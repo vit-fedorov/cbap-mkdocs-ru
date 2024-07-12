@@ -1,0 +1,11 @@
+title: Администрирование аккаунтов
+
+collapse_single_pages: false
+
+nav:
+    - accounts.md
+    - groups.md
+    - system_roles.md
+    - account_permission_audit.md
+    - substitution.md
+    - ...

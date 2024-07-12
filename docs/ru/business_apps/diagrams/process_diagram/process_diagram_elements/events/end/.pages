@@ -1,0 +1,8 @@
+title: Конечные
+
+nav:
+    - index.md
+    - none_end_event.md
+    - stop_process_end_event.md
+    - send_message_end_event.md
+    - ...

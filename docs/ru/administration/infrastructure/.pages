@@ -1,0 +1,14 @@
+title: Инфраструктура
+
+nav:
+    - monitoring.md
+    - logs.md
+    - licensing.md
+    - backup
+    - system_service_management.md
+    - connections
+    - performance.md
+    - logging_configuration.md
+    - global_configuration.md
+    - adapters.md
+    - ...

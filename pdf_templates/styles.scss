@@ -1,0 +1,19 @@
+.md-typeset figure img {
+    display: inline;   
+    image-resolution: 192dpi;
+    max-width: 100%;
+}
+
+.md-typeset figure p {
+    display: inline;   
+}
+
+.md-typeset :is(.admonition-title,summary):before {
+    left: 0.8rem;
+    top: 0.8rem;
+}
+
+.md-typeset ol, .md-typeset ul {
+    
+    margin-left: 0.625rem;
+}

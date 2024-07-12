@@ -1,0 +1,8 @@
+title: Построение процессной архитектуры
+
+nav:
+    - index.md
+    - process_entities_operations
+    - importing_process_entity.md
+    - exporting_process_entity.md
+    - ...

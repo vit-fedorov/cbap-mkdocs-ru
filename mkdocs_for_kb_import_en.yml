@@ -1,0 +1,65 @@
+# This file is used only to build RU help to import it in the kb.comindware.com
+# Run this build script:
+# buildhelp_for_kb_import_en.ps1
+
+INHERIT: mkdocs_common.yml
+
+docs_dir: docs/en
+
+site_url: ""
+
+use_directory_urls: false
+
+site_dir: for_kb_import_en
+
+site_name: "Imported from the CMW Help"
+
+theme:
+  language: en
+  custom_dir: overrides_for_kb_import
+  logo: assets/images/cmw_icon.svg
+  favicon: assets/images/favicon.png
+
+markdown_extensions:
+  - meta
+  - attr_list
+  - md_in_html
+  - sane_lists
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.snippets:
+      base_path: docs\en\.snippets\
+  - toc:
+      title: Table of Contents
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.keys
+
+extra:
+  kbSite: https://kb.cmwlab.com/index.php?ln=en
+
+  kbArticleURLPrefix: https://kb.cmwlab.com/article.php?id=
+
+  kbCategoryURLPrefix: https://kb.cmwlab.com/category.php?id=
+
+plugins:
+  - awesome-pages:
+      collapse_single_pages: true
+  - include-markdown
+  - em-img2fig
+  - autolinks
+  - autorefs
+  - macros
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+          remove_comments: true
+
+hooks:
+  - kb_html_cleanup_hook.py

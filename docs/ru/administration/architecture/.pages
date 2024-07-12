@@ -1,0 +1,9 @@
+title: Архитектура
+
+collapse_single_pages: false
+
+nav:
+    - templates
+    - diagrams
+    - functions.md
+    - communication_routes.md

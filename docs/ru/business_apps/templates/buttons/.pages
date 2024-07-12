@@ -1,0 +1,10 @@
+title: Кнопки
+
+nav:
+    - index.md
+    - button_list_view.md
+    - button_list_operations.md
+    - button_creation.md
+    - button_designer.md
+    - button_deletion.md
+    - ...

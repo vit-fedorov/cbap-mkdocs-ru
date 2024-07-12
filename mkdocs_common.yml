@@ -1,0 +1,49 @@
+theme:
+  name: material
+  language: en
+  palette:
+    scheme: comindware
+  logo: /resources/icons/cmw_icon.svg
+  favicon: /Theme/GetDefaultFavicon
+  custom_dir: overrides
+  features:
+    - navigation.tabs
+    - navigation.tracking
+    - navigation.top
+    - navigation.indexes
+    - content.code.copy
+    - navigation.footer
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra:
+  companyName: 'Comindware'
+  productName: 'Comindware Business Application Platform'
+  productNameArchitect: 'Comindware Architect'
+
+plugins:
+  - search:
+      lang:
+          - en
+          - ru
+  - awesome-pages:
+      collapse_single_pages: true
+  - include-markdown
+  # - section-index
+  - em-img2fig
+  - autolinks
+  - autorefs
+  - macros
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+          remove_comments: true
+  - tags
+  - glightbox:
+      loop: true
+      auto_caption: true
+  - htmlproofer:
+      enabled: !ENV [ENABLE_HTMLPROOFER, False]

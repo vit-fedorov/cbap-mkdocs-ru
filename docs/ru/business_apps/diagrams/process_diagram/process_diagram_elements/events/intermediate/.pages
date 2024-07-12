@@ -1,0 +1,9 @@
+title: Промежуточные
+
+nav:
+    - index.md
+    - timer_intermediate_event.md
+    - send_message_intermediate_event.md
+    - receive_message_intermediate_event.md
+    - none_intermediate_event.md
+    - ...

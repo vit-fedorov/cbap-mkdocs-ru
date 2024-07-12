@@ -1,0 +1,9 @@
+nav:
+    - index.md
+    - Общие свойства элементов: process_diagram_element_common_properties.md
+    - actions
+    - events
+    - Развилки: gateways
+    - Общие элементы: generic
+    - process_diagram_forms.md
+    - ...

@@ -1,0 +1,15 @@
+# This file is used for local authoring and testing the Russian help system without actually building the help or the product
+# To test and author the English help run:
+# mkdocs serve -f mkdocs_en_local.yml (`mkdocs serve` might also work depending on the environment PATH variable)
+
+INHERIT: mkdocs_en.yml
+
+site_url: http://127.0.0.1/help/en/
+
+theme:
+  language: en
+  logo: assets/images/cmw_icon.svg
+  favicon: assets/images/favicon.png
+
+extra_css:
+  - assets/stylesheets/extra.css

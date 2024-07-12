@@ -1,0 +1,7 @@
+title: Атрибуты
+
+nav:
+    - index.md
+    - Типы и свойства атрибутов: attribute_types
+    - Операции с атрибутами: attribute_operations
+    - ...

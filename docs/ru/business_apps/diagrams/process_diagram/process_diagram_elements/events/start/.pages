@@ -1,0 +1,8 @@
+title: Начальные
+
+nav:
+    - index.md
+    - none_start_event.md
+    - timer_start_event.md
+    - receive_message_start_event.md
+    - ...

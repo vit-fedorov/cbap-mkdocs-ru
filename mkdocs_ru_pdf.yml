@@ -1,0 +1,52 @@
+# This file is used for to output PDF version of the Russian help system as PDF/CBAP_User_Guide_RU.pdf
+# It requires GTK3. Installer: install\installgtk3.ps1
+# This configuration and PDF build pipeline are a work in progress. Do not build production PDFs yet.
+# Command: 
+# py -m mkdocs build -f mkdocs_pdf_ru.yml
+
+
+INHERIT: mkdocs_ru.yml
+
+docs_dir: docs/ru/
+site_dir: pdf/
+
+theme:
+    language: ru
+
+site_url: http://127.0.0.1/help/ru/
+
+extra:
+  pdfOutput: true
+
+plugins:
+  - search:
+      lang:
+          - en
+          - ru
+  - awesome-pages
+  - include-markdown
+  # - section-index
+  - em-img2fig
+  - autolinks
+  - autorefs
+  - macros
+
+#   - minify:
+#       minify_html: true
+#       minify_js: true
+#       minify_css: true
+#       htmlmin_opts:
+#           remove_comments: true
+  - with-pdf:
+      cover: true
+      cover_title: Comindware Business Application Platform и Architect
+      cover_subtitle: Руководство пользователя
+      copyright: © 2024 Comindware
+      toc_title: Оглавление
+      toc_level: 3
+      output_path: CBAP_User_Guide_RU.pdf
+      custom_template_path: pdf_templates
+      two_columns_level: 0
+      heading_shift: false
+      ordered_chapter_level: 3
+

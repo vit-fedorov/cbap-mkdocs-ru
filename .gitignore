@@ -1,0 +1,10 @@
+local_test_site/
+pdf/
+!pdf/*.pdf
+!install/requirements.txt
+for_kb_import_en/
+for_kb_import_ru/
+ru_help_local_files/
+eh_help_local_files
+.vscode/settings.json
+compiled_help

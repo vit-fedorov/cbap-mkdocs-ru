@@ -1,0 +1,11 @@
+title: Построение организационной структуры
+
+nav:
+    - index.md
+    - creating_organizational_unit.md
+    - configuring_organizational_unit.md
+    - configuring_organizational_unit_form_and_attributes.md
+    - renaming_organizational_unit.md
+    - changing_hierarchy.md
+    - deleting_organizational_unit.md
+    - ...

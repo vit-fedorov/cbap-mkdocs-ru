@@ -1,0 +1,16 @@
+title: Разработка приложений
+
+nav:
+    - index.md
+    - diagrams
+    - templates
+    - expression_editor
+    - roles_in_application.md
+    - navigation_sections
+    - variables.md
+    - scenarios
+    - online_store.md
+    - integrations.md
+    - version_control
+    - examples
+    - ...

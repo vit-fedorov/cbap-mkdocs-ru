@@ -1,0 +1,9 @@
+title: Администрирование
+
+nav:
+    - index.md
+    - appearance
+    - architecture
+    - account_administration
+    - infrastructure
+    - ...

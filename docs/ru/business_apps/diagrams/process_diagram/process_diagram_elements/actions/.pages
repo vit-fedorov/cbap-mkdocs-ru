@@ -1,0 +1,9 @@
+title: Действия
+
+nav:
+    - index.md
+    - user_task.md
+    - script_task.md
+    - process_call.md
+    - embedded_subprocess.md
+    - ...

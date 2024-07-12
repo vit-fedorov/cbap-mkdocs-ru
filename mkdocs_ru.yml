@@ -1,0 +1,47 @@
+# This file configures the Russian help to be build as Web/help/ru
+# But it does not copy the dependencies
+# Run `py buildhelp.py` to actually build the help with all the dependencies
+
+INHERIT: mkdocs_common.yml
+
+site_name: Справка Comindware Business Application Platform
+
+docs_dir: docs/ru
+    
+theme:
+    language: ru
+
+site_dir: compiled_help
+
+markdown_extensions:
+  - meta
+  - attr_list
+  - md_in_html
+  - sane_lists
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.snippets:
+      base_path: docs\ru\.snippets\
+  - toc:
+      title: На этой странице
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.keys:
+      key_map: 
+        {
+        "enter": "Ввод",
+        "space": "Пробел"
+        }
+
+copyright: '<a href="https://www.comindware.ru/" target="_blank">© 2009–2024 Comindware<sup>®</sup></a>. Тема: '
+
+extra:
+    kbSite: https://kb.comindware.ru/index.php?ln=ru
+
+    kbArticleURLPrefix: https://kb.comindware.ru/article.php?id=
+
+    kbCategoryURLPrefix: https://kb.comindware.ru/category.php?id=

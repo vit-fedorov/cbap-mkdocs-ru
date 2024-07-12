@@ -1,0 +1,40 @@
+# This file configures the English help to be build as Web/help/en
+# But it does not copy the dependencies
+# Run `py buildhelp.py` to actually build the help with all the dependencies
+
+INHERIT: mkdocs_common.yml
+
+site_name: Comindware Business Application Platform Help
+
+docs_dir: docs/en
+
+site_dir: ../Web/help/en
+
+markdown_extensions:
+  - meta
+  - attr_list
+  - md_in_html
+  - sane_lists
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.snippets:
+      base_path: docs\en\.snippets\
+  - toc:
+      title: On this page
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.keys
+
+
+copyright: '<a href="https://www.comindware.com/" target="_blank">© 2009–2024 Comindware<sup>®</sup></a>. Theme: '
+
+extra:
+  kbSite: https://kb.cmwlab.com/index.php?ln=en
+
+  kbArticleURLPrefix: https://kb.cmwlab.com/article.php?id=
+
+  kbCategoryURLPrefix: https://kb.cmwlab.com/category.php?id=

@@ -1,0 +1,19 @@
+# This file is used to build RU help for the local file system in the "ru_help_local_files" folder, command:
+# py -m mkdocs build -f mkdocs_ru_local_files.yml
+# in the mkdocs_ru.yml disable search plugin
+
+INHERIT: mkdocs_ru.yml
+
+site_url: ""
+
+use_directory_urls: false
+
+site_dir: ru_help_local_files
+
+theme:
+  language: ru
+  logo: assets/images/cmw_icon.svg
+  favicon: assets/images/favicon.png
+
+extra_css:
+  - assets/stylesheets/extra.css

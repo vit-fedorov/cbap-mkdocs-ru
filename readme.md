@@ -1,6 +1,5 @@
 # How to initialize the MkDocs environment and build help files
 
-- [How to initialize the MkDocs environment and build help files](#how-to-initialize-the-mkdocs-environment-and-build-help-files)
   - [Initialize the environment](#initialize-the-environment)
   - [Build help](#build-help)
   - [Build PDF manual](#build-pdf-manual)

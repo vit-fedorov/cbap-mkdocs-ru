@@ -32,7 +32,7 @@ hide:
 ## Разделы рабочего стола
 
 {%
-include-markdown "pages.md"
+include-markdown "./pages.md"
 start="<!--page-view-expand-collapse-start-->"
 end="<!--page-view-expand-collapse-end-->"
 %}
@@ -53,7 +53,7 @@ end="<!--page-view-expand-collapse-end-->"
 
 1. Перейдите к рабочему столу, нажав пункт «**Рабочий стол**» на панели навигации.
 {%
-include-markdown "pages.md"
+include-markdown "./pages.md"
 start="<!--page-view-config-start-->"
 end="<!--page-view-config-end-->"
 %}

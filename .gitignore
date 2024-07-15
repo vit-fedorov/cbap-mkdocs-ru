@@ -8,3 +8,5 @@ ru_help_local_files/
 eh_help_local_files
 .vscode/settings.json
 compiled_help
+install/python_latest.exe
+venv/

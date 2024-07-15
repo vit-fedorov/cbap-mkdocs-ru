@@ -1,16 +1,8 @@
 {
 	"folders": [
 		{
-			"name": "Help",
+			"name": "CMW MkDocs RU",
 			"path": "."
-		},
-		{
-			"name": "help",
-			"path": "..\\Web\\js\\modules\\shared\\view\\help"
-		},
-		{
-			"name": "Web",
-			"path": "..\\Web"
 		}
 	],
 	"settings": { 

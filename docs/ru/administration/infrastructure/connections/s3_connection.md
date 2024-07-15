@@ -12,7 +12,7 @@ hide:
 
 ## Введение
 
-ПО **Comindware Business Application Platform** может хранить загруженные пользователями и сформированные системой файлы в хранилище S3:
+ПО **{{ productName }}** может хранить загруженные пользователями и сформированные системой файлы в хранилище S3:
 
 - файлы, прикреплённые к атрибутам типа «Документ» и «Изображение»;
 - файлы, загруженные на странице «Темы»;
@@ -42,18 +42,35 @@ hide:
     vim /usr/share/comindware/configs/instance/instancename.yml
     ```
     
-    Здесь  `_**instancename**_` — имя экземпляра ПО.  
-    См. также статью _«[Пути и содержимое папок экземпляра ПО](https://kb.comindware.ru/article/%d0%9f%d1%83%d1%82%d0%b8-%d0%b8-%d1%81%d0%be%d0%b4%d0%b5%d1%80%d0%b6%d0%b8%d0%bc%d0%be%d0%b5-%d0%bf%d0%b0%d0%bf%d0%be%d0%ba-%d1%8d%d0%ba%d0%b7%d0%b5%d0%bc%d0%bf%d0%bb%d1%8f%d1%80%d0%b0-%d0%9f%d0%9e-2502.html)»._
-3.  Добавьте в файл `_**instancename**_.yml` следующие директивы:
+    Здесь  `instanceName` — имя экземпляра ПО.  
+    См. также статью _«[Пути и содержимое папок экземпляра ПО]({{kbArticleURLPrefix}}2502)»._
+3.  Добавьте в файл `instanceName.yml` следующие директивы:
     
-    ```
+    ``` ini
     # Адрес сервера S3 с указанием порта, идентификатор ключа доступа и секретный ключ
+    s3Connection.default.endpointURL: http://s3.example.com:9000
+    s3Connection.default.accessKey: xxxxx
+    s3Connection.default.secretKey: xxxxx
+    # Установите значение true, если сервер принимает только запросы path-style вида:
+    # https://s3.region-code.amazonaws.com/bucket-name/key-name
+    s3Connection.default.pathStyle: true
+    s3Connection.default.description: Подключение к S3
+                            
+    # Параметры контейнера загруженных файлов
+    userStorage.type: S3
+    userStorage.s3.bucket: user-files-bucket
+    userStorage.s3.connection: default
+
+    # Параметры контейнера временных файлов
+    tempStorage.type: S3
+    tempStorage.s3.bucket: temp-files-bucket
+    tempStorage.s3.connection: default         
     ```
     
-    Внимание!
-    
-    - Необходимо указать разные контейнеры (корзины) для загруженных файлов и для временных файлов.
-    - Имена корзин не должны содержать прописных (заглавных) букв.
+    !!! warning "Внимание!"
+
+        - Необходимо указать разные контейнеры (корзины) для загруженных файлов и для временных файлов.
+        - Имена корзин не должны содержать прописных (заглавных) букв.
     
 4. Перезагрузите экземпляр ПО:
     
@@ -83,11 +100,13 @@ hide:
     - Должно отобразиться сообщение «**Соединение установлено**».
 
 !!! warning "Внимание!"
-    Не вносите изменения в окне свойств подключения к хранилищу S3, заданному в [файле конфигурации](https://kb.comindware.ru/article.php?id=2594#mcetoc_1gjrlqj8j2) экземпляра ПО (`/usr/share/comindware/configs/instance/_**instancename**_.yml`) с помощью директивы `s3Connection.default`. Они не будут применены к конфигурации экземпляра ПО и при перезапуске сервера будут заменены на значения из файла конфигурации `_**instancename**_.yml`
 
-Настраивать подключение к хранилищу S3 следует только в файле `/usr/share/comindware/configs/instance/_**instancename**_.yml`
+    Не вносите изменения в окне свойств подключения к хранилищу S3, заданному в [файле конфигурации](https://kb.comindware.ru/article.php?id=2594#mcetoc_1gjrlqj8j2) экземпляра ПО (`/usr/share/comindware/configs/instance/instanceName.yml`) с помощью директивы `s3Connection.default`. Они не будут применены к конфигурации экземпляра ПО и при перезапуске сервера будут заменены на значения из файла конфигурации `instanceName.yml`
+
+Настраивать подключение к хранилищу S3 следует только в файле `/usr/share/comindware/configs/instance/instanceName.yml`
 
 *![Настройка подключения к хранилищу S3](https://kb.comindware.ru/assets/img_65e9b87a6e895.png)*
+
 ## Связанные статьи
 
 **[Пути и содержимое папок экземпляра ПО]({{kbArticleURLPrefix}}2502)**

@@ -1,0 +1,21 @@
+{
+    "recommendations": [
+        "adamvoss.vscode-languagetool-en",
+        "streetsidesoftware.code-spell-checker",
+        "george-alisson.html-preview-vscode",
+        "wholroyd.jinja",
+        "adamvoss.vscode-languagetool",
+        "yzhang.markdown-all-in-one",
+        "jebbs.markdown-extended",
+        "shd101wyy.markdown-preview-enhanced",
+        "mdickin.markdown-shortcuts",
+        "davidanson.vscode-markdownlint",
+        "mushan.vscode-paste-image",
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "streetsidesoftware.code-spell-checker-russian",
+        "adamvoss.vscode-languagetool-ru",
+        "tomoki1207.pdf",
+        "ms-vscode.wordcount"
+    ]
+}

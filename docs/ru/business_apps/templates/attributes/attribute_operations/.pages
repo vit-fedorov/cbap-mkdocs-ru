@@ -5,5 +5,4 @@ nav:
     - attribute_setup.md
     - attribute_archive_unarchive.md
     - attribute_deletion.md
-    - attribute_change_type.md
     - ...

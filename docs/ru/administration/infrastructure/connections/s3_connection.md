@@ -6,6 +6,7 @@ tags:
   - Active Directory
 hide:
   - tags
+kbId: 2594
 ---
 
 # Хранилище S3. Настройка экземпляра ПО и подключения

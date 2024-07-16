@@ -107,6 +107,6 @@ hide:
 
 *![Настройка подключения к хранилищу S3](https://kb.comindware.ru/assets/img_65e9b87a6e895.png)*
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Пути и содержимое папок экземпляра ПО]({{kbArticleURLPrefix}}2502)**

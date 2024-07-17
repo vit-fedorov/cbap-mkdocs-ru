@@ -22,6 +22,7 @@ nav:
       - Роль: attribute_role.md
       - Список значений: attribute_enum.md
       - Текст: attribute_text.md
+      - Чертёж: attribute_drawing.md
       - Число: attribute_number.md
       - Штрихкод: attribute_barcode.md
     - ...

@@ -46,4 +46,4 @@ plugins:
       loop: true
       auto_caption: true
   - htmlproofer:
-      enabled: !ENV [ENABLE_HTMLPROOFER, False]
+      enabled: !ENV [ENABLE_HTMLPROOFER, True]

@@ -1,7 +1,6 @@
 title: Типы и свойства шаблонов
 
 nav:
-    - index.md
     - template_common_properties.md
     - record_templates.md
     - process_templates.md

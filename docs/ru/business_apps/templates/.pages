@@ -3,9 +3,9 @@ title: Шаблоны
 nav:
     - index.md
     - template_types
-    - template_operations
     - attributes
     - forms
     - buttons
     - cards
+    - import_data.md
     - ...

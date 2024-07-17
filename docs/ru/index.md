@@ -7,9 +7,7 @@ hide:
 
 # Введение
 
-Это встроенная справочная система **[{{ productName }}](business_apps)** и **[{{ productNameArchitect }}](architect_desktop.md)**.
-
-Для навигации по разделам справки используйте гиперссылки и функцию поиска.
+Это руководство пользователя **[{{ productName }}](business_apps/index.md)** с модулем **[{{ productNameArchitect }}](architect_desktop.md)**.
 
 С полной документацией к продукту и учебником можно ознакомиться в **[базе знаний {{ productName }}]({{ kbSite }})**.
 

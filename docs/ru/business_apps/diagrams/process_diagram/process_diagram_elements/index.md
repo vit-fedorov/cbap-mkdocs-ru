@@ -39,7 +39,7 @@ hide:
         * [Промежуточное событие-получение сообщения](receive_message_intermediate_event.md)
         * [Простое событие](none_intermediate_event.md)
     * [Конечные события][конечные-события]
-        * [Простое конечное событие](none_end_event)
+        * [Простое конечное событие](none_end_event.md)
         * [Конечное событие-остановка процесса](stop_process_end_event.md)
         * [Конечное событие-отправка сообщения](send_message_end_event.md)
 * [Развилки][развилки]

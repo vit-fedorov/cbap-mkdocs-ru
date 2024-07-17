@@ -4,7 +4,7 @@ nav:
     - monitoring.md
     - logs.md
     - licensing.md
-    - backup
+    - backup.md
     - system_service_management.md
     - connections
     - performance.md

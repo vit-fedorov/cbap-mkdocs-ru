@@ -1,7 +1,30 @@
 title: Атрибуты
 
 nav:
+
     - index.md
-    - Типы и свойства атрибутов: attribute_types
-    - Операции с атрибутами: attribute_operations
+    - attribute_change_type.md
+    - attribute_common_properties.md
+    - attribute_value_verification.md
+    - attribute_relations.md
+    - system_attributes.md
+    - calculated_attribute.md
+    - displayed_attribute.md
+    - searchable_attribute.md
+    - Свойства атрибутов по типам:
+      - Аккаунт: attribute_account.md
+      - Гиперссылка: attribute_hyperlink.md
+      - Дата и время: attribute_date_time.md
+      - Длительность: attribute_duration.md
+      - Документ: attribute_document.md
+      - Запись: attribute_record.md
+      - Изображение: attribute_image.md
+      - Логический: attribute_boolean.md
+      - Организационная единица: attribute_organizational_unit.md
+      - Роль: attribute_role.md
+      - Список значений: attribute_enum.md
+      - Текст: attribute_text.md
+      - Чертёж: attribute_drawing.md
+      - Число: attribute_number.md
+      - Штрихкод: attribute_barcode.md
     - ...

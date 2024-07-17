@@ -58,7 +58,7 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[Настройка разделов навигации](navigation_sections_setup)**
+**[Настройка разделов навигации](navigation_sections_setup.md)**
 
 **[Настройка панели навигации][настройка-панели-навигации]**
 

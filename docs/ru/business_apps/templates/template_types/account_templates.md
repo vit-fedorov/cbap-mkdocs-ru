@@ -21,8 +21,7 @@ kbId: 2223
 
 ## Свойства шаблона аккаунта
 
-У шаблона аккаунта предусмотрены только [общие свойства](template_common
-_properties.md).
+У шаблона аккаунта предусмотрены только [общие свойства](template_common_properties.md).
 
 _![Свойства шаблона аккаунта](account_templates_properties.png)_
 

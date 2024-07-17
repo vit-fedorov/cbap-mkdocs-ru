@@ -7,7 +7,7 @@ hide:
 
 # Введение
 
-Это руководство пользователя **[{{ productName }}](business_apps)** с модулем **[{{ productNameArchitect }}](architect_desktop.md)**.
+Это руководство пользователя **[{{ productName }}](business_apps/index.md)** с модулем **[{{ productNameArchitect }}](architect_desktop.md)**.
 
 С полной документацией к продукту и учебником можно ознакомиться в **[базе знаний {{ productName }}]({{ kbSite }})**.
 

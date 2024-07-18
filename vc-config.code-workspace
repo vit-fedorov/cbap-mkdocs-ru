@@ -19,9 +19,10 @@
 		"pasteImage.insertPattern": "*${imageSyntaxPrefix}${imageFileName}${imageSyntaxSuffix}*",
 		"languageTool.language": "en, ru, ru-RU",
 		"cSpell.words": [
+			"журналирования",
 			"оргединицами",
 			"отсканировав",
-        	"штрихкода"
+			"штрихкода"
 		]
 	},
 	"extensions": {

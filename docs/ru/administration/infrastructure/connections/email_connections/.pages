@@ -7,5 +7,4 @@ nav:
     - process_receiving_connection.md
     - exchange_receiving_connection.md
     - imap_receiving_connection.md
-    - example_email_connection.md
     - ...

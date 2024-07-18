@@ -1,8 +1,8 @@
 title: Системные подключения
 
 nav:
-    - elasticsearch_connections.md
-    - maps_connections.md
-    - git_connections.md
-    - s3_connections.md
+    - elasticsearch_connection.md
+    - maps_connection.md
+    - git_connection.md
+    - s3_connection.md
     - ...

@@ -4,4 +4,6 @@ nav:
     - get_connection.md
     - odata_connection.md
     - integrations.md
+    - 1c_integrations.md
+    - send_http_connection.md
     - ...

@@ -2,10 +2,5 @@ title: Формы
 
 nav:
     - index.md
-    - form_list_view.md
-    - form_list_operations.md
-    - form_creation.md
-    - form_designer.md
-    - form_deletion.md
     - discussion_configure.md
     - ...

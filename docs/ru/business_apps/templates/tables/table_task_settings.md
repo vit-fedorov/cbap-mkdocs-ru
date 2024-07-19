@@ -117,6 +117,6 @@ _![Удаление таблицы задач](table_task_settings_table_delete.
 
 **[Шаблон процесса](process_templates.md)**
 
-**[Добавление таблицы на страницу «Мои задачи»]({{ kbArticleURLPrefix }}2409)**
+**[Добавление таблицы на страницу «Мои задачи»](table_my_tasks_addition.md)**
 
 **[Настройка таблицы в шаблоне](table_settings.md)**

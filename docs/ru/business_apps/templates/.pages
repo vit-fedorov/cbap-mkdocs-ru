@@ -7,5 +7,6 @@ nav:
     - forms
     - buttons
     - cards
+    - tables
     - import_data.md
     - ...

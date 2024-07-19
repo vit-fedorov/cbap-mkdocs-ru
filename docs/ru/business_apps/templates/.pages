@@ -6,6 +6,7 @@ nav:
     - attributes
     - forms
     - buttons
+    - button_area.md
     - cards
     - tables
     - import_data.md

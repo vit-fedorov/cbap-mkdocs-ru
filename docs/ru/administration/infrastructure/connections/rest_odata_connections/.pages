@@ -1,9 +1,7 @@
-title: Подключения
+title: Подключения REST и OData
 
 nav:
-    - system_connections
-    - authentication
-    - office_connections
-    - email_connections
-    - kafka_connection.md
+    - get_connection.md
+    - odata_connection.md
+    - integrations.md
     - ...

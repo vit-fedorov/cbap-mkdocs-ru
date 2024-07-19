@@ -7,4 +7,5 @@ nav:
     - 1c_integrations.md
     - send_http_connection.md
     - send_inquiry_connection.md
+    - send_http_example.md
     - ...

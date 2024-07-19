@@ -68,6 +68,6 @@ _![Создание пути передачи данных с использов
 
 --8<-- "related_topics_heading.md"
 
-**[Подключения]({{ kbArticleURLPrefix }}2205)**
+**[connections]({{ kbArticleURLPrefix }}2205)**
 
 **[Настройка подключения]({{ kbArticleURLPrefix }}2205#mcetoc_1gjrlqi4l4)**

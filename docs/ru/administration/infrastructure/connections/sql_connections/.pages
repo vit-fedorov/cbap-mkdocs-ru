@@ -1,4 +1,4 @@
-title: Подключения
+title: SQL-подключения
 
 nav:
     - sql_send_connection.md

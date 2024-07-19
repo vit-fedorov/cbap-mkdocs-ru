@@ -177,4 +177,4 @@ _![Содержимое файла integration_raw.log](integrations_log_content
 
 **[Журнал сеансов синхронизации по OData]({{ kbArticleURLPrefix }}2180#mcetoc_1gjriatef8)**
 
-**[Интеграция с 1С по OData. Настройка для импорта данных]({{ kbArticleURLPrefix }}2011)**
+**[Интеграция с 1С по OData. Настройка для импорта данных](1c_integrations.md)**

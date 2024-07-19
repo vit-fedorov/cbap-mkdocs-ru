@@ -43,7 +43,7 @@
 * [Лицензирование](licensing.md)
 * [Резервное копирование](backup.md)
 * [Управление системными службами](system_service_management.md)
-* [Подключения][список-подключений]
+* [connections][список-подключений]
 * [Производительность](performance.md)
 * [Конфигурация журналирования](logging_configuration.md)
 * [Глобальная конфигурация](global_configuration.md)

@@ -50,7 +50,7 @@
 * [Роли](roles_in_application.md)
 * [Разделы навигации](navigation_sections_setup.md)
 * [Функции][функции]
-* [Переменные][переменные]
+* [Переменные][variables]
 * [Сценарии][scenarios]
 * [Интернет-магазин][интернет-магазин]
 * [Интеграции](integrations.md)

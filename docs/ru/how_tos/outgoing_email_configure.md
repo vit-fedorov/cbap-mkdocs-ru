@@ -170,7 +170,7 @@ hide:
 
 **[Пути передачи данных](communication_routes.md)**
 
-**[Диаграмма процесса][диаграмма-процесса]**
+**[Диаграмма процесса][process_diagram_view]**
 
 **[Промежуточное событие-отправка сообщения](send_message_intermediate_event.md)**
 

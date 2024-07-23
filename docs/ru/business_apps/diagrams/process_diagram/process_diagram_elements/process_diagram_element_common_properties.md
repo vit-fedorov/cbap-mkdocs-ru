@@ -40,7 +40,7 @@ hide:
 ## Настройка свойств элемента
 
 1. Нажмите элемент диаграммы.
-2. Нажмите кнопку «**Свойства**» <i class="fa-light fa-gear"></i> в [меню элемента][вызов-меню-элемента].
+2. Нажмите кнопку «**Свойства**» <i class="fa-light fa-gear"></i> в [меню элемента][call_element_menu].
     *![Кнопка «Свойства» в меню элемента](process_diagram_element_common_properties_congigure_button.png)*
 3. Отобразится окно свойств элемента
     *![Общие свойства элемента диаграммы в окне его свойств](process_diagram_element_common_properties.png)*

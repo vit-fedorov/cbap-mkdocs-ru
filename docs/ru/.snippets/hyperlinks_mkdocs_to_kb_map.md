@@ -15,6 +15,7 @@
 [process_diagram_view_instance]: {{ kbArticleURLPrefix }}2355
 [process_templates]: {{ kbArticleURLPrefix }}2222
 [templates]: {{ kbArticleURLPrefix }}2219
+[user_task]: {{ kbArticleURLPrefix }}2392
 [variables]: {{ kbArticleURLPrefix }}2207
 [администрирование]: {{ kbArticleURLPrefix }}2191
 [администрирование-приложения]: {{ kbArticleURLPrefix }}2209#mcetoc_1gjrm25045

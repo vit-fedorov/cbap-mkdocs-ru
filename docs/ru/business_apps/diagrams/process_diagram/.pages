@@ -2,6 +2,7 @@ title: Диаграмма процесса
 
 nav:
     - index.md
+    - process_diagram_build_advice.md
     - process_diagram_view.md
     - process_diagram_designer.md
     - process_diagram_edit.md

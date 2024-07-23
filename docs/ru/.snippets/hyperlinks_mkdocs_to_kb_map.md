@@ -1,5 +1,4 @@
 [formula_function_list]: {{ kbArticleURLPrefix }}2492
-[start_form_user_task_form]: {{ kbArticleURLPrefix }}2363
 
 {% if kbExport %}
 [apps]: {{ kbArticleURLPrefix }}2209
@@ -7,8 +6,10 @@
 [diagram_definition]: {{ kbArticleURLPrefix }}2211
 [diagram_designer]: {{ kbArticleURLPrefix }}2360#mcetoc_1h2d97s1m0
 [diagrams]: {{ kbArticleURLPrefix }}2211
+[none_start_event]: {{ kbArticleURLPrefix }}2378
 [process_diagram_element_common_properties]: {{ kbArticleURLPrefix }}2364
 [process_diagram_elements]: {{ kbArticleURLPrefix }}2365
+[process_diagram_forms]: {{ kbArticleURLPrefix }}2363
 [process_diagram_version_control]: {{ kbArticleURLPrefix }}2358
 [process_diagram_view]: {{ kbArticleURLPrefix }}2360
 [process_diagram_view_instance]: {{ kbArticleURLPrefix }}2355

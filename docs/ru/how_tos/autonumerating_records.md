@@ -146,5 +146,5 @@ kbId:
 **[Написание скриптов на языке C#][manual_csharp]**
 
 {%
-include-markdown "../.snippets/hyperlinks_mkdocs_to_kb_map.md"
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
 %}

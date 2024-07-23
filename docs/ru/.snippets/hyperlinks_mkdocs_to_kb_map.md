@@ -3,7 +3,9 @@
 
 {% if kbExport %}
 [apps]: {{ kbArticleURLPrefix }}2209
+[call_element_menu]: {{ kbArticleURLPrefix }}2360#mcetoc_1h28cr6421
 [diagram_definition]: {{ kbArticleURLPrefix }}2211
+[diagram_designer]: {{ kbArticleURLPrefix }}2360#mcetoc_1h2d97s1m0
 [diagrams]: {{ kbArticleURLPrefix }}2211
 [process_diagram_element_common_properties]: {{ kbArticleURLPrefix }}2364
 [process_diagram_elements]: {{ kbArticleURLPrefix }}2365

@@ -1,12 +1,17 @@
 [formula_function_list]: {{ kbArticleURLPrefix }}2492
+[functions]: {{ kbArticleURLPrefix }}2200
+[expression_introduction]: {{ kbArticleURLPrefix }}1858
 
 {% if kbExport %}
+[actions]: {{ kbArticleURLPrefix }}2390
 [apps]: {{ kbArticleURLPrefix }}2209
 [call_element_menu]: {{ kbArticleURLPrefix }}2360#mcetoc_1h28cr6421
 [diagram_definition]: {{ kbArticleURLPrefix }}2211
 [diagram_designer]: {{ kbArticleURLPrefix }}2360#mcetoc_1h2d97s1m0
 [diagrams]: {{ kbArticleURLPrefix }}2211
 [none_start_event]: {{ kbArticleURLPrefix }}2378
+[process_call_task]: {{ kbArticleURLPrefix }}2609
+[process_call_task_properties]:{{ kbArticleURLPrefix }}2609#mcetoc_1h28bak441
 [process_diagram_element_common_properties]: {{ kbArticleURLPrefix }}2364
 [process_diagram_elements]: {{ kbArticleURLPrefix }}2365
 [process_diagram_forms]: {{ kbArticleURLPrefix }}2363

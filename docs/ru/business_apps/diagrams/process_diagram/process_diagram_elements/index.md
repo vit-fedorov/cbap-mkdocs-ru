@@ -58,8 +58,8 @@ hide:
 
 **[Диаграмма процесса][process_diagram_view]**
 
-**[Просмотр диаграммы процесса](process_diagram_view.md)**
+**[Просмотр диаграммы процесса][process_diagram_view]**
 
 **[Конструктор диаграммы процесса][diagram_designer]**
 
-**[Редактирование диаграммы процесса](process_diagram_edit.md)**
+**[Редактирование диаграммы процесса][process_diagram_view]**

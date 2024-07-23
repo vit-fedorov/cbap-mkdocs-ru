@@ -20,4 +20,4 @@
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
-**[Редактирование диаграммы процесса](process_diagram_edit.md)**
+**[Редактирование диаграммы процесса][process_diagram_view]**

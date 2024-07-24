@@ -1,10 +1,13 @@
 [formula_function_list]: {{ kbArticleURLPrefix }}2492
 [functions]: {{ kbArticleURLPrefix }}2200
 [expression_introduction]: {{ kbArticleURLPrefix }}1858
+[manual_csharp]: {{ kbArticleURLPrefix }}2400
 
 {% if kbExport %}
 [actions]: {{ kbArticleURLPrefix }}2390
 [apps]: {{ kbArticleURLPrefix }}2209
+[attribute_document]: {{ kbArticleURLPrefix }}2241
+[buttons]{{ kbArticleURLPrefix }}2276
 [call_element_menu]: {{ kbArticleURLPrefix }}2360#mcetoc_1h28cr6421
 [diagram_definition]: {{ kbArticleURLPrefix }}2211
 [diagram_designer]: {{ kbArticleURLPrefix }}2360#mcetoc_1h2d97s1m0

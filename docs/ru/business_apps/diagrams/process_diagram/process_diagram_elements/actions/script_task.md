@@ -55,10 +55,10 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[Пользовательская задача](user_task.md)**
+**[Пользовательская задача][user_task]**
 
 **[Общие свойства элементов диаграммы процесса](process_diagram_element_common_properties.md)**
 
-**[Элементы диаграммы процесса][элементы-диаграммы-процесса]**
+**[Элементы диаграммы процесса][process_diagram_elements]**
 
-**[Редактирование диаграммы процесса](process_diagram_edit.md)**
+**[Редактирование диаграммы процесса][process_diagram_view]**

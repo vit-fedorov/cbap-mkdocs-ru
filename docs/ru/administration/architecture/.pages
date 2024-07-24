@@ -4,6 +4,6 @@ collapse_single_pages: false
 
 nav:
     - Шаблоны: business_apps/templates
-    - diagrams
+    - Диаграммы: business_apps/diagrams
     - functions.md
     - communication_routes.md

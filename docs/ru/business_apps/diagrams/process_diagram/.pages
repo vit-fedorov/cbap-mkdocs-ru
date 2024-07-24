@@ -3,11 +3,6 @@ title: Диаграмма процесса
 nav:
     - index.md
     - process_diagram_build_advice.md
-    - process_diagram_view.md
-    - process_diagram_designer.md
-    - process_diagram_edit.md
-    - process_diagram_validate.md
-    - process_diagram_publish.md
     - process_diagram_version_control.md
     - process_diagram_view_instance.md
     - Элементы диаграммы процесса: process_diagram_elements

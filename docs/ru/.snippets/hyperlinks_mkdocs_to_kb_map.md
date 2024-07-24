@@ -7,6 +7,7 @@
 [actions]: {{ kbArticleURLPrefix }}2390
 [apps]: {{ kbArticleURLPrefix }}2209
 [attribute_document]: {{ kbArticleURLPrefix }}2241
+[attribute_enum]: {{ kbArticleURLPrefix }}2244
 [buttons]{{ kbArticleURLPrefix }}2276
 [call_element_menu]: {{ kbArticleURLPrefix }}2360#mcetoc_1h28cr6421
 [diagram_definition]: {{ kbArticleURLPrefix }}2211

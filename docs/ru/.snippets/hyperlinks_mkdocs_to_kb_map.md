@@ -2,6 +2,7 @@
 [functions]: {{ kbArticleURLPrefix }}2200
 [expression_introduction]: {{ kbArticleURLPrefix }}1858
 [manual_csharp]: {{ kbArticleURLPrefix }}2400
+[manual_n3]: {{ kbArticleURLPrefix }}2401
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}2318
 
 {% if kbExport %}

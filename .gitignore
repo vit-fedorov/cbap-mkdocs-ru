@@ -10,3 +10,4 @@ eh_help_local_files
 compiled_help
 install/python_latest.exe
 venv/
+__pycache__/

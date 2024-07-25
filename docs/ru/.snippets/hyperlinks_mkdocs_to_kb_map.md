@@ -10,9 +10,11 @@
 [attribute_enum]: {{ kbArticleURLPrefix }}2244
 [buttons]{{ kbArticleURLPrefix }}2276
 [call_element_menu]: {{ kbArticleURLPrefix }}2360#mcetoc_1h28cr6421
+[common_notifications]: {{ kbArticleURLPrefix }}2566
 [diagram_definition]: {{ kbArticleURLPrefix }}2211
 [diagram_designer]: {{ kbArticleURLPrefix }}2360#mcetoc_1h2d97s1m0
 [diagrams]: {{ kbArticleURLPrefix }}2211
+[global_configuration]: {{ kbArticleURLPrefix }}2185
 [none_start_event]: {{ kbArticleURLPrefix }}2378
 [process_call_task]: {{ kbArticleURLPrefix }}2609
 [process_call_task_properties]:{{ kbArticleURLPrefix }}2609#mcetoc_1h28bak441
@@ -23,6 +25,8 @@
 [process_diagram_view]: {{ kbArticleURLPrefix }}2360
 [process_diagram_view_instance]: {{ kbArticleURLPrefix }}2355
 [process_templates]: {{ kbArticleURLPrefix }}2222
+[send_message_end_event]: {{ kbArticleURLPrefix }}2385
+[send_message_intermediate_event]: {{ kbArticleURLPrefix }}2381
 [templates]: {{ kbArticleURLPrefix }}2219
 [user_task]: {{ kbArticleURLPrefix }}2392
 [variables]: {{ kbArticleURLPrefix }}2207

@@ -35,7 +35,7 @@ hide:
 
 ### Основные
 
-На этой вкладке можно настроить [общие свойства элемента диаграммы процесса](process_diagram_element_common_properties.md).
+На этой вкладке можно настроить [общие свойства элемента диаграммы процесса][process_diagram_element_common_properties].
 
 *![Основные свойства промежуточного события-получения сообщения](receive_message_intermediate_event_general_properties.png)*
 
@@ -78,8 +78,8 @@ hide:
 
 **[Пути передачи данных](communication_routes.md)**
 
-**[Общие свойства элементов диаграммы процесса](process_diagram_element_common_properties.md)**
+**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
-**[Редактирование диаграммы процесса][process_diagram_view]**
+**[Редактирование диаграммы процесса][process_diagram_designer]**

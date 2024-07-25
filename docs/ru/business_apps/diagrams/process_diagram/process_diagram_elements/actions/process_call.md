@@ -38,7 +38,7 @@ hide:
 
 ### Основные
 
-Помимо [общих свойств элемента диаграммы процесса](process_diagram_element_common_properties.md) на этой вкладке можно настроить перечисленные ниже свойства вызова процесса.
+Помимо [общих свойств элемента диаграммы процесса][process_diagram_element_common_properties] на этой вкладке можно настроить перечисленные ниже свойства вызова процесса.
 
 #### Базовые настройки
 
@@ -133,8 +133,8 @@ hide:
 
 **[Встроенный подпроцесс](embedded_subprocess.md)**
 
-**[Общие свойства элементов диаграммы процесса](process_diagram_element_common_properties.md)**
+**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
-**[Редактирование диаграммы процесса][process_diagram_view]**
+**[Редактирование диаграммы процесса][process_diagram_designer]**

@@ -35,7 +35,7 @@ hide:
 
 ## Свойства простого начального события
 
-В  окне свойств **простого начального события** можно настроить только [общие свойства элемента диаграммы процесса](process_diagram_element_common_properties.md).
+В  окне свойств **простого начального события** можно настроить только [общие свойства элемента диаграммы процесса][process_diagram_element_common_properties].
 
 *![Свойства простого начального события](none_start_event_general_properties.png)*
 
@@ -47,8 +47,8 @@ hide:
 
 **[Стартовая форма и форма пользовательской задачи](process_diagram_forms.md)**
 
-**[Общие свойства элементов диаграммы процесса](process_diagram_element_common_properties.md)**
+**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
-**[Редактирование диаграммы процесса][process_diagram_view]**
+**[Редактирование диаграммы процесса][process_diagram_designer]**

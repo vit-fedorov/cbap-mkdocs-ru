@@ -41,4 +41,4 @@ hide:
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
-**[Редактирование диаграммы процесса][process_diagram_view]**
+**[Редактирование диаграммы процесса][process_diagram_designer]**

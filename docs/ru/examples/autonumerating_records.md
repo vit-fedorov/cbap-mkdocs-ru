@@ -53,7 +53,7 @@ kbId:
 
     * Так как этот способ учитывает количество существующих записей, новой записи будет присвоен такой порядковый номер, как если бы все предыдущие записи были тоже пронумерованы.
 
-1. В шаблоне записи *«Заявки»* создайте и поместите на форму атрибут _«Номер заявки»_ типа «**Текст**».
+1. В шаблоне записи _«Заявки»_ создайте и поместите на форму атрибут _«Номер заявки»_ типа «**Текст**».
 2. Откройте **сценарий на выходе** из начального события процесса _«Оформление заявки»_ и добавьте в него действие «**Изменить значения атрибутов**» со следующими свойствами:
 
     | Атрибут            | Операция со значениями | Значение|
@@ -106,26 +106,26 @@ kbId:
     using Comindware.TeamNetwork.Api.Data;
     public class Script
     {
-        public static void Main(Comindware.Process.Api.Data.ScriptContext context, Comindware.Entities entities)
+        public static void Main(Comindware.Process.Api.Data.ScriptContext context, Comindware.Entities entities)
         {
     // BusinessObjectId — запись, связанная с экземпляром процесса.
-                            var objectId = context.BusinessObjectId;  
+            var objectId = context.BusinessObjectId;   
     // Получаем значение переменной «Порядковый номер» по её ID — svar.1.
     // Присваиваем полученное значение переменной sequenceNumber.
-                            var sequenceNumber = (decimal)Api.Solution.SolutionVariableService.GetValue("svar.1");
+            var sequenceNumber = (decimal)Api.Solution.SolutionVariableService.GetValue("svar.1");
     // Nomerzayavki — системное имя атрибута «Номер заявки».
     // Создаём словарь data со значением атрибута «Номер заявки», 
     // равным значению переменной «Порядковый номер».
-                            var data = new Dictionary<string, object>
-               {
-                     {"Nomerzayavki", sequenceNumber}
-               };
+            var data = new Dictionary<string, object>
+            {
+                {"Nomerzayavki", sequenceNumber}
+            };
     // Zayavki — системное имя шаблона записи «Заявки».
     // Записываем значение атрибута «Порядковый номер» в текущей Заявке
-               Api.TeamNetwork.ObjectService.EditWithAlias("Zayavki", objectId, data);
+            Api.TeamNetwork.ObjectService.EditWithAlias("Zayavki", objectId, data);
     // Приращиваем на 1 значение переменной «Порядковый номер»
-               Api.Solution.SolutionVariableService.SetValue("svar.1", sequenceNumber+1);
-        }
+            Api.Solution.SolutionVariableService.SetValue("svar.1", sequenceNumber+1);
+        }
     }
     ```
 

@@ -11,6 +11,7 @@
 [buttons]{{ kbArticleURLPrefix }}2276
 [call_element_menu]: {{ kbArticleURLPrefix }}2360#mcetoc_1h28cr6421
 [common_notifications]: {{ kbArticleURLPrefix }}2566
+[communication_routes]: {{ kbArticleURLPrefix }}2201
 [diagram_definition]: {{ kbArticleURLPrefix }}2211
 [diagram_designer]: {{ kbArticleURLPrefix }}2360#mcetoc_1h2d97s1m0
 [diagrams]: {{ kbArticleURLPrefix }}2211
@@ -24,6 +25,7 @@
 [process_diagram_version_control]: {{ kbArticleURLPrefix }}2358
 [process_diagram_view]: {{ kbArticleURLPrefix }}2360
 [process_diagram_view_instance]: {{ kbArticleURLPrefix }}2355
+[process_sending_connection]: {{ kbArticleURLPrefix }}2394
 [process_templates]: {{ kbArticleURLPrefix }}2222
 [send_message_end_event]: {{ kbArticleURLPrefix }}2385
 [send_message_intermediate_event]: {{ kbArticleURLPrefix }}2381

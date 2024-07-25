@@ -1,0 +1,8 @@
+title: Пути передачи данных
+
+collapse_single_pages: false
+
+nav:
+    - communication_routes.md
+    - system_connections
+    - ...

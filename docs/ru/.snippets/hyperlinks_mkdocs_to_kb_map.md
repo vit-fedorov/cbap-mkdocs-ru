@@ -7,7 +7,7 @@
 [actions]: {{ kbArticleURLPrefix }}2390
 [apps]: {{ kbArticleURLPrefix }}2209
 [attribute_document]: {{ kbArticleURLPrefix }}2241
-[buttons]{{ kbArticleURLPrefix }}2276
+[buttons]: {{ kbArticleURLPrefix }}2276
 [call_element_menu]: {{ kbArticleURLPrefix }}2360#mcetoc_1h28cr6421
 [diagram_definition]: {{ kbArticleURLPrefix }}2211
 [diagram_designer]: {{ kbArticleURLPrefix }}2360#mcetoc_1h2d97s1m0
@@ -27,6 +27,6 @@
 [variables]: {{ kbArticleURLPrefix }}2207
 [администрирование]: {{ kbArticleURLPrefix }}2191
 [администрирование-приложения]: {{ kbArticleURLPrefix }}2209#mcetoc_1gjrm25045
-[использование-вложенной-формы]: {{ kbArticleURLPrefix }}2271#%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B2%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9-%D1%84%D0%BE%D1%80%D0%BC%D1%8B
+[использование-вложенной-формы]: {{ kbArticleURLPrefix }}2271#использование-вложенной-формы
 [редактирование-формы]: {{ kbArticleURLPrefix }}2271#mcetoc_1gk3dol905
 {% endif %}

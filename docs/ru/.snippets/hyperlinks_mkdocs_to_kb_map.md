@@ -39,6 +39,7 @@
 [send_message_end_event]: {{ kbArticleURLPrefix }}2385
 [send_message_intermediate_event]: {{ kbArticleURLPrefix }}2381
 [task_notifications]: {{ kbArticleURLPrefix }}2567
+[#task_notifications_email]: {{ kbArticleURLPrefix }}2567#task_notifications_email
 [templates]: {{ kbArticleURLPrefix }}2219
 [user_task]: {{ kbArticleURLPrefix }}2392
 [variables]: {{ kbArticleURLPrefix }}2207

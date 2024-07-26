@@ -12,21 +12,19 @@
 
 1. Install Python:
 
-   * Change dir to `Help` under the solution root directory.
+* Run:
 
-   * Run:
+     ``` shell
+     ./install/installpy.ps1
+     ```
+     or
+     ``` shell
+     . ./install/install.sh
+     ```
 
-        ``` shell
-        ./install/installpy.ps1
-        ```
-        or
-        ``` shell
-        . ./install/install.sh
-        ```
-
-        * This script downloads and installs the latest Python from python.org (including the `pip` package manager).
-        * `install.sh` also installs GTK3 framework used for PDF output.
-        * In Windows, UAC request may pop-up during the silent installation.
+     * This script downloads and installs the latest Python from python.org (including the `pip` package manager).
+     * `install.sh` also installs the GTK3 framework used for PDF output. Under Windows use installgtk3.ps1 to install the GTK3.
+     * In Windows, UAC request may pop-up during the silent installation.
 
 > [!NOTE]
 > Python is not used in runtime, it is only used to build the static HTML site from the source .MD files.

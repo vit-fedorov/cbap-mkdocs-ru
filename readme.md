@@ -1,9 +1,11 @@
 # How to initialize the MkDocs environment and build help files
 
+- [How to initialize the MkDocs environment and build help files](#how-to-initialize-the-mkdocs-environment-and-build-help-files)
   - [Initialize the environment](#initialize-the-environment)
   - [Build help](#build-help)
   - [Build PDF manual](#build-pdf-manual)
   - [Serve live help site](#serve-live-help-site)
+  - [Build files to import into PHPKB](#build-files-to-import-into-phpkb)
   - [Uninstallation scripts](#uninstallation-scripts)
 
 ## Initialize the environment
@@ -14,11 +16,11 @@
 
    * Run:
 
-        ```
+        ``` shell
         ./install/installpy.ps1
         ```
         or
-        ```
+        ``` shell
         . ./install/install.sh
         ```
 
@@ -31,13 +33,13 @@
 
 1. Initialize Python virtual environment, an install MkDocs with dependencies:
 
-    ```shell
+    ``` shell
     ./install/deploymkdocs.ps1
     ```
 
     or
 
-    ```shell
+    ``` shell
     . ./install/deploy.sh
     ```
 
@@ -45,13 +47,13 @@
 
 1. Run:
 
-    ```shell
+    ``` shell
     ./buildhelp.ps1
     ```
 
     or
 
-    ```shell
+    ``` shell
     . ./buildhelp.sh </Help/directory/path>
     ```
 
@@ -74,24 +76,25 @@
 
         or
 
-        ```shell
+        ``` shell
         . ./buildhelp.sh </Help/directory/path>
         ```
 
     * The `buildhelp.ps1` script is also be executed with:
-        ```shell
+        ``` shell
         npm run buildhelp
         ```
         and
-        ```shell
+        ``` shell
         npm run buil
         ```
+
 ## Build PDF manual
 
 1. Install GTK3: `installgtk3.ps1` or `apt install -y libgtk-3-dev`. In Windows, For GTK3 to work properly the PATH variable might need to be set (and put on top of the PATH list) to its installation directory.
 2. Build the PDF manual:
 
-    ```shell
+    ``` shell
     mkdocs build -f mkdocs_ru_pdf.yml
     ```
 
@@ -130,26 +133,43 @@ You can view the live MkDocs site without building it or compiling the product. 
 
    * Run:
 
-        ```
+        ``` shell
         mkdocs serve
         ```
         or  
-        ```
+        ``` shell
         py -m mkdocs serve
         ```
 
    * For English version run:
 
-       ```
+       ``` shell
        mkdocs serve -f mkdocs_en_local.yml
        ```
 
-**NOTE**
-* The help is not build by, it is only served locally to <http://127.0.0.1:8000>
-* The server watches for edits in the `Help\docs` directory and updates the help on the fly. Any edits you make in the `docs` directory will be immediately reflected at <http://127.0.0.1:8000>
-* _The styling at <http://127.0.0.1:8000> **is different from actual product help as the local CSS is incomplete**.
-* Within the CBAP the help uses CBAP's CSS dynamically._
-* _The CSS is not dynamically pulled from the CBAP to <http://127.0.0.1:8000>_
+## Build files to import into PHPKB
+
+The files will be compiled to the `for_kb_import_ru` or `for_kb_import_en` folder.
+
+The kb_html_cleanup_hook.py does all the magic.
+
+``` shell
+mkdocs build -f mkdocs_for_kb_import_ru.yml
+```
+
+or
+
+``` shell
+mkdocs build -f mkdocs_for_kb_import_en.yml
+```
+
+!!! note
+
+    * The help is not build by, it is only served locally to <http://127.0.0.1:8000>
+    * The server watches for edits in the `Help\docs` directory and updates the help on the fly. Any edits you make in the `docs` directory will be immediately reflected at <http://127.0.0.1:8000>
+    * _The styling at <http://127.0.0.1:8000> **is different from actual product help as the local CSS is incomplete**.
+    * Within the CBAP the help uses CBAP's CSS dynamically._
+    * _The CSS is not dynamically pulled from the CBAP to <http://127.0.0.1:8000>_
 
 ## Uninstallation scripts
 
@@ -161,5 +181,3 @@ You can view the live MkDocs site without building it or compiling the product. 
 <https://squidfunk.github.io/mkdocs-material/>
 <https://github.com/squidfunk/mkdocs-material>
 <https://www.mkdocs.org/>
-
-This framework is trusted by Atlassian, Mozilla, Google, Microsoft, Adruino, etc...

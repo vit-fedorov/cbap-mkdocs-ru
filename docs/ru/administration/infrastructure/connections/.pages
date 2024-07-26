@@ -1,1 +1,11 @@
 title: Подключения
+
+nav:
+    - system_connections
+    - authentication
+    - office_connections
+    - email_connections
+    - rest_odata_connections
+    - kafka_connection.md
+    - sql_connections
+    - ...

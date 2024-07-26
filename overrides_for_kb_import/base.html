@@ -1,0 +1,229 @@
+{% import "partials/language.html" as lang with context %}
+
+<!doctype html>
+<html lang="{{ lang.t('language') }}" class="no-js">
+  <head>
+
+    <!-- Meta tags -->
+    {% block site_meta %}
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+      <!-- Page description -->
+      {% if page.meta and page.meta.description %}
+        <meta name="description" content="{{ page.meta.description }}" />
+      {% elif config.site_description %}
+        <meta name="description" content="{{ config.site_description }}" />
+      {% endif %}
+
+      <!-- Page author -->
+      {% if page.meta and page.meta.author %}
+        <meta name="author" content="{{ page.meta.author }}" />
+      {% elif config.site_author %}
+        <meta name="author" content="{{ config.site_author }}" />
+      {% endif %}
+
+      <!-- Canonical -->
+      {% if page.canonical_url %}
+        <link rel="canonical" href="{{ page.canonical_url }}" />
+      {% endif %}
+
+      <!-- Previous page -->
+      {% if page.previous_page %}
+        <link rel="prev" href="{{ page.previous_page.url | url }}" />
+      {% endif %}
+
+      <!-- Next page -->
+      {% if page.next_page %}
+        <link rel="next" href="{{ page.next_page.url | url }}" />
+      {% endif %}
+
+      <!-- Favicon -->
+      <link rel="icon" href="{{ config.theme.favicon | url }}" />
+
+      <!-- Generator banner -->
+      <meta
+        name="generator"
+        content="mkdocs-{{ mkdocs_version }}, $md-name$-$md-version$"
+      />
+    {% endblock %}
+
+    <!-- Site title -->
+    {% block htmltitle %}
+      {% if page.meta and page.meta.title %}
+        <title>{{ page.meta.title }} - {{ config.site_name }}</title>
+      {% elif page.title and not page.is_homepage %}
+        <title>{{ page.title | striptags }} - {{ config.site_name }}</title>
+      {% else %}
+        <title>{{ config.site_name }}</title>
+      {% endif %}
+    {% endblock %}
+
+    <!-- Theme-related style sheets -->
+    {% block styles %}
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.css' | url }}" />
+
+      <!-- Extra color palette -->
+      {% if config.theme.palette %}
+        {% set palette = config.theme.palette %}
+        <link
+          rel="stylesheet"
+          href="{{ 'assets/stylesheets/palette.css' | url }}"
+        />
+      {% endif %}
+
+      <!-- Custom icons -->
+      {% include "partials/icons.html" %}
+    {% endblock %}
+
+    <!-- JavaScript libraries -->
+    {% block libs %}{% endblock %}
+
+    <!-- Webfonts -->
+    {% block fonts %}
+
+      <!-- Load fonts from Google -->
+      {% if config.theme.font != false %}
+        {% set text = config.theme.font.text | d("Roboto", true) %}
+        {% set code = config.theme.font.code | d("Roboto Mono", true) %}
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family={{
+            text | replace(' ', '+') + ':300,300i,400,400i,700,700i%7C' +
+            code | replace(' ', '+') + ':400,400i,700,700i'
+          }}&display=fallback"
+        />
+        <style>
+          :root {
+            --md-text-font: "{{ text }}";
+            --md-code-font: "{{ code }}";
+          }
+        </style>
+      {% endif %}
+    {% endblock %}
+
+    <!-- Custom style sheets -->
+    {% for path in config.extra_css %}
+      <link rel="stylesheet" href="{{ path | url }}" />
+    {% endfor %}
+
+    <!-- Analytics -->
+    {% block analytics %}
+    
+    {% endblock %}
+
+    <!-- Meta tags from front matter or plugins -->
+    {% if page.meta and page.meta.meta %}
+      {% for tag in page.meta.meta %}
+        <meta
+          {% for key, value in tag.items() %}
+            {{ key }}="{{value}}"
+          {% endfor %}
+        />
+      {% endfor %}
+    {% endif %}
+
+    <!-- Custom front matter -->
+    {% block extrahead %}{% endblock %}
+  </head>
+
+  <!-- Set text direction and color palette, if defined -->
+  {% set direction = config.theme.direction or lang.t("direction") %}
+  {% if config.theme.palette %}
+    {% set palette = config.theme.palette %}
+    {% if not palette is mapping %}
+      {% set palette = palette | first %}
+    {% endif %}
+    {% set scheme  = palette.scheme  | d("default", true) %}
+    {% set primary = palette.primary | d("indigo", true) %}
+    {% set accent  = palette.accent  | d("indigo", true) %}
+    <body
+      dir="{{ direction }}"
+      data-md-color-scheme="{{ scheme | replace(' ', '-') }}"
+      data-md-color-primary="{{ primary | replace(' ', '-') }}"
+      data-md-color-accent="{{ accent | replace(' ', '-') }}"
+    >
+  {% else %}
+    <body dir="{{ direction }}">
+  {% endif %}
+    {% set features = config.theme.features or [] %}
+
+    <!-- User preference: color palette -->
+    {% if not config.theme.palette is mapping %}
+      {% include "partials/javascripts/palette.html" %}
+    {% endif %}
+
+    <!-- Header -->
+    {% block header %}
+
+    {% endblock %}
+
+    <!-- Container -->
+    <div class="md-container" data-md-component="container">
+
+      <!-- Navigation tabs (collapsing) -->
+      {% block tabs %}
+        
+      {% endblock %}
+
+      <!-- Main area -->
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+
+          <!-- Sidebars -->
+          {% block site_nav %}
+
+            {% set toc = page.toc %}
+            <!-- Show table of contents -->
+            {% if toc %}
+              {% include "partials/toc.html" %}
+            {% endif %}
+
+          {% endblock %}
+
+          <!-- Page content -->
+          {% block container %}
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                {% block content %}
+                {{ page.content }}
+                {% endblock %}
+              </article>
+            </div>
+          {% endblock %}
+
+          
+        </div>
+
+        <!-- Back-to-top button -->
+        {% if "navigation.top" in features %}
+          <a
+          class="md-top md-icon" 
+          data-md-component="top" 
+          href="#"
+          >
+          <i class="fa-light fa-arrow-up"></i>
+            {{ lang.t("top") }}
+          </a>
+        {% endif %}
+      </main>
+
+      <!-- Footer -->
+      {% block footer %}
+      {% endblock %}
+    </div>
+
+    
+    
+    <!-- Theme-related configuration -->
+    {% block config %}
+
+    {% endblock %}
+
+    <!-- Theme-related JavaScript -->
+    {% block scripts %}
+      
+    {% endblock %}
+  </body>
+</html>

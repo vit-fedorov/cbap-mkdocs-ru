@@ -3,5 +3,8 @@ title: Использование системы
 nav:
     - index.md
     - navigation_panel
+    - table_personal_use.md
     - cards_view.md
+    - form_personal_use.md
     - discussion_use.md
+    - ...

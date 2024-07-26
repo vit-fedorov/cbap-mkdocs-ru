@@ -10,7 +10,5 @@ nav:
     - variables.md
     - scenarios
     - online_store.md
-    - integrations.md
     - version_control
-    - examples
     - ...

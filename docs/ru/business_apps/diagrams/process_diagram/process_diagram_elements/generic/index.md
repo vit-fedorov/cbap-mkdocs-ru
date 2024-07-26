@@ -32,8 +32,8 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[Общие свойства элементов диаграммы процесса](process_diagram_element_common_properties.md)**
+**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 
-**[Элементы диаграммы процесса][элементы-диаграммы-процесса]**
+**[Элементы диаграммы процесса][process_diagram_elements]**
 
-**[Редактирование диаграммы процесса](process_diagram_edit.md)**
+**[Редактирование диаграммы процесса][process_diagram_designer]**

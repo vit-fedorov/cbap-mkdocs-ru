@@ -34,7 +34,7 @@ hide:
 
 ## Свойства встроенного подпроцесса
 
-В  окне свойств **вызова подпроцесса** можно настроить только [общие свойства элемента диаграммы процесса](process_diagram_element_common_properties.md).
+В  окне свойств **вызова подпроцесса** можно настроить только [общие свойства элемента диаграммы процесса][process_diagram_element_common_properties].
 
 *![Свойства встроенного подпроцесса](embedded_subprocess_properties.png)*
 
@@ -42,8 +42,8 @@ hide:
 
 **[Вызов процесса](process_call.md)**
 
-**[Общие свойства элементов диаграммы процесса](process_diagram_element_common_properties.md)**
+**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 
-**[Элементы диаграммы процесса][элементы-диаграммы-процесса]**
+**[Элементы диаграммы процесса][process_diagram_elements]**
 
-**[Редактирование диаграммы процесса](process_diagram_edit.md)**
+**[Редактирование диаграммы процесса][process_diagram_designer]**

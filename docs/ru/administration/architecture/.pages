@@ -3,7 +3,8 @@ title: Архитектура
 collapse_single_pages: false
 
 nav:
-    - templates
-    - diagrams
+    - Шаблоны: business_apps/templates
+    - Диаграммы: business_apps/diagrams
     - functions.md
-    - communication_routes.md
+    - communication_routes
+    - ...

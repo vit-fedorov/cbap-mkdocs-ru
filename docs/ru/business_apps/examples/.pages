@@ -1,8 +1,0 @@
-title: Практические примеры
-
-nav:
-    - creating_gantt_chart.md
-    - using_gantt_chart.md
-    - outgoing_email_configure.md
-    - Шаблон экспорта. Настройка и использование: '../templates/export_templates/export_template_file_example/'
-    - ...

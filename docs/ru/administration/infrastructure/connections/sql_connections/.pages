@@ -1,0 +1,6 @@
+title: SQL-подключения
+
+nav:
+    - sql_send_connection.md
+    - sql_receive_connection.md
+    - ...

@@ -51,6 +51,8 @@ extra:
 
     kbCategoryURLPrefix: https://kb.comindware.ru/category.php?id=
 
+    kbExport: true
+
 plugins:
   - awesome-pages:
       collapse_single_pages: true

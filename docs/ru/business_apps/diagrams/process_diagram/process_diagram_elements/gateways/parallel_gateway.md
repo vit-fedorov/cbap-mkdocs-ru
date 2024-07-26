@@ -39,7 +39,7 @@ hide:
 
 ## Свойства развилки «и»
 
-В окне свойств **развилки «и»** можно настроить только [общие свойства элемента диаграммы процесса](process_diagram_element_common_properties.md).
+В окне свойств **развилки «и»** можно настроить только [общие свойства элемента диаграммы процесса][process_diagram_element_common_properties].
 
 *![Свойства развилки «и»](parallel_gateway_general_properties.png)*
 
@@ -47,9 +47,9 @@ hide:
 
 **[Развилка «или/или»](exclusive_gateway.md)**
 
-**[Общие свойства элементов диаграммы процесса](process_diagram_element_common_properties.md)**
+**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 
-**[Элементы диаграммы процесса][элементы-диаграммы-процесса]**
+**[Элементы диаграммы процесса][process_diagram_elements]**
 
-**[Редактирование диаграммы процесса](process_diagram_edit.md)**
+**[Редактирование диаграммы процесса][process_diagram_designer]**
 

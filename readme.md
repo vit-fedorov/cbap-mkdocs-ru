@@ -28,8 +28,8 @@
         * `install.sh` also installs GTK3 framework used for PDF output.
         * In Windows, UAC request may pop-up during the silent installation.
 
-!!! note
-    Python is not used in runtime, it is only used to build the static HTML site from the source .MD files.
+> [!NOTE]
+> Python is not used in runtime, it is only used to build the static HTML site from the source .MD files.
 
 1. Initialize Python virtual environment, an install MkDocs with dependencies:
 
@@ -67,27 +67,27 @@
    * en
    * ru
 
-!!! note
-    * `buildhelp.py` will not run on it's own, instead execute:
-
-        ```shell
-        ./buildhelp.ps1
-        ```
-
-        or
-
-        ``` shell
-        . ./buildhelp.sh </Help/directory/path>
-        ```
-
-    * The `buildhelp.ps1` script is also be executed with:
-        ``` shell
-        npm run buildhelp
-        ```
-        and
-        ``` shell
-        npm run buil
-        ```
+> [!NOTE]
+>    * `buildhelp.py` will not run on it's own, instead execute:
+>
+>        ```shell
+>        ./buildhelp.ps1
+>        ```
+>
+>        or
+>
+>        ``` shell
+>        . ./buildhelp.sh </Help/directory/path>
+>        ```
+>
+>    * The `buildhelp.ps1` script is also be executed with:
+>        ``` shell
+>        npm run buildhelp
+>        ```
+>        and
+>        ``` shell
+>        npm run buil
+>        ```
 
 ## Build PDF manual
 
@@ -163,13 +163,13 @@ or
 mkdocs build -f mkdocs_for_kb_import_en.yml
 ```
 
-!!! note
-
-    * The help is not build by, it is only served locally to <http://127.0.0.1:8000>
-    * The server watches for edits in the `Help\docs` directory and updates the help on the fly. Any edits you make in the `docs` directory will be immediately reflected at <http://127.0.0.1:8000>
-    * _The styling at <http://127.0.0.1:8000> **is different from actual product help as the local CSS is incomplete**.
-    * Within the CBAP the help uses CBAP's CSS dynamically._
-    * _The CSS is not dynamically pulled from the CBAP to <http://127.0.0.1:8000>_
+> [!NOTE]
+>
+>    * The help is not build by, it is only served locally to <http://127.0.0.1:8000>
+>    * The server watches for edits in the `Help\docs` directory and updates the help on the fly. Any edits you make in the `docs` directory will be immediately reflected at <http://127.0.0.1:8000>
+>    * _The styling at <http://127.0.0.1:8000> **is different from actual product help as the local CSS is incomplete**.
+>    * Within the CBAP the help uses CBAP's CSS dynamically._
+>    * _The CSS is not dynamically pulled from the CBAP to <http://127.0.0.1:8000>_
 
 ## Uninstallation scripts
 

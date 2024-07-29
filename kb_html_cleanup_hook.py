@@ -58,5 +58,6 @@ def on_post_page (output, **kwargs):
                       pre)
         i.replace_with(bs4.BeautifulSoup(pre, 'html.parser'))
         
-    p = p.body.prettify()
+    p = p.body # do not use prettify(), it adds redundant spaces in PHPKB
+    
     return html.unescape(str(p))

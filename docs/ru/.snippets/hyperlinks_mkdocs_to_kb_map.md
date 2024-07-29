@@ -24,6 +24,7 @@
 [download_archive_csharp]: {{ kbArticleURLPrefix }}2623
 [global_configuration]: {{ kbArticleURLPrefix }}2185
 [none_start_event]: {{ kbArticleURLPrefix }}2378
+[notification_types]: {{ kbArticleURLPrefix }}2626
 [process_call_task]: {{ kbArticleURLPrefix }}2609
 [process_call_task_properties]:{{ kbArticleURLPrefix }}2609#mcetoc_1h28bak441
 [process_diagram]: {{ kbArticleURLPrefix }}2360

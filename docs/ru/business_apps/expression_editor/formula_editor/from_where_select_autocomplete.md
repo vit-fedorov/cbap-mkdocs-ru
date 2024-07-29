@@ -201,7 +201,7 @@ from a in $RequestedCars where a->_creator->username == "admin" select a->id
 
 --8<-- "related_topics_heading.md"
 
-**[Редактор выражений][редактор-выражений]**
+**[Редактор выражений][expression_editor]**
 
 **[Примеры использования формул. База знаний Comindware]({{ kbCategoryURLPrefix }}409){:target="_blank"}**
 

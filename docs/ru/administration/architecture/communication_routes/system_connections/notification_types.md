@@ -92,6 +92,8 @@ _![Просмотр уведомлений о задачах](task_notifications
 
 **[Глобальная конфигурация][global_configuration]**
 
+**[Общие уведомления. Настройка пути передачи данных, диаграммы процесса и глобальной конфигурации][common_notifications]**
+
 **[Уведомления о задачах. Настройка пути передачи данных][task_notifications]**
 
 **[Настройка периодических напоминаний об открытых задачах][periodic_task_notifications]**
@@ -105,8 +107,6 @@ _![Просмотр уведомлений о задачах](task_notifications
 **[Промежуточное событие-получение сообщения][receive_message_intermediate_event]**
 
 **[Начальное событие-получение сообщения][receive_message_start_event]**
-
-**[Общие уведомления. Настройка пути передачи данных, диаграммы процесса и глобальной конфигурации][common_notifications]**
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

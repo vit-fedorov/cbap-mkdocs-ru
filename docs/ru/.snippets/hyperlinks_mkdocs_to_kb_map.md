@@ -1,9 +1,11 @@
 [formula_function_list]: {{ kbArticleURLPrefix }}2492
 [functions]: {{ kbArticleURLPrefix }}2200
+[expression_editor]: {{ kbArticleURLPrefix }}2463
 [expression_introduction]: {{ kbArticleURLPrefix }}1858
 [manual_csharp]: {{ kbArticleURLPrefix }}2400
 [manual_n3]: {{ kbArticleURLPrefix }}2401
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}2318
+[task_notifications_email]: ../administration/architecture/communication_routes/system_connections/task_notifications.md#task_notifications_email
 
 {% if kbExport %}
 [actions]: {{ kbArticleURLPrefix }}2390
@@ -40,7 +42,7 @@
 [send_message_end_event]: {{ kbArticleURLPrefix }}2385
 [send_message_intermediate_event]: {{ kbArticleURLPrefix }}2381
 [task_notifications]: {{ kbArticleURLPrefix }}2567
-[#task_notifications_email]: {{ kbArticleURLPrefix }}2567#task_notifications_email
+[task_notifications_email]: {{ kbArticleURLPrefix }}2567#task_notifications_email
 [templates]: {{ kbArticleURLPrefix }}2219
 [user_task]: {{ kbArticleURLPrefix }}2392
 [variables]: {{ kbArticleURLPrefix }}2207

@@ -6,7 +6,6 @@ nav:
     - licensing.md
     - backup.md
     - system_service_management.md
-    - connections
     - performance.md
     - logging_configuration.md
     - global_configuration.md

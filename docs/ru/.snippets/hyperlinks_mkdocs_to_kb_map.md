@@ -5,7 +5,7 @@
 [manual_csharp]: {{ kbArticleURLPrefix }}2400
 [manual_n3]: {{ kbArticleURLPrefix }}2401
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}2318
-[task_notifications_email]: ../administration/architecture/communication_routes/system_connections/task_notifications.md#task_notifications_email
+[task_notifications_email]: ../administration/connections_communication_routes/system_connections/notifications/task_notifications.md#task_notifications_email
 
 {% if kbExport %}
 [actions]: {{ kbArticleURLPrefix }}2390

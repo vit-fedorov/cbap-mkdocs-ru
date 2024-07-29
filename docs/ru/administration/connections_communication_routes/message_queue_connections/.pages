@@ -1,0 +1,7 @@
+title: Подключения к шинам сообщений
+
+collapse_single_pages: false
+
+nav:
+    - kafka_connection.md
+    - ...

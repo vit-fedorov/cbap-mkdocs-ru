@@ -1,7 +1,6 @@
 import bs4
 import html
 import re
-import json
 import pathlib
 
 
@@ -9,7 +8,8 @@ def on_post_page (output, **kwargs):
     kb_html = output.replace('class="admonition note"', 'class="notice notice-info"')
     kb_html = kb_html.replace('class="admonition warning"', 'class="notice notice-warning"')
     kb_html = kb_html.replace('class="admonition question"', 'class="notice notice-success"')
-    
+    kb_html = kb_html.replace('class="admonition example"', 'class="notice notice-example"')
+    kb_html = kb_html.replace('class="admonition danger"', 'class="notice notice-error"')
     
     
     p = bs4.BeautifulSoup(kb_html, 'html.parser')

@@ -1,5 +1,7 @@
 [attribute_color_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hlsmo2ru1
+[attribute_color_diagram_example]: {{ kbArticleURLPrefix }}2531#formset17
 [attribute_hyperlink_field]:{{ kbArticleURLPrefix }}2531#formset12
+[chevron_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hlsmo2ru1
 [drawing_attribute_configure]: {{ kbArticleURLPrefix }}2575
 [drawing_attribute_file_import]: {{ kbArticleURLPrefix }}2574
 [drawing_attribute_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hmjdrtgh1
@@ -10,6 +12,7 @@
 [manual_csharp]: {{ kbArticleURLPrefix }}2400
 [manual_n3]: {{ kbArticleURLPrefix }}2401
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}2318
+[table_configure_form]: {{ kbArticleURLPrefix }}2531#formset17
 [task_notifications_email]: ../administration/connections_communication_routes/system_connections/notifications/task_notifications.md#task_notifications_email
 
 {% if kbExport %}
@@ -52,6 +55,7 @@
 [scenarios]: {{ kbArticleURLPrefix }}2151
 [send_message_end_event]: {{ kbArticleURLPrefix }}2385
 [send_message_intermediate_event]: {{ kbArticleURLPrefix }}2381
+[table_configure_template]: {{ kbArticleURLPrefix }}2550
 [task_notifications]: {{ kbArticleURLPrefix }}2567
 [task_notifications_email]: {{ kbArticleURLPrefix }}2567#task_notifications_email
 [templates]: {{ kbArticleURLPrefix }}2219

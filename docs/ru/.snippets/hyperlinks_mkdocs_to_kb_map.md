@@ -48,6 +48,7 @@
 [process_templates]: {{ kbArticleURLPrefix }}2222
 [receive_message_intermediate_event]: {{ kbArticleURLPrefix }}2382
 [receive_message_start_event]: {{ kbArticleURLPrefix }}2376
+[scenarios]: {{ kbArticleURLPrefix }}2151
 [send_message_end_event]: {{ kbArticleURLPrefix }}2385
 [send_message_intermediate_event]: {{ kbArticleURLPrefix }}2381
 [task_notifications]: {{ kbArticleURLPrefix }}2567

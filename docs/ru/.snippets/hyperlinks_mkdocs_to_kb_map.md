@@ -4,6 +4,7 @@
 [drawing_attribute_file_import]: {{ kbArticleURLPrefix }}2574
 [drawing_attribute_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hmjdrtgh1
 [formula_function_list]: {{ kbArticleURLPrefix }}2492
+[form_rules]: {{ kbArticleURLPrefix }}2537
 [functions]: {{ kbArticleURLPrefix }}2200
 [expression_introduction]: {{ kbArticleURLPrefix }}1858
 [manual_csharp]: {{ kbArticleURLPrefix }}2400

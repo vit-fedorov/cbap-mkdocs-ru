@@ -1,4 +1,5 @@
 [attribute_color_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hlsmo2ru1
+[attribute_hyperlink_field]:{{ kbArticleURLPrefix }}2531#formset12
 [drawing_attribute_configure]: {{ kbArticleURLPrefix }}2575
 [drawing_attribute_file_import]: {{ kbArticleURLPrefix }}2574
 [drawing_attribute_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hmjdrtgh1
@@ -17,6 +18,8 @@
 [attribute_document]: {{ kbArticleURLPrefix }}2241
 [attribute_enum]: {{ kbArticleURLPrefix }}2244
 [attribute_text]: {{ kbArticleURLPrefix }}2257
+[attributes]: {{ kbArticleURLPrefix }}2252
+[attributes_system]: {{ kbArticleURLPrefix }}2242
 [auto_numerating_records]: {{ kbArticleURLPrefix }}2607
 [buttons]: {{ kbArticleURLPrefix }}2276
 [call_element_menu]: {{ kbArticleURLPrefix }}2360#mcetoc_1h28cr6421

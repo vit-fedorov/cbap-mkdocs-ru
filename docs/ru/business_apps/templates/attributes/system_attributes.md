@@ -2,7 +2,7 @@
 kbId: 2242
 ---
 
-# Системные атрибуты
+# Системные атрибуты {: #attributes_system}
 
 !!! Question "Определения"
 
@@ -24,3 +24,7 @@ kbId: 2242
 --8<-- "related_topics_heading.md"
 
 **[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

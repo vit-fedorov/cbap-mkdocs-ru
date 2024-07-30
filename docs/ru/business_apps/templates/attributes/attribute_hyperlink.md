@@ -68,7 +68,7 @@ _![Свойства атрибута типа «Гиперссылка»](attrib
 
 **[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
 
-**[Динамические элементы формы. Настройка представления гиперссылки](https://kb.comindware.ru/article.php?id=2531#formset12)**
+**[Динамические элементы формы. Настройка представления гиперссылки][attribute_hyperlink_field]**
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

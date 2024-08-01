@@ -2,6 +2,7 @@
 [attribute_color_diagram_example]: {{ kbArticleURLPrefix }}2531#formset17
 [attribute_hyperlink_field]:{{ kbArticleURLPrefix }}2531#formset12
 [chevron_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hlsmo2ru1
+[attribute_document_clone_scenario]: {{ kbArticleURLPrefix }}2608
 [drawing_attribute_configure]: {{ kbArticleURLPrefix }}2575
 [drawing_attribute_file_import]: {{ kbArticleURLPrefix }}2574
 [drawing_attribute_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hmjdrtgh1

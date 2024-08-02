@@ -46,18 +46,20 @@ kbId: 2628
         # Помещаем строку из атрибута «Комментарий»
         # текущей заявки ?item в переменную ?text
         ?item ?KommentariyAttribute ?text.
-        # Проверяем, содержит ли переменная ?text строку «срочн»
+        # Преобразуем комментарий в нижний регистр и помещаем в ?textLowerCase
+        ?text cmwstring:toLower ?textLowerCase.        
+        # Проверяем, содержит ли ?textLowerCase строку «срочн»
         # то есть формы слова «срочно» с любыми окончаниями
-        ?text cmwstring:contains "срочн".
+        ?textLowerCase cmwstring:contains "срочн".
             # Если строка была найдена в переменной text,
             # то значение вычисляемого атрибута сменится на true
-            true -> ?value.  
+            true -> ?value.
     }
     ```
 
     !!! tip "Подсказка"
 
-        Вместо литерала `"срочн"`, искомое слово можно брать из текстового атрибута. Тогда выражение на N3 будет выглядеть следующим образом:
+        Чтобы вместо литерала `"срочн"` брать искомое слово можно из текстового атрибута, используйте следующее выражение:
         
         ``` turtle
         @prefix object: <http://comindware.com/ontology/object#>.  
@@ -65,17 +67,18 @@ kbId: 2628
         {  
             ("Zayavki" "Kommentariy") object:findProperty ?KommentariyAttribute.   
             ?item ?KommentariyAttribute ?text.
-            # Помещаем значеие атрибуат searchWord в переменную ?keyword
-            ("Zayavki" "searchWord") object:findProperty ?searchWordAttribute.   
-            ?item ?searchWordttribute ?keyword.
-            ?text cmwstring:contains ?keyword.
+            # Помещаем значение атрибута Iskomoeslovo (Искомое слово) в переменную ?keyword
+            ("Zayavki" "Iskomoeslovo") object:findProperty ?IskomoeslovoAttribute.   
+            ?item ?IskomoeslovoAttribute ?keyword.
+            # Преобразуем комментарий и искомое слово в нижний регистр
+            ?text cmwstring:toLower ?textLowerCase.
+            ?keyword cmwstring:toLower ?keywordLowerCase.
+            ?textLowerCase cmwstring:contains ?keywordLowerCase.
+                # Если строка была найдена в переменной text,
+                # то значение вычисляемого атрибута сменится на true
                 true -> ?value.  
         }
         ```
-
-    !!! warning "Внимание"
-
-        Такой поиск чувствителен к регистру, и, например, «Срочно» и «срочно» считаются разными строками.
 
 3. Поместите атрибуты на форму и сохраните. У атрибута _«Срочная заявка»_ установите **представление** в виде **флажка**.
 
@@ -83,9 +86,11 @@ kbId: 2628
 
 1. Создайте новую заявку.
 2. В комментарии укажите любой текст и напишите слово _«срочно»_.
-3. В поле _«Срочная заявка»_ будет установлен флажок.
-4. Удалите из комментария слово _«срочно»_.
-5. В поле _«Срочная заявка»_ флажок будет снят.
+3. Сохраните запись.
+4. В поле _«Срочная заявка»_ будет установлен флажок.
+5. Удалите из комментария слово _«срочно»_.
+6. Сохраните запись.
+7. В поле _«Срочная заявка»_ флажок будет снят.
 
 --8<-- "related_topics_heading.md"
 

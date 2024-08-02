@@ -10,6 +10,7 @@ def on_post_page (output, **kwargs):
     kb_html = kb_html.replace('class="admonition question"', 'class="notice notice-success"')
     kb_html = kb_html.replace('class="admonition example"', 'class="notice notice-example"')
     kb_html = kb_html.replace('class="admonition danger"', 'class="notice notice-error"')
+    kb_html = kb_html.replace('class="admonition tip"', 'class="notice notice-tip"')
     
     
     p = bs4.BeautifulSoup(kb_html, 'html.parser')

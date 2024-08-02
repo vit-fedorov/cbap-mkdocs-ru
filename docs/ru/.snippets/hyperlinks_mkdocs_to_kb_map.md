@@ -1,6 +1,6 @@
 [attribute_color_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hlsmo2ru1
 [attribute_color_diagram_example]: {{ kbArticleURLPrefix }}2531#formset17
-[attribute_hyperlink_field]:{{ kbArticleURLPrefix }}2531#formset12
+[attribute_hyperlink_field]: {{ kbArticleURLPrefix }}2531#formset12
 [chevron_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hlsmo2ru1
 [attribute_document_clone_scenario]: {{ kbArticleURLPrefix }}2608
 [drawing_attribute_configure]: {{ kbArticleURLPrefix }}2575
@@ -23,6 +23,7 @@
 [attribute_document]: {{ kbArticleURLPrefix }}2241
 [attribute_enum]: {{ kbArticleURLPrefix }}2244
 [attribute_text]: {{ kbArticleURLPrefix }}2257
+[attribute_text_substring_search_n3]: {{ kbArticleURLPrefix }}2628
 [attributes]: {{ kbArticleURLPrefix }}2252
 [attributes_system]: {{ kbArticleURLPrefix }}2242
 [auto_numerating_records]: {{ kbArticleURLPrefix }}2607

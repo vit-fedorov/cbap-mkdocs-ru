@@ -1,6 +1,10 @@
 title: Практические примеры
 
 nav:
+    - autonumerating_records.md
+    - download_document_archive_csharp.md
+    - substring_search.md
+    - enum_attribute_value_calculation.md
     - creating_gantt_chart.md
     - using_gantt_chart.md
     - outgoing_email_configure.md

@@ -1,11 +1,12 @@
-title: Подключения
+title: Подключения и пути передачи данных
 
 nav:
+    - connections.md
+    - communication_routes.md
     - system_connections
     - authentication
     - office_connections
     - email_connections
     - rest_odata_connections
-    - kafka_connection.md
     - sql_connections
     - ...

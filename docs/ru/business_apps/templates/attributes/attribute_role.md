@@ -9,7 +9,7 @@ kbId: 2240
 
 Атрибут типа «**Роль**» содержит одну или несколько ссылок на записи в связанном [шаблоне роли](role_templates.md). Ссылка представляет собой уникальный идентификатор записи.
 
-Помимо **[общих свойств](attribute_common_properties.md)** для атрибута типа «**Роль**» предусмотрены перечисленные ниже свойства.
+Помимо **[общих свойств][attribute_common_properties]** для атрибута типа «**Роль**» предусмотрены перечисленные ниже свойства.
 
 --8<-- "attribute_property_attribute_interlinking.md"
 
@@ -39,8 +39,12 @@ _![Свойства атрибута типа «Роль»](attribute_role_prope
 
 --8<-- "related_topics_heading.md"
 
-**[Общие свойства атрибутов](attribute_common_properties.md)**
+**[Общие свойства атрибутов][attribute_common_properties]**
 
 **[Шаблон роли](role_templates.md)**
 
 **[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

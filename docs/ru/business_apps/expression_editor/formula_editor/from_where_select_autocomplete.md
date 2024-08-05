@@ -120,7 +120,7 @@ COUNT(from a in db->Cars where a->Make == $Make select a->id)
       ```
 2. После ввода символов `a->` отобразится список атрибутов шаблона, связанного с атрибутом `RequestedCars`, на который ссылается локальная переменная-селектор `a`. Этот список также можно вызвать, нажав клавиши ++ctrl+space++ в позиции после `a->`.
       *![Список атрибутов, вызванный посредством переменной-селектора](formula_editor_linked_record_attributes_selector_autocomplete.png)*
-3. Дважды нажмите системное имя атрибута `_creator`, чтобы вставить его в формулу. `_creator` — это **[системный атрибут](system_attributes.md)**, в котором хранится ID аккаунта, создавшего запись.
+3. Дважды нажмите системное имя атрибута `_creator`, чтобы вставить его в формулу. `_creator` — это **[системный атрибут][attributes_system]**, в котором хранится ID аккаунта, создавшего запись.
 4. Введите строку:
       ```mysql
       == USER() select a->id
@@ -197,7 +197,6 @@ from a in $RequestedCars where a->_creator->username == "admin" select a->id
     * `#!mysql in $RequestedCars` — объявление атрибута `RequestedCars` в качестве источника данных.
     * `#!mysql where a->Make == "Лада"` — выборка в переменную `a` записей, связанных с атрибутом `RequestedCars`, у которых атрибут `Make` имеет значение `"Лада".
     * `#!mysql select a->id` — выборка значений атрибута `id` полученных записей и передача списка этих значений в функцию `COUNT()`.
-    
 
 --8<-- "related_topics_heading.md"
 
@@ -206,3 +205,7 @@ from a in $RequestedCars where a->_creator->username == "admin" select a->id
 **[Примеры использования формул. База знаний Comindware]({{ kbCategoryURLPrefix }}409){:target="_blank"}**
 
 **[Ввод имени функции и просмотр подсказки по функции](function_autocomplete.md)**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

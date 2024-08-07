@@ -1,8 +1,9 @@
 ---
+title: Р7 Офис
 kbId: 2342
 ---
 
-# Р7 Офис. Настройка сервера и подключения
+# Р7 Офис. Настройка сервера и подключения {: #p7_connection}
 
 ## Введение
 
@@ -52,3 +53,7 @@ _![Настройка подключения к Р7-Офис](p7_connection_sett
 --8<-- "related_topics_heading.md"
 
 **[Р7 Офис и Collabora Online. Использование для работы с документами]({{ kbArticleURLPrefix }}2343)**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

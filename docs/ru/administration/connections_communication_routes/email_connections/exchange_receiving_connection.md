@@ -1,8 +1,9 @@
 ---
+title: Получение эл. почты через Exchange
 kbId: 2586
 ---
 
-# Получение эл. почты через Exchange. Настройка подключения
+# Получение эл. почты через Exchange. Настройка подключения {: #exchange_receiving_connection}
 
 ## Введение
 
@@ -60,16 +61,20 @@ kbId: 2586
 
 --8<-- "related_topics_heading.md"
 
-**[Получение эл. почты в процессе. Настройка подключения и пути передачи данных](process_receiving_connection.md)**
+**[Получение эл. почты в процессе. Настройка подключения и пути передачи данных][process_receiving_connection]**
 
-**[Получение эл. почты через IMAP. Настройка подключения](imap_receiving_connection.md)**
+**[Получение эл. почты через IMAP. Настройка подключения][imap_receiving_connection]**
 
-**[Отправка эл. почты через SMTP. Настройка подключения](smtp_sending_connection.md)**
+**[Отправка эл. почты через SMTP. Настройка подключения][smtp_sending_connection]**
 
-**[Отправка эл. почты через Exchange. Настройка подключения](exchange_sending_connection.md)**
+**[Отправка эл. почты через Exchange. Настройка подключения][exchange_sending_connection]**
 
-**[Отправка эл. почты из процесса. Настройка подключения](process_sending_connection.md)**
+**[Отправка эл. почты из процесса. Настройка подключения][process_sending_connection]**
 
 **[Подключения. Типы, создание, настройка, удаление][connections]**
 
-**[Пути передачи данных. Типы, создание, настройка, удаление]({{ kbArticleURLPrefix }}2201)**
+**[Пути передачи данных. Типы, создание, настройка, удаление][communication_routes]**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

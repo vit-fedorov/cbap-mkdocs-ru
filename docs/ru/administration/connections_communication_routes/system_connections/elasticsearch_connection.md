@@ -1,8 +1,9 @@
 ---
+title: Elasticsearch. Настройка подключения
 kbId: 2593
 ---
 
-# Elasticsearch. Настройка подключения
+# Elasticsearch. Настройка подключения {: #elasticsearch_connection}
 
 ## Введение
 
@@ -36,3 +37,7 @@ _![Настройка подключения к Elasticsearch](elasticsearch_con
 --8<-- "related_topics_heading.md"
 
 **[Инициализация {{ productName }}]({{ kbArticleURLPrefix }}2344#mcetoc_1ga11542i2)**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

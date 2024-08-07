@@ -1,8 +1,9 @@
 ---
+title: Аутентификация через OpenID Connect
 kbId: 2329
 ---
 
-# Аутентификация через OpenID Connect. Настройка подключения и служб
+# Аутентификация через OpenID Connect. Настройка подключения и служб {: #openid_connection}
 
 ## Проверка адреса сервера Comindware Business Application Platform
 
@@ -250,3 +251,7 @@ kbId: 2329
     _![Кнопка «Войти с помощью Google»](openid_connection_google_entry.png)_
 
 6. На этом настройка входа через OpenID Connect завершена. Теперь пользователи смогут входить в **{{ productName }}** с помощью своих аккаунтов Google.
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

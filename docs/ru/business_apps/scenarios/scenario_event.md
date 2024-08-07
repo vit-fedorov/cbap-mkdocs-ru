@@ -69,6 +69,6 @@ kbId: 2346
 
 --8<-- "related_topics_heading.md"
 
-**[Создание и настройка сценария][scenario_create_configure]**
+**[Сценарии. Определение, создание, настройка, использование][scenarios]**
 
 **[Настройка действий сценария][scenario_actions]**

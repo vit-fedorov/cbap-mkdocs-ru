@@ -1,8 +1,9 @@
 ---
+title: Внешняя СУБД (MySQL, MSSQL, Oracle, Postgres). Отправка SQL-запроса SELECT
 kbId: 2498
 ---
 
-# Внешняя СУБД (MySQL, MSSQL, Oracle, Postgres). Отправка SQL-запроса SELECT. Настройка подключения, пути передачи данных и сценария
+# Внешняя СУБД (MySQL, MSSQL, Oracle, Postgres). Отправка SQL-запроса SELECT. Настройка подключения, пути передачи данных и сценария {: #sql_send_connection}
 
 ## Введение
 
@@ -275,7 +276,7 @@ kbId: 2498
 {: #step13}
     - В поле «**Целевой шаблон записи**» выберите шаблон «_Города_», в котором будут создаваться записи с данными, полученными из внешней БД.  
 
-        ![Настройка действия «Создать запись» в сценарии](sql_send_connection_create_record_settings.png)
+        _![Настройка действия «Создать запись» в сценарии](sql_send_connection_create_record_settings.png)_
 
 14. Добавьте в действие «**Создание записи**» вложенное действие «**Изменить значения атрибутов**» и настройте его:
     - Нажмите кнопку «**Создать**».
@@ -318,4 +319,8 @@ kbId: 2498
 
 --8<-- "related_topics_heading.md"
 
-**[Внешняя СУБД (MySQL, MSSQL, Oracle, PostgreSQL). Получение данных по таймеру. Настройка подключения, пути передачи данных и сценария](sql_receive_connection.md)**
+**[Внешняя СУБД (MySQL, MSSQL, Oracle, PostgreSQL). Получение данных по таймеру. Настройка подключения, пути передачи данных и сценария][sql_receive_connection]**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

@@ -1,8 +1,9 @@
 ---
+title: Внешняя СУБД (MySQL, MSSQL, Oracle, PostgreSQL). Получение данных по таймеру
 kbId: 2135
 ---
 
-# Внешняя СУБД (MySQL, MSSQL, Oracle, PostgreSQL). Получение данных по таймеру. Настройка подключения, пути передачи данных и сценария
+# Внешняя СУБД (MySQL, MSSQL, Oracle, PostgreSQL). Получение данных по таймеру. Настройка подключения, пути передачи данных и сценария {: #sql_receive_connection}
 
 ## Введение
 
@@ -265,4 +266,8 @@ kbId: 2135
 
 --8<-- "related_topics_heading.md"
 
-**[Внешняя СУБД (MySQL, MSSQL, Oracle, Postgres). Отправка SQL-запроса SELECT. Настройка подключения, пути передачи данных и сценария](sql_send_connection.md)**
+**[Внешняя СУБД (MySQL, MSSQL, Oracle, Postgres). Отправка SQL-запроса SELECT. Настройка подключения, пути передачи данных и сценария][sql_send_connection]**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

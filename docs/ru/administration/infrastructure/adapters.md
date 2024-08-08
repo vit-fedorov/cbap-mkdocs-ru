@@ -1,4 +1,5 @@
 ---
+title: Адаптеры
 tags:
     - адаптеры
     - создание адаптера
@@ -9,7 +10,7 @@ hide:
 kbId: 2181
 ---
 
-# Адаптеры. Определения, настройка, удаление
+# Адаптеры. Определения, настройка, удаление {: #adapters}
 
 ### Определения
 
@@ -68,6 +69,8 @@ _![Создание пути передачи данных с использов
 
 --8<-- "related_topics_heading.md"
 
-**[connections]({{ kbArticleURLPrefix }}2205)**
+**[Подключения. Определения, типы, создание, настройка, удаление][connections]**
 
-**[Настройка подключения]({{ kbArticleURLPrefix }}2205#mcetoc_1gjrlqi4l4)**
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

@@ -1,8 +1,9 @@
 ---
+title: Collabora Online
 kbId: 2588
 ---
 
-# Collabora Online. Настройка подключения
+# Collabora Online. Настройка подключения {: #collabora_connection}
 
 ## Введение
 
@@ -33,3 +34,7 @@ _![Настройка подключения к Collabora Online](collabora_conn
 --8<-- "related_topics_heading.md"
 
 **[Р7 Офис и Collabora Online. Использование для работы с документами]({{ kbArticleURLPrefix }}2343)**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

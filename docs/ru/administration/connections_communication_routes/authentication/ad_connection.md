@@ -1,4 +1,5 @@
 ---
+title: Active Directory
 tags:
   - подключение
   - подключения
@@ -9,7 +10,7 @@ hide:
 kbId: 2206
 ---
 
-# Сервер каталогов. Настройка подключения
+# Сервер каталогов. Настройка подключения {: #ad_connection}
 
 ### Определения
 
@@ -124,3 +125,7 @@ _![Настройка дополнительных свойств подключ
 **[Проверка соединения]({{ kbArticleURLPrefix }}2205#mcetoc_1gjrlqi4l5)**
 
 **[Удаление подключения]({{ kbArticleURLPrefix }}2205#mcetoc_1gjrlqi4l6)**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

@@ -1,4 +1,5 @@
 ---
+title: Хранилище S3
 tags:
   - подключение
   - подключения
@@ -9,7 +10,7 @@ hide:
 kbId: 2594
 ---
 
-# Хранилище S3. Настройка экземпляра ПО и подключения
+# Хранилище S3. Настройка экземпляра ПО и подключения {: #s3_connection}
 
 ## Введение
 
@@ -106,8 +107,12 @@ kbId: 2594
 
 Настраивать подключение к хранилищу S3 следует только в файле `/usr/share/comindware/configs/instance/instanceName.yml`
 
-*![Настройка подключения к хранилищу S3](https://kb.comindware.ru/assets/img_65e9b87a6e895.png)*
+**![Настройка подключения к хранилищу S3](https://kb.comindware.ru/assets/img_65e9b87a6e895.png)**
 
 --8<-- "related_topics_heading.md"
 
 **[Пути и содержимое папок экземпляра ПО]({{kbArticleURLPrefix}}2502)**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

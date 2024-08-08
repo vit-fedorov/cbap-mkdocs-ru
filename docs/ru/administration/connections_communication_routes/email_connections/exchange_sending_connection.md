@@ -1,12 +1,13 @@
 ---
+title: Отправка эл. почты через Exchange
 kbId: 2587
 ---
 
-# Отправка эл. почты через Exchange. Настройка подключения
+# Отправка эл. почты через Exchange. Настройка подключения {: #exchange_sending_connection}
 
 ## Введение
 
-Подключения типа «**Отправка эл. почты через Exchange**» используются в [сценариях](scenario_configure.md). В [процессах]({{ kbArticleURLPrefix }}2360) используются подключения типа «**[Отправка эл. почты из процесса](process_sending_connection.md)**».
+Подключения типа «**Отправка эл. почты через Exchange**» используются в [сценариях][scenarios]. В [процессах][process_diagram] используются подключения типа «**[Отправка эл. почты из процесса][process_sending_connection]**».
 
 После настройки подключения необходимо настроить соответствующий путь передачи данных типа «**Отправка эл. почты через Exchange**».
 
@@ -52,12 +53,16 @@ kbId: 2587
 
 --8<-- "related_topics_heading.md"
 
-**[Получение эл. почты через Exchange. Настройка подключения](exchange_receiving_connection.md)**
+**[Получение эл. почты через Exchange. Настройка подключения][exchange_receiving_connection]**
 
-**[Получение эл. почты через IMAP. Настройка подключения](imap_receiving_connection.md)**
+**[Получение эл. почты через IMAP. Настройка подключения][imap_receiving_connection]**
 
-**[Отправка эл. почты из процесса. Настройка подключения](process_sending_connection.md)**
+**[Отправка эл. почты из процесса. Настройка подключения][process_sending_connection]**
 
 **[Подключения. Типы, создание, настройка, удаление][connections]**
 
-**[Пути передачи данных. Типы, создание, настройка, удаление]({{ kbArticleURLPrefix }}2201)**
+**[Пути передачи данных. Типы, создание, настройка, удаление][communication_routes]**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

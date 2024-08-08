@@ -290,4 +290,12 @@ kbId: 2135
 
 --8<-- "related_topics_heading.md"
 
+<<<<<<< HEAD
 **[Внешняя СУБД (MySQL, MSSQL, Oracle, Postgres). Отправка SQL-запроса. Настройка подключения, пути передачи данных и сценария][sql_send_connection]**
+=======
+**[Внешняя СУБД (MySQL, MSSQL, Oracle, Postgres). Отправка SQL-запроса SELECT. Настройка подключения, пути передачи данных и сценария][sql_send_connection]**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}
+>>>>>>> updates_from_kb_emar

@@ -4,4 +4,5 @@ nav:
     - index.md
     - formula_editor
     - n3_editor
+    - expression_check.md
     - ...

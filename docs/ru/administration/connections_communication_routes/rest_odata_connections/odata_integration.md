@@ -1,4 +1,5 @@
 ---
+title: Синхронизация с веб-сервисом. Интеграция по OData
 tags:
   - приложение
   - интеграции
@@ -12,7 +13,7 @@ hide:
 kbId: 2315
 ---
 
-# Синхронизация с веб-сервисом. Интеграция по OData
+# Синхронизация с веб-сервисом. Интеграция по OData {: #odata_integration}
 
 ## Настройка интеграции с внешним сервисом посредством OData
 
@@ -20,7 +21,7 @@ kbId: 2315
 
 Подробные сведения о формате данных OData см. в статье «[**URI Conventions (OData Version 2.0)**](https://www.odata.org/documentation/odata-version-2-0/uri-conventions/)» (официальное руководство по OData, английский язык).
 
-1. Настройте [подключение к OData-сервису](odata_connection.md).
+1. Настройте [подключение к OData-сервису][odata_connection].
 
     !!! tip "Совет"
 
@@ -173,8 +174,12 @@ _![Содержимое файла integration_raw.log](integrations_log_content
 
 --8<-- "related_topics_heading.md"
 
-**[Синхронизация с веб-сервисом. Настройка подключения](odata_connection.md)**
+**[Синхронизация с веб-сервисом. Настройка подключения][odata_connection]**
 
-**[Журнал сеансов синхронизации по OData]({{ kbArticleURLPrefix }}2180#mcetoc_1gjriatef8)**
+**[Журнал сеансов синхронизации по OData][odata_synchronization_logs]**
 
-**[Интеграция с 1С по OData. Настройка для импорта данных](1c_integrations.md)**
+**[Интеграция с 1С по OData. Настройка для импорта данных][1c_integrations]**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

@@ -2,9 +2,6 @@ title: Сценарии
 
 nav:
     - index.md
-    - scenarios_list_view.md
-    - scenario_create.md
-    - scenario_configure.md
     - scenario_event.md
     - scenario_actions.md
     - scenario_variables.md

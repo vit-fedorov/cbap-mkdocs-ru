@@ -1,8 +1,9 @@
 ---
+title: Аутентификация через WS-Federation
 kbId: 2560
 ---
 
-# Аутентификация через WS-Federation. Настройка подключения, федеративного сервера и глобальной конфигурации
+# Аутентификация через WS-Federation. Настройка подключения, федеративного сервера и глобальной конфигурации {: #wsfederation_connection}
 
 !!! warning "Внимание!"
 
@@ -90,3 +91,7 @@ kbId: 2560
 **[Подсистема журналирования]({{ kbArticleURLPrefix }}2501)**
 
 **[Создание отношений доверия с проверяющей стороной](https://learn.microsoft.com/ru-ru/windows-server/identity/ad-fs/operations/create-a-relying-party-trust)**(документация Microsoft)
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

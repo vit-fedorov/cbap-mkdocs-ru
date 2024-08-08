@@ -7,4 +7,5 @@ nav:
     - account_administration
     - infrastructure
     - connections_communication_routes
+    - auxiliary_software_deployment
     - ...

@@ -1,7 +1,6 @@
 title: Настройка панели навигации
 
 nav:
-    - index.md
     - navigation_sections_setup.md
     - desktop_setup.md
     - pages_setup.md

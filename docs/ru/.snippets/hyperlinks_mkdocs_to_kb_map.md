@@ -51,6 +51,7 @@
 [exchange_receiving_connection]: {{ kbArticleURLPrefix }}2586
 [exchange_sending_connection]: {{ kbArticleURLPrefix }}2587
 [expression_editor]: {{ kbArticleURLPrefix }}2463
+[forms]: {{ kbArticleURLPrefix }}2271
 [get_connection]: {{ kbArticleURLPrefix }}2559
 [git_connection]: {{ kbArticleURLPrefix }}2204
 [global_configuration]: {{ kbArticleURLPrefix }}2185

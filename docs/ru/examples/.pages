@@ -7,7 +7,6 @@ nav:
     - enum_attribute_value_calculation.md
     - creating_gantt_chart.md
     - using_gantt_chart.md
-    - outgoing_email_configure.md
     - process_email_configure.md
     - Шаблон экспорта. Настройка и использование: business_apps/templates/export_templates/export_template_file_example
     - script_using_local_variable.md

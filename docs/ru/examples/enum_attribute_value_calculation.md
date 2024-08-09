@@ -63,13 +63,13 @@ kbId: 2624
     {  
         # Находим атрибут TipTS  (Тип ТС) в шаблоне Zayavki (Заявка на перевозку).
         ("Zayavki" "TipTS") object:findProperty ?TipTSAttribute.
-        # Присваиваем переменной ?TipavtotransportaAttributeValues объект со списком значений атрибута «Тип автотранспорта».
-        ?item ?TipavtotransportaAttribute ?TipTSAttributeValues.
+        # Присваиваем переменной ?TipTSAttributeValues объект со списком значений атрибута «Тип автотранспорта».
+        ?item ?TipTSAttribute ?TipTSAttributeValues.
         # Присваиваем переменной ?SelectedValue объект с выбранным значением атрибута. 
-        ?TipavtotransportaAttributeValues cmw:variantName ?SelectedValue.
+        ?TipTSAttributeValues cmw:variantName ?SelectedValue.
         # Присваиваем переменной ?names массив объектов с заполненными названиями значения атрибута на всех языках.
         ?SelectedValue l10n:text ?names.
-        # Начинаме цикл по ?names
+        # Начинаем цикл по ?names
             # Присваиваем переменной ?langCodeStr код языка названия значения атрибута на текущей итерации цикла.
             ?names l10n:lang ?langCode.
             ("{0}" ?langCode) string:format ?langCodeStr.

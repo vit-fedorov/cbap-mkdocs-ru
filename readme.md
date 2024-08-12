@@ -1,30 +1,28 @@
-# How to initialize the MkDocs environment and build help files
+# How to Initialize MkDocs Environment and Build Help Files
 
-- [How to initialize the MkDocs environment and build help files](#how-to-initialize-the-mkdocs-environment-and-build-help-files)
-  - [Initialize the environment](#initialize-the-environment)
-  - [Build help](#build-help)
-  - [Build PDF manual](#build-pdf-manual)
-  - [Serve live help site](#serve-live-help-site)
-  - [Build files to import into PHPKB](#build-files-to-import-into-phpkb)
-  - [Uninstallation scripts](#uninstallation-scripts)
+This is the MkDocs repository with source files for the CMW knowledge base.
 
-## Initialize the environment
+## Initialize the Environment
 
 1. Install Python:
 
-* Run:
+   - Change dir to `Help` under the solution root directory.
 
-     ``` shell
-     ./install/installpy.ps1
-     ```
-     or
-     ``` shell
-     . ./install/install.sh
-     ```
+   - Run:
 
-     * This script downloads and installs the latest Python from python.org (including the `pip` package manager).
-     * `install.sh` also installs the GTK3 framework used for PDF output. Under Windows use installgtk3.ps1 to install the GTK3.
-     * In Windows, UAC request may pop-up during the silent installation.
+        ``` shell
+        ./install/installpy.ps1
+        ```
+
+        or
+
+        ``` shell
+        sh install/install.sh
+        ```
+
+        - This script downloads and installs the latest Python from python.org (including the `pip` package manager).
+        - `install.sh` also installs GTK3 framework used for PDF output.
+        - In Windows, UAC request may pop-up during the silent installation.
 
 > [!NOTE]
 > Python is not used in runtime, it is only used to build the static HTML site from the source .MD files.
@@ -38,10 +36,10 @@
     or
 
     ``` shell
-    . ./install/deploy.sh
+    sh install/deploy.sh
     ```
 
-## Build help
+## Build Help
 
 1. Run:
 
@@ -52,104 +50,85 @@
     or
 
     ``` shell
-    . ./buildhelp.sh </Help/directory/path>
+    sh buildhelp.sh
     ```
 
-   * This script runs `buildhelp.py` in the virtual environment and builds languages help to `compiled_help`.
+   - This script runs `buildhelp.py` in the virtual environment and builds languages help to `compiled_help`.
 
-   * The language list is set on the line 15 in `buildhelp.py`:
+   - The language list is set on the line 15 in `buildhelp.py`:
 
         `LANGUAGE_LIST = ["en", "ru"]`
 
 2. You should see the newly compiled help subdirectories in the `compiled_help` directory:
-   * en
-   * ru
+   - en
+   - ru
 
 > [!NOTE]
->    * `buildhelp.py` will not run on it's own, instead execute:
->
->        ```shell
->        ./buildhelp.ps1
->        ```
->
->        or
->
->        ``` shell
->        . ./buildhelp.sh </Help/directory/path>
->        ```
->
->    * The `buildhelp.ps1` script is also be executed with:
->        ``` shell
->        npm run buildhelp
->        ```
->        and
->        ``` shell
->        npm run buil
->        ```
+>    * `buildhelp.py` will not run on it's own, instead execute `buildhelp.ps1` or `buildhelp.sh`.
 
-## Build PDF manual
+## Build PDF Manual
 
-1. Install GTK3: `installgtk3.ps1` or `apt install -y libgtk-3-dev`. In Windows, For GTK3 to work properly the PATH variable might need to be set (and put on top of the PATH list) to its installation directory.
+1. Install GTK3: `installgtk3.ps1` or `apt install -y libgtk-3-dev`. 
+
+    > [!NOTE]
+    > In Windows, for GTK3 to work properly the PATH variable might need to be set (and put on top of the PATH list) to its installation directory.
+
 2. Build the PDF manual:
 
     ``` shell
     mkdocs build -f mkdocs_ru_pdf.yml
     ```
 
-3. Build and run the product normally and see the Help system in action.
-
-    * Change dir to `Web` within the solution root directory.
-    * Execute `npm run build` or `buildhelp.sh </Help/directory/path>`
-    * Launch the product instance.
-    * You should see the Help question sign to the left of the search button in the top bar:
-        * The CSS is pulled dynamically from the current theme.
-        * The help is displayed in the current CBAP language.
-        * The help is context dependent: it shows the topic for the current module.
-
-            * See the help button and context resolver code:
-            `js\modules\shared\view\help\HelpPathMappingService.js`
-            `js\modules\shared\view\help\HelpButtonView.js`
-            `js\modules\shared\view\NavigationToolbarView.js` lines 10, 11, 82, 169
-
-## Serve live help site
+## Serve Live Help Site
 
 You can view the live MkDocs site without building it or compiling the product. The live server watches for changes in the `docs` folder and update accordingly.
 
-1. Serve Russian docs locally at <http://127.0.0.1:8000>
+Serve Russian docs locally at <http://127.0.0.1:8000>
 
-   * Change dir to `Help` under the solution root directory.
+1. Change dir to `Help` under the solution root directory.
 
-   * Run:
-        ```
-        ./install/deploymkdocs.ps1
-        ```
-        or
-        ```
-        . ./install/deploy.sh
-        ```
-       * This script deploys the Python virtual environment in `Help/venv` with MKDocs and its dependencies listed in the `requirements.txt` file. It does not build the help files.
+2. Run:
 
-   * Run:
+    ``` shell
+    ./install/deploymkdocs.ps1
+    ```
 
-        ``` shell
-        mkdocs serve
-        ```
-        or  
-        ``` shell
-        py -m mkdocs serve
-        ```
+    or
 
-   * For English version run:
+    ``` shell
+    sh install/deploy.sh
+    ```
+
+    - This script deploys the Python virtual environment in `Help/venv` with MKDocs and its dependencies listed in the `requirements.txt` file. It does not build the help files.
+
+3. Run:
+
+    ``` shell
+    mkdocs serve
+    ```
+
+    or  
+
+    ``` shell
+    py -m mkdocs serve
+    ```
+
+   - For English version run:
 
        ``` shell
        mkdocs serve -f mkdocs_en_local.yml
+
        ```
+
+> [!NOTE]
+>  * The help is not build by `mkdocs serve`, it is only served locally to <http://127.0.0.1:8000>
+>  * The server watches for edits in the `Help\docs` directory and updates the help on the fly. Any edits you make in the `docs` directory will be immediately reflected at <http://127.0.0.1:8000>
 
 ## Build files to import into PHPKB
 
 The files will be compiled to the `for_kb_import_ru` or `for_kb_import_en` folder.
 
-The kb_html_cleanup_hook.py does all the magic.
+The `kb_html_cleanup_hook.py` does all the magic.
 
 ``` shell
 mkdocs build -f mkdocs_for_kb_import_ru.yml
@@ -161,19 +140,11 @@ or
 mkdocs build -f mkdocs_for_kb_import_en.yml
 ```
 
-> [!NOTE]
->
->    * The help is not build by, it is only served locally to <http://127.0.0.1:8000>
->    * The server watches for edits in the `Help\docs` directory and updates the help on the fly. Any edits you make in the `docs` directory will be immediately reflected at <http://127.0.0.1:8000>
->    * _The styling at <http://127.0.0.1:8000> **is different from actual product help as the local CSS is incomplete**.
->    * Within the CBAP the help uses CBAP's CSS dynamically._
->    * _The CSS is not dynamically pulled from the CBAP to <http://127.0.0.1:8000>_
+## Uninstall MkDocs
 
-## Uninstallation scripts
+- `install\uninstallmkdocs.ps1` — uninstalls installs all MKDocs dependencies listed in the `requirements.txt` config file.
 
-* `install\uninstallmkdocs.ps1` — uninstalls installs all MKDocs dependencies listed in the `requirements.txt` config file.
-
-* `install\uninstallpy.ps1` — silently uninstalls Python, runs a single command: `.\python_latest.exe /uninstall /quiet`
+- `install\uninstallpy.ps1` — silently uninstalls Python, runs a single command: `.\python_latest.exe /uninstall /quiet`
 
 **The help is powered by the very popular and well-maintained MkDocs framework:**
 <https://squidfunk.github.io/mkdocs-material/>

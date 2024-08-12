@@ -3,4 +3,5 @@ title: Формы
 nav:
     - index.md
     - discussion_configure.md
+    - form_access_control.md
     - ...

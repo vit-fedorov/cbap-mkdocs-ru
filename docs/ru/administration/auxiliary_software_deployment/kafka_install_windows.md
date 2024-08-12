@@ -1,6 +1,6 @@
 ---
 title: Установка Kafka в Windows
-kbId:
+kbId: 2629
 tags:
     - установка Kafka
     - Kafka

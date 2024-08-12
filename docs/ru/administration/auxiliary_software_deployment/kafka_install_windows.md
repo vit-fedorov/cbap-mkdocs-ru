@@ -157,8 +157,8 @@ _![Диалоговое окно NSSM service installer](img/kafka_install_nssm_
     ``` powershell
     # Укажите IP-адрес сервера Kafka
     mq.server: 10.9.8.7:9092
-    # Укажите имя сервера Kafka
-    mq.name: <имя экземпляра ПО>
+    # Укажите имя экземпляра ПО
+    mq.name: <instanceName>
     ```
 
 3. Удалите следующую строку из файла `<instanceName>.yml`:

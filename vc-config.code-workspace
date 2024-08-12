@@ -16,7 +16,7 @@
 			"typescript"
 		],
 		"pasteImage.path": "${currentFileDir}\\img\\",
-		"pasteImage.insertPattern": "*${imageSyntaxPrefix}${imageFileName}${imageSyntaxSuffix}*",
+		"pasteImage.insertPattern": "_${imageSyntaxPrefix}${imageFileName}${imageSyntaxSuffix}_",
 		"languageTool.language": "en, ru, ru-RU",
 		"cSpell.words": [
 			"журналирования",

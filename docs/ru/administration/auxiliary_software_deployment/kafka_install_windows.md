@@ -6,6 +6,8 @@ tags:
     - Kafka
     - подключение Kafka
     - подключение к шине сообщений
+    - шина сообщений
+    - брокер сообщений
 hide:
     - tags
 ---
@@ -14,179 +16,160 @@ hide:
 
 ## Введение
 
-Для обмена данными с внешними системами можно настроить подключение к брокеру сообщений Kafka. Эта программа обеспечивает высокую пропускную способность при передаче данных.
+Для обмена данными между **{{ productName }}** и внешними системами (а также для работы обсуждений) необходимо настроить подключение к брокеру сообщений Kafka.
 
-Здесь представлена инструкция, как установить Kafka на ОС Windows и подключить её к **{{ productName }}**.
+Здесь представлена инструкция по установке Kafka в ОС Windows с использованием KRaft (без использования Zookeeper) и подключению Kafka к **{{ productName }}**.
 
 ## Предварительные условия
 
-Должна быть установлена Java и прописаны следующие системные переменные:
+Должно быть установлено ПО Java и заданы следующие системные переменные:
 
-- `Path` — короткий путь к файлам Java вида `%JAVA_HOME%\bin`
 - `JAVA_HOME` — путь к исполняемым файлам Open JDK, например `C:\Program Files\jdk\jdk-<version>\bin`
 - `JAVA_HOME_DLL` — путь к DLL-файлу Open JDK, например `C:\Program Files\jdk\jdk-<version>\bin\server\jvm.dll`
+- `Path` — короткий путь к файлам Java: `%JAVA_HOME%\bin`
 
 ## Процесс установки
 
-1. Загрузите последнюю версию Kafka с **[официального сайта](https://kafka.apache.org/downloads)**.
+1. Скачайте последнюю версию Kafka с **[официального сайта](https://kafka.apache.org/downloads)**.
 
-!!! warning "Внимание"
+    !!! warning "Внимание!"
 
-    Для корректной работы Kafka рекомендуется скачивать архив с бинарными файлами.
+        Для корректной работы Kafka рекомендуется скачивать архив с бинарными файлами.
 
-2. Распакуйте файлы архива в следующую папку:
+2. Распакуйте файлы архива, например в папку `C:\kafka\kafka`
 
-```
-C:\kafka\kafka
-```
+    !!! warning "Внимание!"
 
-!!! warning "Внимание"
+        Рекомендуется использовать путь минимальной длины и названия папок без пробелов, иначе некоторые команды могут не сработать.
 
-    Рекомендуется использовать путь минимальной длины и названия папок без пробелов, иначе некоторые команды могут не сработать.
+3. Создайте папку для журналов, например `X:\kafka\logs`.
 
-3. Создайте папку для журналов:
+    !!! warning "Внимание!"
 
-```
-X:\kafka\logs
-```
+        Рекомендуется создавать папку для журналов на отдельном диске, а не на диске где установлено ПО Kafka.
 
-!!! warning "Внимание"
+4. Откройте файл конфигурации Kafka `C:\kafka\kafka\config\kraft\server.properties`.
+5. Отредактируйте файл конфигурации, указав IP-адрес сервера Kafka и папку для журналов. При указании пути к папке журналов используйте косую черту `/`:
 
-    Рекомендуется создавать папку для журналов не на том же диске, где установлена сама Kafka.
-
-4. Откройте следующий файл конфигурации:
-
-```
-C:\kafka\kafka\config\kraft\server.properties
-```
-
-5. Отредактируйте файл конфигурации, указав свой IP-адрес и папку для журналов логирования. При указании папки нужно использовать обычный слэш '/':
-
-``` py
-process.roles=broker,controller
-node.id=1
-# укажите свой IP-адрес 
-controller.quorum.voters=1@10.9.8.7:9093
-# укажите свой IP-адрес 
-listeners=PLAINTEXT://10.9.8.7:9092,CONTROLLER://10.9.8.7:9093
-inter.broker.listener.name=PLAINTEXT
-# укажите свой IP-адрес 
-advertised.listeners=PLAINTEXT://10.9.8.7:9092
-controller.listener.names=CONTROLLER
-listener.security.protocol.map=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
-num.network.threads=3
-num.io.threads=8
-socket.send.buffer.bytes=102400
-socket.receive.buffer.bytes=102400
-socket.request.max.bytes=104857600
-# укажите путь к папке журналов логирования
-log.dirs=X:/kafka/logs
-num.partitions=1
-num.recovery.threads.per.data.dir=1
-offsets.topic.replication.factor=1
-transaction.state.log.replication.factor=1
-transaction.state.log.min.isr=1
-log.retention.hours=168
-log.segment.bytes=1073741824
-log.retention.check.interval.ms=300000
-```
-
-6. Откройте `powershell.exe` или `cmd.exe` от имени администратора и выполните следующие команды:
-
-``` powershell
-cd "C:\kafka\kafka\bin\windows\"
-.\kafka-storage.bat random-uuid
-## Пример вывода результата
-kNZtrWDsRvW0udJeaEahsg
-## Конец примера вывода результата
-.\kafka-storage.bat format -t kNZtrWDsRvW0udJeaEahsg -c C:\kafka\kafka\config\kraft\server.properties
-```
-
-7. Загрузите с **[официального сайта](https://nssm.cc/download)** архив NSSM и распакуйте его.
-8. В папке `\win64` найдите файл `nssm.exe` и скопируйте его в следующую папку:
-
-```
-C:\kafka\kafka\bin\windows\
-```
-
-9. В `powerdshell.exe` или `cmd.exe` от имени администратора выполните следующую команду:
-   
-```
-.\nssm install kafka
-```
-
-10. Запустится диалоговое окно `NSSM service installer`.
-
-_![Диалоговое окно NSSM service installer](kafka_install_nssm_service_installer.png)_
-
-11. В диалоговом окне укажите следующие пути:
-    * для Path
-  
+    ``` ini
+    process.roles=broker,controller
+    node.id=1
+    # Укажите IP-адрес сервера Kafka
+    controller.quorum.voters=1@10.9.8.7:9093
+    # Укажите IP-адрес сервера Kafka
+    listeners=PLAINTEXT://10.9.8.7:9092,CONTROLLER://10.9.8.7:9093
+    inter.broker.listener.name=PLAINTEXT
+    # Укажите IP-адрес сервера Kafka
+    advertised.listeners=PLAINTEXT://10.9.8.7:9092
+    controller.listener.names=CONTROLLER
+    listener.security.protocol.map=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+    num.network.threads=3
+    num.io.threads=8
+    socket.send.buffer.bytes=102400
+    socket.receive.buffer.bytes=102400
+    socket.request.max.bytes=104857600
+    # Укажите путь к папке журналов
+    log.dirs=X:/kafka/logs
+    num.partitions=1
+    num.recovery.threads.per.data.dir=1
+    offsets.topic.replication.factor=1
+    transaction.state.log.replication.factor=1
+    transaction.state.log.min.isr=1
+    log.retention.hours=168
+    log.segment.bytes=1073741824
+    log.retention.check.interval.ms=300000
     ```
+
+6. Откройте _PowerShell_ от имени администратора и выполните команды:
+
+    ``` powershell
+    cd "C:\kafka\kafka\bin\windows\"
+    .\kafka-storage.bat random-uuid
+    ```
+
+7. Kafka выдаст UID, например, `kNZtrWDsRvW0udJeaEahsg`
+8. Используйте полученный UID в следующей команде:
+
+    ``` powershell
+    .\kafka-storage.bat format -t kNZtrWDsRvW0udJeaEahsg -c C:\kafka\kafka\config\kraft\server.properties
+    ```
+
+9. Загрузите с **[официального сайта](https://nssm.cc/download)** архив _NSSM_ и распакуйте его.
+10. В папке `\win64` найдите файл `nssm.exe` и скопируйте его в папку `C:\kafka\kafka\bin\windows\`.
+11. В _PowerShell_ от имени администратора выполните следующую команду:
+   
+    ``` powershell
+    .\nssm install kafka
+    ```
+
+12. Запустится программа `NSSM service installer`.
+
+_![Диалоговое окно NSSM service installer](img/kafka_install_nssm_service_installer.png)_
+
+13. Укажите следующие пути к файлам службы Kafka:
+    * **Path**
+  
+    ``` powershell
     C:\kafka\kafka\bin\windows\kafka-server-start.bat
     ```
 
-    * для Startup directory
+    * **Startup directory**
   
-    ```
+    ``` powershell
     C:\kafka\kafka\bin\windows\
     ```
 
-    * для Arguments
+    * **Arguments**
   
-    ```
+    ``` powershell
     C:\kafka\kafka\config\kraft\server.properties
     ```
 
-12. Нажмите кнопку «Установить сервис».
-13. Произойдёт установка сервиса.
-14. По завершении установки откройте «Службы» и найдите в списке kafka.
+14. Нажмите кнопку «**Install service**».
+15. Произойдёт установка сервиса.
+16. По завершении установки откройте программу _«Службы_» (_Services_) и найдите в списке `kafka`.
 
-_![kafka в списке служб](img/kafka_install_services.png)_
+    _![Kafka в списке служб](img/kafka_install_services.png)_
 
-15. Включите и настройте автоматический перезапуск kafka.
+17. С помощью свойств службы включите и настройте автоматический перезапуск Kafka.
 
-_![Окно настройки службы kafka](img/kafka_install_kafka_service.png)_
+    _![Окно настройки службы Kafka](img/kafka_install_kafka_service.png)_
 
-16. Вы можете протестировать работу Kafka, запустив в `powershell.exe` или `cmd.exe` следующие команды:
+18. Протестируйте работу Kafka, выполнив в _PowerShell_ следующие команды:
 
-``` powershell
-cd "C:\kafka\kafka\bin\windows\"
-.\kafka-console-producer.bat --bootstrap-server 10.9.8.7:9092 --topic TEST
-# отправьте любое сообщение
-hello
-```
+    ``` powershell
+    cd "C:\kafka\kafka\bin\windows\"
+    .\kafka-console-producer.bat --bootstrap-server 10.9.8.7:9092 --topic TEST
+    # Отправьте любое сообщение, например:
+    hello
+    ```
 
-17. При правильной работе Kafka пришлёт предупреждение, что раннее такой ветки сообщений не было, и создаст её.
+19. При правильной работе Kafka выдаст предупреждение, что раннее такой ветки сообщений не было, и создаст её.
 
-_![Создание ветки сообщений Kafka в powershell.exe](img/kafka_install_powershell.png)_
+    _![Создание ветки сообщений Kafka в powershell.exe](img/kafka_install_powershell.png)_
 
-## Подключение Kafka к Comindware Business Application Platform
+## Подключение Kafka к {{ productName }}
 
-1. Откройте папку:
+1. Откройте папку `C:\ProgramData\comindware\configs\instance`
 
-```
-C:\ProgramData\comindware\configs\instance
-```
+2. Откройте файл с именем экземпляра ПО `<instanceName>.yml` и измените или добавьте следующую директиву:
 
-2. Откройте файл с именем экземпляра ПО `instanceName.yml` и измените или добавьте следующую директиву:
+    ``` powershell
+    # Укажите IP-адрес сервера Kafka
+    mq.server: 10.9.8.7:9092
+    # Укажите имя сервера Kafka
+    mq.name: <имя экземпляра ПО>
+    ```
 
-```
-# укажите ваш IP-адрес
-mq.server: 10.9.8.7:9092
-# укажите имя вашего сервера
-mq.name: <имя экземпляра ПО>
-```
+3. Удалите следующую строку из файла `<instanceName>.yml`:
 
-3. Удалите следующую строчку из файла:
+    ``` powershell
+    kafkaBootstrapServer:
+    ```
 
-```
-kafkaBootstrapServer:
-```
-
-4. Перезапустите экземпляр продукта с помощью Утилиты администрирования.
+4. Перезапустите экземпляр ПО с помощью Утилиты администрирования.
 5. Проверьте соединение с Kafka в браузере по ссылке:
 
-```
-<имя экземпляра ПО>/async
-```
+    ``` powershell
+    <instanceName>/async
+    ```

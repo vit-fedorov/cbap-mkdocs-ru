@@ -1,5 +1,5 @@
 ---
-title: Установка Kafka на ОС Windows
+title: Установка Kafka в Windows
 kbId:
 tags:
     - установка Kafka
@@ -12,7 +12,7 @@ hide:
     - tags
 ---
 
-# Установка Kafka на ОС Windows и подключение к Comindware Business Application Platform
+# Установка Kafka В ОС Windows и подключение к Comindware Business Application Platform
 
 ## Введение
 

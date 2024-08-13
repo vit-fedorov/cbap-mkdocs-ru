@@ -12,7 +12,7 @@ hide:
     - tags
 ---
 
-# Установка Kafka В ОС Windows и подключение к Comindware Business Application Platform
+# Установка Kafka В ОС Windows и подключение к {{ productName }}
 
 ## Введение
 

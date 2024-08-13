@@ -5,7 +5,7 @@ kbId: 2329
 
 # Аутентификация через OpenID Connect. Настройка подключения и служб {: #openid_connection}
 
-## Проверка адреса сервера Comindware Business Application Platform
+## Проверка адреса сервера {{ productName }}
 
 1. Откройте раздел [«**Администрирование**» — «**Глобальная конфигурация**»][администрирование].
 2. Удостоверьтесь, что **URL-адрес сервера** начинается с `https://`.  
@@ -118,7 +118,7 @@ kbId: 2329
 
     _![Таблица учётных данных клиентов OAuth](openid_connection_oath_client_table.png)_
 
-## Настройка подключения в Comindware Business Application Platform
+## Настройка подключения в **{{ productName }}**
 
 1. Перейдите в раздел «**Администрирование**» — «**Подключения**».
 2. Нажмите кнопку «**Cоздать**».
@@ -177,7 +177,7 @@ kbId: 2329
 
     ![Перезапуск IIS с помощью командной строки](openid_connection_iis_reconnect.png)
 
-## Настройка ОС Linux для включения аутентификации через OpenID Connect в Comindware Business Application Platform
+## Настройка ОС Linux для включения аутентификации через OpenID Connect в {{ productName }}
 
 1. Перейдите в режим суперпользователя `root`:
 

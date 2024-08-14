@@ -95,3 +95,15 @@ body  {
     z-index: -1;
 }
     
+.admonition {
+    h1.admonition-title, 
+    h2.admonition-title, 
+    h3.admonition-title, 
+    h4.admonition-title, 
+    h5.admonition-title, 
+    h6.admonition-title
+     
+    {
+    font-weight: 300;
+    }
+}

@@ -102,8 +102,6 @@
 
 [expression_editor]: {{ kbArticleURLPrefix }}2463
 
-[form_access_control]:
-
 [forms]: {{ kbArticleURLPrefix }}2271
 
 [get_connection]: {{ kbArticleURLPrefix }}2559
@@ -139,8 +137,6 @@
 [openid_connection]: {{ kbArticleURLPrefix }}2329
 
 [p7_connection]: {{ kbArticleURLPrefix }}2342
-
-[page_access_control]:
 
 [pages]: {{ kbArticleURLPrefix }}2285
 

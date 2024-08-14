@@ -196,7 +196,7 @@
 
 [send_http_example]: {{ kbArticleURLPrefix }}2509
 
-[send_inquiry_connection]: {{ kbArticleURLPrefix }}2589
+[send_http_request_connection]: {{ kbArticleURLPrefix }}2589
 
 [send_message_end_event]: {{ kbArticleURLPrefix }}2385
 

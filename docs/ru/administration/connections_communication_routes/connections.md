@@ -53,7 +53,7 @@ kbId: 2205
 ### Подключения REST и OData
 
 - [Получение веб-запросов][get_connection]
-- [Отправка веб-запросов][send_inquiry_connection]
+- [Отправка веб-запросов][send_http_request_connection]
 - [Синхронизация с веб-сервисом][odata_connection]
 - [Отправка HTTP-запросов][send_http_connection]
 - [Получение HTTP-запросов][receive_http_example]

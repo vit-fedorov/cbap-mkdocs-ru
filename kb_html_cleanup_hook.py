@@ -52,7 +52,7 @@ def on_post_page (output, **kwargs):
     
     #  Fix code blocks for PHPKB
     for i in p.find_all('pre'):
-        pattern = re.compile(r'(\s*<span.*)\n', flags=re.MULTILINE)
+        pattern = re.compile(r'^(.*)\n', flags=re.MULTILINE)
         pre = str(i)
         pre = re.sub(pattern, 
                       r'<code>\1</code><br/>\n', 

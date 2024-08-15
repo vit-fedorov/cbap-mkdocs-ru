@@ -25,6 +25,10 @@ body  {
     background-image: '';
 }
 
+th {
+    background-color: var(--md-code-bg-color);
+}
+
 .md-typeset ul ul {
     list-style-type: circle;
 }

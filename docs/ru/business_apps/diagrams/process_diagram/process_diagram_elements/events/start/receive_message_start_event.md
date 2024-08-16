@@ -17,7 +17,12 @@ kbId: 2376
 
 # Начальное событие-получение сообщения {: #receive_message_start_event}
 
+<div class="admonition question" markdown="block">
+## Определения {: .admonition-title #definitions}
+
 **Начальное событие-получение сообщения** запускает процесс при поступлении сообщения из другого процесса или внешней системы.
+
+</div>
 
 *![Начальное событие-получение сообщения и его меню элемента](receive_message_start_event.png)*
 

@@ -1,5 +1,5 @@
 ---
-title: Рабочий стол. Настройка
+title: Рабочий стол. Определения и настройка
 kbId: 2215
 tags:
   - дашборд
@@ -10,8 +10,7 @@ hide:
   - tags
 ---
 
-# Настройка рабочего стола {: #desktop_setup}
-
+# Рабочий стол. Определения и настройка {: #desktop_setup}
 
 <div class="admonition question" markdown="block">
 ## Определения {: .admonition-title #definitions}

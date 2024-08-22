@@ -60,6 +60,7 @@ _![Окно создания новой диаграммы с выбором п�
 --8<-- "related_topics_heading.md"
 
 **[Управление версиями диаграммы процесса][process_diagram_version_control]**
+
 {%
 include-markdown "../../.snippets/hyperlinks_mkdocs_to_kb_map.md"
 %}

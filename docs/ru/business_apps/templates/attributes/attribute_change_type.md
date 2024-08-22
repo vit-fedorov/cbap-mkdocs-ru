@@ -51,7 +51,7 @@ kbId: 1978
 
 Однако вы можете восстановить данные следующими способами:
 
-- восстановить резервную копию экземпляра ПО **{{ productName }}**, см. статью _«[Общие свойства атрибутов](attribute_common_properties.md)»;_
+- восстановить резервную копию экземпляра ПО **{{ productName }}**, см. статью _«[Общие свойства атрибутов][attribute_common_properties]»;_
 - импортировать ранее выгруженную таблицу со значениями атрибута, см. статью _«[Импорт данных в шаблон](import_data.md)»_.
 
 --8<-- "related_topics_heading.md"
@@ -60,8 +60,12 @@ kbId: 1978
 
 **[Вычисляемые атрибуты](calculated_attribute.md)**
 
-**[Общие свойства атрибутов](attribute_common_properties.md)**
+**[Общие свойства атрибутов][attribute_common_properties]**
 
 **[Резервное копирование. Настройка и запуск, просмотр журнала сеансов](backup.md)**
 
 **[Импорт данных в шаблон](import_data.md)**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

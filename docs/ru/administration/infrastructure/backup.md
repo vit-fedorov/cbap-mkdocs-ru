@@ -88,7 +88,7 @@ kbId: 2190
             
             ``` shell
             # Директория репозитория должна быть доступна экземпляру ПО
-            # Comindware Business Application Platform
+            # {{ productName }}
             # При необходимости установите доступ с помощью команды chmod 777
             path.repo: /var/www/backups/elasticsearch
             ```
@@ -106,10 +106,10 @@ kbId: 2190
             
             ``` shell
             backup.elasticRepository.type: LocalDisk
-            # В данном примере Elasticsearch и Comindware Business Application Platform 
+            # В данном примере Elasticsearch и {{ productName }} Platform 
             # работают на одной машине. 
             # В противном случае следует примонтировать папку репозитория Elasticsearch 
-            # на машине с Comindware Business Application Platform и указать её в директиве ниже
+            # на машине с {{ productName }} и указать её в директиве ниже
             backup.elasticRepository.localDisk.path: /var/www/backups/elasticsearch
             ```
             
@@ -127,7 +127,7 @@ kbId: 2190
             backup.elasticRepository.type: S3 
             # Имя корзины в хранилище S3 для хранения резервных копий данных Elasticsearch
             backup.elasticRepository.s3.bucket: <instanceName>-backups
-            # Имя подключения к хранилищу S3, используемому по умолчанию на стороне Comindware Business Application Platform  
+            # Имя подключения к хранилищу S3, используемому по умолчанию на стороне {{ productName }}  
             backup.elasticRepository.s3.platformConnection: default
             # Имя подключения к хранилищу S3, используемому по умолчанию на стороне Elasticsearch  
             backup.elasticRepository.s3.elasticConnection: default 

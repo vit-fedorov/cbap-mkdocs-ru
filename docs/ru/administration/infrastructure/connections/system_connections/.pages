@@ -1,8 +1,0 @@
-title: Системные подключения
-
-nav:
-    - elasticsearch_connection.md
-    - maps_connection.md
-    - git_connection.md
-    - s3_connection.md
-    - ...

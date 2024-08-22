@@ -1,0 +1,9 @@
+title: Системные подключения
+
+nav:
+    - notifications
+    - elasticsearch_connection.md
+    - maps_connection.md
+    - git_connection.md
+    - s3_connection.md
+    - ...

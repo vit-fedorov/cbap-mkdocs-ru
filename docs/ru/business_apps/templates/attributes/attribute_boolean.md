@@ -9,7 +9,7 @@ kbId: 2245
 
 Атрибут типа «**Логический**» содержит булево значение `true` или `false`.
 
-Помимо **[общих свойств](attribute_common_properties.md)** для атрибута типа «**Логический**» предусмотрены перечисленные ниже свойства.
+Помимо **[общих свойств][attribute_common_properties]** для атрибута типа «**Логический**» предусмотрены перечисленные ниже свойства.
 
 --8<-- "attribute_property_calculated.md"
 
@@ -37,6 +37,10 @@ _![Свойства атрибута типа «Тест»](attribute_boolean_pr
 
 --8<-- "related_topics_heading.md"
 
-**[Общие свойства атрибутов](attribute_common_properties.md)**
+**[Общие свойства атрибутов][attribute_common_properties]**
 
 **[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

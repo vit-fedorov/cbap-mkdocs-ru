@@ -1,9 +1,9 @@
-title: Настройка панели навигации
+title: Панель навигации. Настройка
 
 nav:
-    - index.md
     - navigation_sections_setup.md
     - desktop_setup.md
     - pages_setup.md
+    - page_access_control.md
     - my_tasks_page_configure.md
     - ...

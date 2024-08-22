@@ -1,7 +1,6 @@
 import bs4
-import html
+from bs4 import Comment
 import re
-import json
 import pathlib
 
 
@@ -9,7 +8,9 @@ def on_post_page (output, **kwargs):
     kb_html = output.replace('class="admonition note"', 'class="notice notice-info"')
     kb_html = kb_html.replace('class="admonition warning"', 'class="notice notice-warning"')
     kb_html = kb_html.replace('class="admonition question"', 'class="notice notice-success"')
-    
+    kb_html = kb_html.replace('class="admonition example"', 'class="notice notice-example"')
+    kb_html = kb_html.replace('class="admonition danger"', 'class="notice notice-error"')
+    kb_html = kb_html.replace('class="admonition tip"', 'class="notice notice-tip"')
     
     
     p = bs4.BeautifulSoup(kb_html, 'html.parser')
@@ -22,7 +23,8 @@ def on_post_page (output, **kwargs):
     
     # Add &zwnj; within Fontawesome icons, otherwise PHPKB will delete them
     for i in p.find_all('i', class_=re.compile("fa.+")):
-        i.string = '&zwnj;' + '<!--icon-->'
+        i.string = '&zwnj;'
+        i.append(Comment('icon'))
     
     # Add class="colored_numbers_list" to all ordered lists lists
         for i in p.find_all('ol'):
@@ -51,12 +53,15 @@ def on_post_page (output, **kwargs):
     
     #  Fix code blocks for PHPKB
     for i in p.find_all('pre'):
-        pattern = re.compile(r'(\s*<span.*)\n', flags=re.MULTILINE)
+        pattern = re.compile(r'^(.*)\n', flags=re.MULTILINE)
         pre = str(i)
         pre = re.sub(pattern, 
                       r'<code>\1</code><br/>\n', 
                       pre)
         i.replace_with(bs4.BeautifulSoup(pre, 'html.parser'))
-        
-    p = p.body.prettify()
-    return html.unescape(str(p))
+    
+    # Do not use prettify(), it adds redundant spaces in PHPKB
+    # Fix &zwnj; after BeautifulSoup's redundant escaping
+    kb_html = str(p.body).replace('&amp;zwnj;', '&zwnj;')
+    
+    return kb_html

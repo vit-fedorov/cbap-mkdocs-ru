@@ -15,15 +15,22 @@
 			"javascript",
 			"typescript"
 		],
-		"pasteImage.path": "${currentFileDir}\\img\\",
-		"pasteImage.insertPattern": "*${imageSyntaxPrefix}${imageFileName}${imageSyntaxSuffix}*",
+		"pasteImage.insertPattern": "_${imageSyntaxPrefix}img/${imageFileName}${imageSyntaxSuffix}_",
+		"pasteImage.path": "${currentFileDir}/img",
+		"pasteImage.forceUnixStyleSeparator": true,
+		"pasteImage.prefix": "/",
 		"languageTool.language": "en, ru, ru-RU",
 		"cSpell.words": [
 			"журналирования",
 			"оргединицами",
 			"отсканировав",
 			"штрихкода"
-		]
+		],
+		"markdownlint.config": {
+
+
+			"no-inline-html": false
+		},
 	},
 	"extensions": {
 		"recommendations": [

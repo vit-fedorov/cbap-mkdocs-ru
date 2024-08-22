@@ -6,5 +6,4 @@ nav:
     - Шаблоны: business_apps/templates
     - Диаграммы: business_apps/diagrams
     - functions.md
-    - communication_routes
     - ...

@@ -4,6 +4,10 @@
 
 [attribute_hyperlink_field]: {{ kbArticleURLPrefix }}2531#formset12
 
+[backup_and_restore]: {{ kbArticleURLPrefix }}2579
+
+[backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
+
 [chevron_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hlsmo2ru1
 
 [attribute_document_clone_scenario]: {{ kbArticleURLPrefix }}2608
@@ -69,6 +73,8 @@
 [attributes_system]: {{ kbArticleURLPrefix }}2242
 
 [auto_numerating_records]: {{ kbArticleURLPrefix }}2607
+
+[backup]: {{ kbArticleURLPrefix }}2190
 
 [buttons]: {{ kbArticleURLPrefix }}2276
 

@@ -5,6 +5,7 @@ nav:
     - diagrams
     - templates
     - expression_editor
+    - expressions
     - roles_in_application.md
     - navigation_sections
     - variables.md

@@ -1,6 +1,8 @@
 [attribute_color_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hlsmo2ru1
 
-[attribute_color_diagram_example]: {{ kbArticleURLPrefix }}2531#formset17
+[attribute_color_diagram_example]: {{ kbArticleURLPrefix }}2531#mcetoc_1hr8kce6p2
+
+[attribute_document_clone_scenario]: {{ kbArticleURLPrefix }}2608
 
 [attribute_hyperlink_field]: {{ kbArticleURLPrefix }}2531#formset12
 
@@ -8,9 +10,11 @@
 
 [backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
 
+[cards_view]: {{ kbArticleURLPrefix }}2404
+
 [chevron_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hlsmo2ru1
 
-[attribute_document_clone_scenario]: {{ kbArticleURLPrefix }}2608
+[discussion_use]: {{ kbArticleURLPrefix }}2407
 
 [drawing_attribute_configure]: {{ kbArticleURLPrefix }}2575
 
@@ -19,6 +23,8 @@
 [drawing_attribute_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hmjdrtgh1
 
 [formula_function_list]: {{ kbArticleURLPrefix }}2492
+
+[form_personal_use]: {{ kbArticleURLPrefix }}2568
 
 [form_rules]: {{ kbArticleURLPrefix }}2537
 
@@ -39,6 +45,8 @@
 [manual_n3]: {{ kbArticleURLPrefix }}2401
 
 [odata_synchronization_logs]: {{ kbArticleURLPrefix }}2180#mcetoc_1gjriatef8
+
+[office_connection_use]: {{ kbArticleURLPrefix }}2343
 
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}2318
 
@@ -79,6 +87,8 @@
 [buttons]: {{ kbArticleURLPrefix }}2276
 
 [call_element_menu]: {{ kbArticleURLPrefix }}2360#mcetoc_1h28cr6421
+
+[changelog]: {{ kbArticleURLPrefix }}2634
 
 [collabora_connection]: {{ kbArticleURLPrefix }}2588
 
@@ -128,7 +138,7 @@
 
 [my_tasks_page_configure]: {{ kbArticleURLPrefix }}2411
 
-[navigation_panel]: {{ kbArticleURLPrefix }}2583
+[navigation_panel]: {{ kbArticleURLPrefix }}2283
 
 [navigation_sections_setup]: {{ kbArticleURLPrefix }}2212
 
@@ -142,7 +152,7 @@
 
 [openid_connection]: {{ kbArticleURLPrefix }}2329
 
-[p7_connection]: {{ kbArticleURLPrefix }}2342
+[r7_connection]: {{ kbArticleURLPrefix }}2342
 
 [pages]: {{ kbArticleURLPrefix }}2285
 
@@ -186,6 +196,10 @@
 
 [record_templates]: {{ kbArticleURLPrefix }}2221
 
+[release_notes_4.7.2285]: {{ kbArticleURLPrefix }}2611
+
+[release_notes_4.7.2632]: {{ kbArticleURLPrefix }}2633
+
 [roles]: {{ kbArticleURLPrefix }}2208
 
 [s3_connection]: {{ kbArticleURLPrefix }}2594
@@ -215,6 +229,8 @@
 [sql_send_connection]: {{ kbArticleURLPrefix }}2498
 
 [table_configure_template]: {{ kbArticleURLPrefix }}2550
+
+[table_personal_use]: {{ kbArticleURLPrefix }}2551
 
 [task_notifications]: {{ kbArticleURLPrefix }}2567
 

@@ -42,7 +42,7 @@ kbId: 2205
 
 ### Подключения к офисным приложениям
 
-- [Р7 Офис][p7_connection]
+- [Р7 Офис][r7_connection]
 - [Collabora Online][collabora_connection]
 
 ### Подключения к электронной почте

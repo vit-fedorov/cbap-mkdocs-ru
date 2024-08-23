@@ -26,6 +26,11 @@
 			"отсканировав",
 			"штрихкода"
 		],
+		"markdownlint.config": {
+
+
+			"no-inline-html": false
+		},
 	},
 	"extensions": {
 		"recommendations": [

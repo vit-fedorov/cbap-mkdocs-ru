@@ -3,7 +3,7 @@ title: Р7 Офис
 kbId: 2342
 ---
 
-# Р7 Офис. Настройка сервера и подключения {: #p7_connection}
+# Р7 Офис. Настройка сервера и подключения {: #r7_connection}
 
 ## Введение
 
@@ -30,11 +30,11 @@ kbId: 2342
     `services.CoAuthoring.token.enable.request.inbox: **true**`  
     `services.CoAuthoring.token.enable.browser: **true**`
 
-_![Настройка конфигурации Р7-Офис](p7_connection_settings_configuration.png)_
+_![Настройка конфигурации Р7-Офис](r7_connection_settings_configuration.png)_
 
 1. Скопируйте в буфер обмена токен подключения из строки `services.CoAuthoring.secret.outbox.string`
 
-_![Токен подключения в файле конфигурации Р7-Офис](p7_connection_token.png)_
+_![Токен подключения в файле конфигурации Р7-Офис](r7_connection_token.png)_
 
 ## Настройка подключения к Р7-Офис
 
@@ -48,7 +48,7 @@ _![Токен подключения в файле конфигурации Р7-
 4. Нажмите кнопку «**Проверить соединение**». Должно отобразиться сообщение об успешном подключении к **Серверу документов**.
 5. Сохраните подключение.
 
-_![Настройка подключения к Р7-Офис](p7_connection_settings.png)_
+_![Настройка подключения к Р7-Офис](r7_connection_settings.png)_
 
 --8<-- "related_topics_heading.md"
 

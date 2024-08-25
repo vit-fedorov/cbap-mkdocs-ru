@@ -1,6 +1,6 @@
 # How to Initialize MkDocs Environment and Build Help Files
 
-This is the MkDocs repository with source files for the CMW knowledge base.
+This is the MkDocs repository with source files for the RU CMW knowledge base.
 
 ## Initialize the Environment
 

@@ -198,7 +198,7 @@
 
 [release_notes_4.7.2285]: {{ kbArticleURLPrefix }}2611
 
-[release_notes_4.7.2632]: {{ kbArticleURLPrefix }}2633
+[release_notes_4.7.2658]: {{ kbArticleURLPrefix }}2633
 
 [roles]: {{ kbArticleURLPrefix }}2208
 

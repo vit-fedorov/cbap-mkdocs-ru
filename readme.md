@@ -60,6 +60,7 @@ This is the MkDocs repository with source files for the RU CMW knowledge base.
         `LANGUAGE_LIST = ["en", "ru"]`
 
 2. You should see the newly compiled help subdirectories in the `compiled_help` directory:
+
    - en
    - ru
 

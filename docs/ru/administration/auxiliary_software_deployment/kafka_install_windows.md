@@ -97,29 +97,30 @@ hide:
 9. Загрузите с **[официального сайта](https://nssm.cc/download)** архив _NSSM_ и распакуйте его.
 10. В папке `\win64` найдите файл `nssm.exe` и скопируйте его в папку `C:\kafka\kafka\bin\windows\`.
 11. В _PowerShell_ от имени администратора выполните следующую команду:
-   
+
     ``` powershell
     .\nssm install kafka
     ```
 
 12. Запустится программа `NSSM service installer`.
 
-_![Диалоговое окно NSSM service installer](img/kafka_install_nssm_service_installer.png)_
+    _![Диалоговое окно NSSM service installer](img/kafka_install_nssm_service_installer.png)_
 
 13. Укажите следующие пути к файлам службы Kafka:
-    * **Path**
+
+    - **Path**
   
     ``` powershell
     C:\kafka\kafka\bin\windows\kafka-server-start.bat
     ```
 
-    * **Startup directory**
+    - **Startup directory**
   
     ``` powershell
     C:\kafka\kafka\bin\windows\
     ```
 
-    * **Arguments**
+    - **Arguments**
   
     ``` powershell
     C:\kafka\kafka\config\kraft\server.properties

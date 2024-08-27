@@ -12,7 +12,7 @@
 
 [cards_view]: {{ kbArticleURLPrefix }}2404
 
-[chevron_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hlsmo2ru1
+[chevron_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hld927ho2
 
 [discussion_use]: {{ kbArticleURLPrefix }}2407
 
@@ -49,6 +49,10 @@
 [office_connection_use]: {{ kbArticleURLPrefix }}2343
 
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}2318
+
+[sso_authentication]: {{ kbArticleURLPrefix }}2583
+
+[sso_authentication_keytab_update]: {{ kbArticleURLPrefix }}2583#mcetoc_1hpavbqqi2
 
 [table_configure_form]: {{ kbArticleURLPrefix }}2531#formset17
 

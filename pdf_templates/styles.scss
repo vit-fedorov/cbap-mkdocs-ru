@@ -1,3 +1,5 @@
+/* PDF CSS overrides begin */
+
 @media print {
 
     .md-typeset figure img {
@@ -10,17 +12,27 @@
         display: inline;
     }
 
+    /* TODO implement text-indent only for P without ruining the rest of formatting
+    .md-typeset p:not([class]) {
+        text-indent: 1.5rem;
+        margin-bottom: .2rem;
+        margin-top: .2rem;
+      }
+    */
+
     .md-typeset :is(.admonition-title, summary):before {
         left: 0.8rem;
-        top: 0.8rem;
+        top: 1rem;
     }
 
-    .md-typeset ol,
     .md-typeset ul {
 
         margin-left: 0.625rem;
     }
 
+    .md-typeset ol {
+        margin-left: 1.625rem;
+    }
 
     :root {
         font-size: 12pt;
@@ -70,15 +82,15 @@
 
     article {
         h1 {
-            border-bottom: 3px solid #3698D4;
+            border-bottom: 0px;
         }
 
         h2 {
-            border-bottom: 2px solid #3698D4;
+            border-bottom: 0px;
         }
 
         h3 {
-            border-bottom: 1px solid #3698D4;
+            border-bottom: 0px;
         }
 
     }
@@ -99,6 +111,8 @@
 
         h1 {
             font-size: 36pt;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #3698D4;
         }
 
         h2 {
@@ -108,19 +122,31 @@
 
     /* imported from  https://github.com/orzih/mkdocs-with-pdf/blob/master/mkdocs_with_pdf/styles/_paging.scss */
 
+    h1 {
+        string-set: chapter content(); 
+    }
+   
+    h2, h3 {
+        string-set: chapter string(chapter); 
+    }
+
     @page {
         size: a4 portrait;
-        margin: 20mm 10mm 20mm 10mm;
+        margin: 25mm 10mm 20mm 10mm;
         color: black;
 
         @top-right {
             font-size: 1rem;
             content: string(chapter);
+            width: 100%;
+            border-bottom: 2px solid #3698D4;
+            margin-top: 10mm;
+            margin-bottom: 1rem;
         }
 
         @bottom-center {
             font-size: 1rem;
-            content: 'Стр. ' counter(page)' из ' counter(pages);
+            content: counter(page)' / ' counter(pages);
         }
 
         @bottom-right {
@@ -139,7 +165,7 @@
     .md-typeset ol li {
         margin-bottom: .25rem;
     }
-
+   
     #doc-toc ul li>a>span,
     .md-typeset h1>span,
     .md-typeset h2>span,
@@ -208,4 +234,11 @@
         page-break-inside: auto !important;
     }
 
+    figcaption {
+        page-break-before: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
 }
+
+/* PDF CSS overrides end */

@@ -166,6 +166,8 @@
 
 [forms]: {{ kbArticleURLPrefix }}2271
 
+[form_dynamic_elements]: {{ kbArticleURLPrefix }}2531
+
 [get_connection]: {{ kbArticleURLPrefix }}2559
 
 [git_connection]: {{ kbArticleURLPrefix }}2204

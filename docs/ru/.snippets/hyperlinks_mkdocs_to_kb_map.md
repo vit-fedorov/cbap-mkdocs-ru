@@ -2,7 +2,13 @@
 
 [attribute_color_diagram_example]: {{ kbArticleURLPrefix }}2531#mcetoc_1hr8kce6p2
 
+[attribute_date_time_use]: {{ kbArticleURLPrefix }}2004
+
 [attribute_document_clone_scenario]: {{ kbArticleURLPrefix }}2608
+
+[attribute_enum_calculate_current_value]: {{ kbArticleURLPrefix }}2497
+
+[attribute_enum_calculate_registry]: {{ kbArticleURLPrefix }}2571
 
 [attribute_hyperlink_field]: {{ kbArticleURLPrefix }}2531#formset12
 
@@ -10,13 +16,17 @@
 
 [backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
 
+[cards]: {{ kbArticleURLPrefix }}2402
+
 [cards_view]: {{ kbArticleURLPrefix }}2404
+
+[chevron_color_rules]: {{ kbArticleURLPrefix }}2119
 
 [chevron_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hld927ho2
 
-[discussion_use]: {{ kbArticleURLPrefix }}2407
+[chevron_stage_render]: {{ kbArticleURLPrefix }}2582
 
-[drawing_attribute_configure]: {{ kbArticleURLPrefix }}2575
+[discussion_use]: {{ kbArticleURLPrefix }}2407
 
 [drawing_attribute_file_import]: {{ kbArticleURLPrefix }}2574
 
@@ -29,6 +39,12 @@
 [form_rules]: {{ kbArticleURLPrefix }}2537
 
 [form_static_elements]: {{ kbArticleURLPrefix }}2530
+
+[form_static_elements_area]: {{ kbArticleURLPrefix }}2530#formset5
+
+[form_static_elements_columns]: {{ kbArticleURLPrefix }}2530#formset3
+
+[form_static_elements_tabs]: {{ kbArticleURLPrefix }}2530#formset4
 
 [functions]: {{ kbArticleURLPrefix }}2200
 
@@ -70,11 +86,29 @@
 
 [apps]: {{ kbArticleURLPrefix }}2209
 
+[attribute_barcode]: {{ kbArticleURLPrefix }}2393
+
 [attribute_common_properties]: {{ kbArticleURLPrefix }}2260
+
+[attribute_date_time]: {{ kbArticleURLPrefix }}2246
 
 [attribute_document]: {{ kbArticleURLPrefix }}2241
 
+[attribute_drawing]: {{ kbArticleURLPrefix }}2575
+
+[attribute_duration]: {{ kbArticleURLPrefix }}2248
+
 [attribute_enum]: {{ kbArticleURLPrefix }}2244
+
+[attribute_hyperlink]: {{ kbArticleURLPrefix }}2259
+
+[attribute_image]: {{ kbArticleURLPrefix }}2253
+
+[attribute_number]: {{ kbArticleURLPrefix }}2251
+
+[attribute_record]: {{ kbArticleURLPrefix }}2243
+
+[attribute_role]: {{ kbArticleURLPrefix }}2240
 
 [attribute_text]: {{ kbArticleURLPrefix }}2257
 
@@ -87,6 +121,10 @@
 [auto_numerating_records]: {{ kbArticleURLPrefix }}2607
 
 [backup]: {{ kbArticleURLPrefix }}2190
+
+[button_area]: {{ kbArticleURLPrefix }}2545
+
+[button_area_configure]: {{ kbArticleURLPrefix }}2545#mcetoc_1him01s6g3
 
 [buttons]: {{ kbArticleURLPrefix }}2276
 
@@ -111,6 +149,10 @@
 [diagram_definition]: {{ kbArticleURLPrefix }}2211
 
 [diagrams]: {{ kbArticleURLPrefix }}2211
+
+[discussion_configure]: {{ kbArticleURLPrefix }}2406
+
+[discussion_configure_template]: {{ kbArticleURLPrefix }}2406#mcetoc_1h7hu3akn4
 
 [download_archive_csharp]: {{ kbArticleURLPrefix }}2623
 
@@ -232,15 +274,23 @@
 
 [sql_send_connection]: {{ kbArticleURLPrefix }}2498
 
+[table_clone]: {{ kbArticleURLPrefix }}2552
+
 [table_configure_template]: {{ kbArticleURLPrefix }}2550
 
 [table_personal_use]: {{ kbArticleURLPrefix }}2551
+
+[tables]: {{ kbArticleURLPrefix }} 2548
 
 [task_notifications]: {{ kbArticleURLPrefix }}2567
 
 [task_notifications_email]: {{ kbArticleURLPrefix }}2567#task_notifications_email
 
 [templates]: {{ kbArticleURLPrefix }}2219
+
+[themes]: {{ kbArticleURLPrefix }}2199
+
+[themes_graphic_diagram_color]: {{ kbArticleURLPrefix }}2199#mcetoc_1gjriujcbf
 
 [user_task]: {{ kbArticleURLPrefix }}2392
 

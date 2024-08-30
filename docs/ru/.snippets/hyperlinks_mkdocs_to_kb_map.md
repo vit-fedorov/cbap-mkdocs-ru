@@ -250,7 +250,7 @@
 
 [wsfederation_connection]: {{ kbArticleURLPrefix }}2560
 
-[администрирование]: {{ kbArticleURLPrefix }}2191
+[administration]: {{ kbArticleURLPrefix }}2191
 
 [администрирование-приложения]: {{ kbArticleURLPrefix }}2209#mcetoc_1gjrm25045
 

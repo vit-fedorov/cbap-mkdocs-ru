@@ -180,7 +180,7 @@
 
 [licensing]: {{ kbArticleURLPrefix }}2183
 
-[maps_connection]: {{ kbArticleURLPrefix }}2572
+[map_configure]: {{ kbArticleURLPrefix }}2572
 
 [my_tasks]: {{ kbArticleURLPrefix }}2282
 

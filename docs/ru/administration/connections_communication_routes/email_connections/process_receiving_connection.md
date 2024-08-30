@@ -157,9 +157,7 @@ _![Настройка атрибутов сообщения в пути пере
 
 **[Получение эл. почты через IMAP. Настройка подключения][imap_receiving_connection]**
 
-**[Отправка эл. почты через Exchange. Настройка подключения][exchange_sending_connection]**
-
-**[Отправка эл. почты через SMTP. Настройка подключения][smtp_sending_connection]**
+**[Отправка эл. почты из сценариев через SMTP и Exchange. Настройка подключения, пути передачи данных и сценария][scenario_send_email]**
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

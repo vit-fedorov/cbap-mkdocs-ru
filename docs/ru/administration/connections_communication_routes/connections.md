@@ -49,10 +49,10 @@ kbId: 2205
 
 - [Получение эл. почты в процессе][process_receiving_connection]
 - [Отправка эл. почты из процесса][process_sending_connection]
-- [Получение сообщений через Exchange][exchange_receiving_connection]
-- [Отправка сообщений через Exchange][exchange_sending_connection]
+- [Получение эл. почты через Exchange][exchange_receiving_connection]
+- [Отправка эл. почты через Exchange][scenario_send_email]
 - [Получение эл. почты через IMAP][imap_receiving_connection]
-- [Отправка почты через SMTP][smtp_sending_connection]
+- [Отправка почты через SMTP][scenario_send_email]
 
 ### Подключения REST и OData
 

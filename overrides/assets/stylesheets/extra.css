@@ -62,7 +62,8 @@ th {
     text-align: center;
 }
 
-.md-typeset h5 {
+.md-typeset h5, .md-typeset h6 {
+    font-size: 1em;
     text-transform: none;
     color: var(--md-typeset-color);
 }

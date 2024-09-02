@@ -140,6 +140,8 @@
 
 [connections]: {{ kbArticleURLPrefix }}2205
 
+[connections_delete]: {{ kbArticleURLPrefix }}2205#mcetoc_1gjrlqi4l6
+
 [creating_gantt_chart]: {{ kbArticleURLPrefix }}2107
 
 [desktop]:  {{ kbArticleURLPrefix }}2284

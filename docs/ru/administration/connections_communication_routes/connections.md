@@ -31,7 +31,7 @@ kbId: 2205
 - [Управление версиями через Git][git_connection]
 - [Elasticsearch][elasticsearch_connection]
 - Абстрактное подключение
-- [Карты][maps_connection]
+- [Карты][map_connection]
 - [Хранилище S3][s3_connection]
 
 ### Аутентификация

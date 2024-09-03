@@ -2,7 +2,7 @@ title: Подключения к электронной почте
 
 nav:
     - process_sending_connection.md
-    - smtp_sending_connection.md
+    - scenario_send_email.md
     - process_receiving_connection.md
     - exchange_receiving_connection.md
     - imap_receiving_connection.md

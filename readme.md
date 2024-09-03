@@ -60,6 +60,7 @@ This is the MkDocs repository with source files for the RU CMW knowledge base.
         `LANGUAGE_LIST = ["en", "ru"]`
 
 2. You should see the newly compiled help subdirectories in the `compiled_help` directory:
+
    - en
    - ru
 
@@ -150,3 +151,13 @@ mkdocs build -f mkdocs_for_kb_import_en.yml
 <https://squidfunk.github.io/mkdocs-material/>
 <https://github.com/squidfunk/mkdocs-material>
 <https://www.mkdocs.org/>
+
+## Customize navigation
+
+If awesome-pages plugin is enabled you can selectively enable only certain documentation folders in the mkdocs.yml, for instance:
+
+```
+nav:
+  - ... | administration/**
+  - ... | using_the_system/**
+```

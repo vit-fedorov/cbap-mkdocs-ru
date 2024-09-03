@@ -26,7 +26,7 @@ _![Критически важное уведомление на страниц�
 
 ## Настройка глобальной конфигурации {: #global_configuration_setting}
 
-1. На странице [«**Администрирование**» — «**Инфраструктура**»][администрирование] выберите пункт «**Глобальная конфигурация**» <i class=" fal  fa-desktop " style="box-sizing: border-box; -webkit-font-smoothing: antialiased; display: var(--fa-display,inline-block); font-style: normal; font-variant: normal; line-height: 1; text-rendering: auto; font-family: 'Font Awesome 6 Pro'; font-weight: 300;">‌</i>.
+1. На странице [«**Администрирование**» — «**Инфраструктура**»][administration] выберите пункт «**Глобальная конфигурация**» <i class=" fal  fa-desktop " style="box-sizing: border-box; -webkit-font-smoothing: antialiased; display: var(--fa-display,inline-block); font-style: normal; font-variant: normal; line-height: 1; text-rendering: auto; font-family: 'Font Awesome 6 Pro'; font-weight: 300;">‌</i>.
 2. Установите флажок «**Включить получение уведомлений (кроме уведомлений о задачах)**».
 3. Сохраните глобальную конфигурацию.
 4. Перезапустите экземпляр **{{ productName }}**, чтобы изменения вступили в силу. Для этого может потребоваться обратиться к системному администратору.

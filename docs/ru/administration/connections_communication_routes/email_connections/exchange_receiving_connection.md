@@ -71,9 +71,8 @@ kbId: 2586
 
 **[Получение эл. почты через IMAP. Настройка подключения][imap_receiving_connection]**
 
-**[Отправка эл. почты через SMTP. Настройка подключения][smtp_sending_connection]**
+**[Отправка эл. почты из сценариев через SMTP и Exchange. Настройка подключения, пути передачи данных и сценария][scenario_send_email]**
 
-**[Отправка эл. почты через Exchange. Настройка подключения][exchange_sending_connection]**
 
 **[Отправка эл. почты из процесса. Настройка подключения][process_sending_connection]**
 

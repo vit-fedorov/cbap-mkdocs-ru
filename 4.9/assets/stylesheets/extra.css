@@ -1,0 +1,113 @@
+/* 
+    The duplicate "fontawesome" folder is needed for local Help viewing and PDF generation. 
+    Can't import fontawesome resources from "Web/resources" for these tasks.
+*/
+
+@import url("fontawesome/css/fontawesome.min.css");
+@import url("fontawesome/css/light.min.css");
+@import url("fontawesome/css/brands.min.css");
+
+[data-md-color-scheme="comindware"] {
+    --md-primary-fg-color: #3697d4;
+    --md-primary-fg-color--light: #62aedd;
+    --md-primary-fg-color--dark: #0875bc;
+    --md-footer-bg-color: var(--md-primary-fg-color--dark);
+    --md-footer-bg-color--dark: #343a40;
+}
+
+:root {
+    --md-text-font-family: OpenSans, Roboto;
+  }
+
+
+body  {
+    background: white;
+    background-image: '';
+}
+
+th {
+    background-color: var(--md-code-bg-color);
+}
+
+.md-typeset ul ul {
+    list-style-type: circle;
+}
+
+.md-typeset ul ul ul {
+    list-style-type: square;
+}
+
+.md-typeset ul ul ul ul {
+    list-style-type: "− ";
+}
+
+.md-typeset figure img {
+    display: inline;
+    border: 1px solid hsl(0, 0%, 90%);
+}
+
+.md-typeset figure p {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.md-typeset figcaption {
+    margin: 0em auto 0em;
+    max-width: 100%;
+}
+
+.md-typeset figure {
+    max-width: 100%;
+    text-align: center;
+}
+
+.md-typeset h5 {
+    text-transform: none;
+    color: var(--md-typeset-color);
+}
+
+.md-typeset :is(.admonition,details) {
+    font-size: inherit;
+ 
+}
+
+.glightbox-container .gslider {
+    background: white;
+}
+
+.glightbox-container.glightbox-clean .gslide-title {
+    
+    font-family: var(--md-text-font-family);
+    color: var(--md-typeset-color);
+    font-feature-settings: "kern", "liga";
+    font-style: italic;
+    text-align: center;
+    font-size: .8rem;
+    line-height: 1.6;
+}
+
+.gslide-image img {
+
+    min-width: 50px !important;
+    
+}
+
+.glightbox-clean .gslide-description {
+    
+    min-width: fit-content;
+    z-index: -1;
+}
+    
+.admonition {
+    h1.admonition-title, 
+    h2.admonition-title, 
+    h3.admonition-title, 
+    h4.admonition-title, 
+    h5.admonition-title, 
+    h6.admonition-title
+     
+    {
+    font-weight: 300;
+    }
+}

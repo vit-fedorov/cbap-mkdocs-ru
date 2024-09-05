@@ -6,12 +6,16 @@
 
 INHERIT: mkdocs_ru.yml
 
-site_url: http://127.0.0.1/
+site_url: http://arterm-sedov.github.io/space-game/platform/
 
 theme:
   language: ru
   logo: assets/images/cmw_icon.svg
   favicon: assets/images/favicon.png
+
+extra:
+  version:
+    provider: mike
 
 extra_css:
   - assets/stylesheets/extra.css

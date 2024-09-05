@@ -6,7 +6,7 @@
 
 INHERIT: mkdocs_ru.yml
 
-site_url: http://arterm-sedov.github.io/cbap-mkdocs-ru/
+site_url: http://arterm-sedov.github.io/cbap-mkdocs-ru/platform/
 
 theme:
   language: ru

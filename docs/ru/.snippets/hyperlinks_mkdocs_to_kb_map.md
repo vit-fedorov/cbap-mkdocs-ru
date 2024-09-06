@@ -162,8 +162,6 @@
 
 [exchange_receiving_connection]: {{ kbArticleURLPrefix }}2586
 
-[exchange_sending_connection]: {{ kbArticleURLPrefix }}2587
-
 [expression_editor]: {{ kbArticleURLPrefix }}2463
 
 [forms]: {{ kbArticleURLPrefix }}2271
@@ -258,9 +256,11 @@
 
 [scenario_event]:  {{ kbArticleURLPrefix }}2346
 
-[scenario_variables]: {{ kbArticleURLPrefix }}2399
+[scenario_send_email]: {{ kbArticleURLPrefix }}2584
 
 [scenarios]: {{ kbArticleURLPrefix }}2151
+
+[scenario_variables]: {{ kbArticleURLPrefix }}2399
 
 [send_http_connection]: {{ kbArticleURLPrefix }}2508
 
@@ -271,8 +271,6 @@
 [send_message_end_event]: {{ kbArticleURLPrefix }}2385
 
 [send_message_intermediate_event]: {{ kbArticleURLPrefix }}2381
-
-[smtp_sending_connection]: {{ kbArticleURLPrefix }}2584
 
 [sql_receive_connection]: {{ kbArticleURLPrefix }}2135
 
@@ -304,7 +302,7 @@
 
 [wsfederation_connection]: {{ kbArticleURLPrefix }}2560
 
-[администрирование]: {{ kbArticleURLPrefix }}2191
+[administration]: {{ kbArticleURLPrefix }}2191
 
 [администрирование-приложения]: {{ kbArticleURLPrefix }}2209#mcetoc_1gjrm25045
 

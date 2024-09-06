@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block extrahead %}
-    {% if page and page.meta and page.meta.helpURI %}
-        <meta property="helpURI" content="{{ page.meta.helpURI }}" />
+    {% if page and page.meta and page.meta.kbId %}
+        <meta property="kbUrl" content="http://kb.comindware.ru/article.php?id={{ page.meta.kbId }}" />
     {% endif %}
 {% endblock %}

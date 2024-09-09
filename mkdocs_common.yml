@@ -13,6 +13,7 @@ theme:
     # - navigation.indexes
     - content.code.copy
     - navigation.footer
+    - toc.follow
 
 extra_css:
   - assets/stylesheets/extra.css

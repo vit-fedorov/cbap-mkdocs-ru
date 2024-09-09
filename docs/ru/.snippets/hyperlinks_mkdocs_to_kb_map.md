@@ -168,6 +168,8 @@
 
 [form_dynamic_elements]: {{ kbArticleURLPrefix }}2531
 
+[form_dynamic_elements_map]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_map
+
 [get_connection]: {{ kbArticleURLPrefix }}2559
 
 [git_connection]: {{ kbArticleURLPrefix }}2204

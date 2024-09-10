@@ -4,7 +4,7 @@
 
 INHERIT: mkdocs_common.yml
 
-site_name: База знаний Comindware Business Application Platform
+site_name: Comindware Business Application Platform. База знаний
 
 docs_dir: docs/ru
     

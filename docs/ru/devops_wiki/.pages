@@ -1,0 +1,6 @@
+title: DevOps Wiki
+
+nav:
+    - index.md
+    - kubernetes
+    - ...

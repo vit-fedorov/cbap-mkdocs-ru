@@ -10,6 +10,8 @@
 
 [backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
 
+[business_approval_process]: {{ kbArticleURLPrefix }}2320
+
 [cards_view]: {{ kbArticleURLPrefix }}2404
 
 [chevron_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hld927ho2
@@ -57,6 +59,8 @@
 [table_configure_form]: {{ kbArticleURLPrefix }}2531#formset17
 
 [task_notifications_email]: ../administration/connections_communication_routes/system_connections/notifications/task_notifications.md#task_notifications_email
+
+[telegram_send_notification]: {{ kbArticleURLPrefix }}2610
 
 {% if kbExport %}
 

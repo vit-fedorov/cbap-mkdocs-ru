@@ -1,0 +1,9 @@
+title: Практика Kubernetes
+
+nav:
+    - index.md
+    - kubernetes_install
+    - openebs_install
+    - setup_ssl_for_helm
+    - cbap_install
+    - ...

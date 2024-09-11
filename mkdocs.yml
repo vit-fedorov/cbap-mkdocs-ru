@@ -1,17 +1,9 @@
-# This file is used for local authoring and testing the Russian help system without actually building the help or the product
-# To actually build the help with all the dependencies run `py buildhelp.py`.
+# This file is used for local authoring and testing the Russian help system without actually building the help.
+# To actually build the help with all the dependencies run `buildhelp.ps1`.
 # To test and author the Russian help run:
 # py -m mkdocs serve (`mkdocs serve` might also work depending on the environment PATH variable)
 # To test and author the English help run: py -m mkdocs serve -f mkdocs_en_local.yml
 
 INHERIT: mkdocs_ru.yml
 
-site_url: http://127.0.0.1/help/ru/
-
-theme:
-  language: ru
-  logo: assets/images/cmw_icon.svg
-  favicon: assets/images/favicon.png
-
-extra_css:
-  - assets/stylesheets/extra.css
+site_url: http://127.0.0.1/

@@ -25,6 +25,10 @@ body  {
     background-image: '';
 }
 
+th {
+    background-color: var(--md-code-bg-color);
+}
+
 .md-typeset ul ul {
     list-style-type: circle;
 }
@@ -58,7 +62,8 @@ body  {
     text-align: center;
 }
 
-.md-typeset h5 {
+.md-typeset h5, .md-typeset h6 {
+    font-size: 1em;
     text-transform: none;
     color: var(--md-typeset-color);
 }
@@ -95,3 +100,19 @@ body  {
     z-index: -1;
 }
     
+.admonition {
+    h1.admonition-title, 
+    h2.admonition-title, 
+    h3.admonition-title, 
+    h4.admonition-title, 
+    h5.admonition-title, 
+    h6.admonition-title
+     
+    {
+    font-weight: 300;
+    }
+}
+
+.md-typeset .headerlink {
+    font-family: "Font Awesome 6 Pro";
+}

@@ -1,24 +1,40 @@
-[attribute_color_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hlsmo2ru1
-
-[attribute_color_diagram_example]: {{ kbArticleURLPrefix }}2531#formset17
-
-[attribute_hyperlink_field]: {{ kbArticleURLPrefix }}2531#formset12
-
-[chevron_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hlsmo2ru1
+[attribute_date_time_use]: {{ kbArticleURLPrefix }}2004
 
 [attribute_document_clone_scenario]: {{ kbArticleURLPrefix }}2608
 
-[drawing_attribute_configure]: {{ kbArticleURLPrefix }}2575
+[attribute_enum_calculate_current_value]: {{ kbArticleURLPrefix }}2497
+
+[attribute_enum_calculate_registry]: {{ kbArticleURLPrefix }}2571
+
+[backup_and_restore]: {{ kbArticleURLPrefix }}2579
+
+[backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
+
+[cards]: {{ kbArticleURLPrefix }}2402
+
+[cards_view]: {{ kbArticleURLPrefix }}2404
+
+[chevron_color_rules]: {{ kbArticleURLPrefix }}2119
+
+[chevron_stage_render]: {{ kbArticleURLPrefix }}2582
+
+[discussion_use]: {{ kbArticleURLPrefix }}2407
 
 [drawing_attribute_file_import]: {{ kbArticleURLPrefix }}2574
 
-[drawing_attribute_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hmjdrtgh1
-
 [formula_function_list]: {{ kbArticleURLPrefix }}2492
+
+[form_personal_use]: {{ kbArticleURLPrefix }}2568
 
 [form_rules]: {{ kbArticleURLPrefix }}2537
 
 [form_static_elements]: {{ kbArticleURLPrefix }}2530
+
+[form_static_elements_area]: {{ kbArticleURLPrefix }}2530#formset5
+
+[form_static_elements_columns]: {{ kbArticleURLPrefix }}2530#formset3
+
+[form_static_elements_tabs]: {{ kbArticleURLPrefix }}2530#formset4
 
 [functions]: {{ kbArticleURLPrefix }}2200
 
@@ -36,9 +52,13 @@
 
 [odata_synchronization_logs]: {{ kbArticleURLPrefix }}2180#mcetoc_1gjriatef8
 
+[office_connection_use]: {{ kbArticleURLPrefix }}2343
+
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}2318
 
-[table_configure_form]: {{ kbArticleURLPrefix }}2531#formset17
+[sso_authentication]: {{ kbArticleURLPrefix }}2583
+
+[sso_authentication_keytab_update]: {{ kbArticleURLPrefix }}2583#mcetoc_1hpavbqqi2
 
 [task_notifications_email]: ../administration/connections_communication_routes/system_connections/notifications/task_notifications.md#task_notifications_email
 
@@ -54,11 +74,29 @@
 
 [apps]: {{ kbArticleURLPrefix }}2209
 
+[attribute_barcode]: {{ kbArticleURLPrefix }}2393
+
 [attribute_common_properties]: {{ kbArticleURLPrefix }}2260
+
+[attribute_date_time]: {{ kbArticleURLPrefix }}2246
 
 [attribute_document]: {{ kbArticleURLPrefix }}2241
 
+[attribute_drawing]: {{ kbArticleURLPrefix }}2575
+
+[attribute_duration]: {{ kbArticleURLPrefix }}2248
+
 [attribute_enum]: {{ kbArticleURLPrefix }}2244
+
+[attribute_hyperlink]: {{ kbArticleURLPrefix }}2259
+
+[attribute_image]: {{ kbArticleURLPrefix }}2253
+
+[attribute_number]: {{ kbArticleURLPrefix }}2251
+
+[attribute_record]: {{ kbArticleURLPrefix }}2243
+
+[attribute_role]: {{ kbArticleURLPrefix }}2240
 
 [attribute_text]: {{ kbArticleURLPrefix }}2257
 
@@ -70,9 +108,17 @@
 
 [auto_numerating_records]: {{ kbArticleURLPrefix }}2607
 
+[backup]: {{ kbArticleURLPrefix }}2190
+
+[button_area]: {{ kbArticleURLPrefix }}2545
+
+[button_area_configure]: {{ kbArticleURLPrefix }}2545#mcetoc_1him01s6g3
+
 [buttons]: {{ kbArticleURLPrefix }}2276
 
 [call_element_menu]: {{ kbArticleURLPrefix }}2360#mcetoc_1h28cr6421
+
+[changelog]: {{ kbArticleURLPrefix }}2634
 
 [collabora_connection]: {{ kbArticleURLPrefix }}2588
 
@@ -81,6 +127,8 @@
 [communication_routes]: {{ kbArticleURLPrefix }}2201
 
 [connections]: {{ kbArticleURLPrefix }}2205
+
+[connections_delete]: {{ kbArticleURLPrefix }}2205#mcetoc_1gjrlqi4l6
 
 [creating_gantt_chart]: {{ kbArticleURLPrefix }}2107
 
@@ -92,19 +140,35 @@
 
 [diagrams]: {{ kbArticleURLPrefix }}2211
 
+[discussion_configure]: {{ kbArticleURLPrefix }}2406
+
+[discussion_configure_template]: {{ kbArticleURLPrefix }}2406#mcetoc_1h7hu3akn4
+
 [download_archive_csharp]: {{ kbArticleURLPrefix }}2623
 
 [elasticsearch_connection]: {{ kbArticleURLPrefix }}2593
 
 [exchange_receiving_connection]: {{ kbArticleURLPrefix }}2586
 
-[exchange_sending_connection]: {{ kbArticleURLPrefix }}2587
-
 [expression_editor]: {{ kbArticleURLPrefix }}2463
 
-[form_access_control]:
-
 [forms]: {{ kbArticleURLPrefix }}2271
+
+[form_dynamic_elements]: {{ kbArticleURLPrefix }}2531
+
+[form_dynamic_elements_chevron]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_chevron
+
+[form_dynamic_elements_color]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_color
+
+[form_dynamic_elements_color_diagram_example]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_color_diagram_example
+
+[form_dynamic_elements_drawing]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_drawing
+
+[form_dynamic_elements_hyperlink]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_hyperlink
+
+[form_dynamic_elements_map]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_map
+
+[form_dynamic_elements_table]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_table
 
 [get_connection]: {{ kbArticleURLPrefix }}2559
 
@@ -118,13 +182,15 @@
 
 [licensing]: {{ kbArticleURLPrefix }}2183
 
-[maps_connection]: {{ kbArticleURLPrefix }}2572
+[map_configure]: {{ kbArticleURLPrefix }}2572
+
+[map_use]: {{ kbArticleURLPrefix }}2635
 
 [my_tasks]: {{ kbArticleURLPrefix }}2282
 
 [my_tasks_page_configure]: {{ kbArticleURLPrefix }}2411
 
-[navigation_panel]: {{ kbArticleURLPrefix }}2583
+[navigation_panel]: {{ kbArticleURLPrefix }}2283
 
 [navigation_sections_setup]: {{ kbArticleURLPrefix }}2212
 
@@ -138,9 +204,7 @@
 
 [openid_connection]: {{ kbArticleURLPrefix }}2329
 
-[p7_connection]: {{ kbArticleURLPrefix }}2342
-
-[page_access_control]:
+[r7_connection]: {{ kbArticleURLPrefix }}2342
 
 [pages]: {{ kbArticleURLPrefix }}2285
 
@@ -184,6 +248,10 @@
 
 [record_templates]: {{ kbArticleURLPrefix }}2221
 
+[release_notes_4.7.2285]: {{ kbArticleURLPrefix }}2611
+
+[release_notes_4.7.2721]: {{ kbArticleURLPrefix }}2633
+
 [roles]: {{ kbArticleURLPrefix }}2208
 
 [s3_connection]: {{ kbArticleURLPrefix }}2594
@@ -192,33 +260,43 @@
 
 [scenario_event]:  {{ kbArticleURLPrefix }}2346
 
-[scenario_variables]: {{ kbArticleURLPrefix }}2399
+[scenario_send_email]: {{ kbArticleURLPrefix }}2584
 
 [scenarios]: {{ kbArticleURLPrefix }}2151
+
+[scenario_variables]: {{ kbArticleURLPrefix }}2399
 
 [send_http_connection]: {{ kbArticleURLPrefix }}2508
 
 [send_http_example]: {{ kbArticleURLPrefix }}2509
 
-[send_inquiry_connection]: {{ kbArticleURLPrefix }}2589
+[send_http_request_connection]: {{ kbArticleURLPrefix }}2589
 
 [send_message_end_event]: {{ kbArticleURLPrefix }}2385
 
 [send_message_intermediate_event]: {{ kbArticleURLPrefix }}2381
 
-[smtp_sending_connection]: {{ kbArticleURLPrefix }}2584
-
 [sql_receive_connection]: {{ kbArticleURLPrefix }}2135
 
 [sql_send_connection]: {{ kbArticleURLPrefix }}2498
 
+[table_clone]: {{ kbArticleURLPrefix }}2552
+
 [table_configure_template]: {{ kbArticleURLPrefix }}2550
+
+[table_personal_use]: {{ kbArticleURLPrefix }}2551
+
+[tables]: {{ kbArticleURLPrefix }}2548
 
 [task_notifications]: {{ kbArticleURLPrefix }}2567
 
 [task_notifications_email]: {{ kbArticleURLPrefix }}2567#task_notifications_email
 
 [templates]: {{ kbArticleURLPrefix }}2219
+
+[themes]: {{ kbArticleURLPrefix }}2199
+
+[themes_graphic_diagram_color]: {{ kbArticleURLPrefix }}2199#mcetoc_1gjriujcbf
 
 [user_task]: {{ kbArticleURLPrefix }}2392
 
@@ -228,7 +306,7 @@
 
 [wsfederation_connection]: {{ kbArticleURLPrefix }}2560
 
-[администрирование]: {{ kbArticleURLPrefix }}2191
+[administration]: {{ kbArticleURLPrefix }}2191
 
 [администрирование-приложения]: {{ kbArticleURLPrefix }}2209#mcetoc_1gjrm25045
 

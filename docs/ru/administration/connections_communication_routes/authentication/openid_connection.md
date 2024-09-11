@@ -5,9 +5,9 @@ kbId: 2329
 
 # Аутентификация через OpenID Connect. Настройка подключения и служб {: #openid_connection}
 
-## Проверка адреса сервера Comindware Business Application Platform
+## Проверка адреса сервера {{ productName }}
 
-1. Откройте раздел [«**Администрирование**» — «**Глобальная конфигурация**»][администрирование].
+1. Откройте раздел [«**Администрирование**» — «**Глобальная конфигурация**»][administration].
 2. Удостоверьтесь, что **URL-адрес сервера** начинается с `https://`.  
 
     _![Проверка адреса сервера](openid_connection_check.png)_
@@ -118,7 +118,7 @@ kbId: 2329
 
     _![Таблица учётных данных клиентов OAuth](openid_connection_oath_client_table.png)_
 
-## Настройка подключения в Comindware Business Application Platform
+## Настройка подключения в **{{ productName }}**
 
 1. Перейдите в раздел «**Администрирование**» — «**Подключения**».
 2. Нажмите кнопку «**Cоздать**».
@@ -166,7 +166,7 @@ kbId: 2329
 
 1. Запустите редактор реестра Windows: `regedit.exe`.
 2. Откройте раздел реестра `Computer -> HKEY_LOCAL_MACHINE -> SOWTWARE->Сomindware -> Instances -> имя_экземпляра_Comindware_Business_Application_Platform`.
-3. Дважды щёлкните параметр «**IsFederationAuthEnabled**».
+3. Дважды щёлкните параметр `IsFederationAuthEnabled`.
 4. Если значение этого параметра **0**, измените его на **1**.
 5. Нажмите кнопку «**OK**».  
 
@@ -177,7 +177,7 @@ kbId: 2329
 
     ![Перезапуск IIS с помощью командной строки](openid_connection_iis_reconnect.png)
 
-## Настройка ОС Linux для включения аутентификации через OpenID Connect в Comindware Business Application Platform
+## Настройка ОС Linux для включения аутентификации через OpenID Connect в {{ productName }}
 
 1. Перейдите в режим суперпользователя `root`:
 
@@ -190,7 +190,7 @@ kbId: 2329
     ```
     sudo -i
     ```
-    
+
 2. Добавьте в файл `/etc/hosts` строку:
 
     ```
@@ -199,28 +199,51 @@ kbId: 2329
 
     Здесь `xxx.xxx.xxx.xxx` — IP-адрес, `mycompany.ru` адрес сервера **{{ productName }}**, указанный в [_глобальной конфигурации {{ productName }}_](#проверка-адреса-сервера-comindware-business-application-platform) (без указания протокола `HTTP` или `HTTPS`).
     
-3. В файле `/usr/share/comindware/configs/instance/instanceName.yml` для параметра `isFederationAuthEnabled` установите значение `1`:
+3. В файле `/usr/share/comindware/configs/instance/<instanceName>.yml` для параметра `isFederationAuthEnabled` установите значение `1`:
 
     ```
     isFederationAuthEnabled: 1
     ```
 
-4. Сформируйте SSL-сертификат на сервере nginx. Например, согласно инструкциям в статье «[_Генерация SSL сертификата для NGINX (openssl)_](https://webguard.pro/web-services/nginx/generacziya-ssl-sertifikata-dlya-nginx-openssl.html)».
+    !!! note "Примечание"
+        
+        Здесь и далее `<instanceName>` — имя экземпляра ПО.
+
+4. Сформируйте SSL-сертификат на сервере NGINX. Например, согласно инструкциям в статье «[_Генерация SSL сертификата для NGINX (openssl)_](https://webguard.pro/web-services/nginx/generacziya-ssl-sertifikata-dlya-nginx-openssl.html)».
 5. Откройте для редактирования файл конфигурации NGINX:
 
     ```
-    vim /etc/nginx/sites-available/comindwareinstancename
+    vim /etc/nginx/sites-available/comindware<instanceName>
     ```
 
 6. Настройте конфигурацию SSL-сертификата согласно следующему примеру (добавьте выделенные жёлтым цветом директивы):
 
-    ```
-    server {
-    ```
+    ``` cs
+    server { 
+        listen 80 default; 
+        listen 443 ssl;
 
-    Здесь _`**instanceName**`_ — имя экземпляра ПО.
+        root /var/www/<instanceName>; 
+        server_name mycompany.ru; 
 
-7. Проверьте конфигурацию nginx: 
+        ssl_certificate /etc/nginx/ssl/nginx.crt;
+        ssl_certificate_key /etc/nginx/ssl/nginx.key;
+            
+        client_max_body_size 300m; 
+        fastcgi_read_timeout 10000; 
+        location / { 
+            proxy_read_timeout 10000;
+                        proxy_connect_timeout 10000;
+                        proxy_send_timeout 10000;
+                        root          /var/www/<instanceName>/;
+                        fastcgi_pass  unix:/var/www/<instanceName>/App_Data/comindware.socket;
+                        include       /etc/nginx/fastcgi.conf
+                        } 
+    }
+    ```
+    {{ pdfEndOfBlockHack }}
+
+7. Проверьте конфигурацию NGINX:
 
     ```
     nginx -t
@@ -229,10 +252,8 @@ kbId: 2329
 8. Перезапустите **{{ productName }}**:
 
     ```
-    systemctl restart elasticsearch nginx comindwareinstancename
+    systemctl restart elasticsearch nginx comindware<instanceName>
     ```
-
-    Здесь `instancename` — имя экземпляра ПО.
 
 ## Вход в {{ productName }}
 

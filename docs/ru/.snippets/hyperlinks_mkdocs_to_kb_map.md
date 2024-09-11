@@ -42,7 +42,7 @@
 
 [experimental_functions_support]: {{ kbArticleURLPrefix }}1339#mcetoc_1hsfq7ksu2
 
-[expression_introduction]: {{ kbArticleURLPrefix }}1858
+[expression_introduction]: {{ kbArticleURLPrefix }}2490
 
 [integration_examples]: {{ kbCategoryURLPrefix }}530
 
@@ -210,9 +210,9 @@
 
 [pages_setup]: {{ kbArticleURLPrefix }}2214
 
-[process_call_task]: {{ kbArticleURLPrefix }}2609
+[service_call_task]: {{ kbArticleURLPrefix }}2609
 
-[process_call_task_properties]:{{ kbArticleURLPrefix }}2609#mcetoc_1h28bak441
+[service_call_task_properties]:{{ kbArticleURLPrefix }}2609#mcetoc_1h28bak441
 
 [process_diagram]: {{ kbArticleURLPrefix }}2360
 

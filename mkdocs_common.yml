@@ -1,10 +1,10 @@
 theme:
   name: material
-  language: en
+  language: ru
   palette:
     scheme: comindware
-  logo: /resources/icons/cmw_icon.svg
-  favicon: /Theme/GetDefaultFavicon
+  logo: assets/images/cmw_icon.svg
+  favicon: assets/images/favicon.png
   custom_dir: overrides
   features:
     - navigation.tabs
@@ -24,27 +24,47 @@ extra:
   productNameArchitect: 'Comindware Architect'
 
 plugins:
-  - search:
+  search:
       lang:
           - en
           - ru
-  - awesome-pages:
+  awesome-pages:
       collapse_single_pages: true
-  - include-markdown
-  # - section-index
-  - em-img2fig
-  - autolinks
-  - autorefs
-  - macros
-  - minify:
+  include-markdown: {}
+  # section-index: {}
+  em-img2fig: {}
+  autolinks: {}
+  autorefs: {}
+  macros: {}
+  minify:
       minify_html: true
       minify_js: true
       minify_css: true
       htmlmin_opts:
           remove_comments: true
-  - tags
-  - glightbox:
-      loop: true
-      auto_caption: true
-  - htmlproofer:
-      enabled: !ENV [ENABLE_HTMLPROOFER, False]
+  tags: {}
+  glightbox:
+    loop: true
+    auto_caption: true
+  htmlproofer:
+    enabled: !ENV [ENABLE_HTMLPROOFER, False]
+
+
+markdown_extensions:
+  meta: {}
+  attr_list: {}
+  md_in_html: {}
+  sane_lists: {}
+  admonition: {}
+  pymdownx.details: {}
+  pymdownx.highlight: {}
+  pymdownx.inlinehilite: {}
+  pymdownx.superfences: {}
+  pymdownx.keys: {}
+  pymdownx.snippets: 
+    base_path: docs\ru\.snippets\
+  toc:
+    slugify: !!python/object/apply:pymdownx.slugs.slugify
+      kwds:
+        case: lower
+    permalink:  #fa-light fa-link

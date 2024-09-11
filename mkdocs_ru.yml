@@ -7,36 +7,20 @@ INHERIT: mkdocs_common.yml
 site_name: Comindware Business Application Platform. База знаний
 
 docs_dir: docs/ru
-    
-theme:
-    language: ru
 
 site_dir: compiled_help
 
 markdown_extensions:
-  - meta
-  - attr_list
-  - md_in_html
-  - sane_lists
-  - admonition
-  - pymdownx.details
-  - pymdownx.highlight
-  - pymdownx.inlinehilite
-  - pymdownx.superfences
-  - pymdownx.snippets:
-      base_path: docs\ru\.snippets\
-  - toc:
+  toc:
       title: На этой странице
-      slugify: !!python/object/apply:pymdownx.slugs.slugify
-        kwds:
-          case: lower
-      permalink: '#'
-  - pymdownx.keys:
+      permalink_title: Скопируйте адрес этой ссылки, чтобы поделиться параграфом
+  pymdownx.keys:
       key_map: 
         {
         "enter": "Ввод",
         "space": "Пробел"
         }
+
 
 copyright: '<a href="https://www.comindware.ru/" target="_blank">© 2009–2024 Comindware<sup>®</sup></a>. Тема: '
 

@@ -8,28 +8,21 @@ site_name: Comindware Business Application Platform Help
 
 docs_dir: docs/en
 
-site_dir: ../Web/help/en
+site_dir: compiled_help_en
+
+theme:
+  language: en
+
+plugins:
+  glightbox:
+    loop: true
+    auto_caption: true
 
 markdown_extensions:
-  - meta
-  - attr_list
-  - md_in_html
-  - sane_lists
-  - admonition
-  - pymdownx.details
-  - pymdownx.highlight
-  - pymdownx.inlinehilite
-  - pymdownx.superfences
-  - pymdownx.snippets:
+  pymdownx.snippets:
       base_path: docs\en\.snippets\
-  - toc:
+  toc:
       title: On this page
-      slugify: !!python/object/apply:pymdownx.slugs.slugify
-        kwds:
-          case: lower
-      permalink: '#'
-  - pymdownx.keys
-
 
 copyright: '<a href="https://www.comindware.com/" target="_blank">© 2009–2024 Comindware<sup>®</sup></a>. Theme: '
 

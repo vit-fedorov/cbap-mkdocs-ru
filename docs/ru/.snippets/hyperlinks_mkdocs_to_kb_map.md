@@ -22,7 +22,6 @@
 
 [drawing_attribute_file_import]: {{ kbArticleURLPrefix }}2574
 
-
 [formula_function_list]: {{ kbArticleURLPrefix }}2492
 
 [form_personal_use]: {{ kbArticleURLPrefix }}2568
@@ -60,7 +59,6 @@
 [sso_authentication]: {{ kbArticleURLPrefix }}2583
 
 [sso_authentication_keytab_update]: {{ kbArticleURLPrefix }}2583#mcetoc_1hpavbqqi2
-
 
 [task_notifications_email]: ../administration/connections_communication_routes/system_connections/notifications/task_notifications.md#task_notifications_email
 

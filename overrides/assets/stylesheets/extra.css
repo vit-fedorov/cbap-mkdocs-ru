@@ -112,3 +112,7 @@ th {
     font-weight: 300;
     }
 }
+
+.md-typeset .headerlink {
+    font-family: "Font Awesome 6 Pro";
+}

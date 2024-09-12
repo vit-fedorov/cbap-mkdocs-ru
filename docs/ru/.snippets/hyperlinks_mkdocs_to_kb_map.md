@@ -24,6 +24,8 @@
 
 [formula_function_list]: {{ kbArticleURLPrefix }}2492
 
+[formula_introduction]: {{ kbArticleURLPrefix }}2490
+
 [form_personal_use]: {{ kbArticleURLPrefix }}2568
 
 [form_rules]: {{ kbArticleURLPrefix }}2537
@@ -41,8 +43,6 @@
 [functions_web_service_call]: {{ kbArticleURLPrefix }}2200#function2
 
 [experimental_functions_support]: {{ kbArticleURLPrefix }}1339#mcetoc_1hsfq7ksu2
-
-[expression_introduction]: {{ kbArticleURLPrefix }}2490
 
 [integration_examples]: {{ kbCategoryURLPrefix }}530
 

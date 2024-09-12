@@ -16,7 +16,11 @@
 
 [chevron_field]: {{ kbArticleURLPrefix }}2531#mcetoc_1hld927ho2
 
+[chevron_stage_process_visualize]: {{ kbArticleURLPrefix }}2582
+
 [discussion_use]: {{ kbArticleURLPrefix }}2407
+
+[document_digital_signature]: {{ kbArticleURLPrefix }}2139
 
 [drawing_attribute_configure]: {{ kbArticleURLPrefix }}2575
 

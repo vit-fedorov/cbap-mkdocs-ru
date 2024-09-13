@@ -12,21 +12,15 @@
 
 [cards]: {{ kbArticleURLPrefix }}2402
 
-[cards_view]: {{ kbArticleURLPrefix }}2404
-
 [chevron_color_rules]: {{ kbArticleURLPrefix }}2119
 
 [chevron_stage_render]: {{ kbArticleURLPrefix }}2582
-
-[discussion_use]: {{ kbArticleURLPrefix }}2407
 
 [drawing_attribute_file_import]: {{ kbArticleURLPrefix }}2574
 
 [formula_function_list]: {{ kbArticleURLPrefix }}2492
 
 [formula_introduction]: {{ kbArticleURLPrefix }}2490
-
-[form_personal_use]: {{ kbArticleURLPrefix }}2568
 
 [form_rules]: {{ kbArticleURLPrefix }}2537
 
@@ -118,6 +112,8 @@
 
 [call_element_menu]: {{ kbArticleURLPrefix }}2360#mcetoc_1h28cr6421
 
+[cards_view]: {{ kbArticleURLPrefix }}2404
+
 [changelog]: {{ kbArticleURLPrefix }}2634
 
 [collabora_connection]: {{ kbArticleURLPrefix }}2588
@@ -144,6 +140,8 @@
 
 [discussion_configure_template]: {{ kbArticleURLPrefix }}2406#mcetoc_1h7hu3akn4
 
+[discussion_use]: {{ kbArticleURLPrefix }}2407
+
 [download_archive_csharp]: {{ kbArticleURLPrefix }}2623
 
 [elasticsearch_connection]: {{ kbArticleURLPrefix }}2593
@@ -169,6 +167,8 @@
 [form_dynamic_elements_map]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_map
 
 [form_dynamic_elements_table]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_table
+
+[form_personal_use]: {{ kbArticleURLPrefix }}2568
 
 [get_connection]: {{ kbArticleURLPrefix }}2559
 

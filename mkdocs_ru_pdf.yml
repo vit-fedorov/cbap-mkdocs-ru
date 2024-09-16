@@ -10,43 +10,30 @@ INHERIT: mkdocs_ru.yml
 docs_dir: docs/ru/
 site_dir: pdf/
 
-theme:
-    language: ru
+site_url: http://127.0.0.1/
 
-site_url: http://127.0.0.1/help/ru/
+site_name: Comindware Business Application Platform. Руководство пользователя
 
 extra:
   pdfOutput: true
+  pdfEndOfBlockHack: '<p style="visibility:hidden; font-size:0.1rem">.</p>' # hack for PDF output, prevents PDF build crash after indented paragraphs
 
 plugins:
-  - search:
-      lang:
-          - en
-          - ru
-  - awesome-pages
-  - include-markdown
-  # - section-index
-  - em-img2fig
-  - autolinks
-  - autorefs
-  - macros
-
-#   - minify:
-#       minify_html: true
-#       minify_js: true
-#       minify_css: true
-#       htmlmin_opts:
-#           remove_comments: true
-  - with-pdf:
-      cover: true
-      cover_title: Comindware Business Application Platform
-      cover_subtitle: Руководство пользователя
-      copyright: © 2024 Comindware
-      toc_title: Оглавление
-      toc_level: 3
-      output_path: Comindware Business Application Platform. Руководство пользователя. 19.07.204.pdf
-      custom_template_path: pdf_templates
-      two_columns_level: 0
-      heading_shift: false
-      ordered_chapter_level: 3
-
+  minify:
+    minify_html: false
+    htmlmin_opts:
+      remove_comments: false
+  with-pdf:
+    cover: true
+    cover_title: Comindware Business Application Platform
+    cover_subtitle: Руководство пользователя
+    copyright: © 2024 Comindware
+    author: Версия 4.7
+    toc_title: Оглавление
+    toc_level: 3
+    output_path: Comindware Business Application Platform. Руководство пользователя. 19.07.204.pdf
+    custom_template_path: pdf_templates
+    two_columns_level: 0
+    heading_shift: false
+    ordered_chapter_level: 3
+    # debug_html: true

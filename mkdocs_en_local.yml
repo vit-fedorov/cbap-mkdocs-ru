@@ -4,12 +4,4 @@
 
 INHERIT: mkdocs_en.yml
 
-site_url: http://127.0.0.1/help/en/
-
-theme:
-  language: en
-  logo: assets/images/cmw_icon.svg
-  favicon: assets/images/favicon.png
-
-extra_css:
-  - assets/stylesheets/extra.css
+site_url: http://127.0.0.1/en/

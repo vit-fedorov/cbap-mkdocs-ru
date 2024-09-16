@@ -49,8 +49,8 @@ _![Свойства шаблона процесса](process_templates_propertie
 
 --8<-- "related_topics_heading.md"
 
-**[Диаграмма процесса. Определения][diagrams]**
+**[Диаграмма процесса. Определения][process_diagram]**
 
-**[Общие свойства шаблонов](template_common_properties.md)** 
+**[Общие свойства шаблонов](template_common_properties.md)**
 
 **[Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление][templates]**

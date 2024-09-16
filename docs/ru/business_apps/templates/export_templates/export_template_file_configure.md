@@ -67,7 +67,8 @@ hide:
 
 {% endraw %}
 
-    *![Пример синтаксиса полей шаблона экспорта](export_template_file_advanced_syntax_example.png)*
+*![Пример синтаксиса полей шаблона экспорта](export_template_file_advanced_syntax_example.png)*
+{{ pdfEndOfBlockHack }}
 
 ### Синтаксис для экспорта с использованием C\#
 

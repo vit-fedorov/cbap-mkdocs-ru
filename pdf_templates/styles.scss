@@ -1,19 +1,244 @@
-.md-typeset figure img {
-    display: inline;   
-    image-resolution: 192dpi;
-    max-width: 100%;
-}
+/* PDF CSS overrides begin */
 
-.md-typeset figure p {
-    display: inline;   
-}
+@media print {
 
-.md-typeset :is(.admonition-title,summary):before {
-    left: 0.8rem;
-    top: 0.8rem;
-}
+    .md-typeset figure img {
+        display: inline;
+        image-resolution: 192dpi;
+        max-width: 100%;
+    }
 
-.md-typeset ol, .md-typeset ul {
+    .md-typeset figure p {
+        display: inline;
+    }
+
+    /* TODO implement text-indent only for P without ruining the rest of formatting
+    .md-typeset p:not([class]) {
+        text-indent: 1.5rem;
+        margin-bottom: .2rem;
+        margin-top: .2rem;
+      }
+    */
+
+    .md-typeset :is(.admonition-title, summary):before {
+        left: 0.8rem;
+        top: 1rem;
+    }
+
+    .md-typeset ul {
+
+        margin-left: 0.625rem;
+    }
+
+    .md-typeset ol {
+        margin-left: 1.625rem;
+    }
+
+    :root {
+        font-size: 12pt;
+    }
+
+
+    .md-typeset {
+        font-size: 1rem
+    }
+
+    .md-typeset table:not([class]) {
+        font-size: 1rem;
+    }
+
+    .md-typeset h1 {
+        font-size: 1.5em;
+    }
     
-    margin-left: 0.625rem;
+      
+    .md-typeset h2 {
+        font-size: 1.2em;
+    }
+
+    small {
+        font-size: 0.8em;
+    }
+
+    html {
+        font-size: 1em;
+        font-family: 'Kelmscott Roman NF', 'Noto Serif JP', serif;
+    }
+
+    body {
+        font-size: 1em;
+        font-family: 'Classico URW T OT', 'Noto Serif JP', serif;
+    }
+
+    code {
+        word-break: break-word;
+    }
+
+    pre {
+        word-break: break-word;
+    }
+
+    /* imported from https://github.com/orzih/mkdocs-with-pdf/blob/master/mkdocs_with_pdf/styles/_heading.scss */
+
+    article {
+        h1 {
+            border-bottom: 0px;
+        }
+
+        h2 {
+            border-bottom: 0px;
+        }
+
+        h3 {
+            border-bottom: 0px;
+        }
+
+    }
+
+    /* imported from https://github.com/orzih/mkdocs-with-pdf/blob/master/mkdocs_with_pdf/styles/_toc.scss */
+
+    article#doc-toc {
+        font-size: 12pt;
+
+        ul {
+            font-size: 12pt;
+        }
+    }
+
+    /* imported from https://github.com/orzih/mkdocs-with-pdf/blob/master/mkdocs_with_pdf/styles/cover.scss */
+
+    article#doc-cover {
+
+        h1 {
+            font-size: 36pt;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #3698D4;
+        }
+
+        h2 {
+            font-size: 18pt !important;
+        }
+    }
+
+    /* imported from  https://github.com/orzih/mkdocs-with-pdf/blob/master/mkdocs_with_pdf/styles/_paging.scss */
+
+    h1 {
+        string-set: chapter content(); 
+    }
+   
+    h2, h3 {
+        string-set: chapter string(chapter); 
+    }
+
+    @page {
+        size: a4 portrait;
+        margin: 25mm 10mm 20mm 10mm;
+        color: black;
+
+        @top-right {
+            font-size: 1rem;
+            content: string(chapter);
+            width: 100%;
+            border-bottom: 2px solid #3698D4;
+            margin-top: 10mm;
+            margin-bottom: 1rem;
+        }
+
+        @bottom-center {
+            font-size: 1rem;
+            content: counter(page)' / ' counter(pages);
+        }
+
+        @bottom-right {
+            font-size: 1rem;
+            content: string(copyright);
+        }
+    }
+
+    /* imported from https://github.com/orzih/mkdocs-with-pdf/blob/master/samples/mkdocs-material/extra_sass/style.css.scss */
+
+    .md-typeset {
+        line-height: 1.4;
+    }
+
+    .md-typeset ul li,
+    .md-typeset ol li {
+        margin-bottom: .25rem;
+    }
+   
+    #doc-toc ul li>a>span,
+    .md-typeset h1>span,
+    .md-typeset h2>span,
+    .md-typeset h3>span {
+        display: inline-block;
+    }
+
+    .md-typeset h1>span,
+    .md-typeset h2>span,
+    .md-typeset h3>span {
+        padding-right: 0.5rem;
+    }
+
+    /** workaround [[ **/
+    .md-typeset h2>span.twemoji,
+    .md-typeset h2>span.twemoji>img {
+        height: 1.363em;
+    }
+
+    .md-typeset h2>span.twemoji>img {
+        margin-top: -0.3em;
+    }
+
+    #doc-toc span.twemoji,
+    #doc-toc span.twemoji img {
+        height: 1.125rem;
+        vertical-align: middle;
+    }
+
+    .md-typeset span.twemoji,
+    .md-typeset span.twemoji img {
+        display: inline-block;
+    }
+
+    .md-typeset figure {
+        display: block;
+
+        &>img {
+            margin: 0 auto;
+        }
+    }
+
+    /* ]] **/
+
+    .md-typeset .tx-content__footer hr,
+    footer.md-typeset hr {
+        background-color: transparent;
+        border-bottom: 0.5px solid #3698D4;
+    }
+
+    footer.md-typeset a {
+        display: flex;
+        justify-content: center;
+        vertical-align: middle;
+    }
+
+    article a,
+    article blockquote,
+    article pre,
+    article table,
+    article ul,
+    article ol,
+    article *+div.highlight,
+    section+section *+div.highlight {
+        page-break-before: auto !important;
+        page-break-inside: auto !important;
+    }
+
+    figcaption {
+        page-break-before: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
 }
+
+/* PDF CSS overrides end */

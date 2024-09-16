@@ -67,3 +67,7 @@ body  {
     font-size: inherit;
  
 }
+
+.md-typeset .headerlink {
+    font-family: "Font Awesome 6 Pro";
+}

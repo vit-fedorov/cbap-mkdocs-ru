@@ -67,4 +67,4 @@ markdown_extensions:
     slugify: !!python/object/apply:pymdownx.slugs.slugify
       kwds:
         case: lower
-    permalink:  #fa-light fa-link
+    #permalink:  #fa-light fa-link

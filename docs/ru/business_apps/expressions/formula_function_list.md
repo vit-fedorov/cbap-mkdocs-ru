@@ -1444,7 +1444,7 @@ BOOL(String)
 <td markdown="block">
 
 
-`String` — строка, которая преобразуется в логическое значение.
+`String` — строка, которая преобразуется в логическое значение,  со значением `true` или `false` (без учёта регистра). При неподходящих значениях атрибута (0, 1, истина, ложь и т. п.) функция возвращает пустое значение.
 </td>
 </tr>
 <tr markdown="block">
@@ -2021,6 +2021,64 @@ argument2: строка
 число
 </td>
 </tr>
+
+<tr markdown="block">
+<th colspan="2" markdown="block">
+
+## `DECIMAL()`
+</th>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+Описание
+</td>
+<td markdown="block">
+
+Конвертирует строку в число.
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+Синтаксис
+</td>
+<td markdown="block">
+
+```cs
+DECIMAL(String)
+```
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+Аргументы
+</td>
+<td markdown="block">
+
+- `String` — строка с числовым значением (например, 10, 10,5, 10 000 для русского языка или 10, 10.5, 10,000 — для английского, т. е. значение интерпретируется в соответствии с языком текущего пользователя). При неподходящих значениях атрибута (1 р., $50 и т. п.) функция возвращает пустое значение.
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+Возвращает
+</td>
+<td markdown="block">
+Число
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+Пример
+</td>
+<td markdown="block">
+
+```cs
+DECIMAL("10,5")
+```
+
+Возвращает `10,5`
+</td>
+</tr>
+
 <tr markdown="block">
 <th colspan="2" markdown="block">
 <h2 markdown="block">`DIVIDE()`</h2>
@@ -2482,9 +2540,11 @@ argument1, argument2: значение любого типа
 значение логического типа
 </td>
 </tr>
+
 <tr markdown="block">
 <th colspan="2" markdown="block">
-<h2 markdown="block">`FIRSTORDEFAULT()`</h2>
+
+## `FIRST()`
 </th>
 </tr>
 <tr markdown="block">
@@ -2492,7 +2552,8 @@ argument1, argument2: значение любого типа
 Описание
 </td>
 <td markdown="block">
-Возвращает либо первый элемент последовательности, либо значение по умолчанию для этого типа данных, если первый элемент последовательности не был определён.
+
+Возвращает первый элемент из списка. При отсутствии элементов в списке FIRST() возвращает пустое значение.
 </td>
 </tr>
 <tr markdown="block">
@@ -2500,9 +2561,10 @@ argument1, argument2: значение любого типа
 Синтаксис
 </td>
 <td markdown="block">
-FIRSTORDEFAULT(sequence)
-Для задания последовательности используйте стандартный запрос from where select.
-Например, FIRSTORDEFAULT((from i in db-&gt;music where i&gt;album == ‘Whale Meditation’ select i-&gt;song)). Данное выражение вернет первую песню из альбома Песни китов.
+
+```cs
+FIRST(List)
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2510,7 +2572,8 @@ FIRSTORDEFAULT(sequence)
 Аргументы
 </td>
 <td markdown="block">
-sequence: последовательность однородных элементов любого типа
+
+- `List` — список значений.
 </td>
 </tr>
 <tr markdown="block">
@@ -2521,6 +2584,20 @@ sequence: последовательность однородных элемен
 тип возвращаемого значения совпадает с типом элементов последовательности
 </td>
 </tr>
+<tr markdown="block">
+<td markdown="block">
+Пример
+</td>
+<td markdown="block">
+
+```cs
+FIRST((from i in db-&gt;music where i&gt;album == ‘Whale Meditation’ select i-&gt;song))
+```
+
+Возвращает первую песню из альбома "Whale Meditation".
+</td>
+</tr>
+
 <tr markdown="block">
 <th colspan="2" markdown="block">
 <h2 markdown="block">`FLOOR()`</h2>
@@ -4517,6 +4594,65 @@ USER()
 пользователь или строка
 </td>
 </tr>
+
+<tr markdown="block">
+<th colspan="2" markdown="block">
+
+## `VALUE()`
+</th>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+Описание
+</td>
+<td markdown="block">
+
+Принимает два аргумента: проверяемое выражение и значение по умолчанию. Возвращает значение первого аргумента, если оно не пустое и не равно NULL, в противном случае возвращает значение второго аргумента, если он есть.
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+Синтаксис
+</td>
+<td markdown="block">
+
+```cs
+VALUE(argument, [defaultValue])
+```
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+Аргументы
+</td>
+<td markdown="block">
+
+- `argument` — проверяемое выражение.
+- `defaultValue` — значение по умолчанию. Является необязательным аргументом.
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+Возвращает
+</td>
+<td markdown="block">
+тип возвращаемого значения совпадает с типом проверяемого выражения
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+Пример
+</td>
+<td markdown="block">
+
+```cs
+VALUE($Amount, "Не заполнено поле Amount")
+```
+
+Возвращает значение атрибута _Amount_. В противном случае вернёт текст _«Не заполнено поле Amount»_.
+</td>
+</tr>
+
 <tr markdown="block">
 <th colspan="2" markdown="block">
 <h2 markdown="block">`WORKDAYS()`</h2>

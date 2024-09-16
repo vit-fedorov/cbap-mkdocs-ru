@@ -106,3 +106,7 @@ kbId: 2399
 **[Сценарии. Определение, создание, настройка, использование][scenarios]**
 
 **[Настройка действий сценария][scenario_actions]**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

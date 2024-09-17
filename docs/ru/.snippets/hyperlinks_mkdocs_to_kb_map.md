@@ -10,6 +10,8 @@
 
 [backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
 
+[business_approval_process]: {{ kbArticleURLPrefix }}2320
+
 [cards]: {{ kbArticleURLPrefix }}2402
 
 [cards_view]: {{ kbArticleURLPrefix }}2404
@@ -17,6 +19,8 @@
 [chevron_color_rules]: {{ kbArticleURLPrefix }}2119
 
 [chevron_stage_render]: {{ kbArticleURLPrefix }}2582
+
+[document_digital_signature]: {{ kbArticleURLPrefix }}2139
 
 [drawing_attribute_file_import]: {{ kbArticleURLPrefix }}2574
 
@@ -151,6 +155,8 @@
 [elasticsearch_connection]: {{ kbArticleURLPrefix }}2593
 
 [exchange_receiving_connection]: {{ kbArticleURLPrefix }}2586
+
+[expression_debug]: {{ kbArticleURLPrefix }}2636
 
 [expression_editor]: {{ kbArticleURLPrefix }}2463
 

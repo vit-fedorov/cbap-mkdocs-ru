@@ -13,3 +13,4 @@ venv/
 __pycache__/
 for_pdf_print.html
 phpkb_import/
+.serverCredentials.json

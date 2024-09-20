@@ -10,6 +10,7 @@ import re
 from pathvalidate import sanitize_filename
 from pathlib import Path
 import shutil
+from cryptography.fernet import Fernet
 
 class myparser(HTMLParser):
 	def handle_starttag(self, tag, attrs):
@@ -18,12 +19,21 @@ class myparser(HTMLParser):
 
 import os.path
 
+import json
+
 from sshtunnel import SSHTunnelForwarder
 
 THIS_FILE_DIR = os.path.dirname(os.path.realpath(__file__))
-KB_DIR = os.path.join(THIS_FILE_DIR, 'phpkb_import')
+importPath = input('Path to import: ') 
+KB_DIR = os.path.dirname(importPath) if importPath else 'phpkb_import'
 TOTAL_PAGES_IMPORTED = 0
 CONNECTION = ''
+
+def encrypt(message: bytes, key: bytes) -> bytes:
+    return Fernet(key).encrypt(message)
+
+def decrypt(token: bytes, key: bytes) -> bytes:
+    return Fernet(key).decrypt(token)
 
 def importCategoryChildren(parent, categoryDirectory):
         # category = dict()
@@ -47,7 +57,7 @@ def importCategoryChildren(parent, categoryDirectory):
         print("\n-----\n\nCategory {}. {}. Children: {}\n".format(id, title, children))
         dirName = sanitize_filename('{}. {}'.format(id, title))
         categoryDir = os.path.join(categoryDirectory, dirName)
-        if os.path.exists(os.path.join(categoryDir, "article-{id}-{title}.md".format( id=id, title= sanitize_filename(title)))): 
+        if os.path.exists(categoryDir): 
             print('Deleting dir:' + categoryDir)
             shutil.rmtree(categoryDir, ignore_errors=True)
         Path(categoryDir).mkdir(parents=True, exist_ok=True)
@@ -60,7 +70,7 @@ def importCategoryChildren(parent, categoryDirectory):
         
 def importArtciclesInCategory (categoryId, categoryDir):
     c = CONNECTION.cursor()
-    # c2 = CONNECTION.cursor()
+    #c2 = CONNECTION.cursor()
     c.execute("""
             SELECT DISTINCT (phpkb_articles.article_id), phpkb_articles.article_content, phpkb_articles.article_title 
             FROM phpkb_articles, phpkb_relations, phpkb_categories 
@@ -97,6 +107,24 @@ def importArtciclesInCategory (categoryId, categoryDir):
                 ''
                 ]).format(title, id)
             markdown = frontmatter + markdown
+            pattern = re.compile(r'`!\[.*\]\(.*\) *(.*?) *\{Article-ID:(\d+)\}.*?`', flags=re.MULTILINE)
+            # markdown = re.sub(pattern, r'[\2](https://kb.comindware.ru/article.php?id=\3)', markdown)
+            # markdown = re.sub(pattern, r'[\1](https://kb.comindware.ru/article.php?id=\2)', markdown)
+            for result in re.finditer(pattern, markdown):
+                articleId = result.group(2)
+                c.execute("""
+                    SELECT phpkb_articles.article_title 
+                    FROM phpkb_articles
+                    WHERE article_show='yes' 
+                    AND phpkb_articles.article_id={article_id}
+                    LIMIT 1
+                    """.format(article_id = articleId))
+                
+                foundArticle = c.fetchall()
+                if foundArticle:
+                    articleName = foundArticle[0][0]
+                    replacementRegex = r'[{0}](https://kb.comindware.ru/article.php?id=\2)'.format(articleName)
+                markdown = re.sub(pattern, replacementRegex, markdown, count=1)
             b.write(markdown)
             # print(html.escape(str(p)))
             pages += 1
@@ -130,17 +158,26 @@ def listCategories(categories):
 
 def main():
     
-    # sql_hostname = 'localhost'
-    ssh_host = input("PHPKB host:\n")
-    ssh_username = input('Username:\n')
-    ssh_password = getpass("Password:\n")
-    # ssh_port = 22
-    sql_username = ssh_username
-    sql_password = ssh_password
-    sql_database = 'phpkbv9'
-    sql_port = 3306
-    sql_port_local = 3307
-    sql_ip = '127.0.0.1'
+    with open(".serverCredentials.json", "r") as serverCredentialsFile: 
+        
+        serverCredentialsFileContent = serverCredentialsFile.read()
+        serverCredentials = json.loads(serverCredentialsFileContent) if serverCredentialsFileContent else dict()
+    
+    sql_hostname = serverCredentials['sql_hostname'] or input("SQL_hostname:\n")
+    ssh_host = serverCredentials['ssh_host'] or input("PHPKB host:\n")
+    ssh_username = serverCredentials['ssh_username'] or input('SSH username:\n')
+    ssh_password = getpass("SSH password:\n")
+    sql_username = serverCredentials['sql_username'] or input("SQL username:\n")
+    sql_password = getpass("SQL password:\n")
+    sql_database = serverCredentials['sql_database'] or input("Database name:\n")
+    sql_port = serverCredentials['sql_port'] or input("SQL remote port:\n")
+    sql_port_local = serverCredentials['sql_port_local'] or input("SQL local port:\n")
+    sql_ip = serverCredentials['sql_ip'] or input("SQL remote IP:\n")  
+        
+    # if input('Save credentials? Y / N').lower() == 'y':
+    #     with open(".serverCredentials.json", "w") as serverCredentialsFile: 
+    #         credentialsJson = json.dumps(serverCredentials, indent = 4)
+    #         serverCredentialsFile.write(credentialsJson)
 
     server = SSHTunnelForwarder(
         ssh_host,
@@ -180,7 +217,7 @@ def main():
             print("\n---------\n")
 
             while not (categoryChoice.isnumeric() and int(categoryChoice) <= len(categories)):
-                categoryChoice = input("Choose category to import (1 to {}): ".format(len(categories)))
+                categoryChoice = input("Choose category to browse (1 to {}): ".format(len(categories)))
                 if categoryChoice.isnumeric() and int(categoryChoice) <= len(categories):
                     categoryChoice = int(categoryChoice)-1
                     break
@@ -198,7 +235,7 @@ def main():
             if childrenCategoriesNumber > 0:
                 print ('\nIt has {} child categories:\n'.format(childrenCategoriesNumber))
                 listCategories(childrenCategories)
-                importChildren = input("\nImport all child categories and articles? Y/N: ".format(categoryId, categoryTitle)).lower() 
+                importChildren = input("\nEnter `Y` to import all child categories and articles?").lower()
             else: 
                 print ('\nIt has no child categories')
                 importChildren = input("\nImport all articles from this category? Y/N: ".format(categoryId, categoryTitle)).lower()

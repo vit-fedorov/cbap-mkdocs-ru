@@ -21,6 +21,7 @@ extra:
   companyName: 'Comindware'
   productName: 'Comindware Business Application Platform'
   productNameArchitect: 'Comindware Architect'
+  pdfEndOfBlockHack: ''
 
 plugins:
   - search:

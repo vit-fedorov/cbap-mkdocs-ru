@@ -122,7 +122,7 @@ variableType
 
 **[Сценарии. Определение, создание, настройка, использование][scenarios]**
 
-**[Настройка действий сценария][scenario_actions]**
+**[Настройка действий сценария][scenario_event_actions]**
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

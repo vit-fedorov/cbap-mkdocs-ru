@@ -104,7 +104,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
                 'title: {}',
                 'kbId: {}',
                 '---',
-                ''
+                '\n'
                 ]).format(title, id)
             markdown = frontmatter + markdown
             pattern = re.compile(r'`!\[.*\]\(.*\) *(.*?) *\{Article-ID:(\d+)\}.*?`', flags=re.MULTILINE)

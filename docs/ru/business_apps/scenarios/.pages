@@ -3,6 +3,5 @@ title: Сценарии
 nav:
     - index.md
     - scenario_event.md
-    - scenario_actions.md
     - scenario_variables.md
     - ...

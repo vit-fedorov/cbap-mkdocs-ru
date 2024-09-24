@@ -7,11 +7,3 @@
 INHERIT: mkdocs_ru.yml
 
 site_url: http://127.0.0.1/
-
-theme:
-  language: ru
-  logo: assets/images/cmw_icon.svg
-  favicon: assets/images/favicon.png
-
-extra_css:
-  - assets/stylesheets/extra.css

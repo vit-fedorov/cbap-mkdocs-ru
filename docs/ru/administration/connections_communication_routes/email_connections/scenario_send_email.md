@@ -401,7 +401,7 @@ hide: tags
              # последнюю добавленную версию документа.
              ?Vlozhenie document:currentRevision ?currentDocument.
              # Возвращаем содержимое текущего документа.
-             ?content document:content ?value.
+             ?currentDocument document:content ?value.
          }
          ```
 

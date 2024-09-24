@@ -6,4 +6,5 @@ nav:
     - process_receiving_connection.md
     - exchange_receiving_connection.md
     - imap_receiving_connection.md
+    - 'Пример: отправка, получение и обработка эл. почты в процессе': process_email_configure_include.md
     - ...

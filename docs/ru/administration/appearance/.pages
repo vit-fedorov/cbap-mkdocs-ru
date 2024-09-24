@@ -1,6 +1,6 @@
 title: Внешний вид
 
-collapse_single_pages: false
+collapse_single_pages: true
 
 nav:
     - themes

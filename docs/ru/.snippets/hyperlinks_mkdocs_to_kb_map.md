@@ -22,6 +22,12 @@
 
 [document_digital_signature]: {{ kbArticleURLPrefix }}2139
 
+[discussion_use]: {{ kbArticleURLPrefix }}2407
+
+[document_digital_signature]: {{ kbArticleURLPrefix }}2139
+
+[drawing_attribute_configure]: {{ kbArticleURLPrefix }}2575
+
 [drawing_attribute_file_import]: {{ kbArticleURLPrefix }}2574
 
 [formula_function_list]: {{ kbArticleURLPrefix }}2492
@@ -322,6 +328,10 @@
 
 [использование-вложенной-формы]: {{ kbArticleURLPrefix }}2271#использование-вложенной-формы
 
+[проверить-результат-выражения]:{{ kbArticleURLPrefix }}2149#mcetoc_1ghqvc7u81
+
 [редактирование-формы]: {{ kbArticleURLPrefix }}2271#mcetoc_1gk3dol905
+
+[шаблоны-экспорта]: {{ kbArticleURLPrefix }}2349
 
 {% endif %}

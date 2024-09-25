@@ -446,5 +446,5 @@ writeTo="errorsFile,EventLogCBAPErrors"/>
 
 **[Конфигурация журналирования. Настройка, скачивание журналов](https://kb.comindware.ru/article.php?id=2186)**
 
- [*‌* К началу](#) 
+
 

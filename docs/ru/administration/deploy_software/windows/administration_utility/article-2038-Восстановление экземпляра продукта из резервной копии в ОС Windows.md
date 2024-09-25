@@ -103,5 +103,5 @@ kbId: 2038
 
 **[Резервное копирование и восстановление Comindware Business Application Platform. Краткое руководство для ОС Windows](https://kb.comindware.ru/article.php?id=2101)**
 
- [*‌* К началу](#) 
+
 

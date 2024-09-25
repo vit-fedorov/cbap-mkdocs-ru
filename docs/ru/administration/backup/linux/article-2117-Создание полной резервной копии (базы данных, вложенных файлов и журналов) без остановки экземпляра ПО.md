@@ -216,5 +216,5 @@ tar -cvjf backup_$now.tar.bz2 /var/www/backups/backup_$now
 
 ***[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии](https://kb.comindware.ru/article.php?id=2335)***
 
- [*‌* К началу](#) 
+
 

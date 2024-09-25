@@ -223,5 +223,5 @@ systemctl status elasticsearch kafka nginx comindwareinstancename
 
 **`![](https://kb.comindware.ru/images/marker.png)Проверка и настройка конфигурации экземпляра ПО после восстановления из резервной копии {Article-ID:2618}`**
 
- [*‌* К началу](#) 
+
 

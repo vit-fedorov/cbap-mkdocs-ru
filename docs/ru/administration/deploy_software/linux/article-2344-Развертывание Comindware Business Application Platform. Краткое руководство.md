@@ -235,5 +235,5 @@ systemctl start elasticsearch
 Начальная страница Comindware Business Application Platform
 16. На этом этапе развертывание экземпляра **Comindware Business Application Platform** завершено и можно приступать к созданию и использованию бизнес-приложений.
 
- [*‌* К началу](#) 
+
 

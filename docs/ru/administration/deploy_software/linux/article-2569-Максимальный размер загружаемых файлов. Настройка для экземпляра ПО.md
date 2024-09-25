@@ -109,5 +109,5 @@ systemctl restart comindwareinstancename
 
 **[Пути и содержимое папок экземпляра ПО](https://kb.comindware.ru/article.php?id=2502)**
 
- [*‌* К началу](#) 
+
 

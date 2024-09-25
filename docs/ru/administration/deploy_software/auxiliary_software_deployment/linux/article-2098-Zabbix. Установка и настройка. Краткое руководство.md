@@ -40,5 +40,5 @@ Zabbix состоит из сервера и агентов:
 - [Мониторинг времени отклика сайта в Zabbix (на русском языке, serveradmin.ru)](https://serveradmin.ru/monitoring-vremeni-otklika-sayta-v-zabbix/)
 - [Мониторинг лог файла в Zabbix (на русском языке, serveradmin.ru)](https://serveradmin.ru/monitoring-log-fayla-v-zabbix/)
 
- [*‌* К началу](#) 
+
 

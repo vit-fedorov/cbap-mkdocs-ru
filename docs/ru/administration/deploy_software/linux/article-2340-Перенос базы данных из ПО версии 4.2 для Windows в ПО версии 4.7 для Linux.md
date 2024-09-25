@@ -233,5 +233,5 @@ reboot
 
 **[Развертывание Comindware Business Application Platform. Краткое руководство](https://kb.comindware.ru/article.php?id=2344)**
 
- [*‌* К началу](#) 
+
 

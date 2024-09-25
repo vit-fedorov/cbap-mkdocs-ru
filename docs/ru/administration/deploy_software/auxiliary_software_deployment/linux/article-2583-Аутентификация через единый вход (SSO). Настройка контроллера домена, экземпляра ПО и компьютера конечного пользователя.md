@@ -666,5 +666,5 @@ KRB5_TRACE=/dev/stdout kinit -k -t /etc/nginx/<authuser>.keytab HTTP/<DCName>.<d
 
 **[Аутентификация через OpenID Connect. Настройка подключения и служб](https://kb.comindware.ru/article.php?id=2329)**
 
- [*‌* К началу](#) 
+
 

@@ -167,5 +167,5 @@ indices.id_field_data.enabled: true
 ingest.geoip.downloader.enabled: false
 ```
 
- [*‌* К началу](#) 
+
 

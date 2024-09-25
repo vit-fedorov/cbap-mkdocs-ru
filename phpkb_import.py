@@ -103,6 +103,9 @@ def importArtciclesInCategory (categoryId, categoryDir):
             # Remove redundant TOC
             pattern = re.compile(r'## Содержание.*\n*(.*\t*-.*\n)*\n', flags=re.MULTILINE)
             markdown = re.sub(pattern, r'', markdown)
+            # Remove redundant [*‌* К началу](#) links
+            pattern = re.compile(r'\[.*К началу\]\(#\)', flags=re.MULTILINE)
+            markdown = re.sub(pattern, r'', markdown)
             # Compile and add frontmatter
             frontmatter = '\n'.join([
                 '---',

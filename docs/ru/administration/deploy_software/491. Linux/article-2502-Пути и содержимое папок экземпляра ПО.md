@@ -14,7 +14,7 @@ kbId: 2502
 
 ## Введение
 
-В этой статье представлена информация о расположении файлов и папок экземпляра ПО **Comindware Business Application Platform**в операционных системах семейства [Linux](#mcetoc_1hchr2nua1) (Альт Сервер, Astra Linux, РЕД ОС, Rocky Linux и Ubuntu) и [Windows.](#mcetoc_1hpdpt8tk1)
+В этой статье представлена информация о расположении файлов и папок экземпляра ПО **{{ productName }}**в операционных системах семейства [Linux](#mcetoc_1hchr2nua1) (Альт Сервер, Astra Linux, РЕД ОС, Rocky Linux и Ubuntu) и [Windows.](#mcetoc_1hpdpt8tk1)
 
 ## Содержимое каталогов — Linux
 
@@ -68,7 +68,7 @@ kbId: 2502
 
 **[Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта](https://kb.comindware.ru/article.php?id=2036)**
 
-**[Антивирусное ПО. Настройка исключений: пути и файлы Comindware Business Application Platform](https://kb.comindware.ru/article.php?id=2581)**
+**[Антивирусное ПО. Настройка исключений: пути и файлы {{ productName }}](https://kb.comindware.ru/article.php?id=2581)**
 
 **[Подсистема журналирования](https://kb.comindware.ru/article.php?id=2501)**
 

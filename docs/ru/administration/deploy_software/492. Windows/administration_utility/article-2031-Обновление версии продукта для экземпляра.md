@@ -13,7 +13,7 @@ kbId: 2031
 
 ## Введение
 
-Для развернутого экземпляра можно сменить версию продукта **Comindware Business Application Platform**.
+Для развернутого экземпляра можно сменить версию продукта **{{ productName }}**.
 
 При обновлении версии продукта для экземпляра Утилита администрирования выполняет следующие операции:
 
@@ -66,5 +66,5 @@ kbId: 2031
 
 **[Пути и содержимое папок экземпляра ПО](https://kb.comindware.ru/article.php?id=2502)**
 
-**[Установка продукта Comindware Business Application Platform](https://kb.comindware.ru/article.php?id=2028)**
+**[Установка продукта {{ productName }}](https://kb.comindware.ru/article.php?id=2028)**
 

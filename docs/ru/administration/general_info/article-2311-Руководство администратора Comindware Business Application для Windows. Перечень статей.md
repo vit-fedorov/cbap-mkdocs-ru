@@ -5,11 +5,11 @@ kbId: 2311
 
 # Руководство администратора Comindware Business Application для Windows. Перечень статей
 
-В настоящем руководстве представлены сведения для администраторов ПО **Comindware Business Application Platform** для операционной системы Windows.
+В настоящем руководстве представлены сведения для администраторов ПО **{{ productName }}** для операционной системы Windows.
 
 ## Определения
 
-**ПО** — программное обеспечение Comindware Business Application Platform.
+**ПО** — программное обеспечение {{ productName }}.
 
 **Экземпляр ПО** — установленный веб-сайт на основе ПО.
 
@@ -17,7 +17,7 @@ kbId: 2311
 
 1. Утилита администрирования Comindware
 	1. [Установка и запуск Утилиты администрирования Comindware](https://kb.comindware.ru/article.php?id=2027)
-	2. [Установка продукта Comindware Business Application Platform](https://kb.comindware.ru/article.php?id=2294)
+	2. [Установка продукта {{ productName }}](https://kb.comindware.ru/article.php?id=2294)
 	3. [Настройка конфигурации Утилиты администрирования Comindware](https://kb.comindware.ru/article.php?id=2295)
 	4. [Диагностика экземпляра продукта](https://kb.comindware.ru/article.php?id=2028)
 	5. [Обновление версии продукта для экземпляра](https://kb.comindware.ru/article.php?id=2029)

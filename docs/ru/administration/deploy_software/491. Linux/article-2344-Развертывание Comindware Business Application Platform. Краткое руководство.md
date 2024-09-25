@@ -1,50 +1,56 @@
 ---
-title: Развертывание Comindware Business Application Platform. Краткое руководство
+title: Развертывание {{ productName }}. Краткое руководство
 kbId: 2344
 ---
 
-# Развертывание Comindware Business Application Platform. Краткое руководство
+# Развертывание {{ productName }}. Краткое руководство
 
 ## Содержание
 
 - [Введение](#mcetoc_1ga10l2ir0)
-- [Установка и запуск Comindware Business Application Platform](#mcetoc_1ga10nbi21)
-- [Инициализация Comindware Business Application Platform](#mcetoc_1ga11542i2)
+- [Установка и запуск {{ productName }}](#mcetoc_1ga10nbi21)
+- [Инициализация {{ productName }}](#mcetoc_1ga11542i2)
 
 ## Введение
 
 Для работы **Comindware Business Application** Platform требуются операционная система, сервер базы данных, веб-сервер, обратный прокси-сервер и сервер журналов.
 
-Для быстрого развертывания Comindware Business Application Platform в среде Linux компания **Comindware** предоставляет дистрибутив с установщиком, настраивающим необходимое программное обеспечение. См. статью «[Comindware Business Application Platform 4.7. Перечень стороннего программного обеспечения для Linux](https://kb.comindware.ru/article.php?id=2398)».
+Для быстрого развертывания {{ productName }} в среде Linux компания **Comindware** предоставляет дистрибутив с установщиком, настраивающим необходимое программное обеспечение. См. статью «[{{ productName }} 4.7. Перечень стороннего программного обеспечения для Linux](https://kb.comindware.ru/article.php?id=2398)».
 
-В настоящем документе представлены инструкции по развертыванию и инициализации **Comindware Business Application Platform** из дистрибутива в операционных системах Альт Сервер, Astra Linux 1.7.0,  РЕД ОС, Rocky Linux и Ubuntu Server 22.04.
+В настоящем документе представлены инструкции по развертыванию и инициализации **{{ productName }}** из дистрибутива в операционных системах Альт Сервер, Astra Linux 1.7.0,  РЕД ОС, Rocky Linux и Ubuntu Server 22.04.
 
-## Установка и запуск Comindware Business Application Platform
+## Установка и запуск {{ productName }}
 
-1. Перейдите в режим суперпользователя:
+1. Перейдите в режим суперпользователя:
+
 
 ```
 sudo -i
 ```
-
-или
 
-```
+
+или
+
+
+```{{ productName }}
 su -
 ```
-2. Скачайте и распакуйте дистрибутив **Comindware Business Application Platform** по ссылке, предоставленной компанией Comindware (`X.X.XXXX.X` — номер версии ПО):
+2. Скачайте и распакуйте дистрибутив **Comindware Business Application Platform** по ссылке, предоставленной компанией Comindware (`X.X.XXXX.X` — номер версии ПО):
+
 
 ```
 tar -xf X.X-release-ru-X.X.XXXX.X.alt.tar.gz
 ```
 
-или
+или
+
 
 ```
 tar -xf X.X-release-ru-X.X.XXXX.X.astra.tar.gz
 ```
 
-или
+или
+
 
 ```
 tar -xf X.X-release-ru-X.X.XXXX.X.debian.tar.gz
@@ -69,13 +75,15 @@ tar -xf X.X-release-ru-X.X.XXXX.X.ubuntu.tar.gz
 ```
 3. 
 4. 
-5. Перейдите в распакованную папку:
+5. Перейдите в распакованную папку:
+
 
 ```
 cd CMW_Alt/
 ```
 
-или
+или
+
 
 ```
 cd CMW_Astra/
@@ -104,11 +112,12 @@ cd CMW_Redos/
 ```
 cd CMW_Ubuntu_22.04/
 ```
-6. Установите ПО из дистрибутива:
+6. Установите ПО из дистрибутива:
 
-```
-sh install.sh -p -k [-i=<instanceName>] [-e] [-d=demo] [-u=www-data] [-g=www-data]  
 
+```{{ productName }}
+sh install.sh -p -k [-i=<instanceNa{{ productName }}w-data]  
+{{ productName }}
 ```
 
 Скрипт `install.sh` поддерживает следующие ключи:
@@ -123,7 +132,8 @@ sh install.sh -p -k [-i=<instanceName>] [-e] [-d=demo] [-u=www-data] [-g=www-dat
 	- `h` — вызов краткой справки по использованию скрипта (этот ключ следует указывать только без остальных ключей);
 	- `kh=hostname` — использовать указанный хост для подключения к ПО Kafka (необязательный ключ);
 	- `kp=portnumber` — использовать указанный порт для подключения к ПО Kafka (необязательный ключ);
-	- `i=<instanceName>` — создать экземпляр ПО с указанным именем (необязательный ключ). Имя экземпляра по умолчанию: `cmwdata`.
+	- `i=<instanceName>` — создать экземпляр ПО с указанным именем (необязательный ключ). Имя экземпляра по умолчанию: `cmwdata`.
+
 	
 	Внимание!
 	
@@ -152,7 +162,8 @@ sh install.sh -p -k [-i=<instanceName>] [-e] [-d=demo] [-u=www-data] [-g=www-dat
 ```
 reboot
 ```
-
+
+
 После перезагрузки ОС заново запустите [установку ПО из дистрибутива (шаг 6)](#install.sh).
 8. Дождитесь завершения установки ПО.
 9. Удостоверьтесь, что основные сервисы установлены, запущены и имеют статус `Active (running)`:   
@@ -165,11 +176,11 @@ systemctl status elasticsearch
 ```
 
 Здесь `<instanceName>` — имя экземпляра ПО.
-10. Если какой-либо сервис не работает, запустите его:   
+10. Если какой-ли{{ productName }}
 
 ```
-systemctl start comindware<instanceName>  
-systemctl start kafka  
+systemctl start comindware<instanceName>  {{ productName }}
+systemctl start kafka  {{ productName }}
 systemctl start nginx  
 systemctl start elasticsearch  
 
@@ -180,12 +191,14 @@ systemctl start elasticsearch
 
 1. Запустите веб-браузер и в адресной строке введите: `localhost`
 2. Дождитесь запуска и отображения веб-сайта **Comindware Business Application Platform**, что может занять примерно 5 минут.
-3. Откроется страница создания аккаунта администратора **Comindware Business Application Platform**.
+3. Откроется страница создания аккаунта администратора **Comindware Business Application Platform**.
+
 
 ![Страница создания аккаунта администратора](https://kb.comindware.ru/assets/Picture14.png)
 
 Страница создания аккаунта администратора
-4. Введите учётные данные аккаунта администратора и нажмите кнопку «**Создать аккаунт**».
+4. Введите учётные данные аккаунта администратора и нажмите кнопку «**Создать аккаунт**».
+
 
 Внимание!
 
@@ -196,28 +209,32 @@ systemctl start elasticsearch
 ![Страница инициализации системы](https://kb.comindware.ru/assets/img_63452e8529cca.png)
 
 Страница инициализации системы
-6. Если при установке продукта был указан ключ `-d=clear` или этот ключ был опущен, откроется страница активации ПО.
+6. Если при установке продукта был указан ключ `-d=clear` или этот ключ был опущен, откроется страница активации ПО.
+
 
 ![Страница активации продукта](https://kb.comindware.ru/assets/Picture15.png)
 
 Страница активации продукта
 7. Для первоначального ознакомления с ПО этап активации можно пропустить, нажав кнопку «**Пропустить**».
-8. При необходимости откроется страница настройки подключения к службе Elasticsearch.
+8. При необходимости откроется страница настройки подключения к службе Elasticsearch.
+{{ productName }}
 
-![Настройка подключения к Elasticsearch](https://kb.comindware.ru/assets/Picture16.png)
+![Настройка подключен{{ productName }}e.ru/assets/Picture16.png)
 
-Настройка подключения к Elasticsearch
-9. В поле «**URI**» введите адрес сервера Elasticsearch, например: `http://localhost:9200`
+Настройка подключен{{ productName }}
+9. В поле «**URI**» введите адрес сервера Ela{{ productName }}9200`
 10. Оставьте **Имя пользователя**и **Пароль** Elasticsearch пустыми. Или введите их, если в конфигурации Elasticsearch включена аутентификация.
 11. Установите уникальный **Префикс индекса**. Он служит для идентификации в Elasticsearch данных экземпляра ПО. Поэтому во избежание конфликтов данных для каждого экземпляра ПО следует указывать собственный префикс индекса.
 12. Нажмите кнопку «**Далее**».
-13. При необходимости откроется страница инициализации данных в Elasticsearch.
+13. При необходимости откроется страница инициализации данных в Elasticsearch.
+
 
 ![Страница инициализации данных в Elasticsearch](https://kb.comindware.ru/assets/Picture17.png)
 
 Страница инициализации данных в Elasticsearch
 14. Нажмите кнопку «**Обновить**».
-15. Дождитесь открытия начальной страницы **Comindware Business Application Platform**.
+15. Дождитесь открытия начальной страницы **Comindware Business Application Platform**.
+
 
 ![Начальная страница Comindware Business Application Platform](https://kb.comindware.ru/assets/img_63452e9321257.png)
 

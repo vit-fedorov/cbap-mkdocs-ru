@@ -14,7 +14,8 @@ kbId: 2027
 ## Установка Утилиты администрирования Comindware
 
 1. Распакуйте архив с Утилитой администрирования в папку `ComindwarePlatform``_<номер версии>.``windows`
-2. Откройте папку `ComindwarePlatform``_<номер
+2. Откройте папку `ComindwarePlatform``_<номер
+
  версии>.``windows`
 3. Перейдите в папку `CMW``_``Windows`
 4. Запустите файл `Platform``.``Install``.``msi` 
@@ -71,6 +72,6 @@ msiexec /i "D:\Platform.Install.msi" INSTALLFOLDER="D:\Comindware Install and Ad
 Главное окно Утилиты администрирования
 
 ## Связанные статьи
-
+{{ productName }}
 **[Установка продукта Comindware Business Application Platform](https://kb.comindware.ru/article.php?id=2028)**
 

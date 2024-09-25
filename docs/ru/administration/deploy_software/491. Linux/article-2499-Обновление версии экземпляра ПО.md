@@ -13,23 +13,27 @@ kbId: 2499
 
 ## Введение
 
-В данной статье представлены краткие инструкции по обновлению до 4.7.2285 версии экземпляра ПО **Comindware Business Application Platform** (далее — ПО, экземпляр ПО) под управлением ОС Альт Сервер, Astra Linux, РЕД ОС, Rocky Linux и Ubuntu.
+В данной статье представлены краткие инструкции по обновлению до 4.7.2285 версии экземпляра ПО **{{ productName }}** (далее — ПО, экземпляр ПО) под управлением ОС Альт Сервер, Astra Linux, РЕД ОС, Rocky Linux и Ubuntu.
 
 ## Обновление версии ПО
 
 1. Создайте и перенесите во внешнее хранилище резервную копию базы данных экземпляра ПО. См. статью *«[Резервное копирование. Настройка и запуск, просмотр журнала сеансов](https://kb.comindware.ru/article.php?id=2190)»*.
-2. Перейдите в режим суперпользователя:
+2. Перейдите в режим суперпользователя:
+
 
 ```
 sudo -i
 ```
-
-или
+
+
+или
+
 
 ```
 su -
 ```
-3. Остановите экземпляр ПО и его вспомогательные службы и удостоверьтесь, что они остановлены:
+3. Остановите экземпляр ПО и его вспомогательные службы и удостоверьтесь, что они остановлены:
+
 
 ```
 systemctl stop apigateway<instanceName> comindware<instanceName>  
@@ -37,53 +41,64 @@ systemctl status apigateway<instanceName> comindware<instanceName>
 ```
 
 Здесь *`<instanceName>`*— имя экземпляра ПО.
-4. Проверьте, выполняется ли сервис `Comindware.Adapter.Agent.exe`:
+4. Проверьте, выполняется ли сервис `Comindware.Adapter.Agent.exe`:
+
 
 ```
 ps fax | grep Agent
 ```
 
-	- Если процесс `Comindware.Adapter.Agent.exe`, выполняется, завершите его по `PID`:
+	- Если процесс `Comindware.Adapter.Agent.exe`, выполняется, завершите его по `PID`:
+
 	
 	```
 	kill -9 <PID>
 	```
-5. Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО:
+5. Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО:
+
 
 ```
 rm -rf CMW_Alt
 ```
-
-или
+
+
+или
+
 
 ```
 rm -rf CMW_Astra
 ```
-
+
+
 или   
 
 ```
 rm -rf CMW_Redos
 ```
-
+
+
 или   
 
 ```
 rm -rf CMW_Rocky
 ```
-
-или
+
+
+или
+
 
 ```
 rm -rf CMW_Ubuntu_22.04
 ```
-6. Скачайте и распакуйте дистрибутив с новой версией ПО (`X.X.XXX.X` — номер версии ПО):
+6. Скачайте и распакуйте дистрибутив с новой версией ПО (`X.X.XXX.X` — номер версии ПО):
+
 
 ```
 tar -xf X.X.XXX.X.alt.tar.gz
 ```
 
-или
+или
+
 
 ```
 tar -xf X.X.XXX.X.astra.tar.gz
@@ -106,13 +121,15 @@ tar -xf X.X.XXX.X.rocky.tar.gz
 ```
 tar -xf X.X.XXX.X.ubuntu.tar.gz
 ```
-7. Перейдите в распакованную папку:
+7. Перейдите в распакованную папку:
+
 
 ```
 cd CMW_Alt/scripts/cbap
 ```
 
-или
+или
+
 
 ```
 cd CMW_Astra/scripts/cbap
@@ -140,7 +157,8 @@ cd CMW_Ubuntu22.04/scripts/cbap
 ```
 cp /etc/nginx/sites-available/comindware<instanceName> $HOME            
 ```
-
+
+
 или   
 
 ```
@@ -152,7 +170,8 @@ cp /etc/nginx/conf.d/comindware<instanceName> $HOME
 ```
 systemctl status comindware*
 ```
-11. Запустите установку распакованного дистрибутива ПО:
+11. Запустите установку распакованного дистрибутива ПО:
+
 
 ```
 bash install.sh        
@@ -162,7 +181,8 @@ bash install.sh
 ```
 ls /var/www/.cmw_version/
 ```
-13. Перейдите в директорию скриптов для работы с экземпляром ПО и запустите его обновление до требуемой версии:
+13. Перейдите в директорию скриптов для работы с экземпляром ПО и запустите его обновление до требуемой версии:
+
 
 ```
 cd ../instance/   
@@ -182,7 +202,8 @@ cat /etc/nginx/sites-available/comindware<instanceName>
 	- При необходимости восстановите конфигурацию NGINX, [сохранённую ранее](#NginxBackup).
 15. Откройте для редактирования файл конфигурации `/var/www/<instanceName>/apigateway.json`.
 
-	- Замените в конфигурации адрес сервера Kafka:
+	- Замените в конфигурации адрес сервера Kafka:
+
 	
 	```
 	"Kafka": {  
@@ -192,7 +213,8 @@ cat /etc/nginx/sites-available/comindware<instanceName>
 	
 	```
 16. Если выполняется обновление с версии ниже 4.6.1140.0, откройте для редактирования файл конфигурации экземпляра ПО `/usr/share/comindware/configs/instance/<instanceName>.yml`.
-	- Замените в конфигурации следующие директивы:
+	- Замените в конфигурации следующие директивы:
+
 	
 	```
 	# исходная директива  
@@ -213,7 +235,8 @@ cat /etc/nginx/sites-available/comindware<instanceName>
 	userStorage.type: LocalDisk   
 	userStorage.localDisk.path: /var/streams/<instanceName>
 	```
-	- Добавьте в конфигурацию следующие директивы:
+	- Добавьте в конфигурацию следующие директивы:
+
 	
 	```
 	# Имя конфигурации   
@@ -229,18 +252,21 @@ cat /etc/nginx/sites-available/comindware<instanceName>
 	    - 2  
 	    - 3
 	```
-17. Перезапустите сервисы, настройки которых были изменены:
+17. Перезапустите сервисы, настройки которых были изменены:
+
 
 ```
 systemctl restart apigateway<instanceName> comindware<instanceName>
 ```
 
-	- Проверьте конфигурацию NGINX:
+	- Проверьте конфигурацию NGINX:
+
 	
 	```
 	nginx -t
 	```
-	- Если тест пройден, перезапустите NGINX:
+	- Если тест пройден, перезапустите NGINX:
+
 	
 	```
 	nginx -s reload                

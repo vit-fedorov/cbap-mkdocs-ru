@@ -50,7 +50,7 @@ kbId: 2596
 
 ## Введение
 
-В этой статье представлены инструкции по полному удалению вспомогательных компонентов ПО **Comindware Business Application Platform**:
+В этой статье представлены инструкции по полному удалению вспомогательных компонентов ПО **{{ productName }}**:
 
 - среды исполнения Java Runtime Environment (JRE);
 - брокера сообщений Kafka;
@@ -67,25 +67,27 @@ kbId: 2596
 
 Примечание
 
-Удаление ПО **Comindware Business Application Platform** по инструкциям в этой статье не приведёт к удалению установленных версий ПО и развёрнутых экземпляров ПО.
+Удаление ПО **{{ productName }}** по инструкциям в этой статье не приведёт к удалению установленных версий ПО и развёрнутых экземпляров ПО.
 
 Сведения о расположении файлов экземпляров ПО см. в статье *«[Пути и содержимое папок экземпляра ПО](https://kb.comindware.ru/article.php?id=2502)»*.
 
 ## Определения
 
-- **ПО** — программное обеспечение **Comindware Business Application Platform**.
+- **ПО** — программное обеспечение **{{ productName }}**.
 - **Экземпляр ПО** — развёрнутый веб-сервер на основе ПО.
 
 ## Остановка экземпляров ПО — все ОС Linux
 
 Перед удалением вспомогательных компонентов ПО, остановите все работающие экземпляры ПО.
 
-1. Перейдите в режим суперпользователя:
+1. Перейдите в режим суперпользователя:
+
 
 ```
 sudo -i
 ```
-2. Остановите экземпляр ПО (*`<instancename>`* — имя экземпляра ) и удостоверьтесь, что он остановлен:
+2. Остановите экземпляр ПО (*`<instancename>`* — имя экземпляра ) и удостоверьтесь, что он остановлен:
+
 
 ```
 systemctl stop comindware<instancename>  
@@ -95,7 +97,8 @@ systemctl status comindware<instancename>
 
 ## Удаление компонентов ПО — Альт Сервер
 
-1. Перед выполнением последующих инструкций перейдите в режим суперпользователя:
+1. Перед выполнением последующих инструкций перейдите в режим суперпользователя:
+
 
 ```
 sudo -i
@@ -135,7 +138,8 @@ rm -rf /usr/share/kafka
 ```
 rm -rf /var/log/comindware/.kafka
 ```
-4. Удалите конфигурацию Kafka:
+4. Удалите конфигурацию Kafka:
+
 
 ```
 rm /var/www/.cmw_environment/kafka
@@ -143,12 +147,14 @@ rm /var/www/.cmw_environment/kafka
 
 ### Удаление Mono
 
-1. Удалите пакеты `mono-core` и `mono-devel` вместе с их зависимостями:
+1. Удалите пакеты `mono-core` и `mono-devel` вместе с их зависимостями:
+
 
 ```
 apt-get remove --purge -y mono-devel mono-core
 ```
-2. Удалите конфигурацию Mono:
+2. Удалите конфигурацию Mono:
+
 
 ```
 rm /var/www/.cmw_environment/mono
@@ -166,7 +172,8 @@ rm -rf /usr/share/dotnet/
 ```
 rm /usr/bin/dotnet
 ```
-3. Удалите конфигурацию .NET:
+3. Удалите конфигурацию .NET:
+
 
 ```
 rm /var/www/.cmw_environment/dotnet
@@ -180,7 +187,8 @@ rm /var/www/.cmw_environment/dotnet
 ```
 apt-get remove --purge -y nginx
 ```
-3. Удалите конфигурацию NGINX:
+3. Удалите конфигурацию NGINX:
+
 
 ```
 rm /var/www/.cmw_environment/nginx
@@ -188,7 +196,8 @@ rm /var/www/.cmw_environment/nginx
 
 ## Удаление компонентов ПО — Astra Linux
 
-1. Перед выполнением последующих инструкций перейдите в режим суперпользователя:
+1. Перед выполнением последующих инструкций перейдите в режим суперпользователя:
+
 
 ```
 sudo -i
@@ -201,7 +210,8 @@ sudo -i
 ```
 apt-get remove --purge -y bellsoft-java17-runtime
 ```
-2. Удалите конфигурацию JRE:
+2. Удалите конфигурацию JRE:
+
 
 ```
 rm /var/www/.cmw_environment/java
@@ -228,7 +238,8 @@ rm -rf /usr/share/kafka
 ```
 rm -rf /var/log/comindware/.kafka
 ```
-4. Удалите конфигурацию Kafka:
+4. Удалите конфигурацию Kafka:
+
 
 ```
 rm /var/www/.cmw_environment/kafka
@@ -236,7 +247,8 @@ rm /var/www/.cmw_environment/kafka
 
 ### Удаление Mono
 
-1. Удалите бинарные файлы Mono:
+1. Удалите бинарные файлы Mono:
+
 
 ```
 rm -rf /etc/mono/ \  
@@ -265,7 +277,8 @@ rm -rf /usr/share/man/man1/xsp4.1.gz \
     /usr/share/man/man1/fastcgi-mono-server4.1.gz  
 
 ```
-4. Удалите конфигурацию Mono:
+4. Удалите конфигурацию Mono:
+
 
 ```
 rm /var/www/.cmw_environment/mono
@@ -283,7 +296,8 @@ rm -rf /usr/share/dotnet/
 ```
 rm /usr/bin/dotnet
 ```
-3. Удалите конфигурацию .NET:
+3. Удалите конфигурацию .NET:
+
 
 ```
 rm /var/www/.cmw_environment/dotnet
@@ -297,7 +311,8 @@ rm /var/www/.cmw_environment/dotnet
 ```
 apt-get remove --purge -y nginx nginx-core nginx-common
 ```
-3. Удалите конфигурацию NGINX:
+3. Удалите конфигурацию NGINX:
+
 
 ```
 rm /var/www/.cmw_environment/nginx
@@ -305,7 +320,8 @@ rm /var/www/.cmw_environment/nginx
 
 ## Удаление компонентов ПО — Debian
 
-1. Перед выполнением последующих инструкций перейдите в режим суперпользователя:
+1. Перед выполнением последующих инструкций перейдите в режим суперпользователя:
+
 
 ```
 sudo -i
@@ -323,7 +339,8 @@ apt-get remove --purge -y axiomjdk-java17-runtime-pro
 ```
 rm /usr/bin/java
 ```
-3. Удалите конфигурацию JRE:
+3. Удалите конфигурацию JRE:
+
 
 ```
 rm /var/www/.cmw_environment/java
@@ -350,7 +367,8 @@ rm -rf /usr/share/kafka
 ```
 rm -rf /var/log/comindware/.kafka
 ```
-4. Удалите конфигурацию Kafka:
+4. Удалите конфигурацию Kafka:
+
 
 ```
 rm /var/www/.cmw_environment/kafka
@@ -358,12 +376,14 @@ rm /var/www/.cmw_environment/kafka
 
 ### Удаление Mono
 
-1. Удалите пакет Mono `mono-runtime` и его зависимости:
+1. Удалите пакет Mono `mono-runtime` и его зависимости:
+
 
 ```
 apt-get remove --purge -y mono-runtime
 ```
-2. Удалите конфигурацию Mono:
+2. Удалите конфигурацию Mono:
+
 
 ```
 rm /var/www/.cmw_environment/mono
@@ -381,7 +401,8 @@ rm -rf /usr/share/dotnet/
 ```
 rm /usr/bin/dotnet
 ```
-3. Удалите конфигурацию .NET:
+3. Удалите конфигурацию .NET:
+
 
 ```
 rm /var/www/.cmw_environment/dotnet
@@ -396,7 +417,8 @@ rm /var/www/.cmw_environment/dotnet
 apt-get remove --purge -y nginx-common  
 
 ```
-3. Удалите конфигурацию NGINX:
+3. Удалите конфигурацию NGINX:
+
 
 ```
 rm /var/www/.cmw_environment/nginx
@@ -416,7 +438,8 @@ yum autoremove -y bellsoft-java17-runtime
 ```
 rm /usr/bin/java
 ```
-3. Удалите конфигурацию JRE:
+3. Удалите конфигурацию JRE:
+
 
 ```
 rm /var/www/.cmw_environment/java
@@ -443,7 +466,8 @@ rm -rf /usr/share/kafka
 ```
 rm -rf /var/log/comindware/.kafka
 ```
-4. Удалите конфигурацию Kafka:
+4. Удалите конфигурацию Kafka:
+
 
 ```
 rm /var/www/.cmw_environment/kafka
@@ -451,7 +475,8 @@ rm /var/www/.cmw_environment/kafka
 
 ### Удаление Mono
 
-1. Удалите бинарные файлы Mono:
+1. Удалите бинарные файлы Mono:
+
 
 ```
 rm -rf /etc/mono/ \  
@@ -508,7 +533,8 @@ rm -rf /usr/bin/xsp* \
     /usr/bin/csharp \  
     /usr/bin/asp-*
 ```
-3. Удалите конфигурацию Mono:
+3. Удалите конфигурацию Mono:
+
 
 ```
 rm /var/www/.cmw_environment/mono
@@ -526,7 +552,8 @@ rm -rf /usr/share/dotnet/
 ```
 rm /usr/bin/dotnet
 ```
-3. Удалите конфигурацию .NET:
+3. Удалите конфигурацию .NET:
+
 
 ```
 rm /var/www/.cmw_environment/dotnet
@@ -540,7 +567,8 @@ rm /var/www/.cmw_environment/dotnet
 ```
 yum autoremove -y nginx
 ```
-3. Удалите конфигурацию NGINX:
+3. Удалите конфигурацию NGINX:
+
 
 ```
 rm /var/www/.cmw_environment/nginx
@@ -548,7 +576,8 @@ rm /var/www/.cmw_environment/nginx
 
 ## Удаление компонентов ПО — Rocky Linux
 
-1. Перед выполнением последующих инструкций перейдите в режим суперпользователя:
+1. Перед выполнением последующих инструкций перейдите в режим суперпользователя:
+
 
 ```
 sudo -i
@@ -566,7 +595,8 @@ yum autoremove -y bellsoft-java17-runtime
 ```
 rm /usr/bin/java
 ```
-3. Удалите конфигурацию JRE:
+3. Удалите конфигурацию JRE:
+
 
 ```
 rm /var/www/.cmw_environment/java
@@ -593,7 +623,8 @@ rm -rf /usr/share/kafka
 ```
 rm -rf /var/log/comindware/.kafka
 ```
-4. Удалите конфигурацию Kafka:
+4. Удалите конфигурацию Kafka:
+
 
 ```
 rm /var/www/.cmw_environment/kafka
@@ -601,7 +632,8 @@ rm /var/www/.cmw_environment/kafka
 
 ### Удаление Mono
 
-1. Удалите бинарные файлы Mono:
+1. Удалите бинарные файлы Mono:
+
 
 ```
 rm -rf /etc/mono/ \  
@@ -658,7 +690,8 @@ rm -rf /usr/bin/xsp* \
     /usr/bin/csharp \  
     /usr/bin/asp-*
 ```
-3. Удалите конфигурацию Mono:
+3. Удалите конфигурацию Mono:
+
 
 ```
 rm /var/www/.cmw_environment/mono
@@ -676,7 +709,8 @@ rm -rf /usr/share/dotnet/Rocky
 ```
 rm /usr/bin/dotnet
 ```
-3. Удалите конфигурацию .NET:
+3. Удалите конфигурацию .NET:
+
 
 ```
 rm /var/www/.cmw_environment/dotnet
@@ -690,7 +724,8 @@ rm /var/www/.cmw_environment/dotnet
 ```
 yum autoremove -y nginx nginx-core nginx-filesystem
 ```
-3. Удалите конфигурацию NGINX:
+3. Удалите конфигурацию NGINX:
+
 
 ```
 rm /var/www/.cmw_environment/nginx
@@ -698,7 +733,8 @@ rm /var/www/.cmw_environment/nginx
 
 ## Удаление компонентов ПО — Ubuntu
 
-1. Перед выполнением последующих инструкций перейдите в режим суперпользователя:
+1. Перед выполнением последующих инструкций перейдите в режим суперпользователя:
+
 
 ```
 sudo -i
@@ -716,7 +752,8 @@ apt-get remove --purge -y bellsoft-java17-runtime
 ```
 rm /usr/bin/java
 ```
-3. Удалите конфигурацию JRE:
+3. Удалите конфигурацию JRE:
+
 
 ```
 rm /var/www/.cmw_environment/java
@@ -743,7 +780,8 @@ rm -rf /usr/share/kafka
 ```
 rm -rf /var/log/comindware/.kafka
 ```
-4. Удалите конфигурацию Kafka:
+4. Удалите конфигурацию Kafka:
+
 
 ```
 rm /var/www/.cmw_environment/kafka
@@ -751,12 +789,14 @@ rm /var/www/.cmw_environment/kafka
 
 ### Удаление Mono
 
-1. Удалите пакеты Mono `mono-devel` и `mono-runtime-common` вместе с их зависимостями:
+1. Удалите пакеты Mono `mono-devel` и `mono-runtime-common` вместе с их зависимостями:
+
 
 ```
 apt-get remove --purge -y mono-devel mono-runtime-common
 ```
-2. Удалите конфигурацию Mono:
+2. Удалите конфигурацию Mono:
+
 
 ```
 rm /var/www/.cmw_environment/mono
@@ -776,7 +816,8 @@ apt-get remove --purge -y dotnet-sdk-6.0 \
     dotnet-host \  
     dotnet-apphost-pack-6.0
 ```
-2. Удалите конфигурацию .NET:
+2. Удалите конфигурацию .NET:
+
 
 ```
 rm /var/www/.cmw_environment/dotnet
@@ -790,7 +831,8 @@ rm /var/www/.cmw_environment/dotnet
 ```
 apt-get remove --purge -y nginx-common
 ```
-3. Удалите конфигурацию NGINX:
+3. Удалите конфигурацию NGINX:
+
 
 ```
 rm /var/www/.cmw_environment/nginx

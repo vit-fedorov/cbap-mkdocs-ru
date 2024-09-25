@@ -16,7 +16,7 @@ kbId: 2569
 
 ## Введение
 
-В данной статье представлены инструкции по настройке максимально допустимого размера загружаемых файлов для экземпляра ПО **Comindware Business Application Platform** в операционных системах Windows и Linux (Astra Linux, Альт Сервер, РЕД ОС, Rocky Linux, Ubuntu и т. п.).
+В данной статье представлены инструкции по настройке максимально допустимого размера загружаемых файлов для экземпляра ПО **{{ productName }}** в операционных системах Windows и Linux (Astra Linux, Альт Сервер, РЕД ОС, Rocky Linux, Ubuntu и т. п.).
 
 К загружаемым файлам относятся документы и изображения, прикреплённые к атрибутам типов «[**Документ**](https://kb.comindware.ru/article.php?id=2241)», «[**Изображение**](https://kb.comindware.ru/article.php?id=2253)» и «**Чертёж**», изображения загруженные на страницах «[**Темы**](https://kb.comindware.ru/article.php?id=2199)» и «[**Дизайн страниц входа и регистрации**](https://kb.comindware.ru/article.php?id=2198)», а также  [изображения **аккаунтов**](https://kb.comindware.ru/article.php?id=2194#mcetoc_1gjrh0knp6).
 
@@ -53,12 +53,14 @@ kbId: 2569
 
 Для изменения лимита на размер загружаемых файлов в ОС Linux необходимо отредактировать конфигурацию экземпляра ПО, а также конфигурацию NGINX.
 
-1. Перейдите в режим суперпользователя `root`: 
+1. Перейдите в режим суперпользователя `root`: 
+
 
 ```
 sudo -i
 ```
-2. Откройте для редактирования файл `/var/www/``comindwareinstancename``/Web.config`: 
+2. Откройте для редактирования файл `/var/www/``comindwareinstancename``/Web.config`: 
+
 
 ```
 sudo nano /var/www/comindwareinstancename/Web.config
@@ -66,16 +68,20 @@ sudo nano /var/www/comindwareinstancename/Web.config
 3. Установите лимит (например, 1 ГБ) с помощью директив `httpRuntime maxRequestLength` (в килобайтах) и `requestLimits maxAllowedContentLength` (в байтах):
 
 ```
-<httpRuntime maxRequestLength="1048576" maxUrlLength="4096" requestValidationMode="2.0" shutdownTimeout="300" executionTimeout="3000" targetFramework="4.8" enableVersionHeader="false" />
-...
+<httpRuntime maxRequestLength="1048576" maxUrlLength="4096" requestValidationMode="2.0" shutdownTimeout="300" executionTimeout="3000" targetFramework="4.8" enableVersionHeader="false" />
+
+...
+
 <requestLimits maxAllowedContentLength="1073741824" />       
 ```
-4. Откройте для редактирования файл `/etc/nginx/sites-available/comindwareinstancename`:
+4. Откройте для редактирования файл `/etc/nginx/sites-available/comindwareinstancename`:
+
 
 ```
 sudo nano /etc/nginx/sites-available/comindwareinstancename
 ```
-5. Откройте для редактирования файл `/etc/nginx/sites-available/comindwareinstancename`:
+5. Откройте для редактирования файл `/etc/nginx/sites-available/comindwareinstancename`:
+
 
 ```
 sudo nano /etc/nginx/sites-available/comindwareinstancename
@@ -100,8 +106,10 @@ systemctl restart comindwareinstancename
 2. Установите лимит (например, 1 ГБ) с помощью директив `httpRuntime maxRequestLength` (в килобайтах) и `requestLimits maxAllowedContentLength` (в байтах):
 
 ```
-<httpRuntime maxRequestLength="1048576" maxUrlLength="4096" requestValidationMode="2.0" shutdownTimeout="300" executionTimeout="3000" targetFramework="4.8" enableVersionHeader="false" />
-...
+<httpRuntime maxRequestLength="1048576" maxUrlLength="4096" requestValidationMode="2.0" shutdownTimeout="300" executionTimeout="3000" targetFramework="4.8" enableVersionHeader="false" />
+
+...
+
 <requestLimits maxAllowedContentLength="1073741824" />
 ```
 3. Перезагрузите экземпляр ПО с помощью Утилиты администрирования (либо с помощью Диспетчера служб IIS перезагрузите сервер приложений и сайт экземпляра ПО).

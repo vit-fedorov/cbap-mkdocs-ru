@@ -1,2 +1,8 @@
-title: Развёртывание {{ productName }}
+title: Развёртывание ПО
 categoryId: 415
+
+nav:
+  - architecture_landscape.md
+  - linux
+  - windows
+  - ...

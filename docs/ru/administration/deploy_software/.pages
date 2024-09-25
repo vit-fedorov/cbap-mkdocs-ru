@@ -3,6 +3,8 @@ categoryId: 415
 
 nav:
   - architecture_landscape.md
+  - system_requirements.md
+  - security.md
   - linux
   - windows
   - ...

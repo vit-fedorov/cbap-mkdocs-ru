@@ -1,4 +1,4 @@
-title: Администрирование аккаунтов
+title: Аккаунты и группы
 categoryID: 497
 
 collapse_single_pages: false
@@ -9,4 +9,8 @@ nav:
     - system_roles.md
     - account_permission_audit.md
     - substitution.md
+    - Единый вход и синхронизация с сервером каталогов:
+      - accounts_dc_sync.md
+      - linux
+      - windows
     - ...

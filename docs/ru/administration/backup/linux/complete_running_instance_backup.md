@@ -177,7 +177,7 @@ bash /var/www/apache-ignite/bin/control.sh --snapshot create snapshot_name_$now 
 curl -X PUT "localhost:9200/_snapshot/elasticsearch_repo_name?pretty" -H ’Content-Type: application/json’ -d’ {"type": "fs", "settings": {"location": "/var/www/backups/elasticsearch"}}’
 ```
 
-3.4. Создайте снимок состояния Elasticsearch, заменив ***`elasticsearch_repo_name`****,** `snapshot_name`* и `prefix_name`(префикс индекса, указанный в конфигурации экземпляра ПО) на свои значения:
+3.4. Создайте снимок состояния Elasticsearch, заменив ***`elasticsearch_repo_name`**,** `snapshot_name`* и `prefix_name`(префикс индекса, указанный в конфигурации экземпляра ПО) на свои значения:
 
 ```
 curl -X PUT "localhost:9200/_snapshot/elasticsearch_repo_name/snapshot_name_$now?wait_for_completion=true&pretty" -H ’Content-Type: application/json’ -d’ {"indices": "cmw_prefix_name*", "ignore_unavailable": true, "include_global_state": false}’

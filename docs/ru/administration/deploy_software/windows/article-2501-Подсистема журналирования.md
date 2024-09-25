@@ -32,7 +32,7 @@ kbId: 2501
 	- `C:\ProgramData\Comindware\Instances\<instanceName>\``Config\logs.config` — конфигурация всех журналов экземпляра ПО, включая журналы встроенных адаптеров;
 	- `C:\ProgramData\Comindware\Instances\<instanceName>\``Config\data\Plugins\Agent\logs.config` — конфигурация журналов пользовательских адаптеров.
 
-Здесь и далее ***`<`****`instanceName`****`>`*** — имя экземпляра ПО.
+Здесь и далее ***`<`**`instanceName`**`>`*** — имя экземпляра ПО.
 
 Подробное описание структуры конфигурационного файла см. в документации *NLog* по адресу: [*https://github.com/NLog/NLog/wiki/Tutorial*](https://github.com/NLog/NLog/wiki/Tutorial)
 

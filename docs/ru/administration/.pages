@@ -1,10 +1,12 @@
 title: Администрирование
 
 nav:
-    - index.md
-    - appearance
-    - architecture
-    - account_administration
-    - infrastructure
-    - connections_communication_routes
+    - deploy_software
+    - Администрирование системы:
+        - index.md
+        - appearance
+        - architecture
+        - account_administration
+        - infrastructure
+        - connections_communication_routes
     - ...

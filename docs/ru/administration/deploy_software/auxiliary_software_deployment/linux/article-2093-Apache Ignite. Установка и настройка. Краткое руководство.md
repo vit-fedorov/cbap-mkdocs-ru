@@ -5,13 +5,6 @@ kbId: 2093
 
 # Apache Ignite. Установка и настройка. Краткое руководство
 
-## Содержание
-
-- [Введение](#mcetoc_1g790sepe0)
-- [1. Установка Apache Ignite](#mcetoc_1g7733oci3)
-- [2. Запуск Apache Ignite](#mcetoc_1g773er5c4)
-- [3. Пример файла конфигурации Ignite](#mcetoc_1g773nmjt5)
-
 ## Введение
 
 Для работы **{{ productName }}** требуется программное обеспечение Apache Ignite.

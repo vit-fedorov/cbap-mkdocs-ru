@@ -5,13 +5,6 @@ kbId: 2099
 
 # Установка и настройка Apache Ignite. Краткое руководство для Windows
 
-## Содержание
-
-- [Введение](#mcetoc_1g79gr4062)
-- [1. Установка Apache Ignite](#mcetoc_1g79grtsg4)
-- [2. Запуск Apache Ignite](#mcetoc_1g79gvhfp5)
-- [3. Пример файла конфигурации Ignite](#mcetoc_1g79h4a216)
-
 Экспериментальная функция
 
 Представленная здесь функция находится на стадии разработки. См. *«[Поддержка экспериментальных функций](https://kb.comindware.ru/article.php?id=1339#mcetoc_1hsfq7ksu2)»*.

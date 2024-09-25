@@ -5,13 +5,6 @@ kbId: 2502
 
 # Пути и содержимое папок экземпляра ПО
 
-## Содержание
-
-- [Введение](#mcetoc_1hpdpuo8n4)
-- [Содержимое каталогов — Linux](#mcetoc_1hpdq2a1l5)
-- [Содержимое папок — Windows](#mcetoc_1hpdpt8tk2)
-- [Связанные статьи](#mcetoc_1hpdpt8tk3)
-
 ## Введение
 
 В этой статье представлена информация о расположении файлов и папок экземпляра ПО **{{ productName }}**в операционных системах семейства [Linux](#mcetoc_1hchr2nua1) (Альт Сервер, Astra Linux, РЕД ОС, Rocky Linux и Ubuntu) и [Windows.](#mcetoc_1hpdpt8tk1)

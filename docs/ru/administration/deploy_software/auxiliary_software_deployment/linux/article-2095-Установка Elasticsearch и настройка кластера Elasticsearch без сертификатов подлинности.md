@@ -5,16 +5,6 @@ kbId: 2095
 
 # Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности
 
-## Содержание
-
-- [1. Подготовка физических и виртуальных машин, пакетов программ](#mcetoc_1grits64g1)
-	- [Пример конфигурации серверов](#mcetoc_1grits64g2)
-- [2. Установка Elasticsearch из deb-пакета](#mcetoc_1grits64g3)
-- [3. Конфигурация Elasticsearch](#mcetoc_1grits64g4)
-- [4. Запуск Elasticsearch](#mcetoc_1grits64g5)
-- [5. Проверка состояния кластера](#mcetoc_1grits64g6)
-- [Пример yml-файла конфигурации узла Elasticsearch](#mcetoc_1grits64g7)
-
 Введение
 
 Для работы ПО **{{ productName }}** требуется сервер Elasticsearch версии не ниже 8.10.2.

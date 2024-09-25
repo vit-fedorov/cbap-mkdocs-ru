@@ -5,14 +5,6 @@ kbId: 2094
 
 # Установка Elasticsearch. Краткое руководство для Windows
 
-## Содержание
-
-- [Введение](#mcetoc_1g790ro010)
-- [1. Требования к компьютеру](#mcetoc_1g774esd12)
-- [2. Установка Elasticsearch](#mcetoc_1g774gadp3)
-- [3. Подключение к Elasticsearch при развертывании экземпляра продукта](#mcetoc_1g78vbqbr0)
-- [4. Пример типового файла конфигурации Elasticsearch](#mcetoc_1g79035961)
-
 ## Введение
 
 Для работы **{{ productName }}** требуется сервер Elasticsearch. См. [системные требования](https://kb.comindware.ru/article.php?id=1271).

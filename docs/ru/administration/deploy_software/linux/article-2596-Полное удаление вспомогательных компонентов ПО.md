@@ -5,49 +5,6 @@ kbId: 2596
 
 # Полное удаление вспомогательных компонентов ПО
 
-## Содержание
-
-- [Введение](#mcetoc_1hbg2uqhb0)
-- [Определения](#mcetoc_1gs760qqh2)
-- [Остановка экземпляров ПО — все ОС Linux](#mcetoc_1hpc0esj03)
-- [Удаление компонентов ПО — Альт Сервер](#mcetoc_1hpc5mvg396)
-	- [Удаление JRE](#mcetoc_1hpc6v1ri9h)
-	- [Удаление Kafka](#mcetoc_1hpc591vi88)
-	- [Удаление Mono](#mcetoc_1hpc591vi89)
-	- [Удаление .NET 6.0](#mcetoc_1hpc591vi8a)
-	- [Удаление NGINX](#mcetoc_1hpc591vi8b)
-- [Удаление компонентов ПО — Astra Linux](#mcetoc_1hpc6sk3h9d)
-	- [Удаление JRE](#mcetoc_1hqv57frd0)
-	- [Удаление Kafka](#mcetoc_1hpc591vi8d)
-	- [Удаление Mono](#mcetoc_1hpc591vi8e)
-	- [Удаление .NET 6.0](#mcetoc_1hpc591vi8f)
-	- [Удаление NGINX](#mcetoc_1hpc591vi8g)
-- [Удаление компонентов ПО — Debian](#mcetoc_1hpc6211s97)
-	- [Удаление JRE](#mcetoc_1hpc6tuo59g)
-	- [Удаление Kafka](#mcetoc_1hpc591vi8i)
-	- [Удаление Mono](#mcetoc_1hpc591vi8j)
-	- [Удаление .NET 6.0](#mcetoc_1hpc591vi8k)
-	- [Удаление NGINX](#mcetoc_1hpc591vi8l)
-- [Удаление компонентов ПО — РЕД ОС](#mcetoc_1hpc6613r99)
-	- [Удаление JRE](#mcetoc_1hpc591vi8m)
-	- [Удаление Kafka](#mcetoc_1hpc591vi8n)
-	- [Удаление Mono](#mcetoc_1hpc591vi8o)
-	- [Удаление .NET 6.0](#mcetoc_1hpc591vi8p)
-	- [Удаление NGINX](#mcetoc_1hpc591vi8q)
-- [Удаление компонентов ПО — Rocky Linux](#mcetoc_1hpc6cpu39b)
-	- [Удаление JRE](#mcetoc_1hpc591vi8r)
-	- [Удаление Kafka](#mcetoc_1hpc591vi8s)
-	- [Удаление Mono](#mcetoc_1hpc591vi8t)
-	- [Удаление .NET 6.0](#mcetoc_1hpc591vi8u)
-	- [Удаление NGINX](#mcetoc_1hpc591vi8v)
-- [Удаление компонентов ПО — Ubuntu](#mcetoc_1hpc518s313)
-	- [Удаление JRE](#mcetoc_1hpc591vj90)
-	- [Удаление Kafka](#mcetoc_1hpc591vj91)
-	- [Удаление Mono](#mcetoc_1hpc591vj92)
-	- [Удаление .NET 6.0](#mcetoc_1hpc591vj93)
-	- [Удаление NGINX](#mcetoc_1hpc591vj94)
-- [Связанные статьи](#mcetoc_1hpc0mfc74)
-
 ## Введение
 
 В этой статье представлены инструкции по полному удалению вспомогательных компонентов ПО **{{ productName }}**:

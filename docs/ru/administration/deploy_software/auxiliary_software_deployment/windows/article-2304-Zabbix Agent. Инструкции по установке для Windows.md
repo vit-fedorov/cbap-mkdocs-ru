@@ -5,14 +5,6 @@ kbId: 2304
 
 # Zabbix Agent. Инструкции по установке для Windows
 
-## Содержание
-
-- [Введение](#mcetoc_1i0qi21i20)
-- [1. Установка Zabbix Agent из MSI-пакета](#mcetoc_1gmb5iufr0)
-- [2. Проверка установки Zabbix Agent](#mcetoc_1gmb5iufr1)
-- [3. Добавление Windows-хоста в сеть мониторинга](#mcetoc_1gmb5iufr2)
-- [Использованные ресурсы](#mcetoc_1gmb5iufr3)
-
 ## Введение
 
 Программное обеспечение *Zabbix Agent* позволяет осуществлять мониторинг устройств, на которые оно установлено. Для сбора и отображения данных мониторинга используется ПО *Zabbix Server*. См. статью «[Zabbix Server, Zabbix Agent, Zabbix Frontend и MySQL. Инструкции по установке](https://kb.comindware.ru/article.php?id=2292)».
@@ -108,12 +100,14 @@ kbId: 2304
 - значения `Server` и `ServerActive` в файле конфигурации *Zabbix Agent* `/etc/zabbix/zabbix_agentd.conf` соответствуют IP-адресу *Zabbix Server*:
 
 ```
-Server=192.168.0.1 # ip-адрес приведён как пример
+Server=192.168.0.1 # ip-адрес приведён как пример
+
 
 ```
 
 ```
-ServerActive=192.168.0.1 # ip-адрес приведён как пример
+ServerActive=192.168.0.1 # ip-адрес приведён как пример
+
 
 ```
 

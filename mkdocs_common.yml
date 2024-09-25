@@ -30,7 +30,9 @@ plugins:
           - en
           - ru
   awesome-pages:
-      collapse_single_pages: true
+    collapse_single_pages: true
+  # literate-nav:
+  #     nav_file: SUMMARY.md
   include-markdown: {}
   # section-index: {}
   em-img2fig: {}

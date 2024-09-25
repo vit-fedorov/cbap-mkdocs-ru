@@ -113,6 +113,3 @@ kbId: 2581
 **`![](https://kb.comindware.ru/images/marker.png) Пути и содержимое папок экземпляра ПО (Linux) {Article-ID:2502}`**
 
 **`![](https://kb.comindware.ru/images/marker.png) Пути и содержимое папок экземпляра ПО (v4.2 для Windows) {Article-ID:2302}`**
-
-
-

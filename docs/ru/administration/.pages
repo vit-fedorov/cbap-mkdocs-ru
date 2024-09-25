@@ -1,9 +1,10 @@
 title: Администрирование
 
 nav:
-    - deploy_software
+    - index.md
+    - deploy
     - Администрирование системы:
-        - index.md
+        - administration_page.md
         - appearance
         - architecture
         - account_administration

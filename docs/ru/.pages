@@ -1,8 +1,4 @@
 nav:
-    - using_the_system
-    - administration
+    - Администрирование: administration
     - business_apps
-    - Использование Architect: architect
-    - examples
     - Общие сведения: general
-    - DevOps: devops_wiki

@@ -3,6 +3,6 @@ categoryID: 489
 
 nav:
     - index.md
-    - Linux: 496. Linux
-    - Linux: 495. Windows
+    - linux
+    - windows
     - ...

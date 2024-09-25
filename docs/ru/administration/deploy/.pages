@@ -7,4 +7,5 @@ nav:
   - security.md
   - linux
   - windows
-  - ...
+  - auxiliary_software_deploy_linux
+  - auxiliary_software_deploy_windows

@@ -11,6 +11,7 @@ theme:
     - navigation.tracking
     - navigation.top
     # - navigation.indexes
+    # - navigation.sections
     - content.code.copy
     - navigation.footer
     - toc.follow

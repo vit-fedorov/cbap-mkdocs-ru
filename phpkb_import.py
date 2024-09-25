@@ -97,8 +97,13 @@ def importArtciclesInCategory (categoryId, categoryDir):
             # b.write(html.escape(str(p)))                
             # b.write(str(p))
             markdown = MarkdownConverter(heading_style='ATX', bullets='-', escape_misc=False).convert_soup(p)
+            # Remove redundant line breaks
             pattern = re.compile(r'^\n^\n\n*', flags=re.MULTILINE)
             markdown = re.sub(pattern, r'\n', markdown)
+            # Remove redundant TOC
+            pattern = re.compile(r'## Содержание.*\n*(.*\t*-.*\n)*\n', flags=re.MULTILINE)
+            markdown = re.sub(pattern, r'', markdown)
+            # Compile and add frontmatter
             frontmatter = '\n'.join([
                 '---',
                 'title: {}',

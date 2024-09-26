@@ -12,7 +12,7 @@ site_dir: pdf/
 
 site_url: http://127.0.0.1/
 
-site_name: Comindware Business Application Platform. Руководство пользователя
+site_name: Comindware Business Application Platform. Руководство системного администратора для OS Linux
 
 extra:
   pdfOutput: true
@@ -26,12 +26,12 @@ plugins:
   with-pdf:
     cover: true
     cover_title: Comindware Business Application Platform
-    cover_subtitle: Руководство пользователя
-    copyright: © 2024 Comindware
+    cover_subtitle: Руководство системного администратора для OS Linux
+    copyright: © Comindware, 20009–2024. Все права защищены
     author: Версия 4.7
     toc_title: Оглавление
     toc_level: 3
-    output_path: Comindware Business Application Platform. Руководство пользователя. 19.07.204.pdf
+    output_path: Comindware Business Application Platform. Руководство системного администратора для OS Linux. 27.09.2024.pdf
     custom_template_path: pdf_templates
     two_columns_level: 0
     heading_shift: false

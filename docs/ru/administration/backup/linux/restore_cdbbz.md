@@ -200,5 +200,5 @@ systemctl status nginx comindware<instanceName>
 
 **[Elasticsearch. Настройка подключения](https://kb.comindware.ru/article.php?id=2593)**
 
-[*‌* К началу](#) 
+
 

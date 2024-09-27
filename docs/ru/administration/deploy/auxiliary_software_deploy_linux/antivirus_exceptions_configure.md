@@ -19,7 +19,7 @@ kbId: 2581
 
 По умолчанию файлы экземпляра ПО находятся в каталоге `/var/lib/comindware/instancename`, где `instancename` — имя экземпляра ПО.
 
-*См. также статью «[Пути и содержимое папок экземпляра ПО](https://kb.comindware.ru/article.php?id=2502)».*
+*См. также статью «[Пути и содержимое папок экземпляра ПО][paths]».*
 
 Добавьте в исключения антивирусного ПО перечисленные ниже объекты.
 
@@ -113,3 +113,7 @@ kbId: 2581
 **`![](https://kb.comindware.ru/images/marker.png) Пути и содержимое папок экземпляра ПО (Linux) {Article-ID:2502}`**
 
 **`![](https://kb.comindware.ru/images/marker.png) Пути и содержимое папок экземпляра ПО (v4.2 для Windows) {Article-ID:2302}`**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

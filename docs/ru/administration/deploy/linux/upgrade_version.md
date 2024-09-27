@@ -276,5 +276,5 @@ tail -f /var/log/comindware/<instanceName>/Log/sys*
 
 **[Резервное копирование. Настройка и запуск, просмотр журнала сеансов](https://kb.comindware.ru/article.php?id=2190)**
 
-[*‌* К началу](#)
+
 

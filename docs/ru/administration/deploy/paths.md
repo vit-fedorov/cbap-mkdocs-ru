@@ -3,11 +3,11 @@ title: Пути и содержимое папок экземпляра ПО
 kbId: 2502
 ---
 
-# Пути и содержимое папок экземпляра ПО
+# Пути и содержимое папок экземпляра ПО {: #paths}
 
 ## Введение
 
-В этой статье представлена информация о расположении файлов и папок экземпляра ПО **{{ productName }}**в операционных системах семейства [Linux](#mcetoc_1hchr2nua1) (Альт Сервер, Astra Linux, РЕД ОС, Rocky Linux и Ubuntu) и [Windows.](#mcetoc_1hpdpt8tk1)
+Здесь представлена информация о расположении файлов и папок экземпляра ПО **{{ productName }}**в операционных системах семейства [Linux](#mcetoc_1hchr2nua1) (Альт Сервер, Astra Linux, РЕД ОС, Rocky Linux и Ubuntu) и [Windows.](#mcetoc_1hpdpt8tk1)
 
 ## Содержимое каталогов — Linux
 
@@ -65,5 +65,6 @@ kbId: 2502
 
 **[Подсистема журналирования](https://kb.comindware.ru/article.php?id=2501)**
 
- [*‌* К началу](#)
-
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

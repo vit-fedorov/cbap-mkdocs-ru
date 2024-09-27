@@ -7,7 +7,7 @@ kbId: 2501
 
 ## Введение
 
-В этой статье представлено описание работы подсистемы журналирования ПО **{{ productName }}** для операционных систем Linux.
+Здесь представлено описание работы подсистемы журналирования ПО **{{ productName }}** для операционных систем Linux.
 
 ## Определения
 
@@ -43,7 +43,7 @@ kbId: 2501
 - Windows
 	- `C``:\``ProgramData``\``Comindware``\``Instances``\<instanceName>\Logs`
 
-Сведения о фактическом расположении файлов см. в статье: *[Пути и содержимое папок экземпляра ПО](https://kb.comindware.ru/article.php?id=2502)**;*
+Сведения о фактическом расположении файлов см. в статье: *[Пути и содержимое папок экземпляра ПО][paths]**;*
 
 ### Файловые журналы
 
@@ -434,7 +434,7 @@ writeTo="errorsFile,EventLogCBAPErrors"/>
 
 **[Примеры событий в файловых журналах](https://kb.comindware.ru/article.php?id=2516)**
 
-**[Пути и содержимое папок экземпляра ПО](https://kb.comindware.ru/article.php?id=2502)**
+**[Пути и содержимое папок экземпляра ПО][paths]**
 
 **[Адаптеры](https://kb.comindware.ru/article.php?id=2181)**
 
@@ -446,5 +446,6 @@ writeTo="errorsFile,EventLogCBAPErrors"/>
 
 **[Конфигурация журналирования. Настройка, скачивание журналов](https://kb.comindware.ru/article.php?id=2186)**
 
-
-
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

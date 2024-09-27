@@ -272,6 +272,10 @@
 
 [scenario_elements]:  {{ kbArticleURLPrefix }}2346
 
+[scenario_event]:  {{ kbArticleURLPrefix }}2346#scenario_event
+
+[scenario_actions]:  {{ kbArticleURLPrefix }}2346#scenario_actions
+
 [scenario_send_email]: {{ kbArticleURLPrefix }}2584
 
 [scenarios]: {{ kbArticleURLPrefix }}2151

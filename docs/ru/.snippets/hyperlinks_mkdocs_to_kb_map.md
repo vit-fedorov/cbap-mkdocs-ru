@@ -20,8 +20,6 @@
 
 [chevron_stage_render]: {{ kbArticleURLPrefix }}2582
 
-[document_digital_signature]: {{ kbArticleURLPrefix }}2139
-
 [discussion_use]: {{ kbArticleURLPrefix }}2407
 
 [document_digital_signature]: {{ kbArticleURLPrefix }}2139

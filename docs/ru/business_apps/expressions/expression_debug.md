@@ -358,7 +358,7 @@ hide:
 
 **[Список функций языка формул Comindware][formula_function_list]**
 
-**[Настройка действий сценария][scenario_event_actions]**
+**[Настройка действий сценария][scenario_elements]**
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

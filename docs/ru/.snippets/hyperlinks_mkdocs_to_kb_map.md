@@ -270,7 +270,7 @@
 
 [s3_connection]: {{ kbArticleURLPrefix }}2594
 
-[scenario_event_actions]:  {{ kbArticleURLPrefix }}2346
+[scenario_elements]:  {{ kbArticleURLPrefix }}2346
 
 [scenario_send_email]: {{ kbArticleURLPrefix }}2584
 

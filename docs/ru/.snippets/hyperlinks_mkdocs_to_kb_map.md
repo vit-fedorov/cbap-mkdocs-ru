@@ -276,6 +276,10 @@
 
 [scenario_actions]:  {{ kbArticleURLPrefix }}2346#scenario_actions
 
+[scenario_actions_validate_expression]:  {{ kbArticleURLPrefix }}2346#scenario_actions_validate_expression
+
+[scenario_actions_validate_csharp]:  {{ kbArticleURLPrefix }}2346#scenario_actions_validate_csharp
+
 [scenario_send_email]: {{ kbArticleURLPrefix }}2584
 
 [scenarios]: {{ kbArticleURLPrefix }}2151

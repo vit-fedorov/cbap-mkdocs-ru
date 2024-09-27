@@ -104,7 +104,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
                 'title: {}',
                 'kbId: {}',
                 '---',
-                ''
+                '\n'
                 ]).format(title, id)
             markdown = frontmatter + markdown
             pattern = re.compile(r'`!\[.*\]\(.*\) *(.*?) *\{Article-ID:(\d+)\}.*?`', flags=re.MULTILINE)
@@ -124,7 +124,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
                 if foundArticle:
                     articleName = foundArticle[0][0]
                     replacementRegex = r'[{0}](https://kb.comindware.ru/article.php?id=\2)'.format(articleName)
-                markdown = re.sub(pattern, replacementRegex, markdown, count=1)
+                    markdown = re.sub(pattern, replacementRegex, markdown, count=1)
             b.write(markdown)
             # print(html.escape(str(p)))
             pages += 1
@@ -208,22 +208,28 @@ def main():
 
     while importChildren != 'y':
         
+        
         categoryChoice = ''
+        
         categories = fetchCategories(parent_id=categoryId)
         if parent_category: print("\nParent: {}. {}\n".format(categoryId, categoryTitle))
         if len(categories)>1: 
             parent_category = categories[0]
             listCategories(categories)
             print("\n---------\n")
-
-            while not (categoryChoice.isnumeric() and int(categoryChoice) <= len(categories)):
-                categoryChoice = input("Choose category to browse (1 to {}): ".format(len(categories)))
-                if categoryChoice.isnumeric() and int(categoryChoice) <= len(categories):
-                    categoryChoice = int(categoryChoice)-1
-                    break
-                else:
-                    categoryChoice = ''
-                    print ('Wrong category choice')
+            
+            if importChildren.isnumeric() and int(importChildren) <= len(categories):
+                    categoryChoice = int(importChildren)-1
+                    importChildren = 'y'
+            else:    
+                while not (categoryChoice.isnumeric() and int(categoryChoice) <= len(categories)):
+                    categoryChoice = input("Choose category to browse (1 to {}): ".format(len(categories)))
+                    if categoryChoice.isnumeric() and int(categoryChoice) <= len(categories):
+                        categoryChoice = int(categoryChoice)-1
+                        break
+                    else:
+                        categoryChoice = ''
+                        print ('Wrong category choice')
                 
             
             categoryId = categories[categoryChoice][0]
@@ -235,10 +241,10 @@ def main():
             if childrenCategoriesNumber > 0:
                 print ('\nIt has {} child categories:\n'.format(childrenCategoriesNumber))
                 listCategories(childrenCategories)
-                importChildren = input("\nEnter `Y` to import all child categories and articles?").lower()
+                importChildren = input("\nEnter `Y` to import all child categories and articles. \n Or choose a category to browse (1 to {}). \n".format(childrenCategoriesNumber)).lower()
             else: 
                 print ('\nIt has no child categories')
-                importChildren = input("\nImport all articles from this category? Y/N: ".format(categoryId, categoryTitle)).lower()
+                importChildren = input("\nEnter `Y` to import all articles from this category. ".format(categoryId, categoryTitle)).lower()
                 if importChildren !='y': 
                     print('Imported nothing')
                     break
@@ -248,6 +254,8 @@ def main():
             importCategoryChildren(categories[categoryChoice], KB_DIR)
         
     
+    CONNECTION.close()
+    server.close()
     server.stop()
 
 if __name__ == "__main__":

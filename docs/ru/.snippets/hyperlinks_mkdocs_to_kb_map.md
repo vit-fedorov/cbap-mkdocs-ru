@@ -20,8 +20,6 @@
 
 [chevron_stage_render]: {{ kbArticleURLPrefix }}2582
 
-[document_digital_signature]: {{ kbArticleURLPrefix }}2139
-
 [discussion_use]: {{ kbArticleURLPrefix }}2407
 
 [document_digital_signature]: {{ kbArticleURLPrefix }}2139
@@ -160,7 +158,7 @@
 
 [elasticsearch_connection]: {{ kbArticleURLPrefix }}2593
 
-[exchange_receiving_connection]: {{ kbArticleURLPrefix }}2586
+[scenario_receive_email]: {{ kbArticleURLPrefix }}2586
 
 [expression_debug]: {{ kbArticleURLPrefix }}2636
 
@@ -192,7 +190,7 @@
 
 [global_configuration]: {{ kbArticleURLPrefix }}2185
 
-[imap_receiving_connection]: {{ kbArticleURLPrefix }}2585
+[scenario_receive_email]: {{ kbArticleURLPrefix }}2585
 
 [kafka_connection]: {{ kbArticleURLPrefix }}2606
 

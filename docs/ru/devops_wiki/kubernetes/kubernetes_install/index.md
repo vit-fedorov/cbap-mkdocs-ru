@@ -1,6 +1,6 @@
 # Развертывание кластера Kubernetes на машинах Astra Linux SE 1.7
 
-В этой статье рассматривается развертывание кластера **Kubernetes** в конфигурации из двух узлов: **control-plane** (**master-node**) и **worker-node** (узел рабочей нагрузки).
+Здесь рассматривается развертывание кластера **Kubernetes** в конфигурации из двух узлов: **control-plane** (**master-node**) и **worker-node** (узел рабочей нагрузки).
 
 ## Предварительные требования
 
@@ -133,7 +133,7 @@ sudo hostnamectl set-hostname k8s-control-plane
 **Kubernetes** поддерживает ряд [**сред выполнения контейнеров** (**Container Runtime**)](https://kubernetes.io/docs/setup/production-environment/container-runtimes/). Для использования **Docker Engine** см. [эту статью](https://www.notion.so/zabrovsky-alex/Docker-Installation-7f79e613a9eb4455bc412bfba0bf1c67?pvs=4).
 
 !!! Note "Примечание"
-    В этой статье в качестве среды выполнения контейнеров используется **containerd** версии выше 1.7.2. Работоспособность для версий ниже указанной не гарантируется.
+    Здесь в качестве среды выполнения контейнеров используется **containerd** версии выше 1.7.2. Работоспособность для версий ниже указанной не гарантируется.
 
 ### Установить containerd
 

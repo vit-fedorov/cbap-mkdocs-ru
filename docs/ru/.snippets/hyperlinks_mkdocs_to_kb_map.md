@@ -146,7 +146,7 @@
 
 [elasticsearch_connection]: {{ kbArticleURLPrefix }}2593
 
-[exchange_receiving_connection]: {{ kbArticleURLPrefix }}2586
+[scenario_receive_email]: {{ kbArticleURLPrefix }}2586
 
 [expression_editor]: {{ kbArticleURLPrefix }}2463
 
@@ -176,7 +176,7 @@
 
 [global_configuration]: {{ kbArticleURLPrefix }}2185
 
-[imap_receiving_connection]: {{ kbArticleURLPrefix }}2585
+[scenario_receive_email]: {{ kbArticleURLPrefix }}2585
 
 [kafka_connection]: {{ kbArticleURLPrefix }}2606
 

@@ -35,10 +35,10 @@ kbId: 2201
 
 - [Получение эл. почты в процессе][process_receiving_connection]
 - [Отправка эл. почты из процесса][process_sending_connection]
-- Получение сообщений через Exchange
-- Отправка сообщений через Exchange
-- Получение эл. почты через IMAP
-- Отправка почты через SMTP
+- [Получение эл. почты через Exchange][scenario_receive_email]
+- [Отправка эл. почты через Exchange][scenario_send_email]
+- [Получение эл. почты через IMAP][scenario_receive_email]
+- [Отправка почты через SMTP][scenario_send_email]
 
 ### Подключения REST и OData
 

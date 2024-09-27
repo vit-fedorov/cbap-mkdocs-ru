@@ -102,7 +102,7 @@ _![Журнал всех сеансов](logs_page_all_sessions.png)_
 
 _![Список гиперссылок на страницы, отрытые пользователем за сеанс](logs_pages_hyperlinks_list.png)_
 
-### Интеграция по OData {#logs_odata_synchronization}
+### Интеграция по OData {: #logs_odata_synchronization}
 
 _![Журнал сеансов синхронизации данных по OData](logs_page_OData_integration.png)_
 
@@ -151,3 +151,7 @@ _![Журнал трассировки событий](logs_event_tracing.png)_
 **[Производительность](performance.md)**
 
 **[Подсистема журналирования][logging_engine]**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

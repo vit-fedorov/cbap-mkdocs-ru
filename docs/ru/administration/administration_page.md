@@ -44,7 +44,7 @@ kbId: 2191
 * [Мониторинг](monitoring.md)
 * [Журналы событий](logs.md)
 * [Лицензирование](licensing.md)
-* [Резервное копирование](backup.md)
+* [Резервное копирование][backup]
 * [Управление системными службами](system_service_management.md)
 * [Список подключений][connections]
 * [Производительность](performance.md)
@@ -52,3 +52,7 @@ kbId: 2191
 * [Глобальная конфигурация](global_configuration.md)
 * [Адаптеры](adapters.md)
 * [Ключи аутентификации](authentication_key.md)
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

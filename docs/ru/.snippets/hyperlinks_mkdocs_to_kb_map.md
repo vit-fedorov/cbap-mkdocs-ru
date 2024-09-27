@@ -326,8 +326,6 @@
 
 [использование-вложенной-формы]: {{ kbArticleURLPrefix }}2271#использование-вложенной-формы
 
-[проверить-результат-выражения]:{{ kbArticleURLPrefix }}2149#mcetoc_1ghqvc7u81
-
 [редактирование-формы]: {{ kbArticleURLPrefix }}2271#mcetoc_1gk3dol905
 
 [шаблоны-экспорта]: {{ kbArticleURLPrefix }}2349

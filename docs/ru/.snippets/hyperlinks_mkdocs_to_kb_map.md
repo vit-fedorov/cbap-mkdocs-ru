@@ -210,6 +210,8 @@
 
 [pages_setup]: {{ kbArticleURLPrefix }}2214
 
+[paths]: {{ kbArticleURLPrefix }}2502
+
 [service_call_task]: {{ kbArticleURLPrefix }}2609
 
 [service_call_task_properties]:{{ kbArticleURLPrefix }}2609#mcetoc_1h28bak441

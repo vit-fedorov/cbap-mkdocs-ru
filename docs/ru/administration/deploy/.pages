@@ -5,6 +5,9 @@ nav:
   - architecture_landscape.md
   - system_requirements.md
   - security.md
+  - logging_engine.md
+  - log_files_event_examples.md
+  - ...
   - linux
   - windows
   - auxiliary_software_deploy_linux

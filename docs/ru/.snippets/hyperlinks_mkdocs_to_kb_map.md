@@ -44,8 +44,6 @@
 
 [manual_n3]: {{ kbArticleURLPrefix }}2401
 
-[odata_synchronization_logs]: {{ kbArticleURLPrefix }}2180#mcetoc_1gjriatef8
-
 [office_connection_use]: {{ kbArticleURLPrefix }}2343
 
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}2318
@@ -181,6 +179,18 @@
 [kafka_connection]: {{ kbArticleURLPrefix }}2606
 
 [licensing]: {{ kbArticleURLPrefix }}2183
+
+[log_files_event_examples]: {{ kbArticleURLPrefix }}2516
+
+[logging_engine]: {{ kbArticleURLPrefix }}2501
+
+[logging_engine_audit_log]: {{ kbArticleURLPrefix }}2501#logging_engine_audit_log
+
+[logging_engine_rules]: {{ kbArticleURLPrefix }}2501#logging_engine_rules
+
+[logs]: {{ kbArticleURLPrefix }}2180
+
+[logs_odata_synchronization]: {{ kbArticleURLPrefix }}2180#mcetoc_1gjriatef8
 
 [map_configure]: {{ kbArticleURLPrefix }}2572
 

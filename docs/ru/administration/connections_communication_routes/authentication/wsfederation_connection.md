@@ -80,7 +80,7 @@ kbId: 2560
 
 !!! note "Примечание"
 
-    Основные шаги аутентификации регистрируются в [журнале аудита]({{ kbArticleURLPrefix }}2501#mcetoc_1glh08n4u1).
+    Основные шаги аутентификации регистрируются в [журнале аудита][logging_engine_audit_log].
 
 --8<-- "related_topics_heading.md"
 
@@ -88,7 +88,7 @@ kbId: 2560
 
 **[Пути и содержимое папок экземпляра ПО]({{ kbArticleURLPrefix }}2502)**
 
-**[Подсистема журналирования]({{ kbArticleURLPrefix }}2501)**
+**[Подсистема журналирования][logging_engine]**
 
 **[Создание отношений доверия с проверяющей стороной](https://learn.microsoft.com/ru-ru/windows-server/identity/ad-fs/operations/create-a-relying-party-trust)**(документация Microsoft)
 

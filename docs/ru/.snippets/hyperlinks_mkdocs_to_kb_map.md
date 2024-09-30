@@ -276,6 +276,8 @@
 
 [scenario_actions]:  {{ kbArticleURLPrefix }}2346#scenario_actions
 
+[scenario_actions_common_properties]: {{ kbArticleURLPrefix }}2346#scenario_actions_common_properties
+
 [scenario_actions_validate_expression]:  {{ kbArticleURLPrefix }}2346#scenario_actions_validate_expression
 
 [scenario_actions_validate_csharp]:  {{ kbArticleURLPrefix }}2346#scenario_actions_validate_csharp
@@ -334,6 +336,6 @@
 
 [редактирование-формы]: {{ kbArticleURLPrefix }}2271#mcetoc_1gk3dol905
 
-[шаблоны-экспорта]: {{ kbArticleURLPrefix }}2349
+[export_templates]: {{ kbArticleURLPrefix }}2349
 
 {% endif %}

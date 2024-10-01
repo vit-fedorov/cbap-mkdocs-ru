@@ -288,6 +288,8 @@
 
 [scenario_variables]: {{ kbArticleURLPrefix }}2399
 
+[scenario_verify_expression_csharp]: {{ kbArticleURLPrefix }}2637
+
 [send_http_connection]: {{ kbArticleURLPrefix }}2508
 
 [send_http_example]: {{ kbArticleURLPrefix }}2509

@@ -274,6 +274,8 @@
 
 [scenario_event]:  {{ kbArticleURLPrefix }}2346#scenario_event
 
+[scenario_event_common_properties]:  {{ kbArticleURLPrefix }}2346#scenario_event_common_properties
+
 [scenario_actions]:  {{ kbArticleURLPrefix }}2346#scenario_actions
 
 [scenario_actions_common_properties]: {{ kbArticleURLPrefix }}2346#scenario_actions_common_properties

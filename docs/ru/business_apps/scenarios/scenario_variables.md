@@ -11,12 +11,14 @@ tags:
   - системные переменные
   - локальные переменные
   - переменные в сценарии
+  - тройки
+  - формулы
 hide:
   - tags
 kbId: 2399
 ---
 
-# Использование переменных в сценарии {: #scenario_variables}
+# Переменные в сценарии. Определения, настройка и использование {: #scenario_variables}
 
 <div class="admonition question" markdown="block">
 ## Определения {: .admonition-title #definitions}

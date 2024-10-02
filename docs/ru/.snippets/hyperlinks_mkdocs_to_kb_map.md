@@ -122,6 +122,8 @@
 
 [buttons]: {{ kbArticleURLPrefix }}2276
 
+[button_local_variables]: {{ kbArticleURLPrefix }}2276#button_local_variables
+
 [call_element_menu]: {{ kbArticleURLPrefix }}2360#mcetoc_1h28cr6421
 
 [cards_view]: {{ kbArticleURLPrefix }}2404
@@ -290,7 +292,7 @@
 
 [scenario_variables]: {{ kbArticleURLPrefix }}2399
 
-[scenario_verify_expression_csharp]: {{ kbArticleURLPrefix }}2637
+[scenario_verify_data]: {{ kbArticleURLPrefix }}2637
 
 [send_http_connection]: {{ kbArticleURLPrefix }}2508
 

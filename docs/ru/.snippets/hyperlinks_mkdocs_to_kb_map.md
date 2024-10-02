@@ -282,6 +282,8 @@
 
 [scenario_actions_common_properties]: {{ kbArticleURLPrefix }}2346#scenario_actions_common_properties
 
+[scenario_actions_send_message]: {{ kbArticleURLPrefix }}2346#scenario_actions_send_message
+
 [scenario_actions_validate_expression]:  {{ kbArticleURLPrefix }}2346#scenario_actions_validate_expression
 
 [scenario_actions_validate_csharp]:  {{ kbArticleURLPrefix }}2346#scenario_actions_validate_csharp

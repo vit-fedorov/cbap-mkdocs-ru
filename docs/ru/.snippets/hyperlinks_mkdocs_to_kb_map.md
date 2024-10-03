@@ -198,6 +198,8 @@
 
 [licensing]: {{ kbArticleURLPrefix }}2183
 
+[logs]: {{ kbArticleURLPrefix }}2180
+
 [map_configure]: {{ kbArticleURLPrefix }}2572
 
 [map_use]: {{ kbArticleURLPrefix }}2635

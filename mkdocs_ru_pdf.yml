@@ -25,13 +25,14 @@ plugins:
       remove_comments: false
   with-pdf:
     cover: true
-    cover_title: Comindware Business Application Platform
+    cover_logo: 'https://kb.comindware.ru/assets/comindware_logo.svg'
+    cover_title: Comindware Business Application Platform 4.7
     cover_subtitle: Руководство пользователя
-    copyright: © 2024 Comindware
-    author: Версия 4.7
+    copyright: © Comindware, 2009-2024
+    author: comindware.ru
     toc_title: Оглавление
     toc_level: 3
-    output_path: Comindware Business Application Platform. Руководство пользователя. 19.07.204.pdf
+    output_path: Comindware Business Application Platform. Руководство пользователя. 19.07.2024.pdf
     custom_template_path: pdf_templates
     two_columns_level: 0
     heading_shift: false

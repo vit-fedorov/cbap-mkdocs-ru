@@ -1,0 +1,56 @@
+<style>
+.header {
+    margin-top: -1cm;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logotype, .author {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #3698D4;
+    flex: 0 1 auto;
+    align-self: center;
+}
+
+.logotype {
+    text-align: start;
+    height: 30px;
+    width: 300px;
+}
+
+.author {
+    text-align: end;
+}
+
+.copyright {
+    font-size: 1.3em;
+    font-style: normal;
+}
+</style>
+
+<article id="doc-cover">
+    {% if cover_logo is defined %}
+        <div class="wrapper upper">
+            <div class="header">
+                <!--<div class="logo" style="background-image: url();"></div>-->
+                <div class="logotype"><img src={{ cover_logo | to_url }}></div>
+                {% if author is defined %}<div class="author">{{ author | e }}</div>{% endif %}
+            </div>
+        </div>
+    {% else %}
+        <div class="wrapper"></div>
+    {% endif %}
+    <div class="wrapper">
+        <h1>{{ cover_title | e }}</h1>
+        <h2>{{ cover_subtitle | e }}</h2>
+    </div>
+    <div class="properties">
+        <address>
+            <!--{% if author is defined %}<p id="author">{{ author | e }}</p>{% endif %}</div>-->
+            {% if copyright is defined %}
+                <p class="copyright">{{ copyright | e }}</p>
+            {% endif %}
+        </address>
+    </div>
+</article>

@@ -1,5 +1,6 @@
 /* PDF CSS overrides begin */
 
+
 @media print {
 
     .md-typeset figure img {
@@ -36,11 +37,12 @@
 
     :root {
         font-size: 12pt;
+        
     }
 
 
     .md-typeset {
-        font-size: 1rem
+        font-size: 1rem;
     }
 
     .md-typeset table:not([class]) {
@@ -56,18 +58,23 @@
         font-size: 1.2em;
     }
 
+    .md-typeset .admonition, .md-typeset details {
+    
+        font-size: 1rem;
+    }
+
     small {
         font-size: 0.8em;
     }
 
     html {
         font-size: 1em;
-        font-family: 'Kelmscott Roman NF', 'Noto Serif JP', serif;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     body {
         font-size: 1em;
-        font-family: 'Classico URW T OT', 'Noto Serif JP', serif;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     code {
@@ -92,12 +99,12 @@
         h3 {
             border-bottom: 0px;
         }
-
     }
 
     /* imported from https://github.com/orzih/mkdocs-with-pdf/blob/master/mkdocs_with_pdf/styles/_toc.scss */
 
     article#doc-toc {
+
         font-size: 12pt;
 
         ul {

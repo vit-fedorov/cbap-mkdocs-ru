@@ -72,6 +72,8 @@
 
 [1c_integrations]: {{ kbArticleURLPrefix }}2011
 
+[accounts]: {{ kbArticleURLPrefix }}2194
+
 [actions]: {{ kbArticleURLPrefix }}2390
 
 [ad_connection]: {{ kbArticleURLPrefix }}2206
@@ -79,6 +81,8 @@
 [adapters]: {{ kbArticleURLPrefix }}2181
 
 [apps]: {{ kbArticleURLPrefix }}2209
+
+[application_configure_recommendations]: {{ kbArticleURLPrefix }}2006
 
 [attribute_barcode]: {{ kbArticleURLPrefix }}2393
 
@@ -162,6 +166,8 @@
 
 [scenario_receive_email]: {{ kbArticleURLPrefix }}2586
 
+[export_templates]: {{ kbArticleURLPrefix }}2349
+
 [expression_debug]: {{ kbArticleURLPrefix }}2636
 
 [expression_editor]: {{ kbArticleURLPrefix }}2463
@@ -231,6 +237,8 @@
 [service_call_task]: {{ kbArticleURLPrefix }}2609
 
 [service_call_task_properties]:{{ kbArticleURLPrefix }}2609#mcetoc_1h28bak441
+
+[performance]: {{ kbArticleURLPrefix }}2184
 
 [process_diagram]: {{ kbArticleURLPrefix }}2360
 
@@ -312,6 +320,8 @@
 
 [sql_send_connection]: {{ kbArticleURLPrefix }}2498
 
+[system_roles]: {{ kbArticleURLPrefix }}2175
+
 [table_clone]: {{ kbArticleURLPrefix }}2552
 
 [table_configure_template]: {{ kbArticleURLPrefix }}2550
@@ -334,18 +344,16 @@
 
 [using_gantt_chart]: {{ kbArticleURLPrefix }}2108
 
+[using_the_system]: {{ kbArticleURLPrefix }}2281
+
 [variables]: {{ kbArticleURLPrefix }}2207
 
 [wsfederation_connection]: {{ kbArticleURLPrefix }}2560
 
 [administration]: {{ kbArticleURLPrefix }}2191
 
-[администрирование-приложения]: {{ kbArticleURLPrefix }}2209#mcetoc_1gjrm25045
-
 [использование-вложенной-формы]: {{ kbArticleURLPrefix }}2271#использование-вложенной-формы
 
 [редактирование-формы]: {{ kbArticleURLPrefix }}2271#mcetoc_1gk3dol905
-
-[export_templates]: {{ kbArticleURLPrefix }}2349
 
 {% endif %}

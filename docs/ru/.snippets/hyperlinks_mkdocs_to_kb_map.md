@@ -356,6 +356,8 @@
 
 [themes_graphic_diagram_color]: {{ kbArticleURLPrefix }}2199#mcetoc_1gjriujcbf
 
+[two_factor_authentication]: {{ kbArticleURLPrefix }}2598
+
 [user_task]: {{ kbArticleURLPrefix }}2392
 
 [using_gantt_chart]: {{ kbArticleURLPrefix }}2108

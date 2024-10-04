@@ -57,7 +57,7 @@ _![Настройка замещения](img/substitution_properties.png)_
 
 --8<-- "related_topics_heading.md"
 
-**[Аккаунты. Создание, настройка, замещение, привязка к шаблону аккаунта, назначение лицензий, удаление](https://kb.comindware.ru/article.php?id=2194)**
+**[Аккаунты. Создание, настройка, замещение, привязка к шаблону аккаунта, назначение лицензий, удаление][accounts]**
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

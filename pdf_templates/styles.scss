@@ -37,7 +37,7 @@
 
     :root {
         font-size: 12pt;
-        
+
     }
 
 
@@ -52,14 +52,15 @@
     .md-typeset h1 {
         font-size: 1.5em;
     }
-    
-      
+
+
     .md-typeset h2 {
         font-size: 1.2em;
     }
 
-    .md-typeset .admonition, .md-typeset details {
-    
+    .md-typeset .admonition,
+    .md-typeset details {
+
         font-size: 1rem;
     }
 
@@ -125,21 +126,59 @@
         h2 {
             font-size: 18pt !important;
         }
+
+        .wrapper {
+            padding: 0;
+        }
+
+
+        .header {
+            margin-top: -0.85cm;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .logotype,
+        .author {
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: #3698D4;
+            flex: 0 1 auto;
+            align-self: center;
+        }
+
+        .logotype {
+            text-align: start;
+            height: 30px;
+            width: 300px;
+        }
+
+        .author {
+            text-align: end;
+        }
+
+        .copyright {
+            font-size: 1.3em;
+            font-style: normal;
+        }
     }
+
 
     /* imported from  https://github.com/orzih/mkdocs-with-pdf/blob/master/mkdocs_with_pdf/styles/_paging.scss */
 
     h1 {
-        string-set: chapter content(); 
+        string-set: chapter content();
     }
-   
-    h2, h3 {
-        string-set: chapter string(chapter); 
+
+    h2,
+    h3 {
+        string-set: chapter string(chapter);
     }
 
     @page {
         size: a4 portrait;
-        margin: 25mm 10mm 20mm 10mm;
+        margin: 20mm 20mm 20mm 20mm;
         color: black;
 
         @top-right {
@@ -172,7 +211,7 @@
     .md-typeset ol li {
         margin-bottom: .25rem;
     }
-   
+
     #doc-toc ul li>a>span,
     .md-typeset h1>span,
     .md-typeset h2>span,

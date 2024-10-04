@@ -1,33 +1,22 @@
 <style>
-.header {
-    margin-top: -1cm;
-    display: flex;
-    justify-content: space-between;
-}
 
-.logotype, .author {
-    font-weight: bold;
-    font-size: 1.3rem;
-    color: #3698D4;
-    flex: 0 1 auto;
-    align-self: center;
-}
+@media print {
+    @page: first {
+        {
+            % if copyright is defined %
+        }
 
-.logotype {
-    text-align: start;
-    height: 30px;
-    width: 300px;
-}
+        @bottom-right {
+            content: '{{ copyright | e }}';
+        }
 
-.author {
-    text-align: end;
-}
-
-.copyright {
-    font-size: 1.3em;
-    font-style: normal;
+            {
+            % endif %
+        }
+    }
 }
 </style>
+
 
 <article id="doc-cover">
     {% if cover_logo is defined %}
@@ -47,10 +36,7 @@
     </div>
     <div class="properties">
         <address>
-            <!--{% if author is defined %}<p id="author">{{ author | e }}</p>{% endif %}</div>-->
-            {% if copyright is defined %}
-                <p class="copyright">{{ copyright | e }}</p>
-            {% endif %}
+            <!--{% if author is defined %}<p id="author">{{ author | e }}</p>{% endif %}</div>-->            
         </address>
     </div>
 </article>

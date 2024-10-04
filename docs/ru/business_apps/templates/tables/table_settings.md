@@ -1,4 +1,5 @@
 ---
+title: Настройка таблицы в шаблоне
 kbId: 2550
 ---
 
@@ -231,3 +232,7 @@ _![Настройка области кнопок таблицы](table_settings
 **[Таблицы. Определения, создание, удаление](table_definition.md)**
 
 **[Клонирование таблицы](table_clone.md)**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

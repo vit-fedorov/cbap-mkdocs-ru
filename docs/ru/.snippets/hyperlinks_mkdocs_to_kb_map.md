@@ -10,11 +10,21 @@
 
 [backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
 
+[business_approval_process]: {{ kbArticleURLPrefix }}2320
+
 [cards]: {{ kbArticleURLPrefix }}2402
+
+[cards_view]: {{ kbArticleURLPrefix }}2404
 
 [chevron_color_rules]: {{ kbArticleURLPrefix }}2119
 
 [chevron_stage_render]: {{ kbArticleURLPrefix }}2582
+
+[discussion_use]: {{ kbArticleURLPrefix }}2407
+
+[document_digital_signature]: {{ kbArticleURLPrefix }}2139
+
+[drawing_attribute_configure]: {{ kbArticleURLPrefix }}2575
 
 [drawing_attribute_file_import]: {{ kbArticleURLPrefix }}2574
 
@@ -55,6 +65,8 @@
 [sso_authentication_keytab_update]: {{ kbArticleURLPrefix }}2583#mcetoc_1hpavbqqi2
 
 [task_notifications_email]: ../administration/connections_communication_routes/system_connections/notifications/task_notifications.md#task_notifications_email
+
+[telegram_send_notification]: {{ kbArticleURLPrefix }}2610
 
 {% if kbExport %}
 
@@ -110,6 +122,8 @@
 
 [buttons]: {{ kbArticleURLPrefix }}2276
 
+[button_local_variables]: {{ kbArticleURLPrefix }}2276#button_local_variables
+
 [call_element_menu]: {{ kbArticleURLPrefix }}2360#mcetoc_1h28cr6421
 
 [cards_view]: {{ kbArticleURLPrefix }}2404
@@ -148,6 +162,8 @@
 
 [scenario_receive_email]: {{ kbArticleURLPrefix }}2586
 
+[expression_debug]: {{ kbArticleURLPrefix }}2636
+
 [expression_editor]: {{ kbArticleURLPrefix }}2463
 
 [forms]: {{ kbArticleURLPrefix }}2271
@@ -181,6 +197,8 @@
 [kafka_connection]: {{ kbArticleURLPrefix }}2606
 
 [licensing]: {{ kbArticleURLPrefix }}2183
+
+[logs]: {{ kbArticleURLPrefix }}2180
 
 [map_configure]: {{ kbArticleURLPrefix }}2572
 
@@ -256,15 +274,29 @@
 
 [s3_connection]: {{ kbArticleURLPrefix }}2594
 
-[scenario_actions]: {{ kbArticleURLPrefix }}2149
+[scenario_elements]:  {{ kbArticleURLPrefix }}2346
 
-[scenario_event]:  {{ kbArticleURLPrefix }}2346
+[scenario_event]:  {{ kbArticleURLPrefix }}2346#scenario_event
+
+[scenario_event_common_properties]:  {{ kbArticleURLPrefix }}2346#scenario_event_common_properties
+
+[scenario_actions]:  {{ kbArticleURLPrefix }}2346#scenario_actions
+
+[scenario_actions_common_properties]: {{ kbArticleURLPrefix }}2346#scenario_actions_common_properties
+
+[scenario_actions_send_message]: {{ kbArticleURLPrefix }}2346#scenario_actions_send_message
+
+[scenario_actions_validate_expression]:  {{ kbArticleURLPrefix }}2346#scenario_actions_validate_expression
+
+[scenario_actions_validate_csharp]:  {{ kbArticleURLPrefix }}2346#scenario_actions_validate_csharp
 
 [scenario_send_email]: {{ kbArticleURLPrefix }}2584
 
 [scenarios]: {{ kbArticleURLPrefix }}2151
 
 [scenario_variables]: {{ kbArticleURLPrefix }}2399
+
+[scenario_verify_data]: {{ kbArticleURLPrefix }}2637
 
 [send_http_connection]: {{ kbArticleURLPrefix }}2508
 
@@ -313,5 +345,7 @@
 [использование-вложенной-формы]: {{ kbArticleURLPrefix }}2271#использование-вложенной-формы
 
 [редактирование-формы]: {{ kbArticleURLPrefix }}2271#mcetoc_1gk3dol905
+
+[export_templates]: {{ kbArticleURLPrefix }}2349
 
 {% endif %}

@@ -2,7 +2,7 @@
 # It requires GTK3. Installer: install\installgtk3.ps1
 # This configuration and PDF build pipeline are a work in progress. Do not build production PDFs yet.
 # Command: 
-# py -m mkdocs build -f mkdocs_pdf_ru.yml
+# py -m mkdocs build -f mkdocs_ru_pdf.yml
 
 
 INHERIT: mkdocs_ru.yml

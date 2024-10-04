@@ -51,8 +51,8 @@ _![Настройка свойств нового приложения](bussines
     - [Интеграции][odata_integration]
     - [Пути передачи данных][communication_routes]
     - [Сервер каталогов][directory_server]
-    - [Аудит разрешений аккаунтов][account_audit]
-    - [Активность компонентов][component_activity]
+    - [Аудит разрешений аккаунтов][account_permission_audit]
+    - Активность компонентов
     - [Управление версиями][version_control]
 
 ## Удаление приложения

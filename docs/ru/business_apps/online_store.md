@@ -3,7 +3,7 @@ title: Интернет-магазин
 kbId: 2210
 ---
 
-# Интернет-магазин
+# Интернет-магазин {: #online_store}
 
 --8<-- "experimental_feature.md"
 
@@ -41,5 +41,3 @@ kbId: 2210
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
 %}
-
- 

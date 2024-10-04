@@ -54,6 +54,8 @@
 
 [experimental_functions_support]: {{ kbArticleURLPrefix }}1339#mcetoc_1hsfq7ksu2
 
+[experessions_intro]: {{ kbArticleURLPrefix }}2493
+
 [integration_examples]: {{ kbCategoryURLPrefix }}530
 
 [manual_csharp]: {{ kbArticleURLPrefix }}2400
@@ -248,6 +250,8 @@
 
 [odata_integration]: {{ kbArticleURLPrefix }}2315
 
+[online_store]: {{ kbArticleURLPrefix }}2210
+
 [openid_connection]: {{ kbArticleURLPrefix }}2329
 
 [r7_connection]: {{ kbArticleURLPrefix }}2342
@@ -364,6 +368,8 @@
 
 [templates]: {{ kbArticleURLPrefix }}2219
 
+[templates_move]: {{ kbArticleURLPrefix }}2219#templates_move
+
 [themes]: {{ kbArticleURLPrefix }}2199
 
 [themes_graphic_diagram_color]: {{ kbArticleURLPrefix }}2199#mcetoc_1gjriujcbf
@@ -377,6 +383,12 @@
 [using_the_system]: {{ kbArticleURLPrefix }}2281
 
 [variables]: {{ kbArticleURLPrefix }}2207
+
+[version_control]: {{ kbArticleURLPrefix }}2217
+
+[version_control_app_prepare]: {{ kbArticleURLPrefix }}2217#version_control_app_prepare
+
+[version_control_git]: {{ kbArticleURLPrefix }}2216
 
 [wsfederation_connection]: {{ kbArticleURLPrefix }}2560
 

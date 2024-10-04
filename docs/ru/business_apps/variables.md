@@ -12,6 +12,7 @@ kbId: 2207
 # Переменные приложения. Просмотр списка, настройка и использование {: #variables}
 
 <div class="admonition question" markdown="block">
+
 ## Определения {: .admonition-title #definitions}
 
 **Переменные приложения** — это атрибуты с заданным значением, которые не привязаны к какому-либо шаблону. Их можно использовать в C#-скриптах и выражениях на языке N3 в любом шаблоне или сценарии.
@@ -104,5 +105,5 @@ _![Настройка переменной приложения](img/variable_pr
 **[Автонумерация записей с помощью формулы, C#-скрипта или выражения N3][auto_numerating_records]**
 
 {%
-include-markdown "../.snippets/hyperlinks_mkdocs_to_kb_map.md"
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
 %}

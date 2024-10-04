@@ -1,5 +1,7 @@
 [api_calls]: {{ kbCategoryURLPrefix }}513
 
+[ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}2517
+
 [attribute_date_time_use]: {{ kbArticleURLPrefix }}2004
 
 [attribute_document_clone_scenario]: {{ kbArticleURLPrefix }}2608
@@ -65,6 +67,8 @@
 [sso_authentication]: {{ kbArticleURLPrefix }}2583
 
 [sso_authentication_keytab_update]: {{ kbArticleURLPrefix }}2583#mcetoc_1hpavbqqi2
+
+[sso_authentication_windows_configure]: {{ kbArticleURLPrefix }}2309
 
 [directory_server]: {{ kbArticleURLPrefix }}2308
 
@@ -184,7 +188,7 @@
 
 [form_dynamic_elements]: {{ kbArticleURLPrefix }}2531
 
-[form_dynamic_elements_account]: {{ kbArticleURLPrefix }}2531#аккаунт
+[form_dynamic_elements_account]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_account
 
 [form_dynamic_elements_chevron]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_chevron
 
@@ -285,6 +289,8 @@
 [receive_message_start_event]: {{ kbArticleURLPrefix }}2376
 
 [record_templates]: {{ kbArticleURLPrefix }}2221
+
+[registration_and_login]: {{ kbArticleURLPrefix }}2196
 
 [release_notes_4.7.2285]: {{ kbArticleURLPrefix }}2611
 

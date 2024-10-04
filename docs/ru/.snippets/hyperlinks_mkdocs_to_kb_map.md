@@ -184,6 +184,8 @@
 
 [form_dynamic_elements]: {{ kbArticleURLPrefix }}2531
 
+[form_dynamic_elements_account]: {{ kbArticleURLPrefix }}2531#аккаунт
+
 [form_dynamic_elements_chevron]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_chevron
 
 [form_dynamic_elements_color]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_color
@@ -205,6 +207,8 @@
 [git_connection]: {{ kbArticleURLPrefix }}2204
 
 [global_configuration]: {{ kbArticleURLPrefix }}2185
+
+[groups]: {{ kbArticleURLPrefix }}2193
 
 [scenario_receive_email]: {{ kbArticleURLPrefix }}2585
 

@@ -32,7 +32,7 @@ hide:
     - **Совместная работа**
         - **[Регистрация и вход](registration_and_login.md)**
         - **[Роли в приложении](roles_in_application.md)**
-        - **[Системные роли](system_roles.md)**
+        - **[Системные роли][system_roles]**
         - **[Аккаунты](accounts.md)**
 
 --8<-- "related_topics_heading.md"

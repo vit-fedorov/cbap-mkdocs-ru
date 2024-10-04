@@ -82,7 +82,11 @@
 
 [apps]: {{ kbArticleURLPrefix }}2209
 
+[account_templates]: {{ kbArticleURLPrefix }}2223
+
 [application_configure_recommendations]: {{ kbArticleURLPrefix }}2006
+
+[attribute_account]: {{ kbArticleURLPrefix }}2249
 
 [attribute_barcode]: {{ kbArticleURLPrefix }}2393
 

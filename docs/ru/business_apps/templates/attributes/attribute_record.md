@@ -34,7 +34,7 @@ _![Свойства атрибута типа «Запись»](attribute_record
 
 **[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
 
-**[Атрибут типа «Аккаунт»](attribute_account.md)**
+**[Атрибут типа «Аккаунт»][attribute_account]**
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

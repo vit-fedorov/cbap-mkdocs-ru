@@ -13,7 +13,7 @@ kbId: 2255
 
      В качестве заголовка записей шаблона можно использовать атрибут любого следующих типов:
 
-     - [Аккаунт](attribute_account.md)
+     - [Аккаунт][attribute_account]
      - [Дата и время](attribute_date_time.md)
      - [Длительность](attribute_duration.md)
      - [Текст](attribute_text.md)
@@ -21,7 +21,7 @@ kbId: 2255
 
      По умолчанию в качестве заголовка записей используются следующие системные атрибуты:
 
-     - в [шаблоне аккаунта](account_templates.md) — «**Ф. И. О.**» (`fullName`);
+     - в [шаблоне аккаунта][account_templates] — «**Ф. И. О.**» (`fullName`);
      - в [шаблоне записи](record_templates.md) — «**ID**» (`id`);
      - в [шаблоне оргединиц](organizational_unit_templates.md) — «**Название**» (`unitName`);
      - в [шаблоне роли](role_templates.md) — «**Название**» (`roleName`).

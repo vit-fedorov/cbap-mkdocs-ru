@@ -11,7 +11,7 @@ kbId: 2252
     - **Атрибут** — это простейший элемент данных об объекте: наименование товара ([текст](attribute_text.md)), количество товара ([число](attribute_number.md)), время доставки ([дата и время](attribute_date_time.md)), товар ([запись](attribute_record.md)) и т.п. Атрибут представляет собой аналог поля в реляционной базе данных.
     - Значения атрибутов вводят конечные пользователи, либо они вычисляются автоматически в соответствии с логикой работы приложения.
     - Для ввода и просмотра значений атрибутов используются поля на формах и в таблицах.
-    - Атрибуты предусмотрены у [шаблона записи](record_templates.md), [шаблона аккаунта](account_templates.md) , [шаблона роли](role_templates.md) и [шаблона организационной единицы](organizational_unit_templates.md).
+    - Атрибуты предусмотрены у [шаблона записи](record_templates.md), [шаблона аккаунта][account_templates] , [шаблона роли](role_templates.md) и [шаблона организационной единицы](organizational_unit_templates.md).
 
 ## Типы атрибутов
 
@@ -22,7 +22,7 @@ kbId: 2252
 - [Вычисляемые атрибуты](calculated_attribute.md)
 - [Атрибут-заголовок записей шаблона](displayed_attribute.md)
 - [Атрибуты для поиска записей шаблона](searchable_attribute.md)
-- [Аккаунт](attribute_account.md)
+- [Аккаунт][attribute_account]
 - [Гиперссылка](attribute_hyperlink.md)
 - [Дата и время](attribute_date_time.md)
 - [Длительность](attribute_duration.md)

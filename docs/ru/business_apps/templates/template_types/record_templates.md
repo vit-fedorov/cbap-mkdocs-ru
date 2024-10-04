@@ -17,7 +17,7 @@ kbId: 2221
 
     Шаблоны следующих типов аналогичны шаблону записи, но предназначены для описания специальных сущностей **{{ productName }}**:
 
-    - [Шаблон аккаунта](account_templates.md)
+    - [Шаблон аккаунта][account_templates]
     - [Шаблон роли](role_templates.md)
     - [Шаблон организационной единицы](organizational_unit_templates.md)
 

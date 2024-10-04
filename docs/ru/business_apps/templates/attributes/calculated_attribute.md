@@ -19,7 +19,7 @@ kbId: 2254
 
     Вычисляемыми могут быть атрибуты следующих типов:
 
-    - [Аккаунт](attribute_account.md)
+    - [Аккаунт][attribute_account]
     - [Гиперссылка](attribute_hyperlink.md)
     - [Дата и время](attribute_date_time.md)
     - [Длительность](attribute_duration.md)

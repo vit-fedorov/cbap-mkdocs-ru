@@ -334,6 +334,8 @@
 
 [sql_send_connection]: {{ kbArticleURLPrefix }}2498
 
+[substitution]: {{ kbArticleURLPrefix }}2192
+
 [system_roles]: {{ kbArticleURLPrefix }}2175
 
 [table_clone]: {{ kbArticleURLPrefix }}2552

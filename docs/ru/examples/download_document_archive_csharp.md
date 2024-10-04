@@ -196,7 +196,7 @@ kbId: 2623
 
     _![Отображение кнопки «Скачать вложения» в таблице записей шаблона «Реестр документов»](download_archive_csharp_button.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Атрибут типа «Документ»][attribute_document]**
 

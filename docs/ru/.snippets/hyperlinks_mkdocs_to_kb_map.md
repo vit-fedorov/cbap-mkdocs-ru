@@ -1,3 +1,5 @@
+[api_calls]: {{ kbCategoryURLPrefix }}513
+
 [attribute_date_time_use]: {{ kbArticleURLPrefix }}2004
 
 [attribute_document_clone_scenario]: {{ kbArticleURLPrefix }}2608
@@ -63,6 +65,8 @@
 [sso_authentication]: {{ kbArticleURLPrefix }}2583
 
 [sso_authentication_keytab_update]: {{ kbArticleURLPrefix }}2583#mcetoc_1hpavbqqi2
+
+[directory_server]: {{ kbArticleURLPrefix }}2308
 
 [task_notifications_email]: ../administration/connections_communication_routes/system_connections/notifications/task_notifications.md#task_notifications_email
 
@@ -240,7 +244,7 @@
 
 [service_call_task]: {{ kbArticleURLPrefix }}2609
 
-[service_call_task_properties]:{{ kbArticleURLPrefix }}2609#mcetoc_1h28bak441
+[service_call_task_properties]: {{ kbArticleURLPrefix }}2609#mcetoc_1h28bak441
 
 [performance]: {{ kbArticleURLPrefix }}2184
 
@@ -283,6 +287,8 @@
 [release_notes_4.7.2721]: {{ kbArticleURLPrefix }}2633
 
 [roles]: {{ kbArticleURLPrefix }}2208
+
+[role_templates]: {{ kbArticleURLPrefix }}2220
 
 [s3_connection]: {{ kbArticleURLPrefix }}2594
 

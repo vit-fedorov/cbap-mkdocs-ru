@@ -8,7 +8,7 @@ hide:
 
 # Просмотр списка шаблонов экспорта
 
-1. Откройте [шаблон записи](record_templates.md), [аккаунта][account_templates], [оргединицы](organizational_unit_templates.md) или [роли](role_templates.md).
+1. Откройте [шаблон записи](record_templates.md), [аккаунта][account_templates], [оргединицы](organizational_unit_templates.md) или [роли][role_templates].
 2. Откройте вкладку «**Шаблоны экспорта**».
 3. Отобразится список шаблонов экспорта с их свойствами.
 

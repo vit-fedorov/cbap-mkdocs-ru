@@ -31,7 +31,7 @@ hide:
         - **[Общесистемные настройки](global_configuration.md)**
     - **Совместная работа**
         - **[Регистрация и вход](registration_and_login.md)**
-        - **[Роли в приложении](roles_in_application.md)**
+        - **[Роли в приложении][roles]**
         - **[Системные роли][system_roles]**
         - **[Аккаунты](accounts.md)**
 

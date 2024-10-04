@@ -204,3 +204,7 @@ rewrite-relative-urls=false
 **[Роли в приложении][roles]**
 
 **[Шаблон роли][role_templates]**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

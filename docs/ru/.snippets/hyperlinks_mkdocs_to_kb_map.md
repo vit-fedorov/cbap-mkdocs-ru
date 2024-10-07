@@ -300,6 +300,8 @@
 
 [record_templates]: {{ kbArticleURLPrefix }}2221
 
+[record_template_properties]: {{ kbArticleURLPrefix }}2221#record_template_properties
+
 [registration_and_login]: {{ kbArticleURLPrefix }}2196
 
 [release_notes_4.7.2285]: {{ kbArticleURLPrefix }}2611
@@ -385,6 +387,10 @@
 [variables]: {{ kbArticleURLPrefix }}2207
 
 [version_control]: {{ kbArticleURLPrefix }}2217
+
+[version_control_git]: {{ kbArticleURLPrefix }}2216
+
+[version_control_manual]: {{ kbArticleURLPrefix }}2218
 
 [version_control_app_prepare]: {{ kbArticleURLPrefix }}2217#version_control_app_prepare
 

@@ -14,6 +14,7 @@ hide:
 # Страница «Мои задачи». Определения и настройка {: #my_tasks_page_configure}
 
 <div class="admonition question" markdown="block">
+
 ## Определения {: .admonition-title #definitions}
 
 * По умолчанию в состав страницы «**Мои задачи**» включены следующие таблицы:

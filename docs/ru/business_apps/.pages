@@ -2,6 +2,9 @@ title: Разработка приложений
 
 nav:
     - index.md
+    - application_configure_recommendations.md
+    - data_model.md
+    - identifiers_system_names.md
     - diagrams
     - templates
     - expressions

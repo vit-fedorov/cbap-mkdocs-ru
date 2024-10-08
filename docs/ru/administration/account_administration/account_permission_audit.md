@@ -29,28 +29,23 @@ kbId: 2195
 
 _![Список разрешений для приложений](img/accounts_permission_audit_business_app.png)_
 
-
 ### Системные разрешения
 
 На этой вкладке отображаются разрешения на доступ к ресурсам системы. См. разделы «**[Системные роли][system_roles]**» и «**[Аккаунты][accounts]**».
 
-![Список системных разрешений](img/account_permission_audit_system.png)
-
-Список системных разрешений
+_![Список системных разрешений](img/account_permission_audit_system.png)_
 
 ### Члены групп
 
 На этой вкладке отображается список всех аккаунтов и дочерних групп с указанием групп, в которые они входят. См. раздел «**[Группы][groups]**» и «[**Аккаунты**][accounts]».
 
-![Список членов групп](img/account_permission_audit_group_members.png)
-
-Список членов групп
+_![Список членов групп](img/account_permission_audit_group_members.png)_
 
 ### Члены ролей
 
 На этой вкладке отображается список всех аккаунтов и групп с указанием ролей, которые им назначены. См. разделы «[**Роли**][roles]», «[**Системные роли**][system_roles]» и «[**Аккаунты**][accounts]».
 
-![Список членов ролей](img/account_permission_audit_role_members.png)
+_![Список членов ролей](img/account_permission_audit_role_members.png)_
 
 --8<-- "related_topics_heading.md"
 

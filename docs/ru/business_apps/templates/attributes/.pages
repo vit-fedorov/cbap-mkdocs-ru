@@ -5,8 +5,6 @@ nav:
     - index.md
     - attribute_change_type.md
     - attribute_common_properties.md
-    - attribute_value_verification.md
-    - attribute_relations.md
     - system_attributes.md
     - calculated_attribute.md
     - displayed_attribute.md

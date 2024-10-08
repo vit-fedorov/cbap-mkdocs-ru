@@ -12,7 +12,7 @@ kbId: 2258
 
 Помимо **[общих свойств][attribute_common_properties]** для атрибута типа «**Организационная единица**» предусмотрены перечисленные ниже свойства.
 
---8<-- "attribute_property_attribute_interlinking.md"
+    --8<-- "attribute_property_attribute_interlinking.md"
 
 - «**Хранить несколько значений**» — установите этот флажок, чтобы в атрибуте можно было хранить ссылки на несколько ролей (сформируется связь «один ко многим»).
 --8<-- "attribute_property_calculated.md"

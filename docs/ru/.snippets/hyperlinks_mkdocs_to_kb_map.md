@@ -182,6 +182,8 @@
 
 [download_archive_csharp]: {{ kbArticleURLPrefix }}2623
 
+[elasticdata_description]: {{ kbArticleURLPrefix }}2638
+
 [elasticsearch_connection]: {{ kbArticleURLPrefix }}2593
 
 [scenario_receive_email]: {{ kbArticleURLPrefix }}2586

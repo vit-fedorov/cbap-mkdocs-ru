@@ -20,3 +20,7 @@ _![Общие свойства шаблонов](common_properties.png)_
 --8<-- "related_topics_heading.md"
 
 **[Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление][templates]**
+
+{%
+include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
+%}

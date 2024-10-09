@@ -129,6 +129,9 @@ def importArtciclesInCategory (categoryId, categoryDir):
             markdown = re.sub(pattern, r'', markdown)
             # Replace \t with four spaces
             markdown = markdown.replace('\t', '    ')
+            # Reformat images with captions
+            pattern = re.compile(r'(!\[(.*)\]\(.*\))\n\n\2', flags=re.MULTILINE)
+            markdown = re.sub(pattern, r'_\1_', markdown)
             # Compile and add frontmatter
             frontmatter = '\n'.join([
                 '---',
@@ -158,7 +161,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
                     articleName = foundArticle[0][0]
                     replacementRegex = r'[{0}](https://kb.comindware.ru/article.php?id=\2)'.format(articleName)
                     markdown = re.sub(pattern, replacementRegex, markdown, count=1)
-            # Find all links in markdown    
+            # Replace article links in markdown with URL from hyperlinks map
             pattern = r'\(https://kb\.comindware\.ru.+((article.php\?id=)|-)(\d+)(?(2)|\.html).*\)'
             foundLinks = re.finditer(pattern, markdown)
             for link in foundLinks:

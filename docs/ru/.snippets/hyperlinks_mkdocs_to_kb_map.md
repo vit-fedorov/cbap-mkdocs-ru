@@ -114,6 +114,8 @@
 
 [attribute_number]: {{ kbArticleURLPrefix }}2251
 
+[attribute_organizational_unit]: {{ kbArticleURLPrefix }}2258
+
 [attribute_record]: {{ kbArticleURLPrefix }}2243
 
 [attribute_role]: {{ kbArticleURLPrefix }}2240
@@ -255,6 +257,8 @@
 [online_store]: {{ kbArticleURLPrefix }}2210
 
 [openid_connection]: {{ kbArticleURLPrefix }}2329
+
+[organizational_unit_templates]: {{ kbArticleURLPrefix }}2226
 
 [r7_connection]: {{ kbArticleURLPrefix }}2342
 

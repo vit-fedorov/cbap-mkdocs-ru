@@ -2,7 +2,7 @@
 kbId: 2226
 ---
 
-# Шаблон организационной единицы
+# Шаблон организационной единицы {: #organizational_unit_templates}
 
 <div class="admonition question" markdown="block">
 

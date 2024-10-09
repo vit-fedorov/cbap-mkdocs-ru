@@ -116,7 +116,6 @@ def importArtciclesInCategory (categoryId, categoryDir):
             p.insert(0, article_title)
             with open(filename_html, "w+") as html_file:
                 html_file.write(str(p))    
-                html_file.write(str(p))
             markdown = MarkdownConverter(heading_style='ATX', bullets='-', escape_misc=False).convert_soup(p)
             # Remove redundant new lines
             pattern = re.compile(r'^\n^\n\n*', flags=re.MULTILINE)

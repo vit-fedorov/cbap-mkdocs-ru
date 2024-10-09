@@ -128,6 +128,8 @@ def importArtciclesInCategory (categoryId, categoryDir):
             markdown = re.sub(pattern, r'', markdown)
             # Replace \t with four spaces
             markdown = markdown.replace('\t', '    ')
+            # Replace product name with placeholder
+            markdown = markdown.replace('Comindware Business Application Platform', '{{ productName }}')
             # Reformat images with captions
             pattern = re.compile(r'(!\[(.*)\]\(.*\))\n\n\2', flags=re.MULTILINE)
             markdown = re.sub(pattern, r'_\1_', markdown)

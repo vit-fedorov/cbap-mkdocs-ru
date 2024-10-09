@@ -176,7 +176,7 @@ _![Содержимое файла integration_raw.log](integrations_log_content
 
 **[Синхронизация с веб-сервисом. Настройка подключения][odata_connection]**
 
-**[Журнал сеансов синхронизации по OData][odata_synchronization_logs]**
+**[Журнал сеансов синхронизации по OData][logs_odata_inegration]**
 
 **[Интеграция с 1С по OData. Настройка для импорта данных][1c_integrations]**
 

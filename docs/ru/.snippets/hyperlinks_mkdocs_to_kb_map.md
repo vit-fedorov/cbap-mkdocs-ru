@@ -62,8 +62,6 @@
 
 [manual_n3]: {{ kbArticleURLPrefix }}2401
 
-[odata_synchronization_logs]: {{ kbArticleURLPrefix }}2180#mcetoc_1gjriatef8
-
 [office_connection_use]: {{ kbArticleURLPrefix }}2343
 
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}2318
@@ -231,6 +229,8 @@
 [licensing]: {{ kbArticleURLPrefix }}2183
 
 [logs]: {{ kbArticleURLPrefix }}2180
+
+[logs_odata_inegration]: {{ kbArticleURLPrefix }}2180#logs_odata_inegration
 
 [map_configure]: {{ kbArticleURLPrefix }}2572
 

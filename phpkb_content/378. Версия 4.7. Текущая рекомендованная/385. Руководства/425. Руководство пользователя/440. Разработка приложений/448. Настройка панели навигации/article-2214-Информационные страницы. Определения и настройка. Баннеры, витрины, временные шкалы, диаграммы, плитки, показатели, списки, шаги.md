@@ -369,7 +369,7 @@ _![Настройка показателя](https://kb.comindware.ru/assets/page
 
 В эту группу входят готовые виджеты, которые нельзя настроить:
 
-- **Добро пожаловать** — стандартный баннер **Comindware Business Application Platform** содержащий ссылки на следующие разделы:
+- **Добро пожаловать** — стандартный баннер **{{ productName }}** содержащий ссылки на следующие разделы:
     - **База знаний** — переход сайту [kb.comindware.ru](https://kb.comindware.ru/index.php?ln=ru)
     - **Управление лицензиями** — переход к странице «[**Лицензирование**][licensing]».
     - **Блог Comindware** — переход к сайту [comindware.ru/blog/](https://www.comindware.ru/blog/)

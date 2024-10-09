@@ -41,9 +41,9 @@ _![Настройка подключения к Elasticsearch](https://kb.comind
 14. Нажмите кнопку «**Обновить**».
 
 _![Страница инициализации данных в Elasticsearch](https://kb.comindware.ru/assets/administration_tool9.png)_
-15. Дождитесь открытия начальной страницы **Comindware Business Application Platform**.
+15. Дождитесь открытия начальной страницы **{{ productName }}**.
 
-_![Начальная страница Comindware Business Application Platform](https://kb.comindware.ru/assets/administration_tool10.png)_
+_![Начальная страница {{ productName }}](https://kb.comindware.ru/assets/administration_tool10.png)_
 16. На этом этапе развёртывание экземпляра продукта завершено и можно приступать к созданию и использованию приложений.
 
 ## Связанные статьи

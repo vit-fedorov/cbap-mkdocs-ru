@@ -11,7 +11,7 @@ kbId: 2219
 
 Для каждого [приложения][apps]».*
 
-В **Comindware Business Application Platform** предусмотрены шаблоны следующих типов:
+В **{{ productName }}** предусмотрены шаблоны следующих типов:
 
 - [**шаблон записи**][record_templates]
 - [**шаблон процесса**][process_templates]

@@ -3,25 +3,25 @@ title: Резервное копирование и восстановление
 kbId: 2101
 ---
 
-# Резервное копирование и восстановление Comindware Business Application Platform. Краткое руководство для ОС Windows
+# Резервное копирование и восстановление {{ productName }}. Краткое руководство для ОС Windows
 
 ## Введение
 
-В этой статье представлены инструкции по резервномму копированию и восстановлению данных **Comindware Business Application Platform** в ОС Windows.
+В этой статье представлены инструкции по резервномму копированию и восстановлению данных **{{ productName }}** в ОС Windows.
 
 ### Определения
 
-**Продукт** — программное обеспечение **Comindware Business Application Platform**.
+**Продукт** — программное обеспечение **{{ productName }}**.
 
-**Экземпляр продукта** — развернутый сервер с продуктом **Comindware Business Application Platform**.
+**Экземпляр продукта** — развернутый сервер с продуктом **{{ productName }}**.
 
-**Elasticsearch** — система журналирования в составе **Comindware Business Application Platform**.
+**Elasticsearch** — система журналирования в составе **{{ productName }}**.
 
 **Снимок** — набор данных, сохранённый на определённый момент времени.
 
 ## 1. Подготовка к резервному копированию и восстановлению данных
 
-Для создания резервных копий и восстановления из них данных Comindware Business Application Platform необходимо подготовить конфигурацию резервного копирования, как указано ниже.
+Для создания резервных копий и восстановления из них данных {{ productName }} необходимо подготовить конфигурацию резервного копирования, как указано ниже.
 
 **1.1.** Подготовьте следующие данные о конфигурации экземпляра продукта:
 
@@ -59,7 +59,7 @@ kbId: 2101
 
 Подробные сведения о регистрации репозитория Elasticsearch см. в официальной документации (на английском языке): <https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-register-repository.html>
 
-**3.1.2.** Чтобы создать снимок Elasticsearch, выполните следующую команду, указав имя снимка `snapshot_name` ([см. параграф 1.1](#P1.1)), а в параметре `indices` — индексы, которые требуется включить в снимок (индексы Comindware Business Application Platform имеют префикс, например, `cmw_<InstanceId>_`):
+**3.1.2.** Чтобы создать снимок Elasticsearch, выполните следующую команду, указав имя снимка `snapshot_name` ([см. параграф 1.1](#P1.1)), а в параметре `indices` — индексы, которые требуется включить в снимок (индексы {{ productName }} имеют префикс, например, `cmw_<InstanceId>_`):
 
 `curl -X PUT "localhost:9200/_snapshot/repository_name/snapshot_name?wait_for_completion=true&pretty" -H 'Content-Type: application/json' -d' {"indices": "cmw_<InstanceId>_*", "ignore_unavailable": true, "include_global_state": false}'`
 
@@ -142,7 +142,7 @@ _![Настройка подключения к Elasticsearch](https://kb.comind
 
 _![Страница инициализации данных в Elasticsearch](https://kb.comindware.ru/assets/Picture17.png)_
 
-6.8. Дождитесь открытия начальной страницы **Comindware Business Application Platform**.
+6.8. Дождитесь открытия начальной страницы **{{ productName }}**.
 
 6.9. Откройте страницу «**Администрирование**» — «**Подключения**».
 

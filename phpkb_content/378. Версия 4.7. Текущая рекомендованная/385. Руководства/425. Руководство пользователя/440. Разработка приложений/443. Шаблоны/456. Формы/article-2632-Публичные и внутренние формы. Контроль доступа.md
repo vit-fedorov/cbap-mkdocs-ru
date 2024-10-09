@@ -67,7 +67,7 @@ http://example.com/#form/<oa.XX>/<form.XX>/<RecordID>
 
 Здесь:
 
-    - `http://example.com/` — адрес сервера **Comindware Business Application Platform**;
+    - `http://example.com/` — адрес сервера **{{ productName }}**;
     - `<oa.XX>` — ID шаблона записи *«Заявки»* (его видно в [списке шаблонов](../index.html#просмотр-списка-шаблонов-приложения));
     - `<form.XX>` — ID формы *«Диспетчер»* (его видно в адресной строке браузера в [конструкторе формы][forms];
     - `<RecordID>` — ID записи *«Заявки»*.

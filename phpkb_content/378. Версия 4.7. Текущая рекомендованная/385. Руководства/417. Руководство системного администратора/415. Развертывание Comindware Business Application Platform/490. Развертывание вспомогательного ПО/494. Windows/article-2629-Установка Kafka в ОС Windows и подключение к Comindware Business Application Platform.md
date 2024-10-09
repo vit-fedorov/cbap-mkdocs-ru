@@ -3,14 +3,14 @@ title: Установка Kafka в ОС Windows и подключение к Com
 kbId: 2629
 ---
 
-# Установка Kafka в ОС Windows и подключение к Comindware Business Application Platform
+# Установка Kafka в ОС Windows и подключение к {{ productName }}
 
  
 ## Введение
 
-Для обмена данными между **Comindware Business Application Platform** и внешними системами (а также для работы обсуждений) необходимо настроить подключение к брокеру сообщений Kafka.
+Для обмена данными между **{{ productName }}** и внешними системами (а также для работы обсуждений) необходимо настроить подключение к брокеру сообщений Kafka.
 
-Здесь представлена инструкция по установке Kafka в ОС Windows с использованием KRaft (без использования Zookeeper) и подключению Kafka к **Comindware Business Application Platform**.
+Здесь представлена инструкция по установке Kafka в ОС Windows с использованием KRaft (без использования Zookeeper) и подключению Kafka к **{{ productName }}**.
 
 ## Предварительные условия
 
@@ -138,7 +138,7 @@ hello
 
 _![Создание ветки сообщений Kafka в powershell.exe](https://kb.comindware.ru/assets/kafka_install_powershell.png)_
 
-## Подключение Kafka к Comindware Business Application Platform
+## Подключение Kafka к {{ productName }}
 
 1. Откройте папку `C:\ProgramData\comindware\configs\instance`
 2. Откройте файл с именем экземпляра ПО `.yml` и измените или добавьте следующую директиву:

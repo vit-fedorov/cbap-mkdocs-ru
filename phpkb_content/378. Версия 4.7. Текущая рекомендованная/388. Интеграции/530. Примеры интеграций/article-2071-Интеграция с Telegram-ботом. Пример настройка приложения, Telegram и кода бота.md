@@ -7,7 +7,7 @@ kbId: 2071
 
 ## Введение
 
-В этой статье разберём пример того, как настроить интеграцию **Comindware Business Application Platform** и Telegram-бота.
+В этой статье разберём пример того, как настроить интеграцию **{{ productName }}** и Telegram-бота.
 
 Telegram-бот будет представлять собой проект в Visual Studio на языке C# (Windows Forms Application).
 
@@ -17,38 +17,38 @@ Telegram-бот будет представлять собой проект в V
 
 ## Прикладная задача
 
-Требуется создать Telegram-бот, в котором пользователь мог бы взаимодействовать с **Comindware Business Application Platform**.
+Требуется создать Telegram-бот, в котором пользователь мог бы взаимодействовать с **{{ productName }}**.
 
 Перед использованием бота пользователь должен пройти авторизацию следующим образом:
 
 - При первом обращении бот запрашивает в адрес эл. почты пользователя.
-- Бот ищет аккаунт с указанным адресом в **Comindware Business Application Platform**.
+- Бот ищет аккаунт с указанным адресом в **{{ productName }}**.
 - Если аккаунт найден:
-    - бот высылает 4-значный код авторизации на эл. почту пользователя с помощью процесса в **Comindware Business Application Platform**;
+    - бот высылает 4-значный код авторизации на эл. почту пользователя с помощью процесса в **{{ productName }}**;
     - бот запрашивает код  авторизации у пользователя в чате
 - Если пользователь указывает верный код авторизации, авторизация считается пройденной.
 
 ## Алгоритм авторизации
 
-- На сервере выполняется бот, передающий данные между API Telegram и API **Comindware Business Application Platform**.
+- На сервере выполняется бот, передающий данные между API Telegram и API **{{ productName }}**.
 - Пользователь пишет боту сообщение в Telegram.
-- Бот предлагает пользователю авторизоваться, указав адрес эл. почты, с которым пользователь зарегистрирован в **Comindware Business Application Platform**.
+- Бот предлагает пользователю авторизоваться, указав адрес эл. почты, с которым пользователь зарегистрирован в **{{ productName }}**.
 - Пользователь сообщает боту свой адрес эл. почты.
-- Бот отправляет ***GET***-запрос в **Comindware Business Application Platform** для получения данных аккаунтов в Системе.
+- Бот отправляет ***GET***-запрос в **{{ productName }}** для получения данных аккаунтов в Системе.
 - Бот получает ***JSON***-ответ с данными аккаунтов и ищет среди них аккаунт с указанным адресом эл. почты.
 - Если аккаунт найден, выполняется следующая процедура:
     - Бот генерирует 4-значный код авторизации.
     - Бот записывает код авторизации в атрибут аккаунта с помощью ***POST***-запроса.
     - С помощью ***POST***-запроса бот отправляет эл. письмо пользователю с кодом авторизации.
     - Пользователь указывает Telegram-боту код авторизации, полученный из эл. письма
-- Если код, записанный в **Comindware Business Application Platform** и полученный ботом в последнем сообщении совпадают, авторизация считается пройденной.
-- После прохождения авторизации пользователь может посредством бота инициировать действия в  **Comindware Business Application Platform**.
+- Если код, записанный в **{{ productName }}** и полученный ботом в последнем сообщении совпадают, авторизация считается пройденной.
+- После прохождения авторизации пользователь может посредством бота инициировать действия в  **{{ productName }}**.
 
 Примечание
 
-На основе созданного промежуточного ПО и примера настройки взаимодействия бота с **Comindware Business Application Platform** можно в дальнейшем реализовать различные сценарии: подача заявок, заявлений на отпуск, запрос какой-либо информации из системы и т.д.
+На основе созданного промежуточного ПО и примера настройки взаимодействия бота с **{{ productName }}** можно в дальнейшем реализовать различные сценарии: подача заявок, заявлений на отпуск, запрос какой-либо информации из системы и т.д.
 
-## Предварительная настройка со стороны Comindware Business Application Platform
+## Предварительная настройка со стороны {{ productName }}
 
 1. Создайте шаблон аккаунта *«Sotrudniki»* (с таким же системным именем). В этом шаблоне уже есть системные атрибуты, такие как имя, почта и т.д.
 2. Добавьте атрибут *«ChatID»* типа «**Текст**» (в нашем примере ID атрибута — *op.13*).
@@ -89,16 +89,16 @@ Telegram-бот будет представлять собой проект в V
         <TextBox x:Name="apitoken" Text="введите токен API своего Telegram-бота" Width="240" Height="25"/>   
     </StackPanel>    
     <StackPanel Grid.Row="2">   
-        <Label Height="25" Margin="10,5,0,5">Путь к API Comindware Business Application Platform</Label>   
+        <Label Height="25" Margin="10,5,0,5">Путь к API {{ productName }}</Label>   
         <TextBox x:Name="Apipath" Text="http://yourinstance/api/public/" Width="240" Height="25" />   
     </StackPanel>    
     <StackPanel Grid.Row="3">   
         <Label Height="25" Margin="10,5,0,5">Имя пользователя</Label>   
-        <TextBox x:Name="login" Text="введите имя пользователя, у которого есть доступ к API  Comindware Business Application Platform" Width="240" Height="25" />   
+        <TextBox x:Name="login" Text="введите имя пользователя, у которого есть доступ к API  {{ productName }}" Width="240" Height="25" />   
     </StackPanel>    
     <StackPanel Grid.Row="4">   
         <Label Height="25" Margin="10,5,0,5">Пароль</Label>   
-        <PasswordBox x:Name="password" Password="введите пароль пользователя API  Comindware Business Application Platform" Width="240" Height="25" />   
+        <PasswordBox x:Name="password" Password="введите пароль пользователя API  {{ productName }}" Width="240" Height="25" />   
     </StackPanel>    
 </Grid>
 ```
@@ -171,8 +171,8 @@ namespace Telegram
 Вы можете воспользоваться аналогичным кодом простейшей реализации бота на языке Python из файла `TelegramBotPrimer.py` по ссылке: [TelegramBotComindwareIntegrationPython.zip](https://kb.comindware.ru/file.php?id=193)
 
 _![Запуск бота](https://kb.comindware.ru/assets/img_664f1796168fe.png)_
-13. Для взаимодействия с **Comindware Business Application Platform** воспользуемся **[Solution API](https://kb.comindware.ru/article.php?id=2073)**.
-14. Допишите `/Docs/SolutionApi/` в адресной строке браузера после адреса экземпляра **Comindware Business Application Platform**.
+13. Для взаимодействия с **{{ productName }}** воспользуемся **[Solution API](https://kb.comindware.ru/article.php?id=2073)**.
+14. Допишите `/Docs/SolutionApi/` в адресной строке браузера после адреса экземпляра **{{ productName }}**.
 15. Отобразится страница Swagger с перечнем доступных методов **Solution API**.
 
 _![Переход в область SolutionApi](https://kb.comindware.ru/assets/telegram_bot1.png)_

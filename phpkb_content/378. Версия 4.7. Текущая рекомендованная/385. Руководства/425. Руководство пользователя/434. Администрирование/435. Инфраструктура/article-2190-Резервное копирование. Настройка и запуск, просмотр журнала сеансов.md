@@ -7,15 +7,15 @@ kbId: 2190
 
 ## Введение
 
-В **Comindware Business Application Platform** предусмотрена функция резервного копирования полного образа экземпляра ПО в формате файла с расширением `.CDBBZ`.
+В **{{ productName }}** предусмотрена функция резервного копирования полного образа экземпляра ПО в формате файла с расширением `.CDBBZ`.
 
-При резервном копировании сохраняются все данные всех приложений и все системные настройки экземпляра ПО **Comindware Business Application Platform**.
+При резервном копировании сохраняются все данные всех приложений и все системные настройки экземпляра ПО **{{ productName }}**.
 
-Резервные копии могут храниться как в файловой системе сервера **Comindware Business Application Platform**, так и в [хранилище S3][s3_connection].
+Резервные копии могут храниться как в файловой системе сервера **{{ productName }}**, так и в [хранилище S3][s3_connection].
 
-Резервное копирование можно настраивать и запускать с помощью веб-интерфейса **Comindware Business Application Platform**.
+Резервное копирование можно настраивать и запускать с помощью веб-интерфейса **{{ productName }}**.
 
-Восстановление данных осуществляется на стороне сервера **Comindware Business Application Platform**. См. *«[Восстановление базы данных из файла резервной копии в формате .CDBBZ][backup_restore_cdbbz]»*.
+Восстановление данных осуществляется на стороне сервера **{{ productName }}**. См. *«[Восстановление базы данных из файла резервной копии в формате .CDBBZ][backup_restore_cdbbz]»*.
 
 ## Рекомендации по резервному копированию
 
@@ -42,7 +42,7 @@ kbId: 2190
     
     
         - **Не определено** — не использовать репозиторий для хранения резервных копий.
-        - **Файловая система** — сохранять резервные копии в файловой системе сервера **Comindware Business Application Platform**.
+        - **Файловая система** — сохранять резервные копии в файловой системе сервера **{{ productName }}**.
         
         
             - **Путь к папке** — путь к директории на сервере, в которой будут сохраняться резервные копии, например `/var/lib/comindware/<instanceName>/Backups` (здесь `<instanceName>` — имя экземпляра ПО). Для этой директории предоставьте разрешения на полный доступ, чтобы система могла сохранять в неё резервные копии, например:  
@@ -95,14 +95,14 @@ _![Настройка свойств резервного копирования
 
 ## Настройка резервного копирования данных Elasticsearch
 
-Для корректного резервного копирования данных истории необходимо настроить конфигурацию службы Elasticsearch и экземпляра ПО **Comindware Business Application Platform**:
+Для корректного резервного копирования данных истории необходимо настроить конфигурацию службы Elasticsearch и экземпляра ПО **{{ productName }}**:
 
 - В файле конфигурации Elasticsearch (`/etc/elasticsearch/elasticsearch.yml`) должен быть указан путь к репозиторию резервных копий, например:  
 **Для репозитория на локальном диске**
 
 ```
 # Директория репозитория должна быть доступна экземпляру ПО  
-# Comindware Business Application Platform  
+# {{ productName }}  
 # При необходимости установите доступ с помощью команды chmod 777  
 path.repo: /var/www/backups/elasticsearch
 ```
@@ -119,10 +119,10 @@ s3.client.default.path_style_access: true
 
 ```
 backup.elasticRepository.type: LocalDisk  
-# В данном примере Elasticsearch и Comindware Business Application Platform   
+# В данном примере Elasticsearch и {{ productName }}   
 # работают на одной машине.   
 # В противном случае следует примонтировать папку репозитория Elasticsearch   
-# на машине с Comindware Business Application Platform и указать её в директиве ниже  
+# на машине с {{ productName }} и указать её в директиве ниже  
 backup.elasticRepository.localDisk.path: /var/www/backups/elasticsearch
 ```
 
@@ -141,7 +141,7 @@ backup.elasticRepository.type: S3
 # Имя корзины в хранилище S3 для хранения резервных копий данных Elasticsearch  
 backup.elasticRepository.s3.bucket: <instanceName>-backups  
 # Имя подключения к хранилищу S3, используемому по умолчанию  
-# на стороне Comindware Business Application Platform    
+# на стороне {{ productName }}    
 backup.elasticRepository.s3.platformConnection: default  
 # Имя подключения к хранилищу S3, используемому по умолчанию на стороне Elasticsearch    
 backup.elasticRepository.s3.elasticConnection: default 

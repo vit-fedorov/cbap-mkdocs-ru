@@ -7,15 +7,15 @@ kbId: 2094
 
 ## Введение
 
-Для работы **Comindware Business Application Platform** требуется сервер Elasticsearch. См. [системные требования](https://kb.comindware.ru/article.php?id=1271).
+Для работы **{{ productName }}** требуется сервер Elasticsearch. См. [системные требования](https://kb.comindware.ru/article.php?id=1271).
 
-В случае установки **Comindware Business Application Platform** версии 4.7 в Windows [Утилита администрирования](https://kb.comindware.ru/category.php?id=414) устанавливает службу Elasticsearch в папку `C:\Program Files\Elasticsearch\elasticsearch-8.1.0\`. Эта служба имеет базовую конфигурацию и доступна по адресу `localhost:9200`.
+В случае установки **{{ productName }}** версии 4.7 в Windows [Утилита администрирования](https://kb.comindware.ru/category.php?id=414) устанавливает службу Elasticsearch в папку `C:\Program Files\Elasticsearch\elasticsearch-8.1.0\`. Эта служба имеет базовую конфигурацию и доступна по адресу `localhost:9200`.
 
 Вы можете использовать имеющуюся службу Elasticsearch или развернуть её на отдельном сервере.
 
 В этой статье представлены требования к конфигурации компьютера для сервера Elasticsearch, инструкции по установке и настройке конфигурации сервера и службы Elasticsearch в ОС Windows, а также приведен пример типового файла конфигурации. Инструкции представлены для версии 8.10.2, для других версий содержимое файлов конфигурации и порядок установки могут быть иными.
 
-Только после того, как служба Elasticsearch запущена, можно приступать к развертыванию Comindware Business Application Platform, указав путь к серверу Elasticsearch.
+Только после того, как служба Elasticsearch запущена, можно приступать к развертыванию {{ productName }}, указав путь к серверу Elasticsearch.
 
 ## 1. Требования к компьютеру
 
@@ -75,7 +75,7 @@ _![Настройка стандартного адреса сервера Elast
 
 **3.2.** Если не указать адрес сервера Elasticsearch в конфигурации Утилиты администрирования, то его потребуется указать при развертывании экземпляра продукта.
 
-**3.3.** Укажите адрес сервера и префикс индекса Elasticsearch для данного экземпляра Comindware Business Application Platform.
+**3.3.** Укажите адрес сервера и префикс индекса Elasticsearch для данного экземпляра {{ productName }}.
 
 _![Настройка адреса сервера Elasticsearch для экземпляра продукта](https://kb.comindware.ru/assets/Picture7.png)_
 

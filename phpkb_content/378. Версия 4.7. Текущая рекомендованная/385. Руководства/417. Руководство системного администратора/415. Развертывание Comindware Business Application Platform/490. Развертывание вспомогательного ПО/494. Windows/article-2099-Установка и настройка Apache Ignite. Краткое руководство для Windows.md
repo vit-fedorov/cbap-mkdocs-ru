@@ -13,7 +13,7 @@ kbId: 2099
 
 Apache Ignite — это распределенная высокопроизводительная система управления базами данных.
 
-Comindware Business Application Platform использует Apache Ignite для хранения данных.
+{{ productName }} использует Apache Ignite для хранения данных.
 
 В настоящем документе представлена краткая инструкция по установке Apache Ignite в ОС Windows из ZIP-файла на примере версии 2.16.0.
 
@@ -45,7 +45,7 @@ Comindware Business Application Platform использует Apache Ignite дл
 
 ## 3. Пример файла конфигурации Ignite
 
-Для стабильной работы Ignite вместе с Comindware Business Application Platform важны следующие директивы в данном примере:
+Для стабильной работы Ignite вместе с {{ productName }} важны следующие директивы в данном примере:
 
 - `<igniteConfiguration xmlns="http://ignite.apache.org/schema/dotnet/IgniteConfigurationSection" gridName="myGrid1">` — в параметре `gridName` укажите имя сервера узла Ignite. У узлов кластера должно быть одинаковое имя сервера.
 - `<discoverySpi type="TcpDiscoverySpi"><ipFinder type="TcpDiscoveryStaticIpFinder"><endpoints> <string>127.0.0.1</string></endpoints></ipFinder></discoverySpi>` — в параметре `TcpDiscoveryStaticIpFinder` укажите адрес сервера.

@@ -3,7 +3,7 @@ title: Установка продукта Comindware Business Application Platf
 kbId: 2028
 ---
 
-# Установка продукта Comindware Business Application Platform
+# Установка продукта {{ productName }}
 
 ## Порядок установки
 

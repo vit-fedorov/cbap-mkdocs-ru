@@ -3,17 +3,17 @@ title: Развертывание Comindware Business Application Platform. Кр
 kbId: 2344
 ---
 
-# Развертывание Comindware Business Application Platform. Краткое руководство
+# Развертывание {{ productName }}. Краткое руководство
 
 ## Введение
 
 Для работы **Comindware Business Application** Platform требуются операционная система, сервер базы данных, веб-сервер, обратный прокси-сервер и сервер журналов.
 
-Для быстрого развертывания Comindware Business Application Platform в среде Linux компания **Comindware** предоставляет дистрибутив с установщиком, настраивающим необходимое программное обеспечение. См. статью «[Comindware Business Application Platform 4.7. Перечень стороннего программного обеспечения для Linux](https://kb.comindware.ru/article.php?id=2398)».
+Для быстрого развертывания {{ productName }} в среде Linux компания **Comindware** предоставляет дистрибутив с установщиком, настраивающим необходимое программное обеспечение. См. статью «[Comindware Business Application Platform 4.7. Перечень стороннего программного обеспечения для Linux](https://kb.comindware.ru/article.php?id=2398)».
 
-В настоящем документе представлены инструкции по развертыванию и инициализации **Comindware Business Application Platform** из дистрибутива в операционных системах Альт Сервер, Astra Linux 1.7.0,  РЕД ОС, Rocky Linux и Ubuntu Server 22.04.
+В настоящем документе представлены инструкции по развертыванию и инициализации **{{ productName }}** из дистрибутива в операционных системах Альт Сервер, Astra Linux 1.7.0,  РЕД ОС, Rocky Linux и Ubuntu Server 22.04.
 
-## Установка и запуск Comindware Business Application Platform
+## Установка и запуск {{ productName }}
 
 1. Перейдите в режим суперпользователя:
 
@@ -26,7 +26,7 @@ sudo -i
 ```
 su -
 ```
-2. Скачайте и распакуйте дистрибутив **Comindware Business Application Platform** по ссылке, предоставленной компанией Comindware (`X.X.XXXX.X` — номер версии ПО):
+2. Скачайте и распакуйте дистрибутив **{{ productName }}** по ссылке, предоставленной компанией Comindware (`X.X.XXXX.X` — номер версии ПО):
 
 ```
 tar -xf X.X-release-ru-X.X.XXXX.X.alt.tar.gz
@@ -109,9 +109,9 @@ sh install.sh -p -k [-i=<instanceName>] [-e] [-d=demo] [-u=www-data] [-g=www-dat
 
     - `k` — установить ПО Kafka;
     - `e` — установить ПО Elasticsearch;
-    - `p` — установить ПО Comindware Business Application Platform;
-    - `d=demo` — создать экземпляр ПО Comindware Business Application Platform c демонстрационной базой данных (необязательный ключ по умолчанию);
-    - `d=clear` — создать экземпляр ПО Comindware Business Application Platform без демонстрационной базы данных;
+    - `p` — установить ПО {{ productName }};
+    - `d=demo` — создать экземпляр ПО {{ productName }} c демонстрационной базой данных (необязательный ключ по умолчанию);
+    - `d=clear` — создать экземпляр ПО {{ productName }} без демонстрационной базы данных;
     - `u` — пользователь (необязательный ключ);
     - `g` — группа (необязательный ключ);
     - `h` — вызов краткой справки по использованию скрипта (этот ключ следует указывать только без остальных ключей);
@@ -170,11 +170,11 @@ systemctl start elasticsearch
 ```
 11. После успешного завершения установки подождите 3–5 минут. Этого времени обычно достаточно для автоматического запуска и инициализации установленных служб (в зависимости от конфигурации машины).
 
-## Инициализация Comindware Business Application Platform
+## Инициализация {{ productName }}
 
 1. Запустите веб-браузер и в адресной строке введите: `localhost`
-2. Дождитесь запуска и отображения веб-сайта **Comindware Business Application Platform**, что может занять примерно 5 минут.
-3. Откроется страница создания аккаунта администратора **Comindware Business Application Platform**.
+2. Дождитесь запуска и отображения веб-сайта **{{ productName }}**, что может занять примерно 5 минут.
+3. Откроется страница создания аккаунта администратора **{{ productName }}**.
 
 _![Страница создания аккаунта администратора](https://kb.comindware.ru/assets/Picture14.png)_
 4. Введите учётные данные аккаунта администратора и нажмите кнопку «**Создать аккаунт**».
@@ -201,10 +201,10 @@ _![Настройка подключения к Elasticsearch](https://kb.comind
 
 _![Страница инициализации данных в Elasticsearch](https://kb.comindware.ru/assets/Picture17.png)_
 14. Нажмите кнопку «**Обновить**».
-15. Дождитесь открытия начальной страницы **Comindware Business Application Platform**.
+15. Дождитесь открытия начальной страницы **{{ productName }}**.
 
-_![Начальная страница Comindware Business Application Platform](https://kb.comindware.ru/assets/img_63452e9321257.png)_
-16. На этом этапе развертывание экземпляра **Comindware Business Application Platform** завершено и можно приступать к созданию и использованию бизнес-приложений.
+_![Начальная страница {{ productName }}](https://kb.comindware.ru/assets/img_63452e9321257.png)_
+16. На этом этапе развертывание экземпляра **{{ productName }}** завершено и можно приступать к созданию и использованию бизнес-приложений.
 
 
 

@@ -7,7 +7,7 @@ kbId: 2502
 
 ## Введение
 
-В этой статье представлена информация о расположении файлов и папок экземпляра ПО **Comindware Business Application Platform**в операционных системах семейства [Linux](#mcetoc_1hchr2nua1) (Альт Сервер, Astra Linux, РЕД ОС, Rocky Linux и Ubuntu) и [Windows.](#mcetoc_1hpdpt8tk1)
+В этой статье представлена информация о расположении файлов и папок экземпляра ПО **{{ productName }}**в операционных системах семейства [Linux](#mcetoc_1hchr2nua1) (Альт Сервер, Astra Linux, РЕД ОС, Rocky Linux и Ubuntu) и [Windows.](#mcetoc_1hpdpt8tk1)
 
 ## Содержимое каталогов — Linux
 

@@ -7,7 +7,7 @@ kbId: 2150
 
 ## Введение
 
-System Core API предоставляет системные RESTful-методы для работы со всеми сущностями в экземпляре **Comindware Business Application Platform**. Эти методы могут различаться в разных версиях **Comindware Business Application Platform**.
+System Core API предоставляет системные RESTful-методы для работы со всеми сущностями в экземпляре **{{ productName }}**. Эти методы могут различаться в разных версиях **{{ productName }}**.
 
 Здесь представлен обзор методов System Core API. Полную информацию см. в Swagger.
 
@@ -49,7 +49,7 @@ _![Интерфейс Swagger для System Core API](https://kb.comindware.ru/a
 
 ### Определения
 
-Методы API и документация Swagger используют следующие имена для  сущностей **Comindware Business Application Platform**:
+Методы API и документация Swagger используют следующие имена для  сущностей **{{ productName }}**:
 
 - ***activity*** — элемент диаграммы процесса
 - ***alias*** — системное имя

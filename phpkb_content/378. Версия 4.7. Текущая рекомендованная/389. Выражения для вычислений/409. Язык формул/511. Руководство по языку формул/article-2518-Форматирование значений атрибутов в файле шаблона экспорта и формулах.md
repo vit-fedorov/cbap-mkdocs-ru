@@ -7,7 +7,7 @@ kbId: 2518
 
 ## Введение
 
-В **Comindware Business Application Platform** предусмотрена возможность выгрузки данных записи в шаблон Word, Excel или PDF. Cм. «[Подготовка файла шаблона экспорта](https://kb.comindware.ru/article.php?id=2352)».
+В **{{ productName }}** предусмотрена возможность выгрузки данных записи в шаблон Word, Excel или PDF. Cм. «[Подготовка файла шаблона экспорта](https://kb.comindware.ru/article.php?id=2352)».
 
 В файле шаблона экспорта используются заполнители в фигурных скобках вида `{attributeSystemName}`, где `attributeSystemName` — системное имя атрибута.
 

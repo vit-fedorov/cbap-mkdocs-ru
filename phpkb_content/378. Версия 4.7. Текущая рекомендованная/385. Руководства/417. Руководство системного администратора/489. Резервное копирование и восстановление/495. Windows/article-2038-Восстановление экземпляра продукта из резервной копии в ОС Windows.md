@@ -57,7 +57,7 @@ _![Настройка подключения к Elasticsearch](https://kb.comind
 3. Если откроется страница инициализации данных в Elasticsearch, нажмите кнопку «**Обновить**». 
 
 _![Страница инициализации данных в Elasticsearch](https://kb.comindware.ru/assets/Picture17.png)_
-4. Дождитесь открытия начальной страницы **Comindware Business Application Platform**.
+4. Дождитесь открытия начальной страницы **{{ productName }}**.
 5. Откройте страницу «**Администрирование**» — «**Подключения**».
 
 ![Переход к свойства подключения к Elasticsearch](https://kb.comindware.ru/assets/img_64d09fd6ec3ba.png)

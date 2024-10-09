@@ -6,7 +6,7 @@ kbId: 2577
 # Руководство системного администратора. Содержание раздела
 
 - [**Общие сведения**](https://kb.comindware.ru/category.php?id=512)
-- **[Развёртывание Comindware Business Application Platform](https://kb.comindware.ru/category.php?id=415)**
+- **[Развёртывание {{ productName }}](https://kb.comindware.ru/category.php?id=415)**
     - [**Linux**](https://kb.comindware.ru/category.php?id=491)
     - [**Windows**](https://kb.comindware.ru/category.php?id=492)
     - [**Развёртывание вспомогательного ПО**](https://kb.comindware.ru/category.php?id=490)

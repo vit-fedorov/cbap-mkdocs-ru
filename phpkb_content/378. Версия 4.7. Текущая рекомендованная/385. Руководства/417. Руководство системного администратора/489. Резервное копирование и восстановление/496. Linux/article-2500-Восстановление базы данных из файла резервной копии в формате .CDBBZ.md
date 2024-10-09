@@ -7,7 +7,7 @@ kbId: 2500
 
 ## Введение
 
-В данном разделе представлены инструкции по восстановлению на чистом экземпляре ПО **Comindware Business Application Platform** (далее — ПО, экземпляр ПО) под управлением ОС Linux  базы данных из файла резервной копии с расширением `.CDBBZ`  , созданного с помощью встроенной в ПО функции «**Резервное копирование** ». См. *«[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]**»**.* 
+В данном разделе представлены инструкции по восстановлению на чистом экземпляре ПО **{{ productName }}** (далее — ПО, экземпляр ПО) под управлением ОС Linux  базы данных из файла резервной копии с расширением `.CDBBZ`  , созданного с помощью встроенной в ПО функции «**Резервное копирование** ». См. *«[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]**»**.* 
 
 См. также инструкции по полному резервному копированию и восстановлению базы данных внешними средствами:
 
@@ -27,7 +27,7 @@ su -
 ```
 sudo -i
 ```
-2. Разверните чистый экземпляр ПО *без демонстрационной базы данных*(с параметром `-d=clear`). См. *«[Развертывание](https://kb.comindware.ru/category.php?id=491)*[*Comindware Business Application Platform*](https://kb.comindware.ru/category.php?id=491)**». Например:** 
+2. Разверните чистый экземпляр ПО *без демонстрационной базы данных*(с параметром `-d=clear`). См. *«[Развертывание](https://kb.comindware.ru/category.php?id=491)*[*{{ productName }}*](https://kb.comindware.ru/category.php?id=491)**». Например:** 
 
 ```
 sh install.sh -k -p [-i=<instanceName>] [-e] -d=clear [-u=www-data] [-g=www-data]
@@ -37,16 +37,16 @@ sh install.sh -k -p [-i=<instanceName>] [-e] -d=clear [-u=www-data] [-g=www-data
 
     - `k` — установить ПО Kafka;
     - `e` — установить ПО Elasticsearch;
-    - `p` — установить ПО Comindware Business Application Platform;
-    - `d=clear` *— создать экземпляр ПО Comindware Business Application Platform без демонстрационной базы данных;*
-    - `d=demo` — создать экземпляр ПО Comindware Business Application Platform c демонстрационной базой данных (не обязательный ключ по умолчанию);
+    - `p` — установить ПО {{ productName }};
+    - `d=clear` *— создать экземпляр ПО {{ productName }} без демонстрационной базы данных;*
+    - `d=demo` — создать экземпляр ПО {{ productName }} c демонстрационной базой данных (не обязательный ключ по умолчанию);
     - `u` — пользователь (необязательный ключ);
     - `g` — группа (необязательный ключ);
     - `h` — вызов краткой справки по использованию скрипта (этот ключ следует указывать без остальных ключей);
     - `kh=hostname` — использовать указанный хост для подключения к ПО Kafka (необязательный ключ);
     - `kp=portnumber` — использовать указанный порт для подключения к ПО Kafka (необязательный ключ);
     - `i=<instanceName>` — создать экземпляр ПО с указанным именем (необязательный ключ). Имя экземпляра по умолчанию: `cmwdata`.
-3. Инициализируйте экземпляр ПО. См. *«[Развертывание](https://kb.comindware.ru/category.php?id=491)*[*Comindware Business Application Platform*](https://kb.comindware.ru/category.php?id=491)*»*.
+3. Инициализируйте экземпляр ПО. См. *«[Развертывание](https://kb.comindware.ru/category.php?id=491)*[*{{ productName }}*](https://kb.comindware.ru/category.php?id=491)*»*.
 4. Остановите сервисы NGINX и comindware`<instanceName>` (где `<instanceName>` — имя экземпляра ПО) и удостоверьтесь, что они остановлены:
 
 ```
@@ -183,7 +183,7 @@ systemctl status nginx comindware<instanceName>
 
 **[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]**
 
-**[Развертывание](https://kb.comindware.ru/category.php?id=491)[Comindware Business Application Platform](https://kb.comindware.ru/category.php?id=491)**
+**[Развертывание](https://kb.comindware.ru/category.php?id=491)[{{ productName }}](https://kb.comindware.ru/category.php?id=491)**
 
 **[Регистрация репозитория Elasticsearch (официальное руководство, английский язык)](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-filesystem-repository.html)**
 

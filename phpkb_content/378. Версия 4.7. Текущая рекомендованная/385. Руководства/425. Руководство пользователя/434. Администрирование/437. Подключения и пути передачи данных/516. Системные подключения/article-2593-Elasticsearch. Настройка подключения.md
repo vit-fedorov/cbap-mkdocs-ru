@@ -7,9 +7,9 @@ kbId: 2593
 
 ## Введение
 
-**Comindware Business Application Platform** использует службу Elasticsearch для записи истории всех транзакций, таких как журнал изменений записей и [экземпляров процессов][logs] и т. п.
+**{{ productName }}** использует службу Elasticsearch для записи истории всех транзакций, таких как журнал изменений записей и [экземпляров процессов][logs] и т. п.
 
-Подключение к Elasticsearch автоматически создаётся при [развёртывании](https://kb.comindware.ru/article.php?id=2344#mcetoc_1ga11542i2) **Comindware Business Application Platform**.
+Подключение к Elasticsearch автоматически создаётся при [развёртывании](https://kb.comindware.ru/article.php?id=2344#mcetoc_1ga11542i2) **{{ productName }}**.
 
 В данной статье представлены инструкции по настройке подключения к серверу Elasticsearch.
 
@@ -20,12 +20,12 @@ kbId: 2593
 3. Настройте свойства подключения:   
 
     - **Отключить** — установите этот флажок, чтобы временно деактивировать подключение;
-    - **Префикс индекса** — введите *уникальный* префикс записей в БД Elasticsearch для данного экземпляра **Comindware Business Application Platform**;
+    - **Префикс индекса** — введите *уникальный* префикс записей в БД Elasticsearch для данного экземпляра **{{ productName }}**;
     
     Примечание
     
     
-    Префикс индекса служит для идентификации записей в БД Elasticsearch. Если к одному серверу Elasticsearch подключается несколько экземпляров **Comindware Business Application Platform**, их префиксы индексов должны отличаться. В противном случае будет нарушена целостность данных в БД Elasticsearch.
+    Префикс индекса служит для идентификации записей в БД Elasticsearch. Если к одному серверу Elasticsearch подключается несколько экземпляров **{{ productName }}**, их префиксы индексов должны отличаться. В противном случае будет нарушена целостность данных в БД Elasticsearch.
     - **Название** — введите наглядное наименование подключения;
     - **URL подключения для журналирования** — введите адрес сервера Elasticsearch;
     - **Имя пользователя** — введите логин для входа на сервер Elasticsearch;
@@ -37,7 +37,7 @@ _![Настройка подключения к Elasticsearch](https://kb.comind
 
 ## Связанные статьи
 
-**[Инициализация Comindware Business Application Platform](https://kb.comindware.ru/article.php?id=2344#mcetoc_1ga11542i2)**
+**[Инициализация {{ productName }}](https://kb.comindware.ru/article.php?id=2344#mcetoc_1ga11542i2)**
 
 
 

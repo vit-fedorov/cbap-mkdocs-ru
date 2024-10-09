@@ -17,6 +17,8 @@ class myparser(HTMLParser):
 		if tag == 'img':
 			print("IMG tag with attrs %s\n" % repr(attrs))
 
+import os
+
 import os.path
 
 import json
@@ -25,9 +27,26 @@ from sshtunnel import SSHTunnelForwarder
 
 THIS_FILE_DIR = os.path.dirname(os.path.realpath(__file__))
 importPath = input('Path to import: ') 
-KB_DIR = os.path.dirname(importPath) if importPath else 'phpkb_import'
+KB_DIR = os.path.dirname(importPath) if importPath else 'phpkb_content'
 TOTAL_PAGES_IMPORTED = 0
 CONNECTION = ''
+docs_ru_folder = 'docs/ru'
+hyperlinks_file = os.path.join(docs_ru_folder, '.snippets/hyperlinks_mkdocs_to_kb_map.md')
+
+# Function to search for pattern in hyperlinks file and replace
+def find_url_in_snippet(article_id):
+    with open(hyperlinks_file, 'r', encoding='utf-8') as file:
+        lines = file.readlines()
+    
+    for line in lines:
+        # Search for the url with articleId
+        match = re.search(fr'(\[.*?\]):.*{article_id}', line)
+        if match and match.group(1):
+            url = match.group(1)
+            #print(f"Found link and URL for articleId {article_id}: {url}")
+            return url
+    return ''
+
 
 def encrypt(message: bytes, key: bytes) -> bytes:
     return Fernet(key).encrypt(message)
@@ -86,6 +105,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
      
         # if os.path.exists(os.path.join(categoryDir, "article-{id}-{title}.md".format( id=id, title= sanitize_filename(title))): continue
         filename = os.path.join(categoryDir, "article-{id}-{title}.md".format( id=id, title= sanitize_filename(title)))
+        filename_html = os.path.join(categoryDir, "article-{id}-{title}.html".format( id=id, title= sanitize_filename(title)))
         print ('    Importing article: ' + filename)
         
         with open(filename, "w+") as b:
@@ -94,17 +114,21 @@ def importArtciclesInCategory (categoryId, categoryDir):
             article_title = p.new_tag("h1")
             article_title.string=title
             p.insert(0, article_title)
-            # b.write(html.escape(str(p)))                
-            # b.write(str(p))
+            with open(filename_html, "w+") as html_file:
+                html_file.write(str(p))    
+                html_file.write(str(p))
             markdown = MarkdownConverter(heading_style='ATX', bullets='-', escape_misc=False).convert_soup(p)
+            # Remove redundant new lines
             pattern = re.compile(r'^\n^\n\n*', flags=re.MULTILINE)
             markdown = re.sub(pattern, r'\n', markdown)
             # Remove redundant TOC
-            pattern = re.compile(r'## Содержание.*\n*(.*\t*-.*\n)*\n', flags=re.MULTILINE)
+            pattern = re.compile(r'## Содержание.*\n*(.*\t*-.*\n+)*\n', flags=re.MULTILINE)
             markdown = re.sub(pattern, r'', markdown)
             # Remove redundant [*‌* К началу](#) links
-            pattern = re.compile(r'\[.*К началу\]\(#\)', flags=re.MULTILINE)
+            pattern = re.compile(r'^.*\[.*К началу\]\(#\).*$', flags=re.MULTILINE)
             markdown = re.sub(pattern, r'', markdown)
+            # Replace \t with four spaces
+            markdown = markdown.replace('\t', '    ')
             # Compile and add frontmatter
             frontmatter = '\n'.join([
                 '---',
@@ -113,25 +137,38 @@ def importArtciclesInCategory (categoryId, categoryDir):
                 '---',
                 '\n'
                 ]).format(title, id)
-            markdown = frontmatter + markdown
+            # Add link map to the bottom
+            footer = '{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}\n'
+            markdown = frontmatter + markdown + footer
             pattern = re.compile(r'`!\[.*\]\(.*\) *(.*?) *\{Article-ID:(\d+)\}.*?`', flags=re.MULTILINE)
             # markdown = re.sub(pattern, r'[\2](https://kb.comindware.ru/article.php?id=\3)', markdown)
             # markdown = re.sub(pattern, r'[\1](https://kb.comindware.ru/article.php?id=\2)', markdown)
             for result in re.finditer(pattern, markdown):
                 articleId = result.group(2)
-                c.execute("""
+                c.execute(f"""
                     SELECT phpkb_articles.article_title 
                     FROM phpkb_articles
                     WHERE article_show='yes' 
-                    AND phpkb_articles.article_id={article_id}
+                    AND phpkb_articles.article_id={articleId}
                     LIMIT 1
-                    """.format(article_id = articleId))
+                    """)
                 
                 foundArticle = c.fetchall()
                 if foundArticle:
                     articleName = foundArticle[0][0]
                     replacementRegex = r'[{0}](https://kb.comindware.ru/article.php?id=\2)'.format(articleName)
                     markdown = re.sub(pattern, replacementRegex, markdown, count=1)
+            # Find all links in markdown    
+            pattern = r'\(https://kb\.comindware\.ru.+((article.php\?id=)|-)(\d+)(?(2)|\.html).*\)'
+            foundLinks = re.finditer(pattern, markdown)
+            for link in foundLinks:
+                article_id = link.group(3)
+                url = str(find_url_in_snippet(article_id))
+                if url:
+                    pattern = r'\(https://kb\.comindware\.ru.+{0}.*\)'.format(article_id)
+                    markdown = re.sub(pattern, url, markdown, count=1)
+                    print (f'Replaced {link.group(0)} with {url}')
+            #markdown = markdown.replace('https://kb.comindware.ru/category.php?id=', '{{ kbCategoryURLPrefix }}')
             b.write(markdown)
             # print(html.escape(str(p)))
             pages += 1

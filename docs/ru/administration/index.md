@@ -27,7 +27,7 @@ kbId: 2191
 * [Разделы навигации][navigation_sections_setup]
 * [Шаблоны][templates]
 * [Диаграммы][diagrams]
-* [Функции][функции]
+* [Функции][functions]
 * [Пути передачи данных][communication_routes]
 
 ### Администрирование аккаунтов

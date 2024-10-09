@@ -44,7 +44,7 @@ _![Настройка свойств нового приложения](bussines
     - [Шаблоны][templates]
     - [Роли][roles]
     - [Разделы навигации][navigation_sections_setup]
-    - [Функции][функции]
+    - [Функции][functions]
     - [Переменные][variables]
     - [Сценарии][scenarios]
     - [Интернет-магазин][online_store]

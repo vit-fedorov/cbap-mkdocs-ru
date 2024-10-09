@@ -48,10 +48,6 @@
 
 [form_static_elements_tabs]: {{ kbArticleURLPrefix }}2530#formset4
 
-[functions]: {{ kbArticleURLPrefix }}2200
-
-[functions_web_service_call]: {{ kbArticleURLPrefix }}2200#function2
-
 [experimental_functions_support]: {{ kbArticleURLPrefix }}1339#mcetoc_1hsfq7ksu2
 
 [experessions_intro]: {{ kbArticleURLPrefix }}2493
@@ -213,6 +209,10 @@
 [form_dynamic_elements_table]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_table
 
 [form_personal_use]: {{ kbArticleURLPrefix }}2568
+
+[functions]: {{ kbArticleURLPrefix }}2200
+
+[functions_web_service_call]: {{ kbArticleURLPrefix }}2200#functions_web_service_call
 
 [get_connection]: {{ kbArticleURLPrefix }}2559
 

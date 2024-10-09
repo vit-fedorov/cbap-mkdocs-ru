@@ -1,0 +1,547 @@
+<h1>Настройка таблицы в шаблоне</h1><div class="mce-toc">
+<h2 class="toc-heading">Содержание</h2>
+<ul>
+<li><a href="#mcetoc_1hn38es3m0">Введение</a></li>
+<li><a href="#list0">Переход к конструктору таблицы</a>
+<ul>
+<li><a href="#mcetoc_1hn2megnp0">Области конструктора таблицы</a></li>
+</ul>
+</li>
+<li><a href="#list1">Настройка свойств таблицы</a>
+<ul>
+<li><a href="#list100">Основные свойства</a></li>
+<li><a href="#list101">Дополнительные свойства — сортировка, группировка, подсчёт итогов, фильтрация</a>
+<ul>
+<li><a href="#mcetoc_1hq21glhn0">Сортировка</a></li>
+<li><a href="#mcetoc_1hq21il801">Группировка</a></li>
+<li><a href="#mcetoc_1hq21jjtp2">Подсчёт итогов</a></li>
+<li><a href="#mcetoc_1hq21s13d3">Фильтрация</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#list2">Настройка столбцов таблицы</a></li>
+<li><a href="#mcetoc_1hn5p3p2r0">Добавление столбца</a>
+<ul>
+<li><a href="#mcetoc_1hn2mlgf93">Настройка свойств столбца</a></li>
+</ul>
+</li>
+<li><a href="#mcetoc_1hn2ng18i4">Настройка кнопок таблицы</a>
+<ul>
+<li><a href="#mcetoc_1hn5onopm1">Порядок настройки области кнопок таблицы</a></li>
+</ul>
+</li>
+<li><a href="#mcetoc_1hn2pjngh5">Связанные статьи</a></li>
+</ul>
+</div>
+<h2 id="mcetoc_1hn38es3m0">Введение</h2>
+<p><span style="letter-spacing: 0.2px;">С помощью конструктора таблицы можно настроить представление таблицы, которое будет использоваться по умолчанию для конечных пользователей. </span></p>
+<p><span style="letter-spacing: 0.2px;">В свою очередь, конечный пользователь может <a href="https://kb.comindware.ru/article.php?id=2551">настроить собственную конфигурацию</a> отображения таблицы, например скрыть и переместить столбцы, отфильтровать, отсортировать и сгруппировать строки, подсчитать итоги.</span></p>
+<p><span style="letter-spacing: 0.2px;">В этом разделе представлены инструкции по настройке таблицы в шаблоне. См. также параграф <em>«<a href="https://kb.comindware.ru/article.php?id=2531#formset17">Настройка таблицы на форме</a>»</em>.</span></p>
+<h2 id="list0">Переход к конструктору таблицы</h2>
+<ol class="colored_numbers_list">
+<li>Откройте шаблон и выберите вкладку «<strong>Таблицы</strong>».</li>
+<li>Отобразится список таблиц шаблона.</li>
+<li>Создайте таблицу, нажав кнопку «<strong>Создать</strong>» или откройте таблицу, дважды нажав её в списке.</li>
+<li>Отобразится конструктор таблицы.</li>
+<li>Настройте <a href="#list1">свойства</a>, <a href="#list2">столбцы</a> и <a href="#mcetoc_1hn2ng18i4">кнопки</a> таблицы.</li>
+</ol>
+<div class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Области конструктора таблицы" class="img-responsive" height="774" src="https://kb.comindware.ru/assets/img_65d45b5fb1369.png" width="994"/></p>
+<p class="caption" style="font-size: 15px !important;">Области конструктора таблицы</p>
+</div>
+<h3 id="mcetoc_1hn2megnp0">Области конструктора таблицы</h3>
+<ol>
+<li><strong>Панель элементов </strong>  — содержит <a href="https://kb.comindware.ru/article.php?id=2252">атрибуты</a>, которые можно <a href="#list2">поместить в качестве столбцов</a> в таблицу, а также кнопки для добавления в область кнопок.
+<div class="notice notice-success">
+<p class="admonition-title">Совет</p>
+<p>Панель элементов позволяет создавать и редактировать атрибуты в шаблоне, не покидая конструктор таблицы.</p>
+<ul style="list-style-type: disc;">
+<li style="list-style-type: disc;">Чтобы создать атрибут в текущем шаблоне, наведите указатель мыши на заголовок «<strong>Атрибуты</strong>» и нажмите кнопку «<strong>Добавить атрибут</strong>».</li>
+<li style="list-style-type: disc;">Чтобы создать атрибут в связанном с этим атрибутом шаблоне, наведите указатель на название <strong><a href="https://kb.comindware.ru/article.php?id=2243">атрибута типа запись</a> </strong>и нажмите кнопку «<strong>Добавить атрибут</strong>».</li>
+<li style="list-style-type: disc;">Чтобы отредактировать атрибут, наведите указатель мыши на его название и нажмите кнопку «<strong>Редактировать атрибут</strong>».</li>
+</ul>
+</div>
+</li>
+<li><strong>Область кнопок </strong>— позволяет <a href="#mcetoc_1hn2ng18i4">настроить кнопки</a> для данной таблицы.</li>
+<li><strong>Макет таблицы</strong> — служит для <a href="#list2">настройки столбцов</a> таблицы.</li>
+<li><strong>Панель свойств </strong>— служит для настройки элемента, выбранного на макете: <a href="#list1">таблицы</a>, <a href="#mcetoc_1hn2mlgf93">столбца</a> или <a href="#mcetoc_1hn2ng18i4">кнопок</a>.</li>
+<li><strong>Кнопки</strong>
+<ul>
+<li><span style="box-sizing: border-box; font-weight: 700 !important;"> Сохранить </span>— сохранение текущей конфигурации таблицы.</li>
+<li><strong style="box-sizing: border-box; font-weight: 700 !important;"> Клонировать</strong> — <a href="https://kb.comindware.ru/article.php?id=2552">создание дубликата</a> таблицы.</li>
+<li><strong style="box-sizing: border-box; font-weight: 700 !important;"> Очистить </strong>— удаление всех столбцов таблицы.</li>
+<li><strong>Связи </strong> <em aria-hidden="true" class="fal fa-link-horizontal">‌</em> — просмотр списка сущностей, с которыми связана таблица.</li>
+<li><strong>Перейти к таблице</strong> <em aria-hidden="true" class="fal fa-table">‌</em> — просмотр настроенной таблицы с данными в представлении для конечного пользователя.</li>
+<li><strong style="box-sizing: border-box; font-weight: 700 !important;"> Настроить шаблон </strong><em aria-hidden="true" class="fal fa-external-link">‌</em> — переход к свойствам шаблона, к которому относится таблица.</li>
+</ul>
+</li>
+</ol>
+<h2 id="list1">Настройка свойств таблицы</h2>
+<ol class="colored_numbers_list">
+<li>Нажмите пустую область макета.</li>
+<li>Справа от макета отобразится панель свойств таблицы</li>
+<li>Настройте свойства таблицы на двух вкладках: «<strong style="letter-spacing: 0.2px;">Основные</strong><span style="letter-spacing: 0.2px;">» и «</span><strong style="letter-spacing: 0.2px;">Дополнительные</strong> <span style="letter-spacing: 0.2px;"> ». </span></li>
+<li>Нажмите кнопку «<strong>Сохранить</strong>».</li>
+</ol>
+<h3 id="list100">Основные свойства</h3>
+<ul>
+<li><strong> Отображаемое название </strong>— наглядный заголовок таблицы, который отображается в списке таблиц шаблона и для конечных пользователей.</li>
+<li><strong> Системное имя </strong>— уникальное имя таблицы, которое используется в вычислениях. Может содержать только буквы латинского алфавита, цифры и знак «_». Заполняется автоматически посредством транслитерации.</li>
+<li><strong style="box-sizing: border-box; font-weight: 700 !important;">Ручная загрузка данных </strong>— <span style="color: #545764; font-family: 'Open Sans', sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: 0.2px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;"><span style="color: #545764; font-family: 'Open Sans', sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: 0.2px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">установите этот флажок</span> </span> , чтобы при открытии таблица отображалась без данных. Пользователь сможет настроить внешний вид таблицы, а затем нажать кнопку «<strong style="letter-spacing: 0.2px;">Загрузить данные</strong><span style="letter-spacing: 0.2px;">».</span></li>
+</ul>
+<div class="screenshot_with_caption">
+<p><img alt="Таблица с ручной загрузкой данных" class="img-responsive" height="349" src="https://kb.comindware.ru/assets/img_65d4558190d75.png" width="994"/></p>
+<p class="caption">Таблица с ручной загрузкой данных</p>
+</div>
+<ul>
+<li><strong> По умолчанию </strong>— <span style="box-sizing: border-box; color: #545764; font-family: 'Open Sans', sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: 0.2px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; background-color: #ffffff; float: none; display: inline !important;">установите этот флажок, чтобы таблица отображалась по умолчанию при просмотре записей в шаблоне. <span style="color: #5a5a5a; font-family: OpenSans, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">В шаблоне можно назначить только одну таблицу по умолчанию. </span><span style="color: #5a5a5a; font-family: OpenSans, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">Если пользователь откроет другую таблицу в шаблоне, она станет отображаться для него по умолчанию.</span> </span></li>
+<li><strong> Показывать архивные записи </strong>— установите этот флажок, чтобы в таблице отображались записи помещённые в архив, которые скрыты по умолчанию.</li>
+<li><strong> Отображение формы </strong>— укажите способ отображения форм записей из таблицы:
+<ul style="list-style-type: circle;">
+<li><strong> Нет </strong>— при двойном нажатии строки таблицы форма с записью отобразится вместо таблицы;</li>
+<li><strong> Вертикальное </strong>— при нажатии строки в таблице форма записи отобразится справа от таблицы, границу между таблицей и формой можно будет перемещать с помощью мыши;</li>
+<li><strong>Горизонтальное </strong>— при нажатии строки в таблице форма записи отобразится под таблицей, границу между таблицей и формой можно будет перемещать с помощью мыши.</li>
+</ul>
+</li>
+<li><strong>Записей на странице </strong>— укажите количество строк отображающихся в таблице при её открытии, по умолчанию: 25.</li>
+<li><strong>Закрепить столбцы </strong>— укажите количество столбцов начиная слева, которые не будут прокручиваться по горизонтали.</li>
+<li><strong>Карточки </strong>— выберите представление карточек, которое будет использоваться для отображения данных таблицы в виде плиток. См. <em>«<a href="https://kb.comindware.ru/category.php?id=479">Карточки</a>»</em>.</li>
+<li><strong> Системный фильтр </strong>— задайте список ID записей, которые должны отображаться в таблице. Для этого <span style="letter-spacing: 0.2px;">введите </span><strong style="letter-spacing: 0.2px;">формулу </strong><span style="letter-spacing: 0.2px;">или выражение на языке </span> <strong style="letter-spacing: 0.2px;"> N3 </strong> или составьте таблицу <strong>DMN</strong>.</li>
+</ul>
+<h3 id="list101">Дополнительные свойства — сортировка, группировка, подсчёт итогов, фильтрация</h3>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Перед настройкой дополнительных свойств таблицы её <em>необходимо сохранить</em>.</p>
+</div>
+<p>Для настройки сортировки, группировки, подсчёта итогов и фильтрации данных в таблице, перетащите столбцы из макета таблицы в соответствующие блоки на вкладке «<strong>Дополнительные</strong>» справа от макета и настройте параметры блоков, как указано ниже.</p>
+<p>Чтобы удалить столбец из блока на вкладке «<strong>Дополнительные</strong>», перетащите его за пределы блока.</p>
+<h4 id="mcetoc_1hq21glhn0">Сортировка</h4>
+<p>Перетащите в блок «<strong>Сортировка</strong>» один или несколько столбцов, а затем выберите каждый столбец в блоке и задайте направление сортировки строк таблицы по нему:</p>
+<ul style="list-style-type: circle;">
+<li><strong> По возрастанию </strong>— чем меньше значение в данном столбце, тем выше строка будет отображаться в таблице;</li>
+<li><strong> По убыванию </strong>— чем больше значение в данном столбце, тем выше строка будет отображаться в таблице;</li>
+<li><strong> Пустые сверху </strong>— установите этот флажок, чтобы строки с пустыми значениями в данном столбце отображались над остальными строками.</li>
+</ul>
+<div class="notice notice-info">
+<p class="admonition-title">Примечания</p>
+<p>Правила сортировки строк таблицы по нескольким столбцам будут применяться по порядку следования столбцов в блоке «<strong>Сортировка</strong>»: от первого к последнему.</p>
+<p>Чтобы задать порядок сортировки по нескольким столбцам, расположите их в требуемом порядке в блоке «<strong>Сортировка</strong>».</p>
+</div>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Настройка сортировки строк таблицы по двум столбцам" class="img-responsive" height="353" src="https://kb.comindware.ru/assets/img_65d60fa330f53.png" width="778"/></p>
+<figcaption class="caption" style="font-size: 15px !important;">Настройка сортировки строк таблицы по двум столбцам</figcaption>
+</figure>
+<h4 id="mcetoc_1hq21il801">Группировка</h4>
+<p>Перетащите в блок «<strong>Группировка</strong>» один или несколько столбцов, а затем выберите каждый столбец в блоке и задайте направление группировки строк таблицы по значениям в нём:</p>
+<ul style="list-style-type: circle;">
+<li><strong> По возрастанию </strong>— чем меньше значение в данном столбце, тем выше группа строк будет отображаться в таблице;</li>
+<li><strong> По убыванию </strong>— чем больше значение в данном столбце, тем выше группа строк будет отображаться в таблице;</li>
+<li><strong> Пустые сверху </strong>— установите этот флажок, чтобы строки с пустыми значениями в данном столбце отображались над остальными строками.</li>
+</ul>
+<div class="notice notice-info">
+<p class="admonition-title">Примечания</p>
+<p>Строки группируются по одинаковым значениям в столбце.</p>
+<p>При группировке строк по нескольким столбцам в таблице будет сформировано древовидное представление записей.</p>
+<p>Правила группировки строк таблицы по нескольким столбцам будут применяться по порядку следования столбцов в блоке «<strong>Группировка</strong>»: от первого к последнему.</p>
+<p>Чтобы задать порядок сортировки по нескольким столбцам, расположите их в требуемом порядке в блоке «<strong>Группировка</strong>».</p>
+</div>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Настройка группировки строк таблицы по двум столбцам" class="img-responsive" height="353" src="https://kb.comindware.ru/assets/img_65d60f0f0781d.png" width="778"/></p>
+<figcaption class="caption" style="font-size: 15px !important;">Настройка группировки строк таблицы по двум столбцам</figcaption>
+</figure>
+<h4 id="mcetoc_1hq21jjtp2">Подсчёт итогов</h4>
+<p>Перетащите в блок «<strong>Подсчет итогов</strong>» один или несколько столбцов, а затем выберите каждый столбец в блоке и задайте способ подсчёта итогов по значениям в столбце:</p>
+<ul style="list-style-type: circle;">
+<li><strong> Количество </strong>— будет подсчитано количество строк в каждой группе в таблице;</li>
+<li><strong>Сумма </strong>— для каждой группы строк в таблице будет подсчитана сумма значений в столбце.</li>
+</ul>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Подсчет итогов работает только при включённой группировке строк в таблице.</p>
+</div>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Настройка подсчета итогов по столбцу таблицы" class="img-responsive" height="353" src="https://kb.comindware.ru/assets/img_65d60e625c7c5.png" width="778"/></p>
+<figcaption class="caption" style="font-size: 15px !important;">Настройка подсчета итогов по столбцу таблицы</figcaption>
+</figure>
+<h4 id="mcetoc_1hq21s13d3">Фильтрация</h4>
+<p>Перетащите в блок «<strong>Фильтрация</strong>» один или несколько столбцов, а затем настройте правила фильтрации данных в таблице по значениям в столбцах:</p>
+<ul style="list-style-type: circle;">
+<li><strong>Равно</strong></li>
+<li><strong>Не равно</strong></li>
+<li><strong>Больше чем</strong></li>
+<li><strong>Больше или равно</strong></li>
+<li><strong>Меньше чем</strong></li>
+<li><strong>Меньше или равно</strong></li>
+</ul>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Для фильтров по нескольким столбцам можно выбрать логический оператор <code>И</code> либо <code>ИЛИ</code>. Для этого нажимайте кнопку «<strong>Поменять оператор</strong>» <em class="fal fa-exchange" title="Поменять оператор">‌</em> рядом с правилами фильтрации.</p>
+</div>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Настройка фильтра с оператором «И» по двум столбцам таблицы" class="img-responsive" height="353" src="https://kb.comindware.ru/assets/img_65d6185457a66.png" width="778"/></p>
+<figcaption class="caption" style="font-size: 15px !important;">Настройка фильтра с оператором «И» по двум столбцам таблицы</figcaption>
+</figure>
+<h2 id="list2">Настройка столбцов таблицы</h2>
+<p>Панель элементов конструктора таблицы содержит список атрибутов текущего шаблона и связанных с ним шаблонов. Эти атрибуты можно поместить в таблицу в качестве столбцов.</p>
+<h2 id="mcetoc_1hn5p3p2r0">Добавление столбца</h2>
+<ol class="colored_numbers_list">
+<li>Выберите атрибут в панели элементов слева от макета таблицы.</li>
+<li>Чтобы выбрать атрибут шаблона, связанного с текущим, раскройте в панели элементов атрибут типа «<strong>Запись</strong>».</li>
+<li>Перетащите выбранный атрибут на макет таблицы.</li>
+<li>При необходимости перетащите столбец в требуемую позицию на макете таблицы. При перетаскивании целевая позиция столбца подсвечивается на макете.
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Для конечного пользователя столбцы таблицы будут отображаться слева направо в порядке их следования в макете таблицы: верхний столбец на макете отобразится первым слева в таблице.</p>
+</div>
+</li>
+<li>Справа от макета отобразится панель «<strong>Свойства столбца</strong>».</li>
+<li><a href="#mcetoc_1hn2mlgf93">Настройте свойства столбца</a>.</li>
+</ol>
+<div class="screenshot_with_caption">
+<p><img class="img-responsive" src="https://kb.comindware.ru/assets/img_65d48006c97eb.png"/></p>
+<p class="caption">Добавление и настройка столбца таблицы</p>
+</div>
+<h3 id="mcetoc_1hn2mlgf93">Настройка свойств столбца</h3>
+<ol class="colored_numbers_list">
+<li>Добавьте или выберите столбец таблицы на макете.</li>
+<li>Настройте <strong>свойства столбца</strong> с помощью панели справа от макета таблицы:
+<ol>
+<li style="list-style-type: disc;"><span style="font-weight: 700 !important;">Отображаемое название </span>— заголовок столбца в таблице;</li>
+<li style="list-style-type: disc;"><span style="font-weight: 700 !important;">Ширина столбца </span>— исходная ширина столбца в таблице (конечный пользователь сможет установить персональную ширину столбцов в таблице);</li>
+<li style="list-style-type: disc;"><span style="font-weight: 700 !important;">Скрытый </span>— установите этот флажок, чтобы столбец не отображался для конечного пользователя. Этот флажок можно использовать, например, чтобы скрыть столбцы, которые используются для сортировки, группировки или фильтрации таблицы, но не должны быть видны конечному пользователю. При этом пользователь сможет отобразить скрытые столбцы с помощью <a href="https://kb.comindware.ru/article.php?id=2551">персональной настройки таблицы</a>.</li>
+</ol>
+</li>
+<li style="list-style-type: disc;">Нажмите кнопку «<strong>Сохранить</strong>», чтобы сохранить таблицу.</li>
+</ol>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Под свойствами столбца в справочных целях отображаются свойства атрибута, к которому относится столбец:</p>
+<ul>
+<li><strong> Путь к атрибуту </strong>— полный путь к атрибуту в контексте текущего шаблона;</li>
+<li><strong> Системное имя </strong>— уникальное имя атрибута;</li>
+<li><strong> Тип </strong>— тип данных атрибута;</li>
+<li><strong> Формат отображения </strong>— отображает формат отображения данных атрибута;</li>
+<li><strong> Вычисляемый </strong>— флажок, указывающий, является ли атрибут вычисляемым;</li>
+<li><strong> В архиве </strong>— флажок, указывающий, является ли атрибут архивным.</li>
+</ul>
+</div>
+<h2 class="caption" id="mcetoc_1hn2ng18i4">Настройка кнопок таблицы</h2>
+<p class="caption">В каждой таблице предусмотрена одна <a href="https://kb.comindware.ru/article.php?id=2545">область кнопок</a>. </p>
+<ul>
+<li>Изначально для таблицы используется область кнопок, в <a href="https://kb.comindware.ru/article.php?id=2545#mcetoc_1him2tva33">свойствах </a>которой установлен флажок «<strong>По умолчанию для таблиц</strong>». В стандартной области кнопок, например, у шаблона записи находятся кнопки «<strong style="box-sizing: border-box; font-weight: 700 !important;">Сохранить</strong>» и « <strong style="box-sizing: border-box; font-weight: 700 !important;"> Архивировать </strong> », а у шаблона процесса — «<strong>Создать</strong>», «<strong>Остановить процесс</strong>», «<strong>Мигрировать</strong>» и «<strong>Архивировать</strong>».</li>
+<li>Добавить и удалить кнопки для таблицы можно с помощью конструктора области кнопок, как указано ниже.</li>
+<li>Кроме того, у каждой таблицы предусмотрены перечисленные ниже системные кнопки, которые нельзя добавить и удалить:
+<ul style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 8px 16px; margin-left: 16px; list-style: circle; text-indent: 0px !important;">
+<li style="box-sizing: border-box; font-weight: 300; list-style: circle; text-indent: 0px !important;"><strong style="box-sizing: border-box; font-weight: 700 !important;">Обновить список </strong>— перезагрузка данных таблицы.</li>
+<li style="box-sizing: border-box; font-weight: 300; list-style: circle; text-indent: 0px !important;"><strong style="box-sizing: border-box; font-weight: 700 !important;">Мои настройки </strong>— раскрывающееся меню для настройки таблицы:
+<ul style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 8px 16px; margin-left: 16px; list-style: circle; text-indent: 0px !important;">
+<li style="box-sizing: border-box; font-weight: 300; list-style: circle; text-indent: 0px !important;"><strong style="box-sizing: border-box; font-weight: 700 !important;">Настроить внешний вид </strong>— <a href="https://kb.comindware.ru/article.php?id=2551">персональная настройка</a> отображения столбцов таблицы для текущего пользователя.</li>
+<li style="box-sizing: border-box; font-weight: 300; list-style: circle; text-indent: 0px !important;"><strong style="box-sizing: border-box; font-weight: 700 !important;">Удалить все фильтры </strong>— сброс всех настроенных конечным пользователем фильтров данных в таблице.</li>
+<li style="box-sizing: border-box; font-weight: 300; list-style: circle; text-indent: 0px !important;"><strong style="box-sizing: border-box; font-weight: 700 !important;">Сбросить </strong>— удаление всех настроенных конечным пользователем параметров отображения таблицы. То есть будет восстановлено исходное представление таблицы, настроенное в конструкторе.</li>
+<li style="box-sizing: border-box; font-weight: 300; list-style: circle; text-indent: 0px !important;"><strong style="box-sizing: border-box; font-weight: 700 !important;">Настроить таблицу </strong>— перейти к <a href="https://kb.comindware.ru/article.php?id=2550">конструктору таблицы</a> (если у пользователя есть соответствующие права).</li>
+<li style="box-sizing: border-box; font-weight: 300; list-style: circle; text-indent: 0px !important;"><strong style="box-sizing: border-box; font-weight: 700 !important;">Настроить шаблон </strong>— переход к странице настройки шаблона, к которому относится таблица (если у пользователя есть соответствующие права).</li>
+</ul>
+</li>
+<li style="box-sizing: border-box; font-weight: 300; list-style: circle; text-indent: 0px !important;"><strong>Поиск</strong> — нажмите эту кнопку и введите ключевые слова в поле «<strong>Поиск</strong>». В таблице отобразятся строки, содержащие искомые слова.</li>
+</ul>
+</li>
+</ul>
+<h3 class="caption" id="mcetoc_1hn5onopm1">Порядок настройки области кнопок таблицы</h3>
+<ol class="colored_numbers_list">
+<li>Выберите область кнопок в верхней части макета таблицы.</li>
+<li>В панели элементов слева отобразится список <a href="https://kb.comindware.ru/article.php?id=2276">кнопок шаблона</a>.</li>
+<li>Перетащите необходимые кнопки, группы кнопок и разделители на область кнопок.</li>
+<li>При необходимости настройте свойства кнопок: переименуйте их, смените их значки или цвет. Эти изменения не отразятся на исходных кнопках, они будут использоваться только для данной таблицы.</li>
+<li>Чтобы удалить все элементы из области кнопок, нажмите кнопку «<strong>Очистить</strong>» в панели «<strong>Свойства области кнопок</strong>».
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>При изменении области кнопок таблицы в <a href="https://kb.comindware.ru/article.php?id=2545#toolbar1">списке областей кнопок</a> будет создана новая область кнопок, которая будет использоваться только для этой таблицы. Исходная область кнопок не будет изменена.</p>
+</div>
+</li>
+<li>Чтобы восстановить исходную область кнопок, используемую по умолчанию для таблиц, нажмите кнопку «<strong>Восстановить исходные кнопки</strong>» в панели «<strong>Свойства области кнопок</strong>». После восстановления исходных кнопок и сохранения таблицы созданная для неё особая область кнопок будет удалена из <a href="https://kb.comindware.ru/article.php?id=2545#toolbar1">списка областей кнопок</a>.</li>
+<li>Нажмите кнопку «<strong>Сохранить</strong>», чтобы сохранить таблицу.</li>
+</ol>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Настройка области кнопок таблицы" class="img-responsive" height="407" src="https://kb.comindware.ru/assets/img_65d494144c3f4.png" width="996"/></p>
+<p><span style="color: #666666; font-style: italic; letter-spacing: 0.2px;">Настройка области кнопок таблицы</span></p>
+</figure>
+<h2 id="mcetoc_1hn2pjngh5">Связанные статьи</h2>
+<p><strong><span style="letter-spacing: 0.2px;"><a href="https://kb.comindware.ru/article.php?id=2531#formset17">Настройка таблицы на форме</a></span></strong></p>
+<p><strong><samp data-name="aid" data-title="" data-value="2551"><span style="color: #0066bc; font-family: Tahoma;"><img src="https://kb.comindware.ru/images/marker.png" style="vertical-align: middle;"/>Персональная настройка таблиц {Article-ID:2551}</span></samp> </strong></p>
+<p><strong><samp data-name="aid" data-title="" data-value="2548"><span style="color: #0066bc; font-family: Tahoma;"><img src="https://kb.comindware.ru/images/marker.png" style="vertical-align: middle;"/>Таблицы. Определения, создание, удаление {Article-ID:2548}</span></samp> </strong></p>
+<p><strong><samp data-name="aid" data-title="" data-value="2552"><span style="color: #0066bc; font-family: Tahoma;"><img src="https://kb.comindware.ru/images/marker.png" style="vertical-align: middle;"/>Клонирование таблицы {Article-ID:2552}</span></samp> </strong></p>
+<p><a class="md-top md-icon mkdocs_imported_link" href="#"> <em class="fa-light fa-arrow-up">‌</em> К началу </a></p><h1>Настройка таблицы в шаблоне</h1><div class="mce-toc">
+<h2 class="toc-heading">Содержание</h2>
+<ul>
+<li><a href="#mcetoc_1hn38es3m0">Введение</a></li>
+<li><a href="#list0">Переход к конструктору таблицы</a>
+<ul>
+<li><a href="#mcetoc_1hn2megnp0">Области конструктора таблицы</a></li>
+</ul>
+</li>
+<li><a href="#list1">Настройка свойств таблицы</a>
+<ul>
+<li><a href="#list100">Основные свойства</a></li>
+<li><a href="#list101">Дополнительные свойства — сортировка, группировка, подсчёт итогов, фильтрация</a>
+<ul>
+<li><a href="#mcetoc_1hq21glhn0">Сортировка</a></li>
+<li><a href="#mcetoc_1hq21il801">Группировка</a></li>
+<li><a href="#mcetoc_1hq21jjtp2">Подсчёт итогов</a></li>
+<li><a href="#mcetoc_1hq21s13d3">Фильтрация</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#list2">Настройка столбцов таблицы</a></li>
+<li><a href="#mcetoc_1hn5p3p2r0">Добавление столбца</a>
+<ul>
+<li><a href="#mcetoc_1hn2mlgf93">Настройка свойств столбца</a></li>
+</ul>
+</li>
+<li><a href="#mcetoc_1hn2ng18i4">Настройка кнопок таблицы</a>
+<ul>
+<li><a href="#mcetoc_1hn5onopm1">Порядок настройки области кнопок таблицы</a></li>
+</ul>
+</li>
+<li><a href="#mcetoc_1hn2pjngh5">Связанные статьи</a></li>
+</ul>
+</div>
+<h2 id="mcetoc_1hn38es3m0">Введение</h2>
+<p><span style="letter-spacing: 0.2px;">С помощью конструктора таблицы можно настроить представление таблицы, которое будет использоваться по умолчанию для конечных пользователей. </span></p>
+<p><span style="letter-spacing: 0.2px;">В свою очередь, конечный пользователь может <a href="https://kb.comindware.ru/article.php?id=2551">настроить собственную конфигурацию</a> отображения таблицы, например скрыть и переместить столбцы, отфильтровать, отсортировать и сгруппировать строки, подсчитать итоги.</span></p>
+<p><span style="letter-spacing: 0.2px;">В этом разделе представлены инструкции по настройке таблицы в шаблоне. См. также параграф <em>«<a href="https://kb.comindware.ru/article.php?id=2531#formset17">Настройка таблицы на форме</a>»</em>.</span></p>
+<h2 id="list0">Переход к конструктору таблицы</h2>
+<ol class="colored_numbers_list">
+<li>Откройте шаблон и выберите вкладку «<strong>Таблицы</strong>».</li>
+<li>Отобразится список таблиц шаблона.</li>
+<li>Создайте таблицу, нажав кнопку «<strong>Создать</strong>» или откройте таблицу, дважды нажав её в списке.</li>
+<li>Отобразится конструктор таблицы.</li>
+<li>Настройте <a href="#list1">свойства</a>, <a href="#list2">столбцы</a> и <a href="#mcetoc_1hn2ng18i4">кнопки</a> таблицы.</li>
+</ol>
+<div class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Области конструктора таблицы" class="img-responsive" height="774" src="https://kb.comindware.ru/assets/img_65d45b5fb1369.png" width="994"/></p>
+<p class="caption" style="font-size: 15px !important;">Области конструктора таблицы</p>
+</div>
+<h3 id="mcetoc_1hn2megnp0">Области конструктора таблицы</h3>
+<ol>
+<li><strong>Панель элементов </strong>  — содержит <a href="https://kb.comindware.ru/article.php?id=2252">атрибуты</a>, которые можно <a href="#list2">поместить в качестве столбцов</a> в таблицу, а также кнопки для добавления в область кнопок.
+<div class="notice notice-success">
+<p class="admonition-title">Совет</p>
+<p>Панель элементов позволяет создавать и редактировать атрибуты в шаблоне, не покидая конструктор таблицы.</p>
+<ul style="list-style-type: disc;">
+<li style="list-style-type: disc;">Чтобы создать атрибут в текущем шаблоне, наведите указатель мыши на заголовок «<strong>Атрибуты</strong>» и нажмите кнопку «<strong>Добавить атрибут</strong>».</li>
+<li style="list-style-type: disc;">Чтобы создать атрибут в связанном с этим атрибутом шаблоне, наведите указатель на название <strong><a href="https://kb.comindware.ru/article.php?id=2243">атрибута типа запись</a> </strong>и нажмите кнопку «<strong>Добавить атрибут</strong>».</li>
+<li style="list-style-type: disc;">Чтобы отредактировать атрибут, наведите указатель мыши на его название и нажмите кнопку «<strong>Редактировать атрибут</strong>».</li>
+</ul>
+</div>
+</li>
+<li><strong>Область кнопок </strong>— позволяет <a href="#mcetoc_1hn2ng18i4">настроить кнопки</a> для данной таблицы.</li>
+<li><strong>Макет таблицы</strong> — служит для <a href="#list2">настройки столбцов</a> таблицы.</li>
+<li><strong>Панель свойств </strong>— служит для настройки элемента, выбранного на макете: <a href="#list1">таблицы</a>, <a href="#mcetoc_1hn2mlgf93">столбца</a> или <a href="#mcetoc_1hn2ng18i4">кнопок</a>.</li>
+<li><strong>Кнопки</strong>
+<ul>
+<li><span style="box-sizing: border-box; font-weight: 700 !important;"> Сохранить </span>— сохранение текущей конфигурации таблицы.</li>
+<li><strong style="box-sizing: border-box; font-weight: 700 !important;"> Клонировать</strong> — <a href="https://kb.comindware.ru/article.php?id=2552">создание дубликата</a> таблицы.</li>
+<li><strong style="box-sizing: border-box; font-weight: 700 !important;"> Очистить </strong>— удаление всех столбцов таблицы.</li>
+<li><strong>Связи </strong> <em aria-hidden="true" class="fal fa-link-horizontal">‌</em> — просмотр списка сущностей, с которыми связана таблица.</li>
+<li><strong>Перейти к таблице</strong> <em aria-hidden="true" class="fal fa-table">‌</em> — просмотр настроенной таблицы с данными в представлении для конечного пользователя.</li>
+<li><strong style="box-sizing: border-box; font-weight: 700 !important;"> Настроить шаблон </strong><em aria-hidden="true" class="fal fa-external-link">‌</em> — переход к свойствам шаблона, к которому относится таблица.</li>
+</ul>
+</li>
+</ol>
+<h2 id="list1">Настройка свойств таблицы</h2>
+<ol class="colored_numbers_list">
+<li>Нажмите пустую область макета.</li>
+<li>Справа от макета отобразится панель свойств таблицы</li>
+<li>Настройте свойства таблицы на двух вкладках: «<strong style="letter-spacing: 0.2px;">Основные</strong><span style="letter-spacing: 0.2px;">» и «</span><strong style="letter-spacing: 0.2px;">Дополнительные</strong> <span style="letter-spacing: 0.2px;"> ». </span></li>
+<li>Нажмите кнопку «<strong>Сохранить</strong>».</li>
+</ol>
+<h3 id="list100">Основные свойства</h3>
+<ul>
+<li><strong> Отображаемое название </strong>— наглядный заголовок таблицы, который отображается в списке таблиц шаблона и для конечных пользователей.</li>
+<li><strong> Системное имя </strong>— уникальное имя таблицы, которое используется в вычислениях. Может содержать только буквы латинского алфавита, цифры и знак «_». Заполняется автоматически посредством транслитерации.</li>
+<li><strong style="box-sizing: border-box; font-weight: 700 !important;">Ручная загрузка данных </strong>— <span style="color: #545764; font-family: 'Open Sans', sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: 0.2px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;"><span style="color: #545764; font-family: 'Open Sans', sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: 0.2px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">установите этот флажок</span> </span> , чтобы при открытии таблица отображалась без данных. Пользователь сможет настроить внешний вид таблицы, а затем нажать кнопку «<strong style="letter-spacing: 0.2px;">Загрузить данные</strong><span style="letter-spacing: 0.2px;">».</span></li>
+</ul>
+<div class="screenshot_with_caption">
+<p><img alt="Таблица с ручной загрузкой данных" class="img-responsive" height="349" src="https://kb.comindware.ru/assets/img_65d4558190d75.png" width="994"/></p>
+<p class="caption">Таблица с ручной загрузкой данных</p>
+</div>
+<ul>
+<li><strong> По умолчанию </strong>— <span style="box-sizing: border-box; color: #545764; font-family: 'Open Sans', sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: 0.2px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; background-color: #ffffff; float: none; display: inline !important;">установите этот флажок, чтобы таблица отображалась по умолчанию при просмотре записей в шаблоне. <span style="color: #5a5a5a; font-family: OpenSans, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">В шаблоне можно назначить только одну таблицу по умолчанию. </span><span style="color: #5a5a5a; font-family: OpenSans, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">Если пользователь откроет другую таблицу в шаблоне, она станет отображаться для него по умолчанию.</span> </span></li>
+<li><strong> Показывать архивные записи </strong>— установите этот флажок, чтобы в таблице отображались записи помещённые в архив, которые скрыты по умолчанию.</li>
+<li><strong> Отображение формы </strong>— укажите способ отображения форм записей из таблицы:
+<ul style="list-style-type: circle;">
+<li><strong> Нет </strong>— при двойном нажатии строки таблицы форма с записью отобразится вместо таблицы;</li>
+<li><strong> Вертикальное </strong>— при нажатии строки в таблице форма записи отобразится справа от таблицы, границу между таблицей и формой можно будет перемещать с помощью мыши;</li>
+<li><strong>Горизонтальное </strong>— при нажатии строки в таблице форма записи отобразится под таблицей, границу между таблицей и формой можно будет перемещать с помощью мыши.</li>
+</ul>
+</li>
+<li><strong>Записей на странице </strong>— укажите количество строк отображающихся в таблице при её открытии, по умолчанию: 25.</li>
+<li><strong>Закрепить столбцы </strong>— укажите количество столбцов начиная слева, которые не будут прокручиваться по горизонтали.</li>
+<li><strong>Карточки </strong>— выберите представление карточек, которое будет использоваться для отображения данных таблицы в виде плиток. См. <em>«<a href="https://kb.comindware.ru/category.php?id=479">Карточки</a>»</em>.</li>
+<li><strong> Системный фильтр </strong>— задайте список ID записей, которые должны отображаться в таблице. Для этого <span style="letter-spacing: 0.2px;">введите </span><strong style="letter-spacing: 0.2px;">формулу </strong><span style="letter-spacing: 0.2px;">или выражение на языке </span> <strong style="letter-spacing: 0.2px;"> N3 </strong> или составьте таблицу <strong>DMN</strong>.</li>
+</ul>
+<h3 id="list101">Дополнительные свойства — сортировка, группировка, подсчёт итогов, фильтрация</h3>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Перед настройкой дополнительных свойств таблицы её <em>необходимо сохранить</em>.</p>
+</div>
+<p>Для настройки сортировки, группировки, подсчёта итогов и фильтрации данных в таблице, перетащите столбцы из макета таблицы в соответствующие блоки на вкладке «<strong>Дополнительные</strong>» справа от макета и настройте параметры блоков, как указано ниже.</p>
+<p>Чтобы удалить столбец из блока на вкладке «<strong>Дополнительные</strong>», перетащите его за пределы блока.</p>
+<h4 id="mcetoc_1hq21glhn0">Сортировка</h4>
+<p>Перетащите в блок «<strong>Сортировка</strong>» один или несколько столбцов, а затем выберите каждый столбец в блоке и задайте направление сортировки строк таблицы по нему:</p>
+<ul style="list-style-type: circle;">
+<li><strong> По возрастанию </strong>— чем меньше значение в данном столбце, тем выше строка будет отображаться в таблице;</li>
+<li><strong> По убыванию </strong>— чем больше значение в данном столбце, тем выше строка будет отображаться в таблице;</li>
+<li><strong> Пустые сверху </strong>— установите этот флажок, чтобы строки с пустыми значениями в данном столбце отображались над остальными строками.</li>
+</ul>
+<div class="notice notice-info">
+<p class="admonition-title">Примечания</p>
+<p>Правила сортировки строк таблицы по нескольким столбцам будут применяться по порядку следования столбцов в блоке «<strong>Сортировка</strong>»: от первого к последнему.</p>
+<p>Чтобы задать порядок сортировки по нескольким столбцам, расположите их в требуемом порядке в блоке «<strong>Сортировка</strong>».</p>
+</div>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Настройка сортировки строк таблицы по двум столбцам" class="img-responsive" height="353" src="https://kb.comindware.ru/assets/img_65d60fa330f53.png" width="778"/></p>
+<figcaption class="caption" style="font-size: 15px !important;">Настройка сортировки строк таблицы по двум столбцам</figcaption>
+</figure>
+<h4 id="mcetoc_1hq21il801">Группировка</h4>
+<p>Перетащите в блок «<strong>Группировка</strong>» один или несколько столбцов, а затем выберите каждый столбец в блоке и задайте направление группировки строк таблицы по значениям в нём:</p>
+<ul style="list-style-type: circle;">
+<li><strong> По возрастанию </strong>— чем меньше значение в данном столбце, тем выше группа строк будет отображаться в таблице;</li>
+<li><strong> По убыванию </strong>— чем больше значение в данном столбце, тем выше группа строк будет отображаться в таблице;</li>
+<li><strong> Пустые сверху </strong>— установите этот флажок, чтобы строки с пустыми значениями в данном столбце отображались над остальными строками.</li>
+</ul>
+<div class="notice notice-info">
+<p class="admonition-title">Примечания</p>
+<p>Строки группируются по одинаковым значениям в столбце.</p>
+<p>При группировке строк по нескольким столбцам в таблице будет сформировано древовидное представление записей.</p>
+<p>Правила группировки строк таблицы по нескольким столбцам будут применяться по порядку следования столбцов в блоке «<strong>Группировка</strong>»: от первого к последнему.</p>
+<p>Чтобы задать порядок сортировки по нескольким столбцам, расположите их в требуемом порядке в блоке «<strong>Группировка</strong>».</p>
+</div>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Настройка группировки строк таблицы по двум столбцам" class="img-responsive" height="353" src="https://kb.comindware.ru/assets/img_65d60f0f0781d.png" width="778"/></p>
+<figcaption class="caption" style="font-size: 15px !important;">Настройка группировки строк таблицы по двум столбцам</figcaption>
+</figure>
+<h4 id="mcetoc_1hq21jjtp2">Подсчёт итогов</h4>
+<p>Перетащите в блок «<strong>Подсчет итогов</strong>» один или несколько столбцов, а затем выберите каждый столбец в блоке и задайте способ подсчёта итогов по значениям в столбце:</p>
+<ul style="list-style-type: circle;">
+<li><strong> Количество </strong>— будет подсчитано количество строк в каждой группе в таблице;</li>
+<li><strong>Сумма </strong>— для каждой группы строк в таблице будет подсчитана сумма значений в столбце.</li>
+</ul>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Подсчет итогов работает только при включённой группировке строк в таблице.</p>
+</div>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Настройка подсчета итогов по столбцу таблицы" class="img-responsive" height="353" src="https://kb.comindware.ru/assets/img_65d60e625c7c5.png" width="778"/></p>
+<figcaption class="caption" style="font-size: 15px !important;">Настройка подсчета итогов по столбцу таблицы</figcaption>
+</figure>
+<h4 id="mcetoc_1hq21s13d3">Фильтрация</h4>
+<p>Перетащите в блок «<strong>Фильтрация</strong>» один или несколько столбцов, а затем настройте правила фильтрации данных в таблице по значениям в столбцах:</p>
+<ul style="list-style-type: circle;">
+<li><strong>Равно</strong></li>
+<li><strong>Не равно</strong></li>
+<li><strong>Больше чем</strong></li>
+<li><strong>Больше или равно</strong></li>
+<li><strong>Меньше чем</strong></li>
+<li><strong>Меньше или равно</strong></li>
+</ul>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Для фильтров по нескольким столбцам можно выбрать логический оператор <code>И</code> либо <code>ИЛИ</code>. Для этого нажимайте кнопку «<strong>Поменять оператор</strong>» <em class="fal fa-exchange" title="Поменять оператор">‌</em> рядом с правилами фильтрации.</p>
+</div>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Настройка фильтра с оператором «И» по двум столбцам таблицы" class="img-responsive" height="353" src="https://kb.comindware.ru/assets/img_65d6185457a66.png" width="778"/></p>
+<figcaption class="caption" style="font-size: 15px !important;">Настройка фильтра с оператором «И» по двум столбцам таблицы</figcaption>
+</figure>
+<h2 id="list2">Настройка столбцов таблицы</h2>
+<p>Панель элементов конструктора таблицы содержит список атрибутов текущего шаблона и связанных с ним шаблонов. Эти атрибуты можно поместить в таблицу в качестве столбцов.</p>
+<h2 id="mcetoc_1hn5p3p2r0">Добавление столбца</h2>
+<ol class="colored_numbers_list">
+<li>Выберите атрибут в панели элементов слева от макета таблицы.</li>
+<li>Чтобы выбрать атрибут шаблона, связанного с текущим, раскройте в панели элементов атрибут типа «<strong>Запись</strong>».</li>
+<li>Перетащите выбранный атрибут на макет таблицы.</li>
+<li>При необходимости перетащите столбец в требуемую позицию на макете таблицы. При перетаскивании целевая позиция столбца подсвечивается на макете.
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Для конечного пользователя столбцы таблицы будут отображаться слева направо в порядке их следования в макете таблицы: верхний столбец на макете отобразится первым слева в таблице.</p>
+</div>
+</li>
+<li>Справа от макета отобразится панель «<strong>Свойства столбца</strong>».</li>
+<li><a href="#mcetoc_1hn2mlgf93">Настройте свойства столбца</a>.</li>
+</ol>
+<div class="screenshot_with_caption">
+<p><img class="img-responsive" src="https://kb.comindware.ru/assets/img_65d48006c97eb.png"/></p>
+<p class="caption">Добавление и настройка столбца таблицы</p>
+</div>
+<h3 id="mcetoc_1hn2mlgf93">Настройка свойств столбца</h3>
+<ol class="colored_numbers_list">
+<li>Добавьте или выберите столбец таблицы на макете.</li>
+<li>Настройте <strong>свойства столбца</strong> с помощью панели справа от макета таблицы:
+<ol>
+<li style="list-style-type: disc;"><span style="font-weight: 700 !important;">Отображаемое название </span>— заголовок столбца в таблице;</li>
+<li style="list-style-type: disc;"><span style="font-weight: 700 !important;">Ширина столбца </span>— исходная ширина столбца в таблице (конечный пользователь сможет установить персональную ширину столбцов в таблице);</li>
+<li style="list-style-type: disc;"><span style="font-weight: 700 !important;">Скрытый </span>— установите этот флажок, чтобы столбец не отображался для конечного пользователя. Этот флажок можно использовать, например, чтобы скрыть столбцы, которые используются для сортировки, группировки или фильтрации таблицы, но не должны быть видны конечному пользователю. При этом пользователь сможет отобразить скрытые столбцы с помощью <a href="https://kb.comindware.ru/article.php?id=2551">персональной настройки таблицы</a>.</li>
+</ol>
+</li>
+<li style="list-style-type: disc;">Нажмите кнопку «<strong>Сохранить</strong>», чтобы сохранить таблицу.</li>
+</ol>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Под свойствами столбца в справочных целях отображаются свойства атрибута, к которому относится столбец:</p>
+<ul>
+<li><strong> Путь к атрибуту </strong>— полный путь к атрибуту в контексте текущего шаблона;</li>
+<li><strong> Системное имя </strong>— уникальное имя атрибута;</li>
+<li><strong> Тип </strong>— тип данных атрибута;</li>
+<li><strong> Формат отображения </strong>— отображает формат отображения данных атрибута;</li>
+<li><strong> Вычисляемый </strong>— флажок, указывающий, является ли атрибут вычисляемым;</li>
+<li><strong> В архиве </strong>— флажок, указывающий, является ли атрибут архивным.</li>
+</ul>
+</div>
+<h2 class="caption" id="mcetoc_1hn2ng18i4">Настройка кнопок таблицы</h2>
+<p class="caption">В каждой таблице предусмотрена одна <a href="https://kb.comindware.ru/article.php?id=2545">область кнопок</a>. </p>
+<ul>
+<li>Изначально для таблицы используется область кнопок, в <a href="https://kb.comindware.ru/article.php?id=2545#mcetoc_1him2tva33">свойствах </a>которой установлен флажок «<strong>По умолчанию для таблиц</strong>». В стандартной области кнопок, например, у шаблона записи находятся кнопки «<strong style="box-sizing: border-box; font-weight: 700 !important;">Сохранить</strong>» и « <strong style="box-sizing: border-box; font-weight: 700 !important;"> Архивировать </strong> », а у шаблона процесса — «<strong>Создать</strong>», «<strong>Остановить процесс</strong>», «<strong>Мигрировать</strong>» и «<strong>Архивировать</strong>».</li>
+<li>Добавить и удалить кнопки для таблицы можно с помощью конструктора области кнопок, как указано ниже.</li>
+<li>Кроме того, у каждой таблицы предусмотрены перечисленные ниже системные кнопки, которые нельзя добавить и удалить:
+<ul style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 8px 16px; margin-left: 16px; list-style: circle; text-indent: 0px !important;">
+<li style="box-sizing: border-box; font-weight: 300; list-style: circle; text-indent: 0px !important;"><strong style="box-sizing: border-box; font-weight: 700 !important;">Обновить список </strong>— перезагрузка данных таблицы.</li>
+<li style="box-sizing: border-box; font-weight: 300; list-style: circle; text-indent: 0px !important;"><strong style="box-sizing: border-box; font-weight: 700 !important;">Мои настройки </strong>— раскрывающееся меню для настройки таблицы:
+<ul style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 8px 16px; margin-left: 16px; list-style: circle; text-indent: 0px !important;">
+<li style="box-sizing: border-box; font-weight: 300; list-style: circle; text-indent: 0px !important;"><strong style="box-sizing: border-box; font-weight: 700 !important;">Настроить внешний вид </strong>— <a href="https://kb.comindware.ru/article.php?id=2551">персональная настройка</a> отображения столбцов таблицы для текущего пользователя.</li>
+<li style="box-sizing: border-box; font-weight: 300; list-style: circle; text-indent: 0px !important;"><strong style="box-sizing: border-box; font-weight: 700 !important;">Удалить все фильтры </strong>— сброс всех настроенных конечным пользователем фильтров данных в таблице.</li>
+<li style="box-sizing: border-box; font-weight: 300; list-style: circle; text-indent: 0px !important;"><strong style="box-sizing: border-box; font-weight: 700 !important;">Сбросить </strong>— удаление всех настроенных конечным пользователем параметров отображения таблицы. То есть будет восстановлено исходное представление таблицы, настроенное в конструкторе.</li>
+<li style="box-sizing: border-box; font-weight: 300; list-style: circle; text-indent: 0px !important;"><strong style="box-sizing: border-box; font-weight: 700 !important;">Настроить таблицу </strong>— перейти к <a href="https://kb.comindware.ru/article.php?id=2550">конструктору таблицы</a> (если у пользователя есть соответствующие права).</li>
+<li style="box-sizing: border-box; font-weight: 300; list-style: circle; text-indent: 0px !important;"><strong style="box-sizing: border-box; font-weight: 700 !important;">Настроить шаблон </strong>— переход к странице настройки шаблона, к которому относится таблица (если у пользователя есть соответствующие права).</li>
+</ul>
+</li>
+<li style="box-sizing: border-box; font-weight: 300; list-style: circle; text-indent: 0px !important;"><strong>Поиск</strong> — нажмите эту кнопку и введите ключевые слова в поле «<strong>Поиск</strong>». В таблице отобразятся строки, содержащие искомые слова.</li>
+</ul>
+</li>
+</ul>
+<h3 class="caption" id="mcetoc_1hn5onopm1">Порядок настройки области кнопок таблицы</h3>
+<ol class="colored_numbers_list">
+<li>Выберите область кнопок в верхней части макета таблицы.</li>
+<li>В панели элементов слева отобразится список <a href="https://kb.comindware.ru/article.php?id=2276">кнопок шаблона</a>.</li>
+<li>Перетащите необходимые кнопки, группы кнопок и разделители на область кнопок.</li>
+<li>При необходимости настройте свойства кнопок: переименуйте их, смените их значки или цвет. Эти изменения не отразятся на исходных кнопках, они будут использоваться только для данной таблицы.</li>
+<li>Чтобы удалить все элементы из области кнопок, нажмите кнопку «<strong>Очистить</strong>» в панели «<strong>Свойства области кнопок</strong>».
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>При изменении области кнопок таблицы в <a href="https://kb.comindware.ru/article.php?id=2545#toolbar1">списке областей кнопок</a> будет создана новая область кнопок, которая будет использоваться только для этой таблицы. Исходная область кнопок не будет изменена.</p>
+</div>
+</li>
+<li>Чтобы восстановить исходную область кнопок, используемую по умолчанию для таблиц, нажмите кнопку «<strong>Восстановить исходные кнопки</strong>» в панели «<strong>Свойства области кнопок</strong>». После восстановления исходных кнопок и сохранения таблицы созданная для неё особая область кнопок будет удалена из <a href="https://kb.comindware.ru/article.php?id=2545#toolbar1">списка областей кнопок</a>.</li>
+<li>Нажмите кнопку «<strong>Сохранить</strong>», чтобы сохранить таблицу.</li>
+</ol>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Настройка области кнопок таблицы" class="img-responsive" height="407" src="https://kb.comindware.ru/assets/img_65d494144c3f4.png" width="996"/></p>
+<p><span style="color: #666666; font-style: italic; letter-spacing: 0.2px;">Настройка области кнопок таблицы</span></p>
+</figure>
+<h2 id="mcetoc_1hn2pjngh5">Связанные статьи</h2>
+<p><strong><span style="letter-spacing: 0.2px;"><a href="https://kb.comindware.ru/article.php?id=2531#formset17">Настройка таблицы на форме</a></span></strong></p>
+<p><strong><samp data-name="aid" data-title="" data-value="2551"><span style="color: #0066bc; font-family: Tahoma;"><img src="https://kb.comindware.ru/images/marker.png" style="vertical-align: middle;"/>Персональная настройка таблиц {Article-ID:2551}</span></samp> </strong></p>
+<p><strong><samp data-name="aid" data-title="" data-value="2548"><span style="color: #0066bc; font-family: Tahoma;"><img src="https://kb.comindware.ru/images/marker.png" style="vertical-align: middle;"/>Таблицы. Определения, создание, удаление {Article-ID:2548}</span></samp> </strong></p>
+<p><strong><samp data-name="aid" data-title="" data-value="2552"><span style="color: #0066bc; font-family: Tahoma;"><img src="https://kb.comindware.ru/images/marker.png" style="vertical-align: middle;"/>Клонирование таблицы {Article-ID:2552}</span></samp> </strong></p>
+<p><a class="md-top md-icon mkdocs_imported_link" href="#"> <em class="fa-light fa-arrow-up">‌</em> К началу </a></p>

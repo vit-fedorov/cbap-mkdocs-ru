@@ -1,0 +1,1003 @@
+<h1>Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя</h1><div class="mce-toc">
+<h2 class="toc-heading">Содержание</h2>
+<ul>
+<li><a href="#введение">Введение</a></li>
+<li><a href="#определения">Определения</a></li>
+<li><a href="#примеры-значений-параметров">Примеры значений параметров</a></li>
+<li><a href="#конфигурация-машины-с-экземпляром-по-comindware-business-application-platform">Конфигурация машины linuxHost с экземпляром ПО Comindware Business Application Platform</a></li>
+<li><a href="#конфигурация-машины-с-контроллером-домена">Конфигурация машины DCName с контроллером домена</a>
+<ul>
+<li><a href="#настройка-надёжных-узлов-на-контроллере-домена">Настройка надёжных узлов на контроллере домена</a></li>
+<li><a href="#сервисный-пользователь-домена">Сервисный пользователь домена</a></li>
+<li><a href="#mcetoc_1ho4mh3nr0">Пользователи для проверки аутентификации</a></li>
+</ul>
+</li>
+<li><a href="#создание-keytab-файла-аутентификации">Создание keytab-файла аутентификации</a></li>
+<li><a href="#mcetoc_1hpavbqqi2">Обновление keytab-файла аутентификации для аутентификации новых пользователей</a></li>
+<li><a href="#настройка-машины-linuxhost">Настройка машины linuxHost с экземпляром ПО</a>
+<ul>
+<li><a href="#требования-к-машине-linuxhost">Требования к машине</a></li>
+<li><a href="#настройка-параметров-сети-для-разрешения-dc-fqdn">Настройка параметров сети для разрешения DC FQDN</a>
+<ul>
+<li><a href="#изменение-файла-hosts">Изменение файла hosts</a></li>
+<li><a href="#изменение-файла-resolvconf">Изменение файла resolv.conf</a></li>
+</ul>
+</li>
+<li><a href="#проверка-корректности-настроек-сети">Проверка корректности настроек сети</a></li>
+<li><a href="#синхронизация-времени-между-dcname-и-linuxhost">Синхронизация времени между машинами DCName и linuxHost</a></li>
+<li><a href="#настройка-аутентификации-kerberos-для-astra-linux-и-ubuntu">Настройка конфигурации Kerberos</a>
+<ul>
+<li><a href="#установка-пакета-libsasl2">Установка вспомогательных пакетов</a></li>
+<li><a href="#mcetoc_1ho4qjnqb4">Настройка аутентификации Kerberos</a></li>
+<li><a href="#mcetoc_1ho4qfuu02">Для ОС «Альт»: настройка pam_winbind.conf</a></li>
+<li><a href="#настройка-конфигурации-kerberos-1">Установка экземпляра ПО</a></li>
+<li><a href="#настройка-аутентификации-kerberos">Настройка экземпляра ПО</a></li>
+<li><a href="#mcetoc_1ho4r2l2m6">Установка и настройка модуля NGINX SPNEGO</a></li>
+</ul>
+</li>
+<li><a href="#mcetoc_1hpbijucj0">Изменение конфигурации экземпляра ПО</a></li>
+<li><a href="#mcetoc_1hhhidcql3">Проверка работы функционала Kerberos на машине linuxHost</a></li>
+<li><a href="#проверка-вывода-трассировщика-ошибок-в-shell">Проверка вывода трассировщика ошибок в Shell</a></li>
+</ul>
+</li>
+<li><a href="#mcetoc_1ho536ga40">Связанные статьи</a></li>
+</ul>
+</div>
+<div class="notice notice-warning">
+<p class="admonition-title">Внимание!</p>
+<p>Представленные в данной статье инструкции зависят от конфигурации сторонних систем и окружения, в котором развёрнут экземпляр ПО <strong>Comindware Business Application Platform</strong>.</p>
+<p>Описать все возможные случаи и сочетания конфигураций сторонних систем не представляется возможным, поэтому данные инструкции могут не подойти для вашего случая.</p>
+<p>Для корректной настройки конфигурации контроллера домена, экземпляра ПО и компьютеров конечных пользователей следует обратиться за консультацией в службу поддержки <strong>Comindware </strong>по адресу:</p>
+<p><a href="https://www.comindware.ru/company/contact-us/#tab_support">https://www.comindware.ru/company/contact-us/#tab_support</a></p>
+</div>
+<h2 id="введение">Введение</h2>
+<p>В этой статье представлены инструкции по настройке контроллера домена, экземпляра ПО <strong>Comindware Business Application Platform</strong> (далее «экземпляр ПО») и компьютера конечного пользователя для аутентификации пользователей посредством технологии единого входа (SSO). Инструкции приведены для контроллера домена под управлением ОС Windows Server 2016, экземпляра ПО под управлением ОС Альт 10, Astra Linux SE 1.7 и Debian 12 и компьютера конечного пользователя под управлением ОС Windows 10.</p>
+<h2 id="определения">Определения</h2>
+<ul>
+<li><strong>Контроллер домена</strong> — машина с развёрнутыми доменными службами Active Directory.</li>
+<li><strong>Домен Active Directory</strong> — группа объектов в сети.</li>
+<li><strong>Single Sign-on (SSO)</strong> — технология единого входа, позволяющая пользователям выполнять аутентификацию с использованием одного набора учётных данных в нескольких независимых системах.</li>
+</ul>
+<h2 id="примеры-значений-параметров">Примеры значений параметров</h2>
+<p>В этой статье примеры значений параметров заключены в угловые скобки <code>&lt; &gt;</code>. При настройке конфигурации заменяйте их на фактические значения, как показано в следующей таблице.</p>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th>Пример параметра</th>
+<th>Пример фактического значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;DCName&gt;</code></td>
+<td><code>DC</code></td>
+</tr>
+<tr>
+<td><code>&lt;DCName&gt;.&lt;domain.name&gt;</code></td>
+<td><code>DC.example.com</code></td>
+</tr>
+<tr>
+<td><code>HTTP/&lt;DCName&gt;.&lt;domain.name&gt;@&lt;DOMAIN.NAME&gt;</code></td>
+<td><code>HTTP/DC.example.com@EXAMPLE.COM</code></td>
+</tr>
+<tr>
+<td><code>&lt;linuxHost&gt;</code></td>
+<td><code>server-host-name</code></td>
+</tr>
+<tr>
+<td><code>&lt;domain.controller.ip.address&gt;</code></td>
+<td><code>192.168.0.254</code></td>
+</tr>
+</tbody>
+</table>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Протокол аутентификации Kerberos учитывает регистр символов — там, где в инструкциях даны примеры параметров в верхнем регистре, следует подставлять фактические значения также в верхнем регистре.</p>
+</div>
+<h2 id="конфигурация-машины-с-экземпляром-по-comindware-business-application-platform">Конфигурация машины linuxHost с экземпляром ПО Comindware Business Application Platform</h2>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Операционная система</td>
+<td>Альт 10, Astra Linux SE 1.7, Debian 12</td>
+</tr>
+<tr>
+<td>Имя хоста</td>
+<td><code>&lt;linuxHost&gt;</code></td>
+</tr>
+<tr>
+<td>IP-адрес хоста</td>
+<td><code>&lt;linux.host.ip.address&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="конфигурация-машины-с-контроллером-домена">Конфигурация машины DCName с контроллером домена</h2>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Операционная система</td>
+<td>Windows Server 2016</td>
+</tr>
+<tr>
+<td>Имя хоста</td>
+<td><code>&lt;DCName&gt;</code></td>
+</tr>
+<tr>
+<td>FQDN контроллера домена</td>
+<td><code>&lt;DCName&gt;.&lt;domain.name&gt;</code></td>
+</tr>
+<tr>
+<td>Доменное имя</td>
+<td><code>&lt;domain.name&gt;</code></td>
+</tr>
+<tr>
+<td>IP-адрес контроллера домена</td>
+<td><code>&lt;domain.controller.ip.address&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;"></figure>
+<h3 id="настройка-надёжных-узлов-на-контроллере-домена">Настройка надёжных узлов на контроллере домена</h3>
+<p>При необходимости на контроллере домена добавьте хост <code>&lt;linuxHost&gt;</code> с экземпляром ПО в список надёжных узлов в рамках интранета, как указано ниже.</p>
+<ol class="colored_numbers_list">
+<li>В Панели управления выберите пункт «<strong>Сеть и интернет</strong>».</li>
+<li>Откройте пункт «<strong>Свойства: интернет</strong>» (<strong>Internet Properties</strong>).</li>
+<li>Выберите вкладку «<strong>Безопасность</strong>» (<strong>Security</strong>).</li>
+<li>Выберите зону «<strong>Надёжные узлы</strong>» (<strong>Trusted sites</strong>).</li>
+<li>Нажмите кнопку «<strong>Узлы</strong>» (<strong>Sites</strong>).</li>
+<li>В отобразившемся окне добавьте в список надёжных узлов <code>&lt;linuxHost&gt;</code>.</li>
+</ol>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Добавление машины с экземпляром ПО в список доверенных узлов на контроллере домена" class="img-responsive" height="1058" src="https://kb.comindware.ru/assets/img_65e1e692cb483.png" width="1624"/></p>
+<p><span style="color: #666666; font-style: italic; letter-spacing: 0.2px;">Добавление машины с экземпляром ПО в список доверенных узлов на контроллере домена</span></p>
+</figure>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;"></figure>
+<h3 id="сервисный-пользователь-домена">Сервисный пользователь домена</h3>
+<p>В домене должен существовать пользователь <code>&lt;authuser&gt;</code>, выступающий в роли сервисного аккаунта для модуля аутентификации NGINX, работающего на машине <code>&lt;linuxHost&gt;</code> с экземпляром ПО.</p>
+<p>Если пользователя <code>&lt;authuser&gt;</code> в AD нет, необходимо создать его, указав параметры, приведённые в следующей таблице.</p>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>&lt;authuser&gt;</code></td>
+</tr>
+<tr>
+<td><code>userPrincipalName</code> <br/>(User logon name)</td>
+<td><code>HTTP/&lt;DCName&gt;.&lt;domain.name&gt;@&lt;DOMAIN.NAME&gt;</code></td>
+</tr>
+<tr>
+<td><code>sAMAccountName</code> <br/>(User logon name pre-Windows 2000)</td>
+<td><code>&lt;DOMAIN&gt;\&lt;authuser&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>При создании пользователя <code>&lt;authuser&gt;</code> на вкладке «<strong>Учётная запись</strong>» (<strong>Account</strong>) необходимо установить флажки «<strong>Пользователь не может менять пароль</strong>» (<strong>User cannot change password</strong>) и «<strong>Срок действия пароля не истекает</strong>» (<strong>Password never expires</strong>), как показано на иллюстрации.</p>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><em><img alt="Настройка свойств сервисного аккаунта для NGINX" class="img-responsive" height="533" src="https://kb.comindware.ru/assets/Kerberos_Rocky+Astra_authuser_account_config.png" width="420"/></em></p>
+<figcaption class="caption" style="font-size: 15px !important;">Настройка свойств сервисного аккаунта для NGINX</figcaption>
+</figure>
+<p> </p>
+<h3 id="mcetoc_1ho4mh3nr0">Пользователи для проверки аутентификации</h3>
+<p data-source-line="48">Для проверки работоспособности процедуры аутентификации в данной статье используются пользователи <code>user1</code> и <code>user2</code>, см. следующую таблицу.</p>
+<table data-source-line="50" style="width: 100%;">
+<thead data-source-line="50">
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+<th>Значение</th>
+</tr>
+<tr data-source-line="50">
+<td><code>name</code></td>
+<td><code>user1</code></td>
+<td><code>user2</code></td>
+</tr>
+</thead>
+<tbody data-source-line="52">
+<tr data-source-line="52">
+<td><code>sAmAccountName</code></td>
+<td><code>&lt;domain&gt;/user1</code></td>
+<td><code>&lt;domain&gt;/user2</code></td>
+</tr>
+<tr data-source-line="53">
+<td><code>userPrincipalName</code></td>
+<td><code>user1@&lt;DOMAIN.NAME&gt;</code></td>
+<td><code>user2@&lt;DOMAIN.NAME&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="создание-keytab-файла-аутентификации">Создание keytab-файла аутентификации</h2>
+<ol class="colored_numbers_list">
+<li>На контроллере домена <code>&lt;DCName&gt;</code> выведите список Service Principal Names (SPN), привязанных к пользователю <code>&lt;authuser&gt;</code>:
+<pre class="language-powershell powershell" data-info="powershell" data-role="codeBlock"><code>setspn <span class="token operator">-</span>L &lt;authuser&gt;</code></pre>
+<code></code></li>
+<li><code></code>Добавьте SPN <code>HTTP/&lt;DCName&gt;.&lt;domain.name&gt;</code> к пользователю <code>&lt;authuser&gt;</code>:
+<pre class="language-powershell powershell" data-info="powershell" data-role="codeBlock"><code>setspn <span class="token operator">-</span>S HTTP/&lt;DCName&gt;<span class="token punctuation">.</span>&lt;domain<span class="token punctuation">.</span>name&gt; &lt;authuser&gt;    </code></pre>
+<code></code></li>
+<li>Создайте keytab-файл аутентификации <code>&lt;authuser&gt;.keytab</code>:
+<p><strong>Альт, Astra Linux, Debian</strong></p>
+<pre class="language-powershell powershell" data-info="powershell" data-role="codeBlock"><code>ktpass /out &lt;authuser&gt;.keytab /mapuser &lt;authuser&gt; /princ HTTP/&lt;DCName&gt;.&lt;domain.name&gt;@&lt;DOMAIN.NAME&gt; /pass &lt;P@$$W0RD&gt; /crypto RC4-HMAC-NT /ptype KRB5_NT_PRINCIPAL</code><code></code></pre>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Вместо пароля <code>&lt;P@$$W0RD&gt;</code>, подставьте пароль <a href="#сервисный-пользователь-домена">сервисного пользователя</a> <code>&lt;authuser&gt;</code>.</p>
+</div>
+</li>
+<li>Утилита <code>ktpass</code> создаст файл <code>&lt;authuser&gt;.keytab</code> в рабочей директории <em>PowerShell</em> на момент вызова команды <code>ktpass</code>.</li>
+<li><a href="#настройка-машины-linuxhost">Настройте машину <code>&lt;linuxHost&gt;</code></a> с экземпляром ПО.</li>
+<li><code></code>Перенесите keytab-файл <code>&lt;authuser&gt;.keytab</code> на машину <code>&lt;linuxHost&gt;</code> с экземпляром ПО.</li>
+</ol>
+<h2 id="mcetoc_1hpavbqqi2">Обновление keytab-файла аутентификации для аутентификации новых пользователей</h2>
+<div class="notice notice-warning">
+<p class="admonition-title">Внимание!</p>
+<p>Для обеспечения возможности аутентификации новых пользователей, добавленных при синхронизации с сервером каталогов необходимо заново создать keytab-файл на машине <code>&lt;linuxHost&gt;</code> с экземпляром ПО.</p>
+<p>Эту операцию необходимо выполнять каждый раз после добавления новых пользователей с сервера каталогов на уже настроенной машине <code>&lt;linuxHost&gt;</code>.</p>
+<p>Если не создать новый keytab-файл, пользователи, добавленные с сервера каталогов после создания имеющегося keytab-файла, не смогут войти в систему.</p>
+</div>
+<ol class="colored_numbers_list">
+<li><a href="#настройка-машины-linuxhost">Настройте машину <code>&lt;linuxHost&gt;</code></a> с экземпляром ПО.</li>
+<li>На контроллере домена <code>&lt;DCName&gt;</code> выведите список Service Principal Names (SPN), привязанных к пользователю <code>&lt;authuser&gt;</code>:
+<pre class="language-powershell powershell" data-info="powershell" data-role="codeBlock"><code>setspn <span class="token operator">-</span>L &lt;authuser&gt;</code></pre>
+</li>
+<li>Добавьте SPN <code>HTTP/&lt;DCName&gt;.&lt;domain.name&gt;</code> к пользователю <code>&lt;authuser&gt;</code>:
+<pre class="language-powershell powershell" data-info="powershell" data-role="codeBlock"><code>setspn <span class="token operator">-</span>S HTTP/&lt;DCName&gt;<span class="token punctuation">.</span>&lt;domain<span class="token punctuation">.</span>name&gt; &lt;authuser&gt;    </code></pre>
+</li>
+<li>Создайте keytab-файл аутентификации <code>&lt;authuser&gt;.keytab</code>:
+<p><strong>Для Rocky Linux</strong></p>
+<pre class="language-powershell powershell" data-info="powershell" data-role="codeBlock"><code>ktpass <span class="token operator">/</span>out &lt;authuser&gt;<span class="token punctuation">.</span>keytab <span class="token operator">/</span>mapuser &lt;authuser&gt; <span class="token operator">/</span>princ HTTP/&lt;DCName&gt;<span class="token punctuation">.</span>&lt;domain<span class="token punctuation">.</span>name&gt;@&lt;DOMAIN<span class="token punctuation">.</span>NAME&gt; <span class="token operator">/</span>pass &lt;P@$<span class="token variable">$W0RD</span>&gt; <span class="token operator">/</span>crypto AES256-SHA1 <span class="token operator">/</span>ptype KRB5_NT_PRINCIPAL    </code></pre>
+<p><strong>Для Astra Linux и Ubuntu</strong></p>
+<pre class="language-powershell powershell" data-info="powershell" data-role="codeBlock"><code>ktpass <span class="token operator">/</span>out &lt;authuser&gt;<span class="token punctuation">.</span>keytab <span class="token operator">/</span>mapuser &lt;authuser&gt; <span class="token operator">/</span>princ HTTP/&lt;DCName&gt;<span class="token punctuation">.</span>&lt;domain<span class="token punctuation">.</span>name&gt;@&lt;DOMAIN<span class="token punctuation">.</span>NAME&gt; <span class="token operator">/</span>pass &lt;P@$<span class="token variable">$W0RD</span>&gt; <span class="token operator">/</span>crypto RC4-HMAC-NT <span class="token operator">/</span>ptype KRB5_NT_PRINCIPAL    </code></pre>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Вместо пароля <code>&lt;P@$$W0RD&gt;</code>, подставьте пароль <a href="#сервисный-пользователь-домена">сервисного пользователя</a> <code>&lt;authuser&gt;</code>.</p>
+</div>
+</li>
+<li>Утилита <code>ktpass</code> создаст файл <code>&lt;authuser&gt;.keytab</code> в рабочей директории <em>PowerShell</em> на момент вызова команды <code>ktpass</code>.</li>
+<li>Перейдите на уже <a href="#настройка-машины-linuxhost">настроенную машину <code>&lt;linuxHost&gt;</code></a> с экземпляром ПО.</li>
+<li>Поместите keytab-файл <code>&lt;authuser&gt;.keytab</code> в директорию <code>/etc/nginx/sasl</code> и сделайте его доступным для чтения:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span class="token function">cp</span> /&lt;path_to_keytab&gt;/<span class="token operator">&lt;</span>authuser<span class="token operator">&gt;</span>.keytab /etc/nginx/sasl</code> <br/><code><span class="token function">chmod</span> <span class="token number">664</span> /etc/nginx/sasl/<span class="token operator">&lt;</span>authuser<span class="token operator">&gt;</span>.keytab<br/></code></pre>
+Здесь <code>&lt;path_to_keytab&gt;</code> — папка, в которой находится keytab-файл <code>&lt;authuser&gt;.keytab</code>, взятый с контроллера домена.</li>
+<li>Выпустите тикет для приложения <code>HTTP/&lt;DCName&gt;.&lt;domain.name&gt;</code>:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>kinit <span class="token parameter variable">-k</span> <span class="token parameter variable">-t</span> /etc/nginx/sasl/<span class="token operator">&lt;</span>authuser<span class="token operator">&gt;</span>.keytab HTTP/<span class="token operator">&lt;</span>DCName<span class="token operator">&gt;</span>.<span class="token operator">&lt;</span>domain.name<span class="token operator">&gt;</span></code></pre>
+</li>
+<li>Выдайте права на файл <code>krb5cc_&lt;id&gt;</code> (в примере — <code>krb5cc_991</code> или <code>krb5cc_33</code>, где <code>991</code> и <code>33</code> — <code>id</code> пользователя  <code>nginx</code> и <code>www-data</code> соответственно): <br/><strong>Rocky Linux</strong> <br/>
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>chown -R nginx:nginx /etc/nginx/sasl/krb5cc_991<br/></code></pre>
+<strong>Astra Linux и Ubuntu</strong> <br/>
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>chown -R www-data:www-data /etc/nginx/sasl/krb5cc_33</code></pre>
+</li>
+</ol>
+<h2 id="настройка-машины-linuxhost">Настройка машины linuxHost с экземпляром ПО</h2>
+<h3 id="требования-к-машине-linuxhost">Требования к машине</h3>
+<ul>
+<li>FQDN <code>&lt;DCName&gt;.&lt;domain.name&gt;</code> должно разрешаться.</li>
+<li>Время между машинами <code>&lt;DCName&gt;</code> и <code>&lt;linuxHost&gt;</code> должно быть синхронизировано.</li>
+<li>Должен быть установлен пакет <code>libsasl2</code>.</li>
+<li>Должен быть установлен и сконфигурирован <code>Kerberos</code>.</li>
+<li class="highlight-line" data-source-line="100" style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset- position: relative;">Должен быть установлен и настроен прокси-сервер <em>NGINX</em> с модулем аутентификации <em>SPNEGO</em> и зависимостями исполняемой среды для него.</li>
+</ul>
+<h3 id="настройка-параметров-сети-для-разрешения-dc-fqdn">Настройка параметров сети для разрешения DC FQDN</h3>
+<h4 id="изменение-файла-hosts">Изменение файла hosts</h4>
+<ol class="colored_numbers_list">
+<li>Откройте файл <code>/etc/hosts</code> для редактирования:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span class="token function">vim</span> /etc/hosts    </code></pre>
+<code></code></li>
+<li><code></code>Добавьте в файл <code>hosts</code> правила для разрешения машины <code>&lt;linuxHost&gt;</code> с экземпляром ПО:
+<pre class="language-hosts hosts" data-info="hosts" data-role="codeBlock"><code>127.0.0.1                       localhost localhost.localdomain<br/>127.0.1.1                       &lt;linuxHost&gt;.&lt;domain.name&gt; &lt;linuxHost&gt;<br/>&lt;domain.controller.ip.address&gt;  &lt;DCName&gt;.&lt;domain.name&gt; &lt;DCName&gt;</code></pre>
+<code></code></li>
+</ol>
+<h4 id="изменение-файла-resolvconf">Изменение файла resolv.conf</h4>
+<p>Если после настройки файла <code>hosts</code>, имя контроллера не разрешается, следует отредактировать файл <code>resolv.conf</code>.</p>
+<ol class="colored_numbers_list">
+<li>Разрешите редактирование файла <code>resolv.conf</code>:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>chattr <span class="token parameter variable">-i</span> /etc/resolv.conf</code></pre>
+<code></code></li>
+<li><code></code>Откройте файл разрешения DNS имен <code>resolv.conf</code> для редактирования:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span class="token function">vim</span> /etc/resolv.conf</code></pre>
+<code></code></li>
+<li><code></code>Укажите машину <code>&lt;DCName&gt;</code> в качестве сервера имён <code>nameserver</code>:
+<pre class="language-resolv.conf resolv.conf" data-info="resolv.conf" data-role="codeBlock"><code>domain     &lt;domain.name&gt;<br/>search     &lt;domain.name&gt;<br/>nameserver &lt;domain.controller.ip.address&gt;</code></pre>
+<code></code></li>
+<li><code></code>Запретите редактирование файла <code>resolv.conf</code>:<code><code></code> </code> <code><code></code> </code>
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>chattr +i /etc/resolv.conf</code></pre>
+</li>
+</ol>
+<h3 id="проверка-корректности-настроек-сети">Проверка корректности настроек сети</h3>
+<ol class="colored_numbers_list">
+<li>Убедитесь, что FQDN <code style="letter-spacing: 0.2px;">&lt;DCName&gt;.&lt;domain.name&gt;</code><span style="letter-spacing: 0.2px;"><span style="letter-spacing: 0.2px;"> разрешается:</span> </span>
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span style="color: #339966;"><em><span class="token comment"># DNS Lookup of DC<br/></span></em></span><span class="token function">nslookup</span> <span class="token operator">&lt;</span>DCName<span class="token operator">&gt;<br/></span><span class="token function">nslookup</span> <span class="token operator">&lt;</span>DCName<span class="token operator">&gt;</span>.<span class="token operator">&lt;</span>domain.name<span class="token operator">&gt;</span>
+            <span class="token function"><br/>host</span> <span class="token operator">&lt;</span>DCName<span class="token operator">&gt;</span>.<span class="token operator">&lt;</span>domain.name<span class="token operator">&gt;</span>
+            <span class="token comment"><br/><span style="color: #339966;"><em># Reverse DNS lookup of `nameserver`<br/></em></span></span><span class="token function">host</span> <span class="token operator">&lt;</span>domain.controller.ip.address<span class="token operator">&gt;</span></code></pre>
+<code></code></li>
+</ol>
+<h3 id="синхронизация-времени-между-dcname-и-linuxhost">Синхронизация времени между машинами DCName и linuxHost</h3>
+<p>Синхронизацию времени следует настраивать в следующих случаях:</p>
+<ul>
+<li>машины <code>&lt;DCName&gt;</code> и <code>&lt;linuxHost&gt;</code> находятся в разных часовых поясах;</li>
+<li>машина <code>&lt;linuxHost&gt;</code> не подключена к сервису синхронизации времени.</li>
+</ul>
+<ol class="colored_numbers_list">
+<li>Установите пакет <code>ntp</code>:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span class="token function">apt-get</span> <span class="token function">install</span> ntp</code></pre>
+<code></code></li>
+<li><code></code>Откройте файл конфигурации <code>ntp.conf</code> для редактирования:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span class="token function">vim</span> /etc/ntp.conf</code></pre>
+<code></code></li>
+<li><code></code>Добавьте в файл конфигурации <code>ntp.conf</code> поле <code>server &lt;DOMAIN.NAME&gt; iburst burst prefer</code>:
+<pre class="language-ntp.conf ntp.conf" data-info="ntp.conf" data-role="codeBlock"><code>driftfile /etc/ntp/drift<br/>server &lt;DOMAIN.NAME&gt; iburst burst prefer<br/>server 127.127.1.0 iburst<br/>fudge  127.127.1.0 stratum 10</code> <br/><code><br/>restrict default noquery nomodify<br/>restrict 127.0.0.1   </code></pre>
+<code></code></li>
+<li><code></code>Примените настройки:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>systemctl start ntp</code></pre>
+<code></code></li>
+<li><code></code>Удостоверьтесь, что служба <code>ntp</code> работает:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>systemctl status ntp</code></pre>
+<code></code></li>
+</ol>
+<h3 id="настройка-аутентификации-kerberos-для-astra-linux-и-ubuntu">Настройка конфигурации Kerberos</h3>
+<h4 id="установка-пакета-libsasl2">Установка вспомогательных пакетов</h4>
+<ol class="colored_numbers_list">
+<li>Установите модуль <code>libsasl2</code>:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span class="token function">apt</span> <span class="token function">install</span> libsasl2-modules-gssapi-mit</code></pre>
+<code></code></li>
+<li>Убедитесь, что модуль установлен:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span class="token function">apt</span> list libsasl*</code></pre>
+</li>
+<li>
+<p>Убедитесь, что установлены пакеты <code>krb5-user</code>, <code>krb5-config</code> и зависимости для них:</p>
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>which krb5-user</code> <br/><code>which krb5-config</code></pre>
+</li>
+<li>
+<p>Установите пакеты <code>samba-dc</code> и <code>kerberos-kdc</code>:</p>
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>apt-get install task-samba-dc krb5-kdc</code></pre>
+</li>
+<li><code></code>Убедитесь, что модули установлены:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span class="token function">apt</span> list task-samba-dc krb5-kdc</code></pre>
+<code></code></li>
+</ol>
+<h4 id="mcetoc_1ho4qjnqb4">Настройка аутентификации Kerberos</h4>
+<ol class="colored_numbers_list">
+<li>Откройте файл конфигурации Kerberos для редактирования:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span class="token function">vim</span> /etc/krb5.conf</code></pre>
+<code></code></li>
+<li><code></code><code><span style="color: #545764; font-family: Open Sans, sans-serif;"><span style="font-size: 15px; background-color: #ffffff;">Отредактируйте файл </span></span>krb5.conf</code> согласно приведённому ниже примеру: <br/><strong>Astra Linux, Debian</strong> <br/>
+<pre data-info='krb5.conf {data-source-line="216"}' data-role="codeBlock" data-source-line="216"><code><em><span style="color: #339966;">#astra/debian-winbind</span></em><br/>[libdefaults]<br/>    default_realm = &lt;DOMAIN.NAME&gt;<br/>    kdc_timesync = 1<br/>    ccache_type = 4<br/>    forwardable = true<br/>    proxiable = true
+            <br/>    fcc-mit-ticketflags = true<br/>    dns_lookup_realm = false<br/>    dns_lookup_kdc = false<br/>    v4_instance_resolve = false<br/>    v4_name_convert = {<br/>        host = {<br/>            rcmd = host<br/>            ftp = ftp<br/>        }<br/>        plain = {<br/>            something = something-else<br/>        }<br/>    }<br/><br/>[realms]<br/>    &lt;DOMAIN.NAME&gt; = {<br/>        kdc = &lt;DCName&gt;.&lt;domain.name&gt;<br/>        admin_server = &lt;DCName&gt;.&lt;domain.name&gt;<br/>        default_domain = &lt;domain.name&gt;<br/>    }<br/><br/>[domain_realm]<br/>    .&lt;domain.name&gt; = &lt;DOMAIN.NAME&gt;<br/>    &lt;domain.name&gt; = &lt;DOMAIN.NAME&gt;<br/>[login]<br/>    krb4_convert = false<br/>    krb4_get_tickets = false</code><code><br/></code><code></code></pre>
+<br/><strong>Альт</strong>
+<pre data-info='krb5.conf {data-source-line="221"}' data-role="codeBlock" data-source-line="221"><code>includedir /etc/krb5.conf.d/<br/>[logging]<br/><em><span style="color: #339966;"># default = FILE:/var/log/krb5libs.log</span></em><br/><em><span style="color: #339966;"># kdc = FILE:/var/log/krb5kdc.log</span></em><br/><em><span style="color: #339966;"># admin_server = FILE:/var/log/kadmind.log</span></em>
+            <br/>[libdefaults]<br/>dns_lookup_kdc = true<br/>dns_lookup_realm = false<br/>ticket_lifetime = 24h<br/>renew_lifetime = 7d<br/>forwardable = true<br/>rdns = false<br/>default_realm = &lt;DOMAIN.NAME&gt;<br/>default_ccache_name = KEYRING:persistent:%{uid}<br/><br/>[realms]<br/>  &lt;DOMAIN.NAME&gt; = {<br/>    kdc = &lt;DCName&gt;.&lt;domain.name&gt;<br/>    admin_server = &lt;DCName&gt;.&lt;domain.name&gt;<br/>	default_domain = &lt;domain.name&gt;<br/>  }<br/><br/>[domain_realm]<br/>&lt;.domain.name&gt; = &lt;DOMAIN.NAME&gt;<br/>&lt;domain.name&gt; = &lt;DOMAIN.NAME&gt;</code></pre>
+<code></code></li>
+</ol>
+<h4 id="mcetoc_1ho4qfuu02">Для ОС «Альт»: настройка pam_winbind.conf</h4>
+<ol class="colored_numbers_list" start="5">
+<li>
+<p>Откройте для редактирования файл конфигурации <code>pam_winbind.conf</code>:</p>
+<pre class="language-shell shell highlight-line" data-info='shell {data-source-line="258"}' data-role="codeBlock" data-source-line="258" style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset- text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset- --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; color: #795da3;">vim /etc/security/pam_winbind.conf</code></pre>
+<code></code><code></code></li>
+<li>
+<p>Отредактировать файл конфигурации <code>pam_winbind.conf</code> согласно приведённому ниже примеру:<code></code></p>
+<pre class="language-pam_winbind.conf pam_winbind.conf" data-info='pam_winbind.conf {data-source-line="264"}' data-role="codeBlock" data-source-line="264" style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset- text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset- display: inline; max-width: initial; overflow: initial; line-height: inherit; overflow-wrap: normal;">[global]<br/>debug = no<br/>debug_state = no<br/>try_first_pass = yes<br/>cached_login = yes<br/>krb5_auth = yes<br/>krb_ccache_type = FILE<br/>silent = yes<br/>mkhomedir = yes</code></pre>
+</li>
+</ol>
+<h4 id="настройка-конфигурации-kerberos-1">Установка экземпляра ПО</h4>
+<ol class="colored_numbers_list" start="5">
+<li>
+<p>Скачайте и распакуйте дистрибутив ПО <strong>Comindware Business Application Platform </strong>в директорию <code>`/home/&lt;username&gt;`</code> и  <span style="letter-spacing: 0.2px;">перейдите в директорию с распакованным ПО:</span></p>
+<p><strong>Astra Linux<br/></strong></p>
+<pre data-info='shell {data-source-line="257"}' data-role="codeBlock" data-source-line="257"><code>tar -xvzf 4.6&lt;build.ver&gt;.astra.tar.gz -C /home/&lt;username&gt;<br/>cd /home/&lt;username&gt;/CMW_Astra/</code></pre>
+<strong>Альт<br/></strong>
+<pre data-info='shell {data-source-line="257"}' data-role="codeBlock" data-source-line="257"><code>tar -xvzf 4.6&lt;build.ver&gt;.alt.tar.gz -C /home/&lt;username&gt;<br/>cd /home/&lt;username&gt;/CMW_Alt/</code></pre>
+<strong>Debian<br/></strong>
+<pre data-info='shell {data-source-line="257"}' data-role="codeBlock" data-source-line="257"><code>tar -xvzf 4.6&lt;build.ver&gt;.debian.tar.gz -C /home/&lt;username&gt;<br/>cd /home/&lt;username&gt;/CMW_Debian/</code></pre>
+</li>
+<li>
+<p>Установите ПО <strong>Comindware Business Application Platform </strong> без создания экземпляра ПО и с ключом <code>-d=clear</code> — без демонстрационной базы данных:<strong><br/></strong></p>
+<pre data-info='shell {data-source-line="257"}' data-role="codeBlock" data-source-line="257"><code>sh install.sh -p -d=clear</code></pre>
+</li>
+<li><code></code></li>
+<li><code></code>
+<p>Создайте экземпляр ПО, указав вместо <code><em><strong>&lt;instanceName&gt;</strong></em></code> требуемое имя экземпляра:</p>
+<pre data-info='shell {data-source-line="269"}' data-role="codeBlock" data-source-line="269"><code>cd scripts/instance/<br/>sh create.sh -n=<em><strong>&lt;instanceName&gt;</strong></em> -p=80 -v=4.6.&lt;build.ver&gt;</code><code style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset- display: inline; max-width: initial; overflow: initial; line-height: inherit; overflow-wrap: normal;"></code></pre>
+<code style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset- display: inline; max-width: initial; overflow: initial; line-height: inherit; overflow-wrap: normal;"></code><code></code></li>
+</ol>
+<h4 id="настройка-аутентификации-kerberos">Настройка экземпляра ПО</h4>
+<p>Для включения функционала SSO аутентификации в экземпляре ПО необходимо настроить его файл конфигурации.</p>
+<ol class="colored_numbers_list">
+<li>Откройте для редактирования файл конфигурации экземпляра ПО (<code><strong><em>instanceName</em></strong></code> — имя экземпляра ПО):
+<pre class="source_code_container"><code>vim /usr/share/comindware/configs/instance/<strong><em>instanceName</em></strong>.yml</code></pre>
+</li>
+<li>Добавьте в файл директиву <code>isLinuxSSOAuthorization: true</code>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Пример файла instanceName.yml с директивой  isLinuxSSOAuthorization: true" class="img-responsive" height="241" src="https://kb.comindware.ru/assets/img_65e5cea643f5c.jpeg" width="621"/></p>
+<figcaption class="caption" style="font-size: 15px !important;">Пример файла instanceName.yml с директивой  isLinuxSSOAuthorization: true</figcaption>
+</figure>
+</li>
+</ol>
+<h4 id="mcetoc_1ho4r2l2m6">Установка и настройка модуля NGINX SPNEGO</h4>
+<ol class="colored_numbers_list">
+<li>
+<p>Установите модуль <em>NGINX-SPNEGO</em>:</p>
+<pre class="source_code_container"><code>apt-get install nginx-spnego</code></pre>
+</li>
+<li>
+<p>Добавить модуль <em>SPNEGO</em> к рабочей конфигурации <em>NGINX</em>:</p>
+<pre class="source_code_container"><code>ln -s /etc/nginx/modules-available.d/http_auth_spnego.conf /etc/nginx/modules-enabled/</code></pre>
+</li>
+<li>
+<p>Поместить keytab-файл <code>&lt;authuser&gt;.keytab</code> в директорию конфигурации NGINX и сделать его доступным для чтения:</p>
+<pre><code>cp /&lt;path_to_keytab&gt;/&lt;authuser&gt;.keytab /etc/nginx</code> <br/><code>chmod 664 /etc/nginx/&lt;authuser&gt;.keytab</code> <br/><code></code></pre>
+Здесь <code>&lt;path_to_keytab&gt;</code> — папка, в которой находится keytab-файл <code>&lt;authuser&gt;.keytab</code>, взятый с контроллера домена.</li>
+<li>
+<p>Откройте для редактирования описание веб-приложения <em>NGINX</em> для экземпляра ПО <code><em><strong>&lt;instanceName&gt;</strong></em></code>:</p>
+<pre class="source_code_container"><code>vim /etc/nginx/sites-available.d/comindware<em><strong>&lt;instanceName&gt;</strong></em></code></pre>
+</li>
+<li>
+<p>Отредактируйте файл comindware<code><em><strong>&lt;instanceName&gt;</strong></em></code> согласно приведённому ниже примеру:<code></code></p>
+<pre class="language-comindwarecmwdata comindwarecmwdata" data-info='comindwarecmwdata {data-source-line="298"}' data-role="codeBlock" data-source-line="298" style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; padding: 0.8em; overflow: auto; line-height: 1.4; border: #d6d6d6; border-radius: 3px; margin-top: 0px; margin-bottom: 16px; color: #333333; background: #f5f5f5; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; text-align: left; white-space: pre; word-spacing: 0px; word-break: normal; overflow-wrap: normal; tab-size: 8; hyphens: none; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; color: #000000; background: 0px 0px transparent; padding: 0px; border-radius: 3px; font-size: 0.85em; margin: 0px; word-break: normal; white-space: pre; border: 0px; display: inline; max-width: initial; overflow: initial; line-height: inherit; overflow-wrap: normal;">server {<br/>        listen 8999 http2;<br/>        root /var/www/cmwdata;<br/>
+            location /async {<br/>                grpc_pass grpc_cmwdata;<br/>        }<br/>}<br/>
+            server {<br/>        listen       80 default;<br/>        root         /var/www/cmwdata;<br/>
+            client_header_timeout 3h;<br/>        client_body_timeout 3h;<br/>        grpc_read_timeout 3h;<br/>        grpc_send_timeout 3h;<br/>
+            client_max_body_size 300m;<br/>        fastcgi_read_timeout 10000;<br/>
+            location /async {<br/>                grpc_pass grpc_cmwdata;<br/>        }<br/>
+            location / {<br/>                # SPNEGO Configuration<br/>                add_header Set-Cookie "cmw_user=$remote_user";<br/>                auth_gss on;<br/>                auth_gss_realm &lt;DOMAIN.NAME&gt;;<br/>                auth_gss_keytab /etc/nginx/&lt;authuser&gt;.keytab;<br/>                auth_gss_service_name HTTP/&lt;authuser&gt;.&lt;domain.name&gt;;<br/>                auth_gss_allow_basic_fallback on;<br/>
+            proxy_read_timeout 10000;<br/>                proxy_connect_timeout 10000;<br/>                proxy_send_timeout 10000;<br/>                root                /var/www/cmwdata/;<br/>                fastcgi_pass        unix:/var/www/cmwdata/App_Data/cmwdata.socket;<br/>                include             /etc/nginx/fastcgi.conf;
+            }<br/>}</code><code></code></pre>
+</li>
+<li>Проверьте синтаксис веб-приложения <em>NGINX</em> для экземпляра ПО <code><em><strong>&lt;instanceName&gt;</strong></em></code>:
+<pre class="source_code_container"><code>nginx -t</code></pre>
+</li>
+<li>Примените настройки и перезапустите <em>NGINX</em>:
+<pre class="source_code_container"><code>nginx -s reload</code></pre>
+</li>
+<li>Проверьте статус сервиса <em>NGINX</em>:
+<pre class="source_code_container"><code>systemctl status nginx</code></pre>
+</li>
+<li>Проверьте статус сервиса экземпляра ПО <code><em><strong>&lt;instanceName&gt;</strong></em></code>:
+<pre class="source_code_container"><code>systemctl status comindware<em><strong>&lt;instanceName&gt;</strong></em></code></pre>
+<code></code></li>
+</ol>
+<h3 id="mcetoc_1hpbijucj0">Изменение конфигурации экземпляра ПО</h3>
+<ol class="colored_numbers_list">
+<li>Войдите в экземпляр ПО с помощью браузера.</li>
+<li>Откройте свойства <a href="https://kb.comindware.ru/article.php?id=2206">подключения к серверу каталогов</a>, которое будет использоваться для синхронизации аккаунтов.</li>
+<li>На вкладке «<strong>Основные</strong>» установите флажок «<strong>Использовать по умолчанию</strong>».</li>
+<li>На вкладке «<strong>Сопоставление атрибутов</strong>» нажмите кнопку «<strong>Восстановить</strong>».</li>
+<li>Сохраните свойства подключения.</li>
+<li>Перезапустите экземпляр ПО:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>systemctl restart comindware<span class="token operator">&lt;</span>instance_name<span class="token operator">&gt;</span></code></pre>
+</li>
+</ol>
+<h3 id="mcetoc_1hhhidcql3">Проверка работы функционала Kerberos на машине linuxHost</h3>
+<ol class="colored_numbers_list">
+<li>Создайте тикет для приложения <code>HTTP/&lt;DCName&gt;.&lt;domain.name&gt;</code>: <br/>
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>kinit -k -t /etc/nginx/&lt;authuser&gt;.keytab HTTP/&lt;DCName&gt;.&lt;domain.name&gt;</code></pre>
+</li>
+<li>Выведите список тикетов: <br/>
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>klist</code></pre>
+</li>
+</ol>
+<h3 id="проверка-вывода-трассировщика-ошибок-в-shell">Проверка вывода трассировщика ошибок в Shell</h3>
+<ol class="colored_numbers_list">
+<li>Выполните команду:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>KRB5_TRACE=/dev/stdout kinit -k -t /etc/nginx/&lt;authuser&gt;.keytab HTTP/&lt;DCName&gt;.&lt;domain.name&gt;</code></pre>
+</li>
+</ol>
+<h2 id="mcetoc_1ho536ga40"><span class="token operator">Связанные статьи</span></h2>
+<p><strong><span class="token operator"><samp data-name="aid" data-title="" data-value="2517"><span style="color: #0066bc; font-family: Tahoma;"><img src="https://kb.comindware.ru/images/marker.png" style="vertical-align: middle;"/> Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО {Article-ID:2517}</span></samp> </span></strong></p>
+<p><strong><samp data-name="aid" data-title="" data-value="2329"><span style="color: #0066bc; font-family: Tahoma;"><img src="https://kb.comindware.ru/images/marker.png" style="vertical-align: middle;"/>Аутентификация через OpenID Connect. Настройка подключения и служб {Article-ID:2329}</span></samp> </strong></p>
+<p><a class="md-top md-icon mkdocs_imported_link" href="#"> <em class="fa-light fa-arrow-up">‌</em> К началу </a><code></code></p><h1>Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя</h1><div class="mce-toc">
+<h2 class="toc-heading">Содержание</h2>
+<ul>
+<li><a href="#введение">Введение</a></li>
+<li><a href="#определения">Определения</a></li>
+<li><a href="#примеры-значений-параметров">Примеры значений параметров</a></li>
+<li><a href="#конфигурация-машины-с-экземпляром-по-comindware-business-application-platform">Конфигурация машины linuxHost с экземпляром ПО Comindware Business Application Platform</a></li>
+<li><a href="#конфигурация-машины-с-контроллером-домена">Конфигурация машины DCName с контроллером домена</a>
+<ul>
+<li><a href="#настройка-надёжных-узлов-на-контроллере-домена">Настройка надёжных узлов на контроллере домена</a></li>
+<li><a href="#сервисный-пользователь-домена">Сервисный пользователь домена</a></li>
+<li><a href="#mcetoc_1ho4mh3nr0">Пользователи для проверки аутентификации</a></li>
+</ul>
+</li>
+<li><a href="#создание-keytab-файла-аутентификации">Создание keytab-файла аутентификации</a></li>
+<li><a href="#mcetoc_1hpavbqqi2">Обновление keytab-файла аутентификации для аутентификации новых пользователей</a></li>
+<li><a href="#настройка-машины-linuxhost">Настройка машины linuxHost с экземпляром ПО</a>
+<ul>
+<li><a href="#требования-к-машине-linuxhost">Требования к машине</a></li>
+<li><a href="#настройка-параметров-сети-для-разрешения-dc-fqdn">Настройка параметров сети для разрешения DC FQDN</a>
+<ul>
+<li><a href="#изменение-файла-hosts">Изменение файла hosts</a></li>
+<li><a href="#изменение-файла-resolvconf">Изменение файла resolv.conf</a></li>
+</ul>
+</li>
+<li><a href="#проверка-корректности-настроек-сети">Проверка корректности настроек сети</a></li>
+<li><a href="#синхронизация-времени-между-dcname-и-linuxhost">Синхронизация времени между машинами DCName и linuxHost</a></li>
+<li><a href="#настройка-аутентификации-kerberos-для-astra-linux-и-ubuntu">Настройка конфигурации Kerberos</a>
+<ul>
+<li><a href="#установка-пакета-libsasl2">Установка вспомогательных пакетов</a></li>
+<li><a href="#mcetoc_1ho4qjnqb4">Настройка аутентификации Kerberos</a></li>
+<li><a href="#mcetoc_1ho4qfuu02">Для ОС «Альт»: настройка pam_winbind.conf</a></li>
+<li><a href="#настройка-конфигурации-kerberos-1">Установка экземпляра ПО</a></li>
+<li><a href="#настройка-аутентификации-kerberos">Настройка экземпляра ПО</a></li>
+<li><a href="#mcetoc_1ho4r2l2m6">Установка и настройка модуля NGINX SPNEGO</a></li>
+</ul>
+</li>
+<li><a href="#mcetoc_1hpbijucj0">Изменение конфигурации экземпляра ПО</a></li>
+<li><a href="#mcetoc_1hhhidcql3">Проверка работы функционала Kerberos на машине linuxHost</a></li>
+<li><a href="#проверка-вывода-трассировщика-ошибок-в-shell">Проверка вывода трассировщика ошибок в Shell</a></li>
+</ul>
+</li>
+<li><a href="#mcetoc_1ho536ga40">Связанные статьи</a></li>
+</ul>
+</div>
+<div class="notice notice-warning">
+<p class="admonition-title">Внимание!</p>
+<p>Представленные в данной статье инструкции зависят от конфигурации сторонних систем и окружения, в котором развёрнут экземпляр ПО <strong>Comindware Business Application Platform</strong>.</p>
+<p>Описать все возможные случаи и сочетания конфигураций сторонних систем не представляется возможным, поэтому данные инструкции могут не подойти для вашего случая.</p>
+<p>Для корректной настройки конфигурации контроллера домена, экземпляра ПО и компьютеров конечных пользователей следует обратиться за консультацией в службу поддержки <strong>Comindware </strong>по адресу:</p>
+<p><a href="https://www.comindware.ru/company/contact-us/#tab_support">https://www.comindware.ru/company/contact-us/#tab_support</a></p>
+</div>
+<h2 id="введение">Введение</h2>
+<p>В этой статье представлены инструкции по настройке контроллера домена, экземпляра ПО <strong>Comindware Business Application Platform</strong> (далее «экземпляр ПО») и компьютера конечного пользователя для аутентификации пользователей посредством технологии единого входа (SSO). Инструкции приведены для контроллера домена под управлением ОС Windows Server 2016, экземпляра ПО под управлением ОС Альт 10, Astra Linux SE 1.7 и Debian 12 и компьютера конечного пользователя под управлением ОС Windows 10.</p>
+<h2 id="определения">Определения</h2>
+<ul>
+<li><strong>Контроллер домена</strong> — машина с развёрнутыми доменными службами Active Directory.</li>
+<li><strong>Домен Active Directory</strong> — группа объектов в сети.</li>
+<li><strong>Single Sign-on (SSO)</strong> — технология единого входа, позволяющая пользователям выполнять аутентификацию с использованием одного набора учётных данных в нескольких независимых системах.</li>
+</ul>
+<h2 id="примеры-значений-параметров">Примеры значений параметров</h2>
+<p>В этой статье примеры значений параметров заключены в угловые скобки <code>&lt; &gt;</code>. При настройке конфигурации заменяйте их на фактические значения, как показано в следующей таблице.</p>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th>Пример параметра</th>
+<th>Пример фактического значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;DCName&gt;</code></td>
+<td><code>DC</code></td>
+</tr>
+<tr>
+<td><code>&lt;DCName&gt;.&lt;domain.name&gt;</code></td>
+<td><code>DC.example.com</code></td>
+</tr>
+<tr>
+<td><code>HTTP/&lt;DCName&gt;.&lt;domain.name&gt;@&lt;DOMAIN.NAME&gt;</code></td>
+<td><code>HTTP/DC.example.com@EXAMPLE.COM</code></td>
+</tr>
+<tr>
+<td><code>&lt;linuxHost&gt;</code></td>
+<td><code>server-host-name</code></td>
+</tr>
+<tr>
+<td><code>&lt;domain.controller.ip.address&gt;</code></td>
+<td><code>192.168.0.254</code></td>
+</tr>
+</tbody>
+</table>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Протокол аутентификации Kerberos учитывает регистр символов — там, где в инструкциях даны примеры параметров в верхнем регистре, следует подставлять фактические значения также в верхнем регистре.</p>
+</div>
+<h2 id="конфигурация-машины-с-экземпляром-по-comindware-business-application-platform">Конфигурация машины linuxHost с экземпляром ПО Comindware Business Application Platform</h2>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Операционная система</td>
+<td>Альт 10, Astra Linux SE 1.7, Debian 12</td>
+</tr>
+<tr>
+<td>Имя хоста</td>
+<td><code>&lt;linuxHost&gt;</code></td>
+</tr>
+<tr>
+<td>IP-адрес хоста</td>
+<td><code>&lt;linux.host.ip.address&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="конфигурация-машины-с-контроллером-домена">Конфигурация машины DCName с контроллером домена</h2>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Операционная система</td>
+<td>Windows Server 2016</td>
+</tr>
+<tr>
+<td>Имя хоста</td>
+<td><code>&lt;DCName&gt;</code></td>
+</tr>
+<tr>
+<td>FQDN контроллера домена</td>
+<td><code>&lt;DCName&gt;.&lt;domain.name&gt;</code></td>
+</tr>
+<tr>
+<td>Доменное имя</td>
+<td><code>&lt;domain.name&gt;</code></td>
+</tr>
+<tr>
+<td>IP-адрес контроллера домена</td>
+<td><code>&lt;domain.controller.ip.address&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;"></figure>
+<h3 id="настройка-надёжных-узлов-на-контроллере-домена">Настройка надёжных узлов на контроллере домена</h3>
+<p>При необходимости на контроллере домена добавьте хост <code>&lt;linuxHost&gt;</code> с экземпляром ПО в список надёжных узлов в рамках интранета, как указано ниже.</p>
+<ol class="colored_numbers_list">
+<li>В Панели управления выберите пункт «<strong>Сеть и интернет</strong>».</li>
+<li>Откройте пункт «<strong>Свойства: интернет</strong>» (<strong>Internet Properties</strong>).</li>
+<li>Выберите вкладку «<strong>Безопасность</strong>» (<strong>Security</strong>).</li>
+<li>Выберите зону «<strong>Надёжные узлы</strong>» (<strong>Trusted sites</strong>).</li>
+<li>Нажмите кнопку «<strong>Узлы</strong>» (<strong>Sites</strong>).</li>
+<li>В отобразившемся окне добавьте в список надёжных узлов <code>&lt;linuxHost&gt;</code>.</li>
+</ol>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Добавление машины с экземпляром ПО в список доверенных узлов на контроллере домена" class="img-responsive" height="1058" src="https://kb.comindware.ru/assets/img_65e1e692cb483.png" width="1624"/></p>
+<p><span style="color: #666666; font-style: italic; letter-spacing: 0.2px;">Добавление машины с экземпляром ПО в список доверенных узлов на контроллере домена</span></p>
+</figure>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;"></figure>
+<h3 id="сервисный-пользователь-домена">Сервисный пользователь домена</h3>
+<p>В домене должен существовать пользователь <code>&lt;authuser&gt;</code>, выступающий в роли сервисного аккаунта для модуля аутентификации NGINX, работающего на машине <code>&lt;linuxHost&gt;</code> с экземпляром ПО.</p>
+<p>Если пользователя <code>&lt;authuser&gt;</code> в AD нет, необходимо создать его, указав параметры, приведённые в следующей таблице.</p>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>&lt;authuser&gt;</code></td>
+</tr>
+<tr>
+<td><code>userPrincipalName</code> <br/>(User logon name)</td>
+<td><code>HTTP/&lt;DCName&gt;.&lt;domain.name&gt;@&lt;DOMAIN.NAME&gt;</code></td>
+</tr>
+<tr>
+<td><code>sAMAccountName</code> <br/>(User logon name pre-Windows 2000)</td>
+<td><code>&lt;DOMAIN&gt;\&lt;authuser&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>При создании пользователя <code>&lt;authuser&gt;</code> на вкладке «<strong>Учётная запись</strong>» (<strong>Account</strong>) необходимо установить флажки «<strong>Пользователь не может менять пароль</strong>» (<strong>User cannot change password</strong>) и «<strong>Срок действия пароля не истекает</strong>» (<strong>Password never expires</strong>), как показано на иллюстрации.</p>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><em><img alt="Настройка свойств сервисного аккаунта для NGINX" class="img-responsive" height="533" src="https://kb.comindware.ru/assets/Kerberos_Rocky+Astra_authuser_account_config.png" width="420"/></em></p>
+<figcaption class="caption" style="font-size: 15px !important;">Настройка свойств сервисного аккаунта для NGINX</figcaption>
+</figure>
+<p> </p>
+<h3 id="mcetoc_1ho4mh3nr0">Пользователи для проверки аутентификации</h3>
+<p data-source-line="48">Для проверки работоспособности процедуры аутентификации в данной статье используются пользователи <code>user1</code> и <code>user2</code>, см. следующую таблицу.</p>
+<table data-source-line="50" style="width: 100%;">
+<thead data-source-line="50">
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+<th>Значение</th>
+</tr>
+<tr data-source-line="50">
+<td><code>name</code></td>
+<td><code>user1</code></td>
+<td><code>user2</code></td>
+</tr>
+</thead>
+<tbody data-source-line="52">
+<tr data-source-line="52">
+<td><code>sAmAccountName</code></td>
+<td><code>&lt;domain&gt;/user1</code></td>
+<td><code>&lt;domain&gt;/user2</code></td>
+</tr>
+<tr data-source-line="53">
+<td><code>userPrincipalName</code></td>
+<td><code>user1@&lt;DOMAIN.NAME&gt;</code></td>
+<td><code>user2@&lt;DOMAIN.NAME&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="создание-keytab-файла-аутентификации">Создание keytab-файла аутентификации</h2>
+<ol class="colored_numbers_list">
+<li>На контроллере домена <code>&lt;DCName&gt;</code> выведите список Service Principal Names (SPN), привязанных к пользователю <code>&lt;authuser&gt;</code>:
+<pre class="language-powershell powershell" data-info="powershell" data-role="codeBlock"><code>setspn <span class="token operator">-</span>L &lt;authuser&gt;</code></pre>
+<code></code></li>
+<li><code></code>Добавьте SPN <code>HTTP/&lt;DCName&gt;.&lt;domain.name&gt;</code> к пользователю <code>&lt;authuser&gt;</code>:
+<pre class="language-powershell powershell" data-info="powershell" data-role="codeBlock"><code>setspn <span class="token operator">-</span>S HTTP/&lt;DCName&gt;<span class="token punctuation">.</span>&lt;domain<span class="token punctuation">.</span>name&gt; &lt;authuser&gt;    </code></pre>
+<code></code></li>
+<li>Создайте keytab-файл аутентификации <code>&lt;authuser&gt;.keytab</code>:
+<p><strong>Альт, Astra Linux, Debian</strong></p>
+<pre class="language-powershell powershell" data-info="powershell" data-role="codeBlock"><code>ktpass /out &lt;authuser&gt;.keytab /mapuser &lt;authuser&gt; /princ HTTP/&lt;DCName&gt;.&lt;domain.name&gt;@&lt;DOMAIN.NAME&gt; /pass &lt;P@$$W0RD&gt; /crypto RC4-HMAC-NT /ptype KRB5_NT_PRINCIPAL</code><code></code></pre>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Вместо пароля <code>&lt;P@$$W0RD&gt;</code>, подставьте пароль <a href="#сервисный-пользователь-домена">сервисного пользователя</a> <code>&lt;authuser&gt;</code>.</p>
+</div>
+</li>
+<li>Утилита <code>ktpass</code> создаст файл <code>&lt;authuser&gt;.keytab</code> в рабочей директории <em>PowerShell</em> на момент вызова команды <code>ktpass</code>.</li>
+<li><a href="#настройка-машины-linuxhost">Настройте машину <code>&lt;linuxHost&gt;</code></a> с экземпляром ПО.</li>
+<li><code></code>Перенесите keytab-файл <code>&lt;authuser&gt;.keytab</code> на машину <code>&lt;linuxHost&gt;</code> с экземпляром ПО.</li>
+</ol>
+<h2 id="mcetoc_1hpavbqqi2">Обновление keytab-файла аутентификации для аутентификации новых пользователей</h2>
+<div class="notice notice-warning">
+<p class="admonition-title">Внимание!</p>
+<p>Для обеспечения возможности аутентификации новых пользователей, добавленных при синхронизации с сервером каталогов необходимо заново создать keytab-файл на машине <code>&lt;linuxHost&gt;</code> с экземпляром ПО.</p>
+<p>Эту операцию необходимо выполнять каждый раз после добавления новых пользователей с сервера каталогов на уже настроенной машине <code>&lt;linuxHost&gt;</code>.</p>
+<p>Если не создать новый keytab-файл, пользователи, добавленные с сервера каталогов после создания имеющегося keytab-файла, не смогут войти в систему.</p>
+</div>
+<ol class="colored_numbers_list">
+<li><a href="#настройка-машины-linuxhost">Настройте машину <code>&lt;linuxHost&gt;</code></a> с экземпляром ПО.</li>
+<li>На контроллере домена <code>&lt;DCName&gt;</code> выведите список Service Principal Names (SPN), привязанных к пользователю <code>&lt;authuser&gt;</code>:
+<pre class="language-powershell powershell" data-info="powershell" data-role="codeBlock"><code>setspn <span class="token operator">-</span>L &lt;authuser&gt;</code></pre>
+</li>
+<li>Добавьте SPN <code>HTTP/&lt;DCName&gt;.&lt;domain.name&gt;</code> к пользователю <code>&lt;authuser&gt;</code>:
+<pre class="language-powershell powershell" data-info="powershell" data-role="codeBlock"><code>setspn <span class="token operator">-</span>S HTTP/&lt;DCName&gt;<span class="token punctuation">.</span>&lt;domain<span class="token punctuation">.</span>name&gt; &lt;authuser&gt;    </code></pre>
+</li>
+<li>Создайте keytab-файл аутентификации <code>&lt;authuser&gt;.keytab</code>:
+<p><strong>Для Rocky Linux</strong></p>
+<pre class="language-powershell powershell" data-info="powershell" data-role="codeBlock"><code>ktpass <span class="token operator">/</span>out &lt;authuser&gt;<span class="token punctuation">.</span>keytab <span class="token operator">/</span>mapuser &lt;authuser&gt; <span class="token operator">/</span>princ HTTP/&lt;DCName&gt;<span class="token punctuation">.</span>&lt;domain<span class="token punctuation">.</span>name&gt;@&lt;DOMAIN<span class="token punctuation">.</span>NAME&gt; <span class="token operator">/</span>pass &lt;P@$<span class="token variable">$W0RD</span>&gt; <span class="token operator">/</span>crypto AES256-SHA1 <span class="token operator">/</span>ptype KRB5_NT_PRINCIPAL    </code></pre>
+<p><strong>Для Astra Linux и Ubuntu</strong></p>
+<pre class="language-powershell powershell" data-info="powershell" data-role="codeBlock"><code>ktpass <span class="token operator">/</span>out &lt;authuser&gt;<span class="token punctuation">.</span>keytab <span class="token operator">/</span>mapuser &lt;authuser&gt; <span class="token operator">/</span>princ HTTP/&lt;DCName&gt;<span class="token punctuation">.</span>&lt;domain<span class="token punctuation">.</span>name&gt;@&lt;DOMAIN<span class="token punctuation">.</span>NAME&gt; <span class="token operator">/</span>pass &lt;P@$<span class="token variable">$W0RD</span>&gt; <span class="token operator">/</span>crypto RC4-HMAC-NT <span class="token operator">/</span>ptype KRB5_NT_PRINCIPAL    </code></pre>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Вместо пароля <code>&lt;P@$$W0RD&gt;</code>, подставьте пароль <a href="#сервисный-пользователь-домена">сервисного пользователя</a> <code>&lt;authuser&gt;</code>.</p>
+</div>
+</li>
+<li>Утилита <code>ktpass</code> создаст файл <code>&lt;authuser&gt;.keytab</code> в рабочей директории <em>PowerShell</em> на момент вызова команды <code>ktpass</code>.</li>
+<li>Перейдите на уже <a href="#настройка-машины-linuxhost">настроенную машину <code>&lt;linuxHost&gt;</code></a> с экземпляром ПО.</li>
+<li>Поместите keytab-файл <code>&lt;authuser&gt;.keytab</code> в директорию <code>/etc/nginx/sasl</code> и сделайте его доступным для чтения:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span class="token function">cp</span> /&lt;path_to_keytab&gt;/<span class="token operator">&lt;</span>authuser<span class="token operator">&gt;</span>.keytab /etc/nginx/sasl</code> <br/><code><span class="token function">chmod</span> <span class="token number">664</span> /etc/nginx/sasl/<span class="token operator">&lt;</span>authuser<span class="token operator">&gt;</span>.keytab<br/></code></pre>
+Здесь <code>&lt;path_to_keytab&gt;</code> — папка, в которой находится keytab-файл <code>&lt;authuser&gt;.keytab</code>, взятый с контроллера домена.</li>
+<li>Выпустите тикет для приложения <code>HTTP/&lt;DCName&gt;.&lt;domain.name&gt;</code>:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>kinit <span class="token parameter variable">-k</span> <span class="token parameter variable">-t</span> /etc/nginx/sasl/<span class="token operator">&lt;</span>authuser<span class="token operator">&gt;</span>.keytab HTTP/<span class="token operator">&lt;</span>DCName<span class="token operator">&gt;</span>.<span class="token operator">&lt;</span>domain.name<span class="token operator">&gt;</span></code></pre>
+</li>
+<li>Выдайте права на файл <code>krb5cc_&lt;id&gt;</code> (в примере — <code>krb5cc_991</code> или <code>krb5cc_33</code>, где <code>991</code> и <code>33</code> — <code>id</code> пользователя  <code>nginx</code> и <code>www-data</code> соответственно): <br/><strong>Rocky Linux</strong> <br/>
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>chown -R nginx:nginx /etc/nginx/sasl/krb5cc_991<br/></code></pre>
+<strong>Astra Linux и Ubuntu</strong> <br/>
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>chown -R www-data:www-data /etc/nginx/sasl/krb5cc_33</code></pre>
+</li>
+</ol>
+<h2 id="настройка-машины-linuxhost">Настройка машины linuxHost с экземпляром ПО</h2>
+<h3 id="требования-к-машине-linuxhost">Требования к машине</h3>
+<ul>
+<li>FQDN <code>&lt;DCName&gt;.&lt;domain.name&gt;</code> должно разрешаться.</li>
+<li>Время между машинами <code>&lt;DCName&gt;</code> и <code>&lt;linuxHost&gt;</code> должно быть синхронизировано.</li>
+<li>Должен быть установлен пакет <code>libsasl2</code>.</li>
+<li>Должен быть установлен и сконфигурирован <code>Kerberos</code>.</li>
+<li class="highlight-line" data-source-line="100" style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset- position: relative;">Должен быть установлен и настроен прокси-сервер <em>NGINX</em> с модулем аутентификации <em>SPNEGO</em> и зависимостями исполняемой среды для него.</li>
+</ul>
+<h3 id="настройка-параметров-сети-для-разрешения-dc-fqdn">Настройка параметров сети для разрешения DC FQDN</h3>
+<h4 id="изменение-файла-hosts">Изменение файла hosts</h4>
+<ol class="colored_numbers_list">
+<li>Откройте файл <code>/etc/hosts</code> для редактирования:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span class="token function">vim</span> /etc/hosts    </code></pre>
+<code></code></li>
+<li><code></code>Добавьте в файл <code>hosts</code> правила для разрешения машины <code>&lt;linuxHost&gt;</code> с экземпляром ПО:
+<pre class="language-hosts hosts" data-info="hosts" data-role="codeBlock"><code>127.0.0.1                       localhost localhost.localdomain<br/>127.0.1.1                       &lt;linuxHost&gt;.&lt;domain.name&gt; &lt;linuxHost&gt;<br/>&lt;domain.controller.ip.address&gt;  &lt;DCName&gt;.&lt;domain.name&gt; &lt;DCName&gt;</code></pre>
+<code></code></li>
+</ol>
+<h4 id="изменение-файла-resolvconf">Изменение файла resolv.conf</h4>
+<p>Если после настройки файла <code>hosts</code>, имя контроллера не разрешается, следует отредактировать файл <code>resolv.conf</code>.</p>
+<ol class="colored_numbers_list">
+<li>Разрешите редактирование файла <code>resolv.conf</code>:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>chattr <span class="token parameter variable">-i</span> /etc/resolv.conf</code></pre>
+<code></code></li>
+<li><code></code>Откройте файл разрешения DNS имен <code>resolv.conf</code> для редактирования:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span class="token function">vim</span> /etc/resolv.conf</code></pre>
+<code></code></li>
+<li><code></code>Укажите машину <code>&lt;DCName&gt;</code> в качестве сервера имён <code>nameserver</code>:
+<pre class="language-resolv.conf resolv.conf" data-info="resolv.conf" data-role="codeBlock"><code>domain     &lt;domain.name&gt;<br/>search     &lt;domain.name&gt;<br/>nameserver &lt;domain.controller.ip.address&gt;</code></pre>
+<code></code></li>
+<li><code></code>Запретите редактирование файла <code>resolv.conf</code>:<code><code></code> </code> <code><code></code> </code>
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>chattr +i /etc/resolv.conf</code></pre>
+</li>
+</ol>
+<h3 id="проверка-корректности-настроек-сети">Проверка корректности настроек сети</h3>
+<ol class="colored_numbers_list">
+<li>Убедитесь, что FQDN <code style="letter-spacing: 0.2px;">&lt;DCName&gt;.&lt;domain.name&gt;</code><span style="letter-spacing: 0.2px;"><span style="letter-spacing: 0.2px;"> разрешается:</span> </span>
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span style="color: #339966;"><em><span class="token comment"># DNS Lookup of DC<br/></span></em></span><span class="token function">nslookup</span> <span class="token operator">&lt;</span>DCName<span class="token operator">&gt;<br/></span><span class="token function">nslookup</span> <span class="token operator">&lt;</span>DCName<span class="token operator">&gt;</span>.<span class="token operator">&lt;</span>domain.name<span class="token operator">&gt;</span>
+            <span class="token function"><br/>host</span> <span class="token operator">&lt;</span>DCName<span class="token operator">&gt;</span>.<span class="token operator">&lt;</span>domain.name<span class="token operator">&gt;</span>
+            <span class="token comment"><br/><span style="color: #339966;"><em># Reverse DNS lookup of `nameserver`<br/></em></span></span><span class="token function">host</span> <span class="token operator">&lt;</span>domain.controller.ip.address<span class="token operator">&gt;</span></code></pre>
+<code></code></li>
+</ol>
+<h3 id="синхронизация-времени-между-dcname-и-linuxhost">Синхронизация времени между машинами DCName и linuxHost</h3>
+<p>Синхронизацию времени следует настраивать в следующих случаях:</p>
+<ul>
+<li>машины <code>&lt;DCName&gt;</code> и <code>&lt;linuxHost&gt;</code> находятся в разных часовых поясах;</li>
+<li>машина <code>&lt;linuxHost&gt;</code> не подключена к сервису синхронизации времени.</li>
+</ul>
+<ol class="colored_numbers_list">
+<li>Установите пакет <code>ntp</code>:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span class="token function">apt-get</span> <span class="token function">install</span> ntp</code></pre>
+<code></code></li>
+<li><code></code>Откройте файл конфигурации <code>ntp.conf</code> для редактирования:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span class="token function">vim</span> /etc/ntp.conf</code></pre>
+<code></code></li>
+<li><code></code>Добавьте в файл конфигурации <code>ntp.conf</code> поле <code>server &lt;DOMAIN.NAME&gt; iburst burst prefer</code>:
+<pre class="language-ntp.conf ntp.conf" data-info="ntp.conf" data-role="codeBlock"><code>driftfile /etc/ntp/drift<br/>server &lt;DOMAIN.NAME&gt; iburst burst prefer<br/>server 127.127.1.0 iburst<br/>fudge  127.127.1.0 stratum 10</code> <br/><code><br/>restrict default noquery nomodify<br/>restrict 127.0.0.1   </code></pre>
+<code></code></li>
+<li><code></code>Примените настройки:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>systemctl start ntp</code></pre>
+<code></code></li>
+<li><code></code>Удостоверьтесь, что служба <code>ntp</code> работает:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>systemctl status ntp</code></pre>
+<code></code></li>
+</ol>
+<h3 id="настройка-аутентификации-kerberos-для-astra-linux-и-ubuntu">Настройка конфигурации Kerberos</h3>
+<h4 id="установка-пакета-libsasl2">Установка вспомогательных пакетов</h4>
+<ol class="colored_numbers_list">
+<li>Установите модуль <code>libsasl2</code>:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span class="token function">apt</span> <span class="token function">install</span> libsasl2-modules-gssapi-mit</code></pre>
+<code></code></li>
+<li>Убедитесь, что модуль установлен:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span class="token function">apt</span> list libsasl*</code></pre>
+</li>
+<li>
+<p>Убедитесь, что установлены пакеты <code>krb5-user</code>, <code>krb5-config</code> и зависимости для них:</p>
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>which krb5-user</code> <br/><code>which krb5-config</code></pre>
+</li>
+<li>
+<p>Установите пакеты <code>samba-dc</code> и <code>kerberos-kdc</code>:</p>
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>apt-get install task-samba-dc krb5-kdc</code></pre>
+</li>
+<li><code></code>Убедитесь, что модули установлены:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span class="token function">apt</span> list task-samba-dc krb5-kdc</code></pre>
+<code></code></li>
+</ol>
+<h4 id="mcetoc_1ho4qjnqb4">Настройка аутентификации Kerberos</h4>
+<ol class="colored_numbers_list">
+<li>Откройте файл конфигурации Kerberos для редактирования:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code><span class="token function">vim</span> /etc/krb5.conf</code></pre>
+<code></code></li>
+<li><code></code><code><span style="color: #545764; font-family: Open Sans, sans-serif;"><span style="font-size: 15px; background-color: #ffffff;">Отредактируйте файл </span></span>krb5.conf</code> согласно приведённому ниже примеру: <br/><strong>Astra Linux, Debian</strong> <br/>
+<pre data-info='krb5.conf {data-source-line="216"}' data-role="codeBlock" data-source-line="216"><code><em><span style="color: #339966;">#astra/debian-winbind</span></em><br/>[libdefaults]<br/>    default_realm = &lt;DOMAIN.NAME&gt;<br/>    kdc_timesync = 1<br/>    ccache_type = 4<br/>    forwardable = true<br/>    proxiable = true
+            <br/>    fcc-mit-ticketflags = true<br/>    dns_lookup_realm = false<br/>    dns_lookup_kdc = false<br/>    v4_instance_resolve = false<br/>    v4_name_convert = {<br/>        host = {<br/>            rcmd = host<br/>            ftp = ftp<br/>        }<br/>        plain = {<br/>            something = something-else<br/>        }<br/>    }<br/><br/>[realms]<br/>    &lt;DOMAIN.NAME&gt; = {<br/>        kdc = &lt;DCName&gt;.&lt;domain.name&gt;<br/>        admin_server = &lt;DCName&gt;.&lt;domain.name&gt;<br/>        default_domain = &lt;domain.name&gt;<br/>    }<br/><br/>[domain_realm]<br/>    .&lt;domain.name&gt; = &lt;DOMAIN.NAME&gt;<br/>    &lt;domain.name&gt; = &lt;DOMAIN.NAME&gt;<br/>[login]<br/>    krb4_convert = false<br/>    krb4_get_tickets = false</code><code><br/></code><code></code></pre>
+<br/><strong>Альт</strong>
+<pre data-info='krb5.conf {data-source-line="221"}' data-role="codeBlock" data-source-line="221"><code>includedir /etc/krb5.conf.d/<br/>[logging]<br/><em><span style="color: #339966;"># default = FILE:/var/log/krb5libs.log</span></em><br/><em><span style="color: #339966;"># kdc = FILE:/var/log/krb5kdc.log</span></em><br/><em><span style="color: #339966;"># admin_server = FILE:/var/log/kadmind.log</span></em>
+            <br/>[libdefaults]<br/>dns_lookup_kdc = true<br/>dns_lookup_realm = false<br/>ticket_lifetime = 24h<br/>renew_lifetime = 7d<br/>forwardable = true<br/>rdns = false<br/>default_realm = &lt;DOMAIN.NAME&gt;<br/>default_ccache_name = KEYRING:persistent:%{uid}<br/><br/>[realms]<br/>  &lt;DOMAIN.NAME&gt; = {<br/>    kdc = &lt;DCName&gt;.&lt;domain.name&gt;<br/>    admin_server = &lt;DCName&gt;.&lt;domain.name&gt;<br/>	default_domain = &lt;domain.name&gt;<br/>  }<br/><br/>[domain_realm]<br/>&lt;.domain.name&gt; = &lt;DOMAIN.NAME&gt;<br/>&lt;domain.name&gt; = &lt;DOMAIN.NAME&gt;</code></pre>
+<code></code></li>
+</ol>
+<h4 id="mcetoc_1ho4qfuu02">Для ОС «Альт»: настройка pam_winbind.conf</h4>
+<ol class="colored_numbers_list" start="5">
+<li>
+<p>Откройте для редактирования файл конфигурации <code>pam_winbind.conf</code>:</p>
+<pre class="language-shell shell highlight-line" data-info='shell {data-source-line="258"}' data-role="codeBlock" data-source-line="258" style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset- text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset- --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; color: #795da3;">vim /etc/security/pam_winbind.conf</code></pre>
+<code></code><code></code></li>
+<li>
+<p>Отредактировать файл конфигурации <code>pam_winbind.conf</code> согласно приведённому ниже примеру:<code></code></p>
+<pre class="language-pam_winbind.conf pam_winbind.conf" data-info='pam_winbind.conf {data-source-line="264"}' data-role="codeBlock" data-source-line="264" style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset- text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset- display: inline; max-width: initial; overflow: initial; line-height: inherit; overflow-wrap: normal;">[global]<br/>debug = no<br/>debug_state = no<br/>try_first_pass = yes<br/>cached_login = yes<br/>krb5_auth = yes<br/>krb_ccache_type = FILE<br/>silent = yes<br/>mkhomedir = yes</code></pre>
+</li>
+</ol>
+<h4 id="настройка-конфигурации-kerberos-1">Установка экземпляра ПО</h4>
+<ol class="colored_numbers_list" start="5">
+<li>
+<p>Скачайте и распакуйте дистрибутив ПО <strong>Comindware Business Application Platform </strong>в директорию <code>`/home/&lt;username&gt;`</code> и  <span style="letter-spacing: 0.2px;">перейдите в директорию с распакованным ПО:</span></p>
+<p><strong>Astra Linux<br/></strong></p>
+<pre data-info='shell {data-source-line="257"}' data-role="codeBlock" data-source-line="257"><code>tar -xvzf 4.6&lt;build.ver&gt;.astra.tar.gz -C /home/&lt;username&gt;<br/>cd /home/&lt;username&gt;/CMW_Astra/</code></pre>
+<strong>Альт<br/></strong>
+<pre data-info='shell {data-source-line="257"}' data-role="codeBlock" data-source-line="257"><code>tar -xvzf 4.6&lt;build.ver&gt;.alt.tar.gz -C /home/&lt;username&gt;<br/>cd /home/&lt;username&gt;/CMW_Alt/</code></pre>
+<strong>Debian<br/></strong>
+<pre data-info='shell {data-source-line="257"}' data-role="codeBlock" data-source-line="257"><code>tar -xvzf 4.6&lt;build.ver&gt;.debian.tar.gz -C /home/&lt;username&gt;<br/>cd /home/&lt;username&gt;/CMW_Debian/</code></pre>
+</li>
+<li>
+<p>Установите ПО <strong>Comindware Business Application Platform </strong> без создания экземпляра ПО и с ключом <code>-d=clear</code> — без демонстрационной базы данных:<strong><br/></strong></p>
+<pre data-info='shell {data-source-line="257"}' data-role="codeBlock" data-source-line="257"><code>sh install.sh -p -d=clear</code></pre>
+</li>
+<li><code></code></li>
+<li><code></code>
+<p>Создайте экземпляр ПО, указав вместо <code><em><strong>&lt;instanceName&gt;</strong></em></code> требуемое имя экземпляра:</p>
+<pre data-info='shell {data-source-line="269"}' data-role="codeBlock" data-source-line="269"><code>cd scripts/instance/<br/>sh create.sh -n=<em><strong>&lt;instanceName&gt;</strong></em> -p=80 -v=4.6.&lt;build.ver&gt;</code><code style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset- display: inline; max-width: initial; overflow: initial; line-height: inherit; overflow-wrap: normal;"></code></pre>
+<code style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset- display: inline; max-width: initial; overflow: initial; line-height: inherit; overflow-wrap: normal;"></code><code></code></li>
+</ol>
+<h4 id="настройка-аутентификации-kerberos">Настройка экземпляра ПО</h4>
+<p>Для включения функционала SSO аутентификации в экземпляре ПО необходимо настроить его файл конфигурации.</p>
+<ol class="colored_numbers_list">
+<li>Откройте для редактирования файл конфигурации экземпляра ПО (<code><strong><em>instanceName</em></strong></code> — имя экземпляра ПО):
+<pre class="source_code_container"><code>vim /usr/share/comindware/configs/instance/<strong><em>instanceName</em></strong>.yml</code></pre>
+</li>
+<li>Добавьте в файл директиву <code>isLinuxSSOAuthorization: true</code>
+<figure class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Пример файла instanceName.yml с директивой  isLinuxSSOAuthorization: true" class="img-responsive" height="241" src="https://kb.comindware.ru/assets/img_65e5cea643f5c.jpeg" width="621"/></p>
+<figcaption class="caption" style="font-size: 15px !important;">Пример файла instanceName.yml с директивой  isLinuxSSOAuthorization: true</figcaption>
+</figure>
+</li>
+</ol>
+<h4 id="mcetoc_1ho4r2l2m6">Установка и настройка модуля NGINX SPNEGO</h4>
+<ol class="colored_numbers_list">
+<li>
+<p>Установите модуль <em>NGINX-SPNEGO</em>:</p>
+<pre class="source_code_container"><code>apt-get install nginx-spnego</code></pre>
+</li>
+<li>
+<p>Добавить модуль <em>SPNEGO</em> к рабочей конфигурации <em>NGINX</em>:</p>
+<pre class="source_code_container"><code>ln -s /etc/nginx/modules-available.d/http_auth_spnego.conf /etc/nginx/modules-enabled/</code></pre>
+</li>
+<li>
+<p>Поместить keytab-файл <code>&lt;authuser&gt;.keytab</code> в директорию конфигурации NGINX и сделать его доступным для чтения:</p>
+<pre><code>cp /&lt;path_to_keytab&gt;/&lt;authuser&gt;.keytab /etc/nginx</code> <br/><code>chmod 664 /etc/nginx/&lt;authuser&gt;.keytab</code> <br/><code></code></pre>
+Здесь <code>&lt;path_to_keytab&gt;</code> — папка, в которой находится keytab-файл <code>&lt;authuser&gt;.keytab</code>, взятый с контроллера домена.</li>
+<li>
+<p>Откройте для редактирования описание веб-приложения <em>NGINX</em> для экземпляра ПО <code><em><strong>&lt;instanceName&gt;</strong></em></code>:</p>
+<pre class="source_code_container"><code>vim /etc/nginx/sites-available.d/comindware<em><strong>&lt;instanceName&gt;</strong></em></code></pre>
+</li>
+<li>
+<p>Отредактируйте файл comindware<code><em><strong>&lt;instanceName&gt;</strong></em></code> согласно приведённому ниже примеру:<code></code></p>
+<pre class="language-comindwarecmwdata comindwarecmwdata" data-info='comindwarecmwdata {data-source-line="298"}' data-role="codeBlock" data-source-line="298" style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; padding: 0.8em; overflow: auto; line-height: 1.4; border: #d6d6d6; border-radius: 3px; margin-top: 0px; margin-bottom: 16px; color: #333333; background: #f5f5f5; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; text-align: left; white-space: pre; word-spacing: 0px; word-break: normal; overflow-wrap: normal; tab-size: 8; hyphens: none; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; color: #000000; background: 0px 0px transparent; padding: 0px; border-radius: 3px; font-size: 0.85em; margin: 0px; word-break: normal; white-space: pre; border: 0px; display: inline; max-width: initial; overflow: initial; line-height: inherit; overflow-wrap: normal;">server {<br/>        listen 8999 http2;<br/>        root /var/www/cmwdata;<br/>
+            location /async {<br/>                grpc_pass grpc_cmwdata;<br/>        }<br/>}<br/>
+            server {<br/>        listen       80 default;<br/>        root         /var/www/cmwdata;<br/>
+            client_header_timeout 3h;<br/>        client_body_timeout 3h;<br/>        grpc_read_timeout 3h;<br/>        grpc_send_timeout 3h;<br/>
+            client_max_body_size 300m;<br/>        fastcgi_read_timeout 10000;<br/>
+            location /async {<br/>                grpc_pass grpc_cmwdata;<br/>        }<br/>
+            location / {<br/>                # SPNEGO Configuration<br/>                add_header Set-Cookie "cmw_user=$remote_user";<br/>                auth_gss on;<br/>                auth_gss_realm &lt;DOMAIN.NAME&gt;;<br/>                auth_gss_keytab /etc/nginx/&lt;authuser&gt;.keytab;<br/>                auth_gss_service_name HTTP/&lt;authuser&gt;.&lt;domain.name&gt;;<br/>                auth_gss_allow_basic_fallback on;<br/>
+            proxy_read_timeout 10000;<br/>                proxy_connect_timeout 10000;<br/>                proxy_send_timeout 10000;<br/>                root                /var/www/cmwdata/;<br/>                fastcgi_pass        unix:/var/www/cmwdata/App_Data/cmwdata.socket;<br/>                include             /etc/nginx/fastcgi.conf;
+            }<br/>}</code><code></code></pre>
+</li>
+<li>Проверьте синтаксис веб-приложения <em>NGINX</em> для экземпляра ПО <code><em><strong>&lt;instanceName&gt;</strong></em></code>:
+<pre class="source_code_container"><code>nginx -t</code></pre>
+</li>
+<li>Примените настройки и перезапустите <em>NGINX</em>:
+<pre class="source_code_container"><code>nginx -s reload</code></pre>
+</li>
+<li>Проверьте статус сервиса <em>NGINX</em>:
+<pre class="source_code_container"><code>systemctl status nginx</code></pre>
+</li>
+<li>Проверьте статус сервиса экземпляра ПО <code><em><strong>&lt;instanceName&gt;</strong></em></code>:
+<pre class="source_code_container"><code>systemctl status comindware<em><strong>&lt;instanceName&gt;</strong></em></code></pre>
+<code></code></li>
+</ol>
+<h3 id="mcetoc_1hpbijucj0">Изменение конфигурации экземпляра ПО</h3>
+<ol class="colored_numbers_list">
+<li>Войдите в экземпляр ПО с помощью браузера.</li>
+<li>Откройте свойства <a href="https://kb.comindware.ru/article.php?id=2206">подключения к серверу каталогов</a>, которое будет использоваться для синхронизации аккаунтов.</li>
+<li>На вкладке «<strong>Основные</strong>» установите флажок «<strong>Использовать по умолчанию</strong>».</li>
+<li>На вкладке «<strong>Сопоставление атрибутов</strong>» нажмите кнопку «<strong>Восстановить</strong>».</li>
+<li>Сохраните свойства подключения.</li>
+<li>Перезапустите экземпляр ПО:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>systemctl restart comindware<span class="token operator">&lt;</span>instance_name<span class="token operator">&gt;</span></code></pre>
+</li>
+</ol>
+<h3 id="mcetoc_1hhhidcql3">Проверка работы функционала Kerberos на машине linuxHost</h3>
+<ol class="colored_numbers_list">
+<li>Создайте тикет для приложения <code>HTTP/&lt;DCName&gt;.&lt;domain.name&gt;</code>: <br/>
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>kinit -k -t /etc/nginx/&lt;authuser&gt;.keytab HTTP/&lt;DCName&gt;.&lt;domain.name&gt;</code></pre>
+</li>
+<li>Выведите список тикетов: <br/>
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>klist</code></pre>
+</li>
+</ol>
+<h3 id="проверка-вывода-трассировщика-ошибок-в-shell">Проверка вывода трассировщика ошибок в Shell</h3>
+<ol class="colored_numbers_list">
+<li>Выполните команду:
+<pre class="language-shell shell" data-info="shell" data-role="codeBlock"><code>KRB5_TRACE=/dev/stdout kinit -k -t /etc/nginx/&lt;authuser&gt;.keytab HTTP/&lt;DCName&gt;.&lt;domain.name&gt;</code></pre>
+</li>
+</ol>
+<h2 id="mcetoc_1ho536ga40"><span class="token operator">Связанные статьи</span></h2>
+<p><strong><span class="token operator"><samp data-name="aid" data-title="" data-value="2517"><span style="color: #0066bc; font-family: Tahoma;"><img src="https://kb.comindware.ru/images/marker.png" style="vertical-align: middle;"/> Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО {Article-ID:2517}</span></samp> </span></strong></p>
+<p><strong><samp data-name="aid" data-title="" data-value="2329"><span style="color: #0066bc; font-family: Tahoma;"><img src="https://kb.comindware.ru/images/marker.png" style="vertical-align: middle;"/>Аутентификация через OpenID Connect. Настройка подключения и служб {Article-ID:2329}</span></samp> </strong></p>
+<p><a class="md-top md-icon mkdocs_imported_link" href="#"> <em class="fa-light fa-arrow-up">‌</em> К началу </a><code></code></p>

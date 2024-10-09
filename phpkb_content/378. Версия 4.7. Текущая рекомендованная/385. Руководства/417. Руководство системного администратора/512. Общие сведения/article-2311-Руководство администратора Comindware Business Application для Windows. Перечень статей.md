@@ -1,0 +1,180 @@
+---
+title: Руководство администратора Comindware Business Application для Windows. Перечень статей
+kbId: 2311
+---
+
+# Руководство администратора Comindware Business Application для Windows. Перечень статей
+
+В настоящем руководстве представлены сведения для администраторов ПО **Comindware Business Application Platform** для операционной системы Windows.
+
+## Определения
+
+**ПО** — программное обеспечение Comindware Business Application Platform.
+
+**Экземпляр ПО** — установленный веб-сайт на основе ПО.
+
+**Система** — развёрнутый программно-аппаратный комплекс на основе ПО.
+
+1. Утилита администрирования Comindware
+    1. [Установка и запуск Утилиты администрирования Comindware](https://kb.comindware.ru/article.php?id=2027)
+    2. [Установка продукта Comindware Business Application Platform](https://kb.comindware.ru/article.php?id=2294)
+    3. [Настройка конфигурации Утилиты администрирования Comindware](https://kb.comindware.ru/article.php?id=2295)
+    4. [Диагностика экземпляра продукта](https://kb.comindware.ru/article.php?id=2028)
+    5. [Обновление версии продукта для экземпляра](https://kb.comindware.ru/article.php?id=2029)
+    6. [Создание экземпляра продукта, добавление скрытого экземпляра](https://kb.comindware.ru/article.php?id=2030)
+    7. [Удаление версии продукта](https://kb.comindware.ru/article.php?id=2031)
+    8. [Запуск, остановка и удаление экземпляра продукта](https://kb.comindware.ru/article.php?id=2032)
+    9. [Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта](https://kb.comindware.ru/article.php?id=2033)
+    10. [Индикация состояния и обновление списка экземпляров продукта](https://kb.comindware.ru/article.php?id=2034)
+    11. [Восстановление экземпляра продукта из резервной копии в ОС Windows](https://kb.comindware.ru/article.php?id=2035)
+    12. [Инициализация экземпляра продукта](https://kb.comindware.ru/article.php?id=2036)
+    13. [Остановка экземпляра системы с помощью Диспетчера служб IIS](https://kb.comindware.ru/article.php?id=2037)
+    14. [Запуск экземпляра системы с помощью Диспетчера служб IIS](https://kb.comindware.ru/article.php?id=2038)
+    15. [Резервное копирование с помощью внешних средств в ОС Windows](https://kb.comindware.ru/article.php?id=2039)
+    16. [Ручной перенос базы данных экземпляра ПО в ОС Windows](https://kb.comindware.ru/article.php?id=2040)
+2. [Администрирование аккаунтов](https://kb.comindware.ru/article.php?id=2296)
+3. Остановка и запуск экземпляра ПО
+    1. [Аутентификация, авторизация и сессии пользователей](https://kb.comindware.ru/article.php?id=2297)
+    2. [Синхронизация с сервером каталогов (Active Directory)](https://kb.comindware.ru/article.php?id=2298)
+    3. [Настройка единого входа (SSO-аутентификации) в ОС Windows](https://kb.comindware.ru/article.php?id=2299)
+    4. [Безопасность](https://kb.comindware.ru/article.php?id=2300)
+4. [Панель и разделы навигации. Определения, настройка, удаление](https://kb.comindware.ru/article.php?id=2301)
+5. [Рабочий стол. Определения и настройка](https://kb.comindware.ru/article.php?id=2302)
+6. Резервное копирование и восстановление
+    1. [Резервное копирование встроенными средствами ПО][backup]
+    2. [Информационные страницы. Использование](https://kb.comindware.ru/article.php?id=2303)
+    3. [Диаграммы. Определения, создание, просмотр, удаление](https://kb.comindware.ru/article.php?id=2154)
+7. Мониторинг и журналирование работы Системы
+    1. [Подсистема журналирования](https://kb.comindware.ru/article.php?id=2501#mcetoc_1glgviuqt6)
+    2. [Перенаправление сообщений из файлов журналов в журнал событий Windows](https://kb.comindware.ru/article.php?id=2501#mcetoc_1glgvkqe77)
+    3. [Файловые журналы](https://kb.comindware.ru/article.php?id=2501#mcetoc_1glgvul1j8)
+8. Архитектура и ландшафт развёртывания Системы
+    1. [Определения](https://kb.comindware.ru/article.php?id=2085#mcetoc_1g78u77lo2)
+    2. [Архитектура Системы](https://kb.comindware.ru/article.php?id=2085#mcetoc_1g7eahlrr0)
+    3. [Рекомендуемые варианты развёртывания Системы](https://kb.comindware.ru/article.php?id=2085#mcetoc_1g7eauu4b2)
+    4. [Рекомендуемый набор серверов приложений](https://kb.comindware.ru/article.php?id=2085#mcetoc_1g7ebavmr4)
+9. Техническое обеспечение Системы
+    1. [Конфигурация серверов приложений](https://kb.comindware.ru/article.php?id=2085#mcetoc_1g7ebfaqq1)
+    2. [Конфигурация подсистем](https://kb.comindware.ru/article.php?id=2085#mcetoc_1g7ebvhdq0)
+10. Безопасность Системы
+    1. [Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление](https://kb.comindware.ru/article.php?id=2306)
+    2. [Синхронизация с веб-сервисом. Интеграция по OData](https://kb.comindware.ru/article.php?id=2307)
+    3. `![](https://kb.comindware.ru/images/marker.png){Article-ID:2308}`
+    4. `![](https://kb.comindware.ru/images/marker.png){Article-ID:2309}`
+    5. `![](https://kb.comindware.ru/images/marker.png){Article-ID:2310}`
+    6. [Роли](https://kb.comindware.ru/category/comindware-business-application-platform/%d0%92%d0%b5%d1%80%d1%81%d0%b8%d1%8f-4/%d0%a0%d1%83%d0%ba%d0%be%d0%b2%d0%be%d0%b4%d1%81%d1%82%d0%b2%d0%b0/%d0%a0%d1%83%d0%ba%d0%be%d0%b2%d0%be%d0%b4%d1%81%d1%82%d0%b2%d0%be-%d0%bf%d0%be%d0%bb%d1%8c%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8f-4-2/%d0%90%d0%b4%d0%bc%d0%b8%d0%bd%d0%b8%d1%81%d1%82%d1%80%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5/%d0%90%d0%b4%d0%bc%d0%b8%d0%bd%d0%b8%d1%81%d1%82%d1%80%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5-%d0%b0%d0%ba%d0%ba%d0%b0%d1%83%d0%bd%d1%82%d0%be%d0%b2/%d0%a1%d0%b8%d1%81%d1%82%d0%b5%d0%bc%d0%bd%d1%8b%d0%b5-%d1%80%d0%be%d0%bb%d0%b8/461/)
+    7. `![](https://kb.comindware.ru/images/marker.png){Article-ID:2312}`
+    8. `![](https://kb.comindware.ru/images/marker.png){Article-ID:2313}`
+    9. `![](https://kb.comindware.ru/images/marker.png){Article-ID:2314}`
+11. Настройка панели навигации
+    1. `![](https://kb.comindware.ru/images/marker.png){Article-ID:2212}`
+    2. `![](https://kb.comindware.ru/images/marker.png){Article-ID:2215}`
+    3. `![](https://kb.comindware.ru/images/marker.png){Article-ID:2285}`
+    4. [Добавление ссылки на страницу в раздел навигации][pages_setup]
+12. Разработка приложений
+    1. [Просмотр списка приложений][apps]
+    2. [Создание приложения][apps]
+    3. [Просмотр и настройка свойств приложения][apps]
+    4. [Администрирование приложения][apps]
+    5. `![](https://kb.comindware.ru/images/marker.png){Article-ID:2211}`
+    6. `![](https://kb.comindware.ru/images/marker.png){Article-ID:2219}`
+    7. `![](https://kb.comindware.ru/images/marker.png){Article-ID:2315}`
+    8. [Трансфер метаданных (конфигурации) приложения][version_control]
+13. Настройка тем
+    1. [Переход к конструктору тем][themes]
+    2. [Доступные темы][themes]
+    3. [Сохранение и сброс настроек][themes]
+    4. [Свойства системы][themes]
+    5. [Фирменные изображения][themes]
+    6. [Шрифты][themes]
+    7. [Цветовая палитра][themes]
+    8. [Предварительный просмотр][themes]
+14. Настройка дизайна страниц входа и регистрации
+    1. [Конструктор страниц входа и регистрации](https://kb.comindware.ru/article.php?id=2198#mcetoc_1gjripa5r1)
+    2. [Настройка страницы входа](https://kb.comindware.ru/article.php?id=2198#mcetoc_1gjripa5r2)
+    3. [Настройка страницы регистрации](https://kb.comindware.ru/article.php?id=2198#mcetoc_1gjripa5r5)
+    4. [Настройка общих блоков страниц входа и регистрации](https://kb.comindware.ru/article.php?id=2198#mcetoc_1gjripa5r7)
+15. Настройка путей передачи данных
+    1. [Просмотр списка путей передачи данных][communication_routes]
+    2. [Создание пути передачи данных][communication_routes]
+    3. [Настройка пути передачи данных][communication_routes]
+    4. [Удаление пути передачи данных][communication_routes]
+16. Настройка аккаунтов
+    1. [Список аккаунтов][accounts]
+    2. [Создание аккаунта][accounts]
+    3. [Привязка аккаунта к шаблону аккаунта][accounts]
+    4. [Диспетчер лицензий][accounts]
+    5. [Настройка свойств аккаунта][accounts]
+    6. [Настройка учётных данных для подключений][accounts]
+    7. [Удаление аккаунтов][accounts]
+17. Настройка групп
+    1. [Просмотр списка групп][groups]
+    2. [Создание группы][groups]
+    3. [Настройка свойств группы][groups]
+    4. [Удаление групп][groups]
+18. Аудит разрешений аккаунтов
+    1. [Просмотр разрешений аккаунтов](https://kb.comindware.ru/article.php?id=2195#mcetoc_1gjrg7q8g1)
+    2. [Экспорт списка разрешений](https://kb.comindware.ru/article.php?id=2195#mcetoc_1gjrg7q8g2)
+    3. [Разрешения в приложениях](https://kb.comindware.ru/article.php?id=2195#mcetoc_1gjrg7q8g3)
+    4. [Системные разрешения](https://kb.comindware.ru/article.php?id=2195#mcetoc_1gjrg7q8g4)
+    5. [Члены групп](https://kb.comindware.ru/article.php?id=2195#mcetoc_1gjrg7q8g5)
+    6. [Члены ролей](https://kb.comindware.ru/article.php?id=2195#mcetoc_1gjrg7q8g6)
+19. Настройка замещений
+    1. [Просмотр списка замещений][substitution]
+    2. [Создание замещения][substitution]
+    3. [Настройка свойств замещения][substitution]
+    4. [Удаление замещений][substitution]
+20. Настройка регистрации и входа
+    1. [Настройка самостоятельной регистрации аккаунтов][registration_and_login]
+    2. [Настройка подключения к внешней службе][registration_and_login]
+    3. [Создание подключения к Active Directory][registration_and_login]
+    4. [Удаление подключения][registration_and_login]
+21. Просмотр показателей мониторинга
+    1. [Просмотр диаграммы мониторинга](https://kb.comindware.ru/article.php?id=2187#mcetoc_1gjrh9rcl1)
+    2. [Диаграммы и показатели](https://kb.comindware.ru/article.php?id=2187#mcetoc_1gjrh9rcl6)
+    3. [Масштабирование диаграмм](https://kb.comindware.ru/article.php?id=2187#mcetoc_1gjrh9rcl2)
+    4. [Просмотр данных за определенное время](https://kb.comindware.ru/article.php?id=2187#mcetoc_1gjrh9rcl3)
+    5. [Просмотр подробных показателей на диаграмме](https://kb.comindware.ru/article.php?id=2187#mcetoc_1gjrh9rcl4)
+    6. [Переход к журналу с диаграммы](https://kb.comindware.ru/article.php?id=2187#mcetoc_1gjrh9rcl5)
+22. Просмотр журналов событий
+    1. [Просмотр журналов событий][logs]
+    2. [Типы журналов событий][logs]
+23. Лицензирование
+    1. [Просмотр списка лицензионных ключей][licensing]
+    2. [Добавление лицензионного ключа][licensing]
+    3. [Онлайн-активация][licensing]
+    4. [Ручная активация][licensing]
+    5. [Просмотр свойств лицензионного ключа][licensing]
+    6. [Назначение лицензий аккаунтам][licensing]
+    7. [Отзыв лицензий у аккаунтов][licensing]
+    8. [Удаление лицензионного ключа][licensing]
+24. Управление системными службами
+    1. [Просмотр списка системных служб](https://kb.comindware.ru/article.php?id=2182#mcetoc_1gjrhskg01)
+    2. [Остановка или запуск служб](https://kb.comindware.ru/article.php?id=2182#mcetoc_1gjrhskg16)
+25. Настройка подключений
+    1. [Просмотр списка подключений][connections]
+    2. [Типы подключений][connections]
+    3. [Создание подключения][connections]
+    4. [Настройка подключения][connections]
+    5. [Проверка соединения][connections]
+    6. [Удаление подключения][connections]
+26. Просмотр показателей производительности
+    1. [Просмотр показателей производительности][performance]
+    2. [Сброс показателей][performance]
+    3. [Поиск показателей][performance]
+    4. [Показатели на вкладке «Процессы»][performance]
+    5. [Показатели на вкладке «Скрипты»][performance]
+    6. [Показатели на вкладке «Системные службы»][performance]
+    7. [Показатели на вкладке «Сообщения»][performance]
+    8. [Показатели на вкладке «Выражения»][performance]
+27. Настройка конфигурации журналирования
+    1. [Просмотр и настройка конфигурации](https://kb.comindware.ru/article.php?id=2186#mcetoc_1gjrh9tu31)
+    2. [Скачивание журналов](https://kb.comindware.ru/article.php?id=2186#mcetoc_1gjrh9tu43)
+28. Настройка глобальной конфигурации
+    1. [Просмотр и настройка конфигурации][global_configuration]
+29. Настройка адаптеров
+    1. [Просмотр списка адаптеров][adapters]
+    2. [Создание адаптера][adapters]
+    3. [Настройка адаптера][adapters]
+    4. [Удаление адаптера][adapters]
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

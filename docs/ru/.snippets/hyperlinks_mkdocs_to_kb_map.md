@@ -126,6 +126,8 @@
 
 [attributes]: {{ kbArticleURLPrefix }}2252
 
+[attributes_configure]: {{ kbArticleURLPrefix }}2252#attributes_configure
+
 [attributes_system]: {{ kbArticleURLPrefix }}2242
 
 [auto_numerating_records]: {{ kbArticleURLPrefix }}2607

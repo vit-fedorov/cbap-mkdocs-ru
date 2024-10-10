@@ -26,8 +26,9 @@ import json
 from sshtunnel import SSHTunnelForwarder
 
 THIS_FILE_DIR = os.path.dirname(os.path.realpath(__file__))
-importPath = input('Path to import: ') 
-KB_DIR = os.path.dirname(importPath) if importPath else 'phpkb_content'
+importPathDefault = 'phpkb_content'
+importPath = input(f'Path to import (default `{importPathDefault}`): ') 
+KB_DIR = os.path.dirname(importPath) if importPath else importPathDefault
 TOTAL_PAGES_IMPORTED = 0
 CONNECTION = ''
 docs_ru_folder = 'docs/ru'
@@ -121,7 +122,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
             pattern = re.compile(r'^\n^\n\n*', flags=re.MULTILINE)
             markdown = re.sub(pattern, r'\n', markdown)
             # Remove redundant TOC
-            pattern = re.compile(r'## Содержание.*\n*(.*\t*-.*\n+)*\n', flags=re.MULTILINE)
+            pattern = re.compile(r'(#+ +|\*\* ?)Содержание.*\n*((( {0,4}|\t*)(\d\.|-).*\n+)*\n* {0,4})*\n', flags=re.MULTILINE)
             markdown = re.sub(pattern, r'', markdown)
             # Remove redundant [*‌* К началу](#) links
             pattern = re.compile(r'^.*\[.*К началу\]\(#\).*$', flags=re.MULTILINE)
@@ -163,13 +164,13 @@ def importArtciclesInCategory (categoryId, categoryDir):
                     replacementRegex = r'[{0}](https://kb.comindware.ru/article.php?id=\2)'.format(articleName)
                     markdown = re.sub(pattern, replacementRegex, markdown, count=1)
             # Replace article links in markdown with URL from hyperlinks map
-            pattern = r'\(https://kb\.comindware\.ru.+((article.php\?id=)|-)(\d+)(?(2)|\.html).*\)'
+            pattern = r'\(https://kb\.comindware\.ru.+?((article.php\?id=)|-)(\d+)(?(2)|\.html).*?\)'
             foundLinks = re.finditer(pattern, markdown)
             for link in foundLinks:
                 article_id = link.group(3)
                 url = str(find_url_in_snippet(article_id))
                 if url:
-                    pattern = r'\(https://kb\.comindware\.ru.+{0}.*\)'.format(article_id)
+                    pattern = r'\(https://kb\.comindware\.ru.+?((article.php\?id=)|-)({0})(?(2)|\.html).*?\)'.format(article_id)
                     markdown = re.sub(pattern, url, markdown, count=1)
                     print (f'Replaced {link.group(0)} with {url}')
             #markdown = markdown.replace('https://kb.comindware.ru/category.php?id=', '{{ kbCategoryURLPrefix }}')

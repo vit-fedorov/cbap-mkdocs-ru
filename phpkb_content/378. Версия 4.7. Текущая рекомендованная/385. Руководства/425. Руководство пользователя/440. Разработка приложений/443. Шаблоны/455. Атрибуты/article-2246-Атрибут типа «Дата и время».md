@@ -17,7 +17,7 @@ kbId: 2246
 
 _![Свойства атрибута типа «Дата и время»](https://kb.comindware.ru/assets/attribute_date_time_properties.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Работа с атрибутом типа «Дата и время»][attribute_date_time_use]**
 

@@ -16,7 +16,7 @@ kbId: 2465
 
 _![Подсказка при предиктивном вводе имени функции](https://kb.comindware.ru/assets/formula_editor_function_autocomplete.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Справочник по функциям][expression_editor]**
 

@@ -61,7 +61,7 @@ $CarType<-Cars:Type
 COUNT($Car<-Requests:Car) 
 ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Редактор выражений][expression_editor]**
 

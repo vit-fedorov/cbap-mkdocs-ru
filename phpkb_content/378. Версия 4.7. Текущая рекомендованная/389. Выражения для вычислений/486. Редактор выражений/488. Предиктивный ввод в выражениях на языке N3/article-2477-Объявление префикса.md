@@ -21,7 +21,7 @@ _![Список доступных префиксов N3 с описанием](
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.               
 ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Редактор выражений][expression_editor]**
 

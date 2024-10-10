@@ -62,7 +62,7 @@ _![Свойства атрибута типа «Изображение»](https:
 ![Исходный и преобразованный файлы](https://kb.comindware.ru/assets/attribute_image_example.png)
 Исходный и преобразованный файлы
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Представление атрибута «Изображение» на форме][form_dynamic_elements]**
 

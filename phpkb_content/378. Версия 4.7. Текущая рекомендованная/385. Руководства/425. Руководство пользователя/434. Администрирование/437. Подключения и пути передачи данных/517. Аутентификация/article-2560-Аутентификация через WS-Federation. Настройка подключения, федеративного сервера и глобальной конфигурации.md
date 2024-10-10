@@ -74,7 +74,7 @@ _![Страница входа в систему с кнопкой «Войти 
 
 
 Основные шаги аутентификации регистрируются в [журнале аудита](https://kb.comindware.ru/article.php?id=2501#mcetoc_1glh08n4u1).
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[[Глобальная конфигурация][global_configuration]](https://kb.comindware.ru/article.php?id=2310)**
 

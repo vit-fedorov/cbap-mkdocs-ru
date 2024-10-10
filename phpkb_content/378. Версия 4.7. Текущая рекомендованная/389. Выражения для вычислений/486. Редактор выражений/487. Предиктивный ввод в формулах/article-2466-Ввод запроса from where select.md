@@ -209,7 +209,7 @@ COUNT(from a in $RequestedCars where a->Make == "Лада" select a->id)
 - `where a->Make == "Лада"` — выборка в переменную `a` записей, связанных с атрибутом `RequestedCars`, у которых атрибут `Make` имеет значение `"Лада".
 - `select a->id` — выборка значений атрибута `id` полученных записей и передача списка этих значений в функцию `COUNT()`.
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Редактор выражений][expression_editor]**
 

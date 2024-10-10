@@ -52,7 +52,7 @@ COUNT(from b in db->Zayavkanaavtomobil  where b->Status->Nazvanie == select b->i
 COUNT(from b in db->Zayavkanaavtomobil  where b->Status->Nazvanie == "Выполняется"  select b->id) 
 ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Редактор выражений][expression_editor]**
 

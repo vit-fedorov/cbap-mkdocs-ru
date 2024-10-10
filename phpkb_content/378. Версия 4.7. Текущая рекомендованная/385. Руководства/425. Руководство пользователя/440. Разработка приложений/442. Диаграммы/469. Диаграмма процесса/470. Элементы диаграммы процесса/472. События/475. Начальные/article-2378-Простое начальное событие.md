@@ -30,7 +30,7 @@ _![Простое начальное событие и его меню элем�
 
 _![Свойства простого начального события](https://kb.comindware.ru/assets/none_start_event_general_properties.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[События](https://kb.comindware.ru/article.php?id=2374)**
 

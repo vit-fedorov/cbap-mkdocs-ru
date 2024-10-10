@@ -19,7 +19,7 @@ kbId: 2377
 2. Будет создано **простое начальное событие**.
 3. При необходимости смените [тип события][call_element_menu].
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[События](https://kb.comindware.ru/article.php?id=2374)**
 

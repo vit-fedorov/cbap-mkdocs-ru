@@ -29,7 +29,7 @@ kbId: 2433
 ![Переименование процесса с помощью конструктора диаграммы](https://kb.comindware.ru/assets/process_architecture_modeling_rename_from_properties.png)
 Переименование процесса с помощью конструктора диаграммы
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Просмотр реестра процессов][построение-процессной-архитектуры]**
 

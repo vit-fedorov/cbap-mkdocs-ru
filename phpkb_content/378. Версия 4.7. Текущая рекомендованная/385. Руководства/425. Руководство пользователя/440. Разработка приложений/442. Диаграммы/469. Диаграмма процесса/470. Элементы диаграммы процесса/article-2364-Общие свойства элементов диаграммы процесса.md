@@ -29,7 +29,7 @@ _![Свойства выбранного элемента в панели сво
 ![Общие свойства элемента диаграммы в окне его свойств](https://kb.comindware.ru/assets/process_diagram_element_common_properties.png)
 Общие свойства элемента диаграммы в окне его свойств
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 

@@ -23,7 +23,7 @@ _![Значки состояния экземпляра продукта](https:
 
 _![Обновление списка экземпляров продукта](https://kb.comindware.ru/assets/img_667ebf655edcc.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Запуск, остановка и удаление экземпляра продукта](https://kb.comindware.ru/article.php?id=2035)**
 

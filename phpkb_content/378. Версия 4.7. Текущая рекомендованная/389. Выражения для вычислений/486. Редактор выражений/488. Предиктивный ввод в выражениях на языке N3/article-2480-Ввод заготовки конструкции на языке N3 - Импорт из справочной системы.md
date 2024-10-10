@@ -26,7 +26,7 @@ if { }
 }
 ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Ввод префикса](https://kb.comindware.ru/article.php?id=2477)**
 

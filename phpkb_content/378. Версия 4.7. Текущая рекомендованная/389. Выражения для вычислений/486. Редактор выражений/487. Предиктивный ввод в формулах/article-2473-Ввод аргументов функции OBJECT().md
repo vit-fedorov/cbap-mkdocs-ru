@@ -29,7 +29,7 @@ kbId: 2473
 OBJECT("Upravlenieavtoparkom", "Avtomobil", "Marka", "Лада") 
 ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Редактор выражений][expression_editor]**
 

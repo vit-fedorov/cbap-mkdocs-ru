@@ -53,7 +53,7 @@ _![Корректно заполненные гиперссылки](https://kb.
 
 _![](https://kb.comindware.ru/assets/img_6682b6c5e5402.png)_Проверка формата гиперссылки
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Общие свойства атрибутов][attribute_common_properties]**
 

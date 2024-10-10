@@ -46,7 +46,7 @@ _![Страница инициализации данных в Elasticsearch](ht
 _![Начальная страница {{ productName }}](https://kb.comindware.ru/assets/administration_tool10.png)_
 16. На этом этапе развёртывание экземпляра продукта завершено и можно приступать к созданию и использованию приложений.
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 ***[Установка продукта Comindware Business Application Platform](https://kb.comindware.ru/article.php?id=2028)***
 

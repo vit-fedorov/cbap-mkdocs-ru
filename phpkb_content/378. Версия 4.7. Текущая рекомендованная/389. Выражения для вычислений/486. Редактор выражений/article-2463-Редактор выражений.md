@@ -89,7 +89,7 @@ _![Сведения об ошибке в выражении](https://kb.comindwa
 
 _![Поиск текста в выражении](https://kb.comindware.ru/assets/expression_editor_found_text.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Предиктивный ввод в формулах](https://kb.comindware.ru/article.php?id=2468)**
 

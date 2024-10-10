@@ -15,7 +15,7 @@ kbId: 2418
 
 _![Форма оргединицы](https://kb.comindware.ru/assets/configuring_organizational_unit_properties.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Редактирование формы и атрибутов оргединицы][navigation_panel]**
 

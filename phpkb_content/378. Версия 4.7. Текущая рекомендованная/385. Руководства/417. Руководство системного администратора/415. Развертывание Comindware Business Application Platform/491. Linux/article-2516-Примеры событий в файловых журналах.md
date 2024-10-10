@@ -45,7 +45,7 @@ kbId: 2516
 | **Успешный результат выполнения сервиса** | yyyy-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 systemAccount    Core Loaded | - `yyyy-MM-dd HH:mm:ss,SSS` — дата и время события - `INFO` — тип события: информационное - `00000000-0000-0000-0000-000000000000` — идентификатор сеанса - `systemAccount` — учётная запись, запустившая сервис - `Core Loaded` — запущен сервис Core |
 | **Событие в адаптере** | [yyy-MM-dd HH:mm:ss,SSS][INFO][Getting meta for plugin XxxSenderAdapter.] Platform key: XXX\_AdapterAgent5b28ad88a4cb4d4f8078c4deef1ee08b; Service name: ServiceName; Runtime: .NET 6.0.21 [2023-12-08 00:10:20,667][INFO][Meta is ready for XxxSenderAdapter.] Platform key: XXX\_AdapterAgent5b28ad88a4cb4d4f8078c4deef1ee08b; Service name: ServiceName; Runtime: .NET 6.0.21 data: {"Name":"XxxSenderAdapter","Description":"Адаптер для связи с системой «XXX»","Direction":"Outgoing","EndpointDefinitionJson":"{}} | - `yyyy-MM-dd HH:mm:ss,SSS` — дата и время события - `INFO` — тип события: информационное - `Getting meta for plugin XxxSenderAdapter` — описание события - `Platform key: XXX_AdapterAgent5b28ad88a4cb4d4f8078c4deef1ee08b; Service name: ServiceName; Runtime: .NET 6.0.21` — контекст события - `data: {}` — содержимое сообщения |
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Подсистема журналирования](https://kb.comindware.ru/article.php?id=2501)** 
 

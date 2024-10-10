@@ -22,7 +22,7 @@ kbId: 2464
 USER()->username 
 ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Редактор выражений][expression_editor]**
 

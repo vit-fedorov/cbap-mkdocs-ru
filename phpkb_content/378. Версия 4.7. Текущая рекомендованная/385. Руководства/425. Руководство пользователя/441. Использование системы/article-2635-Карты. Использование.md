@@ -61,7 +61,7 @@ kbId: 2635
 
 _![Пример карты и таблицы меток на карте](https://kb.comindware.ru/assets/map_use_example.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Карты. Настройка][map_configure]**
 

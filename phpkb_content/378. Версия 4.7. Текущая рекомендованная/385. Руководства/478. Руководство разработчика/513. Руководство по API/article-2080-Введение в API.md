@@ -126,7 +126,7 @@ http://your-host/api/public/system/TeamNetwork/ObjectAppService/Create
 - В теле запроса (`body`) укажите системное имя шаблона записи (например, `"Car"`).
 - В ответ на запрос **{{ productName }}**вернёт ID созданного шаблона записи (например, `"oa.1"`).
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Методы Solution API](https://kb.comindware.ru/article.php?id=2073)**
 

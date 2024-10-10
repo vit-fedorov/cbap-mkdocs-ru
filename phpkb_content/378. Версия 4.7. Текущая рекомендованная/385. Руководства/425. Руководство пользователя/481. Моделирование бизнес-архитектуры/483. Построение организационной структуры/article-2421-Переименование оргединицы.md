@@ -28,7 +28,7 @@ kbId: 2421
 ![Переименование оргединицы с помощью формы свойств](https://kb.comindware.ru/assets/organizational_structure_modeling_rename_from_properties.png)
 Переименование оргединицы с помощью формы свойств
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Просмотр реестра оргединиц][построение-организационной-структуры]**
 

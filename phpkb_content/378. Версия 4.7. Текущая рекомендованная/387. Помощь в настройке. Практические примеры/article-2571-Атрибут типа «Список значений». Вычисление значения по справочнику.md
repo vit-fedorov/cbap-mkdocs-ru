@@ -80,7 +80,7 @@ _![](https://kb.comindware.ru/assets/enum_field_calculate_by_reference.gif)_Ав
 
 _![Представление атрибута типа «Список значений» в таблице](https://kb.comindware.ru/assets/img_65b75c467bf5d.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Атрибут типа «Список значений»][attribute_enum]**
 

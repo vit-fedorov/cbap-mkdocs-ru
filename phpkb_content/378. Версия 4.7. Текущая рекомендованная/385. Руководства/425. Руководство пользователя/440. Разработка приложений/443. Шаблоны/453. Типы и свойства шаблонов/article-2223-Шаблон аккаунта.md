@@ -26,7 +26,7 @@ kbId: 2223
 
 _![Свойства шаблона аккаунта](https://kb.comindware.ru/assets/account_templates_properties.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Общие свойства шаблонов](https://kb.comindware.ru/article.php?id=2225)**
 

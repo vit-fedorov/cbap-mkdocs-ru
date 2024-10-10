@@ -28,7 +28,7 @@ _![Список доступных переменных](https://kb.comindware.r
 }
 ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Ввод предиката](https://kb.comindware.ru/article.php?id=2479)**
 

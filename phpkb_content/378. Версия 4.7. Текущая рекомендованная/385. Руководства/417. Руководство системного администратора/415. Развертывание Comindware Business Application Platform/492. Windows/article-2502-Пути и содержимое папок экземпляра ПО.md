@@ -55,7 +55,7 @@ _![Пример файла конфигурации instancename.yml](https://k
 - `C``:\``ProgramData``\с``omindware``\``Instances``\instancename\Logs` — журналы экземпляра ПО.
 - `C``:\``ProgramData``\с``omindware``\``Instances``\instancename\Temp` — временные файлы.
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта](https://kb.comindware.ru/article.php?id=2036)**
 

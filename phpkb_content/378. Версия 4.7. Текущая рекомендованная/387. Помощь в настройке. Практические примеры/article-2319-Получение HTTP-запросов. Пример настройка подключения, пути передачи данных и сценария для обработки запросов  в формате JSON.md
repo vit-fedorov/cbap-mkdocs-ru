@@ -202,7 +202,7 @@ _![Сценарий обработки заказа](https://kb.comindware.ru/as
 
 _![Полученные заказы](https://kb.comindware.ru/assets/json9.jpg)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **`![](https://kb.comindware.ru/images/marker.png)Настройка действий сценария {Article-ID:2149}`**
 

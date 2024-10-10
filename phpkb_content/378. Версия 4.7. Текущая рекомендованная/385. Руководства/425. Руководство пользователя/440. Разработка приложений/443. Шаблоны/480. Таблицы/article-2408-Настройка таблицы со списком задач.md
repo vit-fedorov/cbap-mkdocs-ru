@@ -110,7 +110,7 @@ _![Добавление таблицы задач на страницу «Мои
 
 _![Удаление таблицы задач](https://kb.comindware.ru/assets/img_64d63780f30e8.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Шаблон процесса][process_templates]**
 

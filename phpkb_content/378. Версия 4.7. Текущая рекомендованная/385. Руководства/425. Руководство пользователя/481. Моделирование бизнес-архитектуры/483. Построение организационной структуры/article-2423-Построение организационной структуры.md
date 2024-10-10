@@ -31,7 +31,7 @@ kbId: 2423
 
 _![Иерархический реестр оргединиц](https://kb.comindware.ru/assets/organizational_structure_modeling_registry.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Построение процессной архитектуры][построение-процессной-архитектуры]**
 

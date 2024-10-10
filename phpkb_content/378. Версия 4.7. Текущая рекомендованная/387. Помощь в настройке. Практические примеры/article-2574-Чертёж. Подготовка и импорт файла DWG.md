@@ -106,7 +106,7 @@ _![](https://kb.comindware.ru/assets/img_65c640abd145d.png)_Шаг 1. Загру
     
     Шаг 2. Привязка слоёв чертежа к шаблонам и атрибутам
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Чертёж. Настройка шаблонов, атрибутов, форм и полей][drawing_attribute_configure]**
 

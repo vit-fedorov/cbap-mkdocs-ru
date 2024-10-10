@@ -21,7 +21,7 @@ _![Список локальных переменных в сценарии](htt
 ADDDAYS($$requestTime, 1) 
 ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Редактор выражений][expression_editor]**
 

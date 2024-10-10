@@ -32,7 +32,7 @@ _![Переход к конструктору формы оргединицы](h
 
 _![Конструктор формы оргединицы](https://kb.comindware.ru/assets/configuring_organizational_unit_form_designer.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Изменение свойств оргединицы](https://kb.comindware.ru/article.php?id=2418)**
 

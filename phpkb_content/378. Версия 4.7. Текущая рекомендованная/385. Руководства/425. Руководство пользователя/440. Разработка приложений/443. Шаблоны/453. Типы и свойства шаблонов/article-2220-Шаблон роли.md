@@ -23,7 +23,7 @@ kbId: 2220
 
 _![Свойства шаблона роли](https://kb.comindware.ru/assets/role_templates_properties.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Роли в приложении. Определения, настройка, объединение, удаление][roles]**
 

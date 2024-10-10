@@ -65,7 +65,7 @@ export JVM_OPTS="-Xms10m -Xmx16g
 ```
 2. Перезапустите экземпляр ПО, чтобы изменения вступили в силу.
 
-### Связанные статьи
+#--8<-- "related_topics_heading.md"
 
 - [Общие рекомендации по оптимизации производительности Apache Ignite](https://ignite.apache.org/docs/latest/perf-and-troubleshooting/general-perf-tips) (английский язык, официальное руководство Apache Ignite)
 - [Настройка памяти и JVM](https://ignite.apache.org/docs/latest/perf-and-troubleshooting/memory-tuning) (английский язык, официальное руководство Apache Ignite)
@@ -109,7 +109,7 @@ export JVM_OPTS="-Xms10m -Xmx16g
 ```
 3. Перезапустите службу Elasticsearch, чтобы изменения вступили в силу.
 
-### Связанные статьи
+#--8<-- "related_topics_heading.md"
 
 - [Ускорение поиска](https://www.elastic.co/guide/en/elasticsearch/reference/current/tune-for-search-speed.html) (английский язык, официальное руководство Elasticsearch)
 - [Ускорение индексации](https://www.elastic.co/guide/en/elasticsearch/reference/current/tune-for-indexing-speed.html) (английский язык, официальное руководство Elasticsearch)

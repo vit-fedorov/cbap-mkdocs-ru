@@ -37,7 +37,7 @@ _![Список функций для префикса](https://kb.comindware.ru
 }
 ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Редактор выражений][expression_editor]**
 

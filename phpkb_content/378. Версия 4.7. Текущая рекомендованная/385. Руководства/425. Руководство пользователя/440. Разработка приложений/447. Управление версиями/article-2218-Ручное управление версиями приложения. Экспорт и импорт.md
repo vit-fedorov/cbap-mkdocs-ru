@@ -85,7 +85,7 @@ _![Результат проверки с ошибками](https://kb.comindwar
 
 _![Настройка импорта приложения из файла CTF](https://kb.comindware.ru/assets/manual_version_import_properties.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Управление версиями приложения][version_control]**
 

@@ -51,7 +51,7 @@ _![Список атрибутов шаблона](https://kb.comindware.ru/asse
 } 
 ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Редактор выражений][expression_editor]**
 

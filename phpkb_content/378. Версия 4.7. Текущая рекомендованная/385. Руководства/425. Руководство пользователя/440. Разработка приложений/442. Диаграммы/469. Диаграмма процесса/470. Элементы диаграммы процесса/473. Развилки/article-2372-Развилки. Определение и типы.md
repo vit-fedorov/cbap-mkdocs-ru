@@ -14,7 +14,7 @@ kbId: 2372
 - **[Развилка «или/или»](https://kb.comindware.ru/article.php?id=2373)**
 - **[Развилка «и»](https://kb.comindware.ru/article.php?id=2371)**
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 

@@ -151,7 +151,7 @@ _![Создание действия в сценарии](https://kb.comindware.
 
 _![Удаление действия из сценария](https://kb.comindware.ru/assets/scenario_delete_action.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Событие и действия сценария. Определения, типы, свойства, настройка][scenario_elements]**
 

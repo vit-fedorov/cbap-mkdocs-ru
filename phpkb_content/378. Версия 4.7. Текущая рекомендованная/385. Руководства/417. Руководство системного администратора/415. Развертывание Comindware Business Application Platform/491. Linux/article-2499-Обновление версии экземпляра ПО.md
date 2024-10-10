@@ -223,7 +223,7 @@ systemctl restart apigateway<instanceName> comindware<instanceName>
 tail -f /var/log/comindware/<instanceName>/Log/sys*
 ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]**
 

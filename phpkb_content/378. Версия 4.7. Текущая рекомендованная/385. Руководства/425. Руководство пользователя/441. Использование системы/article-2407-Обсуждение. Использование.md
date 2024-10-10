@@ -22,7 +22,7 @@ kbId: 2407
 
 _![](https://kb.comindware.ru/assets/img_64ecb1bd77af1.png)_Кнопки в обсуждении
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Обсуждения. Настройка][discussion_configure]**
 

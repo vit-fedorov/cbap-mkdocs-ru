@@ -76,7 +76,7 @@ _![Удаление элементов из списка значений](https
 
 _![Раскрывающийся список значений на форме](https://kb.comindware.ru/assets/attribute_enum_example.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Атрибут типа «Список значений». Вычисление значения по справочнику][attribute_enum_calculate_registry]**
 

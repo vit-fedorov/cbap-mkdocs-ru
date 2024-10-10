@@ -492,7 +492,7 @@ public class Script {
 
 _![Настройка действия «Изменить значения скриптом»](https://kb.comindware.ru/assets/scenario_actions_change_value_script.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Сценарии. Определение, создание, настройка, использование][scenarios]**
 

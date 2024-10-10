@@ -22,7 +22,7 @@ kbId: 2226
 
 _![Свойства шаблона организационной единицы](https://kb.comindware.ru/assets/organizational_unit_templates_properties.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Общие свойства шаблонов](https://kb.comindware.ru/article.php?id=2225)**
 

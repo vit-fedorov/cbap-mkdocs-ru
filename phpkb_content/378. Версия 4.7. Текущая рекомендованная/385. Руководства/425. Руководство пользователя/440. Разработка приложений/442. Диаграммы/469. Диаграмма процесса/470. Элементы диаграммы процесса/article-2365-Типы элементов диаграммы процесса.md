@@ -42,7 +42,7 @@ kbId: 2365
     - [Поток управления](https://kb.comindware.ru/article.php?id=2368)
     - [Комментарий](https://kb.comindware.ru/article.php?id=2367)
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 

@@ -124,7 +124,7 @@ _![Окрашивание строк таблицы с помощью форму
 
 _![Окрашивание строк таблицы по справочнику](https://kb.comindware.ru/assets/attribute_color_table_example2.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Таблица. Настройка в шаблоне][table_configure_template]**
 

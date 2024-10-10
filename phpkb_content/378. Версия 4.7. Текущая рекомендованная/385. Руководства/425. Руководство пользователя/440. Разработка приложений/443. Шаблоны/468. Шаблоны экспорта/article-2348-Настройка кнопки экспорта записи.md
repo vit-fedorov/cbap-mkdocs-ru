@@ -53,7 +53,7 @@ kbId: 2348
 [![Добавление разрешения на использование кнопки экспорта для роли](https://kb.comindware.ru/assets/export_template_button_configure_permission.png)](https://kb.comindware.ru/assets/export_template_button_configure_permission.png)
 Добавление разрешения на использование кнопки экспорта для роли
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Настройка шаблона экспорта][export_templates]**
 

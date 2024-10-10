@@ -37,7 +37,7 @@ _![Рабочий стол Comindware Architect](https://kb.comindware.ru/assets
         - **[Системные роли][system_roles]**
         - **[Аккаунты][accounts]**
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Построение процессной архитектуры][построение-процессной-архитектуры]**
 

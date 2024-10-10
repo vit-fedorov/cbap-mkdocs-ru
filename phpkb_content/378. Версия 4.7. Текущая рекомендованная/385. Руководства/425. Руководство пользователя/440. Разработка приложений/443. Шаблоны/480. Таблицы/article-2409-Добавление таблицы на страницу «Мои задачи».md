@@ -20,7 +20,7 @@ kbId: 2409
 
 _![Добавление таблицы задач на страницу «Мои задачи»](https://kb.comindware.ru/assets/img_64d637419ab49.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Страница «Мои задачи». Определения и настройка][my_tasks_page_configure]**
 

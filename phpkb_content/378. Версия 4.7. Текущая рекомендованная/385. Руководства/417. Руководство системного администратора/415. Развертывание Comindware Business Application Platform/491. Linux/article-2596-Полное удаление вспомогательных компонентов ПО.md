@@ -758,7 +758,7 @@ apt-get remove --purge -y nginx-common
 rm /var/www/.cmw_environment/nginx
 ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Пути и содержимое папок экземпляра ПО](https://kb.comindware.ru/article.php?id=2502)**
 

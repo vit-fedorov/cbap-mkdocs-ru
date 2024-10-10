@@ -61,7 +61,7 @@ kbId: 2353
 [![Файл, сформированный по шаблону экспорта](https://kb.comindware.ru/assets/export_template_file_result.png)](https://kb.comindware.ru/assets/export_template_file_result.png)
 Файл, сформированный по шаблону экспорта
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Настройка шаблона экспорта с использованием C#](https://kb.comindware.ru/article.php?id=1942)**
 

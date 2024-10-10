@@ -50,7 +50,7 @@ kbId: 2221
 
 _![Свойства шаблона записи](https://kb.comindware.ru/assets/record_templates_properties.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Общие свойства шаблонов](https://kb.comindware.ru/article.php?id=2225)**
 

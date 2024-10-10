@@ -41,7 +41,7 @@ _![Проверка значения атрибута](https://kb.comindware.ru/
 
 _![Связи атрибута](https://kb.comindware.ru/assets/attribute_common_properties_relations.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
 

@@ -34,7 +34,7 @@ kbId: 2186
 
 _![Настройка конфигурации журналирования](https://kb.comindware.ru/assets/img_667302038ee2c.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Подсистема журналирования](https://kb.comindware.ru/article.php?id=2501)**
 

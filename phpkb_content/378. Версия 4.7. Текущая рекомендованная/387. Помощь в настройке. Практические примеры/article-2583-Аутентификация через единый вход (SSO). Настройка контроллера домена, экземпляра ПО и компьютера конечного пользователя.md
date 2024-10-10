@@ -613,7 +613,7 @@ klist
 KRB5_TRACE=/dev/stdout kinit -k -t /etc/nginx/<authuser>.keytab HTTP/<DCName>.<domain.name>
 ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО][ad_authentication_configure_dc_instance]**
 

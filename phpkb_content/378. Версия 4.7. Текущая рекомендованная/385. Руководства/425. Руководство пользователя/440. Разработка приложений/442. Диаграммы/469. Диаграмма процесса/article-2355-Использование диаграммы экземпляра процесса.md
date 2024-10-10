@@ -88,7 +88,7 @@ _![Диаграмма экземпляра процесса](https://kb.comindwa
 
 _![Просмотр цепочки событий экземпляра процесса](https://kb.comindware.ru/assets/process_diagram_view_events_chain.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Управление версиями диаграммы процесса](process_diagram_version_control.html)**
 

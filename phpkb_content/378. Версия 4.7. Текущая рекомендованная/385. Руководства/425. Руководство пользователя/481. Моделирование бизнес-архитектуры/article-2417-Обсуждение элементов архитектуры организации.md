@@ -44,7 +44,7 @@ _![Использование обсуждений](https://kb.comindware.ru/ass
 
 _![Просмотр списка обсуждений процессов](https://kb.comindware.ru/assets/viewing_process_conversations_list.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Просмотр диаграммы](https://kb.comindware.ru/article.php?id=2428)**
 

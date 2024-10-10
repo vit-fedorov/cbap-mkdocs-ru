@@ -56,7 +56,7 @@ _![Токен подключения в файле конфигурации Р7-
 
 _![Настройка подключения к Р7-Офис](https://kb.comindware.ru/assets/Pasted image 20230420151946.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Р7 Офис и Collabora Online. Использование для работы с документами][office_connection_use]**
 

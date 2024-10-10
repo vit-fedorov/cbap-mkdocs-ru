@@ -205,7 +205,7 @@ _![Настройка подсчёта итогов по столбцу](https:/
 
 _![Полный сброс персональных настроек таблицы](https://kb.comindware.ru/assets/table_personal_use_full_drop_settings.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Настройка таблицы в шаблоне][table_configure_template]**
 

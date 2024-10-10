@@ -35,7 +35,7 @@ kbId: 2593
 
 _![Настройка подключения к Elasticsearch](https://kb.comindware.ru/assets/img_65e9a2ce0866e.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Инициализация {{ productName }}](https://kb.comindware.ru/article.php?id=2344#mcetoc_1ga11542i2)**
 

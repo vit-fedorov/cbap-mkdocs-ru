@@ -36,7 +36,7 @@ COUNT(from b in db->Zayavkanaotpusk  where b->Statuszayavki == "Odobrena"  selec
 EQUALS($Statuszayavki, "Odobrena") 
 ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Редактор выражений][expression_editor]**
 

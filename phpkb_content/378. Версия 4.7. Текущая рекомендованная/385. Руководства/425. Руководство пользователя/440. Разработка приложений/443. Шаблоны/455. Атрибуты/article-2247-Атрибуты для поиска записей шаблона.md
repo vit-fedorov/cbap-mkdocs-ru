@@ -28,7 +28,7 @@ _![Поиск записей в таблице](https://kb.comindware.ru/assets/
 
 _![Флажок «Использовать для поиска записей»](https://kb.comindware.ru/assets/searcheable_attribute.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
 

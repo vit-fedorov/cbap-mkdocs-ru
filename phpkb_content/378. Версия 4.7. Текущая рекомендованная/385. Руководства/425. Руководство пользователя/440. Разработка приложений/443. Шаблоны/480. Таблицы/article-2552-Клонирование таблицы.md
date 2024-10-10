@@ -20,7 +20,7 @@ kbId: 2552
 
 _![Клонирование таблицы](https://kb.comindware.ru/assets/img_65d47e3f583d9.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Таблицы. Определения, создание, удаление][tables]**
 

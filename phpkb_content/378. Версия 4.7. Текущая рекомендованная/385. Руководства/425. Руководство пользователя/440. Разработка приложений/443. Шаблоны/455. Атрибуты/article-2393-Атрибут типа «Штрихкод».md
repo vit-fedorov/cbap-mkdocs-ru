@@ -41,7 +41,7 @@ _![Свойства атрибута типа «Штрихкод»](https://kb.c
 ![Редактирование QR-кода на форме](https://kb.comindware.ru/assets/attribute_qrcode_example.png)
 Редактирование QR-кода на форме
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Общие свойства атрибутов][attribute_common_properties]**
 

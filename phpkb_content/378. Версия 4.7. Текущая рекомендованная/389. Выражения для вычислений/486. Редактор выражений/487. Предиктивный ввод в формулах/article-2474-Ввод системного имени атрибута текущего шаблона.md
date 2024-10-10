@@ -19,7 +19,7 @@ kbId: 2474
 INT($Passazhiry) 
 ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Редактор выражений][expression_editor]**
 

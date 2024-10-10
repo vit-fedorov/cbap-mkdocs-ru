@@ -100,7 +100,7 @@ https://<your-host>/docs
 
 _![Удаление приложения с помощью API](https://kb.comindware.ru/assets/applications_delete_api.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Введение в API][api_intro]**
 

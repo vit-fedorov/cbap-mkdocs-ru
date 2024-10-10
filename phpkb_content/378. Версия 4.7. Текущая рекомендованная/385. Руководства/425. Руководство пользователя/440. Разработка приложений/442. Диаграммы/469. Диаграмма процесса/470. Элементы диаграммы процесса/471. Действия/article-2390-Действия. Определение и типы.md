@@ -18,7 +18,7 @@ kbId: 2390
     - **[Вызов процесса](https://kb.comindware.ru/article.php?id=2389)**
     - **[Встроенный подпроцесс](https://kb.comindware.ru/article.php?id=2391)**
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 

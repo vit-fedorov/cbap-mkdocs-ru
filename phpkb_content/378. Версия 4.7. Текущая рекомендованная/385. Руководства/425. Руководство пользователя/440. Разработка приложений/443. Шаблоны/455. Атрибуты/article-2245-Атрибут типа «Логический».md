@@ -35,7 +35,7 @@ _![Свойства атрибута типа «Тест»](https://kb.comindwar
     ![Переключатель для логического атрибута на форме](https://kb.comindware.ru/assets/attribute_boolean_example.png)
     Переключатель для логического атрибута на форме
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Общие свойства атрибутов][attribute_common_properties]**
 

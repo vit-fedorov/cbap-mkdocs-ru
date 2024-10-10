@@ -20,7 +20,7 @@ kbId: 2469
 ADD($Zatraty->Summa, $Nalog) 
 ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Редактор выражений][expression_editor]**
 

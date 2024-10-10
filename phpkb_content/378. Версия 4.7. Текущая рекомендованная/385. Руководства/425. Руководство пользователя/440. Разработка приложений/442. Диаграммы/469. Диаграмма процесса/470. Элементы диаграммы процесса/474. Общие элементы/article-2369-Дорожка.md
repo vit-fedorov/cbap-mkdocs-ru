@@ -23,7 +23,7 @@ _![Дорожка и её меню элемента](https://kb.comindware.ru/as
 
 _![Свойства дорожки](https://kb.comindware.ru/assets/lane_general_properties.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 

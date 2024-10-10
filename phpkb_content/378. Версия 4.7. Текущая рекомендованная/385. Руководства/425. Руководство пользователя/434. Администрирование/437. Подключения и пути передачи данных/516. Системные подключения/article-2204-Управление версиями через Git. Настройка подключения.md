@@ -32,7 +32,7 @@ kbId: 2204
 
 _![Настройка подключения типа «Управление версиями через Git»](https://kb.comindware.ru/assets/git_connection_properties_edit.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Управление версиями  приложения через Git. Инициализация репозитория, экспорт и импорт][version_control_git]**
 

@@ -44,7 +44,7 @@ _![Создание обсуждения](https://kb.comindware.ru/assets/img_64
 
 _![Настройка конфигурации обсуждений в шаблоне](https://kb.comindware.ru/assets/img_64d5fdb4915e3.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Обсуждение. Использование][discussion_use]**
 

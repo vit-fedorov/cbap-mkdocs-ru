@@ -51,7 +51,7 @@ _![Создание подключения для отправки HTTP-запр
 
 _![Настройка подключения для отправки HTTP-запросов](https://kb.comindware.ru/assets/send_http_connection_settings.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Отправка HTTP-запросов типа GET. Пример: настройка подключения, пути передачи данных и сценария для обработки запросов в формате JSON][send_http_example]**
 

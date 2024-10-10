@@ -17,7 +17,7 @@ kbId: 2430
 
 _![Проверка диаграммы](https://kb.comindware.ru/assets/verify_diagram.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Просмотр реестра процессов][построение-процессной-архитектуры]**
 

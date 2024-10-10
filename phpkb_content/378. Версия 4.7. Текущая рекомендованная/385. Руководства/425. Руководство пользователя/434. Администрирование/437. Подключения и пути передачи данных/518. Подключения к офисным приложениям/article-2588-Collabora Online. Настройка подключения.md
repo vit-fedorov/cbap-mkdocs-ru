@@ -31,7 +31,7 @@ kbId: 2588
 
 _![Настройка подключения к Collabora Online](https://kb.comindware.ru/assets/img_65e72c450bcdb.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Р7 Офис и Collabora Online. Использование для работы с документами][office_connection_use]**
 

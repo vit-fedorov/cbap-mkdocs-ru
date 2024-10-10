@@ -101,7 +101,7 @@ _![Список таблиц в шаблоне](https://kb.comindware.ru/assets/
     - **В архиве**
     - **Дата изменения**
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Настройка таблицы в шаблоне][table_configure_template]**
 

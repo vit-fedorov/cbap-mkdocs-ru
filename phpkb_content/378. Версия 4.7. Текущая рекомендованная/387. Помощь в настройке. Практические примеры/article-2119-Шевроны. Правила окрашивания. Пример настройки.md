@@ -101,7 +101,7 @@ kbId: 2119
 
 _![Прогресс выполнения заявки в виде шевронов](https://kb.comindware.ru/assets/img_660a9e23f3b6c.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Шевроны. Визуализация этапов процесса. Пример настройки][chevron_stage_render]**
 

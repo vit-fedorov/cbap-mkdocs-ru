@@ -175,7 +175,7 @@ Api.TeamNetwork.ObjectAppExportService.ExecuteWordExportTemplate("exportTemplate
     - откройте каждый файл шрифта и нажмите в окне просмотра шрифта кнопку «**Установить**».
 3. Используйте в файле Excel шаблона экспорта только шрифты, перенесённые с сервера CBAP.
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Пример настройки и использования шаблона экспорта авансового отчёта](https://kb.comindware.ru/article.php?id=2353)**
 

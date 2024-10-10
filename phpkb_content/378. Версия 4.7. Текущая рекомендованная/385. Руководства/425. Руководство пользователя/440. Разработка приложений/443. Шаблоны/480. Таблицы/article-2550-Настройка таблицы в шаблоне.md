@@ -218,7 +218,7 @@ _![](https://kb.comindware.ru/assets/img_65d48006c97eb.png)_Добавление
 
 _![Настройка области кнопок таблицы](https://kb.comindware.ru/assets/img_65d494144c3f4.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Настройка таблицы на форме][form_dynamic_elements]**
 

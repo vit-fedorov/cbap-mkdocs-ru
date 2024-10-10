@@ -42,7 +42,7 @@ _![Основные свойства промежуточного события
 
 _![Дополнительные свойства промежуточного события-таймера](https://kb.comindware.ru/assets/timer_intermediate_event_advanced_properties.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[События](https://kb.comindware.ru/article.php?id=2374)**
 

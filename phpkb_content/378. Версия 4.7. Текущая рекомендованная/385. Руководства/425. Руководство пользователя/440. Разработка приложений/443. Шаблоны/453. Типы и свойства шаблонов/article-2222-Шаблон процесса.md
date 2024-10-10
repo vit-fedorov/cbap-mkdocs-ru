@@ -45,7 +45,7 @@ kbId: 2222
 
 _![Свойства шаблона процесса](https://kb.comindware.ru/assets/process_templates_properties.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Диаграмма процесса. Определения, просмотр, редактирование, публикация][call_element_menu]**
 

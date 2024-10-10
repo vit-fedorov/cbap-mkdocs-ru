@@ -56,7 +56,7 @@ _![Окно контроля учётных записей](https://kb.comindwar
 
 _![Главное окно Утилиты администрирования](https://kb.comindware.ru/assets/img_667988719e042.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Установка продукта Comindware Business Application Platform](https://kb.comindware.ru/article.php?id=2028)**
 

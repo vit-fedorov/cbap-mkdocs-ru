@@ -20,7 +20,7 @@ _![Пул и его меню элемента](https://kb.comindware.ru/assets/p
 
 _![Свойства пула](https://kb.comindware.ru/assets/pool_properties.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 

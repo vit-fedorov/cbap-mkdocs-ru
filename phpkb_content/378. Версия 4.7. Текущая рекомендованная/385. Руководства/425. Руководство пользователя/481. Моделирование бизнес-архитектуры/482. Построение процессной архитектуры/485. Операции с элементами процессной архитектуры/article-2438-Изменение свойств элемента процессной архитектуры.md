@@ -24,7 +24,7 @@ kbId: 2438
 
 _![Настройка свойств элемента процессной архитектуры](https://kb.comindware.ru/assets/configuring_process_entity_properties.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Редактирование формы и атрибутов оргединицы](https://kb.comindware.ru/article.php?id=2422)**
 

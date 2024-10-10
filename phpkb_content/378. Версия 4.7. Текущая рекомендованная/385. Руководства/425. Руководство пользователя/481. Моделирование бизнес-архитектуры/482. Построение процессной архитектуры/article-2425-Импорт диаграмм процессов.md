@@ -55,7 +55,7 @@ _![Импорт диаграмм из другой BPM-системы](https://k
 
 _![Выбор процессов для импорта](https://kb.comindware.ru/assets/importing_process_entity_select_processes.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Просмотр реестра процессов][построение-процессной-архитектуры]**
 

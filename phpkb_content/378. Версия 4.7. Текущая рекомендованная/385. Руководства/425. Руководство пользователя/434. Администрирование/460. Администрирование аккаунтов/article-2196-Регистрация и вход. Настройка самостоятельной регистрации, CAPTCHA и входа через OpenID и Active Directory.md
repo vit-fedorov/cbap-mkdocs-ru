@@ -50,7 +50,7 @@ _![Плитка нового подключения к серверу катал
 
 _![Удаление подключения к серверу каталогов](https://kb.comindware.ru/assets/registration_and_login_connection_ellipsis_menu.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Сервер каталогов. Настройка подключения][ad_connection]**
 

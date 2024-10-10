@@ -224,7 +224,7 @@ _![Выбор конкурса для добавления позиций](https
 
 _![Отображение добавленных позиций в конкурсе](https://kb.comindware.ru/assets/script_using_local_variable_tender_positions.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Кнопки. Определения, настройка, удаление][buttons]**
 

@@ -70,7 +70,7 @@ _![Отображение виджетов на странице «Сводка 
 
 _![Отображение виджетов на странице «Сводка заявок» при отсутствии доступа к данным](https://kb.comindware.ru/assets/page_access_control_partial_access.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Панель и разделы навигации. Настройка][navigation_sections_setup]**
 

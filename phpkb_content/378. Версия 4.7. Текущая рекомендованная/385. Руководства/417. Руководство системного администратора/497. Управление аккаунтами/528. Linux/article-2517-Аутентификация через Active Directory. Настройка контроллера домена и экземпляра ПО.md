@@ -199,7 +199,7 @@ KRB5_TRACE=/dev/stdout kinit <username>
 
 Здесь `<username>` — имя любого пользователя домена, для которого известен пароль.
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Сервер каталогов. Настройка подключения][ad_connection]**
 

@@ -410,7 +410,7 @@ writeTo="errorsFile,EventLogCBAPErrors"/>
 ```
 6. Перезагрузите экземпляр ПО, чтобы изменения вступили в силу. См. раздел [Настройка конфигурации Утилиты администрирования Comindware](https://kb.comindware.ru/article.php?id=2029).
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Примеры событий в файловых журналах](https://kb.comindware.ru/article.php?id=2516)**
 

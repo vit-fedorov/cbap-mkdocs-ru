@@ -108,7 +108,7 @@ kbId: 2581
 - `C:\ProgramData\Elastic\Elasticsearch\repo` — папка с репозиторием, см. директиву `path.repo` в файле конфигурации `X:\Program Files\Elastic\Elasticsearch\8.X.X\config\elasticsearch.yml`.
 - `C:\ProgramData\Elastic\Elasticsearch\logs` — папка с журналами, см. директиву `path.logs` в файле конфигурации `X:\Program Files\Elastic\Elasticsearch\8.X.X\config\elasticsearch.yml`.
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **`![](https://kb.comindware.ru/images/marker.png) Пути и содержимое папок экземпляра ПО (Linux) {Article-ID:2502}`**
 

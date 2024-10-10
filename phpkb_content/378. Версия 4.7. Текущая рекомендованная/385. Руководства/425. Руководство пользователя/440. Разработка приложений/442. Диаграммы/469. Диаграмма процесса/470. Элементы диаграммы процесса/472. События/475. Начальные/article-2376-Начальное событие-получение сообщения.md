@@ -64,7 +64,7 @@ _![Настройка имени сообщения для начального 
 
 _![Настройка данных сообщения для начального события-получения сообщения](https://kb.comindware.ru/assets/receive_message_start_event_message_data.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[События](../index.html#события)**
 

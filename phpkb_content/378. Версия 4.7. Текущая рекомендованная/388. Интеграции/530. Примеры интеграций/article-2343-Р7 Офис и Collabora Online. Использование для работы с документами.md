@@ -44,7 +44,7 @@ _![Создание документа в Р7-Офис или Collabora Online](
 
 _![Переименование документа Р7-Офис в {{ productName }}](https://kb.comindware.ru/assets/Pasted image 20230420172116.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[*[Р7 Офис. Настройка сервера и подключения][r7_connection]*][r7_connection]**
 

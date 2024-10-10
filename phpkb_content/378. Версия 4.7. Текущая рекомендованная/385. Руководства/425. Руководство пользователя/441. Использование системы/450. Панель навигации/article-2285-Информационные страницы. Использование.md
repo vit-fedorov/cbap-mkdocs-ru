@@ -51,7 +51,7 @@ _![Кнопка выхода из полноэкранного режима](htt
 
 _![Выбор и упорядочивание разделов страницы](https://kb.comindware.ru/assets/img_64e4b4f7a0a0d.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Использование системы](https://kb.comindware.ru/category.php?id=441)**
 

@@ -25,7 +25,7 @@ _![Список значений атрибута taskStatus](https://kb.comindw
 }
 ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Редактор выражений][expression_editor]**
 

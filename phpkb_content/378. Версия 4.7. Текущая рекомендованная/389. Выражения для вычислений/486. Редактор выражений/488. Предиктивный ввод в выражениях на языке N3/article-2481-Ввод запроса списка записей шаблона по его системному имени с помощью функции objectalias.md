@@ -55,7 +55,7 @@ _![Список шаблонов в приложении](https://kb.comindware.
 }
 ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Редактор выражений][expression_editor]**
 

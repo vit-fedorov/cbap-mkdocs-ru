@@ -427,7 +427,7 @@ _![Настройка списка](https://kb.comindware.ru/assets/pages_setup_
 
 _![Настройка шагов](https://kb.comindware.ru/assets/pages_setup_steps_setting.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Информационные страницы. Использование][pages]**
 

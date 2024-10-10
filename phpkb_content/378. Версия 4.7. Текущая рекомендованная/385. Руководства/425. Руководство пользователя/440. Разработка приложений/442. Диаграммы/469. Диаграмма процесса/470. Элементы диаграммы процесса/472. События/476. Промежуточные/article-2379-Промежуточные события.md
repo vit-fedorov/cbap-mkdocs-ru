@@ -27,7 +27,7 @@ _![Варианты расположения промежуточного соб
 2. Будет создано **[промежуточное событие-таймер](https://kb.comindware.ru/article.php?id=2383)**.
 3. При необходимости смените [тип события](#mcetoc_1h28fj8u80) с помощью [меню элемента][call_element_menu].
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[События](https://kb.comindware.ru/article.php?id=2374)**
 

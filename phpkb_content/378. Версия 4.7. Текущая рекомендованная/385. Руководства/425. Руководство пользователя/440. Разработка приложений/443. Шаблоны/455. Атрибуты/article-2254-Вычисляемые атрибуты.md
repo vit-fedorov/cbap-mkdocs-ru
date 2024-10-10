@@ -60,7 +60,7 @@ _![Полный редактор выражений](https://kb.comindware.ru/as
 - [Примеры использования формул](https://kb.comindware.ru/category/comindware-business-application-platform/Версия-4/Формулы-для-вычислений/Язык-выражений/409/)
 - [Примеры использования языка N3](https://kb.comindware.ru/category/comindware-business-application-platform/Версия-4/Формулы-для-вычислений/Язык-n3/408/)
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
 

@@ -49,7 +49,7 @@ _![Основные свойства развилки «или/или»](https:/
 
 _![Дополнительные свойства развилки «или/или»](https://kb.comindware.ru/assets/exclusive_gateway_advanced_propertes.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Развилка «и»](https://kb.comindware.ru/article.php?id=2371)**
 

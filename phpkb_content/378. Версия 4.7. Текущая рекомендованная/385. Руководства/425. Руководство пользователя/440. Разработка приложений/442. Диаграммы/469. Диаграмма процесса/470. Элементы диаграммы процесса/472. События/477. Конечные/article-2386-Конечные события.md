@@ -19,7 +19,7 @@ kbId: 2386
 2. Будет создано **[простое конечное событие](https://kb.comindware.ru/article.php?id=2387)**.
 3. При необходимости смените [тип события](#mcetoc_1h28cm1740) с помощью [меню элемента][call_element_menu].
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[События](https://kb.comindware.ru/article.php?id=2374)**
 

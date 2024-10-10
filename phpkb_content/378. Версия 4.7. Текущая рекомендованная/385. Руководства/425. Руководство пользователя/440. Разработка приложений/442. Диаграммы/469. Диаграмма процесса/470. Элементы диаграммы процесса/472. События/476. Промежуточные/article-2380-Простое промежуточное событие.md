@@ -43,7 +43,7 @@ _![Основные свойства простого промежуточног
 
 _![Дополнительные свойства простого промежуточного события](https://kb.comindware.ru/assets/none_intermediate_event_advanced_properties.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[События](https://kb.comindware.ru/article.php?id=2374)**
 

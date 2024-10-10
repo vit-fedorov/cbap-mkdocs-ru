@@ -25,7 +25,7 @@ kbId: 2374
     - **[Конечное событие-остановка процесса](https://kb.comindware.ru/article.php?id=2384)**
     - **[Конечное событие-отправка сообщения][send_message_end_event]**
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 

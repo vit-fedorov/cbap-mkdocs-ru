@@ -78,7 +78,7 @@ _![Сообщение «Сбор данных закончен»](https://kb.com
 
 _![Содержимое папки с результатами диагностики](https://kb.comindware.ru/assets/img_667abc22ba979.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Настройка конфигурации Утилиты администрирования Comindware](https://kb.comindware.ru/article.php?id=2029)**
 

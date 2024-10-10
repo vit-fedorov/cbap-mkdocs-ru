@@ -60,7 +60,7 @@ kbId: 2420
 ![Ввод названия новой оргединицы на панели навигации](https://kb.comindware.ru/assets/organizational_structure_modeling_rename_on_creation.png)
 Ввод названия новой оргединицы на панели навигации
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Просмотр реестра оргединиц][построение-организационной-структуры]**
 

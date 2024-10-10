@@ -56,7 +56,7 @@ _![Основные свойства потока управления](https://
 
 _![Дополнительные свойства потока управления](https://kb.comindware.ru/assets/sequence_flow_advanced_properties.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Развилки](https://kb.comindware.ru/article.php?id=2372)**
 

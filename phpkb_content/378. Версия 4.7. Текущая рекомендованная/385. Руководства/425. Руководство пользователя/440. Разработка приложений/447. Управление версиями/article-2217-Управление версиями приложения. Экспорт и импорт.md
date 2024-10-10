@@ -58,7 +58,7 @@ _![Страница «Управление версиями через Git»](ht
 
 _![Переход к ручному управлению версиями](https://kb.comindware.ru/assets/verstion_control_switch_to_manual.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Управление версиями через Git][version_control_git]**
 

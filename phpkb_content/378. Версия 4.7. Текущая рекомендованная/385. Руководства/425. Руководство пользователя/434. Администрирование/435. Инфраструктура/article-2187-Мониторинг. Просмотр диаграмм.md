@@ -85,7 +85,7 @@ _![Подробные сведения на диаграмме](https://kb.comin
 
 _![Панель сведений с кнопкой «Просмотреть журнал»](https://kb.comindware.ru/assets/monitoring_details.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Глобальная конфигурация][global_configuration]**
 

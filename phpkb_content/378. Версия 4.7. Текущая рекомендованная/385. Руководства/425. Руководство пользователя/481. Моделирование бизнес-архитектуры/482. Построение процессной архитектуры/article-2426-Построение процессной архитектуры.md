@@ -37,7 +37,7 @@ kbId: 2426
 
 _![Иерархический реестр процессов](https://kb.comindware.ru/assets/process_architecture_modeling_registry.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Построение организационной структуры][построение-организационной-структуры]**
 

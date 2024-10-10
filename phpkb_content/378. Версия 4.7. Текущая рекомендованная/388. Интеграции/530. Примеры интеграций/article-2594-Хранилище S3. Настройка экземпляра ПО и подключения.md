@@ -101,7 +101,7 @@ systemctl restart comindwareinstancename
 
 Просмотр свойств подключения к хранилищу S3
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Пути и содержимое папок экземпляра ПО](https://kb.comindware.ru/article.php?id=2502)**
 

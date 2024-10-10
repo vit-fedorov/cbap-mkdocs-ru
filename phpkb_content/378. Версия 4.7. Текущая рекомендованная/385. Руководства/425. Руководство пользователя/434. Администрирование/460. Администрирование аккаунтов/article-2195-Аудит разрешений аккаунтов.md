@@ -42,7 +42,7 @@ _![Список членов групп](https://kb.comindware.ru/assets/account
 
 _![Список членов ролей](https://kb.comindware.ru/assets/account_permission_audit_role_members.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Аккаунты. Создание, настройка, замещение, привязка к шаблону аккаунта, назначение лицензий, удаление][accounts]**
 

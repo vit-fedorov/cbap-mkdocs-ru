@@ -91,7 +91,7 @@ _![Список переменных приложения](https://kb.comindware
 
 _![Настройка переменной приложения](https://kb.comindware.ru/assets/variable_properties.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Использование переменных в сценарии][scenario_variables]**
 

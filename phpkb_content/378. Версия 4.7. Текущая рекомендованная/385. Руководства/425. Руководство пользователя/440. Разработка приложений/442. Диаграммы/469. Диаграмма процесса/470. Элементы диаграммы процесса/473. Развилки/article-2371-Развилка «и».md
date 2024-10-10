@@ -35,7 +35,7 @@ _![Пример использования развилок «и»](https://kb.c
 
 _![Свойства развилки «и»](https://kb.comindware.ru/assets/parallel_gateway_general_properties.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Поток управления](https://kb.comindware.ru/article.php?id=2368)**
 

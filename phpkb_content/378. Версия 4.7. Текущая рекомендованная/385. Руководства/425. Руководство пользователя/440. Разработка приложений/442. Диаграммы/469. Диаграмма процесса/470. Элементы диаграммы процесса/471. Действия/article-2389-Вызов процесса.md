@@ -118,7 +118,7 @@ _![Настройка передачи данных из текущего про
 
 _![Настройка передачи данных в текущий процесс из вызываемого](https://kb.comindware.ru/assets/process_call_output_data.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Встроенный подпроцесс](https://kb.comindware.ru/article.php?id=2391)**
 

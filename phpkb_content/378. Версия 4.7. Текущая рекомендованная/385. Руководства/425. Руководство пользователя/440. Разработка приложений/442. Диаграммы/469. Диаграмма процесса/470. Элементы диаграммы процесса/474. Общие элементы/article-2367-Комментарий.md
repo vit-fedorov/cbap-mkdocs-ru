@@ -21,7 +21,7 @@ _![Комментарий и его меню элемента](https://kb.comind
 
 _![Свойства комментария](https://kb.comindware.ru/assets/text_annotation_general_properties.png)_
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 

@@ -138,6 +138,8 @@
 
 [buttons]: {{ kbArticleURLPrefix }}2276
 
+[button_configure]: {{ kbArticleURLPrefix }}2276#button_configure
+
 [button_local_variables]: {{ kbArticleURLPrefix }}2276#button_local_variables
 
 [cards]: {{ kbArticleURLPrefix }}2402

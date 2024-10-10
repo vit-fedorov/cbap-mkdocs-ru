@@ -129,6 +129,8 @@ def importArtciclesInCategory (categoryId, categoryDir):
             markdown = re.sub(pattern, r'', markdown)
             # Replace \t with four spaces
             markdown = markdown.replace('\t', '    ')
+            # Replace Related Articles heading with placeholder
+            markdown = markdown.replace('## Связанные статьи', '--8<-- "related_topics_heading.md"')
             # Replace product name with placeholder
             markdown = markdown.replace('Comindware Business Application Platform', '{{ productName }}')
             # Reformat images with captions

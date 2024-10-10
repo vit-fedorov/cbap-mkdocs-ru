@@ -240,6 +240,8 @@
 
 [map_use]: {{ kbArticleURLPrefix }}2635
 
+[monitoring]: {{ kbArticleURLPrefix }}2187
+
 [my_tasks]: {{ kbArticleURLPrefix }}2282
 
 [my_tasks_page_configure]: {{ kbArticleURLPrefix }}2411

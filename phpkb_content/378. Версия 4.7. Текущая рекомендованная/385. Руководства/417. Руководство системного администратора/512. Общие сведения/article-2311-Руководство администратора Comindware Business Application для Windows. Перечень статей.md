@@ -130,12 +130,12 @@ kbId: 2311
     3. [Создание подключения к Active Directory][registration_and_login]
     4. [Удаление подключения][registration_and_login]
 21. Просмотр показателей мониторинга
-    1. [Просмотр диаграммы мониторинга](https://kb.comindware.ru/article.php?id=2187#mcetoc_1gjrh9rcl1)
-    2. [Диаграммы и показатели](https://kb.comindware.ru/article.php?id=2187#mcetoc_1gjrh9rcl6)
-    3. [Масштабирование диаграмм](https://kb.comindware.ru/article.php?id=2187#mcetoc_1gjrh9rcl2)
-    4. [Просмотр данных за определенное время](https://kb.comindware.ru/article.php?id=2187#mcetoc_1gjrh9rcl3)
-    5. [Просмотр подробных показателей на диаграмме](https://kb.comindware.ru/article.php?id=2187#mcetoc_1gjrh9rcl4)
-    6. [Переход к журналу с диаграммы](https://kb.comindware.ru/article.php?id=2187#mcetoc_1gjrh9rcl5)
+    1. [Просмотр диаграммы мониторинга][monitoring]
+    2. [Диаграммы и показатели][monitoring]
+    3. [Масштабирование диаграмм][monitoring]
+    4. [Просмотр данных за определенное время][monitoring]
+    5. [Просмотр подробных показателей на диаграмме][monitoring]
+    6. [Переход к журналу с диаграммы][monitoring]
 22. Просмотр журналов событий
     1. [Просмотр журналов событий][logs]
     2. [Типы журналов событий][logs]

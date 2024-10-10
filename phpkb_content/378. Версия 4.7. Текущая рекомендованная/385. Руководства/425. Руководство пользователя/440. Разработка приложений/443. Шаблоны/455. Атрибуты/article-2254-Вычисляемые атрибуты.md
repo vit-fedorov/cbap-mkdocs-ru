@@ -17,7 +17,7 @@ kbId: 2254
 - [Длительность][attribute_duration]
 - [Запись][attribute_record]
 - [Логический](https://kb.comindware.ru/article.php?id=2245)
-- [Организационная единица](https://kb.comindware.ru/article.php?id=2258)
+- [Организационная единица][attribute_organizational_unit]
 - [Роль][attribute_role]
 - [Атрибут типа «Список значений»][attribute_enum]
 - [Текст][attribute_text]

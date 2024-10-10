@@ -22,10 +22,10 @@ kbId: 2255
 
 По умолчанию в качестве заголовка записей используются следующие системные атрибуты:
 
-- в [шаблоне аккаунта][account_templates];
-- в [шаблоне записи][record_templates];
-- в [шаблоне оргединиц](https://kb.comindware.ru/article.php?id=2226) — «**Название**» (`unitName`);
-- в [шаблоне роли][role_templates].
+- в [шаблоне аккаунта][account_templates] — «**Ф. И. О.**» (`fullName`);
+- в [шаблоне записи][record_templates] — «**ID**» (`id`);
+- в [шаблоне оргединиц][organizational_unit_templates] — «**Название**» (`unitName`);
+- в [шаблоне роли][role_templates] — «**Название**» (`roleName`).
 
 _![Пример отображения имени заявителя в заголовке формы вместо ID записи](https://kb.comindware.ru/assets/displayed_attribute_example.png)_
 

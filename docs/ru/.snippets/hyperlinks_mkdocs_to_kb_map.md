@@ -172,7 +172,7 @@
 
 [creating_gantt_chart]: {{ kbArticleURLPrefix }}2107
 
-[desktop]:  {{ kbArticleURLPrefix }}2284
+[desktop]: {{ kbArticleURLPrefix }}2284
 
 [desktop_setup]: {{ kbArticleURLPrefix }}2215
 
@@ -288,7 +288,7 @@
 
 [process_diagram]: {{ kbArticleURLPrefix }}2360
 
-[process_diagram_process_diagram_call_element_menu]: {{ kbArticleURLPrefix }}2360#mcetoc_1h28cr6421
+[process_diagram_call_element_menu]: {{ kbArticleURLPrefix }}2360#mcetoc_1h28cr6421
 
 [process_diagram_designer]: {{ kbArticleURLPrefix }}2360#mcetoc_1h2d97s1m0
 
@@ -336,21 +336,21 @@
 
 [s3_connection]: {{ kbArticleURLPrefix }}2594
 
-[scenario_elements]:  {{ kbArticleURLPrefix }}2346
+[scenario_elements]: {{ kbArticleURLPrefix }}2346
 
-[scenario_event]:  {{ kbArticleURLPrefix }}2346#scenario_event
+[scenario_event]: {{ kbArticleURLPrefix }}2346#scenario_event
 
-[scenario_event_common_properties]:  {{ kbArticleURLPrefix }}2346#scenario_event_common_properties
+[scenario_event_common_properties]: {{ kbArticleURLPrefix }}2346#scenario_event_common_properties
 
-[scenario_actions]:  {{ kbArticleURLPrefix }}2346#scenario_actions
+[scenario_actions]: {{ kbArticleURLPrefix }}2346#scenario_actions
 
 [scenario_actions_common_properties]: {{ kbArticleURLPrefix }}2346#scenario_actions_common_properties
 
 [scenario_actions_send_message]: {{ kbArticleURLPrefix }}2346#scenario_actions_send_message
 
-[scenario_actions_validate_expression]:  {{ kbArticleURLPrefix }}2346#scenario_actions_validate_expression
+[scenario_actions_validate_expression]: {{ kbArticleURLPrefix }}2346#scenario_actions_validate_expression
 
-[scenario_actions_validate_csharp]:  {{ kbArticleURLPrefix }}2346#scenario_actions_validate_csharp
+[scenario_actions_validate_csharp]: {{ kbArticleURLPrefix }}2346#scenario_actions_validate_csharp
 
 [scenario_send_email]: {{ kbArticleURLPrefix }}2584
 

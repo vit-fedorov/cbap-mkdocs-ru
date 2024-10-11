@@ -2,7 +2,7 @@
 kbId: 2247
 ---
 
-# Атрибуты для поиска записей шаблона
+# Атрибуты для поиска записей шаблона {: #attribute_searchable}
 
 <div class="admonition question" markdown="block">
 

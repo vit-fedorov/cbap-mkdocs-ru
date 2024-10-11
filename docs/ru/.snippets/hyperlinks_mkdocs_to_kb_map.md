@@ -96,9 +96,15 @@
 
 [attribute_barcode]: {{ kbArticleURLPrefix }}2393
 
+[attribute_boolean]: {{ kbArticleURLPrefix }}2245
+
 [attribute_common_properties]: {{ kbArticleURLPrefix }}2260
 
+[attribute_calculated]: {{ kbArticleURLPrefix }}2254
+
 [attribute_date_time]: {{ kbArticleURLPrefix }}2246
+
+[attribute_displayed]: {{ kbArticleURLPrefix }}2255
 
 [attribute_document]: {{ kbArticleURLPrefix }}2241
 
@@ -120,13 +126,15 @@
 
 [attribute_role]: {{ kbArticleURLPrefix }}2240
 
+[attribute_searchable]: {{ kbArticleURLPrefix }}2247
+
 [attribute_text]: {{ kbArticleURLPrefix }}2257
 
 [attribute_text_substring_search_n3]: {{ kbArticleURLPrefix }}2628
 
 [attributes]: {{ kbArticleURLPrefix }}2252
 
-[attributes_configure]: {{ kbArticleURLPrefix }}2252#attributes_configure
+[attributes_archive]: {{ kbArticleURLPrefix }}2252#attributes_archive
 
 [attributes_system]: {{ kbArticleURLPrefix }}2242
 
@@ -209,6 +217,8 @@
 [form_dynamic_elements_drawing]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_drawing
 
 [form_dynamic_elements_hyperlink]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_hyperlink
+
+[form_dynamic_elements_linked_processes]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_linked_processes
 
 [form_dynamic_elements_map]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_map
 
@@ -383,6 +393,8 @@
 [templates]: {{ kbArticleURLPrefix }}2219
 
 [templates_move]: {{ kbArticleURLPrefix }}2219#templates_move
+
+[templates_archive_unarchive]: {{ kbArticleURLPrefix }}2219#templates_archive_unarchive
 
 [themes]: {{ kbArticleURLPrefix }}2199
 

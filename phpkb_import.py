@@ -35,18 +35,22 @@ docs_ru_folder = 'docs/ru'
 hyperlinks_file = os.path.join(docs_ru_folder, '.snippets/hyperlinks_mkdocs_to_kb_map.md')
 
 # Function to search for pattern in hyperlinks file and replace
-def find_url_in_snippet(article_id):
+def find_url_in_snippet(article_id, anchor):
     with open(hyperlinks_file, 'r', encoding='utf-8') as file:
         lines = file.readlines()
-    
+    url = ''
     for line in lines:
         # Search for the url with articleId
-        match = re.search(fr'(\[.*?\]):.*{article_id}', line)
+        match = None
+        if anchor:
+            match = re.search(fr'(\[.*?\]):.*{article_id}#{anchor}\n', line)
+        #     print (f"articleId {article_id} and anchor {anchor}")
+        if not match:
+            match = re.search(fr'(\[.*?\]):.*{article_id}\n', line)
         if match and match.group(1):
             url = match.group(1)
             #print(f"Found link and URL for articleId {article_id}: {url}")
-            return url
-    return ''
+    return url
 
 
 def encrypt(message: bytes, key: bytes) -> bytes:
@@ -166,11 +170,14 @@ def importArtciclesInCategory (categoryId, categoryDir):
                     replacementRegex = r'[{0}](https://kb.comindware.ru/article.php?id=\2)'.format(articleName)
                     markdown = re.sub(pattern, replacementRegex, markdown, count=1)
             # Replace article links in markdown with URL from hyperlinks map
-            pattern = r'\(https://kb\.comindware\.ru.+?((article.php\?id=)|-)(\d+)(?(2)|\.html).*?\)'
+            pattern = r'\(https://kb\.comindware\.ru.+?((article.php\?id=)|-)(\d+)(?(2)|\.html)(#?)(.*?)\)'
             foundLinks = re.finditer(pattern, markdown)
             for link in foundLinks:
                 article_id = link.group(3)
-                url = str(find_url_in_snippet(article_id))
+                anchor = ''
+                if link.group(4) == '#':
+                    anchor = link.group(5)
+                url = find_url_in_snippet(article_id, anchor)
                 if url:
                     pattern = r'\(https://kb\.comindware\.ru.+?((article.php\?id=)|-)({0})(?(2)|\.html).*?\)'.format(article_id)
                     markdown = re.sub(pattern, url, markdown, count=1)

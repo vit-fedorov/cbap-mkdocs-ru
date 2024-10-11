@@ -176,8 +176,6 @@
 
 [desktop_setup]: {{ kbArticleURLPrefix }}2215
 
-[diagram_definition]: {{ kbArticleURLPrefix }}2211
-
 [diagrams]: {{ kbArticleURLPrefix }}2211
 
 [discussion_configure]: {{ kbArticleURLPrefix }}2406

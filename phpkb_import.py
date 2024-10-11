@@ -43,10 +43,10 @@ def find_url_in_snippet(article_id, anchor):
         # Search for the url with articleId
         match = None
         if anchor:
-            match = re.search(fr'(\[.*?\]):.*{article_id}#{anchor}\n', line)
+            match = re.search(fr'(\[.*?\]):.*kbArticleURLPrefix.*{article_id}#{anchor}\n', line)
         #     print (f"articleId {article_id} and anchor {anchor}")
         if not match:
-            match = re.search(fr'(\[.*?\]):.*{article_id}\n', line)
+            match = re.search(fr'(\[.*?\]):.*kbArticleURLPrefix.*{article_id}\n', line)
         if match and match.group(1):
             url = match.group(1)
             #print(f"Found link and URL for articleId {article_id}: {url}")

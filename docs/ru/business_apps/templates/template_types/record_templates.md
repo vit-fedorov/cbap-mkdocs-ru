@@ -23,7 +23,7 @@ kbId: 2221
 
     - [Шаблон аккаунта][account_templates]
     - [Шаблон роли][role_templates]
-    - [Шаблон организационной единицы](organizational_unit_templates.md)
+    - [Шаблон организационной единицы][organizational_unit_templates]
 
 ## Пример использования шаблона записи
 

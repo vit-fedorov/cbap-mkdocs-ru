@@ -192,7 +192,7 @@ _![Свойства сообщения — путь передачи данны�
 
     _![События отправки сообщения на диаграмме процесса](https://kb.comindware.ru/assets/outgoing_email_configure_send_message_event.png)_
 
-2. В [меню элемента][call_element_menu] события нажмите кнопку «**Свойства**» <i class="fa-light fa-gear">‌</i>.
+2. В [меню элемента][process_diagram_call_element_menu] события нажмите кнопку «**Свойства**» <i class="fa-light fa-gear">‌</i>.
 3. На вкладке «**Основные**» настройте [общие свойства элемента][process_diagram_element_common_properties].
 4. На вкладке «**Дополнительные**» выберите путь передачи данных.
 

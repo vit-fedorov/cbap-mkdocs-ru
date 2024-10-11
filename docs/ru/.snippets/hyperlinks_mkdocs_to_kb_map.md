@@ -156,8 +156,6 @@
 
 [cards_view]: {{ kbArticleURLPrefix }}2404
 
-[call_element_menu]: {{ kbArticleURLPrefix }}2360#mcetoc_1h28cr6421
-
 [cards_view]: {{ kbArticleURLPrefix }}2404
 
 [changelog]: {{ kbArticleURLPrefix }}2634
@@ -289,6 +287,8 @@
 [performance]: {{ kbArticleURLPrefix }}2184
 
 [process_diagram]: {{ kbArticleURLPrefix }}2360
+
+[process_diagram_process_diagram_call_element_menu]: {{ kbArticleURLPrefix }}2360#mcetoc_1h28cr6421
 
 [process_diagram_designer]: {{ kbArticleURLPrefix }}2360#mcetoc_1h2d97s1m0
 

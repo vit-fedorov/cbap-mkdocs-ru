@@ -24,7 +24,7 @@ kbId: 2255
 По умолчанию в качестве заголовка записей используются следующие системные атрибуты:
 
 - в [шаблоне аккаунта][account_templates] — «**Ф. И. О.**» (`fullName`);
-- в [шаблоне записи](record_templates.md) — «**ID**» (`id`);
+- в [шаблоне записи][record_templates] — «**ID**» (`id`);
 - в [шаблоне оргединиц](organizational_unit_templates.md) — «**Название**» (`unitName`);
 - в [шаблоне роли][role_templates] — «**Название**» (`roleName`).
 

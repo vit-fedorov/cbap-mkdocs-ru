@@ -24,7 +24,7 @@ kbId: 2259
 | - **SSH** | `ssh://user@server.ru` |
 | - **Telegram** | `https://t.me/username` |
 | - **Git** | `git://server.ru/repository` |
-- **Вычислять по выражению** — установите этот флажок, чтобы значение атрибута вычислялось во время работы приложения. См. *«[Вычисляемые атрибуты](https://kb.comindware.ru/article.php?id=2254)».*
+- **Вычислять по выражению** — установите этот флажок, чтобы значение атрибута вычислялось во время работы приложения. См. *«[Вычисляемые атрибуты][attribute_calculated]».*
 
 _![Свойства атрибута типа «Гиперссылка»](https://kb.comindware.ru/assets/attribute_hyperlink_properties.png)_
 

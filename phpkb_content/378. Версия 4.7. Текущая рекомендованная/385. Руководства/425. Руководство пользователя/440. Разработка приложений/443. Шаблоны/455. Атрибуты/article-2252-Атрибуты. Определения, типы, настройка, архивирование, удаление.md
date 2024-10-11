@@ -18,9 +18,9 @@ kbId: 2252
 
 - [Общие свойства атрибутов][attribute_common_properties]
 - [Системные атрибуты][attributes_system]
-- [Вычисляемые атрибуты](https://kb.comindware.ru/article.php?id=2254)
-- [Атрибут-заголовок записей шаблона](https://kb.comindware.ru/article.php?id=2255)
-- [Атрибуты для поиска записей шаблона](https://kb.comindware.ru/article.php?id=2247)
+- [Вычисляемые атрибуты][attribute_calculated]
+- [Атрибут-заголовок записей шаблона][attribute_displayed]
+- [Атрибуты для поиска записей шаблона][attribute_searchable]
 - [Аккаунт][attribute_account]
 - [Гиперссылка][attribute_hyperlink]
 - [Дата и время][attribute_date_time]
@@ -28,12 +28,12 @@ kbId: 2252
 - [Документ][attribute_document]
 - [Запись][attribute_record]
 - [Изображение][attribute_image]
-- [Логический](https://kb.comindware.ru/article.php?id=2245)
+- [Логический][attribute_boolean]
 - [Организационная единица][attribute_organizational_unit]
 - [Роль][attribute_role]
 - [Список значений][attribute_enum]
 - [Текст][attribute_text]
-- [Чертёж][drawing_attribute_configure]
+- [Чертёж][attribute_drawing]
 - [Число][attribute_number]
 - [Штрихкод][attribute_barcode]
 

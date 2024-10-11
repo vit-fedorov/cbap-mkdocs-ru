@@ -60,7 +60,7 @@ kbId: 1978
 
 **[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
 
-**[Вычисляемые атрибуты](https://kb.comindware.ru/article.php?id=2254)**
+**[Вычисляемые атрибуты][attribute_calculated]**
 
 **[Общие свойства атрибутов][attribute_common_properties]**
 

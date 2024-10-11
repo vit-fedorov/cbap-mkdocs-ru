@@ -29,6 +29,6 @@ _![Свойства дорожки](https://kb.comindware.ru/assets/lane_general
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
-**[Редактирование диаграммы процесса][call_element_menu]**
+**[Редактирование диаграммы процесса][process_diagram_designer]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

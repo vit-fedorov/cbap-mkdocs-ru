@@ -65,6 +65,6 @@ _![Пример карты и таблицы меток на карте](https:/
 
 **[Карты. Настройка][map_configure]**
 
-**[Динамические элементы формы. Настройка карты][form_dynamic_elements]**
+**[Динамические элементы формы. Настройка карты][form_dynamic_elements_map]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -212,6 +212,8 @@
 
 [form_dynamic_elements_hyperlink]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_hyperlink
 
+[form_dynamic_elements_image]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_image
+
 [form_dynamic_elements_linked_processes]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_linked_processes
 
 [form_dynamic_elements_map]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_map

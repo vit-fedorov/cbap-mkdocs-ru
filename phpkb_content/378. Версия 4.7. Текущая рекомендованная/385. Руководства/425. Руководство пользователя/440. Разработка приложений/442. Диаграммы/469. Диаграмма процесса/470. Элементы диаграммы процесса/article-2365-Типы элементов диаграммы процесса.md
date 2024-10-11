@@ -52,6 +52,6 @@ kbId: 2365
 
 **[Конструктор диаграммы процесса](https://kb.comindware.ru/article.php?id=2356)**
 
-**[Редактирование диаграммы процесса][call_element_menu]**
+**[Редактирование диаграммы процесса][process_diagram]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

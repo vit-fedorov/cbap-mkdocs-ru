@@ -17,7 +17,7 @@ kbId: 2386
 
 1. Перетащите конечное событие с панели элементов на поток управления или пустое место диаграммы.
 2. Будет создано **[простое конечное событие](https://kb.comindware.ru/article.php?id=2387)**.
-3. При необходимости смените [тип события](#mcetoc_1h28cm1740) с помощью [меню элемента][call_element_menu].
+3. При необходимости смените [тип события](#mcetoc_1h28cm1740) с помощью [меню элемента][process_diagram_call_element_menu].
 
 --8<-- "related_topics_heading.md"
 
@@ -25,6 +25,6 @@ kbId: 2386
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
-**[Редактирование диаграммы процесса][call_element_menu]**
+**[Редактирование диаграммы процесса][process_diagram]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

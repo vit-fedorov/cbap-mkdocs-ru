@@ -42,7 +42,7 @@ _![Свойства простого начального события](https:
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
-**[Редактирование диаграммы процесса][call_element_menu]**
+**[Редактирование диаграммы процесса][process_diagram]**
 
 **[`![](https://kb.comindware.ru/images/marker.png)Настройка сценария {Article-ID:2153}`](https://kb.comindware.ru/article.php?id=2153)**
 

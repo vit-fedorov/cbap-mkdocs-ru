@@ -58,7 +58,7 @@ _![Просмотр внутренних уведомлений](https://kb.comi
 
 - [уведомления о задачах с особым текстом][task_notifications];
 - [периодические напоминания об открытых задачах][periodic_task_notifications];
-- [уведомления о задачах по электронной почте][task_notifications].
+- [уведомления о задачах по электронной почте][task_notifications_email].
 
 _![Просмотр уведомлений о задачах](https://kb.comindware.ru/assets/task_notifications_view.png)_
 

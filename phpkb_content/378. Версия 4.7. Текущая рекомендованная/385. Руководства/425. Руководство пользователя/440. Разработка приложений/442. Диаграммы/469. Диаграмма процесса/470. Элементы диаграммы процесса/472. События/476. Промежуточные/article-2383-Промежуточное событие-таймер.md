@@ -52,6 +52,6 @@ _![Дополнительные свойства промежуточного с
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
-**[Редактирование диаграммы процесса][call_element_menu]**
+**[Редактирование диаграммы процесса][process_diagram]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

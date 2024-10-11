@@ -30,9 +30,7 @@
 
 [document_digital_signature]: {{ kbArticleURLPrefix }}2139
 
-[drawing_attribute_configure]: {{ kbArticleURLPrefix }}2575
-
-[drawing_attribute_file_import]: {{ kbArticleURLPrefix }}2574
+[attribute_drawing_file_import]: {{ kbArticleURLPrefix }}2574
 
 [formula_function_list]: {{ kbArticleURLPrefix }}2492
 

@@ -38,7 +38,7 @@ kbId: 2252
 - [Роль][attribute_role]
 - [Список значений][attribute_enum]
 - [Текст][attribute_text]
-- [Чертёж][drawing_attribute_configure]
+- [Чертёж][attribute_drawing]
 - [Число][attribute_number]
 - [Штрихкод][attribute_barcode]
 

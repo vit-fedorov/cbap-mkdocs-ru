@@ -49,6 +49,6 @@ kbId: 2191
 * [Список подключений][connections]
 * [Производительность](performance.md)
 * [Конфигурация журналирования](logging_configuration.md)
-* [Глобальная конфигурация](global_configuration.md)
+* [Глобальная конфигурация][global_configuration]
 * [Адаптеры](adapters.md)
 * [Ключи аутентификации](authentication_key.md)

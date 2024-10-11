@@ -28,12 +28,12 @@ hide:
         - **[Рабочее пространство][navigation_sections_setup]**
     - **Расширенная настройка**
         - **[Резервное копирование][backup]**
-        - **[Общесистемные настройки](global_configuration.md)**
+        - **[Общесистемные настройки][global_configuration]**
     - **Совместная работа**
-        - **[Регистрация и вход](registration_and_login.md)**
+        - **[Регистрация и вход][registration_and_login]**
         - **[Роли в приложении][roles]**
         - **[Системные роли][system_roles]**
-        - **[Аккаунты](accounts.md)**
+        - **[Аккаунты][accounts]**
 
 --8<-- "related_topics_heading.md"
 

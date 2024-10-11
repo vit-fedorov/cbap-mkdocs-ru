@@ -144,7 +144,7 @@ _![Журнал трассировки событий](logs_event_tracing.png)_
 
 --8<-- "related_topics_heading.md"
 
-**[Глобальная конфигурация](global_configuration.md)**
+**[Глобальная конфигурация][global_configuration]**
 
 **[Мониторинг](monitoring.md)**
 

@@ -84,7 +84,7 @@ kbId: 2560
 
 --8<-- "related_topics_heading.md"
 
-**[Глобальная конфигурация](global_configuration.md)**
+**[Глобальная конфигурация][global_configuration]**
 
 **[Пути и содержимое папок экземпляра ПО]({{ kbArticleURLPrefix }}2502)**
 

@@ -234,7 +234,7 @@
 
 [groups]: {{ kbArticleURLPrefix }}2193
 
-[scenario_receive_email]: {{ kbArticleURLPrefix }}2585
+[import_data]: {{ kbArticleURLPrefix }}2555
 
 [kafka_connection]: {{ kbArticleURLPrefix }}2606
 
@@ -349,6 +349,8 @@
 [scenario_actions_validate_expression]: {{ kbArticleURLPrefix }}2346#scenario_actions_validate_expression
 
 [scenario_actions_validate_csharp]: {{ kbArticleURLPrefix }}2346#scenario_actions_validate_csharp
+
+[scenario_receive_email]: {{ kbArticleURLPrefix }}2585
 
 [scenario_send_email]: {{ kbArticleURLPrefix }}2584
 

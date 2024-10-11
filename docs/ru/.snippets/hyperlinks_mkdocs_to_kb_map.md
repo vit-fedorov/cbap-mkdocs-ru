@@ -32,6 +32,8 @@
 
 [attribute_drawing_file_import]: {{ kbArticleURLPrefix }}2574
 
+[formula_use_examples]: {{ kbCategoryURLPrefix }}409
+
 [formula_function_list]: {{ kbArticleURLPrefix }}2492
 
 [formula_introduction]: {{ kbArticleURLPrefix }}2490
@@ -55,6 +57,8 @@
 [manual_csharp]: {{ kbArticleURLPrefix }}2400
 
 [manual_n3]: {{ kbArticleURLPrefix }}2401
+
+[N3_use_examples]: {{ kbCategoryURLPrefix }}408
 
 [office_connection_use]: {{ kbArticleURLPrefix }}2343
 
@@ -133,6 +137,8 @@
 [attributes]: {{ kbArticleURLPrefix }}2252
 
 [attributes_archive]: {{ kbArticleURLPrefix }}2252#attributes_archive
+
+[attributes_configure]: {{ kbArticleURLPrefix }}2252#attributes_configure
 
 [attributes_system]: {{ kbArticleURLPrefix }}2242
 

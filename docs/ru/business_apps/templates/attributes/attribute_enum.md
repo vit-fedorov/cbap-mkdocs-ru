@@ -66,12 +66,12 @@ _![Удаление элементов из списка значений](attri
         - **Формат отображения: Бейдж**
         - **Список значений:**
 
-        |Системное имя|EN|RU|Цвет|Значок|
-        |---|---|---|---|---|
-        |bus|Bus|Автобус|<span style="background-color: #ff0000; color: #ffffff;">#ff0000</span>|<i class="fa-light fa-bus">‌</i> bus|
-        |passengerCar|Car|Легковой автомобиль|<span style="background-color: #0000ff; color: #ffffff;">#0000ff</span>|<i class="fa-light fa-car">‌</i> car|
-        |truck|Truck|Пикап|<span style="background-color: #00ff00;">#00ff00</span>|<i class="fa-light fa-truck">‌</i> truck|
-        |van|Minivan|Микроавтобус|<span style="background-color: #ffff00;">#ffff00</span>|<i class="fa-light fa-van-shuttle">‌</i> van-shuttle|
+        | Системное имя | EN      | RU                  | Цвет                                                                    | Значок                                              |
+        | ------------- | ------- | ------------------- | ----------------------------------------------------------------------- | --------------------------------------------------- |
+        | bus           | Bus     | Автобус             | <span style="background-color: #ff0000; color: #ffffff;">#ff0000</span> | <i class="fa-light fa-bus">‌</i> bus                 |
+        | passengerCar  | Car     | Легковой автомобиль | <span style="background-color: #0000ff; color: #ffffff;">#0000ff</span> | <i class="fa-light fa-car">‌</i> car                 |
+        | truck         | Truck   | Пикап               | <span style="background-color: #00ff00;">#00ff00</span>                 | <i class="fa-light fa-truck">‌</i> truck             |
+        | van           | Minivan | Микроавтобус        | <span style="background-color: #ffff00;">#ffff00</span>                 | <i class="fa-light fa-van-shuttle">‌</i> van-shuttle |
             
 
     **Результирующее поведение**

@@ -104,6 +104,8 @@
 
 [attribute_calculated]: {{ kbArticleURLPrefix }}2254
 
+[attribute_color]: {{ kbArticleURLPrefix }}2627
+
 [attribute_date_time]: {{ kbArticleURLPrefix }}2246
 
 [attribute_displayed]: {{ kbArticleURLPrefix }}2255

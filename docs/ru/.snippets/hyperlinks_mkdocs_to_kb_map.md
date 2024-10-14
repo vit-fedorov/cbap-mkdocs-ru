@@ -158,9 +158,9 @@
 
 [button_local_variables]: {{ kbArticleURLPrefix }}2276#button_local_variables
 
-[cards]: {{ kbArticleURLPrefix }}2402
+[cards_configure]: {{ kbArticleURLPrefix }}2402
 
-[cards_view]: {{ kbArticleURLPrefix }}2404
+[cards_configure_assign_to_table]: {{ kbArticleURLPrefix }}2402#cards_configure_assign_to_table
 
 [cards_view]: {{ kbArticleURLPrefix }}2404
 

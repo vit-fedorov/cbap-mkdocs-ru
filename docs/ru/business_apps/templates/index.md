@@ -27,7 +27,7 @@ kbId: 2219
 
 - [общие свойства шаблона](template_common_properties.md);
 - [таблицы](table_definition.md) для отображения данных;
-- [карточки](cards_assign_to_table.md);
+- [карточки][cards_configure_assign_to_table];
 - [формы][forms] для просмотра и ввода данных;
 - [кнопки][buttons] для выполнения операций в приложении;
 - [области кнопок](button_area.md) для форм и таблиц.

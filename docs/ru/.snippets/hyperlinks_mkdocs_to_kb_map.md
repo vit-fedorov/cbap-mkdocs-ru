@@ -150,7 +150,7 @@
 
 [button_area]: {{ kbArticleURLPrefix }}2545
 
-[button_area_configure]: {{ kbArticleURLPrefix }}2545#mcetoc_1him01s6g3
+[button_area_configure]: {{ kbArticleURLPrefix }}2545#button_area_configure
 
 [buttons]: {{ kbArticleURLPrefix }}2276
 
@@ -261,6 +261,8 @@
 [my_tasks]: {{ kbArticleURLPrefix }}2282
 
 [my_tasks_page_configure]: {{ kbArticleURLPrefix }}2411
+
+[my_tasks_page_configure_add_to_navigation]: {{ kbArticleURLPrefix }}2411#my_tasks_page_configure_add_to_navigation
 
 [navigation_panel]: {{ kbArticleURLPrefix }}2283
 
@@ -392,7 +394,7 @@
 
 [table_personal_use]: {{ kbArticleURLPrefix }}2551
 
-[tables]: {{ kbArticleURLPrefix }}2548
+[table_configure]: {{ kbArticleURLPrefix }}2548
 
 [task_notifications]: {{ kbArticleURLPrefix }}2567
 
@@ -403,6 +405,8 @@
 [templates_move]: {{ kbArticleURLPrefix }}2219#templates_move
 
 [templates_archive_unarchive]: {{ kbArticleURLPrefix }}2219#templates_archive_unarchive
+
+[template_common_properties]: {{ kbArticleURLPrefix }}2225
 
 [themes]: {{ kbArticleURLPrefix }}2199
 

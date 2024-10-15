@@ -30,7 +30,7 @@ importPathDefault = 'phpkb_content'
 importPath = input(f'Path to import (default `{importPathDefault}`): ') 
 KB_DIR = os.path.dirname(importPath) if importPath else importPathDefault
 TOTAL_PAGES_IMPORTED = 0
-CONNECTION = ''
+CONNECTION = None
 docs_ru_folder = 'docs/ru'
 hyperlinks_file = os.path.join(docs_ru_folder, '.snippets/hyperlinks_mkdocs_to_kb_map.md')
 
@@ -95,13 +95,13 @@ def importCategoryChildren(parent, categoryDirectory):
 def importArtciclesInCategory (categoryId, categoryDir):
     c = CONNECTION.cursor()
     #c2 = CONNECTION.cursor()
-    c.execute("""
+    c.execute(f"""
             SELECT DISTINCT (phpkb_articles.article_id), phpkb_articles.article_content, phpkb_articles.article_title 
             FROM phpkb_articles, phpkb_relations, phpkb_categories 
             WHERE article_show='yes' 
             AND phpkb_relations.category_id = {categoryId} 
             AND phpkb_relations.article_id = phpkb_articles.article_id
-            """.format(categoryId = categoryId))
+            """)
     
     articles = c.fetchall()
     global TOTAL_PAGES_IMPORTED
@@ -109,8 +109,9 @@ def importArtciclesInCategory (categoryId, categoryDir):
     for id, content, title in articles:
      
         # if os.path.exists(os.path.join(categoryDir, "article-{id}-{title}.md".format( id=id, title= sanitize_filename(title))): continue
-        filename = os.path.join(categoryDir, "article-{id}-{title}.md".format( id=id, title= sanitize_filename(title)))
-        filename_html = os.path.join(categoryDir, "article-{id}-{title}.html".format( id=id, title= sanitize_filename(title)))
+        sanitizedTitle=sanitize_filename(title)
+        filename = os.path.join(categoryDir, f"article-{id}-{sanitizedTitle}.md")
+        filename_html = os.path.join(categoryDir, f"article-{id}-{sanitizedTitle}.html")
         print ('    Importing article: ' + filename)
         
         with open(filename, "w+") as b:
@@ -143,11 +144,11 @@ def importArtciclesInCategory (categoryId, categoryDir):
             # Compile and add frontmatter
             frontmatter = '\n'.join([
                 '---',
-                'title: {}',
-                'kbId: {}',
+                f'title: {title}',
+                f'kbId: {id}',
                 '---',
                 '\n'
-                ]).format(title, id)
+                ])
             # Add link map to the bottom
             footer = '{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}\n'
             markdown = frontmatter + markdown + footer
@@ -167,7 +168,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
                 foundArticle = c.fetchall()
                 if foundArticle:
                     articleName = foundArticle[0][0]
-                    replacementRegex = r'[{0}](https://kb.comindware.ru/article.php?id=\2)'.format(articleName)
+                    replacementRegex = fr'[{articleName}](https://kb.comindware.ru/article.php?id=\2)'
                     markdown = re.sub(pattern, replacementRegex, markdown, count=1)
             # Replace article links in markdown with URL from hyperlinks map
             pattern = r'\(https://kb\.comindware\.ru.+?((article.php\?id=)|-)(\d+)(?(2)|\.html)(#?)(.*?)\)'
@@ -211,7 +212,7 @@ def fetchCategories(show='yes', status='public', language_id=2, parent_id=''):
 def listCategories(categories):
     index = 1
     for id, title, parent_id in categories:
-        print("{}. {}. {}".format(index, id, title))
+        print(f"{index}. {id}. {title}")
         index += 1
 
 def main():

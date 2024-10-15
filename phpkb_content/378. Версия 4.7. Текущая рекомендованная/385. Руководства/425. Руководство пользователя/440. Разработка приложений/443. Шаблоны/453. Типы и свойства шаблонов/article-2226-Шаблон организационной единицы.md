@@ -18,13 +18,13 @@ kbId: 2226
 
 ## Свойства шаблона оргединицы
 
-У шаблона организационной единицы предусмотрены только [общие свойства](https://kb.comindware.ru/article.php?id=2225).
+У шаблона организационной единицы предусмотрены только [общие свойства][template_common_properties].
 
 _![Свойства шаблона организационной единицы](https://kb.comindware.ru/assets/organizational_unit_templates_properties.png)_
 
 --8<-- "related_topics_heading.md"
 
-**[Общие свойства шаблонов](https://kb.comindware.ru/article.php?id=2225)**
+**[Общие свойства шаблонов][template_common_properties]**
 
 **[Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление][templates]**
 

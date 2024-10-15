@@ -22,13 +22,13 @@ kbId: 2223
 
 ## Свойства шаблона аккаунта
 
-У шаблона аккаунта предусмотрены только [общие свойства](https://kb.comindware.ru/article.php?id=2225).
+У шаблона аккаунта предусмотрены только [общие свойства][template_common_properties].
 
 _![Свойства шаблона аккаунта](https://kb.comindware.ru/assets/account_templates_properties.png)_
 
 --8<-- "related_topics_heading.md"
 
-**[Общие свойства шаблонов](https://kb.comindware.ru/article.php?id=2225)**
+**[Общие свойства шаблонов][template_common_properties]**
 
 **[Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление][templates]**
 

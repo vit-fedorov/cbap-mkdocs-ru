@@ -19,7 +19,7 @@ kbId: 2220
 
 ## Свойства шаблона роли
 
-У шаблона роли предусмотрены только [общие свойства](https://kb.comindware.ru/article.php?id=2225).
+У шаблона роли предусмотрены только [общие свойства][template_common_properties].
 
 _![Свойства шаблона роли](https://kb.comindware.ru/assets/role_templates_properties.png)_
 
@@ -27,7 +27,7 @@ _![Свойства шаблона роли](https://kb.comindware.ru/assets/rol
 
 **[Роли в приложении. Определения, настройка, объединение, удаление][roles]**
 
-**[Общие свойства шаблонов](https://kb.comindware.ru/article.php?id=2225)**
+**[Общие свойства шаблонов][template_common_properties]**
 
 **[Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление][templates]**
 

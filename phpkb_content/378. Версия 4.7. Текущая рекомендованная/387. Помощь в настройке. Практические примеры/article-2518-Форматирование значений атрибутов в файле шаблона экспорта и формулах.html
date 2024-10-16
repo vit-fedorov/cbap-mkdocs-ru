@@ -45,7 +45,7 @@
 <div class="notice notice-info">
 <p class="admonition-title">Примечание</p>
 <p>Аналогичным образом можно форматировать числа при использовании функции <code>FORMAT()</code>, например:</p>
-<pre><code>FORMAT("{0:N2}",LIST($numberAttributeSystemName)</code></pre>
+<pre><code>FORMAT("{0:N2}",LIST($numberAttributeSystemName))</code></pre>
 </div>
 <h2 id="mcetoc_1hhh1ic4f2">Форматирование дат и времени</h2>
 <p>Значение атрибута типа «<strong>Дата и время</strong>» экспортируется в документ Word как текст.</p>
@@ -57,7 +57,7 @@
 <div class="notice notice-info">
 <p class="admonition-title">Примечание</p>
 <p>Аналогичным образом можно форматировать даты и время при использовании функций <code>FORMAT()</code> и <code>FORMATLOC()</code>, например:</p>
-<pre><code>FORMAT("{0:dddd, dd MMMM yyyy 'г.'}",LIST($dateAttributeSystemName)</code></pre>
+<pre><code>FORMAT("{0:dddd, dd MMMM yyyy 'г.'}",LIST($dateAttributeSystemName))</code></pre>
 </div>
 <h3 id="mcetoc_1hhha06mh1">Примеры форматирования дат и времени</h3>
 <div class="table-responsive">
@@ -369,7 +369,7 @@
 <div class="notice notice-info">
 <p class="admonition-title">Примечание</p>
 <p>Аналогичным образом можно форматировать даты и время при использовании функций <code>FORMAT()</code> и <code>FORMATLOC()</code>, например:</p>
-<pre><code>FORMAT("{0:dd' д. 'hh':'mm':'ss}",LIST($durationAttributeSystemName)</code></pre>
+<pre><code>FORMAT("{0:dd' д. 'hh':'mm':'ss}",LIST($durationAttributeSystemName))</code></pre>
 </div>
 <h3 id="mcetoc_1hhhac5793">Примеры форматирования значений длительности</h3>
 <div class="table-responsive">
@@ -483,7 +483,7 @@
 <h2 id="mcetoc_1hhh1kfe44">Форматирование логических значений</h2>
 <p>Значение атрибута типа «<strong>Логический</strong>» экспортируется как строка «<em>Истина» </em>или <em>«Ложь</em>».</p>
 <p>Для экспорта значения в другом виде (например, <code>"Согласовано","Не согласовано"</code>) можно привести его к требуемому формату. Для этого создайте новый текстовый атрибут и сделайте его вычисляемым с помощью формулы, например:</p>
-<pre><code>FORMAT("{0}",LIST(IF($attributeSystemName == true,"Согласовано","Не согласовано"))</code></pre>
+<pre><code>FORMAT("{0}",LIST(IF($attributeSystemName == true,"Согласовано","Не согласовано")))</code></pre>
 <h2 id="mcetoc_1hhh1u2qs5">Форматирование данных аккаунта</h2>
 <p>Посредством атрибута типа «<strong>Аккаунт</strong>» можно экспортировать данные пользователя (значения атрибутов аккаунта), например, адрес эл. почты и должность.</p>
 <p>При этом можно форматировать значения атрибутов. Например:</p>

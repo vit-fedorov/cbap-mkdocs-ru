@@ -7,7 +7,7 @@ kbId: 2518
 
 ## Введение
 
-В **{{ productName }}** предусмотрена возможность выгрузки данных записи в шаблон Word, Excel или PDF. Cм. «[Подготовка файла шаблона экспорта](https://kb.comindware.ru/article.php?id=2352)».
+В **{{ productName }}** предусмотрена возможность выгрузки данных записи в шаблон Word, Excel или PDF. Cм. «[Подготовка файла шаблона экспорта][export_template_file_configure]».
 
 В файле шаблона экспорта используются заполнители в фигурных скобках вида `{attributeSystemName}`, где `attributeSystemName` — системное имя атрибута.
 
@@ -32,7 +32,7 @@ kbId: 2518
 Аналогичным образом можно форматировать числа при использовании функции `FORMAT()`, например:
 
 ```
-FORMAT("{0:N2}",LIST($numberAttributeSystemName)
+FORMAT("{0:N2}",LIST($numberAttributeSystemName))
 ```
 
 ## Форматирование дат и времени
@@ -50,7 +50,7 @@ FORMAT("{0:N2}",LIST($numberAttributeSystemName)
 Аналогичным образом можно форматировать даты и время при использовании функций `FORMAT()` и `FORMATLOC()`, например:
 
 ```
-FORMAT("{0:dddd, dd MMMM yyyy 'г.'}",LIST($dateAttributeSystemName)
+FORMAT("{0:dddd, dd MMMM yyyy 'г.'}",LIST($dateAttributeSystemName))
 ```
 
 ### Примеры форматирования дат и времени
@@ -130,7 +130,7 @@ FORMAT("{0:dddd, dd MMMM yyyy 'г.'}",LIST($dateAttributeSystemName)
 Аналогичным образом можно форматировать даты и время при использовании функций `FORMAT()` и `FORMATLOC()`, например:
 
 ```
-FORMAT("{0:dd' д. 'hh':'mm':'ss}",LIST($durationAttributeSystemName)
+FORMAT("{0:dd' д. 'hh':'mm':'ss}",LIST($durationAttributeSystemName))
 ```
 
 ### Примеры форматирования значений длительности
@@ -171,7 +171,7 @@ FORMAT("{0:dd' д. 'hh':'mm':'ss}",LIST($durationAttributeSystemName)
 Для экспорта значения в другом виде (например, `"Согласовано","Не согласовано"`) можно привести его к требуемому формату. Для этого создайте новый текстовый атрибут и сделайте его вычисляемым с помощью формулы, например:
 
 ```
-FORMAT("{0}",LIST(IF($attributeSystemName == true,"Согласовано","Не согласовано"))
+FORMAT("{0}",LIST(IF($attributeSystemName == true,"Согласовано","Не согласовано")))
 ```
 
 ## Форматирование данных аккаунта
@@ -225,9 +225,9 @@ FORMAT("{0}",LIST(IF($attributeSystemName == true,"Согласовано","Не
 
 --8<-- "related_topics_heading.md"
 
-**[Системные имена атрибутов аккаунтов](https://kb.comindware.ru/article.php?id=2599)**
+**[Системные имена атрибутов аккаунтов][account_attribute_system_names]**
 
-**[Подготовка файла шаблона экспорта](https://kb.comindware.ru/article.php?id=2352)**
+**[Подготовка файла шаблона экспорта][export_template_file_configure]**
 
 **[Список функций языка формул Comindware][formula_function_list]**
 

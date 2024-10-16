@@ -97,7 +97,7 @@ kbId: 2038
 
 Настройка пути к файлам резервной копии
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Резервное копирование. Настройка и запу{{ productName }}.comindware.ru/article.php?id=2190)**
 

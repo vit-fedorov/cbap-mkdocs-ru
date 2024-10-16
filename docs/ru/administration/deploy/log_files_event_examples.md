@@ -1199,6 +1199,6 @@ data: {"Name":"XxxSenderAdapter","Description":"Адаптер для связи
 - `Platform key: XXX_AdapterAgent5b28ad88a4cb4d4f8078c4deef1ee08b; Service name: ServiceName; Runtime: .NET 6.0.21` — контекст события
 - `data: {}` — содержимое сообщения
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Подсистема журналирования][logging_engine]**

@@ -222,6 +222,8 @@
 
 [forms]: {{ kbArticleURLPrefix }}2271
 
+[form_designer]: {{ kbArticleURLPrefix }}2271#form_designer
+
 [form_dynamic_elements]: {{ kbArticleURLPrefix }}2531
 
 [form_dynamic_elements_account]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_account

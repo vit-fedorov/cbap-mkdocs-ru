@@ -14,6 +14,8 @@
 
 [attribute_enum_calculate_registry]: {{ kbArticleURLPrefix }}2571
 
+[account_attribute_system_names]: {{ kbArticleURLPrefix }}2599
+
 [backup_and_restore]: {{ kbArticleURLPrefix }}2579
 
 [backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
@@ -51,6 +53,10 @@
 [experimental_functions_support]: {{ kbArticleURLPrefix }}1339#mcetoc_1hsfq7ksu2
 
 [experessions_intro]: {{ kbArticleURLPrefix }}2493
+
+[export_template_csharp_configure]: {{ kbArticleURLPrefix }}1942
+
+[export_template_csharp_collection_download]: {{ kbArticleURLPrefix }}1944
 
 [integration_examples]: {{ kbCategoryURLPrefix }}530
 
@@ -199,6 +205,18 @@
 [scenario_receive_email]: {{ kbArticleURLPrefix }}2586
 
 [export_templates]: {{ kbArticleURLPrefix }}2349
+
+[export_template_button_configure]: {{ kbArticleURLPrefix }}2348
+
+[export_template_file_configure]: {{ kbArticleURLPrefix }}2352
+
+[export_template_file_configure_fonts]: {{ kbArticleURLPrefix }}2352#export_template_file_configure_fonts
+
+[export_template_file_configure_output_filename]: {{ kbArticleURLPrefix }}2352#export_template_file_configure_output_filename
+
+[export_template_file_example]: {{ kbArticleURLPrefix }}2353
+
+[export_template_file_formula_format_values]: {{ kbArticleURLPrefix }}2518
 
 [expression_debug]: {{ kbArticleURLPrefix }}2636
 

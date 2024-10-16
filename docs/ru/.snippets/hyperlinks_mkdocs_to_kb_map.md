@@ -212,8 +212,6 @@
 
 [export_template_file_configure_fonts]: {{ kbArticleURLPrefix }}2352#export_template_file_configure_fonts
 
-[export_template_file_configure_output_filename]: {{ kbArticleURLPrefix }}2352#export_template_file_configure_output_filename
-
 [export_template_file_example]: {{ kbArticleURLPrefix }}2353
 
 [export_template_file_formula_format_values]: {{ kbArticleURLPrefix }}2518

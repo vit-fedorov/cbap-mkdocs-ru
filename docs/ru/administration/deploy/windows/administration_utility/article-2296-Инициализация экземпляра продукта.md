@@ -58,7 +58,7 @@ kbId: 2296
 Начальная страница Comindware Business Application Platform
 16. На этом этапе развёртывание экземпляра продукта завершено и можно приступать к созданию и использованию приложений.
 
-## Связанные статьи{{ productName }}
+--8<-- "related_topics_heading.md"{{ productName }}
 
 ***[Установка продукта Comindware Business Application Platform](https://kb.comindware.ru/article.php?id=2028)***
 

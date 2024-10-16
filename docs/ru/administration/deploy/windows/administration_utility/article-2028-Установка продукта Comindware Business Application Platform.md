@@ -87,7 +87,7 @@ kbId: 2028
 "C:\Program Files\Elasticsearch\elasticsearch-<номер.версии>\bin\elasticsearch-service.bat" start
 ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Настройка конфигурации Утилиты администрирования Comindware](https://kb.comindware.ru/article.php?id=2029)**
 

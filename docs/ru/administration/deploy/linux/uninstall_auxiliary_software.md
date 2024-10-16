@@ -814,7 +814,7 @@ kbId: 2596
     rm /var/www/.cmw_environment/nginx
     ```
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Пути и содержимое папок экземпляра ПО][paths]**
 

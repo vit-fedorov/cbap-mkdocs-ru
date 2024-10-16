@@ -212,7 +212,7 @@ tar -cvjf backup_$now.tar.bz2 /var/www/backups/backup_$now
 
 3.8. Перенесите архив с резервной копией во внешнее хранилище.
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 ***[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии](https://kb.comindware.ru/article.php?id=2335)***
 

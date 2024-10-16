@@ -444,7 +444,7 @@ _[https://github.com/NLog/NLog/wiki/EventLog-target](https://github.com/NLog/NLo
 
 6. Перезагрузите экземпляр ПО, чтобы изменения вступили в силу. См. раздел _[Настройка конфигурации Утилиты администрирования Comindware][administration_utility_configure]_.
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 
 **[Примеры событий в файловых журналах][log_files_event_examples]**
 

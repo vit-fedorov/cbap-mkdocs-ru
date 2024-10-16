@@ -94,7 +94,8 @@ systemctl restart comindwareinstancename
 
 Если во время дефрагментации возникнет ошибка «Слишком много открытых файлов» (Too many open files), выполните указанные ниже шаги (пример для Astra Linux).
 
-1. Добавьте в файл `/etc/security/limits.conf` строки:
+1. Добавьте в файл `/etc/security/limits.conf` строки:
+
 
 ```
 * soft nproc 65535   
@@ -106,34 +107,40 @@ www-data hard nproc 200000
 www-data soft nofile 200000   
 www-data hard nofile 200000
 ```
-2. Добавьте в файл `/etc/pam.d/common-session` строку:
+2. Добавьте в файл `/etc/pam.d/common-session` строку:
+
 
 ```
 session required pam_limits.so
 ```
-3. Добавьте в файл `/etc/sysctl.conf` строку:
+3. Добавьте в файл `/etc/sysctl.conf` строку:
+
 
 ```
 fs.file-max = 2097152
 ```
-4. Раскомментируйте строку и задайте значение в файле `/etc/systemd/user.conf`:
+4. Раскомментируйте строку и задайте значение в файле `/etc/systemd/user.conf`:
+
 
 ```
 DefaultLimitNOFILE=65536
 ```
-5. Раскомментируйте строку и задайте значение в файле `/etc/systemd/system.conf`:
+5. Раскомментируйте строку и задайте значение в файле `/etc/systemd/system.conf`:
+
 
 ```
 DefaultLimitNOFILE=65536
 ```
-6. Откройте для редактирования конфигурацию сервиса экземпляра ПО: 
+6. Откройте для редактирования конфигурацию сервиса экземпляра ПО: 
+
 
 ```
 systemctl edit comindwareinstancename.service
 ```
-7. Добавьте в него строки:
+7. Добавьте в него строки:
 
-```
+
+--8<-- "related_topics_heading.md"
 [Service]    
 LimitNOFILE=65536    
 LimitNOFILESoft=65536

@@ -65,7 +65,7 @@ msiexec /i "D:\Platform.Install.msi" INSTALLFOLDER="D:\Comindware Install and Ad
 
 Главное окно Утилиты администрирования
 
-## Связанные статьи
+--8<-- "related_topics_heading.md"
 {{ productName }}
 **[Установка продукта Comindware Business Application Platform](https://kb.comindware.ru/article.php?id=2028)**
 

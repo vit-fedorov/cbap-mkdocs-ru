@@ -182,6 +182,8 @@
 
 [log_files_event_examples]: {{ kbArticleURLPrefix }}2516
 
+[logging_configuration]: {{ kbArticleURLPrefix }}2186
+
 [logging_engine]: {{ kbArticleURLPrefix }}2501
 
 [logging_engine_audit_log]: {{ kbArticleURLPrefix }}2501#logging_engine_audit_log
@@ -225,6 +227,8 @@
 [service_call_task]: {{ kbArticleURLPrefix }}2609
 
 [service_call_task_properties]:{{ kbArticleURLPrefix }}2609#mcetoc_1h28bak441
+
+[performance]: {{ kbArticleURLPrefix }}2184
 
 [process_diagram]: {{ kbArticleURLPrefix }}2360
 
@@ -314,7 +318,19 @@
 
 [using_gantt_chart]: {{ kbArticleURLPrefix }}2108
 
+[administration_utility_configure]: {{ kbArticleURLPrefix }}2029
+
 [variables]: {{ kbArticleURLPrefix }}2207
+
+[version_control]: {{ kbArticleURLPrefix }}2217
+
+[version_control_git]: {{ kbArticleURLPrefix }}2216
+
+[version_control_manual]: {{ kbArticleURLPrefix }}2218
+
+[version_control_app_prepare]: {{ kbArticleURLPrefix }}2217#version_control_app_prepare
+
+[version_control_git]: {{ kbArticleURLPrefix }}2216
 
 [wsfederation_connection]: {{ kbArticleURLPrefix }}2560
 

@@ -98,9 +98,9 @@ kbId: 2516
 - `POST` — тип запроса
 - `accountFormChanges` — тело запроса с данными учётной записи:
     - `"PasswordHash":"XXXXXX"` — хэш пароля
-    - `"DataformChanges":{``"WidgetChanges":[{}]``}` — поля формы учётной записи
-        - `"ObjId":"``n``ull``"` — идентификатор временной записи
-        - `"TempId":"cmw.temp.``I``D``"` — идентификатор временной записи
+    - `"DataformChanges":{"WidgetChanges":[{}]}` — поля формы учётной записи
+        - `"ObjId":"null"` — идентификатор временной записи
+        - `"TempId":"cmw.temp.ID"` — идентификатор временной записи
         - `"TypeId":"cmw.account.Account"` — тип создаваемого объекта: учётная запись
         - `"Changes":{}` — данные учетной записи
             - `FULL_NAME` — Ф. И. О. пользователя
@@ -194,7 +194,7 @@ Stack:
 - `Service name: "DataformService"` — наименование службы, обрабатывавшей веб-запрос
 - `Method name: "ApplyChangesAndQueryData"` — наименование метода запроса
 - `Parameters list` — массив параметров запроса
-    - `"``Changes``"``:{}` — данные учётной записи
+    - `"Changes":{}` — данные учётной записи
         - `"WidgetChanges":[{}]` — массив полей формы учётной записи
         - `"ObjId":"cmw.temp.ID"` — идентификатор временной записи
         - `"TempId":"cmw.temp.150"` — идентификатор временной записи
@@ -277,7 +277,7 @@ Stack:
 - `query` — тело запроса с данными учётной записи
     - `"ObjId":"account.ID"` — идентификатор учётной записи
     - `"TypeId":"cmw.account.Account"` — тип объекта: учётная записи
-    - `"Changes":{"cmw.account.form.group2flag1":{"Origin":4,"Literal":``false``,"Time":1698244978684}}` — отключение учётной записи: `"Literal":``false`
+    - `"Changes":{"cmw.account.form.group2flag1":{"Origin":4,"Literal":false,"Time":1698244978684}}` — отключение учётной записи: `"Literal":false`
     - `"ObjId":"account.ID"` — идентификатор временной записи
     - `"RootObjId":"account.ID"` — идентификатор временной записи
 - `OK` — статус обработки запроса
@@ -307,7 +307,7 @@ Stack:
     - `"WidgetChanges":[{}]` — поля формы учётной записи
     - `"ObjId":"account.ID"` — идентификатор учётной записи
     - `"TypeId":"cmw.account.Account"` — тип объекта: учётная запись
-    - `"Changes":{"cmw.account.form.group2flag1":{"Origin":4,"Literal":``true``,"Time":1698245267640}}` — включение учётной записи: `"Literal":``true`
+    - `"Changes":{"cmw.account.form.group2flag1":{"Origin":4,"Literal":true,"Time":1698245267640}}` — включение учётной записи: `"Literal":true`
     - `"RootObjId":"account.ID"` — идентификатор временной записи
 - `OK` — статус обработки запроса
 - `hh:mm:ss.SSS` — длительность обработки запроса
@@ -332,9 +332,9 @@ Stack:
 - `POST` — тип запроса
 - `accountFormChanges` — тело запроса с данными учётной записи:
     - `"PasswordHash":"XXXXXXX"` — хэш нового пароля
-    - `"DataformChanges":{"WidgetChanges":[{``}]}` — поля формы учётной записи
+    - `"DataformChanges":{"WidgetChanges":[{}]}` — поля формы учётной записи
     - `"TypeId":"cmw.account.Account"` — тип объекта: учётная запись
-    - `"``Changes``"``:{}` — данные учётной записи
+    - `"Changes":{}` — данные учётной записи
         - `"ObjId":"account.ID"` — идентификатор учётной записи
         - `"Id":"account.ID"` — идентификатор учётной записи
 
@@ -483,12 +483,12 @@ Stack:
 - `XXX.XXX.XXX.XXX` — IP-адрес сервера
 - `http://SERVER_URL/api/RolesCollectionApi/Put` — путь к методу API для изменения роли
 - `PUT` — тип запроса
-- `r``ole` — тело запроса:
+- `role` — тело запроса:
     - `"Id":"role.ID"` — идентификатор роли
     - `"Name":"Role Name"` — название роли
     - `"Alias":"RoleSystemName"` — системное имя роли
-    - `"Workspace":{"Id":"workspace.``ID``","Name":"Workspace Name"}` — свойства раздела навигации, к которому привязана системная роль
-    - `"Solution":"sln.``ID``"` — идентификатор приложения
+    - `"Workspace":{"Id":"workspace.ID","Name":"Workspace Name"}` — свойства раздела навигации, к которому привязана системная роль
+    - `"Solution":"sln.ID"` — идентификатор приложения
     - `"IsPredefined":false` — непредустановленная роль
     - `"RoleType":1` — тип роли:
         - 0 — системная стандартная
@@ -496,25 +496,25 @@ Stack:
         - 2 — системная пользовательская
         - `"Members":[]` — массив идентификаторов учётных записей и групп, входящих в роль
     - `"RootResource":{}` — приложение, к ресурсам которого роль задаёт разрешения
-    - `"Children":[{"Name":"``Resource name``","Children":[],"Target":"``resource``.``ID``","TargetType":``XX``,"Privileges":``XXX``,"AvailablePrivileges":``XXX``}]`— массив ресурсов, к которым роль задаёт разрешения
+    - `"Children":[{"Name":"Resource name","Children":[],"Target":"resource.ID","TargetType":XX,"Privileges":XXX,"AvailablePrivileges":XXX}]`— массив ресурсов, к которым роль задаёт разрешения
         - `"Target":"resource.ID"` — идентификатор ресурса
         - `"TargetType":XX` — код типа ресурса
         - `"Privileges":XXX` — код установленных разрешений
         - `"AvailablePrivileges":XXX` — код доступных разрешений
 - `Разрешение добавлено в роль` — описание события
-- `'{"Privilege":"Read","Role":"[``applicationSystemName``] RoleSystemName","RoleType":"BusinessApp","Resource":"[``ParentSystemName``]` `ResourceSystemName","ResourceType":"RecordTemplate"}'` — тело запроса:
+- `'{"Privilege":"Read","Role":"[applicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName]` `ResourceSystemName","ResourceType":"RecordTemplate"}'` — тело запроса:
     - `"Privilege":"Read"` — тип добавленного разрешения:
         - `Create` — создание
         - `Delete` — удаление
         - `Read` — чтение
         - `Update` — запись
-    - `"Role":"[``ApplicationSystemName``] RoleSystemName"` — свойства роли:
+    - `"Role":"[ApplicationSystemName] RoleSystemName"` — свойства роли:
         - `ApplicationSystemName` — системное имя приложения
         - `RoleSystemName` — системное имя роли
     - `"RoleType":"BusinessApp"` — тип роли:
         - `BusinessApp` — роль в приложении
         - `System` — системная
-    - `"Resource":"[``ParentSystemName``] ResourceSystemName"` путь к ресурсу, на доступ к которому предоставлено разрешение:
+    - `"Resource":"[ParentSystemName] ResourceSystemName"` путь к ресурсу, на доступ к которому предоставлено разрешение:
         - `parentSystemName` — системное имя родительского ресурса
         - `ResourceSystemName` — системное имя ресурса
     - `"ResourceType":"RecordTemplate"` — тип ресурса, на доступ к которому предоставлено разрешение:
@@ -562,8 +562,8 @@ Stack:
     - `"Id":"role.ID"` — идентификатор роли
     - `"Name":"Role Name"` — название роли
     - `"Alias":"RoleSystemName"` — системное имя роли
-    - `"Workspace":{"Id":"workspace.``ID``","Name":"Workspace Name"}` — свойства раздела навигации, к которому
-    - `"Solution":"sln.``ID``"` — идентификатор приложения
+    - `"Workspace":{"Id":"workspace.ID","Name":"Workspace Name"}` — свойства раздела навигации, к которому
+    - `"Solution":"sln.ID"` — идентификатор приложения
     - `"IsPredefined":false` — непредустановленная роль
     - `"RoleType":1` — тип роли:
         - 0 — системная предустановленная
@@ -573,12 +573,12 @@ Stack:
     - `"RootResource":{}` — объект корневого ресурса, к которому роль задаёт разрешения: приложение
     - `"Children":[{}]` — массив объектов с ресурсами, к которым роль задаёт разрешения
 - Аккаунт добавлен в роль — описание события
-- `'{"User":"username",``"Role":"[ApplicationSystemName] RoleSystemName"``,"RoleType":"BusinessApp"}'` — тело запроса:
-    - - `"``User``":"``username``"` — имя пользователя
+- `'{"User":"username","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp"}'` — тело запроса:
+    - - `"User":"username"` — имя пользователя
         - `"Role":"[ApplicationSystemName] RoleSystemName"` — свойства роли:
             - `systemSolution` — системное имя приложения
             - `RoleSystemName` — системное имя роли
-        - `"RoleType":"``BusinessApp``"` — тип роли:
+        - `"RoleType":"BusinessApp"` — тип роли:
             - `BusinessApp` — роль в приложении
             - `System` — системная роль
 - `OK` — статус обработки запроса
@@ -622,8 +622,8 @@ Stack:
     - `"Id":"role.ID"` — идентификатор роли
     - `"Name":"Role Name"` — название роли
     - `"Alias":"RoleSystemName"` — системное имя роли
-    - `"Workspace":{"Id":"workspace.``ID``","Name":"Workspace Name"}` — свойства раздела навигации, к которому
-    - `"Solution":"sln.``ID``"` — идентификатор приложения
+    - `"Workspace":{"Id":"workspace.ID","Name":"Workspace Name"}` — свойства раздела навигации, к которому
+    - `"Solution":"sln.ID"` — идентификатор приложения
     - `"IsPredefined":false` — непредустановленная роль
     - `"RoleType":1` — тип роли:
         - 0 — системная предустановленная
@@ -633,12 +633,12 @@ Stack:
     - `"RootResource":{}` — объект корневого ресурса, к которому роль задаёт разрешения: приложение
     - `"Children":[{}]` — массив объектов с ресурсами, к которым роль задаёт разрешения
 - Аккаунт удален из роли — описание события
-- `'{"User":"username",``"Role":"[ApplicationSystemName] RoleSystemName"``,"RoleType":"BusinessApp"}'` — тело запроса:
+- `'{"User":"username","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp"}'` — тело запроса:
     - `"User":"username"` — имя пользователя
-    - `"Role":"[``ApplicationSystemName``] RoleSystemName"` — свойства роли:
+    - `"Role":"[ApplicationSystemName] RoleSystemName"` — свойства роли:
         - `ApplicationSystemName` — системное имя приложения
         - `RoleSystemName` — системное имя роли
-    - `"``RoleType``":"``BusinessApp``"` — тип роли:
+    - `"RoleType":"BusinessApp"` — тип роли:
         - `BusinessApp` — роль в приложении
         - `System` — системная роль
 - `OK` — статус обработки запроса
@@ -716,8 +716,8 @@ Stack:
 
 **Чтение свойств шаблона записи**
 
-- `http://SERVER_URL/api/TemplatesApi/Get/oa.``ID` — путь к методу API для чтения шаблона записи
-- `http://SERVER_URL/api/RecordTypeContextApi?recordTypeId=oa.``ID` — путь к методу API для чтения свойств шаблона записи
+- `http://SERVER_URL/api/TemplatesApi/Get/oa.ID` — путь к методу API для чтения шаблона записи
+- `http://SERVER_URL/api/RecordTypeContextApi?recordTypeId=oa.ID` — путь к методу API для чтения свойств шаблона записи
 - `oa.ID` — идентификатор шаблона записи
 - `GET` — тип запроса
 - `"{"id":"oa.ID"}"` — тело запроса с идентификатором шаблона
@@ -744,9 +744,9 @@ Stack:
 
 **Чтение списка связанных шаблонов**
 
-- `http://SERVER_URL/api/TemplatesApi/GetUsages/oa.``ID`— путь к методу API для чтения списка шаблонов, связанных с указанным шаблоном
+- `http://SERVER_URL/api/TemplatesApi/GetUsages/oa.ID`— путь к методу API для чтения списка шаблонов, связанных с указанным шаблоном
 - `GET`— тип запроса
-- `{"id":"oa.``ID``"}` — тело запроса с идентификатором шаблона
+- `{"id":"oa.ID"}` — тело запроса с идентификатором шаблона
 - `OK` — статус обработки запроса
 - `hh:mm:ss` — длительность обработки запроса
 - `GET` `completed` — результат обработки запроса: выполнен
@@ -770,7 +770,7 @@ Stack:
 - `XXX.XXX.XXX.XXX` — IP-адрес сервера
 - `http://SERVER_URL/FormDesigner/CloneRecordForm` — путь к методу API для копирования формы
 - `POST` — тип запроса
-- `{"recordTypeId":"oa.``ID``","cloningFormId":"form.``ID``","newName":"``New Form Name``","newAlias":"``NewFormSystemName``"}` — тело запроса:
+- `{"recordTypeId":"oa.ID","cloningFormId":"form.ID","newName":"New Form Name","newAlias":"NewFormSystemName"}` — тело запроса:
 - `"recordTypeId":"oa.ID"` — идентификатор шаблона записи
     - `"cloningFormId":"form.ID"` — идентификатор исходной формы
     - `"newName":"New Form Name"` — название новой формы
@@ -798,11 +798,11 @@ Stack:
 - `XXX.XXX.XXX.XXX` — IP-адрес сервера
 - `http://SERVER_URL/api/RecordTypeContextApi` — путь к методу API для изменения атрибута шаблона
 - `POST` — тип запроса
-- `"property":{``}` — тело запроса со свойствами атрибута:
-    - `"RecordTypeId":"oa.``ID``"`— идентификатор шаблона записи, атрибут которого требуется изменить
+- `"property":{}` — тело запроса со свойствами атрибута:
+    - `"RecordTypeId":"oa.ID"`— идентификатор шаблона записи, атрибут которого требуется изменить
     - `"Name":"Attribute Name"` — название атрибута
     - `"Alias":"AttributeSystemName"` — системное имя атрибута
-- `O``K` — статус обработки запроса
+- `OK` — статус обработки запроса
 - `hh:mm:ss.SSS` — длительность обработки запроса
 
 `POST` `completed` — результат обработки запроса: выполнен
@@ -824,10 +824,10 @@ Stack:
 - `00000000-0000-0000-0000-000000000000` — идентификатор сеанса
 - `username` — имя пользователя, изменившего роль
 - `XXX.XXX.XXX.XXX` — IP-адрес сервера
-- `http://SERVER_URL/RecordTypeContextApi/Delete/op.``ID` — путь к методу API для удаления шаблона
+- `http://SERVER_URL/RecordTypeContextApi/Delete/op.ID` — путь к методу API для удаления шаблона
 - `DELETE` — тип запроса
-- `{"id":"op.``ID``"}"` — тело запроса: идентификатор шаблона, подлежащего удалению
-- `O``K` — статус обработки запроса
+- `{"id":"op.ID"}"` — тело запроса: идентификатор шаблона, подлежащего удалению
+- `OK` — статус обработки запроса
 - `hh:mm:ss.SSS` — длительность обработки запроса
 - `DELETE` `completed` — результат обработки запроса: выполнен
 
@@ -858,12 +858,12 @@ Stack:
 - `XXX.XXX.XXX.XXX` — IP-адрес сервера
 - `http://SERVER_URL/api/RolesCollectionApi/Put` — путь к методу API для изменения роли
 - `PUT` — тип запроса
-- `r``ole` — тело запроса:
+- `role` — тело запроса:
     - `"Id":"role.ID"` — идентификатор роли
     - `"Name":"Role Name"` — название роли
     - `"Alias":"RoleSystemName"` — системное имя роли
-    - `"Workspace":{"Id":"workspace.``ID``","Name":"Workspace Name"}` — свойства раздела навигации, к которому привязана системная роль
-    - `"Solution":"sln.``ID``"` — идентификатор приложения
+    - `"Workspace":{"Id":"workspace.ID","Name":"Workspace Name"}` — свойства раздела навигации, к которому привязана системная роль
+    - `"Solution":"sln.ID"` — идентификатор приложения
     - `"IsPredefined":false` — непредустановленная роль
     - `"RoleType":1` — тип роли:
         - 0 — системная стандартная
@@ -871,25 +871,25 @@ Stack:
         - 2 — системная пользовательская
         - `"Members":[]` — массив идентификаторов учётных записей и групп, входящих в роль
     - `"RootResource":{}` — приложение, к ресурсам которого роль задаёт разрешения
-    - `"Children":[{"Name":"``Resource name``","Children":[],"Target":"``resource``.``ID``","TargetType":``XX``,"Privileges":``XXX``,"AvailablePrivileges":``XXX``}]`— массив ресурсов, к которым роль задаёт разрешения
+    - `"Children":[{"Name":"Resource name","Children":[],"Target":"resource.ID","TargetType":XX,"Privileges":XXX,"AvailablePrivileges":XXX}]`— массив ресурсов, к которым роль задаёт разрешения
         - `"Target":"resource.ID"` — идентификатор ресурса
         - `"TargetType":XX` — код типа ресурса
         - `"Privileges":XXX` — код установленных разрешений
         - `"AvailablePrivileges":XXX` — код доступных разрешений
 - `Разрешение добавлено в роль` — описание события
-- `'{"Privilege":"Read","Role":"[``applicationSystemName``] RoleSystemName","RoleType":"BusinessApp","Resource":"[``ParentSystemName``]` `ResourceSystemName","ResourceType":"RecordTemplate"}'` — тело запроса:
+- `'{"Privilege":"Read","Role":"[applicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName]` `ResourceSystemName","ResourceType":"RecordTemplate"}'` — тело запроса:
     - `"Privilege":"Read"` — тип добавленного разрешения:
         - `Create` — создание
         - `Delete` — удаление
         - `Read` — чтение
         - `Update` — запись
-    - `"Role":"[``ApplicationSystemName``] RoleSystemName"` — свойства роли:
+    - `"Role":"[ApplicationSystemName] RoleSystemName"` — свойства роли:
         - `ApplicationSystemName` — системное имя приложения
         - `RoleSystemName` — системное имя роли
     - `"RoleType":"BusinessApp"` — тип роли:
         - `BusinessApp` — роль в приложении
         - `System` — системная
-    - `"Resource":"[``ParentSystemName``] ResourceSystemName"` путь к ресурсу, на доступ к которому предоставлено разрешение:
+    - `"Resource":"[ParentSystemName] ResourceSystemName"` путь к ресурсу, на доступ к которому предоставлено разрешение:
         - `parentSystemName` — системное имя родительского ресурса
         - `ResourceSystemName` — системное имя ресурса
     - `"ResourceType":"RecordTemplate"` — тип ресурса, на доступ к которому предоставлено разрешение:
@@ -927,12 +927,12 @@ Stack:
 - `XXX.XXX.XXX.XXX` — IP-адрес сервера
 - `http://SERVER_URL/api/RolesCollectionApi/Put` — путь к методу API для изменения роли
 - `PUT` — тип запроса
-- `r``ole` — тело запроса:
+- `role` — тело запроса:
     - `"Id":"role.ID"` — идентификатор роли
     - `"Name":"Role Name"` — название роли
     - `"Alias":"RoleSystemName"` — системное имя роли
-    - `"Workspace":{"Id":"workspace.``ID``","Name":"Workspace Name"}` — свойства раздела навигации, к которому привязана системная роль
-    - `"Solution":"sln.``ID``"` — идентификатор приложения
+    - `"Workspace":{"Id":"workspace.ID","Name":"Workspace Name"}` — свойства раздела навигации, к которому привязана системная роль
+    - `"Solution":"sln.ID"` — идентификатор приложения
     - `"IsPredefined":false` — непредустановленная роль
     - `"RoleType":1` — тип роли:
         - 0 — системная стандартная
@@ -940,25 +940,25 @@ Stack:
         - 2 — системная пользовательская
         - `"Members":[]` — массив идентификаторов учётных записей и групп, входящих в роль
     - `"RootResource":{}` — приложение, к ресурсам которого роль задаёт разрешения
-    - `"Children":[{"Name":"``Resource name``","Children":[],"Target":"``resource``.``ID``","TargetType":``XX``,"Privileges":``XXX``,"AvailablePrivileges":``XXX``}]`— массив ресурсов, к которым роль задаёт разрешения
+    - `"Children":[{"Name":"Resource name","Children":[],"Target":"resource.ID","TargetType":XX,"Privileges":XXX,"AvailablePrivileges":XXX}]`— массив ресурсов, к которым роль задаёт разрешения
         - `"Target":"resource.ID"` — идентификатор ресурса
         - `"TargetType":XX` — код типа ресурса
         - `"Privileges":XXX` — код установленных разрешений
         - `"AvailablePrivileges":XXX` — код доступных разрешений
 - `Разрешение удалено из роли` — описание события
-- `'{"Privilege":"Read","Role":"[``applicationSystemName``] RoleSystemName","RoleType":"BusinessApp","Resource":"[``ParentSystemName``]` `ResourceSystemName","ResourceType":"RecordTemplate"}'` — тело запроса:
+- `'{"Privilege":"Read","Role":"[applicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName]` `ResourceSystemName","ResourceType":"RecordTemplate"}'` — тело запроса:
     - `"Privilege":"Read"` — тип добавленного разрешения:
         - `Create` — создание
         - `Delete` — удаление
         - `Read` — чтение
         - `Update` — запись
-    - `"Role":"[``ApplicationSystemName``] RoleSystemName"` — свойства роли:
+    - `"Role":"[ApplicationSystemName] RoleSystemName"` — свойства роли:
         - `ApplicationSystemName` — системное имя приложения
         - `RoleSystemName` — системное имя роли
     - `"RoleType":"BusinessApp"` — тип роли:
         - `BusinessApp` — роль в приложении
         - `System` — системная
-    - `"Resource":"[``ParentSystemName``] ResourceSystemName"` путь к ресурсу, на доступ к которому предоставлено разрешение:
+    - `"Resource":"[ParentSystemName] ResourceSystemName"` путь к ресурсу, на доступ к которому предоставлено разрешение:
         - `parentSystemName` — системное имя родительского ресурса
         - `ResourceSystemName` — системное имя ресурса
     - `"ResourceType":"RecordTemplate"` — тип ресурса, на доступ к которому предоставлено разрешение:
@@ -1052,7 +1052,7 @@ IIS authentication: Anonymous
 - `Comindware Business Application Platform has started` — описание события: система запущена
 - `System information` — сведения о системе
     - `Server: SERVERNAME` — имя сервера
-    - `Database:` `xxxxxxxx``-``xxxx``-``xxxx``-``xxxx``-``xxxxxxxxxxxx` — идентификатор базы данных экземпляра ПО
+    - `Database:` `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` — идентификатор базы данных экземпляра ПО
     - `OperatingSystem: Microsoft Windows NT XXX.XXX.XXX.XXX` — наименование и номер версии операционной системы сервера
     - `Version: X.X.XXXX.X` — версия ПО Comindware Business Application Platform
     - `Timezone: Europe/Moscow` — часовой пояс экземпляра ПО
@@ -1064,10 +1064,10 @@ IIS authentication: Anonymous
     - `Application authentication: Anonimous | Ldap | Builtin` — способ аутентификации экземпляра ПО
 - `PerformanceHelper.Perform: FullTextSearchService.RebuildThreadWorker() succeed` —запущена системная служба полнотекстового поиска
 - `Time:59184ms` — длительность запуска службы
-- `TotalGCMemory:``XXX``MB` — память, выделенная сборщику мусора
-- `DeltaGCMemory:-``XXX``MB` — изменение памяти, выделенной сборщику мусора
-- `TotalProcessMemory:``XXX``MB` — память, выделенная системе
-- `DeltaProcessMemory:``XXX``MB` — изменение памяти, выделенной системе
+- `TotalGCMemory:XXXMB` — память, выделенная сборщику мусора
+- `DeltaGCMemory:-XXXMB` — изменение памяти, выделенной сборщику мусора
+- `TotalProcessMemory:XXXMB` — память, выделенная системе
+- `DeltaProcessMemory:XXXMB` — изменение памяти, выделенной системе
 
 ### Окончание (остановка) работы системы
 

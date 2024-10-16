@@ -270,6 +270,8 @@
 
 [release_notes_4.7.2721]: {{ kbArticleURLPrefix }}2633
 
+[release_notes_4.7.2902]: {{ kbArticleURLPrefix }}2639
+
 [roles]: {{ kbArticleURLPrefix }}2208
 
 [s3_connection]: {{ kbArticleURLPrefix }}2594

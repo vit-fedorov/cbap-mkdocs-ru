@@ -94,6 +94,14 @@
 
 [application_configure_recommendations]: {{ kbArticleURLPrefix }}2006
 
+[architect_diagram_configure]: {{ kbArticleURLPrefix }}2431
+
+[architect_form_attribute_organizational_unit_configure]: {{ kbArticleURLPrefix }}2422
+
+[architect_organizational_unit_create]: {{ kbArticleURLPrefix }}2420
+
+[architect_organizational_unit_hierarchy_configure]: {{ kbArticleURLPrefix }}2419
+
 [attribute_account]: {{ kbArticleURLPrefix }}2249
 
 [attribute_barcode]: {{ kbArticleURLPrefix }}2393
@@ -243,6 +251,8 @@
 [groups]: {{ kbArticleURLPrefix }}2193
 
 [import_data]: {{ kbArticleURLPrefix }}2555
+
+[importing_process_entity]: {{ kbArticleURLPrefix }}2425
 
 [kafka_connection]: {{ kbArticleURLPrefix }}2606
 

@@ -212,7 +212,7 @@
 
 [expression_editor]: {{ kbArticleURLPrefix }}2463
 
-[form_access_control]: {{ kbArticleURLPrefix }}2362
+[form_access_control]: {{ kbArticleURLPrefix }}2632
 
 [forms]: {{ kbArticleURLPrefix }}2271
 

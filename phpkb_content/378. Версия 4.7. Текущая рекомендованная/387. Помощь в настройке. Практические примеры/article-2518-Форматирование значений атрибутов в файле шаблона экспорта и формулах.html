@@ -38,9 +38,13 @@
 <p>Для некоторых типов атрибутов можно задать формат значения. Для этого после имени атрибута через двоеточие следует указать формат, в указанной ниже нотации.</p>
 <p>Аналогичным образом можно форматировать значения при использовании функций <code>FORMAT()</code> и <code>FORMATLOC()</code>.</p>
 <h2 id="форматирование-чисел">Форматирование чисел</h2>
-<p>Значение атрибута типа «<strong>Число</strong>» экспортируется в документ Word как текст.</p>
-<p>Для экспорта в шаблон Excel необходимо в файле Excel настроить соответствующий тип ячейки.</p>
-<p>Для атрибута типа «<strong>Число</strong>» можно задать количество знаков после запятой:</p>
+<p>В документ Word значение атрибута типа «<strong>Число</strong>» экспортируется как текст.</p>
+<p>При экспорте в Excel числовых атрибутов формат ячейки, заданный в Excel, не учитывается:</p>
+<ul>
+<li>Если в свойствах атрибута типа «<strong>Число</strong>» указано <strong>количества знаков после запятой</strong>, ячейке в Excel назначается соответствующий формат. Если для <strong>количества знаков после запятой</strong> выбрать пункт «<strong>Не преобразовывать</strong>», то ячейке будет назначен формат «<strong>Общий</strong>».</li>
+<li>Если в шаблоне экспорта в заполнителе задано количество знаков после запятой, этот формат будет назначен ячейке Excel. Он имеет приоритет над форматом числа, заданным в свойствах атрибута.</li>
+</ul>
+<p>В шаблоне экспорта, в заполнителе количество знаков после запятой задаётся следующим образом:</p>
 <ul>
 <li><code>{numberAttributeSystemName:N2}</code> — десятичное число с 2 знаками после запятой;</li>
 <li><code>{numberAttributeSystemName:N1}</code> — десятичное число с 1 знаком после запятой;</li>
@@ -50,7 +54,7 @@
 <p class="admonition-title">Синтаксис для формулы</p>
 <p>Аналогичным образом можно форматировать числа при использовании функции <code>FORMAT()</code>, например:</p>
 <div class="highlight"><code><code></code></code>
-<pre><code>FORMAT("{0:N2}",LIST($numberAttributeSystemName))</code></pre>
+<pre><code><span class="n">FORMAT</span><span class="p">(</span><span class="s">"{0:N2}"</span><span class="p">,</span><span class="n">LIST</span><span class="p">(</span><span class="err">$</span><span class="n">numberAttributeSystemName</span><span class="p">))</span></code></pre>
 </div>
 </div>
 <h2 id="форматирование-дат-и-времени">Форматирование дат и времени</h2>
@@ -58,13 +62,13 @@
 <p>Для экспорта в шаблон Excel необходимо в файле Excel настроить соответствующий тип ячейки.</p>
 <p>Для экспорта значения атрибута типа «<strong>Дата и время</strong>» можно задать формат по стандарту ISO 8601, например:</p>
 <ul>
-<li>заменитель <code>{dateAttributeSystemName:dd.MM.yyyy}</code> будет экспортирован в формате <code>04.12.2024</code>.</li>
+<li>заполнитель <code>{dateAttributeSystemName:dd.MM.yyyy}</code> будет экспортирован в формате <code>04.12.2024</code>.</li>
 </ul>
 <div class="notice notice-tip">
 <p class="admonition-title">Синтаксис для формулы</p>
 <p>Аналогичным образом можно форматировать даты и время при использовании функций <code>FORMAT()</code> и <code>FORMATLOC()</code>, например:</p>
 <div class="highlight"><code><code></code></code>
-<pre><code>FORMAT("{0:dddd, dd MMMM yyyy 'г.'}",LIST($dateAttributeSystemName))</code></pre>
+<pre><code><span class="n">FORMAT</span><span class="p">(</span><span class="s">"{0:dddd, dd MMMM yyyy 'г.'}"</span><span class="p">,</span><span class="n">LIST</span><span class="p">(</span><span class="err">$</span><span class="n">dateAttributeSystemName</span><span class="p">))</span></code></pre>
 </div>
 </div>
 <h3 id="примеры-форматирования-дат-и-времени">Примеры форматирования дат и времени</h3>
@@ -302,13 +306,13 @@
 <p>Для экспорта в шаблон Excel без потери формата необходимо в файле Excel настроить соответствующий тип ячейки.</p>
 <p>Для экспорта значения атрибута типа «<strong>Дата и время</strong>» можно задать формат по стандарту ISO 8601, например:</p>
 <ul>
-<li>заменитель <code>{durationAttributeSystemName:dd' д 'hh' ч'}</code> будет экспортирован в формате <code>1 д 3 ч</code>.</li>
+<li>заполнитель <code>{durationAttributeSystemName:dd' д 'hh' ч'}</code> будет экспортирован в формате <code>1 д 3 ч</code>.</li>
 </ul>
 <div class="notice notice-tip">
 <p class="admonition-title">Синтаксис для формулы</p>
 <p>Аналогичным образом можно форматировать даты и время при использовании функций <code>FORMAT()</code> и <code>FORMATLOC()</code>, например:</p>
 <div class="highlight"><code><code></code></code>
-<pre><code>FORMAT("{0:dd' д. 'hh':'mm':'ss}",LIST($durationAttributeSystemName))</code></pre>
+<pre><code><span class="n">FORMAT</span><span class="p">(</span><span class="s">"{0:dd' д. 'hh':'mm':'ss}"</span><span class="p">,</span><span class="n">LIST</span><span class="p">(</span><span class="err">$</span><span class="n">durationAttributeSystemName</span><span class="p">))</span></code></pre>
 </div>
 </div>
 <h3 id="примеры-форматирования-значений-длительности">Примеры форматирования значений длительности</h3>
@@ -421,7 +425,7 @@
 <p>Значение атрибута типа «<strong>Логический</strong>» экспортируется как строка «<em>Истина»</em> или <em>«Ложь</em>».</p>
 <p>Для экспорта значения в другом виде (например, <code>"Согласовано","Не согласовано"</code>) можно привести его к требуемому формату. Для этого создайте новый текстовый атрибут и сделайте его вычисляемым с помощью формулы, например:</p>
 <div class="highlight"><code><code></code></code>
-<pre><code>FORMAT("{0}",LIST(IF($attributeSystemName == true,"Согласовано","Не согласовано")))</code></pre>
+<pre><code><span class="n">FORMAT</span><span class="p">(</span><span class="s">"{0}"</span><span class="p">,</span><span class="n">LIST</span><span class="p">(</span><span class="n">IF</span><span class="p">(</span><span class="err">$</span><span class="n">attributeSystemName</span> <span class="o">==</span> <span class="k">true</span><span class="p">,</span><span class="s">"Согласовано"</span><span class="p">,</span><span class="s">"Не согласовано"</span><span class="p">)))</span></code></pre>
 </div>
 <h2 id="форматирование-данных-аккаунта">Форматирование данных аккаунта</h2>
 <p>Посредством атрибута типа «<strong>Аккаунт</strong>» можно экспортировать данные пользователя (значения атрибутов аккаунта), например, адрес эл. почты и должность.</p>

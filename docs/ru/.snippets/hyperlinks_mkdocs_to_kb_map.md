@@ -126,6 +126,8 @@
 
 [attribute_record]: {{ kbArticleURLPrefix }}2243
 
+[attribute_record_example]: {{ kbArticleURLPrefix }}2243#attribute_record_example
+
 [attribute_role]: {{ kbArticleURLPrefix }}2240
 
 [attribute_searchable]: {{ kbArticleURLPrefix }}2247

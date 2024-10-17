@@ -428,14 +428,14 @@ _[https://github.com/NLog/NLog/wiki/EventLog-target](https://github.com/NLog/NLo
     CreateEventSource.vbs "CBAP"
     ```
 
-4. Создайте в файле `logs.config` в подразделе`nlog.targets` (с конфигурацией файловых журналов) подраздел `target` с параметрами записи данных в журнал событий Windows:
+4. Создайте в файле `logs.config` в подразделе `nlog.targets` (с конфигурацией файловых журналов) подраздел `target` с параметрами записи данных в журнал событий Windows:
 
     ``` log
     <target xsi:type="EventLogCBAPErrors" name="eventlog" layout="${message}"   
     log="Application" source="CBAP"/>
     ```
 
-5. Создайте в файле `logs.config` правило (подраздел `logger`в разделе`nlog.rules`), которое будет определять сообщения, подлежащие записи в журнал событий Windows:
+5. Создайте в файле `logs.config` правило (подраздел `logger` в разделе `nlog.rules`), которое будет определять сообщения, подлежащие записи в журнал событий Windows:
 
     ``` log
     <logger name="*" minlevel="Warn" maxlevel="Fatal"   

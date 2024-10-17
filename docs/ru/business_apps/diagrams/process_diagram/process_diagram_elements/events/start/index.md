@@ -18,7 +18,7 @@ hide:
 
 ## Типы начальных событий
 
-- **[Простое начальное событие](none_start_event.md)**
+- **[Простое начальное событие][none_start_event]**
 - **[Начальное событие-таймер](timer_start_event.md)**
 - **[Начальное событие-получение сообщения](receive_message_start_event.md)**
 
@@ -35,3 +35,5 @@ hide:
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
 **[Редактирование диаграммы процесса][process_diagram_designer]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

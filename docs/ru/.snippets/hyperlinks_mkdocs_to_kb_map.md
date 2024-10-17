@@ -40,15 +40,7 @@
 
 [formula_introduction]: {{ kbArticleURLPrefix }}2490
 
-[form_rules]: {{ kbArticleURLPrefix }}2537
-
-[form_static_elements]: {{ kbArticleURLPrefix }}2530
-
-[form_static_elements_area]: {{ kbArticleURLPrefix }}2530#formset5
-
-[form_static_elements_columns]: {{ kbArticleURLPrefix }}2530#formset3
-
-[form_static_elements_tabs]: {{ kbArticleURLPrefix }}2530#formset4
+[html_supported_tags]: {{ kbArticleURLPrefix }}2413
 
 [experimental_functions_support]: {{ kbArticleURLPrefix }}1339#mcetoc_1hsfq7ksu2
 
@@ -220,9 +212,13 @@
 
 [expression_editor]: {{ kbArticleURLPrefix }}2463
 
+[form_access_control]: {{ kbArticleURLPrefix }}2362
+
 [forms]: {{ kbArticleURLPrefix }}2271
 
 [form_designer]: {{ kbArticleURLPrefix }}2271#form_designer
+
+[form_elements]: {{ kbArticleURLPrefix }}2271#form_elements
 
 [form_dynamic_elements]: {{ kbArticleURLPrefix }}2531
 
@@ -236,6 +232,8 @@
 
 [form_dynamic_elements_drawing]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_drawing
 
+[form_dynamic_elements_embedded_form]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_embedded_form
+
 [form_dynamic_elements_hyperlink]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_hyperlink
 
 [form_dynamic_elements_image]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_image
@@ -245,6 +243,18 @@
 [form_dynamic_elements_map]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_map
 
 [form_dynamic_elements_table]: {{ kbArticleURLPrefix }}2531#form_dynamic_elements_table
+
+[form_rules]: {{ kbArticleURLPrefix }}2537
+
+[form_static_elements]: {{ kbArticleURLPrefix }}2530
+
+[form_static_elements_area]: {{ kbArticleURLPrefix }}2530#form_static_elements_area
+
+[form_static_elements_columns]: {{ kbArticleURLPrefix }}2530#form_static_elements_columns
+
+[form_static_elements_static_text]: {{ kbArticleURLPrefix }}2530#form_static_elements_static_text
+
+[form_static_elements_tabs]: {{ kbArticleURLPrefix }}2530#form_static_elements_tabs
 
 [form_personal_use]: {{ kbArticleURLPrefix }}2568
 

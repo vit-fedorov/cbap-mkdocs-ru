@@ -1,17 +1,19 @@
-<h1>Пример настройки и использования шаблона экспорта авансового отчёта</h1><div class="md-container">
-<div class="md-main__inner md-grid">
+<h1>Пример настройки и использования шаблона экспорта авансового отчёта</h1><div class="md-container" data-md-component="container">
+<div class="md-main__inner md-grid"><nav aria-label="Содержание" class="md-nav md-nav--secondary">
 <div class="mce-toc">
 <h2 class="toc-heading">Содержание</h2>
-<ul>
-<li><a href="#mcetoc_1h1p7o3390">Инструкции</a></li>
-<li><a href="#mcetoc_1h1p7o3391">Связанные статьи</a></li>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#порядок-настройки"> <span class="md-ellipsis"> Порядок настройки </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#связанные-статьи"> <span class="md-ellipsis"> Связанные статьи </span> </a></li>
 </ul>
 </div>
-<div class="md-content">
-<h2 id="mcetoc_1h1p7o3390">Инструкции</h2>
+</nav>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h2 id="порядок-настройки">Порядок настройки</h2>
 <ol class="colored_numbers_list">
 <li>
-<p>Создайте три <strong><a href="https://kb.comindware.ru/article.php?id=2221">шаблона записи</a></strong>:</p>
+<p>Создайте три <strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2221">шаблона записи</a></strong>:</p>
 <ul>
 <li><em>Заявки</em></li>
 <li><em>Затраты</em></li>
@@ -81,7 +83,8 @@
 <li>
 <p>Вынесите созданные атрибуты на формы в шаблонах.</p>
 </li>
-<li>Создайте несколько наглядных записей:
+<li>
+<p>Создайте несколько наглядных записей:</p>
 <ul>
 <li>справочник типов затрат;</li>
 <li>затраты с указанием их типа;</li>
@@ -90,42 +93,31 @@
 </li>
 <li>
 <p>Создайте файл шаблона экспорта <code>advance_report.xlsx</code>, показанный на иллюстрации:</p>
-<div class="screenshot_with_caption"><a class="glightbox" href="https://kb.comindware.ru/assets/export_template_file_example_advance_report.png"><img alt="Файл шаблона экспорта «Авансовый отчёт»" src="https://kb.comindware.ru/assets/export_template_file_example_advance_report.png"/></a>
-<p class="caption">Файл шаблона экспорта «Авансовый отчёт»</p>
-</div>
+<figure class="screenshot_with_caption"><img alt="Файл шаблона экспорта «Авансовый отчёт»" src="https://kb.comindware.ru/assets/export_template_file_example_advance_report.png"/>
+<figcaption class="caption">Файл шаблона экспорта «Авансовый отчёт»</figcaption>
+</figure>
 </li>
 <li>
-<p>Создайте в шаблоне записи «<em>Заявки</em>» <a href="https://kb.comindware.ru/article.php?id=2349">шаблон экспорта</a> « <em>Авансовый отчёт</em>» с файлом <code>advance_report.xslx</code>.</p>
+<p>Создайте в шаблоне записи «<em>Заявки</em>» <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2349">шаблон экспорта</a> «<em>Авансовый отчёт</em>» с файлом <code>advance_report.xslx</code>.</p>
 </li>
+<li>Вместе с шаблоном экспорта будет автоматически создана <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2348">кнопка экспорта записи</a> «<em>Авансовый отчёт</em>».</li>
+<li>Вынесите кнопку «<em>Авансовый отчёт</em>» на форму шаблона записи «<em>Заявки</em>».</li>
+<li>Откройте любую запись шаблона «<em>Заявки</em>».</li>
+<li>Нажмите кнопку «<em>Авансовый отчёт</em>».</li>
 <li>
-<p>Вместе с шаблоном экспорта будет автоматически создана <a href="https://kb.comindware.ru/article.php?id=2348">кнопка экспорта записи</a> « <em>Авансовый отчёт</em>».</p>
-</li>
-<li>
-<p>Вынесите кнопку «<em>Авансовый отчёт</em>» на форму шаблона записи «<em>Заявки</em>».</p>
-</li>
-<li>
-<p>Откройте любую запись шаблона «<em>Заявки</em>».</p>
-</li>
-<li>
-<p>Нажмите кнопку «<em>Авансовый отчёт</em>».</p>
-</li>
-<li>
-<p>Браузер скачает файл следующего вида (с именем, заданным в <a href="https://kb.comindware.ru/article.php?id=2349#export-template-output-filename">свойствах шаблона экспорта</a>):</p>
-<div class="screenshot_with_caption"><a class="glightbox" href="https://kb.comindware.ru/assets/export_template_file_result.png"><img alt="Файл, сформированный по шаблону экспорта" src="https://kb.comindware.ru/assets/export_template_file_result.png"/></a>
-<p class="caption">Файл, сформированный по шаблону экспорта</p>
-</div>
+<p>Браузер скачает файл следующего вида (с именем, заданным в <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2349">свойствах шаблона экспорта</a>):</p>
+<figure class="screenshot_with_caption"><img alt="Файл, сформированный по шаблону экспорта" src="https://kb.comindware.ru/assets/export_template_file_result.png"/>
+<figcaption class="caption">Файл, сформированный по шаблону экспорта</figcaption>
+</figure>
 </li>
 </ol>
-<h2 id="mcetoc_1h1p7o3391">Связанные статьи</h2>
-<p><strong><a href="https://kb.comindware.ru/article.php?id=1942">Настройка шаблона экспорта с использованием C#</a></strong></p>
-<p><strong><a href="https://kb.comindware.ru/article.php?id=1944">Настройка выгрузки нескольких коллекций и изображений</a></strong></p>
-<p><strong><a href="https://kb.comindware.ru/article.php?id=2349">Настройка шаблона экспорта</a></strong></p>
-<p><strong><a href="https://kb.comindware.ru/article.php?id=2352">Подготовка файла шаблона экспорта</a></strong></p>
-<p><strong><a href="https://kb.comindware.ru/article.php?id=2348">Настройка кнопки экспорта</a></strong></p>
+<h2 id="связанные-статьи">Связанные статьи</h2>
+<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=1942">Настройка шаблона экспорта с использованием C#</a></strong></p>
+<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=1944">Настройка выгрузки нескольких коллекций и изображений</a></strong></p>
+<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2349">Настройка шаблона экспорта</a></strong></p>
+<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2352">Подготовка файла шаблона экспорта</a></strong></p>
+<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2348">Настройка кнопки экспорта</a></strong></p>
+</article>
 </div>
 </div>
-<p><a class="md-top md-icon mkdocs_imported_link" href="#"> <em class="fa-light fa-arrow-up">‌</em> К началу </a></p>
-</div>
-<div class="md-dialog">
-<div class="md-dialog__inner md-typeset"> </div>
-</div>
+<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#"> <em class="fa-light fa-arrow-up">‌<!--icon--></em> К началу </a></div>

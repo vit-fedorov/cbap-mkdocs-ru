@@ -100,13 +100,9 @@
 
 [application_configure_recommendations]: {{ kbArticleURLPrefix }}2006
 
-[architect_diagram_configure]: {{ kbArticleURLPrefix }}2431
+[architect_desktop]: {{ kbArticleURLPrefix }}2415
 
-[architect_form_attribute_organizational_unit_configure]: {{ kbArticleURLPrefix }}2422
-
-[architect_organizational_unit_create]: {{ kbArticleURLPrefix }}2420
-
-[architect_organizational_unit_hierarchy_configure]: {{ kbArticleURLPrefix }}2419
+[architect_version_control]: {{ kbArticleURLPrefix }}2417
 
 [attribute_account]: {{ kbArticleURLPrefix }}2249
 
@@ -180,17 +176,41 @@
 
 [changelog]: {{ kbArticleURLPrefix }}2634
 
+[changing_hierarchy]: {{ kbArticleURLPrefix }}2419
+
+[changing_process_hierarchy]: {{ kbArticleURLPrefix }}2437
+
+[cloning_process_entity]: {{ kbArticleURLPrefix }}2436
+
 [collabora_connection]: {{ kbArticleURLPrefix }}2588
 
 [common_notifications]: {{ kbArticleURLPrefix }}2566
 
 [communication_routes]: {{ kbArticleURLPrefix }}2201
 
+[configuring_organizational_unit]: {{ kbArticleURLPrefix }}2418
+
+[configuring_organizational_unit_form_and_attributes]: {{ kbArticleURLPrefix }}2422
+
+[configuring_process_entity_properties]: {{ kbArticleURLPrefix }}2438
+
+[configuring_process_entity_propeerties_form_and_attributes]: {{ kbArticleURLPrefix }}2435
+
 [connections]: {{ kbArticleURLPrefix }}2205
 
 [connections_delete]: {{ kbArticleURLPrefix }}2205#mcetoc_1gjrlqi4l6
 
+[conversations]: {{ kbArticleURLPrefix }}2417
+
 [creating_gantt_chart]: {{ kbArticleURLPrefix }}2107
+
+[creating_organizational_unit]: {{ kbArticleURLPrefix }}2420
+
+[creating_process_entity]: {{ kbArticleURLPrefix }}2432
+
+[deleting_organizational_unit]: {{ kbArticleURLPrefix }}2424
+
+[deleting_process_entity]: {{ kbArticleURLPrefix }}2434
 
 [desktop]: {{ kbArticleURLPrefix }}2284
 
@@ -205,6 +225,8 @@
 [discussion_use]: {{ kbArticleURLPrefix }}2407
 
 [download_archive_csharp]: {{ kbArticleURLPrefix }}2623
+
+[edit_diagram]: {{ kbArticleURLPrefix }}2431
 
 [elasticdata_description]: {{ kbArticleURLPrefix }}2638
 
@@ -223,6 +245,8 @@
 [export_template_file_example]: {{ kbArticleURLPrefix }}2353
 
 [export_template_file_formula_format_values]: {{ kbArticleURLPrefix }}2518
+
+[exporting_process_entity]: {{ kbArticleURLPrefix }}2427
 
 [expression_debug]: {{ kbArticleURLPrefix }}2636
 
@@ -368,6 +392,10 @@
 
 [release_notes_4.7.2902]: {{ kbArticleURLPrefix }}2639
 
+[renaming_organizational_unit]: {{ kbArticleURLPrefix }}2421
+
+[renaming_process_entity]: {{ kbArticleURLPrefix }}2433
+
 [roles]: {{ kbArticleURLPrefix }}2208
 
 [role_templates]: {{ kbArticleURLPrefix }}2220
@@ -452,6 +480,8 @@
 
 [variables]: {{ kbArticleURLPrefix }}2207
 
+[verify_diagram]: {{ kbArticleURLPrefix }}2430
+
 [version_control]: {{ kbArticleURLPrefix }}2217
 
 [version_control_git]: {{ kbArticleURLPrefix }}2216
@@ -461,6 +491,8 @@
 [version_control_app_prepare]: {{ kbArticleURLPrefix }}2217#version_control_app_prepare
 
 [version_control_git]: {{ kbArticleURLPrefix }}2216
+
+[viewing_diagram]: {{ kbArticleURLPrefix }}2428
 
 [wsfederation_connection]: {{ kbArticleURLPrefix }}2560
 

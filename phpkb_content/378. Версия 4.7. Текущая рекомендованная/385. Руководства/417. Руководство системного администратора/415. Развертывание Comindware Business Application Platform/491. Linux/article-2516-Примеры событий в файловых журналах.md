@@ -190,7 +190,7 @@ Stack:
 - `Core` — наименование модуля, в котором произошло событие
 - `hh:mm:ss.SSS` — длительность обработки запроса
 - `X.X.XXX.X` — версия ПО {{ productName }}
-- `Транзакция нарушает уникальность триплета:  cmw.account.mbox -` `email@example.com` — описание события: неуникальный адрес эл. почты
+- `Транзакция нарушает уникальность триплета:  cmw.account.mbox - email@example.com` — описание события: неуникальный адрес эл. почты
 - `Service name: "DataformService"` — наименование службы, обрабатывавшей веб-запрос
 - `Method name: "ApplyChangesAndQueryData"` — наименование метода запроса
 - `Parameters list` — массив параметров запроса
@@ -502,7 +502,7 @@ Stack:
         - `"Privileges":XXX` — код установленных разрешений
         - `"AvailablePrivileges":XXX` — код доступных разрешений
 - `Разрешение добавлено в роль` — описание события
-- `'{"Privilege":"Read","Role":"[applicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName]` `ResourceSystemName","ResourceType":"RecordTemplate"}'` — тело запроса:
+- `'{"Privilege":"Read","Role":"[applicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName","ResourceType":"RecordTemplate"}'` — тело запроса:
     - `"Privilege":"Read"` — тип добавленного разрешения:
         - `Create` — создание
         - `Delete` — удаление
@@ -740,7 +740,7 @@ Stack:
 - `"filter":{}` — фильтр шаблонов
 - `OK` — статус обработки запроса
 - `hh:mm:ss` — длительность обработки запроса
-- `POST` `completed` — результат обработки запроса: выполнен
+- `POST completed` — результат обработки запроса: выполнен
 
 **Чтение списка связанных шаблонов**
 
@@ -749,7 +749,7 @@ Stack:
 - `{"id":"oa.ID"}` — тело запроса с идентификатором шаблона
 - `OK` — статус обработки запроса
 - `hh:mm:ss` — длительность обработки запроса
-- `GET` `completed` — результат обработки запроса: выполнен
+- `GET completed` — результат обработки запроса: выполнен
 
 ### Копирование объекта
 
@@ -777,7 +777,7 @@ Stack:
     - `"newAlias":"NewFormSystemName"` — системное имя новой формы
 - `200` — статус обработки запроса
 - `hh:mm:ss.SSS` — длительность обработки запроса
-- `POST` `completed` — результат обработки запроса: выполнен
+- `POST completed` — результат обработки запроса: выполнен
 
 ### Изменение объекта
 
@@ -805,7 +805,7 @@ Stack:
 - `OK` — статус обработки запроса
 - `hh:mm:ss.SSS` — длительность обработки запроса
 
-`POST` `completed` — результат обработки запроса: выполнен
+`POST completed` — результат обработки запроса: выполнен
 
 ### Удаление объекта
 
@@ -829,7 +829,7 @@ Stack:
 - `{"id":"op.ID"}"` — тело запроса: идентификатор шаблона, подлежащего удалению
 - `OK` — статус обработки запроса
 - `hh:mm:ss.SSS` — длительность обработки запроса
-- `DELETE` `completed` — результат обработки запроса: выполнен
+- `DELETE completed` — результат обработки запроса: выполнен
 
 ### Установка прав доступа на объект
 
@@ -877,7 +877,7 @@ Stack:
         - `"Privileges":XXX` — код установленных разрешений
         - `"AvailablePrivileges":XXX` — код доступных разрешений
 - `Разрешение добавлено в роль` — описание события
-- `'{"Privilege":"Read","Role":"[applicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName]` `ResourceSystemName","ResourceType":"RecordTemplate"}'` — тело запроса:
+- `'{"Privilege":"Read","Role":"[applicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName","ResourceType":"RecordTemplate"}'` — тело запроса:
     - `"Privilege":"Read"` — тип добавленного разрешения:
         - `Create` — создание
         - `Delete` — удаление
@@ -946,7 +946,7 @@ Stack:
         - `"Privileges":XXX` — код установленных разрешений
         - `"AvailablePrivileges":XXX` — код доступных разрешений
 - `Разрешение удалено из роли` — описание события
-- `'{"Privilege":"Read","Role":"[applicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName]` `ResourceSystemName","ResourceType":"RecordTemplate"}'` — тело запроса:
+- `'{"Privilege":"Read","Role":"[applicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName","ResourceType":"RecordTemplate"}'` — тело запроса:
     - `"Privilege":"Read"` — тип добавленного разрешения:
         - `Create` — создание
         - `Delete` — удаление
@@ -1051,7 +1051,7 @@ IIS authentication: Anonymous
 - `{{ productName }} has started` — описание события: система запущена
 - `System information` — сведения о системе
     - `Server: SERVERNAME` — имя сервера
-    - `Database:` `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` — идентификатор базы данных экземпляра ПО
+    - `Database: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` — идентификатор базы данных экземпляра ПО
     - `OperatingSystem: Microsoft Windows NT XXX.XXX.XXX.XXX` — наименование и номер версии операционной системы сервера
     - `Version: X.X.XXXX.X` — версия ПО {{ productName }}
     - `Timezone: Europe/Moscow` — часовой пояс экземпляра ПО
@@ -1197,6 +1197,8 @@ data: {"Name":"XxxSenderAdapter","Description":"Адаптер для связи
 - `Getting meta for plugin XxxSenderAdapter` — описание события
 - `Platform key: XXX_AdapterAgent5b28ad88a4cb4d4f8078c4deef1ee08b; Service name: ServiceName; Runtime: .NET 6.0.21` — контекст события
 - `data: {}` — содержимое сообщения
+
+--8<-- "related_topics_heading.md"
 
 **[Подсистема журналирования](logging_engine.html#logging_engine)**
 

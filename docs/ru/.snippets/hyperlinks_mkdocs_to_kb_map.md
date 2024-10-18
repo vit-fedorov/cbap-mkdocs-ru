@@ -218,6 +218,10 @@
 
 [forms]: {{ kbArticleURLPrefix }}2271
 
+[forms_embedded]: {{ kbArticleURLPrefix }}2271#forms_embedded
+
+[forms_list]: {{ kbArticleURLPrefix }}2271#forms_list
+
 [form_designer]: {{ kbArticleURLPrefix }}2271#form_designer
 
 [form_elements]: {{ kbArticleURLPrefix }}2271#form_elements
@@ -422,11 +426,11 @@
 
 [table_clone]: {{ kbArticleURLPrefix }}2552
 
+[table_configure]: {{ kbArticleURLPrefix }}2548
+
 [table_configure_template]: {{ kbArticleURLPrefix }}2550
 
 [table_personal_use]: {{ kbArticleURLPrefix }}2551
-
-[table_configure]: {{ kbArticleURLPrefix }}2548
 
 [task_notifications]: {{ kbArticleURLPrefix }}2567
 
@@ -468,14 +472,10 @@
 
 [administration]: {{ kbArticleURLPrefix }}2191
 
-[использование-вложенной-формы]: {{ kbArticleURLPrefix }}2271#использование-вложенной-формы
-
 [построение-процессной-архитектуры]: {{ kbArticleURLPrefix }}2426
 
 [конструктор-диаграмм]: {{ kbArticleURLPrefix }}2429
 
 [построение-организационной-структуры]: {{ kbArticleURLPrefix }}2423
-
-[редактирование-формы]: {{ kbArticleURLPrefix }}2271#mcetoc_1gk3dol905
 
 {% endif %}

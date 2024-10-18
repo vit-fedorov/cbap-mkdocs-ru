@@ -212,6 +212,8 @@
 
 [diagrams]: {{ kbArticleURLPrefix }}2211
 
+[diagram_list]: {{ kbArticleURLPrefix }}2211#diagram_list
+
 [discussion_configure]: {{ kbArticleURLPrefix }}2406
 
 [discussion_configure_template]: {{ kbArticleURLPrefix }}2406#mcetoc_1h7hu3akn4
@@ -364,9 +366,9 @@
 
 [process_diagram]: {{ kbArticleURLPrefix }}2360
 
-[process_diagram_call_element_menu]: {{ kbArticleURLPrefix }}2360#mcetoc_1h28cr6421
+[process_diagram_call_element_menu]: {{ kbArticleURLPrefix }}2360#process_diagram_call_element_menu
 
-[process_diagram_designer]: {{ kbArticleURLPrefix }}2360#mcetoc_1h2d97s1m0
+[process_diagram_designer]: {{ kbArticleURLPrefix }}2360#process_diagram_designer
 
 [process_diagram_element_common_properties]: {{ kbArticleURLPrefix }}2364
 

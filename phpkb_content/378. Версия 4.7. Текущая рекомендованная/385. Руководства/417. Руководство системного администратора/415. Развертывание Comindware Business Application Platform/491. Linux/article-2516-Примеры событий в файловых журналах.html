@@ -122,10 +122,10 @@
 <li><code>accountFormChanges</code> — тело запроса с данными учётной записи:
 <ul>
 <li><code>"PasswordHash":"XXXXXX"</code> — хэш пароля</li>
-<li><code>"DataformChanges":{``"WidgetChanges":[{}]``}</code> — поля формы учётной записи
+<li><code>"DataformChanges":{"WidgetChanges":[{}]}</code> — поля формы учётной записи
 <ul>
-<li><code>"ObjId":"``n``ull``"</code> — идентификатор временной записи</li>
-<li><code>"TempId":"cmw.temp.``I``D``"</code> — идентификатор временной записи</li>
+<li><code>"ObjId":"null"</code> — идентификатор временной записи</li>
+<li><code>"TempId":"cmw.temp.ID"</code> — идентификатор временной записи</li>
 <li><code>"TypeId":"cmw.account.Account"</code> — тип создаваемого объекта: учётная запись</li>
 <li><code>"Changes":{}</code> — данные учетной записи
 <ul>
@@ -177,12 +177,12 @@
 <li><code>Core</code> — наименование модуля, в котором произошло событие</li>
 <li><code>hh:mm:ss.SSS</code> — длительность обработки запроса</li>
 <li><code>X.X.XXX.X</code> — версия ПО Comindware Business Application Platform</li>
-<li><code>Транзакция нарушает уникальность триплета:  cmw.account.mbox -</code> <code>email@example.com</code> — описание события: неуникальный адрес эл. почты</li>
+<li><code>Транзакция нарушает уникальность триплета:  cmw.account.mbox - email@example.com</code> — описание события: неуникальный адрес эл. почты</li>
 <li><code>Service name: "DataformService"</code> — наименование службы, обрабатывавшей веб-запрос</li>
 <li><code>Method name: "ApplyChangesAndQueryData"</code> — наименование метода запроса</li>
 <li><code>Parameters list</code> — массив параметров запроса
 <ul>
-<li><code>"``Changes``"``:{}</code> — данные учётной записи
+<li><code>"Changes":{}</code> — данные учётной записи
 <ul>
 <li><code>"WidgetChanges":[{}]</code> — массив полей формы учётной записи</li>
 <li><code>"ObjId":"cmw.temp.ID"</code> — идентификатор временной записи</li>
@@ -242,7 +242,7 @@
 <ul>
 <li><code>"ObjId":"account.ID"</code> — идентификатор учётной записи</li>
 <li><code>"TypeId":"cmw.account.Account"</code> — тип объекта: учётная записи</li>
-<li><code>"Changes":{"cmw.account.form.group2flag1":{"Origin":4,"Literal":``false``,"Time":1698244978684}}</code> — отключение учётной записи: <code>"Literal":``false</code></li>
+<li><code>"Changes":{"cmw.account.form.group2flag1":{"Origin":4,"Literal":false,"Time":1698244978684}}</code> — отключение учётной записи: <code>"Literal":false</code></li>
 <li><code>"ObjId":"account.ID"</code> — идентификатор временной записи</li>
 <li><code>"RootObjId":"account.ID"</code> — идентификатор временной записи</li>
 </ul>
@@ -270,7 +270,7 @@
 <li><code>"WidgetChanges":[{}]</code> — поля формы учётной записи</li>
 <li><code>"ObjId":"account.ID"</code> — идентификатор учётной записи</li>
 <li><code>"TypeId":"cmw.account.Account"</code> — тип объекта: учётная запись</li>
-<li><code>"Changes":{"cmw.account.form.group2flag1":{"Origin":4,"Literal":``true``,"Time":1698245267640}}</code> — включение учётной записи: <code>"Literal":``true</code></li>
+<li><code>"Changes":{"cmw.account.form.group2flag1":{"Origin":4,"Literal":true,"Time":1698245267640}}</code> — включение учётной записи: <code>"Literal":true</code></li>
 <li><code>"RootObjId":"account.ID"</code> — идентификатор временной записи</li>
 </ul>
 </li>
@@ -295,9 +295,9 @@
 <li><code>accountFormChanges</code> — тело запроса с данными учётной записи:
 <ul>
 <li><code>"PasswordHash":"XXXXXXX"</code> — хэш нового пароля</li>
-<li><code>"DataformChanges":{"WidgetChanges":[{``}]}</code> — поля формы учётной записи</li>
+<li><code>"DataformChanges":{"WidgetChanges":[{}]}</code> — поля формы учётной записи</li>
 <li><code>"TypeId":"cmw.account.Account"</code> — тип объекта: учётная запись</li>
-<li><code>"``Changes``"``:{}</code> — данные учётной записи
+<li><code>"Changes":{}</code> — данные учётной записи
 <ul>
 <li><code>"ObjId":"account.ID"</code> — идентификатор учётной записи</li>
 <li><code>"Id":"account.ID"</code> — идентификатор учётной записи</li>
@@ -418,13 +418,13 @@
 <li><code>XXX.XXX.XXX.XXX</code> — IP-адрес сервера</li>
 <li><code>http://SERVER_URL/api/RolesCollectionApi/Put</code> — путь к методу API для изменения роли</li>
 <li><code>PUT</code> — тип запроса</li>
-<li><code>r``ole</code> — тело запроса:
+<li><code>role</code> — тело запроса:
 <ul>
 <li><code>"Id":"role.ID"</code> — идентификатор роли</li>
 <li><code>"Name":"Role Name"</code> — название роли</li>
 <li><code>"Alias":"RoleSystemName"</code> — системное имя роли</li>
-<li><code>"Workspace":{"Id":"workspace.``ID``","Name":"Workspace Name"}</code> — свойства раздела навигации, к которому привязана системная роль</li>
-<li><code>"Solution":"sln.``ID``"</code> — идентификатор приложения</li>
+<li><code>"Workspace":{"Id":"workspace.ID","Name":"Workspace Name"}</code> — свойства раздела навигации, к которому привязана системная роль</li>
+<li><code>"Solution":"sln.ID"</code> — идентификатор приложения</li>
 <li><code>"IsPredefined":false</code> — непредустановленная роль</li>
 <li><code>"RoleType":1</code> — тип роли:
 <ul>
@@ -435,7 +435,7 @@
 </ul>
 </li>
 <li><code>"RootResource":{}</code> — приложение, к ресурсам которого роль задаёт разрешения</li>
-<li><code>"Children":[{"Name":"``Resource name``","Children":[],"Target":"``resource``.``ID``","TargetType":``XX``,"Privileges":``XXX``,"AvailablePrivileges":``XXX``}]</code>— массив ресурсов, к которым роль задаёт разрешения
+<li><code>"Children":[{"Name":"Resource name","Children":[],"Target":"resource.ID","TargetType":XX,"Privileges":XXX,"AvailablePrivileges":XXX}]</code>— массив ресурсов, к которым роль задаёт разрешения
 <ul>
 <li><code>"Target":"resource.ID"</code> — идентификатор ресурса</li>
 <li><code>"TargetType":XX</code> — код типа ресурса</li>
@@ -446,7 +446,7 @@
 </ul>
 </li>
 <li><code>Разрешение добавлено в роль</code> — описание события</li>
-<li><code>'{"Privilege":"Read","Role":"[``applicationSystemName``] RoleSystemName","RoleType":"BusinessApp","Resource":"[``ParentSystemName``]</code> <code>ResourceSystemName","ResourceType":"RecordTemplate"}'</code> — тело запроса:
+<li><code>'{"Privilege":"Read","Role":"[applicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName","ResourceType":"RecordTemplate"}'</code> — тело запроса:
 <ul>
 <li><code>"Privilege":"Read"</code> — тип добавленного разрешения:
 <ul>
@@ -456,7 +456,7 @@
 <li><code>Update</code> — запись</li>
 </ul>
 </li>
-<li><code>"Role":"[``ApplicationSystemName``] RoleSystemName"</code> — свойства роли:
+<li><code>"Role":"[ApplicationSystemName] RoleSystemName"</code> — свойства роли:
 <ul>
 <li><code>ApplicationSystemName</code> — системное имя приложения</li>
 <li><code>RoleSystemName</code> — системное имя роли</li>
@@ -468,7 +468,7 @@
 <li><code>System</code> — системная</li>
 </ul>
 </li>
-<li><code>"Resource":"[``ParentSystemName``] ResourceSystemName"</code> путь к ресурсу, на доступ к которому предоставлено разрешение:
+<li><code>"Resource":"[ParentSystemName] ResourceSystemName"</code> путь к ресурсу, на доступ к которому предоставлено разрешение:
 <ul>
 <li><code>parentSystemName</code> — системное имя родительского ресурса</li>
 <li><code>ResourceSystemName</code> — системное имя ресурса</li>
@@ -517,8 +517,8 @@
 <li><code>"Id":"role.ID"</code> — идентификатор роли</li>
 <li><code>"Name":"Role Name"</code> — название роли</li>
 <li><code>"Alias":"RoleSystemName"</code> — системное имя роли</li>
-<li><code>"Workspace":{"Id":"workspace.``ID``","Name":"Workspace Name"}</code> — свойства раздела навигации, к которому</li>
-<li><code>"Solution":"sln.``ID``"</code> — идентификатор приложения</li>
+<li><code>"Workspace":{"Id":"workspace.ID","Name":"Workspace Name"}</code> — свойства раздела навигации, к которому</li>
+<li><code>"Solution":"sln.ID"</code> — идентификатор приложения</li>
 <li><code>"IsPredefined":false</code> — непредустановленная роль</li>
 <li><code>"RoleType":1</code> — тип роли:
 <ul>
@@ -533,18 +533,18 @@
 </ul>
 </li>
 <li>Аккаунт добавлен в роль — описание события</li>
-<li><code>'{"User":"username",``"Role":"[ApplicationSystemName] RoleSystemName"``,"RoleType":"BusinessApp"}'</code> — тело запроса:
+<li><code>'{"User":"username","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp"}'</code> — тело запроса:
 <ul>
 <li>
 <ul>
-<li><code>"``User``":"``username``"</code> — имя пользователя</li>
+<li><code>"User":"username"</code> — имя пользователя</li>
 <li><code>"Role":"[ApplicationSystemName] RoleSystemName"</code> — свойства роли:
 <ul>
 <li><code>systemSolution</code> — системное имя приложения</li>
 <li><code>RoleSystemName</code> — системное имя роли</li>
 </ul>
 </li>
-<li><code>"RoleType":"``BusinessApp``"</code> — тип роли:
+<li><code>"RoleType":"BusinessApp"</code> — тип роли:
 <ul>
 <li><code>BusinessApp</code> — роль в приложении</li>
 <li><code>System</code> — системная роль</li>
@@ -591,8 +591,8 @@
 <li><code>"Id":"role.ID"</code> — идентификатор роли</li>
 <li><code>"Name":"Role Name"</code> — название роли</li>
 <li><code>"Alias":"RoleSystemName"</code> — системное имя роли</li>
-<li><code>"Workspace":{"Id":"workspace.``ID``","Name":"Workspace Name"}</code> — свойства раздела навигации, к которому</li>
-<li><code>"Solution":"sln.``ID``"</code> — идентификатор приложения</li>
+<li><code>"Workspace":{"Id":"workspace.ID","Name":"Workspace Name"}</code> — свойства раздела навигации, к которому</li>
+<li><code>"Solution":"sln.ID"</code> — идентификатор приложения</li>
 <li><code>"IsPredefined":false</code> — непредустановленная роль</li>
 <li><code>"RoleType":1</code> — тип роли:
 <ul>
@@ -607,16 +607,16 @@
 </ul>
 </li>
 <li>Аккаунт удален из роли — описание события</li>
-<li><code>'{"User":"username",``"Role":"[ApplicationSystemName] RoleSystemName"``,"RoleType":"BusinessApp"}'</code> — тело запроса:
+<li><code>'{"User":"username","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp"}'</code> — тело запроса:
 <ul>
 <li><code>"User":"username"</code> — имя пользователя</li>
-<li><code>"Role":"[``ApplicationSystemName``] RoleSystemName"</code> — свойства роли:
+<li><code>"Role":"[ApplicationSystemName] RoleSystemName"</code> — свойства роли:
 <ul>
 <li><code>ApplicationSystemName</code> — системное имя приложения</li>
 <li><code>RoleSystemName</code> — системное имя роли</li>
 </ul>
 </li>
-<li><code>"``RoleType``":"``BusinessApp``"</code> — тип роли:
+<li><code>"RoleType":"BusinessApp"</code> — тип роли:
 <ul>
 <li><code>BusinessApp</code> — роль в приложении</li>
 <li><code>System</code> — системная роль</li>
@@ -678,8 +678,8 @@
 </ul>
 <p><strong>Чтение свойств шаблона записи</strong></p>
 <ul>
-<li><code>http://SERVER_URL/api/TemplatesApi/Get/oa.``ID</code> — путь к методу API для чтения шаблона записи</li>
-<li><code>http://SERVER_URL/api/RecordTypeContextApi?recordTypeId=oa.``ID</code> — путь к методу API для чтения свойств шаблона записи</li>
+<li><code>http://SERVER_URL/api/TemplatesApi/Get/oa.ID</code> — путь к методу API для чтения шаблона записи</li>
+<li><code>http://SERVER_URL/api/RecordTypeContextApi?recordTypeId=oa.ID</code> — путь к методу API для чтения свойств шаблона записи</li>
 <li><code>oa.ID</code> — идентификатор шаблона записи</li>
 <li><code>GET</code> — тип запроса</li>
 <li><code>"{"id":"oa.ID"}"</code> — тело запроса с идентификатором шаблона</li>
@@ -702,16 +702,16 @@
 <li><code>"filter":{}</code> — фильтр шаблонов</li>
 <li><code>OK</code> — статус обработки запроса</li>
 <li><code>hh:mm:ss</code> — длительность обработки запроса</li>
-<li><code>POST</code> <code>completed</code> — результат обработки запроса: выполнен</li>
+<li><code>POST completed</code> — результат обработки запроса: выполнен</li>
 </ul>
 <p><strong>Чтение списка связанных шаблонов</strong></p>
 <ul>
-<li><code>http://SERVER_URL/api/TemplatesApi/GetUsages/oa.``ID</code>— путь к методу API для чтения списка шаблонов, связанных с указанным шаблоном</li>
+<li><code>http://SERVER_URL/api/TemplatesApi/GetUsages/oa.ID</code>— путь к методу API для чтения списка шаблонов, связанных с указанным шаблоном</li>
 <li><code>GET</code>— тип запроса</li>
-<li><code>{"id":"oa.``ID``"}</code> — тело запроса с идентификатором шаблона</li>
+<li><code>{"id":"oa.ID"}</code> — тело запроса с идентификатором шаблона</li>
 <li><code>OK</code> — статус обработки запроса</li>
 <li><code>hh:mm:ss</code> — длительность обработки запроса</li>
-<li><code>GET</code> <code>completed</code> — результат обработки запроса: выполнен</li>
+<li><code>GET completed</code> — результат обработки запроса: выполнен</li>
 </ul>
 <h3 id="копирование-объекта">Копирование объекта</h3>
 <p><strong>Пример события</strong></p>
@@ -727,7 +727,7 @@
 <li><code>XXX.XXX.XXX.XXX</code> — IP-адрес сервера</li>
 <li><code>http://SERVER_URL/FormDesigner/CloneRecordForm</code> — путь к методу API для копирования формы</li>
 <li><code>POST</code> — тип запроса</li>
-<li><code>{"recordTypeId":"oa.``ID``","cloningFormId":"form.``ID``","newName":"``New Form Name``","newAlias":"``NewFormSystemName``"}</code> — тело запроса:</li>
+<li><code>{"recordTypeId":"oa.ID","cloningFormId":"form.ID","newName":"New Form Name","newAlias":"NewFormSystemName"}</code> — тело запроса:</li>
 <li><code>"recordTypeId":"oa.ID"</code> — идентификатор шаблона записи
 <ul>
 <li><code>"cloningFormId":"form.ID"</code> — идентификатор исходной формы</li>
@@ -737,7 +737,7 @@
 </li>
 <li><code>200</code> — статус обработки запроса</li>
 <li><code>hh:mm:ss.SSS</code> — длительность обработки запроса</li>
-<li><code>POST</code> <code>completed</code> — результат обработки запроса: выполнен</li>
+<li><code>POST completed</code> — результат обработки запроса: выполнен</li>
 </ul>
 <h3 id="изменение-объекта">Изменение объекта</h3>
 <p><strong>Пример события</strong></p>
@@ -753,17 +753,17 @@
 <li><code>XXX.XXX.XXX.XXX</code> — IP-адрес сервера</li>
 <li><code>http://SERVER_URL/api/RecordTypeContextApi</code> — путь к методу API для изменения атрибута шаблона</li>
 <li><code>POST</code> — тип запроса</li>
-<li><code>"property":{``}</code> — тело запроса со свойствами атрибута:
+<li><code>"property":{}</code> — тело запроса со свойствами атрибута:
 <ul>
-<li><code>"RecordTypeId":"oa.``ID``"</code>— идентификатор шаблона записи, атрибут которого требуется изменить</li>
+<li><code>"RecordTypeId":"oa.ID"</code>— идентификатор шаблона записи, атрибут которого требуется изменить</li>
 <li><code>"Name":"Attribute Name"</code> — название атрибута</li>
 <li><code>"Alias":"AttributeSystemName"</code> — системное имя атрибута</li>
 </ul>
 </li>
-<li><code>O``K</code> — статус обработки запроса</li>
+<li><code>OK</code> — статус обработки запроса</li>
 <li><code>hh:mm:ss.SSS</code> — длительность обработки запроса</li>
 </ul>
-<p><code>POST</code> <code>completed</code> — результат обработки запроса: выполнен</p>
+<p><code>POST completed</code> — результат обработки запроса: выполнен</p>
 <h3 id="удаление-объекта">Удаление объекта</h3>
 <p><strong>Пример события</strong></p>
 <div class="highlight"><code><code></code></code>
@@ -776,12 +776,12 @@
 <li><code>00000000-0000-0000-0000-000000000000</code> — идентификатор сеанса</li>
 <li><code>username</code> — имя пользователя, изменившего роль</li>
 <li><code>XXX.XXX.XXX.XXX</code> — IP-адрес сервера</li>
-<li><code>http://SERVER_URL/RecordTypeContextApi/Delete/op.``ID</code> — путь к методу API для удаления шаблона</li>
+<li><code>http://SERVER_URL/RecordTypeContextApi/Delete/op.ID</code> — путь к методу API для удаления шаблона</li>
 <li><code>DELETE</code> — тип запроса</li>
-<li><code>{"id":"op.``ID``"}"</code> — тело запроса: идентификатор шаблона, подлежащего удалению</li>
-<li><code>O``K</code> — статус обработки запроса</li>
+<li><code>{"id":"op.ID"}"</code> — тело запроса: идентификатор шаблона, подлежащего удалению</li>
+<li><code>OK</code> — статус обработки запроса</li>
 <li><code>hh:mm:ss.SSS</code> — длительность обработки запроса</li>
-<li><code>DELETE</code> <code>completed</code> — результат обработки запроса: выполнен</li>
+<li><code>DELETE completed</code> — результат обработки запроса: выполнен</li>
 </ul>
 <h3 id="установка-прав-доступа-на-объект">Установка прав доступа на объект</h3>
 <p><strong>Пример события</strong></p>
@@ -797,13 +797,13 @@
 <li><code>XXX.XXX.XXX.XXX</code> — IP-адрес сервера</li>
 <li><code>http://SERVER_URL/api/RolesCollectionApi/Put</code> — путь к методу API для изменения роли</li>
 <li><code>PUT</code> — тип запроса</li>
-<li><code>r``ole</code> — тело запроса:
+<li><code>role</code> — тело запроса:
 <ul>
 <li><code>"Id":"role.ID"</code> — идентификатор роли</li>
 <li><code>"Name":"Role Name"</code> — название роли</li>
 <li><code>"Alias":"RoleSystemName"</code> — системное имя роли</li>
-<li><code>"Workspace":{"Id":"workspace.``ID``","Name":"Workspace Name"}</code> — свойства раздела навигации, к которому привязана системная роль</li>
-<li><code>"Solution":"sln.``ID``"</code> — идентификатор приложения</li>
+<li><code>"Workspace":{"Id":"workspace.ID","Name":"Workspace Name"}</code> — свойства раздела навигации, к которому привязана системная роль</li>
+<li><code>"Solution":"sln.ID"</code> — идентификатор приложения</li>
 <li><code>"IsPredefined":false</code> — непредустановленная роль</li>
 <li><code>"RoleType":1</code> — тип роли:
 <ul>
@@ -814,7 +814,7 @@
 </ul>
 </li>
 <li><code>"RootResource":{}</code> — приложение, к ресурсам которого роль задаёт разрешения</li>
-<li><code>"Children":[{"Name":"``Resource name``","Children":[],"Target":"``resource``.``ID``","TargetType":``XX``,"Privileges":``XXX``,"AvailablePrivileges":``XXX``}]</code>— массив ресурсов, к которым роль задаёт разрешения
+<li><code>"Children":[{"Name":"Resource name","Children":[],"Target":"resource.ID","TargetType":XX,"Privileges":XXX,"AvailablePrivileges":XXX}]</code>— массив ресурсов, к которым роль задаёт разрешения
 <ul>
 <li><code>"Target":"resource.ID"</code> — идентификатор ресурса</li>
 <li><code>"TargetType":XX</code> — код типа ресурса</li>
@@ -825,7 +825,7 @@
 </ul>
 </li>
 <li><code>Разрешение добавлено в роль</code> — описание события</li>
-<li><code>'{"Privilege":"Read","Role":"[``applicationSystemName``] RoleSystemName","RoleType":"BusinessApp","Resource":"[``ParentSystemName``]</code> <code>ResourceSystemName","ResourceType":"RecordTemplate"}'</code> — тело запроса:
+<li><code>'{"Privilege":"Read","Role":"[applicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName","ResourceType":"RecordTemplate"}'</code> — тело запроса:
 <ul>
 <li><code>"Privilege":"Read"</code> — тип добавленного разрешения:
 <ul>
@@ -835,7 +835,7 @@
 <li><code>Update</code> — запись</li>
 </ul>
 </li>
-<li><code>"Role":"[``ApplicationSystemName``] RoleSystemName"</code> — свойства роли:
+<li><code>"Role":"[ApplicationSystemName] RoleSystemName"</code> — свойства роли:
 <ul>
 <li><code>ApplicationSystemName</code> — системное имя приложения</li>
 <li><code>RoleSystemName</code> — системное имя роли</li>
@@ -847,7 +847,7 @@
 <li><code>System</code> — системная</li>
 </ul>
 </li>
-<li><code>"Resource":"[``ParentSystemName``] ResourceSystemName"</code> путь к ресурсу, на доступ к которому предоставлено разрешение:
+<li><code>"Resource":"[ParentSystemName] ResourceSystemName"</code> путь к ресурсу, на доступ к которому предоставлено разрешение:
 <ul>
 <li><code>parentSystemName</code> — системное имя родительского ресурса</li>
 <li><code>ResourceSystemName</code> — системное имя ресурса</li>
@@ -886,13 +886,13 @@
 <li><code>XXX.XXX.XXX.XXX</code> — IP-адрес сервера</li>
 <li><code>http://SERVER_URL/api/RolesCollectionApi/Put</code> — путь к методу API для изменения роли</li>
 <li><code>PUT</code> — тип запроса</li>
-<li><code>r``ole</code> — тело запроса:
+<li><code>role</code> — тело запроса:
 <ul>
 <li><code>"Id":"role.ID"</code> — идентификатор роли</li>
 <li><code>"Name":"Role Name"</code> — название роли</li>
 <li><code>"Alias":"RoleSystemName"</code> — системное имя роли</li>
-<li><code>"Workspace":{"Id":"workspace.``ID``","Name":"Workspace Name"}</code> — свойства раздела навигации, к которому привязана системная роль</li>
-<li><code>"Solution":"sln.``ID``"</code> — идентификатор приложения</li>
+<li><code>"Workspace":{"Id":"workspace.ID","Name":"Workspace Name"}</code> — свойства раздела навигации, к которому привязана системная роль</li>
+<li><code>"Solution":"sln.ID"</code> — идентификатор приложения</li>
 <li><code>"IsPredefined":false</code> — непредустановленная роль</li>
 <li><code>"RoleType":1</code> — тип роли:
 <ul>
@@ -903,7 +903,7 @@
 </ul>
 </li>
 <li><code>"RootResource":{}</code> — приложение, к ресурсам которого роль задаёт разрешения</li>
-<li><code>"Children":[{"Name":"``Resource name``","Children":[],"Target":"``resource``.``ID``","TargetType":``XX``,"Privileges":``XXX``,"AvailablePrivileges":``XXX``}]</code>— массив ресурсов, к которым роль задаёт разрешения
+<li><code>"Children":[{"Name":"Resource name","Children":[],"Target":"resource.ID","TargetType":XX,"Privileges":XXX,"AvailablePrivileges":XXX}]</code>— массив ресурсов, к которым роль задаёт разрешения
 <ul>
 <li><code>"Target":"resource.ID"</code> — идентификатор ресурса</li>
 <li><code>"TargetType":XX</code> — код типа ресурса</li>
@@ -914,7 +914,7 @@
 </ul>
 </li>
 <li><code>Разрешение удалено из роли</code> — описание события</li>
-<li><code>'{"Privilege":"Read","Role":"[``applicationSystemName``] RoleSystemName","RoleType":"BusinessApp","Resource":"[``ParentSystemName``]</code> <code>ResourceSystemName","ResourceType":"RecordTemplate"}'</code> — тело запроса:
+<li><code>'{"Privilege":"Read","Role":"[applicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName","ResourceType":"RecordTemplate"}'</code> — тело запроса:
 <ul>
 <li><code>"Privilege":"Read"</code> — тип добавленного разрешения:
 <ul>
@@ -924,7 +924,7 @@
 <li><code>Update</code> — запись</li>
 </ul>
 </li>
-<li><code>"Role":"[``ApplicationSystemName``] RoleSystemName"</code> — свойства роли:
+<li><code>"Role":"[ApplicationSystemName] RoleSystemName"</code> — свойства роли:
 <ul>
 <li><code>ApplicationSystemName</code> — системное имя приложения</li>
 <li><code>RoleSystemName</code> — системное имя роли</li>
@@ -936,7 +936,7 @@
 <li><code>System</code> — системная</li>
 </ul>
 </li>
-<li><code>"Resource":"[``ParentSystemName``] ResourceSystemName"</code> путь к ресурсу, на доступ к которому предоставлено разрешение:
+<li><code>"Resource":"[ParentSystemName] ResourceSystemName"</code> путь к ресурсу, на доступ к которому предоставлено разрешение:
 <ul>
 <li><code>parentSystemName</code> — системное имя родительского ресурса</li>
 <li><code>ResourceSystemName</code> — системное имя ресурса</li>
@@ -982,7 +982,7 @@
 <li><code>System information</code> — сведения о системе
 <ul>
 <li><code>Server: SERVERNAME</code> — имя сервера</li>
-<li><code>Database:</code> <code>xxxxxxxx``-``xxxx``-``xxxx``-``xxxx``-``xxxxxxxxxxxx</code> — идентификатор базы данных экземпляра ПО</li>
+<li><code>Database: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</code> — идентификатор базы данных экземпляра ПО</li>
 <li><code>OperatingSystem: Microsoft Windows NT XXX.XXX.XXX.XXX</code> — наименование и номер версии операционной системы сервера</li>
 <li><code>Version: X.X.XXXX.X</code> — версия ПО Comindware Business Application Platform</li>
 <li><code>Timezone: Europe/Moscow</code> — часовой пояс экземпляра ПО</li>
@@ -996,10 +996,10 @@
 </li>
 <li><code>PerformanceHelper.Perform: FullTextSearchService.RebuildThreadWorker() succeed</code> —запущена системная служба полнотекстового поиска</li>
 <li><code>Time:59184ms</code> — длительность запуска службы</li>
-<li><code>TotalGCMemory:``XXX``MB</code> — память, выделенная сборщику мусора</li>
-<li><code>DeltaGCMemory:-``XXX``MB</code> — изменение памяти, выделенной сборщику мусора</li>
-<li><code>TotalProcessMemory:``XXX``MB</code> — память, выделенная системе</li>
-<li><code>DeltaProcessMemory:``XXX``MB</code> — изменение памяти, выделенной системе</li>
+<li><code>TotalGCMemory:XXXMB</code> — память, выделенная сборщику мусора</li>
+<li><code>DeltaGCMemory:-XXXMB</code> — изменение памяти, выделенной сборщику мусора</li>
+<li><code>TotalProcessMemory:XXXMB</code> — память, выделенная системе</li>
+<li><code>DeltaProcessMemory:XXXMB</code> — изменение памяти, выделенной системе</li>
 </ul>
 <h3 id="окончание-остановка-работы-системы">Окончание (остановка) работы системы</h3>
 <p><strong>Пример события</strong></p>

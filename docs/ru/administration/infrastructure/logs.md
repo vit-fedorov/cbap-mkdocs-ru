@@ -148,6 +148,6 @@ _![Журнал трассировки событий](logs_event_tracing.png)_
 
 **[Мониторинг][monitoring]**
 
-**[Производительность](performance.md)**
+**[Производительность][performance]**
 
-**[Подсистема журналирования]({{ kbArticleURLPrefix }}2501.html)**
+**[Подсистема журналирования][logging_engine]**

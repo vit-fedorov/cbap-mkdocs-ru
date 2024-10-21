@@ -326,7 +326,7 @@
 
 [login_and_registration_page_design]: {{ kbArticleURLPrefix }}2198
 
-[logging_configuration]: {{ kbArticleURLPrefix }}2501
+[logging_configuration]: {{ kbArticleURLPrefix }}2186
 
 [logs]: {{ kbArticleURLPrefix }}2180
 

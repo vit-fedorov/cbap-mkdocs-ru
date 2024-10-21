@@ -94,3 +94,5 @@ _![Панель сведений с кнопкой «Просмотреть жу
 **[Производительность][performance]**
 
 **[Подсистема журналирования][logging_engine]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -3,8 +3,7 @@ pdf/
 !pdf/*.pdf
 !install/requirements.txt
 for_kb_import_en/
-!for_kb_import_ru/
-for_kb_import_ru/search/*
+for_kb_import_ru/search/search_index.json
 ru_help_local_files/
 eh_help_local_files
 .vscode/settings.json

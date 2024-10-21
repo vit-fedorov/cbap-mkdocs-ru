@@ -9,14 +9,14 @@ kbId:
 
 ## Настройка шаблона записи с мета-данными
 
-1. Создайте шаблон «Тип автомобиля».
+1. Создайте шаблон «Тип автомобиля / Vehicle Type».
 2. Добавьте текстовые атрибуты «Название RU», «Название En».
 3. Добавьте вычисляемый текстовый атрибут «Отображаемое название»:
 
     - Вычисляемое выражение: формула
 
-    ``` cs
-    IF (USER()->language=='ru', VALUE($NazvanieRU, $NazvanieEN), VALUE($NazvanieEN, $NazvanieRU))
-    ```
+        ``` cs
+        IF (USER()->language=='ru', VALUE($NazvanieRU, $NazvanieEN), VALUE($NazvanieEN, $NazvanieRU))
+        ```
 
-4. 
+4. Lj

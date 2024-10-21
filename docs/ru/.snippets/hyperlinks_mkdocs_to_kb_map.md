@@ -1,8 +1,8 @@
 [api_calls]: {{ kbCategoryURLPrefix }}513
 
-[api_web]: {{ kbArticleURLPrefix }}2080
+[api_web]: {{ kbArticleURLPrefix }}1940
 
-[api_intro]: {{ kbArticleURLPrefix }}1940
+[api_intro]: {{ kbArticleURLPrefix }}2080
 
 [ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}2517
 
@@ -49,6 +49,8 @@
 [export_template_csharp_collection_download]: {{ kbArticleURLPrefix }}1944
 
 [integration_examples]: {{ kbCategoryURLPrefix }}530
+
+[logging_engine]: {{ kbArticleURLPrefix }}2501
 
 [manual_csharp]: {{ kbArticleURLPrefix }}2400
 
@@ -151,6 +153,8 @@
 [attributes_system]: {{ kbArticleURLPrefix }}2242
 
 [auto_numerating_records]: {{ kbArticleURLPrefix }}2607
+
+[authentication_keys]: {{ kbArticleURLPrefix }}2604
 
 [backup]: {{ kbArticleURLPrefix }}2190
 
@@ -320,6 +324,10 @@
 
 [licensing]: {{ kbArticleURLPrefix }}2183
 
+[login_and_registration_page_design]: {{ kbArticleURLPrefix }}2198
+
+[logging_configuration]: {{ kbArticleURLPrefix }}2501
+
 [logs]: {{ kbArticleURLPrefix }}2180
 
 [logs_odata_inegration]: {{ kbArticleURLPrefix }}2180#logs_odata_inegration
@@ -465,6 +473,8 @@
 [substitution]: {{ kbArticleURLPrefix }}2192
 
 [system_roles]: {{ kbArticleURLPrefix }}2175
+
+[system_service_management]: {{ kbArticleURLPrefix }}2182
 
 [table_clone]: {{ kbArticleURLPrefix }}2552
 

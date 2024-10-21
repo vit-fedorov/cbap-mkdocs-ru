@@ -10,5 +10,5 @@ nav:
     - logging_configuration.md
     - global_configuration.md
     - adapters.md
-    - authentication_key.md
+    - authentication_keys.md
     - ...

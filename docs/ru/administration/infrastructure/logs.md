@@ -146,7 +146,7 @@ _![Журнал трассировки событий](logs_event_tracing.png)_
 
 **[Глобальная конфигурация][global_configuration]**
 
-**[Мониторинг](monitoring.md)**
+**[Мониторинг][monitoring]**
 
 **[Производительность](performance.md)**
 

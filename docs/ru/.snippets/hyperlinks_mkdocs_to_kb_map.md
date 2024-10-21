@@ -80,7 +80,7 @@
 
 [accounts]: {{ kbArticleURLPrefix }}2194
 
-[account_permission_audit]: {{ kbArticleURLPrefix }}2194
+[account_permission_audit]: {{ kbArticleURLPrefix }}2195
 
 [actions]: {{ kbArticleURLPrefix }}2390
 

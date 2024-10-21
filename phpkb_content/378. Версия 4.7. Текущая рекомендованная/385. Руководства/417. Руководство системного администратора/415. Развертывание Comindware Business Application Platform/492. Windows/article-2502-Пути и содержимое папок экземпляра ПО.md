@@ -45,7 +45,7 @@ _![Пример файла конфигурации instancename.yml](https://k
 - `C``:\` `ProgramData``\сomindware``\``Instances` — папка с экземплярами ПО.
 - `C``:\``ProgramData``\сomindware``\``Instances``\instancename` — экземпляр ПО.
 - `C``:\``ProgramData``\сomindware``\``Instances``\instancename``\``Config` — конфигурационные файлы:
-    - `logs.config` (конфигурация журналов, см. статью *«[Подсистема журналирования](https://kb.comindware.ru/article.php?id=2501)»*);
+    - `logs.config` (конфигурация журналов, см. статью *«[Подсистема журналирования][logging_engine]»*);
     - `Web.config` (конфигурация экземпляра системы);
     - `Workers.config` (конфигурация системных служб экземпляра системы).
 - `C``:\``ProgramData``\``сomindware``\``Instances``\instancename``\``Data` — файлы базы данных.
@@ -61,7 +61,7 @@ _![Пример файла конфигурации instancename.yml](https://k
 
 **[Антивирусное ПО. Настройка исключений: пути и файлы Comindware Business Application Platform](https://kb.comindware.ru/article.php?id=2581)**
 
-**[Подсистема журналирования](https://kb.comindware.ru/article.php?id=2501)**
+**[Подсистема журналирования][logging_engine]**
 
 
 

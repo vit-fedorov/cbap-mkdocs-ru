@@ -472,6 +472,6 @@ writeTo="errorsFile,EventLogCBAPErrors"/>
 
 **[Просмотр показателей производительности с помощью страницы «Администрирование»][performance]**
 
-**[Конфигурация журналирования. Настройка, скачивание журналов](https://kb.comindware.ru/article.php?id=2186)**
+**[Конфигурация журналирования. Настройка, скачивание журналов][logging_configuration]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

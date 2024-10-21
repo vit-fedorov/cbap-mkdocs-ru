@@ -45,9 +45,9 @@ kbId: 2311
     2. [Информационные страницы. Использование](https://kb.comindware.ru/article.php?id=2303)
     3. [Диаграммы. Определения, создание, просмотр, удаление](https://kb.comindware.ru/article.php?id=2154)
 7. Мониторинг и журналирование работы Системы
-    1. [Подсистема журналирования](https://kb.comindware.ru/article.php?id=2501#mcetoc_1glgviuqt6)
-    2. [Перенаправление сообщений из файлов журналов в журнал событий Windows](https://kb.comindware.ru/article.php?id=2501#mcetoc_1glgvkqe77)
-    3. [Файловые журналы](https://kb.comindware.ru/article.php?id=2501#mcetoc_1glgvul1j8)
+    1. [Подсистема журналирования][logging_engine]
+    2. [Перенаправление сообщений из файлов журналов в журнал событий Windows][logging_engine]
+    3. [Файловые журналы][logging_engine]
 8. Архитектура и ландшафт развёртывания Системы
     1. [Определения](https://kb.comindware.ru/article.php?id=2085#mcetoc_1g78u77lo2)
     2. [Архитектура Системы](https://kb.comindware.ru/article.php?id=2085#mcetoc_1g7eahlrr0)
@@ -90,10 +90,10 @@ kbId: 2311
     7. [Цветовая палитра][themes]
     8. [Предварительный просмотр][themes]
 14. Настройка дизайна страниц входа и регистрации
-    1. [Конструктор страниц входа и регистрации](https://kb.comindware.ru/article.php?id=2198#mcetoc_1gjripa5r1)
-    2. [Настройка страницы входа](https://kb.comindware.ru/article.php?id=2198#mcetoc_1gjripa5r2)
-    3. [Настройка страницы регистрации](https://kb.comindware.ru/article.php?id=2198#mcetoc_1gjripa5r5)
-    4. [Настройка общих блоков страниц входа и регистрации](https://kb.comindware.ru/article.php?id=2198#mcetoc_1gjripa5r7)
+    1. [Конструктор страниц входа и регистрации][login_and_registration_page_design]
+    2. [Настройка страницы входа][login_and_registration_page_design]
+    3. [Настройка страницы регистрации][login_and_registration_page_design]
+    4. [Настройка общих блоков страниц входа и регистрации][login_and_registration_page_design]
 15. Настройка путей передачи данных
     1. [Просмотр списка путей передачи данных][communication_routes]
     2. [Создание пути передачи данных][communication_routes]
@@ -149,8 +149,8 @@ kbId: 2311
     7. [Отзыв лицензий у аккаунтов][licensing]
     8. [Удаление лицензионного ключа][licensing]
 24. Управление системными службами
-    1. [Просмотр списка системных служб](https://kb.comindware.ru/article.php?id=2182#mcetoc_1gjrhskg01)
-    2. [Остановка или запуск служб](https://kb.comindware.ru/article.php?id=2182#mcetoc_1gjrhskg16)
+    1. [Просмотр списка системных служб][system_service_management]
+    2. [Остановка или запуск служб][system_service_management]
 25. Настройка подключений
     1. [Просмотр списка подключений][connections]
     2. [Типы подключений][connections]
@@ -168,8 +168,8 @@ kbId: 2311
     7. [Показатели на вкладке «Сообщения»][performance]
     8. [Показатели на вкладке «Выражения»][performance]
 27. Настройка конфигурации журналирования
-    1. [Просмотр и настройка конфигурации](https://kb.comindware.ru/article.php?id=2186#mcetoc_1gjrh9tu31)
-    2. [Скачивание журналов](https://kb.comindware.ru/article.php?id=2186#mcetoc_1gjrh9tu43)
+    1. [Просмотр и настройка конфигурации][logging_configuration]
+    2. [Скачивание журналов][logging_configuration]
 28. Настройка глобальной конфигурации
     1. [Просмотр и настройка конфигурации][global_configuration]
 29. Настройка адаптеров

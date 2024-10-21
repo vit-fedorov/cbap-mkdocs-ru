@@ -17,7 +17,7 @@ kbId: 2431
     - выберите элемент на диаграмме;
     - в разделе «**Быстрое создание**» [меню элемента][конструктор-диаграмм] укажите элемент, который требуется создать.
 4. Новый элемент будет создан и при необходимости связан потоком управления с имеющимся на диаграмме.
-5. [Настройте элемент](https://kb.comindware.ru/article.php?id=2438).
+5. [Настройте элемент][configuring_process_entity_properties].
 
 _![Создание элемента на диаграмме](https://kb.comindware.ru/assets/edit_diagram_create_element.png)_
 
@@ -87,8 +87,8 @@ _![Изменение размера элемента](https://kb.comindware.ru/
 
 **[Конструктор диаграмм][конструктор-диаграмм]**
 
-**[Изменение свойств элемента процессной архитектуры](https://kb.comindware.ru/article.php?id=2438)**
+**[Изменение свойств элемента процессной архитектуры][configuring_process_entity_properties]**
 
-**[Редактирование формы свойств и атрибутов элемента](https://kb.comindware.ru/article.php?id=2435)**
+**[Редактирование формы свойств и атрибутов элемента][configuring_process_entity_propeerties_form_and_attributes]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

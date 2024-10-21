@@ -1,4 +1,6 @@
-<h1>Управление версиями диаграммы процесса</h1><div class="mce-toc">
+<h1>Управление версиями диаграммы процесса</h1><div class="md-container" data-md-component="container">
+<div class="md-main__inner md-grid"><nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<div class="mce-toc">
 <h2 class="toc-heading">Содержание</h2>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#введение"> <span class="md-ellipsis"> Введение </span> </a></li>
@@ -9,6 +11,7 @@
 <li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#связанные-статьи"> <span class="md-ellipsis"> Связанные статьи </span> </a></li>
 </ul>
 </div>
+</nav>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h2 id="введение">Введение</h2>
@@ -28,27 +31,30 @@
 <h2 id="diagram_version_list_view">Просмотр списка версий диаграммы</h2>
 <p>Просмотреть список версий диаграммы процесса можно двумя способами:</p>
 <ul>
-<li>В <strong><a class="autorefs autorefs-internal mkdocs_imported_link" href="../index.html#diagram_list">списке диаграмм</a></strong> нажмите кнопку «<strong>Показать все версии</strong>» в столбце «<strong>Версии</strong>» рядом с количеством версий. Отобразится список версий диаграммы со следующими сведениями:
-<ul>
-<li>номер версии диаграммы;</li>
+<li>
+<p>В <strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2211#diagram_list">списке диаграмм</a></strong> нажмите кнопку «<strong>Показать все версии</strong>» в столбце «<strong>Версии</strong>» рядом с количеством версий. Отобразится список версий диаграммы со следующими сведениями:</p>
+</li>
+<li>
+<p>номер версии диаграммы;</p>
+</li>
 <li>дата публикации версии;</li>
 <li>общее количество экземпляров процесса, запущенных по данной версии диаграммы;</li>
-<li>количество экземпляров процесса в статусе «<strong>Активен</strong>».
-<div class="screenshot_with_caption"><img alt="Список версий диаграммы процесса, открытый из списка диаграмм" class="img-responsive" height="368" src="https://kb.comindware.ru/assets/process_diagram_list_versions.png" width="684"/>
-<p class="caption">Список версий диаграммы процесса, открытый из списка диаграмм</p>
-</div>
+<li>
+<p>количество экземпляров процесса в статусе «<strong>Активен</strong>».</p>
+<figure class="screenshot_with_caption"><img alt="Список версий диаграммы процесса, открытый из списка диаграмм" src="https://kb.comindware.ru/assets/process_diagram_list_versions.png"/>
+<figcaption class="caption">Список версий диаграммы процесса, открытый из списка диаграмм</figcaption>
+</figure>
 </li>
-</ul>
-</li>
-<li>На <strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2360#process_diagram_view">странице «<strong>Диаграмма</strong>» </a> </strong>  шаблона процесса или в <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2360#process_diagram_designer">конструкторе диаграммы</a> нажмите кнопку «<strong>Выбрать версию</strong>». Отобразится список версий диаграммы со следующими сведениями:
+<li>
+<p id="process_diagram_version_list">На <strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2360#process_diagram_view">странице «<strong>Диаграмма</strong>»</a></strong> шаблона процесса или в <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2360#process_diagram_designer">конструкторе диаграммы</a> нажмите кнопку «<strong>Выбрать версию</strong>». Отобразится список версий диаграммы со следующими сведениями:</p>
 <ul>
 <li>номер версии диаграммы;</li>
 <li>дата публикации версии;</li>
 <li>гиперссылки с ID экземпляров процесса в статусе «<strong>Активен</strong>», запущенных по данной версии диаграммы. При нажатии гиперссылки отобразится <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2355">диаграмма экземпляра процесса</a>.</li>
 </ul>
-<div class="screenshot_with_caption"><img alt="Список версий диаграммы процесса, открытый c диаграммы" class="img-responsive" height="368" src="https://kb.comindware.ru/assets/process_diagram_version_list.png" width="684"/>
-<p class="caption">Список версий диаграммы процесса, открытый c диаграммы</p>
-</div>
+<figure class="screenshot_with_caption"><img alt="Список версий диаграммы процесса, открытый c диаграммы" src="https://kb.comindware.ru/assets/process_diagram_version_list.png"/>
+<figcaption class="caption">Список версий диаграммы процесса, открытый c диаграммы</figcaption>
+</figure>
 </li>
 </ul>
 <h2 id="выбор-версии-диаграммы-для-просмотра-и-редактирования">Выбор версии диаграммы для просмотра и редактирования</h2>
@@ -82,9 +88,9 @@
 <div class="notice notice-info">
 <p class="admonition-title">Примечание</p>
 <p>Удалить можно только версию диаграммы, по которой нет запущенных экземпляров процесса. В противном случае отобразится сообщение о том, что нельзя удалить версию диаграммы, по которой выполняется экземпляр процесса:</p>
-<div class="screenshot_with_caption"><img alt="Сообщение при попытке удаления версии диаграммы выполняющегося экземпляра процесса" class="img-responsive" height="48" src="https://kb.comindware.ru/assets/diagram_version_deletion_denied_copy3.png" width="425"/>
-<p class="caption">Сообщение при попытке удаления версии диаграммы выполняющегося экземпляра процесса</p>
-</div>
+<figure class="screenshot_with_caption"><img alt="Сообщение при попытке удаления версии диаграммы выполняющегося экземпляра процесса" src="https://kb.comindware.ru/assets/diagram_version_deletion_denied.png"/>
+<figcaption class="caption">Сообщение при попытке удаления версии диаграммы выполняющегося экземпляра процесса</figcaption>
+</figure>
 </div>
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2360#process_diagram_publish">Публикация диаграммы процесса</a></strong></p>
@@ -93,4 +99,5 @@
 <p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2355">Использование диаграммы экземпляра процесса</a></strong></p>
 </article>
 </div>
-<p><a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#"> <em class="fa-light fa-arrow-up">‌<!--icon--></em> К началу </a></p>
+</div>
+<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#"> <em class="fa-light fa-arrow-up">‌<!--icon--></em> К началу </a></div>

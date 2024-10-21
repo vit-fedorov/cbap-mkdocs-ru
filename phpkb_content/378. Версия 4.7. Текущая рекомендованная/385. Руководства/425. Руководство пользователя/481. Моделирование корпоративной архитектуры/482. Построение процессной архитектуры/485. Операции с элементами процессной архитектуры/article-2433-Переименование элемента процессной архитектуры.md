@@ -33,8 +33,8 @@ kbId: 2433
 
 **[Просмотр реестра процессов][построение-процессной-архитектуры]**
 
-**[Создание элемента процессной архитектуры](https://kb.comindware.ru/article.php?id=2432)**
+**[Создание элемента процессной архитектуры][creating_process_entity]**
 
-**[Изменение свойств элемента процессной архитектуры](https://kb.comindware.ru/article.php?id=2438)**
+**[Изменение свойств элемента процессной архитектуры][configuring_process_entity_properties]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

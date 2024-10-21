@@ -113,12 +113,12 @@ kbId: 2311
     3. [Настройка свойств группы][groups]
     4. [Удаление групп][groups]
 18. Аудит разрешений аккаунтов
-    1. [Просмотр разрешений аккаунтов](https://kb.comindware.ru/article.php?id=2195#mcetoc_1gjrg7q8g1)
-    2. [Экспорт списка разрешений](https://kb.comindware.ru/article.php?id=2195#mcetoc_1gjrg7q8g2)
-    3. [Разрешения в приложениях](https://kb.comindware.ru/article.php?id=2195#mcetoc_1gjrg7q8g3)
-    4. [Системные разрешения](https://kb.comindware.ru/article.php?id=2195#mcetoc_1gjrg7q8g4)
-    5. [Члены групп](https://kb.comindware.ru/article.php?id=2195#mcetoc_1gjrg7q8g5)
-    6. [Члены ролей](https://kb.comindware.ru/article.php?id=2195#mcetoc_1gjrg7q8g6)
+    1. [Просмотр разрешений аккаунтов][account_permission_audit]
+    2. [Экспорт списка разрешений][account_permission_audit]
+    3. [Разрешения в приложениях][account_permission_audit]
+    4. [Системные разрешения][account_permission_audit]
+    5. [Члены групп][account_permission_audit]
+    6. [Члены ролей][account_permission_audit]
 19. Настройка замещений
     1. [Просмотр списка замещений][substitution]
     2. [Создание замещения][substitution]

@@ -32,8 +32,8 @@ kbId: 2421
 
 **[Просмотр реестра оргединиц][построение-организационной-структуры]**
 
-**[Создание оргединицы](https://kb.comindware.ru/article.php?id=2420)**
+**[Создание оргединицы][creating_organizational_unit]**
 
-**[Настройка оргединицы](https://kb.comindware.ru/article.php?id=2418)**
+**[Настройка оргединицы][configuring_organizational_unit]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

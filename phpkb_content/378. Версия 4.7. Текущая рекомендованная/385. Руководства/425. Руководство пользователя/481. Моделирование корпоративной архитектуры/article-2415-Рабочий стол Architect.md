@@ -26,7 +26,7 @@ _![Рабочий стол Comindware Architect](https://kb.comindware.ru/assets
 - **Настройка продукта**
     - **Внешний вид**
         - **[Темы][themes]**
-        - **[Дизайн страниц входа и регистрации](https://kb.comindware.ru/article.php?id=2198)**
+        - **[Дизайн страниц входа и регистрации][login_and_registration_page_design]**
         - **[Рабочее пространство][navigation_sections_setup]**
     - **Расширенная настройка**
         - **[Резервное копирование](https://kb.comindware.ru/category.php?id=436)**

@@ -132,7 +132,7 @@ kbId: 2613
         - страницу «[Производительность][performance]»;
         - страницу «[Журналы событий][logs]»;
         - страницу «[Мониторинг][monitoring]»;
-        - [файловые журналы](https://kb.comindware.ru/article.php?id=2501);
+        - [файловые журналы][logging_engine];
         - тайминги запросов браузера;
     - Используйте инструменты профилирования производительности вебсайта, например Webpagetest, профайлер JavaScript в Chrome;
     - Используйте инструменты мониторинга производительности сервера, например Zabbix, Prometheus, Grafana, VmStat (`sysstat`), `top`, `htop`, `perf` и `flamegraph.pl`, .

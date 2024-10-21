@@ -46,10 +46,10 @@ _![Области конструктора страниц входа и реги
 4. Настройте [информационный блок](#mcetoc_1gjripa5r4).
 5. Настройте общие блоки страниц входа и регистрации:
 
-    - [Логотип](https://kb.comindware.ru/secure/%d0%94%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd-%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%b8%d1%86-%d0%b2%d1%85%d0%be%d0%b4%d0%b0-%d0%b8-%d1%80%d0%b5%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%86%d0%b8%d0%b8-2198.html#mcetoc_1gjripa5r8)
-    - [Социальные сети](https://kb.comindware.ru/secure/%d0%94%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd-%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%b8%d1%86-%d0%b2%d1%85%d0%be%d0%b4%d0%b0-%d0%b8-%d1%80%d0%b5%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%86%d0%b8%d0%b8-2198.html#mcetoc_1gjripa5r9)
-    - [Ссылки](https://kb.comindware.ru/secure/%d0%94%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd-%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%b8%d1%86-%d0%b2%d1%85%d0%be%d0%b4%d0%b0-%d0%b8-%d1%80%d0%b5%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%86%d0%b8%d0%b8-2198.html#mcetoc_1gjripa5ra)
-    - [Фон](https://kb.comindware.ru/secure/%d0%94%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd-%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%b8%d1%86-%d0%b2%d1%85%d0%be%d0%b4%d0%b0-%d0%b8-%d1%80%d0%b5%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%86%d0%b8%d0%b8-2198.html#mcetoc_1gjripa5rb)
+    - [Логотип][login_and_registration_page_design]
+    - [Социальные сети][login_and_registration_page_design]
+    - [Ссылки][login_and_registration_page_design]
+    - [Фон][login_and_registration_page_design]
 
 ![Настройка страницы входа](https://kb.comindware.ru/assets/img_65fbf6fd2d496.png)
 
@@ -82,10 +82,10 @@ _![](https://kb.comindware.ru/assets/img_65fbf758e3f6c.png)_Настройка �
 2. Отобразятся макет и панель свойств страницы регистрации.
 3. В панели «**Свойства страницы регистрации**» ведите **заголовок страницы** — он будет отображаться во вкладке браузера, когда пользователь находится на странице регистрации.
 4. Настройте общие блоки страниц входа и регистрации:
-    - [Логотип](https://kb.comindware.ru/secure/%d0%94%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd-%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%b8%d1%86-%d0%b2%d1%85%d0%be%d0%b4%d0%b0-%d0%b8-%d1%80%d0%b5%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%86%d0%b8%d0%b8-2198.html#mcetoc_1gjripa5r8)
-    - [Социальные сети](https://kb.comindware.ru/secure/%d0%94%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd-%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%b8%d1%86-%d0%b2%d1%85%d0%be%d0%b4%d0%b0-%d0%b8-%d1%80%d0%b5%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%86%d0%b8%d0%b8-2198.html#mcetoc_1gjripa5r9)
-    - [Ссылки](https://kb.comindware.ru/secure/%d0%94%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd-%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%b8%d1%86-%d0%b2%d1%85%d0%be%d0%b4%d0%b0-%d0%b8-%d1%80%d0%b5%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%86%d0%b8%d0%b8-2198.html#mcetoc_1gjripa5ra)
-    - [Фон](https://kb.comindware.ru/secure/%d0%94%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd-%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%b8%d1%86-%d0%b2%d1%85%d0%be%d0%b4%d0%b0-%d0%b8-%d1%80%d0%b5%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%86%d0%b8%d0%b8-2198.html#mcetoc_1gjripa5rb)
+    - [Логотип][login_and_registration_page_design]
+    - [Социальные сети][login_and_registration_page_design]
+    - [Ссылки][login_and_registration_page_design]
+    - [Фон][login_and_registration_page_design]
 
 _![Настройка заголовка страницы регистрации](https://kb.comindware.ru/assets/img_65fbf96a94dc0.png)_
 
@@ -93,10 +93,10 @@ _![Настройка заголовка страницы регистрации
 
 Для страниц входа и регистрации предусмотрены общие элементы:
 
-- [Логотип](https://kb.comindware.ru/secure/%d0%94%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd-%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%b8%d1%86-%d0%b2%d1%85%d0%be%d0%b4%d0%b0-%d0%b8-%d1%80%d0%b5%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%86%d0%b8%d0%b8-2198.html#mcetoc_1gjripa5r8)
-- [Социальные сети](https://kb.comindware.ru/secure/%d0%94%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd-%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%b8%d1%86-%d0%b2%d1%85%d0%be%d0%b4%d0%b0-%d0%b8-%d1%80%d0%b5%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%86%d0%b8%d0%b8-2198.html#mcetoc_1gjripa5r9)
-- [Ссылки](https://kb.comindware.ru/secure/%d0%94%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd-%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%b8%d1%86-%d0%b2%d1%85%d0%be%d0%b4%d0%b0-%d0%b8-%d1%80%d0%b5%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%86%d0%b8%d0%b8-2198.html#mcetoc_1gjripa5ra)
-- [Фон](https://kb.comindware.ru/secure/%d0%94%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd-%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%b8%d1%86-%d0%b2%d1%85%d0%be%d0%b4%d0%b0-%d0%b8-%d1%80%d0%b5%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%86%d0%b8%d0%b8-2198.html#mcetoc_1gjripa5rb)
+- [Логотип][login_and_registration_page_design]
+- [Социальные сети][login_and_registration_page_design]
+- [Ссылки][login_and_registration_page_design]
+- [Фон][login_and_registration_page_design]
 
 _![Общие блоки страниц входа и регистрации](https://kb.comindware.ru/assets/img_65fbfde07d524.png)_
 

@@ -11,7 +11,7 @@ kbId: 2080
 
 - [**Solution API**](https://kb.comindware.ru/article.php?id=2150)
 - [**System Core API**](https://kb.comindware.ru/article.php?id=2073)
-- [**Web API**][api_intro]
+- [**Web API**][api_web]
 
 ### Определения
 
@@ -101,7 +101,7 @@ API **{{ productName }}** поддерживает два способа аут
 
 1. Чтобы перейти к странице Swagger, введите в адресной строке браузера строку `https://your-host/docs`, где `your-host` — доменное имя вашего сервера.
 2. Отобразится страница **{{ productName }} API** со следующими разделами:
-    - **RESTful Web API** — общие методы для всех версий ПО (см. [Методы Web API][api_intro]);
+    - **RESTful Web API** — общие методы для всех версий ПО (см. [Методы Web API][api_web]);
     - **System Core API** — системные методы, которые могут отличаться для разных версий ПО (см. [Методы System Core API](https://kb.comindware.ru/article.php?id=2150));
     - **Solution API** — методы для шаблонов бизнес-приложений (см. [Методы Solution API](https://kb.comindware.ru/article.php?id=2073)).
 3. Перейдите на страницу требуемого API.
@@ -132,7 +132,7 @@ http://your-host/api/public/system/TeamNetwork/ObjectAppService/Create
 
 **[Методы System Core API](https://kb.comindware.ru/article.php?id=2150)**
 
-**[Методы Web API][api_intro]**
+**[Методы Web API][api_web]**
 
 
 

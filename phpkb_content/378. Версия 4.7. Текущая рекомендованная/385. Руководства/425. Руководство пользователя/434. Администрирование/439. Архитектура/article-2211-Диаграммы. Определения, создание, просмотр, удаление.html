@@ -1,106 +1,91 @@
-<h1>Диаграммы. Определения, создание, просмотр, удаление</h1><div class="md-container">
-<div class="md-main__inner md-grid">
+<h1>Диаграммы. Определения, создание, просмотр, удаление</h1><div class="md-container" data-md-component="container">
+<div class="md-main__inner md-grid"><nav aria-label="Содержание" class="md-nav md-nav--secondary">
 <div class="mce-toc">
 <h2 class="toc-heading">Содержание</h2>
-<ul>
-<li>
-<ul>
-<li><a href="#mcetoc_1hpj6olj61">Определения</a></li>
-</ul>
-</li>
-<li><a href="#mcetoc_1gjrn01fg1">Просмотр списка диаграмм в приложении и настройка диаграммы</a></li>
-<li><a href="#mcetoc_1gjrlfh3f1">Просмотр списка диаграмм из всех приложений</a>
-<ul>
-<li><a href="#mcetoc_1gjrn01fg3">Сведения в списке диаграмм приложения</a></li>
-</ul>
-</li>
-<li><a href="#mcetoc_1gjrn01fhc">Создание диаграммы</a></li>
-<li><a href="#mcetoc_1gjrn01fhd">Удаление диаграмм</a></li>
-<li><a href="#mcetoc_1hpvlrclm0">Связанные статьи</a></li>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#definitions"> <span class="md-ellipsis"> Определения </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#diagram_list"> <span class="md-ellipsis"> Просмотр списка и настройка диаграмм в приложении </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#просмотр-списка-и-настройка-диаграмм-из-всех-приложений"> <span class="md-ellipsis"> Просмотр списка и настройка диаграмм из всех приложений </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#diagram_creation"> <span class="md-ellipsis"> Создание диаграммы </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#удаление-диаграмм"> <span class="md-ellipsis"> Удаление диаграмм </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#связанные-статьи"> <span class="md-ellipsis"> Связанные статьи </span> </a></li>
 </ul>
 </div>
-<div class="md-content">
+</nav>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
 <div class="notice notice-success">
-<h3 class="admonition-title" id="mcetoc_1hpj6olj61">Определения</h3>
+<h2 class="admonition-title" id="definitions">Определения</h2>
 <ul>
-<li>В <strong>Comindware Business Application Platform</strong> предусмотрены диаграммы процессов, бизнес-способностей, моделей данных и классов.</li>
-<li><a href="https://kb.comindware.ru/article.php?id=2362"><strong>Диаграмма процесса</strong></a> составляется по стандарту BPMN 2.0 и позволяет визуализировать и исполнять бизнес-процесс с назначением задач исполнителям, выполнением сценариев, отправкой внутренних и внешних сообщений, просмотром журнала действий.</li>
-<li><strong>Диаграмма бизнес-способностей</strong> позволяет представить связи и взаимодействие объектов процессной архитектуры: бизнес-процессов и ресурсов.</li>
-<li><strong>Диаграмма модели данных</strong> показывает и позволяет задавать связи шаблонов записей и шаблонов аккаунтов, а также позволяет создавать новые <a href="https://kb.comindware.ru/article.php?id=2219">шаблоны</a>.</li>
-<li><strong>Диаграмма классов</strong> показывает и позволяет редактировать и создавать новые шаблоны.</li>
+<li>В <strong>Comindware Business Application Platform</strong> предусмотрены диаграммы процессов, бизнес-способностей, моделей данных и классов.</li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2360"><strong>Диаграмма процесса</strong></a> составляется по стандарту BPMN 2.0 и позволяет визуализировать и исполнять бизнес-процесс с назначением задач исполнителям, выполнением сценариев, отправкой внутренних и внешних сообщений, просмотром журнала действий.</li>
+<li><strong>Диаграмма бизнес-способностей</strong> позволяет представить связи и взаимодействие объектов процессной архитектуры: бизнес-процессов и ресурсов.</li>
+<li><strong>Диаграмма модели данных</strong> показывает и позволяет задавать связи шаблонов записей и шаблонов аккаунтов, а также позволяет создавать новые <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2219">шаблоны</a>.</li>
+<li><strong>Диаграмма классов</strong> показывает и позволяет редактировать и создавать новые шаблоны.</li>
 </ul>
 </div>
-<h2 id="mcetoc_1gjrn01fg1">Просмотр списка диаграмм в приложении и настройка диаграммы</h2>
-Для каждого приложения предусмотрены отдельные диаграммы процессов, бизнес-способностей, моделей данных и классов.</div>
-<div class="md-content"><br/>
+<h2 id="diagram_list">Просмотр списка и настройка диаграмм в приложении</h2>
+<p>Для каждого приложения предусмотрены отдельные диаграммы процессов, бизнес-способностей, моделей данных и классов.</p>
 <ol class="colored_numbers_list">
-<li>На странице <a href="https://kb.comindware.ru/article.php?id=2191#mcetoc_1gjrh0osk2">«<strong>Администрирование</strong>» — «<strong>Архитектура</strong>»</a> выберите пункт «<strong>Приложения</strong>» <em class="fal fa-cubes">‌</em>.</li>
+<li>На странице <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2191">«<strong>Администрирование</strong>»</a> в разделе «<strong>Архитектура</strong>» выберите пункт «<strong>Приложения</strong>» <em class="fa-light fa-project-diagram">‌<!--icon--></em>.</li>
 <li>Отобразится список приложений.</li>
 <li>Дважды нажмите строку приложения в списке.</li>
-<li>В разделе <strong>«<a href="https://kb.comindware.ru/article.php?id=2209">Администрирование</a>»</strong> приложения выберите пункт «<strong>Диаграммы</strong>» <em class="fal fa-project-diagram">‌</em>.</li>
+<li>В разделе <strong>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2209">Администрирование</a>»</strong> приложения выберите пункт «<strong>Диаграммы</strong>» <em class="fa-light fa-project-diagram">‌<!--icon--></em>.</li>
 <li>Отобразится список диаграмм для данного приложения.</li>
-<li><a href="#mcetoc_1gjrn01fhc">Создайте диаграмму</a> или дважды нажмите строку диаграммы в списке.</li>
-<li>Отредактируйте диаграмму.</li>
+<li><a class="autorefs autorefs-internal mkdocs_imported_link" href="#diagram_creation">Создайте диаграмму</a> или дважды нажмите строку диаграммы в списке.</li>
+<li>Просмотрите или отредактируйте диаграмму.</li>
 </ol>
-<h2 id="mcetoc_1gjrlfh3f1">Просмотр списка диаграмм из всех приложений</h2>
-<ol class="colored_numbers_list">
-<li>На странице <a href="https://kb.comindware.ru/article.php?id=2191"><strong>«Администрирование»</strong> — «<strong>Архитектура</strong>»</a> выберите пункт «<strong>Диаграммы</strong>» <em class="fal fa-project-diagram">‌</em>.</li>
-<li>Отобразится общий список всех диаграмм из всех <a href="https://kb.comindware.ru/article.php?id=2209">приложений</a>.</li>
-</ol>
-<h3 id="mcetoc_1gjrn01fg3">Сведения в списке диаграмм приложения</h3>
-<ul>
-<li><strong>ID</strong> — уникальный идентификатор диаграммы, формируется автоматически.</li>
-<li><strong>Название</strong> — наименование диаграммы.</li>
-<li><strong>Тип:</strong>
-<ul>
-<li><a href="https://kb.comindware.ru/article.php?id=2362">диаграмма процесса</a>;</li>
-<li>диаграмма модели данных;</li>
-<li>диаграмма классов;</li>
-<li>диаграмма бизнес-способностей.</li>
-</ul>
-</li>
-<li><strong>Статус</strong>:
-<ul>
-<li>первоначальная по умолчанию;</li>
-<li>рабочая;</li>
-<li>скрытая.</li>
-</ul>
-</li>
-<li><strong>Версии</strong> — количество версий диаграммы бизнес-процесса и кнопка «<strong>Показать все версии</strong>» для <a href="https://kb.comindware.ru/article.php?id=2355"> просмотра списка версий</a>. Версии отображаются только для <a href="https://kb.comindware.ru/article.php?id=2362">диаграмм процессов</a>.</li>
-</ul>
-<div class="screenshot_with_caption">
-<p><img alt="Список диаграмм приложения" class="img-responsive" height="400" src="https://kb.comindware.ru/assets/img_65fd6137691f3.png" width="992"/></p>
-<p class="caption">Список диаграмм приложения</p>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
 </div>
-<h2 id="mcetoc_1gjrn01fhc">Создание диаграммы</h2>
-<p>Создать вручную можно диаграмму <strong>бизнес-способностей, классов </strong>или <strong>модели данных</strong>.</p>
-<p><a href="https://kb.comindware.ru/article.php?id=2362"><strong>Диаграмма процесса</strong></a> создается вместе с <a href="https://kb.comindware.ru/article.php?id=2222"><strong>шаблоном процесса</strong></a>.</p>
+<p>Для <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2360">диаграмм процессов</a> в списке отображаются количество версий диаграммы и кнопка «<strong>Показать все версии</strong>» для <a class="autorefs autorefs-internal mkdocs_imported_link" href="process_diagram/process_diagram_version_control.html#diagram_version_list_view">просмотра списка версий</a> диаграммы.</p>
+<h2 id="просмотр-списка-и-настройка-диаграмм-из-всех-приложений">Просмотр списка и настройка диаграмм из всех приложений</h2>
 <ol class="colored_numbers_list">
-<li>Откройте <a href="#mcetoc_1gjrn01fg1">список диаграмм</a>.</li>
+<li>На странице <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2191">«<strong>Администрирование</strong>»</a> в разделе «<strong>Архитектура</strong>» выберите пункт «<strong>Диаграммы</strong>» <em class="fa-light fa-project-diagram">‌<!--icon--></em>‌.</li>
+<li>Отобразится общий список всех диаграмм из всех <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2209">приложений</a>.</li>
+<li><a class="autorefs autorefs-internal mkdocs_imported_link" href="#diagram_creation">Создайте диаграмму</a> или дважды нажмите строку диаграммы в списке.</li>
+<li>Просмотрите или отредактируйте диаграмму.</li>
+</ol>
+<figure class="screenshot_with_caption">
+<p><img alt="Список диаграмм приложения" src="https://kb.comindware.ru/assets/diagram_list.png"/></p>
+<figcaption class="caption">Список диаграмм приложения</figcaption>
+</figure>
+<h2 id="diagram_creation">Создание диаграммы</h2>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Создать вручную можно диаграмму <strong>бизнес-способностей, классов</strong> или <strong>модели данных</strong>.</p>
+<p><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2360"><strong>Диаграмма процесса</strong></a> создается вместе с <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2222"><strong>шаблоном процесса</strong></a>.</p>
+</div>
+<ol class="colored_numbers_list">
+<li>Откройте <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2211#diagram_list">список диаграмм</a>.</li>
 <li>Нажмите кнопку «<strong>Создать</strong>».</li>
 <li>Отобразится окно «<strong>Новая диаграмма</strong>».</li>
-<li>Укажите <strong>название</strong>, <strong>системное имя</strong> и <strong>тип диаграммы</strong>.
+<li>
+<p>Укажите <strong>название</strong>, <strong>системное имя</strong> и <strong>тип диаграммы</strong>.</p>
 <ul>
 <li>При создании диаграммы в общем списке диаграмм выберите <strong>приложение</strong>.</li>
 </ul>
 </li>
-<li>Нажмите кнопку «<strong>Сохранить</strong>».</li>
+<li>
+<p>Нажмите кнопку «<strong>Сохранить</strong>».</p>
+</li>
 <li>Созданная диаграмма отобразится в списке.</li>
+<li>Дважды нажмите диаграмму в списке, чтобы просмотреть или отредактировать её.</li>
 </ol>
-<div class="screenshot_with_caption">
+<figure class="screenshot_with_caption">
 <p><img alt="Окно создания новой диаграммы с выбором приложения" src="https://kb.comindware.ru/assets/diagram_creation_with_app_selection.png"/></p>
-<p class="caption">Создание новой диаграммы</p>
-</div>
-<h2 id="mcetoc_1gjrn01fhd">Удаление диаграмм</h2>
+<figcaption class="caption">Окно создания новой диаграммы с выбором приложения</figcaption>
+</figure>
+<h2 id="удаление-диаграмм">Удаление диаграмм</h2>
 <ol class="colored_numbers_list">
-<li>Откройте <a href="#mcetoc_1gjrn01fg1">список диаграмм</a>.</li>
+<li>Откройте <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2211#diagram_list">список диаграмм</a>.</li>
 <li>Установите для подлежащих удалению диаграмм флажки выбора.</li>
 <li>Нажмите кнопку «<strong>Удалить</strong>» над списком диаграмм.</li>
 <li>Подтвердите удаление диаграмм.</li>
 </ol>
-<h2 id="mcetoc_1hpvlrclm0">Связанные статьи</h2>
-<p><strong><samp data-name="aid" data-title="" data-value="2358"><img src="https://kb.comindware.ru/images/marker.png"/>Управление версиями диаграммы процесса {Article-ID:2358}</samp> </strong></p>
+<h2 id="связанные-статьи">Связанные статьи</h2>
+<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2358">Управление версиями диаграммы процесса</a></strong></p>
+</article>
 </div>
 </div>
-<p><a class="md-top md-icon mkdocs_imported_link" href="#"> <em class="fa-light fa-arrow-up">‌</em> К началу</a></p>
-</div>
+<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#"> <em class="fa-light fa-arrow-up">‌<!--icon--></em> К началу </a></div>

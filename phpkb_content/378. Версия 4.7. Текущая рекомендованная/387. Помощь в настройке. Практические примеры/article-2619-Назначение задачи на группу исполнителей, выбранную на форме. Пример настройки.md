@@ -107,6 +107,6 @@ _![Диаграмма процесса «Оформление заявок»](ht
 
 **[Атрибут типа «Роль»][attribute_role]**
 
-**[Администрирование системы][administration]**
+**[Страница «Администрирование». Использование][administration]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

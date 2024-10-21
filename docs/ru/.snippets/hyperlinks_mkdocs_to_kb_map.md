@@ -28,8 +28,6 @@
 
 [directory_server]: {{ kbArticleURLPrefix }}2308
 
-[discussion_use]: {{ kbArticleURLPrefix }}2407
-
 [document_digital_signature]: {{ kbArticleURLPrefix }}2139
 
 [attribute_drawing_file_import]: {{ kbArticleURLPrefix }}2574
@@ -72,6 +70,8 @@
 
 [task_notifications_email]: ../administration/connections_communication_routes/system_connections/notifications/task_notifications.md#task_notifications_email
 
+[process_diagram_call_element_menu]: ../business_apps/diagrams/process_diagram/index.md#process_diagram_call_element_menu
+
 [telegram_send_notification]: {{ kbArticleURLPrefix }}2610
 
 {% if kbExport %}
@@ -79,6 +79,8 @@
 [1c_integrations]: {{ kbArticleURLPrefix }}2011
 
 [accounts]: {{ kbArticleURLPrefix }}2194
+
+[account_permission_audit]: {{ kbArticleURLPrefix }}2194
 
 [actions]: {{ kbArticleURLPrefix }}2390
 

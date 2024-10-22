@@ -992,7 +992,5 @@ _![Диаграмма процесса «Обработка ответа рук�
 
 **[Список функций языка формул Comindware][formula_function_list]**
 
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}
 <!--include-end-->

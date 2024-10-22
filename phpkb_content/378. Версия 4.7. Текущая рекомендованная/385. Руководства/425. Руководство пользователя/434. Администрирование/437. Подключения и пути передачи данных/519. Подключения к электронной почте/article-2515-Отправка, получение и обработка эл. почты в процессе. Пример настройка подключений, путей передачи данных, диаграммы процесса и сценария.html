@@ -117,7 +117,7 @@
 </figure>
 <h4 id="шаблон-процесса-обработка-ответа-руководителя">Шаблон процесса «Обработка ответа руководителя»</h4>
 <p><em>Шаблон процесса «Обработка ответа руководителя»</em> свяжите с шаблоном записи <em><a class="mkdocs_imported_link" href="#attributes_record_template_manager_decision">«Решения руководителя»</a>.</em></p>
-<p>См. также <a class="autorefs autorefs-internal mkdocs_imported_link" href="../../../examples/process_email_configure.html#elements_manager_answer_processing_setup">«Настройка элементов диаграммы процесса <em>«Обработка ответа руководителя»</em></a>.</p>
+<p>См. также <a class="mkdocs_imported_link" href="#elements_manager_answer_processing_setup">«Настройка элементов диаграммы процесса <em>«Обработка ответа руководителя»</em></a>.</p>
 <ul>
 <li><em><a class="mkdocs_imported_link" href="#start_event_manager_answer_receive">Поступил ответ руководителя</a></em> — <strong>начальное событие-получение сообщения</strong>; соединено с конечным событием.</li>
 <li><em><a class="mkdocs_imported_link" href="#end_event_decision_transfer">Передача решения в процесс «Согласование отпуска»</a></em> — <strong>конечное событие-отправка сообщения</strong>.</li>
@@ -538,7 +538,7 @@
 <div class="notice notice-warning">
 <p class="admonition-title">Бизнес-логика</p>
 <p>Из ответного письма руководителя путь передачи данных будет извлекать тему и текст письма.</p>
-<p>Затем <a class="autorefs autorefs-internal mkdocs_imported_link" href="../../../examples/process_email_configure.html#elements_manager_answer_processing_setup">процесс <em>«Обработка ответов руководителя»</em></a> будет извлекать из письма данные в шаблон <em><a class="mkdocs_imported_link" href="#attributes_record_template_manager_decision">«Решения руководителя»</a>:</em></p>
+<p>Затем <a class="mkdocs_imported_link" href="#elements_manager_answer_processing_setup">процесс <em>«Обработка ответов руководителя»</em></a> будет извлекать из письма данные в шаблон <em><a class="mkdocs_imported_link" href="#attributes_record_template_manager_decision">«Решения руководителя»</a>:</em></p>
 <ul>
 <li>номер заявления из темы письма — в атрибут <em>«№ заявления»</em></li>
 <li>решение по заявлению из темы письма — в атрибут <em>«Отпуск согласован»</em>;</li>
@@ -835,9 +835,9 @@
 <ol class="colored_numbers_list">
 <li>Процесс <em>«Согласование отпуска»</em> запускается вручную путём создания его экземпляра.</li>
 <li>При запуске процесса создаётся запись в шаблоне <em><a class="mkdocs_imported_link" href="#attributes_record_template_vacation_application">«Оформлено заявление на отпуск»</a></em>, связанная с экземпляром процесса.</li>
-<li>Пользователь, запустивший процесс, заполняет стартовую форму события <em><a class="autorefs autorefs-internal mkdocs_imported_link" href="../../../examples/process_email_configure.html#start_event_application_registered">«Оформлено заявление на отпуск»</a></em>, указав <em>дату начала и количество дней</em> отпуска.</li>
+<li>Пользователь, запустивший процесс, заполняет стартовую форму события <em><a class="mkdocs_imported_link" href="#start_event_application_registered">«Оформлено заявление на отпуск»</a></em>, указав <em>дату начала и количество дней</em> отпуска.</li>
 <li>Событие <em><a class="mkdocs_imported_link" href="#intermediate_event_notification_to_manager">«Отправка уведомления для руководителя»</a></em> отправляет <a class="mkdocs_imported_link" href="#notification_to_manager">письмо с заявлением</a> <em>Руководителю</em>.</li>
-<li>Событие <em><a class="mkdocs_imported_link" href="#intermediate_event_manager_answer">«Обработан ответ руководителя»</a></em> ожидает решения <em>Руководителя</em> из процесса <em><a class="autorefs autorefs-internal mkdocs_imported_link" href="../../../examples/process_email_configure.html#elements_manager_answer_processing_setup">«Обработка ответа руководителя»</a></em>.</li>
+<li>Событие <em><a class="mkdocs_imported_link" href="#intermediate_event_manager_answer">«Обработан ответ руководителя»</a></em> ожидает решения <em>Руководителя</em> из процесса <em><a class="mkdocs_imported_link" href="#elements_manager_answer_processing_setup">«Обработка ответа руководителя»</a></em>.</li>
 <li><em>Руководитель</em> нажимает в полученном письме кнопку <em>«Согласовать отпуск»</em> или <em>«Отказать в отпуске»</em> и отправляет автоматически сформированное письмо с решением по заявлению.</li>
 <li>Процесс <em>«Обработка ответа руководителя»</em> получает письмо, извлекает из него данные и передаёт решение по заявлению в событие <em><a class="mkdocs_imported_link" href="#intermediate_event_manager_answer">«Обработан ответ руководителя»</a></em> процесса <em>«Согласование отпуска».</em></li>
 <li>В зависимости от решения <em>Руководителя</em> в процессе <em>«Согласование отпуска»</em> срабатывает конечное событие <em><a class="mkdocs_imported_link" href="#end_event_vacation_accept">«Отпуск согласован»</a></em> или <em><a class="mkdocs_imported_link" href="#end_event_vacation_decline">«В отпуске отказано»</a>.</em></li>
@@ -857,7 +857,7 @@
 <h3 id="start_event_application_registered">Начальное событие «Оформлено заявление на отпуск»</h3>
 <ol class="colored_numbers_list">
 <li>Выберите начальное событие сообщения <em>«Оформлено заявление на отпуск».</em></li>
-<li>В <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2360#mcetoc_1h28cr6421">меню элемента</a> выберите пункт «<strong>Стартовая форма</strong>» <em class="fa-light fa-window-maximize">‌<!--icon--></em>.</li>
+<li>В <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2360#process_diagram_call_element_menu">меню элемента</a> выберите пункт «<strong>Стартовая форма</strong>» <em class="fa-light fa-window-maximize">‌<!--icon--></em>.</li>
 <li>
 <p>Настройте стартовую форму:</p>
 <ul>
@@ -1147,7 +1147,7 @@
 <p><strong>Дополнительные</strong></p>
 <ul>
 <li><strong>Место назначения: внешний сокет</strong></li>
-<li><strong>Использовать путь передачи данных:</strong> <em><a class="autorefs autorefs-internal mkdocs_imported_link" href="../../../examples/process_email_configure.html#notification_vacation_accept">Уведомление «Отпуск согласован»</a></em></li>
+<li><strong>Использовать путь передачи данных:</strong> <em><a class="mkdocs_imported_link" href="#notification_vacation_accept">Уведомление «Отпуск согласован»</a></em></li>
 </ul>
 </li>
 <li>
@@ -1280,7 +1280,7 @@
 </table>
 <div class="notice notice-info">
 <p class="admonition-title">Примечание</p>
-<p>Из значений этих атрибутов формируется эл. письмо <em>Заявителю</em> посредством пути передачи данных <em><a class="autorefs autorefs-internal mkdocs_imported_link" href="../../../examples/process_email_configure.html#notification_vacation_decline">«Уведомление «В отпуске отказано»</a></em>.</p>
+<p>Из значений этих атрибутов формируется эл. письмо <em>Заявителю</em> посредством пути передачи данных <em><a class="mkdocs_imported_link" href="#notification_vacation_decline">«Уведомление «В отпуске отказано»</a></em>.</p>
 </div>
 </li>
 </ul>
@@ -1301,7 +1301,7 @@
 <div class="notice notice-warning">
 <p class="admonition-title">Бизнес-логика</p>
 <ol class="colored_numbers_list">
-<li>Процесс <em>«Обработка ответов руководителя»</em> запускается при поступлении нового письма в почтовый ящик, указанный в подключении «<strong><a class="autorefs autorefs-internal mkdocs_imported_link" href="../../../examples/process_email_configure.html#email_receive_process">Получение эл. почты в процессе</a></strong>».</li>
+<li>Процесс <em>«Обработка ответов руководителя»</em> запускается при поступлении нового письма в почтовый ящик, указанный в подключении «<strong><a class="mkdocs_imported_link" href="#email_receive_process">Получение эл. почты в процессе</a></strong>».</li>
 <li>При запуске процесса создаётся запись в <a class="mkdocs_imported_link" href="#attributes_record_template_manager_decision">шаблоне <em>«Решения руководителя»</em></a>, связанная с экземпляром процесса.</li>
 <li>Процесс <em>«Обработка ответа руководителя»</em> обрабатывает поступившие письма и передаёт данные в процесс <em>«Согласование отпуска»</em>.</li>
 <li>
@@ -1503,7 +1503,7 @@
 </ol>
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2360">Диаграмма процесса</a></strong></p>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2360#mcetoc_1h2d97s1m0">Конструктор диаграммы процесса</a></strong></p>
+<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2360#process_diagram_designer">Конструктор диаграммы процесса</a></strong></p>
 <p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2378">Простое начальное событие</a></strong></p>
 <p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2376">Начальное событие-получение сообщения</a></strong></p>
 <p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2363">Стартовая форма</a></strong></p>

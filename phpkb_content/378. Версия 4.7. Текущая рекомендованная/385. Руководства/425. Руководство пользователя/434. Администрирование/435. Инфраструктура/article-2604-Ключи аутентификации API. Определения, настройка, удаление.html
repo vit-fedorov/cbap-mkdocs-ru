@@ -1,53 +1,58 @@
-<h1>Ключи аутентификации API. Определения, настройка, удаление</h1><div class="md-container">
-<div class="md-main__inner md-grid">
+<h1>Ключи аутентификации API. Определения, настройка, удаление</h1><div class="md-container" data-md-component="container">
+<div class="md-main__inner md-grid"><nav aria-label="Содержание" class="md-nav md-nav--secondary">
 <div class="mce-toc">
 <h2 class="toc-heading">Содержание</h2>
-<ul>
-<li><a href="#mcetoc_1hrjoag3a0">Определения</a></li>
-<li><a href="#mcetoc_1gjrhsm392">Просмотр списка и настройка ключа аутентификации</a></li>
-<li><a href="#mcetoc_1gjrhsm394">Удаление ключей аутентификации</a></li>
-<li><a href="#mcetoc_1gjrhsm395">Связанные статьи</a></li>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#definitions"> <span class="md-ellipsis"> Определения </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#просмотр-списка-и-настройка-ключа-аутентификации"> <span class="md-ellipsis"> Просмотр списка и настройка ключа аутентификации </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#удаление-ключей-аутентификации"> <span class="md-ellipsis"> Удаление ключей аутентификации </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#связанные-статьи"> <span class="md-ellipsis"> Связанные статьи </span> </a></li>
 </ul>
 </div>
+</nav>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
 <div class="notice notice-success">
-<h3 class="admonition-title" id="mcetoc_1hrjoag3a0">Определения</h3>
+<h2 class="admonition-title" id="definitions">Определения</h2>
 <ul>
-<li><strong>Ключи аутентификации </strong>используются для доступа к API <strong>Comindware Business Application Platform</strong> из внешних систем с использованием HMAC-аутентификации.</li>
-<li>Ключ аутентификации следует назначать аккаунту, у которого есть разрешение «<strong>Вызовы API</strong>» в <a href="https://kb.comindware.ru/article.php?id=2175">системной роли</a>, либо пользователю, входящему в системную роль «<strong>Системные администраторы</strong>». Только такие аккаунты могут использовать API <strong>Comindware Business Application Platform</strong>.</li>
+<li><strong>Ключи аутентификации</strong> используются для доступа к API <strong>Comindware Business Application Platform</strong> из внешних систем с использованием HMAC-аутентификации.</li>
+<li>Ключ аутентификации следует назначать аккаунту, у которого есть разрешение «<strong>Вызовы API</strong>» в <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2175">системной роли</a>, либо пользователю входящему в системную роль «<strong>Системные администраторы</strong>». Только такие аккаунты могут использовать API <strong>Comindware Business Application Platform</strong>.</li>
 <li>При HMAC-аутентификации внешняя система должна передать токен и секретный ключ.</li>
 </ul>
 </div>
-<h2 id="mcetoc_1gjrhsm392">Просмотр списка и настройка ключа аутентификации</h2>
+<h2 id="просмотр-списка-и-настройка-ключа-аутентификации">Просмотр списка и настройка ключа аутентификации</h2>
 <ol class="colored_numbers_list">
-<li>На странице <a href="https://kb.comindware.ru/article.php?id=2191.html">«<strong>Администрирование</strong>» — «<strong>Инфраструктура</strong>»</a> выберите пункт «<strong>Ключи аутентификации</strong>» <em class="fa-light fal fa-lock-keyhole">‌</em>.</li>
-<li>Отобразится список ключей.
-<div class="screenshot_with_caption">
-<p><img alt="Список ключей аутентификации" class="img-responsive" height="272" src="https://kb.comindware.ru/assets/img_661e9c91cbad3.png" width="989"/></p>
-<p class="caption">Список ключей аутентификации</p>
-</div>
-</li>
-<li>Нажмите кнопку «<strong>Создать</strong>» или дважды нажмите строку имеющегося ключа.</li>
-<li>При создании ключа выберите аккаунт <strong>пользователя</strong> и <strong>срок действия ключа</strong>. При настройке имеющегося ключа можно только изменить его <strong>срок действия</strong>.</li>
-</ol>
-</div>
-<div class="screenshot_with_caption">
-<p><img alt="Настройка ключа аутентификации" class="img-responsive" height="319" src="https://kb.comindware.ru/assets/img_661e9cc460334.png" width="995"/></p>
-<p class="caption">Настройка нового ключа аутентификации</p>
-</div>
-<ul>
-<li>Нажмите кнопку «<strong>Сохранить</strong>».</li>
-<li>Отобразятся свойства сформированного ключа.</li>
-<li>Используйте сформированные <strong>секретный ключ</strong> и <strong>токен для аутентификации</strong> внешних систем при доступе к API <strong>Comindware Business Application Platform</strong>.
-<figure class="screenshot_with_caption" style="font-size: 15px !important;">
-<p><img class="img-responsive" src="https://kb.comindware.ru/assets/img_661e9d1d1cccc.png"/></p>
-<figcaption class="caption" style="font-size: 15px !important;">Свойства сформированного ключа аутентификации</figcaption>
+<li>На странице «<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2191"><strong>Администрирование</strong></a>» в разделе «<strong>Инфраструктура</strong>» выберите пункт «<strong>Ключи аутентификации</strong>» <em class="fa-light fa-lock-keyhole">‌<!--icon--></em>.</li>
+<li>
+<p>Отобразится список ключей.</p>
+<figure class="screenshot_with_caption"><img alt="Список ключей аутентификации" src="https://kb.comindware.ru/assets/authentication_key_list.png"/>
+<figcaption class="caption">Список ключей аутентификации</figcaption>
 </figure>
 </li>
-</ul>
-<h2 id="mcetoc_1gjrhsm394">Удаление ключей аутентификации</h2>
+<li>
+<p>Нажмите кнопку «<strong>Создать</strong>» или дважды нажмите строку имеющегося ключа.</p>
+</li>
+<li>
+<p>При создании ключа выберите аккаунт <strong>пользователя</strong> и <strong>срок действия ключа</strong>. При настройке имеющегося ключа можно только изменить его <strong>срок действия</strong>.</p>
+<figure class="screenshot_with_caption"><img alt="Настройка нового ключа аутентификации" src="https://kb.comindware.ru/assets/authentication_key_settings.png"/>
+<figcaption class="caption">Настройка нового ключа аутентификации</figcaption>
+</figure>
+</li>
+<li>
+<p>Нажмите кнопку «<strong>Сохранить</strong>».</p>
+</li>
+<li>Отобразятся свойства сформированного ключа.</li>
+<li>
+<p>Используйте сформированные <strong>секретный ключ</strong> и <strong>токен для аутентификации</strong> внешних систем при доступе к API <strong>Comindware Business Application Platform</strong>.</p>
+<figure class="screenshot_with_caption"><img alt="Свойства сформированного ключа аутентификации" src="https://kb.comindware.ru/assets/authentication_key_properties.png"/>
+<figcaption class="caption">Свойства сформированного ключа аутентификации</figcaption>
+</figure>
+</li>
+</ol>
+<h2 id="удаление-ключей-аутентификации">Удаление ключей аутентификации</h2>
 <div class="notice notice-warning">
 <p class="admonition-title">Внимание!</p>
-<p>После удаления ключей аутентификации аккаунты, которым они назначены, потеряют возможность использовать API <strong>Comindware Business Application Platform </strong>с HMAC-аутентификацией.</p>
+<p>После удаления ключей аутентификации аккаунты, которым они назначены, потеряют возможность использовать API <strong>Comindware Business Application Platform</strong> с HMAC-аутентификацией.</p>
 </div>
 <ol class="colored_numbers_list">
 <li>Откройте список ключей аутентификации.</li>
@@ -55,11 +60,10 @@
 <li>Нажмите кнопку «<strong>Удалить</strong>».</li>
 <li>Подтвердите удаление ключей.</li>
 </ol>
-<h2 id="mcetoc_1gjrhsm395">Связанные статьи</h2>
-<p><strong><samp data-name="aid" data-title="" data-value="2080"><span style="color: #0066bc; font-family: Tahoma;"><img src="https://kb.comindware.ru/images/marker.png" style="vertical-align: middle;"/>Введение в API {Article-ID:2080}</span></samp></strong></p>
+<h2 id="связанные-статьи">Связанные статьи</h2>
+<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2080">Введение в API</a></strong></p>
+<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2175">Системные роли. Определения, настройка, объединение, удаление</a></strong></p>
+</article>
 </div>
-<p><strong><samp data-name="aid" data-title="" data-value="2175"><span style="color: #0066bc; font-family: Tahoma;"><img src="https://kb.comindware.ru/images/marker.png" style="vertical-align: middle;"/>Системные роли. Определения, настройка, объединение, удаление {Article-ID:2175}</span></samp></strong></p>
-<p><a class="md-top md-icon mkdocs_imported_link" href="#"> <em class="fa-light fa-arrow-up">‌</em> К началу </a></p>
-<div class="md-dialog">
-<div class="md-dialog__inner md-typeset"> </div>
 </div>
+<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#"> <em class="fa-light fa-arrow-up">‌<!--icon--></em> К началу </a></div>

@@ -16,13 +16,11 @@ hide:
 
 ## Описание {{ productName }} 4
 
-{% elif kbExport %}
-
-## Введение
-
 {% else %}
 
 # Описание {{ productName }} 4
+
+## Введение
 
 {% endif %}
 
@@ -68,7 +66,7 @@ hide:
 
 ## Возможности {{ productNameArchitect }} {: #architect_features}
 
-**{{ productNameArchitect }}** — это no-code-конструктор процессной архитектуры и организационной структуры организации.
+**{{ productNameArchitect }}** — это no-code-конструктор процессной архитектуры и организационной структуры предприятия.
 
 Продукт предоставляет перечисленные ниже возможности.
 
@@ -92,6 +90,4 @@ hide:
 * Контроль доступа к элементам бизнес-архитектуры организации.
 * Удобный настраиваемый рабочий стол для доступа к реестрам, диаграммам и функциям настройки системы.
 
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

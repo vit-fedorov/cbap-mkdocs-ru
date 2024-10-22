@@ -8,6 +8,4 @@ start="<!--include-start-->"
 end="<!--include-end-->"
 %}
 
-[process_diagram_call_element_menu]: ../../../business_apps/diagrams/process_diagram/index.md#process_diagram_call_element_menu
-
 {% endif %}

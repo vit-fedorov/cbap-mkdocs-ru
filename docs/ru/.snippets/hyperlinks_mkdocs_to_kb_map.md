@@ -70,10 +70,6 @@
 
 [tutorial]: {{ kbCategoryURLPrefix }}386
 
-[task_notifications_email]: ../administration/connections_communication_routes/system_connections/notifications/task_notifications.md#task_notifications_email
-
-[process_diagram_call_element_menu]: ../business_apps/diagrams/process_diagram/index.md#process_diagram_call_element_menu
-
 [telegram_send_notification]: {{ kbArticleURLPrefix }}2610
 
 {% if kbExport %}

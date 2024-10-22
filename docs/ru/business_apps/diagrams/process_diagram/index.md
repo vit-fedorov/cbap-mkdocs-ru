@@ -118,8 +118,9 @@ _![Диаграмма шаблона процесса в режиме просм
 
 --8<-- "process_diagram_scale_buttons.md"
 
+[](){: #process_diagram_call_element_menu }
+
 **(6) Меню элемента** — содержит команды для работы с выбранным элементом. Отображается при нажатии элемента диаграммы. Набор команд в этом меню зависит от [типа элемента][process_diagram_elements].
-{: #process_diagram_call_element_menu}
 
 _![Конструктор диаграммы процесса](img/process_diagram_designer.png)_
 

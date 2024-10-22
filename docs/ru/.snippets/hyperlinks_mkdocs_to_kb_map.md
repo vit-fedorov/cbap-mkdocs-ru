@@ -494,7 +494,11 @@
 
 [themes]: {{ kbArticleURLPrefix }}2199
 
-[themes_graphic_diagram_color]: {{ kbArticleURLPrefix }}2199#mcetoc_1gjriujcbf
+[themes_graphic_diagram_color]: {{ kbArticleURLPrefix }}2199#themes_graphic_diagram_color
+
+[themes_base_colors]: {{ kbArticleURLPrefix }}2199#themes_base_colors
+
+[themes_branded_images]: {{ kbArticleURLPrefix }}2199#themes_branded_images
 
 [two_factor_authentication]: {{ kbArticleURLPrefix }}2598
 

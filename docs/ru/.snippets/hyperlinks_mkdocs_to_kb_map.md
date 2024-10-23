@@ -18,6 +18,8 @@
 
 [account_attribute_system_names]: {{ kbArticleURLPrefix }}2599
 
+[auxiliary_software_list]: {{ kbArticleURLPrefix }}2398
+
 [backup_and_restore]: {{ kbArticleURLPrefix }}2579
 
 [backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
@@ -79,11 +81,17 @@
 
 [1c_integrations]: {{ kbArticleURLPrefix }}2011
 
+[account_templates]: {{ kbArticleURLPrefix }}2223
+
 [accounts]: {{ kbArticleURLPrefix }}2194
 
 [account_permission_audit]: {{ kbArticleURLPrefix }}2195
 
+[accounts_dc_sync]: {{ kbArticleURLPrefix }}2308
+
 [actions]: {{ kbArticleURLPrefix }}2390
+
+[ad_authentication_configure]: {{ kbArticleURLPrefix }}2517
 
 [ad_connection]: {{ kbArticleURLPrefix }}2206
 
@@ -93,11 +101,31 @@
 
 [apps]: {{ kbArticleURLPrefix }}2209
 
-[account_templates]: {{ kbArticleURLPrefix }}2223
-
 [application_configure_recommendations]: {{ kbArticleURLPrefix }}2006
 
 [architect_desktop]: {{ kbArticleURLPrefix }}2415
+
+[architect_changing_hierarchy]: {{ kbArticleURLPrefix }}2419
+
+[architect_changing_process_hierarchy]: {{ kbArticleURLPrefix }}2437
+
+[architect_cloning_process_entity]: {{ kbArticleURLPrefix }}2436
+
+[architect_configuring_organizational_unit]: {{ kbArticleURLPrefix }}2418
+
+[architect_configuring_organizational_unit_form_and_attributes]: {{ kbArticleURLPrefix }}2422
+
+[architect_configuring_process_entity_properties]: {{ kbArticleURLPrefix }}2438
+
+[architect_configuring_process_entity_propeerties_form_and_attributes]: {{ kbArticleURLPrefix }}2435
+
+[architect_creating_organizational_unit]: {{ kbArticleURLPrefix }}2420
+
+[architect_creating_process_entity]: {{ kbArticleURLPrefix }}2432
+
+[architect_deleting_organizational_unit]: {{ kbArticleURLPrefix }}2424
+
+[architect_deleting_process_entity]: {{ kbArticleURLPrefix }}2434
 
 [architect_edit_diagram]: {{ kbArticleURLPrefix }}2431
 
@@ -218,6 +246,12 @@
 [conversations]: {{ kbArticleURLPrefix }}2417
 
 [creating_gantt_chart]: {{ kbArticleURLPrefix }}2107
+
+[deploy_guide]: {{ kbArticleURLPrefix }}2344
+
+[desktop]: {{ kbArticleURLPrefix }}2284
+
+[deploy_guide]: {{ kbArticleURLPrefix }}2344
 
 [architect_creating_organizational_unit]: {{ kbArticleURLPrefix }}2420
 
@@ -482,6 +516,8 @@
 [send_message_end_event]: {{ kbArticleURLPrefix }}2385
 
 [send_message_intermediate_event]: {{ kbArticleURLPrefix }}2381
+
+[sso_authenticatation_configure]: {{ kbArticleURLPrefix }}2583
 
 [sql_receive_connection]: {{ kbArticleURLPrefix }}2135
 

@@ -11,7 +11,7 @@ hide:
     - tags
 ---
 
-# Проверка диаграммы процесса {: #verify_diagram}
+# Проверка диаграммы процесса {: #architect_verify_diagram}
 
 Для диаграмм процессов в нотации BPMN 2.0 предусмотрена функция проверки.
 
@@ -29,3 +29,4 @@ hide:
 
 **[Использование системы — Панель навигации][navigation_panel]**
 
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

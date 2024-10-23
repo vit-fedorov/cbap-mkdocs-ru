@@ -15,7 +15,7 @@ hide:
     - tags
 ---
 
-# Редактирование формы свойств и атрибутов элемента процессной архитектуры {: #configuring_process_entity_propeerties_form_and_attributes}
+# Редактирование формы свойств и атрибутов элемента процессной архитектуры {: #architect_configuring_process_entity_propeerties_form_and_attributes}
 
 У каждого элемента процессной архитектуры предусмотрены настраиваемые атрибуты и форма свойств.
 
@@ -47,9 +47,9 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[Изменение свойств элемента процессной архитектуры](configuring_process_entity_properties.md)**
+**[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]**
 
-**[Редактирование формы и атрибутов оргединицы](configuring_organizational_unit_form_and_attributes.md)**
+**[Редактирование формы и атрибутов оргединицы][architect_configuring_organizational_unit_form_and_attributes]**
 
 **[Конструктор формы][form_designer]**
 
@@ -61,8 +61,10 @@ hide:
 
 **[Просмотр реестра процессов][просмотр-реестра-процессов]**
 
-**[Создание элемента процессной архитектуры](creating_process_entity.md)**
+**[Создание элемента процессной архитектуры][architect_creating_process_entity]**
 
-**[Переименование элемента процессной архитектуры](renaming_process_entity.md)**
+**[Переименование элемента процессной архитектуры][architect_renaming_process_entity]**
 
 **[Использование системы — Панель навигации][navigation_panel]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

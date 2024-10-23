@@ -13,7 +13,7 @@ hide:
     - tags
 ---
 
-# Переименование оргединицы {: #renaming_organizational_unit}
+# Переименование оргединицы {: #architect_renaming_organizational_unit}
 
 ## Переименование с помощью панели навигации
 
@@ -36,6 +36,8 @@ hide:
 
 **[Просмотр реестра оргединиц][просмотр-реестра-оргединиц]**
 
-**[Создание оргединицы](creating_organizational_unit.md)**
+**[Создание оргединицы][architect_creating_organizational_unit]**
 
-**[Настройка оргединицы](configuring_organizational_unit.md)**
+**[Настройка оргединицы][architect_configuring_organizational_unit]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

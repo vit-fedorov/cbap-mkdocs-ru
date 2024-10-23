@@ -13,7 +13,7 @@ hide:
     - tags
 ---
 
-# Удаление оргединиц {: #deleting_organizational_unit}
+# Удаление оргединиц {: #architect_deleting_organizational_unit}
 
 !!! Warning "Внимание!"
     Оргединицы удаляются безвозвратно вместе со всеми дочерними оргединицами.
@@ -47,3 +47,5 @@ hide:
 **[Просмотр реестра оргединиц][просмотр-реестра-оргединиц]**
 
 **[Использование системы — Панель навигации][navigation_panel]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

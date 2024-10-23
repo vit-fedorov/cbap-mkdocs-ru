@@ -13,7 +13,7 @@ hide:
     - tags
 ---
 
-# Создание оргединицы {: #creating_organizational_unit}
+# Создание оргединицы {: #architect_creating_organizational_unit}
 
 ## Создание оргединицы на верхнем уровне иерархии с помощью реестра
 
@@ -63,9 +63,10 @@ hide:
 
 **[Просмотр реестра оргединиц][просмотр-реестра-оргединиц]**
 
-**[Настройка оргединицы](configuring_organizational_unit.md)**
+**[Настройка оргединицы][architect_configuring_organizational_unit]**
 
-**[Переименование оргединицы](renaming_organizational_unit.md)**
+**[Переименование оргединицы][architect_renaming_organizational_unit]**
 
 **[Использование системы — Панель навигации][navigation_panel]**
 
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

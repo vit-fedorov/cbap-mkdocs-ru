@@ -15,7 +15,7 @@ hide:
     - tags
 ---
 
-# Изменение иерархии оргединиц {: #changing_hierarchy}
+# Изменение иерархии оргединиц {: #architect_changing_hierarchy}
 
 ## Перемещение оргединицы с помощью реестра
 
@@ -40,3 +40,5 @@ hide:
 **[Просмотр реестра оргединиц][просмотр-реестра-оргединиц]**
 
 **[Использование системы — Панель навигации][navigation_panel]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

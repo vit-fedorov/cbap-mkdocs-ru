@@ -11,7 +11,7 @@ hide:
 
 {% if userGuide %}
 
-Это руководство пользователя **[{{ productName }}](business_apps/index.md)** с модулем **[{{ productNameArchitect }}](architect_desktop.md)**.
+Это руководство пользователя **[{{ productName }}](business_apps/index.md)** с модулем **[{{ productNameArchitect }}][architect_desktop]**.
 
 {% elif adminGuide %}
 

@@ -17,7 +17,7 @@ hide:
     - tags
 ---
 
-# Редактирование формы и атрибутов оргединицы {: #configuring_organizational_unit_form_and_attributes}
+# Редактирование формы и атрибутов оргединицы {: #architect_configuring_organizational_unit_form_and_attributes}
 
 У каждой оргединицы предусмотрены настраиваемые атрибуты и форма свойств.
 
@@ -44,9 +44,9 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[Изменение свойств оргединицы](configuring_organizational_unit.md)**
+**[Изменение свойств оргединицы][architect_configuring_organizational_unit]**
 
-**[Редактирование формы свойств и атрибутов элемента процессной архитектуры](configuring_process_entity_properties.md)**
+**[Редактирование формы свойств и атрибутов элемента процессной архитектуры][architect_configuring_process_entity_properties]**
 
 **[Просмотр реестра оргединиц][просмотр-реестра-оргединиц]**
 
@@ -59,3 +59,5 @@ hide:
 **[Редактирование формы][form_designer]**
 
 **[Использование системы — Панель навигации][navigation_panel]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

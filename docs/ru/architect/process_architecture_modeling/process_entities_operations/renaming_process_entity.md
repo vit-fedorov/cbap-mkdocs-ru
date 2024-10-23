@@ -10,7 +10,7 @@ hide:
     - tags
 ---
 
-# Переименование элемента процессной архитектуры {: #renaming_process_entity}
+# Переименование элемента процессной архитектуры {: #architect_renaming_process_entity}
 
 ## Переименование с помощью панели навигации
 
@@ -34,6 +34,9 @@ hide:
 
 **[Просмотр реестра процессов][просмотр-реестра-процессов]**
 
-**[Создание элемента процессной архитектуры](creating_process_entity.md)**
+**[Создание элемента процессной архитектуры][architect_creating_process_entity]**
 
-**[Изменение свойств элемента процессной архитектуры](configuring_process_entity_properties.md)**
+**[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]**
+
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

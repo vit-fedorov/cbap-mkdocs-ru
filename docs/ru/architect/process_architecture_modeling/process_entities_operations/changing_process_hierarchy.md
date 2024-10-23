@@ -16,7 +16,7 @@ hide:
     - tags
 ---
 
-# Изменение иерархии элементов процессной архитектуры {: #changing_process_hierarchy}
+# Изменение иерархии элементов процессной архитектуры {: #architect_changing_process_hierarchy}
 
 ## Перемещение элемента с помощью реестра
 
@@ -41,3 +41,5 @@ hide:
 **[Просмотр реестра процессов][просмотр-реестра-процессов]**
 
 **[Использование системы — Панель навигации][navigation_panel]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

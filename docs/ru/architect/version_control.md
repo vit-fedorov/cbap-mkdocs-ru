@@ -48,7 +48,7 @@ hide:
     *![Просмотр версий диаграммы](version_control_viewing_diagram_versions.png)*
 
 !!! Note "Примечание"
-    [Редактировать](edit_diagram.md) можно только текущую версию диаграммы.
+    [Редактировать][architect_edit_diagram] можно только текущую версию диаграммы.
 
 --8<-- "related_topics_heading.md"
 
@@ -57,3 +57,5 @@ hide:
 **[Просмотр реестра оргединиц][просмотр-реестра-оргединиц]**
 
 **[Использование системы — Панель навигации][navigation_panel]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

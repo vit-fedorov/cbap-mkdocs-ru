@@ -11,7 +11,7 @@ hide:
     - tags
 ---
 
-# Редактирование диаграммы {: #edit_diagram}
+# Редактирование диаграммы {: #architect_edit_diagram}
 
 Для редактирования диаграммы перейдите к [конструктору диаграмм][переход-к-конструктору-диаграмм].
 
@@ -89,6 +89,8 @@ hide:
 
 **[Конструктор диаграмм][конструктор-диаграмм]**
 
-**[Изменение свойств элемента процессной архитектуры](configuring_process_entity_properties.md)**
+**[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]**
 
-**[Редактирование формы свойств и атрибутов элемента](configuring_process_entity_properties_form_and_attributes.md)**
+**[Редактирование формы свойств и атрибутов элемента][architect_configuring_process_entity_properties_form_and_attributes]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

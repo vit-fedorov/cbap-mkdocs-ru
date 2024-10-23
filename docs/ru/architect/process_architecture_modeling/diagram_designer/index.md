@@ -35,8 +35,8 @@ hide:
     * **Очистить** <i class="fa-light fa-trash"></i> — безвозвратное удаление всех элементов с диаграммы. При нажатии этой кнопки отобразится запрос подтверждения.
     * **Обсуждение** <i class="fa-light fa-comment-dots"></i> — отображение чата для обсуждения диаграммы.
     * **Версии** <i class="fa-light fa-code-branch"></i> — управление версиями диаграммы.
-    * **Свойства** <i class="fa-light fa-sidebar-flip"></i> — [настройка свойств](configuring_process_entity_properties.md) выбранного элемента или всей диаграммы.
-2. Кнопки «**Импорт**» <i class="fa-light fa-arrow-down-to-bracket"></i> и «**Проверить**» <i class="fa-light  fa-circle-exclamation-check"></i> — позволяют [импортировать](importing_process_entity.md) и [проверить диаграмму](verify_diagram.md). Кнопка «**Проверить**» отображается только для диаграмм процессов. Проверка диаграмм бизнес-способностей не предусмотрена.
+    * **Свойства** <i class="fa-light fa-sidebar-flip"></i> — [настройка свойств][architect_configuring_process_entity_properties] выбранного элемента или всей диаграммы.
+2. Кнопки «**Импорт**» <i class="fa-light fa-arrow-down-to-bracket"></i> и «**Проверить**» <i class="fa-light  fa-circle-exclamation-check"></i> — позволяют [импортировать][architect_importing_process_entity] и [проверить диаграмму][architect_verify_diagram]. Кнопка «**Проверить**» отображается только для диаграмм процессов. Проверка диаграмм бизнес-способностей не предусмотрена.
 3. Палитра элементов — содержит либо элементы нотации BPMN 2.0, либо элементы нотации бизнес-способностей.
 --8<-- "process_architecture_diagram_zoom_controls.md"
 6. Панель свойств. В этой области также отображаются панель обсуждения и панель версий диаграммы.
@@ -64,6 +64,7 @@ end="<!--navigating-to-child-end-->"
 
 **[Просмотр реестра процессов][просмотр-реестра-процессов]**
 
-**[Редактирование диаграммы](edit_diagram.md)**
+**[Редактирование диаграммы][architect_edit_diagram]**
+**[Просмотр диаграммы][architect_viewing_diagram]**
 
-**[Просмотр диаграммы](viewing_diagram.md)**
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

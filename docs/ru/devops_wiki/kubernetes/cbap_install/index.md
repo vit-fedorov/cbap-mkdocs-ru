@@ -1,4 +1,4 @@
-# Развертывание Comindware Business Application Platform в кластере K8s
+# Развертывание {{ productName }} в кластере K8s
 
 ## Необходимые условия
 
@@ -10,7 +10,7 @@
 - архив образов компонент Платформы cbap-4.6.1864_images.tgz
 - архив файлов манифестов для K8s cbap-k8s-manifests.tgz
 
-## Развертывание Comindware Business Application Platform с помощью K8s
+## Развертывание {{ productName }} с помощью K8s
 
 ### Добавление образов компонент Платформы в репозиторий образов
 

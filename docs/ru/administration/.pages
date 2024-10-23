@@ -1,7 +1,7 @@
 title: Администрирование
 
 nav:
-    - index.md
+    - administration_intro.md
     - deploy
     - Администрирование системы:
         - administration_page.md

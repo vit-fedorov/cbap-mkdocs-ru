@@ -1,0 +1,208 @@
+<h1>Диаграмма Ганта. Настройка</h1><p>На форме можно разместить диаграмму Ганта, которая будет строиться динамически по данным приложения.</p>
+<p>Для формирования диаграммы Ганта потребуется настроить несколько шаблонов и атрибутов определённых типов.</p>
+<p>См. также статью «<strong><a href="https://kb.comindware.ru/article.php?id=2108">Диаграмма Ганта. Использование</a></strong>».</p>
+<div class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Пример диаграммы Ганта" class="img-responsive" height="792" src="https://kb.comindware.ru/assets/gantt_chart_example2.png" width="1544"/></p>
+<p class="caption" style="font-size: 15px !important;">Пример диаграммы Ганта</p>
+</div>
+<h2 id="mcetoc_1hfoqf6i70">Настройка шаблонов записи и форм</h2>
+<ol class="colored_numbers_list">
+<li>Создайте три <strong><a href="https://kb.comindware.ru/article.php?id=2221">шаблона записи</a></strong>:
+<ul>
+<li><em>Работы</em></li>
+<li><em>План работ</em></li>
+<li><em>Зависимости работ</em></li>
+</ul>
+</li>
+<li>В шаблоне <em>«Работы»</em> создайте и поместите на форму атрибуты:
+<ul>
+<li><em>Дата начала</em></li>
+<li><em>Дата начала плановая</em></li>
+<li><em>Дата окончания</em></li>
+<li><em>Дата окончания плановая</em>
+<ul style="list-style-type: circle;">
+<li><strong>Тип данных</strong>: <strong>дата и время</strong></li>
+</ul>
+</li>
+<li><em>Дочерние работы</em>
+<ul style="list-style-type: circle;">
+<li><strong>Тип данных</strong>: <strong>запись</strong>.</li>
+<li><strong>Связанный шаблон</strong>: <em>Работы</em></li>
+<li><strong>Хранить несколько значений</strong>: флажок установлен.</li>
+<li><strong>Взаимная связь с новым атрибутом</strong>: <em>Родительская работа</em>.</li>
+</ul>
+</li>
+<li><em>Зависимости работ</em>
+<ul style="list-style-type: circle;">
+<li><strong>Тип данных</strong>: <strong>запись</strong>.</li>
+<li><strong>Связанный шаблон</strong>: <em>Зависимости работ</em>.</li>
+<li><strong>Хранить несколько значений</strong>: флажок установлен.</li>
+<li><strong>Взаимная связь с новым атрибутом</strong>: <em>Зависимая работа</em>.</li>
+</ul>
+</li>
+<li><em>Исполнитель</em>
+<ul style="list-style-type: circle;">
+<li><strong>Тип данных</strong>: <strong>аккаунт</strong>.</li>
+</ul>
+</li>
+<li><em>Наименование работы</em>
+<ul style="list-style-type: circle;">
+<li><strong>Тип данных</strong>: <strong>текст</strong>.</li>
+<li><strong>Использовать как заголовок записей</strong>: флажок установлен.</li>
+</ul>
+</li>
+<li><em>Номер работы</em></li>
+<ul style="list-style-type: circle;">
+<li><strong>Тип данных</strong>: <strong>число</strong>.</li>
+</ul>
+<li><em>Позиция в иерархии</em>
+<ul style="list-style-type: circle;">
+<li><strong>Тип данных</strong>: <strong>текст</strong>.</li>
+</ul>
+</li>
+<li><em>Прогресс</em>
+<ul style="list-style-type: circle;">
+<li><strong>Тип данных</strong>: <strong>число</strong>.</li>
+<li><strong>Количество знаков после запятой</strong>: <strong>не преобразовывать</strong></li>
+</ul>
+</li>
+</ul>
+<div class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Основная форма шаблона «Работы»" class="img-responsive" data-type="preloader" height="485" src="https://kb.comindware.ru/assets/creating_gantt_chart_work_template_form2.png" width="530"/></p>
+<p class="caption" style="font-size: 15px !important;"><span style="letter-spacing: 0.2px; text-align: left; color: #545764;">Основная форма шаблона «Работы»</span></p>
+</div>
+</li>
+<li>В шаблоне <em>«Зависимости работ»</em> создайте и поместите на основную форму атрибуты:
+<ul>
+<li><em>Задержка</em>
+<ul style="list-style-type: circle;">
+<li><strong>Тип данных</strong>: <strong>длительность</strong>.</li>
+</ul>
+</li>
+<li><em>Предшествующая работа</em>
+<ul style="list-style-type: circle;">
+<li><strong>Тип данных</strong>: <strong>запись</strong>.</li>
+<li><strong>Связанный шаблон</strong>: <em>Работы</em>.</li>
+</ul>
+</li>
+<li><em>Наименование зависимости</em>
+<ul style="list-style-type: circle;">
+<li><strong>Тип данных</strong>: <strong>текст</strong>.</li>
+<li><strong>Вычислять по выражению</strong>: флажок установлен.</li>
+<li><strong>Вычисляемое значение</strong>:</li>
+<li>CONCAT(LIST($Predshestvuyuschayarabota-&gt;Naimenovanieraboty,</li>
+<li>    " -&gt; ",</li>
+<li>    $Zavisimayarabota-&gt;Naimenovanieraboty))</li>
+<li>Свойство «<strong>Доступ</strong>» на форме: <strong>только чтение</strong>.</li>
+</ul>
+</li>
+<li><em>Тип связи</em>
+<ul style="list-style-type: circle;">
+<li><strong>Тип данных</strong>: <strong>список значений</strong>.</li>
+<li><strong>Список значений</strong> — четыре значения: <br/><br/>
+<div class="blue_note"><strong>Системные имена</strong> значений данного атрибута должны быть именно такими, как указано выше. В противном случае диаграмма Ганта не будет формироваться должным образом.</div>
+<ul style="list-style-type: square;">
+<li><strong>Системное имя</strong>: <em>startToStart</em>.
+<ul style="list-style-type: square;">
+<li><strong>EN</strong>: <em>Start to start</em>.</li>
+<li><strong>RU</strong>: <em>Начало-начало</em>.</li>
+</ul>
+</li>
+<li><strong>Системное имя</strong>: <em>startToEnd</em>.
+<ul style="list-style-type: square;">
+<li><strong>EN</strong>: <em>Start to end</em>.</li>
+<li><strong>RU</strong>: <em>Начало-окончание</em>.</li>
+</ul>
+</li>
+<li><strong>Системное имя</strong>: <em>endToStart</em>.
+<ul style="list-style-type: square;">
+<li><strong>EN</strong>: <em>End to start</em>.</li>
+<li><strong>RU</strong>: <em>Окончание-начало</em>.</li>
+</ul>
+</li>
+<li><strong>Системное имя</strong>: <em>endToEnd</em>.
+<ul style="list-style-type: square;">
+<li><strong>EN</strong>: <em>End to end</em>.</li>
+<li><strong>RU</strong>: <em>Окончание-окончание</em>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Список значений атрибута «Тип связи»" class="img-responsive" data-type="preloader" height="282" src="https://kb.comindware.ru/assets/creating_gantt_chart_link_type_value_list1.png" width="880"/></p>
+<p class="caption" style="font-size: 15px !important;"><span style="letter-spacing: 0.2px; text-align: left; color: #545764;">Список значений атрибута «Тип связи»</span></p>
+</div>
+<div class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Основная форма шаблона «Зависимости»" class="img-responsive" data-type="preloader" height="380" src="https://kb.comindware.ru/assets/creating_gantt_chart_work_dependency1.png" width="307"/></p>
+<p class="caption" style="font-size: 15px !important;">Основная форма шаблона «Зависимости»</p>
+</div>
+</li>
+<li>В шаблоне <em>«План работ»</em> создайте и <strong>дважды</strong> поместите на форму атрибут:
+<ul>
+<li><em>Работы</em>
+<ul style="list-style-type: circle;">
+<li><strong>Тип данных</strong>: <strong>запись</strong>.</li>
+<li><strong>Связанный шаблон</strong>: <em>Работы</em></li>
+<li><strong>Хранить несколько значений</strong>: флажок установлен.</li>
+<li><strong>Взаимная связь с новым атрибутом</strong>: <em>Связь</em>.</li>
+</ul>
+</li>
+</ul>
+<div class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Основная форма шаблона «План работ»" class="img-responsive" data-type="preloader" height="890" src="https://kb.comindware.ru/assets/creating_gantt_chart_work_plan_form1.png" width="1329"/></p>
+<p class="caption" style="font-size: 15px !important;"><span style="letter-spacing: 0.2px; text-align: left; color: #545764;">Основная форма шаблона «План работ»</span></p>
+</div>
+</li>
+<li>Для первого поля <em>«Работы»</em> на форме выберите <strong>представление «Диаграмма Ганта»</strong> и установите следующие свойства диаграммы, выбрав ранее созданные атрибуты:
+<ul>
+<li><strong>Наименование</strong>: <em>Наименование работы</em>.</li>
+<li><strong>Исполнитель</strong>: <em>Исполнитель</em>.</li>
+<li><strong>Дата начала плановая</strong>: <em>Дата начала плановая</em>.</li>
+<li><strong>Дата начала</strong>: <em>Дата начала</em>.</li>
+<li><strong>Дата окончания плановая</strong>: <em>Дата окончания плановая</em>.</li>
+<li><strong>Дата окончания</strong>: <em>Дата окончания</em>.</li>
+<li><strong>Процент выполнения</strong>: <em>Прогресс</em>.</li>
+<li><strong>Форма</strong>: <em>Работы - Основная форма</em>.</li>
+<li><strong>Дочерние работы</strong>: <em>Дочерние работы</em>.</li>
+<li><strong>Упорядочивание</strong>: <em>Номер работы</em>.</li>
+<li><strong>Зависимости</strong>: <em>Зависимости работ</em>.</li>
+<li><strong>Предшествующие работы</strong>: <em>Предшествующая работа</em>.</li>
+<li><strong>Типы связей</strong>: <em>Тип связи</em>.</li>
+<li><strong>Задержка/опережение</strong>: <em>Задержка</em>.</li>
+</ul>
+<div class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img class="img-responsive" src="https://kb.comindware.ru/assets/img_63a5a8d384d51.png"/></p>
+<p class="caption" style="font-size: 15px !important;"><span style="letter-spacing: 0.2px; text-align: left; color: #545764;">Свойства диаграммы Ганта на форме</span></p>
+</div>
+</li>
+<li>Для второго поля <em>«Работы»</em> на форме выберите <strong>представление «Таблица»</strong> и установите следующие свойства таблицы, выбрав ранее созданные атрибуты:
+<ul>
+<li><strong>Доступ</strong>: <em>Разрешить ввод</em>.</li>
+<li><strong>Дочерние записи</strong>: <em>Дочерние работы</em>.</li>
+<li><strong>Упорядочивание</strong>: <em>Номер работы</em>.</li>
+<li><strong>Иерархическая нумерация</strong>: <em>Позиция в иерархии</em>.</li>
+<li>Перетащите на область кнопок таблицы кнопки <strong>«Создать»</strong>, <strong>«Добавить»</strong>, <strong>«Исключить»</strong>, <strong>«Редактировать»</strong>, <strong>«Удалить»</strong>.</li>
+<li>Перетащите в таблицу атрибуты шаблона <em>«Работы»</em>:
+<ul style="list-style-type: circle;">
+<li><em>«Позиция в иерархии»</em> (свойство столбца <strong>«Доступ»</strong>: <strong>только чтение</strong>),</li>
+<li><em>«Наименование работы»</em>,</li>
+<li><em>«Исполнитель»</em>,</li>
+<li><em>«Прогресс»</em>,</li>
+<li><em>«Дата начала плановая»</em>,</li>
+<li><em>«Дата начала»</em>,</li>
+<li><em>«Дата окончания плановая»</em>,</li>
+<li><em>«Дата окончания»</em>,</li>
+<li><em>«Зависимости»</em> (в свойствах столбца установите флажки <strong>«Разрешить создание записей»</strong> и <strong>«Разрешить редактирование записей»</strong>).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<div class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Свойства таблицы работ на форме" class="img-responsive" height="501" src="https://kb.comindware.ru/assets/creating_gantt_chart_table_properties1.png" width="494"/></p>
+<p class="caption" style="font-size: 15px !important;">Свойства таблицы работ на форме</p>
+</div>
+<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; font-size: 15px; font-weight: 300; letter-spacing: 0.2px; line-height: 25px; color: #545764; font-family: 'Open Sans', sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">См. также статью «<strong style="box-sizing: border-box; font-weight: 700 !important;"><a href="https://kb.comindware.ru/article.php?id=2108" style="box-sizing: border-box; color: #2d9adf; text-decoration: none; background-color: transparent;">Диаграмма Ганта. Использование</a></strong>».</p>

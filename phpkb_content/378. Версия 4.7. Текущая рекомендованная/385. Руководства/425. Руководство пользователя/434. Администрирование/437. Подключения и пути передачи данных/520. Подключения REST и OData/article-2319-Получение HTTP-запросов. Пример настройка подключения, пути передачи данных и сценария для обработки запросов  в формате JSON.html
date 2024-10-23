@@ -1,0 +1,149 @@
+<h1>Получение HTTP-запросов. Пример: настройка подключения, пути передачи данных и сценария для обработки запросов  в формате JSON</h1><div class="mce-toc">
+<h2 class="toc-heading">Содержание</h2>
+<ul>
+<li><a href="#mcetoc_1hiiq8tpn2">Введение</a></li>
+<li><a href="#mcetoc_1hiiq8lms1">Исходные данные</a></li>
+<li><a href="#mcetoc_1hiir1gg14">Настройка подключения</a></li>
+<li><a href="#mcetoc_1hiir20525">Настройка пути передачи данных</a></li>
+<li><a href="#mcetoc_1hiir33ed6">Настройка сценария для обработки полученного JSON запроса.</a></li>
+<li><a href="#mcetoc_1hiir5qop7">Тестирование</a></li>
+<li><a href="#mcetoc_1hiirr4bjc">Связанные статьи</a></li>
+</ul>
+</div>
+<h2 id="mcetoc_1hiiq8tpn2">Введение</h2>
+<p><strong>Comindware Business Application Platform</strong> может получать HTTP-запросы с помощью встроенного HTTP-адаптера.</p>
+<p>В этой статье на примере сценария приема заказов мы разберем настройку получения и обработки HTTP-запроса в формате JSON.</p>
+<p>Настройка для обработки XML и простого текста будет аналогичной.</p>
+<h2 id="mcetoc_1hiiq8lms1">Исходные данные</h2>
+<p>Пример JSON-данных из запроса, поступающего в систему из внешней системы:</p>
+<pre><code>{</code> <br/><code>    "ListZakazov": [</code> <br/><code>        {</code> <br/><code>            "Zakaz": {</code> <br/><code>            "Client": "Петров",</code> <br/><code>            "nomer": 54,</code> <br/><code>            "tovar":"Яблоко"</code> <br/><code>            }</code> <br/><code>        },</code> <br/><code>        {</code> <br/><code>            "Zakaz": {</code> <br/><code>            "Client": "Иванов",</code> <br/><code>            "nomer": 60,</code> <br/><code>            "tovar":"Банан"</code> <br/><code>            }</code> <br/><code>        },</code> <br/><code>        {</code> <br/><code>            "Zakaz": {</code> <br/><code>            "Client": "Сидоров",</code> <br/><code>            "nomer": 61,</code> <br/><code>            "tovar":"Груша"</code> <br/><code>            }</code> <br/><code>        }</code> <br/><code>    ]</code> <br/><code>}</code></pre>
+<div> </div>
+<p>В приложении имеется шаблон записи «<em>Заказы</em>», с атрибутами:</p>
+<ul>
+<li><em>Номер</em> — тип данных: <strong>Число</strong></li>
+<li><em>Клиент</em> — тип данных: <strong>Текст</strong></li>
+<li><em>Товар</em> — тип данных: <strong>Текст</strong></li>
+</ul>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>В данной статье не рассматривается поиск схожих данных и проверка на их наличие.</p>
+</div>
+<h2 id="mcetoc_1hiir1gg14">Настройка подключения</h2>
+<p><span style="letter-spacing: 0.2px;"><strong>1.</strong> Перейдите в раздел «<strong>Администрирование</strong>» — «<strong>Инфраструктура</strong>» — «<strong>Подключения</strong>». Нажмите</span> кнопку «<strong>Создать</strong>» и выберите пункт «<strong>Подключения REST и OData</strong>» — «<strong>Получение HTTP-запросов</strong>».</p>
+<div class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Создание подключения" class="img-responsive" height="451" src="https://kb.comindware.ru/assets/json1.jpg" width="723"/></p>
+<p class="caption" style="font-size: 15px !important;">Создание подключения</p>
+</div>
+<p><strong>2.</strong> Настройте свойства нового подключения:</p>
+<ul>
+<li><strong>Системное имя</strong> (на латинице) нового подключения;</li>
+<li><strong>Описание</strong> — отображаемое название нового подключения;</li>
+<li><strong>Путь URI</strong> — путь, на который будут поступать HTTP-запросы;</li>
+<li><strong>Формат данных</strong> — <strong>JSON</strong>. Также поддерживаются <strong>XML</strong> и <strong>простой текст</strong>, но в этой статье рассматривается обработка данных в формате JSON.</li>
+</ul>
+<p><strong>3.</strong> Сохраните подключение.</p>
+<h2 id="mcetoc_1hiir20525">Настройка пути передачи данных</h2>
+<p><span style="letter-spacing: 0.2px;"><strong>1.</strong> Перейдите в раздел <strong>Администрирование — Инфраструктура — Пути передачи данных</strong>. Нажмите</span> кнопку «<strong>Создать</strong>» и выберите пункт  «<strong>Подключения REST и OData</strong>» — «<strong>Получение HTTP-запросов</strong>».</p>
+<div class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Создание пути передачи данных" class="img-responsive" height="367" src="https://kb.comindware.ru/assets/json2.png" width="535"/></p>
+<p class="caption" style="font-size: 15px !important;">Создание пути передачи данных</p>
+</div>
+<p><strong>2.</strong> В окне создания нового пути передачи данных укажите:</p>
+<ul>
+<li><strong>Подключение</strong> — выберите ранее созданное <a href="#mcetoc_1hiir1gg14">подключение</a>.</li>
+<li><strong>Системное имя</strong> (на латинице) нового пути передачи данных;</li>
+<li><strong>Описание</strong> — наглядное наименование нового пути передачи данных.</li>
+</ul>
+<p><strong>3.</strong> Перейдите на вкладку «<strong>Атрибуты сообщения</strong>».</p>
+<p><strong>Запрос</strong> — здесь указывается данные JSON сопоставляются с атрибутами <strong>Comindware Business Application Plaform</strong>.</p>
+<p>На данном этапе следует посмотреть структуру JSON-данных, поступающих в запросе, и разобрать их на атрибуты с указанием типов данных:</p>
+<ul>
+<li><em>ListZakazov</em> — атрибут, который содержит в себе данные по всем заказам. <strong>Тип</strong> — <strong>объект</strong>;</li>
+<li><em>Zakaz</em> — атрибут, который тоже в себе содержит данные по одному заказу. <strong>Тип</strong> — <strong>объект</strong>;</li>
+<li><span style="letter-spacing: 0.2px;"><em>nomer</em> — атрибут, содержащий значение номера заказа. <strong>Тип</strong> — <strong>число</strong>;</span></li>
+<li><em>Client</em> — атрибут, содержащий значение клиента заказа. <strong>Тип</strong> — <strong>строка</strong>;</li>
+<li><em>tovar</em> — атрибут, содержащий значение товара заказа. <strong>Тип</strong> — <strong>строка</strong>.</li>
+</ul>
+<p><strong>4.</strong> Воссоздайте структуру входных данных JSON в таблице «<strong>Запрос</strong>» с помощью кнопки «<strong>Добавить</strong>».</p>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Чтобы создать в таблице дочерний атрибут, установите флажок у родительского атрибута и нажмите кнопку «<strong>Добавить</strong>».</p>
+</div>
+<div class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Настройка запроса" class="img-responsive" height="599" src="https://kb.comindware.ru/assets/json3.jpg" width="854"/></p>
+<p class="caption" style="font-size: 15px !important;">Настройка запроса</p>
+</div>
+<p><strong>5.</strong> При необходимости настройте <strong>ответ</strong> — здесь можно составить макет JSON, который будет ответом на запрос, и ответ с ошибкой — здесь можно составить макет JSON, который будет ответом на запрос, в котором произошла ошибка.</p>
+<p><strong>6.</strong> Перейдите на вкладку «<strong>Интеграция</strong>».</p>
+<p><strong>7. Укажите ат</strong><span style="letter-spacing: 0.2px;"><strong>рибуты для десериализации данных</strong>. В стандартном варианте следует указать <code>$</code> в обоих столбцах. Для поиска определенного атрибута используйте JSONPath. </span></p>
+<p><span style="letter-spacing: 0.2px;"><strong>8. </strong>При необходимости укажите <strong>атр</strong></span><strong>ибут для заголовков</strong>, в котором будут содержаться все атрибуты заголовков запроса, <strong>а</strong><span style="letter-spacing: 0.2px;"><strong>трибут для параметров запроса</strong>, в котором будут содержаться все параметры запроса, и <strong>а</strong></span><span style="letter-spacing: 0.2px;"><strong>трибут для тела запроса</strong>, в котором будет содержаться всё тело запроса.</span></p>
+<p><span style="letter-spacing: 0.2px;"><strong><a id="RequestURI"></a>9. </strong>В поле «<strong>Базовый путь для приема HTTP-запросов</strong>» указан адрес, на который внешняя система должна отправлять запросы в <strong>Comindware Business Application Platform</strong>.</span></p>
+<p><span style="letter-spacing: 0.2px;"><strong>10.</strong> Сохраните путь передачи данных.</span></p>
+<div class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Настройка интеграции" class="img-responsive" height="600" src="https://kb.comindware.ru/assets/json4.png" width="860"/></p>
+<p class="caption" style="font-size: 15px !important;">Настройка интеграции</p>
+</div>
+<h2 id="mcetoc_1hiir33ed6">Настройка сценария для обработки полученного JSON запроса.</h2>
+<p><strong>1.</strong> <span style="letter-spacing: 0.2px;">Перейдите на страницу «<strong>Администрирование</strong>» приложения. Откройте страницу «<strong>Сценарии</strong>». Нажмите</span> кнопку «<strong>Создать</strong>». Введите название, системное имя сценария и нажмите кнопку «<strong>Сохранить</strong>».</p>
+<div class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Создание сценария" class="img-responsive" height="495" src="https://kb.comindware.ru/assets/json5.jpg" width="638"/></p>
+<p class="caption" style="font-size: 15px !important;">Создание сценария</p>
+</div>
+<p><strong>2.</strong> У начального события измените тип на «<strong>Получение сообщения</strong>» и настройте его. </p>
+<ul>
+<li>Выберите шаблон записи, куда будут поступать основные данные;</li>
+<li>Выберите ранее созданные подключение и путь передачи данных;</li>
+<li>Задайте имя переменной (любое на латинице).</li>
+</ul>
+<div class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Настройка события" class="img-responsive" height="640" src="https://kb.comindware.ru/assets/json6.jpg" width="842"/></p>
+<p class="caption" style="font-size: 15px !important;">Настройка события</p>
+</div>
+<p><strong>3.</strong> Добавьте действие «<strong>Цикл по объектам</strong>» и настройте его.</p>
+<ul>
+<li><span style="letter-spacing: 0.2px;">Задайте имя переменной </span>(в данном примере указана переменная <code>local</code>), в ней будет храниться объект итерации<span style="letter-spacing: 0.2px;">;</span></li>
+<li><span style="letter-spacing: 0.2px;">Напишите выражение на языке N3, по которому система выберет нужные объекты для итерации.</span></li>
+</ul>
+<p><code></code></p>
+<pre style="margin-bottom: 0in; line-height: normal;"><code>@prefix session: &lt;http://comindware.com/ontology/session#&gt;.</code> <br/><code>@prefix var: &lt;http://comindware.com/ontology/session/variable#&gt;.</code> <br/><code>{</code> <br/><code>    session:context var:request ?req. <span style="color: #339966;"><em>#request — переменная из первого блока, в которой находится разобранный JSON</em></span></code> <br/><code>    ?req var:ListZakazov ?value. <span style="color: #339966;"><em>#ListZakazov - переменная, в которой находится массив объектов</em></span></code> <br/><code>}</code></pre>
+<p><code></code></p>
+<div> </div>
+<div class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Настройка действия «Цикл по объектам»" class="img-responsive" height="634" src="https://kb.comindware.ru/assets/json7.jpg" width="837"/></p>
+<p class="caption" style="font-size: 15px !important;">Настройка действия «Цикл по объектам»</p>
+</div>
+<p><span style="letter-spacing: 0.2px;"><strong>4.</strong> </span><span style="letter-spacing: 0.2px;">Внутрь действия «<strong>Цикл по объектам</strong>» добавьте действие «<strong>Создать запись</strong>» и укажите</span> <span style="letter-spacing: 0.2px;">  шаблон записи «Заказы». </span></p>
+<p><strong>5.</strong> Внутрь действия «<strong>Создать запись</strong>» добавьте действие «<strong>Изменить значения атрибутов</strong>» и настройте его.</p>
+<ul>
+<li>Добавьте три атрибута (<em>Клиент, Товар</em> и <em>Номер</em>);</li>
+<li>Операцию со значениями у всех атрибутов укажите «<strong>Заменить</strong>»;</li>
+<li>Значением будет формула <code>$$local-&gt;Zakaz-&gt;Client</code> (для клиента), для остальных атрибутов будет такая же формула, только в конце в место <code>Client</code> будет название соответствующего атрибута JSON.</li>
+</ul>
+<p>Переменная <code>$$local</code> — хранит значение текущего объекта итерации. Пример:</p>
+<pre><code><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">{</span></code> <br/><code><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">  </span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #a31515;">"</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #a31515;">Zakaz</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #a31515;">"</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">:</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;"> </span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">{</span></code> <br/><code><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">             </span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #a31515;">"</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #a31515;">Client</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #a31515;">"</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">:</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;"> </span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #0451a5;">"Петров"</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">, </span></code> <br/><code><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">             </span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #a31515;">"</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #a31515;">nomer</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #a31515;">"</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">:</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;"> </span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #098658;">54</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">, </span></code> <br/><code><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">             </span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #a31515;">"</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #a31515;">tovar</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #a31515;">"</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">: </span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #0451a5;">"Яблоко"</span></code> <br/><code><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">            }</span></code> <br/><code><span style="font-size: 9.0pt; line-height: 150%; font-family: 'Courier New'; color: black;">},</span></code></pre>
+<div> </div>
+<div> </div>
+<p>Переменная <code>$$local-&gt;Zakaz</code> будет содержать массив данных по заказу из текущего объекта итерации. Пример:</p>
+<pre style="margin-bottom: 0in; line-height: normal; background: #FFFFFE;"><code><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">{</span></code> <br/><code><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #a31515;">  "</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #a31515;">Client</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #a31515;">"</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">: </span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #0451a5;">"Петров"</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">,</span></code> <br/><code>  <span style="font-size: 9.0pt; font-family: 'Courier New'; color: #a31515;">"nomer"</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">: </span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #098658;">54</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">, </span></code> <br/><code><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">  </span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #a31515;">"tovar"</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: black;">: </span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #0451a5;">"</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #0451a5;">Яблоко</span><span style="font-size: 9.0pt; font-family: 'Courier New'; color: #0451a5;">"</span></code> <br/><code><span style="font-size: 9.0pt; line-height: 150%; font-family: 'Courier New'; color: black;">}</span></code></pre>
+<div> </div>
+<p>Переменная <code>$$local-&gt;Zakaz-&gt;Tovar</code> будет данные информации о товаре по заказу из текущего объекта итерации. Пример:</p>
+<pre><code><span style="font-size: 11.0pt; line-height: 115%; font-family: 'Calibri',sans-serif; color: #0451a5;">"Яблоко"</span></code></pre>
+<div class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Настройка действия «Изменить значения атрибутов»" class="img-responsive" height="460" src="https://kb.comindware.ru/assets/json8.jpg" width="843"/></p>
+<p class="caption" style="font-size: 15px !important;">Настройка действия «Изменить значения атрибутов»</p>
+</div>
+<p><strong>6. </strong>Получившийся сценарий должен выглядеть следующим образом:</p>
+<div class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Сценарий обработки заказа" class="img-responsive" height="815" src="https://kb.comindware.ru/assets/json10.jpg" width="955"/></p>
+<p class="caption" style="font-size: 15px !important;">Сценарий обработки заказа</p>
+</div>
+<h2 id="mcetoc_1hiir5qop7">Тестирование</h2>
+<p><strong>1.</strong> Отправьте запрос из внешней системы в <strong>Comindware Business Application Platform </strong>на адрес, указанный <span style="letter-spacing: 0.2px;">в поле «<strong>Базовый путь для приема HTTP-запросов</strong>» в <a href="#RequestURI">свойствах пути передачи данных</a></span>.</p>
+<p><strong>2.</strong> Проверьте обработку запроса: должны быть созданы записи в шаблоне «<em>Заказы</em>», соответствующие полученному запросу, как показано на иллюстрации:</p>
+<div class="screenshot_with_caption" style="font-size: 15px !important;">
+<p><img alt="Полученные заказы" class="img-responsive" height="347" src="https://kb.comindware.ru/assets/json9.jpg" width="650"/></p>
+<p class="caption" style="font-size: 15px !important;">Полученные заказы</p>
+</div>
+<h2 id="mcetoc_1hiirr4bjc">Связанные статьи</h2>
+<p><strong><samp data-name="aid" data-title="" data-value="2149"><span style="color: #0066bc; font-family: Tahoma;"><img src="https://kb.comindware.ru/images/marker.png" style="vertical-align: middle;"/>Настройка действий сценария {Article-ID:2149}</span></samp> </strong></p>
+<p><a class="md-top md-icon mkdocs_imported_link" href="#"> <em class="fa-light fa-arrow-up">‌</em> К началу </a></p>

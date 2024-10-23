@@ -1,7 +1,5 @@
 title: Карточки
 
 nav:
-    - cards_layout_configure.md
-    - cards_assign_to_table.md
-    - cards_layout_delete.md
+    - Карточки: cards_layout_configure.md
     - ...

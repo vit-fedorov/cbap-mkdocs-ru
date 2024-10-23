@@ -31,25 +31,25 @@ kbId: 2308
 
 Определение соответствия данных группы производится следующим образом:
 
-| {{ productName }} | | Active Directory |
-| --- | --- | --- |
-| Системное имя | Отображаемое название | Системное имя |
-| Name | Название | CN |
-| Description | Описание | Description |
-| members | Участники группы | Member |
-| parentGroups | Входит в группы | MemberOf |
-| Username | Имя пользователя | SamAccountName |
-| IsActive | Активен (логический атрибут) | IsEnabled |
-| Mbox | Адрес эл.почты | Mail |
-| FullName | Имя | FullName |
-| Title | Должность | Title |
-| Department | Отдел | Department |
-| Office | Офис | PhysucakDeliveryOfficeName |
-| Skype | Skype | Pager |
-| Manager | Руководитель | ManagerID |
-| Phone | Телефон | TelephoneNumber, Mobile |
-| Authentification=LDAP | Метод проверки подлинности |  |
-| Picture | Аватар |  |
+| {{ productName }}     |                              | Active Directory           |
+| --------------------- | ---------------------------- | -------------------------- |
+| Системное имя         | Отображаемое название        | Системное имя              |
+| Name                  | Название                     | CN                         |
+| Description           | Описание                     | Description                |
+| members               | Участники группы             | Member                     |
+| parentGroups          | Входит в группы              | MemberOf                   |
+| Username              | Имя пользователя             | SamAccountName             |
+| IsActive              | Активен (логический атрибут) | IsEnabled                  |
+| Mbox                  | Адрес эл.почты               | Mail                       |
+| FullName              | Имя                          | FullName                   |
+| Title                 | Должность                    | Title                      |
+| Department            | Отдел                        | Department                 |
+| Office                | Офис                         | PhysucakDeliveryOfficeName |
+| Skype                 | Skype                        | Pager                      |
+| Manager               | Руководитель                 | ManagerID                  |
+| Phone                 | Телефон                      | TelephoneNumber, Mobile    |
+| Authentification=LDAP | Метод проверки подлинности   |                            |
+| Picture               | Аватар                       |                            |
 
 ## Механизм авторизации через сервер каталогов (Active Directory)
 

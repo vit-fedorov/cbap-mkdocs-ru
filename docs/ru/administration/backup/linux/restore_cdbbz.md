@@ -55,6 +55,7 @@ kbId: 2500
     systemctl status nginx comindware<instanceName>
     ```
 
+<a id="unpack_backup"></a>
 5. Распакуйте архив резервной копии в каталог `/var/lib/comindware/<instanceName>/`:
 
 ```
@@ -146,6 +147,7 @@ unzip /tmp/BackupFileName.202302161625.cdbbz -d /var/lib/comindware/<instanceNam
 
 	```
 
+	<a id="s3_repository"></a>
 	!!! note "Примечание"
 
 		Шаги 7 и 8 не требуются при восстановлении снимка из хранилища S3.

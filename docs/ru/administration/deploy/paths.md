@@ -7,9 +7,9 @@ kbId: 2502
 
 ## Введение
 
-Здесь представлена информация о расположении файлов и папок экземпляра ПО **{{ productName }}**в операционных системах семейства [Linux](#содержимое-каталогов-linux) (Альт Сервер, Astra Linux, РЕД ОС, Rocky Linux и Ubuntu) и [Windows.](#содержимое-папок--windows)
+Здесь представлена информация о расположении файлов и папок экземпляра ПО **{{ productName }}**в операционных системах семейства [Linux](#paths_linux) (Альт Сервер, Astra Linux, РЕД ОС, Rocky Linux и Ubuntu) и [Windows.](#paths_windows)
 
-## Содержимое каталогов — Linux
+## Содержимое каталогов — Linux {: #paths_linux}
 
 По умолчанию файлы экземпляра ПО находятся в каталоге `/var/lib/comindware/instancename`
 
@@ -35,7 +35,7 @@ kbId: 2502
 
 Пример файла конфигурации instancename.yml
 
-## Содержимое папок — Windows
+## Содержимое папок — Windows {: #paths_windows}
 
 База данных по умолчанию находится в папке с экземпляром ПО: `C:\ProgramData\Comindware\Instances\instancename`. Здесь `instancename` — имя экземпляра ПО.
 

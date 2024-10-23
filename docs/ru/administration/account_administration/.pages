@@ -9,7 +9,5 @@ nav:
     - system_roles.md
     - account_permission_audit.md
     - substitution.md
-    - accounts_dc_sync.md
-    - linux
-    - windows
+    - accounts_dc_sync
     - ...

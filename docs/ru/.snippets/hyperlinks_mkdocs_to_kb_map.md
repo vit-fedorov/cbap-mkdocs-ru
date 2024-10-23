@@ -117,7 +117,7 @@
 
 [architect_configuring_process_entity_properties]: {{ kbArticleURLPrefix }}2438
 
-[architect_configuring_process_entity_propeerties_form_and_attributes]: {{ kbArticleURLPrefix }}2435
+[architect_configuring_process_entity_properties_form_and_attributes]: {{ kbArticleURLPrefix }}2435
 
 [architect_creating_organizational_unit]: {{ kbArticleURLPrefix }}2420
 
@@ -237,7 +237,7 @@
 
 [architect_configuring_process_entity_properties]: {{ kbArticleURLPrefix }}2438
 
-[architect_configuring_process_entity_propeerties_form_and_attributes]: {{ kbArticleURLPrefix }}2435
+[architect_configuring_process_entity_properties_form_and_attributes]: {{ kbArticleURLPrefix }}2435
 
 [connections]: {{ kbArticleURLPrefix }}2205
 

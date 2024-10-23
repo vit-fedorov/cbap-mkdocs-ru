@@ -36,5 +36,5 @@ kbId: 2034
 
 --8<-- "related_topics_heading.md"
 
-**[Запуск, остановка и удаление экземпляра продукта](https://kb.comindware.ru/article.php?id=2035)**
+**[Запуск, остановка и удаление экземпляра продукта]({{ kbArticleURLPrefix }}2035)**
 

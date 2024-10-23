@@ -9,14 +9,15 @@ kbId: 2303
 
 **1.** Создайте файл `powershell` со скриптом для запуска резервного копирования, например `backupscript``.``ps``1`.
 
-**2.** В созданном файле укажите `login` — имя пользователя, `password` — пароль для входа в экземпляр ПО, `backupID` — идентификатор конфигурации резервного копирования в экземпляре системы. См. раздел [*«**Просмотр списка конфигураций резервного копирования*](https://kb.comindware.ru/article.php?id=2190)*[»](https://kb.comindware.ru/article.php?id=2190).*
+**2.** В созданном файле укажите `login` — имя пользователя, `password` — пароль для входа в экземпляр ПО, `backupID` — идентификатор конфигурации резервного копирования в экземпляре системы. См. раздел [*«**Просмотр списка конфигураций резервного копирования*]({{ kbArticleURLPrefix }}2190)*[»]({{ kbArticleURLPrefix }}2190).*
 
 ```
 # Enter your credential  
 $login = «admin»  
 $password = «admin»  
   
-# Enter required backup
+# Enter required backup
+
 configuration ID  
 $backupID = «backupConfig.1»  
   

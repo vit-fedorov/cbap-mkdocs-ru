@@ -7,7 +7,7 @@ kbId: 2094
 
 ## Введение
 
-Для работы **{{ productName }}** требуется сервер Elasticsearch. См. [системные требования](https://kb.comindware.ru/article.php?id=1271).
+Для работы **{{ productName }}** требуется сервер Elasticsearch. См. [системные требования]({{ kbArticleURLPrefix }}1271).
 
 В случае установки **{{ productName }}** версии 4.7 в Windows [Утилита администрирования](https://kb.comindware.ru/category.php?id=414) устанавливает службу Elasticsearch в папку `C:\Program Files\Elasticsearch\elasticsearch-8.1.0\`. Эта служба имеет базовую конфигурацию и доступна по адресу `localhost:9200`.
 

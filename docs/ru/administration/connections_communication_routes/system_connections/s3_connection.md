@@ -84,8 +84,8 @@ kbId: 2594
 
 ## Проверка подключения к хранилищу S3
 
-1. Перейдите в [список подключений](https://kb.comindware.ru/article.php?id=2205#mcetoc_1gjrlqi4l1).
-2. Дважды нажмите в списке подключение типа «**S3**» (название подключения задаётся директивой `s3Connection.default.description` в [файле конфигурации](https://kb.comindware.ru/article.php?id=2594#mcetoc_1gjrlqj8j2)).
+1. Перейдите в [список подключений]({{ kbArticleURLPrefix }}2205#mcetoc_1gjrlqi4l1).
+2. Дважды нажмите в списке подключение типа «**S3**» (название подключения задаётся директивой `s3Connection.default.description` в [файле конфигурации]({{ kbArticleURLPrefix }}2594#mcetoc_1gjrlqj8j2)).
 3. Просмотрите свойства подключения:  
     - **Отключить** — этот флажок установлен, если подключение неактивно;
     - **Название** — наглядное наименование подключения;
@@ -103,7 +103,7 @@ kbId: 2594
 
 !!! warning "Внимание!"
 
-    Не вносите изменения в окне свойств подключения к хранилищу S3, заданному в [файле конфигурации](https://kb.comindware.ru/article.php?id=2594#mcetoc_1gjrlqj8j2) экземпляра ПО (`/usr/share/comindware/configs/instance/instanceName.yml`) с помощью директивы `s3Connection.default`. Они не будут применены к конфигурации экземпляра ПО и при перезапуске сервера будут заменены на значения из файла конфигурации `instanceName.yml`
+    Не вносите изменения в окне свойств подключения к хранилищу S3, заданному в [файле конфигурации]({{ kbArticleURLPrefix }}2594#mcetoc_1gjrlqj8j2) экземпляра ПО (`/usr/share/comindware/configs/instance/instanceName.yml`) с помощью директивы `s3Connection.default`. Они не будут применены к конфигурации экземпляра ПО и при перезапуске сервера будут заменены на значения из файла конфигурации `instanceName.yml`
 
 Настраивать подключение к хранилищу S3 следует только в файле `/usr/share/comindware/configs/instance/instanceName.yml`
 

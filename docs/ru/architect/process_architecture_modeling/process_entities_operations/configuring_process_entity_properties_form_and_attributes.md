@@ -15,7 +15,7 @@ hide:
     - tags
 ---
 
-# Редактирование формы свойств и атрибутов элемента процессной архитектуры {: #architect_configuring_process_entity_propeerties_form_and_attributes}
+# Редактирование формы свойств и атрибутов элемента процессной архитектуры {: #architect_configuring_process_entity_properties_form_and_attributes}
 
 У каждого элемента процессной архитектуры предусмотрены настраиваемые атрибуты и форма свойств.
 

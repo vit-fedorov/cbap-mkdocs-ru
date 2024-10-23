@@ -7,7 +7,7 @@ kbId: 2518
 
 ## Введение
 
-В **{{ productName }}** предусмотрена возможность выгрузки данных записи в шаблон Word, Excel или PDF. Cм. «[Подготовка файла шаблона экспорта](https://kb.comindware.ru/article.php?id=2352)».
+В **{{ productName }}** предусмотрена возможность выгрузки данных записи в шаблон Word, Excel или PDF. Cм. «[Подготовка файла шаблона экспорта]({{ kbArticleURLPrefix }}2352)».
 
 В файле шаблона экспорта используются заполнители в фигурных скобках вида `{attributeSystemName}`, где `attributeSystemName` — системное имя атрибута.
 
@@ -183,7 +183,7 @@ FORMAT("{0}",LIST(IF($attributeSystemName == true,"Согласовано","Не
 - `{accountAttributeSystemName.birthday:dd MMMM yyyy 'г.'}` — дата рождения в формате: *29 мая 2024 г.*;
 - `{accountAttributeSystemName.title}` — должность.
 
-См. также [полный перечень атрибутов аккаунта](https://kb.comindware.ru/article.php?id=1354).
+См. также [полный перечень атрибутов аккаунта]({{ kbArticleURLPrefix }}1354).
 
 ## Форматирование атрибутов связанных записей
 

@@ -105,5 +105,5 @@ kbId: 2030
 
 --8<-- "related_topics_heading.md"
 
-**[Настройка конфигурации Утилиты администрирования Comindware](https://kb.comindware.ru/article.php?id=2029)**
+**[Настройка конфигурации Утилиты администрирования Comindware]({{ kbArticleURLPrefix }}2029)**
 

@@ -1,2 +1,6 @@
 title: Инструкции для Windows
 categoryId: 529
+
+nav:
+    - sso_authenticatation_configure_windows.md
+    - ...

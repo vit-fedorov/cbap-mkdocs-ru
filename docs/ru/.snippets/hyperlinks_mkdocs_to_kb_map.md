@@ -6,6 +6,8 @@
 
 [attribute_enum_calculate_registry]: {{ kbArticleURLPrefix }}2571
 
+[auxiliary_software_list]: {{ kbArticleURLPrefix }}2398
+
 [backup_and_restore]: {{ kbArticleURLPrefix }}2579
 
 [backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
@@ -48,8 +50,6 @@
 
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}2318
 
-[sso_authentication]: {{ kbArticleURLPrefix }}2583
-
 [sso_authentication_keytab_update]: {{ kbArticleURLPrefix }}2583#mcetoc_1hpavbqqi2
 
 [task_notifications_email]: ../administration/connections_communication_routes/system_connections/notifications/task_notifications.md#task_notifications_email
@@ -58,7 +58,11 @@
 
 [1c_integrations]: {{ kbArticleURLPrefix }}2011
 
+[accounts_dc_sync]: {{ kbArticleURLPrefix }}2308
+
 [actions]: {{ kbArticleURLPrefix }}2390
+
+[ad_authentication_configure]: {{ kbArticleURLPrefix }}2517
 
 [ad_connection]: {{ kbArticleURLPrefix }}2206
 
@@ -125,6 +129,8 @@
 [connections_delete]: {{ kbArticleURLPrefix }}2205#mcetoc_1gjrlqi4l6
 
 [creating_gantt_chart]: {{ kbArticleURLPrefix }}2107
+
+[deploy_guide]: {{ kbArticleURLPrefix }}2344
 
 [desktop]:  {{ kbArticleURLPrefix }}2284
 
@@ -297,6 +303,8 @@
 [sql_receive_connection]: {{ kbArticleURLPrefix }}2135
 
 [sql_send_connection]: {{ kbArticleURLPrefix }}2498
+
+[sso_authenticatation_configure]: {{ kbArticleURLPrefix }}2583
 
 [table_clone]: {{ kbArticleURLPrefix }}2552
 

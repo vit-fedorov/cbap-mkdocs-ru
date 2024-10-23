@@ -10,4 +10,5 @@ nav:
         - account_administration
         - infrastructure
         - connections_communication_routes
+    - account_administration
     - ...

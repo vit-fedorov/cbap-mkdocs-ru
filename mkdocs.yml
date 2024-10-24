@@ -14,5 +14,6 @@ extra:
   productNameArchitect: 'Comindware Architect'
   pdfEndOfBlockHack: ''
   pdfOutput: False
-  adminGuide: False
-  userGuide: True
+  adminGuide: True
+  userGuide: False
+  kbExport: False

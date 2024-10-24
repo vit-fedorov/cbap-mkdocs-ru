@@ -44,7 +44,7 @@
 
 [html_supported_tags]: {{ kbArticleURLPrefix }}2413
 
-[experimental_feature_support]: {{ kbArticleURLPrefix }}1339#mcetoc_1hsfq7ksu2
+[experimental_feature_support]: {{ kbArticleURLPrefix }}1339#experimental_feature_support
 
 [experessions_intro]: {{ kbArticleURLPrefix }}2493
 

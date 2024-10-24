@@ -581,6 +581,8 @@
 
 [построение-процессной-архитектуры]: {{ kbArticleURLPrefix }}2426
 
+[просмотр-реестра-процессов]: {{ kbArticleURLPrefix }}2426#mcetoc_1h7v7ph040
+
 [конструктор-диаграмм]: {{ kbArticleURLPrefix }}2429
 
 [построение-организационной-структуры]: {{ kbArticleURLPrefix }}2423

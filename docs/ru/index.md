@@ -28,15 +28,7 @@ hide:
 
 Здесь представлены инструкции для ПО **{{ productName }}** текущей рекомендованной версии **{{productVersion}}**.
 
-Прежде чем приступать к настройке и использованию ПО, ознакомьтесь со следующими сведениями:
-
-- [Определения](#definitions)
-- [Поддерживаемые версии ПО](#supported_software)
-- [Поддержка экспериментальных функций](#experimental_feature_support)
-- [Актуальность документации](#documentation_relevance)
-{% if userGuide and not kbExport %}
-- [Описание {{ productName }} {{ productVersion }}](#product_description)
-{% endif %}
+Прежде чем приступать к настройке и использованию ПО, ознакомьтесь с приведёнными ниже сведениями.
 
 {% if pdfOutput and not kbExport %}
 

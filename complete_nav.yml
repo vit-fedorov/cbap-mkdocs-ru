@@ -283,7 +283,7 @@ nav:
         - administration/connections_communication_routes/email_connections/scenario_send_email.md
         - administration/connections_communication_routes/email_connections/process_receiving_connection.md
         - administration/connections_communication_routes/email_connections/scenario_receive_email.md
-      - administration/connections_communication_routes/email_connections/process_email_configure_include.md
+        - administration/connections_communication_routes/email_connections/process_email_configure_include.md
       - Подключения REST и OData:
         - administration/connections_communication_routes/rest_odata_connections/get_connection.md
         - administration/connections_communication_routes/rest_odata_connections/odata_connection.md

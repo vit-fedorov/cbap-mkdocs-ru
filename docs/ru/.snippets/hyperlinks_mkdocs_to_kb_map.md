@@ -232,6 +232,8 @@
 
 [scenario_receive_email]: {{ kbArticleURLPrefix }}2586
 
+[events_chain_view]: {{ kbArticleURLPrefix }}2355#events_chain_view
+
 [export_templates]: {{ kbArticleURLPrefix }}2349
 
 [export_template_button_configure]: {{ kbArticleURLPrefix }}2348

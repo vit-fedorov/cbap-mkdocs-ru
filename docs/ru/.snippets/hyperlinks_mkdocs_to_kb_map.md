@@ -20,21 +20,15 @@
 
 [backup_and_restore]: {{ kbArticleURLPrefix }}2579
 
-[backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
-
 [business_approval_process]: {{ kbArticleURLPrefix }}2320
 
 [chevron_color_rules]: {{ kbArticleURLPrefix }}2119
 
 [chevron_stage_render]: {{ kbArticleURLPrefix }}2582
 
-[directory_server]: {{ kbArticleURLPrefix }}2308
-
 [document_digital_signature]: {{ kbArticleURLPrefix }}2139
 
 [attribute_drawing_file_import]: {{ kbArticleURLPrefix }}2574
-
-[elasticsearch_ssl_certificate_configure]: {{ kbArticleURLPrefix }}2337
 
 [formula_use_examples]: {{ kbCategoryURLPrefix }}409
 
@@ -54,15 +48,12 @@
 
 [integration_examples]: {{ kbCategoryURLPrefix }}530
 
-[logging_engine]: {{ kbArticleURLPrefix }}2501
-
 [manual_csharp]: {{ kbArticleURLPrefix }}2400
 
 [manual_n3]: {{ kbArticleURLPrefix }}2401
 
 [N3_use_examples]: {{ kbCategoryURLPrefix }}408
 
-[odata_synchronization_logs]: {{ kbArticleURLPrefix }}2180#mcetoc_1gjriatef8
 [office_connection_use]: {{ kbArticleURLPrefix }}2343
 
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}2318
@@ -197,6 +188,8 @@
 
 [backup]: {{ kbArticleURLPrefix }}2190
 
+[backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
+
 [button_area]: {{ kbArticleURLPrefix }}2545
 
 [button_area_configure]: {{ kbArticleURLPrefix }}2545#button_area_configure
@@ -225,15 +218,9 @@
 
 [common_notifications]: {{ kbArticleURLPrefix }}2566
 
+[complete_running_instance_backup]: {{ kbArticleURLPrefix }}2117
+
 [communication_routes]: {{ kbArticleURLPrefix }}2201
-
-[architect_configuring_organizational_unit]: {{ kbArticleURLPrefix }}2418
-
-[architect_configuring_organizational_unit_form_and_attributes]: {{ kbArticleURLPrefix }}2422
-
-[architect_configuring_process_entity_properties]: {{ kbArticleURLPrefix }}2438
-
-[architect_configuring_process_entity_properties_form_and_attributes]: {{ kbArticleURLPrefix }}2435
 
 [connections]: {{ kbArticleURLPrefix }}2205
 
@@ -249,13 +236,9 @@
 
 [deploy_guide]: {{ kbArticleURLPrefix }}2344
 
-[architect_creating_organizational_unit]: {{ kbArticleURLPrefix }}2420
+[db_migrate_4.2_to_4.7]: {{ kbArticleURLPrefix }}2340
 
-[architect_creating_process_entity]: {{ kbArticleURLPrefix }}2432
-
-[architect_deleting_organizational_unit]: {{ kbArticleURLPrefix }}2424
-
-[architect_deleting_process_entity]: {{ kbArticleURLPrefix }}2434
+[db_move_manually]: {{ kbArticleURLPrefix }}2137
 
 [desktop]: {{ kbArticleURLPrefix }}2284
 
@@ -274,6 +257,8 @@
 [download_archive_csharp]: {{ kbArticleURLPrefix }}2623
 
 [elasticdata_description]: {{ kbArticleURLPrefix }}2638
+
+[elasticsearch_ssl_certificate_configure]: {{ kbArticleURLPrefix }}2337
 
 [elasticsearch_connection]: {{ kbArticleURLPrefix }}2593
 
@@ -469,6 +454,10 @@
 
 [release_notes_4.7.2902]: {{ kbArticleURLPrefix }}2639
 
+[restore_complete_backup]: {{ kbArticleURLPrefix }}2335
+
+[restore_test_configure]: {{ kbArticleURLPrefix }}2618
+
 [roles]: {{ kbArticleURLPrefix }}2208
 
 [role_templates]: {{ kbArticleURLPrefix }}2220
@@ -560,6 +549,8 @@
 [themes_branded_images]: {{ kbArticleURLPrefix }}2199#themes_branded_images
 
 [two_factor_authentication]: {{ kbArticleURLPrefix }}2598
+
+[uninstall_auxiliary_software]: {{ kbArticleURLPrefix }}2596
 
 [user_task]: {{ kbArticleURLPrefix }}2392
 

@@ -81,7 +81,7 @@ kbId: 2206
     
     Если не создать новый keytab-файл, пользователи, добавленные с сервера каталогов после создания имеющегося keytab-файла, не смогут войти в систему.
 
-    См. параграф [_«Обновление keytab-файла аутентификации»_][sso_authentication_keytab_update].
+    См. параграф [_«Обновление keytab-файла аутентификации»_][sso_authentication_configure_keytab_update].
     {{ pdfEndOfBlockHack }}
 
 _![Настройка основных свойств подключения к серверу каталогов](ad_connection_properties_settings.png)_
@@ -133,9 +133,9 @@ _![Настройка дополнительных свойств подключ
 
 --8<-- "related_topics_heading.md"
 
-**[Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО]({{ kbArticleURLPrefix }}2517.html)**
+**[Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО][ad_authentication_configure_dc_instance]**
 
-**[Настройка единого входа (SSO-аутентификации) в ОС Windows]({{ kbArticleURLPrefix }}2309.html)**
+**[Настройка единого входа (SSO-аутентификации) в ОС Windows][sso_authentication_configure_windows]**
 
 **[Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя][sso_authenticatation_configure]**
 

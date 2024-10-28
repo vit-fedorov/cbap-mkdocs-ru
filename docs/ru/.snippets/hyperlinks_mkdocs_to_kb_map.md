@@ -6,8 +6,6 @@
 
 [api_intro]: {{ kbArticleURLPrefix }}2080
 
-[ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}2517
-
 [attribute_date_time_use]: {{ kbArticleURLPrefix }}2004
 
 [attribute_document_clone_scenario]: {{ kbArticleURLPrefix }}2608
@@ -35,6 +33,8 @@
 [document_digital_signature]: {{ kbArticleURLPrefix }}2139
 
 [attribute_drawing_file_import]: {{ kbArticleURLPrefix }}2574
+
+[elasticsearch_ssl_certificate_configure]: {{ kbArticleURLPrefix }}2337
 
 [formula_use_examples]: {{ kbCategoryURLPrefix }}409
 
@@ -67,12 +67,6 @@
 
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}2318
 
-[sso_authentication]: {{ kbArticleURLPrefix }}2583
-
-[sso_authentication_keytab_update]: {{ kbArticleURLPrefix }}2583#mcetoc_1hpavbqqi2
-
-[sso_authentication_windows_configure]: {{ kbArticleURLPrefix }}2309
-
 [tutorial]: {{ kbCategoryURLPrefix }}386
 
 [telegram_send_notification]: {{ kbArticleURLPrefix }}2610
@@ -92,6 +86,8 @@
 [actions]: {{ kbArticleURLPrefix }}2390
 
 [ad_authentication_configure]: {{ kbArticleURLPrefix }}2517
+
+[ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}2517
 
 [ad_connection]: {{ kbArticleURLPrefix }}2206
 
@@ -509,6 +505,8 @@
 
 [send_http_connection]: {{ kbArticleURLPrefix }}2508
 
+[security]: {{ kbArticleURLPrefix }}2312
+
 [send_http_example]: {{ kbArticleURLPrefix }}2509
 
 [send_http_request_connection]: {{ kbArticleURLPrefix }}2589
@@ -518,6 +516,10 @@
 [send_message_intermediate_event]: {{ kbArticleURLPrefix }}2381
 
 [sso_authenticatation_configure]: {{ kbArticleURLPrefix }}2583
+
+[sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}2583#sso_authentication_configure_keytab_update
+
+[sso_authentication_configure_windows]: {{ kbArticleURLPrefix }}2309
 
 [sql_receive_connection]: {{ kbArticleURLPrefix }}2135
 
@@ -578,6 +580,12 @@
 [version_control_git]: {{ kbArticleURLPrefix }}2216
 
 [wsfederation_connection]: {{ kbArticleURLPrefix }}2560
+
+[zabbix_deploy]: {{ kbArticleURLPrefix }}2098
+
+[zabbix_agent_deploy]: {{ kbArticleURLPrefix }}2291
+
+[zabbix_server_deploy]: {{ kbArticleURLPrefix }}2292
 
 [построение-процессной-архитектуры]: {{ kbArticleURLPrefix }}2426
 

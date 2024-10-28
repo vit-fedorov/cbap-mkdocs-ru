@@ -86,6 +86,8 @@
 
 [administration]: {{ kbArticleURLPrefix }}2191
 
+[antivirus_exceptions_configure]: {{ kbArticleURLPrefix }}2581
+
 [apps]: {{ kbArticleURLPrefix }}2209
 
 [application_configure_recommendations]: {{ kbArticleURLPrefix }}2006
@@ -343,6 +345,8 @@
 [groups]: {{ kbArticleURLPrefix }}2193
 
 [import_data]: {{ kbArticleURLPrefix }}2555
+
+[instance_configure_windows]: {{ kbArticleURLPrefix }}2036
 
 [kafka_connection]: {{ kbArticleURLPrefix }}2606
 

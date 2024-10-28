@@ -24,78 +24,31 @@ nav:
     - administration/deploy/logging_engine.md
     - administration/deploy/log_files_event_examples.md
     - administration/deploy/paths.md
-    - Развёртывание в Linux:
-      - Установка и запуск {{ productName }}: administration/deploy/linux/deploy_guide.md
-      - administration/deploy/linux/db_migrate_4.2_to_4.7.md
-      - administration/deploy/linux/uninstall_auxiliary_software.md
-      - administration/deploy/linux/upgrade_version.md
-      - administration/deploy/linux/upload_size_limit_configure.md
-      - Вспомогательное ПО. Развёртывание:
-        - administration/deploy/linux/auxiliary_software_deploy/antivirus_exceptions_configure.md
-        - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_defragment.md
-        - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_deploy.md
-        - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_ssl_certificate_configure.md
-        - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_optimize.md
-        - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_cluster_deploy_no_certificates.md
-        - administration/deploy/linux/auxiliary_software_deploy/index.md
-        - administration/deploy/linux/auxiliary_software_deploy/nginx_deploy.md
-        - administration/deploy/linux/auxiliary_software_deploy/nginx_geoip_deploy.md
-        - administration/deploy/linux/auxiliary_software_deploy/zabbix_agent_deploy.md
-        - administration/deploy/linux/auxiliary_software_deploy/zabbix_deploy.md
-        - administration/deploy/linux/auxiliary_software_deploy/zabbix_server_deploy.md  
-    - Развёртывание в Windows:
-      - Утилита администрирования Comindware. Установка и настройка версий и экземпляров ПО:
-        - administration/deploy/windows/administration_utility/article-2027-Установка
-          и запуск Утилиты администрирования Comindware.md
-        - administration/deploy/windows/administration_utility/article-2028-Установка
-          продукта Comindware Business Application Platform.md
-        - administration/deploy/windows/administration_utility/article-2029-Настройка
-          конфигурации Утилиты администрирования Comindware.md
-        - administration/deploy/windows/administration_utility/article-2030-Диагностика
-          экземпляра продукта.md
-        - administration/deploy/windows/administration_utility/article-2031-Обновление
-          версии продукта для экземпляра.md
-        - administration/deploy/windows/administration_utility/article-2032-Создание
-          экземпляра продукта, добавление скрытого экземпляра.md
-        - administration/deploy/windows/administration_utility/article-2034-Удаление
-          версии продукта.md
-        - administration/deploy/windows/administration_utility/article-2035-Запуск,
-          остановка и удаление экземпляра продукта.md
-        - administration/deploy/windows/administration_utility/article-2036-Настройка
-          конфигурации и просмотр фактических путей к папкам экземпляра продукта.md
-        - administration/deploy/windows/administration_utility/article-2037-Индикация
-          состояния и обновление списка экземпляров продукта.md
-        - administration/deploy/windows/administration_utility/article-2038-Восстановление
-          экземпляра продукта из резервной копии в ОС Windows.md
-        - administration/deploy/windows/administration_utility/article-2296-Инициализация
-          экземпляра продукта.md
-      - administration/deploy/windows/article-2129-Обновление версии экземпляра ПО с 3.5 на 4.2. Инструкции, подготовка базы данных, устранение проблем.md
-      - administration/deploy/windows/article-2298-Остановка экземпляра системы с помощью Диспетчера служб IIS.md
-      - administration/deploy/windows/article-2300-Запуск экземпляра системы с помощью Диспетчера служб IIS.md
-      - administration/deploy/windows/article-2316-Comindware Architect. Инструкции
-        по установке экземпляра ПО в ОС Windows.md
-      - Вспомогательное ПО. Развёртывание:
-        - administration/deploy/windows/auxiliary_software_deploy/aabbix_agent_deploy_windows.md
-        - administration/deploy/windows/auxiliary_software_deploy/apache_ignite_deploy_windows.md
-        - administration/deploy/windows/auxiliary_software_deploy/elasticsearch_deploy_windows.md
-        - administration/deploy/windows/auxiliary_software_deploy/kafka_install_windows.md
+    - Установка и запуск {{ productName }}: administration/deploy/linux/deploy_guide.md
+    - administration/deploy/linux/db_migrate_4.2_to_4.7.md
+    - administration/deploy/linux/uninstall_auxiliary_software.md
+    - administration/deploy/linux/upgrade_version.md
+    - administration/deploy/linux/upload_size_limit_configure.md
+    - Вспомогательное ПО. Развёртывание:
+      - administration/deploy/linux/auxiliary_software_deploy/antivirus_exceptions_configure.md
+      - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_defragment.md
+      - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_deploy.md
+      - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_ssl_certificate_configure.md
+      - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_optimize.md
+      - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_cluster_deploy_no_certificates.md
+      - administration/deploy/linux/auxiliary_software_deploy/index.md
+      - administration/deploy/linux/auxiliary_software_deploy/nginx_deploy.md
+      - administration/deploy/linux/auxiliary_software_deploy/nginx_geoip_deploy.md
+      - administration/deploy/linux/auxiliary_software_deploy/zabbix_agent_deploy.md
+      - administration/deploy/linux/auxiliary_software_deploy/zabbix_deploy.md
+      - administration/deploy/linux/auxiliary_software_deploy/zabbix_server_deploy.md
   - Резервное копирование и восстановление:
     - administration/backup/index.md
-    - Инструкции для Linux:
-      - administration/backup/linux/complete_running_instance_backup.md
-      - administration/backup/linux/db_move_manually.md
-      - administration/backup/linux/restore_cdbbz.md
-      - administration/backup/linux/restore_complete_backup.md
-      - administration/backup/linux/restore_test_configure.md
-    - Инструкции для Windows:
-      - administration/backup/windows/article-2038-Восстановление экземпляра продукта
-        из резервной копии в ОС Windows.md
-      - administration/backup/windows/article-2101-Резервное копирование и восстановление
-        Comindware Business Application Platform. Краткое руководство для ОС Windows.md
-      - administration/backup/windows/article-2154-Ручной перенос базы данных экземпляра
-        ПО в ОС Windows.md
-      - administration/backup/windows/article-2303-Резервное копирование с помощью
-        внешних средств в ОС Windows.md
+    - administration/backup/linux/complete_running_instance_backup.md
+    - administration/backup/linux/db_move_manually.md
+    - administration/backup/linux/restore_cdbbz.md
+    - administration/backup/linux/restore_complete_backup.md
+    - administration/backup/linux/restore_test_configure.md
   - Администрирование системы:
     - administration/administration_page.md
     - Внешний вид:
@@ -204,9 +157,12 @@ nav:
 
 
 exclude_docs: |
-  product_description.md
+  administration/deploy/windows/*
+  administration/deploy/windows/auxiliary_software_deploy/**
+  administration/backup/windows/**
   administration/architecture/functions.md
   administration/connections_communication_routes/email_connections/process_email_configure_include.md
+  product_description.md
   architect/**
   business_apps/application_configure_recommendations.md
   business_apps/data_model.md

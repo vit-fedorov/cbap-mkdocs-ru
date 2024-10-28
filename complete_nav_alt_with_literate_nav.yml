@@ -32,8 +32,8 @@ nav:
   - Развёртывание Comindware Business Application Platform в Windows: 
     - administration/deploy/windows/
     - Утилита администрирования Comindware. Установка и настройка версий и экземпляров ПО: administration/deploy/windows/administration_utility/
-  - Развертывание вспомогательного ПО в Linux: auxiliary_software_deploy_linux/
-  - Развертывание вспомогательного ПО в Windows: auxiliary_software_deploy_windows/
+  - Развертывание вспомогательного ПО в Linux: linux/auxiliary_software_deploy/
+  - Развертывание вспомогательного ПО в Windows: windows/auxiliary_software_deploy/
   - Администрирование системы:
     - administration/administration_page.md
     - Внешний вид:

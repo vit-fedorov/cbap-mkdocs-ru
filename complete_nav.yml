@@ -168,7 +168,7 @@ nav:
     - administration/deploy/log_files_event_examples.md
     - Развёртывание Comindware Business Application Platform в Linux:
       - administration/deploy/linux/deploy_guide.md
-      - administration/deploy/linux/move_db_4.2_to_4.7.md
+      - administration/deploy/linux/db_migrate_4.2_to_4.7.md
       - administration/deploy/linux/uninstall_auxiliary_software.md
       - administration/deploy/linux/upgrade_version.md
       - administration/deploy/linux/upload_size_limit_configure.md
@@ -207,24 +207,24 @@ nav:
       - administration/deploy/windows/article-2316-Comindware Architect. Инструкции
         по установке экземпляра ПО в ОС Windows.md
     - Развертывание вспомогательного ПО в Linux:
-      - administration/deploy/auxiliary_software_deploy_linux/antivirus_exceptions_configure.md
-      - administration/deploy/auxiliary_software_deploy_linux/apache_ignite_defragment.md
-      - administration/deploy/auxiliary_software_deploy_linux/apache_ignite_deploy.md
-      - administration/deploy/auxiliary_software_deploy_linux/article-2337-Формирование
+      - administration/deploy/linux/auxiliary_software_deploy/antivirus_exceptions_configure.md
+      - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_defragment.md
+      - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_deploy.md
+      - administration/deploy/linux/auxiliary_software_deploy/article-2337-Формирование
         SSL-сертификатов и настройка кластера Elasticsearch для их использования.md
-      - administration/deploy/auxiliary_software_deploy_linux/auxiliary_software_optimize.md
-      - administration/deploy/auxiliary_software_deploy_linux/elasticsearch_cluster_deploy_no_certificates.md
-      - administration/deploy/auxiliary_software_deploy_linux/index.md
-      - administration/deploy/auxiliary_software_deploy_linux/nginx_deploy.md
-      - administration/deploy/auxiliary_software_deploy_linux/nginx_geoip_deploy.md
-      - administration/deploy/auxiliary_software_deploy_linux/zabbix_agent_deploy.md
-      - administration/deploy/auxiliary_software_deploy_linux/zabbix_deploy.md
-      - administration/deploy/auxiliary_software_deploy_linux/zabbix_server_deploy.md
+      - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_optimize.md
+      - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_cluster_deploy_no_certificates.md
+      - administration/deploy/linux/auxiliary_software_deploy/index.md
+      - administration/deploy/linux/auxiliary_software_deploy/nginx_deploy.md
+      - administration/deploy/linux/auxiliary_software_deploy/nginx_geoip_deploy.md
+      - administration/deploy/linux/auxiliary_software_deploy/zabbix_agent_deploy.md
+      - administration/deploy/linux/auxiliary_software_deploy/zabbix_deploy.md
+      - administration/deploy/linux/auxiliary_software_deploy/zabbix_server_deploy.md
     - Развертывание вспомогательного ПО в Windows:
-      - administration/deploy/auxiliary_software_deploy_windows/aabbix_agent_deploy_windows.md
-      - administration/deploy/auxiliary_software_deploy_windows/apache_ignite_deploy_windows.md
-      - administration/deploy/auxiliary_software_deploy_windows/elasticsearch_deploy_windows.md
-      - administration/deploy/auxiliary_software_deploy_windows/kafka_install_windows.md
+      - administration/deploy/windows/auxiliary_software_deploy/aabbix_agent_deploy_windows.md
+      - administration/deploy/windows/auxiliary_software_deploy/apache_ignite_deploy_windows.md
+      - administration/deploy/windows/auxiliary_software_deploy/elasticsearch_deploy_windows.md
+      - administration/deploy/windows/auxiliary_software_deploy/kafka_install_windows.md
   - Администрирование системы:
     - administration/administration_page.md
     - Внешний вид:
@@ -238,7 +238,6 @@ nav:
       - administration/account_administration/system_roles.md
       - administration/account_administration/account_permission_audit.md
       - administration/account_administration/substitution.md
-      - administration/account_administration/accounts_manage.md
       - administration/account_administration/authentication_authorization_sessions.md
       - administration/account_administration/registration_and_login.md
       - administration/account_administration/two_factor_authentication.md

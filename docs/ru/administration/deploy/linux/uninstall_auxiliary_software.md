@@ -3,7 +3,7 @@ title: Полное удаление вспомогательных компон
 kbId: 2596
 ---
 
-# Полное удаление вспомогательных компонентов ПО
+# Полное удаление вспомогательных компонентов ПО {: #uninstall_auxiliary_software}
 
 ## Введение
 
@@ -818,6 +818,4 @@ kbId: 2596
 
 **[Пути и содержимое папок экземпляра ПО][paths]**
 
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

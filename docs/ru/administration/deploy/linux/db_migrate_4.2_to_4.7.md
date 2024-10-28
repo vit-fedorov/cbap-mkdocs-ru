@@ -3,11 +3,11 @@ title: Перенос базы данных из ПО версии 4.2 для Wi
 kbId: 2340
 ---
 
-# Перенос базы данных из ПО версии 4.2 для Windows в ПО версии 4.7 для Linux
+# Перенос базы данных из ПО версии 4.2 для Windows в ПО версии 4.7 для Linux {: #db_migrate_4.2_to_4.7}
 
 Экспериментальная функция
 
-Представленная здесь функция находится на стадии разработки. См. *«[Поддержка экспериментальных функций]({{ kbArticleURLPrefix }}1339#mcetoc_1hsfq7ksu2)»*.
+Представленная здесь функция находится на стадии разработки. См. *«[Поддержка экспериментальных функций][experimental_feature_support]»*.
 
 ## Введение
 
@@ -41,7 +41,7 @@ kbId: 2340
 
 1. Откройте веб-сайт системы версии 4.2.
 2. В разделе «**Администрирование**» — «**Инфраструктура**» выберите пункт «**Резервное копирование**».
-3. В списке конфигураций резервного копирования выберите или создайте конфигурацию резервного копирования. В свойствах конфигурации резервного копирования должны быть установлены флажки «**С файлами**» и «**Со скриптами**». См. статью *«[Резервное копирование. Настройка и запуск, просмотр журнала сеансов]({{ kbArticleURLPrefix }}2190)».*
+3. В списке конфигураций резервного копирования выберите или создайте конфигурацию резервного копирования. В свойствах конфигурации резервного копирования должны быть установлены флажки «**С файлами**» и «**Со скриптами**». См. статью *«[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]».*
 4. Нажмите кнопку «**Запустить копирование**».
 5. Дождитесь окончания резервного копирования. Статус резервного копирования отображается на вкладке «**Журнал**» страницы «**Резервное копирование**».
 
@@ -56,10 +56,10 @@ kbId: 2340
 1. Скачайте архив с утилитой миграции `migrationTool.zip` по ссылке, предоставленной службой поддержки Comindware.
 2. Распакуйте архив `migrationTool.zip`, например, в папку `C:\MigrationTool`
 3. Выделите для Apache Ignite достаточно оперативной памяти, как указано ниже
+
 	- Откройте в текстовом редакторе файл `C:\MigrationTool\Ignite.config`
 	- Найдите блок конфигурации выделенной памяти, например:
 
-	
 	```
 	<property name="dataRegionConfigurations">  
 	          <list>  
@@ -80,9 +80,8 @@ kbId: 2340
 	              <property name="checkpointPageBufferSize" value="#{256L * 1024 * 1024}" />  
 	            </bean>
 	```
+
 	- В показанном выше блоке измените директивы начального и максимального объема памяти, а также объема буфера контрольных точек, как указано ниже:
-	
-	
 	
 	```
 	<property name="initialSize" value="#{1L * 1024 * 1024 * 1024}" />  
@@ -90,148 +89,147 @@ kbId: 2340
 	...  
 	<property name="checkpointPageBufferSize" value="#{2L * 1024 * 1024 * 1024}" />
 	```
+
 	- Сохраните изменённый файл.
+
 4. Откройте папку с резервными копиями, указанную в столбце «**Путь к файлу**» на вкладке «**Конфигурации**» страницы «**Резервное копирование**».
 
+	_![Путь к папке с резервными копиями экземпляра ПО](https://kb.comindware.ru/assets/Pasted image 20230313145410.png)_
 
-![Путь к папке с резервными копиями экземпляра ПО](https://kb.comindware.ru/assets/Pasted image 20230313145410.png)
-
-Путь к папке с резервными копиями экземпляра ПО
 5. Измените расширение файла резервной копии с `cdbbz` на `zip`.
 
+	_![Переименование файла резервной копии экземпляра ПО](https://kb.comindware.ru/assets/Pasted image 20230313150026.png)_
 
-![Переименование файла резервной копии экземпляра ПО](https://kb.comindware.ru/assets/Pasted image 20230313150026.png)
-
-Переименование файла резервной копии экземпляра ПО
 6. Распакуйте архив резервной копии, например в папку `C:\DatabaseBackup`  
 
-![Распакованное содержимое резервной копии экземпляра ПО](https://kb.comindware.ru/assets/Pasted image 20230313153125.png)
+	_![Распакованное содержимое резервной копии экземпляра ПО](https://kb.comindware.ru/assets/Pasted image 20230313153125.png)_
 
-Распакованное содержимое резервной копии экземпляра ПО
 7. Создайте **пустую** папку, в которую будут помещены файлы базы данных, преобразованные утилитой миграции, например `C:\DatabaseMigrated`.
 8. Запустите приложение *Windows PowerShell ISE* от  *имени администратора* Windows.
 9. В окно скриптов скопируйте следующие строки:
 
-```
-Get-ChildItem "C:\migrationTool" -recurse | Unblock-File -confirm  
-[Environment]::SetEnvironmentVariable("IsMigrationMode", "true")  
-C:\MigrationTool\bin\Comindware.Platform.Migration.exe "C:\DataвaseBackup" "C:\DatabaseMigrated" <instanceName>
-```
+	```
+	Get-ChildItem "C:\migrationTool" -recurse | Unblock-File -confirm  
+	[Environment]::SetEnvironmentVariable("IsMigrationMode", "true")  
+	C:\MigrationTool\bin\Comindware.Platform.Migration.exe "C:\DataвaseBackup" "C:\DatabaseMigrated" <instanceName>
+	```
 
-Здесь:
+	Здесь:
 
-	- `C:\MigrationTool\bin\Comindware.Platform.Migration.exe` — путь к распакованному на [шаге 2](#step_2_conversion) исполняемому файлу утилиты миграции базы данных.
-	- `C:\DataвaseBackup` — путь к папке с базой данных, подлежащей миграции.
-	- `C:\DatabaseMigrated` — путь к папке, в которую будут помещены преобразованные файлы базы данных.
-	- `instanceName` — имя нового экземпляра ПО, который будет создан после миграции. Рекомендуется указывать такое же имя экземпляра ПО, как использовалось в среде Windows. См. статью *«[Изменение конфигурации экземпляра ПО]({{ kbArticleURLPrefix }}2036)»*.
+		- `C:\MigrationTool\bin\Comindware.Platform.Migration.exe` — путь к распакованному на [шаге 2](#step_2_conversion) исполняемому файлу утилиты миграции базы данных.
+		- `C:\DataвaseBackup` — путь к папке с базой данных, подлежащей миграции.
+		- `C:\DatabaseMigrated` — путь к папке, в которую будут помещены преобразованные файлы базы данных.
+		- `instanceName` — имя нового экземпляра ПО, который будет создан после миграции. Рекомендуется указывать такое же имя экземпляра ПО, как использовалось в среде Windows. См. статью *«[Изменение конфигурации экземпляра ПО][instance_configure_windows]»*.
+
 10. Выделите первую строку скрипта:
 
+	```
+	Get-ChildItem "C:\migrationTool" -recurse | Unblock-File -confirm
+	```
 
-```
-Get-ChildItem "C:\migrationTool" -recurse | Unblock-File -confirm
-```
 11. Выполните выделенную строку, нажав клавишу `F8` (или щелкнув строку правой кнопкой мыши и выбрав в контекстном меню пункт **Run Selection**).
 12. Дождитесь завершения выполнения команды.
 13. Выделите и выполните вторую и третьи строки скрипта:
 
+	```
+	[Environment]::SetEnvironmentVariable("IsMigrationMode", "true")  
+	C:\MigrationTool\bin\Comindware.Platform.Migration.exe "C:\DataвaseBackup" "C:\DatabaseMigrated" <instanceName>
+	```
 
-```
-[Environment]::SetEnvironmentVariable("IsMigrationMode", "true")  
-C:\MigrationTool\bin\Comindware.Platform.Migration.exe "C:\DataвaseBackup" "C:\DatabaseMigrated" <instanceName>
-```
 14. Утилита миграции выведет на экран данные о процессе миграции.
 15. Дождитесь успешного завершения миграции.
 16. Удостоверьтесь, что в папке для преобразованной базы данных появились новые папки и файлы.
 
-![Папки преобразованной базы данных](https://kb.comindware.ru/assets/Pasted image 20230323134758.png)
-
-Папки преобразованной базы данных
+	_![Папки преобразованной базы данных](https://kb.comindware.ru/assets/Pasted image 20230323134758.png)_
 
 ## Развёртывание преобразованной базы данных в экземпляре ПО под управлением Linux
 
-1. Перейдите в режим суперпользователя:   
-**Astra Linux, Ubuntu**
+1. Перейдите в режим суперпользователя:
 
-```
-sudo -i   
+	**Astra Linux, Ubuntu**
 
-```
+	```
+	sudo -i   
 
-**Альт Сервер, РЕД ОС**
-{{ productName }}
-```
-su -
-```
-2. Скачайте, разверните и инициализируйте экземпляр ПО.
-	- См. *[Развертывание Comindware Business Application Platform. Краткое руководство]({{ kbArticleURLPrefix }}2344)*
-	- При установке ПО используйте ключ `d=clear` — установить ПО без демонстрационной базы данных:*Astra Linux, Ubuntu*
+	```
 
-```
-sh install.sh -e -p -k -d=clear -u=www-data -g=www-data -i=<instanceName>   
+	**Альт Сервер, РЕД ОС**
+	{{ productName }}
+	```
+	su -
+	```
+	2. Скачайте, разверните и инициализируйте экземпляр ПО.
+		- См. *[Установка и запуск {{ productName }}][deploy_guide]*
+		- При установке ПО используйте ключ `d=clear` — установить ПО без демонстрационной базы данных:*Astra Linux, Ubuntu*
 
-```
+	```
+	sh install.sh -e -p -k -d=clear -u=www-data -g=www-data -i=<instanceName>   
 
-*Альт Сервер, РЕД ОС*
+	```
 
-```
-sh install.sh -e -p -k -d=clear -u=_nginx -g=_nginx -i=<instanceName>
-```
+	*Альт Сервер, РЕД ОС*
 
-Здесь `<instanceName>`— имя экземпляра ПО. Если не указать этот параметр, будет задано стандартное имя экземпляра:  `cmwdata`
-3. Остановите сервисы Elasticsearch, NGINX, comindwareinstanceName и Kafka и удостоверьтесь, что они остановлены:
+	```
+	sh install.sh -e -p -k -d=clear -u=_nginx -g=_nginx -i=<instanceName>
+	```
+
+	Здесь `<instanceName>`— имя экземпляра ПО. Если не указать этот параметр, будет задано стандартное имя экземпляра:  `cmwdata`
+	3. Остановите сервисы Elasticsearch, NGINX, comindwareinstanceName и Kafka и удостоверьтесь, что они остановлены:
 
 
-```
-systemctl stop elasticsearch  
-systemctl stop nginx   
-systemctl stop kafka  
-systemctl stop comindware<instanceName>   
-  
-systemctl status elasticsearch  
-systemctl status nginx   
-systemctl status kafka  
-systemctl status comindware<instanceName>  
+	```
+	systemctl stop elasticsearch  
+	systemctl stop nginx   
+	systemctl stop kafka  
+	systemctl stop comindware<instanceName>   
+	
+	systemctl status elasticsearch  
+	systemctl status nginx   
+	systemctl status kafka  
+	systemctl status comindware<instanceName>  
 
-```
+	```
+
 4. Поместите в папку `/var/lib/comindware/<instanceName>``/Database/` содержимое папки с преобразованной базой данных. См. раздел «**[Преобразование базы данных в Windows](#преобразование-базы-данных-в-windows)**».
 5. Смените владельца папки `/var/lib/comindware/`:   
-**Astra Linux, Ubuntu**    
 
-```
-chown -R www-data:www-data /var/lib/comindware/ 
-```
+	**Astra Linux, Ubuntu**    
 
-**Альт Сервер, РЕД ОС**   
+	```
+	chown -R www-data:www-data /var/lib/comindware/ 
+	```
 
-```
-chown -R _nginx:_nginx /var/lib/comindware/ 
-```
+	**Альт Сервер, РЕД ОС**   
+
+	```
+	chown -R _nginx:_nginx /var/lib/comindware/ 
+	```
 
 ## Запуск и проверка конфигурации экземпляра ПО
 
 1. Запустите необходимые службы и проверьте их статус:
 
-```
-systemctl start elasticsearch kafka nginx comindware<instanceName>  
-systemctl status elasticsearch kafka nginx comindware<instanceName>
-```
+	```
+	systemctl start elasticsearch kafka nginx comindware<instanceName>  
+	systemctl status elasticsearch kafka nginx comindware<instanceName>
+	```
+
 2. Перезапустите систему:
 
+	```
+	reboot
+	```
 
-```
-reboot
-```
 3. Откройте в браузере веб-сайт с экземпляром ПО.
 4. Дождитесь инициализации экземпляра ПО. Этот процесс может занять некоторое время. Может потребоваться обновить страницу браузера.
-5. Проверьте и исправьте конфигурацию экземпляра. См. *«[Проверка и настройка конфигурации экземпляра ПО после восстановления из резервной копии]({{ kbArticleURLPrefix }}2618)».*
-{{ productName }}
+5. Проверьте и исправьте конфигурацию экземпляра. См. *«[Проверка и настройка конфигурации экземпляра ПО после восстановления из резервной копии][restore_test_configure]».*
+
 --8<-- "related_topics_heading.md"
 
-**[Проверка и настройка конфигурации экземпляра ПО после восстановления из резервной копии]({{ kbArticleURLPrefix }}2618)**
+**[Проверка и настройка конфигурации экземпляра ПО после восстановления из резервной копии][restore_test_configure]**
 
-**[Резервное копирование. Настройка и запуск, просмотр журнала сеансов]({{ kbArticleURLPrefix }}2190)**
+**[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]**
 
-**[Развертывание Comindware Business Application Platform. Краткое руководство]({{ kbArticleURLPrefix }}2344)**
+**[Установка и запуск {{ productName }}][deploy_guide]**
 
-
-
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

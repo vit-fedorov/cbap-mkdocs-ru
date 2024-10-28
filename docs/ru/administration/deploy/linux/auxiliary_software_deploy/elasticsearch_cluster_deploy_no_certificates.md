@@ -13,7 +13,7 @@ kbId: 2095
 
 Только после запуска службы Elasticsearch можно приступать к развертыванию **{{ productName }}**, указав путь к серверу Elasticsearch.
 
-## 1. Подготовка физических и виртуальных машин, пакетов программ
+## Подготовка физических и виртуальных машин, пакетов программ
 
 Установка в минимальной конфигурации выполняется на 3 разделённых виртуальных машинах.
 
@@ -37,11 +37,11 @@ kbId: 2095
 - `deb`-пакет `elasticsearch-8.5.1-amd64.deb`
 - `yml`-файл конфигурации для Elasticsearch `customElasticConfig.yml`
 
-## 2. Установка Elasticsearch из deb-пакета
+## Установка Elasticsearch из deb-пакета
 
 Повторите шаги, описанные в этом разделе, для каждого из узлов Elasticsearch.
 
-2.1. Обновите ПО на сервере:
+1. Обновите ПО на сервере:
 
 ```
 sudo apt update && sudo apt upgrade -y && sudo reboot
@@ -49,13 +49,13 @@ sudo apt update && sudo apt upgrade -y && sudo reboot
 
 В процессе обновления сервер перезагрузится.
 
-2.2. Перейдите в папку пользователя:
+2. Перейдите в папку пользователя:
 
 ```
 cd /home/username/
 ```
 
-2.3. Запустите процесс установки Elasticsearch:
+3. Запустите процесс установки Elasticsearch:
 
 ```
 sudo dpkg --install elasticsearch-8.5.1-amd64.deb
@@ -98,15 +98,15 @@ Generate an enrollment token for Elasticsearch nodes with
 ---------------------------------------------------------------------
 ```
 
-2.4. Обратите внимание на строку The generated password for the elastic built-in superuser is — напротив неё будет выведен автоматически сформированный пароль для встроенного суперпользователя elastic. **Сохраните этот пароль.**
+4. Обратите внимание на строку The generated password for the elastic built-in superuser is — напротив неё будет выведен автоматически сформированный пароль для встроенного суперпользователя elastic. **Сохраните этот пароль.**
 
-## 3. Конфигурация Elasticsearch
+## Конфигурация Elasticsearch
 
 Повторите шаги, описанные в этом разделе, для каждого из узлов Elasticsearch.
 
 Помните, что имя кластера `cluster.name` для каждого из узлов должно совпадать, а имя узла `node.name` должно быть уникальным.
 
-3.1. Создайте папки, в которые Elasticsearch будет сохранять данные журналов, индексов и резервных копий:
+1. Создайте папки, в которые Elasticsearch будет сохранять данные журналов, индексов и резервных копий:
 
 ```
 sudo mkdir /var/elasticsearch
@@ -118,7 +118,7 @@ sudo mkdir /var/elasticsearch/logs
 sudo mkdir /var/elasticsearch/backups
 ```
 
-3.2. Измените владельца папки и права доступа к ней:
+2. Измените владельца папки и права доступа к ней:
 
 ```
 sudo chown elasticsearch:elasticsearch --recursive /var/elasticsearch/
@@ -126,25 +126,25 @@ sudo chown elasticsearch:elasticsearch --recursive /var/elasticsearch/
 sudo chmod  764 --recursive /var/elasticsearch/      
 ```
 
-3.3. Создайте папку для хранения резервной копии `yml`-файла конфигурации Elasticsearch:
+3. Создайте папку для хранения резервной копии `yml`-файла конфигурации Elasticsearch:
 
 ```
 sudo mkdir /etc/elasticsearch/backupConfig        
 ```
 
-3.4. Переместите `yml`-файл конфигурации Elasticsearch в папку `/etc/elasticsearch/backupConfig`:
+4. Переместите `yml`-файл конфигурации Elasticsearch в папку `/etc/elasticsearch/backupConfig`:
 
 ```
 sudo mv /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/backupConfig
 ```
 
-3.5. Создайте новый  `yml`-файл конфигурации Elasticsearch `elasticsearch.yml`:
+5. Создайте новый  `yml`-файл конфигурации Elasticsearch `elasticsearch.yml`:
 
 ```
 sudo nano /etc/elasticsearch/elasticsearch.yml
 ```
 
-3.6. Скопируйте в созданный файл конфигурации следующее содержимое:
+6. Скопируйте в созданный файл конфигурации следующее содержимое:
 
 ```
 bootstrap.memory_lock: false
@@ -199,9 +199,9 @@ cluster.initial_master_nodes:
 indices.id_field_data.enabled: true
 ```
 
-3.6. Сохраните изменения `yml`-файла конфигурации закройте текстовый редактор Nano, нажав клавиши: `Ctrl+O, Ввод, Ctrl+X`.
+6. Сохраните изменения `yml`-файла конфигурации закройте текстовый редактор Nano, нажав клавиши: `Ctrl+O, Ввод, Ctrl+X`.
 
-3.7. Измените для `yml`-файла конфигурации Elasticsearch владельца и права доступа:
+7. Измените для `yml`-файла конфигурации Elasticsearch владельца и права доступа:
 
 ```
 sudo chown elasticsearch:elasticsearch --recursive /etc/elasticsearch/elasticsearch.yml
@@ -209,79 +209,79 @@ sudo chown elasticsearch:elasticsearch --recursive /etc/elasticsearch/elasticsea
 sudo chmod 764 --recursive /etc/elasticsearch/elasticsearch.yml
 ```
 
-3.8. Откройте в текстовом редакторе Nano `yml`-файл конфигурации Elasticsearch:
+8. Откройте в текстовом редакторе Nano `yml`-файл конфигурации Elasticsearch:
 
 ```
 sudo nano /etc/elasticsearch/elasticsearch.yml        
 ```
 
-3.9. Задайте имя кластера с помощью директивы `cluster.name` в строке 2 `yml`-файла конфигурации: 
+9. Задайте имя кластера с помощью директивы `cluster.name` в строке 2 `yml`-файла конфигурации: 
 
 ```
 cluster.name: elasticsearch.example.cbap 
 ```
 
-**Примечание**    
-Имя кластера должно быть одинаковым для всех узлов кластера Elasticsearch.
+!!! note "Примечание"
+    Имя кластера должно быть одинаковым для всех узлов кластера Elasticsearch.
 
-3.10. Задайте имя узла с помощью директивы `node.name` в строке 11 `yml`-файла конфигурации. 
+10. Задайте имя узла с помощью директивы `node.name` в строке 11 `yml`-файла конфигурации. 
 
-**Примечание**   
-Имя узла должно быть уникальным для каждого из узлов кластера Elasticsearch:
+!!! note "Примечание"
+    Имя узла должно быть уникальным для каждого из узлов кластера Elasticsearch:
 
 ```
 node.name: elasticsearch1
 ```
 
-3.1. Укажите путь до директории, в которую настраиваемый узел Elasticsearch будет сохранять файлы данных шардов, отредактировав строку 13:
+11. Укажите путь до директории, в которую настраиваемый узел Elasticsearch будет сохранять файлы данных шардов, отредактировав строку 13:
 
 ```
 path.data: /var/elasticsearch/data
 ```
 
-3.12. Укажите путь до директории, в которую настраиваемый узел Elasticsearch будет сохранять файлы логов, отредактировав строку 14:
+12. Укажите путь до директории, в которую настраиваемый узел Elasticsearch будет сохранять файлы логов, отредактировав строку 14:
 
 ```
 path.logs: /var/elasticsearch/logs
 ```
 
-3.13. Укажите путь до директории, в которую настраиваемый узел Elasticsearch будет сохранять файлы резервного копирования, отредактировав строку 15:
+13. Укажите путь до директории, в которую настраиваемый узел Elasticsearch будет сохранять файлы резервного копирования, отредактировав строку 15:
 
 ```
 path.repo: /var/elasticsearch/backups
 ```
 
-3.14. Укажите уникальный IP-адрес (как пример - 192.168.ХХХ.1) машины настраиваемого узла Elasticsearch, отредактировав строку 29:
+14. Укажите уникальный IP-адрес (как пример - 192.168.ХХХ.1) машины настраиваемого узла Elasticsearch, отредактировав строку 29:
 
 ```
 network.host: 192.168.XXX.1
 ```
 
-3.15. Задайте список IP-адресов машин (как пример - 192.168.XXX.1, 192.168.XXX.2, 192.168.XXX.3), на которых будут расположены узлы кластера Elasticsearch, отредактировав строку 31. Например, для кластера из трех узлов, директива будет вот такой:
+15. Задайте список IP-адресов машин (как пример - 192.168.XXX.1, 192.168.XXX.2, 192.168.XXX.3), на которых будут расположены узлы кластера Elasticsearch, отредактировав строку 31. Например, для кластера из трех узлов, директива будет вот такой:
 
 ```
 discovery.seed_hosts : ["192.168.XXX.1", "192.168.XXX.2","192.168.XXX.3"]
 ```
 
-3.16. Сохраните изменения `yml`-файла конфигурации и закройте текстовый редактор Nano, нажав клавиши: `Ctrl+O, Ввод, Ctrl+X`.
+16. Сохраните изменения `yml`-файла конфигурации и закройте текстовый редактор Nano, нажав клавиши: `Ctrl+O, Ввод, Ctrl+X`.
 
-## 4. Запуск Elasticsearch
+## Запуск Elasticsearch
 
 Повторите шаги, описанные в этом разделе, для каждого из узлов Elasticsearch.
 
-4.1. Перезагрузите конфигурацию `systemd`:
+1. Перезагрузите конфигурацию `systemd`:
 
 ```
 sudo systemctl daemon-reload
 ```
 
-4.2. Добавьте процесс `elasticsearch.service` в список автозагрузки при запуске ОС и запустите его:
+2. Добавьте процесс `elasticsearch.service` в список автозагрузки при запуске ОС и запустите его:
 
 ```
 sudo systemctl enable --now elasticsearch.service
 ```
 
-4.3. Убедитесь, что процесс `elasticsearch.service` запустился:
+3. Убедитесь, что процесс `elasticsearch.service` запустился:
 
 ```
 sudo systemctl status elasticsearch.service
@@ -319,14 +319,14 @@ Dec 01 10:11:12 penguin-02 systemd[1]: Starting Elasticsearch...
 Dec 01 10:12:27 penguin-02 systemd[1]: Started Elasticsearch.        
 ```
 
-**Примечание**   
-В случае возникновения ошибок при запуске процесса `elasticsearch.service` рекомендуется изучить файл журнала:
+!!! note "Примечание"
+    В случае возникновения ошибок при запуске процесса `elasticsearch.service` рекомендуется изучить файл журнала:
 
 ```
 sudo less /var/elasticsearch/logs/yourClusterName.log        
 ```
 
-4.4. С помощью curl убедитесь, что REST API узла Elasticsearch доступен:
+4. С помощью curl убедитесь, что REST API узла Elasticsearch доступен:
 
 ```
 sudo curl <http://192.168.XXX.XX>Х:9200
@@ -372,15 +372,15 @@ sudo curl <http://192.168.XXX.XX>Х:9200
 
 Повторите шаги, описанные в этом разделе, для каждого из узлов Elasticsearch.
 
-## 5. Проверка состояния кластера
+## Проверка состояния кластера
 
-5.1. Выполнив для каждого из узлов кластера Elasticsearch шаги, описанные в предыдущих разделах, от любого из узлов выполните GET-запрос проверки состояния кластера:
+1. Выполнив для каждого из узлов кластера Elasticsearch шаги, описанные в предыдущих разделах, от любого из узлов выполните GET-запрос проверки состояния кластера:
 
 ```
 sudo curl <http://192.168.XXX.XX1:9200/_cluster/health?pretty>>
 ```
 
-5.2. Убедитесь, что в ответе на запрос значение параметра `number_of_nodes` равно количеству узлов кластера:
+2. Убедитесь, что в ответе на запрос значение параметра `number_of_nodes` равно количеству узлов кластера:
 
 ```
 {
@@ -470,7 +470,4 @@ cluster.initial_master_nodes:
   - elasticsearch3      
 ```
 
-
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

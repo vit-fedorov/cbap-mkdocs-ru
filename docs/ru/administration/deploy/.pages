@@ -10,5 +10,5 @@ nav:
   - ...
   - linux
   - windows
-  - auxiliary_software_deploy_linux
-  - auxiliary_software_deploy_windows
+  - linux/auxiliary_software_deploy
+  - windows/auxiliary_software_deploy

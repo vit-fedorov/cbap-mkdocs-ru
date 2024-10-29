@@ -17,7 +17,7 @@ hide:
 
 # Изменение свойств оргединицы {: #architect_configuring_organizational_unit}
 
-1. Выберите организационную единицу в [панели навигации][navigation_panel], либо в [реестре оргединиц][просмотр-реестра-оргединиц].
+1. Выберите организационную единицу в [панели навигации][navigation_panel], либо в [реестре оргединиц][architect_organizational_structure_modelling].
 2. Отобразится форма оргединицы.
 3. Настройте свойства оргединицы, заполнив поля формы.
 4. При необходимости [отредактируйте форму и атрибуты оргединицы][architect_configuring_organizational_unit_form_and_attributes].
@@ -31,7 +31,7 @@ hide:
 
 **[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]**
 
-**[Просмотр реестра оргединиц][просмотр-реестра-оргединиц]**
+**[Просмотр реестра оргединиц][architect_organizational_structure_modelling]**
 
 **[Переименование оргединицы][architect_renaming_organizational_unit]**
 

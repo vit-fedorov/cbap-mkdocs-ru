@@ -1,4 +1,6 @@
 ---
+title: Задача-выполнение сценария
+kbId: 2388
 tags:
   - диаграммы
   - диаграмма процесса
@@ -14,7 +16,7 @@ hide:
   - tags
 ---
 
-# Задача-выполнение сценария
+# Задача-выполнение сценария {: #process_diagram_elements_script_task}
 
 **Задачу-выполнение сценария** выполняет система. При переходе токена на этот элемент автоматически выполняется скрипт C#.
 
@@ -55,10 +57,12 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[Пользовательская задача][user_task]**
+**[Пользовательская задача][process_diagram_elements_user_task]**
 
 **[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
 **[Редактирование диаграммы процесса][process_diagram_designer]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

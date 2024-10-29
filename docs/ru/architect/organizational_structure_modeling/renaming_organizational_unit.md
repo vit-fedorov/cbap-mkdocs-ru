@@ -27,14 +27,14 @@ hide:
 
 ## Переименование с помощью формы свойств оргединицы
 
-1. Выберите оргединицу в [панели навигации][navigation_panel] или дважды нажмите её строку в [реестре оргединиц][просмотр-реестра-оргединиц].
+1. Выберите оргединицу в [панели навигации][navigation_panel] или дважды нажмите её строку в [реестре оргединиц][architect_organizational_structure_modelling].
 1. В отобразившейся форме введите требуемое название в поле «**Название**».
 
     *![Переименование оргединицы с помощью формы свойств](organizational_structure_modeling_rename_from_properties.png)*
 
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра оргединиц][просмотр-реестра-оргединиц]**
+**[Просмотр реестра оргединиц][architect_organizational_structure_modelling]**
 
 **[Создание оргединицы][architect_creating_organizational_unit]**
 

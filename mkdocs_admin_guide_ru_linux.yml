@@ -56,22 +56,17 @@ nav:
       - Дизайн страниц входа и регистрации: administration/appearance/login_and_registration_page_design/index.md
     - Аккаунты и группы:
       - administration/account_administration/authentication_authorization_sessions.md
-      
       - administration/account_administration/accounts.md
       - administration/account_administration/groups.md
       - administration/account_administration/system_roles.md
       - administration/account_administration/account_permission_audit.md
       - administration/account_administration/substitution.md
-      
       - administration/account_administration/registration_and_login.md
       - administration/account_administration/two_factor_authentication.md
       - Синхронизация с сервером каталогов:
         - administration/account_administration/accounts_dc_sync/index.md
-        - Инструкции для Linux:
-          - administration/account_administration/accounts_dc_sync/linux/ad_authentication_configure.md
-          - administration/account_administration/accounts_dc_sync/linux/sso_authenticatation_configure.md
-        - Инструкции для Windows:
-          - administration/account_administration/accounts_dc_sync/windows/sso_authenticatation_configure_windows.md
+        - administration/account_administration/accounts_dc_sync/linux/ad_authentication_configure.md
+        - administration/account_administration/accounts_dc_sync/linux/sso_authenticatation_configure.md
     - Инфраструктура:
       - administration/infrastructure/monitoring.md
       - administration/infrastructure/logs.md
@@ -110,10 +105,8 @@ nav:
         - administration/connections_communication_routes/rest_odata_connections/get_connection.md
         - administration/connections_communication_routes/rest_odata_connections/odata_connection.md
         - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
-        - administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
-        - administration/connections_communication_routes/rest_odata_connections/send_http_example.md
         - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
       - SQL-подключения:
         - administration/connections_communication_routes/sql_connections/sql_send_connection.md
@@ -161,7 +154,10 @@ exclude_docs: |
   administration/deploy/windows/auxiliary_software_deploy/**
   administration/backup/windows/**
   administration/architecture/functions.md
+  administration/account_administration/accounts_dc_sync/windows/sso_authenticatation_configure_windows.md
   administration/connections_communication_routes/email_connections/process_email_configure_include.md
+  administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
+  administration/connections_communication_routes/rest_odata_connections/send_http_example.md
   product_description.md
   architect/**
   business_apps/application_configure_recommendations.md

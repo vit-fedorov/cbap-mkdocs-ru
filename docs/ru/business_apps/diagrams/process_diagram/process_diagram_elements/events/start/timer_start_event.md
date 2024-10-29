@@ -1,4 +1,5 @@
 ---
+kbId: 2375
 tags:
   - диаграмма процесса
   - элементы диаграммы процесса
@@ -12,7 +13,7 @@ hide:
   - tags
 ---
 
-# Начальное событие-таймер
+# Начальное событие-таймер {: #process_diagram_elements_timer_start_event}
 
 **Начальное событие-таймер периодически** запускает процесс при наступлении заданного времени по расписанию.
 
@@ -78,7 +79,7 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[События][события]**
+**[process_diagram_elements_events][process_diagram_elements_events]**
 
 **[Типы начальных событий][типы-начальных-событий]**
 
@@ -87,3 +88,5 @@ hide:
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
 **[Редактирование диаграммы процесса][process_diagram_designer]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

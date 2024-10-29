@@ -201,7 +201,7 @@ unzip /tmp/BackupFileName.202302161625.cdbbz -d /var/lib/comindware/<instanceNam
 
 **[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]**
 
-**[Установка и запуск {{ productName }}][deploy_guide]**
+**[Установка и запуск {{ productName }}][deploy_guide_linux]**
 
 **[Регистрация репозитория Elasticsearch (официальное руководство, английский язык)](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-filesystem-repository.html)**
 

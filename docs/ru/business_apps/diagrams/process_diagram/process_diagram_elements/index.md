@@ -24,32 +24,33 @@ hide:
 
 Для построения диаграммы процесса предусмотрены следующие элементы:
 
-* [Действия][actions]
-    * [Пользовательская задача][user_task]
-    * [Задача-выполнение сценария][задача-выполнение-сценария]
-    * [Вызов процесса][вызов-процесса]
-    * [Встроенный подпроцесс][встроенный-подпроцесс]
-* [События][события]
-    * [Начальные события][начальные-события]
-        * [Простое начальное событие][none_start_event]        * [Начальное событие-таймер](timer_start_event.md)
-        * [Начальное событие-получение сообщения](receive_message_start_event.md)
-    * [Промежуточные события][промежуточные-события]
-        * [Промежуточное событие-таймер](timer_intermediate_event.md)
-        * [Промежуточное событие-отправка сообщения](send_message_intermediate_event.md)
-        * [Промежуточное событие-получение сообщения](receive_message_intermediate_event.md)
-        * [Простое событие](none_intermediate_event.md)
-    * [Конечные события][конечные-события]
-        * [Простое конечное событие](none_end_event.md)
-        * [Конечное событие-остановка процесса](stop_process_end_event.md)
-        * [Конечное событие-отправка сообщения](send_message_end_event.md)
-* [Развилки][развилки]
-    * [Развилка «или/или»][развилка-илиили]
-    * [Развилка «и»][развилка-и]
-* [Общие элементы][общие-элементы-диаграммы-процесса]
-    * [Пул][пул]
-    * [Дорожка][дорожка]
-    * [Поток управления][поток-управления]
-    * [Комментарий][комментарий]
+* [Действия][process_diagram_elements_actions]
+    * [Пользовательская задача][process_diagram_elements_user_task]
+    * [Задача-выполнение сценария][process_diagram_elements_script_task]
+    * [Вызов процесса][process_diagram_elements_process_call]
+    * [Встроенный подпроцесс][process_diagram_elements_embedded_subprocess]
+* [process_diagram_elements_events][process_diagram_elements_events]
+    * [Начальные события][process_diagram_elements_events_start]
+        * [Простое начальное событие][process_diagram_elements_none_start_event]
+        * [Начальное событие-таймер][process_diagram_elements_timer_start_event]
+        * [Начальное событие-получение сообщения][process_diagram_elements_receive_message_start_event]
+    * [Промежуточные события][process_diagram_elements_events_intermediate]
+        * [Промежуточное событие-таймер][process_diagram_elements_timer_intermediate_event]
+        * [Промежуточное событие-отправка сообщения][process_diagram_elements_send_message_intermediate_event]
+        * [Промежуточное событие-получение сообщения][process_diagram_elements_receive_message_intermediate_event]
+        * [Простое событие][process_diagram_elements_none_intermediate_event]
+    * [Конечные события][process_diagram_elements_events_end]
+        * [Простое конечное событие][process_diagram_elements_none_end_event]
+        * [Конечное событие-остановка процесса][process_diagram_elements_stop_process_end_event]
+        * [Конечное событие-отправка сообщения][process_diagram_elements_send_message_end_event]
+* [Развилки][process_diagram_elements_gateways]
+    * [Развилка «или/или»][process_diagram_elements_gateway_exclusive]
+    * [Развилка «и»][process_diagram_elements_gateway_parallel]
+* [Общие элементы][process_diagram_elements_generic]
+    * [process_diagram_elements_pool][process_diagram_elements_pool]
+    * [Дорожка][process_diagram_elements_lane]
+    * [Поток управления][process_diagram_elements_sequence_flow]
+    * [Комментарий][process_diagram_elements_text_annotation]
 
 --8<-- "related_topics_heading.md"
 
@@ -60,3 +61,5 @@ hide:
 **[Просмотр диаграммы процесса][process_diagram_view]**
 
 **[Редактирование диаграммы процесса][process_diagram_designer]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -13,7 +13,7 @@ hide:
   - tags
 ---
 
-# Простое начальное событие {: #none_start_event}
+# Простое начальное событие {: #process_diagram_elements_none_start_event}
 
 **Простое начальное событие** запускает процесс при создании его экземпляра.
 
@@ -27,7 +27,7 @@ hide:
 - **Действия**
     - **Свойства** <i class="fa-light fa-gear"></i> — переход к окну [свойств простого начального события](#свойства-простого-начального-события).
     --8<-- "process_diagram_exit_scenario.md"
-    - **Стартовая форма** <i class="fa-light fa-window-maximize"></i> — настройка [формы](process_diagram_forms.md) для заполнения при запуске процесса.
+    - **Стартовая форма** <i class="fa-light fa-window-maximize"></i> — настройка [формы][process_diagram_forms] для заполнения при запуске процесса.
     - **Правила для стартовой формы** <i class="fa-light fa-rectangle-list"></i> — настройка правил для стартовой формы.
     --8<-- "process_diagram_delete_element.md"
 - **Изменить тип** — смена типа события.
@@ -41,14 +41,16 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[События][события]**
+**[process_diagram_elements_events][process_diagram_elements_events]**
 
 **[Типы начальных событий][типы-начальных-событий]**
 
-**[Стартовая форма и форма пользовательской задачи](process_diagram_forms.md)**
+**[Стартовая форма и форма пользовательской задачи][process_diagram_forms]**
 
 **[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
 **[Редактирование диаграммы процесса][process_diagram_designer]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

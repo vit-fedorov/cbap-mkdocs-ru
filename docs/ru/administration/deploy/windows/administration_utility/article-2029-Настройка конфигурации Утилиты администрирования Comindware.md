@@ -121,3 +121,4 @@ kbId: 2029
 
 **[Диагностика экземпляра продукта]({{ kbArticleURLPrefix }}2030)**
 
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

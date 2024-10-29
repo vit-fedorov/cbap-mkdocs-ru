@@ -1,4 +1,6 @@
 ---
+title: Пул
+kbId: 2366
 tags:
   - диаграммы
   - диаграмма процесса
@@ -11,7 +13,7 @@ hide:
   - tags
 ---
 
-# Пул
+# Пул {: #process_diagram_pool}
 
 **Пул** содержит все остальные элементы диаграммы процесса. Его нельзя удалить.
 
@@ -35,3 +37,5 @@ hide:
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
 **[Редактирование диаграммы процесса][process_diagram_designer]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -1,9 +1,9 @@
 ---
-title: Zabbix Server, Zabbix Agent, Zabbix Frontend и MySQL. Инструкции по установке
+title: Zabbix Server, Zabbix Agent, Zabbix Frontend и MySQL. Установка и настройка
 kbId: 2292
 ---
 
-# Zabbix Server, Zabbix Agent, Zabbix Frontend и MySQL. Инструкции по установке {: #zabbix_server_deploy}
+# Zabbix Server, Zabbix Agent, Zabbix Frontend и MySQL. Установка и настройка {: #zabbix_server_deploy}
 
 ## Введение
 

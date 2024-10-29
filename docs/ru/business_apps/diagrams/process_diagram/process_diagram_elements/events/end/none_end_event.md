@@ -1,4 +1,6 @@
 ---
+title: Простое конечное событие
+kbId: 2387
 tags:
   - диаграмма процесса
   - элементы диаграммы процесса
@@ -13,7 +15,7 @@ hide:
   - tags
 ---
 
-# Простое конечное событие
+# Простое конечное событие {: #process_diagram_elements_none_end_event}
 
 Когда токен входит в **простое конечное событие**, завершается соответствующая ветвь процесса (или весь процесс, если он состоит из одной ветви).
 
@@ -47,14 +49,16 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[События][события]**
+**[process_diagram_elements_events][process_diagram_elements_events]**
 
 **[Типы конечных событий][типы-конечных-событий]**
 
-**[Простое промежуточное событие](none_intermediate_event.md)**
+**[Простое промежуточное событие][process_diagram_elements_none_intermediate_event]**
 
 **[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
 **[Редактирование диаграммы процесса][process_diagram_designer]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

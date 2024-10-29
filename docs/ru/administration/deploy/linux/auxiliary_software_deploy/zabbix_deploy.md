@@ -1,9 +1,9 @@
 ---
-title: Zabbix. Установка и настройка. Краткое руководство
+title: Zabbix. Установка и настройка
 kbId: 2098
 ---
 
-# Zabbix. Установка и настройка. Краткое руководство {: #zabbix_deploy}
+# Zabbix. Установка и настройка {: #zabbix_deploy}
 
 ## Введение
 
@@ -33,7 +33,9 @@ Zabbix состоит из сервера и агентов:
 
 - [Zabbix Server, Zabbix Agent, Zabbix Frontend и MySQL. Инструкции по установке][zabbix_server_deploy]
 - [Zabbix Agent. Инструкции по установке][zabbix_agent_deploy]
+{% if adminGuideWindows %}
 - [Zabbix Agent. Инструкции по установке для Windows]({{ kbArticleURLPrefix }}2304)
+{% endif %}
 - [Официальная инструкция по установке Zabbix (на английском языке)](https://www.zabbix.com/documentation/5.4/ru/manual/appendix/install)
 - [Установка и настройка Zabbix 5.0 (на русском языке, serveradmin.ru)](https://serveradmin.ru/ustanovka-i-nastrojka-zabbix-5-0/)
 - [Мониторинг web сайта в Zabbix (на русском языке, serveradmin.ru)](https://serveradmin.ru/monitoring-web-sayta-v-zabbix/)

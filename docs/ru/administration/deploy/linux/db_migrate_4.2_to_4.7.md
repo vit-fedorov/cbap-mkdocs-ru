@@ -159,7 +159,7 @@ kbId: 2340
 	su -
 	```
 	2. Скачайте, разверните и инициализируйте экземпляр ПО.
-		- См. *[Установка и запуск {{ productName }}][deploy_guide]*
+		- См. *[Установка и запуск {{ productName }}][deploy_guide_linux]*
 		- При установке ПО используйте ключ `d=clear` — установить ПО без демонстрационной базы данных:*Astra Linux, Ubuntu*
 
 	```
@@ -230,6 +230,6 @@ kbId: 2340
 
 **[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]**
 
-**[Установка и запуск {{ productName }}][deploy_guide]**
+**[Установка и запуск {{ productName }}][deploy_guide_linux]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

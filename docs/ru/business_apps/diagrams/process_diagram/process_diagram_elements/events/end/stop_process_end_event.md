@@ -1,4 +1,6 @@
 ---
+title: Конечное событие-остановка процесса
+kbId: 2384
 tags:
   - диаграмма процесса
   - элементы диаграммы процесса
@@ -13,7 +15,7 @@ hide:
   - tags
 ---
 
-# Конечное событие-остановка процесса
+# Конечное событие-остановка процесса {: #process_diagram_elements_stop_process_end_event}
 
 Когда токен входит в **конечное событие-остановку процесса**, завершаются все ветви процесса (даже если токены не дошли до их конечных событий).
 
@@ -47,11 +49,11 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[События][события]**
+**[process_diagram_elements_events][process_diagram_elements_events]**
 
 **[Типы конечных событий][типы-конечных-событий]**
 
-**[Простое промежуточное событие](none_intermediate_event.md)**
+**[Простое промежуточное событие][process_diagram_elements_none_intermediate_event]**
 
 **[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 

@@ -64,8 +64,6 @@
 
 {% if kbExport %}
 
-[1c_integrations]: {{ kbArticleURLPrefix }}2011
-
 [account_templates]: {{ kbArticleURLPrefix }}2223
 
 [accounts]: {{ kbArticleURLPrefix }}2194
@@ -73,8 +71,6 @@
 [account_permission_audit]: {{ kbArticleURLPrefix }}2195
 
 [accounts_dc_sync]: {{ kbArticleURLPrefix }}2308
-
-[actions]: {{ kbArticleURLPrefix }}2390
 
 [ad_authentication_configure]: {{ kbArticleURLPrefix }}2517
 
@@ -90,15 +86,225 @@
 
 [apps]: {{ kbArticleURLPrefix }}2209
 
+[authentication_keys]: {{ kbArticleURLPrefix }}2604
+
+[backup]: {{ kbArticleURLPrefix }}2190
+
+[backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
+
+[changelog]: {{ kbArticleURLPrefix }}2634
+
+[collabora_connection]: {{ kbArticleURLPrefix }}2588
+
+[common_notifications]: {{ kbArticleURLPrefix }}2566
+
+[complete_running_instance_backup]: {{ kbArticleURLPrefix }}2117
+
+[communication_routes]: {{ kbArticleURLPrefix }}2201
+
+[connections]: {{ kbArticleURLPrefix }}2205
+
+[connections_delete]: {{ kbArticleURLPrefix }}2205#mcetoc_1gjrlqi4l6
+
+[db_migrate_4.2_to_4.7]: {{ kbArticleURLPrefix }}2340
+
+[db_move_manually]: {{ kbArticleURLPrefix }}2137
+
+[desktop]: {{ kbArticleURLPrefix }}2284
+
+[desktop_setup]: {{ kbArticleURLPrefix }}2215
+
+[diagrams]: {{ kbArticleURLPrefix }}2211
+
+[diagram_list]: {{ kbArticleURLPrefix }}2211#diagram_list
+
+[elasticsearch_ssl_certificate_configure]: {{ kbArticleURLPrefix }}2337
+
+[elasticsearch_connection]: {{ kbArticleURLPrefix }}2593
+
+[get_connection]: {{ kbArticleURLPrefix }}2559
+
+[git_connection]: {{ kbArticleURLPrefix }}2204
+
+[global_configuration]: {{ kbArticleURLPrefix }}2185
+
+[groups]: {{ kbArticleURLPrefix }}2193
+
+[kafka_connection]: {{ kbArticleURLPrefix }}2606
+
+[licensing]: {{ kbArticleURLPrefix }}2183
+
+[log_files_event_examples]: {{ kbArticleURLPrefix }}2516
+
+[login_and_registration_page_design]: {{ kbArticleURLPrefix }}2198
+
+[logging_configuration]: {{ kbArticleURLPrefix }}2186
+
+[logging_engine]: {{ kbArticleURLPrefix }}2501
+
+[logging_engine_audit_log]: {{ kbArticleURLPrefix }}2501#logging_engine_audit_log
+
+[logging_engine_rules]: {{ kbArticleURLPrefix }}2501#logging_engine_rules
+
+[logs]: {{ kbArticleURLPrefix }}2180
+
+[logs_event_chain_view]: {{ kbArticleURLPrefix }}2180#logs_event_chain_view
+
+[logs_odata_inegration]: {{ kbArticleURLPrefix }}2180#logs_odata_inegration
+
+[map_configure]: {{ kbArticleURLPrefix }}2572
+
+[notification_types]: {{ kbArticleURLPrefix }}2626
+
+[monitoring]: {{ kbArticleURLPrefix }}2187
+
+[my_tasks_page_configure]: {{ kbArticleURLPrefix }}2411
+
+[my_tasks_page_configure_add_to_navigation]: {{ kbArticleURLPrefix }}2411#my_tasks_page_configure_add_to_navigation
+
+[navigation_sections_setup]: {{ kbArticleURLPrefix }}2212
+
+[odata_connection]: {{ kbArticleURLPrefix }}2504
+
+[odata_integration]: {{ kbArticleURLPrefix }}2315
+
+[openid_connection]: {{ kbArticleURLPrefix }}2329
+
+[organizational_unit_templates]: {{ kbArticleURLPrefix }}2226
+
+[r7_connection]: {{ kbArticleURLPrefix }}2342
+
+[pages_setup]: {{ kbArticleURLPrefix }}2214
+
+[paths]: {{ kbArticleURLPrefix }}2502
+
+[performance]: {{ kbArticleURLPrefix }}2184
+
+[process_diagram]: {{ kbArticleURLPrefix }}2360
+
+[process_diagram_version_control]: {{ kbArticleURLPrefix }}2358
+
+[process_diagram_view_instance]: {{ kbArticleURLPrefix }}2355
+
+[process_receiving_connection]: {{ kbArticleURLPrefix }}2564
+
+[process_sending_connection]: {{ kbArticleURLPrefix }}2394
+
+[process_templates]: {{ kbArticleURLPrefix }}2222
+
+[receive_http_example]: {{ kbArticleURLPrefix }}2319
+
+[record_templates]: {{ kbArticleURLPrefix }}2221
+
+[record_template_properties]: {{ kbArticleURLPrefix }}2221#record_template_properties
+
+[registration_and_login]: {{ kbArticleURLPrefix }}2196
+
+[release_notes_4.7.2285]: {{ kbArticleURLPrefix }}2611
+
+[release_notes_4.7.2721]: {{ kbArticleURLPrefix }}2633
+
+[release_notes_4.7.2902]: {{ kbArticleURLPrefix }}2639
+
+[restore_complete_backup]: {{ kbArticleURLPrefix }}2335
+
+[restore_test_configure]: {{ kbArticleURLPrefix }}2618
+
+[roles]: {{ kbArticleURLPrefix }}2208
+
+[role_templates]: {{ kbArticleURLPrefix }}2220
+
+[s3_connection]: {{ kbArticleURLPrefix }}2594
+
+[scenario_receive_email]: {{ kbArticleURLPrefix }}2585
+
+[scenario_send_email]: {{ kbArticleURLPrefix }}2584
+
+[send_http_connection]: {{ kbArticleURLPrefix }}2508
+
+[security]: {{ kbArticleURLPrefix }}2312
+
+[send_http_request_connection]: {{ kbArticleURLPrefix }}2589
+
+[sso_authenticatation_configure]: {{ kbArticleURLPrefix }}2583
+
+[sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}2583#sso_authentication_configure_keytab_update
+
+[sql_receive_connection]: {{ kbArticleURLPrefix }}2135
+
+[sql_send_connection]: {{ kbArticleURLPrefix }}2498
+
+[substitution]: {{ kbArticleURLPrefix }}2192
+
+[system_roles]: {{ kbArticleURLPrefix }}2175
+
+[system_service_management]: {{ kbArticleURLPrefix }}2182
+
+[table_clone]: {{ kbArticleURLPrefix }}2552
+
+[table_configure_template]: {{ kbArticleURLPrefix }}2550
+
+[table_personal_use]: {{ kbArticleURLPrefix }}2551
+
+[task_notifications]: {{ kbArticleURLPrefix }}2567
+
+[task_notifications_email]: {{ kbArticleURLPrefix }}2567#task_notifications_email
+
+[templates]: {{ kbArticleURLPrefix }}2219
+
+[templates_move]: {{ kbArticleURLPrefix }}2219#templates_move
+
+[templates_archive_unarchive]: {{ kbArticleURLPrefix }}2219#templates_archive_unarchive
+
+[template_common_properties]: {{ kbArticleURLPrefix }}2225
+
+[themes]: {{ kbArticleURLPrefix }}2199
+
+[themes_graphic_diagram_color]: {{ kbArticleURLPrefix }}2199#themes_graphic_diagram_color
+
+[themes_base_colors]: {{ kbArticleURLPrefix }}2199#themes_base_colors
+
+[themes_branded_images]: {{ kbArticleURLPrefix }}2199#themes_branded_images
+
+[two_factor_authentication]: {{ kbArticleURLPrefix }}2598
+
+[uninstall_auxiliary_software]: {{ kbArticleURLPrefix }}2596
+
+[version_control]: {{ kbArticleURLPrefix }}2217
+
+[version_control_git]: {{ kbArticleURLPrefix }}2216
+
+[version_control_manual]: {{ kbArticleURLPrefix }}2218
+
+[version_control_app_prepare]: {{ kbArticleURLPrefix }}2217#version_control_app_prepare
+
+[version_control_git]: {{ kbArticleURLPrefix }}2216
+
+[wsfederation_connection]: {{ kbArticleURLPrefix }}2560
+
+[architect_process_architecture_modelling]: {{ kbArticleURLPrefix }}2426
+
+[просмотр-реестра-процессов]: {{ kbArticleURLPrefix }}2426#mcetoc_1h7v7ph040
+
+[конструктор-диаграмм]: {{ kbArticleURLPrefix }}2429
+
+[построение-организационной-структуры]: {{ kbArticleURLPrefix }}2423
+
+{% endif %}
+
+{% if adminGuideLinux or adminGuideWindows or kbExport %}
+
+[1c_integrations]: {{ kbArticleURLPrefix }}2011
+
 [application_configure_recommendations]: {{ kbArticleURLPrefix }}2006
 
 [architect_desktop]: {{ kbArticleURLPrefix }}2415
 
 [architect_changing_hierarchy]: {{ kbArticleURLPrefix }}2419
 
-[architect_changing_process_hierarchy]: {{ kbArticleURLPrefix }}2437
-
 [architect_cloning_process_entity]: {{ kbArticleURLPrefix }}2436
+
+[architect_changing_process_hierarchy]: {{ kbArticleURLPrefix }}2437
 
 [architect_configuring_organizational_unit]: {{ kbArticleURLPrefix }}2418
 
@@ -107,6 +313,8 @@
 [architect_configuring_process_entity_properties]: {{ kbArticleURLPrefix }}2438
 
 [architect_configuring_process_entity_properties_form_and_attributes]: {{ kbArticleURLPrefix }}2435
+
+[architect_conversations]: {{ kbArticleURLPrefix }}2417
 
 [architect_creating_organizational_unit]: {{ kbArticleURLPrefix }}2420
 
@@ -121,6 +329,10 @@
 [architect_exporting_process_entity]: {{ kbArticleURLPrefix }}2427
 
 [architect_importing_process_entity]: {{ kbArticleURLPrefix }}2425
+
+[architect_organizational_structure_modelling]: {{ kbArticleURLPrefix }}2423
+
+[architect_process_architecture_modelling]: {{ kbArticleURLPrefix }}2426
 
 [architect_renaming_organizational_unit]: {{ kbArticleURLPrefix }}2421
 
@@ -186,12 +398,6 @@
 
 [auto_numerating_records]: {{ kbArticleURLPrefix }}2607
 
-[authentication_keys]: {{ kbArticleURLPrefix }}2604
-
-[backup]: {{ kbArticleURLPrefix }}2190
-
-[backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
-
 [button_area]: {{ kbArticleURLPrefix }}2545
 
 [button_area_configure]: {{ kbArticleURLPrefix }}2545#button_area_configure
@@ -208,47 +414,9 @@
 
 [cards_view]: {{ kbArticleURLPrefix }}2404
 
-[changelog]: {{ kbArticleURLPrefix }}2634
-
-[architect_changing_hierarchy]: {{ kbArticleURLPrefix }}2419
-
-[architect_changing_process_hierarchy]: {{ kbArticleURLPrefix }}2437
-
-[architect_cloning_process_entity]: {{ kbArticleURLPrefix }}2436
-
-[collabora_connection]: {{ kbArticleURLPrefix }}2588
-
-[common_notifications]: {{ kbArticleURLPrefix }}2566
-
-[complete_running_instance_backup]: {{ kbArticleURLPrefix }}2117
-
-[communication_routes]: {{ kbArticleURLPrefix }}2201
-
-[connections]: {{ kbArticleURLPrefix }}2205
-
-[connections_delete]: {{ kbArticleURLPrefix }}2205#mcetoc_1gjrlqi4l6
-
-[conversations]: {{ kbArticleURLPrefix }}2417
-
-[creating_gantt_chart]: {{ kbArticleURLPrefix }}2107
-
-[deploy_guide]: {{ kbArticleURLPrefix }}2344
+[gantt_chart_create]: {{ kbArticleURLPrefix }}2107
 
 [desktop]: {{ kbArticleURLPrefix }}2284
-
-[deploy_guide]: {{ kbArticleURLPrefix }}2344
-
-[db_migrate_4.2_to_4.7]: {{ kbArticleURLPrefix }}2340
-
-[db_move_manually]: {{ kbArticleURLPrefix }}2137
-
-[desktop]: {{ kbArticleURLPrefix }}2284
-
-[desktop_setup]: {{ kbArticleURLPrefix }}2215
-
-[diagrams]: {{ kbArticleURLPrefix }}2211
-
-[diagram_list]: {{ kbArticleURLPrefix }}2211#diagram_list
 
 [discussion_configure]: {{ kbArticleURLPrefix }}2406
 
@@ -260,11 +428,11 @@
 
 [elasticdata_description]: {{ kbArticleURLPrefix }}2638
 
-[elasticsearch_ssl_certificate_configure]: {{ kbArticleURLPrefix }}2337
+[process_diagram_elements_events_end]: {{ kbArticleURLPrefix }}2386
 
-[elasticsearch_connection]: {{ kbArticleURLPrefix }}2593
+[process_diagram_elements_events_intermediate]: {{ kbArticleURLPrefix }}2379
 
-[scenario_receive_email]: {{ kbArticleURLPrefix }}2586
+[process_diagram_elements_events_start]: {{ kbArticleURLPrefix }}2377
 
 [export_templates]: {{ kbArticleURLPrefix }}2349
 
@@ -278,9 +446,9 @@
 
 [export_template_file_formula_format_values]: {{ kbArticleURLPrefix }}2518
 
-[expression_debug]: {{ kbArticleURLPrefix }}2636
-
 [expression_editor]: {{ kbArticleURLPrefix }}2463
+
+[expression_debug]: {{ kbArticleURLPrefix }}2636
 
 [form_access_control]: {{ kbArticleURLPrefix }}2632
 
@@ -336,83 +504,25 @@
 
 [functions_web_service_call]: {{ kbArticleURLPrefix }}2200#functions_web_service_call
 
-[get_connection]: {{ kbArticleURLPrefix }}2559
-
-[git_connection]: {{ kbArticleURLPrefix }}2204
-
-[global_configuration]: {{ kbArticleURLPrefix }}2185
-
-[groups]: {{ kbArticleURLPrefix }}2193
-
 [import_data]: {{ kbArticleURLPrefix }}2555
-
-[instance_configure_windows]: {{ kbArticleURLPrefix }}2036
-
-[kafka_connection]: {{ kbArticleURLPrefix }}2606
-
-[licensing]: {{ kbArticleURLPrefix }}2183
-
-[log_files_event_examples]: {{ kbArticleURLPrefix }}2516
-
-[login_and_registration_page_design]: {{ kbArticleURLPrefix }}2198
-
-[logging_configuration]: {{ kbArticleURLPrefix }}2186
-
-[logging_engine]: {{ kbArticleURLPrefix }}2501
-
-[logging_engine_audit_log]: {{ kbArticleURLPrefix }}2501#logging_engine_audit_log
-
-[logging_engine_rules]: {{ kbArticleURLPrefix }}2501#logging_engine_rules
-
-[logs]: {{ kbArticleURLPrefix }}2180
-
-[logs_odata_inegration]: {{ kbArticleURLPrefix }}2180#logs_odata_inegration
-
-[map_configure]: {{ kbArticleURLPrefix }}2572
 
 [map_use]: {{ kbArticleURLPrefix }}2635
 
-[monitoring]: {{ kbArticleURLPrefix }}2187
-
 [my_tasks]: {{ kbArticleURLPrefix }}2282
-
-[my_tasks_page_configure]: {{ kbArticleURLPrefix }}2411
-
-[my_tasks_page_configure_add_to_navigation]: {{ kbArticleURLPrefix }}2411#my_tasks_page_configure_add_to_navigation
 
 [navigation_panel]: {{ kbArticleURLPrefix }}2283
 
-[navigation_sections_setup]: {{ kbArticleURLPrefix }}2212
+[process_diagram_elements_none_intermediate_event]: {{ kbArticleURLPrefix }}2380
 
-[none_start_event]: {{ kbArticleURLPrefix }}2378
+[none_intermediate_event_milestone_duration]: {{ kbArticleURLPrefix }}2380#process_diagram_elements_none_intermediate_event_milestone_duration
 
-[notification_types]: {{ kbArticleURLPrefix }}2626
+[process_diagram_elements_none_end_event]: {{ kbArticleURLPrefix }}2387
 
-[odata_connection]: {{ kbArticleURLPrefix }}2504
-
-[odata_integration]: {{ kbArticleURLPrefix }}2315
+[process_diagram_elements_none_start_event]: {{ kbArticleURLPrefix }}2378
 
 [online_store]: {{ kbArticleURLPrefix }}2210
 
-[openid_connection]: {{ kbArticleURLPrefix }}2329
-
-[organizational_unit_templates]: {{ kbArticleURLPrefix }}2226
-
-[r7_connection]: {{ kbArticleURLPrefix }}2342
-
 [pages]: {{ kbArticleURLPrefix }}2285
-
-[pages_setup]: {{ kbArticleURLPrefix }}2214
-
-[paths]: {{ kbArticleURLPrefix }}2502
-
-[service_call_task]: {{ kbArticleURLPrefix }}2609
-
-[service_call_task_properties]: {{ kbArticleURLPrefix }}2609#mcetoc_1h28bak441
-
-[performance]: {{ kbArticleURLPrefix }}2184
-
-[process_diagram]: {{ kbArticleURLPrefix }}2360
 
 [process_diagram_call_element_menu]: {{ kbArticleURLPrefix }}2360#process_diagram_call_element_menu
 
@@ -420,53 +530,55 @@
 
 [process_diagram_element_common_properties]: {{ kbArticleURLPrefix }}2364
 
+[process_diagram_forms]: {{ kbArticleURLPrefix }}2363
+
 [process_diagram_elements]: {{ kbArticleURLPrefix }}2365
 
-[process_diagram_forms]: {{ kbArticleURLPrefix }}2363
+[process_diagram_elements_actions]: {{ kbArticleURLPrefix }}2390
+
+[process_diagram_elements_gateways]: {{ kbArticleURLPrefix }}2372
+
+[process_diagram_elements_generic]: {{ kbArticleURLPrefix }}2370
+
+[process_diagram_elements_events]: {{ kbArticleURLPrefix }}2374
+
+[process_diagram_elements_pool]: {{ kbArticleURLPrefix }}2366
+
+[process_diagram_elements_lane]: {{ kbArticleURLPrefix }}2369
+
+[process_diagram_elements_sequence_flow]: {{ kbArticleURLPrefix }}2368
+
+[process_diagram_elements_text_annotation]: {{ kbArticleURLPrefix }}2367
+
+[process_diagram_elements_embedded_subprocess]: {{ kbArticleURLPrefix }}2391
+
+[process_diagram_elements_gateway_exclusive]: {{ kbArticleURLPrefix }}2373
+
+[process_diagram_elements_gateway_parallel]: {{ kbArticleURLPrefix }}2371
+
+[process_diagram_elements_process_call]: {{ kbArticleURLPrefix }}2389
+
+[process_diagram_elements_script_task]: {{ kbArticleURLPrefix }}2388
+
+[process_diagram_elements_user_task]: {{ kbArticleURLPrefix }}2392
+
+[process_diagram_elements_receive_message_start_event]: {{ kbArticleURLPrefix }}2376
+
+[process_diagram_elements_receive_message_intermediate_event]: {{ kbArticleURLPrefix }}2382
+
+[process_diagram_elements_send_message_end_event]: {{ kbArticleURLPrefix }}2385
+
+[process_diagram_elements_send_message_intermediate_event]: {{ kbArticleURLPrefix }}2381
+
+[process_diagram_elements_timer_intermediate_event]: {{ kbArticleURLPrefix }}2383
+
+[process_diagram_elements_timer_start_event]: {{ kbArticleURLPrefix }}2375
 
 [process_diagram_publish]: {{ kbArticleURLPrefix }}2360#process_diagram_publish
 
-[process_diagram_version_control]: {{ kbArticleURLPrefix }}2358
-
 [process_diagram_view]: {{ kbArticleURLPrefix }}2360#process_diagram_view
 
-[process_diagram_view_instance]: {{ kbArticleURLPrefix }}2355
-
 [process_email_configure]: {{ kbArticleURLPrefix }}2515
-
-[process_receiving_connection]: {{ kbArticleURLPrefix }}2564
-
-[process_sending_connection]: {{ kbArticleURLPrefix }}2394
-
-[process_templates]: {{ kbArticleURLPrefix }}2222
-
-[receive_http_example]: {{ kbArticleURLPrefix }}2319
-
-[receive_message_intermediate_event]: {{ kbArticleURLPrefix }}2382
-
-[receive_message_start_event]: {{ kbArticleURLPrefix }}2376
-
-[record_templates]: {{ kbArticleURLPrefix }}2221
-
-[record_template_properties]: {{ kbArticleURLPrefix }}2221#record_template_properties
-
-[registration_and_login]: {{ kbArticleURLPrefix }}2196
-
-[release_notes_4.7.2285]: {{ kbArticleURLPrefix }}2611
-
-[release_notes_4.7.2721]: {{ kbArticleURLPrefix }}2633
-
-[release_notes_4.7.2902]: {{ kbArticleURLPrefix }}2639
-
-[restore_complete_backup]: {{ kbArticleURLPrefix }}2335
-
-[restore_test_configure]: {{ kbArticleURLPrefix }}2618
-
-[roles]: {{ kbArticleURLPrefix }}2208
-
-[role_templates]: {{ kbArticleURLPrefix }}2220
-
-[s3_connection]: {{ kbArticleURLPrefix }}2594
 
 [scenario_actions]: {{ kbArticleURLPrefix }}2149
 
@@ -486,95 +598,29 @@
 
 [scenario_actions_validate_csharp]: {{ kbArticleURLPrefix }}2346#scenario_actions_validate_csharp
 
-[scenario_receive_email]: {{ kbArticleURLPrefix }}2585
-
-[scenario_send_email]: {{ kbArticleURLPrefix }}2584
-
 [scenarios]: {{ kbArticleURLPrefix }}2151
 
 [scenario_variables]: {{ kbArticleURLPrefix }}2399
 
 [scenario_verify_data]: {{ kbArticleURLPrefix }}2637
 
-[send_http_connection]: {{ kbArticleURLPrefix }}2508
-
-[security]: {{ kbArticleURLPrefix }}2312
-
 [send_http_example]: {{ kbArticleURLPrefix }}2509
 
-[send_http_request_connection]: {{ kbArticleURLPrefix }}2589
+[service_call_task]: {{ kbArticleURLPrefix }}2609
 
-[send_message_end_event]: {{ kbArticleURLPrefix }}2385
-
-[send_message_intermediate_event]: {{ kbArticleURLPrefix }}2381
-
-[sso_authenticatation_configure]: {{ kbArticleURLPrefix }}2583
-
-[sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}2583#sso_authentication_configure_keytab_update
+[service_call_task_properties]: {{ kbArticleURLPrefix }}2609#mcetoc_1h28bak441
 
 [sso_authentication_configure_windows]: {{ kbArticleURLPrefix }}2309
 
-[sql_receive_connection]: {{ kbArticleURLPrefix }}2135
-
-[sql_send_connection]: {{ kbArticleURLPrefix }}2498
-
-[substitution]: {{ kbArticleURLPrefix }}2192
-
-[system_roles]: {{ kbArticleURLPrefix }}2175
-
-[system_service_management]: {{ kbArticleURLPrefix }}2182
-
-[table_clone]: {{ kbArticleURLPrefix }}2552
+[process_diagram_elements_stop_process_end_event]: {{ kbArticleURLPrefix }}2384
 
 [table_configure]: {{ kbArticleURLPrefix }}2548
 
-[table_configure_template]: {{ kbArticleURLPrefix }}2550
-
-[table_personal_use]: {{ kbArticleURLPrefix }}2551
-
-[task_notifications]: {{ kbArticleURLPrefix }}2567
-
-[task_notifications_email]: {{ kbArticleURLPrefix }}2567#task_notifications_email
-
-[templates]: {{ kbArticleURLPrefix }}2219
-
-[templates_move]: {{ kbArticleURLPrefix }}2219#templates_move
-
-[templates_archive_unarchive]: {{ kbArticleURLPrefix }}2219#templates_archive_unarchive
-
-[template_common_properties]: {{ kbArticleURLPrefix }}2225
-
-[themes]: {{ kbArticleURLPrefix }}2199
-
-[themes_graphic_diagram_color]: {{ kbArticleURLPrefix }}2199#themes_graphic_diagram_color
-
-[themes_base_colors]: {{ kbArticleURLPrefix }}2199#themes_base_colors
-
-[themes_branded_images]: {{ kbArticleURLPrefix }}2199#themes_branded_images
-
-[two_factor_authentication]: {{ kbArticleURLPrefix }}2598
-
-[uninstall_auxiliary_software]: {{ kbArticleURLPrefix }}2596
-
-[user_task]: {{ kbArticleURLPrefix }}2392
-
-[using_gantt_chart]: {{ kbArticleURLPrefix }}2108
+[gantt_chart_use]: {{ kbArticleURLPrefix }}2108
 
 [using_the_system]: {{ kbArticleURLPrefix }}2281
 
 [variables]: {{ kbArticleURLPrefix }}2207
-
-[version_control]: {{ kbArticleURLPrefix }}2217
-
-[version_control_git]: {{ kbArticleURLPrefix }}2216
-
-[version_control_manual]: {{ kbArticleURLPrefix }}2218
-
-[version_control_app_prepare]: {{ kbArticleURLPrefix }}2217#version_control_app_prepare
-
-[version_control_git]: {{ kbArticleURLPrefix }}2216
-
-[wsfederation_connection]: {{ kbArticleURLPrefix }}2560
 
 [zabbix_deploy]: {{ kbArticleURLPrefix }}2098
 
@@ -582,12 +628,16 @@
 
 [zabbix_server_deploy]: {{ kbArticleURLPrefix }}2292
 
-[построение-процессной-архитектуры]: {{ kbArticleURLPrefix }}2426
+{% elif (adminGuideLinux and not adminGuideWindows) or kbExport %}
 
-[просмотр-реестра-процессов]: {{ kbArticleURLPrefix }}2426#mcetoc_1h7v7ph040
+[instance_configure_windows]: {{ kbArticleURLPrefix }}2036
 
-[конструктор-диаграмм]: {{ kbArticleURLPrefix }}2429
+{% elif (not adminGuideLinux and adminGuideWindows) or kbExport %}
 
-[построение-организационной-структуры]: {{ kbArticleURLPrefix }}2423
+[deploy_guide_linux]: {{ kbArticleURLPrefix }}2344
+
+[deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}2344#deploy_guide_linux_initialize
+
+[instance_configure_windows]: {{ kbArticleURLPrefix }}2036
 
 {% endif %}

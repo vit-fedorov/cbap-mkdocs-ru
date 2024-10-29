@@ -1,4 +1,6 @@
 ---
+kbId: 2377
+title: Начальные события
 tags:
   - диаграмма процесса
   - элементы диаграммы процесса
@@ -12,15 +14,15 @@ hide:
   - tags
 ---
 
-# Начальные события
+# Начальные события {: #process_diagram_elements_events_start}
 
 **Начальное событие** создаёт и запускает экземпляр процесса. При этом создаётся токен, который переходит на следующий элемент диаграммы процесса. На диаграмме должно быть хотя бы одно начальное событие.
 
 ## Типы начальных событий
 
-- **[Простое начальное событие][none_start_event]**
-- **[Начальное событие-таймер](timer_start_event.md)**
-- **[Начальное событие-получение сообщения](receive_message_start_event.md)**
+- **[Простое начальное событие][process_diagram_elements_none_start_event]**
+- **[Начальное событие-таймер][process_diagram_elements_timer_start_event]**
+- **[Начальное событие-получение сообщения][process_diagram_elements_receive_message_start_event]**
 
 ## Создание начального события на диаграмме
 
@@ -30,7 +32,7 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[События][события]**
+**[process_diagram_elements_events][process_diagram_elements_events]**
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 

@@ -157,10 +157,8 @@ nav:
         - administration/connections_communication_routes/rest_odata_connections/get_connection.md
         - administration/connections_communication_routes/rest_odata_connections/odata_connection.md
         - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
-        - administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
-        - administration/connections_communication_routes/rest_odata_connections/send_http_example.md
         - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
       - SQL-подключения:
         - administration/connections_communication_routes/sql_connections/sql_send_connection.md
@@ -207,6 +205,8 @@ exclude_docs: |
   product_description.md
   administration/architecture/functions.md
   administration/connections_communication_routes/email_connections/process_email_configure_include.md
+  administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
+  administration/connections_communication_routes/rest_odata_connections/send_http_example.md
   architect/**
   business_apps/application_configure_recommendations.md
   business_apps/data_model.md

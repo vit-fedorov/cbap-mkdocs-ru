@@ -1,4 +1,6 @@
 ---
+title: Вызов процесса
+kbId: 2389
 tags:
   - диаграммы
   - диаграмма процесса
@@ -14,7 +16,7 @@ hide:
   - tags
 ---
 
-# Вызов процесса
+# Вызов процесса {: #process_diagram_elements_process_call}
 
 **Вызов процесса** запускает внешний подпроцесс из текущего процесса. Это позволяет, например, выполнять одинаковую последовательность действий в нескольких процессах.
 
@@ -148,10 +150,12 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[Встроенный подпроцесс](embedded_subprocess.md)**
+**[Встроенный подпроцесс][process_diagram_elements_embedded_subprocess]**
 
 **[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
 **[Редактирование диаграммы процесса][process_diagram_designer]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -1,4 +1,6 @@
 ---
+title: Поток управления
+kbId: 2368
 tags:
   - диаграммы
   - диаграмма процесса
@@ -11,7 +13,7 @@ hide:
   - tags
 ---
 
-# Поток управления
+# Поток управления {: #process_diagram_elements_sequence_flow}
 
 **Поток управления** — соединяет два последовательных элемента процесса. Предусмотрено два типа потоков:
 
@@ -68,10 +70,12 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[Развилки][развилки]**
+**[Развилки][process_diagram_elements_gateways]**
 
 **[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
 **[Редактирование диаграммы процесса][process_diagram_designer]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

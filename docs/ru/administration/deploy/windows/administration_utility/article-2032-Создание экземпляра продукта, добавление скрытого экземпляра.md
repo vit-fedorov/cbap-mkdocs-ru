@@ -86,3 +86,4 @@ kbId: 2032
 
 **[Восстановление экземпляра продукта из резервной копии в ОС Windows]({{ kbArticleURLPrefix }}2038)**
 
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

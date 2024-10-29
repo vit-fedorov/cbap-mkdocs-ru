@@ -7,15 +7,15 @@ kbId: 2593
 
 ## Введение
 
-**{{ productName }}** использует службу Elasticsearch для записи истории всех транзакций, таких как журнал изменений записей и [экземпляров процессов]({{ kbArticleURLPrefix }}2355#mcetoc_1h2d9mpbf5), [цепочка событий](logs.md#просмотр-цепочки-событий) и т. п.
+**{{ productName }}** использует службу Elasticsearch для записи истории всех транзакций, таких как журнал изменений записей и [экземпляров процессов][process_diagram_view_instance], [цепочка событий][logs_event_chain_view] и т. п.
 
-Подключение к Elasticsearch автоматически создаётся при [развёртывании]({{ kbArticleURLPrefix }}2344#mcetoc_1ga11542i2) **{{ productName }}**.
+Подключение к Elasticsearch автоматически создаётся при [развёртывании][deploy_guide_linux_initialize] **{{ productName }}**.
 
 В данной статье представлены инструкции по настройке подключения к серверу Elasticsearch.
 
 ## Настройка подключения
 
-1. Перейдите в [список подключений]({{ kbArticleURLPrefix }}2205#mcetoc_1gjrlqi4l1).
+1. Перейдите в [список подключений][connections].
 2. Дважды нажмите в списке подключение _«ElasticsearchChannel»_ или создайте подключение типа «**Системные подключения**» — «**Elasticsearch**».
 3. Настройте свойства подключения:  
 
@@ -38,8 +38,6 @@ _![Настройка подключения к Elasticsearch](elasticsearch_con
 
 --8<-- "related_topics_heading.md"
 
-**[Инициализация {{ productName }}]({{ kbArticleURLPrefix }}2344#mcetoc_1ga11542i2)**
+**[Инициализация {{ productName }}][deploy_guide_linux_initialize]**
 
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

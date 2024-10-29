@@ -15,7 +15,7 @@ hide:
     - tags
 ---
 
-# Обсуждение элементов архитектуры организации {: #conversations}
+# Обсуждение элементов архитектуры организации {: #architect_conversations}
 
 В {{ productNameArchitect }} можно вести обсуждения диаграмм, элементов диаграмм и организационных единиц.
 
@@ -54,6 +54,8 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[Просмотр диаграммы](viewing_diagram.md)**
+**[Просмотр диаграммы][architect_viewing_diagram]**
 
-**[Просмотр реестра оргединиц][просмотр-реестра-оргединиц]**
+**[Просмотр реестра оргединиц][architect_organizational_structure_modelling]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

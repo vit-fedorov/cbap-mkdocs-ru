@@ -1,4 +1,6 @@
 ---
+title: Комментарий
+kbId: 
 tags:
   - диаграммы
   - диаграмма процесса
@@ -11,7 +13,7 @@ hide:
   - tags
 ---
 
-# Комментарий
+# Комментарий {: #process_diagram_elements_text_annotation}
 
 **Комментарий** позволяет привязать произвольный текст к элементу диаграммы процесса.
 
@@ -36,3 +38,5 @@ hide:
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
 **[Редактирование диаграммы процесса][process_diagram_designer]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

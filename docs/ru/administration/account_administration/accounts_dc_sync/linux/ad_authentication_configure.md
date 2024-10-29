@@ -48,7 +48,7 @@ kbId: 2517
 | Имя хоста | `<linuxHost>` |
 | IP-адрес хоста | `<linux.host.ip.address>` |
 
-## Конфигурация машины DCName с контроллером домена
+## Конфигурация машины DCName с контроллером домена {: #ad_authentication_configure_dc_instance}
 
 | Параметр | Значение |
 | --- | --- |

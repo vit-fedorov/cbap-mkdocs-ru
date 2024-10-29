@@ -1,4 +1,6 @@
 ---
+title: Объявление префикса
+kbId: 2477
 tags:
   - выражения
   - n3
@@ -15,7 +17,7 @@ hide:
   - tags
 ---
 
-# Объявление префикса
+# Объявление префикса {: #n3_editor_prefix_autocomplete}
 
 1. Введите символ `@`.
 2. Отобразится список доступных префиксов.
@@ -32,3 +34,5 @@ hide:
 **[Редактор выражений][expression_editor]**
 
 **[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

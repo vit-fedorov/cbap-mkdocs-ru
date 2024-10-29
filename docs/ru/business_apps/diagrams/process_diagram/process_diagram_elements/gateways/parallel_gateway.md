@@ -46,7 +46,7 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[Развилка «или/или»](exclusive_gateway.md)**
+**[Развилка «или/или»][process_diagram_elements_gateway_exclusive]**
 
 **[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 
@@ -54,3 +54,4 @@ hide:
 
 **[Редактирование диаграммы процесса][process_diagram_designer]**
 
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

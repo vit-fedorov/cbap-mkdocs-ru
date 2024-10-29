@@ -62,10 +62,12 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[Развилка «и»](parallel_gateway.md)**
+**[Развилка «и»][process_diagram_elements_gateway_parallel]**
 
 **[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
 **[Редактирование диаграммы процесса][process_diagram_designer]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

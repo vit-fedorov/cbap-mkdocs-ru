@@ -65,7 +65,7 @@ hide:
 
     _![Страница «Управление версиями через Git»](img/version_control_git.png)_
 
-2. Чтобы перейти к [управлению версиями приложения вручную](manual_version_control.md), нажмите заголовок «**Управление версиями через Git**» и в раскрывающемся меню выберите пункт «**Ручное управление версиями**».
+2. Чтобы перейти к [управлению версиями приложения вручную][version_control_manual], нажмите заголовок «**Управление версиями через Git**» и в раскрывающемся меню выберите пункт «**Ручное управление версиями**».
 
     _![Переход к ручному управлению версиями](img/verstion_control_switch_to_manual.png)_
 
@@ -75,6 +75,4 @@ hide:
 
 **[Ручное управление версиями][version_control_manual]**
 
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

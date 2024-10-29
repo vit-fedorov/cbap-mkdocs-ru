@@ -16,7 +16,7 @@ hide:
 
 # Ввод имени переменной
 
-1. Введите фигурные скобки `{  }` в пустое выражение (после [префиксов](prefix_autocomplete.md)).
+1. Введите фигурные скобки `{  }` в пустое выражение (после [префиксов][n3_editor_prefix_autocomplete]).
 2. Внутри фигурных скобок введите символ `?`. Этот список также можно вызвать, нажав клавиши ++ctrl+space++ в позиции после символа `?`.
 3. Отобразится список доступных переменных.
 *![Список доступных переменных](n3_editor_variable_autocomplete.png)*
@@ -35,10 +35,12 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-[Ввод предиката](predicate_autocomplete.md)
+[Ввод предиката][n3_editor_predicate_autocomplete]
 
-[Ввод префикса](predicate_autocomplete.md)
+[Ввод префикса][n3_editor_prefix_autocomplete]
 
 **[Редактор выражений][expression_editor]**
 
 **[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

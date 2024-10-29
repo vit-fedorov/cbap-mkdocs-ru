@@ -19,11 +19,13 @@ hide:
 
 ## Типы развилок
 
-- **[Развилка «или/или»](exclusive_gateway.md)**
-- **[Развилка «и»](parallel_gateway.md)**
+- **[Развилка «или/или»][process_diagram_elements_gateway_exclusive]**
+- **[Развилка «и»][process_diagram_elements_gateway_parallel]**
 
 --8<-- "related_topics_heading.md"
 
 **[Элементы диаграммы процесса][process_diagram_elements]**
 
 **[Редактирование диаграммы процесса][process_diagram_designer]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

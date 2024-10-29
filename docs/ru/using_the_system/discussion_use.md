@@ -32,4 +32,6 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[Настройка обсуждений](discussion_configure.md)**
+**[Настройка обсуждений][discussion_configure]**
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

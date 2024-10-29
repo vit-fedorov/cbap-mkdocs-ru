@@ -1,4 +1,6 @@
 ---
+title: Ввод запроса from where select
+kbId: 2466
 tags:
   - выражения
   - формулы
@@ -22,7 +24,7 @@ hide:
   - tags
 ---
 
-# Ввод запроса from where select
+# Ввод запроса from where select {: #formula_editor_from_where_select_autocomplete}
 
 Запрос `#!mysql from where select` возвращает список значений из указанного источника данных, соответствующих заданному условию.
 
@@ -171,7 +173,7 @@ from a in $RequestedCars where a->_creator->username == "admin" select a->id
      
     **Составление формулы**
        
-    1. Введите функцию `#!mysql COUNT()`. См. «**[Ввод имени функции и просмотр подсказки по функции](function_autocomplete.md)**».
+    1. Введите функцию `#!mysql COUNT()`. См. «**[Ввод имени функции и просмотр подсказки по функции][formula_editor_function_autocompete]**».
     2. В позиции аргумента функции нажмите клавиши ++ctrl+space++.
     3. Отобразится список источников данных.
          *![Список источников данных для запроса](formula_editor_from_where_select_autocomplete.png)*
@@ -182,7 +184,7 @@ from a in $RequestedCars where a->_creator->username == "admin" select a->id
     7. В отобразившемся списке атрибутов шаблона _«Автомобили»_ дважды нажмите системное имя атрибута _Make_, чтобы вставить его в формулу. См. «**Ввод системного имени атрибута после переменной-селектора**»
         *![Список атрибутов шаблона _«Автомобили»_](formula_editor_from_where_select_autocomplete_condition_record_attribute_list.png)*
     8. Введите оператор `==` и нажмите клавиши ++ctrl+space++.
-    9. Отобразится список записей шаблона _«Автомобили»_ в виде марок автомобилей. См. «**[Ввод заголовка записи связанного шаблона](record_heading_autocomplete.md)**».
+    9. Отобразится список записей шаблона _«Автомобили»_ в виде марок автомобилей. См. «**[Ввод заголовка записи связанного шаблона][formula_editor_record_heading_autocomplete]**».
          *![Список записей в шаблоне _«Автомобили»_](formula_editor_from_where_select_autocomplete_condition_record_heading_list.png)*
     10.  Дважды нажмите пункт _«Лада»_, чтобы вставить в формулу строковый литерал `#!mysql "Лада"`.
     
@@ -204,8 +206,6 @@ from a in $RequestedCars where a->_creator->username == "admin" select a->id
 
 **[Примеры использования формул. База знаний Comindware]({{ kbCategoryURLPrefix }}409){:target="_blank"}**
 
-**[Ввод имени функции и просмотр подсказки по функции](function_autocomplete.md)**
+**[Ввод имени функции и просмотр подсказки по функции][formula_editor_function_autocompete]**
 
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

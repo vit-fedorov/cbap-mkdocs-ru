@@ -354,6 +354,8 @@
 
 [attribute_calculated]: {{ kbArticleURLPrefix }}2254
 
+[attribute_change_type]: {{ kbArticleURLPrefix }}1978
+
 [attribute_color]: {{ kbArticleURLPrefix }}2627
 
 [attribute_date_time]: {{ kbArticleURLPrefix }}2246
@@ -500,6 +502,14 @@
 
 [form_personal_use]: {{ kbArticleURLPrefix }}2568
 
+[formula_editor]: {{ kbArticleURLPrefix }}2468
+
+[formula_editor_function_autocompete]: {{ kbArticleURLPrefix }}2465
+
+[formula_editor_from_where_select_autocomplete]: {{ kbArticleURLPrefix }}2466
+
+[formula_editor_record_heading_autocomplete]: {{ kbArticleURLPrefix }}2471
+
 [functions]: {{ kbArticleURLPrefix }}2200
 
 [functions_web_service_call]: {{ kbArticleURLPrefix }}2200#functions_web_service_call
@@ -509,6 +519,12 @@
 [map_use]: {{ kbArticleURLPrefix }}2635
 
 [my_tasks]: {{ kbArticleURLPrefix }}2282
+
+[n3_editor_block_autocomplete]: {{ kbArticleURLPrefix }}2480
+
+[n3_editor_predicate_autocomplete]: {{ kbArticleURLPrefix }}2479
+
+[n3_editor_prefix_autocomplete]: {{ kbArticleURLPrefix }}2477
 
 [navigation_panel]: {{ kbArticleURLPrefix }}2283
 

@@ -23,7 +23,8 @@
         <div class="wrapper upper">
             <div class="header">
                 <!--<div class="logo" style="background-image: url();"></div>-->
-                <div class="logotype"><img src={{ cover_logo | to_url }}></div>
+                {% set imgUrl = cover_logo | to_url | replace('\\', '/') | replace('file://', 'file:///')  %}
+                <div class="logotype"><img src={{ imgUrl }}></div>
                 {% if author is defined %}<div class="author">{{ author | e }}</div>{% endif %}
             </div>
         </div>

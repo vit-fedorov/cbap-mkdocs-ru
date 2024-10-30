@@ -26,6 +26,7 @@ kbId: 2243
 
 _![Свойства атрибута типа «Запись»](img/attribute_record_properties.png)_
 
+[](){: #example}
 ## Пример использования {: #attribute_record_example}
 
 --8<-- "attribute_property_attribute_linking_example.md"

@@ -23,7 +23,7 @@ kbId: 2249
 
 _![Свойства атрибута типа «Аккаунт»](attribute_account_properties.png)_
 
-## Пример использования
+## Пример использования {: #example}
 
 --8<-- "attribute_property_attribute_linking_example.md"
 

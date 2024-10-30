@@ -162,6 +162,8 @@ kbId: 2329
 
     _![Добавление авторизованного адреса перенаправления после входа в клиент OAuth в Google Cloud](openid_connection_google_cloud.png)_
 
+{% if adminGuideWindows or userGuide or kbExport %}
+
 ## Настройка реестра Windows для включения аутентификации через OpenID Connect в {{ productName }}
 
 1. Запустите редактор реестра Windows: `regedit.exe`.
@@ -176,6 +178,10 @@ kbId: 2329
 7. Дождитесь перезапуска служб IIS.  
 
     ![Перезапуск IIS с помощью командной строки](openid_connection_iis_reconnect.png)
+
+{% endif %}
+
+{% if adminGuideLinux or userGuide or kbExport %}
 
 ## Настройка ОС Linux для включения аутентификации через OpenID Connect в {{ productName }}
 
@@ -254,6 +260,8 @@ kbId: 2329
     ```
     systemctl restart elasticsearch nginx comindware<instanceName>
     ```
+
+{% endif %}
 
 ## Вход в {{ productName }}
 

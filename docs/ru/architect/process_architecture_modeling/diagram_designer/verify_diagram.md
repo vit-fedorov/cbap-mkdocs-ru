@@ -25,7 +25,7 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра процессов][просмотр-реестра-процессов]**
+**[Просмотр реестра процессов][architect_process_architecture_modelling]**
 
 **[Использование системы — Панель навигации][navigation_panel]**
 

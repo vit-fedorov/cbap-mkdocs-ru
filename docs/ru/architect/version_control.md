@@ -52,7 +52,7 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра процессов][просмотр-реестра-процессов]**
+**[Просмотр реестра процессов][architect_process_architecture_modelling]**
 
 **[Просмотр реестра оргединиц][architect_organizational_structure_modelling]**
 

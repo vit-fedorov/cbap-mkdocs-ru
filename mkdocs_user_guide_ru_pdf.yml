@@ -5,12 +5,11 @@
 # py -m mkdocs build -f mkdocs_ru_pdf.yml
 
 
-INHERIT: mkdocs_ru.yml
+INHERIT: mkdocs_userguide_ru.yml
 
-docs_dir: docs/ru/
 site_dir: pdf/
 
-site_url: http://127.0.0.1/
+site_url: ''
 
 site_name: Comindware Business Application Platform. Руководство пользователя
 
@@ -25,7 +24,7 @@ plugins:
       remove_comments: false
   with-pdf:
     cover: true
-    cover_logo: 'https://kb.comindware.ru/assets/comindware_logo.svg'
+    cover_logo: assets/images/comindware_logo.svg
     cover_title: Comindware Business Application Platform 4.7
     cover_subtitle: Руководство пользователя
     copyright: © Comindware, 2009–2024

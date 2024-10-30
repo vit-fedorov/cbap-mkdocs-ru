@@ -2,15 +2,11 @@
 # It requires GTK3. Installer: install\installgtk3.ps1
 # This configuration and PDF build pipeline are a work in progress. Do not build production PDFs yet.
 # Command: 
-# py -m mkdocs build -f mkdocs_pdf_ru.yml
-
+# py -m mkdocs build -f mkdocs_admin_guide_ru_linux_pdf.yml
 
 INHERIT: mkdocs_admin_guide_ru_linux.yml
 
-docs_dir: docs/ru/
 site_dir: pdf/
-
-site_url: http://127.0.0.1/
 
 site_name: Comindware Business Application Platform. Руководство системного администратора для OS Linux
 
@@ -24,16 +20,17 @@ plugins:
     htmlmin_opts:
       remove_comments: false
   with-pdf:
+    cover_subtitle: Руководство системного администратора для Linux
+    output_path: Comindware Business Application Platform. Руководство системного администратора для OS Linux. 29.10.2024.pdf
     cover: true
-    cover_title: Comindware Business Application Platform
-    cover_subtitle: Руководство системного администратора для OS Linux
-    copyright: © Comindware, 20009–2024. Все права защищены
-    author: Версия 4.7
+    cover_logo: 'assets/images/comindware_logo.svg'
+    cover_title: Comindware Business Application Platform 4.7
+    copyright: © Comindware, 2009–2024
+    author: comindware.ru
     toc_title: Оглавление
     toc_level: 3
-    output_path: Comindware Business Application Platform. Руководство системного администратора для OS Linux. 28.10.2024.pdf
     custom_template_path: pdf_templates
     two_columns_level: 0
     heading_shift: false
     ordered_chapter_level: 3
-    # debug_html: true
+    debug_html: false

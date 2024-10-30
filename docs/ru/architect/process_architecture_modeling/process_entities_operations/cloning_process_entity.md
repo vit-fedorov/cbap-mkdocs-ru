@@ -36,7 +36,7 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра процессов][просмотр-реестра-процессов]**
+**[Просмотр реестра процессов][architect_process_architecture_modelling]**
 
 **[Переименование элемента процессной архитектуры][architect_renaming_process_entity]**
 

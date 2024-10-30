@@ -32,7 +32,7 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра процессов][просмотр-реестра-процессов]**
+**[Просмотр реестра процессов][architect_process_architecture_modelling]**
 
 **[Создание элемента процессной архитектуры][architect_creating_process_entity]**
 

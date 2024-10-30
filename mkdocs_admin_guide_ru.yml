@@ -7,11 +7,9 @@
 INHERIT: mkdocs.yml
 
 extra:
-  pdfOutput: False
   adminGuideLinux: True
   adminGuideWindows: True
   userGuide: False
-  kbExport: False
 
 nav:
 

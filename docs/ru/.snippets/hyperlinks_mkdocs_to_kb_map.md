@@ -282,14 +282,6 @@
 
 [wsfederation_connection]: {{ kbArticleURLPrefix }}2560
 
-[architect_process_architecture_modelling]: {{ kbArticleURLPrefix }}2426
-
-[просмотр-реестра-процессов]: {{ kbArticleURLPrefix }}2426#mcetoc_1h7v7ph040
-
-[конструктор-диаграмм]: {{ kbArticleURLPrefix }}2429
-
-[построение-организационной-структуры]: {{ kbArticleURLPrefix }}2423
-
 {% endif %}
 
 {% if adminGuideLinux or adminGuideWindows or kbExport %}
@@ -333,6 +325,8 @@
 [architect_organizational_structure_modelling]: {{ kbArticleURLPrefix }}2423
 
 [architect_process_architecture_modelling]: {{ kbArticleURLPrefix }}2426
+
+[architect_process_diagram_designer]: {{ kbArticleURLPrefix }}2429
 
 [architect_renaming_organizational_unit]: {{ kbArticleURLPrefix }}2421
 
@@ -649,6 +643,14 @@
 [instance_configure_windows]: {{ kbArticleURLPrefix }}2036
 
 {% elif (not adminGuideLinux and adminGuideWindows) or kbExport %}
+
+[deploy_guide_linux]: {{ kbArticleURLPrefix }}2344
+
+[deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}2344#deploy_guide_linux_initialize
+
+[instance_configure_windows]: {{ kbArticleURLPrefix }}2036
+
+{% elif (userGuide and not adminGuideLinux and not adminGuideWindows) or kbExport %}
 
 [deploy_guide_linux]: {{ kbArticleURLPrefix }}2344
 

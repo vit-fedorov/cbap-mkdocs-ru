@@ -70,11 +70,7 @@
 
 [account_permission_audit]: {{ kbArticleURLPrefix }}2195
 
-[accounts_dc_sync]: {{ kbArticleURLPrefix }}2308
-
 [ad_authentication_configure]: {{ kbArticleURLPrefix }}2517
-
-[ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}2517
 
 [ad_connection]: {{ kbArticleURLPrefix }}2206
 
@@ -89,8 +85,6 @@
 [authentication_keys]: {{ kbArticleURLPrefix }}2604
 
 [backup]: {{ kbArticleURLPrefix }}2190
-
-[backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
 
 [changelog]: {{ kbArticleURLPrefix }}2634
 
@@ -140,12 +134,6 @@
 
 [logging_configuration]: {{ kbArticleURLPrefix }}2186
 
-[logging_engine]: {{ kbArticleURLPrefix }}2501
-
-[logging_engine_audit_log]: {{ kbArticleURLPrefix }}2501#logging_engine_audit_log
-
-[logging_engine_rules]: {{ kbArticleURLPrefix }}2501#logging_engine_rules
-
 [logs]: {{ kbArticleURLPrefix }}2180
 
 [logs_event_chain_view]: {{ kbArticleURLPrefix }}2180#logs_event_chain_view
@@ -175,8 +163,6 @@
 [r7_connection]: {{ kbArticleURLPrefix }}2342
 
 [pages_setup]: {{ kbArticleURLPrefix }}2214
-
-[paths]: {{ kbArticleURLPrefix }}2502
 
 [performance]: {{ kbArticleURLPrefix }}2184
 
@@ -225,10 +211,6 @@
 [security]: {{ kbArticleURLPrefix }}2312
 
 [send_http_request_connection]: {{ kbArticleURLPrefix }}2589
-
-[sso_authenticatation_configure]: {{ kbArticleURLPrefix }}2583
-
-[sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}2583#sso_authentication_configure_keytab_update
 
 [sql_receive_connection]: {{ kbArticleURLPrefix }}2135
 
@@ -284,7 +266,7 @@
 
 {% endif %}
 
-{% if adminGuideLinux or adminGuideWindows or kbExport %}
+{% if (not userGuide and (adminGuideLinux or adminGuideWindows)) or kbExport %}
 
 [1c_integrations]: {{ kbArticleURLPrefix }}2011
 
@@ -620,8 +602,6 @@
 
 [service_call_task_properties]: {{ kbArticleURLPrefix }}2609#mcetoc_1h28bak441
 
-[sso_authentication_configure_windows]: {{ kbArticleURLPrefix }}2309
-
 [process_diagram_elements_stop_process_end_event]: {{ kbArticleURLPrefix }}2384
 
 [table_configure]: {{ kbArticleURLPrefix }}2548
@@ -638,7 +618,9 @@
 
 [zabbix_server_deploy]: {{ kbArticleURLPrefix }}2292
 
-{% elif (adminGuideLinux and not adminGuideWindows) or kbExport %}
+{% endif %}
+
+{% if (adminGuideLinux and not adminGuideWindows) or kbExport %}
 
 [instance_configure_windows]: {{ kbArticleURLPrefix }}2036
 
@@ -650,12 +632,32 @@
 
 [instance_configure_windows]: {{ kbArticleURLPrefix }}2036
 
-{% elif (userGuide and not adminGuideLinux and not adminGuideWindows) or kbExport %}
+{% elif (userGuide and not (adminGuideLinux or adminGuideWindows)) or kbExport %}
+
+[accounts_dc_sync]: {{ kbArticleURLPrefix }}2308
+
+[ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}2517
+
+[backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
 
 [deploy_guide_linux]: {{ kbArticleURLPrefix }}2344
 
 [deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}2344#deploy_guide_linux_initialize
 
 [instance_configure_windows]: {{ kbArticleURLPrefix }}2036
+
+[logging_engine]: {{ kbArticleURLPrefix }}2501
+
+[logging_engine_audit_log]: {{ kbArticleURLPrefix }}2501#logging_engine_audit_log
+
+[logging_engine_rules]: {{ kbArticleURLPrefix }}2501#logging_engine_rules
+
+[paths]: {{ kbArticleURLPrefix }}2502
+
+[sso_authenticatation_configure]: {{ kbArticleURLPrefix }}2583
+
+[sso_authentication_configure_windows]: {{ kbArticleURLPrefix }}2309
+
+[sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}2583#sso_authentication_configure_keytab_update
 
 {% endif %}

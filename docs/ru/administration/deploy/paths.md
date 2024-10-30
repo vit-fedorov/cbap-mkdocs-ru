@@ -9,7 +9,7 @@ kbId: 2502
 
 Здесь представлена информация о расположении файлов и папок экземпляра ПО **{{ productName }}**.
 
-{% if adminGuideLinux or kbExport %}
+{% if userGuide or adminGuideLinux or kbExport %}
 
 ## Содержимое директорий — Linux {: #paths_linux}
 
@@ -37,7 +37,7 @@ kbId: 2502
 
 {% endif %}
 
-{% if adminGuideWindows or kbExport %}
+{% if userGuide or adminGuideWindows or kbExport %}
 
 ## Содержимое папок — Windows {: #paths_windows}
 

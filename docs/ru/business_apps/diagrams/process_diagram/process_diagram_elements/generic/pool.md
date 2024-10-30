@@ -13,7 +13,7 @@ hide:
   - tags
 ---
 
-# Пул {: #process_diagram_pool}
+# Пул {: #process_diagram_elements_pool}
 
 **Пул** содержит все остальные элементы диаграммы процесса. Его нельзя удалить.
 

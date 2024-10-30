@@ -61,7 +61,7 @@ kbId: 2308
 
 Инструкции по настройке подключения к серверу каталогов см. в следующих статьях:
 
-{% if kbExport %}
+{% if userGuide or kbExport %}
 
 - **{{ productName }}**
 	- **[Сервер каталогов. Настройка подключения][ad_connection]**
@@ -71,7 +71,9 @@ kbId: 2308
 - **Windows**
 	- **[Настройка единого входа (SSO-аутентификации) в ОС Windows][sso_authentication_configure_windows]**
 
-{% elif adminGuideLinux %}
+{% else %}
+
+{% if adminGuideLinux %}
 
 - **[Сервер каталогов. Настройка подключения][ad_connection]**
 - **[Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО][ad_authentication_configure_dc_instance]**
@@ -81,6 +83,8 @@ kbId: 2308
 
 - **[Сервер каталогов. Настройка подключения][ad_connection]**
 - **[Настройка единого входа (SSO-аутентификации) в ОС Windows][sso_authentication_configure_windows]**
+
+{% endif %}
 
 {% endif %}
 

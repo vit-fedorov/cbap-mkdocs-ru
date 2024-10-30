@@ -226,7 +226,7 @@ hide: tags
 
     - **Содержимое документа** — введите строку с содержимым файла в формате Base64 (заполнители не поддерживаются). Например:
 
-    ```cs
+    ```
     0K3RgtC+INC/0YDQuNC80LXRgCDRgdGC0YDQvtC60Lgg0LIg0LrQvtC00LjRgNC+0LLQutC1IEJhc2U2NC4=
     ```
 
@@ -242,7 +242,7 @@ hide: tags
 
         в формате Base64 будет выглядеть следующим образом:
 
-        ```cs
+        ```
         0K3RgtC+INC/0YDQuNC80LXRgCDRgdGC0YDQvtC60Lgg0LIg0LrQvtC00LjRgNC+0LLQutC1IEJhc2U2NC4=
         ```
 

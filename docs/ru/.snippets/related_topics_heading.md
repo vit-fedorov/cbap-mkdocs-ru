@@ -1,1 +1,1 @@
---8<-- "related_topics_heading.md"
+## Связанные статьи

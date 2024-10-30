@@ -31,10 +31,10 @@ nav:
       - Дизайн страниц входа и регистрации: administration/appearance/themes/index.md
       - Темы: administration/appearance/login_and_registration_page_design/index.md
     - Архитектура:
-      - Приложения: /business_apps/
-      - Шаблоны: /business_apps/templates/
-      - Диаграммы: /business_apps/diagrams/
-      - Разделы навигации: /business_apps/navigation_sections/
+      - Приложения: business_apps/index.md
+      - Шаблоны: business_apps/templates/index.md
+      - Диаграммы: business_apps/diagrams/index.md
+      - Разделы навигации: business_apps/navigation_sections/navigation_sections_setup.md
       - administration/architecture/functions.md
     - Аккаунты и группы:
       - administration/account_administration/accounts.md

@@ -5,7 +5,7 @@
 # py -m mkdocs build -f mkdocs_ru_pdf.yml
 
 
-INHERIT: mkdocs_userguide_ru.yml
+INHERIT: mkdocs_user_guide_ru.yml
 
 site_dir: pdf/
 

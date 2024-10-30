@@ -14,7 +14,7 @@ hide:
   - tags
 ---
 
-# Конечное событие-отправка сообщения {: #send_message_end_event}
+# Конечное событие-отправка сообщения {: #process_diagram_elements_send_message_end_event}
 
 <div class="admonition question" markdown="block">
 ## Определения {: .admonition-title #definitions}

@@ -7,8 +7,6 @@ nav:
   - security.md
   - logging_engine.md
   - log_files_event_examples.md
-  - ...
   - linux
   - windows
-  - linux/auxiliary_software_deploy
-  - windows/auxiliary_software_deploy
+  - ...

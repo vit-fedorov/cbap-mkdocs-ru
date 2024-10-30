@@ -530,7 +530,7 @@
 
 [process_diagram_elements_none_intermediate_event]: {{ kbArticleURLPrefix }}2380
 
-[none_intermediate_event_milestone_duration]: {{ kbArticleURLPrefix }}2380#process_diagram_elements_none_intermediate_event_milestone_duration
+[process_diagram_elements_none_intermediate_event_milestone_duration]: {{ kbArticleURLPrefix }}2380#process_diagram_elements_none_intermediate_event_milestone_duration
 
 [process_diagram_elements_none_end_event]: {{ kbArticleURLPrefix }}2387
 

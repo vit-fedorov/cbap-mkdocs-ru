@@ -1,0 +1,258 @@
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr"> <div class="md-container" data-md-component="container"> <main class="md-main" data-md-component="main"> <div class="md-main__inner md-grid"> <nav aria-label="Содержание" class="md-nav md-nav--secondary"> <div class="mce-toc"> <h2 class="toc-heading"> Содержание </h2> <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix=""> <li class="md-nav__item"> <a class="md-nav__link mkdocs_imported_link" href="#подготовка-физических-и-виртуальных-машин-пакетов-программ"> <span class="md-ellipsis"> Подготовка физических и виртуальных машин, пакетов программ </span> </a> <nav aria-label="Подготовка физических и виртуальных машин, пакетов программ" class="md-nav"> <ul class="md-nav__list"> <li class="md-nav__item"> <a class="md-nav__link mkdocs_imported_link" href="#пример-конфигурации-серверов"> <span class="md-ellipsis"> Пример конфигурации серверов </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item"> <a class="md-nav__link mkdocs_imported_link" href="#установка-elasticsearch-из-deb-пакета"> <span class="md-ellipsis"> Установка Elasticsearch из deb-пакета </span> </a> </li> <li class="md-nav__item"> <a class="md-nav__link mkdocs_imported_link" href="#конфигурация-elasticsearch"> <span class="md-ellipsis"> Конфигурация Elasticsearch </span> </a> </li> <li class="md-nav__item"> <a class="md-nav__link mkdocs_imported_link" href="#запуск-elasticsearch"> <span class="md-ellipsis"> Запуск Elasticsearch </span> </a> </li> <li class="md-nav__item"> <a class="md-nav__link mkdocs_imported_link" href="#проверка-состояния-кластера"> <span class="md-ellipsis"> Проверка состояния кластера </span> </a> </li> <li class="md-nav__item"> <a class="md-nav__link mkdocs_imported_link" href="#пример-yml-файла-конфигурации-узла-elasticsearch"> <span class="md-ellipsis"> Пример yml-файла конфигурации узла Elasticsearch </span> </a> </li> </ul> </div> </nav> <div class="md-content" data-md-component="content"> <article class="md-content__inner md-typeset">  <p>Введение</p> <p>Для работы ПО <strong>Comindware Business Application Platform</strong> требуется сервер Elasticsearch версии не ниже 8.10.2.</p> <p>Здесь представлены требования к конфигурации компьютеров, инструкции по установке Elasticsearch, и настройке узлов кластера Elasticsearch без проверки сертификатов подлинности на виртуальных машинах с ОС Ubuntu 22.04.4 LTS.</p> <p>Только после запуска службы Elasticsearch можно приступать к развертыванию <strong>Comindware Business Application Platform</strong>, указав путь к серверу Elasticsearch.</p> <h2 id="подготовка-физических-и-виртуальных-машин-пакетов-программ">Подготовка физических и виртуальных машин, пакетов программ</h2> <p>Установка в минимальной конфигурации выполняется на 3 разделённых виртуальных машинах.</p> <p>Для полнофункциональной отказоустойчивой системы требуется установка на 4 виртуальных машинах с Ubuntu 22.04.LTS, расположенных на как минимум 3 физических машинах (IP-адреса приведены ниже исключительно для примера).</p> <h3 id="пример-конфигурации-серверов">Пример конфигурации серверов</h3> <ul> <li><code>masterdatanode1</code> c IP-адресом <code>1.1.1.1</code> и ролями <code>data</code>, <code>master</code>, <code>ingest</code>.</li> <li>ОЗУ не менее 8 ГБ, 4 ядра, SSD не менее 30 ГБ.</li> <li><code>datanode2</code> c IP-адресом <code>1.1.1.2</code> и ролями <code>data</code>, <code>ingest</code>.</li> <li>ОЗУ не менее 8 ГБ, 4 ядра, SSD не менее 30 ГБ.</li> <li><code>masternode3</code> c IP-адресом <code>1.1.1.3</code> и ролью <code>master</code>.</li> <li>ОЗУ не менее 4 ГБ, 4 ядра, SSD не менее 30 ГБ.</li> <li><code>masternode4</code> c IP-адресом <code>1.1.1.4</code> и ролью master типа <code>voting_only</code>.</li> <li>ОЗУ не менее 4 ГБ, 4 ядра, SSD не менее 30 ГБ.</li> </ul> <p>Серверы <code>masterdatanode1</code> и <code>datanode2</code> необходимо разместить на разных физических машинах.</p> <p>На все машины в папку <code>/home/username</code> необходимо загрузить:</p> <ul> <li><code>deb</code>-пакет <code>elasticsearch-8.5.1-amd64.deb</code></li> <li><code>yml</code>-файл конфигурации для Elasticsearch <code>customElasticConfig.yml</code></li> </ul> <h2 id="установка-elasticsearch-из-deb-пакета">Установка Elasticsearch из deb-пакета</h2> <p>Повторите шаги, описанные в этом разделе, для каждого из узлов Elasticsearch.</p> <ol class="colored_numbers_list"> <li>Обновите ПО на сервере:</li> </ol> <div class="highlight"><code><pre><span></span><code>sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo reboot</code><br/>
+</pre></code></div> <p>В процессе обновления сервер перезагрузится.</p> <ol class="colored_numbers_list" start="2"> <li>Перейдите в папку пользователя:</li> </ol> <div class="highlight"><code><pre><span></span><code>cd /home/username/</code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="3"> <li>Запустите процесс установки Elasticsearch:</li> </ol> <div class="highlight"><code><pre><span></span><code>sudo dpkg --install elasticsearch-8.5.1-amd64.deb</code><br/>
+</pre></code></div> <p>По окончании установки машина выдаст отчёт:</p> <div class="highlight"><code><pre><span></span><code>Setting up elasticsearch (8.10.2) ...</code><br/>
+<code></code><br/>
+<code>---------------------------   </code><br/>
+<code>Security autoconfiguration information</code><br/>
+<code></code><br/>
+<code>Authentication and authorization are enabled.</code><br/>
+<code></code><br/>
+<code>TLS for the transport and HTTP layers is enabled and configured.</code><br/>
+<code></code><br/>
+<code>The generated password for the elastic built-in superuser is : wfcEcSTqfyttNCNdpQgv</code><br/>
+<code></code><br/>
+<code>If this node should join an existing cluster, you can reconfigure this with</code><br/>
+<code></code><br/>
+<code>'/usr/share/elasticsearch/bin/elasticsearch-reconfigure-node --enrollment-token &lt;token-here&gt;'</code><br/>
+<code></code><br/>
+<code>after creating an enrollment token on your existing cluster.</code><br/>
+<code></code><br/>
+<code>You can complete the following actions at any time:</code><br/>
+<code></code><br/>
+<code>Reset the password of the elastic built-in superuser with</code><br/>
+<code></code><br/>
+<code>'/usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic'.</code><br/>
+<code></code><br/>
+<code>Generate an enrollment token for Kibana instances with</code><br/>
+<code></code><br/>
+<code>'/usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana'.</code><br/>
+<code></code><br/>
+<code>Generate an enrollment token for Elasticsearch nodes with</code><br/>
+<code></code><br/>
+<code>'/usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s node'.</code><br/>
+<code></code><br/>
+<code>---------------------------------------------------------------------</code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="4"> <li>Обратите внимание на строку The generated password for the elastic built-in superuser is — напротив неё будет выведен автоматически сформированный пароль для встроенного суперпользователя elastic. <strong>Сохраните этот пароль.</strong></li> </ol> <h2 id="конфигурация-elasticsearch">Конфигурация Elasticsearch</h2> <p>Повторите шаги, описанные в этом разделе, для каждого из узлов Elasticsearch.</p> <p>Помните, что имя кластера <code>cluster.name</code> для каждого из узлов должно совпадать, а имя узла <code>node.name</code> должно быть уникальным.</p> <ol class="colored_numbers_list"> <li>Создайте папки, в которые Elasticsearch будет сохранять данные журналов, индексов и резервных копий:</li> </ol> <div class="highlight"><code><pre><span></span><code>sudo mkdir /var/elasticsearch</code><br/>
+<code></code><br/>
+<code>sudo mkdir /var/elasticsearch/data</code><br/>
+<code></code><br/>
+<code>sudo mkdir /var/elasticsearch/logs</code><br/>
+<code></code><br/>
+<code>sudo mkdir /var/elasticsearch/backups</code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="2"> <li>Измените владельца папки и права доступа к ней:</li> </ol> <div class="highlight"><code><pre><span></span><code>sudo chown elasticsearch:elasticsearch --recursive /var/elasticsearch/</code><br/>
+<code></code><br/>
+<code>sudo chmod  764 --recursive /var/elasticsearch/      </code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="3"> <li>Создайте папку для хранения резервной копии <code>yml</code>-файла конфигурации Elasticsearch:</li> </ol> <div class="highlight"><code><pre><span></span><code>sudo mkdir /etc/elasticsearch/backupConfig        </code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="4"> <li>Переместите <code>yml</code>-файл конфигурации Elasticsearch в папку <code>/etc/elasticsearch/backupConfig</code>:</li> </ol> <div class="highlight"><code><pre><span></span><code>sudo mv /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/backupConfig</code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="5"> <li>Создайте новый  <code>yml</code>-файл конфигурации Elasticsearch <code>elasticsearch.yml</code>:</li> </ol> <div class="highlight"><code><pre><span></span><code>sudo nano /etc/elasticsearch/elasticsearch.yml</code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="6"> <li>Скопируйте в созданный файл конфигурации следующее содержимое:</li> </ol> <div class="highlight"><code><pre><span></span><code>bootstrap.memory_lock: false</code><br/>
+<code></code><br/>
+<code>cluster.name: elasticsearch.example.cbap</code><br/>
+<code></code><br/>
+<code>cluster.max_shards_per_node: 10000</code><br/>
+<code></code><br/>
+<code>http.port: 9200</code><br/>
+<code></code><br/>
+<code>node.roles: [ master, data, ingest, remote_cluster_client ]</code><br/>
+<code></code><br/>
+<code>node.name: elasticsearch1</code><br/>
+<code></code><br/>
+<code>path.data: /var/elasticsearch/data</code><br/>
+<code></code><br/>
+<code>path.logs: /var/elasticsearch/logs</code><br/>
+<code></code><br/>
+<code>path.repo: /var/elasticsearch/backups</code><br/>
+<code></code><br/>
+<code>xpack.security.enabled: false</code><br/>
+<code></code><br/>
+<code>xpack.security.http.ssl:</code><br/>
+<code></code><br/>
+<code>  enabled: false</code><br/>
+<code></code><br/>
+<code>#  keystore.path: certs/es1.p12    # [&lt;-] specify path to signedNodeCert.p12 here</code><br/>
+<code></code><br/>
+<code>xpack.security.transport.ssl:</code><br/>
+<code></code><br/>
+<code>  enabled: false</code><br/>
+<code></code><br/>
+<code>#  key: certs/es1.key    # [&lt;-] specify path to nodecert.key here</code><br/>
+<code></code><br/>
+<code>#  certificate: certs/es1.crt    # [&lt;-] specify path to nodeCert.crt here</code><br/>
+<code></code><br/>
+<code>#  certificate_authorities: [ "certs/CMW-RootCA.crt" ]    # [&lt;-] specify path to CACert.crt here</code><br/>
+<code></code><br/>
+<code>network.host: 192.168.1.43</code><br/>
+<code></code><br/>
+<code>discovery.seed_hosts : ["192.168.1.43", "192.168.1.42","1.1.1.3"]</code><br/>
+<code></code><br/>
+<code>cluster.initial_master_nodes:</code><br/>
+<code></code><br/>
+<code>  - elasticsearch1</code><br/>
+<code></code><br/>
+<code>  - elasticsearch2</code><br/>
+<code></code><br/>
+<code>  - elasticsearch3  </code><br/>
+<code></code><br/>
+<code>#Этот флаг требуется для записи данных в индексы  </code><br/>
+<code>indices.id_field_data.enabled: true</code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="6"> <li> <p>Сохраните изменения <code>yml</code>-файла конфигурации закройте текстовый редактор Nano, нажав клавиши: <code>Ctrl+O, Ввод, Ctrl+X</code>.</p> </li> <li> <p>Измените для <code>yml</code>-файла конфигурации Elasticsearch владельца и права доступа:</p> </li> </ol> <div class="highlight"><code><pre><span></span><code>sudo chown elasticsearch:elasticsearch --recursive /etc/elasticsearch/elasticsearch.yml</code><br/>
+<code></code><br/>
+<code>sudo chmod 764 --recursive /etc/elasticsearch/elasticsearch.yml</code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="8"> <li>Откройте в текстовом редакторе Nano <code>yml</code>-файл конфигурации Elasticsearch:</li> </ol> <div class="highlight"><code><pre><span></span><code>sudo nano /etc/elasticsearch/elasticsearch.yml        </code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="9"> <li>Задайте имя кластера с помощью директивы <code>cluster.name</code> в строке 2 <code>yml</code>-файла конфигурации: </li> </ol> <div class="highlight"><code><pre><span></span><code>cluster.name: elasticsearch.example.cbap </code><br/>
+</pre></code></div> <div class="notice notice-info"> <p class="admonition-title">Примечание</p> <p>Имя кластера должно быть одинаковым для всех узлов кластера Elasticsearch.</p> </div> <ol class="colored_numbers_list" start="10"> <li>Задайте имя узла с помощью директивы <code>node.name</code> в строке 11 <code>yml</code>-файла конфигурации. </li> </ol> <div class="notice notice-info"> <p class="admonition-title">Примечание</p> <p>Имя узла должно быть уникальным для каждого из узлов кластера Elasticsearch:</p> </div> <div class="highlight"><code><pre><span></span><code>node.name: elasticsearch1</code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="11"> <li>Укажите путь до директории, в которую настраиваемый узел Elasticsearch будет сохранять файлы данных шардов, отредактировав строку 13:</li> </ol> <div class="highlight"><code><pre><span></span><code>path.data: /var/elasticsearch/data</code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="12"> <li>Укажите путь до директории, в которую настраиваемый узел Elasticsearch будет сохранять файлы логов, отредактировав строку 14:</li> </ol> <div class="highlight"><code><pre><span></span><code>path.logs: /var/elasticsearch/logs</code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="13"> <li>Укажите путь до директории, в которую настраиваемый узел Elasticsearch будет сохранять файлы резервного копирования, отредактировав строку 15:</li> </ol> <div class="highlight"><code><pre><span></span><code>path.repo: /var/elasticsearch/backups</code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="14"> <li>Укажите уникальный IP-адрес (как пример - 192.168.ХХХ.1) машины настраиваемого узла Elasticsearch, отредактировав строку 29:</li> </ol> <div class="highlight"><code><pre><span></span><code>network.host: 192.168.XXX.1</code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="15"> <li>Задайте список IP-адресов машин (как пример - 192.168.XXX.1, 192.168.XXX.2, 192.168.XXX.3), на которых будут расположены узлы кластера Elasticsearch, отредактировав строку 31. Например, для кластера из трех узлов, директива будет вот такой:</li> </ol> <div class="highlight"><code><pre><span></span><code>discovery.seed_hosts : ["192.168.XXX.1", "192.168.XXX.2","192.168.XXX.3"]</code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="16"> <li>Сохраните изменения <code>yml</code>-файла конфигурации и закройте текстовый редактор Nano, нажав клавиши: <code>Ctrl+O, Ввод, Ctrl+X</code>.</li> </ol> <h2 id="запуск-elasticsearch">Запуск Elasticsearch</h2> <p>Повторите шаги, описанные в этом разделе, для каждого из узлов Elasticsearch.</p> <ol class="colored_numbers_list"> <li>Перезагрузите конфигурацию <code>systemd</code>:</li> </ol> <div class="highlight"><code><pre><span></span><code>sudo systemctl daemon-reload</code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="2"> <li>Добавьте процесс <code>elasticsearch.service</code> в список автозагрузки при запуске ОС и запустите его:</li> </ol> <div class="highlight"><code><pre><span></span><code>sudo systemctl enable --now elasticsearch.service</code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="3"> <li>Убедитесь, что процесс <code>elasticsearch.service</code> запустился:</li> </ol> <div class="highlight"><code><pre><span></span><code>sudo systemctl status elasticsearch.service</code><br/>
+</pre></code></div> <p>Пример результата проверки статуса процесса <code>elasticsearch.service</code>:</p> <div class="highlight"><code><pre><span></span><code>elasticsearch.service - Elasticsearch</code><br/>
+<code></code><br/>
+<code>  Loaded: loaded (/lib/systemd/system/elasticsearch.service; enabled; vendor preset: enabled)</code><br/>
+<code></code><br/>
+<code>  Active: active (running) since Thu 2022-12-01 10:12:27 UTC; 6s ago</code><br/>
+<code></code><br/>
+<code>    Docs: &lt;&lt;https://www.elastic.co&gt;&gt;</code><br/>
+<code></code><br/>
+<code>Main PID: 3597 (java)</code><br/>
+<code></code><br/>
+<code>   Tasks: 63 (limit: 4575)</code><br/>
+<code></code><br/>
+<code>  Memory: 629.9M</code><br/>
+<code></code><br/>
+<code>     CPU: 44.422s</code><br/>
+<code></code><br/>
+<code>  CGroup: /system.slice/elasticsearch.service</code><br/>
+<code></code><br/>
+<code>          ├─3597 /usr/share/elasticsearch/jdk/bin/java -Xms4m -Xmx64m -XX:+UseSerialGC -Dcli.name=server -Dcli.scri&gt;</code><br/>
+<code></code><br/>
+<code>          ├─3656 /usr/share/elasticsearch/jdk/bin/java -Des.networkaddress.cache.ttl=60 -Des.networkaddress.cache.n&gt;</code><br/>
+<code></code><br/>
+<code>          └─3676 /usr/share/elasticsearch/modules/x-pack-ml/platform/linux-x86_64/bin/controller</code><br/>
+<code></code><br/>
+<code>Dec 01 10:11:12 penguin-02 systemd[1]: Starting Elasticsearch...</code><br/>
+<code></code><br/>
+<code>Dec 01 10:12:27 penguin-02 systemd[1]: Started Elasticsearch.        </code><br/>
+</pre></code></div> <div class="notice notice-info"> <p class="admonition-title">Примечание</p> <p>В случае возникновения ошибок при запуске процесса <code>elasticsearch.service</code> рекомендуется изучить файл журнала:</p> </div> <div class="highlight"><code><pre><span></span><code>sudo less /var/elasticsearch/logs/yourClusterName.log        </code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="4"> <li>С помощью curl убедитесь, что REST API узла Elasticsearch доступен:</li> </ol> <div class="highlight"><code><pre><span></span><code>sudo curl &lt;http://192.168.XXX.XX&gt;Х:9200</code><br/>
+</pre></code></div> <p>Пример ответа на запрос:</p> <div class="highlight"><code><pre><span></span><code>{</code><br/>
+<code></code><br/>
+<code>"name" : "elasticsearch1",</code><br/>
+<code></code><br/>
+<code>"cluster_name" : "yourClusterName",</code><br/>
+<code></code><br/>
+<code>"cluster_uuid" : "Xfj14lWBRf2c6GAuwtV5lg",</code><br/>
+<code></code><br/>
+<code>"version" : {</code><br/>
+<code></code><br/>
+<code>    "number" : "8.5.1",</code><br/>
+<code></code><br/>
+<code>    "build_flavor" : "default",</code><br/>
+<code></code><br/>
+<code>    "build_type" : "deb",</code><br/>
+<code></code><br/>
+<code>    "build_hash" : "c1310c45fc534583afe2c1c03046491efba2bba2",</code><br/>
+<code></code><br/>
+<code>    "build_date" : "2022-11-09T21:02:20.169855900Z",</code><br/>
+<code></code><br/>
+<code>    "build_snapshot" : false,</code><br/>
+<code></code><br/>
+<code>    "lucene_version" : "9.4.1",</code><br/>
+<code></code><br/>
+<code>    "minimum_wire_compatibility_version" : "7.17.0",</code><br/>
+<code></code><br/>
+<code>    "minimum_index_compatibility_version" : "7.0.0"</code><br/>
+<code></code><br/>
+<code>    },</code><br/>
+<code></code><br/>
+<code>"tagline" : "You Know, for Search"</code><br/>
+<code></code><br/>
+<code>}        </code><br/>
+</pre></code></div> <p>Повторите шаги, описанные в этом разделе, для каждого из узлов Elasticsearch.</p> <h2 id="проверка-состояния-кластера">Проверка состояния кластера</h2> <ol class="colored_numbers_list"> <li>Выполнив для каждого из узлов кластера Elasticsearch шаги, описанные в предыдущих разделах, от любого из узлов выполните GET-запрос проверки состояния кластера:</li> </ol> <div class="highlight"><code><pre><span></span><code>sudo curl &lt;http://192.168.XXX.XX1:9200/_cluster/health?pretty&gt;&gt;</code><br/>
+</pre></code></div> <ol class="colored_numbers_list" start="2"> <li>Убедитесь, что в ответе на запрос значение параметра <code>number_of_nodes</code> равно количеству узлов кластера:</li> </ol> <div class="highlight"><code><pre><span></span><code>{</code><br/>
+<code></code><br/>
+<code>"cluster_name" : "yourClusterName",</code><br/>
+<code></code><br/>
+<code>"status" : "green",</code><br/>
+<code></code><br/>
+<code>"timed_out" : false,</code><br/>
+<code></code><br/>
+<code>"number_of_nodes" : 2,</code><br/>
+<code></code><br/>
+<code>"number_of_data_nodes" : 2,</code><br/>
+<code></code><br/>
+<code>"active_primary_shards" : 1,</code><br/>
+<code></code><br/>
+<code>"active_shards" : 2,</code><br/>
+<code></code><br/>
+<code>"relocating_shards" : 0,</code><br/>
+<code></code><br/>
+<code>"initializing_shards" : 0,</code><br/>
+<code></code><br/>
+<code>"unassigned_shards" : 0,</code><br/>
+<code></code><br/>
+<code>"delayed_unassigned_shards" : 0,</code><br/>
+<code></code><br/>
+<code>"number_of_pending_tasks" : 0,</code><br/>
+<code></code><br/>
+<code>"number_of_in_flight_fetch" : 0,</code><br/>
+<code></code><br/>
+<code>"task_max_waiting_in_queue_millis" : 0,</code><br/>
+<code></code><br/>
+<code>"active_shards_percent_as_number" : 100.0</code><br/>
+<code></code><br/>
+<code>}        </code><br/>
+</pre></code></div> <h2 id="пример-yml-файла-конфигурации-узла-elasticsearch">Пример yml-файла конфигурации узла Elasticsearch</h2> <div class="highlight"><code><pre><span></span><code>bootstrap.memory_lock: false</code><br/>
+<code></code><br/>
+<code>cluster.name: elasticsearch.example.cbap</code><br/>
+<code></code><br/>
+<code>cluster.max_shards_per_node: 10000</code><br/>
+<code></code><br/>
+<code>http.port: 9200</code><br/>
+<code></code><br/>
+<code>node.roles: [ master, data, ingest, remote_cluster_client ]</code><br/>
+<code></code><br/>
+<code>node.name: elasticsearch1</code><br/>
+<code></code><br/>
+<code>path.data: /var/elasticsearch/data</code><br/>
+<code></code><br/>
+<code>path.logs: /var/elasticsearch/logs</code><br/>
+<code></code><br/>
+<code>path.repo: /var/elasticsearch/backups</code><br/>
+<code></code><br/>
+<code>xpack.security.enabled: false</code><br/>
+<code></code><br/>
+<code>xpack.security.http.ssl:</code><br/>
+<code></code><br/>
+<code>  enabled: false</code><br/>
+<code></code><br/>
+<code>#  keystore.path: certs/es1.p12    # [&lt;-] specify path to signedNodeCert.p12 here</code><br/>
+<code></code><br/>
+<code>xpack.security.transport.ssl:</code><br/>
+<code></code><br/>
+<code>  enabled: false</code><br/>
+<code></code><br/>
+<code>#  key: certs/es1.key    # [&lt;-] specify path to nodecert.key here</code><br/>
+<code></code><br/>
+<code>#  certificate: certs/es1.crt    # [&lt;-] specify path to nodeCert.crt here</code><br/>
+<code></code><br/>
+<code>#  certificate_authorities: [ "certs/CMW-RootCA.crt" ]    # [&lt;-] specify path to CACert.crt here</code><br/>
+<code></code><br/>
+<code>network.host: 192.168.1.43</code><br/>
+<code></code><br/>
+<code>discovery.seed_hosts : ["192.168.1.43", "192.168.1.42","1.1.1.3"]</code><br/>
+<code></code><br/>
+<code>cluster.initial_master_nodes:</code><br/>
+<code></code><br/>
+<code>  - elasticsearch1</code><br/>
+<code></code><br/>
+<code>  - elasticsearch2</code><br/>
+<code></code><br/>
+<code>  - elasticsearch3      </code><br/>
+</pre></code></div> </article> </div> </div> <a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#"> <i class="fa-light fa-arrow-up">&zwnj;<!--icon--></i> К началу </a> </main> </div> <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>

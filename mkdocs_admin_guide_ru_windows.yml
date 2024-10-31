@@ -53,7 +53,8 @@ nav:
     - administration/deploy/windows/article-2316-Comindware Architect. Инструкции
       по установке экземпляра ПО в ОС Windows.md
     - Вспомогательное ПО. Развёртывание:
-      - administration/deploy/windows/auxiliary_software_deploy/aabbix_agent_deploy_windows.md
+      - administration/deploy/linux/auxiliary_software_deploy/antivirus_exceptions_configure.md
+      - administration/deploy/windows/auxiliary_software_deploy/zabbix_agent_deploy_windows.md
       - administration/deploy/windows/auxiliary_software_deploy/apache_ignite_deploy_windows.md
       - administration/deploy/windows/auxiliary_software_deploy/elasticsearch_deploy_windows.md
       - administration/deploy/windows/auxiliary_software_deploy/kafka_install_windows.md
@@ -119,10 +120,8 @@ nav:
         - administration/connections_communication_routes/rest_odata_connections/get_connection.md
         - administration/connections_communication_routes/rest_odata_connections/odata_connection.md
         - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
-        - administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
-        - administration/connections_communication_routes/rest_odata_connections/send_http_example.md
         - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
       - SQL-подключения:
         - administration/connections_communication_routes/sql_connections/sql_send_connection.md
@@ -144,7 +143,6 @@ nav:
         - business_apps/templates/template_types/record_templates.md
         - business_apps/templates/template_types/process_templates.md
         - business_apps/templates/template_types/account_templates.md
-        - business_apps/templates/template_types/article-2110-Шаблон аккаунта. Использование.md
         - business_apps/templates/template_types/role_templates.md
         - business_apps/templates/template_types/organizational_unit_templates.md
     - business_apps/roles_in_application.md
@@ -168,6 +166,7 @@ nav:
 exclude_docs: |
   administration/deploy/linux/**
   administration/deploy/linux/auxiliary_software_deploy/**
+  !administration/deploy/linux/auxiliary_software_deploy/antivirus_exceptions_configure.md
   administration/architecture/functions.md
   administration/account_administration/accounts_dc_sync/linux/ad_authentication_configure.md
   administration/account_administration/accounts_dc_sync/linux/sso_authenticatation_configure.md
@@ -200,6 +199,7 @@ exclude_docs: |
   business_apps/templates/forms/form_rules.md
   business_apps/templates/forms/form_static_elements.md
   business_apps/templates/tables/table_configure.md
+  business_apps/templates/template_types/article-2110-Шаблон аккаунта. Использование.md
   devops_wiki/**
   examples/**
   using_the_system/**

@@ -9,13 +9,11 @@ kbId:
 
 Для работы **{{ productName }}** требуется сервер Elasticsearch. См. [системные требования][system_requirements].
 
-В случае установки **{{ productName }}** версии {{ productVersion }} в Windows [Утилита администрирования](https://kb.comindware.ru/category.php?id=414) устанавливает службу Elasticsearch в папку `C:\Program Files\Elasticsearch\elasticsearch-8.1.0\`. Эта служба имеет базовую конфигурацию и доступна по адресу `localhost:9200`.
+При установке **{{ productName }}** версии для ОС Linux одновременно с экземпляром ПО можно развернуть сервер Elasticsearch. Для этого укажите ключ `-e` при запуске скрипта.
 
-Вы можете использовать имеющуюся службу Elasticsearch или развернуть её на отдельном сервере.
+Служба Elasticsearch имеет базовую конфигурацию и доступна по адресу `localhost:9200`. Вы можете использовать имеющуюся службу Elasticsearch или развернуть её на отдельном сервере.
 
-Здесь представлены требования к конфигурации компьютера для сервера Elasticsearch, инструкции по установке и настройке конфигурации сервера и службы Elasticsearch в ОС Windows, а также приведен пример типового файла конфигурации. Инструкции представлены для версии 8.10.2, для других версий содержимое файлов конфигурации и порядок установки могут быть иными.
-
-Только после того, как служба Elasticsearch запущена, можно приступать к развертыванию **{{ productName }}**, указав путь к серверу Elasticsearch.
+Здесь представлены требования к конфигурации компьютера для сервера Elasticsearch, инструкции по установке и настройке конфигурации сервера и службы Elasticsearch в ОС Linux, а также приведен пример типового файла конфигурации. Инструкции представлены для версии 8.10.2, для других версий содержимое файлов конфигурации и порядок установки могут быть иными.
 
 ## Требования к компьютеру
 
@@ -27,82 +25,51 @@ kbId:
 
 ## Установка Elasticsearch
 
-Для установки Elasticsearch необходимо распаковать исполняемые файлы из ZIP-архива, а затем настроить переменные среды, службу Elasticsearch и конфигурацию сервера.
+Здесь представлена инструкция по установке Elasticsearch с помощью дистрибутива **{{ productName }}**. Для установки Elasticsearch без помощи дистрибутива воспользуйтесь [инструкцией с официального сайта](https://www.elastic.co/guide/en/elasticsearch/reference/current/targz.html).
 
-В процессе установки и настройки Elasticsearch все команды следует выполнять от имени администратора.
-
-1. Скачайте файл `elasticsearch-<8.XX.X>-windows-x86_64.zip` c дистрибутивом Elasticsearch. Здесь `<8.XX.X>` — номер версии Elasticsearch.
-2. Распакуйте архив в целевую папку, например: `C:\Program Files\Elastic\Elasticsearch\elasticsearch-<8.XX.X>`
-
-    Последующие инструкции подразумевают, что сервер Elasticsearch установлен в эту папку.
-
-3. Настройте переменные среды, как указано ниже:
-
-    - Путь к исполняемым файлам Elasticsearch: `ES_HOME: C:\Program Files\Elasticsearch\elasticsearch\elasticsearch-<8.XX.X>`
-    - Путь к JDK (требуется версия, совместимая с текущей версией Elasticsearch): `ES_JAVA_HOME: C:\Program Files\Elasticsearch\elasticsearch-<8.XX.X>\jdk`
-    - Папка с файлами конфигурации: `ES_PATH_CONF: C:\Program Files\Elasticsearch\elasticsearch-<8.XX.X>\config`
-    - Папка с файлами журналов: `SERVICE_LOG_DIR: C:\ProgramData\Elasticsearch\elasticsearch-<8.XX.X>\logs`
-    - Директива для автоматического запуска службы: `ES_START_TYPE: auto`
-
-4. Настройте службу Elasticsearch с помощью файла конфигурации `elasticsearch.yml`
-
-    Можно скопировать его содержимое из раздела «[Пример типового файла конфигурации Elasticsearch](#пример-типового-файла-конфигурации-elasticsearch)».
-
-5. Зарегистрируйте службу Elasticsearch, выполнив следующую команду:
+1. Перейдите в режим суперпользователя:
 
     ``` sh
-    "C:\Program Files\Elasticsearch\elasticsearch-<8.XX.X>\bin\elasticsearch-service.bat" install
+    sudo -i
     ```
 
-6. Запустите службу Elasticsearch, выполнив следующую команду:
+    или
 
     ``` sh
-    "C:\Program Files\Elasticsearch\elasticsearch-<8.XX.X>\bin\elasticsearch-service.bat" start
+    su -
     ```
 
-7. Сформируйте пароль для пользователя Elasticsearch с помощью следующей команды:
+2. Скачайте и распакуйте дистрибутив **{{ productName }}** по ссылке, предоставленной компанией **{{ companyName }}** (`X.X.XXXX.X` — номер версии ПО, `<osname>` — название операционной системы):
 
     ``` sh
-    "C:\Program Files\Elasticsearch\elasticsearch-<8.XX.X>\bin\elasticsearch-reset-password.bat" –u elastic
+    tar -xf X.X-release-ru-X.X.XXXX.X.<osname>.tar.gz
     ```
 
-8. Сохраните пароль, который отобразится на экране.
+3. Перейдите в распакованную папку:
 
-    !!! note "Примечание"
+    ``` sh
+    cd CMW_<osname>/
+    ```
 
-        Если пароль не отобразился, но отобразилось сообщение с предложением нажать клавишу ++Y++ для просмотра пароля, нажмите клавишу ++Y++.
+4. Установите Elasticsearch из дистрибутива:
 
-9. Убедитесь, что служба Elasticsearch успешно зарегистрирована и работает с помощью приложения «Службы» (`services.msc`):
+    ``` sh
+    sh install.sh -e 
+    ```
 
-    _![Сведения о службе Elasticsearch в приложении «Службы»](https://kb.comindware.ru/assets/Picture5.png)_
+5. После установки удостоверьтесь, что Elasticsearch запущен и имеет статус Active (running):
 
-10. Если служба Elasticsearch не запустилась:
+    ``` sh
+    systemctl status elasticsearch
+    ```
 
-    - проверьте ошибки конфигурации в журнале Elasticsearch по пути `C:\ProgramData\Elasticsearch\elasticsearch-<8.XX.X>\logs` (указанном в переменной окружения среды `SERVICE_LOG_DIR`).
-    - устраните ошибки, запустите службу и проверьте работоспособность службы, как указано в пункте 8.
+6. Если сервис Elasticsearch не работает, запустите его:
 
-## Подключение к Elasticsearch при развертывании экземпляра продукта
+    ``` sh
+    systemctl start elasticsearch
+    ```
 
-1. Перед созданием экземпляра продукта укажите адрес сервера Elasticsearch, который будет использоваться по умолчанию для новых экземпляров продукта, в конфигурации Утилиты администрирования Comindware. См. _«[Утилита администрирования {{ companyName }}. Установка и использование][admin_utility_install_launch]»_.
-
-    _![Настройка стандартного адреса сервера Elasticsearch](https://kb.comindware.ru/assets/Picture6.png)_
-
-2. Если не был указан адрес сервера Elasticsearch в конфигурации Утилиты администрирования, то его потребуется указать при развертывании экземпляра продукта.
-3. Укажите адрес сервера и префикс индекса Elasticsearch для данного экземпляра **{{ productName }}**.
-
-    _![Настройка адреса сервера Elasticsearch для экземпляра продукта](https://kb.comindware.ru/assets/Picture7.png)_
-
-4. После развертывания экземпляра продукта в разделе «**Администрирование системы**» — «**Подключения**» будет отображаться настроенное подключение к Elasticsearch.
-
-    _![Подключение к Elasticsearch в новом экземпляре продукта](https://kb.comindware.ru/assets/Picture8.png)_
-
-5. Чтобы изменить свойства подключения к Elasticsearch, дважды нажмите его строку в списке подключений.
-6. Отобразится окно «**Свойства подключения: Elasticsearch**».
-7. При необходимости измените свойства подключения, **проверьте соединение** и нажмите кнопку «**Сохранить**».
-
-    _![Настройка свойств подключения к Elasticsearch](https://kb.comindware.ru/assets/Picture9.png)_
-
-8. После изменения свойств сервера Elasticsearch перезапустите экземпляр продукта с помощью Утилиты администрирования {{ companyName }}. См.  _«[Утилита администрирования {{ companyName }}. Установка и использование][admin_utility_install_launch]»_.
+Для развёртывания кластера Elasticsearch см. _«[Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности][elasticsearch_cluster_deploy_no_certificates]»_.
 
 ## Пример типового файла конфигурации Elasticsearch
 
@@ -111,61 +78,46 @@ kbId:
 - сервер Elasticsearch состоит из единственного узла;
 - служба работает в локальной сети;
 - включена аутентификация;
-- служба доступна через порт `9201`;
-- адрес сервера `http://testhost:9201`;
-- путь к файлу конфигурации: `C:\Program Files\Elastic\Elasticsearch\<8.XX.X>\config\elasticsearch.yml`
+- служба доступна через порт `9200`;
+- адрес сервера `http://localhost:9200`;
+- путь к файлу конфигурации: `/etc/elasticsearch/elasticsearch.yml`
 
 ``` sh
-#Начало файла конфигурации   
-#Разрешить свопинг памяти   
-bootstrap.memory_lock: false   
-  
-#Название кластера   
-cluster.name: cmw   
-  
-#Максимальное возможное количество шардов в кластере   
-#Система создает отдельный индекс для каждого объекта мониторинга, поэтому рекомендуется увеличить количество шардов до 3000   
-cluster.max_shards_per_node: 3000   
-  
-#Стандартный номер порта 9200 изменен по соображениям безопасности   
-http.port: 9201   
-  
-#Сетевые параметры   
-#Если доступ по сети не требуется, то закомментируйте строки #network.host и discovery.seed_hosts   
-#Замените имя компьютера — testhost — на реальное имя   
-network.host: testhost   
-discovery.seed_hosts:   
-  - testhost   
-  
-#Простейшая конфигурация с одним узлом   
-discovery.type: single-node   
-  
-#Название узла   
-node.name: cmw   
-  
-#Путь к папке с данными   
-path.data: d:\ProgramData\Elasticsearch\elasticsearch-<8.XX.X>\data   
-  
-#Путь к папке с журналами   
-path.logs: d:\ProgramData\Elasticsearch\elasticsearch-<8.XX.X>\logs   
-  
-#Путь к папке с резервными копиями   
-#Путь должен указывать на существующий диск   
-#Резервные копии должны храниться на отдельном диске отдельно от #основных данных   
-#Раскомментируйте директиву path.repo, если требуется создавать резервные копии   
-#path.repo: d:elastic_backup   
-  
-#Обычная лицензия   
-xpack.license.self_generated.type: basic   
-  
-#Аутентификация включена   
-xpack.security.enabled: true   
-  
-#Этот флаг требуется для записи данных в индексы   
-indices.id_field_data.enabled: true   
-  
-#отключить геолокацию    
-ingest.geoip.downloader.enabled: false
+#======================== Elasticsearch Configuration =========================
+cluster.name: my-application
+# ------------------------------------ Node ------------------------------------
+node.name: node-1
+# ----------------------------------- Paths ------------------------------------
+path.data: /var/lib/elasticsearch # database path Elasticsearch
+path.logs: /var/log/elasticsearch # путь к файлам журнала Elasticsearch
+#path.repo: /var/backups/elasticsearch # путь к репозиторию резервных копий Elasticsearch
+# ----------------------------------- Memory -----------------------------------
+bootstrap.memory_lock: false
+# ---------------------------------- Network -----------------------------------
+# укажите IP сервера Elasticsearch или 127.0.0.1, если Elasticsearch и 
+# Comindware Business Application Platform развёрнуты на одной машине
+network.host: 127.0.0.1  
+http.port: 9200 # порт по умолчанию
+# --------------------------------- Discovery ----------------------------------
+discovery.type: single-node # директива для работы в режиме одного узла
+#discovery.seed_hosts: ["192.168.12.1"] # директива для работы кластера
+#cluster.initial_master_nodes: ["192.168.12.1"] # директива для работы кластера
+# ---------------------------------- Various -----------------------------------
+search.allow_expensive_queries: true
+action.destructive_requires_name: true
+indices.id_field_data.enabled: true
+# ---------------------------------- Security ----------------------------------
+xpack.security.enabled: false
+xpack.security.enrollment.enabled: false
+xpack.security.http.ssl:
+  enabled: false
+  #  keystore.path: certs/http.p12
+xpack.security.transport.ssl:
+  enabled: false
+  #  verification_mode: certificate
+  #  keystore.path: certs/transport.p12
+  #  truststore.path: certs/transport.p12
+http.host: 0.0.0.0 # IP - слушать внешний интерфейс, 127.0.0.1 - localhost, 0.0.0.0 - все
 ```
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -218,6 +218,8 @@
 
 [substitution]: {{ kbArticleURLPrefix }}2192
 
+[system_requirements]: {{ kbArticleURLPrefix }}1271
+
 [system_roles]: {{ kbArticleURLPrefix }}2175
 
 [system_service_management]: {{ kbArticleURLPrefix }}2182
@@ -622,6 +624,8 @@
 
 {% if userGuide or (adminGuideLinux and not adminGuideWindows) or kbExport %}
 
+[admin_utility_install_software]: {{ kbArticleURLPrefix }}2028
+
 [backup_restore_windows]: {{ kbArticleURLPrefix }}2101
 
 [backup_windows_external]: {{ kbArticleURLPrefix }}2301
@@ -673,5 +677,7 @@
 [logging_engine_rules]: {{ kbArticleURLPrefix }}2501#logging_engine_rules
 
 [paths]: {{ kbArticleURLPrefix }}2502
+
+[system_requirements]: {{ kbArticleURLPrefix }}1271
 
 {% endif %}

@@ -3,7 +3,7 @@ title: Системные требования {{ productName }}
 kbId: 1271
 ---
 
-# Системные требования {{ productName }}
+# Системные требования {{ productName }} {: #system_requirements}
 
 ## Введение
 

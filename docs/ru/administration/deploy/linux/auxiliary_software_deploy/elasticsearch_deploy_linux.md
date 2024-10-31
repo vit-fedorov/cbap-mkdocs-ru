@@ -1,9 +1,9 @@
 ---
-title: Установка Elasticsearch. Краткое руководство для Windows
-kbId: 2094
+title: Установка Elasticsearch. Краткое руководство для Linux
+kbId: 
 ---
 
-# Установка Elasticsearch. Краткое руководство для Windows {: #elasticsearch_deploy_windows}
+# Установка Elasticsearch. Краткое руководство для Linux {: #elasticsearch_deploy_Linux}
 
 ## Введение
 

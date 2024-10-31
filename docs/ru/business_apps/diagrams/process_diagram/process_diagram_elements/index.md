@@ -29,7 +29,7 @@ hide:
     * [Задача-выполнение сценария][process_diagram_elements_script_task]
     * [Вызов процесса][process_diagram_elements_process_call]
     * [Встроенный подпроцесс][process_diagram_elements_embedded_subprocess]
-* [process_diagram_elements_events][process_diagram_elements_events]
+* [События][process_diagram_elements_events]
     * [Начальные события][process_diagram_elements_events_start]
         * [Простое начальное событие][process_diagram_elements_none_start_event]
         * [Начальное событие-таймер][process_diagram_elements_timer_start_event]

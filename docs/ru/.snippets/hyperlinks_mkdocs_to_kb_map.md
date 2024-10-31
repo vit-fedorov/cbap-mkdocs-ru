@@ -38,8 +38,6 @@
 
 [html_supported_tags]: {{ kbArticleURLPrefix }}2413
 
-[experimental_feature_support]: {{ kbArticleURLPrefix }}1339#experimental_feature_support
-
 [experessions_intro]: {{ kbArticleURLPrefix }}2493
 
 [export_template_csharp_configure]: {{ kbArticleURLPrefix }}1942
@@ -115,6 +113,8 @@
 [elasticsearch_ssl_certificate_configure]: {{ kbArticleURLPrefix }}2337
 
 [elasticsearch_connection]: {{ kbArticleURLPrefix }}2593
+
+[experimental_feature_support]: {{ kbArticleURLPrefix }}1339#experimental_feature_support
 
 [get_connection]: {{ kbArticleURLPrefix }}2559
 
@@ -620,11 +620,19 @@
 
 {% endif %}
 
-{% if (adminGuideLinux and not adminGuideWindows) or kbExport %}
+{% if userGuide or (adminGuideLinux and not adminGuideWindows) or kbExport %}
 
 [instance_configure_windows]: {{ kbArticleURLPrefix }}2036
 
-{% elif (not adminGuideLinux and adminGuideWindows) or kbExport %}
+[sso_authentication_configure_windows]: {{ kbArticleURLPrefix }}2309
+
+{% endif %}
+
+{% if userGuide or (not adminGuideLinux and adminGuideWindows) or kbExport %}
+
+[ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}2517
+
+[backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
 
 [deploy_guide_linux]: {{ kbArticleURLPrefix }}2344
 
@@ -632,15 +640,15 @@
 
 [instance_configure_windows]: {{ kbArticleURLPrefix }}2036
 
+[sso_authenticatation_configure]: {{ kbArticleURLPrefix }}2583
+
+[sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}2583#sso_authentication_configure_keytab_update
+
 {% endif %}
 
 {% if (userGuide and not (adminGuideLinux or adminGuideWindows)) or kbExport %}
 
 [accounts_dc_sync]: {{ kbArticleURLPrefix }}2308
-
-[ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}2517
-
-[backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
 
 [deploy_guide_linux]: {{ kbArticleURLPrefix }}2344
 
@@ -655,11 +663,5 @@
 [logging_engine_rules]: {{ kbArticleURLPrefix }}2501#logging_engine_rules
 
 [paths]: {{ kbArticleURLPrefix }}2502
-
-[sso_authenticatation_configure]: {{ kbArticleURLPrefix }}2583
-
-[sso_authentication_configure_windows]: {{ kbArticleURLPrefix }}2309
-
-[sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}2583#sso_authentication_configure_keytab_update
 
 {% endif %}

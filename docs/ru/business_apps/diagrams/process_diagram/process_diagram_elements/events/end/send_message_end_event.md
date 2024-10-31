@@ -86,7 +86,7 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-**[process_diagram_elements_events][process_diagram_elements_events]**
+**[События][process_diagram_elements_events]**
 
 **[Типы конечных событий][типы-конечных-событий]**
 

@@ -1,105 +1,101 @@
-<h1>Темы. Настройка, применение, предпросмотр</h1><div class="md-container">
-<div class="md-main__inner md-grid">
+<h1>Темы. Настройка, применение, предпросмотр</h1><div class="md-container" data-md-component="container">
+<div class="md-main__inner md-grid"><nav aria-label="Содержание" class="md-nav md-nav--secondary">
 <div class="mce-toc">
 <h2 class="toc-heading">Содержание</h2>
-<ul>
-<li><a href="#mcetoc_1hq2osqr30">Использование конструктора тем</a></li>
-<li><a href="#mcetoc_1gjriujcb1">Операции с темами</a>
-<ul>
-<li><a href="#mcetoc_1gjriujcb2">Выбор темы</a></li>
-<li><a href="#mcetoc_1gjriujcb6">Применение темы</a></li>
-<li><a href="#mcetoc_1gjriujcb3">Создание новой темы</a></li>
-<li><a href="#mcetoc_1gjriujcb4">Клонирование темы</a></li>
-<li><a href="#mcetoc_1hq2pkpkc1">Удаление темы</a></li>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#definitions"> <span class="md-ellipsis"> Определения </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#использование-конструктора-тем"> <span class="md-ellipsis"> Использование конструктора тем </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#операции-с-темами"> <span class="md-ellipsis"> Операции с темами </span> </a><nav aria-label="Операции с темами" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#выбор-темы-для-настройки"> <span class="md-ellipsis"> Выбор темы для настройки </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#применение-темы"> <span class="md-ellipsis"> Применение темы </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#создание-новой-темы"> <span class="md-ellipsis"> Создание новой темы </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#клонирование-темы"> <span class="md-ellipsis"> Клонирование темы </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#удаление-темы"> <span class="md-ellipsis"> Удаление темы </span> </a></li>
 </ul>
-</li>
-<li><a href="#mcetoc_1h397o0rp0">Сохранение и сброс настроек</a></li>
-<li><a href="#mcetoc_1gjriujcb8">Свойства системы</a></li>
-<li><a href="#mcetoc_1gjriujcb9">Фирменные изображения</a></li>
-<li><a href="#mcetoc_1gjriujcba">Шрифты</a></li>
-<li><a href="#mcetoc_1gjriujcbb">Цветовая палитра</a>
-<ul>
-<li><a href="#mcetoc_1gjriujcbc">Цвета основных элементов</a></li>
-<li><a href="#mcetoc_1gjriujcbd">Цвета приоритетов</a></li>
-<li><a href="#mcetoc_1gjriujcbe">Цвета дополнительных элементов</a></li>
-<li><a href="#mcetoc_1gjriujcbf">Цвета графиков и диаграмм</a></li>
-<li><a href="#mcetoc_1gjriujcbg">Пользовательские стили</a></li>
+</nav></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#сохранение-и-сброс-настроек"> <span class="md-ellipsis"> Сохранение и сброс настроек </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#свойства-системы"> <span class="md-ellipsis"> Свойства системы </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#themes_branded_images"> <span class="md-ellipsis"> Фирменные изображения </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#шрифты"> <span class="md-ellipsis"> Шрифты </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#цветовая-палитра"> <span class="md-ellipsis"> Цветовая палитра </span> </a><nav aria-label="Цветовая палитра" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#themes_base_colors"> <span class="md-ellipsis"> Цвета основных элементов </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#themes_priority_colors"> <span class="md-ellipsis"> Цвета приоритетов </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#themes_additional_colors"> <span class="md-ellipsis"> Цвета дополнительных элементов </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#themes_graphic_diagram_color"> <span class="md-ellipsis"> Цвета графиков и диаграмм </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#пользовательские-стили"> <span class="md-ellipsis"> Пользовательские стили </span> </a></li>
 </ul>
-</li>
-<li><a href="#mcetoc_1gjriujcbh">Предварительный просмотр</a>
-<ul>
-<li><a href="#mcetoc_1gjriujcbi">Предпросмотр оформления основных элементов</a></li>
-<li><a href="#mcetoc_1gjriujcbj">Предпросмотр оформления форм</a></li>
-<li><a href="#mcetoc_1gjriujcbk">Предпросмотр оформления таблиц</a></li>
-</ul>
-</li>
+</nav></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#предварительный-просмотр"> <span class="md-ellipsis"> Предварительный просмотр </span> </a></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#связанные-статьи"> <span class="md-ellipsis"> Связанные статьи </span> </a></li>
 </ul>
 </div>
-<div class="md-content">
-<h2 id="mcetoc_1hq2osqr30">Использование конструктора тем</h2>
+</nav>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<div class="notice notice-success">
+<h2 class="admonition-title" id="definitions">Определения</h2>
+<p><strong>Тема</strong> — это набор визуальных элементов, которые определяют внешний вид <strong>Comindware Business Application Platform</strong>.</p>
+<p>По умолчанию используется стандартная тема под названием «<strong>Comindware</strong>», которую нельзя изменить.</p>
+<p>Чтобы настроить внешний вид графического интерфейса, создайте новую тему или клонируйте имеющуюся.</p>
+<p>Для тонкой настройки темы можно использовать собственные стили CSS.</p>
+</div>
+<h2 id="использование-конструктора-тем">Использование конструктора тем</h2>
 <ol class="colored_numbers_list">
-<li>На странице <a href="https://kb.comindware.ru/article.php?id=2191">«<strong>Администрирование</strong>» — «<strong>Внешний вид</strong>»</a> выберите пункт «<strong>Темы</strong>» <em class="fa-light fa-palette">‌</em>.</li>
-<li>Отобразится конструктор тем</li>
-<li>Настройте тему с помощью следующих разделов:
+<li>На странице «<strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2191">Администрирование</a></strong>» в разделе «<strong>Внешний вид</strong>» выберите пункт «<strong>Темы</strong>» <em class="fa-light fa-palette">‌<!--icon--></em>.</li>
+<li>Отобразится конструктор тем.</li>
+<li>
+<p>Настройте тему с помощью следующих разделов:</p>
 <ul>
-<li><a class="autorefs autorefs-internal" href="https://kb.comindware.ru/secure/%d0%a2%d0%b5%d0%bc%d1%8b-2199.html#mcetoc_1gjriujcb1">Доступные темы</a></li>
-<li><a class="autorefs autorefs-internal" href="https://kb.comindware.ru/secure/%d0%a2%d0%b5%d0%bc%d1%8b-2199.html#mcetoc_1gjriujcb8">Свойства системы</a></li>
-<li><a class="autorefs autorefs-internal" href="https://kb.comindware.ru/secure/%d0%a2%d0%b5%d0%bc%d1%8b-2199.html#mcetoc_1gjriujcba">Шрифты</a></li>
-<li><a class="autorefs autorefs-internal" href="https://kb.comindware.ru/secure/%d0%a2%d0%b5%d0%bc%d1%8b-2199.html#mcetoc_1gjriujcbb">Цветовая палитра</a></li>
-<li><a class="autorefs autorefs-internal" href="https://kb.comindware.ru/secure/%d0%a2%d0%b5%d0%bc%d1%8b-2199.html#mcetoc_1gjriujcbh">Предварительный просмотр</a></li>
+<li><a class="mkdocs_imported_link" href="#операции-с-темами">Доступные темы</a></li>
+<li><a class="mkdocs_imported_link" href="#свойства-системы">Свойства системы</a></li>
+<li><a class="mkdocs_imported_link" href="#шрифты">Шрифты</a></li>
+<li><a class="mkdocs_imported_link" href="#цветовая-палитра">Цветовая палитра</a></li>
+<li><a class="mkdocs_imported_link" href="#пользовательские-стили">Пользовательские стили</a></li>
+<li><a class="mkdocs_imported_link" href="#предварительный-просмотр">Предварительный просмотр</a></li>
 </ul>
 </li>
-<li><a href="#mcetoc_1h397o0rp0">Сохраните изменения</a> темы.</li>
+<li>
+<p><a class="mkdocs_imported_link" href="#сохранение-и-сброс-настроек">Сохраните изменения</a> темы.</p>
+</li>
 </ol>
-<h2 id="mcetoc_1gjriujcb1">Операции с темами</h2>
-<p>Для настройки внешнего вида системы вы можете использовать стандартную тему под названием «<strong>Comindware</strong>», создать новую тему либо клонировать имеющуюся.</p>
-<p>Стандартную тему «<strong>Comindware</strong>» изменить нельзя (для настройки ее следует <a href="#mcetoc_1gjriujcb4">клонировать</a>).</p>
+<h2 id="операции-с-темами">Операции с темами</h2>
 <p>В разделе «<strong>Доступные темы</strong>» отображаются эскизы имеющихся тем и кнопки для выполнения операций с темами:</p>
 <ul>
-<li><a href="https://kb.comindware.ru/secure/%d0%a2%d0%b5%d0%bc%d1%8b-2199.html#mcetoc_1gjriujcb3"><strong>Создать</strong></a></li>
-<li><a href="https://kb.comindware.ru/secure/%d0%a2%d0%b5%d0%bc%d1%8b-2199.html#mcetoc_1gjriujcb4"><strong>Клонировать</strong></a></li>
-<li><a href="https://kb.comindware.ru/secure/%d0%a2%d0%b5%d0%bc%d1%8b-2199.html#mcetoc_1gjriujcb5"><strong>Удалить</strong></a></li>
-<li><a href="https://kb.comindware.ru/secure/%d0%a2%d0%b5%d0%bc%d1%8b-2199.html#mcetoc_1gjriujcb6"><strong>Применить</strong></a></li>
+<li><a class="mkdocs_imported_link" href="#создание-новой-темы"><strong>Создать</strong></a></li>
+<li><a class="mkdocs_imported_link" href="#клонирование-темы"><strong>Клонировать</strong></a></li>
+<li><a class="mkdocs_imported_link" href="#удаление-темы"><strong>Удалить</strong></a></li>
+<li><a class="mkdocs_imported_link" href="#применение-темы"><strong>Применить</strong></a></li>
 </ul>
-<div class="screenshot_with_caption" style="font-size: 15px !important;">
-<p><img alt="Доступные темы" class="img-responsive" height="296" src="https://kb.comindware.ru/assets/img_6490027648abf.png" width="462"/></p>
-<p class="caption" style="font-size: 15px !important;">Доступные темы</p>
-</div>
-<h3 id="mcetoc_1gjriujcb2">Выбор темы для настройки</h3>
+<h3 id="выбор-темы-для-настройки">Выбор темы для настройки</h3>
 <ol class="colored_numbers_list">
-<li>Нажмите эскиз темы.</li>
+<li>В разделе «<strong>Доступные темы</strong>» нажмите эскиз темы.</li>
 <li>Выбранная в будет отмечена флажком на ее эскизе.</li>
 <li>Теперь все внесённые изменения будут применяться для выбранной темы.</li>
 </ol>
-<div class="screenshot_with_caption">
-<p><img alt="Выбранная тема отмечена флажком" src="https://kb.comindware.ru/assets/applied_theme.png"/></p>
-<p class="caption">Выбранная тема отмечена флажком</p>
-</div>
-<h3 id="mcetoc_1gjriujcb6">Применение темы</h3>
+<figure class="screenshot_with_caption">
+<p><img alt="Доступные темы, выбранная тема отмечена флажком" src="https://kb.comindware.ru/assets/available_themes.png"/></p>
+<figcaption class="caption">Доступные темы, выбранная тема отмечена флажком</figcaption>
+</figure>
+<h3 id="применение-темы">Применение темы</h3>
 <ol class="colored_numbers_list">
-<li>Нажмите эскиз темы, которую требуется применить.</li>
+<li>В разделе «<strong>Доступные темы</strong>» нажмите эскиз темы, которую требуется применить.</li>
 <li>Нажмите кнопку «<strong>Применить</strong>» для применения выбранной темы.</li>
-<li>Отобразится запрос на обновление страницы для вступления изменений в силу.</li>
-<li>Теперь система будет отображаться с использованием применённой темы.</li>
+<li>Отобразится запрос на обновление страницы.</li>
+<li>Подтвердите обновление страницы, чтобы изменения вступили в силу.</li>
+<li>Теперь графический интерфейс будет отображаться с использованием применённой темы.</li>
 </ol>
-<div class="screenshot_with_caption">
-<p><img alt="Запрос на обновление страницы для применения темы" class="img-responsive" height="165" src="https://kb.comindware.ru/assets/img_6490026265cf5.png" width="455"/></p>
-<p class="caption">Запрос на обновление страницы для применения темы</p>
-</div>
-<h3 id="mcetoc_1gjriujcb3">Создание новой темы</h3>
+<h3 id="создание-новой-темы">Создание новой темы</h3>
 <ol class="colored_numbers_list">
-<li>Нажмите кнопку «<strong>Создать</strong>», для создания новой темы со стандартной конфигурацией.</li>
+<li>В разделе «<strong>Доступные темы</strong>» нажмите кнопку «<strong>Создать</strong>».</li>
 <li>Отобразится окно «<strong>Создание новой темы</strong>».</li>
 <li>Введите <strong>название новой темы</strong>.</li>
 <li>Нажмите кнопку «<strong>Создать</strong>».</li>
-<li>Новая тема будет создана, выбрана и применена.</li>
-<li>Теперь все внесённые изменения будут применяться для выбранной темы.</li>
+<li>Будет создана, выбрана и применена тема со стандартной конфигурацией.</li>
+<li>Теперь все внесённые изменения будут применяться для новой темы.</li>
 </ol>
-<div class="screenshot_with_caption" style="font-size: 15px !important;">
-<p><img alt="Окно создания новой темы" class="img-responsive" height="244" src="https://kb.comindware.ru/assets/img_649002e44ceda.png" width="296"/></p>
-<p class="caption" style="font-size: 15px !important;">Окно создания новой темы</p>
-</div>
-<h3 id="mcetoc_1gjriujcb4">Клонирование темы</h3>
+<h3 id="клонирование-темы">Клонирование темы</h3>
 <ol class="colored_numbers_list">
 <li>Нажмите эскиз темы, которую требуется дублировать.</li>
 <li>Нажмите кнопку «<strong>Клонировать</strong>».</li>
@@ -107,15 +103,10 @@
 <li>Укажите <strong>название новой темы</strong>.</li>
 <li>Нажмите кнопку «<strong>Клонировать</strong>».</li>
 <li>Будет создан дубликат выбранной темы.</li>
-<li>Новая тема будет выбрана.</li>
-<li>Теперь все внесённые изменения будут применяться для выбранной темы.</li>
-<li>Если исходная тема была применена, то вместо нее будет применена тема-дубликат.</li>
+<li>Новая тема будет выбрана и применена.</li>
+<li>Теперь все внесённые изменения будут применяться для новой темы.</li>
 </ol>
-<div class="screenshot_with_caption" style="font-size: 15px !important;">
-<p><img alt="Окно клонирования темы" class="img-responsive" height="244" src="https://kb.comindware.ru/assets/img_64900299d2a18.png" width="296"/></p>
-<p class="caption" style="font-size: 15px !important;">Окно клонирования темы</p>
-</div>
-<h3 id="mcetoc_1hq2pkpkc1">Удаление темы</h3>
+<h3 id="удаление-темы">Удаление темы</h3>
 <div class="notice notice-info">
 <p class="admonition-title">Примечание</p>
 <p>Тему, которая применена в настоящий момент, удалить нельзя (кнопка «<strong>Удалить</strong>» не будет отображаться).</p>
@@ -124,163 +115,158 @@
 <ol class="colored_numbers_list">
 <li>Нажмите эскиз темы, которую требуется удалить.</li>
 <li>Нажмите кнопку «<strong>Удалить</strong>».</li>
-<li>Отобразится окно «<strong>Подтвердите удаление</strong>».</li>
-<li>Нажмите кнопку «<strong>Удалить</strong>».</li>
+<li>Подтвердите удаление в отобразившемся окне.</li>
 </ol>
-<h2 id="mcetoc_1h397o0rp0">Сохранение и сброс настроек</h2>
+<h2 id="сохранение-и-сброс-настроек">Сохранение и сброс настроек</h2>
 <p>В разделах, в которых имеется возможность настройки параметров темы, предусмотрены следующие кнопки:</p>
 <ul>
-<li><strong>Сохранить</strong> — сохранение настроенных параметров раздела;</li>
-<li><strong>Сбросить настройки</strong> — восстановление ранее сохраненных параметров раздела.</li>
+<li><strong>Сохранить</strong> — сохранение настроенных параметров раздела;</li>
+<li><strong>Сбросить настройки</strong> — восстановление ранее сохраненных параметров раздела.</li>
 </ul>
-<p>Прежде чем сохранять настройки в разделах темы, ознакомьтесь с <a class="autorefs autorefs-internal" href="https://kb.comindware.ru/secure/%d0%a2%d0%b5%d0%bc%d1%8b-2199.html#mcetoc_1gjriujcbh">предварительным просмотром</a>, чтобы убедиться в правильности конфигурации темы.</p>
-<p>Если редактируемая тема применена, после нажатия кнопки «<strong>Сохранить</strong>» отобразится запрос на обновление страницы. Подтвердите обновление страницы, чтобы изменения вступили в силу.</p>
-<div class="screenshot_with_caption" style="font-size: 15px !important;">
-<p><img alt="Сохранение настроек в разделе «Свойства системы»" class="img-responsive" height="180" src="https://kb.comindware.ru/assets/img_660587f03fe15.png" width="361"/></p>
-<p class="caption" style="font-size: 15px !important;">Сохранение настроек в разделе «Свойства системы»</p>
-</div>
-<h2 id="mcetoc_1gjriujcb8">Свойства системы</h2>
-<p>Данный раздел отображается только для особых тем и не отображается для стандартной темы под названием «Comindware».</p>
-<div class="screenshot_with_caption" style="font-size: 15px !important;">
-<p><img alt="Раздел «Свойства системы»" class="img-responsive" height="180" src="https://kb.comindware.ru/assets/img_660588e736659.png" width="343"/></p>
-<p class="caption" style="font-size: 15px !important;">Свойства системы</p>
-</div>
+<p>Прежде чем сохранять настройки в разделах темы, ознакомьтесь с <a class="mkdocs_imported_link" href="#предварительный-просмотр">предварительным просмотром</a>, чтобы убедиться в правильности конфигурации темы.</p>
+<p>Если редактируемая тема применена, после нажатия кнопки «<strong>Сохранить</strong>» отобразится запрос на обновление страницы. Чтобы изменения вступили в силу, подтвердите обновление страницы.</p>
+<figure class="screenshot_with_caption">
+<p><img alt="Сохранение настроек в разделе «Свойства системы»" src="https://kb.comindware.ru/assets/theme_save_settings.png"/></p>
+<figcaption class="caption">Сохранение настроек в разделе «Свойства системы»</figcaption>
+</figure>
+<h2 id="свойства-системы">Свойства системы</h2>
+<p>Данный раздел отображается только для особых тем и не отображается для стандартной темы под названием «<strong>Comindware</strong>».</p>
 <p>Вы можете задать «<strong>Название системы</strong>», которое будет отображаться в верхней информационной панели:</p>
-<div class="screenshot_with_caption" style="font-size: 15px !important;">
-<p><img alt="Верхняя информационная панель с заданным названием системы" src="https://kb.comindware.ru/assets/system_name_theme.png" style="letter-spacing: 0.2px;"/></p>
-<p class="caption" style="font-size: 15px !important;"> Верхняя информационная панель с заданным названием системы</p>
-</div>
-<h2 id="mcetoc_1gjriujcb9">Фирменные изображения</h2>
+<figure class="screenshot_with_caption">
+<p><img alt="Название системы в верхней информационной панели" src="https://kb.comindware.ru/assets/system_name_theme.png"/></p>
+<figcaption class="caption">Название системы в верхней информационной панели</figcaption>
+</figure>
+<h2 id="themes_branded_images">Фирменные изображения</h2>
 <p>Для темы можно назначить собственные изображения:</p>
 <ul>
-<li><strong>Значок сайта</strong> — это изображение будет отображаться во вкладках браузера;</li>
-<li><strong>Логотип</strong> — это изображение по умолчанию используется в качестве логотипа <strong><a href="https://kb.comindware.ru/article.php?id=2198">страниц входа и регистрации</a></strong>;</li>
-<li><strong>Фон страниц</strong> — это изображение по умолчанию используется в качестве фона <strong>страниц входа и регистрации</strong>.</li>
+<li><strong>Значок сайта</strong> — это изображение будет отображаться во вкладках браузера;</li>
+<li><strong>Логотип</strong> — это изображение по умолчанию используется в качестве логотипа <strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2198">страниц входа и регистрации</a></strong>;</li>
+<li><strong>Фон страниц</strong> — это изображение по умолчанию используется в качестве фона <strong>страниц входа и регистрации</strong>.</li>
 </ul>
-<div class="screenshot_with_caption" style="font-size: 15px !important;">
-<p><img alt="Фирменные изображения" class="img-responsive" height="419" src="https://kb.comindware.ru/assets/img_649002855eba7.png" width="1005"/></p>
-<p class="caption" style="font-size: 15px !important;">Фирменные изображения</p>
-</div>
-<p>Для назначенных теме фирменных изображений предусмотрено меню операций:</p>
+<figure class="screenshot_with_caption">
+<p><img alt="Фирменные изображения" src="https://kb.comindware.ru/assets/branded_images.png"/></p>
+<figcaption class="caption">Фирменные изображения</figcaption>
+</figure>
+<p>Нажмите крайнюю правую часть панели с именем файла, чтобы вызвать меню операций с фирменными изображениями:</p>
 <ul>
-<li><strong>История</strong> — просмотр журнала изменений загруженного в систему файла изображения;</li>
-<li><strong>Скачать</strong> — загрузка файла изображения на компьютер;</li>
-<li><strong>Удалить</strong> — удаление файла изображения из системы.</li>
+<li><strong>История</strong> — просмотр журнала изменений загруженного изображения;</li>
+<li><strong>Скачать</strong> — скачивание изображения на компьютер;</li>
+<li><strong>Удалить</strong> — удаление изображения из темы.</li>
 </ul>
-<p>Чтобы вызвать это меню, нажмите крайнюю правую часть панели с именем файла:</p>
-<div class="screenshot_with_caption" style="font-size: 15px !important;">
-<p><img alt="Меню операций с изображением" src="https://kb.comindware.ru/assets/image_manipulation.png" style="letter-spacing: 0.2px;"/></p>
-<p class="caption" style="font-size: 15px !important;">Меню операций с изображением</p>
-</div>
-<h2 id="mcetoc_1gjriujcba">Шрифты</h2>
-<p>В этом разделе можно настроить <strong>шрифт заголовков</strong> и <strong>шрифт обычного текста</strong> в системе:</p>
+<figure class="screenshot_with_caption">
+<p><img alt="Меню операций с изображением" src="https://kb.comindware.ru/assets/image_manipulation.png"/></p>
+<figcaption class="caption">Меню операций с изображением</figcaption>
+</figure>
+<h2 id="шрифты">Шрифты</h2>
+<p>В этом разделе можно настроить <strong>шрифт заголовков</strong> и <strong>шрифт обычного текста</strong>:</p>
 <ul>
-<li><strong>Шрифт</strong> — выберите гарнитуру шрифта из предложенного списка;</li>
-<li><strong>Начертание</strong> — выберите вариант шрифта из предложенного списка:
+<li><strong>Шрифт</strong> — выберите гарнитуру шрифта из предложенного списка;</li>
+<li><strong>Начертание</strong> — выберите вариант шрифта из предложенного списка:
 <ul>
 <li>Regular (Обычный), Italic (Курсив), Bold (Полужирный), Light (Тонкий), Medium (Средний);</li>
 </ul>
 </li>
-<li><strong>Базовый размер</strong> — выберите из предложенного списка размер шрифта, относительного которого будут определяться размеры заголовков и текстов соответственно.</li>
+<li><strong>Базовый размер</strong> — выберите из предложенного списка размер шрифта, относительного которого будут определяться размеры заголовков и текстов соответственно.</li>
 </ul>
-<div class="screenshot_with_caption">
-<p><img alt="Шрифты" class="img-responsive" height="309" src="https://kb.comindware.ru/assets/img_649002ab1282f.png" width="1005"/></p>
-<p class="caption">Шрифты</p>
-</div>
-<h2 id="mcetoc_1gjriujcbb">Цветовая палитра</h2>
-<p>В этом разделе можно задать собственные цвета для большинства элементов системы.</p>
-<h3 id="mcetoc_1gjriujcbc">Цвета основных элементов</h3>
+<figure class="screenshot_with_caption">
+<p><img alt="Шрифты" src="https://kb.comindware.ru/assets/fonts.png"/></p>
+<figcaption class="caption">Шрифты</figcaption>
+</figure>
+<h2 id="цветовая-палитра">Цветовая палитра</h2>
+<p>В этом разделе можно задать собственные цвета для большинства элементов графического интерфейса.</p>
+<h3 id="themes_base_colors">Цвета основных элементов</h3>
+<p>В этом разделе можно настроить:</p>
 <ul>
-<li>Основной <strong>фирменный цвет</strong> — цвет большинства графических элементов: верхней информационной панели, фона заголовков разделов и столбцов, флажков, названия выбранной вкладки, гиперссылок.</li>
-<li>Цвета <strong>окон и меню</strong>:
+<li>основной <strong>фирменный цвет</strong> — цвет большинства графических элементов: верхней информационной панели, фона заголовков разделов и столбцов, флажков, названия выбранной вкладки, гиперссылок;</li>
+<li>цвета <strong>окон и меню</strong>:
 <ul>
 <li><strong>фона страниц</strong>;</li>
 <li><strong>фона меню</strong>;</li>
-<li><strong>основного фона</strong>.</li>
+<li><strong>основного фона</strong>;</li>
 </ul>
 </li>
-<li><strong>Цветовые акценты</strong>:
+<li><strong>цветовые акценты</strong>:
 <ul>
 <li><strong>ошибки</strong> — цвет фона всплывающих сообщений об ошибках;</li>
 <li><strong>успех</strong> — цвет фона всплывающих сообщений о выполненных действиях;</li>
-<li><strong>предупреждения</strong> — цвет фона всплывающих предупреждениях.</li>
+<li><strong>предупреждения</strong> — цвет фона всплывающих предупреждениях;</li>
 </ul>
 </li>
-<li>Цвет <strong>текста</strong> — заголовков полей, текста в полях ввода, дат, подписей флажков, названий невыбранных вкладок.</li>
-<li>Цвет <strong>выделения</strong> — цвет выделения строк и столбцов в таблицах при их выборе.</li>
-<li>Цвета <strong>стандартных кнопок</strong>:
+<li>цвет <strong>текста</strong> — заголовков полей, текста в полях ввода, дат, подписей флажков, названий невыбранных вкладок;</li>
+<li>цвет <strong>выделения</strong> — цвет выделения строк и столбцов в таблицах при их выборе;</li>
+<li>цвета <strong>стандартных кнопок</strong>:
 <ul>
 <li><strong>обычной кнопки</strong>;</li>
 <li><strong>кнопки отмены</strong>.</li>
 </ul>
 </li>
 </ul>
-<div class="screenshot_with_caption">
-<p><img alt="Цветовая палитра — Основные элементы" class="img-responsive" height="673" src="https://kb.comindware.ru/assets/img_6490030aa256d.png" width="1005"/></p>
-<p class="caption">Цветовая палитра — Основные элементы</p>
-</div>
-<h3 id="mcetoc_1gjriujcbd">Цвета приоритетов</h3>
+<figure class="screenshot_with_caption">
+<p><img alt="Цветовая палитра — Основные элементы" src="https://kb.comindware.ru/assets/palette_basic.png"/></p>
+<figcaption class="caption">Цветовая палитра — Основные элементы</figcaption>
+</figure>
+<h3 id="themes_priority_colors">Цвета приоритетов</h3>
 <p>В этом разделе можно настроить цвета, которые можно будет назначать различным кнопкам при конструировании бизнес-решений.</p>
-<div class="screenshot_with_caption">
-<p><img alt="Подраздел «Цветовая палитра — Приоритеты»" src="https://kb.comindware.ru/assets/palette_priority.png"/></p>
-<p class="caption">Цветовая палитра — Приоритеты</p>
-</div>
-<h3 id="mcetoc_1gjriujcbe">Цвета дополнительных элементов</h3>
+<figure class="screenshot_with_caption">
+<p><img alt="Цветовая палитра — Приоритеты" src="https://kb.comindware.ru/assets/palette_priority.png"/></p>
+<figcaption class="caption">Цветовая палитра — Приоритеты</figcaption>
+</figure>
+<h3 id="themes_additional_colors">Цвета дополнительных элементов</h3>
+<p>В этом разделе можно настроить цветовое оформление дополнительных элементов графического интерфейса:</p>
 <ul>
-<li>
-<p><strong>Тени</strong> — выберите <strong>цвет</strong>, <strong>прозрачность</strong> и <strong>размытие</strong> для различных теней:</p>
+<li><strong>Тени</strong> — выберите <strong>цвет</strong>, <strong>прозрачность</strong> и <strong>размытие</strong> для различных теней:
 <ul>
 <li><strong>теней меню</strong>;</li>
 <li><strong>теней раскрывающегося меню</strong>;</li>
 <li><strong>теней всплывающего окна</strong>;</li>
-<li><strong>теней конструктора</strong>.</li>
+<li><strong>теней конструктора</strong>;</li>
 </ul>
 </li>
-<li>
-<p><strong>Рамки</strong> — выберите цвет рамок для различных элементов интерфейса системы:</p>
+<li><strong>Рамки</strong> — выберите цвет рамок для различных элементов:
 <ul>
-<li><strong>основных рамок</strong>;</li>
-<li><strong>рамок таблиц</strong>;</li>
-<li><strong>рамок элементов меню</strong>.</li>
+<li><strong>основных рамок</strong></li>
+<li><strong>рамок таблиц</strong></li>
+<li><strong>рамок элементов меню</strong></li>
 </ul>
 </li>
 </ul>
-<div class="screenshot_with_caption">
-<p><img alt="Подраздел «Цветовая палитра — Дополнительно»" src="https://kb.comindware.ru/assets/palette_additional.png"/></p>
-<p class="caption">Цветовая палитра — Дополнительно</p>
+<figure class="screenshot_with_caption">
+<p><img alt="Цветовая палитра — Дополнительно" src="https://kb.comindware.ru/assets/palette_additional.png"/></p>
+<figcaption class="caption">Цветовая палитра — Дополнительно</figcaption>
+</figure>
+<h3 id="themes_graphic_diagram_color">Цвета графиков и диаграмм</h3>
+<p>В этом разделе можно задать цвета, которые будут использоваться для линий, столбцов и сегментов графиков и диаграмм.</p>
+<figure class="screenshot_with_caption">
+<p><img alt="Цветовая палитра — Графики и диаграммы" src="https://kb.comindware.ru/assets/palette_charts.png"/></p>
+<figcaption class="caption">Цветовая палитра — Графики и диаграммы</figcaption>
+</figure>
+<h3 id="пользовательские-стили">Пользовательские стили</h3>
+<p>В этом разделе можно указать дополнительные стили CSS для тонкой настройки внешнего вида графического интерфейса.</p>
+<div class="notice notice-warning">
+<p class="admonition-title">Внимание!</p>
+<p>Используйте собственные стили CSS с осторожностью и тщательно тестируйте их поведение, так как они могут непредсказуемо влиять на отображение графического интерфейса и могут оказаться несовместимы с будущими версиями Comindware Business Application Platform.</p>
 </div>
-<h3 id="mcetoc_1gjriujcbf">Цвета графиков и диаграмм</h3>
-<p>В этом разделе можно задать цвета, которые будут использоваться для линий, столбцов и сегментов графиков и диаграмм, построенных в системе.</p>
-<div class="screenshot_with_caption">
-<p><img alt="Подраздел «Цветовая палитра — Графики и диаграммы»" src="https://kb.comindware.ru/assets/palette_charts.png"/></p>
-<p class="caption">Цветовая палитра — Графики и диаграммы</p>
-</div>
-<h3 id="mcetoc_1gjriujcbg">Пользовательские стили</h3>
-<p>В этом разделе можно указать дополнительные пользовательские стили CSS для изменения внешнего вида системы.</p>
-<div class="screenshot_with_caption">
-<p><img alt="Подраздел «Цветовая палитра — Пользовательские стили»" src="https://kb.comindware.ru/assets/palette_custom_css.png"/></p>
-<p class="caption">Цветовая палитра — Пользовательские стили</p>
-</div>
-<h2 id="mcetoc_1gjriujcbh">Предварительный просмотр</h2>
-<p>В этом разделе можно ознакомиться с тем, как интерфейс системы будет выглядеть с заданными настройками. Прежде чем сохранять настройки в разделах темы, ознакомьтесь с предварительным просмотром, чтобы убедиться в правильности конфигурации темы.</p>
-<h3 id="mcetoc_1gjriujcbi">Предпросмотр оформления основных элементов</h3>
-<div class="screenshot_with_caption">
-<p><img alt="Предварительный просмотр — Основные элементы" class="img-responsive" height="789" src="https://kb.comindware.ru/assets/img_64900351ab88e.png" width="1005"/></p>
-<p class="caption">Предварительный просмотр темы — Основные элементы</p>
-</div>
-<h3 id="mcetoc_1gjriujcbj">Предпросмотр оформления форм</h3>
-<div class="screenshot_with_caption">
-<p><img alt="Предварительный просмотр — Формы" class="img-responsive" height="639" src="https://kb.comindware.ru/assets/img_6490035cdbb11.png" width="1004"/></p>
-<p>Предварительный просмотр темы — Формы</p>
-</div>
-<h3 id="mcetoc_1gjriujcbk">Предпросмотр оформления таблиц</h3>
-<div class="screenshot_with_caption">
-<p><img alt="Предварительный просмотр — Формы" class="img-responsive" height="716" src="https://kb.comindware.ru/assets/img_6490036abaad5.png" width="1004"/></p>
-<p class="caption">Предварительный просмотр темы — Формы</p>
-</div>
-<h2 class="caption" id="mcetoc_1hq2qelp92">Связанные статьи</h2>
-<p class="caption"><strong><samp data-name="aid" data-title="" data-value="2198"><span style="color: #0066bc; font-family: Tahoma;"><img src="https://kb.comindware.ru/images/marker.png" style="vertical-align: middle;"/>Дизайн страниц входа и регистрации {Article-ID:2198}</span></samp> </strong></p>
+<figure class="screenshot_with_caption">
+<p><img alt="Цветовая палитра — Пользовательские стили" src="https://kb.comindware.ru/assets/palette_custom_css.png"/></p>
+<figcaption class="caption">Цветовая палитра — Пользовательские стили</figcaption>
+</figure>
+<h2 id="предварительный-просмотр">Предварительный просмотр</h2>
+<p>В этом разделе можно ознакомиться с тем, как графический интерфейс будет выглядеть с заданными настройками. Прежде чем сохранять настройки в разделах темы, ознакомьтесь с предварительным просмотром, чтобы убедиться в правильности конфигурации темы.</p>
+<figure class="screenshot_with_caption">
+<p><img alt="Предварительный просмотр — Основные элементы" src="https://kb.comindware.ru/assets/preview_basic.png"/></p>
+<figcaption class="caption">Предварительный просмотр — Основные элементы</figcaption>
+</figure>
+<figure class="screenshot_with_caption">
+<p><img alt="Предварительный просмотр — Формы" src="https://kb.comindware.ru/assets/preview_forms.png"/></p>
+<figcaption class="caption">Предварительный просмотр — Формы</figcaption>
+</figure>
+<figure class="screenshot_with_caption">
+<p><img alt="Предварительный просмотр — Формы" src="https://kb.comindware.ru/assets/preview_tables.png"/></p>
+<figcaption class="caption">Предварительный просмотр — Формы</figcaption>
+</figure>
+<h2 id="связанные-статьи">Связанные статьи</h2>
+<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2198">Дизайн страниц входа и регистрации</a></strong></p>
+</article>
 </div>
 </div>
-<p><a class="md-top md-icon mkdocs_imported_link" href="#"> <em class="fa-light fa-arrow-up">‌</em> К началу</a></p>
-</div>
+<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#"> <em class="fa-light fa-arrow-up">‌<!--icon--></em> К началу </a></div>

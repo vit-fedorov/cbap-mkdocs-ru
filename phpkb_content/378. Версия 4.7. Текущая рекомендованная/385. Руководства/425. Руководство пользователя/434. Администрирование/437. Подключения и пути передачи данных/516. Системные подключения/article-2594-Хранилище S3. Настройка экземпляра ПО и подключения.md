@@ -37,7 +37,7 @@ vim /usr/share/comindware/configs/instance/instancename.yml
 ```
 
 Здесь  `instancename` — имя экземпляра ПО.   
-См. также статью *«[Пути и содержимое папок экземпляра ПО](https://kb.comindware.ru/article.php?id=2502)».*
+См. также статью *«[Пути и содержимое папок экземпляра ПО][paths]».*
 3. Добавьте в файл `instancename.yml` следующие директивы:
 
 ```
@@ -103,7 +103,7 @@ systemctl restart comindwareinstancename
 
 --8<-- "related_topics_heading.md"
 
-**[Пути и содержимое папок экземпляра ПО](https://kb.comindware.ru/article.php?id=2502)**
+**[Пути и содержимое папок экземпляра ПО][paths]**
 
 
 

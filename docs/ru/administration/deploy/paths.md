@@ -11,7 +11,7 @@ kbId: 2502
 
 {% if userGuide or adminGuideLinux or kbExport %}
 
-## Содержимое директорий — Linux {: #paths_linux}
+## Содержимое директорий {% if userGuide or kbExport %}— Linux{% endif %} {: #paths_linux}
 
 По умолчанию файлы экземпляра ПО находятся в директории `/var/lib/comindware/<instanceName>`
 
@@ -24,7 +24,7 @@ kbId: 2502
 - `/var/log/comindware/<instanceName>/Logs/` — файлы журналов.
 - `/var/log/comindware/<instanceName>/Logs/Archive` — архивы журналов.
 - `/var/lib/comindware/<instanceName>/Database/Scripts` — скомпилированные библиотеки для скриптов на языке С#.
-- `/var/lib/comindware/<instanceName>/Database/``snapshots` — снимки данных Apache Ignite.
+- `/var/lib/comindware/<instanceName>/Database/snapshots` — снимки данных Apache Ignite.
 - `/var/lib/comindware/<instanceName>/Database/wal` — файлы журнала предварительной записи.
 - `/var/lib/comindware/<instanceName>/Streams` — загруженные пользователями и сформированные системой файлы, которые прикреплены к соответствующим атрибутам.
 - Временные данные, обеспечивающие работу экземпляра ПО. В этих папках нет пользовательских данных и файлов базы данных экземпляра ПО:
@@ -39,7 +39,7 @@ kbId: 2502
 
 {% if userGuide or adminGuideWindows or kbExport %}
 
-## Содержимое папок — Windows {: #paths_windows}
+## Содержимое папок {% if userGuide or kbExport %}— Windows{% endif %} {: #paths_windows}
 
 База данных по умолчанию находится в папке с экземпляром ПО: `C:\ProgramData\Comindware\Instances\<instanceName>`. Здесь `<instanceName>` — имя экземпляра ПО.
 
@@ -55,11 +55,11 @@ kbId: 2502
 	- `Web.config` (конфигурация экземпляра системы);
 	- `Workers.config` (конфигурация системных служб экземпляра системы).
 - `C:\ProgramData\сomindware\Instances\<instanceName>\Data` — файлы базы данных.
-- `C:\ProgramData\с``omindware\Instances\<instanceName>\Data\Scripts` — DLL-файлы, скомпилированные из скриптов на языке C#.
-- `C:\ProgramData\с``omindware\Instances\<instanceName>\Data\FullTextSearch` — индексы полнотекстового поиска.
-- `C:\ProgramData\с``omindware\Instances\<instanceName>\Streams` — файлы, загруженные пользователями и сформированные ПО.
-- `C:\ProgramData\с``omindware\Instances\<instanceName>\Logs` — журналы экземпляра ПО.
-- `C:\ProgramData\с``omindware\Instances\<instanceName>\Temp` — временные файлы.
+- `C:\ProgramData\сomindware\Instances\<instanceName>\Data\Scripts` — DLL-файлы, скомпилированные из скриптов на языке C#.
+- `C:\ProgramData\сomindware\Instances\<instanceName>\Data\FullTextSearch` — индексы полнотекстового поиска.
+- `C:\ProgramData\сomindware\Instances\<instanceName>\Streams` — файлы, загруженные пользователями и сформированные ПО.
+- `C:\ProgramData\сomindware\Instances\<instanceName>\Logs` — журналы экземпляра ПО.
+- `C:\ProgramData\сomindware\Instances\<instanceName>\Temp` — временные файлы.
 
 {% endif %}
 

@@ -8,7 +8,7 @@ kbId: 2479
 ## Инструкции
 
 1. В позиции предиката нажмите клавиши `Ctrl``Пробел`.
-2. Отобразится список [объявленных префиксов](https://kb.comindware.ru/article.php?id=2477).
+2. Отобразится список [объявленных префиксов][n3_editor_prefix_autocomplete].
 
 _![Список доступных префиксов](https://kb.comindware.ru/assets/n3_editor_predicate_prefix_autocomplete.png)_
 3. Выберите префикс в списке, чтобы просмотреть его описание.

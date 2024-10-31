@@ -176,7 +176,7 @@ from a in $RequestedCars where a->_creator->username == "admin" select a->id
 
 **Составление формулы**
 
-1. Введите функцию `COUNT()`. См. «**[Ввод имени функции и просмотр подсказки по функции](https://kb.comindware.ru/article.php?id=2465)**».
+1. Введите функцию `COUNT()`. См. «**[Ввод имени функции и просмотр подсказки по функции][formula_editor_function_autocompete]**».
 2. В позиции аргумента функции нажмите клавиши `Ctrl` `Пробел`.
 3. Отобразится список источников данных.
 ![Список источников данных для запроса](https://kb.comindware.ru/assets/formula_editor_from_where_select_autocomplete.png)
@@ -190,7 +190,7 @@ from a in $RequestedCars where a->_creator->username == "admin" select a->id
 ![Список атрибутов шаблона _«Автомобили»_](https://kb.comindware.ru/assets/formula_editor_from_where_select_autocomplete_condition_record_attribute_list.png)
 Список атрибутов шаблона *«Автомобили»*
 8. Введите оператор `==` и нажмите клавиши `Ctrl` `Пробел`.
-9. Отобразится список записей шаблона *«Автомобили»* в виде марок автомобилей. См. «**[Ввод заголовка записи связанного шаблона](https://kb.comindware.ru/article.php?id=2471)**».
+9. Отобразится список записей шаблона *«Автомобили»* в виде марок автомобилей. См. «**[Ввод заголовка записи связанного шаблона][formula_editor_record_heading_autocomplete]**».
 ![Список записей в шаблоне _«Автомобили»_](https://kb.comindware.ru/assets/formula_editor_from_where_select_autocomplete_condition_record_heading_list.png)
 Список записей в шаблоне *«Автомобили»*
 10. Дважды нажмите пункт *«Лада»*, чтобы вставить в формулу строковый литерал `"Лада"`.
@@ -215,6 +215,6 @@ COUNT(from a in $RequestedCars where a->Make == "Лада" select a->id)
 
 **[Примеры использования формул](https://kb.comindware.ru/category.php?id=409)**
 
-**[Ввод имени функции и просмотр подсказки по функции](https://kb.comindware.ru/article.php?id=2465)**
+**[Ввод имени функции и просмотр подсказки по функции][formula_editor_function_autocompete]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

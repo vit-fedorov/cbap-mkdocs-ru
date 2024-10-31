@@ -120,7 +120,7 @@ _![Настройка передачи данных в текущий проце
 
 --8<-- "related_topics_heading.md"
 
-**[Встроенный подпроцесс](https://kb.comindware.ru/article.php?id=2391)**
+**[Встроенный подпроцесс][process_diagram_elements_embedded_subprocess]**
 
 **[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 

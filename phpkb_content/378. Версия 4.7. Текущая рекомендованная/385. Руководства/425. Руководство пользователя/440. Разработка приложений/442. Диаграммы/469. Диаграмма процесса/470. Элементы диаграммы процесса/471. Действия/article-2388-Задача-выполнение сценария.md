@@ -45,7 +45,7 @@ _![Скрипт С# задачи-выполнения сценария](https://
 
 --8<-- "related_topics_heading.md"
 
-**[Пользовательская задача][user_task]**
+**[Пользовательская задача][process_diagram_elements_user_task]**
 
 **[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 

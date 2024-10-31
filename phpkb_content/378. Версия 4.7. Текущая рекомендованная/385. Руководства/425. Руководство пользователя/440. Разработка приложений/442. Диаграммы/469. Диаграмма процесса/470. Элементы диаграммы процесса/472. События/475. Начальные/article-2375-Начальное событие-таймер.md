@@ -77,9 +77,9 @@ _![Основные свойства начального события-тай�
 
 --8<-- "related_topics_heading.md"
 
-**[События](https://kb.comindware.ru/article.php?id=2374)**
+**[События][process_diagram_elements_events]**
 
-**[Начальные события](https://kb.comindware.ru/article.php?id=2377)**
+**[Начальные события][process_diagram_elements_events_start]**
 
 **[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 

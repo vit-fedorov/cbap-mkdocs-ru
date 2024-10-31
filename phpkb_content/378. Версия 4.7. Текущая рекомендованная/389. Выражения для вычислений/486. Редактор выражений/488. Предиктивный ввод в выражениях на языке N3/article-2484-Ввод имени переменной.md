@@ -7,7 +7,7 @@ kbId: 2484
 
 ## Инструкции
 
-1. Введите фигурные скобки `{ }` в пустое выражение (после [префиксов](https://kb.comindware.ru/article.php?id=2477)).
+1. Введите фигурные скобки `{ }` в пустое выражение (после [префиксов][n3_editor_prefix_autocomplete]).
 2. Внутри фигурных скобок введите символ `?`. Этот список также можно вызвать, нажав клавиши `Ctrl` `Пробел` в позиции после символа `?`.
 3. Отобразится список доступных переменных.
 
@@ -30,9 +30,9 @@ _![Список доступных переменных](https://kb.comindware.r
 
 --8<-- "related_topics_heading.md"
 
-**[Ввод предиката](https://kb.comindware.ru/article.php?id=2479)**
+**[Ввод предиката][n3_editor_predicate_autocomplete]**
 
-**[Ввод префикса](https://kb.comindware.ru/article.php?id=2477)**
+**[Ввод префикса][n3_editor_prefix_autocomplete]**
 
 **[Редактор выражений][expression_editor]**
 

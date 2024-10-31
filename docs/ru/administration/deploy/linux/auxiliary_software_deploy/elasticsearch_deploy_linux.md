@@ -1,31 +1,33 @@
 ---
-title: Установка Elasticsearch. Краткое руководство для Linux
+title: Elasticsearch. Установка в базовой конфигурации
 kbId: 
 ---
 
-# Установка Elasticsearch. Краткое руководство для Linux {: #elasticsearch_deploy_Linux}
+# Elasticsearch. Установка в базовой конфигурации {: #elasticsearch_deploy_Linux}
 
 ## Введение
 
 Для работы **{{ productName }}** требуется сервер Elasticsearch. См. [системные требования][system_requirements].
 
-При установке **{{ productName }}** версии для ОС Linux одновременно с экземпляром ПО можно развернуть сервер Elasticsearch. Для этого укажите ключ `-e` при запуске скрипта.
+Здесь представлена инструкция по установке Elasticsearch с помощью дистрибутива **{{ productName }}** в простейшей базовой конфигурации. 
 
-Служба Elasticsearch имеет базовую конфигурацию и доступна по адресу `localhost:9200`. Вы можете использовать имеющуюся службу Elasticsearch или развернуть её на отдельном сервере.
+Инструкции по установке Elasticsearch в иных конфигурациях см. [инструкции на официальном сайте](https://www.elastic.co/guide/en/elasticsearch/reference/current/targz.html) или _«[Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности][elasticsearch_cluster_deploy_no_certificates]»_.
 
-Здесь представлены требования к конфигурации компьютера для сервера Elasticsearch, инструкции по установке и настройке конфигурации сервера и службы Elasticsearch в ОС Linux, а также приведен пример типового файла конфигурации. Инструкции представлены для версии 8.10.2, для других версий содержимое файлов конфигурации и порядок установки могут быть иными.
+С помощью дистрибутива **{{ productName }}** можно развернуть сервер Elasticsearch вместе с экземпляром ПО или на отдельном сервере. Для этого укажите ключ `-e` при запуске скрипта `install.sh`. См. _«[Установка, запуск, инициализация и остановка ПО {{ productName }}][deploy_guide_linux]»_.
 
-## Требования к компьютеру
+Установленная таким образом служба Elasticsearch имеет базовую конфигурацию: без аутентификации и с одним узлом. Она доступна по адресу `localhost:9200`.
 
-Сервер Elasticsearch создает значительную нагрузку на вычислительные ресурсы компьютера, поэтому рекомендуется:
+Здесь представлены требования к техническому обеспечению и инструкции по развёртыванию конфигурации службы Elasticsearch в ОС Linux, а также приведен пример типового файла конфигурации. Инструкции представлены для версии Elasticsearch 8.10.2, для других версий содержимое файлов конфигурации и порядок установки могут быть иными.
+
+## Требования к серверу
+
+Elasticsearch создает значительную нагрузку на вычислительные ресурсы компьютера, поэтому рекомендуется:
 
 - использовать отдельный SSD-диск для хранения журналов и данных сервера Elasticsearch;
 - осуществлять мониторинг свободного места на диске, так как сервер перестает записывать данные, если на диске мало свободного места;
 - использовать высокопроизводительный компьютер с достаточным объемом ОЗУ и количеством ядер ЦП, так как для обработки каждого индекса создается отдельный поток, а индексов может быть много.
 
 ## Установка Elasticsearch
-
-Здесь представлена инструкция по установке Elasticsearch с помощью дистрибутива **{{ productName }}**. Для установки Elasticsearch без помощи дистрибутива воспользуйтесь [инструкцией с официального сайта](https://www.elastic.co/guide/en/elasticsearch/reference/current/targz.html).
 
 1. Перейдите в режим суперпользователя:
 
@@ -69,7 +71,6 @@ kbId:
     systemctl start elasticsearch
     ```
 
-Для развёртывания кластера Elasticsearch см. _«[Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности][elasticsearch_cluster_deploy_no_certificates]»_.
 
 ## Пример типового файла конфигурации Elasticsearch
 
@@ -77,36 +78,43 @@ kbId:
 
 - сервер Elasticsearch состоит из единственного узла;
 - служба работает в локальной сети;
-- включена аутентификация;
+- выключена аутентификация;
 - служба доступна через порт `9200`;
 - адрес сервера `http://localhost:9200`;
 - путь к файлу конфигурации: `/etc/elasticsearch/elasticsearch.yml`
 
 ``` sh
 #======================== Elasticsearch Configuration =========================
+# Имя кластера
 cluster.name: my-application
 # ------------------------------------ Node ------------------------------------
+# Имя узла
 node.name: node-1
 # ----------------------------------- Paths ------------------------------------
-path.data: /var/lib/elasticsearch # database path Elasticsearch
-path.logs: /var/log/elasticsearch # путь к файлам журнала Elasticsearch
-#path.repo: /var/backups/elasticsearch # путь к репозиторию резервных копий Elasticsearch
+# database path Elasticsearch
+path.data: /var/lib/elasticsearch
+# путь к файлам журнала Elasticsearch
+path.logs: /var/log/elasticsearch
+# path.repo: /var/backups/elasticsearch # путь к репозиторию резервных копий Elasticsearch
 # ----------------------------------- Memory -----------------------------------
+# Разрешите свопинг памяти
 bootstrap.memory_lock: false
 # ---------------------------------- Network -----------------------------------
-# укажите IP сервера Elasticsearch или 127.0.0.1, если Elasticsearch и 
+# Укажите IP сервера Elasticsearch или 127.0.0.1, если Elasticsearch и 
 # Comindware Business Application Platform развёрнуты на одной машине
 network.host: 127.0.0.1  
 http.port: 9200 # порт по умолчанию
 # --------------------------------- Discovery ----------------------------------
-discovery.type: single-node # директива для работы в режиме одного узла
-#discovery.seed_hosts: ["192.168.12.1"] # директива для работы кластера
-#cluster.initial_master_nodes: ["192.168.12.1"] # директива для работы кластера
+# Директива для работы в режиме одного узла
+discovery.type: single-node
+# discovery.seed_hosts: ["192.168.12.1"] # директива для режима кластера
+# cluster.initial_master_nodes: ["192.168.12.1"] # директива для режима кластера
 # ---------------------------------- Various -----------------------------------
 search.allow_expensive_queries: true
 action.destructive_requires_name: true
 indices.id_field_data.enabled: true
 # ---------------------------------- Security ----------------------------------
+# Аутентификация выключена
 xpack.security.enabled: false
 xpack.security.enrollment.enabled: false
 xpack.security.http.ssl:
@@ -119,5 +127,7 @@ xpack.security.transport.ssl:
   #  truststore.path: certs/transport.p12
 http.host: 0.0.0.0 # IP - слушать внешний интерфейс, 127.0.0.1 - localhost, 0.0.0.0 - все
 ```
+
+
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

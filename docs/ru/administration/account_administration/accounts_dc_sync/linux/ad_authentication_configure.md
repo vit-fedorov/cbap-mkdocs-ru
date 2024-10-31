@@ -7,7 +7,7 @@ kbId: 2517
 
 !!! warning "Внимание!"
 
-    Представленные в данной статье инструкции зависят от конфигурации сторонних систем и окружения, в котором развёрнут экземпляр ПО **{{ productName }}** (далее «экземпляр ПО»).
+    Представленные здесь инструкции зависят от конфигурации сторонних систем и окружения, в котором развёрнут экземпляр ПО **{{ productName }}** (далее «экземпляр ПО»).
 
     Описать все возможные варианты и сочетания конфигураций сторонних систем не представляется возможным, поэтому данные инструкции могут не подойти для вашего случая.
 
@@ -28,13 +28,13 @@ kbId: 2517
 
 Здесь примеры значений параметров заключены в угловые скобки `< >`. При настройке конфигурации заменяйте их на фактические значения, как показано в следующей таблице.
 
-| Пример параметра | Пример фактического значения |
-| --- | --- |
-| `<DCName>` | `DC` |
-| `<DCName>.<domain.name>` | `DC.example.com` |
+| Пример параметра                            | Пример фактического значения      |
+| ------------------------------------------- | --------------------------------- |
+| `<DCName>`                                  | `DC`                              |
+| `<DCName>.<domain.name>`                    | `DC.example.com`                  |
 | `HTTP/<DCName>.<domain.name>@<DOMAIN.NAME>` | `HTTP/DC.example.com@EXAMPLE.COM` |
-| `<linuxHost>` | `server-host-name` |
-| `<domain.controller.ip.address>` | `192.168.0.254` |
+| `<linuxHost>`                               | `server-host-name`                |
+| `<domain.controller.ip.address>`            | `192.168.0.254`                   |
 
 !!! note "Примечание"
 
@@ -42,20 +42,20 @@ kbId: 2517
 
 ## Конфигурация машины linuxHost с экземпляром ПО {{ productName }}
 
-| Параметр | Значение |
-| --- | --- |
-| Операционная система | Linux |
-| Имя хоста | `<linuxHost>` |
-| IP-адрес хоста | `<linux.host.ip.address>` |
+| Параметр             | Значение                  |
+| -------------------- | ------------------------- |
+| Операционная система | Linux                     |
+| Имя хоста            | `<linuxHost>`             |
+| IP-адрес хоста       | `<linux.host.ip.address>` |
 
 ## Конфигурация машины DCName с контроллером домена {: #ad_authentication_configure_dc_instance}
 
-| Параметр | Значение |
-| --- | --- |
-| Операционная система | Windows Server 2016 |
-| Имя хоста | `<DCName>` |
-| FQDN контроллера домена | `<DCName>.<domain.name>` |
-| Доменное имя | `<domain.name>` |
+| Параметр                    | Значение                         |
+| --------------------------- | -------------------------------- |
+| Операционная система        | Windows Server 2016              |
+| Имя хоста                   | `<DCName>`                       |
+| FQDN контроллера домена     | `<DCName>.<domain.name>`         |
+| Доменное имя                | `<domain.name>`                  |
 | IP-адрес контроллера домена | `<domain.controller.ip.address>` |
 
 ## Настройка машины linuxHost с экземпляром ПО для Astra Linux и Ubuntu
@@ -77,27 +77,27 @@ kbId: 2517
 3. Отредактируйте файл `krb5.conf` согласно следующему примеру:
 
     ``` sh
-    #astra-winbind    
-    [libdefaults]   
-        default_realm = <DOMAIN.NAME>   
-        kdc_timesync = 1   
-        ccache_type = 2   
-        forwardable = true   
-        proxiable = true   
-        fcc-mit-ticketflags = true   
-        dns_lookup_realm = false   
-        default_ccache_name = DIR:/tmp   
-    [realms]   
-        <DOMAIN.NAME> = {   
-            kdc = <DCName>.<domain.name>   
-            admin_server = <DCName>.<domain.name>   
-            default_domain = <domain.name>   
-        }   
-    [domain_realm]   
-        .<domain.name> = <DOMAIN.NAME>   
-        <domain.name> = <DOMAIN.NAME>   
-    [login]   
-        krb4_convert = false   
+    #astra-winbind
+    [libdefaults]
+        default_realm = <DOMAIN.NAME>
+        kdc_timesync = 1
+        ccache_type = 2
+        forwardable = true
+        proxiable = true
+        fcc-mit-ticketflags = true
+        dns_lookup_realm = false
+        default_ccache_name = DIR:/tmp
+    [realms]
+        <DOMAIN.NAME> = {
+            kdc = <DCName>.<domain.name>
+            admin_server = <DCName>.<domain.name>
+            default_domain = <domain.name>
+        }
+    [domain_realm]
+        .<domain.name> = <DOMAIN.NAME>
+        <domain.name> = <DOMAIN.NAME>
+    [login]
+        krb4_convert = false
         krb4_get_tickets = false
     ```
 
@@ -149,38 +149,38 @@ kbId: 2517
 3. Отредактируйте файл `krb5.conf` согласно следующему примеру:
 
     ``` sh
-    [libdefaults]   
-        default_realm = <DOMAIN.NAME>   
-        kdc_timesync = 1   
-        ccache_type = 2   
-        forwardable = true   
-        proxiable = true   
-        fcc-mit-ticketflags = true   
-        dns_lookup_realm = false   
-    [realms]   
-        <DOMAIN.NAME> = {   
-            kdc = <DCName>.<domain.name>   
-            admin_server = <DCName>.<domain.name>   
-            default_domain = <domain.name>   
-        }   
-    [domain_realm]   
-        .<domain.name> = <DOMAIN.NAME>   
-        <domain.name> = <DOMAIN.NAME>   
-    [login]   
-        krb4_convert = false   
+    [libdefaults]
+        default_realm = <DOMAIN.NAME>
+        kdc_timesync = 1
+        ccache_type = 2
+        forwardable = true
+        proxiable = true
+        fcc-mit-ticketflags = true
+        dns_lookup_realm = false
+    [realms]
+        <DOMAIN.NAME> = {
+            kdc = <DCName>.<domain.name>
+            admin_server = <DCName>.<domain.name>
+            default_domain = <domain.name>
+        }
+    [domain_realm]
+        .<domain.name> = <DOMAIN.NAME>
+        <domain.name> = <DOMAIN.NAME>
+    [login]
+        krb4_convert = false
         krb4_get_tickets = false
     ```
 
 4. Откройте файл конфигурации `kcm_default_ccache` для редактирования:
 
     ``` sh
-    vim /etc/krb5.conf.d/kcm_default_ccache    
+    vim /etc/krb5.conf.d/kcm_default_ccache
     ```
 
 5. Отредактируйте файл `kcm_default_ccache` согласно следующему примеру:
 
     ``` sh
-    [libdefaults]  
+    [libdefaults]
     default_ccache_name = DIR:/tmp
     ```
 
@@ -219,7 +219,4 @@ kbId: 2517
 
 **[Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя][sso_authenticatation_configure]**
 
-
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

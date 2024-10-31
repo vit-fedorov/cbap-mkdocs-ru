@@ -622,7 +622,15 @@
 
 {% if userGuide or (adminGuideLinux and not adminGuideWindows) or kbExport %}
 
+[backup_restore_windows]: {{ kbArticleURLPrefix }}2101
+
+[backup_windows_external]: {{ kbArticleURLPrefix }}2301
+
+[db_move_manual_windows]: {{ kbArticleURLPrefix }}2154
+
 [instance_configure_windows]: {{ kbArticleURLPrefix }}2036
+
+[restore_windows]: {{ kbArticleURLPrefix }}2038
 
 [sso_authentication_configure_windows]: {{ kbArticleURLPrefix }}2309
 
@@ -631,6 +639,8 @@
 {% if userGuide or (not adminGuideLinux and adminGuideWindows) or kbExport %}
 
 [ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}2517
+
+[admin_utility_install_launch]: {{ kbArticleURLPrefix }}2027
 
 [backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
 

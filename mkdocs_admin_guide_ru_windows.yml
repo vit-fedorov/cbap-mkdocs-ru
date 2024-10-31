@@ -23,35 +23,22 @@ nav:
     - administration/deploy/log_files_event_examples.md
     - administration/deploy/paths.md
     - Утилита администрирования Comindware. Установка и настройка версий и экземпляров ПО:
-      - administration/deploy/windows/administration_utility/article-2027-Установка
-        и запуск Утилиты администрирования Comindware.md
-      - administration/deploy/windows/administration_utility/article-2028-Установка
-        продукта Comindware Business Application Platform.md
-      - administration/deploy/windows/administration_utility/article-2029-Настройка
-        конфигурации Утилиты администрирования Comindware.md
-      - administration/deploy/windows/administration_utility/article-2030-Диагностика
-        экземпляра продукта.md
-      - administration/deploy/windows/administration_utility/article-2031-Обновление
-        версии продукта для экземпляра.md
-      - administration/deploy/windows/administration_utility/article-2032-Создание
-        экземпляра продукта, добавление скрытого экземпляра.md
-      - administration/deploy/windows/administration_utility/article-2034-Удаление
-        версии продукта.md
-      - administration/deploy/windows/administration_utility/article-2035-Запуск,
-        остановка и удаление экземпляра продукта.md
-      - administration/deploy/windows/administration_utility/article-2036-Настройка
-        конфигурации и просмотр фактических путей к папкам экземпляра продукта.md
-      - administration/deploy/windows/administration_utility/article-2037-Индикация
-        состояния и обновление списка экземпляров продукта.md
-      - administration/deploy/windows/administration_utility/article-2038-Восстановление
-        экземпляра продукта из резервной копии в ОС Windows.md
-      - administration/deploy/windows/administration_utility/article-2296-Инициализация
-        экземпляра продукта.md
+      - administration/deploy/windows/administration_utility/admin_utility_install_launch.md
+      - administration/deploy/windows/administration_utility/article-2028-Установка продукта Comindware Business Application Platform.md
+      - administration/deploy/windows/administration_utility/article-2029-Настройка конфигурации Утилиты администрирования Comindware.md
+      - administration/deploy/windows/administration_utility/article-2030-Диагностика экземпляра продукта.md
+      - administration/deploy/windows/administration_utility/article-2031-Обновление версии продукта для экземпляра.md
+      - administration/deploy/windows/administration_utility/article-2032-Создание экземпляра продукта, добавление скрытого экземпляра.md
+      - administration/deploy/windows/administration_utility/article-2034-Удаление версии продукта.md
+      - administration/deploy/windows/administration_utility/article-2035-Запуск, остановка и удаление экземпляра продукта.md
+      - administration/deploy/windows/administration_utility/article-2036-Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта.md
+      - administration/deploy/windows/administration_utility/article-2037-Индикация состояния и обновление списка экземпляров продукта.md
+      - administration/deploy/windows/administration_utility/article-2038-Восстановление экземпляра продукта из резервной копии в ОС Windows.md
+      - administration/deploy/windows/administration_utility/article-2296-Инициализация экземпляра продукта.md
     - administration/deploy/windows/article-2129-Обновление версии экземпляра ПО с 3.5 на 4.2. Инструкции, подготовка базы данных, устранение проблем.md
     - administration/deploy/windows/article-2298-Остановка экземпляра системы с помощью Диспетчера служб IIS.md
     - administration/deploy/windows/article-2300-Запуск экземпляра системы с помощью Диспетчера служб IIS.md
-    - administration/deploy/windows/article-2316-Comindware Architect. Инструкции
-      по установке экземпляра ПО в ОС Windows.md
+    - administration/deploy/windows/article-2316-Comindware Architect. Инструкции по установке экземпляра ПО в ОС Windows.md
     - Вспомогательное ПО. Развёртывание:
       - administration/deploy/linux/auxiliary_software_deploy/antivirus_exceptions_configure.md
       - administration/deploy/windows/auxiliary_software_deploy/zabbix_agent_deploy_windows.md
@@ -60,10 +47,10 @@ nav:
       - administration/deploy/windows/auxiliary_software_deploy/kafka_install_windows.md
   - Резервное копирование и восстановление:
     - administration/backup/index.md
-    - administration/backup/windows/article-2038-Восстановление экземпляра продукта из резервной копии в ОС Windows.md
-    - administration/backup/windows/article-2101-Резервное копирование и восстановление Comindware Business Application Platform. Краткое руководство для ОС Windows.md
-    - administration/backup/windows/article-2154-Ручной перенос базы данных экземпляра ПО в ОС Windows.md
-    - administration/backup/windows/article-2303-Резервное копирование с помощью внешних средств в ОС Windows.md
+    - administration/backup/windows/restore_windows.md
+    - administration/backup/windows/backup_restore_windows.md
+    - administration/backup/windows/db_move_manual_windows.md
+    - administration/backup/windows/backup_windows_external.md
   - Администрирование системы:
     - administration/administration_page.md
     - Внешний вид:
@@ -79,9 +66,7 @@ nav:
       
       - administration/account_administration/registration_and_login.md
       - administration/account_administration/two_factor_authentication.md
-      - Синхронизация с сервером каталогов:
-        - administration/account_administration/accounts_dc_sync/index.md
-        - administration/account_administration/accounts_dc_sync/windows/sso_authenticatation_configure_windows.md
+      - Синхронизация с сервером каталогов: - administration/account_administration/accounts_dc_sync/index.md - administration/account_administration/accounts_dc_sync/windows/sso_authenticatation_configure_windows.md
     - Инфраструктура:
       - administration/infrastructure/monitoring.md
       - administration/infrastructure/logs.md
@@ -95,56 +80,21 @@ nav:
     - Интеграции с внешними системами:
       - administration/connections_communication_routes/connections.md
       - administration/connections_communication_routes/communication_routes.md
-      - Системные подключения:
-        - Уведомления:
-          - administration/connections_communication_routes/system_connections/notifications/notification_types.md
-          - administration/connections_communication_routes/system_connections/notifications/common_notifications.md
-          - administration/connections_communication_routes/system_connections/notifications/task_notifications.md
-        - administration/connections_communication_routes/system_connections/elasticsearch_connection.md
-        - administration/connections_communication_routes/system_connections/map_configure.md
-        - administration/connections_communication_routes/system_connections/git_connection.md
-        - administration/connections_communication_routes/system_connections/s3_connection.md
-      - Аутентификация:
-        - administration/connections_communication_routes/authentication/openid_connection.md
-        - administration/connections_communication_routes/authentication/wsfederation_connection.md
-        - administration/connections_communication_routes/authentication/ad_connection.md
-      - Подключения к офисным приложениям:
-        - administration/connections_communication_routes/office_connections/collabora_connection.md
-        - administration/connections_communication_routes/office_connections/r7_connection.md
-      - Подключения к электронной почте:
-        - administration/connections_communication_routes/email_connections/process_sending_connection.md
-        - administration/connections_communication_routes/email_connections/scenario_send_email.md
-        - administration/connections_communication_routes/email_connections/process_receiving_connection.md
-        - administration/connections_communication_routes/email_connections/scenario_receive_email.md
-      - Подключения REST и OData:
-        - administration/connections_communication_routes/rest_odata_connections/get_connection.md
-        - administration/connections_communication_routes/rest_odata_connections/odata_connection.md
-        - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
-        - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
-        - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
-        - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
-      - SQL-подключения:
-        - administration/connections_communication_routes/sql_connections/sql_send_connection.md
-        - administration/connections_communication_routes/sql_connections/sql_receive_connection.md
-      - Подключения к шинам сообщений:
-        - administration/connections_communication_routes/message_queue_connections/kafka_connection.md
+      - Системные подключения: - Уведомления:   - administration/connections_communication_routes/system_connections/notifications/notification_types.md   - administration/connections_communication_routes/system_connections/notifications/common_notifications.md   - administration/connections_communication_routes/system_connections/notifications/task_notifications.md - administration/connections_communication_routes/system_connections/elasticsearch_connection.md - administration/connections_communication_routes/system_connections/map_configure.md - administration/connections_communication_routes/system_connections/git_connection.md - administration/connections_communication_routes/system_connections/s3_connection.md
+      - Аутентификация: - administration/connections_communication_routes/authentication/openid_connection.md - administration/connections_communication_routes/authentication/wsfederation_connection.md - administration/connections_communication_routes/authentication/ad_connection.md
+      - Подключения к офисным приложениям: - administration/connections_communication_routes/office_connections/collabora_connection.md - administration/connections_communication_routes/office_connections/r7_connection.md
+      - Подключения к электронной почте: - administration/connections_communication_routes/email_connections/process_sending_connection.md - administration/connections_communication_routes/email_connections/scenario_send_email.md - administration/connections_communication_routes/email_connections/process_receiving_connection.md - administration/connections_communication_routes/email_connections/scenario_receive_email.md
+      - Подключения REST и OData: - administration/connections_communication_routes/rest_odata_connections/get_connection.md - administration/connections_communication_routes/rest_odata_connections/odata_connection.md - administration/connections_communication_routes/rest_odata_connections/odata_integration.md - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
+      - SQL-подключения: - administration/connections_communication_routes/sql_connections/sql_send_connection.md - administration/connections_communication_routes/sql_connections/sql_receive_connection.md
+      - Подключения к шинам сообщений: - administration/connections_communication_routes/message_queue_connections/kafka_connection.md
   - Администрирование приложений:
     - business_apps/index.md
     - Диаграммы:
       - business_apps/diagrams/index.md
-      - Диаграмма процесса:
-        - business_apps/diagrams/process_diagram/index.md
-        - business_apps/diagrams/process_diagram/process_diagram_version_control.md
-        - business_apps/diagrams/process_diagram/process_diagram_view_instance.md
+      - Диаграмма процесса: - business_apps/diagrams/process_diagram/index.md - business_apps/diagrams/process_diagram/process_diagram_version_control.md - business_apps/diagrams/process_diagram/process_diagram_view_instance.md
     - Шаблоны:
       - business_apps/templates/index.md
-      - Типы и свойства шаблонов:
-        - business_apps/templates/template_types/template_common_properties.md
-        - business_apps/templates/template_types/record_templates.md
-        - business_apps/templates/template_types/process_templates.md
-        - business_apps/templates/template_types/account_templates.md
-        - business_apps/templates/template_types/role_templates.md
-        - business_apps/templates/template_types/organizational_unit_templates.md
+      - Типы и свойства шаблонов: - business_apps/templates/template_types/template_common_properties.md - business_apps/templates/template_types/record_templates.md - business_apps/templates/template_types/process_templates.md - business_apps/templates/template_types/account_templates.md - business_apps/templates/template_types/role_templates.md - business_apps/templates/template_types/organizational_unit_templates.md
     - business_apps/roles_in_application.md
     - Панель навигации. Настройка:
       - business_apps/navigation_sections/navigation_sections_setup.md

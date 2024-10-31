@@ -55,12 +55,12 @@ kbId: 2296
 
 ![Начальная страниц{{ productName }}rm](https://kb.comindware.ru/assets/administration_tool10.png)
 
-Начальная страница Comindware Business Application Platform
+Начальная страница {{ productName }}
 16. На этом этапе развёртывание экземпляра продукта завершено и можно приступать к созданию и использованию приложений.
 
 --8<-- "related_topics_heading.md"{{ productName }}
 
-***[Установка продукта Comindware Business Application Platform]({{ kbArticleURLPrefix }}2028)***
+***[Установка продукта {{ productName }}]({{ kbArticleURLPrefix }}2028)***
 
 ***[Установка Elasticsearch. Краткое руководство для Windows]({{ kbArticleURLPrefix }}2094)***
 

@@ -189,7 +189,7 @@ Stack:
 - `XXX.XXX.XXX.XXX` — IP-адрес сервера
 - `Core` — наименование модуля, в котором произошло событие
 - `hh:mm:ss.SSS` — длительность обработки запроса
-- `X.X.XXX.X` — версия ПО Comindware Business Application Platform
+- `X.X.XXX.X` — версия ПО {{ productName }}
 - `Транзакция нарушает уникальность триплета:  cmw.account.mbox - email@example.com` — описание события: неуникальный адрес эл. почты
 - `Service name: "DataformService"` — наименование службы, обрабатывавшей веб-запрос
 - `Method name: "ApplyChangesAndQueryData"` — наименование метода запроса
@@ -247,7 +247,7 @@ Stack:
 - `XXX.XXX.XXX.XXX` — IP-адрес сервера
 - `Core` — наименование модуля, в котором произошло событие
 - `hh:mm:ss.SSS` — длительность обработки запроса
-- `X.X.XXX.X` — версия ПО Comindware Business Application Platform
+- `X.X.XXX.X` — версия ПО {{ productName }}
 - `Вы не можете удалить свой аккаунт` — описание события
 - `Service name: "AccountService"` — наименование службы, обрабатывавшей веб-запрос
 - `Method name:` " `Delete`" — наименование метода запроса
@@ -980,7 +980,7 @@ Stack:
 **Пример события**
 
 ``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 systemAccount ::1   Экземпляр Comindware Business Application Platform запущен.
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 systemAccount ::1   Экземпляр {{ productName }} запущен.
 
 Системная информация:
 
@@ -1014,7 +1014,7 @@ Stack:
 **Пример события**
 
 ``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 systemAccount    Comindware Business Application Platform has started.
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 systemAccount    {{ productName }} has started.
 
 System information:
 
@@ -1049,12 +1049,12 @@ IIS authentication: Anonymous
 - `00000000-0000-0000-0000-000000000000` — идентификатор сеанса
 - `systemAccount` — учётная запись, запустившая систему
 - `::1` — идентификатор локального хоста вместо IP-адреса
-- `Comindware Business Application Platform has started` — описание события: система запущена
+- `{{ productName }} has started` — описание события: система запущена
 - `System information` — сведения о системе
     - `Server: SERVERNAME` — имя сервера
     - `Database: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` — идентификатор базы данных экземпляра ПО
     - `OperatingSystem: Microsoft Windows NT XXX.XXX.XXX.XXX` — наименование и номер версии операционной системы сервера
-    - `Version: X.X.XXXX.X` — версия ПО Comindware Business Application Platform
+    - `Version: X.X.XXXX.X` — версия ПО {{ productName }}
     - `Timezone: Europe/Moscow` — часовой пояс экземпляра ПО
     - `Language: ru` — язык экземпляра ПО
     - `Config path: E:\npd\Config` — путь к конфигурации
@@ -1074,7 +1074,7 @@ IIS authentication: Anonymous
 **Пример события**
 
 ``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 systemAccount    Comindware Business Application Platform has stopped.
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 systemAccount    {{ productName }} has stopped.
 ```
 
 **Поля события**
@@ -1083,7 +1083,7 @@ IIS authentication: Anonymous
 - `INFO` — тип события: информационное
 - `00000000-0000-0000-0000-000000000000` — идентификатор сеанса
 - `systemAccount` — учётная запись, запустившая систему
-- `Comindware Business Application Platform has started` — описание события: система остановлена
+- `{{ productName }} has started` — описание события: система остановлена
 
 ### Запуск сервиса/службы/модуля
 
@@ -1123,7 +1123,7 @@ IIS authentication: Anonymous
 **Пример события**
 
 ``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 systemAccount    Comindware Business Application Platform has stopped.
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 systemAccount    {{ productName }} has stopped.
 ```
 
 **Поля события**
@@ -1132,7 +1132,7 @@ IIS authentication: Anonymous
 - `INFO` — тип события: информационное
 - `00000000-0000-0000-0000-000000000000` — идентификатор сеанса
 - `systemAccount` — учётная запись, остановившая систему
-- `Comindware Business Application Platform has started` — описание события: система остановлена
+- `{{ productName }} has started` — описание события: система остановлена
 
 ### Успешный результат выполнения процесса
 

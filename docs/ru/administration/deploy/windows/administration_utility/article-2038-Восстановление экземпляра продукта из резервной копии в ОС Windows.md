@@ -9,7 +9,7 @@ kbId: 2038
 
 Экземпляр продукта можно восстановить из резервной копии в формате `CDBBZ`.
 
-Сведения о создании файла резервной копии см. статьях *«[Резервное копирование и восстановление {{ productName }}. Краткое руководство для ОС Windows]({{ kbArticleURLPrefix }}2101)»*.
+Сведения о создании файла резервной копии см. статьях *«[Резервное копирование и восстановление {{ productName }}. Краткое руководство для ОС Windows][backup_restore_windows]»*.
 
 ## Порядок восстановления экземпляра продукта
 
@@ -71,7 +71,7 @@ kbId: 2038
 ![Страница инициализации данных в Elasticsearch](https://kb.comindware.ru/assets/Picture17.png)
 {{ productName }}
 Страница инициализации данных в Elasticsearch
-4. Дождитесь открытия начальной страницы **Comindware Business Application Platform**.
+4. Дождитесь открытия начальной страницы **{{ productName }}**.
 5. Откройте страницу «**Администрирование**» — «**Подключения**».
 
 ![Переход к свойства подключения к Elasticsearch](https://kb.comindware.ru/assets/img_64d09fd6ec3ba.png)
@@ -101,7 +101,7 @@ kbId: 2038
 
 **[Резервное копирование. Настройка и запу{{ productName }}.comindware.ru/article.php?id=2190)**
 
-**[Резервное копирование и восстановление Comindware Business Application Platform. Краткое руководство для ОС Windows]({{ kbArticleURLPrefix }}2101)**
+**[Резервное копирование и восстановление {{ productName }}. Краткое руководство для ОС Windows][backup_restore_windows]**
 
 
 

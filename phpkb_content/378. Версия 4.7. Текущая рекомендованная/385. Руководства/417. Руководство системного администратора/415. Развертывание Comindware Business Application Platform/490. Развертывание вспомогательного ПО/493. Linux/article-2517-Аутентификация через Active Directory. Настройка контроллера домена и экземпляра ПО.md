@@ -7,7 +7,7 @@ kbId: 2517
 
 Внимание!
 
-Представленные в данной статье инструкции зависят от конфигурации сторонних систем и окружения, в котором развёрнут экземпляр ПО **{{ productName }}** (далее «экземпляр ПО»).
+Представленные здесь инструкции зависят от конфигурации сторонних систем и окружения, в котором развёрнут экземпляр ПО **{{ productName }}** (далее «экземпляр ПО»).
 
 Описать все возможные варианты и сочетания конфигураций сторонних систем не представляется возможным, поэтому данные инструкции могут не подойти для вашего случая.
 
@@ -75,27 +75,27 @@ vim /etc/krb5.conf
 3. Отредактируйте файл `krb5.conf` согласно следующему примеру:
 
 ```
-#astra-winbind      
-[libdefaults]     
-    default_realm = <DOMAIN.NAME>     
-    kdc_timesync = 1     
-    ccache_type = 2     
-    forwardable = true     
-    proxiable = true     
-    fcc-mit-ticketflags = true     
-    dns_lookup_realm = false     
-    default_ccache_name = DIR:/tmp     
-[realms]     
-    <DOMAIN.NAME> = {     
-        kdc = <DCName>.<domain.name>     
-        admin_server = <DCName>.<domain.name>     
-        default_domain = <domain.name>     
-    }     
-[domain_realm]     
-    .<domain.name> = <DOMAIN.NAME>     
-    <domain.name> = <DOMAIN.NAME>     
-[login]     
-    krb4_convert = false     
+#astra-winbind  
+[libdefaults]  
+    default_realm = <DOMAIN.NAME>  
+    kdc_timesync = 1  
+    ccache_type = 2  
+    forwardable = true  
+    proxiable = true  
+    fcc-mit-ticketflags = true  
+    dns_lookup_realm = false  
+    default_ccache_name = DIR:/tmp  
+[realms]  
+    <DOMAIN.NAME> = {  
+        kdc = <DCName>.<domain.name>  
+        admin_server = <DCName>.<domain.name>  
+        default_domain = <domain.name>  
+    }  
+[domain_realm]  
+    .<domain.name> = <DOMAIN.NAME>  
+    <domain.name> = <DOMAIN.NAME>  
+[login]  
+    krb4_convert = false  
     krb4_get_tickets = false
 ```
 
@@ -144,36 +144,36 @@ vim /etc/krb5.conf
 3. Отредактируйте файл `krb5.conf` согласно следующему примеру:
 
 ```
-[libdefaults]     
-    default_realm = <DOMAIN.NAME>     
-    kdc_timesync = 1     
-    ccache_type = 2     
-    forwardable = true     
-    proxiable = true     
-    fcc-mit-ticketflags = true     
-    dns_lookup_realm = false     
-[realms]     
-    <DOMAIN.NAME> = {     
-        kdc = <DCName>.<domain.name>     
-        admin_server = <DCName>.<domain.name>     
-        default_domain = <domain.name>     
-    }     
-[domain_realm]     
-    .<domain.name> = <DOMAIN.NAME>     
-    <domain.name> = <DOMAIN.NAME>     
-[login]     
-    krb4_convert = false     
+[libdefaults]  
+    default_realm = <DOMAIN.NAME>  
+    kdc_timesync = 1  
+    ccache_type = 2  
+    forwardable = true  
+    proxiable = true  
+    fcc-mit-ticketflags = true  
+    dns_lookup_realm = false  
+[realms]  
+    <DOMAIN.NAME> = {  
+        kdc = <DCName>.<domain.name>  
+        admin_server = <DCName>.<domain.name>  
+        default_domain = <domain.name>  
+    }  
+[domain_realm]  
+    .<domain.name> = <DOMAIN.NAME>  
+    <domain.name> = <DOMAIN.NAME>  
+[login]  
+    krb4_convert = false  
     krb4_get_tickets = false
 ```
 4. Откройте файл конфигурации `kcm_default_ccache` для редактирования:
 
 ```
-vim /etc/krb5.conf.d/kcm_default_ccache    
+vim /etc/krb5.conf.d/kcm_default_ccache
 ```
 5. Отредактируйте файл `kcm_default_ccache` согласно следующему примеру:
 
 ```
-[libdefaults]    
+[libdefaults]  
 default_ccache_name = DIR:/tmp
 ```
 

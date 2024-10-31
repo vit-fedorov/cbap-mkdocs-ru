@@ -124,6 +124,6 @@ kbId: 2581
 
 --8<-- "related_topics_heading.md"
 
-**[Пути и содержимое папок экземпляра ПО (Linux)][paths]**
+**[Пути и содержимое папок экземпляра ПО][paths]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

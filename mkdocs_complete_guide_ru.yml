@@ -15,6 +15,19 @@ nav:
 
   - Введение:
     - index.md
+    - product_description.md
+  - Использование системы:
+    - using_the_system/index.md
+    - Панель навигации:
+      - using_the_system/navigation_panel/index.md
+      - using_the_system/navigation_panel/desktop.md
+      - using_the_system/navigation_panel/my_tasks.md
+      - using_the_system/navigation_panel/pages.md
+    - Таблицы: using_the_system/table_personal_use.md
+    - Карточки: using_the_system/cards_view.md
+    - Формы: using_the_system/form_personal_use.md
+    - Обсуждение: using_the_system/discussion_use.md
+    - Карты: using_the_system/map_use.md
   - Развёртывание ПО:
     - administration/deploy/system_requirements.md
     - administration/deploy/architecture_landscape.md
@@ -82,9 +95,14 @@ nav:
     - Внешний вид:
       - Темы: administration/appearance/themes/index.md
       - Дизайн страниц входа и регистрации: administration/appearance/login_and_registration_page_design/index.md
+    - Архитектура:
+      - Приложения: /business_apps/
+      - Шаблоны: /business_apps/templates/
+      - Диаграммы: /business_apps/diagrams/
+      - Разделы навигации: /business_apps/navigation_sections/
+      - administration/architecture/functions.md
     - Аккаунты и группы:
       - administration/account_administration/authentication_authorization_sessions.md
-      
       - administration/account_administration/accounts.md
       - administration/account_administration/groups.md
       - administration/account_administration/system_roles.md
@@ -134,12 +152,15 @@ nav:
         - administration/connections_communication_routes/email_connections/scenario_send_email.md
         - administration/connections_communication_routes/email_connections/process_receiving_connection.md
         - administration/connections_communication_routes/email_connections/scenario_receive_email.md
+        - 'Пример: отправка, получение и обработка эл. почты в процессе': administration/connections_communication_routes/email_connections/process_email_configure_include.md
       - Подключения REST и OData:
         - administration/connections_communication_routes/rest_odata_connections/get_connection.md
         - administration/connections_communication_routes/rest_odata_connections/odata_connection.md
         - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
+        - administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
+        - administration/connections_communication_routes/rest_odata_connections/send_http_example.md
         - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
       - SQL-подключения:
         - administration/connections_communication_routes/sql_connections/sql_send_connection.md
@@ -243,8 +264,6 @@ nav:
         - business_apps/templates/forms/form_rules.md
         - business_apps/templates/forms/form_static_elements.md
         - business_apps/templates/forms/form_dynamic_elements.md
-        - examples/creating_gantt_chart.md
-        - examples/using_gantt_chart.md
         - business_apps/templates/forms/discussion_configure.md
       - Кнопки: business_apps/templates/buttons/index.md
       - business_apps/templates/button_area.md
@@ -336,11 +355,22 @@ nav:
     - examples/download_document_archive_csharp.md
     - examples/substring_search.md
     - examples/enum_attribute_value_calculation.md
-    - examples/script_using_local_variable.md
+    - examples/creating_gantt_chart.md
+    - examples/using_gantt_chart.md
     - examples/scenario_verify_data.md
+    - examples/process_email_configure.md
+    - examples/script_using_local_variable.md
   - Обзор версий:
     - general/changelog/changelog.md
     - general/changelog/release_notes_4.7.2902.md
     - general/changelog/release_notes_4.7.2721.md
     - general/changelog/release_notes_4.7.2285.md
-
+  - DevOps Wiki:
+    - index.md
+    - Практика Kubernetes:
+      - devops_wiki/index.md
+      - devops_wiki/kubernetes/index.md
+      - devops_wiki/kubernetes/kubernetes_install/index.md
+      - devops_wiki/kubernetes/openebs_install/index.md
+      - devops_wiki/kubernetes/setup_ssl_for_helm/index.md
+      - devops_wiki/kubernetes/cbap_install/index.md

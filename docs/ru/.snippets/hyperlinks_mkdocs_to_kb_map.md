@@ -632,7 +632,9 @@
 
 [instance_configure_windows]: {{ kbArticleURLPrefix }}2036
 
-{% elif (userGuide and not (adminGuideLinux or adminGuideWindows)) or kbExport %}
+{% endif %}
+
+{% if (userGuide and not (adminGuideLinux or adminGuideWindows)) or kbExport %}
 
 [accounts_dc_sync]: {{ kbArticleURLPrefix }}2308
 

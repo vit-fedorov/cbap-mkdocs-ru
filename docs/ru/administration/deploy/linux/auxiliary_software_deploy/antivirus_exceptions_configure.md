@@ -13,7 +13,7 @@ kbId: 2581
 
 ## Процессы, файлы и пути для добавления в исключения антивирусного ПО
 
-{% if adminGuideWindows or kbExport %}
+{% if adminGuideLinux or kbExport %}
 
 ### Linux
 

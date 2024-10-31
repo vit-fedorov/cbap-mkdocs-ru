@@ -24,9 +24,7 @@
 <code>nslookup<span class="w"> </span>&lt;DCName&gt;</code><br/>
 <code>nslookup<span class="w"> </span>&lt;DCName&gt;.&lt;domain.name&gt;</code><br/>
 <code></code><br/>
-<code></code><br/>
 <code>host<span class="w"> </span>&lt;DCName&gt;.&lt;domain.name&gt;</code><br/>
-<code></code><br/>
 <code></code><br/>
 <code><span class="c1"># Reverse DNS lookup of `nameserver`</span></code><br/>
 <code>host<span class="w"> </span>&lt;domain.controller.ip.address&gt;</code><br/>
@@ -55,7 +53,6 @@
 <code><span class="w">    </span><span class="nv">ccache_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span></code><br/>
 <code><span class="w">    </span><span class="nv">forwardable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span></code><br/>
 <code><span class="w">    </span><span class="nv">proxiable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span></code><br/>
-<code></code><br/>
 <code></code><br/>
 <code><span class="w">    </span>fcc-mit-ticketflags<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span></code><br/>
 <code><span class="w">    </span><span class="nv">dns_lookup_realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span></code><br/>
@@ -135,7 +132,6 @@
 <code><span class="w">        </span>listen<span class="w"> </span><span class="m">8999</span><span class="w"> </span>http2<span class="p">;</span></code><br/>
 <code><span class="w">        </span>root<span class="w"> </span>/var/www/cmwdata<span class="p">;</span></code><br/>
 <code></code><br/>
-<code></code><br/>
 <code><span class="w">            </span>location<span class="w"> </span>/async<span class="w"> </span><span class="o">{</span></code><br/>
 <code><span class="w">                </span>grpc_pass<span class="w"> </span>grpc_cmwdata<span class="p">;</span></code><br/>
 <code><span class="w">        </span><span class="o">}</span></code><br/>
@@ -150,15 +146,12 @@
 <code><span class="w">        </span>grpc_read_timeout<span class="w"> </span>3h<span class="p">;</span></code><br/>
 <code><span class="w">        </span>grpc_send_timeout<span class="w"> </span>3h<span class="p">;</span></code><br/>
 <code></code><br/>
-<code></code><br/>
 <code><span class="w">        </span>client_max_body_size<span class="w"> </span>300m<span class="p">;</span></code><br/>
 <code><span class="w">        </span>fastcgi_read_timeout<span class="w"> </span><span class="m">10000</span><span class="p">;</span></code><br/>
-<code></code><br/>
 <code></code><br/>
 <code><span class="w">            </span>location<span class="w"> </span>/async<span class="w"> </span><span class="o">{</span></code><br/>
 <code><span class="w">                </span>grpc_pass<span class="w"> </span>grpc_cmwdata<span class="p">;</span></code><br/>
 <code><span class="w">            </span><span class="o">}</span></code><br/>
-<code></code><br/>
 <code></code><br/>
 <code><span class="w">            </span>location<span class="w"> </span>/<span class="w"> </span><span class="o">{</span></code><br/>
 <code><span class="w">                </span><span class="c1"># SPNEGO Configuration</span></code><br/>
@@ -175,7 +168,6 @@
 <code><span class="w">                </span>root<span class="w">                </span>/var/www/cmwdata/<span class="p">;</span></code><br/>
 <code><span class="w">                </span>fastcgi_pass<span class="w">        </span>unix:/var/www/cmwdata/App_Data/cmwdata.socket<span class="p">;</span></code><br/>
 <code><span class="w">                </span>include<span class="w">             </span>/etc/nginx/fastcgi.conf<span class="p">;</span></code><br/>
-<code></code><br/>
 <code><span class="w">            </span><span class="o">}</span></code><br/>
 <code><span class="o">}</span></code><br/>
 </pre></code></div> </li> <li> <p>Проверьте синтаксис веб-приложения <em>NGINX</em> для экземпляра ПО <code>&lt;instanceName&gt;</code>:</p> <div class="highlight"><code><pre><span></span><code>nginx<span class="w"> </span>-t</code><br/>

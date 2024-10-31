@@ -268,9 +268,7 @@ _![Настройка свойств сервисного аккаунта дл�
     nslookup <DCName>
     nslookup <DCName>.<domain.name>
 
-
     host <DCName>.<domain.name>
-
 
     # Reverse DNS lookup of `nameserver`
     host <domain.controller.ip.address>
@@ -374,7 +372,6 @@ _![Настройка свойств сервисного аккаунта дл�
         ccache_type = 4
         forwardable = true
         proxiable = true
-
 
         fcc-mit-ticketflags = true
         dns_lookup_realm = false
@@ -531,7 +528,6 @@ _![Пример файла instanceName.yml с директивой  isLinuxSSOA
             listen 8999 http2;
             root /var/www/cmwdata;
 
-
                 location /async {
                     grpc_pass grpc_cmwdata;
             }
@@ -546,15 +542,12 @@ _![Пример файла instanceName.yml с директивой  isLinuxSSOA
             grpc_read_timeout 3h;
             grpc_send_timeout 3h;
 
-
             client_max_body_size 300m;
             fastcgi_read_timeout 10000;
-
 
                 location /async {
                     grpc_pass grpc_cmwdata;
                 }
-
 
                 location / {
                     # SPNEGO Configuration
@@ -571,7 +564,6 @@ _![Пример файла instanceName.yml с директивой  isLinuxSSOA
                     root                /var/www/cmwdata/;
                     fastcgi_pass        unix:/var/www/cmwdata/App_Data/cmwdata.socket;
                     include             /etc/nginx/fastcgi.conf;
-
                 }
     }
     ```

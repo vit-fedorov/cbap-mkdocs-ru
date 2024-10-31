@@ -5,9 +5,29 @@ kbId: 2583
 
 # Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя
 
+    - [Требования к машине](#требования-к-машине)
+    - [Настройка параметров сети для разрешения DC FQDN](#настройка-параметров-сети-для-разрешения-dc-fqdn) 
+    
+        - [Изменение файла hosts](#изменение-файла-hosts)
+        - [Изменение файла resolv.conf](#изменение-файла-resolvconf)
+    - [Проверка корректности настроек сети](#проверка-корректности-настроек-сети)
+    - [Синхронизация времени между машинами DCName и linuxHost](#синхронизация-времени-между-машинами-dcname-и-linuxhost)
+    - [Настройка конфигурации Kerberos](#настройка-конфигурации-kerberos) 
+    
+        - [Установка вспомогательных пакетов](#установка-вспомогательных-пакетов)
+        - [Настройка аутентификации Kerberos](#настройка-аутентификации-kerberos)
+        - [Для ОС «Альт»: настройка pam\_winbind.conf](#для-ос-альт-настройка-pam_winbindconf)
+        - [Установка экземпляра ПО](#установка-экземпляра-по)
+        - [Настройка экземпляра ПО](#настройка-экземпляра-по)
+        - [Установка и настройка модуля NGINX SPNEGO](#установка-и-настройка-модуля-nginx-spnego)
+    - [Изменение конфигурации экземпляра ПО](#изменение-конфигурации-экземпляра-по)
+    - [Проверка работы функционала Kerberos на машине linuxHost](#проверка-работы-функционала-kerberos-на-машине-linuxhost)
+    - [Проверка вывода трассировщика ошибок в Shell](#проверка-вывода-трассировщика-ошибок-в-shell)
+- [Связанные статьи](#связанные-статьи)
+
 Внимание!
 
-Представленные в данной статье инструкции зависят от конфигурации сторонних систем и окружения, в котором развёрнут экземпляр ПО **{{ productName }}**.
+Представленные в данной статье инструкции зависят от конфигурации сторонних систем и окружения, в котором развёрнут экземпляр ПО **{{ productName }}**.
 
 Описать все возможные случаи и сочетания конфигураций сторонних систем не представляется возможным, поэтому данные инструкции могут не подойти для вашего случая.
 
@@ -17,17 +37,17 @@ kbId: 2583
 
 ## Введение
 
-В этой статье представлены инструкции по настройке контроллера домена, экземпляра ПО **{{ productName }}** (далее «экземпляр ПО») и компьютера конечного пользователя для аутентификации пользователей посредством технологии единого входа (SSO). Инструкции приведены для контроллера домена под управлением ОС Windows Server 2016, экземпляра ПО под управлением ОС Альт 10, Astra Linux SE 1.7 и Debian 12 и компьютера конечного пользователя под управлением ОС Windows 10.
+Здесь представлены инструкции по настройке контроллера домена, экземпляра ПО **{{ productName }}** (далее «экземпляр ПО») и компьютера конечного пользователя для аутентификации пользователей посредством технологии единого входа (SSO). Инструкции приведены для контроллера домена под управлением ОС Windows Server 2016, экземпляра ПО под управлением ОС Linux и компьютера конечного пользователя под управлением ОС Windows 10.
 
 ## Определения
 
 - **Контроллер домена** — машина с развёрнутыми доменными службами Active Directory.
 - **Домен Active Directory** — группа объектов в сети.
-- **Single Sign-on (SSO)** — технология единого входа, позволяющая пользователям выполнять аутентификацию с использованием одного набора учётных данных в нескольких независимых системах.
+- **Single Sign-on (SSO)** — технология единого входа, позволяющая пользователям выполнять аутентификацию с использованием одного набора учётных данных в нескольких независимых системах.
 
 ## Примеры значений параметров
 
-В этой статье примеры значений параметров заключены в угловые скобки `< >`. При настройке конфигурации заменяйте их на фактические значения, как показано в следующей таблице.
+Здесь примеры значений параметров заключены в угловые скобки `< >`. При настройке конфигурации заменяйте их на фактические значения, как показано в следующей таблице:
 
 | Пример параметра | Пример фактического значения |
 | --- | --- |
@@ -41,11 +61,11 @@ kbId: 2583
 
 Протокол аутентификации Kerberos учитывает регистр символов — там, где в инструкциях даны примеры параметров в верхнем регистре, следует подставлять фактические значения также в верхнем регистре.
 
-## Конфигурация машины linuxHost с экземпляром ПО {{ productName }}
+## Конфигурация машины linuxHost с экземпляром ПО {{ productName }}
 
 | Параметр | Значение |
 | --- | --- |
-| Операционная система | Альт 10, Astra Linux SE 1.7, Debian 12 |
+| Операционная система | Linux |
 | Имя хоста | `<linuxHost>` |
 | IP-адрес хоста | `<linux.host.ip.address>` |
 
@@ -70,31 +90,27 @@ kbId: 2583
 5. Нажмите кнопку «**Узлы**» (**Sites**).
 6. В отобразившемся окне добавьте в список надёжных узлов `<linuxHost>`.
 
-_![Добавление машины с экземпляром ПО в список доверенных узлов на контроллере домена](https://kb.comindware.ru/assets/img_65e1e692cb483.png)_
+_![Добавление машины с экземпляром ПО в список доверенных узлов на контроллере домена](https://kb.comindware.ru/assets/sso_authenticatation_configure_make_host_machine_trusted.png)_
 
 ### Сервисный пользователь домена
 
-В домене должен существовать пользователь `<authuser>`, выступающий в роли сервисного аккаунта для модуля аутентификации NGINX, работающего на машине `<linuxHost>` с экземпляром ПО.
+В домене должен существовать пользователь `<authuser>`, выступающий в роли сервисного аккаунта для модуля аутентификации *NGINX*, работающего на машине `<linuxHost>` с экземпляром ПО.
 
-Если пользователя `<authuser>` в AD нет, необходимо создать его, указав параметры, приведённые в следующей таблице.
+Если пользователя `<authuser>` в AD нет, необходимо создать его, указав параметры, приведённые в следующей таблице:
 
 | Параметр | Значение |
 | --- | --- |
 | `name` | `<authuser>` |
 | `userPrincipalName` (User logon name) | `HTTP/<DCName>.<domain.name>@<DOMAIN.NAME>` |
-| `sAMAccountName` (User logon name pre-Windows 2000) | `<DOMAIN>\<authuser>` |
+| `sAMAccountName` (User logon name pre-Windows 2000) | `<DOMAIN>\<authuser>` |
 
 При создании пользователя `<authuser>` на вкладке «**Учётная запись**» (**Account**) необходимо установить флажки «**Пользователь не может менять пароль**» (**User cannot change password**) и «**Срок действия пароля не истекает**» (**Password never expires**), как показано на иллюстрации.
 
-*![Настройка свойств сервисного аккаунта для NGINX](https://kb.comindware.ru/assets/Kerberos_Rocky+Astra_authuser_account_config.png)*
-
-Настройка свойств сервисного аккаунта для NGINX
-
- 
+_![Настройка свойств сервисного аккаунта для NGINX](https://kb.comindware.ru/assets/Kerberos_Rocky%2BAstra_authuser_account_config.png)_
 
 ### Пользователи для проверки аутентификации
 
-Для проверки работоспособности процедуры аутентификации в данной статье используются пользователи `user1` и `user2`, см. следующую таблицу.
+Для проверки работоспособности процедуры аутентификации в данной статье используются пользователи `user1` и `user2`, см. следующую таблицу:
 
 | Параметр | Значение | Значение |
 | --- | --- | --- |
@@ -104,18 +120,19 @@ _![Добавление машины с экземпляром ПО в спис
 
 ## Создание keytab-файла аутентификации
 
-1. На контроллере домена `<DCName>` выведите список Service Principal Names (SPN), привязанных к пользователю `<authuser>`:
+1. На контроллере домена `<DCName>` выведите список Service Principal Names (SPN), привязанных к пользователю `<authuser>`:
 
 ```
 setspn -L <authuser>
 ```
-2. Добавьте SPN `HTTP/<DCName>.<domain.name>` к пользователю `<authuser>`:
+2. Добавьте SPN `HTTP/<DCName>.<domain.name>` к пользователю `<authuser>`:
 
 ```
-setspn -S HTTP/<DCName>.<domain.name> <authuser>    
+setspn -S HTTP/<DCName>.<domain.name> <authuser>
 ```
-3. Создайте keytab-файл аутентификации `<authuser>.keytab`:
-**Альт, Astra Linux, Debian**
+3. Создайте keytab-файл аутентификации `<authuser>.keytab`:
+
+**Альт, Astra Linux, Debian**
 
 ```
 ktpass /out <authuser>.keytab /mapuser <authuser> /princ HTTP/<DCName>.<domain.name>@<DOMAIN.NAME> /pass <P@$$W0RD> /crypto RC4-HMAC-NT /ptype KRB5_NT_PRINCIPAL
@@ -124,72 +141,72 @@ ktpass /out <authuser>.keytab /mapuser <authuser> /princ HTTP/<DCName>.<domain.n
 Примечание
 
 Вместо пароля `<P@$$W0RD>`, подставьте пароль [сервисного пользователя](#сервисный-пользователь-домена) `<authuser>`.
-4. Утилита `ktpass` создаст файл `<authuser>.keytab` в рабочей директории *PowerShell* на момент вызова команды `ktpass`.
-5. [Настройте машину `<linuxHost>`](#настройка-машины-linuxhost) с экземпляром ПО.
-6. Перенесите keytab-файл `<authuser>.keytab` на машину `<linuxHost>` с экземпляром ПО.
+4. Утилита `ktpass` создаст файл `<authuser>.keytab` в рабочей директории *PowerShell* на момент вызова команды `ktpass`.
+5. [Настройте машину `<linuxHost>`](#настройка-машины-linuxhost-с-экземпляром-по) с экземпляром ПО.
+6. Перенесите keytab-файл `<authuser>.keytab` на машину `<linuxHost>` с экземпляром ПО.
 
 ## Обновление keytab-файла аутентификации для аутентификации новых пользователей
 
 Внимание!
 
-Для обеспечения возможности аутентификации новых пользователей, добавленных при синхронизации с сервером каталогов необходимо заново создать keytab-файл на машине `<linuxHost>` с экземпляром ПО.
+Для обеспечения возможности аутентификации новых пользователей, добавленных при синхронизации с сервером каталогов необходимо заново создать keytab-файл на машине `<linuxHost>` с экземпляром ПО.
 
-Эту операцию необходимо выполнять каждый раз после добавления новых пользователей с сервера каталогов на уже настроенной машине `<linuxHost>`.
+Эту операцию необходимо выполнять каждый раз после добавления новых пользователей с сервера каталогов на уже настроенной машине `<linuxHost>`.
 
 Если не создать новый keytab-файл, пользователи, добавленные с сервера каталогов после создания имеющегося keytab-файла, не смогут войти в систему.
 
-1. [Настройте машину `<linuxHost>`](#настройка-машины-linuxhost) с экземпляром ПО.
-2. На контроллере домена `<DCName>` выведите список Service Principal Names (SPN), привязанных к пользователю `<authuser>`:
+1. [Настройте машину `<linuxHost>`](#настройка-машины-linuxhost-с-экземпляром-по) с экземпляром ПО.
+2. На контроллере домена `<DCName>` выведите список Service Principal Names (SPN), привязанных к пользователю `<authuser>`:
 
 ```
 setspn -L <authuser>
 ```
-3. Добавьте SPN `HTTP/<DCName>.<domain.name>` к пользователю `<authuser>`:
+3. Добавьте SPN `HTTP/<DCName>.<domain.name>` к пользователю `<authuser>`:
 
 ```
-setspn -S HTTP/<DCName>.<domain.name> <authuser>    
+setspn -S HTTP/<DCName>.<domain.name> <authuser>
 ```
-4. Создайте keytab-файл аутентификации `<authuser>.keytab`:
+4. Создайте keytab-файл аутентификации `<authuser>.keytab`:
+
 **Для Rocky Linux**
 
 ```
-ktpass /out <authuser>.keytab /mapuser <authuser> /princ HTTP/<DCName>.<domain.name>@<DOMAIN.NAME> /pass <P@$$W0RD> /crypto AES256-SHA1 /ptype KRB5_NT_PRINCIPAL    
+ktpass /out <authuser>.keytab /mapuser <authuser> /princ HTTP/<DCName>.<domain.name>@<DOMAIN.NAME> /pass <P@$$W0RD> /crypto AES256-SHA1 /ptype KRB5_NT_PRINCIPAL
 ```
 
 **Для Astra Linux и Ubuntu**
 
 ```
-ktpass /out <authuser>.keytab /mapuser <authuser> /princ HTTP/<DCName>.<domain.name>@<DOMAIN.NAME> /pass <P@$$W0RD> /crypto RC4-HMAC-NT /ptype KRB5_NT_PRINCIPAL    
+ktpass /out <authuser>.keytab /mapuser <authuser> /princ HTTP/<DCName>.<domain.name>@<DOMAIN.NAME> /pass <P@$$W0RD> /crypto RC4-HMAC-NT /ptype KRB5_NT_PRINCIPAL
 ```
 
 Примечание
 
 Вместо пароля `<P@$$W0RD>`, подставьте пароль [сервисного пользователя](#сервисный-пользователь-домена) `<authuser>`.
-5. Утилита `ktpass` создаст файл `<authuser>.keytab` в рабочей директории *PowerShell* на момент вызова команды `ktpass`.
-6. Перейдите на уже [настроенную машину `<linuxHost>`](#настройка-машины-linuxhost) с экземпляром ПО.
-7. Поместите keytab-файл `<authuser>.keytab` в директорию `/etc/nginx/sasl` и сделайте его доступным для чтения:
+5. Утилита `ktpass` создаст файл `<authuser>.keytab` в рабочей директории *PowerShell* на момент вызова команды `ktpass`.
+6. Перейдите на уже [настроенную машину `<linuxHost>`](#настройка-машины-linuxhost-с-экземпляром-по) с экземпляром ПО.
+7. Поместите keytab-файл `<authuser>.keytab` в директорию `/etc/nginx/sasl` и сделайте его доступным для чтения:
 
 ```
-cp /<path_to_keytab>/<authuser>.keytab /etc/nginx/sasl   
-chmod 664 /etc/nginx/sasl/<authuser>.keytab  
-
+cp /<path_to_keytab>/<authuser>.keytab /etc/nginx/sasl  
+chmod 664 /etc/nginx/sasl/<authuser>.keytab
 ```
-
-Здесь `<path_to_keytab>` — папка, в которой находится keytab-файл `<authuser>.keytab`, взятый с контроллера домена.
-8. Выпустите тикет для приложения `HTTP/<DCName>.<domain.name>`:
+
+Здесь `<path_to_keytab>` — папка, в которой находится keytab-файл `<authuser>.keytab`, взятый с контроллера домена.
+8. Выпустите тикет для приложения `HTTP/<DCName>.<domain.name>`:
 
 ```
 kinit -k -t /etc/nginx/sasl/<authuser>.keytab HTTP/<DCName>.<domain.name>
 ```
-9. Выдайте права на файл `krb5cc_<id>` (в примере — `krb5cc_991` или `krb5cc_33`, где `991` и `33` — `id` пользователя  `nginx` и `www-data` соответственно):   
-**Rocky Linux**   
+9. Выдайте права на файл `krb5cc_<id>` (в примере — `krb5cc_991` или `krb5cc_33`, где `991` и `33` — `id` пользователя `nginx` и `www-data` соответственно):
+
+**Rocky Linux**
 
 ```
-chown -R nginx:nginx /etc/nginx/sasl/krb5cc_991  
-
+chown -R nginx:nginx /etc/nginx/sasl/krb5cc_991
 ```
 
-**Astra Linux и Ubuntu**   
+**Astra Linux и Ubuntu**
 
 ```
 chown -R www-data:www-data /etc/nginx/sasl/krb5cc_33
@@ -209,12 +226,12 @@ chown -R www-data:www-data /etc/nginx/sasl/krb5cc_33
 
 #### Изменение файла hosts
 
-1. Откройте файл `/etc/hosts` для редактирования:
+1. Откройте файл `/etc/hosts` для редактирования:
 
 ```
-vim /etc/hosts    
+vim /etc/hosts
 ```
-2. Добавьте в файл `hosts` правила для разрешения машины `<linuxHost>` с экземпляром ПО:
+2. Добавьте в файл `hosts` правила для разрешения машины `<linuxHost>` с экземпляром ПО:
 
 ```
 127.0.0.1                       localhost localhost.localdomain  
@@ -224,26 +241,26 @@ vim /etc/hosts
 
 #### Изменение файла resolv.conf
 
-Если после настройки файла `hosts`, имя контроллера не разрешается, следует отредактировать файл `resolv.conf`.
+Если после настройки файла `hosts`, имя контроллера не разрешается, следует отредактировать файл `resolv.conf`.
 
-1. Разрешите редактирование файла `resolv.conf`:
+1. Разрешите редактирование файла `resolv.conf`:
 
 ```
 chattr -i /etc/resolv.conf
 ```
-2. Откройте файл разрешения DNS имен `resolv.conf` для редактирования:
+2. Откройте файл разрешения DNS имен `resolv.conf` для редактирования:
 
 ```
 vim /etc/resolv.conf
 ```
-3. Укажите машину `<DCName>` в качестве сервера имён `nameserver`:
+3. Укажите машину `<DCName>` в качестве сервера имён `nameserver`:
 
 ```
 domain     <domain.name>  
 search     <domain.name>  
 nameserver <domain.controller.ip.address>
 ```
-4. Запретите редактирование файла `resolv.conf`: 
+4. Запретите редактирование файла `resolv.conf`:
 
 ```
 chattr +i /etc/resolv.conf
@@ -251,15 +268,15 @@ chattr +i /etc/resolv.conf
 
 ### Проверка корректности настроек сети
 
-1. Убедитесь, что FQDN `<DCName>.<domain.name>` разрешается: 
+1. Убедитесь, что FQDN `<DCName>.<domain.name>` разрешается:
 
 ```
 # DNS Lookup of DC  
 nslookup <DCName>  
-nslookup <DCName>.<domain.name>
-              
-host <DCName>.<domain.name>
-              
+nslookup <DCName>.<domain.name>  
+  
+host <DCName>.<domain.name>  
+  
 # Reverse DNS lookup of `nameserver`  
 host <domain.controller.ip.address>
 ```
@@ -271,33 +288,33 @@ host <domain.controller.ip.address>
 - машины `<DCName>` и `<linuxHost>` находятся в разных часовых поясах;
 - машина `<linuxHost>` не подключена к сервису синхронизации времени.
 
-1. Установите пакет `ntp`:
+1. Установите пакет `ntp`:
 
 ```
 apt-get install ntp
 ```
-2. Откройте файл конфигурации `ntp.conf` для редактирования:
+2. Откройте файл конфигурации `ntp.conf` для редактирования:
 
 ```
 vim /etc/ntp.conf
 ```
-3. Добавьте в файл конфигурации `ntp.conf` поле `server <DOMAIN.NAME> iburst burst prefer`:
+3. Добавьте в файл конфигурации `ntp.conf` поле `server <DOMAIN.NAME> iburst burst prefer`:
 
 ```
 driftfile /etc/ntp/drift  
 server <DOMAIN.NAME> iburst burst prefer  
 server 127.127.1.0 iburst  
-fudge  127.127.1.0 stratum 10   
+fudge  127.127.1.0 stratum 10  
   
 restrict default noquery nomodify  
-restrict 127.0.0.1   
+restrict 127.0.0.1
 ```
-4. Примените настройки:
+4. Примените настройки:
 
 ```
 systemctl start ntp
 ```
-5. Удостоверьтесь, что служба `ntp` работает:
+5. Удостоверьтесь, что служба `ntp` работает:
 
 ```
 systemctl status ntp
@@ -307,28 +324,28 @@ systemctl status ntp
 
 #### Установка вспомогательных пакетов
 
-1. Установите модуль `libsasl2`:
+1. Установите модуль `libsasl2`:
 
 ```
 apt install libsasl2-modules-gssapi-mit
 ```
-2. Убедитесь, что модуль установлен:
+2. Убедитесь, что модуль установлен:
 
 ```
 apt list libsasl*
 ```
-3. Убедитесь, что установлены пакеты `krb5-user`, `krb5-config` и зависимости для них:
+3. Убедитесь, что установлены пакеты `krb5-user`, `krb5-config` и зависимости для них:
 
 ```
-which krb5-user   
+which krb5-user  
 which krb5-config
 ```
-4. Установите пакеты `samba-dc` и `kerberos-kdc`:
+4. Установите пакеты `samba-dc` и `kerberos-kdc`:
 
 ```
 apt-get install task-samba-dc krb5-kdc
 ```
-5. Убедитесь, что модули установлены:
+5. Убедитесь, что модули установлены:
 
 ```
 apt list task-samba-dc krb5-kdc
@@ -336,13 +353,14 @@ apt list task-samba-dc krb5-kdc
 
 #### Настройка аутентификации Kerberos
 
-1. Откройте файл конфигурации Kerberos для редактирования:
+1. Откройте файл конфигурации Kerberos для редактирования:
 
 ```
 vim /etc/krb5.conf
 ```
-2. `Отредактируйте файл krb5.conf` согласно приведённому ниже примеру:   
-**Astra Linux, Debian**   
+2. Отредактируйте файл `krb5.conf` согласно следующему примеру:
+
+**Astra Linux, Debian**
 
 ```
 #astra/debian-winbind  
@@ -351,8 +369,8 @@ vim /etc/krb5.conf
     kdc_timesync = 1  
     ccache_type = 4  
     forwardable = true  
-    proxiable = true
-              
+    proxiable = true  
+  
     fcc-mit-ticketflags = true  
     dns_lookup_realm = false  
     dns_lookup_kdc = false  
@@ -379,11 +397,9 @@ vim /etc/krb5.conf
     <domain.name> = <DOMAIN.NAME>  
 [login]  
     krb4_convert = false  
-    krb4_get_tickets = false  
-
+    krb4_get_tickets = false
 ```
 
-  
 **Альт**
 
 ```
@@ -391,8 +407,8 @@ includedir /etc/krb5.conf.d/
 [logging]  
 # default = FILE:/var/log/krb5libs.log  
 # kdc = FILE:/var/log/krb5kdc.log  
-# admin_server = FILE:/var/log/kadmind.log
-              
+# admin_server = FILE:/var/log/kadmind.log  
+  
 [libdefaults]  
 dns_lookup_kdc = true  
 dns_lookup_realm = false  
@@ -404,25 +420,25 @@ default_realm = <DOMAIN.NAME>
 default_ccache_name = KEYRING:persistent:%{uid}  
   
 [realms]  
-  <DOMAIN.NAME> = {  
+<DOMAIN.NAME> = {  
     kdc = <DCName>.<domain.name>  
     admin_server = <DCName>.<domain.name>  
     default_domain = <domain.name>  
-  }  
+}  
   
 [domain_realm]  
-<.domain.name> = <DOMAIN.NAME>  
+<.domain.name> = <DOMAIN.NAME>  {{ productName }}  
 <domain.name> = <DOMAIN.NAME>
 ```
 
 #### Для ОС «Альт»: настройка pam\_winbind.conf
 
-5. Откройте для редактирования файл конфигурации `pam_winbind.conf`:
+1. Откройте для редактирования файл конфигурации `pam_winbind.conf`:
 
 ```
 vim /etc/security/pam_winbind.conf
 ```
-6. Отредактировать файл конфигурации `pam_winbind.conf` согласно приведённому ниже примеру:
+2. Отредактировать файл конфигурации `pam_winbind.conf` согласно следующему примеру:
 
 ```
 [global]  
@@ -438,53 +454,38 @@ mkhomedir = yes
 
 #### Установка экземпляра ПО
 
-5. Скачайте и распакуйте дистрибутив ПО **{{ productName }}** в директорию ``/home/<username>`` и  перейдите в директорию с распакованным ПО:
-
-**Astra Linux**
+1. Скачайте и распакуйте дистрибутив ПО **{{ productName }}** в директорию `/home/<username>` и перейдите в директорию с распакованным ПО (`X.X.XXXX.X` — номер версии ПО, `<osname>` — название операционной системы):
 
 ```
-tar -xvzf 4.6<build.ver>.astra.tar.gz -C /home/<username>  
-cd /home/<username>/CMW_Astra/
+tar -xvzf X.X.XXXX.X.<osname>.tar.gz -C /home/<username>  
+cd /home/<username>/CMW_<osname>/
 ```
-
-**Альт**
-
-```
-tar -xvzf 4.6<build.ver>.alt.tar.gz -C /home/<username>  
-cd /home/<username>/CMW_Alt/
-```
-
-**Debian**
-
-```
-tar -xvzf 4.6<build.ver>.debian.tar.gz -C /home/<username>  
-cd /home/<username>/CMW_Debian/
-```
-6. Установите ПО **{{ productName }}**  без создания экземпляра ПО и с ключом `-d=clear` — без демонстрационной базы данных:
+2. Установите ПО **{{ productName }}** без создания экземпляра ПО и с ключом `-d=clear` — без демонстрационной базы данных:
 
 ```
 sh install.sh -p -d=clear
 ```
-7. 
-8. Создайте экземпляр ПО, указав вместо `<instanceName>` требуемое имя экземпляра:
+3. Создайте экземпляр ПО, указав вместо `<instanceName>` требуемое имя экземпляра (`X.X.XXXX.X` — номер версии ПО):
 
 ```
 cd scripts/instance/  
-sh create.sh -n=<instanceName> -p=80 -v=4.6.<build.ver>
+sh create.sh -n=<instanceName> -p=80 -v=X.X.XXXX.X
 ```
 
 #### Настройка экземпляра ПО
 
 Для включения функционала SSO аутентификации в экземпляре ПО необходимо настроить его файл конфигурации.
 
-1. Откройте для редактирования файл конфигурации экземпляра ПО (`instanceName` — имя экземпляра ПО):
+1. Откройте для редактирования файл конфигурации экземпляра ПО (`instanceName` — имя экземпляра ПО):
 
 ```
 vim /usr/share/comindware/configs/instance/instanceName.yml
 ```
 2. Добавьте в файл директиву `isLinuxSSOAuthorization: true`
 
-_![Пример файла instanceName.yml с директивой  isLinuxSSOAuthorization: true](https://kb.comindware.ru/assets/img_65e5cea643f5c.jpeg)_
+![Пример файла instanceName.yml с директивой  isLinuxSSOAuthorization: true](https://kb.comindware.ru/assets/sso_authenticatation_configure_yml_file_example.png)
+
+Пример файла instanceName.yml с директивой isLinuxSSOAuthorization: true
 
 #### Установка и настройка модуля NGINX SPNEGO
 
@@ -498,48 +499,47 @@ apt-get install nginx-spnego
 ```
 ln -s /etc/nginx/modules-available.d/http_auth_spnego.conf /etc/nginx/modules-enabled/
 ```
-3. Поместить keytab-файл `<authuser>.keytab` в директорию конфигурации NGINX и сделать его доступным для чтения:
+3. Поместить keytab-файл `<authuser>.keytab` в директорию конфигурации NGINX и сделать его доступным для чтения:
 
 ```
-cp /<path_to_keytab>/<authuser>.keytab /etc/nginx   
-chmod 664 /etc/nginx/<authuser>.keytab   
-
+cp /<path_to_keytab>/<authuser>.keytab /etc/nginx  
+chmod 664 /etc/nginx/<authuser>.keytab
 ```
-
-Здесь `<path_to_keytab>` — папка, в которой находится keytab-файл `<authuser>.keytab`, взятый с контроллера домена.
+
+Здесь `<path_to_keytab>` — папка, в которой находится keytab-файл `<authuser>.keytab`, взятый с контроллера домена.
 4. Откройте для редактирования описание веб-приложения *NGINX* для экземпляра ПО `<instanceName>`:
 
 ```
 vim /etc/nginx/sites-available.d/comindware<instanceName>
 ```
-5. Отредактируйте файл comindware`<instanceName>` согласно приведённому ниже примеру:
+5. Отредактируйте файл `comindware<instanceName>` согласно следующему примеру:
 
 ```
 server {  
         listen 8999 http2;  
         root /var/www/cmwdata;  
-
+  
             location /async {  
                 grpc_pass grpc_cmwdata;  
         }  
 }  
-
-            server {  
+  
+server {  
         listen       80 default;  
         root         /var/www/cmwdata;  
-
-            client_header_timeout 3h;  
+  
+        client_header_timeout 3h;  
         client_body_timeout 3h;  
         grpc_read_timeout 3h;  
         grpc_send_timeout 3h;  
-
-            client_max_body_size 300m;  
+  
+        client_max_body_size 300m;  
         fastcgi_read_timeout 10000;  
-
+  
             location /async {  
                 grpc_pass grpc_cmwdata;  
-        }  
-
+            }  
+  
             location / {  
                 # SPNEGO Configuration  
                 add_header Set-Cookie "cmw_user=$remote_user";  
@@ -548,32 +548,32 @@ server {
                 auth_gss_keytab /etc/nginx/<authuser>.keytab;  
                 auth_gss_service_name HTTP/<authuser>.<domain.name>;  
                 auth_gss_allow_basic_fallback on;  
-
-            proxy_read_timeout 10000;  
+  
+                proxy_read_timeout 10000;  
                 proxy_connect_timeout 10000;  
                 proxy_send_timeout 10000;  
                 root                /var/www/cmwdata/;  
                 fastcgi_pass        unix:/var/www/cmwdata/App_Data/cmwdata.socket;  
-                include             /etc/nginx/fastcgi.conf;
+                include             /etc/nginx/fastcgi.conf;  
             }  
 }
 ```
-6. Проверьте синтаксис веб-приложения *NGINX* для экземпляра ПО `<instanceName>`:
+6. Проверьте синтаксис веб-приложения *NGINX* для экземпляра ПО `<instanceName>`:
 
 ```
 nginx -t
 ```
-7. Примените настройки и перезапустите *NGINX*:
+7. Примените настройки и перезапустите *NGINX*:
 
 ```
 nginx -s reload
 ```
-8. Проверьте статус сервиса *NGINX*:
+8. Проверьте статус сервиса *NGINX*:
 
 ```
 systemctl status nginx
 ```
-9. Проверьте статус сервиса экземпляра ПО `<instanceName>`:
+9. Проверьте статус сервиса экземпляра ПО `<instanceName>`:
 
 ```
 systemctl status comindware<instanceName>
@@ -583,10 +583,10 @@ systemctl status comindware<instanceName>
 
 1. Войдите в экземпляр ПО с помощью браузера.
 2. Откройте свойства [подключения к серверу каталогов][ad_connection], которое будет использоваться для синхронизации аккаунтов.
-3. На вкладке «**Основные**» установите флажок «**Использовать по умолчанию**».
-4. На вкладке «**Сопоставление атрибутов**» нажмите кнопку «**Восстановить**».
+3. На вкладке «**Основные**» установите флажок «**Использовать по умолчанию**».
+4. На вкладке «**Сопоставление атрибутов**» нажмите кнопку «**Восстановить**».
 5. Сохраните свойства подключения.
-6. Перезапустите экземпляр ПО:
+6. Перезапустите экземпляр ПО:
 
 ```
 systemctl restart comindware<instance_name>
@@ -594,12 +594,12 @@ systemctl restart comindware<instance_name>
 
 ### Проверка работы функционала Kerberos на машине linuxHost
 
-1. Создайте тикет для приложения `HTTP/<DCName>.<domain.name>`:   
+1. Создайте тикет для приложения `HTTP/<DCName>.<domain.name>`:
 
 ```
 kinit -k -t /etc/nginx/<authuser>.keytab HTTP/<DCName>.<domain.name>
 ```
-2. Выведите список тикетов:   
+2. Выведите список тикетов:
 
 ```
 klist
@@ -607,7 +607,7 @@ klist
 
 ### Проверка вывода трассировщика ошибок в Shell
 
-1. Выполните команду:
+1. Выполните команду:
 
 ```
 KRB5_TRACE=/dev/stdout kinit -k -t /etc/nginx/<authuser>.keytab HTTP/<DCName>.<domain.name>
@@ -618,7 +618,5 @@ KRB5_TRACE=/dev/stdout kinit -k -t /etc/nginx/<authuser>.keytab HTTP/<DCName>.<d
 **[Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО][ad_authentication_configure_dc_instance]**
 
 **[Аутентификация через OpenID Connect. Настройка подключения и служб][openid_connection]**
-
-
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

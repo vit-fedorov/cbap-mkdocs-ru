@@ -9,38 +9,38 @@ kbId: 2365
 
 Для построения диаграммы процесса предусмотрены перечисленные ниже элементы.
 
-- ### [Действия][actions]
+- ### [Действия][process_diagram_elements_actions]
 
-    - [Пользовательская задача][user_task]
-    - [Задача-выполнение сценария](https://kb.comindware.ru/article.php?id=2388)
+    - [Пользовательская задача][process_diagram_elements_user_task]
+    - [Задача-выполнение сценария][process_diagram_elements_script_task]
     - [Задача-вызов сервиса][service_call_task]
-    - [Вызов процесса](https://kb.comindware.ru/article.php?id=2389)
-    - [Встроенный подпроцесс](https://kb.comindware.ru/article.php?id=2391)
-- ### [События](https://kb.comindware.ru/article.php?id=2374)
+    - [Вызов процесса][process_diagram_elements_process_call]
+    - [Встроенный подпроцесс][process_diagram_elements_embedded_subprocess]
+- ### [События][process_diagram_elements_events]
 
-    - [Начальные события](https://kb.comindware.ru/article.php?id=2377)
-        - [Простое начальное событие][none_start_event]
-        - [Начальное событие-таймер](https://kb.comindware.ru/article.php?id=2375)
-        - [Начальное событие-получение сообщения][receive_message_start_event]
-    - [Промежуточные события](https://kb.comindware.ru/article.php?id=2379)
-        - [Промежуточное событие-таймер](https://kb.comindware.ru/article.php?id=2383)
-        - [Промежуточное событие-отправка сообщения][send_message_intermediate_event]
-        - [Промежуточное событие-получение сообщения][receive_message_intermediate_event]
-        - [Простое промежуточное событие](https://kb.comindware.ru/article.php?id=2380)
-    - [Конечные события](https://kb.comindware.ru/article.php?id=2386)
-        - [Простое конечное событие](https://kb.comindware.ru/article.php?id=2387)
-        - [Конечное событие-остановка процесса](https://kb.comindware.ru/article.php?id=2384)
-        - [Конечное событие-отправка сообщения][send_message_end_event]
-- ### [Развилки](https://kb.comindware.ru/article.php?id=2372)
+    - [Начальные события][process_diagram_elements_events_start]
+        - [Простое начальное событие][process_diagram_elements_none_start_event]
+        - [Начальное событие-таймер][process_diagram_elements_timer_start_event]
+        - [Начальное событие-получение сообщения][process_diagram_elements_receive_message_start_event]
+    - [Промежуточные события][process_diagram_elements_events_intermediate]
+        - [Промежуточное событие-таймер][process_diagram_elements_timer_intermediate_event]
+        - [Промежуточное событие-отправка сообщения][process_diagram_elements_send_message_intermediate_event]
+        - [Промежуточное событие-получение сообщения][process_diagram_elements_receive_message_intermediate_event]
+        - [Простое промежуточное событие][process_diagram_elements_none_intermediate_event]
+    - [Конечные события][process_diagram_elements_events_end]
+        - [Простое конечное событие][process_diagram_elements_none_end_event]
+        - [Конечное событие-остановка процесса][process_diagram_elements_stop_process_end_event]
+        - [Конечное событие-отправка сообщения][process_diagram_elements_send_message_end_event]
+- ### [Развилки][process_diagram_elements_gateways]
 
-    - [Развилка «или/или»](https://kb.comindware.ru/article.php?id=2373)
-    - [Развилка «и»](https://kb.comindware.ru/article.php?id=2371)
-- ### [Общие элементы](https://kb.comindware.ru/article.php?id=2370)
+    - [Развилка «или/или»][process_diagram_elements_gateway_exclusive]
+    - [Развилка «и»][process_diagram_elements_gateway_parallel]
+- ### [Общие элементы][process_diagram_elements_generic]
 
-    - [Пул](https://kb.comindware.ru/article.php?id=2366)
-    - [Дорожка](https://kb.comindware.ru/article.php?id=2369)
-    - [Поток управления](https://kb.comindware.ru/article.php?id=2368)
-    - [Комментарий](https://kb.comindware.ru/article.php?id=2367)
+    - [Пул][process_diagram_elements_pool]
+    - [Дорожка][process_diagram_elements_lane]
+    - [Поток управления][process_diagram_elements_sequence_flow]
+    - [Комментарий][process_diagram_elements_text_annotation]
 
 --8<-- "related_topics_heading.md"
 

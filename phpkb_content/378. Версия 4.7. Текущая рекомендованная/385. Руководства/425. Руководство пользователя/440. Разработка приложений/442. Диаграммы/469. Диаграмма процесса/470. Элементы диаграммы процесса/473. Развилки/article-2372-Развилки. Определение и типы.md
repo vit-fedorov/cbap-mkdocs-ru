@@ -7,12 +7,12 @@ kbId: 2372
 
 ### Определение
 
-**Развилки** позволяют формировать расходящиеся и сходящиеся [потоки](https://kb.comindware.ru/article.php?id=2368).
+**Развилки** позволяют формировать расходящиеся и сходящиеся [потоки][process_diagram_elements_sequence_flow].
 
 ## Типы развилок
 
-- **[Развилка «или/или»](https://kb.comindware.ru/article.php?id=2373)**
-- **[Развилка «и»](https://kb.comindware.ru/article.php?id=2371)**
+- **[Развилка «или/или»][process_diagram_elements_gateway_exclusive]**
+- **[Развилка «и»][process_diagram_elements_gateway_parallel]**
 
 --8<-- "related_topics_heading.md"
 

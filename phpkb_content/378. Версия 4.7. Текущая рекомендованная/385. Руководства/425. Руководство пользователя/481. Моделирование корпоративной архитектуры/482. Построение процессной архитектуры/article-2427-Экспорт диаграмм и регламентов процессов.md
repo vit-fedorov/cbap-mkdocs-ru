@@ -24,7 +24,7 @@ kbId: 2427
 
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра процессов][построение-процессной-архитектуры]**
+**[Просмотр реестра процессов][architect_process_architecture_modelling]**
 
 **[Использование панели навигации][navigation_panel]**
 

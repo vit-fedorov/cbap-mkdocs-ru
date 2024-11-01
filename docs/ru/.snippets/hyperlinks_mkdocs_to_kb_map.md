@@ -1,3 +1,5 @@
+<!-- Любые руководства -->
+
 [administration_utility_configure]: {{ kbArticleURLPrefix }}2029
 
 [api_calls]: {{ kbCategoryURLPrefix }}513
@@ -61,6 +63,8 @@
 [telegram_send_notification]: {{ kbArticleURLPrefix }}2610
 
 {% if kbExport %}
+
+<!-- Экспорт в БЗ любых руководств -->
 
 [account_templates]: {{ kbArticleURLPrefix }}2223
 
@@ -267,6 +271,8 @@
 {% endif %}
 
 {% if (not userGuide and (adminGuideLinux or adminGuideWindows)) or kbExport %}
+
+<!-- Руководство администратора для Linux/Windows или экспорт в БЗ -->
 
 [1c_integrations]: {{ kbArticleURLPrefix }}2011
 
@@ -624,11 +630,29 @@
 
 {% if userGuide or (adminGuideLinux and not adminGuideWindows) or kbExport %}
 
+<!-- Руководство пользователя, администратора для Linux или экспорт в БЗ  -->
+
+[admin_utility_install_launch]: {{ kbArticleURLPrefix }}2027
+
+[admin_utility_install_software]: {{ kbArticleURLPrefix }}2028
+
+[admin_utility_instance_installize]: {{ kbArticleURLPrefix }}2296
+
+[admin_utility_instance_start_stop]: {{ kbArticleURLPrefix }}2027
+
+[admin_utility_instance_upgrade_3_2_to_4_2]: {{ kbArticleURLPrefix }}2129
+
+[admin_utility_instance_upgrade_version]: {{ kbArticleURLPrefix }}2031
+
 [backup_restore_windows]: {{ kbArticleURLPrefix }}2101
 
 [backup_windows_external]: {{ kbArticleURLPrefix }}2301
 
 [db_move_manual_windows]: {{ kbArticleURLPrefix }}2154
+
+[elasticsearch_deploy_windows]: {{ kbArticleURLPrefix }}2094
+
+[instance_configure_windows]: {{ kbArticleURLPrefix }}2036
 
 [instance_configure_windows]: {{ kbArticleURLPrefix }}2036
 
@@ -640,9 +664,9 @@
 
 {% if userGuide or (not adminGuideLinux and adminGuideWindows) or kbExport %}
 
-[ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}2517
+<!-- Руководство пользователя, администратора для Windows или экспорт в БЗ  -->
 
-[admin_utility_install_launch]: {{ kbArticleURLPrefix }}2027
+[ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}2517
 
 [backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
 
@@ -650,15 +674,21 @@
 
 [deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}2344#deploy_guide_linux_initialize
 
-[instance_configure_windows]: {{ kbArticleURLPrefix }}2036
+[elasticsearch_cluster_deploy_no_certificates]: {{ kbArticleURLPrefix }}2095
 
 [sso_authenticatation_configure]: {{ kbArticleURLPrefix }}2583
 
 [sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}2583#sso_authentication_configure_keytab_update
 
+[nginx_deploy]: {{ kbArticleURLPrefix }}2096
+
+[nginx_geoid_deploy]: {{ kbArticleURLPrefix }}2097
+
 {% endif %}
 
 {% if (userGuide and not (adminGuideLinux or adminGuideWindows)) or kbExport %}
+
+<!-- Руководство пользователя или экспорт в БЗ  -->
 
 [accounts_dc_sync]: {{ kbArticleURLPrefix }}2308
 

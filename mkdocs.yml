@@ -4,4 +4,4 @@
 # py -m mkdocs serve (`mkdocs serve` might also work depending on the environment PATH variable)
 # To test and author the English help run: py -m mkdocs serve -f mkdocs_en_local.yml
 
-INHERIT: mkdocs_guide_admin_ru_linux.yml
+INHERIT: mkdocs_guide_complete_ru.yml

@@ -1,9 +1,9 @@
 ---
-title: Модуль GeoIP для NGINX. Установка и настройка. Краткое руководство
+title: Модуль GeoIP для NGINX. Установка и настройка
 kbId: 2097
 ---
 
-# Модуль GeoIP для NGINX. Установка и настройка. Краткое руководство
+# Модуль GeoIP для NGINX. Установка и настройка {: #nginx_geoid_deploy}
 
 ## Введение
 
@@ -14,7 +14,7 @@ kbId: 2097
 Подробные сведения по установке и настройке модуля GeoIP представлены на следующих сайтах:
 
 - <https://dev.maxmind.com/geoip/updating-databases?lang=en>
-- [https://itsecforu.ru/2018/08/29/как-установить-mod\_geoip-для-apache-в-rhel-и-centos/](https://itsecforu.ru/2018/08/29/%D0%BA%D0%B0%D0%BA-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-mod_geoip-%D0%B4%D0%BB%D1%8F-apache-%D0%B2-rhel-%D0%B8-centos/)
+- <https://itsecforu.ru/2018/08/29/как-установить-mod_geoip-для-apache-в-rhel-и-centos/>
 
 ## Установка
 
@@ -24,22 +24,22 @@ kbId: 2097
     - **Alt**: `sudo apt-get install nginx-geoip`
     - **CentOS**: `yum install nginx-module-geoip`
 
-1. Обновите базы GeoIP до актуальной версии с помощью команд:
+2. Обновите базы GeoIP до актуальной версии с помощью команд:
 
-    ```
+    ``` sh
     mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.dat_bak   
     cd /usr/share/GeoIP/   
     wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz   
     gunzip GeoIP.dat.gz
     ```
 
-3 С помощью команды `nginx -V` убедитесь, что веб-сервер собран с параметром `--with-http_geoip_module`. В противном случае необходимо самостоятельно собрать модуль NGINX. Исходные коды GeoIP находятся в открытом доступе.
+3. С помощью команды `nginx -V` убедитесь, что веб-сервер собран с параметром `--with-http_geoip_module`. В противном случае необходимо самостоятельно собрать модуль NGINX. Исходные коды GeoIP находятся в открытом доступе.
 
 ## Ограничение доступа для пользователей из определенных стран
 
 1. Чтобы запретить доступ к сайту пользователям из Украины и США, в папке с файлами конфигурации веб-сервера NGINX создайте файл `block.map.include` со следующими директивами:
 
-    ```
+    ``` sh
     geoip_country /usr/share/GeoIP/GeoIP.dat;    
         map $geoip_country_code $allowed_country {    
                 default yes;   
@@ -50,7 +50,7 @@ kbId: 2097
 
 2. Чтобы разрешить использование сайта только пользователям из России, Китая и Тайваня, используйте в файле конфигурации следующие директивы:
 
-    ```
+    ``` sh
     geoip_country /usr/share/GeoIP/GeoIP.dat;    
         map $geoip_country_code $allowed_country {   
             default no;   
@@ -64,7 +64,7 @@ kbId: 2097
 
 4. В настройках хоста (раздел `server`) добавьте следующую директиву:
 
-    ```
+    ``` sh
     if ($allowed_country = no) {   
         return 404;   
     }
@@ -76,29 +76,27 @@ kbId: 2097
 
 Приведенный ниже скрипт загружает последнюю версию базы данных GeoIP каждый месяц. Добавьте его в файл `/etc/cron.monthly`.
 
-    ```
-    #!/bin/sh   
-    GEOIP_MIRROR="http://geolite.maxmind.com/download/geoip/database"   
-    GEOIPDIR=/usr/share/GeoIP   
-    TMPDIR=   
-    DATABASES="GeoLiteCity GeoLiteCountry/GeoIP asnum/GeoIPASNum GeoIPv6"   
-    if [ -d "${GEOIPDIR}" ]; then   
-    cd $GEOIPDIR   
-    if [ -n "${DATABASES}" ]; then   
-    TMPDIR=$(mktemp -d geoipupdate.XXXXXXXXXX)   
-    echo "Updating GeoIP databases..."   
-    for db in $DATABASES; do   
-    fname=$(basename $db)   
-    wget --no-verbose -t 3 -T 60 "${GEOIP_MIRROR}/${db}.dat.gz" -O "${TMPDIR}/${fname}.dat.gz"   
-    gunzip -fdc "${TMPDIR}/${fname}.dat.gz" > "${TMPDIR}/${fname}.dat"   
-    mv "${TMPDIR}/${fname}.dat" "${GEOIPDIR}/${fname}.dat"   
-    chmod 0644 "${GEOIPDIR}/${fname}.dat"   
-    done   
-    [ -d "${TMPDIR}" ] && rm -rf $TMPDIR   
-    fi   
-    fi
-    ```
+``` sh
+#!/bin/sh   
+GEOIP_MIRROR="http://geolite.maxmind.com/download/geoip/database"   
+GEOIPDIR=/usr/share/GeoIP   
+TMPDIR=   
+DATABASES="GeoLiteCity GeoLiteCountry/GeoIP asnum/GeoIPASNum GeoIPv6"   
+if [ -d "${GEOIPDIR}" ]; then   
+cd $GEOIPDIR   
+if [ -n "${DATABASES}" ]; then   
+TMPDIR=$(mktemp -d geoipupdate.XXXXXXXXXX)   
+echo "Updating GeoIP databases..."   
+for db in $DATABASES; do   
+fname=$(basename $db)   
+wget --no-verbose -t 3 -T 60 "${GEOIP_MIRROR}/${db}.dat.gz" -O "${TMPDIR}/${fname}.dat.gz"   
+gunzip -fdc "${TMPDIR}/${fname}.dat.gz" > "${TMPDIR}/${fname}.dat"   
+mv "${TMPDIR}/${fname}.dat" "${GEOIPDIR}/${fname}.dat"   
+chmod 0644 "${GEOIPDIR}/${fname}.dat"   
+done   
+[ -d "${TMPDIR}" ] && rm -rf $TMPDIR   
+fi   
+fi
+```
 
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

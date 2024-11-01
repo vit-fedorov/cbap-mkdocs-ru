@@ -1,44 +1,80 @@
 ---
-title: NGINX. Установка и настройка. Краткое руководство
+title: NGINX. Установка и настройка
 kbId: 2096
 ---
 
-# NGINX. Установка и настройка. Краткое руководство
+# NGINX. Установка и настройка {: #nginx_deploy}
 
 ## Введение
 
-В настоящем документе представлена краткая инструкция по установке и настройке конфигурации HTTP-сервера NGINX в ОС Ubuntu 20.04 для использования NGINX в сочетании с {{ productName }}.
+В настоящем документе представлена краткая инструкция по установке и настройке конфигурации HTTP-сервера NGINX в Linux для использования NGINX в сочетании с {{ productName }}.
 
 Подробные сведения по установке и настройке NGINX представлены на следующих сайтах:
 
-- [http://NGINX.org/ru/docs/beginners\_guide.html](http://nginx.org/ru/docs/beginners_guide.html)
-- [https://ruvds.com/ru/helpcenter/kak-nastroit-NGINX-na-ubuntu-20-04/](https://ruvds.com/ru/helpcenter/kak-nastroit-nginx-na-ubuntu-20-04/)
-- [https://webdevblog.ru/bezopasnost-NGINX-kak-uluchshit-konfiguraciju-vashego-servera/](https://webdevblog.ru/bezopasnost-nginx-kak-uluchshit-konfiguraciju-vashego-servera/)
+- <http://nginx.org/ru/docs/beginners_guide.html>
+- <https://ruvds.com/ru/helpcenter/kak-nastroit-nginx-na-ubuntu-20-04/>
+- <https://webdevblog.ru/bezopasnost-nginx-kak-uluchshit-konfiguraciju-vashego-servera/>
 
-## 1. Установка NGINX
+## Установка NGINX
 
 Войдите в систему под учётной записью, имеющей разрешение на запуск команды `sudo`, и выполните следующие команды:
 
-- `$ sudo apt update`
-- `$ sudo apt install NGINX`
+``` sh
+sudo apt update
+sudo apt install NGINX
+```
 
 Первая команда обновляет базу данных пакетов, доступных для установки. Вторая — устанавливает компоненты NGINX.
 
 После установки NGINX настройте его конфигурацию.
 
-## 2. Настройка сервера NGINX
+## Настройка сервера NGINX
 
 Конфигурация NGINX хранится в файле `NGINX.conf`. По умолчанию файл `NGINX.conf` находится в следующей папке:
 
 - `/etc/NGINX` или `/usr/local/etc/NGINX` — в системах Linux;
-- `[папка установки NGINX]/conf` — в системах Windows.
+- `<папка установки NGINX>/conf` — в системах Windows.
 
-### 2.1. Пример конфигурации прокси-сервера
+### Пример конфигурации прокси-сервера
 
-| server {     server\_name  domain.com;     reset\_timedout\_connection  on;     listen 80;       location /robots.txt { root /var/www/html; }     return 301 https://$host$request\_uri; }   server {     server\_name  domain.com;     reset\_timedout\_connection  on;        listen 443 ssl;       location / {     proxy\_pass http://backend-server:8081/;     proxy\_next\_upstream error timeout invalid\_header http\_500 http\_503;       # do not set HOST header     proxy\_set\_header  Host                $host;     proxy\_set\_header  X-Forwarded-For     $proxy\_add\_x\_forwarded\_for;     proxy\_set\_header  X-Forwarded-Proto   $scheme;     proxy\_set\_header  X-Real-IP           $remote\_addr;       proxy\_connect\_timeout     90;     proxy\_send\_timeout        1000;     proxy\_read\_timeout        1000;       # enable WebSockets     proxy\_http\_version 1.1;     proxy\_set\_header Upgrade $http\_upgrade;     proxy\_set\_header Connection "upgrade";       client\_max\_body\_size 100m;       error\_log /var/log/NGINX/domain-error.log error;     access\_log /var/log/NGINX/domain-access.log;   } } |
-| --- |
+``` sh
+server {
+    server_name  domain.com;
+    reset_timedout_connection  on;
+    listen 80;
+    location /robots.txt { root /var/www/html; }
+    return 301 https://$host$request_uri;
+}
 
-### 2.2. Настройка UFW
+server {
+    server_name  domain.com;
+    reset_timedout_connection  on;
+    listen 443 ssl;
+    location / {
+    proxy_pass http://backend-server:8081/;
+    proxy_next_upstream error timeout invalid_header http_500 http_503;
+
+    # do not set HOST header
+    proxy_set_header  Host                $host;
+    proxy_set_header  X-Forwarded-For     $proxy_add_x_forwarded_for;
+    proxy_set_header  X-Forwarded-Proto   $scheme;
+    proxy_set_header  X-Real-IP           $remote_addr;
+    proxy_connect_timeout     90;
+    proxy_send_timeout        1000;
+    proxy_read_timeout        1000;
+
+    # enable WebSockets
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+    client_max_body_size 100m;
+    error_log /var/log/NGINX/domain-error.log error;
+    access_log /var/log/NGINX/domain-access.log;
+  }
+}
+```
+
+### Настройка UFW
 
 Для защиты подключений рекомендуется настроить межсетевой экран с помощью утилиты Uncomplicated Firewall (UFW).
 
@@ -48,13 +84,13 @@ kbId: 2096
 
 Команда для проверки статуса: `$ sudo ufw status`
 
-### 2.3. Отключение команды server\_tokens
+### Отключение команды server\_tokens
 
 По умолчанию команда `server_tokens`возвращает номер версии NGINX.
 
 Чтобы скрыть версию NGINX, отключите команду `server_tokens`, добавив в файле конфигурации NGINX следующую директиву: `server_tokens off`
 
-### 2.4. Контроль ресурсов и ограничения
+### Контроль ресурсов и ограничения
 
 Для предотвращения DoS-атак на NGINX можно установить ограничения на размер буфера для всех клиентов. Для это в разделе `server` файла конфигурации NGINX используйте следующие директивы:
 
@@ -63,7 +99,7 @@ kbId: 2096
 - `client_max_body_size` — максимально допустимый размер тела клиентского запроса, например: `client_max_body_size`. Размера 1 КБ должно быть достаточно, но его следует увеличить, если загрузка файлов осуществляется методом POST.
 - `large_client_header_buffers` —максимальное количество и размер буферов, которые будут использоваться для чтения больших заголовков клиентских запросов. Например, чтобы установить максимальное количество буферов равным 2, каждый с максимальным размером 1 КБ, и разрешить прием URI-данных размером 2 КБ, используйте следующую директиву: `large_client_header_buffers 2 1k`
 
-### 2.5. Настройка NGINX для включения заголовков безопасности
+### Настройка NGINX для включения заголовков безопасности
 
 Чтобы дополнительно защитить веб-сервер NGINX, можно добавить определенные заголовки HTTP. Ниже приведены рекомендованные варианты таких заголовков.
 
@@ -83,23 +119,20 @@ kbId: 2096
 
 Заголовок HTTP X-XSS-Protection поддерживают браузеры IE и Safari. Он не требуется для современных браузеров, если используется строгая политика безопасности содержимого. Однако, чтобы предотвратить атаки типа XSS при использовании старых браузеров (которые не поддерживают CSP), добавьте заголовок X-XSS Protection в раздел `server`: `add_header X-XSS-Protection "1; mode=block”;`
 
-### 2.6. Настройка SSL и наборов шифров Cipher Suite
+### Настройка SSL и наборов шифров Cipher Suite
 
 Конфигурация NGINX по умолчанию позволяет использовать небезопасные старые версии протокола TLS, которые н рекомендуется применять. Следует изменить конфигурацию для поддержки только новых, безопасных версий TLS. Для этого добавьте следующую директиву в раздел `server` файла конфигурации NGINX: `ssl_protocols TLSv1.2 TLSv1.3;`
 
 Укажите конкретные наборы шифров (криптографических алгоритмов), чтобы предотвратить использование уязвимых наборов не поддерживаются. Либо для автоматического выбора шифра на стороне сервера добавьте следующую директиву в раздел `server`: `ssl_prefer_server_ciphers on;`
 
-### 2.7. Регулярное обновление сервера
+### Регулярное обновление сервера
 
 Следует регулярно устанавливать последние обновления NGINX с официального сайта: [http://NGINX.org/en/security\_advisories.html](http://nginx.org/en/security_advisories.html)
 
-### 2.8. Проверка состояния сервера
+### Проверка состояния сервера
 
 Команда проверки статуса веб-сервера NGINX: `$ systemctl status NGINX`
 
-![Статус веб-сервера NGINX](https://kb.comindware.ru/assets/Picture_10.png)
+_![Статус веб-сервера NGINX](https://kb.comindware.ru/assets/Picture_10.png)_
 
-Статус веб-сервера NGINX
-
-
-
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

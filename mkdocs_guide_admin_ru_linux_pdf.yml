@@ -4,7 +4,7 @@
 # Command: 
 # py -m mkdocs build -f mkdocs_admin_guide_ru_linux_pdf.yml
 
-INHERIT: mkdocs_admin_guide_ru_linux.yml
+INHERIT: mkdocs_guide_admin_ru_linux.yml
 
 site_dir: pdf/
 

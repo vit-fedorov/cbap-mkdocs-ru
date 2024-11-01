@@ -9,7 +9,7 @@ kbId:
 
 Для работы **{{ productName }}** требуется сервер Elasticsearch. См. [системные требования][system_requirements].
 
-Здесь представлена инструкция по установке Elasticsearch с помощью дистрибутива **{{ productName }}** в простейшей базовой конфигурации. 
+Здесь представлена инструкция по установке Elasticsearch с помощью дистрибутива **{{ productName }}** в простейшей базовой конфигурации.
 
 Инструкции по установке Elasticsearch в иных конфигурациях см. [инструкции на официальном сайте](https://www.elastic.co/guide/en/elasticsearch/reference/current/targz.html) или _«[Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности][elasticsearch_cluster_deploy_no_certificates]»_.
 
@@ -78,7 +78,7 @@ Elasticsearch создает значительную нагрузку на вы
 
 - сервер Elasticsearch состоит из единственного узла;
 - служба работает в локальной сети;
-- выключена аутентификация;
+- отключена аутентификация;
 - служба доступна через порт `9200`;
 - адрес сервера `http://localhost:9200`;
 - путь к файлу конфигурации: `/etc/elasticsearch/elasticsearch.yml`
@@ -91,9 +91,9 @@ cluster.name: my-application
 # Имя узла
 node.name: node-1
 # ----------------------------------- Paths ------------------------------------
-# database path Elasticsearch
+# Путь к папке с данными
 path.data: /var/lib/elasticsearch
-# путь к файлам журнала Elasticsearch
+# Путь к файлам журнала Elasticsearch
 path.logs: /var/log/elasticsearch
 # path.repo: /var/backups/elasticsearch # путь к репозиторию резервных копий Elasticsearch
 # ----------------------------------- Memory -----------------------------------
@@ -110,16 +110,21 @@ discovery.type: single-node
 # discovery.seed_hosts: ["192.168.12.1"] # директива для режима кластера
 # cluster.initial_master_nodes: ["192.168.12.1"] # директива для режима кластера
 # ---------------------------------- Various -----------------------------------
+# Нечёткий поиск включён
 search.allow_expensive_queries: true
+# Удаление всех индексов запрещено
 action.destructive_requires_name: true
+# Запись данных в индексы включена
 indices.id_field_data.enabled: true
 # ---------------------------------- Security ----------------------------------
-# Аутентификация выключена
+# Аутентификация отключена
 xpack.security.enabled: false
 xpack.security.enrollment.enabled: false
+# Поддержка HTTPS отключена
 xpack.security.http.ssl:
   enabled: false
   #  keystore.path: certs/http.p12
+# TLS/SSL отключено
 xpack.security.transport.ssl:
   enabled: false
   #  verification_mode: certificate
@@ -128,6 +133,10 @@ xpack.security.transport.ssl:
 http.host: 0.0.0.0 # IP - слушать внешний интерфейс, 127.0.0.1 - localhost, 0.0.0.0 - все
 ```
 
+-8<-- "related_topics_heading.md"
 
+**[Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности][elasticsearch_cluster_deploy_no_certificates]**
+
+**[Установка, запуск, инициализация и остановка ПО {{ productName }}][deploy_guide_linux]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

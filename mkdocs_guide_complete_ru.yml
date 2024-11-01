@@ -6,16 +6,17 @@
 
 INHERIT: mkdocs_ru.yml
 
-extra:
-  adminGuideLinux: True
-  adminGuideWindows: True
-  userGuide: True
-
 nav:
 
-  - Введение:
+  - Общие сведения:
     - index.md
     - product_description.md
+    - Обзор версий:
+      - general/changelog/changelog.md
+      - general/changelog/release_notes_4.7.3023.md
+      - general/changelog/release_notes_4.7.2902.md
+      - general/changelog/release_notes_4.7.2721.md
+      - general/changelog/release_notes_4.7.2285.md 
   - Использование системы:
     - using_the_system/index.md
     - Панель навигации:
@@ -28,145 +29,155 @@ nav:
     - Формы: using_the_system/form_personal_use.md
     - Обсуждение: using_the_system/discussion_use.md
     - Карты: using_the_system/map_use.md
-  - Развёртывание ПО:
-    - administration/deploy/system_requirements.md
-    - administration/deploy/architecture_landscape.md
-    - administration/deploy/security.md
-    - administration/deploy/logging_engine.md
-    - administration/deploy/log_files_event_examples.md
-    - administration/deploy/paths.md
-    - Развёртывание в Linux:
-      - Установка и запуск {{ productName }}: administration/deploy/linux/deploy_guide.md
-      - administration/deploy/linux/db_migrate_4.2_to_4.7.md
-      - administration/deploy/linux/uninstall_auxiliary_software.md
-      - administration/deploy/linux/upgrade_version.md
-      - administration/deploy/linux/upload_size_limit_configure.md
-      - Вспомогательное ПО. Развёртывание:
-        - administration/deploy/linux/auxiliary_software_deploy/antivirus_exceptions_configure.md
-        - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_defragment.md
-        - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_deploy.md
-        - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_ssl_certificate_configure.md
-        - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_optimize.md
-        - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_cluster_deploy_no_certificates.md
-        - administration/deploy/linux/auxiliary_software_deploy/index.md
-        - administration/deploy/linux/auxiliary_software_deploy/nginx_deploy.md
-        - administration/deploy/linux/auxiliary_software_deploy/nginx_geoip_deploy.md
-        - administration/deploy/linux/auxiliary_software_deploy/zabbix_agent_deploy.md
-        - administration/deploy/linux/auxiliary_software_deploy/zabbix_deploy.md
-        - administration/deploy/linux/auxiliary_software_deploy/zabbix_server_deploy.md  
-    - Развёртывание в Windows:
-      - Утилита администрирования Comindware. Установка и настройка версий и экземпляров ПО:
-        - administration/deploy/windows/administration_utility/admin_utility_install_launch.md
-        - administration/deploy/windows/administration_utility/article-2028-Установка продукта Comindware Business Application Platform.md
-        - administration/deploy/windows/administration_utility/article-2029-Настройка конфигурации Утилиты администрирования Comindware.md
-        - administration/deploy/windows/administration_utility/article-2030-Диагностика экземпляра продукта.md
-        - administration/deploy/windows/administration_utility/article-2031-Обновление версии продукта для экземпляра.md
-        - administration/deploy/windows/administration_utility/article-2032-Создание экземпляра продукта, добавление скрытого экземпляра.md
-        - administration/deploy/windows/administration_utility/article-2034-Удаление версии продукта.md
-        - administration/deploy/windows/administration_utility/article-2035-Запуск, остановка и удаление экземпляра продукта.md
-        - administration/deploy/windows/administration_utility/article-2036-Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта.md
-        - administration/deploy/windows/administration_utility/article-2037-Индикация состояния и обновление списка экземпляров продукта.md
-        - administration/deploy/windows/administration_utility/article-2038-Восстановление экземпляра продукта из резервной копии в ОС Windows.md
-        - administration/deploy/windows/administration_utility/article-2296-Инициализация экземпляра продукта.md
-      - administration/deploy/windows/article-2129-Обновление версии экземпляра ПО с 3.5 на 4.2. Инструкции, подготовка базы данных, устранение проблем.md
-      - administration/deploy/windows/article-2298-Остановка экземпляра системы с помощью Диспетчера служб IIS.md
-      - administration/deploy/windows/article-2300-Запуск экземпляра системы с помощью Диспетчера служб IIS.md
-      - administration/deploy/windows/article-2316-Comindware Architect. Инструкции по установке экземпляра ПО в ОС Windows.md
-      - Вспомогательное ПО. Развёртывание:
-        - administration/deploy/windows/auxiliary_software_deploy/zabbix_agent_deploy_windows.md
-        - administration/deploy/windows/auxiliary_software_deploy/apache_ignite_deploy_windows.md
-        - administration/deploy/windows/auxiliary_software_deploy/elasticsearch_deploy_windows.md
-        - administration/deploy/windows/auxiliary_software_deploy/kafka_install_windows.md
-  - Резервное копирование и восстановление:
-    - administration/backup/index.md
-    - Инструкции для Linux:
-      - administration/backup/linux/complete_running_instance_backup.md
-      - administration/backup/linux/db_move_manually.md
-      - administration/backup/linux/restore_cdbbz.md
-      - administration/backup/linux/restore_complete_backup.md
-      - administration/backup/linux/restore_test_configure.md
-    - Инструкции для Windows:
-      - administration/backup/windows/restore_windows.md
-      - administration/backup/windows/backup_restore_windows.md
-      - administration/backup/windows/db_move_manual_windows.md
-      - administration/backup/windows/backup_windows_external.md
   - Администрирование:
-    - administration/administration_page.md
-    - Внешний вид:
-      - Темы: administration/appearance/themes/index.md
-      - Дизайн страниц входа и регистрации: administration/appearance/login_and_registration_page_design/index.md
-    - Архитектура:
-      - Приложения: /business_apps/
-      - Шаблоны: /business_apps/templates/
-      - Диаграммы: /business_apps/diagrams/
-      - Разделы навигации: /business_apps/navigation_sections/
-      - administration/architecture/functions.md
-    - Аккаунты и группы:
-      - administration/account_administration/authentication_authorization_sessions.md
-      - administration/account_administration/accounts.md
-      - administration/account_administration/groups.md
-      - administration/account_administration/system_roles.md
-      - administration/account_administration/account_permission_audit.md
-      - administration/account_administration/substitution.md
-      
-      - administration/account_administration/registration_and_login.md
-      - administration/account_administration/two_factor_authentication.md
-      - Синхронизация с сервером каталогов:
-        - administration/account_administration/accounts_dc_sync/index.md
-        - Инструкции для Linux:
-          - administration/account_administration/accounts_dc_sync/linux/ad_authentication_configure.md
-          - administration/account_administration/accounts_dc_sync/linux/sso_authenticatation_configure.md
-        - Инструкции для Windows:
-          - administration/account_administration/accounts_dc_sync/windows/sso_authenticatation_configure_windows.md
-    - Инфраструктура:
-      - administration/infrastructure/monitoring.md
-      - administration/infrastructure/logs.md
-      - administration/infrastructure/licensing.md
-      - administration/infrastructure/system_service_management.md
-      - administration/infrastructure/performance.md
-      - administration/infrastructure/logging_configuration.md
-      - administration/infrastructure/global_configuration.md
-      - administration/infrastructure/adapters.md
-      - administration/infrastructure/authentication_keys.md
-    - Интеграции с внешними системами:
-      - administration/connections_communication_routes/connections.md
-      - administration/connections_communication_routes/communication_routes.md
-      - Системные подключения:
-        - Уведомления: 
-          - administration/connections_communication_routes/system_connections/notifications/notification_types.md 
-          - administration/connections_communication_routes/system_connections/notifications/common_notifications.md
-          - administration/connections_communication_routes/system_connections/notifications/task_notifications.md
-        - administration/connections_communication_routes/system_connections/elasticsearch_connection.md
-        - administration/connections_communication_routes/system_connections/map_configure.md
-        - administration/connections_communication_routes/system_connections/git_connection.md
-        - administration/connections_communication_routes/system_connections/s3_connection.md
-      - Аутентификация:
-        - administration/connections_communication_routes/authentication/openid_connection.md
-        - administration/connections_communication_routes/authentication/wsfederation_connection.md
-        - administration/connections_communication_routes/authentication/ad_connection.md
-      - Подключения к офисным приложениям:
-        - administration/connections_communication_routes/office_connections/collabora_connection.md
-        - administration/connections_communication_routes/office_connections/r7_connection.md
-      - Подключения к электронной почте:
-        - administration/connections_communication_routes/email_connections/process_sending_connection.md
-        - administration/connections_communication_routes/email_connections/scenario_send_email.md
-        - administration/connections_communication_routes/email_connections/process_receiving_connection.md
-        - administration/connections_communication_routes/email_connections/scenario_receive_email.md
-        - 'Пример: отправка, получение и обработка эл. почты в процессе': administration/connections_communication_routes/email_connections/process_email_configure_include.md
-      - Подключения REST и OData:
-        - administration/connections_communication_routes/rest_odata_connections/get_connection.md
-        - administration/connections_communication_routes/rest_odata_connections/odata_connection.md
-        - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
-        - administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
-        - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
-        - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
-        - administration/connections_communication_routes/rest_odata_connections/send_http_example.md
-        - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
-      - SQL-подключения:
-        - administration/connections_communication_routes/sql_connections/sql_send_connection.md
-        - administration/connections_communication_routes/sql_connections/sql_receive_connection.md
-      - Подключения к шинам сообщений:
-        - administration/connections_communication_routes/message_queue_connections/kafka_connection.md
+    - Развёртывание ПО:
+      - administration/deploy/system_requirements.md
+      - administration/deploy/architecture_landscape.md
+      - administration/deploy/security.md
+      - administration/deploy/logging_engine.md
+      - administration/deploy/log_files_event_examples.md
+      - administration/deploy/paths.md
+      - Развёртывание в Linux:
+        - Установка и запуск {{ productName }}: administration/deploy/linux/deploy_guide.md
+        - administration/deploy/linux/db_migrate_4.2_to_4.7.md
+        - administration/deploy/linux/uninstall_auxiliary_software.md
+        - administration/deploy/linux/upgrade_version.md
+        - administration/deploy/linux/upload_size_limit_configure.md
+        - Вспомогательное ПО. Развёртывание:
+          - administration/deploy/linux/auxiliary_software_deploy/antivirus_exceptions_configure.md
+          - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_defragment.md
+          - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_deploy.md
+          - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_ssl_certificate_configure.md
+          - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_optimize.md
+          - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_cluster_deploy_no_certificates.md
+          - administration/deploy/linux/auxiliary_software_deploy/index.md
+          - administration/deploy/linux/auxiliary_software_deploy/nginx_deploy.md
+          - administration/deploy/linux/auxiliary_software_deploy/nginx_geoip_deploy.md
+          - administration/deploy/linux/auxiliary_software_deploy/zabbix_agent_deploy.md
+          - administration/deploy/linux/auxiliary_software_deploy/zabbix_deploy.md
+          - administration/deploy/linux/auxiliary_software_deploy/zabbix_server_deploy.md  
+        - Развёртывание в Windows:
+          - Утилита администрирования Comindware. Установка и настройка версий и экземпляров ПО:
+            - administration/deploy/windows/administration_utility/admin_utility_install_launch.md
+            - administration/deploy/windows/administration_utility/article-2028-Установка продукта Comindware Business Application Platform.md
+            - administration/deploy/windows/administration_utility/article-2029-Настройка конфигурации Утилиты администрирования Comindware.md
+            - administration/deploy/windows/administration_utility/article-2030-Диагностика экземпляра продукта.md
+            - administration/deploy/windows/administration_utility/article-2031-Обновление версии продукта для экземпляра.md
+            - administration/deploy/windows/administration_utility/article-2032-Создание экземпляра продукта, добавление скрытого экземпляра.md
+            - administration/deploy/windows/administration_utility/article-2034-Удаление версии продукта.md
+            - administration/deploy/windows/administration_utility/article-2035-Запуск, остановка и удаление экземпляра продукта.md
+            - administration/deploy/windows/administration_utility/article-2036-Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта.md
+            - administration/deploy/windows/administration_utility/article-2037-Индикация состояния и обновление списка экземпляров продукта.md
+            - administration/deploy/windows/administration_utility/article-2038-Восстановление экземпляра продукта из резервной копии в ОС Windows.md
+            - administration/deploy/windows/administration_utility/article-2296-Инициализация экземпляра продукта.md
+          - administration/deploy/windows/article-2129-Обновление версии экземпляра ПО с 3.5 на 4.2. Инструкции, подготовка базы данных, устранение проблем.md
+          - administration/deploy/windows/article-2298-Остановка экземпляра системы с помощью Диспетчера служб IIS.md
+          - administration/deploy/windows/article-2300-Запуск экземпляра системы с помощью Диспетчера служб IIS.md
+          - administration/deploy/windows/article-2316-Comindware Architect. Инструкции по установке экземпляра ПО в ОС Windows.md
+          - Вспомогательное ПО. Развёртывание:
+            - administration/deploy/windows/auxiliary_software_deploy/zabbix_agent_deploy_windows.md
+            - administration/deploy/windows/auxiliary_software_deploy/apache_ignite_deploy_windows.md
+            - administration/deploy/windows/auxiliary_software_deploy/elasticsearch_deploy_windows.md
+            - administration/deploy/windows/auxiliary_software_deploy/kafka_install_windows.md
+    - Резервное копирование и восстановление:
+      - administration/backup/index.md
+      - Инструкции для Linux:
+        - administration/backup/linux/complete_running_instance_backup.md
+        - administration/backup/linux/db_move_manually.md
+        - administration/backup/linux/restore_cdbbz.md
+        - administration/backup/linux/restore_complete_backup.md
+        - administration/backup/linux/restore_test_configure.md
+      - Инструкции для Windows:
+        - administration/backup/windows/restore_windows.md
+        - administration/backup/windows/backup_restore_windows.md
+        - administration/backup/windows/db_move_manual_windows.md
+        - administration/backup/windows/backup_windows_external.md
+    - Администрирование системы:
+      - administration/administration_page.md
+      - Внешний вид:
+        - Темы: administration/appearance/themes/index.md
+        - Дизайн страниц входа и регистрации: administration/appearance/login_and_registration_page_design/index.md
+      - Архитектура:
+        - Приложения: /business_apps/
+        - Шаблоны: /business_apps/templates/
+        - Диаграммы: /business_apps/diagrams/
+        - Разделы навигации: /business_apps/navigation_sections/
+        - administration/architecture/functions.md
+      - Аккаунты и группы:
+        - administration/account_administration/authentication_authorization_sessions.md
+        - administration/account_administration/accounts.md
+        - administration/account_administration/groups.md
+        - administration/account_administration/system_roles.md
+        - administration/account_administration/account_permission_audit.md
+        - administration/account_administration/substitution.md
+        
+        - administration/account_administration/registration_and_login.md
+        - administration/account_administration/two_factor_authentication.md
+        - Синхронизация с сервером каталогов:
+          - administration/account_administration/accounts_dc_sync/index.md
+          - Инструкции для Linux:
+            - administration/account_administration/accounts_dc_sync/linux/ad_authentication_configure.md
+            - administration/account_administration/accounts_dc_sync/linux/sso_authenticatation_configure.md
+          - Инструкции для Windows:
+            - administration/account_administration/accounts_dc_sync/windows/sso_authenticatation_configure_windows.md
+      - Инфраструктура:
+        - administration/infrastructure/monitoring.md
+        - administration/infrastructure/logs.md
+        - administration/infrastructure/licensing.md
+        - administration/infrastructure/system_service_management.md
+        - administration/infrastructure/performance.md
+        - administration/infrastructure/logging_configuration.md
+        - administration/infrastructure/global_configuration.md
+        - administration/infrastructure/adapters.md
+        - administration/infrastructure/authentication_keys.md
+      - Интеграции с внешними системами:
+        - administration/connections_communication_routes/connections.md
+        - administration/connections_communication_routes/communication_routes.md
+        - Системные подключения:
+          - Уведомления: 
+            - administration/connections_communication_routes/system_connections/notifications/notification_types.md 
+            - administration/connections_communication_routes/system_connections/notifications/common_notifications.md
+            - administration/connections_communication_routes/system_connections/notifications/task_notifications.md
+          - administration/connections_communication_routes/system_connections/elasticsearch_connection.md
+          - administration/connections_communication_routes/system_connections/map_configure.md
+          - administration/connections_communication_routes/system_connections/git_connection.md
+          - administration/connections_communication_routes/system_connections/s3_connection.md
+        - Аутентификация:
+          - administration/connections_communication_routes/authentication/openid_connection.md
+          - administration/connections_communication_routes/authentication/wsfederation_connection.md
+          - administration/connections_communication_routes/authentication/ad_connection.md
+        - Подключения к офисным приложениям:
+          - administration/connections_communication_routes/office_connections/collabora_connection.md
+          - administration/connections_communication_routes/office_connections/r7_connection.md
+        - Подключения к электронной почте:
+          - administration/connections_communication_routes/email_connections/process_sending_connection.md
+          - administration/connections_communication_routes/email_connections/scenario_send_email.md
+          - administration/connections_communication_routes/email_connections/process_receiving_connection.md
+          - administration/connections_communication_routes/email_connections/scenario_receive_email.md
+          - 'Пример: отправка, получение и обработка эл. почты в процессе': administration/connections_communication_routes/email_connections/process_email_configure_include.md
+        - Подключения REST и OData:
+          - administration/connections_communication_routes/rest_odata_connections/get_connection.md
+          - administration/connections_communication_routes/rest_odata_connections/odata_connection.md
+          - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
+          - administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
+          - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
+          - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
+          - administration/connections_communication_routes/rest_odata_connections/send_http_example.md
+          - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
+        - SQL-подключения:
+          - administration/connections_communication_routes/sql_connections/sql_send_connection.md
+          - administration/connections_communication_routes/sql_connections/sql_receive_connection.md
+        - Подключения к шинам сообщений:
+          - administration/connections_communication_routes/message_queue_connections/kafka_connection.md
+    - DevOps Wiki:
+      - devops_wiki/index.md
+      - Практика Kubernetes:
+        - devops_wiki/index.md
+        - devops_wiki/kubernetes/index.md
+        - devops_wiki/kubernetes/kubernetes_install/index.md
+        - devops_wiki/kubernetes/openebs_install/index.md
+        - devops_wiki/kubernetes/setup_ssl_for_helm/index.md
+        - devops_wiki/kubernetes/cbap_install/index.md
   - Разработка приложений:
     - business_apps/application_configure_recommendations.md
     - business_apps/elasticdata_description.md
@@ -360,18 +371,3 @@ nav:
     - examples/scenario_verify_data.md
     - examples/process_email_configure.md
     - examples/script_using_local_variable.md
-  - Обзор версий:
-    - general/changelog/changelog.md
-    - general/changelog/release_notes_4.7.3023.md
-    - general/changelog/release_notes_4.7.2902.md
-    - general/changelog/release_notes_4.7.2721.md
-    - general/changelog/release_notes_4.7.2285.md
-  - DevOps Wiki:
-    - index.md
-    - Практика Kubernetes:
-      - devops_wiki/index.md
-      - devops_wiki/kubernetes/index.md
-      - devops_wiki/kubernetes/kubernetes_install/index.md
-      - devops_wiki/kubernetes/openebs_install/index.md
-      - devops_wiki/kubernetes/setup_ssl_for_helm/index.md
-      - devops_wiki/kubernetes/cbap_install/index.md

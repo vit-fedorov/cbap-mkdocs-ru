@@ -32,6 +32,7 @@ extra:
   adminGuideLinux: True
   adminGuideWindows: True
   userGuide: True
+  completeGuide: True
 
 plugins:
   search:

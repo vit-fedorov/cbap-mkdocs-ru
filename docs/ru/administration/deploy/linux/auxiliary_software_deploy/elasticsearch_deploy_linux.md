@@ -133,7 +133,7 @@ xpack.security.transport.ssl:
 http.host: 0.0.0.0 # IP - слушать внешний интерфейс, 127.0.0.1 - localhost, 0.0.0.0 - все
 ```
 
--8<-- "related_topics_heading.md"
+--8<-- "related_topics_heading.md"
 
 **[Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности][elasticsearch_cluster_deploy_no_certificates]**
 

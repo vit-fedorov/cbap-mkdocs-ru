@@ -8,8 +8,6 @@ INHERIT: mkdocs_guide_admin_ru_linux.yml
 
 site_dir: pdf/
 
-site_name: Comindware Business Application Platform. Руководство системного администратора для OS Linux
-
 extra:
   pdfOutput: true
   pdfEndOfBlockHack: '<p style="visibility:hidden; font-size:0.1rem">.</p>' # hack for PDF output, prevents PDF build crash after indented paragraphs

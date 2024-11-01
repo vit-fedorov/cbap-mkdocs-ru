@@ -11,8 +11,6 @@ site_dir: pdf/
 
 site_url: ''
 
-site_name: Comindware Business Application Platform. Руководство пользователя
-
 extra:
   pdfOutput: true
   pdfEndOfBlockHack: '<p style="visibility:hidden; font-size:0.1rem">.</p>' # hack for PDF output, prevents PDF build crash after indented paragraphs

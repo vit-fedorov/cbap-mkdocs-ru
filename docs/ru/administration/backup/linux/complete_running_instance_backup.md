@@ -20,14 +20,14 @@ kbId: 2117
 
 Для создания резервной копии соберите перечисленные ниже данные об экземпляре ПО.
 
-1.  Имя экземпляра ПО: `<instanceName>`. Можно получить в ответе на запрос localhost:9200/\_cat/indices, например `cmw_cmw-study`, как показано на следующей иллюстрации.
+1. Имя экземпляра ПО: `<instanceName>`. Можно получить в ответе на запрос localhost:9200/\_cat/indices, например `cmw_cmw-study`, как показано на следующей иллюстрации.
 
     _![Определение имени экземпляра ПО](https://kb.comindware.ru/assets/Pasted%20image%2020221229181253.png)_
 
-2. Директория с базой данных экземпляра ПО: `/var/lib/comindware/<instanceName>/Database`. Может быть задана другая директория с помощью директивы `<workDirectory>` в файле конфигурации `/var/www/comindware/Ignite.config`. Если в файле конфигурации директива `<workDirectory>` не содержит директории, используется директория по умолчанию.
-3. Путь для сохранения снимков базы данных Apache Ignite, по умолчанию: `/var/lib/comindware/<instanceName>/Database/snapshots/`
-4. Имя репозитория Elasticsearch, заданное при его регистрации, например: `elastic_search_repo_name`
-5. Путь для сохранения резервных копий Elasticsearch:
+2. Директория с базой данных экземпляра ПО: `/var/lib/comindware/<instanceName>/Database`. Может быть задана другая директория с помощью директивы `<workDirectory>` в файле конфигурации `/var/www/comindware/Ignite.config`. Если в файле конфигурации директива `<workDirectory>` не содержит директории, используется директория по умолчанию.
+3. Путь для сохранения снимков базы данных Apache Ignite, по умолчанию: `/var/lib/comindware/<instanceName>/Database/snapshots/`
+4. Имя репозитория Elasticsearch, заданное при его регистрации, например: `elastic_search_repo_name`
+5. Путь для сохранения резервных копий Elasticsearch:
 
     - например, `/var/www/backups/elasticsearch`
     - должен быть указан в директиве `path.repo` в файле `/etc/elasticsearch/elasticsearch.yml`
@@ -36,7 +36,7 @@ kbId: 2117
 
     _![Определение пути для резервных копий Elasticsearch](https://kb.comindware.ru/assets/Pasted%20image%2020221229181640.png)_
 
-6. Имя снимка, заданное администратором, например, в формате `<instanceName><Date><Time>`
+6. Имя снимка, заданное администратором, например, в формате `<instanceName><Date><Time>`
 
 ## Установка и настройка исполняемых скриптов Apache Ignite
 
@@ -124,7 +124,7 @@ kbId: 2117
     mkdir /var/www/backups/elasticsearch 
     ```
 
-12. Присвойте директории `backups` права на чтение-запись `rwxrwxrwx`:
+12. Присвойте директории `backups` права на чтение-запись `rwxrwxrwx`:
 
     ```
     chmod -R 777 backups/ 
@@ -170,7 +170,7 @@ kbId: 2117
     curl -X PUT "localhost:9200/_snapshot/elasticsearch_repo_name?pretty" -H ’Content-Type: application/json’ -d’ {"type": "fs", "settings": {"location": "/var/www/backups/elasticsearch"}}’
     ```
 
-4. Создайте снимок состояния Elasticsearch, заменив ***`elasticsearch_repo_name`**,** `snapshot_name`* и `prefix_name`(префикс индекса, указанный в конфигурации экземпляра ПО) на свои значения:
+4. Создайте снимок состояния Elasticsearch, заменив ***`elasticsearch_repo_name`**,** `snapshot_name`* и `prefix_name`(префикс индекса, указанный в конфигурации экземпляра ПО) на свои значения:
 
     ```
     curl -X PUT "localhost:9200/_snapshot/elasticsearch_repo_name/snapshot_name_$now?wait_for_completion=true&pretty" -H ’Content-Type: application/json’ -d’ {"indices": "cmw_prefix_name*", "ignore_unavailable": true, "include_global_state": false}’

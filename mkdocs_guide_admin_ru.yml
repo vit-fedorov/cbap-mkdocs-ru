@@ -10,6 +10,9 @@ extra:
   adminGuideLinux: True
   adminGuideWindows: True
   userGuide: False
+  completeGuide: False
+
+site_name: Comindware Business Application Platform. Руководство администратора
 
 nav:
 

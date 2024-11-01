@@ -162,32 +162,244 @@ _![Типовой ландшафт сервисом в составе Систе
 - 200 активных;
 - 25 постоянных.
 
-| **Имя сервера** | **Описание** | **Кол-во логи­­ческих ядер ЦП от 3,0 ГГц** | **ОЗУ, ГБ** | **Хранение данных** | | | | |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **Раздел с ПО,**   **ГБ**   **SSD** | **База данных,**   **ГБ**   **Высоко­­надеж­­ный высоко­скорост­­ной SSD** | **Загру­­­жаемые файлы,**   **ГБ**   **СХД HDD** | **Жур­налы,**   **ГБ**   **HDD** | **Резерв­­ные копии,**   **ГБ**   **СХД HDD** |
-| **Инфраструктурные сервисы** | | | | | | | | |
-| Nginx reverse proxy1 | Обратный прокси (VPS) | 2 | 2 | 24 |  |  |  |  |
-| Nginx reverse proxy2 | Обратный прокси (VPS) | 2 | 2 | 24 |  |  |  |  |
-| Zabbix1 | Cистема монито­ринга и отслеживания (VPS) | 2 | 4 | 24 | 128 |  |  |  |
-| Zabbix2 | Cистема мониторинга и отсле­живания (VPS) | 2 | 4 | 24 | 128 |  |  |  |
-|  |  |  |  |  |  |  |  |  |
-| **Продуктовый ландшафт** | | | | | | | | |
-| CBAP-node1\* | Сервер прило­жений (VPS) | 8 | 32 | 64 | 128 | 1024 | 16 | 512 |
-| CBAP-node2\* | Сервер прило­жений (VPS) | 8 | 32 | 64 | 128 | 16 |
-| CBAP-node3\* | Сервер прило­жений (VPS) | 8 | 32 | 64 | 128 | 16 |
-| Elasticsearch-node1\* | Сервер журналов Elasticsearch (VPS) | 4 | 16 | 24 | 128 |  | 16 | 512 |
-| Elasticsearch-node2\* | Сервер журналов Elasticsearch (VPS) | 4 | 16 | 24 | 128 |  | 16 |
-| Elasticsearch-node3\* | Сервер журналов Elasticsearch (VPS) | 4 | 16 | 24 | 128 |  | 16 |
-| \* Виртуальные серверы одного сервиса должны быть размещены на разных физических серверах. | | | | | | | | |
-| Скорость соединения между серверами должна быть не менее 10 Гб/с. | | | | | | | | |
-|  | | | | | | | | |
-| **Ландшафт тестирования и разработки** | | | | | | | | |
-| git-server | GitLab | 2 | 4 | 24 | 128 |  |  |  |
-| CBAP-test | Сервер прило­жений (VPS) | 8 | 24 | 64 | 128 | 32 | 16 | 128 |
-| CBAP-dev | Сервер прило­жений (VPS) | 8 | 24 | 64 | 128 | 32 | 16 | 128 |
-| Elasticsearch | Сервер журналов Elasticsearch (VPS) | 4 | 16 | 24 | 128 |  | 16 | 128 |
-|  |  |  |  |  |  |  |  |  |
-| **Сумма по типам ресурсов** | | **66** | **224** | **536** | **1536** | **1088** | **144** | **1408** |
+<table block="markdown" style="max-width: 100%; width: 100%;">
+<thead>
+<tr valign="top">
+<th rowspan="2" block="markdown">
+<p><strong>Имя сервера</strong></p>
+</th>
+<th rowspan="2" block="markdown">
+<p><strong>Описание</strong></p>
+</th>
+<th rowspan="2" block="markdown">
+<p><span block="markdown"><strong>Кол-во логи­­ческих ядер ЦП от 3,0 ГГц</strong></span></p>
+</th>
+<th rowspan="2" block="markdown">
+<p><span block="markdown"><strong>ОЗУ, ГБ</strong></span></p>
+</th>
+<th colspan="5" block="markdown">
+<p><strong>Хранение данных</strong></p>
+</th>
+</tr>
+<tr valign="top">
+<th block="markdown">
+<p><span block="markdown"><strong>SSD</strong></span></p>
+</th>
+<th block="markdown">
+<p><span block="markdown"><strong>Высоко­­надеж­­ный высоко­скорост­­ной SSD</strong></span></p>
+</th>
+<th block="markdown">
+<p><span block="markdown"><strong>СХД HDD</strong></span></p>
+</th>
+<th block="markdown">
+<p><span block="markdown"><strong>HDD</strong></span></p>
+</th>
+<th block="markdown">
+<p><span block="markdown"><strong>СХД HDD</strong></span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="9" block="markdown"><strong>Инфраструктурные сервисы</strong></td>
+</tr>
+<tr>
+<td block="markdown">Nginx reverse proxy1</td>
+<td block="markdown">Обратный прокси (VPS)</td>
+<td block="markdown">2</td>
+<td block="markdown">2</td>
+<td block="markdown">24</td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+</tr>
+<tr>
+<td block="markdown">Nginx reverse proxy2</td>
+<td block="markdown">Обратный прокси (VPS)</td>
+<td block="markdown">2</td>
+<td block="markdown">2</td>
+<td block="markdown">24</td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+</tr>
+<tr>
+<td block="markdown">Zabbix1</td>
+<td block="markdown">Cистема монито­ринга и отслеживания (VPS)</td>
+<td block="markdown">2</td>
+<td block="markdown">4</td>
+<td block="markdown">24</td>
+<td block="markdown">128</td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+</tr>
+<tr>
+<td block="markdown">Zabbix2</td>
+<td block="markdown">Cистема мониторинга и отсле­живания (VPS)</td>
+<td block="markdown">2</td>
+<td block="markdown">4</td>
+<td block="markdown">24</td>
+<td block="markdown">128</td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+</tr>
+<tr>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+</tr>
+<tr>
+<td colspan="9" block="markdown"><strong>Продуктовый ландшафт</strong></td>
+</tr>
+<tr>
+<td block="markdown">CBAP-node1*</td>
+<td block="markdown">Сервер прило­жений (VPS)</td>
+<td block="markdown">8</td>
+<td block="markdown">32</td>
+<td block="markdown">64</td>
+<td block="markdown">128</td>
+<td rowspan="3" block="markdown">1024</td>
+<td block="markdown">16</td>
+<td rowspan="3" block="markdown">512</td>
+</tr>
+<tr>
+<td block="markdown">CBAP-node2*</td>
+<td block="markdown">Сервер прило­жений (VPS)</td>
+<td block="markdown">8</td>
+<td block="markdown">32</td>
+<td block="markdown">64</td>
+<td block="markdown">128</td>
+<td block="markdown">16</td>
+</tr>
+<tr>
+<td block="markdown">CBAP-node3*</td>
+<td block="markdown">Сервер прило­жений (VPS)</td>
+<td block="markdown">8</td>
+<td block="markdown">32</td>
+<td block="markdown">64</td>
+<td block="markdown">128</td>
+<td block="markdown">16</td>
+</tr>
+<tr>
+<td block="markdown">Elasticsearch-node1*</td>
+<td block="markdown">Сервер журналов Elasticsearch (VPS)</td>
+<td block="markdown">4</td>
+<td block="markdown">16</td>
+<td block="markdown">24</td>
+<td block="markdown">128</td>
+<td block="markdown"> </td>
+<td block="markdown">16</td>
+<td rowspan="3" block="markdown">512</td>
+</tr>
+<tr>
+<td block="markdown">Elasticsearch-node2*</td>
+<td block="markdown">Сервер журналов Elasticsearch (VPS)</td>
+<td block="markdown">4</td>
+<td block="markdown">16</td>
+<td block="markdown">24</td>
+<td block="markdown">128</td>
+<td block="markdown"> </td>
+<td block="markdown">16</td>
+</tr>
+<tr>
+<td block="markdown">Elasticsearch-node3*</td>
+<td block="markdown">Сервер журналов Elasticsearch (VPS)</td>
+<td block="markdown">4</td>
+<td block="markdown">16</td>
+<td block="markdown">24</td>
+<td block="markdown">128</td>
+<td block="markdown"> </td>
+<td block="markdown">16</td>
+</tr>
+<tr>
+<td colspan="9" block="markdown">* Виртуальные серверы одного сервиса должны быть размещены на разных физических серверах.</td>
+</tr>
+<tr>
+<td colspan="9" block="markdown">Скорость соединения между серверами должна быть не менее 10 Гб/с.</td>
+</tr>
+<tr>
+<td colspan="9" block="markdown"> </td>
+</tr>
+<tr>
+<td colspan="9" block="markdown"><strong>Ландшафт тестирования и разработки</strong></td>
+</tr>
+<tr>
+<td block="markdown">git-server</td>
+<td block="markdown">GitLab</td>
+<td block="markdown">2</td>
+<td block="markdown">4</td>
+<td block="markdown">24</td>
+<td block="markdown">128</td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+</tr>
+<tr>
+<td block="markdown">CBAP-test</td>
+<td block="markdown">Сервер прило­жений (VPS)</td>
+<td block="markdown">8</td>
+<td block="markdown">24</td>
+<td block="markdown">64</td>
+<td block="markdown">128</td>
+<td block="markdown">32</td>
+<td block="markdown">16</td>
+<td block="markdown">128</td>
+</tr>
+<tr>
+<td block="markdown">CBAP-dev</td>
+<td block="markdown">Сервер прило­жений (VPS)</td>
+<td block="markdown">8</td>
+<td block="markdown">24</td>
+<td block="markdown">64</td>
+<td block="markdown">128</td>
+<td block="markdown">32</td>
+<td block="markdown">16</td>
+<td block="markdown">128</td>
+</tr>
+<tr>
+<td block="markdown">Elasticsearch</td>
+<td block="markdown">Сервер журналов Elasticsearch (VPS)</td>
+<td block="markdown">4</td>
+<td block="markdown">16</td>
+<td block="markdown">24</td>
+<td block="markdown">128</td>
+<td block="markdown"> </td>
+<td block="markdown">16</td>
+<td block="markdown">128</td>
+</tr>
+<tr>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+<td block="markdown"> </td>
+</tr>
+<tr>
+<td colspan="2" block="markdown"><strong>Сумма по типам ресурсов</strong></td>
+<td block="markdown"><strong>66</strong></td>
+<td block="markdown"><strong>224</strong></td>
+<td block="markdown"><strong>536</strong></td>
+<td block="markdown"><strong>1536</strong></td>
+<td block="markdown"><strong>1088</strong></td>
+<td block="markdown"><strong>144</strong></td>
+<td block="markdown"><strong>1408</strong></td>
+</tr>
+</tbody>
+</table>
 
 #### Минимальная конфигурация основного и резервного серверов приложений
 

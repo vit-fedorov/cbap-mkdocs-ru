@@ -11,23 +11,14 @@ kbId: 2085
 
 В настоящем руководстве представлено краткое описание архитектуры **{{ productName }}**, а также даны рекомендации по выбору ландшафта и конфигурации программного и аппаратного обеспечения для развертывания системы на основе **{{ productName }}**.
 
-## Определения
+!!! question "Определения"
 
-**Продукт** — программное обеспечение **{{ productName }}**.
-
-**Система** — развернутый программно-аппаратный комплекс на основе продукта **{{ productName }}**.
-
-**Сервер приложений** — установленный экземпляр продукта **{{ productName }}**.
-
-**Приложение** — обособленное бизнес-решение, реализованное на сервере приложений.
-
-**Активные пользователи** — пользователи, регулярно генерирующие данные на сервере приложений.
-
-**DAS** — запоминающее устройство, непосредственно подключенное к серверу приложений.
-
-**SAN** — сетевая система хранения (СХД, сеть хранения данных).
-
-**IOPS** — количество операций ввода-вывода в секунду.
+    - **Сервер приложений** — установленный экземпляр ПО **{{ productName }}**.
+    - **Приложение** — обособленное бизнес-решение, реализованное на сервере приложений.
+    - **Активные пользователи** — пользователи, регулярно генерирующие данные на сервере приложений.
+    - **DAS** — запоминающее устройство, непосредственно подключенное к серверу приложений.
+    - **SAN** — сетевая система хранения (СХД, сеть хранения данных).
+    - **IOPS** — количество операций ввода-вывода в секунду.
 
 ## Архитектура Системы
 
@@ -44,7 +35,7 @@ kbId: 2085
 - *Подсистема файловых журналов*: NLog.
 - *Модули для интеграции*: см. раздел «[Интеграция с внешними системами](#интеграция-с-внешними-системами)».
 
-Полный перечень стороннего ПО, входящего в состав и необходимого для работы Системы, см. в статьях: [{{ productName }} 4.7. Перечень стороннего программного обеспечения для Linux]({{ kbArticleURLPrefix }}2398)   , [Перечень стороннего ПО для Windows]({{ kbArticleURLPrefix }}2092).
+Полный перечень стороннего ПО, входящего в состав и необходимого для работы Системы, см. в статьях: [{{ productName }} {{ productVersion }} Перечень стороннего программного обеспечения для Linux]({{ kbArticleURLPrefix }}2398).
 
 _![Диаграмма архитектуры {{ productName }}](https://kb.comindware.ru/assets/Picture1.png)_
 
@@ -53,9 +44,9 @@ _![Диаграмма архитектуры {{ productName }}](https://kb.comin
 В Системе предусмотрены перечисленные ниже механизмы обеспечения безопасности и отказоустойчивости.
 
 - Внешняя безопасность — реализуется посредством:
-	- механизма аутентификации пользователей Kerberos и OpenID;
-	- сетевого экрана;
-	- обратного прокси-сервера.
+    - механизма аутентификации пользователей Kerberos и OpenID;
+    - сетевого экрана;
+    - обратного прокси-сервера.
 - Внутренняя безопасность — реализуется посредством ролевой модели безопасности.
 - Отказоустойчивость — реализуется посредством использованием резервных серверов и дополнительных узлов хранения и обработки данных.
 - Масштабируемость — реализуется посредством увеличения количества серверов, обрабатывающих запросы.
@@ -89,7 +80,7 @@ _![Диаграмма архитектуры {{ productName }}](https://kb.comin
 
 Ниже перечислены компоненты типовой минимальной конфигурации Системы, предназначенной для демонстраций и реализации пилотных проектов.
 
-1. ***{{ productName }}***: установленный экземпляр Продукта.
+1. ***{{ productName }}***: установленный экземпляр ПО.
 2. *СУБД* *Comindware Elastic Data*.
 3. *Сервер Elasticsearch* — в конфигурации с одним узлом.
 
@@ -99,7 +90,7 @@ _![Минимальная конфигурация Системы](https://kb.co
 
 Ниже перечислены компоненты типовой продуктовой конфигурации, обеспечивающей дублирование и резервирование ресурсов, а также отказоустойчивость Системы.
 
-1. ***{{ productName }}***: установленный экземпляр Продукта.
+1. ***{{ productName }}***: установленный экземпляр ПО.
 2. *СУБД Comindware Elastic Data*.
 3. *Сервер Elasticsearch*.
 4. *Обратный прокси-сервер NGINX* для фильтрации нежелательных запросов и ретрансляции допустимых запросов во внутреннюю сеть.
@@ -108,8 +99,7 @@ _![Минимальная конфигурация Системы](https://kb.co
 7. *Сервер LDAP* (необязательно) для централизованного управления инфраструктурой сети.
 8. *Сервер Git* (необязательно) для контроля версий приложений, создаваемых с помощью **{{ productName }}**.
 
-_![Продуктовая конфигурация: ландшафт подсистем](https://kb.comindware.ru/assets/Picture3_3.png)
-_
+_![Продуктовая конфигурация: ландшафт подсистем](https://kb.comindware.ru/assets/Picture3_3.png)_
 
 Продуктовое использование накладывает требования на следующие характеристики Системы:
 
@@ -154,275 +144,213 @@ _![Типовой ландшафт сервисом в составе Систе
 
 Каналы связи между узлами Системы должны обеспечивать пропускную способность не менее 10 Гбит/с.
 
-#### Пример расчёта системных ресурсов отказоустойчивой системы
+#### Примеры расчёта системных ресурсов отказоустойчивой системы
 
-В таблице ниже представлена конфигурация системы для следующего количества пользователей:
+В следующих таблицах представлена конфигурация системы для следующего количества пользователей:
 
 - 500 зарегистрированных;
 - 200 активных;
 - 25 постоянных.
 
-<table block="markdown" style="max-width: 100%; width: 100%;">
-<thead>
-<tr valign="top">
-<th rowspan="2" block="markdown">
-<p><strong>Имя сервера</strong></p>
-</th>
-<th rowspan="2" block="markdown">
-<p><strong>Описание</strong></p>
-</th>
-<th rowspan="2" block="markdown">
-<p><span block="markdown"><strong>Кол-во логи­­ческих ядер ЦП от 3,0 ГГц</strong></span></p>
-</th>
-<th rowspan="2" block="markdown">
-<p><span block="markdown"><strong>ОЗУ, ГБ</strong></span></p>
-</th>
-<th colspan="5" block="markdown">
-<p><strong>Хранение данных</strong></p>
-</th>
-</tr>
-<tr valign="top">
-<th block="markdown">
-<p><span block="markdown"><strong>SSD</strong></span></p>
-</th>
-<th block="markdown">
-<p><span block="markdown"><strong>Высоко­­надеж­­ный высоко­скорост­­ной SSD</strong></span></p>
-</th>
-<th block="markdown">
-<p><span block="markdown"><strong>СХД HDD</strong></span></p>
-</th>
-<th block="markdown">
-<p><span block="markdown"><strong>HDD</strong></span></p>
-</th>
-<th block="markdown">
-<p><span block="markdown"><strong>СХД HDD</strong></span></p>
-</th>
+##### Инфраструктурные сервисы
+
+- Виртуальные серверы одного сервиса должны быть размещены на разных физических серверах.
+- Скорость соединения между серверами должна быть не менее 10 Гб/с.
+- SSD-накопитель для базы данных должен быть высокоскоростным и высоконадёжным.
+
+<table markdown="block" >
+<thead markdown="block">
+<tr markdown="block">
+<th markdown="block">Логич. ядер ЦП от 3,0 ГГц</th>
+<th markdown="block">ОЗУ, ГБ</th>
+<th markdown="block">Раздел с ПО, ГБ, SSD</th>
+<th markdown="block">БД, ГБ, SSD</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td colspan="9" block="markdown"><strong>Инфраструктурные сервисы</strong></td>
+<tbody markdown="block">
+<tr markdown="block">
+<td colspan="4" markdown="block">
+**Обратные прокси (VPS): `NGINX reverse proxy1`, `NGINX reverse proxy2`**
+</td>
 </tr>
-<tr>
-<td block="markdown">Nginx reverse proxy1</td>
-<td block="markdown">Обратный прокси (VPS)</td>
-<td block="markdown">2</td>
-<td block="markdown">2</td>
-<td block="markdown">24</td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
+<tr markdown="block">
+<td markdown="block">2</td>
+<td markdown="block">2</td>
+<td markdown="block">24</td>
+<td markdown="block"></td>
 </tr>
-<tr>
-<td block="markdown">Nginx reverse proxy2</td>
-<td block="markdown">Обратный прокси (VPS)</td>
-<td block="markdown">2</td>
-<td block="markdown">2</td>
-<td block="markdown">24</td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
+
+<thead markdown="block">
+<tr markdown="block">
+<td colspan="7" markdown="block">
+**Система мониторинга и отслеживания (VPS): `Zabbix1`, `Zabbix2`**
+</td>
 </tr>
-<tr>
-<td block="markdown">Zabbix1</td>
-<td block="markdown">Cистема монито­ринга и отслеживания (VPS)</td>
-<td block="markdown">2</td>
-<td block="markdown">4</td>
-<td block="markdown">24</td>
-<td block="markdown">128</td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-</tr>
-<tr>
-<td block="markdown">Zabbix2</td>
-<td block="markdown">Cистема мониторинга и отсле­живания (VPS)</td>
-<td block="markdown">2</td>
-<td block="markdown">4</td>
-<td block="markdown">24</td>
-<td block="markdown">128</td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-</tr>
-<tr>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-</tr>
-<tr>
-<td colspan="9" block="markdown"><strong>Продуктовый ландшафт</strong></td>
-</tr>
-<tr>
-<td block="markdown">CBAP-node1*</td>
-<td block="markdown">Сервер прило­жений (VPS)</td>
-<td block="markdown">8</td>
-<td block="markdown">32</td>
-<td block="markdown">64</td>
-<td block="markdown">128</td>
-<td rowspan="3" block="markdown">1024</td>
-<td block="markdown">16</td>
-<td rowspan="3" block="markdown">512</td>
-</tr>
-<tr>
-<td block="markdown">CBAP-node2*</td>
-<td block="markdown">Сервер прило­жений (VPS)</td>
-<td block="markdown">8</td>
-<td block="markdown">32</td>
-<td block="markdown">64</td>
-<td block="markdown">128</td>
-<td block="markdown">16</td>
-</tr>
-<tr>
-<td block="markdown">CBAP-node3*</td>
-<td block="markdown">Сервер прило­жений (VPS)</td>
-<td block="markdown">8</td>
-<td block="markdown">32</td>
-<td block="markdown">64</td>
-<td block="markdown">128</td>
-<td block="markdown">16</td>
-</tr>
-<tr>
-<td block="markdown">Elasticsearch-node1*</td>
-<td block="markdown">Сервер журналов Elasticsearch (VPS)</td>
-<td block="markdown">4</td>
-<td block="markdown">16</td>
-<td block="markdown">24</td>
-<td block="markdown">128</td>
-<td block="markdown"> </td>
-<td block="markdown">16</td>
-<td rowspan="3" block="markdown">512</td>
-</tr>
-<tr>
-<td block="markdown">Elasticsearch-node2*</td>
-<td block="markdown">Сервер журналов Elasticsearch (VPS)</td>
-<td block="markdown">4</td>
-<td block="markdown">16</td>
-<td block="markdown">24</td>
-<td block="markdown">128</td>
-<td block="markdown"> </td>
-<td block="markdown">16</td>
-</tr>
-<tr>
-<td block="markdown">Elasticsearch-node3*</td>
-<td block="markdown">Сервер журналов Elasticsearch (VPS)</td>
-<td block="markdown">4</td>
-<td block="markdown">16</td>
-<td block="markdown">24</td>
-<td block="markdown">128</td>
-<td block="markdown"> </td>
-<td block="markdown">16</td>
-</tr>
-<tr>
-<td colspan="9" block="markdown">* Виртуальные серверы одного сервиса должны быть размещены на разных физических серверах.</td>
-</tr>
-<tr>
-<td colspan="9" block="markdown">Скорость соединения между серверами должна быть не менее 10 Гб/с.</td>
-</tr>
-<tr>
-<td colspan="9" block="markdown"> </td>
-</tr>
-<tr>
-<td colspan="9" block="markdown"><strong>Ландшафт тестирования и разработки</strong></td>
-</tr>
-<tr>
-<td block="markdown">git-server</td>
-<td block="markdown">GitLab</td>
-<td block="markdown">2</td>
-<td block="markdown">4</td>
-<td block="markdown">24</td>
-<td block="markdown">128</td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-</tr>
-<tr>
-<td block="markdown">CBAP-test</td>
-<td block="markdown">Сервер прило­жений (VPS)</td>
-<td block="markdown">8</td>
-<td block="markdown">24</td>
-<td block="markdown">64</td>
-<td block="markdown">128</td>
-<td block="markdown">32</td>
-<td block="markdown">16</td>
-<td block="markdown">128</td>
-</tr>
-<tr>
-<td block="markdown">CBAP-dev</td>
-<td block="markdown">Сервер прило­жений (VPS)</td>
-<td block="markdown">8</td>
-<td block="markdown">24</td>
-<td block="markdown">64</td>
-<td block="markdown">128</td>
-<td block="markdown">32</td>
-<td block="markdown">16</td>
-<td block="markdown">128</td>
-</tr>
-<tr>
-<td block="markdown">Elasticsearch</td>
-<td block="markdown">Сервер журналов Elasticsearch (VPS)</td>
-<td block="markdown">4</td>
-<td block="markdown">16</td>
-<td block="markdown">24</td>
-<td block="markdown">128</td>
-<td block="markdown"> </td>
-<td block="markdown">16</td>
-<td block="markdown">128</td>
-</tr>
-<tr>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-<td block="markdown"> </td>
-</tr>
-<tr>
-<td colspan="2" block="markdown"><strong>Сумма по типам ресурсов</strong></td>
-<td block="markdown"><strong>66</strong></td>
-<td block="markdown"><strong>224</strong></td>
-<td block="markdown"><strong>536</strong></td>
-<td block="markdown"><strong>1536</strong></td>
-<td block="markdown"><strong>1088</strong></td>
-<td block="markdown"><strong>144</strong></td>
-<td block="markdown"><strong>1408</strong></td>
+</thead>
+<tbody markdown="block">
+<tr markdown="block">
+<td markdown="block">2</td>
+<td markdown="block">4</td>
+<td markdown="block">24</td>
+<td markdown="block">128</td>
 </tr>
 </tbody>
 </table>
 
-#### Минимальная конфигурация основного и резервного серверов приложений
+##### Продуктовый ландшафт
+
+- Виртуальные серверы одного сервиса должны быть размещены на разных физических серверах.
+- Скорость соединения между серверами должна быть не менее 10 Гб/с.
+- SSD-накопитель для базы данных должен быть высокоскоростным и высоконадёжным.
+
+<table markdown="block" >
+<thead markdown="block">
+<tr markdown="block">
+<th markdown="block">Логич. ядер ЦП от 3,0 ГГц</th>
+<th markdown="block">ОЗУ, ГБ</th>
+<th markdown="block">Раздел с ПО, ГБ, SSD</th>
+<th markdown="block">БД, ГБ, SSD</th>
+<th markdown="block">Загру­­­жаемые файлы, ГБ, СХД HDD</th>
+<th markdown="block">Жур­налы, HDD</th>
+<th markdown="block">Резерв­­ные копии, ГБ, СХД HDD</th>
+</tr>
+<tr markdown="block">
+<td colspan="8" markdown="block">
+**Серверы приложений (VPS): `CBAP-node1`, `CBAP-node2`, `CBAP-node3`**
+</td>
+</tr>
+</thead>
+<tbody markdown="block">
+<tr markdown="block">
+<td markdown="block">8</td>
+<td markdown="block">32</td>
+<td markdown="block">64</td>
+<td markdown="block">128</td>
+<td markdown="block">1024</td>
+<td markdown="block">16</td>
+<td markdown="block">512</td>
+</tr>
+
+<tr markdown="block">
+<td colspan="7" markdown="block">
+**Сервер журналов Elasticsearch (VPS): `Elasticsearch-node1`, `Elasticsearch-node2`, `Elasticsearch-node3`**
+</td>
+</tr>
+
+<tbody markdown="block">
+<tr markdown="block">
+<td markdown="block">4</td>
+<td markdown="block">16</td>
+<td markdown="block">24</td>
+<td markdown="block">128</td>
+<td markdown="block"></td>
+<td markdown="block">16</td>
+<td markdown="block">512</td>
+</tr>
+
+</tbody>
+</table>
+
+##### Ландшафт тестирования и разработки
+
+- SSD-накопитель для базы данных должен быть высокоскоростным и высоконадёжным.
+
+<table markdown="block" >
+<thead markdown="block">
+<tr markdown="block">
+<th markdown="block">Логич. ядер ЦП от 3,0 ГГц</th>
+<th markdown="block">ОЗУ, ГБ</th>
+<th markdown="block">Раздел с ПО, ГБ, SSD</th>
+<th markdown="block">БД, ГБ, SSD</th>
+<th markdown="block">Загру­­­жаемые файлы, ГБ, СХД HDD</th>
+<th markdown="block">Жур­налы, HDD</th>
+<th markdown="block">Резерв­­ные копии, ГБ, СХД HDD</th>
+</tr>
+</thead>
+<tbody markdown="block">
+<tr markdown="block">
+<td colspan="7" markdown="block">
+**GitLab: `git-server`**
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">2</td>
+<td markdown="block">4</td>
+<td markdown="block">24</td>
+<td markdown="block">128</td>
+<td markdown="block"></td>
+<td markdown="block"></td>
+<td markdown="block"></td>
+</tr>
+
+<tr markdown="block">
+<td colspan="7" markdown="block">
+**Сервер приложений (VPS): `CBAP-test`**
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">8</td>
+<td markdown="block">24</td>
+<td markdown="block">64</td>
+<td markdown="block">128</td>
+<td markdown="block">32</td>
+<td markdown="block">16</td>
+<td markdown="block">128</td>
+</tr>
+
+<tr markdown="block">
+<td colspan="7" markdown="block">
+**Сервер приложений (VPS): `CBAP-dev`**
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">8</td>
+<td markdown="block">24</td>
+<td markdown="block">64</td>
+<td markdown="block">128</td>
+<td markdown="block">32</td>
+<td markdown="block">16</td>
+<td markdown="block">128</td>
+</tr>
+<tr markdown="block">
+<td colspan="7" markdown="block">
+**Сервер журналов Elasticsearch (VPS): `Elasticsearch`**
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">4</td>
+<td markdown="block">16</td>
+<td markdown="block">24</td>
+<td markdown="block">128</td>
+<td markdown="block"></td>
+<td markdown="block">16</td>
+<td markdown="block">128</td>
+
+</tbody>
+</table>
+
+##### Минимальная конфигурация основного сервера приложений
 
 | **Кол-во польз.** | **ЦП** | **ОЗУ** | **HDD** | **SSD** |
 | --- | --- | --- | --- | --- |
-| **Основной сервер приложений** | | | | |
-| 1–200 активных | 4 ядра от 3,7 ГГц + (1 ядро × 100 акт. польз. × кол-во приложений) | 16 ГБ + (4 ГБ × 100 акт. польз. × кол-во приложений) | 16 ГБ | 16 ГБ |
-| 200 активных | 4 ядра + (2 ядра × кол-во прил.) | 16 ГБ + (8 ГБ × кол-во прил.) | 16 ГБ × кол-во прил. | 16 ГБ × кол-во прил. |
-| 300 активных | 4 ядра + (3 ядра × кол-во прил.) | 16 ГБ + (12 ГБ × кол-во прил.) | 16 ГБ × кол-во прил. | 16 ГБ × кол-во прил. |
-| 400 активных | 4 ядра + (4 ядра × кол-во прил.) | 16 ГБ + (16 ГБ × кол-во прил.) | 16 ГБ × кол-во прил. | 16 ГБ × кол-во прил. |
-| **Резервный сервер приложений** | | | | |
-| 1­– 200 | 4 ядра от 3,7 ГГц + (1 ядро × 100 польз. × кол-во приложений) | 16 ГБ + (4 ГБ × 100 польз. × кол-во приложений) | 16 ГБ × кол-во прил. | 8 ГБ × кол-во прил. |
-| 200 | 4 ядра + (2 ядра × кол-во прил.) | 16 ГБ + (8 ГБ × кол-во прил.) | 16 ГБ × кол-во прил. | 8 ГБ × кол-во прил. |
-| 300 | 4 ядра + (3 ядра × кол-во прил.) | 16 ГБ + (12 ГБ × кол-во прил.) | 16 ГБ × кол-во прил. | 8 ГБ × кол-во прил. |
-| 400 | 4 ядра + (4 ядра × кол-во прил.) | 16 ГБ + (16 ГБ × кол-во прил.) | 16 ГБ × кол-во прил. | 16 ГБ × кол-во прил. |
+| 1–200 активных | 4 ядра от 3,7 ГГц + <br/>(1 ядро × 100 акт. польз. × кол-во прил.) | 16 ГБ + <br/>(4 ГБ × 100 акт. польз. × кол-во прил.) | 16 ГБ | 16 ГБ |
+| 200 активных | 4 ядра + <br/>(2 ядра × кол-во прил.) | 16 ГБ + <br/>(8 ГБ × кол-во прил.) | 16 ГБ × кол-во прил. | 16 ГБ × кол-во прил. |
+| 300 активных | 4 ядра + <br/>(3 ядра × кол-во прил.) | 16 ГБ + <br/>(12 ГБ × кол-во прил.) | 16 ГБ × кол-во прил. | 16 ГБ × кол-во прил. |
+| 400 активных | 4 ядра + <br/>(4 ядра × кол-во прил.) | 16 ГБ + <br/>(16 ГБ × кол-во прил.) | 16 ГБ × кол-во прил. | 16 ГБ × кол-во прил. |
 
-#### Минимальная конфигурация серверов разработки и тестирования
+##### Минимальная конфигурация резервного сервера приложений
+
+| **Кол-во польз.** | **ЦП** | **ОЗУ** | **HDD** | **SSD** |
+| --- | --- | --- | --- | --- |
+| 1­–200 | 4 ядра от 3,7 ГГц + <br/>(1 ядро × 100 польз. × кол-во прил.) | 16 ГБ + <br/>(4 ГБ × 100 польз. × кол-во прил.) | 16 ГБ × кол-во прил. | 8 ГБ × кол-во прил. |
+| 200 | 4 ядра + <br/>(2 ядра × кол-во прил.) | 16 ГБ + <br/>(8 ГБ × кол-во прил.) | 16 ГБ × кол-во прил. | 8 ГБ × кол-во прил. |
+| 300 | 4 ядра + <br/>(3 ядра × кол-во прил.) | 16 ГБ + <br/>(12 ГБ × кол-во прил.) | 16 ГБ × кол-во прил. | 8 ГБ × кол-во прил. |
+| 400 | 4 ядра + <br/>(4 ядра × кол-во прил.) | 16 ГБ + <br/>(16 ГБ × кол-во прил.) | 16 ГБ × кол-во прил. | 16 ГБ × кол-во прил. |
+
+##### Минимальная конфигурация серверов разработки и тестирования
 
 | **Кол-во польз.**       | **ЦП**            | **ОЗУ** | **HDD** | **SSD** |
 | ----------------------- | ----------------- | ------- | ------- | ------- |
-| **Сервер разработки**   |                   |         |         |         |
-| 1–100                   | 4 ядра от 3,7 ГГц | 16 ГБ   | 16 ГБ   | 16 ГБ   |
-| **Сервер тестирования** |                   |         |         |         |
 | 1–100                   | 4 ядра от 3,7 ГГц | 16 ГБ   | 16 ГБ   | 16 ГБ   |
 
 ### Конфигурация системы хранения данных
@@ -493,18 +421,18 @@ NGINX в минимально необходимой конфигурации у
 Конфигурация сервера Zabbix должна обеспечивать мониторинг работоспособности Системы, как указано ниже.
 
 1. Мониторинг доступности сервера Apache Ignite
-	1. Сервер может быть недоступен из-за проблем с сетью.
-	2. На сервере может закончиться свободное место на диске.
-	3. Конфигурация сервера может не позволять обработать запросы, например, ввиду невозможности создания нового индекса или соответствующего ему шарду.
+    1. Сервер может быть недоступен из-за проблем с сетью.
+    2. На сервере может закончиться свободное место на диске.
+    3. Конфигурация сервера может не позволять обработать запросы, например, ввиду невозможности создания нового индекса или соответствующего ему шарду.
 2. Мониторинг доступности сервера Elasticsearch
-	1. Сервер может быть недоступен из-за проблем с сетью.
-	2. На сервере может закончиться свободное место на диске.
-	3. Конфигурация сервера может не позволять обработать запросы, например, ввиду невозможности создания нового индекса или соответствующего ему шарда.
+    1. Сервер может быть недоступен из-за проблем с сетью.
+    2. На сервере может закончиться свободное место на диске.
+    3. Конфигурация сервера может не позволять обработать запросы, например, ввиду невозможности создания нового индекса или соответствующего ему шарда.
 3. Мониторинг места на дисках с базой данных, журналами, резервными копиями и т. п.
 4. Мониторинг ошибок в процессе работы Системы
-	1. Ошибки конфигурации Системы.
-	2. Ошибки в процессе эксплуатации Системы.
-	3. Ошибки, связанные с обновлением окружения, в котором работает Система, или компонентов самой Системы.
+    1. Ошибки конфигурации Системы.
+    2. Ошибки в процессе эксплуатации Системы.
+    3. Ошибки, связанные с обновлением окружения, в котором работает Система, или компонентов самой Системы.
 
 **Примеры конфигураций**
 

@@ -221,7 +221,7 @@ nav:
       - administration/deploy/linux/auxiliary_software_deploy/zabbix_deploy.md
       - administration/deploy/linux/auxiliary_software_deploy/zabbix_server_deploy.md
     - Развертывание вспомогательного ПО в Windows:
-      - administration/deploy/windows/auxiliary_software_deploy/aabbix_agent_deploy_windows.md
+      - administration/deploy/windows/auxiliary_software_deploy/zabbix_agent_deploy_windows.md
       - administration/deploy/windows/auxiliary_software_deploy/apache_ignite_deploy_windows.md
       - administration/deploy/windows/auxiliary_software_deploy/elasticsearch_deploy_windows.md
       - administration/deploy/windows/auxiliary_software_deploy/kafka_install_windows.md

@@ -31,7 +31,7 @@
 <li>Раз в сутки — полное резервное копирование базы данных, скриптов, файлов и истории операций встроенными средствами ПО, срок хранения резервных копий: не менее двух недель.</li>
 <li>Раз в неделю — резервное копирование всего образа развёрнутого ПО средствами виртуализации, срок хранения резервных копий: не менее трех месяцев.</li>
 </ul>
-<p>Инструкции по резервному копированию и восстановлению данных встроенными и внешними средствами см. в разделе <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2579">Резервное копирование и восстановление</a>»</em>.</p>
+<p>Инструкции по резервному копированию и восстановлению данных встроенными и внешними средствами см. в разделе <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2579">Резервное копирование и восстановление</a>»</em> базы знаний Comindware.</p>
 <h2 id="просмотр-списка-и-настройка-конфигураций-резервного-копирования">Просмотр списка и настройка конфигураций резервного копирования</h2>
 <ol class="colored_numbers_list">
 <li>В разделе <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2191">«<strong>Администрирование</strong>» — «<strong>Инфраструктура</strong>»</a> выберите пункт «<strong>Резервное копирование</strong>» <em class="fa-light fa-coins">‌<!--icon--></em>.</li>
@@ -51,7 +51,8 @@
 <p><strong>Файловая система</strong> — сохранять резервные копии в файловой системе сервера <strong>Comindware Business Application Platform</strong>.</p>
 <ul>
 <li>
-<p><strong>Путь к папке</strong> — путь к директории на сервере, в которой будут сохраняться резервные копии, например <code>/var/lib/comindware/&lt;instanceName&gt;/Backups</code> (здесь <code>&lt;instanceName&gt;</code> — имя экземпляра ПО). Для этой директории предоставьте разрешения на полный доступ, чтобы система могла сохранять в неё резервные копии, например:<br/><strong>Astra Linux, Ubuntu, Rocky</strong></p>
+<p><strong>Путь к папке</strong> — путь к директории на сервере, в которой будут сохраняться резервные копии, например <code>/var/lib/comindware/&lt;instanceName&gt;/Backups</code> (здесь <code>&lt;instanceName&gt;</code> — имя экземпляра ПО). Для этой директории предоставьте разрешения на полный доступ, чтобы система могла сохранять в неё резервные копии, например:</p>
+<p><strong>Astra Linux, Ubuntu, Rocky</strong></p>
 <div class="highlight"><code><code></code></code>
 <pre><code>chmod <span class="m">777</span> /var/lib/comindware/&lt;instanceName&gt;chown -R www-data:www-data /var/lib/comindware/&lt;instanceName&gt;</code><br/><code>chown -R www-data:www-data /var/lib/comindware/&lt;instanceName&gt;</code></pre>
 </div>
@@ -65,14 +66,12 @@
 <li>
 <p><strong>Хранилище S3</strong> — сохранять резервные копии во <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2594">внешнем сервисе S3</a>.</p>
 <ul>
-<li>
-<p><strong>Имя корзины</strong> — введите имя контейнера в хранилище S3, к котором будут сохраняться резервные копии.</p>
+<li><strong>Имя корзины</strong> — введите имя контейнера в хранилище S3, к котором будут сохраняться резервные копии.</li>
+</ul>
 <div class="notice notice-warning">
 <p class="admonition-title">Внимание!</p>
 <p>Для резервного копирования в основной и дополнительный репозитории будет использоваться только подключение к S3, заданное в файле конфигурации экземпляра ПО (<code>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code>) с помощью директивы <code>s3Connection.default</code></p>
 </div>
-</li>
-</ul>
 </li>
 </ul>
 </li>
@@ -82,20 +81,25 @@
 <li><strong>С файлами</strong> — установите этот флажок, чтобы включить в состав резервной копии загруженные файлы.</li>
 <li><strong>Со скриптами</strong> — установите этот флажок, чтобы включить в состав резервной копии скрипты.</li>
 <li><strong>С историей</strong> — установите этот флажок, чтобы включить в состав резервной копии данные Elasticsearch. См. <em>«<a class="mkdocs_imported_link" href="#настройка-резервного-копирования-данных-elasticsearch">Настройка резервного копирования данных Elasticsearch</a>»</em>.</li>
-<li><strong>Режим запуска</strong>
+<li>
+<p><strong>Режим запуска</strong></p>
 <ul>
 <li><strong>Вручную</strong> — для запуска резервного копирования потребуется нажимать кнопку «<strong>Запустить копирование</strong>» в <a class="mkdocs_imported_link" href="#запуск-резервного-копирования">списке конфигураций резервного копирования</a>.</li>
-<li><strong>По расписанию</strong> — резервное копирование будет выполняться по расписанию со следующими параметрами:
+<li>
+<p><strong>По расписанию</strong> — резервное копирование будет выполняться по расписанию со следующими параметрами:</p>
 <ul>
 <li><strong>Максимум копий</strong> — максимальное количество резервных копий, которые будут храниться в папке на сервере. Укажите значение 0, чтобы хранить все резервные копии.</li>
 <li><strong>Периодичность</strong> — частота, с которой будет выполняться копирование.</li>
-<li><strong>Интервал</strong>
+<li>
+<p><strong>Интервал</strong></p>
 <ul>
 <li><strong>С</strong> — время суток, начиная с которого может выполняться копирование в указанные дни недели.</li>
 <li><strong>До</strong> — время суток, вплоть до которого может выполняться копирование в указанные дни недели.</li>
 </ul>
 </li>
-<li><strong>Дни запуска</strong> — дни недели, по которым будет выполняться копирование с указанной периодичностью.</li>
+<li>
+<p><strong>Дни запуска</strong> — дни недели, по которым будет выполняться копирование с указанной периодичностью.</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -111,7 +115,8 @@
 <p>Для корректного резервного копирования данных истории необходимо настроить конфигурацию службы Elasticsearch и экземпляра ПО <strong>Comindware Business Application Platform</strong>:</p>
 <ul>
 <li>
-<p>В файле конфигурации Elasticsearch (<code>/etc/elasticsearch/elasticsearch.yml</code>) должен быть указан путь к репозиторию резервных копий, например:<br/><strong>Для репозитория на локальном диске</strong></p>
+<p>В файле конфигурации Elasticsearch (<code>/etc/elasticsearch/elasticsearch.yml</code>) должен быть указан путь к репозиторию резервных копий, например:</p>
+<p><strong>Для репозитория на локальном диске</strong></p>
 <div class="highlight"><code><code></code></code>
 <pre><code><span class="c1"># Директория репозитория должна быть доступна экземпляру ПО</span></code><br/><code><span class="c1"># Comindware Business Application Platform</span></code><br/><code><span class="c1"># При необходимости установите доступ с помощью команды chmod 777</span></code><br/><code>path.repo: /var/www/backups/elasticsearch</code></pre>
 </div>
@@ -121,7 +126,8 @@
 </div>
 </li>
 <li>
-<p>В файле конфигурации экземпляра ПО (<code>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code>) необходимо указать тип репозитория резервных копий Elasticsearch (<code>LocalDisk</code> или <code>S3</code>) и путь к репозиторию, например:<br/><strong>Для репозитория на локальном диске</strong></p>
+<p>В файле конфигурации экземпляра ПО (<code>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code>) необходимо указать тип репозитория резервных копий Elasticsearch (<code>LocalDisk</code> или <code>S3</code>) и путь к репозиторию, например:</p>
+<p><strong>Для репозитория на локальном диске</strong></p>
 <div class="highlight"><code><code></code></code>
 <pre><code>backup.elasticRepository.type: LocalDisk</code><br/><code><span class="c1"># В данном примере Elasticsearch и Comindware Business Application Platform </span></code><br/><code><span class="c1"># работают на одной машине. </span></code><br/><code><span class="c1"># В противном случае следует примонтировать папку репозитория Elasticsearch </span></code><br/><code><span class="c1"># на машине с Comindware Business Application Platform и указать её в директиве ниже</span></code><br/><code>backup.elasticRepository.localDisk.path: /var/www/backups/elasticsearch</code></pre>
 </div>
@@ -147,7 +153,8 @@
 <li>В разделе <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2191">«<strong>Администрирование</strong>» — «<strong>Инфраструктура</strong>»</a> выберите пункт «<strong>Резервное копирование</strong>» <em class="fal fa-coins">‌<!--icon--></em>.</li>
 <li>Отобразится список конфигураций резервного копирования.</li>
 <li>Выберите вкладку «<strong>Журнал</strong>».</li>
-<li>Отобразится список сеансов резервного копирования со следующими сведениями:
+<li>
+<p>Отобразится список сеансов резервного копирования со следующими сведениями:</p>
 <ul>
 <li><strong>ID</strong> — уникальный идентификатор резервной копии.</li>
 <li><strong>Конфигурация</strong> — название конфигурации резервного копирования.</li>
@@ -158,7 +165,9 @@
 <li><strong>Размер архива</strong> — размер сохраненной резервной копии.</li>
 </ul>
 </li>
-<li>Если отображаются не все ожидаемые сеансы, нажмите кнопку «<strong>Обновить</strong>», чтобы загрузить в список данные о текущих сеансах резервного копирования.</li>
+<li>
+<p>Если отображаются не все ожидаемые сеансы, нажмите кнопку «<strong>Обновить</strong>», чтобы загрузить в список данные о текущих сеансах резервного копирования.</p>
+</li>
 </ol>
 <figure class="screenshot_with_caption">
 <p><img alt="Список сеансов резервного копирования" src="https://kb.comindware.ru/assets/backup_log.png"/></p>

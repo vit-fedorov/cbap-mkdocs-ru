@@ -17,14 +17,14 @@
 <article class="md-content__inner md-typeset">
 <h2 id="введение">Введение</h2>
 <p>Здесь представлены инструкции по настройке подключения и пути передачи передачи данных из эл. писем и веб-запросов в бизнес-процессе.</p>
-<p>Кроме того, потребуется настроить <strong><a class="mkdocs_imported_link" href="../../../business_apps/diagrams/process_diagram/process_diagram_elements/events/start/receive_message_start_event.html">начальное</a></strong> или <strong><a class="mkdocs_imported_link" href="../../../business_apps/diagrams/process_diagram/process_diagram_elements/events/intermediate/receive_message_intermediate_event.html">промежуточное</a> событие-получение сообщения</strong> на диаграмме процесса.</p>
+<p>Кроме того, потребуется настроить <strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2376">начальное</a></strong> или <strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2382">промежуточное</a> событие-получение сообщения</strong> на диаграмме процесса.</p>
 <p>Подробный пример настройки приложения для обмена данными посредством эл. почты см. в статье <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2515">Пример: согласование заявлений по эл. почте. Настройка подключений, путей передачи данных и диаграммы процесса</a>»</em>.</p>
 <h2 id="порядок-настройки-получения-эл-писем">Порядок настройки получения эл. писем</h2>
 <ol class="colored_numbers_list">
 <li><a class="mkdocs_imported_link" href="#настройка-подключения">Настройте подключение</a> типа «<strong>Получение эл. почты в процессе</strong>».</li>
 <li><a class="mkdocs_imported_link" href="#настройка-пути-передачи-данных">Настройте путь передачи данных</a> типа «<strong>Получение эл. почты в процессе</strong>».</li>
 <li>
-<p>Настройте <strong><a class="mkdocs_imported_link" href="../../../business_apps/diagrams/process_diagram/process_diagram_elements/events/start/receive_message_start_event.html">начальное</a></strong> или <a class="mkdocs_imported_link" href="../../../business_apps/diagrams/process_diagram/process_diagram_elements/events/intermediate/receive_message_intermediate_event.html"><strong>промежуточное</strong></a> <strong>событие-получение сообщения</strong> на диаграмме процесса:</p>
+<p>Настройте <strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2376">начальное</a></strong> или <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2382"><strong>промежуточное</strong></a> <strong>событие-получение сообщения</strong> на диаграмме процесса:</p>
 <ul>
 <li>укажите настроенный <strong>путь передачи данных</strong>;</li>
 <li>настройте сопоставление <strong>данных сообщения</strong>.</li>
@@ -99,7 +99,7 @@
 <h2 id="настройка-пути-передачи-данных">Настройка пути передачи данных</h2>
 <p>Путь передачи данных для получения эл. почты служит для преобразования и передачи данных из эл. письма в <strong>Comindware Business Application Platform</strong>.</p>
 <ol class="colored_numbers_list">
-<li>Откройте страницу «<strong>Администрирование</strong>»  — «<strong>Архитектура</strong>» или страницу «<strong>Администрирование</strong>» приложения.</li>
+<li>Откройте страницу «<strong>Администрирование</strong>» — «<strong>Архитектура</strong>» или страницу «<strong>Администрирование</strong>» приложения.</li>
 <li>Выберите пункт «<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2201"><strong>Пути передачи данных</strong></a>» <em aria-hidden="true" class="fa-light fa-route">‌<!--icon--></em>.</li>
 <li>Откройте двойным нажатием в списке или создайте путь передачи данных типа «<strong>Подключения к электронной почте</strong>» – «<strong>Получение эл. почты в процессе</strong>».</li>
 <li>Настройте свойства пути передачи данных на следующих вкладках:</li>
@@ -142,7 +142,7 @@
 <p>Путь передачи данных для получения эл. почты служит для передачи данных из эл. письма в <strong>Comindware Business Application Platform</strong>.</p>
 <ul>
 <li>
-<p>На вкладке «<a class="mkdocs_imported_link" href="#атрибуты-сообщения"><strong>Атрибуты сообщения</strong></a>» пути передачи данных задайте набор атрибутов, значения которых требуется извлечь из письма. Для этого создайте атрибуты и сопоставьте их с полями эл. письма.</p>
+<p>На вкладке «<strong>Атрибуты сообщения</strong>» пути передачи данных задайте набор атрибутов, значения которых требуется извлечь из письма. Для этого создайте атрибуты и сопоставьте их с полями эл. письма.</p>
 <ul>
 <li>
 <p>Например, поместите текст эл. письма в атрибут <em>EmailBody</em>:</p>
@@ -156,7 +156,7 @@
 </ul>
 </li>
 <li>
-<p>Передайте значения атрибутов сообщения в атрибуты записи с помощью вкладки «<strong><a class="mkdocs_imported_link" href="../../../business_apps/diagrams/process_diagram/process_diagram_elements/events/start/receive_message_start_event.html#данные-сообщения">Данные сообщения</a></strong>» в свойствах <strong>события-получения сообщения</strong>, использующего этот путь передачи данных.</p>
+<p>Передайте значения атрибутов сообщения в атрибуты записи с помощью вкладки «<strong>Данные сообщения</strong>» в свойствах <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2376"><strong>события-получения сообщения</strong></a>, использующего этот путь передачи данных.</p>
 </li>
 </ul>
 </div>
@@ -195,7 +195,6 @@
 <figcaption class="caption">Настройка атрибутов сообщения в пути передачи данных для получения эл. почты в процессе</figcaption>
 </figure>
 <h2 id="связанные-статьи">Связанные статьи</h2>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2515">Пример: согласование заявлений по эл. почте. Настройка подключений, путей передачи данных и диаграммы процесса</a></strong></p>
 <p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2376">Начальное событие-получение сообщения</a></strong></p>
 <p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2382">Промежуточное событие-получение сообщения</a></strong></p>
 <p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2515">Отправка, получение и обработка эл. почты в процессе. Пример: настройка подключений, путей передачи данных, диаграммы процесса и сценария</a></strong></p>

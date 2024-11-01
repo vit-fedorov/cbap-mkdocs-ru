@@ -11,10 +11,10 @@ kbId: 2370
 
 ## Типы общих элементов
 
-- **[Пул](https://kb.comindware.ru/article.php?id=2366)**
-- **[Дорожка](https://kb.comindware.ru/article.php?id=2369)**
-- **[Поток управления](https://kb.comindware.ru/article.php?id=2368)**
-- **[Комментарий](https://kb.comindware.ru/article.php?id=2367)**
+- **[Пул][process_diagram_elements_pool]**
+- **[Дорожка][process_diagram_elements_lane]**
+- **[Поток управления][process_diagram_elements_sequence_flow]**
+- **[Комментарий][process_diagram_elements_text_annotation]**
 
 --8<-- "related_topics_heading.md"
 

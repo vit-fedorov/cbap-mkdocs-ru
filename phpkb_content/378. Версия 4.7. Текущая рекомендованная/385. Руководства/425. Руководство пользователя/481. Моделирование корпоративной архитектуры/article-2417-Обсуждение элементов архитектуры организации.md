@@ -7,7 +7,7 @@ kbId: 2417
 
 Экспериментальная функция
 
-Представленная здесь функция находится на стадии разработки. См. *«[Поддержка экспериментальных функций][experimental_functions_support]»*.
+Представленная здесь функция находится на стадии разработки. См. *«[Поддержка экспериментальных функций](https://kb.comindware.ru/article.php?id=1339#mcetoc_1hsfq7ksu2)»*.
 
 ## Просмотр обсуждения
 
@@ -46,8 +46,8 @@ _![Просмотр списка обсуждений процессов](https:
 
 --8<-- "related_topics_heading.md"
 
-**[Просмотр диаграммы][viewing_diagram]**
+**[Просмотр диаграммы][architect_viewing_diagram]**
 
-**[Просмотр реестра оргединиц][построение-организационной-структуры]**
+**[Просмотр реестра оргединиц][architect_organizational_structure_modelling]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

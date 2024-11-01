@@ -4,7 +4,7 @@
 # py -m mkdocs serve (`mkdocs serve` might also work depending on the environment PATH variable)
 # To test and author the English help run: py -m mkdocs serve -f mkdocs_en_local.yml
 
-INHERIT: mkdocs.yml
+INHERIT: mkdocs_ru.yml
 
 extra:
   adminGuideLinux: True
@@ -60,7 +60,7 @@ nav:
       - administration/deploy/windows/article-2300-Запуск экземпляра системы с помощью Диспетчера служб IIS.md
       - administration/deploy/windows/article-2316-Comindware Architect. Инструкции по установке экземпляра ПО в ОС Windows.md
       - Вспомогательное ПО. Развёртывание:
-        - administration/deploy/windows/auxiliary_software_deploy/aabbix_agent_deploy_windows.md
+        - administration/deploy/windows/auxiliary_software_deploy/zabbix_agent_deploy_windows.md
         - administration/deploy/windows/auxiliary_software_deploy/apache_ignite_deploy_windows.md
         - administration/deploy/windows/auxiliary_software_deploy/elasticsearch_deploy_windows.md
         - administration/deploy/windows/auxiliary_software_deploy/kafka_install_windows.md
@@ -95,8 +95,11 @@ nav:
       - administration/account_administration/two_factor_authentication.md
       - Синхронизация с сервером каталогов:
         - administration/account_administration/accounts_dc_sync/index.md
-        - Инструкции для Linux: - administration/account_administration/accounts_dc_sync/linux/ad_authentication_configure.md - administration/account_administration/accounts_dc_sync/linux/sso_authenticatation_configure.md
-        - Инструкции для Windows: - administration/account_administration/accounts_dc_sync/windows/sso_authenticatation_configure_windows.md
+        - Инструкции для Linux:
+          - administration/account_administration/accounts_dc_sync/linux/ad_authentication_configure.md
+          - administration/account_administration/accounts_dc_sync/linux/sso_authenticatation_configure.md
+        - Инструкции для Windows:
+          - administration/account_administration/accounts_dc_sync/windows/sso_authenticatation_configure_windows.md
     - Инфраструктура:
       - administration/infrastructure/monitoring.md
       - administration/infrastructure/logs.md
@@ -111,7 +114,10 @@ nav:
       - administration/connections_communication_routes/connections.md
       - administration/connections_communication_routes/communication_routes.md
       - Системные подключения:
-        - Уведомления: - administration/connections_communication_routes/system_connections/notifications/notification_types.md - administration/connections_communication_routes/system_connections/notifications/common_notifications.md - administration/connections_communication_routes/system_connections/notifications/task_notifications.md
+        - Уведомления: 
+          - administration/connections_communication_routes/system_connections/notifications/notification_types.md 
+          - administration/connections_communication_routes/system_connections/notifications/common_notifications.md
+          - administration/connections_communication_routes/system_connections/notifications/task_notifications.md
         - administration/connections_communication_routes/system_connections/elasticsearch_connection.md
         - administration/connections_communication_routes/system_connections/map_configure.md
         - administration/connections_communication_routes/system_connections/git_connection.md
@@ -155,7 +161,6 @@ nav:
         - business_apps/templates/template_types/record_templates.md
         - business_apps/templates/template_types/process_templates.md
         - business_apps/templates/template_types/account_templates.md
-        - business_apps/templates/template_types/article-2110-Шаблон аккаунта. Использование.md
         - business_apps/templates/template_types/role_templates.md
         - business_apps/templates/template_types/organizational_unit_templates.md
     - business_apps/roles_in_application.md

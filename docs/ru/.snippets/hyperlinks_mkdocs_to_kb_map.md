@@ -568,6 +568,8 @@
 
 [process_diagram_elements_timer_start_event]: {{ kbArticleURLPrefix }}2375
 
+[release_notes_4.7.3023]: {{ kbArticleURLPrefix }}2642
+
 [process_diagram_publish]: {{ kbArticleURLPrefix }}2360#process_diagram_publish
 
 [process_diagram_view]: {{ kbArticleURLPrefix }}2360#process_diagram_view

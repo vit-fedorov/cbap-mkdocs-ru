@@ -80,6 +80,6 @@ _![Содержимое папки с результатами диагност�
 
 --8<-- "related_topics_heading.md"
 
-**[Настройка конфигурации Утилиты администрирования Comindware](https://kb.comindware.ru/article.php?id=2029)**
+**[Настройка конфигурации Утилиты администрирования Comindware][administration_utility_configure]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

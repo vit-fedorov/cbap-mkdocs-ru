@@ -32,9 +32,9 @@ _![Свойства простого начального события](https:
 
 --8<-- "related_topics_heading.md"
 
-**[События](https://kb.comindware.ru/article.php?id=2374)**
+**[События][process_diagram_elements_events]**
 
-**[Типы начальных событий](https://kb.comindware.ru/article.php?id=2377)**
+**[Типы начальных событий][process_diagram_elements_events_start]**
 
 **[Стартовая форма и форма пользовательской задачи][process_diagram_forms]**
 

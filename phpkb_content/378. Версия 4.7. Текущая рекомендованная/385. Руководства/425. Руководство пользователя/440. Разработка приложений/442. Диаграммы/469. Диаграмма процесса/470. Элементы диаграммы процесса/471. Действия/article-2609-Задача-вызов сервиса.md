@@ -74,7 +74,7 @@ _![Выбор глобальной функции для задачи-вызов
 
 **[Функции](https://kb.comindware.ru/article.php?id=1193)**
 
-**[Пользовательская задача][user_task]**
+**[Пользовательская задача][process_diagram_elements_user_task]**
 
 **[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
 

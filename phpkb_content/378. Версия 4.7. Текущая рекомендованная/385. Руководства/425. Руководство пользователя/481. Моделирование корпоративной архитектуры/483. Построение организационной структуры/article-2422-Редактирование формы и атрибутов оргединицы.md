@@ -19,8 +19,8 @@ kbId: 2422
 
 Атрибутивный состав оргединицы можно изменить, и на её форму можно вынести дополнительные визуальные элементы и атрибуты.
 
-1. Выберите оргединицу в [панели навигации][navigation_panel] или в [реестре оргединиц][построение-организационной-структуры].
-2. Отобразится [форма оргединицы][configuring_organizational_unit].
+1. Выберите оргединицу в [панели навигации][navigation_panel] или в [реестре оргединиц][architect_organizational_structure_modelling].
+2. Отобразится [форма оргединицы][architect_configuring_organizational_unit].
 3. Нажмите кнопку «**Информация**» *‌* и в раскрывающемся меню выберите пункт «**Редактировать форму**».
 
 _![Переход к конструктору формы оргединицы](https://kb.comindware.ru/assets/configuring_organizational_unit_edit_form.png)_
@@ -34,11 +34,11 @@ _![Конструктор формы оргединицы](https://kb.comindware
 
 --8<-- "related_topics_heading.md"
 
-**[Изменение свойств оргединицы][configuring_organizational_unit]**
+**[Изменение свойств оргединицы][architect_configuring_organizational_unit]**
 
-**[Редактирование формы свойств и атрибутов элемента процессной архитектуры][configuring_process_entity_propeerties_form_and_attributes]**
+**[Редактирование формы свойств и атрибутов элемента процессной архитектуры][architect_configuring_process_entity_properties_form_and_attributes]**
 
-**[Просмотр реестра оргединиц][построение-организационной-структуры]**
+**[Просмотр реестра оргединиц][architect_organizational_structure_modelling]**
 
 **[Конструктор формы][forms]**
 

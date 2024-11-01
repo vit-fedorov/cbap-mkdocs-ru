@@ -45,7 +45,7 @@ _![Настройка свойств нового приложения](https://
     - [Интернет-магазин][online_store]
     - [Интеграции][odata_integration]
     - [Пути передачи данных][communication_routes]
-    - [Сервер каталогов][directory_server]
+    - [Сервер каталогов][accounts_dc_sync]
     - [Аудит разрешений аккаунтов][account_permission_audit]
     - Активность компонентов
     - [Управление версиями][version_control]

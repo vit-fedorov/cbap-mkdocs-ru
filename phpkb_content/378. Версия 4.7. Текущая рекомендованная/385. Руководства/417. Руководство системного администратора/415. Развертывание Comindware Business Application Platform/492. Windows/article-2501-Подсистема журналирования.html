@@ -4,8 +4,6 @@
 <h2 class="toc-heading">Содержание</h2>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#введение"> <span class="md-ellipsis"> Введение </span> </a></li>
-<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#определения"> <span class="md-ellipsis"> Определения </span> </a><nav aria-label="Определения" class="md-nav">
-<ul class="md-nav__list">
 <li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#описание-подсистемы-журналирования"> <span class="md-ellipsis"> Описание подсистемы журналирования </span> </a></li>
 <li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#файловые-журналы"> <span class="md-ellipsis"> Файловые журналы </span> </a><nav aria-label="Файловые журналы" class="md-nav">
 <ul class="md-nav__list">
@@ -29,8 +27,7 @@
 </ul>
 </nav></li>
 <li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#перенаправление-сообщений-из-файлов-журналов-в-журнал-событий-windows"> <span class="md-ellipsis"> Перенаправление сообщений из файлов журналов в журнал событий Windows </span> </a></li>
-</ul>
-</nav></li>
+<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#связанные-статьи"> <span class="md-ellipsis"> Связанные статьи </span> </a></li>
 </ul>
 </div>
 </nav>
@@ -38,19 +35,15 @@
 <article class="md-content__inner md-typeset">
 <h2 id="введение">Введение</h2>
 <p>Здесь представлено описание работы подсистемы журналирования ПО <strong>Comindware Business Application Platform</strong> для операционных систем Linux.</p>
-<h2 id="определения">Определения</h2>
-<p><strong>ПО</strong> — программное обеспечение <strong>Comindware Business Application Platform</strong>.</p>
-<p><strong>Экземпляр ПО</strong> — развёрнутый веб-сайт на основе ПО.</p>
-<p><strong>Система</strong> — развёрнутый программно-аппаратный комплекс на основе ПО.</p>
-<h3 id="описание-подсистемы-журналирования">Описание подсистемы журналирования</h3>
+<h2 id="описание-подсистемы-журналирования">Описание подсистемы журналирования</h2>
 <p>Подсистема журналирования ПО использует библиотеку <em>NLog</em> (с открытым исходным кодом), которая записывает данные в файлы журналов.</p>
 <p>Полная документация по настройке <em>NLog</em> для журналирования в файлы представлена по адресу: <em><a class="mkdocs_imported_link" href="https://github.com/NLog/NLog/wiki/File-target">https://github.com/NLog/NLog/wiki/File-target</a></em></p>
 <p>ПО позволяет настроить уровень журналирования, правила формирования событий в журналах, место хранения журналов, порядок и набор параметров именования файлов журналов, а также ограничения по размеру и предельному количеству файлов журналов, с помощью конфигурационных файлов:</p>
 <ul>
 <li>Linux
 <ul>
-<li><code>/var/www/instanceName/logs.config</code> — конфигурация всех журналов экземпляра ПО, включая журналы встроенных адаптеров;</li>
-<li><code>/var/www/instanceName/data/Plugins/Agent/logs.config</code> — конфигурация журналов пользовательских адаптеров.</li>
+<li><code>/var/www/&lt;instanceName&gt;/logs.config</code> — конфигурация всех журналов экземпляра ПО, включая журналы встроенных адаптеров;</li>
+<li><code>/var/www/&lt;instanceName&gt;/data/Plugins/Agent/logs.config</code> — конфигурация журналов пользовательских адаптеров.</li>
 </ul>
 </li>
 <li>Windows
@@ -66,7 +59,7 @@
 <ul>
 <li>Linux
 <ul>
-<li><code>/var/log/comindware/instanceName/Logs</code></li>
+<li><code>/var/log/comindware/&lt;instanceName&gt;/Logs</code></li>
 </ul>
 </li>
 <li>Windows
@@ -75,8 +68,8 @@
 </ul>
 </li>
 </ul>
-<p>Сведения о фактическом расположении файлов см. в статье <em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2502">Пути и содержимое папок экземпляра ПО</a></em>;</p>
-<h3 id="файловые-журналы">Файловые журналы</h3>
+<p>Сведения о фактическом расположении файлов см. в статье <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2502">Пути и содержимое папок экземпляра ПО</a>»</em>.</p>
+<h2 id="файловые-журналы">Файловые журналы</h2>
 <p>ПО поддерживает следующие файловые журналы:</p>
 <ul>
 <li><a class="mkdocs_imported_link" href="#журналы-адаптеров">Адаптеры</a></li>
@@ -424,7 +417,7 @@
 <p><img alt="Пример журнала аудита" src="https://kb.comindware.ru/assets/logging_engine_adapter_log.png"/></p>
 <figcaption class="caption">Пример журнала аудита</figcaption>
 </figure>
-<h3 id="перенаправление-сообщений-из-файлов-журналов-в-журнал-событий-windows">Перенаправление сообщений из файлов журналов в журнал событий Windows</h3>
+<h2 id="перенаправление-сообщений-из-файлов-журналов-в-журнал-событий-windows">Перенаправление сообщений из файлов журналов в журнал событий Windows</h2>
 <p>Библиотека NLog позволяет записывать журналы помимо файлов в другие хранилища, например в службу «Журнал событий Windows» (EventLog), который можно просмотреть с помощью приложения <strong>Просмотр событий</strong>.</p>
 <p>Полная документация по настройке журналирования в журнал событий Windows представлена по адресу:</p>
 <p><em><a class="mkdocs_imported_link" href="https://github.com/NLog/NLog/wiki/EventLog-target">https://github.com/NLog/NLog/wiki/EventLog-target</a></em></p>
@@ -461,6 +454,7 @@
 <p>Перезагрузите экземпляр ПО, чтобы изменения вступили в силу. См. раздел <em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2029">«Настройка конфигурации Утилиты администрирования Comindware»</a></em>.</p>
 </li>
 </ol>
+<h2 id="связанные-статьи">Связанные статьи</h2>
 <p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2516">Примеры событий в файловых журналах</a></strong></p>
 <p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2502">Пути и содержимое папок экземпляра ПО</a></strong></p>
 <p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2181">Адаптеры</a></strong></p>

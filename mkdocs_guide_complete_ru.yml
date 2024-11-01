@@ -56,29 +56,29 @@ nav:
           - administration/deploy/linux/auxiliary_software_deploy/zabbix_agent_deploy.md
           - administration/deploy/linux/auxiliary_software_deploy/zabbix_deploy.md
           - administration/deploy/linux/auxiliary_software_deploy/zabbix_server_deploy.md  
-        - Развёртывание в Windows:
-          - Утилита администрирования Comindware. Установка и настройка версий и экземпляров ПО:
-            - administration/deploy/windows/administration_utility/admin_utility_install_launch.md
-            - administration/deploy/windows/administration_utility/article-2028-Установка продукта Comindware Business Application Platform.md
-            - administration/deploy/windows/administration_utility/article-2029-Настройка конфигурации Утилиты администрирования Comindware.md
-            - administration/deploy/windows/administration_utility/article-2030-Диагностика экземпляра продукта.md
-            - administration/deploy/windows/administration_utility/article-2031-Обновление версии продукта для экземпляра.md
-            - administration/deploy/windows/administration_utility/article-2032-Создание экземпляра продукта, добавление скрытого экземпляра.md
-            - administration/deploy/windows/administration_utility/article-2034-Удаление версии продукта.md
-            - administration/deploy/windows/administration_utility/article-2035-Запуск, остановка и удаление экземпляра продукта.md
-            - administration/deploy/windows/administration_utility/article-2036-Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта.md
-            - administration/deploy/windows/administration_utility/article-2037-Индикация состояния и обновление списка экземпляров продукта.md
-            - administration/deploy/windows/administration_utility/article-2038-Восстановление экземпляра продукта из резервной копии в ОС Windows.md
-            - administration/deploy/windows/administration_utility/article-2296-Инициализация экземпляра продукта.md
-          - administration/deploy/windows/article-2129-Обновление версии экземпляра ПО с 3.5 на 4.2. Инструкции, подготовка базы данных, устранение проблем.md
-          - administration/deploy/windows/article-2298-Остановка экземпляра системы с помощью Диспетчера служб IIS.md
-          - administration/deploy/windows/article-2300-Запуск экземпляра системы с помощью Диспетчера служб IIS.md
-          - administration/deploy/windows/article-2316-Comindware Architect. Инструкции по установке экземпляра ПО в ОС Windows.md
-          - Вспомогательное ПО. Развёртывание:
-            - administration/deploy/windows/auxiliary_software_deploy/zabbix_agent_deploy_windows.md
-            - administration/deploy/windows/auxiliary_software_deploy/apache_ignite_deploy_windows.md
-            - administration/deploy/windows/auxiliary_software_deploy/elasticsearch_deploy_windows.md
-            - administration/deploy/windows/auxiliary_software_deploy/kafka_install_windows.md
+      - Развёртывание в Windows:
+        - Утилита администрирования Comindware. Установка и настройка версий и экземпляров ПО:
+          - administration/deploy/windows/administration_utility/admin_utility_install_launch.md
+          - administration/deploy/windows/administration_utility/article-2028-Установка продукта Comindware Business Application Platform.md
+          - administration/deploy/windows/administration_utility/article-2029-Настройка конфигурации Утилиты администрирования Comindware.md
+          - administration/deploy/windows/administration_utility/article-2030-Диагностика экземпляра продукта.md
+          - administration/deploy/windows/administration_utility/article-2031-Обновление версии продукта для экземпляра.md
+          - administration/deploy/windows/administration_utility/article-2032-Создание экземпляра продукта, добавление скрытого экземпляра.md
+          - administration/deploy/windows/administration_utility/article-2034-Удаление версии продукта.md
+          - administration/deploy/windows/administration_utility/article-2035-Запуск, остановка и удаление экземпляра продукта.md
+          - administration/deploy/windows/administration_utility/article-2036-Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта.md
+          - administration/deploy/windows/administration_utility/article-2037-Индикация состояния и обновление списка экземпляров продукта.md
+          - administration/deploy/windows/administration_utility/article-2038-Восстановление экземпляра продукта из резервной копии в ОС Windows.md
+          - administration/deploy/windows/administration_utility/article-2296-Инициализация экземпляра продукта.md
+        - administration/deploy/windows/article-2129-Обновление версии экземпляра ПО с 3.5 на 4.2. Инструкции, подготовка базы данных, устранение проблем.md
+        - administration/deploy/windows/article-2298-Остановка экземпляра системы с помощью Диспетчера служб IIS.md
+        - administration/deploy/windows/article-2300-Запуск экземпляра системы с помощью Диспетчера служб IIS.md
+        - administration/deploy/windows/article-2316-Comindware Architect. Инструкции по установке экземпляра ПО в ОС Windows.md
+        - Вспомогательное ПО. Развёртывание:
+          - administration/deploy/windows/auxiliary_software_deploy/zabbix_agent_deploy_windows.md
+          - administration/deploy/windows/auxiliary_software_deploy/apache_ignite_deploy_windows.md
+          - administration/deploy/windows/auxiliary_software_deploy/elasticsearch_deploy_windows.md
+          - administration/deploy/windows/auxiliary_software_deploy/kafka_install_windows.md
     - Резервное копирование и восстановление:
       - administration/backup/index.md
       - Инструкции для Linux:

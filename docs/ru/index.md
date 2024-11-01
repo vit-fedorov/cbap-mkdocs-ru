@@ -8,22 +8,25 @@ hide:
     - tags
 ---
 
-{% if not kbExport %}
+{% if kbExport %}
+## Введение
 
-{% if userGuide %}
+{% elif completeGuide %}
+
+Это полное руководство ПО **{{ productName }}**.
+
+{% elif userGuide %}
 
 Это руководство пользователя ПО **{{ productName }}** с модулем **{{ productNameArchitect }}**.
 
-{% elif adminGuide %}
+{% elif adminGuideLinux %}
 
 Это руководство системного администратора ПО **{{ productName }}** для операционной системы Linux.
 
-{% endif %}
+{% elif adminGuideWindows %}
 
-{% endif %}
+Это руководство системного администратора ПО **{{ productName }}** для операционной системы Windows.
 
-{% if kbExport %}
-## Введение
 {% endif %}
 
 Здесь представлены инструкции для ПО **{{ productName }}** текущей рекомендованной версии **{{productVersion}}**.

@@ -1,15 +1,15 @@
 ---
-title: Apache Ignite. Установка и настройка. Краткое руководство
+title: Apache Ignite. Установка и настройка
 kbId: 2093
 ---
 
-# Apache Ignite. Установка и настройка. Краткое руководство
+# Apache Ignite. Установка и настройка {: #apache_ignite_deploy}
 
 ## Введение
 
 Для работы **{{ productName }}** требуется программное обеспечение Apache Ignite.
 
-Apache Ignite в минимально необходимой конфигурации устанавливается автоматически при развертывании **{{ productName }}** в ОС Linux и Windows.
+Apache Ignite в минимально необходимой конфигурации устанавливается автоматически при установке **{{ productName }}** с ключом `-e`.
 
 Для продвинутых конфигураций требуется развернуть Apache Ignite самостоятельно.
 
@@ -19,35 +19,23 @@ Apache Ignite в минимально необходимой конфигура�
 
 Краткое руководство на русском языке представлено на веб-сайте: <https://platform.digital.gov.ru/docs/data-management/platform-v-ignite-se/quick-start>
 
- 
+## Установка Apache Ignite
 
-## 1. Установка Apache Ignite
+1. Скачайте установочный файл Ignite с веб-сайта: <https://ignite.apache.org/download.cgi#binaries>
+2. Распакуйте архив в папку Ignite, например: `/var/www/ignite`
+3. Установите переменную среды `IGNITE_HOME`, указав путь к папке Ignite без завершающего символа `/`: `export IGNITE_HOME=var/www/ignite`
+4. Дополнительные модули для использования Ignite в сочетании с {{ productName }} не требуются.
+5. Настройте конфигурацию Ignite, изменив файл `Apache.Ignite.exe.config`: `$IGNITE_HOME/platforms/dotnet/bin/Apache.Ignite.exe.config`
+6. Пример файла `Apache.Ignite.exe.config` приведён в разделе [«Пример файла конфигурации Ignite»](#3-пример-файла-конфигурации-ignite).
 
-**1.1.** Скачайте установочный файл Ignite с веб-сайта: <https://ignite.apache.org/download.cgi#binaries>
+## Запуск Apache Ignite
 
-**1.2.** Распакуйте архив в папку Ignite, например: `/var/www/ignite`
+1. Запустите службу Apache Ignite с помощью команды: `/$IGNITE_HOME/bin/ignite.sh -v`; параметр `-v` включает вывод подробных данных в журнал (по умолчанию в журнал Ignite выводятся только краткие сведения).
+2. Если запустить Ignite не удалось, проверьте информацию в журнале, по умолчанию он хранится в папке `$IGNITE_HOME/work/log`.
 
-**1.3.** Установите переменную среды `IGNITE_HOME`, указав путь к папке Ignite без завершающего символа `/`: `export IGNITE_HOME=var/www/ignite`
+## Пример файла конфигурации Ignite
 
-**1.4.** Дополнительные модули для использования Ignite в сочетании с {{ productName }} не требуются.
-
-**1.5.** Настройте конфигурацию Ignite, изменив файл `Apache.Ignite.exe.config`: `$IGNITE_HOME/platforms/dotnet/bin/Apache.Ignite.exe.config`
-
-**1.6.** Пример файла `Apache.Ignite.exe.config` приведён в разделе [«Пример файла конфигурации Ignite»](#3-пример-файла-конфигурации-ignite).
-
- 
-
-## 2. Запуск Apache Ignite
-
-**2.1.** Запустите службу Apache Ignite с помощью команды: `/$IGNITE_HOME/bin/ignite.sh -v`; параметр `-v` включает вывод подробных данных в журнал (по умолчанию в журнал Ignite выводятся только краткие сведения).
-
-**2.2.** Если запустить Ignite не удалось, проверьте информацию в журнале, по умолчанию он хранится в папке `$IGNITE_HOME/work/log`.
-
- 
-
-## 3. Пример файла конфигурации Ignite
-
-Для стабильной работы Ignite вместе с {{ productName }} важны следующие директивы в данном примере:
+Для стабильной работы Ignite вместе с **{{ productName }}** важны следующие директивы в данном примере:
 
 - `<igniteConfiguration xmlns="http://ignite.apache.org/schema/dotnet/IgniteConfigurationSection" gridName="myGrid1">` — в параметре `gridName` укажите имя сервера узла Ignite. У узлов кластера должно быть одинаковое имя сервера.
 - `<discoverySpi type="TcpDiscoverySpi"><ipFinder type="TcpDiscoveryStaticIpFinder"><endpoints> <string>127.0.0.1</string></endpoints></ipFinder></discoverySpi>` — в параметре `TcpDiscoveryStaticIpFinder` укажите адрес сервера.
@@ -65,13 +53,9 @@ Apache Ignite в минимально необходимой конфигура�
       <gcServer enabled="true"/>   
   </runtime>   
   <igniteConfiguration xmlns="http://ignite.apache.org/schema/dotnet/IgniteConfigurationSection" gridName="myGrid1">   
-      
       <localhost></localhost>   
-     
       <networkTimeout>1000</networkTimeout>   
-        
       <networkSendRetryDelay>1000</networkSendRetryDelay>   
-            
       <jvmOptions>   
           <string>-Xms512m</string>   
           <string>-Xmx3g</string>   
@@ -84,7 +68,6 @@ Apache Ignite в минимально необходимой конфигура�
           <string>-Djava.net.preferIPv4Stack=true</string>   
           <string>--illegal-access=warn</string>   
       </jvmOptions>   
-        
       <discoverySpi type="TcpDiscoverySpi">   
           <ipFinder type="TcpDiscoveryStaticIpFinder">   
               <endpoints>   
@@ -92,13 +75,11 @@ Apache Ignite в минимально необходимой конфигура�
               </endpoints>   
           </ipFinder>   
       </discoverySpi>   
-        
       <atomicConfiguration type="AtomicConfiguration">   
           <atomicSequenceReserveSize>1000</atomicSequenceReserveSize>   
           <cacheMode>Partitioned</cacheMode>   
           <backups>1</backups>   
       </atomicConfiguration>   
-  
       <dataStorageConfiguration type="DataStorageConfiguration">   
           <walPath>wal/</walPath>   
           <walArchivePath>wal/</walArchivePath>   
@@ -124,22 +105,14 @@ Apache Ignite в минимально необходимой конфигура�
                   </dataRegionConfiguration>   
           </dataRegionConfigurations>   
       </dataStorageConfiguration>   
-    
       <clientMode>false</clientMode>   
-  
       <includedEventTypes></includedEventTypes>   
-  
       <workDirectory>/var/lib/ignite/</workDirectory>   
-  
       <jvmDllPath></jvmDllPath>   
-  
       <igniteInstanceName>Comindware_Instance2</igniteInstanceName>   
-  
       <autoGenerateIgniteInstanceName>false</autoGenerateIgniteInstanceName>   
-  
 </igniteConfiguration>   
 </configuration>
 ```
 
-
-
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

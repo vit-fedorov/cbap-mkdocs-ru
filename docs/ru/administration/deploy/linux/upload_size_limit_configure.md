@@ -3,22 +3,30 @@ title: Максимальный размер загружаемых файлов
 kbId: 2569
 ---
 
-# Максимальный размер загружаемых файлов. Настройка для экземпляра ПО
+# Максимальный размер загружаемых файлов. Настройка для экземпляра ПО { #upload_size_limit_configure}
 
 ## Введение
 
-В данной статье представлены инструкции по настройке максимально допустимого размера загружаемых файлов для экземпляра ПО **{{ productName }}** в операционных системах Windows и Linux (Astra Linux, Альт Сервер, РЕД ОС, Rocky Linux, Ubuntu и т. п.).
+Здесь представлены инструкции по настройке максимально допустимого размера загружаемых файлов для экземпляра ПО **{{ productName }}**.
 
-К загружаемым файлам относятся документы и изображения, прикреплённые к атрибутам типов «[**Документ**]({{ kbArticleURLPrefix }}2241)», «[**Изображение**]({{ kbArticleURLPrefix }}2253)» и «**Чертёж**», изображения загруженные на страницах «[**Темы**]({{ kbArticleURLPrefix }}2199)» и «[**Дизайн страниц входа и регистрации**]({{ kbArticleURLPrefix }}2198)», а также  [изображения **аккаунтов**]({{ kbArticleURLPrefix }}2194#mcetoc_1gjrh0knp6).
+К загружаемым файлам относятся документы и изображения, прикреплённые к атрибутам типов «[**Документ**][attribute_document]», «[**Изображение**][attribute_image]» и «**Чертёж**», изображения загруженные на страницах «[**Темы**][themes]» и «[**Дизайн страниц входа и регистрации**][login_and_registration_page_design]», а также  [изображения **аккаунтов**][accounts].
 
 ## Расположение загруженных файлов
 
 По умолчанию файлы, загружаемые конечными пользователями и формируемые автоматически, хранятся в следующем каталоге:
 
-- `/var/lib/comindware``/instancename/Streams` — Linux
-- `C``:\``ProgramData``\``Comindware``\`  `Instances``\instancename\Streams` — Windows
+{% if completeGuide or kbExport %}
+- `/var/lib/comindware/<instanceName>/Streams` — Linux
+- `C:\ProgramData\Comindware\`  `Instances\<instanceName>\Streams` — Windows
+{% endif %}
+{% if adminGuideLinux or kbExport %}
+`/var/lib/comindware/<instanceName>/Streams`
+{% endif %}
+{% if adminGuideWindows or kbExport %}
+`C:\ProgramData\Comindware\`  `Instances\<instanceName>\Streams`
+{% endif %}
 
-Здесь и далее `instancename` — имя экземпляра ПО.
+Здесь и далее `<instanceName>` — имя экземпляра ПО.
 
 Подробные сведения о расположении загружаемых файлов см. в статье *«[Пути и содержимое папок экземпляра ПО][paths]».*
 
@@ -40,75 +48,82 @@ kbId: 2569
 		- Можно прикрепить к одному полю типа «**Документ**» файл объёмом 300 МБ.
 		- Нельзя прикрепить к полям типа «**Документ**» три файла по 110 МБ.
 
+{% if completeGuide or adminGuideLinux or kbExport %}
 ### Изменение лимита в Linux
 
 Для изменения лимита на размер загружаемых файлов в ОС Linux необходимо отредактировать конфигурацию экземпляра ПО, а также конфигурацию NGINX.
 
-1. Перейдите в режим суперпользователя `root`: 
+1. Перейдите в режим суперпользователя `root`:
 
+	```
+	sudo -i
+	```
 
-```
-sudo -i
-```
-2. Откройте для редактирования файл `/var/www/``comindwareinstancename``/Web.config`: 
+2. Откройте для редактирования файл `/var/www/comindware<instanceName>/Web.config`:
 
+	```
+	sudo nano /var/www/comindware<instanceName>/Web.config
+	```
 
-```
-sudo nano /var/www/comindwareinstancename/Web.config
-```
 3. Установите лимит (например, 1 ГБ) с помощью директив `httpRuntime maxRequestLength` (в килобайтах) и `requestLimits maxAllowedContentLength` (в байтах):
 
-```
-<httpRuntime maxRequestLength="1048576" maxUrlLength="4096" requestValidationMode="2.0" shutdownTimeout="300" executionTimeout="3000" targetFramework="4.8" enableVersionHeader="false" />
+	```
+	<httpRuntime maxRequestLength="1048576" maxUrlLength="4096" requestValidationMode="2.0" shutdownTimeout="300" executionTimeout="3000" targetFramework="4.8" enableVersionHeader="false" />
 
-...
+	...
 
-<requestLimits maxAllowedContentLength="1073741824" />       
-```
-4. Откройте для редактирования файл `/etc/nginx/sites-available/comindwareinstancename`:
+	<requestLimits maxAllowedContentLength="1073741824" />       
+	```
 
+4. Откройте для редактирования файл `/etc/nginx/sites-available/comindware<instanceName>`:
 
-```
-sudo nano /etc/nginx/sites-available/comindwareinstancename
-```
-5. Откройте для редактирования файл `/etc/nginx/sites-available/comindwareinstancename`:
+	```
+	sudo nano /etc/nginx/sites-available/comindware<instanceName>
+	```
 
+5. Откройте для редактирования файл `/etc/nginx/sites-available/comindware<instanceName>`:
 
-```
-sudo nano /etc/nginx/sites-available/comindwareinstancename
-```
+	```
+	sudo nano /etc/nginx/sites-available/comindware<instanceName>
+	```
+
 6. Установите лимит в мегабайтах с помощью директивы `client_max_body_size`:
 
-```
-client_max_body_size 1024m;
-```
+	```
+	client_max_body_size 1024m;
+	```
+
 7. Перезагрузите экземпляр ПО и NGINX:
 
-```
-systemctl restart nginx  
-systemctl restart comindwareinstancename
-```
+	```
+	systemctl restart nginx  
+	systemctl restart comindware<instanceName>
+	```
 
+{% endif%}
+
+{% if completeGuide or adminGuideWindows or kbExport %}
 ### Изменение лимита в Windows
 
 Для изменения лимита на размер загружаемых файлов в ОС Windows необходимо отредактировать конфигурацию экземпляра ПО.
 
-1. Откройте для редактирования файл `C``:\``ProgramData``\``Comindware``\``Instances``\instancename``\``Config``\Web.config`.
+1. Откройте для редактирования файл `C:\ProgramData\Comindware\Instances\<instanceName>\Config\Web.config`.
 2. Установите лимит (например, 1 ГБ) с помощью директив `httpRuntime maxRequestLength` (в килобайтах) и `requestLimits maxAllowedContentLength` (в байтах):
 
-```
-<httpRuntime maxRequestLength="1048576" maxUrlLength="4096" requestValidationMode="2.0" shutdownTimeout="300" executionTimeout="3000" targetFramework="4.8" enableVersionHeader="false" />
+	```
+	<httpRuntime maxRequestLength="1048576" maxUrlLength="4096" requestValidationMode="2.0" shutdownTimeout="300" executionTimeout="3000" targetFramework="4.8" enableVersionHeader="false" />
 
-...
+	...
 
-<requestLimits maxAllowedContentLength="1073741824" />
-```
-3. Перезагрузите экземпляр ПО с помощью Утилиты администрирования (либо с помощью Диспетчера служб IIS перезагрузите сервер приложений и сайт экземпляра ПО).
+	<requestLimits maxAllowedContentLength="1073741824" />
+	```
+
+3. Перезагрузите экземпляр ПО с помощью Утилиты администрирования (либо с помощью _Диспетчера служб IIS_ перезагрузите сервер приложений и сайт экземпляра ПО).
+
+{% endif%}
 
 --8<-- "related_topics_heading.md"
 
 **[Пути и содержимое папок экземпляра ПО][paths]**
 
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -17,13 +17,13 @@ kbId: 2292
 
 1. Для работы *Zabbix Server* необходимо установить NGINX:
 
-    ```
+    ``` sh
     sudo apt install -y nginx
     ```
 
 2. Загрузите deb-пакет из репозитория:
 
-    ```
+    ``` sh
     sudo wget <https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4%2Bubuntu22.04_all.deb>
     sudo dpkg -i zabbix-release_6.0-4+ubuntu22.04_all.deb
     sudo apt update
@@ -31,7 +31,7 @@ kbId: 2292
 
 3. Установите *Zabbix Server*, *Zabbix Frontend* и *Zabbix Agent*:
 
-    ```
+    ``` sh
     sudo apt install -y zabbix-server-mysql zabbix-frontend-php zabbix-nginx-conf zabbix-sql-scripts zabbix-agent
     ```
 
@@ -39,38 +39,38 @@ kbId: 2292
 
 1. Установите и активируйте MySQL:
 
-    ```
+    ``` sh
     sudo apt install -y mysql-server
     sudo systemctl enable --now mysql
     ```
 
 2. Запустите MySQL от имени суперпользователя root:
 
-    ```
+    ``` sh
     sudo mysql
     ```
 
 3. После входа в консоль MySQL выполните запрос, подставив свои значения в поля `'root'`,`'localhost'` и `'password'`:
 
-    ```
+    ``` sh
     ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
     ```
 
 4. Ожидаемый ответ консоли MySQL с подтверждением внесённых изменений:
 
-    ```
+    ``` sh
     Query OK, 0 rows affected (0.01 sec)
     ```
 
 5. Выйдите из сеанса для пользователя root :
 
-    ```
+    ``` sh
     quit;
     ```
 
 6. Запустите скрипт `mysql_secure_installation` и в интерактивном режиме согласитесь удалить тестовую базу данных и аккаунт анонимного пользователя:
 
-    ```
+    ``` sh
     /usr/bin/mysql_secure_installation
 
     Securing the MySQL server deployment.
@@ -121,19 +121,19 @@ kbId: 2292
 
 1. Начните сеанс пользователя `root` в MySQL:
 
-    ```
+    ``` sh
     mysql -uroot -p
     ```
 
 2. Создайте базу данных `zabbix`:
 
-    ```
+    ``` sh
     create database zabbix character set utf8mb4 collate utf8mb4_bin;
     ```
 
 3. Создайте пользователя `zabbix`. Не забудьте задать пароль:
 
-    ```
+    ``` sh
     create user zabbix@localhost identified by 'password'; 
     grant all privileges on zabbix.* to zabbix@localhost;
     SET GLOBAL log_bin_trust_function_creators = 1;
@@ -142,7 +142,7 @@ kbId: 2292
 
 4. Создайте схему данных для Zabbix:
 
-    ```
+    ``` sh
     zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -uzabbix -p zabbix
     ```
 
@@ -152,13 +152,13 @@ kbId: 2292
 
 1. Откройте файл конфигурации `zabbix_server.conf` с помощью текстового редактора, например:
 
-    ```
+    ``` sh
     sudo nano /etc/zabbix/zabbix_server.conf
     ```
 
 2. Укажите пароль пользователя zabbix (заданный на шаге 3.3) для доступа к MySQL:
 
-    ```
+    ``` sh
     ### Option: DBPassword
     #       Database password.
     #       Comment this line if no password is used.
@@ -175,20 +175,20 @@ kbId: 2292
 
 1. Отредактируйте `/etc/zabbix/nginx.conf` :
 
-    ```
+    ``` sh
     sudo nano /etc/zabbix/nginx.conf
     ```
 
 2. Раскомментируйте директивы `listen` и `server_name` и присвойте им значения:
 
-    ```
+    ``` sh
     listen 8080;
     server_name example.com; # change-me.com
     ```
 
 3. Запустите службы *Zabbix Server, Zabbix Agent, Zabbix Frontend* и *NGINX*:
 
-    ```
+    ``` sh
     sudo systemctl daemon-reload
     sudo systemctl enable --now zabbix-server zabbix-agent nginx php8.1-fpm
     ```
@@ -215,7 +215,7 @@ kbId: 2292
 
 5. В открывшейся форме ведите учётные данные встроенного суперпользователя:
 
-    ```
+    ``` sh
     Admin
     zabbix
     ```
@@ -232,13 +232,13 @@ kbId: 2292
 
 1. Отредактируйте файл конфигурации `/etc/zabbix/zabbix_agentd.conf`:
 
-    ```
+    ``` sh
     sudo nano /etc/zabbix/zabbix_agentd.conf
     ```
 
 2. В файле конфигурации необходимо указать IP-адрес *Zabbix Server*. Если сервер развёрнут на наблюдаемой машине укажите IP-адрес 127.0.0.1 (если интерфейс loopback не настроен иначе):
 
-    ```
+    ``` sh
     ### Option: Server
     #       List of comma delimited IP addresses, optionally in CIDR notation, or DNS names of Zabbix ser>
     #       Incoming connections will be accepted only from the hosts listed here.
@@ -255,32 +255,32 @@ kbId: 2292
 
 3. Отредактируйте директиву `ServerActive`:
 
-    ```
+    ``` sh
     ServerActive=127.0.0.1
     ```
 
 4. Разрешите в сетевом экране использование порта 10050:
 
-    ```
+    ``` sh
     sudo ufw allow 10050/tcp
-```
+    ```
 
 5. Примените изменения:
 
-    ```
+    ``` sh
     sudo systemctl daemon-reload
     sudo ufw reload
-```
+    ```
 
 6. Запустите *Zabbix Agent* и добавьте его в список автозагрузки:
 
-    ```
+    ``` sh
     sudo systemctl enable  --now zabbix-agent
     ```
 
 7. Удостоверьтесь, что служба работает:
 
-    ```
+    ``` sh
     systemctl status zabbix.agent
     ```
 

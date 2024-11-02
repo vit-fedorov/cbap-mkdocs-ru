@@ -668,6 +668,12 @@
 
 [ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}2517
 
+[apache_ignite_deploy]: {{ kbArticleURLPrefix }}2093
+
+[apache_ignite_defragment]: {{ kbArticleURLPrefix }}2495
+
+[auxiliary_software_optimize]: {{ kbArticleURLPrefix }}2496
+
 [backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
 
 [deploy_guide_linux]: {{ kbArticleURLPrefix }}2344
@@ -705,5 +711,7 @@
 [logging_engine_rules]: {{ kbArticleURLPrefix }}2501#logging_engine_rules
 
 [paths]: {{ kbArticleURLPrefix }}2502
+
+[upload_size_limit_configure]: {{ kbArticleURLPrefix }}2569
 
 {% endif %}

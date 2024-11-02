@@ -224,66 +224,66 @@ _![Диаграмма оргструктуры](architect_example_organizational
 
 1. В _шаблоне организационной единицы_ создайте следующие атрибуты:
 
-    <table block="markdown">
-    <tbody block="markdown">
-    <tr block="markdown">
-    <th block="markdown">
+    <table markdown="block">
+    <tbody markdown="block">
+    <tr markdown="block">
+    <th markdown="block">
     Название
     </th>
-    <th block="markdown">
+    <th markdown="block">
     Системное имя
     </th>
-    <th block="markdown">
+    <th markdown="block">
     Свойства
     </th>
     </tr>
-    <tr block="markdown">
-    <td block="markdown">
+    <tr markdown="block">
+    <td markdown="block">
     _Тип служебный_
     </td>
-    <td block="markdown">
+    <td markdown="block">
     _Tipsluzhebnyy_
     </td>
-    <td block="markdown">
+    <td markdown="block">
 
-    **Тип данных: текст**
-    **Вычислять автоматически:** флажок установлен
-    **Вычисляемое выражение: формула**  
+    - **Тип данных: текст**
+    - **Вычислять автоматически:** флажок установлен
+    - **Вычисляемое выражение: формула**  
 
-    ``` cs
-    FORMAT("{0}",LIST($unitType))
-    ```
+        ``` cs
+        FORMAT("{0}",LIST($unitType))
+        ```
 
     </td>
     </tr>
-    <tr block="markdown">
-    <td block="markdown">
+    <tr markdown="block">
+    <td markdown="block">
     _Отдел_
     </td>
-    <td block="markdown">
+    <td markdown="block">
     _Otdel_
     </td>
-    <td block="markdown">
+    <td markdown="block">
 
-    **Тип данных: текст**
-    **Вычислять автоматически:** флажок установлен
-    **Вычисляемое выражение: N3**
+    - **Тип данных: текст**
+    - **Вычислять автоматически:** флажок установлен
+    - **Вычисляемое выражение: N3**
 
-    ``` turtle
-    @prefix object: <http://comindware.com/ontology/object#>.
-    {
-        ("systemSolution" "Tipsluzhebnyy") object:findProperty ?foundProperty.
-        ("systemSolution" "superiorUnit") object:findProperty ?superiorUnitProp.
-        ("systemSolution" "Otdel") object:findProperty ?Otdel.
-        ("systemSolution" "unitName") object:findProperty ?name.
-        if {?item ?foundProperty "Department". }
-        then { ?item ?name ?value.}
-        else {
-        ?item ?superiorUnitProp ?superiorUnit.
-            ?superiorUnit ?Otdel ?value.
-        }.
-    }
-    ```
+        ``` turtle
+        @prefix object: <http://comindware.com/ontology/object#>.
+        {
+            ("systemSolution" "Tipsluzhebnyy") object:findProperty ?foundProperty.
+            ("systemSolution" "superiorUnit") object:findProperty ?superiorUnitProp.
+            ("systemSolution" "Otdel") object:findProperty ?Otdel.
+            ("systemSolution" "unitName") object:findProperty ?name.
+            if {?item ?foundProperty "Department". }
+            then { ?item ?name ?value.}
+            else {
+            ?item ?superiorUnitProp ?superiorUnit.
+                ?superiorUnit ?Otdel ?value.
+            }.
+        }
+        ```
 
     </td>
     </tr>

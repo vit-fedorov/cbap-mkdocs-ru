@@ -51,8 +51,8 @@ _![Подтверждение удаления экземпляра продук
 
 **[Индикация состояния и обновление списка экземпляров продукта](https://kb.comindware.ru/article.php?id=2037)**
 
-[**Запуск Утилиты администрирования Comindware**][admin_utility_install_launch]
+[**Запуск Утилиты администрирования Comindware**][admin_utility_instance_start_stop]
 
-**[Инициализация экземпляра продукта](https://kb.comindware.ru/article.php?id=2296)**
+**[Инициализация экземпляра продукта][admin_utility_instance_installize]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

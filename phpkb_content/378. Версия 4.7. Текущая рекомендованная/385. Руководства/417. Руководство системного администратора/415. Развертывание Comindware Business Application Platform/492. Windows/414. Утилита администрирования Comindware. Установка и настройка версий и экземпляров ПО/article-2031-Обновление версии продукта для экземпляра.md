@@ -54,6 +54,6 @@ _![Страница входа на сайт экземпляра продукт
 
 **[Пути и содержимое папок экземпляра ПО][paths]**
 
-**[Установка продукта Comindware Business Application Platform](https://kb.comindware.ru/article.php?id=2028)**
+**[Установка продукта Comindware Business Application Platform][admin_utility_install_software]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

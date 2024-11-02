@@ -30,7 +30,7 @@ _![Страница создания аккаунта администратор
 ![Страница активации экземпляра системы](https://kb.comindware.ru/assets/administration_tool7.png)
 
 Страница активации экземпляра продукта
-8. Откроется страница настройки подключения к службе Elasticsearch. См. параграф *«[Использование службы Elasticsearch, установленной Утилитой администрирования](https://kb.comindware.ru/article/414/%d0%a3%d1%81%d1%82%d0%b0%d0%bd%d0%be%d0%b2%d0%ba%d0%b0-%d0%bf%d1%80%d0%be%d0%b4%d1%83%d0%ba%d1%82%d0%b0-comindware-business-application-platform-2028.html#mcetoc_1i1fpsb3t3)»*.
+8. Откроется страница настройки подключения к службе Elasticsearch. См. параграф *«[Использование службы Elasticsearch, установленной Утилитой администрирования][admin_utility_install_software]»*.
 9. В поле «**URI**» введите адрес сервера Elasticsearch, например: `http://localhost:9200`.
 10. При необходимости введите учётные данные для сервера Elasticsearch в поля «**Имя пользователя**» и «**Пароль**».
 11. Укажите необходимый **префикс индекса** Elasticsearch.
@@ -48,8 +48,8 @@ _![Начальная страница {{ productName }}](https://kb.comindware.
 
 --8<-- "related_topics_heading.md"
 
-***[Установка продукта Comindware Business Application Platform](https://kb.comindware.ru/article.php?id=2028)***
+***[Установка продукта Comindware Business Application Platform][admin_utility_install_software]***
 
-***[Установка Elasticsearch. Краткое руководство для Windows](https://kb.comindware.ru/article.php?id=2094)***
+***[Установка Elasticsearch. Краткое руководство для Windows][elasticsearch_deploy_windows]***
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

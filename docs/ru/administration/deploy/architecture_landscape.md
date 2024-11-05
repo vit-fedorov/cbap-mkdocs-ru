@@ -158,10 +158,10 @@ kbId: 2085
 - Скорость соединения между серверами должна быть не менее 10 Гб/с.
 - SSD-накопитель для базы данных должен быть высокоскоростным и высоконадёжным.
 
-<table markdown >
+<table markdown>
 <thead markdown>
 <tr markdown>
-<th markdown>Логич. ядер ЦП от 3,0 ГГц</th>
+<th markdown>Логич. ядер ЦП от 3,0 ГГц</th>
 <th markdown>ОЗУ, ГБ</th>
 <th markdown>Раздел с ПО, ГБ, SSD</th>
 <th markdown>БД, ГБ, SSD</th>
@@ -203,16 +203,16 @@ kbId: 2085
 - Скорость соединения между серверами должна быть не менее 10 Гб/с.
 - SSD-накопитель для базы данных должен быть высокоскоростным и высоконадёжным.
 
-<table markdown >
+<table markdown>
 <thead markdown>
 <tr markdown>
-<th markdown>Логич. ядер ЦП от 3,0 ГГц</th>
-<th markdown>ОЗУ, ГБ</th>
-<th markdown>Раздел с ПО, ГБ, SSD</th>
-<th markdown>БД, ГБ, SSD</th>
-<th markdown>Загру­­­жаемые файлы, ГБ, СХД HDD</th>
-<th markdown>Жур­налы, HDD</th>
-<th markdown>Резерв­­ные копии, ГБ, СХД HDD</th>
+<th markdown markdown>Логич. ядер ЦП от 3,0 ГГц</th>
+<th markdown markdown>ОЗУ, ГБ</th>
+<th markdown markdown>Раздел с ПО, ГБ, SSD</th>
+<th markdown markdown>БД, ГБ, SSD</th>
+<th markdown markdown>Загру­­­жаемые файлы, ГБ,<br/>СХД HDD</th>
+<th markdown markdown>Жур­налы, HDD</th>
+<th markdown markdown>Резерв­­ные копии, ГБ,<br/>СХД HDD</th>
 </tr>
 <tr markdown>
 <td colspan="8" markdown>
@@ -255,16 +255,16 @@ kbId: 2085
 
 - SSD-накопитель для базы данных должен быть высокоскоростным и высоконадёжным.
 
-<table markdown >
+<table markdown>
 <thead markdown>
 <tr markdown>
-<th markdown>Логич. ядер ЦП от 3,0 ГГц</th>
+<th markdown>Логич. ядер ЦП от 3,0 ГГц</th>
 <th markdown>ОЗУ, ГБ</th>
 <th markdown>Раздел с ПО, ГБ, SSD</th>
 <th markdown>БД, ГБ, SSD</th>
-<th markdown>Загру­­­жаемые файлы, ГБ, СХД HDD</th>
+<th markdown>Загру­­­жаемые файлы, ГБ,<br/>СХД HDD</th>
 <th markdown>Жур­налы, HDD</th>
-<th markdown>Резерв­­ные копии, ГБ, СХД HDD</th>
+<th markdown>Резерв­­ные копии, ГБ,<br/>СХД HDD</th>
 </tr>
 </thead>
 <tbody markdown>

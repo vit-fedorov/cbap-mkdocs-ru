@@ -39,7 +39,7 @@ kbId: 2137
     ```
 
 3. Откройте файл `Ignite.config` в текстовом редакторе nano:
-{: .pageBreakAfterAvoid}
+{: .pageBreakInsideAvoid}
 
     ```
     nano -v Ignite.config

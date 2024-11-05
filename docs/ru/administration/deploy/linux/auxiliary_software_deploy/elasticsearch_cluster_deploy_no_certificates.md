@@ -43,7 +43,7 @@ kbId: 2095
 
 1. Обновите ПО на сервере:
 
-    ```
+    ``` sh
     sudo apt update && sudo apt upgrade -y && sudo reboot
     ```
 
@@ -51,19 +51,19 @@ kbId: 2095
 
 2. Перейдите в папку пользователя:
 
-    ```
+    ``` sh
     cd /home/username/
     ```
 
 3. Запустите процесс установки Elasticsearch:
 
-    ```
+    ``` sh
     sudo dpkg --install elasticsearch-8.5.1-amd64.deb
     ```
 
     По окончании установки машина выдаст отчёт:
 
-    ```
+    ``` sh
     Setting up elasticsearch (8.10.2) ...
     ---------------------------   
     Security autoconfiguration information
@@ -93,7 +93,7 @@ kbId: 2095
 
 1. Создайте папки, в которые Elasticsearch будет сохранять данные журналов, индексов и резервных копий:
 
-    ```
+    ``` sh
     sudo mkdir /var/elasticsearch
     sudo mkdir /var/elasticsearch/data
     sudo mkdir /var/elasticsearch/logs
@@ -102,32 +102,32 @@ kbId: 2095
 
 2. Измените владельца папки и права доступа к ней:
 
-    ```
+    ``` sh
     sudo chown elasticsearch:elasticsearch --recursive /var/elasticsearch/
     sudo chmod  764 --recursive /var/elasticsearch/      
     ```
 
 3. Создайте папку для хранения резервной копии `yml`-файла конфигурации Elasticsearch:
 
-    ```
+    ``` sh
     sudo mkdir /etc/elasticsearch/backupConfig        
     ```
 
 4. Переместите `yml`-файл конфигурации Elasticsearch в папку `/etc/elasticsearch/backupConfig`:
 
-    ```
+    ``` sh
     sudo mv /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/backupConfig
     ```
 
 5. Создайте новый  `yml`-файл конфигурации Elasticsearch `elasticsearch.yml`:
 
-    ```
+    ``` sh
     sudo nano /etc/elasticsearch/elasticsearch.yml
     ```
 
 6. Скопируйте в созданный файл конфигурации следующее содержимое:
 
-    ```
+    ``` yml
     bootstrap.memory_lock: false
     cluster.name: elasticsearch.example.cbap
     cluster.max_shards_per_node: 10000
@@ -159,20 +159,20 @@ kbId: 2095
 6. Сохраните изменения `yml`-файла конфигурации закройте текстовый редактор Nano, нажав клавиши: `Ctrl+O, Ввод, Ctrl+X`.
 7. Измените для `yml`-файла конфигурации Elasticsearch владельца и права доступа:
 
-    ```
+    ``` sh
     sudo chown elasticsearch:elasticsearch --recursive /etc/elasticsearch/elasticsearch.yml
     sudo chmod 764 --recursive /etc/elasticsearch/elasticsearch.yml
     ```
 
 8. Откройте в текстовом редакторе Nano `yml`-файл конфигурации Elasticsearch:
 
-    ```
+    ``` sh
     sudo nano /etc/elasticsearch/elasticsearch.yml        
     ```
 
 9. Задайте имя кластера с помощью директивы `cluster.name` в строке 2 `yml`-файла конфигурации: 
 
-    ```
+    ``` sh
     cluster.name: elasticsearch.example.cbap 
     ```
 
@@ -184,37 +184,37 @@ kbId: 2095
     !!! note "Примечание"
         Имя узла должно быть уникальным для каждого из узлов кластера Elasticsearch:
 
-    ```
+    ``` sh
     node.name: elasticsearch1
     ```
 
 11. Укажите путь до директории, в которую настраиваемый узел Elasticsearch будет сохранять файлы данных шардов, отредактировав строку 13:
 
-    ```
+    ``` sh
     path.data: /var/elasticsearch/data
     ```
 
 12. Укажите путь до директории, в которую настраиваемый узел Elasticsearch будет сохранять файлы логов, отредактировав строку 14:
 
-    ```
+    ``` sh
     path.logs: /var/elasticsearch/logs
     ```
 
 13. Укажите путь до директории, в которую настраиваемый узел Elasticsearch будет сохранять файлы резервного копирования, отредактировав строку 15:
 
-    ```
+    ``` sh
     path.repo: /var/elasticsearch/backups
     ```
 
 14. Укажите уникальный IP-адрес (как пример - 192.168.ХХХ.1) машины настраиваемого узла Elasticsearch, отредактировав строку 29:
 
-    ```
+    ``` sh
     network.host: 192.168.XXX.1
     ```
 
 15. Задайте список IP-адресов машин (как пример - 192.168.XXX.1, 192.168.XXX.2, 192.168.XXX.3), на которых будут расположены узлы кластера Elasticsearch, отредактировав строку 31. Например, для кластера из трех узлов, директива будет вот такой:
 
-    ```
+    ``` sh
     discovery.seed_hosts : ["192.168.XXX.1", "192.168.XXX.2","192.168.XXX.3"]
     ```
 
@@ -226,25 +226,23 @@ kbId: 2095
 
 1. Перезагрузите конфигурацию `systemd`:
 
-    ```
+    ``` sh
     sudo systemctl daemon-reload
     ```
 
 2. Добавьте процесс `elasticsearch.service` в список автозагрузки при запуске ОС и запустите его:
 
-    ```
+    ``` sh
     sudo systemctl enable --now elasticsearch.service
     ```
 
 3. Убедитесь, что процесс `elasticsearch.service` запустился:
 
-    ```
+    ``` sh
     sudo systemctl status elasticsearch.service
     ```
 
-    Пример результата проверки статуса процесса `elasticsearch.service`:
-
-    ```
+    ``` sh title="Пример результата проверки статуса процесса elasticsearch.service"
     elasticsearch.service - Elasticsearch
       Loaded: loaded (/lib/systemd/system/elasticsearch.service; enabled; vendor preset: enabled)
       Active: active (running) since Thu 2022-12-01 10:12:27 UTC; 6s ago
@@ -264,19 +262,19 @@ kbId: 2095
     !!! note "Примечание"
         В случае возникновения ошибок при запуске процесса `elasticsearch.service` рекомендуется изучить файл журнала:
 
-    ```
+    ``` sh
     sudo less /var/elasticsearch/logs/yourClusterName.log        
     ```
 
 4. С помощью curl убедитесь, что REST API узла Elasticsearch доступен:
 
-    ```
+    ``` sh
     sudo curl <http://192.168.XXX.XX>Х:9200
     ```
 
     Пример ответа на запрос:
 
-    ```
+    ``` json
     {
     "name" : "elasticsearch1",
     "cluster_name" : "yourClusterName",
@@ -301,13 +299,13 @@ kbId: 2095
 
 1. Выполнив для каждого из узлов кластера Elasticsearch шаги, описанные в предыдущих разделах, от любого из узлов выполните GET-запрос проверки состояния кластера:
 
-    ```
+    ``` sh
     sudo curl <http://192.168.XXX.XX1:9200/_cluster/health?pretty>>
     ```
 
 2. Убедитесь, что в ответе на запрос значение параметра `number_of_nodes` равно количеству узлов кластера:
 
-    ```
+    ``` json
     {
     "cluster_name" : "yourClusterName",
     "status" : "green",
@@ -329,7 +327,7 @@ kbId: 2095
 
 ## Пример yml-файла конфигурации узла Elasticsearch
 
-```
+``` yml
 bootstrap.memory_lock: false
 cluster.name: elasticsearch.example.cbap
 cluster.max_shards_per_node: 10000

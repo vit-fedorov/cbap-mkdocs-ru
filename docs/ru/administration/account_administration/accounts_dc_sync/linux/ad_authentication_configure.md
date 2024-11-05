@@ -147,6 +147,7 @@ kbId: 2517
     ```
 
 3. Отредактируйте файл `krb5.conf` согласно следующему примеру:
+{: .pageBreakInsideAvoid }
 
     ``` sh
     [libdefaults]

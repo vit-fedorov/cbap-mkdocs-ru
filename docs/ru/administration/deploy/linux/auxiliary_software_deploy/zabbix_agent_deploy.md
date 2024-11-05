@@ -91,7 +91,7 @@ kbId: 2291
     systemctl status zabbix-agent 
     ```
 
-_![Ожидаемый статус сервиса Zabbix Agent](https://kb.comindware.ru/assets/img_63ad99c681d0a.png)_
+    _![Ожидаемый статус сервиса Zabbix Agent](https://kb.comindware.ru/assets/img_63ad99c681d0a.png)_
 
 ## Добавление Linux-хоста в сеть мониторинга
 
@@ -121,10 +121,11 @@ _![Ожидаемый статус сервиса Zabbix Agent](https://kb.comin
     _![Статус хоста Zabbix Agent](https://kb.comindware.ru/assets/img_63ad999c17b2e.png)_
 
 12. Если индикатор красный, удостоверьтесь, что:
+{. pageBreakInsideAvoid }
 
-- сетевой экран на машине, где развернут *Zabbix Server*, разрешает обмен данными через порт 10051;
-- сетевой экран на машине, где развернут *Zabbix Agent*, разрешает обмен данными через порт 10050;
-- значения `Server` и `ServerActive` в файле конфигурации *Zabbix Agent* `/etc/zabbix/zabbix_agentd.conf` соответствуют IP-адресу *Zabbix Server*:
+    - сетевой экран на машине, где развернут *Zabbix Server*, разрешает обмен данными через порт 10051;
+    - сетевой экран на машине, где развернут *Zabbix Agent*, разрешает обмен данными через порт 10050;
+    - значения `Server` и `ServerActive` в файле конфигурации *Zabbix Agent* `/etc/zabbix/zabbix_agentd.conf` соответствуют IP-адресу *Zabbix Server*:
 
     ```
     Server=192.168.0.1 # ip-адрес приведён как пример
@@ -133,6 +134,8 @@ _![Ожидаемый статус сервиса Zabbix Agent](https://kb.comin
 
 !!! note "Примечание"
     При любых изменениях в файле конфигурации необходимо остановить и снова запустить (при перезапуске используется конфигурация из памяти) сервис Zabbix Agent или перезагрузить компьютер.
+    {{ pdfEndOfBlockHack }}
+    {: .pageBreakAfter}
 
 ## Использованные ресурсы
 

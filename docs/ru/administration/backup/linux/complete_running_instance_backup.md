@@ -42,19 +42,19 @@ kbId: 2117
 
 1. Для установки исполняемых скриптов перейдите в режим суперпользователя `root`:
 
-    ```
+    ``` sh
     sudo -i 
     ```
 
     или
 
-    ```
+    ``` sh
     su - 
     ```
 
 2. Проверьте наличие пакета `apache-ignite` на машине:
 
-    ```
+    ``` sh
     dpkg -s apache-ignite 
     ```
 
@@ -62,38 +62,38 @@ kbId: 2117
 
 3. Если пакета нет, загрузите zip-архив со скриптами:
 
-    ```
+    ``` sh
     wget -P /tmp/ https://archive.apache.org/dist/ignite/2.16.0/apache-ignite-2.16.0-bin.zip 
     ```
 
 4. Если на машине ранее не был установлен пакет `zip`, установите его:
 
-    ```
+    ``` sh
     apt install zip 
     ```
 
 5. Разархивируйте пакет в директорию `/var/www/`:
 
-    ```
+    ``` sh
     unzip /tmp/apache-ignite-2.16.0-bin.zip -d /var/www 
     ```
 
 6. Переименуйте получившуюся директорию со скриптами `Apache Ignite` в `apache-ignite`:
 
-    ```
+    ``` sh
     mv /var/www/apache-ignite-2.16.0-bin /var/www/apache-ignite 
     ```
 
 7. Прейдите в директорию `/var/www/`:
 
-    ```
+    ``` sh
     cd /var/www/ 
     ```
 
 8. Назначьте папке `apache-ignite` права на чтение-запись `rwxrwxrwx`:
 {: #assignRights}
 
-    ```
+    ``` sh
     chmod -R 777 apache-ignite/ 
     ```
 
@@ -101,32 +101,32 @@ kbId: 2117
 
     *Astra Linux, Ubuntu, Rocky*
 
-    ```
+    ``` sh
     chown -R www-data:www-data apache-ignite/   
 
     ```
 
     *Альт Сервер*
 
-    ```
+    ``` sh
     chown -R _nginx:_nginx apache-ignite/ 
     ```
 
 10. Создайте директории для сохранения резервных копий:
 
-    ```
+    ``` sh
     mkdir /var/www/backups/ 
     ```
 
 11. Создайте директорию репозитория Elasticsearch:
 
-    ```
+    ``` sh
     mkdir /var/www/backups/elasticsearch 
     ```
 
 12. Присвойте директории `backups` права на чтение-запись `rwxrwxrwx`:
 
-    ```
+    ``` sh
     chmod -R 777 backups/ 
     ```
 
@@ -134,14 +134,14 @@ kbId: 2117
 
     *Astra Linux, Ubuntu, Rocky*
 
-    ```
+    ``` sh
     chown -R www-data:www-data backups/  
 
     ```
 
     *Альт Сервер*
 
-    ```
+    ``` sh
     chown -R _nginx:_nginx backups/
     ```
 
@@ -153,32 +153,32 @@ kbId: 2117
 
 1. Задайте переменную `now`:
 
-    ```
+    ``` sh
     now=$(date  %Y_%m_%d_%H_%M)
     ```
 
 2. Проверьте окружение и создайте снимок состояния Apache Ignite:
 
-    ```
+    ``` sh
     bash /var/www/apache-ignite/bin/control.sh --baseline   
     bash /var/www/apache-ignite/bin/control.sh --snapshot create snapshot_name_$now --sync  
     ```
 
 3. Зарегистрируйте репозиторий Elasticsearch. Вместо `elasticsearch_repo_name` и `/var/www/backups/elasticsearch` подставьте своё имя репозитория и путь к его папке:
 
-    ```
+    ``` sh
     curl -X PUT "localhost:9200/_snapshot/elasticsearch_repo_name?pretty" -H ’Content-Type: application/json’ -d’ {"type": "fs", "settings": {"location": "/var/www/backups/elasticsearch"}}’
     ```
 
 4. Создайте снимок состояния Elasticsearch, заменив ***`elasticsearch_repo_name`**,** `snapshot_name`* и `prefix_name`(префикс индекса, указанный в конфигурации экземпляра ПО) на свои значения:
 
-    ```
+    ``` sh
     curl -X PUT "localhost:9200/_snapshot/elasticsearch_repo_name/snapshot_name_$now?wait_for_completion=true&pretty" -H ’Content-Type: application/json’ -d’ {"indices": "cmw_prefix_name*", "ignore_unavailable": true, "include_global_state": false}’
     ```
 
 5. Создайте директории для хранения компонентов резервной копии:
 
-    ```
+    ```  sh
     mkdir /var/www/backups/backup_$now  
     mkdir /var/www/backups/backup_$now/Database   
     mkdir /var/www/backups/backup_$now/elastic   
@@ -189,7 +189,7 @@ kbId: 2117
 
 6. Перенесите и скопируйте компоненты в директорию резервной копии:
 
-    ```
+    ``` sh
     mv /var/www/comindware/data/Database/snapshots/snapshot_name_$now /var/www/backups/backup_$now/Database   
     cp -r /var/www/backups/elasticsearch/* /var/www/backups/backup_$now/elastic   
     cp -r /var/www/comindware/data/Database/wal/* /var/www/backups/backup_$now/wal   
@@ -199,7 +199,7 @@ kbId: 2117
 
 7. Создайте архив с резервной копией:
 
-    ```
+    ``` sh
     tar -cvjf backup_$now.tar.bz2 /var/www/backups/backup_$now
     ```
 

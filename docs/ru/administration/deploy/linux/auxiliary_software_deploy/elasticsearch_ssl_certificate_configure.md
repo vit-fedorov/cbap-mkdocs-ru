@@ -75,7 +75,7 @@ kbId: 2337
 2. Аналогично [шагу 1.3.1](#P1_3_1) создайте сертификат для каждого узла, подставляя вместо `es1.csr` и `es1.key` соответствующие значения.
 3. Для каждого из узлов создайте `ext`-файл, описывающий узел. Подставьте свои значения напротив `DNS.1`, `DNS.2` и `IP.1`.
 
-    ``` sh
+    ``` ini
     sudo cat > es1.ext << EOF
 
     authorityKeyIdentifier=keyid
@@ -176,7 +176,7 @@ kbId: 2337
 
     Исходный файл конфигурации Elasticsearch:
 
-    ``` sh
+    ``` yml
     xpack.security.enabled: false
     xpack.security.http.ssl:
         enabled: false
@@ -190,7 +190,7 @@ kbId: 2337
 
     Пример изменённого файла конфигурации, где сертификат узла — `es1.crt`, ключ — `es1.key`, `pem`-пакет с сертификатом и ключом — `es1.p12`:
 
-    ``` sh
+    ``` yml
     xpack.security.enabled: true
     xpack.security.http.ssl:
         enabled: true
@@ -241,7 +241,7 @@ kbId: 2337
     sudo systemctl status elasticsearch.service 
     ```
 
-    ``` sh
+    ``` sh title="Пример результата проверки статуса процесса elasticsearch.service"
     elasticsearch.service - Elasticsearch
 
         Loaded: loaded (/lib/systemd/system/elasticsearch.service; enabled; vendor preset: enabled)

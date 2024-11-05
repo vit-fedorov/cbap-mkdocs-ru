@@ -28,12 +28,12 @@ kbId: 2502
 - `/var/lib/comindware/<instanceName>/Database/wal` — файлы журнала предварительной записи.
 - `/var/lib/comindware/<instanceName>/Streams` — загруженные пользователями и сформированные системой файлы, которые прикреплены к соответствующим атрибутам.
 - Временные данные, обеспечивающие работу экземпляра ПО. В этих папках нет пользовательских данных и файлов базы данных экземпляра ПО:
-	- `/var/lib/comindware/<instanceName>/Temp`
-	- `/var/lib/comindware/<instanceName>/Database/cache`
-	- `/var/lib/comindware/<instanceName>/Database/diagnostic`
-	- `/var/lib/comindware/<instanceName>/Database/FullTextSearch`
+    - `/var/lib/comindware/<instanceName>/Temp`
+    - `/var/lib/comindware/<instanceName>/Database/cache`
+    - `/var/lib/comindware/<instanceName>/Database/diagnostic`
+    - `/var/lib/comindware/<instanceName>/Database/FullTextSearch`
 
-	_![Пример файла конфигурации <instanceName>.yml](https://kb.comindware.ru/assets/img_66546f9baeb01.png)_
+    _![Пример файла конфигурации <instanceName>.yml](https://kb.comindware.ru/assets/img_66546f9baeb01.png)_
 
 {% endif %}
 
@@ -51,9 +51,9 @@ kbId: 2502
 - `C:\ProgramData\сomindware\Instances` — папка с экземплярами ПО.
 - `C:\ProgramData\сomindware\Instances\<instanceName>` — экземпляр ПО.
 - `C:\ProgramData\сomindware\Instances\<instanceName>\Config` — конфигурационные файлы:
-	- `logs.config` (конфигурация журналов, см. статью *«[Подсистема журналирования][logging_engine]»*);
-	- `Web.config` (конфигурация экземпляра системы);
-	- `Workers.config` (конфигурация системных служб экземпляра системы).
+    - `logs.config` (конфигурация журналов, см. статью *«[Подсистема журналирования][logging_engine]»*);
+    - `Web.config` (конфигурация экземпляра системы);
+    - `Workers.config` (конфигурация системных служб экземпляра системы).
 - `C:\ProgramData\сomindware\Instances\<instanceName>\Data` — файлы базы данных.
 - `C:\ProgramData\сomindware\Instances\<instanceName>\Data\Scripts` — DLL-файлы, скомпилированные из скриптов на языке C#.
 - `C:\ProgramData\сomindware\Instances\<instanceName>\Data\FullTextSearch` — индексы полнотекстового поиска.

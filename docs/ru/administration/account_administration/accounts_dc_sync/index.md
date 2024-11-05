@@ -64,12 +64,12 @@ kbId: 2308
 {% if userGuide or kbExport %}
 
 - **{{ productName }}**
-	- **[Сервер каталогов. Настройка подключения][ad_connection]**
+    - **[Сервер каталогов. Настройка подключения][ad_connection]**
 - **Linux**
-	- **[Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО][ad_authentication_configure_dc_instance]**
-	- **[Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя][sso_authenticatation_configure]**
+    - **[Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО][ad_authentication_configure_dc_instance]**
+    - **[Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя][sso_authenticatation_configure]**
 - **Windows**
-	- **[Настройка единого входа (SSO-аутентификации) в ОС Windows][sso_authentication_configure_windows]**
+    - **[Настройка единого входа (SSO-аутентификации) в ОС Windows][sso_authentication_configure_windows]**
 
 {% else %}
 

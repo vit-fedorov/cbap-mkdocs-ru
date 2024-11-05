@@ -13,7 +13,7 @@ site_url: ''
 
 extra:
   pdfOutput: true
-  pdfEndOfBlockHack: '<p style="visibility:hidden; font-size:0.1rem">.</p>' # hack for PDF output, prevents PDF build crash after indented paragraphs
+  pdfEndOfBlockHack: '<p class="pdfEndOfBlockHack">.</p>' # hack for PDF output, prevents PDF build crash after indented paragraphs
 
 plugins:
   minify:

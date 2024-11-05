@@ -18,7 +18,7 @@ kbId: 2501
     - `/var/www/<instanceName>/data/Plugins/Agent/logs.config` — конфигурация журналов пользовательских адаптеров.
 - Windows
     - `C:\ProgramData\Comindware\Instances\<instanceName>\Config\logs.config` — конфигурация всех журналов экземпляра ПО, включая журналы встроенных адаптеров;
-    - `C:\ProgramData\Comindware\Instances\<instanceName>\Config\data\Plugins\Agent\logs.config` — конфигурация журналов пользовательских адаптеров.
+    - `C:\ProgramData\Comindware\Instances\<instanceName>\Config\data\Plugins\Agent\logs.config`{: style="word-break: break-all"} — конфигурация журналов пользовательских адаптеров.
 
 Здесь и далее _`<instanceName>`_ — имя экземпляра ПО.
 

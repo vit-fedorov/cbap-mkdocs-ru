@@ -42,6 +42,7 @@ Apache Ignite в минимально необходимой конфигура�
 - `<dataRegionConfigurations type="DataRegionConfiguration"> <dataRegionConfiguration><name>Persistent</name><persistenceEnabled>true</persistenceEnabled>` — в директиве `dataRegionConfiguration` укажите `<persistenceEnabled>true</persistenceEnabled>`.
 - `<workDirectory>/var/lib/ignite/</workDirectory>>` — укажите рабочую папку Ignite.
 - `<igniteInstanceName>Comindware_Instance2</igniteInstanceName>` — укажите имя экземпляра Ignite.
+{: .pageBreakAvtoAvoid}
 
 ```
 <?xml version="1.0" encoding="utf-8"?>   
@@ -114,5 +115,6 @@ Apache Ignite в минимально необходимой конфигура�
 </igniteConfiguration>   
 </configuration>
 ```
+{: .pageBreakInsideAuto .pageBreakBeforeAvoid}
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

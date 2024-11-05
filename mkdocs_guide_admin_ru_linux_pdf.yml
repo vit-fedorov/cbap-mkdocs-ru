@@ -10,7 +10,7 @@ site_dir: pdf/
 
 extra:
   pdfOutput: true
-  pdfEndOfBlockHack: '<p style="visibility:hidden; font-size:0.1rem">.</p>' # hack for PDF output, prevents PDF build crash after indented paragraphs
+  pdfEndOfBlockHack: '<p class="pdfEndOfBlockHack">.</p>' # hack for PDF output, prevents PDF build crash after indented paragraphs
 
 plugins:
   minify:
@@ -31,4 +31,4 @@ plugins:
     two_columns_level: 0
     heading_shift: false
     ordered_chapter_level: 3
-    debug_html: false
+    debug_html: true

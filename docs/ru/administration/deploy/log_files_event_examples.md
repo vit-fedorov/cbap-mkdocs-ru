@@ -128,11 +128,12 @@ kbId: 2516
     - `accountIds` — массив идентификаторов удалённых аккаунтов
     - `account.1`, `account.2`  — идентификаторы аккаунтов
 
-### Неуспешное создание учетной записи
+### Неуспешное создание учетной записи {: .pageBreakBefore }
 
 **Пример события**
+{: .pageBreakAfterAvoid }
 
-``` sql
+``` {: .sql .pageBreakBeforeAvoid .pageBreakInsideAuto }
 -MM-dd HH:mm:ss,SSS ERROR 00000000-0000-0000-0000-000000000000 username SERVER\_URL PORT XXX.XXX.XXX.XXX  Core HH:mm:ss.SSS X.X.XXX.X  '   Транзакция нарушает уникальность триплета:  cmw.account.mbox – email@example.com
 
 Service name:
@@ -207,6 +208,7 @@ Stack:
 ### Неуспешное удаление учетной записи
 
 **Пример события**
+{: .pageBreakAfterAvoid }
 
 ``` sql
 -MM-dd HH:mm:ss,SSS ERROR 00000000-0000-0000-0000-000000000000 username SERVER\_URL PORT XXX.XXX.XXX.XXX  Core HH:mm:ss.SSS X.X.XXX.X  '   Вы не можете удалить свой аккаунт
@@ -237,6 +239,7 @@ Stack:
 ```
 
 **Поля события**
+{: .pageBreakAfterAvoid }
 
 - `yyyy-MM-dd HH:mm:ss,SSS` — дата и время события
 - `ERROR` — тип события: ошибка
@@ -449,8 +452,9 @@ Stack:
 ### Изменение прав группы (роли) пользователей
 
 **Пример события**
+{: .pageBreakAfterAvoid }
 
-``` sql
+``` {: .sql .pageBreakBeforeAvoid .pageBreakInsideAuto }
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'PUT: "{"role":{"Id":"role.ID","Name":"Role Name","Alias":"RoleSystemName","Workspace":{"Id":"workspace.1","Name":"Workspace Name"},"Solution":"sln.1","Creator":"account.6","CreationDate":"2023-10-25T17:58:03+00:00","LastWriteDate":"2023-10-25T17:58:03+00:00","Members":["account.ID","account.ID"],"IsActive":true,"IsPredefined":false,"RoleType":1,"RootResource":{"Name":"Системное приложение","Description":"","Children":[{"Name":"Organizational unit template","Children":[{"Name":"All records","Children":[],"Target":"lst.13","TargetType":14,"Privileges":4,"AvailablePrivileges":4}],"Target":"os.1","TargetType":22,"Privileges":132,"AvailablePrivileges":204}],"Target":"sln.1","TargetType":4,"Privileges":204,"AvailablePrivileges":716},"CreatorName":"Full Name"}}"' ''
 
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Read","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"systemSolution","ResourceType":"BusinessApp"}'
@@ -473,6 +477,7 @@ Stack:
 
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put OK HH:mm:ss.SSS 'PUT completed' ''
 ```
+{: .pageBreakInsideAuto .pageBreakBeforeAvoid }
 
 **Поля события**
 
@@ -588,6 +593,7 @@ Stack:
 ### Исключение пользователя из состава группы (удаление роли)
 
 **Пример события**
+{: .pageBreakAfterAvoid }
 
 ``` sql
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/Members/GetMembersData   'POST: "{"model":{"FilterType":3,"Selected":["account.ID"]}}"' ''
@@ -683,6 +689,7 @@ Stack:
 ### Чтение объекта
 
 **Пример события**
+{: .pageBreakAfterAvoid }
 
 ``` sql
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/TemplatesApi/Get/oa.91   'GET: "{"id":"oa.91"}"' ''
@@ -754,6 +761,7 @@ Stack:
 ### Копирование объекта
 
 **Пример события**
+{: .pageBreakAfterAvoid }
 
 ``` sql
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/FormDesigner/CloneRecordForm   'POST: "{"recordTypeId":"oa.91","cloningFormId":"form.3355","newName":"New Form Name","newAlias":"NewFormSystemName"}"' ''
@@ -834,6 +842,7 @@ Stack:
 ### Установка прав доступа на объект
 
 **Пример события**
+{: .pageBreakAfterAvoid }
 
 ``` sql
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'PUT: "{"role":{"Id":"role.26","Name":"Role Name","Alias":"RoleSystemName","Workspace":{"Id":"workspace.1","Name":"Workspace Name"},"Solution":"sln.1","Creator":"account.6","CreationDate":"2023-10-25T17:58:03+00:00","LastWriteDate":"2023-10-25T20:15:39+00:00","Members":["account.194"],"IsActive":true,"IsPredefined":false,"RoleType":1,"RootResource":{"Id":"rrpd.2329","Name":"Application Name","Role":"role.26","Children":[{"Name":"Resource name","Children":[],"Target":"oa.89","TargetType":20,"Privileges":204,"AvailablePrivileges":719},{"Id":"rrpd.2330","Name":"Organizational unit template","Role":"role.26","Children":[{"Id":"rrpd.2331","Name":"All records","Role":"role.26","Children":[],"Target":"lst.13","TargetType":14,"Privileges":4,"AvailablePrivileges":4}],"Target":"os.1","TargetType":22,"Privileges":132,"AvailablePrivileges":204}],"Target":"sln.1","TargetType":4,"Privileges":204,"AvailablePrivileges":716},"CreatorName":"Full Name"}}"' ''
@@ -1009,9 +1018,13 @@ Stack:
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 systemAccount    PerformanceHelper.Perform: FullTextSearchService.RebuildThreadWorker() succeed Time:59184ms TotalGCMemory:472MB DeltaGCMemory:-146MB TotalProcessMemory:462MB DeltaProcessMemory:0MB
 ```
 
+{% if completeGuide or adminGuideWindows or kbExport %}
+
 **Версия 4.2 (Windows)**
+{: .pageBreakAfterAvoid }
 
 **Пример события**
+{: .pageBreakAfterAvoid }
 
 ``` sql
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 systemAccount    {{ productName }} has started.
@@ -1068,6 +1081,8 @@ IIS authentication: Anonymous
 - `DeltaGCMemory:-XXXMB` — изменение памяти, выделенной сборщику мусора
 - `TotalProcessMemory:XXXMB` — память, выделенная системе
 - `DeltaProcessMemory:XXXMB` — изменение памяти, выделенной системе
+
+{% endif %}
 
 ### Окончание (остановка) работы системы
 

@@ -13,13 +13,37 @@
         display: inline;
     }
 
-    /* TODO implement text-indent only for P without ruining the rest of formatting
-    .md-typeset p:not([class]) {
-        text-indent: 1.5rem;
-        margin-bottom: .2rem;
-        margin-top: .2rem;
-      }
-    */
+
+
+    // TODO implement text-indent only for P without ruining the rest of formatting
+    // .md-typeset p:not([class]) {
+    //     text-indent: 1.5rem;
+    //     // margin-left: 0rem;
+    //     margin-bottom: .2rem;
+    //     margin-top: .2rem;
+    // }
+
+    // .md-typeset li p,
+    // .md-typeset ul li p,
+    // .md-typeset ul li > p,
+    // .md-typeset ol li > p,
+    // .md-typeset .admonition li p:not([class]) {
+    //     text-indent: 0;
+    //     margin-left: inherit;
+    //     margin-bottom: inherit;
+    //     margin-top: inherit;
+    // }
+
+    // .md-typeset .admonition ul li {
+    //     margin-left: 1.5rem;
+    //     padding-inline-start: 1.5rem !important;
+    // }
+
+    // .md-typeset ul li,
+    // .md-typeset ol li > ul li,
+    // ol li {
+    //     padding-inline-start: 1.5rem !important;
+    // }
 
     .pdfEndOfBlockHack {
         visibility: hidden;
@@ -31,7 +55,7 @@
     }
 
     .pageBreakBefore {
-        break-after: always !important;
+        break-before: always !important;
     }
 
     .pageBreakAfterAvoid {
@@ -82,14 +106,6 @@
     }
 
 
-    .md-typeset table {
-        break-inside: avoid;
-        // font-size: 0.8rem;
-        // display: table !important;
-        // width: 98% !important;
-        // max-width: 98% !important;
-    }
-
     .md-typeset table,
     .md-typeset td,
     .md-typeset th {
@@ -108,7 +124,6 @@
         font-size: 1.4em;
     }
 
-
     .md-typeset h2 {
         font-size: 1.2em;
     }
@@ -117,12 +132,11 @@
         font-size: 1.1em;
     }
 
-
     .md-typeset .admonition,
     .md-typeset details {
-
         font-size: 1rem;
     }
+
 
     small {
         font-size: 0.8em;
@@ -149,9 +163,8 @@
         break-before: avoid;
     }
 
-
     .md-typeset li {
-        break-inside: avoid;
+        break-inside: auto;
     }
 
     /* imported from https://github.com/orzih/mkdocs-with-pdf/blob/master/mkdocs_with_pdf/styles/_heading.scss */
@@ -360,6 +373,15 @@
     .md-typeset h6 {
         page-break-after: avoid !important;
         page-break-inside: avoid !important;
+    }
+
+    .md-typeset h1,
+    .md-typeset h2,
+    .md-typeset h3,
+    .md-typeset h4,
+    .md-typeset h5,
+    .md-typeset h6 {
+        margin-left: 0;
     }
 }
 

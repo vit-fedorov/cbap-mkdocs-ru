@@ -131,7 +131,6 @@ kbId: 2516
 ### Неуспешное создание учетной записи {: .pageBreakBefore }
 
 **Пример события**
-{: .pageBreakAfterAvoid }
 
 ``` {: .sql .pageBreakBeforeAvoid .pageBreakInsideAuto }
 -MM-dd HH:mm:ss,SSS ERROR 00000000-0000-0000-0000-000000000000 username SERVER\_URL PORT XXX.XXX.XXX.XXX  Core HH:mm:ss.SSS X.X.XXX.X  '   Транзакция нарушает уникальность триплета:  cmw.account.mbox – email@example.com
@@ -159,7 +158,11 @@ Stack:
   at Comindware.LogicsStorage.Api.TransactionExtensions.ReplaceStatement[TValue] (Comindware.LogicsStorage.Api.Transaction transaction, Comindware.LogicsStorage.Api.Identity subject, Comindware.LogicsStorage.Api.Identity predicate, TValue value) [0x0001f] in <7d85b33b773e45b1b9d638b93301c0e9>:0
 
   at Comindware.TeamNetwork.Core.Services.PropertyPathWriter.WriteValue[TData] (Comindware.LogicsStorage.Api.Identity qContextObject, System.String[] path, System.Object value, System.String qWidget) [0x00199] in <8025f5369894426089cefdaa59a4c743>:0
+{% if pdfOutput %}
+```
 
+``` sql
+{% endif %}
   at Comindware.TeamNetwork.Core.Services.WidgetsDataWriter.WriteLiteral (Comindware.LogicsStorage.Api.Identity qObject, Comindware.TeamNetwork.Core.Services.PropertyPathWriter writer, Comindware.TeamNetwork.Api.Data.DataSourceInfo ds, System.Object value, System.String widget) [0x000c8] in <8025f5369894426089cefdaa59a4c743>:0
 
   at Comindware.TeamNetwork.Core.Services.WidgetsDataWriter.ApplyWidgetValueChange (Comindware.TeamNetwork.Core.Services.PropertyPathWriter writer, Comindware.LogicsStorage.Api.Identity qObject, Comindware.LogicsStorage.Api.Identity qWidget, Comindware.TeamNetwork.Api.Data.Forms.WidgetValueChange wChange) [0x00185] in <8025f5369894426089cefdaa59a4c743>:0
@@ -205,10 +208,9 @@ Stack:
         - `EMAIL` — адрес эл. почты пользователя
 - `Stack` — данные функций, обрабатывавших веб-запрос
 
-### Неуспешное удаление учетной записи
+### Неуспешное удаление учетной записи {: .pageBreakBefore }
 
 **Пример события**
-{: .pageBreakAfterAvoid }
 
 ``` sql
 -MM-dd HH:mm:ss,SSS ERROR 00000000-0000-0000-0000-000000000000 username SERVER\_URL PORT XXX.XXX.XXX.XXX  Core HH:mm:ss.SSS X.X.XXX.X  '   Вы не можете удалить свой аккаунт
@@ -239,7 +241,6 @@ Stack:
 ```
 
 **Поля события**
-{: .pageBreakAfterAvoid }
 
 - `yyyy-MM-dd HH:mm:ss,SSS` — дата и время события
 - `ERROR` — тип события: ошибка
@@ -341,7 +342,7 @@ Stack:
         - `"ObjId":"account.ID"` — идентификатор учётной записи
         - `"Id":"account.ID"` — идентификатор учётной записи
 
-### Создание роли
+### Создание роли {: .pageBreakBefore}
 
 **Пример события**
 
@@ -449,35 +450,27 @@ Stack:
 - `hh:mm:ss.SSS` — длительность обработки запроса
 - `DELETE completed` — результат обработки запроса: выполнен
 
-### Изменение прав группы (роли) пользователей
+### Изменение прав группы (роли) пользователей {: .pageBreakBefore .pageBreakAfterAvoid }
 
-**Пример события**
-{: .pageBreakAfterAvoid }
+**Пример события** {: .pageBreakAfterAvoid }
 
-``` {: .sql .pageBreakBeforeAvoid .pageBreakInsideAuto }
+``` sql
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'PUT: "{"role":{"Id":"role.ID","Name":"Role Name","Alias":"RoleSystemName","Workspace":{"Id":"workspace.1","Name":"Workspace Name"},"Solution":"sln.1","Creator":"account.6","CreationDate":"2023-10-25T17:58:03+00:00","LastWriteDate":"2023-10-25T17:58:03+00:00","Members":["account.ID","account.ID"],"IsActive":true,"IsPredefined":false,"RoleType":1,"RootResource":{"Name":"Системное приложение","Description":"","Children":[{"Name":"Organizational unit template","Children":[{"Name":"All records","Children":[],"Target":"lst.13","TargetType":14,"Privileges":4,"AvailablePrivileges":4}],"Target":"os.1","TargetType":22,"Privileges":132,"AvailablePrivileges":204}],"Target":"sln.1","TargetType":4,"Privileges":204,"AvailablePrivileges":716},"CreatorName":"Full Name"}}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Read","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"systemSolution","ResourceType":"BusinessApp"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Read","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"systemSolution", "ResourceType":"BusinessApp"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Create","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"systemSolution","ResourceType":"BusinessApp"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Create","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"systemSolution", "ResourceType":"BusinessApp"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Update","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[systemSolution] RecordTemplateName","ResourceType":"RecordTemplate"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Update","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[systemSolution] RecordTemplateName", "ResourceType":"RecordTemplate"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Delete","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"systemSolution","ResourceType":"BusinessApp"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Delete","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"systemSolution", "ResourceType":"BusinessApp"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Read","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[systemSolution] systemSolution\_OrganizationalStructure","ResourceType":"OrgStructureTemplate"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Delete","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[systemSolution] systemSolution\_OrganizationalStructure", "ResourceType":"OrgStructureTemplate"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Delete","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[systemSolution] systemSolution\_OrganizationalStructure","ResourceType":"OrgStructureTemplate"}'
-
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Read","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[systemSolution] systemSolution\_OrganizationalStructure","ResourceType":"OrgStructureTemplate"}'
-
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Delete","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[systemSolution] systemSolution\_OrganizationalStructure","ResourceType":"OrgStructureTemplate"}'
-
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Read","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[systemSolution\_OrganizationalStructure] defaultList","ResourceType":"List"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Read","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[systemSolution\_OrganizationalStructure] defaultList", "ResourceType":"List"}'
 
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put OK HH:mm:ss.SSS 'PUT completed' ''
 ```
-{: .pageBreakInsideAuto .pageBreakBeforeAvoid }
 
 **Поля события**
 
@@ -501,13 +494,13 @@ Stack:
         - 2 — системная пользовательская
         - `"Members":[]` — массив идентификаторов учётных записей и групп, входящих в роль
     - `"RootResource":{}` — приложение, к ресурсам которого роль задаёт разрешения
-    - `"Children":[{"Name":"Resource name","Children":[],"Target":"resource.ID","TargetType":XX,"Privileges":XXX,"AvailablePrivileges":XXX}]`— массив ресурсов, к которым роль задаёт разрешения
+    - `"Children":[{"Name":"Resource name","Children":[],"Target":"resource.ID","TargetType":XX,"Privileges":XXX, "AvailablePrivileges":XXX}]`— массив ресурсов, к которым роль задаёт разрешения
         - `"Target":"resource.ID"` — идентификатор ресурса
         - `"TargetType":XX` — код типа ресурса
         - `"Privileges":XXX` — код установленных разрешений
         - `"AvailablePrivileges":XXX` — код доступных разрешений
 - `Разрешение добавлено в роль` — описание события
-- `'{"Privilege":"Read","Role":"[applicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName","ResourceType":"RecordTemplate"}'` — тело запроса:
+- `'{"Privilege":"Read","Role":"[applicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'` — тело запроса:
     - `"Privilege":"Read"` — тип добавленного разрешения:
         - `Create` — создание
         - `Delete` — удаление
@@ -590,10 +583,9 @@ Stack:
 - `hh:mm:ss.SSS` — длительность обработки запроса
 - `PUT completed` — результат обработки запроса: выполнен
 
-### Исключение пользователя из состава группы (удаление роли)
+### Исключение пользователя из состава группы (удаление роли) {: .pageBreakBefore }
 
 **Пример события**
-{: .pageBreakAfterAvoid }
 
 ``` sql
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/Members/GetMembersData   'POST: "{"model":{"FilterType":3,"Selected":["account.ID"]}}"' ''
@@ -689,7 +681,6 @@ Stack:
 ### Чтение объекта
 
 **Пример события**
-{: .pageBreakAfterAvoid }
 
 ``` sql
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/TemplatesApi/Get/oa.91   'GET: "{"id":"oa.91"}"' ''
@@ -761,7 +752,6 @@ Stack:
 ### Копирование объекта
 
 **Пример события**
-{: .pageBreakAfterAvoid }
 
 ``` sql
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/FormDesigner/CloneRecordForm   'POST: "{"recordTypeId":"oa.91","cloningFormId":"form.3355","newName":"New Form Name","newAlias":"NewFormSystemName"}"' ''
@@ -839,21 +829,20 @@ Stack:
 - `hh:mm:ss.SSS` — длительность обработки запроса
 - `DELETE completed` — результат обработки запроса: выполнен
 
-### Установка прав доступа на объект
+### Установка прав доступа на объект {: .pageBreakBefore }
 
 **Пример события**
-{: .pageBreakAfterAvoid }
 
 ``` sql
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'PUT: "{"role":{"Id":"role.26","Name":"Role Name","Alias":"RoleSystemName","Workspace":{"Id":"workspace.1","Name":"Workspace Name"},"Solution":"sln.1","Creator":"account.6","CreationDate":"2023-10-25T17:58:03+00:00","LastWriteDate":"2023-10-25T20:15:39+00:00","Members":["account.194"],"IsActive":true,"IsPredefined":false,"RoleType":1,"RootResource":{"Id":"rrpd.2329","Name":"Application Name","Role":"role.26","Children":[{"Name":"Resource name","Children":[],"Target":"oa.89","TargetType":20,"Privileges":204,"AvailablePrivileges":719},{"Id":"rrpd.2330","Name":"Organizational unit template","Role":"role.26","Children":[{"Id":"rrpd.2331","Name":"All records","Role":"role.26","Children":[],"Target":"lst.13","TargetType":14,"Privileges":4,"AvailablePrivileges":4}],"Target":"os.1","TargetType":22,"Privileges":132,"AvailablePrivileges":204}],"Target":"sln.1","TargetType":4,"Privileges":204,"AvailablePrivileges":716},"CreatorName":"Full Name"}}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Read","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName","ResourceType":"RecordTemplate"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Read","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Create","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName","ResourceType":"RecordTemplate"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Create","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Update","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName","ResourceType":"RecordTemplate"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Update","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Delete","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName","ResourceType":"RecordTemplate"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Delete","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'
 
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put OK HH:mm:ss.SSS 'PUT completed' ''
 ```
@@ -886,7 +875,7 @@ Stack:
         - `"Privileges":XXX` — код установленных разрешений
         - `"AvailablePrivileges":XXX` — код доступных разрешений
 - `Разрешение добавлено в роль` — описание события
-- `'{"Privilege":"Read","Role":"[applicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName","ResourceType":"RecordTemplate"}'` — тело запроса:
+- `'{"Privilege":"Read","Role":"[applicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'` — тело запроса:
     - `"Privilege":"Read"` — тип добавленного разрешения:
         - `Create` — создание
         - `Delete` — удаление
@@ -922,7 +911,7 @@ Stack:
 ``` sql
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'PUT: "{"role":{"Id":"role.26","Name":"ТЕст","Alias":"TEst","Workspace":{"Id":"workspace.1","Name":"Workspace Name"},"Solution":"sln.1","Creator":"account.6","CreationDate":"2023-10-25T17:58:03+00:00","LastWriteDate":"2023-10-25T20:15:39+00:00","Members":["account.194"],"IsActive":true,"IsPredefined":false,"RoleType":1,"RootResource":{"Id":"rrpd.2329","Name":"Application name","Role":"role.26","Children":[{"Name":"Resource name","Children":[],"Target":"oa.89","TargetType":20,"Privileges":76,"AvailablePrivileges":719},{"Id":"rrpd.2330","Name":"Organizational unit template","Role":"role.26","Children":[{"Id":"rrpd.2331","Name":"All records","Role":"role.26","Children":[],"Target":"lst.13","TargetType":14,"Privileges":4,"AvailablePrivileges":4}],"Target":"os.1","TargetType":22,"Privileges":132,"AvailablePrivileges":204}],"Target":"sln.1","TargetType":4,"Privileges":204,"AvailablePrivileges":716},"CreatorName":"Full Name"}}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение удалено из роли' '{"Privilege":"Delete","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName","ResourceType":"RecordTemplate"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение удалено из роли' '{"Privilege":"Delete","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'
 
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put OK HH:mm:ss.SSS 'PUT completed' ''
 ```
@@ -955,7 +944,7 @@ Stack:
         - `"Privileges":XXX` — код установленных разрешений
         - `"AvailablePrivileges":XXX` — код доступных разрешений
 - `Разрешение удалено из роли` — описание события
-- `'{"Privilege":"Read","Role":"[applicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName","ResourceType":"RecordTemplate"}'` — тело запроса:
+- `'{"Privilege":"Read","Role":"[applicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'` — тело запроса:
     - `"Privilege":"Read"` — тип добавленного разрешения:
         - `Create` — создание
         - `Delete` — удаление
@@ -1020,11 +1009,9 @@ Stack:
 
 {% if completeGuide or adminGuideWindows or kbExport %}
 
-**Версия 4.2 (Windows)**
-{: .pageBreakAfterAvoid }
+#### Версия 4.2 (Windows) {: .pageBreakAfterAvoid }
 
 **Пример события**
-{: .pageBreakAfterAvoid }
 
 ``` sql
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 systemAccount    {{ productName }} has started.

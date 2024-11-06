@@ -344,6 +344,7 @@ hide: tags
         ```
 
     - _Attachments_ — с дочерними переменными:
+    {: .pageBreakBeforeAvoid }
 
         - _Name_ — **значение: N3**
 
@@ -366,6 +367,7 @@ hide: tags
          ```
 
         - _Extension_ — **значение: N3**
+        {: .pageBreakAfter }
 
          ``` turtle
          # Импортируем функции для работы с записями и документами
@@ -386,6 +388,7 @@ hide: tags
          ```
 
         - _Content_ — **значение: N3**
+        {: .pageBreakBefore }
 
          ``` turtle
          # Импортируем функции для работы с записями и документами

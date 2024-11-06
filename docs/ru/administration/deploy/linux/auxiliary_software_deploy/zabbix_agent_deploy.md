@@ -138,8 +138,8 @@ kbId: 2291
 
 ## Использованные ресурсы
 
-[Официальная инструкция по установке Zabbix (на английском языке)](https://www.zabbix.com/documentation/current/en/manual/installation/install#installing-zabbix-daemons)
+_[Официальная инструкция по установке Zabbix (на английском языке)](https://www.zabbix.com/documentation/current/en/manual/installation/install#installing-zabbix-daemons)_
 
-[Инструкция по установке Zabbix (на английском языке)](https://subscription.packtpub.com/book/networking-and-servers/9781784397586/1/ch01lvl1sec09/agent-installation-and-configuration)
+_[Инструкция по установке Zabbix (на английском языке)](https://subscription.packtpub.com/book/networking-and-servers/9781784397586/1/ch01lvl1sec09/agent-installation-and-configuration)_
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

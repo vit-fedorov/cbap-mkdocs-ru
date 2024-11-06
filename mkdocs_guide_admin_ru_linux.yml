@@ -133,10 +133,10 @@ nav:
     - business_apps/roles_in_application.md
     - Панель навигации. Настройка:
       - business_apps/navigation_sections/navigation_sections_setup.md
-      - business_apps/navigation_sections/desktop_setup.md
-      - business_apps/navigation_sections/pages_setup.md
+      # - business_apps/navigation_sections/desktop_setup.md
+      # - business_apps/navigation_sections/pages_setup.md
       - business_apps/navigation_sections/page_access_control.md
-      - business_apps/navigation_sections/my_tasks_page_configure.md
+      # - business_apps/navigation_sections/my_tasks_page_configure.md
     - Управление версиями:
       - business_apps/version_control/git_version_control.md
       - business_apps/version_control/index.md

@@ -10,6 +10,8 @@
 
 [attribute_document_clone_scenario]: {{ kbArticleURLPrefix }}2608
 
+[attribute_drawing_file_import]: {{ kbArticleURLPrefix }}2574
+
 [attribute_enum_calculate_current_value]: {{ kbArticleURLPrefix }}2497
 
 [attribute_enum_calculate_registry]: {{ kbArticleURLPrefix }}2571
@@ -26,19 +28,23 @@
 
 [chevron_stage_render]: {{ kbArticleURLPrefix }}2582
 
+[csharp_examples]: {{ kbCategoryURLPrefix }}410
+
 [directory_server]: {{ kbArticleURLPrefix }}2308
 
 [document_digital_signature]: {{ kbArticleURLPrefix }}2139
 
-[attribute_drawing_file_import]: {{ kbArticleURLPrefix }}2574
+[example_csharp_my_profile_button]: {{ kbArticleURLPrefix }}2646
 
-[formula_use_examples]: {{ kbCategoryURLPrefix }}409
+[example_csharp_object_copy]: {{ kbArticleURLPrefix }}2645
 
-[formula_function_list]: {{ kbArticleURLPrefix }}2492
+[example_formula_condition_set_value]: {{ kbArticleURLPrefix }}2643
 
-[formula_introduction]: {{ kbArticleURLPrefix }}2490
+[example_formula_group_account_calculate]: {{ kbArticleURLPrefix }}2644
 
-[html_supported_tags]: {{ kbArticleURLPrefix }}2413
+[example_n3_account_attributes_compare]: {{ kbArticleURLPrefix }}2648
+
+[example_n3_list_by_creator_filter]: {{ kbArticleURLPrefix }}2647
 
 [experimental_functions_support]: {{ kbArticleURLPrefix }}1339#mcetoc_1hsfq7ksu2
 
@@ -48,6 +54,18 @@
 
 [export_template_csharp_collection_download]: {{ kbArticleURLPrefix }}1944
 
+[formula_examples]: {{ kbCategoryURLPrefix }}500
+
+[formula_guide]: {{ kbCategoryURLPrefix }}511
+
+[formula_use_examples]: {{ kbCategoryURLPrefix }}409
+
+[formula_function_list]: {{ kbArticleURLPrefix }}2492
+
+[formula_introduction]: {{ kbArticleURLPrefix }}2490
+
+[html_supported_tags]: {{ kbArticleURLPrefix }}2413
+
 [integration_examples]: {{ kbCategoryURLPrefix }}530
 
 [logging_engine]: {{ kbArticleURLPrefix }}2501
@@ -55,6 +73,10 @@
 [manual_csharp]: {{ kbArticleURLPrefix }}2400
 
 [manual_n3]: {{ kbArticleURLPrefix }}2401
+
+[n3_examples]: {{ kbCategoryURLPrefix }}510
+
+[n3_guide]: {{ kbCategoryURLPrefix }}509
 
 [N3_use_examples]: {{ kbCategoryURLPrefix }}408
 

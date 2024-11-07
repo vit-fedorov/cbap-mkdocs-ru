@@ -53,17 +53,35 @@ article.md-typeset {
 }
 
 
-article > .md-typeset > h1, h2, h3, h4, h5, h6
-{
-    margin-left: 0em!important;
+article>.md-typeset>h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-left: 0em !important;
 }
 
-.md-typeset > p:not([class]) {
-    margin-left: 0em!important;
+.md-typeset h1 {
+    margin-top: 0em !important;
+    margin-left: 0em !important;
+}
+
+.md-typeset h1, h2, h3, h4, h5, h6 {
+
+    span.pdf-order {
+        padding-left: 0;
+    }
+}
+
+.md-typeset>p:not([class]) {
+    margin-left: 0em !important;
     text-indent: 1.5rem
 }
 
-
+.admonition p:not([class]) {
+    text-indent: 1.5rem
+}
 
 .pdfEndOfBlockHack {
     visibility: hidden;
@@ -83,6 +101,16 @@ article > .md-typeset > h1, h2, h3, h4, h5, h6
 
 *.pageBreakBefore {
     margin-top: 0px !important;
+}
+
+.md-typeset h1.admonition-title,
+.md-typeset h2.admonition-title,
+.md-typeset h3.admonition-title,
+.md-typeset h4.admonition-title,
+.md-typeset h5.admonition-title,
+.md-typeset h6.admonition-title {
+    left: -0.6rem;
+    margin-right: -1.2rem;
 }
 
 .pageBreakAfterAvoid {

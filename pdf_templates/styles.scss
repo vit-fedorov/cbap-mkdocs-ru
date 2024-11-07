@@ -1,388 +1,421 @@
 /* PDF CSS overrides begin */
 
 
-@media print {
+//@media print {
 
-    .md-typeset figure img {
-        display: inline;
-        image-resolution: 192dpi;
-        max-width: 100%;
-    }
+.md-typeset figure img {
+    display: inline;
+    image-resolution: 192dpi;
+    max-width: 100%;
+}
 
-    .md-typeset figure p {
-        display: inline;
-    }
-
-
-
-    // TODO implement text-indent only for P without ruining the rest of formatting
-    // .md-typeset p:not([class]) {
-    //     text-indent: 1.5rem;
-    //     // margin-left: 0rem;
-    //     margin-bottom: .2rem;
-    //     margin-top: .2rem;
-    // }
-
-    // .md-typeset li p,
-    // .md-typeset ul li p,
-    // .md-typeset ul li > p,
-    // .md-typeset ol li > p,
-    // .md-typeset .admonition li p:not([class]) {
-    //     text-indent: 0;
-    //     margin-left: inherit;
-    //     margin-bottom: inherit;
-    //     margin-top: inherit;
-    // }
-
-    // .md-typeset .admonition ul li {
-    //     margin-left: 1.5rem;
-    //     padding-inline-start: 1.5rem !important;
-    // }
-
-    // .md-typeset ul li,
-    // .md-typeset ol li > ul li,
-    // ol li {
-    //     padding-inline-start: 1.5rem !important;
-    // }
-
-    .pdfEndOfBlockHack {
-        visibility: hidden;
-        font-size: 0.01rem;
-    }
-
-    .pageBreakAfter {
-        break-after: always !important;
-    }
-
-    .pageBreakBefore {
-        break-before: always !important;
-    }
-
-    .pageBreakAfterAvoid {
-        break-after: avoid !important;
-    }
-
-    .pageBreakInsideAvoid {
-        break-inside: avoid !important;
-    }
-
-    .pageBreakBeforeAvoid {
-        break-after: avoid !important;
-    }
-
-    .pageBreakInsideAuto {
-        break-inside: auto !important;
-    }
-
-    .md-typeset :is(.admonition-title, summary):before {
-        left: 0.8rem;
-        top: 1rem;
-    }
-
-    .md-typeset ul {
-
-        margin-left: 0.625rem;
-    }
-
-    .md-typeset ol {
-        margin-left: 1.625rem;
-    }
-
-    :root {
-        font-size: 12pt;
-
-    }
+.md-typeset figure p {
+    display: inline;
+}
 
 
-    .md-typeset {
-        font-size: 1rem;
-    }
+// TODO implement text-indent only for P without ruining the rest of formatting
+// .md-typeset p:not([class]) {
+//     text-indent: 1.5rem;
+//     // margin-left: 0rem;
+//     margin-bottom: .2rem;
+//     margin-top: .2rem;
+// }
 
-    .md-typeset table:not([class]) {
-        font-size: 0.8rem;
-        display: table !important;
-        width: 98% !important;
-        max-width: 98% !important;
-    }
+// .md-typeset li p,
+// .md-typeset ul li p,
+// .md-typeset ul li > p,
+// .md-typeset ol li > p,
+// .md-typeset .admonition li p:not([class]) {
+//     text-indent: 0;
+//     margin-left: inherit;
+//     margin-bottom: inherit;
+//     margin-top: inherit;
+// }
 
+// .md-typeset .admonition ul li {
+//     margin-left: 1.5rem;
+//     padding-inline-start: 1.5rem !important;
+// }
 
-    .md-typeset table,
-    .md-typeset td,
-    .md-typeset th {
-        break-inside: avoid;
-    }
+// .md-typeset ul li,
+// .md-typeset ol li > ul li,
+// ol li {
+//     padding-inline-start: 1.5rem !important;
+// }
 
-    .md-typeset__table {
-        break-inside: avoid;
-        display: table !important;
-        max-width: 100% !important;
-        min-width: 100% !important;
-        width: 100% !important;
-    }
+// .md-typeset p:not([class]) {
+//     text-indent: 0;
+// }
 
-    .md-typeset h1 {
-        font-size: 1.4em;
-    }
-
-    .md-typeset h2 {
-        font-size: 1.2em;
-    }
-
-    .md-typeset h3 {
-        font-size: 1.1em;
-    }
-
-    .md-typeset .admonition,
-    .md-typeset details {
-        font-size: 1rem;
-    }
+article.md-typeset {
+    margin-left: 0;
+}
 
 
-    small {
-        font-size: 0.8em;
-    }
+article > .md-typeset > h1, h2, h3, h4, h5, h6
+{
+    margin-left: 0em!important;
+}
 
-    html {
-        font-size: 1em;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body {
-        font-size: 1em;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .md-typeset code {
-        word-break: break-word;
-        break-inside: avoid;
-    }
-
-    .md-typeset pre {
-        word-break: break-word;
-        break-inside: auto;
-        break-before: avoid;
-    }
-
-    .md-typeset li {
-        break-inside: auto;
-    }
-
-    /* imported from https://github.com/orzih/mkdocs-with-pdf/blob/master/mkdocs_with_pdf/styles/_heading.scss */
-
-    article {
-        h1 {
-            border-bottom: 0px;
-        }
-
-        h2 {
-            border-bottom: 0px;
-        }
-
-        h3 {
-            border-bottom: 0px;
-        }
-    }
-
-    /* imported from https://github.com/orzih/mkdocs-with-pdf/blob/master/mkdocs_with_pdf/styles/_toc.scss */
-
-    article#doc-toc {
-
-        font-size: 12pt;
-
-        ul {
-            font-size: 12pt;
-        }
-    }
-
-    /* imported from https://github.com/orzih/mkdocs-with-pdf/blob/master/mkdocs_with_pdf/styles/cover.scss */
-
-    article#doc-cover {
-
-        h1 {
-            font-size: 36pt;
-            padding-bottom: 20px;
-            border-bottom: 3px solid #3698D4;
-        }
-
-        h2 {
-            font-size: 18pt !important;
-        }
-
-        .wrapper {
-            padding: 0;
-        }
+.md-typeset > p:not([class]) {
+    margin-left: 0em!important;
+    text-indent: 1.5rem
+}
 
 
-        .header {
-            margin-top: -0.85cm;
-            display: flex;
-            justify-content: space-between;
 
-        }
+.pdfEndOfBlockHack {
+    visibility: hidden;
+    font-size: 0px;
+    max-height: 0px;
+    padding: 0px;
+}
 
-        .logotype,
-        .author {
-            font-weight: bold;
-            font-size: 1.3rem;
-            color: #3698D4;
-            flex: 0 1 auto;
-            align-self: center;
-        }
+.pageBreakAfter {
+    break-after: always !important;
+}
 
-        .logotype {
-            text-align: start;
-            height: 30px;
-            width: 300px;
-        }
+// TODO fix extra spacing before line breaks
+.pageBreakBefore {
+    break-before: always !important;
+}
 
-        .author {
-            text-align: end;
-        }
+*.pageBreakBefore {
+    margin-top: 0px !important;
+}
 
-        .copyright {
-            font-size: 1.3em;
-            font-style: normal;
-        }
-    }
+.pageBreakAfterAvoid {
+    break-after: avoid !important;
+}
+
+.pageBreakInsideAvoid {
+    break-inside: avoid !important;
+}
+
+.pageBreakBeforeAvoid {
+    break-after: avoid !important;
+}
+
+.pageBreakInsideAuto {
+    break-inside: auto !important;
+}
+
+.md-typeset :is(.admonition-title, summary):before {
+    left: 0.8rem;
+    top: 1rem;
+}
+
+.md-typeset ul {
+
+    margin-left: 0.625rem;
+}
+
+.md-typeset ol {
+    margin-left: 1.625rem;
+}
+
+:root {
+    font-size: 12pt;
+
+}
 
 
-    /* imported from  https://github.com/orzih/mkdocs-with-pdf/blob/master/mkdocs_with_pdf/styles/_paging.scss */
+.md-typeset {
+    font-size: 1rem;
+}
 
+.md-typeset table:not([class]) {
+    font-size: 0.8rem;
+    display: table !important;
+    width: 98% !important;
+    max-width: 98% !important;
+}
+
+
+.md-typeset table,
+.md-typeset td,
+.md-typeset th {
+    break-inside: avoid;
+}
+
+.md-typeset__table {
+    break-inside: avoid;
+    display: table !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    width: 100% !important;
+}
+
+.md-typeset h1 {
+    font-size: 1.4em;
+}
+
+.md-typeset h2 {
+    font-size: 1.2em;
+}
+
+.md-typeset h3 {
+    font-size: 1.1em;
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+    font-size: 1rem;
+}
+
+
+small {
+    font-size: 0.8em;
+}
+
+html {
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.md-typeset code {
+    word-break: break-word;
+    break-inside: avoid;
+}
+
+.md-typeset pre {
+    word-break: break-word;
+    break-inside: auto;
+    break-before: avoid;
+}
+
+.md-typeset li {
+    break-inside: auto;
+}
+
+/* imported from https://github.com/orzih/mkdocs-with-pdf/blob/master/mkdocs_with_pdf/styles/_heading.scss */
+
+article {
     h1 {
-        string-set: chapter content();
+        border-bottom: 0px;
     }
 
-    h2,
+    h2 {
+        border-bottom: 0px;
+    }
+
     h3 {
-        string-set: chapter string(chapter);
-    }
-
-    @page {
-        size: a4 portrait;
-        margin: 20mm 20mm 20mm 20mm;
-        color: black;
-
-        @top-right {
-            font-size: 1rem;
-            content: string(chapter);
-            width: 100%;
-            border-bottom: 2px solid #3698D4;
-            margin-top: 10mm;
-            margin-bottom: 1rem;
-        }
-
-        @bottom-center {
-            font-size: 1rem;
-            content: counter(page)' / ' counter(pages);
-        }
-
-        @bottom-right {
-            font-size: 1rem;
-            content: string(copyright);
-        }
-    }
-
-    /* imported from https://github.com/orzih/mkdocs-with-pdf/blob/master/samples/mkdocs-material/extra_sass/style.css.scss */
-
-    .md-typeset {
-        line-height: 1.4;
-    }
-
-    .md-typeset ul li,
-    .md-typeset ol li {
-        margin-bottom: .25rem;
-    }
-
-    #doc-toc ul li>a>span,
-    .md-typeset h1>span,
-    .md-typeset h2>span,
-    .md-typeset h3>span {
-        display: inline-block;
-    }
-
-    .md-typeset h1>span,
-    .md-typeset h2>span,
-    .md-typeset h3>span {
-        padding-right: 0.5rem;
-    }
-
-    /** workaround [[ **/
-    .md-typeset h2>span.twemoji,
-    .md-typeset h2>span.twemoji>img {
-        height: 1.363em;
-    }
-
-    .md-typeset h2>span.twemoji>img {
-        margin-top: -0.3em;
-    }
-
-    #doc-toc span.twemoji,
-    #doc-toc span.twemoji img {
-        height: 1.125rem;
-        vertical-align: middle;
-    }
-
-    .md-typeset span.twemoji,
-    .md-typeset span.twemoji img {
-        display: inline-block;
-    }
-
-    .md-typeset figure {
-        display: block;
-
-        &>img {
-            margin: 0 auto;
-        }
-    }
-
-    /* ]] **/
-
-    .md-typeset .tx-content__footer hr,
-    footer.md-typeset hr {
-        background-color: transparent;
-        border-bottom: 0.5px solid #3698D4;
-    }
-
-    footer.md-typeset a {
-        display: flex;
-        justify-content: center;
-        vertical-align: middle;
-    }
-
-    .md-typeset a,
-    .md-typeset blockquote,
-    .md-typeset ul,
-    .md-typeset ol,
-    .md-typeset *+div.highlight,
-    section+section *+div.highlight {
-        page-break-before: auto !important;
-        page-break-inside: auto !important;
-    }
-
-    .md-typeset figure,
-    .md-typeset figcaption {
-        page-break-before: avoid !important;
-        page-break-inside: avoid !important;
-    }
-
-    .md-typeset h1,
-    .md-typeset h2,
-    .md-typeset h3,
-    .md-typeset h4,
-    .md-typeset h5,
-    .md-typeset h6 {
-        page-break-after: avoid !important;
-        page-break-inside: avoid !important;
-    }
-
-    .md-typeset h1,
-    .md-typeset h2,
-    .md-typeset h3,
-    .md-typeset h4,
-    .md-typeset h5,
-    .md-typeset h6 {
-        margin-left: 0;
+        border-bottom: 0px;
     }
 }
+
+/* imported from https://github.com/orzih/mkdocs-with-pdf/blob/master/mkdocs_with_pdf/styles/_toc.scss */
+
+article#doc-toc {
+
+    font-size: 12pt;
+
+    ul {
+        font-size: 12pt;
+    }
+}
+
+/* imported from https://github.com/orzih/mkdocs-with-pdf/blob/master/mkdocs_with_pdf/styles/cover.scss */
+
+article#doc-cover {
+
+    h1 {
+        font-size: 36pt;
+        padding-bottom: 20px;
+        border-bottom: 3px solid #3698D4;
+    }
+
+    h2 {
+        font-size: 18pt !important;
+    }
+
+    .wrapper {
+        padding: 0;
+    }
+
+
+    .header {
+        margin-top: -0.85cm;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .logotype,
+    .author {
+        font-weight: bold;
+        font-size: 1.3rem;
+        color: #3698D4;
+        flex: 0 1 auto;
+        align-self: center;
+    }
+
+    .logotype {
+        text-align: start;
+        height: 30px;
+        width: 300px;
+    }
+
+    .author {
+        text-align: end;
+    }
+
+    .copyright {
+        font-size: 1.3em;
+        font-style: normal;
+    }
+}
+
+
+/* imported from  https://github.com/orzih/mkdocs-with-pdf/blob/master/mkdocs_with_pdf/styles/_paging.scss */
+
+h1 {
+    string-set: chapter content();
+}
+
+h2,
+h3 {
+    string-set: chapter string(chapter);
+}
+
+@page {
+    size: a4 portrait;
+    margin: 20mm 20mm 20mm 20mm;
+    color: black;
+
+    @top-right {
+        font-size: 1rem;
+        content: string(chapter);
+        width: 100%;
+        border-bottom: 2px solid #3698D4;
+        margin-top: 10mm;
+        margin-bottom: 1rem;
+    }
+
+    @bottom-center {
+        font-size: 1rem;
+        content: counter(page)' / ' counter(pages);
+    }
+
+    @bottom-right {
+        font-size: 1rem;
+        content: string(copyright);
+    }
+}
+
+/* imported from https://github.com/orzih/mkdocs-with-pdf/blob/master/samples/mkdocs-material/extra_sass/style.css.scss */
+
+.md-typeset {
+    line-height: 1.4;
+}
+
+.md-typeset ul li,
+.md-typeset ol li {
+    margin-bottom: .25rem;
+}
+
+#doc-toc ul li>a>span,
+.md-typeset h1>span,
+.md-typeset h2>span,
+.md-typeset h3>span {
+    display: inline-block;
+}
+
+.md-typeset h1>span,
+.md-typeset h2>span,
+.md-typeset h3>span {
+    padding-right: 0.5rem;
+}
+
+/** workaround [[ **/
+.md-typeset h2>span.twemoji,
+.md-typeset h2>span.twemoji>img {
+    height: 1.363em;
+}
+
+.md-typeset h2>span.twemoji>img {
+    margin-top: -0.3em;
+}
+
+#doc-toc span.twemoji,
+#doc-toc span.twemoji img {
+    height: 1.125rem;
+    vertical-align: middle;
+}
+
+.md-typeset span.twemoji,
+.md-typeset span.twemoji img {
+    display: inline-block;
+}
+
+.md-typeset figure {
+    display: block;
+
+    &>img {
+        margin: 0 auto;
+    }
+}
+
+/* ]] **/
+
+.md-typeset .tx-content__footer hr,
+footer.md-typeset hr {
+    background-color: transparent;
+    border-bottom: 0.5px solid #3698D4;
+}
+
+footer.md-typeset a {
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.md-typeset a,
+.md-typeset blockquote,
+.md-typeset ul,
+.md-typeset ol,
+.md-typeset *+div.highlight,
+section+section *+div.highlight {
+    page-break-before: auto !important;
+    page-break-inside: auto !important;
+}
+
+.md-typeset figure,
+.md-typeset figcaption {
+    page-break-before: auto !important;
+    page-break-inside: avoid !important;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h5,
+.md-typeset h6 {
+    margin-left: 0.2em;
+    text-indent: 0;
+}
+
+.md-typeset h4 {
+    margin-left: 0.3em;
+    text-indent: 0;
+}
+
+//}
 
 /* PDF CSS overrides end */

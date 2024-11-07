@@ -367,7 +367,7 @@ hide: tags
          ```
 
         - _Extension_ — **значение: N3**
-        {: .pageBreakAfter }
+        {: .pageBreakBefore }
 
          ``` turtle
          # Импортируем функции для работы с записями и документами
@@ -388,7 +388,6 @@ hide: tags
          ```
 
         - _Content_ — **значение: N3**
-        {: .pageBreakBefore }
 
          ``` turtle
          # Импортируем функции для работы с записями и документами

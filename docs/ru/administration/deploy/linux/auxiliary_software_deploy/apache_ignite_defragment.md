@@ -50,6 +50,7 @@ kbId: 2495
     ```
 
 8. В файле `control.sh` измените директиву `DEFAULT_CONFIG`:
+{: .pageBreakBefore }
 
     ```
     DEFAULT_CONFIG=config/Ignite.config

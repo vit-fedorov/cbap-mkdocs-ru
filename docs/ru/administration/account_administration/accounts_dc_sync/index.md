@@ -17,14 +17,14 @@ kbId: 2308
 
 Все изменения пользователей на сервере AD синхронизируются с Системой только принудительно или по расписанию.
 
-Примечание
+!!! Примечание
 
-- После смены домена Active Directory во время синхронизации обновятся данные аккаунтов, при этом сохранится привязка аккаунтов к [ролям в приложении]({{ kbArticleURLPrefix }}2208) и [системным ролям]({{ kbArticleURLPrefix }}2175).
-- Если на стороне Active Directory у аккаунта сменилось имя пользователя, в Системе будет создан новый аккаунт.
+    - После смены домена Active Directory во время синхронизации обновятся данные аккаунтов, при этом сохранится привязка аккаунтов к [ролям в приложении]({{ kbArticleURLPrefix }}2208) и [системным ролям]({{ kbArticleURLPrefix }}2175).
+    - Если на стороне Active Directory у аккаунта сменилось имя пользователя, в Системе будет создан новый аккаунт.
 
 Система хранит данные о версии загружаемого объекта. При создании повторного соединения, система запрашивает данные, проверяет версию каждого объекта, если она изменилась, то данные синхронизируются.
 
-Типы синхронизации:
+**Типы синхронизации:**
 
 - синхронизация всех пользователей — в Системе создаются все пользователи, которые состоят в RDN;
 - выбор групп для синхронизации — можно выбрать группы, которые состоят в RDN; в Системе создаются группы, подгруппы и аккаунты, состоящие в выбранных группах; в Системе не отображается, что подгруппа состоит в группе.
@@ -32,25 +32,101 @@ kbId: 2308
 Определение соответствия данных группы производится следующим образом:
 {: .pageBreakAfterAvoid}
 
-| {{ productName }}     |                              | Active Directory           |
-| --------------------- | ---------------------------- | -------------------------- |
-| Системное имя         | Отображаемое название        | Системное имя              |
-| Name                  | Название                     | CN                         |
-| Description           | Описание                     | Description                |
-| members               | Участники группы             | Member                     |
-| parentGroups          | Входит в группы              | MemberOf                   |
-| Username              | Имя пользователя             | SamAccountName             |
-| IsActive              | Активен (логический атрибут) | IsEnabled                  |
-| Mbox                  | Адрес эл.почты               | Mail                       |
-| FullName              | Имя                          | FullName                   |
-| Title                 | Должность                    | Title                      |
-| Department            | Отдел                        | Department                 |
-| Office                | Офис                         | PhysucakDeliveryOfficeName |
-| Skype                 | Skype                        | Pager                      |
-| Manager               | Руководитель                 | ManagerID                  |
-| Phone                 | Телефон                      | TelephoneNumber, Mobile    |
-| Authentification=LDAP | Метод проверки подлинности   |                            |
-| Picture               | Аватар                       |                            |
+<table>
+<thead>
+<tr>
+<th colspan=2>Comindware Business Application Platform</th>
+<th>Active Directory</th>
+</tr>
+<tr>
+<th>Системное имя</th>
+<th>Отображаемое название</th>
+<th>Системное имя</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Название</td>
+<td>CN</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Описание</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>members</td>
+<td>Участники группы</td>
+<td>Member</td>
+</tr>
+<tr>
+<td>parentGroups</td>
+<td>Входит в группы</td>
+<td>MemberOf</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>Имя пользователя</td>
+<td>SamAccountName</td>
+</tr>
+<tr>
+<td>IsActive</td>
+<td>Активен (логический атрибут)</td>
+<td>IsEnabled</td>
+</tr>
+<tr>
+<td>Mbox</td>
+<td>Адрес эл.почты</td>
+<td>Mail</td>
+</tr>
+<tr>
+<td>FullName</td>
+<td>Имя</td>
+<td>FullName</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Должность</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Department</td>
+<td>Отдел</td>
+<td>Department</td>
+</tr>
+<tr>
+<td>Office</td>
+<td>Офис</td>
+<td>PhysucakDeliveryOfficeName</td>
+</tr>
+<tr>
+<td>Skype</td>
+<td>Skype</td>
+<td>Pager</td>
+</tr>
+<tr>
+<td>Manager</td>
+<td>Руководитель</td>
+<td>ManagerID</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>Телефон</td>
+<td>TelephoneNumber, Mobile</td>
+</tr>
+<tr>
+<td>Authentification=LDAP</td>
+<td>Метод проверки подлинности</td>
+<td></td>
+</tr>
+<tr>
+<td>Picture</td>
+<td>Аватар</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 ## Механизм авторизации через сервер каталогов (Active Directory)
 
@@ -62,7 +138,7 @@ kbId: 2308
 
 Инструкции по настройке подключения к серверу каталогов см. в следующих статьях:
 
-{% if userGuide or kbExport %}
+{% if completeGuide or userGuide or kbExport %}
 
 - **{{ productName }}**
     - **[Сервер каталогов. Настройка подключения][ad_connection]**
@@ -72,20 +148,16 @@ kbId: 2308
 - **Windows**
     - **[Настройка единого входа (SSO-аутентификации) в ОС Windows][sso_authentication_configure_windows]**
 
-{% else %}
-
-{% if adminGuideLinux %}
+{% elif adminGuideLinux %}
 
 - **[Сервер каталогов. Настройка подключения][ad_connection]**
-- **[Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО][ad_authentication_configure_dc_instance]**
+- **[Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО][ad_authentication_configure]**
 - **[Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя][sso_authenticatation_configure]**
 
 {% elif adminGuideWindows %}
 
 - **[Сервер каталогов. Настройка подключения][ad_connection]**
 - **[Настройка единого входа (SSO-аутентификации) в ОС Windows][sso_authentication_configure_windows]**
-
-{% endif %}
 
 {% endif %}
 

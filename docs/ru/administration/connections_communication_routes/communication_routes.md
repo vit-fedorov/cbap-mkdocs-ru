@@ -45,7 +45,7 @@ kbId: 2201
 - [Отправка HTTP-запросов][send_http_example]
 - [Получение HTTP-запросов][receive_http_example]
 
-### Подключения к шине сообщений
+### Подключения к шине сообщений {: .pageBreakBefore }
 
 - Отправка сообщений через Kafka
 - [Получение сообщений через Kafka][kafka_connection]

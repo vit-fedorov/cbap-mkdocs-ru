@@ -126,6 +126,7 @@ kbId: 2095
     ```
 
 6. Скопируйте в созданный файл конфигурации следующее содержимое:
+{: .pageBreakBefore }
 
     ``` yml
     bootstrap.memory_lock: false
@@ -220,7 +221,7 @@ kbId: 2095
 
 16. Сохраните изменения `yml`-файла конфигурации и закройте текстовый редактор Nano, нажав клавиши: `Ctrl+O, Ввод, Ctrl+X`.
 
-## Запуск Elasticsearch
+## Запуск Elasticsearch {: .pageBreakBefore }
 
 Повторите шаги, описанные в этом разделе, для каждого из узлов Elasticsearch.
 
@@ -273,6 +274,7 @@ kbId: 2095
     ```
 
     Пример ответа на запрос:
+    {: .pageBreakBefore }
 
     ``` json
     {
@@ -325,7 +327,7 @@ kbId: 2095
     }        
     ```
 
-## Пример yml-файла конфигурации узла Elasticsearch
+## Пример yml-файла конфигурации узла Elasticsearch {: .pageBreakBefore }
 
 ``` yml
 bootstrap.memory_lock: false

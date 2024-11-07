@@ -35,8 +35,7 @@ sudo apt install NGINX
 - `/etc/NGINX` или `/usr/local/etc/NGINX` — в системах Linux;
 - `<папка установки NGINX>/conf` — в системах Windows.
 
-### Пример конфигурации прокси-сервера
-{: .pageBreakAfterAvoid}
+### Пример конфигурации прокси-сервера {: .pageBreakBefore}
 
 ``` sh
 server {

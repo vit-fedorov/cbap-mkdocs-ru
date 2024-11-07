@@ -26,7 +26,7 @@ kbId: 2499
     - Обновите конфигурацию экземпляра ПО и вспомогательных служб.
     - Перезапустите экземпляр ПО и вспомогательные службы.
 
-## Обновление версии ПО
+## Подготовка экземпляра ПО к обновлению
 
 1. Создайте и перенесите во внешнее хранилище резервную копию базы данных экземпляра ПО. См. статью _«[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]»_.
 2. Перейдите в режим суперпользователя:
@@ -38,18 +38,17 @@ kbId: 2499
     или
 
     ``` sh
-    su -
+    su -
     ```
 
 3. Остановите экземпляр ПО и его вспомогательные службы и удостоверьтесь, что они остановлены:
 
-
     ``` sh
-    systemctl stop apigateway<instanceName> comindware<instanceName>  
-    systemctl status apigateway<instanceName> comindware<instanceName> 
+    systemctl stop apigateway<instanceName> comindware<instanceName>
+    systemctl status apigateway<instanceName> comindware<instanceName>
     ```
 
-    Здесь `<instanceName>` — имя экземпляра ПО.
+    Здесь `<instanceName>` — имя экземпляра ПО.
 
 4. Проверьте, выполняется ли сервис `Comindware.Adapter.Agent.exe`:
 
@@ -67,13 +66,13 @@ kbId: 2499
 {: #NginxBackup}
 
     ``` sh
-    cp /etc/nginx/sites-available/comindware<instanceName> $HOME            
+    cp /etc/nginx/sites-available/comindware<instanceName> $HOME
     ```
 
-    или   
+    или
 
     ``` sh
-    cp /etc/nginx/conf.d/comindware<instanceName> $HOME        
+    cp /etc/nginx/conf.d/comindware<instanceName> $HOME
     ```
 
 6. Проверьте имя и статус экземпляра:
@@ -88,9 +87,9 @@ kbId: 2499
     rm -rf CMW_<osname>
     ```
 
-## Обновление версии экземпляра ПО {: .pageBreakBerore }
+## Обновление версии ПО для экземпляра {: .pageBreakBefore }
 
-1. Скачайте и распакуйте дистрибутив с новой версией ПО (`X.X.XXX.X` — номер версии ПО, `<osname>` — название операционной системы):
+1. Скачайте и распакуйте дистрибутив с новой версией ПО (`X.X.XXX.X` — номер версии ПО, `<osname>` — название операционной системы):
 
     ``` sh
     tar -xf X.X.XXX.X.<osname>.tar.gz
@@ -123,10 +122,10 @@ kbId: 2499
 
     Здесь:
 
-    - `X.X.XXX.X` — номер устанавливаемой версии ПО;
-    - `<instanceName>` — имя обновляемого экземпляра ПО.
+    - `X.X.XXX.X` — номер устанавливаемой версии ПО;
+    - `<instanceName>` — имя обновляемого экземпляра ПО.
 
-6.  Проверьте корректность конфигурации NGINX для экземпляра ПО:
+6. Проверьте корректность конфигурации NGINX для экземпляра ПО:
 
     ``` sh
     cat /etc/nginx/sites-available/comindware<instanceName>
@@ -139,53 +138,55 @@ kbId: 2499
     - Замените в конфигурации адрес сервера Kafka:
 
         ``` sh
-        "Kafka": {  
-            "BootstrapServer": "<KAFKAIP>:9092",  
-            "GroupId": "<instanceName>"  
-        }    
+        "Kafka": {
+            "BootstrapServer": "<KAFKAIP>:9092",
+            "GroupId": "<instanceName>"
+        }
         ```
 
-8. Если выполняется обновление с версии ниже 4.6.1140.0, откройте для редактирования файл конфигурации экземпляра ПО `/usr/share/comindware/configs/instance/<instanceName>.yml`.
+8. Если выполняется обновление с версии ниже 4.6.1140.0, откройте для редактирования файл конфигурации экземпляра ПО `/usr/share/comindware/configs/instance/<instanceName>.yml`.
+
     - Замените в конфигурации следующие директивы:
-    
+
         ``` sh
-        # исходная директива  
-        # backupPath: /var/backups/<instanceName>  
-        # заменить на:  
-        backup.config.default.repository.type: LocalDisk  
-        backup.config.default.repository.localDisk.path: /var/backups/<instanceName> ## backupPath  
-        
-        # исходная директива  
-        # tempPath: /var/lib/comindware/<instanceName>/Temp  
-        # заменить на:  
-        tempStorage.type: LocalDisk  
-        tempStorage.localDisk.path: /var/lib/comindware/<instanceName>/Temp ## tempPath  
-        
-        # исходная директива  
-        # streamsPath: /var/streams/<instanceName>  
-        # заменить на:  
-        userStorage.type: LocalDisk   
+        # исходная директива
+        # backupPath: /var/backups/<instanceName>
+        # заменить на:
+        backup.config.default.repository.type: LocalDisk
+        backup.config.default.repository.localDisk.path: /var/backups/<instanceName> ## backupPath
+
+        # исходная директива
+        # tempPath: /var/lib/comindware/<instanceName>/Temp
+        # заменить на:
+        tempStorage.type: LocalDisk
+        tempStorage.localDisk.path: /var/lib/comindware/<instanceName>/Temp ## tempPath
+
+        # исходная директива
+        # streamsPath: /var/streams/<instanceName>
+        # заменить на:
+        userStorage.type: LocalDisk
         userStorage.localDisk.path: /var/streams/<instanceName>
         ```
 
     - Добавьте в конфигурацию следующие директивы:
-    
+
         ``` sh
-        # Имя конфигурации   
-        configName: <instanceName>    
-        
-        # Имя базы данных Apache Ignite   
-        instanceName: <instanceName>    
-        
-        manageAdapterHost: true  
-        useDataBusNumbers:  
-            - 0  
-            - 1  
-            - 2  
+        # Имя конфигурации
+        configName: <instanceName>
+
+        # Имя базы данных Apache Ignite
+        instanceName: <instanceName>
+
+        manageAdapterHost: true
+        useDataBusNumbers:
+            - 0
+            - 1
+            - 2
             - 3
         ```
 
 9. Удостоверьтесь, что итоговый файл конфигурации `/usr/share/comindware/configs/instance/<instanceName>.yml` выглядит аналогично следующему примеру:
+{: .pageBreakBefore }
 
     ``` sh
     databasePath: /var/lib/comindware/<instanceName>/Database/
@@ -231,12 +232,12 @@ kbId: 2499
         ```
 
     - Если тест пройден, перезапустите NGINX:
-    
+
         ``` sh
         nginx -s reload
         ```
 
-11. Откройте сайт экземпляра ПО в браузере, дождитесь окончания загрузки, одновременно открыв выдачу журналов экземпляра в терминале:   
+11. Откройте сайт экземпляра ПО в браузере, дождитесь окончания загрузки, одновременно открыв выдачу журналов экземпляра в терминале:
 
     ``` sh
     tail -f /var/log/comindware/<instanceName>/Log/sys*

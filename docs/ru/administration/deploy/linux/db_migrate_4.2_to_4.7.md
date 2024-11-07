@@ -23,7 +23,8 @@ kbId: 2340
         - `JAVA_HOME_DLL` — путь к DLL-файлу Open JDK 17, например `C:\Program Files\jdk\jdk-<version>\bin\server\jvm.dll`
         - `JAVA_OPTS` — начальный и максимальный объёмы памяти, выделенные для Java, например `-Xms512m -Xmx3g`
         - `JVM_OPTS`  — конфигурация запуска виртуальной машины Java, рекомендуется использовать следующий набор настроек:
-
+        {: .pageBreakBefore }
+        
         ```
         -Xms512m -Xmx16g -XX:MaxDirectMemorySize=1g -Djava.net.preferIPv4Stack=true -XX:+AlwaysPreTouch -XX:+UseG1GC -XX:+ScavengeBeforeFullGC -XX:+DisableExplicitGC --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.management/com.sun.jmx.mbeanserver=ALL-UNNAMED --add-exports=jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED --add-exports=java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED --add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED -DIGNITE_QUIET=false -DIGNITE_NO_ASCII=true 
         ```
@@ -41,9 +42,7 @@ kbId: 2340
 4. Нажмите кнопку «**Запустить копирование**».
 5. Дождитесь окончания резервного копирования. Статус резервного копирования отображается на вкладке «**Журнал**» страницы «**Резервное копирование**».
 
-![Запуск резервного копирования экземпляра ПО](https://kb.comindware.ru/assets/Pasted image 20230313144815.png)
-
-Запуск резервного копирования экземпляра ПО
+_![Запуск резервного копирования экземпляра ПО](https://kb.comindware.ru/assets/Pasted image 20230313144815.png)_
 
 ## Преобразование базы данных в Windows
 
@@ -103,6 +102,7 @@ kbId: 2340
 7. Создайте **пустую** папку, в которую будут помещены файлы базы данных, преобразованные утилитой миграции, например `C:\DatabaseMigrated`.
 8. Запустите приложение *Windows PowerShell ISE* от  *имени администратора* Windows.
 9. В окно скриптов скопируйте следующие строки:
+{: .pageBreakBefore }
 
     ```
     Get-ChildItem "C:\migrationTool" -recurse | Unblock-File -confirm  
@@ -112,10 +112,10 @@ kbId: 2340
 
     Здесь:
 
-        - `C:\MigrationTool\bin\Comindware.Platform.Migration.exe` — путь к распакованному на [шаге 2](#step_2_conversion) исполняемому файлу утилиты миграции базы данных.
-        - `C:\DataвaseBackup` — путь к папке с базой данных, подлежащей миграции.
-        - `C:\DatabaseMigrated` — путь к папке, в которую будут помещены преобразованные файлы базы данных.
-        - `instanceName` — имя нового экземпляра ПО, который будет создан после миграции. Рекомендуется указывать такое же имя экземпляра ПО, как использовалось в среде Windows. См. статью *«[Изменение конфигурации экземпляра ПО][instance_configure_windows]»*.
+    - `C:\MigrationTool\bin\Comindware.Platform.Migration.exe` — путь к распакованному на [шаге 2](#step_2_conversion) исполняемому файлу утилиты миграции базы данных.
+    - `C:\DataвaseBackup` — путь к папке с базой данных, подлежащей миграции.
+    - `C:\DatabaseMigrated` — путь к папке, в которую будут помещены преобразованные файлы базы данных.
+    - `instanceName` — имя нового экземпляра ПО, который будет создан после миграции. Рекомендуется указывать такое же имя экземпляра ПО, как использовалось в среде Windows. См. статью *«[Изменение конфигурации экземпляра ПО][instance_configure_windows]»*.
 
 10. Выделите первую строку скрипта:
 
@@ -138,7 +138,7 @@ kbId: 2340
 
     _![Папки преобразованной базы данных](https://kb.comindware.ru/assets/Pasted image 20230323134758.png)_
 
-## Развёртывание преобразованной базы данных в экземпляре ПО под управлением Linux
+## Развёртывание преобразованной базы данных в экземпляре ПО под управлением Linux {: .pageBreakBefore }
 
 1. Перейдите в режим суперпользователя:
 

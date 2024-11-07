@@ -35,7 +35,7 @@ kbId: 2292
     sudo apt install -y zabbix-server-mysql zabbix-frontend-php zabbix-nginx-conf zabbix-sql-scripts zabbix-agent
     ```
 
-## Установка и конфигурация MySQL
+## Установка и конфигурация MySQL {: .pageBreakBefore }
 
 1. Установите и активируйте MySQL:
 
@@ -69,6 +69,7 @@ kbId: 2292
     ```
 
 6. Запустите скрипт `mysql_secure_installation` и в интерактивном режиме согласитесь удалить тестовую базу данных и аккаунт анонимного пользователя:
+{: .pageBreakBefore }
 
     ``` sh
     /usr/bin/mysql_secure_installation
@@ -117,7 +118,7 @@ kbId: 2292
     All done!
     ```
 
-## Создание базы данных для Zabbix в MySQL
+## Создание базы данных для Zabbix в MySQL {: .pageBreakBefore }
 
 1. Начните сеанс пользователя `root` в MySQL:
 
@@ -171,7 +172,7 @@ kbId: 2292
 
 3. Сохраните изменения и выйдите.
 
-## 5Настройка Zabbix Frontend
+## 5Настройка Zabbix Frontend {: .pageBreakBefore }
 
 1. Отредактируйте `/etc/zabbix/nginx.conf` :
 
@@ -222,7 +223,7 @@ kbId: 2292
 
     _![Вход в Zabbix Frontend](https://kb.comindware.ru/assets/img_63af07227b847.png)_
 
-## Настройка службы Zabbix Agent
+## Настройка службы Zabbix Agent {: .pageBreakBefore }
 
 !!! note "Примечание"
 

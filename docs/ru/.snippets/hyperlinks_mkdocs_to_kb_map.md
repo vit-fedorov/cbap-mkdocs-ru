@@ -418,6 +418,8 @@
 
 [release_notes_4.7.3023]: {{ kbArticleURLPrefix }}2642
 
+[release_notes_4.7.3084]: {{ kbArticleURLPrefix }}2649
+
 [renaming_organizational_unit]: {{ kbArticleURLPrefix }}2421
 
 [renaming_process_entity]: {{ kbArticleURLPrefix }}2433

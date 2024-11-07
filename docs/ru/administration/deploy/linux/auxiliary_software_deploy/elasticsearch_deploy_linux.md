@@ -1,6 +1,6 @@
 ---
 title: Elasticsearch. Установка в базовой конфигурации
-kbId:
+kbId: 2650
 ---
 
 # Elasticsearch. Установка в базовой конфигурации {: #elasticsearch_deploy_Linux}

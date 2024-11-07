@@ -736,6 +736,8 @@
 
 [paths]: {{ kbArticleURLPrefix }}2502
 
+[system_requirements]: {{ kbArticleURLPrefix }}1271
+
 [upload_size_limit_configure]: {{ kbArticleURLPrefix }}2569
 
 {% endif %}

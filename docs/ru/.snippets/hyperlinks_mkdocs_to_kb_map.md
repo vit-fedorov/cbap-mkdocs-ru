@@ -218,6 +218,10 @@
 
 [release_notes_4.7.2902]: {{ kbArticleURLPrefix }}2639
 
+[release_notes_4.7.3023]: {{ kbArticleURLPrefix }}2642
+
+[release_notes_4.7.3084]: {{ kbArticleURLPrefix }}2649
+
 [restore_complete_backup]: {{ kbArticleURLPrefix }}2335
 
 [restore_test_configure]: {{ kbArticleURLPrefix }}2618
@@ -593,8 +597,6 @@
 [process_diagram_elements_timer_intermediate_event]: {{ kbArticleURLPrefix }}2383
 
 [process_diagram_elements_timer_start_event]: {{ kbArticleURLPrefix }}2375
-
-[release_notes_4.7.3023]: {{ kbArticleURLPrefix }}2642
 
 [process_diagram_publish]: {{ kbArticleURLPrefix }}2360#process_diagram_publish
 

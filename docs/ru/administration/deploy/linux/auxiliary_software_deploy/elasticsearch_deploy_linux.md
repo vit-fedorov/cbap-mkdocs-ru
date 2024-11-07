@@ -9,15 +9,18 @@ kbId:
 
 Для работы **{{ productName }}** требуется сервер Elasticsearch. См. [системные требования][system_requirements].
 
-Здесь представлена инструкция по установке Elasticsearch с помощью дистрибутива **{{ productName }}** в простейшей базовой конфигурации.
+Здесь представлены инструкции по установке Elasticsearch с помощью дистрибутива **{{ productName }}** в простейшей базовой конфигурации.
 
-Инструкции по установке Elasticsearch в иных конфигурациях см. [инструкции на официальном сайте](https://www.elastic.co/guide/en/elasticsearch/reference/current/targz.html) или _«[Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности][elasticsearch_cluster_deploy_no_certificates]»_.
+Инструкции по установке Elasticsearch в иных конфигурациях:
+
+- _[Официальный сайт Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/targz.html)_ (английский язык)
+- _[Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности][elasticsearch_cluster_deploy_no_certificates]_
 
 С помощью дистрибутива **{{ productName }}** можно развернуть сервер Elasticsearch вместе с экземпляром ПО или на отдельном сервере. Для этого укажите ключ `-e` при запуске скрипта `install.sh`. См. _«[Установка, запуск, инициализация и остановка ПО {{ productName }}][deploy_guide_linux]»_.
 
-Установленная таким образом служба Elasticsearch имеет базовую конфигурацию: без аутентификации и с одним узлом. Она доступна по адресу `localhost:9200`.
+Установленная таким образом сервер Elasticsearch имеет базовую конфигурацию: без аутентификации и с одним узлом. Он доступна по адресу `localhost:9200`.
 
-Здесь представлены требования к техническому обеспечению и инструкции по развёртыванию конфигурации службы Elasticsearch в ОС Linux, а также приведен пример типового файла конфигурации. Инструкции представлены для версии Elasticsearch 8.10.2, для других версий содержимое файлов конфигурации и порядок установки могут быть иными.
+Здесь представлены требования к техническому обеспечению и инструкции по развёртыванию сервера Elasticsearch в ОС Linux, а также приведён пример типового файла конфигурации. Инструкции представлены для версии Elasticsearch 8.10.2, для других версий содержимое файлов конфигурации и порядок установки могут быть иными.
 
 ## Требования к серверу
 
@@ -47,39 +50,38 @@ Elasticsearch создает значительную нагрузку на вы
     tar -xf X.X-release-ru-X.X.XXXX.X.<osname>.tar.gz
     ```
 
-3. Перейдите в распакованную папку:
+3. Перейдите в распакованную директорию:
 
     ``` sh
     cd CMW_<osname>/
     ```
 
-4. Установите Elasticsearch из дистрибутива:
+4. Установите Elasticsearch из дистрибутива с помощью ключа `-e`:
 
     ``` sh
-    sh install.sh -e 
+    sh install.sh -e
     ```
 
-5. После установки удостоверьтесь, что Elasticsearch запущен и имеет статус Active (running):
+5. После установки удостоверьтесь, что сервер Elasticsearch запущен и имеет статус `Active (running)`:
 
     ``` sh
     systemctl status elasticsearch
     ```
 
-6. Если сервис Elasticsearch не работает, запустите его:
+6. Если сервер Elasticsearch не работает, запустите его:
 
     ``` sh
     systemctl start elasticsearch
     ```
-
 
 ## Пример типового файла конфигурации Elasticsearch
 
 Ниже приведен пример файла `elasticsearch.yml` для следующей конфигурации сервера:
 
 - сервер Elasticsearch состоит из единственного узла;
-- служба работает в локальной сети;
+- сервер работает в локальной сети;
 - отключена аутентификация;
-- служба доступна через порт `9200`;
+- сервер доступна через порт `9200`;
 - адрес сервера `http://localhost:9200`;
 - путь к файлу конфигурации: `/etc/elasticsearch/elasticsearch.yml`
 
@@ -91,7 +93,7 @@ cluster.name: my-application
 # Имя узла
 node.name: node-1
 # ----------------------------------- Paths ------------------------------------
-# Путь к папке с данными
+# Путь к директории с данными
 path.data: /var/lib/elasticsearch
 # Путь к файлам журнала Elasticsearch
 path.logs: /var/log/elasticsearch
@@ -107,8 +109,8 @@ http.port: 9200 # порт по умолчанию
 # --------------------------------- Discovery ----------------------------------
 # Директива для работы в режиме одного узла
 discovery.type: single-node
-# discovery.seed_hosts: ["192.168.12.1"] # директива для режима кластера
-# cluster.initial_master_nodes: ["192.168.12.1"] # директива для режима кластера
+# discovery.seed_hosts: ["192.168.12.1"] # Директива для режима кластера
+# cluster.initial_master_nodes: ["192.168.12.1"] # Директива для режима кластера
 # ---------------------------------- Various -----------------------------------
 # Нечёткий поиск включён
 search.allow_expensive_queries: true
@@ -130,10 +132,13 @@ xpack.security.transport.ssl:
   #  verification_mode: certificate
   #  keystore.path: certs/transport.p12
   #  truststore.path: certs/transport.p12
-http.host: 0.0.0.0 # IP - слушать внешний интерфейс, 127.0.0.1 - localhost, 0.0.0.0 - все
+# IP - слушать внешний интерфейс, 127.0.0.1 - localhost, 0.0.0.0 - все
+http.host: 0.0.0.0
 ```
 
 --8<-- "related_topics_heading.md"
+
+**[Официальный сайт Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/targz.html)** (английский язык)
 
 **[Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности][elasticsearch_cluster_deploy_no_certificates]**
 

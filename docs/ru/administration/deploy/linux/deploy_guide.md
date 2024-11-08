@@ -47,6 +47,7 @@ kbId: 2344
     ```
 
     Скрипт `install.sh` поддерживает следующие ключи:
+    {: .pageBreakBefore }
 
     - `k` — установить ПО Kafka;
     - `e` — установить ПО Elasticsearch;
@@ -122,7 +123,7 @@ kbId: 2344
     systemctl start elasticsearch  
     ```
 
-## Остановка экземпляра ПО
+## Остановка экземпляра ПО {: .pageBreakBefore }
 
 1. Перейдите в режим суперпользователя:
 

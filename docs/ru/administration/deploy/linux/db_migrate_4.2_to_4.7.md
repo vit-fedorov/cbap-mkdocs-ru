@@ -9,32 +9,32 @@ kbId: 2340
 
 ## Введение
 
-Здесь представлены краткие инструкции по переносу базы данных (БД) **{{ productName }}** (далее «экземпляр ПО») версии 4.2 из ОС Windows 10 в экземпляр ПО версии 4.7 под управлением ОС Linux.
+Здесь представлены краткие инструкции по переносу базы данных (БД) **{{ productName }}** (далее «экземпляр ПО») версии 4.2 из ОС Windows 10 в экземпляр ПО версии 4.7 под управлением ОС Linux.
 
 ## Предварительные условия
 
 ### Необходимое программное обеспечение
 
-- Развёрнутый и работоспособный экземпляр ПО **{{ productName }}** *версии 4.2* под управлением ОС Windows.
-- Установленная утилита миграции *версии 4.7* под управлением ОС Windows для преобразования базы данных.
+- Развёрнутый и работоспособный экземпляр ПО **{{ productName }}** *версии 4.2* под управлением ОС Windows.
+- Установленная утилита миграции *версии 4.7* под управлением ОС Windows для преобразования базы данных.
 - Установленное ПО [Open JDK 17](https://download.java.net/openjdk/jdk17.0.0.1/ri/openjdk-17.0.0.1+2_windows-x64_bin.zip "https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_windows-x64_bin.zip") для ОС Windows.
-    - В переменных среды Windows должна быть заданы следующие переменные для Open JDK (здесь `<version>` — номер версии Open JDK):
-        - `JAVA_HOME` — путь к исполняемым файлам Open JDK 17, например `C:\Program Files\jdk\jdk-<version>`
-        - `JAVA_HOME_DLL` — путь к DLL-файлу Open JDK 17, например `C:\Program Files\jdk\jdk-<version>\bin\server\jvm.dll`
-        - `JAVA_OPTS` — начальный и максимальный объёмы памяти, выделенные для Java, например `-Xms512m -Xmx3g`
-        - `JVM_OPTS`  — конфигурация запуска виртуальной машины Java, рекомендуется использовать следующий набор настроек:
+    - В переменных среды Windows должна быть заданы следующие переменные для Open JDK (здесь `<version>` — номер версии Open JDK):
+        - `JAVA_HOME` — путь к исполняемым файлам Open JDK 17, например `C:\Program Files\jdk\jdk-<version>`
+        - `JAVA_HOME_DLL` — путь к DLL-файлу Open JDK 17, например `C:\Program Files\jdk\jdk-<version>\bin\server\jvm.dll`
+        - `JAVA_OPTS` — начальный и максимальный объёмы памяти, выделенные для Java, например `-Xms512m -Xmx3g`
+        - `JVM_OPTS`  — конфигурация запуска виртуальной машины Java, рекомендуется использовать следующий набор настроек:
         {: .pageBreakBefore }
-        
+
         ```
-        -Xms512m -Xmx16g -XX:MaxDirectMemorySize=1g -Djava.net.preferIPv4Stack=true -XX:+AlwaysPreTouch -XX:+UseG1GC -XX:+ScavengeBeforeFullGC -XX:+DisableExplicitGC --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.management/com.sun.jmx.mbeanserver=ALL-UNNAMED --add-exports=jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED --add-exports=java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED --add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED -DIGNITE_QUIET=false -DIGNITE_NO_ASCII=true 
+        -Xms512m -Xmx16g -XX:MaxDirectMemorySize=1g -Djava.net.preferIPv4Stack=true -XX:+AlwaysPreTouch -XX:+UseG1GC -XX:+ScavengeBeforeFullGC -XX:+DisableExplicitGC --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.management/com.sun.jmx.mbeanserver=ALL-UNNAMED --add-exports=jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED --add-exports=java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED --add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED -DIGNITE_QUIET=false -DIGNITE_NO_ASCII=true
         ```
 
 ### Требования к аппаратному обеспечению
 
-- Для преобразования базы данных свободный объем оперативной памяти должен составлять 10 ГБ объём базы данных (рекомендуется минимум 32 ГБ).
+- Для преобразования базы данных свободный объем оперативной памяти должен составлять 10 ГБ объём базы данных (рекомендуется минимум 32 ГБ).
 - На дисках должно быть достаточно места для хранения исходной БД и преобразованной БД. Объём преобразованной БД может в 10 раз превышать объём исходной БД.
 
-## Создание резервной копии базы данных экземпляра ПО под управлением Windows
+## Создание резервной копии базы данных экземпляра ПО под управлением Windows {: .pageBreakBefore }
 
 1. Откройте веб-сайт системы версии 4.2.
 2. В разделе «**Администрирование**» — «**Инфраструктура**» выберите пункт «**Резервное копирование**».
@@ -44,46 +44,46 @@ kbId: 2340
 
 _![Запуск резервного копирования экземпляра ПО](https://kb.comindware.ru/assets/Pasted image 20230313144815.png)_
 
-## Преобразование базы данных в Windows
+## Преобразование базы данных в Windows {: .pageBreakBefore }
 
-Для преобразования базы данных используется утилита миграции **CBAP Migration Tool** в ОС Windows.
+Для преобразования базы данных используется утилита миграции **CBAP Migration Tool** в ОС Windows.
 
 1. Скачайте архив с утилитой миграции `migrationTool.zip` по ссылке, предоставленной службой поддержки Comindware.
 2. Распакуйте архив `migrationTool.zip`, например, в папку `C:\MigrationTool`
 3. Выделите для Apache Ignite достаточно оперативной памяти, как указано ниже
 
-    1. Откройте в текстовом редакторе файл `C:\MigrationTool\Ignite.config`
+    1. Откройте в текстовом редакторе файл `C:\MigrationTool\Ignite.config`
     2. Найдите блок конфигурации выделенной памяти, например:
 
-    ```
-    <property name="dataRegionConfigurations">  
-              <list>  
-                <bean class="org.apache.ignite.configuration.DataRegionConfiguration">  
-                  <property name="warmUpConfiguration">  
-                    <bean class="org.apache.ignite.configuration.LoadAllWarmUpConfiguration" />  
-                  </property>  
-                  <property name="name" value="Persistent" />  
-                  <property name="persistenceEnabled" value="true" />  
-                  <property name="initialSize" value="#{20L * 1024 * 1024}" />  
-                  <property name="maxSize" value="#{3L * 1024 * 1024 * 1024}" />  
-                  <property name="pageEvictionMode" value="RANDOM_2_LRU" />  
-                  <!--   
-                  < 1 GB             : MIN (256 MB, Data_Region_Size)  
-                  between 1 GB and 8 : GB Data_Region_Size / 4  
-                  > 8 GB             : 2 GB   
-                  -->  
-                  <property name="checkpointPageBufferSize" value="#{256L * 1024 * 1024}" />  
-                </bean>
-    ```
+        ```
+        <property name="dataRegionConfigurations">
+            <list>
+            <bean class="org.apache.ignite.configuration.DataRegionConfiguration">
+                <property name="warmUpConfiguration">
+                    <bean class="org.apache.ignite.configuration.LoadAllWarmUpConfiguration" />
+                </property>
+                <property name="name" value="Persistent" />
+                <property name="persistenceEnabled" value="true" />
+                <property name="initialSize" value="#{20L * 1024 * 1024}" />
+                <property name="maxSize" value="#{3L * 1024 * 1024 * 1024}" />
+                <property name="pageEvictionMode" value="RANDOM_2_LRU" />
+                <!--
+                < 1 GB             : MIN (256 MB, Data_Region_Size)
+                between 1 GB and 8 : GB Data_Region_Size / 4
+                > 8 GB             : 2 GB
+                -->
+                <property name="checkpointPageBufferSize" value="#{256L * 1024 * 1024}" />
+            </bean>
+        ```
 
     3. В показанном выше блоке измените директивы начального и максимального объема памяти, а также объема буфера контрольных точек, как указано ниже:
-
-    ```
-    <property name="initialSize" value="#{1L * 1024 * 1024 * 1024}" />  
-    <property name="maxSize" value="#{8L * 1024 * 1024 * 1024}" />  
-    ...  
-    <property name="checkpointPageBufferSize" value="#{2L * 1024 * 1024 * 1024}" />
-    ```
+        ```
+        <property name="initialSize" value="#{1L * 1024 * 1024 * 1024}" />
+        <property name="maxSize" value="#{8L * 1024 * 1024 * 1024}" />
+        ...
+        <property name="checkpointPageBufferSize" value="#{2L * 1024 * 1024 * 1024}" />
+        ```
+        {: .pageBreakBefore }
 
     4. Сохраните изменённый файл.
 
@@ -95,27 +95,27 @@ _![Запуск резервного копирования экземпляра
 
     _![Переименование файла резервной копии экземпляра ПО](https://kb.comindware.ru/assets/Pasted image 20230313150026.png)_
 
-6. Распакуйте архив резервной копии, например в папку `C:\DatabaseBackup`  
+6. Распакуйте архив резервной копии, например в папку `C:\DatabaseBackup`
 
     _![Распакованное содержимое резервной копии экземпляра ПО](https://kb.comindware.ru/assets/Pasted image 20230313153125.png)_
 
 7. Создайте **пустую** папку, в которую будут помещены файлы базы данных, преобразованные утилитой миграции, например `C:\DatabaseMigrated`.
-8. Запустите приложение *Windows PowerShell ISE* от  *имени администратора* Windows.
+8. Запустите приложение *Windows PowerShell ISE* от *имени администратора* Windows.
 9. В окно скриптов скопируйте следующие строки:
-{: .pageBreakBefore }
 
     ```
-    Get-ChildItem "C:\migrationTool" -recurse | Unblock-File -confirm  
-    [Environment]::SetEnvironmentVariable("IsMigrationMode", "true")  
-    C:\MigrationTool\bin\Comindware.Platform.Migration.exe "C:\DataвaseBackup" "C:\DatabaseMigrated" <instanceName>
+    Get-ChildItem "C:\migrationTool" -recurse | Unblock-File -confirm
+    [Environment]::SetEnvironmentVariable("IsMigrationMode", "true")
+    C:\MigrationTool\bin\Comindware.Platform.Migration.exe "C:\DatabaseBackup" "C:\DatabaseMigrated" <instanceName>
     ```
 
     Здесь:
+    {: .pageBreakBefore }
 
-    - `C:\MigrationTool\bin\Comindware.Platform.Migration.exe` — путь к распакованному на [шаге 2](#step_2_conversion) исполняемому файлу утилиты миграции базы данных.
-    - `C:\DataвaseBackup` — путь к папке с базой данных, подлежащей миграции.
-    - `C:\DatabaseMigrated` — путь к папке, в которую будут помещены преобразованные файлы базы данных.
-    - `instanceName` — имя нового экземпляра ПО, который будет создан после миграции. Рекомендуется указывать такое же имя экземпляра ПО, как использовалось в среде Windows. См. статью *«[Изменение конфигурации экземпляра ПО][instance_configure_windows]»*.
+    - `C:\MigrationTool\bin\Comindware.Platform.Migration.exe` — путь к распакованному на [шаге 2](#step_2_conversion) исполняемому файлу утилиты миграции базы данных.
+    - `C:\DataвaseBackup` — путь к папке с базой данных, подлежащей миграции.
+    - `C:\DatabaseMigrated` — путь к папке, в которую будут помещены преобразованные файлы базы данных.
+    - `instanceName` — имя нового экземпляра ПО, который будет создан после миграции. Рекомендуется указывать такое же имя экземпляра ПО, как использовалось в среде Windows. См. статью *«[Изменение конфигурации экземпляра ПО][instance_configure_windows]»*.
 
 10. Выделите первую строку скрипта:
 
@@ -123,12 +123,12 @@ _![Запуск резервного копирования экземпляра
     Get-ChildItem "C:\migrationTool" -recurse | Unblock-File -confirm
     ```
 
-11. Выполните выделенную строку, нажав клавишу `F8` (или щелкнув строку правой кнопкой мыши и выбрав в контекстном меню пункт **Run Selection**).
+11. Выполните выделенную строку, нажав клавишу `F8` (или щелкнув строку правой кнопкой мыши и выбрав в контекстном меню пункт **Run Selection**).
 12. Дождитесь завершения выполнения команды.
 13. Выделите и выполните вторую и третьи строки скрипта:
 
     ```
-    [Environment]::SetEnvironmentVariable("IsMigrationMode", "true")  
+    [Environment]::SetEnvironmentVariable("IsMigrationMode", "true")
     C:\MigrationTool\bin\Comindware.Platform.Migration.exe "C:\DataвaseBackup" "C:\DatabaseMigrated" <instanceName>
     ```
 
@@ -145,60 +145,63 @@ _![Запуск резервного копирования экземпляра
     **Astra Linux, Ubuntu**
 
     ```
-    sudo -i   
+    sudo -i
+    ```
+
+    **Альт Сервер, РЕД ОС**
+
+    ```
+    su -
+    ```
+
+2. Скачайте, разверните и инициализируйте экземпляр ПО.
+
+    - См. *[Установка и запуск {{ productName }}][deploy_guide_linux]*
+    - При установке ПО используйте ключ `d=clear` — установить ПО без демонстрационной базы данных:
+
+    **Astra Linux, Ubuntu**
+
+    ```
+    sh install.sh -e -p -k -d=clear -u=www-data -g=www-data -i=<instanceName>
 
     ```
 
     **Альт Сервер, РЕД ОС**
-    {{ productName }}
-    ```
-    su -
-    ```
-    2. Скачайте, разверните и инициализируйте экземпляр ПО.
-        - См. *[Установка и запуск {{ productName }}][deploy_guide_linux]*
-        - При установке ПО используйте ключ `d=clear` — установить ПО без демонстрационной базы данных:*Astra Linux, Ubuntu*
 
     ```
-    sh install.sh -e -p -k -d=clear -u=www-data -g=www-data -i=<instanceName>   
-
+    sh install.sh -e -p -k -d=clear -u=_nginx -g=_nginx -i=<instanceName>
     ```
 
-    *Альт Сервер, РЕД ОС*
+    Здесь `<instanceName>` — имя экземпляра ПО. Если не указать этот параметр, будет задано стандартное имя экземпляра: `cmwdata`
+
+3. Остановите сервисы Elasticsearch, NGINX, comindwareinstanceName и Kafka и удостоверьтесь, что они остановлены:
 
     ```
-    sh install.sh -e -p -k -d=clear -u=_nginx -g=_nginx -i=<instanceName>
-    ```
+    systemctl stop elasticsearch
+    systemctl stop nginx
+    systemctl stop kafka
+    systemctl stop comindware<instanceName>
 
-    Здесь `<instanceName>`— имя экземпляра ПО. Если не указать этот параметр, будет задано стандартное имя экземпляра:  `cmwdata`
-    3. Остановите сервисы Elasticsearch, NGINX, comindwareinstanceName и Kafka и удостоверьтесь, что они остановлены:
-
-
-    ```
-    systemctl stop elasticsearch  
-    systemctl stop nginx   
-    systemctl stop kafka  
-    systemctl stop comindware<instanceName>   
-    
-    systemctl status elasticsearch  
-    systemctl status nginx   
-    systemctl status kafka  
-    systemctl status comindware<instanceName>  
+    systemctl status elasticsearch
+    systemctl status nginx
+    systemctl status kafka
+    systemctl status comindware<instanceName>
 
     ```
 
-4. Поместите в папку `/var/lib/comindware/<instanceName>``/Database/` содержимое папки с преобразованной базой данных. См. раздел «**[Преобразование базы данных в Windows](#преобразование-базы-данных-в-windows)**».
-5. Смените владельца папки `/var/lib/comindware/`:   
+4. Поместите в папку `/var/lib/comindware/<instanceName>/Database/` содержимое папки с преобразованной базой данных. См. _«[Преобразование базы данных в Windows](#преобразование-базы-данных-в-windows)»_.
+5. Смените владельца папки `/var/lib/comindware/`:
 
-    **Astra Linux, Ubuntu**    
-
-    ```
-    chown -R www-data:www-data /var/lib/comindware/ 
-    ```
-
-    **Альт Сервер, РЕД ОС**   
+    **Astra Linux, Ubuntu**
 
     ```
-    chown -R _nginx:_nginx /var/lib/comindware/ 
+    chown -R www-data:www-data /var/lib/comindware/
+    ```
+
+    **Альт Сервер, РЕД ОС**
+
+    ```
+    chown -R _nginx:_nginx /var/lib/comindware/
     ```
 
 ## Запуск и проверка конфигурации экземпляра ПО
@@ -206,7 +209,7 @@ _![Запуск резервного копирования экземпляра
 1. Запустите необходимые службы и проверьте их статус:
 
     ```
-    systemctl start elasticsearch kafka nginx comindware<instanceName>  
+    systemctl start elasticsearch kafka nginx comindware<instanceName>
     systemctl status elasticsearch kafka nginx comindware<instanceName>
     ```
 
@@ -218,7 +221,7 @@ _![Запуск резервного копирования экземпляра
 
 3. Откройте в браузере веб-сайт с экземпляром ПО.
 4. Дождитесь инициализации экземпляра ПО. Этот процесс может занять некоторое время. Может потребоваться обновить страницу браузера.
-5. Проверьте и исправьте конфигурацию экземпляра. См. *«[Проверка и настройка конфигурации экземпляра ПО после восстановления из резервной копии][restore_test_configure]».*
+5. Проверьте и исправьте конфигурацию экземпляра. См. *«[Проверка и настройка конфигурации экземпляра ПО после восстановления из резервной копии][restore_test_configure]».*
 
 --8<-- "related_topics_heading.md"
 

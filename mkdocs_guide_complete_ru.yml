@@ -13,6 +13,7 @@ nav:
     - product_description.md
     - Обзор версий:
       - general/changelog/changelog.md
+      - general/changelog/release_notes_4.7.3084.md
       - general/changelog/release_notes_4.7.3023.md
       - general/changelog/release_notes_4.7.2902.md
       - general/changelog/release_notes_4.7.2721.md
@@ -38,18 +39,16 @@ nav:
       - administration/deploy/log_files_event_examples.md
       - administration/deploy/paths.md
       - Развёртывание в Linux:
-        - Установка и запуск {{ productName }}: administration/deploy/linux/deploy_guide.md
+        - Установка и запуск Comindware Business Application Platform: administration/deploy/linux/deploy_guide.md
         - administration/deploy/linux/db_migrate_4.2_to_4.7.md
         - administration/deploy/linux/uninstall_auxiliary_software.md
         - administration/deploy/linux/upgrade_version.md
         - administration/deploy/linux/upload_size_limit_configure.md
         - Вспомогательное ПО. Развёртывание:
-          - administration/deploy/linux/auxiliary_software_deploy/antivirus_exceptions_configure.md
-          - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_defragment.md
-          - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_deploy.md
-          - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_ssl_certificate_configure.md
-          - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_optimize.md
+          - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_deploy_linux.md
           - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_cluster_deploy_no_certificates.md
+          - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_ssl_certificate_configure.md
+          - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_deploy.md
           - administration/deploy/linux/auxiliary_software_deploy/nginx_deploy.md
           - administration/deploy/linux/auxiliary_software_deploy/nginx_geoip_deploy.md
           - administration/deploy/linux/auxiliary_software_deploy/zabbix_agent_deploy.md
@@ -78,6 +77,10 @@ nav:
           - administration/deploy/windows/auxiliary_software_deploy/apache_ignite_deploy_windows.md
           - administration/deploy/windows/auxiliary_software_deploy/elasticsearch_deploy_windows.md
           - administration/deploy/windows/auxiliary_software_deploy/kafka_install_windows.md
+      - Вспомогательное ПО. Оптимизация:
+        - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_optimize.md
+        - administration/deploy/linux/auxiliary_software_deploy/antivirus_exceptions_configure.md
+        - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_defragment.md
     - Резервное копирование и восстановление:
       - administration/backup/index.md
       - Инструкции для Linux:
@@ -302,6 +305,7 @@ nav:
       - business_apps/version_control/index.md
       - business_apps/version_control/manual_version_control.md
     - Выражения для вычислений:
+      - business_apps/expressions/expression_intro.md
       - business_apps/expressions/expression_debug.md
       - Редактор выражений:
         - business_apps/expressions/expression_editor/index.md

@@ -32,8 +32,6 @@ nav:
       - administration/deploy/linux/upgrade_version.md
       - administration/deploy/linux/upload_size_limit_configure.md
       - Вспомогательное ПО. Развёртывание:
-        - administration/deploy/linux/auxiliary_software_deploy/antivirus_exceptions_configure.md
-        - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_defragment.md
         - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_deploy.md
         - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_ssl_certificate_configure.md
         - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_optimize.md
@@ -66,6 +64,10 @@ nav:
         - administration/deploy/windows/auxiliary_software_deploy/apache_ignite_deploy_windows.md
         - administration/deploy/windows/auxiliary_software_deploy/elasticsearch_deploy_windows.md
         - administration/deploy/windows/auxiliary_software_deploy/kafka_install_windows.md
+    - Вспомогательное ПО. Оптимизация:
+      - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_optimize.md
+      - administration/deploy/linux/auxiliary_software_deploy/antivirus_exceptions_configure.md
+      - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_defragment.md
   - Резервное копирование и восстановление:
     - administration/backup/index.md
     - Инструкции для Linux:
@@ -176,6 +178,7 @@ nav:
       - business_apps/version_control/manual_version_control.md
   - Обзор версий:
     - general/changelog/changelog.md
+    - general/changelog/release_notes_4.7.3084.md
     - general/changelog/release_notes_4.7.3023.md
     - general/changelog/release_notes_4.7.2902.md
     - general/changelog/release_notes_4.7.2721.md

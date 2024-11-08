@@ -42,8 +42,11 @@ nav:
     - administration/deploy/windows/article-2298-Остановка экземпляра системы с помощью Диспетчера служб IIS.md
     - administration/deploy/windows/article-2300-Запуск экземпляра системы с помощью Диспетчера служб IIS.md
     - administration/deploy/windows/article-2316-Comindware Architect. Инструкции по установке экземпляра ПО в ОС Windows.md
-    - Вспомогательное ПО. Развёртывание:
+    - Вспомогательное ПО. Оптимизация:
+      - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_optimize.md
       - administration/deploy/linux/auxiliary_software_deploy/antivirus_exceptions_configure.md
+      - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_defragment.md
+    - Вспомогательное ПО. Развёртывание:
       - administration/deploy/windows/auxiliary_software_deploy/zabbix_agent_deploy_windows.md
       - administration/deploy/windows/auxiliary_software_deploy/apache_ignite_deploy_windows.md
       - administration/deploy/windows/auxiliary_software_deploy/elasticsearch_deploy_windows.md

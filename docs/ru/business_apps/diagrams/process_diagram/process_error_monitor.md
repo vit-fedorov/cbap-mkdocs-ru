@@ -104,36 +104,36 @@ hide:
 5. Соедините развилку «**или/или**» с задачей _«Ошибка выполнения скрипта»_ и следующим этапом процесса.
 6. Настройте исходящие потоки на развилке «**или/или**»:
 
-    <table block="markdown">
-    <tbody block="markdown">
-    <tr block="markdown">
-    <th block="markdown">
+    <table markdown="block">
+    <tbody markdown="block">
+    <tr markdown="block">
+    <th markdown="block">
     Поток «иначе»
     </th>
-    <th block="markdown">
+    <th markdown="block">
     Конечная точка
     </th>
-    <th block="markdown">
+    <th markdown="block">
     Условие
     </th>
     </tr>
-    <tr block="markdown">
-    <td block="markdown">
+    <tr markdown="block">
+    <td markdown="block">
     Флажок установлен
     </td>
-    <td block="markdown">
+    <td markdown="block">
     Пользовательская задача _«Ошибка выполнения скрипта»_
     </td>
-    <td block="markdown">
+    <td markdown="block">
     </td>
     </tr>
-    <tr block="markdown">
-    <td block="markdown">
+    <tr markdown="block">
+    <td markdown="block">
     </td>
-    <td block="markdown">
+    <td markdown="block">
     Следующий этап процесса
     </td>
-    <td block="markdown">
+    <td markdown="block">
     **Формула:**
 
     ``` cs

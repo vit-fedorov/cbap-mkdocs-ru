@@ -216,7 +216,7 @@ nav:
       - business_apps/scenarios/scenario_elements.md
       - business_apps/scenarios/scenario_variables.md
     - business_apps/online_store.md
-    - Управление версиями: 
+    - Управление версиями:
       - business_apps/version_control/index.md
       - business_apps/version_control/manual_version_control.md
       - business_apps/version_control/git_version_control.md

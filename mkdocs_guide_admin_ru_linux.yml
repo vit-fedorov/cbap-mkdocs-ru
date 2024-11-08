@@ -140,9 +140,9 @@ nav:
       - business_apps/navigation_sections/page_access_control.md
       # - business_apps/navigation_sections/my_tasks_page_configure.md
     - Управление версиями:
-      - business_apps/version_control/git_version_control.md
       - business_apps/version_control/index.md
       - business_apps/version_control/manual_version_control.md
+      - business_apps/version_control/git_version_control.md
   - Обзор версий:
     - general/changelog/changelog.md
     - general/changelog/release_notes_4.7.3084.md

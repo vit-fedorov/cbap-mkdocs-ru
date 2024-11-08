@@ -1,9 +1,9 @@
 ---
-title: Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности
+title: Развёртывание кластера Elasticsearch без сертификатов подлинности
 kbId: 2095
 ---
 
-# Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности {: #elasticsearch_cluster_deploy_no_certificates}
+# Развёртывание кластера Elasticsearch без сертификатов подлинности {: #elasticsearch_cluster_deploy_no_certificates}
 
 ## Введение
 

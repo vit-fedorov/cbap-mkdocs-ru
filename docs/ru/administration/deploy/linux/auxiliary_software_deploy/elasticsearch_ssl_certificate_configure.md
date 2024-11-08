@@ -1,9 +1,9 @@
 ---
-title: Формирование SSL-сертификатов и настройка кластера Elasticsearch для их использования
+title: Настройка SSL-сертификатов на кластере Elasticsearch
 kbId: 2337
 ---
 
-# Формирование SSL-сертификатов и настройка кластера Elasticsearch для их использования {: #elasticsearch_ssl_certificate_configure}
+# Настройка SSL-сертификатов на кластере Elasticsearch {: #elasticsearch_ssl_certificate_configure}
 
 ## Введение
 

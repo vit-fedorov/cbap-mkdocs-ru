@@ -1,9 +1,10 @@
 ---
 title: Регистрация и вход
+kbTitle: Регистрация и вход. Настройка самостоятельной регистрации, CAPTCHA и входа через OpenID и Active Directory
 kbId: 2196
 ---
 
-# Регистрация и вход. Настройка самостоятельной регистрации, CAPTCHA и входа через OpenID и Active Directory {: #registration_and_login}
+# Настройка самостоятельной регистрации, CAPTCHA и входа через OpenID и AD {: #registration_and_login}
 
 ## Введение
 

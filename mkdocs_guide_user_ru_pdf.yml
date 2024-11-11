@@ -29,7 +29,7 @@ plugins:
     author: comindware.ru
     toc_title: Оглавление
     toc_level: 3
-    output_path: Comindware Business Application Platform. Руководство пользователя. 29.10.2024.pdf
+    output_path: ../Comindware Business Application Platform. Руководство пользователя. 11.11.2024.pdf
     custom_template_path: pdf_templates
     two_columns_level: 0
     heading_shift: false

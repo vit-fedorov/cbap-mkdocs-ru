@@ -19,7 +19,7 @@ plugins:
       remove_comments: false
   with-pdf:
     cover_subtitle: Руководство системного администратора для Linux
-    output_path: Comindware Business Application Platform. Руководство системного администратора для OS Linux. 29.10.2024.pdf
+    output_path: ../Comindware Business Application Platform. Руководство системного администратора для OS Linux. 11.11.2024.pdf
     cover: true
     cover_logo: 'assets/images/comindware_logo.svg'
     cover_title: Comindware Business Application Platform 4.7

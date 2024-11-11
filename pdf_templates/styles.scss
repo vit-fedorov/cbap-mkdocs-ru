@@ -154,6 +154,10 @@ h6 {
     margin-right: -1.2rem;
 }
 
+.md-typeset li .admonition p.admonition-title {
+    text-indent: 0rem;
+}
+
 .pageBreakAfterAvoid {
     break-after: avoid !important;
 }

@@ -246,6 +246,9 @@ _![Настройка свойств сервисного аккаунта дл�
     vim /etc/resolv.conf
     ```
 
+    {{ pdfEndOfBlockHack }}
+    {: .pageBreakBefore }
+
 3. Укажите машину `<DCName>` в качестве сервера имён `nameserver`:
 {: .pageBreakBefore }
 
@@ -294,6 +297,9 @@ _![Настройка свойств сервисного аккаунта дл�
     ``` sh
     vim /etc/ntp.conf
     ```
+
+    {{ pdfEndOfBlockHack }}
+    {: .pageBreakAfter}
 
 3. Добавьте в файл конфигурации `ntp.conf` поле `server <DOMAIN.NAME> iburst burst prefer`:
 
@@ -537,7 +543,6 @@ _![Пример файла instanceName.yml с директивой  isLinuxSSOA
                     grpc_pass grpc_cmwdata;
             }
     }
-
     server {
             listen       80 default;
             root         /var/www/cmwdata;
@@ -546,10 +551,14 @@ _![Пример файла instanceName.yml с директивой  isLinuxSSOA
             client_body_timeout 3h;
             grpc_read_timeout 3h;
             grpc_send_timeout 3h;
-
             client_max_body_size 300m;
             fastcgi_read_timeout 10000;
 
+    {% if pdfOutput %}
+    ```
+
+    ``` sh
+    {% endif %}
                 location /async {
                     grpc_pass grpc_cmwdata;
                 }
@@ -598,7 +607,7 @@ _![Пример файла instanceName.yml с директивой  isLinuxSSOA
     systemctl status comindware<instanceName>
     ```
 
-### Изменение конфигурации экземпляра ПО
+### Изменение конфигурации экземпляра ПО {: .pageBreakBefore }
 
 1. Войдите в экземпляр ПО с помощью браузера.
 2. Откройте свойства [подключения к серверу каталогов][ad_connection], которое будет использоваться для синхронизации аккаунтов.

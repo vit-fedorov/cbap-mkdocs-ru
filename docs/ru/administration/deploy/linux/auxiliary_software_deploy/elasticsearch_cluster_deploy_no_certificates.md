@@ -85,7 +85,7 @@ kbId: 2095
 
 4. Обратите внимание на строку `The generated password for the elastic built-in superuser is` — напротив неё будет выведен автоматически сформированный пароль для встроенного суперпользователя elastic. **Сохраните этот пароль.**
 
-## Конфигурация Elasticsearch
+## Конфигурация Elasticsearch {: .pageBreakBefore }
 
 Повторите шаги, описанные в этом разделе, для каждого из узлов Elasticsearch.
 
@@ -125,8 +125,10 @@ kbId: 2095
     sudo nano /etc/elasticsearch/elasticsearch.yml
     ```
 
+    {{ pdfEndOfBlockHack }}
+    {: .pageBreakAfter }
+
 6. Скопируйте в созданный файл конфигурации следующее содержимое:
-{: .pageBreakBefore }
 
     ``` yml
     bootstrap.memory_lock: false

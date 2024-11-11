@@ -26,7 +26,7 @@ kbId: 2596
 
     Сведения о расположении файлов экземпляров ПО см. в статье *«[Пути и содержимое папок экземпляра ПО][paths]»*.
 
-## Остановка экземпляров ПО — все ОС Linux
+## Остановка экземпляров ПО — все ОС Linux {: .pageBreakBefore }
 
 Перед удалением вспомогательных компонентов ПО, остановите все работающие экземпляры ПО.
 
@@ -36,7 +36,7 @@ kbId: 2596
     sudo -i
     ```
 
-2. Остановите экземпляр ПО (*`<instancename>`* — имя экземпляра ) и удостоверьтесь, что он остановлен:
+2. Остановите экземпляр ПО (`<instancename>` — имя экземпляра ) и удостоверьтесь, что он остановлен:
 
     ``` shell
     systemctl stop comindware<instancename>
@@ -45,7 +45,7 @@ kbId: 2596
 
 3. Если развёрнуто несколько экземпляров ПО, повторите шаг 2 для остальных экземпляров.
 
-## Удаление компонентов ПО — Альт Сервер
+## Удаление компонентов ПО — Альт Сервер  {: .pageBreakBefore }
 
 1. Перед выполнением последующих инструкций перейдите в режим суперпользователя:
 
@@ -153,7 +153,7 @@ kbId: 2596
     rm /var/www/.cmw_environment/nginx
     ```
 
-## Удаление компонентов ПО — Astra Linux
+## Удаление компонентов ПО — Astra Linux  {: .pageBreakBefore }
 
 1. Перед выполнением последующих инструкций перейдите в режим суперпользователя:
 
@@ -280,7 +280,7 @@ kbId: 2596
     rm /var/www/.cmw_environment/nginx
     ```
 
-## Удаление компонентов ПО — Debian
+## Удаление компонентов ПО — Debian  {: .pageBreakBefore }
 
 1. Перед выполнением последующих инструкций перейдите в режим суперпользователя:
 
@@ -389,7 +389,7 @@ kbId: 2596
     rm /var/www/.cmw_environment/nginx
     ```
 
-## Удаление компонентов ПО — РЕД ОС
+## Удаление компонентов ПО — РЕД ОС  {: .pageBreakBefore }
 
 ### Удаление JRE
 
@@ -427,7 +427,7 @@ kbId: 2596
     ``` shell
     rm -rf /usr/share/kafka
     ```
-{: .pageBreakAfter }
+
 3. Удалите журналы Kafka:
     ``` shell
     rm -rf /var/log/comindware/.kafka
@@ -437,7 +437,7 @@ kbId: 2596
     rm /var/www/.cmw_environment/kafka
     ```
 
-### Удаление Mono
+### Удаление Mono {: .pageBreakBefore }
 
 1. Удалите бинарные файлы Mono:
     ``` shell
@@ -459,7 +459,7 @@ kbId: 2596
         /usr/lib/mono \
         /usr/include/mono-2.0
     ```
-{: .pagebreakAfter }
+
 2. Удалите ссылки на исполняемые файлы:
     ``` shell
     rm -rf /usr/bin/xsp* \
@@ -495,7 +495,12 @@ kbId: 2596
         /usr/bin/csharp \
         /usr/bin/asp-*
     ```
+
+    {{ pdfEndOfBlockHack }}
+    {: .pageBreakAfter }
+
 3. Удалите конфигурацию Mono:
+
     ``` shell
     rm /var/www/.cmw_environment/mono
     ```
@@ -654,6 +659,9 @@ kbId: 2596
         /usr/bin/asp-*
     ```
 
+    {{ pdfEndOfBlockHack }}
+    {: .pageBreakAfter }
+
 3. Удалите конфигурацию Mono:
 
     ``` shell
@@ -695,7 +703,7 @@ kbId: 2596
     rm /var/www/.cmw_environment/nginx
     ```
 
-## Удаление компонентов ПО — Ubuntu
+## Удаление компонентов ПО — Ubuntu {: .pageBreakBefore }
 
 1. Перед выполнением последующих инструкций перейдите в режим суперпользователя:
 

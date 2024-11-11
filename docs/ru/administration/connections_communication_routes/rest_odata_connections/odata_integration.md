@@ -36,6 +36,9 @@ kbId: 2315
 
     _![Переход к разделу «Интеграции» приложения](integrations_list.png)_
 
+    {{ pdfEndOfBlockHack }}
+    {: .pageBreakBefore }
+
 4. В списке интеграций нажмите кнопку «**Создать**».
 
     _![Создание конфигурации интеграции](integrations_configuration_create.png)_

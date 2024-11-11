@@ -172,7 +172,7 @@ kbId: 2292
 
 3. Сохраните изменения и выйдите.
 
-## 5Настройка Zabbix Frontend {: .pageBreakBefore }
+## Настройка Zabbix Frontend {: .pageBreakBefore }
 
 1. Отредактируйте `/etc/zabbix/nginx.conf` :
 

@@ -43,6 +43,7 @@ _![Создание подключения для синхронизации с 
         [https://www.odata.org/odata-services/](https://www.odata.org/odata-services/) 
 
 - **Тип аутентификации**:
+{: .pageBreakBefore }
     - **Без аутентификации**
     - **Обычная**
     - **Windows**

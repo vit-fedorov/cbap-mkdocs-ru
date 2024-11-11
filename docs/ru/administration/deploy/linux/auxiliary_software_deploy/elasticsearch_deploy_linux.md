@@ -74,7 +74,7 @@ Elasticsearch создает значительную нагрузку на вы
     systemctl start elasticsearch
     ```
 
-## Пример типового файла конфигурации Elasticsearch
+## Пример типового файла конфигурации Elasticsearch {: .pageBreakBefore }
 
 Ниже приведен пример файла `elasticsearch.yml` для следующей конфигурации сервера:
 
@@ -118,6 +118,11 @@ search.allow_expensive_queries: true
 action.destructive_requires_name: true
 # Запись данных в индексы включена
 indices.id_field_data.enabled: true
+{% if pdfOutput %}
+```
+
+``` sh
+{% endif %}
 # ---------------------------------- Security ----------------------------------
 # Аутентификация отключена
 xpack.security.enabled: false

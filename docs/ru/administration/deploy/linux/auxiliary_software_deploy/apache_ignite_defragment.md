@@ -48,6 +48,7 @@ kbId: 2495
     ```
     cd /home/username/ignite/bin
     ```
+    {{ pdfEndOfBlockHack }}
 
 8. В файле `control.sh` измените директиву `DEFAULT_CONFIG`:
 {: .pageBreakBefore }
@@ -91,7 +92,7 @@ kbId: 2495
     systemctl restart comindwareinstancename
     ```
 
-## Решение возможных проблем
+## Решение возможных проблем {: .pageBreakBefore }
 
 Если во время дефрагментации возникнет ошибка _«Слишком много открытых файлов»_ (_Too many open files_), выполните указанные ниже шаги (пример приведён для Astra Linux).
 

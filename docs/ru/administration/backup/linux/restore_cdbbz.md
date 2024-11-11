@@ -81,8 +81,10 @@ kbId: 2500
     chmod -R 766 /var/lib/comindware/<instanceName>
     ```
 
+    {{ pdfEndOfBlockHack }}
+    {: .pageBreakBefore }
+
 9. Назначьте перенесенным каталогам владельца:
-{: .pageBreakBefore }
 
     **Astra Linux, Ubuntu, Rocky**
 

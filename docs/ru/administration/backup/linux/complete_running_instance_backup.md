@@ -188,6 +188,9 @@ kbId: 2117
     mkdir /var/www/backups/backup_$now/wal
     ```
 
+    {{ pdfEndOfBlockHack }}
+    {: .pageBreakBefore }
+
 6. Перенесите и скопируйте компоненты в директорию резервной копии:
 
     ``` sh

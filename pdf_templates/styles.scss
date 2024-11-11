@@ -48,6 +48,12 @@
 //     text-indent: 0;
 // }
 
+
+.md-typeset .admonition ul li > p,
+.md-typeset .admonition ol li > p {
+    text-indent: 0;
+}
+
 article.md-typeset {
     margin-left: 0;
 }
@@ -84,17 +90,17 @@ h6 {
 }
 
 .pdfEndOfBlockHack {
-    visibility: hidden;
-    font-size: 0px;
-    max-height: 0px;
-    padding: 0px;
+    visibility: hidden !important;
+    font-size: 0px !important;
+    max-height: 0px !important;
+    padding: 0px !important;
+    margin: 0px !important;
 }
 
 .pageBreakAfter {
     break-after: always !important;
 }
 
-// TODO fix extra spacing before line breaks
 .pageBreakBefore {
     break-before: always !important;
 }

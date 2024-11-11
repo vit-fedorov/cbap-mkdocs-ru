@@ -69,9 +69,8 @@ kbId: 2292
     ```
 
 6. Запустите скрипт `mysql_secure_installation` и в интерактивном режиме согласитесь удалить тестовую базу данных и аккаунт анонимного пользователя:
-{: .pageBreakBefore }
 
-    ``` sh
+    ``` { .sh .pageBreakAfter }
     /usr/bin/mysql_secure_installation
 
     Securing the MySQL server deployment.
@@ -88,7 +87,11 @@ kbId: 2292
     Using existing password for root.
 
     Change the password for root ? (Press y|Y for Yes, any other key for No) : n
+    {% if pdfOutput %}
+    ```
 
+    ``` {: .sh title="Удаление анонимного пользователя MySQL — продолжение" .pageBreakBefore }
+    {% endif %}
     By default, a MySQL installation has an anonymous user,
     allowing anyone to log into MySQL without having to have
     a user account created for them. This is intended only for
@@ -215,6 +218,7 @@ kbId: 2292
     _![Завершение установки Zabbix Frontend](https://kb.comindware.ru/assets/img_63af071cc182b.png)_
 
 5. В открывшейся форме ведите учётные данные встроенного суперпользователя:
+{: .pageBreakBefore }
 
     ``` sh
     Admin

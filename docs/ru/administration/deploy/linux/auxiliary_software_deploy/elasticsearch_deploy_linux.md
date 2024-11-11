@@ -85,7 +85,7 @@ Elasticsearch создает значительную нагрузку на вы
 - адрес сервера `http://localhost:9200`;
 - путь к файлу конфигурации: `/etc/elasticsearch/elasticsearch.yml`
 
-``` sh
+``` {: .sh .pageBreakAfter }
 #======================== Elasticsearch Configuration =========================
 # Имя кластера
 cluster.name: my-application

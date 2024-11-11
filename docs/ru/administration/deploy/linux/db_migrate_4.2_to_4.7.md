@@ -55,7 +55,7 @@ _![Запуск резервного копирования экземпляра
     1. Откройте в текстовом редакторе файл `C:\MigrationTool\Ignite.config`
     2. Найдите блок конфигурации выделенной памяти, например:
 
-        ```
+        ``` xml
         <property name="dataRegionConfigurations">
             <list>
             <bean class="org.apache.ignite.configuration.DataRegionConfiguration">
@@ -77,7 +77,7 @@ _![Запуск резервного копирования экземпляра
         ```
 
     3. В показанном выше блоке измените директивы начального и максимального объема памяти, а также объема буфера контрольных точек, как указано ниже:
-        ```
+        ``` xml
         <property name="initialSize" value="#{1L * 1024 * 1024 * 1024}" />
         <property name="maxSize" value="#{8L * 1024 * 1024 * 1024}" />
         ...
@@ -103,7 +103,7 @@ _![Запуск резервного копирования экземпляра
 8. Запустите приложение *Windows PowerShell ISE* от *имени администратора* Windows.
 9. В окно скриптов скопируйте следующие строки:
 
-    ```
+    ``` sh
     Get-ChildItem "C:\migrationTool" -recurse | Unblock-File -confirm
     [Environment]::SetEnvironmentVariable("IsMigrationMode", "true")
     C:\MigrationTool\bin\Comindware.Platform.Migration.exe "C:\DatabaseBackup" "C:\DatabaseMigrated" <instanceName>
@@ -119,7 +119,7 @@ _![Запуск резервного копирования экземпляра
 
 10. Выделите первую строку скрипта:
 
-    ```
+    ``` sh
     Get-ChildItem "C:\migrationTool" -recurse | Unblock-File -confirm
     ```
 
@@ -127,7 +127,7 @@ _![Запуск резервного копирования экземпляра
 12. Дождитесь завершения выполнения команды.
 13. Выделите и выполните вторую и третьи строки скрипта:
 
-    ```
+    ``` sh
     [Environment]::SetEnvironmentVariable("IsMigrationMode", "true")
     C:\MigrationTool\bin\Comindware.Platform.Migration.exe "C:\DataвaseBackup" "C:\DatabaseMigrated" <instanceName>
     ```
@@ -144,13 +144,13 @@ _![Запуск резервного копирования экземпляра
 
     **Astra Linux, Ubuntu**
 
-    ```
+    ``` sh
     sudo -i
     ```
 
     **Альт Сервер, РЕД ОС**
 
-    ```
+    ``` sh
     su -
     ```
 
@@ -161,14 +161,14 @@ _![Запуск резервного копирования экземпляра
 
     **Astra Linux, Ubuntu**
 
-    ```
+    ``` sh
     sh install.sh -e -p -k -d=clear -u=www-data -g=www-data -i=<instanceName>
 
     ```
 
     **Альт Сервер, РЕД ОС**
 
-    ```
+    ``` sh
     sh install.sh -e -p -k -d=clear -u=_nginx -g=_nginx -i=<instanceName>
     ```
 
@@ -176,7 +176,7 @@ _![Запуск резервного копирования экземпляра
 
 3. Остановите сервисы Elasticsearch, NGINX, comindwareinstanceName и Kafka и удостоверьтесь, что они остановлены:
 
-    ```
+    ``` sh
     systemctl stop elasticsearch
     systemctl stop nginx
     systemctl stop kafka
@@ -194,13 +194,13 @@ _![Запуск резервного копирования экземпляра
 
     **Astra Linux, Ubuntu**
 
-    ```
+    ``` sh
     chown -R www-data:www-data /var/lib/comindware/
     ```
 
     **Альт Сервер, РЕД ОС**
 
-    ```
+    ``` sh
     chown -R _nginx:_nginx /var/lib/comindware/
     ```
 
@@ -208,14 +208,14 @@ _![Запуск резервного копирования экземпляра
 
 1. Запустите необходимые службы и проверьте их статус:
 
-    ```
+    ``` sh
     systemctl start elasticsearch kafka nginx comindware<instanceName>
     systemctl status elasticsearch kafka nginx comindware<instanceName>
     ```
 
 2. Перезапустите систему:
 
-    ```
+    ``` sh
     reboot
     ```
 

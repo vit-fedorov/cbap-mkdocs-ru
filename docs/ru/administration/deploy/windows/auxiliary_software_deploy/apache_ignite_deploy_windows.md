@@ -58,7 +58,7 @@ Apache Ignite — это распределенная высокопроизво
 {% if pdfOutput %}
 ```
 
-``` xml
+``` xml title="Пример файла конфигурации Ignite — продолжение"
 {% endif %}
         <jvmOptions>
             <string>-Xms512m</string>

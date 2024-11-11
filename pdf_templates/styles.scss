@@ -13,51 +13,76 @@
     display: inline;
 }
 
+.md-typeset ul > li {
+    margin-left: 0rem !important;
+}
 
-// TODO implement text-indent only for P without ruining the rest of formatting
-// .md-typeset p:not([class]) {
-//     text-indent: 1.5rem;
-//     // margin-left: 0rem;
-//     margin-bottom: .2rem;
-//     margin-top: .2rem;
-// }
+.md-typeset ol > li {
+    margin-left: -0.5rem !important;
+}
 
-// .md-typeset li p,
-// .md-typeset ul li p,
-// .md-typeset ul li > p,
-// .md-typeset ol li > p,
-// .md-typeset .admonition li p:not([class]) {
-//     text-indent: 0;
-//     margin-left: inherit;
-//     margin-bottom: inherit;
-//     margin-top: inherit;
-// }
+.md-typeset ul li > ul {
+    margin-left: 1.2rem !important;
+}
 
-// .md-typeset .admonition ul li {
-//     margin-left: 1.5rem;
-//     padding-inline-start: 1.5rem !important;
-// }
+.md-typeset ul {
+    margin-left: 0.5rem !important;
+}
 
-// .md-typeset ul li,
-// .md-typeset ol li > ul li,
-// ol li {
-//     padding-inline-start: 1.5rem !important;
-// }
+.md-typeset .admonition > ul {
+    margin-left: 1rem !important;
+}
 
-// .md-typeset p:not([class]) {
-//     text-indent: 0;
-// }
+.md-typeset .admonition p + ul {
+    margin-left: 2.7rem !important;
+}
 
+.md-typeset p + ul {
+    margin-left: 1.5rem !important;
+}
 
-.md-typeset .admonition ul li > p,
-.md-typeset .admonition ol li > p {
+.md-typeset ol > li > ul {
+    margin-left: 1.3rem !important;
+}
+
+.md-typeset ul li::before {
+    content: "    ";
+}
+
+.md-typeset ul li {
+    text-indent: -1.2rem;
+
+    p:not(:first-child, [class]){
+        text-indent: 1.5rem;
+        margin-left: 0.1rem;
+    }
+
+    .fa-light {
+        display: inline;
+    }
+
+}
+
+.md-typeset ul li > p:first-child {
+    display: inline;
+    margin-left: -0.2rem;
     text-indent: 0;
 }
+
+.md-typeset ol li > p:first-child
+{
+    display: inline;
+    text-indent: 0;
+}
+
+// .md-typeset .admonition ul li > p,
+// .md-typeset .admonition ol li > p {
+//     text-indent: 0;
+// }
 
 article.md-typeset {
     margin-left: 0;
 }
-
 
 article>.md-typeset>h1,
 h2,

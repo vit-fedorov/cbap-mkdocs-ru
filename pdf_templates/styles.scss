@@ -129,7 +129,8 @@ h6 {
 
 .pdfEndOfBlockHack,
 .pdfEndOfBlockHack + p:empty,
-.pageBreakAfter + p:empty
+.pageBreakAfter + p:empty,
+p:empty
  {
     visibility: hidden !important;
     font-size: 0px !important;

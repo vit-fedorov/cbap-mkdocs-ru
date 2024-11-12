@@ -100,14 +100,14 @@ kbId: 2117
 
 9. Смените владельца директории `apache-ignite`:
 
-    *Astra Linux, Ubuntu, Rocky*
+    **Astra Linux, Ubuntu, Rocky**
 
     ``` sh
     chown -R www-data:www-data apache-ignite/
 
     ```
 
-    *Альт Сервер*
+    **Альт Сервер**
 
     ``` sh
     chown -R _nginx:_nginx apache-ignite/
@@ -133,14 +133,14 @@ kbId: 2117
 
 13. Смените владельца директории `backups`:
 
-    *Astra Linux, Ubuntu, Rocky*
+    **Astra Linux, Ubuntu, Rocky**
 
     ``` sh
     chown -R www-data:www-data backups/
 
     ```
 
-    *Альт Сервер*
+    **Альт Сервер**
 
     ``` sh
     chown -R _nginx:_nginx backups/

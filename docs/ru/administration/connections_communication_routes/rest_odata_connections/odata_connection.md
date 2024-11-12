@@ -42,6 +42,9 @@ _![Создание подключения для синхронизации с 
         
         [https://www.odata.org/odata-services/](https://www.odata.org/odata-services/) 
 
+    {{ pdfEndOfBlockHack }}
+    {: .pageBreakAfter }
+
 - **Тип аутентификации**:
 {: .pageBreakBefore }
     - **Без аутентификации**

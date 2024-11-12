@@ -32,7 +32,7 @@ Apache Ignite — это распределенная высокопроизво
 
 2. Если запустить Ignite не удалось, проверьте информацию в журнале, по умолчанию он хранится в папке `%IGNITE_HOME%\work\log`.
 
-## Пример файла конфигурации Ignite
+## Пример файла конфигурации Ignite {: .pageBreakBefore }
 
 Для стабильной работы Ignite вместе с {{ productName }} важны следующие директивы в данном примере:
 
@@ -42,7 +42,7 @@ Apache Ignite — это распределенная высокопроизво
 - `<workDirectory>C:\apache-ignite-2.16.0-bin\</workDirectory>>` — укажите рабочую папку Ignite.
 - `<igniteInstanceName>Comindware_Instance2</igniteInstanceName>` — укажите имя экземпляра Ignite.
 
-``` xml
+``` {: .xml title="Пример файла конфигурации Ignite" .pageBreakAfter }
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
     <configSections>
@@ -58,7 +58,7 @@ Apache Ignite — это распределенная высокопроизво
 {% if pdfOutput %}
 ```
 
-``` xml title="Пример файла конфигурации Ignite — продолжение"
+``` { .xml title="Пример файла конфигурации Ignite — продолжение" .pageBreakBefore }
 {% endif %}
         <jvmOptions>
             <string>-Xms512m</string>

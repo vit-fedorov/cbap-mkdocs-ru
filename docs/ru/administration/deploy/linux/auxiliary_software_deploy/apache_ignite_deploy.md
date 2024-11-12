@@ -33,7 +33,7 @@ Apache Ignite в минимально необходимой конфигура�
 1. Запустите службу Apache Ignite с помощью команды: `/$IGNITE_HOME/bin/ignite.sh -v`; параметр `-v` включает вывод подробных данных в журнал (по умолчанию в журнал Ignite выводятся только краткие сведения).
 2. Если запустить Ignite не удалось, проверьте информацию в журнале, по умолчанию он хранится в папке `$IGNITE_HOME/work/log`.
 
-## Пример файла конфигурации Ignite
+## Пример файла конфигурации Ignite {: .pageBreakBefore }
 
 Для стабильной работы Ignite вместе с **{{ productName }}** важны следующие директивы в данном примере:
 
@@ -42,9 +42,8 @@ Apache Ignite в минимально необходимой конфигура�
 - `<dataRegionConfigurations type="DataRegionConfiguration"> <dataRegionConfiguration><name>Persistent</name><persistenceEnabled>true</persistenceEnabled>` — в директиве `dataRegionConfiguration` укажите `<persistenceEnabled>true</persistenceEnabled>`.
 - `<workDirectory>/var/lib/ignite/</workDirectory>>` — укажите рабочую папку Ignite.
 - `<igniteInstanceName>Comindware_Instance2</igniteInstanceName>` — укажите имя экземпляра Ignite.
-{: .pageBreakAvtoAvoid}
 
-``` xml
+``` {: .xml title="Пример файла конфигурации Ignite" .pageBreakAfter }
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <configSections>
@@ -60,7 +59,7 @@ Apache Ignite в минимально необходимой конфигура�
 {% if pdfOutput %}
 ```
 
-``` xml title="Пример файла конфигурации Ignite — продолжение"
+``` {: .xml title="Пример файла конфигурации Ignite — продолжение" .pageBreakBefore }
 {% endif %}
       <jvmOptions>
           <string>-Xms512m</string>

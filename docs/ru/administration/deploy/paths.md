@@ -27,6 +27,7 @@ kbId: 2502
 - `/var/lib/comindware/<instanceName>/Database/snapshots` — снимки данных Apache Ignite.
 - `/var/lib/comindware/<instanceName>/Database/wal` — файлы журнала предварительной записи.
 - `/var/lib/comindware/<instanceName>/Streams` — загруженные пользователями и сформированные системой файлы, которые прикреплены к соответствующим атрибутам.
+{: .pageBreakAfter }
 - Временные данные, обеспечивающие работу экземпляра ПО. В этих папках нет пользовательских данных и файлов базы данных экземпляра ПО:
     - `/var/lib/comindware/<instanceName>/Temp`
     - `/var/lib/comindware/<instanceName>/Database/cache`

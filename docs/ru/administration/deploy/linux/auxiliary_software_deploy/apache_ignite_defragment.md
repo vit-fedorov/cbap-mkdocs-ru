@@ -48,10 +48,11 @@ kbId: 2495
     ```
     cd /home/username/ignite/bin
     ```
+
     {{ pdfEndOfBlockHack }}
+    {: .pageBreakAfter }
 
 8. В файле `control.sh` измените директиву `DEFAULT_CONFIG`:
-{: .pageBreakBefore }
 
     ```
     DEFAULT_CONFIG=config/Ignite.config

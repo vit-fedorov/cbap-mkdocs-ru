@@ -77,7 +77,7 @@ kbId: 2329
     _![Настройка страницы согласия OAuth — сохранение настроенных разрешений](openid_connection_oath_permission_saving.png)_
 
     {{ pdfEndOfBlockHack }}
-    {: .pageBreakBefore }
+    {: .pageBreakAfter }
 
 4. На странице «**Test users**» кнопку «**Save and continue**».  
 
@@ -96,7 +96,7 @@ kbId: 2329
 
     _![Настройка страницы согласия OAuth — статус опубликованного приложения](openid_connection_oath_app_status.png)_
 
-### Настройка учётных данных клиента OAuth
+### Настройка учётных данных клиента OAuth {: .pageBreakBefore }
 
 1. В левой панели выберите пункт «**Credentials**».
 2. На странице «**Credentials**» нажмите кнопку «**Create credentials**».
@@ -121,7 +121,7 @@ kbId: 2329
 
     _![Таблица учётных данных клиентов OAuth](openid_connection_oath_client_table.png)_
 
-## Настройка подключения в **{{ productName }}**
+## Настройка подключения в **{{ productName }}** {: .pageBreakBefore }
 
 1. Перейдите в раздел «**Администрирование**» — «**Подключения**».
 2. Нажмите кнопку «**Cоздать**».
@@ -154,7 +154,7 @@ kbId: 2329
 
 18. Нажмите кнопку «**Сохранить**».
 
-## Настройка API и служб Google Cloud — этап 2
+## Настройка API и служб Google Cloud — этап 2  {: .pageBreakBefore }
 
 1. Откройте веб-сайт Google Cloud [https://console.developers.google.com/](https://console.developers.google.com/)
 2. В левой панели выберите пункт «**Credentials**».
@@ -269,7 +269,7 @@ kbId: 2329
 
 {% endif %}
 
-## Вход в {{ productName }}
+## Вход в {{ productName }} {: .pageBreakBefore }
 
 1. Откройте веб-сайт экземпляра {{ productName }}, например [https://mycompany.ru](https://mycompany.ru/)
 2. Нажмите кнопку «**Войти как администратор**».  
@@ -277,7 +277,7 @@ kbId: 2329
     _![Переход к странице входа администратора](openid_connection_administrator_entry.png)_
 
     {{ pdfEndOfBlockHack }}
-    {: .pageBreakBefore }
+    {: .pageBreakAfter }
 
 3. Введите свои учётные данные и нажмите кнопку «**Войти**».  
 

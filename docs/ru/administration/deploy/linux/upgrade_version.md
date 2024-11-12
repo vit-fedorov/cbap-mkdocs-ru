@@ -186,7 +186,7 @@ kbId: 2499
         ```
 
     {{ pdfEndOfBlockHack }}
-    {: .pageBreakBefore }
+    {: .pageBreakAfter }
 
 9. Удостоверьтесь, что итоговый файл конфигурации `/usr/share/comindware/configs/instance/<instanceName>.yml` выглядит аналогично следующему примеру:
 

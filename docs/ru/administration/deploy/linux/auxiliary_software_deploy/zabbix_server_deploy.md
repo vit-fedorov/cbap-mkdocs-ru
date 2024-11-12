@@ -70,7 +70,7 @@ kbId: 2292
 
 6. Запустите скрипт `mysql_secure_installation` и в интерактивном режиме согласитесь удалить тестовую базу данных и аккаунт анонимного пользователя:
 
-    ``` { .sh .pageBreakAfter }
+    ``` { .sh .pageBreakAfter title="Удаление анонимного пользователя MySQL" }
     /usr/bin/mysql_secure_installation
 
     Securing the MySQL server deployment.
@@ -217,8 +217,10 @@ kbId: 2292
 
     _![Завершение установки Zabbix Frontend](https://kb.comindware.ru/assets/img_63af071cc182b.png)_
 
+    {{ pdfEndOfBlockHack }}
+    {: .pageBreakAfter }
+
 5. В открывшейся форме ведите учётные данные встроенного суперпользователя:
-{: .pageBreakBefore }
 
     ``` sh
     Admin
@@ -276,6 +278,9 @@ kbId: 2292
     sudo systemctl daemon-reload
     sudo ufw reload
     ```
+
+    {{ pdfEndOfBlockHack }}
+    {: .pageBreakAfter }
 
 6. Запустите *Zabbix Agent* и добавьте его в список автозагрузки:
 

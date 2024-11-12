@@ -82,7 +82,7 @@ kbId: 2500
     ```
 
     {{ pdfEndOfBlockHack }}
-    {: .pageBreakBefore }
+    {: .pageBreakAfter }
 
 9. Назначьте перенесенным каталогам владельца:
 
@@ -137,6 +137,9 @@ kbId: 2500
     ```
     systemctl start elasticsearch.service 
     ```
+
+    {{ pdfEndOfBlockHack }}
+    {: .pageBreakAfter }
 
 7. Зарегистрируйте репозиторий (например, `repostory_backup`) с резервной копией снимка Elasticsearch:
 

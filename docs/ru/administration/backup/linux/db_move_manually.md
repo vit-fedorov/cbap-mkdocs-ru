@@ -105,6 +105,7 @@ kbId: 2137
     _![Запуск скрипта создания снимка](https://kb.comindware.ru/assets/img_63567b113131e.png)_
 
 13. Просмотрите содержимое папки со снимками Apache Ignite:
+{: .pageBreakBefore }
 
     ```
     cd /var/lib/comindware/<instanceName>/Database/snapshots/ && ll 
@@ -132,10 +133,11 @@ kbId: 2137
     mkdir /var/www/cmw-db/
     ```
 
-!!! note "Примечание"
-    Любые операции копирования в папку базы данных экземпляра ПО и из неё следует выполнять только после отключения сервисов Elasticsearch, comindware***<instanceName>*** (где  `<instanceName>` — имя экземпляра ПО), NGINX, Kafka и Zookeeper.
+    !!! note "Примечание"
+        Любые операции копирования в папку базы данных экземпляра ПО и из неё следует выполнять только после отключения сервисов Elasticsearch, comindware***<instanceName>*** (где  `<instanceName>` — имя экземпляра ПО), NGINX, Kafka и Zookeeper.
 
 4. Остановите сервисы:
+{: .pageBreakBefore }
 
     ```
     systemctl stop elasticsearch.service comindware<instanceName>.service nginx.service kafka.service zookeeper.service

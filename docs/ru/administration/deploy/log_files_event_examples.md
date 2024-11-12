@@ -51,7 +51,7 @@ kbId: 2516
 - `hh:mm:ss.SSS` — длительность обработки запроса
 - `User logout success` — описание события: «Пользователь вышел из системы»
 
-### Неуспешный вход пользователя в систему
+### Неуспешный вход пользователя в систему {: .pageBreakBefore }
 
 ### Неверное имя при входе в систему
 
@@ -79,7 +79,7 @@ kbId: 2516
 - `http://SERVER_URL/Home/Login/?failedLogin=InvalidLoginAndPassword&inputID=&returnUrl==%2fResolve` — адрес страницы, отображающейся после неудачной попытки входа
 - `GET` — метод запроса
 
-### Создание учетной записи
+### Создание учетной записи {: .pageBreakBefore }
 
 **Пример события**
 
@@ -107,7 +107,7 @@ kbId: 2516
             - `USER_NAME` — имя пользователя
             - `EMAIL` — адрес эл. почты пользователя
 
-### Удаление учетной записи
+### Удаление учетной записи {: .pageBreakBefore }
 
 **Пример события**
 
@@ -132,7 +132,7 @@ kbId: 2516
 
 **Пример события**
 
-``` {: .sql .pageBreakAfter .pageBreakInsideAvoid }
+``` {: .sql .pageBreakAfter .pageBreakInsideAvoid title="Неуспешное создание учётной записи. Пример события" }
 -MM-dd HH:mm:ss,SSS ERROR 00000000-0000-0000-0000-000000000000 username SERVER\_URL PORT XXX.XXX.XXX.XXX  Core HH:mm:ss.SSS X.X.XXX.X  '   Транзакция нарушает уникальность триплета:  cmw.account.mbox – email@example.com
 
 Service name:
@@ -563,6 +563,7 @@ Stack:
 - http://`SERVER_URL`/api/`Role`sCollectionApi/Put — путь к методу API для изменения роли
 - `PUT` — тип запроса
 - `Role` — тело запроса:
+{: .pageBreakBefore }
     - `"Id":"role.ID"` — идентификатор роли
     - `"Name":"Role Name"` — название роли
     - `"Alias":"RoleSystemName"` — системное имя роли
@@ -615,13 +616,13 @@ Stack:
 - `http://SERVER_URL/Members/GetMembersData`— путь к методу API для получения идентификатора учётной записи участника роли
 - `POST` — тип запроса
 - `{"model":{"FilterType":3,"Selected":["account.ID"]}}` — тело запроса:
-{: .pageBreakBefore }
     - `"FilterType":3` — тип фильтра учётных записей:
         - 1 — только учётные записи
         - 2 — только группы
         - 3 — учётные записи и группы
     - `"Selected":["account.ID"]` — массив идентификаторов исключённых учётных записей
 - `http://SERVER_URL/api/RolesCollectionApi/Put` — путь к методу API для изменения роли
+{: .pageBreakBefore }
 - `PUT` — тип запроса
 - `Role` — тело запроса:
     - `"Id":"role.ID"` — идентификатор роли
@@ -644,14 +645,13 @@ Stack:
         - `ApplicationSystemName` — системное имя приложения
         - `RoleSystemName` — системное имя роли
     - `"RoleType":"BusinessApp"` — тип роли:
-    {: .pageBreakBefore }
         - `BusinessApp` — роль в приложении
         - `System` — системная роль
 - `OK` — статус обработки запроса
 - `hh:mm:ss.SSS` — длительность обработки запроса
 - `PUT` completed — результат обработки запроса: выполнен
 
-### Создание объекта
+### Создание объекта {: .pageBreakBefore }
 
 **Создание шаблона**
 
@@ -686,7 +686,7 @@ Stack:
     - `"IsTransferable":false` — флаг «Переносить данные шаблона при трансфере»
     - `"ConversationDisplayConfig":{}` — конфигурация обсуждений в шаблоне
 
-### Чтение объекта
+### Чтение объекта {: .pageBreakBefore }
 
 **Пример события**
 
@@ -759,7 +759,7 @@ Stack:
 - `hh:mm:ss` — длительность обработки запроса
 - `GET completed` — результат обработки запроса: выполнен
 
-### Копирование объекта
+### Копирование объекта {: .pageBreakBefore }
 
 **Пример события**
 
@@ -886,6 +886,7 @@ Stack:
         - `"Privileges":XXX` — код установленных разрешений
         - `"AvailablePrivileges":XXX` — код доступных разрешений
 - `Разрешение добавлено в роль` — описание события
+{: .pageBreakBefore }
 - `'{"Privilege":"Read","Role":"[applicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'` — тело запроса:
     - `"Privilege":"Read"` — тип добавленного разрешения:
         - `Create` — создание
@@ -944,6 +945,7 @@ Stack:
     - `"Solution":"sln.ID"` — идентификатор приложения
     - `"IsPredefined":false` — непредустановленная роль
     - `"RoleType":1` — тип роли:
+    {: .pageBreakBefore }
         - 0 — системная стандартная
         - 1 — роль в приложении
         - 2 — системная пользовательская
@@ -970,6 +972,7 @@ Stack:
     - `"Resource":"[ParentSystemName] ResourceSystemName"` путь к ресурсу, на доступ к которому предоставлено разрешение:
         - `parentSystemName` — системное имя родительского ресурса
         - `ResourceSystemName` — системное имя ресурса
+        {: .pageBreakBefore }
     - `"ResourceType":"RecordTemplate"` — тип ресурса, на доступ к которому предоставлено разрешение:
         - `BusinessApp` — приложение
         - `ChangeJournal` — журнал изменений
@@ -1082,7 +1085,7 @@ IIS authentication: Anonymous
 
 {% endif %}
 
-### Окончание (остановка) работы системы
+### Окончание (остановка) работы системы {: .pageBreakBefore }
 
 **Пример события**
 
@@ -1098,7 +1101,7 @@ IIS authentication: Anonymous
 - `systemAccount` — учётная запись, запустившая систему
 - `{{ productName }} has started` — описание события: система остановлена
 
-### Запуск сервиса/службы/модуля
+### Запуск сервиса/службы/модуля {: .pageBreakBefore }
 
 **Пример события**
 
@@ -1147,7 +1150,7 @@ IIS authentication: Anonymous
 - `systemAccount` — учётная запись, остановившая систему
 - `{{ productName }} has started` — описание события: система остановлена
 
-### Успешный результат выполнения процесса
+### Успешный результат выполнения процесса {: .pageBreakBefore }
 
 **Пример события**
 
@@ -1171,7 +1174,6 @@ IIS authentication: Anonymous
 - `"contextChanges":{}` — данные для запуска процесса:
     - `"CommandId":"event.ID"` — идентификатор кнопки, по нажатию которой был запущен процесс
     - `"ContextObjects":[]` — массив идентификаторов записей, по которым был запущен процесс
-
 - `systemAccount` — учётная запись, запустившая службу
 - `Process runned count=11 (completed=3)` — количество запущенных экземпляров процесса (количество завершённых экземпляров процесса)
 - `lastRunTime="DD.MM.YYYY hh:mm:ss"` — время последнего выполнения процесса
@@ -1179,7 +1181,7 @@ IIS authentication: Anonymous
 - `worker threads started=7 (failed=0)` — количество запущенных потоков системных служб (количество завершившихся с ошибкой системных служб)
 - `messages total=0 (failed=0)` — количество переданных сообщений (количество сообщений, переданных с ошибкой)
 
-### Успешный результат выполнения сервиса
+### Успешный результат выполнения сервиса {: .pageBreakBefore }
 
 **Пример события**
 

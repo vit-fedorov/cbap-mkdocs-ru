@@ -177,8 +177,7 @@ kbId: 2498
     Host=ServerAddress;Database=DataBaseName;User ID=Username;Password=Password;
     ```
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakAfter }
+    {{ pdfPageBreakHard }}
 
 7. В поле «**Система управления базами данных**» выберите тип СУБД:
 
@@ -296,8 +295,7 @@ kbId: 2498
 
     _![Настройка свойств действия «Отправить сообщение»](img/sql_send_connection_send_message_settings.png)_
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakAfter }
+    {{ pdfPageBreakHard }}
 
 12. За действием «**Отправить сообщение**» добавьте действие «**Повторять по количеству объектов**» и настройте его свойства:
 {: #object_cycle }

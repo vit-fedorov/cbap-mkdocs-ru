@@ -14,6 +14,7 @@ site_url: ''
 extra:
   pdfOutput: true
   pdfEndOfBlockHack: '<p class="pdfEndOfBlockHack">.</p>' # hack for PDF output, prevents PDF build crash after indented paragraphs
+  pdfPageBreakHard: '<p class="pdfEndOfBlockHack pageBreakAfter">.</p>'
 
 plugins:
   minify:

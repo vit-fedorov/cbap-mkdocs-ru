@@ -81,8 +81,7 @@ kbId: 2500
     chmod -R 766 /var/lib/comindware/<instanceName>
     ```
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakAfter }
+    {{ pdfPageBreakHard }}
 
 9. Назначьте перенесенным каталогам владельца:
 
@@ -138,8 +137,7 @@ kbId: 2500
     systemctl start elasticsearch.service
     ```
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakAfter }
+    {{ pdfPageBreakHard }}
 
 7. Зарегистрируйте репозиторий (например, `repostory_backup`) с резервной копией снимка Elasticsearch:
 

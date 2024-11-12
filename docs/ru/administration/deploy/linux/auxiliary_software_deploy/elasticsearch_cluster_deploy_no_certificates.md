@@ -125,8 +125,7 @@ kbId: 2095
     sudo nano /etc/elasticsearch/elasticsearch.yml
     ```
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakAfter }
+    {{ pdfPageBreakHard }}
 
 6. Скопируйте в созданный файл конфигурации следующее содержимое:
 

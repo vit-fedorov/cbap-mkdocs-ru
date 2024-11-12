@@ -49,8 +49,7 @@ kbId: 2495
     cd /home/username/ignite/bin
     ```
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakAfter }
+    {{ pdfPageBreakHard }}
 
 8. В файле `control.sh` измените директиву `DEFAULT_CONFIG`:
 

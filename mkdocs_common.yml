@@ -27,6 +27,7 @@ extra:
   productNameArchitect: 'Comindware Architect'
   productVersion: 4.7
   pdfEndOfBlockHack: ''
+  pdfPageBreakHard: ''
   pdfOutput: False
   kbExport: False
   adminGuideLinux: True

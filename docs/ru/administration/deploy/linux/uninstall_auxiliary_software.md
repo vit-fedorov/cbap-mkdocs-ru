@@ -310,7 +310,6 @@ kbId: 2596
     ```
 
 ### Удаление Kafka
-{: .pageBreakBefore }
 
 1. Удалите службу Kafka:
 
@@ -340,7 +339,7 @@ kbId: 2596
     rm /var/www/.cmw_environment/kafka
     ```
 
-### Удаление Mono
+### Удаление Mono {: .pageBreakBefore }
 
 1. Удалите пакет Mono `mono-runtime` и его зависимости:
 
@@ -496,8 +495,7 @@ kbId: 2596
         /usr/bin/asp-*
     ```
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakAfter }
+    {{ pdfPageBreakHard }}
 
 3. Удалите конфигурацию Mono:
 
@@ -659,8 +657,7 @@ kbId: 2596
         /usr/bin/asp-*
     ```
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakAfter }
+    {{ pdfPageBreakHard }}
 
 3. Удалите конфигурацию Mono:
 

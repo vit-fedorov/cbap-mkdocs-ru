@@ -81,8 +81,7 @@ kbId: 2135
     host    all    all    123.45.67.89    md5
     ```
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakAfter }
+    {{ pdfPageBreakHard }}
 
 5. Перезапустите службу `postgresql`:
 
@@ -202,8 +201,7 @@ kbId: 2135
 
     _![Переход к свойствам элемент сценария](img/sql_receive_connection_scenario_properties_transfer.png)_
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakAfter }
+    {{ pdfPageBreakHard }}
 
 7. Настройте свойства события:
 {: #start_event }
@@ -240,8 +238,7 @@ kbId: 2135
             }
             ```
 
-        {{ pdfEndOfBlockHack }}
-        {: .pageBreakAfter }
+        {{ pdfPageBreakHard }}
 
         - Здесь:
             - `CityRecords` — **имя переменной**, указанное в свойствах свойствах события «[**Получение сообщения**](#start_event)».
@@ -258,8 +255,7 @@ kbId: 2135
 
     _![Настройка действия «Создать запись» в сценарии](img/sql_receive_connection_scenario_create_record_settings.png)_
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakAfter }
+    {{ pdfPageBreakHard }}
 
 11.  Добавьте в действие «**Создать запись**» вложенное действие «**Изменить значения атрибутов**» и настройте его.
     - Нажмите кнопку «**Создать**».
@@ -292,8 +288,7 @@ kbId: 2135
 
     _![Настройка действия «Изменить значения атрибутов» в сценарии](img/sql_receive_connection_change_attributes_settings.png)_
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakAfter }
+    {{ pdfPageBreakHard }}
 
 12. Должен получиться показанный на следующей иллюстрации сценарий.
 

@@ -68,8 +68,7 @@ hide: tags
                 chown -R _nginx:_nginx /var/lib/comindware/<instanceName>
                 ```
 
-                {{ pdfEndOfBlockHack }}
-                {: .pageBreakBefore }
+                {{ pdfPageBreakHard }}
 
         - **Хранилище S3** — сохранять резервные копии во [внешнем сервисе S3][s3_connection].
             - **Имя корзины** — введите имя контейнера в хранилище S3, к котором будут сохраняться резервные копии.

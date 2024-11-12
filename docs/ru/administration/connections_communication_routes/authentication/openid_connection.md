@@ -12,7 +12,7 @@ kbId: 2329
 
     _![Проверка адреса сервера](openid_connection_check.png)_
 
-## Настройка API и служб Google Cloud — этап 1
+## Настройка API и служб Google Cloud — этап 1 {: .pageBreakBefore }
 
 1. Откройте веб-сайт [https://console.developers.google.com/](https://console.developers.google.com/)
 2. Если проекты отсутствуют, нажмите кнопку «**Create project**».
@@ -33,6 +33,7 @@ kbId: 2329
 8. В поле «**Search for APIs & Services**» найдите **Site Verification API**.
 
     _![Поиск Site Verification API](openid_connection_api_search.png)_
+    {{ pdfPageBreakHard }}
 
 9. Перейдите к разделу «**Site Verification API**».
 
@@ -42,7 +43,7 @@ kbId: 2329
 
     _![Включение Site Verification API](openid_connection_api_verification_enabled.png)_
 
-### Настройка страницы согласия OAuth
+### Настройка страницы согласия OAuth {: .pageBreakBefore }
 
 1. В меню слева выберите пункт «**OAuth consent screen**».
 2. В разделе «**User type**» выберите «**External**» и нажмите кнопку «**Create**».
@@ -61,6 +62,7 @@ kbId: 2329
 2. В разделе «**App domain**» в поле «**Application home page**» введите [адрес сервера](#проверка-адреса-сервера-comindware-business-application-platform), указанный в глобальной конфигурации {{ productName }}, например [https://mycompany.ru](https://mycompany.ru/)
 3. В разделе «**Authorized domains**» нажмите кнопку «**Add domain**» и введите в поле «**Authorized domain 1**» доменное имя сервера без префикса `https://`, например _mycompany.ru_
 4. В разделе «**Developer contact information**» в поле «**Email addresses**» введите, например, свой адрес эл. почты.
+{: .pageBreakAfter}
 5. Нажмите кнопку «**Save and continue**».
 
     _![Настройка страницы согласия OAuth — главная страница приложения, домен, контактная информация разработчика](openid_connection_oath_agreement.png)_
@@ -76,8 +78,7 @@ kbId: 2329
 
     _![Настройка страницы согласия OAuth — сохранение настроенных разрешений](openid_connection_oath_permission_saving.png)_
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakAfter }
+    {{ pdfPageBreakHard }}
 
 4. На странице «**Test users**» кнопку «**Save and continue**».
 
@@ -226,8 +227,7 @@ kbId: 2329
     vim /etc/nginx/sites-available/comindware<instanceName>
     ```
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakAfter }
+    {{ pdfPageBreakHard }}
 
 6. Настройте конфигурацию SSL-сертификата аналогично следующему примеру:
 
@@ -277,12 +277,11 @@ kbId: 2329
 
     _![Переход к странице входа администратора](openid_connection_administrator_entry.png)_
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakAfter }
-
 3. Введите свои учётные данные и нажмите кнопку «**Войти**».
 
     _![Вход с аккаунтом администратора](openid_connection_administrator.png)_
+
+    {{ pdfPageBreakHard }}
 
 4. Выйдите из системы.
 5. Отобразится страница входа с кнопкой «**Войти с помощью Google**».

@@ -127,7 +127,10 @@ h6 {
     text-indent: 1.5rem
 }
 
-.pdfEndOfBlockHack {
+.pdfEndOfBlockHack,
+.pdfEndOfBlockHack + p:empty,
+.pageBreakAfter + p:empty
+ {
     visibility: hidden !important;
     font-size: 0px !important;
     max-height: 0px !important;

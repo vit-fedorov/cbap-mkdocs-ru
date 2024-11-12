@@ -65,7 +65,7 @@ kbId: 2095
 
     ``` sh
     Setting up elasticsearch (8.10.2) ...
-    ---------------------------   
+    ---------------------------
     Security autoconfiguration information
     Authentication and authorization are enabled.
     TLS for the transport and HTTP layers is enabled and configured.
@@ -104,13 +104,13 @@ kbId: 2095
 
     ``` sh
     sudo chown elasticsearch:elasticsearch --recursive /var/elasticsearch/
-    sudo chmod  764 --recursive /var/elasticsearch/      
+    sudo chmod  764 --recursive /var/elasticsearch/
     ```
 
 3. Создайте папку для хранения резервной копии `yml`-файла конфигурации Elasticsearch:
 
     ``` sh
-    sudo mkdir /etc/elasticsearch/backupConfig        
+    sudo mkdir /etc/elasticsearch/backupConfig
     ```
 
 4. Переместите `yml`-файл конфигурации Elasticsearch в папку `/etc/elasticsearch/backupConfig`:
@@ -154,8 +154,8 @@ kbId: 2095
     cluster.initial_master_nodes:
       - elasticsearch1
       - elasticsearch2
-      - elasticsearch3  
-    #Этот флаг требуется для записи данных в индексы  
+      - elasticsearch3
+    #Этот флаг требуется для записи данных в индексы
     indices.id_field_data.enabled: true
     ```
 
@@ -170,13 +170,13 @@ kbId: 2095
 8. Откройте в текстовом редакторе Nano `yml`-файл конфигурации Elasticsearch:
 
     ``` sh
-    sudo nano /etc/elasticsearch/elasticsearch.yml        
+    sudo nano /etc/elasticsearch/elasticsearch.yml
     ```
 
 9. Задайте имя кластера с помощью директивы `cluster.name` в строке 2 `yml`-файла конфигурации: 
 
     ``` sh
-    cluster.name: elasticsearch.example.cbap 
+    cluster.name: elasticsearch.example.cbap
     ```
 
     !!! note "Примечание"
@@ -259,14 +259,14 @@ kbId: 2095
               ├─3656 /usr/share/elasticsearch/jdk/bin/java -Des.networkaddress.cache.ttl=60 -Des.networkaddress.cache.n>
               └─3676 /usr/share/elasticsearch/modules/x-pack-ml/platform/linux-x86_64/bin/controller
     Dec 01 10:11:12 penguin-02 systemd[1]: Starting Elasticsearch...
-    Dec 01 10:12:27 penguin-02 systemd[1]: Started Elasticsearch.        
+    Dec 01 10:12:27 penguin-02 systemd[1]: Started Elasticsearch.
     ```
 
     !!! note "Примечание"
         В случае возникновения ошибок при запуске процесса `elasticsearch.service` рекомендуется изучить файл журнала:
 
     ``` sh
-    sudo less /var/elasticsearch/logs/yourClusterName.log        
+    sudo less /var/elasticsearch/logs/yourClusterName.log
     ```
 
 4. С помощью curl убедитесь, что REST API узла Elasticsearch доступен:
@@ -295,7 +295,7 @@ kbId: 2095
         "minimum_index_compatibility_version" : "7.0.0"
         },
     "tagline" : "You Know, for Search"
-    }        
+    }
     ```
     {{ pdfEndOfBlockHack }}
 
@@ -326,7 +326,7 @@ kbId: 2095
     "number_of_in_flight_fetch" : 0,
     "task_max_waiting_in_queue_millis" : 0,
     "active_shards_percent_as_number" : 100.0
-    }        
+    }
     ```
 
 ## Пример yml-файла конфигурации узла Elasticsearch {: .pageBreakBefore }
@@ -355,7 +355,7 @@ discovery.seed_hosts : ["192.168.1.43", "192.168.1.42","1.1.1.3"]
 cluster.initial_master_nodes:
   - elasticsearch1
   - elasticsearch2
-  - elasticsearch3      
+  - elasticsearch3
 ```
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

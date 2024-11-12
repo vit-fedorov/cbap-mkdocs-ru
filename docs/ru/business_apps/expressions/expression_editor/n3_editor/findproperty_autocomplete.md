@@ -41,19 +41,19 @@ hide:
 8. Отобразится список атрибутов шаблона, выбранного на шаге 4.
 *![Список атрибутов шаблона](n3_editor_findproperty_argument2_autocomplete.png)*
 9. Дважды нажмите системное имя атрибута, например `_creationDate`, чтобы вставить его в выражение.
-  
+
 ```turtle title="Пример: выражение, возвращающее месяц по значению атрибута типа «Дата и время»"
-@prefix object: <http://comindware.com/ontology/object#>. 
+@prefix object: <http://comindware.com/ontology/object#>.
 @prefix cmwtime: <http://comindware.com/logics/time#>.
 {
     # Находим атрибут _creationDate шаблона Zayavkanaotpusk
     ("Zayavkanaotpusk" "_creationDate") object:findProperty ?dtProperty.
-    
-    # Определяем значение атрибута _creationDate 
+
+    # Определяем значение атрибута _creationDate
     # в текущей записи шаблона Zayavkanaotpusk
     ?item ?dtProperty ?dmonth.
     # Извлекаем номер месяца из значения атрибута _creationDate
-    ?dmonth cmwutc:month ?value.      
+    ?dmonth cmwutc:month ?value.
 }
 ```
 

@@ -35,7 +35,7 @@ hide:
 @prefix cmw: <http://comindware.com/logics#>.
 @prefix taskStatus: <http://comindware.com/ontology/taskStatus#>.
 {
-  ?value cmw:taskStatus taskStatus:inProgress.                 
+  ?value cmw:taskStatus taskStatus:inProgress.
 }
 ```
 

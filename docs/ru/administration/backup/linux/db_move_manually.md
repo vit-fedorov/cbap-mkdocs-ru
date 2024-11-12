@@ -34,7 +34,7 @@ kbId: 2137
 2. Перейдите в папку ПО:
 
     ```
-    cd /var/www/comindware/  
+    cd /var/www/comindware/
 
     ```
 
@@ -67,7 +67,7 @@ kbId: 2137
 6. Перейдите в папку с базой данных экземпляра ПО в рабочей папке и выведите на экран её содержимое:
 
     ```
-    cd /var/lib/comindware/<instanceName>/Database/dbdb/ && ll  
+    cd /var/lib/comindware/<instanceName>/Database/dbdb/ && ll
 
     ```
 
@@ -83,7 +83,7 @@ kbId: 2137
 9. Создайте с помощью nano скрипт `snapshot.sh`:
 
     ```
-    nano snapshot.sh  
+    nano snapshot.sh
     ```
 
     _![Создание скрипта с помощью nano](https://kb.comindware.ru/assets/img_63567a89286c4.png)_
@@ -91,7 +91,7 @@ kbId: 2137
 10. Введите скрипт создания снимка, например:
 
     ```
-    now=$(date +%Y_%m_%d)   
+    now=$(date +%Y_%m_%d)
     /usr/share/ignite/bin/control.sh --snapshot create snapshot_$now
     ```
 
@@ -146,7 +146,7 @@ kbId: 2137
 5. Убедитесь, что сервисы остановлены. Статус должен быть `Active: inactive (dead)`:
 
     ```
-    systemctl status zookeeper.service kafka.service nginx.service comindware<instanceName>.service elasticsearch.service  
+    systemctl status zookeeper.service kafka.service nginx.service comindware<instanceName>.service elasticsearch.service
 
     ```
 
@@ -170,7 +170,7 @@ kbId: 2137
     nano Ignite.config
     ```
 
-11. Найдите директиву `<workDirectory>` и укажите в ней путь папке базы данных экземпляра ПО:   
+11. Найдите директиву `<workDirectory>` и укажите в ней путь папке базы данных экземпляра ПО:
 
     ```
     <workDirectory>/var/www/cmw-db</workDirectory>
@@ -181,7 +181,7 @@ kbId: 2137
 12. Проверьте наличие, а также дату и время создания файлов и папок в папке с базой данных экземпляра ПО:
 
     ```
-    cd /var/www/cmw-db/ && ll  
+    cd /var/www/cmw-db/ && ll
     cd /var/www/cmw-db/db/ && ll
     ```
 
@@ -192,8 +192,8 @@ kbId: 2137
 13. Замените права доступа и владельцев папок:
 
     ```
-    cd /var/www/  
-    chmod -R 777 cmw-db/  
+    cd /var/www/
+    chmod -R 777 cmw-db/
     sudo chown -R www-data:www-data cmw-db/
     ```
 
@@ -210,7 +210,7 @@ kbId: 2137
 1. Запустите необходимые службы и проверьте их статус. Статус должен быть `Active: running`:
 
     ```
-    systemctl start elasticsearch kafka nginx comindware<instanceName>  
+    systemctl start elasticsearch kafka nginx comindware<instanceName>
     systemctl status elasticsearch kafka nginx comindware<instanceName>
     ```
 

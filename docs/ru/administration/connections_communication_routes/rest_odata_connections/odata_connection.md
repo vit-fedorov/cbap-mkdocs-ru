@@ -31,15 +31,15 @@ _![Создание подключения для синхронизации с 
     !!! tip "Совет"
 
         Для экспериментов с синхронизацией по OData можно использовать общедоступные серверы, предоставляемые OData.org.
-        
+
         Например, для тестирования импорта данных в качестве **адреса веб-сервиса** можно указать: 
-        
+
         [https://services.odata.org/V3/OData/OData.svc/](https://services.odata.org/V3/OData/OData.svc/)
-        
+
         Адреса остальных тестовых серверов OData.org представлены на следующих сайтах:
-        
+
         [https://services.odata.org/](https://services.odata.org/) 
-        
+
         [https://www.odata.org/odata-services/](https://www.odata.org/odata-services/) 
 
     {{ pdfEndOfBlockHack }}

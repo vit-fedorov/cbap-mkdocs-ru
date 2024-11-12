@@ -29,8 +29,8 @@ hide:
     *![Список значений атрибута после оператора](formula_editor_enum_autocomplete.png)*
 4. Дважды нажмите системное имя значения атрибута, чтобы вставить его в формулу.
   ```mysql title="Пример: формула, возвращающая количество записей в шаблоне Zayavkanaotpusk со значением атрибута Statuszayavki, равным Odobrena"
-  COUNT(from b in db->Zayavkanaotpusk 
-  where b->Statuszayavki == "Odobrena" 
+  COUNT(from b in db->Zayavkanaotpusk
+  where b->Statuszayavki == "Odobrena"
   select b->id)
   ```
 

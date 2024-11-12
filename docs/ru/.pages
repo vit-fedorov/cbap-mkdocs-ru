@@ -1,6 +1,6 @@
 nav:
 
-    - Общие сведения: 
+    - Общие сведения:
         - index.md
         - Описание ПО: product_description.md
         - general

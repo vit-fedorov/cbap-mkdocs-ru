@@ -5,7 +5,7 @@ tags:
     - C#-скрипт
     - скрипт
     - скачать документы
-    - документ 
+    - документ
     - атрибут типа «Документ»
     - скачать файлы
     - скачать архив
@@ -94,7 +94,7 @@ kbId: 2623
                                 var doc_Array = doc_Obj as object[];
                                 if(doc_Array.Length > 0)
                                 {
-    // Каждый файл в массиве doc_Array преобразуем в строку Base64 
+    // Каждый файл в массиве doc_Array преобразуем в строку Base64
     // и помещаем в архив fileInArchive.
                                     foreach(var doc in doc_Array)
                                     {

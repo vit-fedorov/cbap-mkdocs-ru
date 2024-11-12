@@ -179,7 +179,7 @@ hide:
 2. Чтобы выводить определённое сообщение об ошибке, если возникло исключение при нажатии кнопки, воспользуйтесь следующим образцом кода:
 
     ```cs
-    using System; 
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using Comindware.Data.Entity;
@@ -189,7 +189,7 @@ hide:
     class Script
     {
         public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)
-        { 
+        {
             // Добавьте код, в котором не требуется обрабатывать исключения.
             string ResultDescription = "";
             try
@@ -204,13 +204,13 @@ hide:
 
                 var resultError = new UserCommandResult
                 {
-                    // Указываем, что скрипт завершился с ошибкой, 
+                    // Указываем, что скрипт завершился с ошибкой,
                     // и формируем об этом уведомление
                     Success = false,
-                    // Ставим флаг необходимости сохранения 
+                    // Ставим флаг необходимости сохранения
                     // результирующей записи в базу данных.
                     Commited = true,
-                    // Указываем, что следует 
+                    // Указываем, что следует
                     // вывести уведомление.
                     ResultType = UserCommandResultType.Notificate,
                     // Формируем уведомление.
@@ -218,11 +218,11 @@ hide:
                     {
                         new UserCommandMessage
                         {
-                            // Указываем уровень важности уведомления: 
+                            // Указываем уровень важности уведомления:
                             // Critical, Fatal, Low, Major, None, Normal
                             Severity = SeverityLevel.Normal,
-                            // Этот текст будет выведен в уведомлении и 
-                            // журнале действий и ошибок 
+                            // Этот текст будет выведен в уведомлении и
+                            // журнале действий и ошибок
                             // в случае срабатывания исключения.
                             Text = string.Format("Результат: {0}", ResultDescription)
                         }
@@ -242,12 +242,12 @@ hide:
                         new UserCommandMessage
                         {
                             Severity = SeverityLevel.Normal,
-                            // Этот текст будет выведен в уведомлении и 
-                            // журнале действий и ошибок 
+                            // Этот текст будет выведен в уведомлении и
+                            // журнале действий и ошибок
                             // в случае штатного завершения работы скрипта.
                             Text = string.Format("Результат: {0}", ResultDescription)
                         }
-                    }        
+                    }
                 };
                 return result;    
         }
@@ -285,8 +285,8 @@ hide:
                 // Добавьте код, который должен отработать в случае ошибки.
                 ResultDescription = "Ошибка";
             }
-            // Эта строка отобразится в поле «Выходные данные» 
-            // для события «Скрипт выполнен» в цепочке событий 
+            // Эта строка отобразится в поле «Выходные данные»
+            // для события «Скрипт выполнен» в цепочке событий
             // для задачи-выполнения сценария.
             return string.Format("Результат: {0}", ResultDescription);
         }

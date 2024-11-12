@@ -24,7 +24,7 @@ hide:
 4. Отобразится список доступных типов литералов.
 *![Список доступных типов литералов](n3_editor_literal_autocomplete.png)*
 4. Дважды нажмите тип литерала, например `duration`, чтобы вставить его в выражение.
-  
+
 ```turtle title="Пример: выражение, возвращающее конец текущего дня"
 @prefix session: <http://comindware.com/ontology/session#>.
 @prefix cmwutc: <http://comindware.com/logics/time/utc#>.

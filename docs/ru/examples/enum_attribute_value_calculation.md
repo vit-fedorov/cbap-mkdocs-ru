@@ -55,17 +55,17 @@ kbId: 2624
 
     ``` turtle
     # Импортируем функции для работы с записями, строками и базой данных
-    @prefix object: <http://comindware.com/ontology/object#>.  
-    @prefix cmw: <http://comindware.com/logics#>.  
-    @prefix l10n: <http://comindware.com/ontology/l10n#>.  
-    @prefix string: <http://www.w3.org/2000/10/swap/string#>.  
+    @prefix object: <http://comindware.com/ontology/object#>.
+    @prefix cmw: <http://comindware.com/logics#>.
+    @prefix l10n: <http://comindware.com/ontology/l10n#>.
+    @prefix string: <http://www.w3.org/2000/10/swap/string#>.
     @prefix cmwentity: <http://comindware.com/ontology/entity#>.
-    {  
+    {
         # Находим атрибут TipTS  (Тип ТС) в шаблоне Zayavki (Заявка на перевозку).
         ("Zayavki" "TipTS") object:findProperty ?TipTSAttribute.
         # Присваиваем переменной ?TipTSAttributeValues объект со списком значений атрибута «Тип автотранспорта».
         ?item ?TipTSAttribute ?TipTSAttributeValues.
-        # Присваиваем переменной ?SelectedValue объект с выбранным значением атрибута. 
+        # Присваиваем переменной ?SelectedValue объект с выбранным значением атрибута.
         ?TipTSAttributeValues cmw:variantName ?SelectedValue.
         # Присваиваем переменной ?names массив объектов с заполненными названиями значения атрибута на всех языках.
         ?SelectedValue l10n:text ?names.
@@ -73,11 +73,11 @@ kbId: 2624
             # Присваиваем переменной ?langCodeStr код языка названия значения атрибута на текущей итерации цикла.
             ?names l10n:lang ?langCode.
             ("{0}" ?langCode) string:format ?langCodeStr.
-            # Сравниваем код языка для значения атрибута с желаемым. 
+            # Сравниваем код языка для значения атрибута с желаемым.
             # "ru" — код русского языка, "en" — английского, "de" — немецкого.
             ?langCodeStr cmwentity:contains "ru".
-                # Если предыдущее предложение возвращает true, записываем значение на русском языке в вычисляемый атрибут.       
-                ?names l10n:data ?value. 
+                # Если предыдущее предложение возвращает true, записываем значение на русском языке в вычисляемый атрибут.     
+                ?names l10n:data ?value.
         # переходим к следующей итерации по ?names.
     }
     ```

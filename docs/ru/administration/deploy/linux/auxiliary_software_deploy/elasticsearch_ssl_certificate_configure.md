@@ -22,14 +22,14 @@ kbId: 2337
 1. Перед установкой OpenSSL обновите ПО:
 
     ``` sh
-    sudo apt update   
-    sudo apt upgrade 
+    sudo apt update
+    sudo apt upgrade
     ```
 
 2. Установите OpenSSL:
 
     ``` sh
-    sudo apt install openssl 
+    sudo apt install openssl
     ```
 
 ### Формирование сертификата СА {: .pageBreakBefore }
@@ -37,19 +37,19 @@ kbId: 2337
 1. В домашней папке пользователя `username` создайте папку, в которой предстоит работать:
 
     ``` sh
-    mkdir certsGen 
+    mkdir certsGen
     ```
 
 2. Перейдите в папку `certsGen`:
 
     ``` sh
-    cd certsGen/ 
+    cd certsGen/
     ```
 
 3. <a id="P1_2_3"></a>Создайте ключи для СА:
 
     ``` sh
-    sudo openssl genrsa -aes256 -out ExampleRootCA.key 4096 
+    sudo openssl genrsa -aes256 -out ExampleRootCA.key 4096
     ```
 
 4. Придумайте, запишите и введите пароль для формирования ключа.
@@ -57,7 +57,7 @@ kbId: 2337
 6. Создайте сертификат СА:
 
     ``` sh
-    sudo openssl req -x509 -new -nodes -key ExampleRootCA.key -sha256 -days 10000 -out ExampleRootCA.crt -subj '/CN=Xmpl Root CA/C=RU/ST=Moscow/O=Xmpl' 
+    sudo openssl req -x509 -new -nodes -key ExampleRootCA.key -sha256 -days 10000 -out ExampleRootCA.crt -subj '/CN=Xmpl Root CA/C=RU/ST=Moscow/O=Xmpl'
     ```
 
 6. В результате вы получите файл `ExampleRootCA.crt` — сертификат СА.
@@ -69,7 +69,7 @@ kbId: 2337
 1. <a id="P1_3_1"></a>Создайте ключ и сертификат для узла `es1`:
 
     ``` sh
-    sudo openssl req -new -nodes -out es1.csr -newkey rsa:4096 -keyout es1.key -subj '/CN=Elasticsearch 1/C=RU/ST=Moscow/O=Xmpl/OU=Xmpl Cloud' 
+    sudo openssl req -new -nodes -out es1.csr -newkey rsa:4096 -keyout es1.key -subj '/CN=Elasticsearch 1/C=RU/ST=Moscow/O=Xmpl/OU=Xmpl Cloud'
     ```
 
 2. Аналогично [шагу 1.3.1](#P1_3_1) создайте сертификат для каждого узла, подставляя вместо `es1.csr` и `es1.key` соответствующие значения.
@@ -126,7 +126,7 @@ kbId: 2337
 2. В каждом из узлов перенесите сгенерированные файлы (подставьте фактическое имя файла вместо `esX`)  в папку `/etc/elasticsearch/certs`:
 
     ``` sh
-    sudo mv /home/username/esX.* /etc/elasticsearch/certs 
+    sudo mv /home/username/esX.* /etc/elasticsearch/certs
     ```
 
 3. Измените пользователя для директории и настройте права доступа:
@@ -145,7 +145,7 @@ kbId: 2337
     ``` sh
     sudo /usr/share/elasticsearch/bin/elasticsearch-keystore add xpack.security.http.ssl.keystore.secure_password
 
-    Setting xpack.security.http.ssl.keystore.secure_password already exists. Overwrite? [y/N]y 
+    Setting xpack.security.http.ssl.keystore.secure_password already exists. Overwrite? [y/N]y
 
     Enter value for xpack.security.http.ssl.keystore.secure_password: ВВЕДИТЕ ПАРОЛЬ
 
@@ -171,7 +171,7 @@ kbId: 2337
 1. Для каждого узла кластера Elasticsearch отредактируйте `yml`-файл конфигурации Elasticsearch, как показано в примерах ниже. Внимательно следите за сохранением отступов. Воспользуйтесь редактором текстовым редактором Nano:
 
     ``` sh
-    sudo nano /etc/elasticsearch/elasticsearch.yml 
+    sudo nano /etc/elasticsearch/elasticsearch.yml
     ```
 
     Исходный файл конфигурации Elasticsearch:
@@ -226,19 +226,19 @@ kbId: 2337
 1. Перезагрузите конфигурацию `systemd`:
 
     ``` sh
-    sudo systemctl daemon-reload 
+    sudo systemctl daemon-reload
     ```
 
 2. Перезапустите процесс `elasticsearch.service`:
 
     ``` sh
-    sudo systemctl restart elasticsearch.service 
+    sudo systemctl restart elasticsearch.service
     ```
 
 3. Убедитесь, что процесс `elasticsearch.service` запустился:
 
     ``` sh
-    sudo systemctl status elasticsearch.service 
+    sudo systemctl status elasticsearch.service
     ```
 
     ``` sh title="Пример результата проверки статуса процесса elasticsearch.service"
@@ -264,7 +264,7 @@ kbId: 2337
         В случае ошибок с запуском процесса `elasticsearch.service` рекомендуется изучить файл журнала:
 
         ``` sh
-        sudo less /var/elasticsearch/logs/yourClusterName.log 
+        sudo less /var/elasticsearch/logs/yourClusterName.log
         ```
 
 4. Повторите шаги, описанные в этом разделе, для каждого из узлов Elasticsearch.
@@ -291,7 +291,7 @@ kbId: 2337
 1. После того как для каждого из узлов кластера Elasticsearch были выполнены шаги, описанные в предыдущих разделах, с любого из узлов выполните `GET`-запрос в веб-браузере:
 
     ``` sh
-    https://192.168.XXX.XX1:9200/_cluster/health?pretty 
+    https://192.168.XXX.XX1:9200/_cluster/health?pretty
     ```
 
 2. Браузер отобразит форму для ввода учётных данных.

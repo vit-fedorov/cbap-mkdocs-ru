@@ -62,7 +62,7 @@ kbId: 2038
 
     _![Настройка подключения к Elasticsearch](https://kb.comindware.ru/assets/Picture16.png)_
 
-3. Если откроется страница инициализации данных в Elasticsearch, нажмите кнопку «**Обновить**». 
+3. Если откроется страница инициализации данных в Elasticsearch, нажмите кнопку «**Обновить**».
 
     _![Страница инициализации данных в Elasticsearch](https://kb.comindware.ru/assets/Picture17.png)_
 

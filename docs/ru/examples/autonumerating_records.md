@@ -9,7 +9,7 @@ tags:
     - формулы
     - язык выражений
     - выражения
-hide: 
+hide:
     - tags
 kbId: 2607
 ---
@@ -63,11 +63,11 @@ kbId: 2607
         - `FORMAT()` — эта функция принимает строку с заполнителями вида `{0}`…`{N}` и список значений. Функция подставляет значения из списка в соответствующие заполнители и возвращает результирующую строку.
 
         - `LIST()` — эта функция принимает перечень значений и возвращает список, состоящий из этих значений.
-        
+
         - `COUNT()` — эта функция подсчитывает количество записей в шаблоне записи, возвращённых в запросом `from a in db`.
 
-        - `from a in db->Zayavki select a->id` — запрос всех записей из шаблона _«Заявки»_. 
-        
+        - `from a in db->Zayavki select a->id` — запрос всех записей из шаблона _«Заявки»_.
+
         - `Zayavki` — системное имя шаблона записи _«Заявки»_.
 
 3. Опубликуйте диаграмму процесса.
@@ -107,12 +107,12 @@ kbId: 2607
         public static void Main(Comindware.Process.Api.Data.ScriptContext context, Comindware.Entities entities)
         {
     // BusinessObjectId — запись, связанная с экземпляром процесса.
-            var objectId = context.BusinessObjectId;   
+            var objectId = context.BusinessObjectId;
     // Получаем значение переменной «Порядковый номер» по её ID — svar.1.
     // Присваиваем полученное значение переменной sequenceNumber.
             var sequenceNumber = (decimal)Api.Solution.SolutionVariableService.GetValue("svar.1");
     // Nomerzayavki — системное имя атрибута «Номер заявки».
-    // Создаём словарь data со значением атрибута «Номер заявки», 
+    // Создаём словарь data со значением атрибута «Номер заявки»,
     // равным значению переменной «Порядковый номер».
             var data = new Dictionary<string, object>
             {
@@ -161,11 +161,11 @@ C#-скрипт также можно применять для автонуме
     - **Значение: C#**
 
         ``` cs
-        public class Script 
+        public class Script
         {
         // ObjectID — запись, в контексте которой выполняется скрипт.
-            public static decimal Main(string ObjectID) 
-            {         
+            public static decimal Main(string ObjectID)
+            {
         // Получаем значение переменной «Порядковый номер» по её ID — svar.1.
         // Присваиваем полученное значение переменной sequenceNumber.
                 var sequenceNumber = (decimal)Api.Solution.SolutionVariableService.GetValue("svar.1");
@@ -212,10 +212,10 @@ C#-скрипт также можно применять для автонуме
         @prefix cmwnullable: <http://comindware.com/ontology/entity/nullable#>.
 
         {
-            # Получаем значение глобальной переменной «Порядковый номер» 
+            # Получаем значение глобальной переменной «Порядковый номер»
             # по её ID — svar.1 и помещаем в ?globalVar.
             "svar.1" globalvariable:getValueById ?globalVar.
-            # Увеличиваем значение глобальной переменной «Порядковый номер» 
+            # Увеличиваем значение глобальной переменной «Порядковый номер»
             # на 1 и сохраняем в ?resultSum.
             (?globalVar 1) cmwnullable:sum ?resultSum.
             # Присваиваем глобальной переменной значение ?resultSum.

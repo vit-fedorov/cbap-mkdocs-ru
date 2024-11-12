@@ -1202,9 +1202,9 @@ IIS authentication: Anonymous
 **Пример события**
 
 ``` sql
-[yyy-MM-dd HH:mm:ss,SSS][INFO][Getting meta for plugin XxxSenderAdapter.] Platform key: XXX\_AdapterAgent5b28ad88a4cb4d4f8078c4deef1ee08b; Service name: ServiceName; Runtime: .NET 6.0.21  
-  
-[2023-12-08 00:10:20,667][INFO][Meta is ready for XxxSenderAdapter.] Platform key: XXX\_AdapterAgent5b28ad88a4cb4d4f8078c4deef1ee08b; Service name: ServiceName; Runtime: .NET 6.0.21  
+[yyy-MM-dd HH:mm:ss,SSS][INFO][Getting meta for plugin XxxSenderAdapter.] Platform key: XXX\_AdapterAgent5b28ad88a4cb4d4f8078c4deef1ee08b; Service name: ServiceName; Runtime: .NET 6.0.21
+
+[2023-12-08 00:10:20,667][INFO][Meta is ready for XxxSenderAdapter.] Platform key: XXX\_AdapterAgent5b28ad88a4cb4d4f8078c4deef1ee08b; Service name: ServiceName; Runtime: .NET 6.0.21
 data: {"Name":"XxxSenderAdapter","Description":"Адаптер для связи с системой «XXX»","Direction":"Outgoing","EndpointDefinitionJson":"{}}
 ```
 

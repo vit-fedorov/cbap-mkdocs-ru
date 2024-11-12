@@ -178,7 +178,7 @@ include-markdown ".snippets/email_receive_logics.md"
 - **IsTentative** — собрание под вопросом (логический).
 - **HasMessage** — ответ содержит сообщение (логический).
 
-#### Настройка собственного атрибута сообщения
+#### Настройка собственного атрибута сообщения {: .pageBreakBefore }
 
 Чтобы создать атрибут сообщения, нажмите кнопку «**Добавить**» над таблицей «**Запрос**», «**Ответ**» или «**Ответ с ошибкой**» и заполните свойства атрибута:
 
@@ -269,7 +269,7 @@ include-markdown ".snippets/email_receive_logics.md"
     @prefix document: <http://comindware.com/ontology/document#>.
     @prefix cmwstring: <http://comindware.com/logics/string#>.
     {
-        # Помещаем переменную attachment 
+        # Помещаем переменную attachment
         # из действия «Повторять по количеству объектов»
         # в локальную переменную ?attachment.
         session:context variable:attachment ?attachment.
@@ -281,7 +281,7 @@ include-markdown ".snippets/email_receive_logics.md"
         ?attachment variable:Name ?filename.
         # Соединяем имя файла и расширение в переменную ?filenameValue.
         (?filename ?extension) cmwstring:concatenation ?filenameValue.
-        # Собираем новый файл из имени и содержимого, 
+        # Собираем новый файл из имени и содержимого,
         # сохраняем его в папку Streams
         # и возвращаем ID нового документа с прикреплённым файлом.
         (?contentValue ?filenameValue) document:attach ?value.

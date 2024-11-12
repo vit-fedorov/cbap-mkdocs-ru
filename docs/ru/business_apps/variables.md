@@ -54,19 +54,19 @@ kbId: 2207
 
         ``` cs
         public class Script {
-            // Задайте тип метода Main(), 
+            // Задайте тип метода Main(),
             // соответствующий типу атрибута и переменной приложения:
             // string — Текст, int, decimal — Число, dateTime — Дата и время,
-            // bool — Логический, TimeSpan — Длительность, 
+            // bool — Логический, TimeSpan — Длительность,
             // IEnumerable<string> — Список значений.
-            // ObjectID — переменная, в которой хранится 
+            // ObjectID — переменная, в которой хранится
             // ID экземпляра шаблона записи,
             // в контексте которого выполняется скрипт.
-            // Чтобы просмотреть доступные методы 
-            // в пространстве имён Comindware, 
+            // Чтобы просмотреть доступные методы
+            // в пространстве имён Comindware,
             // введите Comindware и точку
-            
-            public static decimal Main(string ObjectID) {         
+
+            public static decimal Main(string ObjectID) {
                 var result = (decimal)Api.Solution.SolutionVariableService.GetValue("svar.1");
                 return result;
             }

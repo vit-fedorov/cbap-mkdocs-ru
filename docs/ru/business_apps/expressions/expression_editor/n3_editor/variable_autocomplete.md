@@ -21,7 +21,7 @@ hide:
 3. Отобразится список доступных переменных.
 *![Список доступных переменных](n3_editor_variable_autocomplete.png)*
 4. Дважды нажмите имя переменной, например `value`, чтобы вставить его в выражение.
-  
+
 ```turtle title="Пример: выражение, возвращающее список всех записей из шаблона аккаунта"
 @prefix account: <http://comindware.com/ontology/account#>.
 @prefix container: <http://comindware.com/ontology/container#>.

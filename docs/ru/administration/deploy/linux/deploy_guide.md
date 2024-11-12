@@ -43,7 +43,7 @@ kbId: 2344
 {: #install.sh}
 
     ``` sh
-    sh install.sh -p -k [-i=<instanceName>] [-e] [-d=demo] [-u=www-data] [-g=www-data]  
+    sh install.sh -p -k [-i=<instanceName>] [-e] [-d=demo] [-u=www-data] [-g=www-data]
     ```
 
     Скрипт `install.sh` поддерживает следующие ключи:
@@ -64,15 +64,15 @@ kbId: 2344
     !!! warning "Внимание!"
 
         Если при установке ПО вы не создадите экземпляр (то есть опустите ключ `i=<instanceName>`), то впоследствии невозможно будет создать экземпляр с помощью скрипта `install.sh`.
-                    
-        Для создания экземпляра ПО при наличии установленной версии используйте скрипт `create.sh`, выполните следующие команды:          
-        
+
+        Для создания экземпляра ПО при наличии установленной версии используйте скрипт `create.sh`, выполните следующие команды:
+
         ``` sh
-        cd CMW_<osname>/scripts/instance  
-        
-        sh create.sh -n=<instanceName> [-p=<portNumber>] -v=<versionNumber>  
+        cd CMW_<osname>/scripts/instance
+
+        sh create.sh -n=<instanceName> [-p=<portNumber>] -v=<versionNumber>
         ```
-    
+
         - `-n=<instanceName>` — создать экземпляр ПО с указанным именем (**обязательный** ключ);
         - `-p=<portNumber>` — создать экземпляр ПО с указанным именем (необязательный ключ). Порт по умолчанию: 80;
         - `-v=<versionNumber>` — номер установленной версии ПО вида: `X.X.XXXX.X` (например: 4.7.2222.0);
@@ -106,10 +106,10 @@ kbId: 2344
 2. Удостоверьтесь, что основные сервисы установлены, запущены и имеют статус `Active (running)`:
 
     ``` sh
-    systemctl status comindware<instanceName>  
-    systemctl status kafka  
-    systemctl status nginx  
-    systemctl status elasticsearch 
+    systemctl status comindware<instanceName>
+    systemctl status kafka
+    systemctl status nginx
+    systemctl status elasticsearch
     ```
 
     Здесь `<instanceName>` — имя экземпляра ПО.
@@ -117,10 +117,10 @@ kbId: 2344
 3. Если какой-либо сервис не работает, запустите его:
 
     ``` sh
-    systemctl start comindware<instanceName>  
-    systemctl start kafka  
-    systemctl start nginx  
-    systemctl start elasticsearch  
+    systemctl start comindware<instanceName>
+    systemctl start kafka
+    systemctl start nginx
+    systemctl start elasticsearch
     ```
 
 ## Остановка экземпляра ПО {: .pageBreakBefore }
@@ -141,19 +141,19 @@ kbId: 2344
 остановите службы, поддерживающие работу ПО:
 
     ``` sh
-    systemctl stop comindware<instanceName>  
-    systemctl stop kafka  
-    systemctl stop nginx  
-    systemctl stop elasticsearch 
+    systemctl stop comindware<instanceName>
+    systemctl stop kafka
+    systemctl stop nginx
+    systemctl stop elasticsearch
     ```
 
 3. Удостоверьтесь, что службы остановлены:
 
     ``` sh
-    systemctl status comindware<instanceName>  
-    systemctl status kafka  
-    systemctl status nginx  
-    systemctl status elasticsearch 
+    systemctl status comindware<instanceName>
+    systemctl status kafka
+    systemctl status nginx
+    systemctl status elasticsearch
     ```
 
 ## Инициализация {{ productName }} {: #deploy_guide_linux_initialize}

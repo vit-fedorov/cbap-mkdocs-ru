@@ -1,7 +1,7 @@
 ---
 title: Резервное копирование
 kbId: 2190
-tags: 
+tags:
     - резервная копия
     - S3
     - история
@@ -41,7 +41,7 @@ hide: tags
 ## Просмотр списка и настройка конфигураций резервного копирования
 
 1. В разделе [«**Администрирование**» — «**Инфраструктура**»][administration] выберите пункт «**Резервное копирование**» <i class="fa-light  fa-coins">‌</i>.
-2. Отобразится список конфигураций резервного копирования. 
+2. Отобразится список конфигураций резервного копирования.
 3. Нажмите кнопку «**Создать**» или дважды нажмите строку конфигурации в списке.
 4. Настройте и сохраните конфигурацию резервного копирования:
 
@@ -52,16 +52,16 @@ hide: tags
 
         - **Не определено** — не использовать репозиторий для хранения резервных копий.
         - **Файловая система** — сохранять резервные копии в файловой системе сервера **{{ productName }}**.
-            - **Путь к папке** — путь к директории на сервере, в которой будут сохраняться резервные копии, например `/var/lib/comindware/<instanceName>/Backups` (здесь `<instanceName>` — имя экземпляра ПО). Для этой директории предоставьте разрешения на полный доступ, чтобы система могла сохранять в неё резервные копии, например:  
+            - **Путь к папке** — путь к директории на сервере, в которой будут сохраняться резервные копии, например `/var/lib/comindware/<instanceName>/Backups` (здесь `<instanceName>` — имя экземпляра ПО). Для этой директории предоставьте разрешения на полный доступ, чтобы система могла сохранять в неё резервные копии, например:
 
-                **Astra Linux, Ubuntu, Rocky**  
+                **Astra Linux, Ubuntu, Rocky**
 
                 ``` shell
                 chmod 777 /var/lib/comindware/<instanceName>chown -R www-data:www-data /var/lib/comindware/<instanceName>
                 chown -R www-data:www-data /var/lib/comindware/<instanceName>
                 ```
 
-                **Альт Сервер**  
+                **Альт Сервер**
 
                 ``` shell
                 chmod 777 /var/lib/comindware/<instanceName>chown -R _nginx:_nginx /var/lib/comindware/<instanceName>
@@ -100,7 +100,7 @@ _![Настройка свойств резервного копирования
 
 Для корректного резервного копирования данных истории необходимо настроить конфигурацию службы Elasticsearch и экземпляра ПО **{{ productName }}**:
 
-- В файле конфигурации Elasticsearch (`/etc/elasticsearch/elasticsearch.yml`) должен быть указан путь к репозиторию резервных копий, например:  
+- В файле конфигурации Elasticsearch (`/etc/elasticsearch/elasticsearch.yml`) должен быть указан путь к репозиторию резервных копий, например:
 
     **Для репозитория на локальном диске**
 
@@ -119,15 +119,15 @@ _![Настройка свойств резервного копирования
     s3.client.default.path_style_access: true
     ```
 
-- В файле конфигурации экземпляра ПО (`/usr/share/comindware/configs/instance/<instanceName>.yml`) необходимо указать тип репозитория резервных копий Elasticsearch (`LocalDisk` или `S3`) и путь к репозиторию, например:  
+- В файле конфигурации экземпляра ПО (`/usr/share/comindware/configs/instance/<instanceName>.yml`) необходимо указать тип репозитория резервных копий Elasticsearch (`LocalDisk` или `S3`) и путь к репозиторию, например:
 
     **Для репозитория на локальном диске**
 
     ``` shell
     backup.elasticRepository.type: LocalDisk
-    # В данном примере Elasticsearch и {{ productName }} 
-    # работают на одной машине. 
-    # В противном случае следует примонтировать папку репозитория Elasticsearch 
+    # В данном примере Elasticsearch и {{ productName }}
+    # работают на одной машине.
+    # В противном случае следует примонтировать папку репозитория Elasticsearch
     # на машине с {{ productName }} и указать её в директиве ниже
     backup.elasticRepository.localDisk.path: /var/www/backups/elasticsearch
     ```
@@ -136,22 +136,22 @@ _![Настройка свойств резервного копирования
     {: .pageBreakBefore }
 
     ``` shell
-    # Конфигурация подключения к хранилищу S3, используемого по умолчанию 
-    s3Connection.default.endpointURL: http://localhost:9000 
-    s3Connection.default.accessKey: xxxxx 
-    s3Connection.default.secretKey: xxxxx 
-    s3Connection.default.pathStyleAccess: true 
-    s3Connection.default.description: Подключение к S3 по умолчанию 
+    # Конфигурация подключения к хранилищу S3, используемого по умолчанию
+    s3Connection.default.endpointURL: http://localhost:9000
+    s3Connection.default.accessKey: xxxxx
+    s3Connection.default.secretKey: xxxxx
+    s3Connection.default.pathStyleAccess: true
+    s3Connection.default.description: Подключение к S3 по умолчанию
 
-    # Конфигурация репозитория резервных копий Elasticsearch в хранилище S3 
-    backup.elasticRepository.type: S3 
+    # Конфигурация репозитория резервных копий Elasticsearch в хранилище S3
+    backup.elasticRepository.type: S3
     # Имя корзины в хранилище S3 для хранения резервных копий данных Elasticsearch
     backup.elasticRepository.s3.bucket: <instanceName>-backups
     # Имя подключения к хранилищу S3, используемому по умолчанию
-    # на стороне {{ productName }}  
+    # на стороне {{ productName }}
     backup.elasticRepository.s3.platformConnection: default
-    # Имя подключения к хранилищу S3, используемому по умолчанию на стороне Elasticsearch  
-    backup.elasticRepository.s3.elasticConnection: default 
+    # Имя подключения к хранилищу S3, используемому по умолчанию на стороне Elasticsearch
+    backup.elasticRepository.s3.elasticConnection: default
     ```
 
 ## Запуск резервного копирования {: .pageBreakBefore }

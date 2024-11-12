@@ -28,7 +28,7 @@ hide:
 6. Отобразится список функций для префикса.
 *![Список функций для префикса](n3_editor_predicate_prefix_function_autocomplete.png)*
 7. Дважды нажмите имя функции, например `objectId`, чтобы вставить его в выражение.
-  
+
 ```turtle title="Пример: выражение, возвращающее ID исполнителей выполняющихся задач для текущей записи"
 @prefix cmw: <http://comindware.com/logics#>.
 @prefix task: <http://comindware.com/ontology/task#>.

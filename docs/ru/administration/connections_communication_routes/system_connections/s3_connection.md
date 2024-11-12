@@ -44,7 +44,7 @@ kbId: 2594
     vim /usr/share/comindware/configs/instance/instancename.yml
     ```
 
-    Здесь  `instanceName` — имя экземпляра ПО.  
+    Здесь  `instanceName` — имя экземпляра ПО.
 
     См. также статью _«[Пути и содержимое папок экземпляра ПО]({{kbArticleURLPrefix}}2502)»._
 
@@ -59,7 +59,7 @@ kbId: 2594
     # https://s3.region-code.amazonaws.com/bucket-name/key-name
     s3Connection.default.pathStyle: true
     s3Connection.default.description: Подключение к S3
-                            
+
     # Параметры контейнера загруженных файлов
     userStorage.type: S3
     userStorage.s3.bucket: user-files-bucket
@@ -68,7 +68,7 @@ kbId: 2594
     # Параметры контейнера временных файлов
     tempStorage.type: S3
     tempStorage.s3.bucket: temp-files-bucket
-    tempStorage.s3.connection: default         
+    tempStorage.s3.connection: default
     ```
 
     !!! warning "Внимание!"
@@ -88,18 +88,18 @@ kbId: 2594
 
 1. Перейдите в [список подключений]({{ kbArticleURLPrefix }}2205#mcetoc_1gjrlqi4l1).
 2. Дважды нажмите в списке подключение типа «**S3**» (название подключения задаётся директивой `s3Connection.default.description` в [файле конфигурации]({{ kbArticleURLPrefix }}2594#mcetoc_1gjrlqj8j2)).
-3. Просмотрите свойства подключения:  
+3. Просмотрите свойства подключения:
     - **Отключить** — этот флажок установлен, если подключение неактивно;
     - **Название** — наглядное наименование подключения;
     - **Адрес конечной точки** — адрес сервера S3;
     - **Ключ доступа** — идентификатор секретного ключа доступа к серверу S3;
     - **Секретный ключ** — ключ для доступа к серверу S3;
     - **Запросы типа path-style** — флажок установлен, если сервер принимает только запросы path-style вида:
-        
+
         ```
         https://s3.region-code.amazonaws.com/bucket-name/key-name
         ```
-        
+
 4. Нажмите кнопку «**Проверить соединение**».
     - Должно отобразиться сообщение «**Соединение установлено**».
 

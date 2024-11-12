@@ -138,7 +138,7 @@ kbId: 2292
 3. Создайте пользователя `zabbix`. Не забудьте задать пароль:
 
     ``` sh
-    create user zabbix@localhost identified by 'password'; 
+    create user zabbix@localhost identified by 'password';
     grant all privileges on zabbix.* to zabbix@localhost;
     SET GLOBAL log_bin_trust_function_creators = 1;
     quit;
@@ -233,8 +233,8 @@ kbId: 2292
 
 !!! note "Примечание"
 
-    Следующие шаги предназначены исключительно для настройки мониторинга ресурсов машины с установленным Zabbix Server.   
-  
+    Следующие шаги предназначены исключительно для настройки мониторинга ресурсов машины с установленным Zabbix Server.
+
     Для установки и настройки Zabbix Agent на сторонние машины используйте соответствующие инструкции. См. статью «[Zabbix Agent. Инструкции по установке][zabbix_agent_deploy]».
 
 1. Отредактируйте файл конфигурации `/etc/zabbix/zabbix_agentd.conf`:
@@ -257,7 +257,7 @@ kbId: 2292
     # Mandatory: yes, if StartAgents is not explicitly set to 0
     # Default:
     # Server=your.server.ip.address
-    Server=127.0.0.1 
+    Server=127.0.0.1
     ```
 
 3. Отредактируйте директиву `ServerActive`:

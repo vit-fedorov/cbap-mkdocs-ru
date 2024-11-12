@@ -36,9 +36,9 @@ kbId: 2628
 
     ``` turtle
     # Импортируем функции для работы с записями и строками
-    @prefix object: <http://comindware.com/ontology/object#>.  
-    @prefix cmwstring: <http://comindware.com/logics/string#>.  
-    {  
+    @prefix object: <http://comindware.com/ontology/object#>.
+    @prefix cmwstring: <http://comindware.com/logics/string#>.
+    {
         # Находим атрибут Kommentariy (Комментарий) в шаблоне Zayavki (Заявки)
         # и помещаем его в переменную KommentariyAttribute
         ("Zayavki" "Kommentariy") object:findProperty ?KommentariyAttribute.
@@ -63,7 +63,7 @@ kbId: 2628
             ?textLowerCase cmwstring:contains ?keywordLowerCase.
             # Если строка была найдена в переменной ?textLowerCase,
             # то значение вычисляемого атрибута сменится на true
-            true -> ?value.  
+            true -> ?value.
     }
     ```
 

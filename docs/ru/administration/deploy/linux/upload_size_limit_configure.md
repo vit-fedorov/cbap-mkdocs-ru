@@ -73,7 +73,7 @@ kbId: 2569
 
     ...
 
-    <requestLimits maxAllowedContentLength="1073741824" />       
+    <requestLimits maxAllowedContentLength="1073741824" />
     ```
 
 4. Откройте для редактирования файл `/etc/nginx/sites-available/comindware<instanceName>`:
@@ -97,7 +97,7 @@ kbId: 2569
 7. Перезагрузите экземпляр ПО и NGINX:
 
     ```
-    systemctl restart nginx  
+    systemctl restart nginx
     systemctl restart comindware<instanceName>
     ```
 

@@ -52,9 +52,9 @@ hide:
 * `#!mysql in` — объявление источника данных:
     - `#!mysql db->TemplateName` — шаблон записи с системным именем `TemplateName`;
     - `#!mysql $RecordAttributeName` — атрибут типа «**Запись**» с системным именем `RecordAttributeName`, хранящий несколько значений;
-    - `#!mysql (from where select)` — вложенный запрос. Вложенный запрос необходимо заключить в скобки и использовать в нём уникальную переменную-селектор: 
+    - `#!mysql (from where select)` — вложенный запрос. Вложенный запрос необходимо заключить в скобки и использовать в нём уникальную переменную-селектор:
     ```mysql
-    from a in (from b in $DataSource2 where Condition2 select b->Attribute2) 
+    from a in (from b in $DataSource2 where Condition2 select b->Attribute2)
     where Condition1 select a->Attribute1
     ```
 * `#!mysql where Condition` — выбор записей, для которых выражение `Condition` возвращает `true`.
@@ -62,16 +62,16 @@ hide:
 * `#!mysql select a->ReturnAttribute` — выборка значений атрибута `ReturnAttribute` записей из источника данных. Оператор `select` может содержать выражение.
 
 ```mysql title="Пример: запрос записей районов Москвы с сортировкой по убыванию названия района"
-from a in $Cities 
-where a->CityName == "Москва" 
-orderby a->Districts->DistrictName descending 
+from a in $Cities
+where a->CityName == "Москва"
+orderby a->Districts->DistrictName descending
 select a->Districts
 ```
 
 ```mysql title="Пример: запрос названий и авторов книг, у которых указан автор, с сортировкой по возрастанию имени автора и выводом в формате «Название: название книги. Автор: имя автора»"
-from book in $Books 
-where NOT(EMPTY(book->Author)) 
-orderby a->boook->Author->Name 
+from book in $Books
+where NOT(EMPTY(book->Author))
+orderby a->boook->Author->Name
 select CONCAT(LIST('Название: ', book->Name, '. Автор: ', book->Author->Name))
 ```
 
@@ -86,7 +86,7 @@ select CONCAT(LIST('Название: ', book->Name, '. Автор: ', book->Aut
 
 1. Введите строку:
       ```mysql
-      from a in 
+      from a in
       ```
 2. После ввода оператора `in` отобразится список доступных источников данных. Этот список также можно вызвать, нажав клавиши ++ctrl+space++ в позиции после оператора `in`.
       *![Список источников данных](formula_editor_application_templates_autocomplete_attribute_source.png)*
@@ -101,7 +101,7 @@ from a in $Costs where a->TotalAmount > $PlannedCosts select a->id
 
 1. Введите строку:
       ```mysql
-      from a in db-> 
+      from a in db->
       ```
 2. После ввода символов `db->` отобразится список шаблонов текущего приложения. Этот список также можно вызвать, нажав клавиши ++ctrl+space++ в позиции после `db->`.
       *![Список шаблонов в текущем приложении](formula_editor_application_templates_autocomplete.png)*
@@ -170,9 +170,9 @@ from a in $RequestedCars where a->_creator->username == "admin" select a->id
             - **Тип данных**: **текст**
             -  **Использовать как заголовок записей**: флажок установлен
         - Записи: `УАЗ`, `Москвич`, `Лада`
-     
+
     **Составление формулы**
-       
+
     1. Введите функцию `#!mysql COUNT()`. См. «**[Ввод имени функции и просмотр подсказки по функции][formula_editor_function_autocompete]**».
     2. В позиции аргумента функции нажмите клавиши ++ctrl+space++.
     3. Отобразится список источников данных.
@@ -187,7 +187,7 @@ from a in $RequestedCars where a->_creator->username == "admin" select a->id
     9. Отобразится список записей шаблона _«Автомобили»_ в виде марок автомобилей. См. «**[Ввод заголовка записи связанного шаблона][formula_editor_record_heading_autocomplete]**».
          *![Список записей в шаблоне _«Автомобили»_](formula_editor_from_where_select_autocomplete_condition_record_heading_list.png)*
     10.  Дважды нажмите пункт _«Лада»_, чтобы вставить в формулу строковый литерал `#!mysql "Лада"`.
-    
+
     ```mysql title="Формула, возвращающая количество записей, связанных с атрибутом RequestedCars, у которых атрибут Make имеет значение «Лада»"
     COUNT(from a in $RequestedCars where a->Make == "Лада" select a->id)
     ```

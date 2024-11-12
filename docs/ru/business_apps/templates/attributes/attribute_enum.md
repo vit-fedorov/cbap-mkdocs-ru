@@ -72,12 +72,12 @@ _![Удаление элементов из списка значений](attri
         | passengerCar  | Car     | Легковой автомобиль | <span style="background-color: #0000ff; color: #ffffff;">#0000ff</span> | <i class="fa-light fa-car">‌</i> car                 |
         | truck         | Truck   | Пикап               | <span style="background-color: #00ff00;">#00ff00</span>                 | <i class="fa-light fa-truck">‌</i> truck             |
         | van           | Minivan | Микроавтобус        | <span style="background-color: #ffff00;">#ffff00</span>                 | <i class="fa-light fa-van-shuttle">‌</i> van-shuttle |
-            
+
 
     **Результирующее поведение**
 
     - Поле _«Тип транспортного средства»_ будет отображаться как раскрывающийся список с названиями и значками автомобилей, пункты списка будут окрашены указанными цветами:
-        
+
     _![Раскрывающийся список значений на форме](img/attribute_enum_example.png)_
 
 --8<-- "related_topics_heading.md"

@@ -4,11 +4,11 @@ tags:
     - C#
     - скрипт
     - C#-скрипт
-    - кнопка 
+    - кнопка
     - копирование данных
     - локальная переменная
     - локальные переменные
-hide: 
+hide:
     - tags
 kbId: 2630
 ---
@@ -90,7 +90,7 @@ kbId: 2630
 7. На вкладке «**Скрипт**» вставьте следующий код:
 
     ``` cs
-    using System; 
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using Comindware.Data.Entity;
@@ -129,12 +129,12 @@ kbId: 2630
         };
         return resultBad0;
             }
-            
+
             Decimal posNum = 0;
             foreach (string selectId in userCommandContext.ObjectIds)
             {
                 Dictionary<string,object> data_new = new Dictionary<string,object>();
-                
+
                 // Собираем данные из шаблона записи «Номенклатура продукции»
                 var data_selectId = Api.TeamNetwork.ObjectService.GetPropertyValues(new String[]{selectId}, new String[]{"Naimenovanie", "Edinitsaizmereniya", "Tsena"});
                 // Копируем значения атрибутов шаблона «Номенклатура продукции» в атрибуты позиции в конкурсе
@@ -146,7 +146,7 @@ kbId: 2630
                                 data_new.Add("Tsena", data_selectId[selectId]["Tsena"]);
                 data_new.Add("Produktsiyanazakupku", data_selectId[selectId]["id"]);
                 // Если конкурс выбран, проставляем ссылку на него в текущую позицию
-                if (konkursId != "") 
+                if (konkursId != "")
                 {
                     // Konkurs — системное имя атрибута «Конкурс» шаблона записи «Позиции в конкурсе»
                     data_new.Add("Konkurs", konkursId);
@@ -157,7 +157,7 @@ kbId: 2630
                 Api.TeamNetwork.ObjectService.CreateWithAlias("Pozitsiivkonkurse", data_new);
             }
 
-        // Завершаем работу скрипта    
+        // Завершаем работу скрипта
         var result = new UserCommandResult
         {
                 Success = true,

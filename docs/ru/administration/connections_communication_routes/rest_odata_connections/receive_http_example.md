@@ -19,30 +19,30 @@ kbId: 2319
 Пример JSON-данных из запроса, поступающего в систему из внешней системы:
 
 ``` js
-{ 
-    "ListZakazov": [ 
-        { 
-            "Zakaz": { 
-            "Client": "Петров", 
-            "nomer": 54, 
-            "tovar":"Яблоко" 
-            } 
-        }, 
-        { 
-            "Zakaz": { 
-            "Client": "Иванов", 
-            "nomer": 60, 
-            "tovar":"Банан" 
-            } 
-        }, 
-        { 
-            "Zakaz": { 
-            "Client": "Сидоров", 
-            "nomer": 61, 
-            "tovar":"Груша" 
-            } 
-        } 
-    ] 
+{
+    "ListZakazov": [
+        {
+            "Zakaz": {
+            "Client": "Петров",
+            "nomer": 54,
+            "tovar":"Яблоко"
+            }
+        },
+        {
+            "Zakaz": {
+            "Client": "Иванов",
+            "nomer": 60,
+            "tovar":"Банан"
+            }
+        },
+        {
+            "Zakaz": {
+            "Client": "Сидоров",
+            "nomer": 61,
+            "tovar":"Груша"
+            }
+        }
+    ]
 }
 ```
 
@@ -134,11 +134,11 @@ _![Настройка интеграции](json4.png)_
 - Напишите выражение на языке N3, по которому система выберет нужные объекты для итерации.
 
     ``` py
-    @prefix session: <http://comindware.com/ontology/session#>. 
-    @prefix var: <http://comindware.com/ontology/session/variable#>. 
-    { 
-        session:context var:request ?req. #request — переменная из первого блока, в которой находится разобранный JSON 
-        ?req var:ListZakazov ?value. #ListZakazov - переменная, в которой находится массив объектов 
+    @prefix session: <http://comindware.com/ontology/session#>.
+    @prefix var: <http://comindware.com/ontology/session/variable#>.
+    {
+        session:context var:request ?req. #request — переменная из первого блока, в которой находится разобранный JSON
+        ?req var:ListZakazov ?value. #ListZakazov - переменная, в которой находится массив объектов
     }
     ```
 
@@ -154,22 +154,22 @@ _![Настройка интеграции](json4.png)_
     Переменная `$$local` — хранит значение текущего объекта итерации. Пример:
 
     ```js
-    { 
-    "Zakaz": { 
-                "Client": "Петров",  
-                "nomer": 54,  
-                "tovar": "Яблоко" 
-                } 
+    {
+    "Zakaz": {
+                "Client": "Петров",
+                "nomer": 54,
+                "tovar": "Яблоко"
+                }
     },
     ```
 
     Переменная `$$local—Zakaz` будет содержать массив данных по заказу из текущего объекта итерации. Пример:
 
     ```js
-    { 
-    "Client": "Петров", 
-    "nomer": 54,  
-    "tovar": "Яблоко" 
+    {
+    "Client": "Петров",
+    "nomer": 54,
+    "tovar": "Яблоко"
     }
     ```
 

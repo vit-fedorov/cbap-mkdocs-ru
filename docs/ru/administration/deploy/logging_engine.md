@@ -417,15 +417,15 @@ _[https://github.com/NLog/NLog/wiki/EventLog-target](https://github.com/NLog/NLo
 2. Создайте скрипт по приведённому ниже образцу на языке VisualBasic и сохраните его в файл с расширением .VBS (например, `CreateEventSource.vbs`):
 
     ``` sh
-    Set Args = WScript.Arguments   
-    If Args.Count < 1 then WScript.Echo "USAGE: CreateEventSource.vbs <EventSourceName>"   
-        WScript.Quit   
-    End If   
-    EventSourceName = Args(0)   
-    Set WshShell = WScript.CreateObject("WScript.Shell")   
-    'Create event source   
-    KeyName = "HKLM\SYSTEM\CurrentControlSet\Services\Eventlog\Application\" & EventSourceName & "\EventMessageFile"   
-    'Change path to .NET Framework version used   
+    Set Args = WScript.Arguments
+    If Args.Count < 1 then WScript.Echo "USAGE: CreateEventSource.vbs <EventSourceName>"
+        WScript.Quit
+    End If
+    EventSourceName = Args(0)
+    Set WshShell = WScript.CreateObject("WScript.Shell")
+    'Create event source
+    KeyName = "HKLM\SYSTEM\CurrentControlSet\Services\Eventlog\Application\" & EventSourceName & "\EventMessageFile"
+    'Change path to .NET Framework version used
     WshShell.RegWrite KeyName,"%windir%\Microsoft.NET\Framework64\v2.0.50727\EventLogMessages.dll", "REG_EXPAND_SZ"
     ```
 
@@ -442,14 +442,14 @@ _[https://github.com/NLog/NLog/wiki/EventLog-target](https://github.com/NLog/NLo
 4. Создайте в файле `logs.config` в подразделе `nlog.targets` (с конфигурацией файловых журналов) подраздел `target` с параметрами записи данных в журнал событий Windows:
 
     ``` log
-    <target xsi:type="EventLogCBAPErrors" name="eventlog" layout="${message}"   
+    <target xsi:type="EventLogCBAPErrors" name="eventlog" layout="${message}"
     log="Application" source="CBAP"/>
     ```
 
 5. Создайте в файле `logs.config` правило (подраздел `logger` в разделе `nlog.rules`), которое будет определять сообщения, подлежащие записи в журнал событий Windows:
 
     ``` log
-    <logger name="*" minlevel="Warn" maxlevel="Fatal"   
+    <logger name="*" minlevel="Warn" maxlevel="Fatal"
     writeTo="errorsFile,EventLogCBAPErrors"/>
     ```
 

@@ -20,11 +20,13 @@ kbId: 2247
 - [Документ][attribute_document]
 - [Изображение][attribute_image]
 
+</div>
+
 _![Поиск записей в системе](img/searcheable_attribute_global_search.png)_
 
 _![Поиск записей в таблице](img/searcheable_attribute_table_search.png)_
 
-## Включение атрибута в поиск
+## Включение атрибута в поиск {: .pageBreakBefore }
 
 Установите флажок «**Использовать для поиска записей**» в [свойствах атрибута][attributes_configure].
 

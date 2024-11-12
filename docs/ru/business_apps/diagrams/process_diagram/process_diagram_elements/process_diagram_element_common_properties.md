@@ -38,7 +38,7 @@ hide:
 
 _![Свойства выбранного элемента в панели свойств элемента](img/process_diagram_element_common_properties_in_properties_panel.png)_
 
-## Настройка свойств элемента {: #process_diagram_element_properties_setting}
+## Настройка свойств элемента {: #process_diagram_element_properties_setting .pageBreakBefore }
 
 1. Нажмите элемент диаграммы.
 2. Нажмите кнопку «**Свойства**» <i class="fa-light fa-gear"></i> в меню элемента.

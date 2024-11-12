@@ -33,6 +33,7 @@ kbId: 2329
 8. В поле «**Search for APIs & Services**» найдите **Site Verification API**.
 
     _![Поиск Site Verification API](openid_connection_api_search.png)_
+
     {{ pdfPageBreakHard }}
 
 9. Перейдите к разделу «**Site Verification API**».

@@ -42,9 +42,12 @@
     margin-left: 0 !important;
 }
 
-.md-typeset pre,
 .md-typeset * + div.highlight, section + section * + div.highlight {
     margin-left: 0rem !important;
+}
+
+.md-typeset pre {
+    text-indent: 0;
 }
 
 .md-typeset > table {

@@ -3,15 +3,15 @@ title: Введение в API
 kbId: 2080
 ---
 
-# Введение в API
+# Введение в API {: #api_intro}
 
 ## Введение
 
 **{{ productName }}** может обращаться к API внешних систем через [подключения](https://kb.comindware.ru/category.php?id=437) и [пути передачи данных](https://kb.comindware.ru/category.php?id=515), а также может обрабатывать запросы из внешних систем через интерфейсы **REST API** трех типов:
 
-- [**Solution API**](https://kb.comindware.ru/article.php?id=2150)
-- [**System Core API**](https://kb.comindware.ru/article.php?id=2073)
-- [**Web API**][api_web]
+- [Solution API][api_solution]
+- [System Core API][api_system_core]
+- [Web API][api_web]
 
 ### Определения
 

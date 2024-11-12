@@ -1,10 +1,16 @@
-[api_calls]: {{ kbCategoryURLPrefix }}513
+[account_attribute_system_names]: {{ kbArticleURLPrefix }}2599
 
-[api_web]: {{ kbArticleURLPrefix }}1940
+[ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}2517
+
+[api_calls]: {{ kbCategoryURLPrefix }}513
 
 [api_intro]: {{ kbArticleURLPrefix }}2080
 
-[ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}2517
+[api_solution]: {{ kbArticleURLPrefix }}2073
+
+[api_system_core]: {{ kbCategoryURLPrefix }}2150
+
+[api_web]: {{ kbArticleURLPrefix }}1940
 
 [attribute_date_time_use]: {{ kbArticleURLPrefix }}2004
 
@@ -13,8 +19,6 @@
 [attribute_enum_calculate_current_value]: {{ kbArticleURLPrefix }}2497
 
 [attribute_enum_calculate_registry]: {{ kbArticleURLPrefix }}2571
-
-[account_attribute_system_names]: {{ kbArticleURLPrefix }}2599
 
 [backup_and_restore]: {{ kbArticleURLPrefix }}2579
 

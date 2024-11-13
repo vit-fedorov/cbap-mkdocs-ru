@@ -51,16 +51,16 @@ _![Плитка нового подключения к серверу катал
 
 _![Удаление подключения к серверу каталогов](img/registration_and_login_connection_ellipsis_menu.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Сервер каталогов. Настройка подключения][ad_connection]*
-- *[Аутентификация через WS-Federation. Настройка подключения, федеративного сервера и глобальной конфигурации][wsfederation_connection]*
-- *[Аутентификация через OpenID Connect. Настройка подключения и служб][openid_connection]*
-- *[Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО][ad_authentication_configure_dc_instance]*
-- *[Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя][sso_authenticatation_configure]*
-- *[Настройка единого входа (SSO-аутентификации) в ОС Windows][sso_authentication_configure_windows]*
+- _[Сервер каталогов. Настройка подключения][ad_connection]_
+- _[Аутентификация через WS-Federation. Настройка подключения, федеративного сервера и глобальной конфигурации][wsfederation_connection]_
+- _[Аутентификация через OpenID Connect. Настройка подключения и служб][openid_connection]_
+- _[Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО][ad_authentication_configure_dc_instance]_
+- _[Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя][sso_authenticatation_configure]_
+- _[Настройка единого входа (SSO-аутентификации) в ОС Windows][sso_authentication_configure_windows]_
 
 </div>
 

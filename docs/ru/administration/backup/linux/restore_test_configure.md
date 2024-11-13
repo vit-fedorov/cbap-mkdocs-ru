@@ -47,17 +47,16 @@ kbId: 2618
 
     _![Настройка пути к файлам резервных копий](https://kb.comindware.ru/assets/img_6683f199b7b30.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]*
-- *[Восстановление базы данных из файла резервной копии в формате .CDBBZ][backup_restore_cdbbz]*
-- *[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии][restore_complete_backup]*
-- *[Ручной перенос базы данных экземпляра ПО][db_move_manually]*
+- _[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]_
+- _[Восстановление базы данных из файла резервной копии в формате .CDBBZ][backup_restore_cdbbz]_
+- _[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии][restore_complete_backup]_
+- _[Ручной перенос базы данных экземпляра ПО][db_move_manually]_
+- _[Перенос базы данных из ПО версии 4.2 для Windows в ПО версии 4.7 для Linux][db_migrate_4.2_to_4.7]_
 
 </div>
-
-**[Перенос базы данных из ПО версии 4.2 для Windows в ПО версии 4.7 для Linux]({{ kbArticleURLPrefix }}2340)**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -27,12 +27,12 @@ title: Шаблон организационной единицы
 
 _![Свойства шаблона организационной единицы](organizational_unit_templates_properties.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Общие свойства шаблонов][template_common_properties]*
-- *[Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление][templates]*
+- _[Общие свойства шаблонов][template_common_properties]_
+- _[Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление][templates]_
 
 </div>
 

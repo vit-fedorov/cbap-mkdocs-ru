@@ -197,11 +197,11 @@ _![Настройка интеграции](json4.png)_
 
 _![Полученные заказы](json9.jpg)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Настройка действий сценария][scenarios]*
+- _[Настройка действий сценария][scenarios]_
 
 </div>
 

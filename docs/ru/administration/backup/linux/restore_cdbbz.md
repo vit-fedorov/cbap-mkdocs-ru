@@ -11,8 +11,8 @@ kbId: 2500
 
 См. также инструкции по полному резервному копированию и восстановлению базы данных внешними средствами:
 
-- *[Создание полной резервной копии (базы данных, вложенных файлов и журналов) без остановки экземпляра ПО][complete_running_instance_backup]*
-- *[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии][restore_complete_backup]*
+- _[Создание полной резервной копии (базы данных, вложенных файлов и журналов) без остановки экземпляра ПО][complete_running_instance_backup]_
+- _[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии][restore_complete_backup]_
 
 ## Восстановление базы данных и скриптов
 
@@ -198,21 +198,18 @@ kbId: 2500
 4. Удостоверьтесь, что все данные из резервной копии восстановлены.
 5. Проверьте и исправьте конфигурацию экземпляра. См. *«[Проверка и настройка конфигурации экземпляра ПО {{ productName }} после восстановления из резервной копии][restore_test_configure]».*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Создание полной резервной копии (базы данных, вложенных файлов и журналов) без остановки экземпляра ПО][complete_running_instance_backup]*
-- *[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии][restore_complete_backup]*
-- *[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]*
-- *[Установка и запуск {{ productName }}][deploy_guide_linux]*
+- _[Создание полной резервной копии (базы данных, вложенных файлов и журналов) без остановки экземпляра ПО][complete_running_instance_backup]_
+- _[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии][restore_complete_backup]_
+- _[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]_
+- _[Установка и запуск {{ productName }}][deploy_guide_linux]_
+- _[Регистрация репозитория Elasticsearch (официальное руководство, английский язык)](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-filesystem-repository.html)_
+- _[Восстановление снимка Elasticsearch (официальное руководство, английский язык)](https://www.elastic.co/guide/en/elasticsearch/reference/current/restore-snapshot-api.html)_
+- _[Elasticsearch. Настройка подключения][elasticsearch_connection]_
 
 </div>
-
-**[Регистрация репозитория Elasticsearch (официальное руководство, английский язык)](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-filesystem-repository.html)**
-
-**[Восстановление снимка Elasticsearch (официальное руководство, английский язык)](https://www.elastic.co/guide/en/elasticsearch/reference/current/restore-snapshot-api.html)**
-
-**[Elasticsearch. Настройка подключения][elasticsearch_connection]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

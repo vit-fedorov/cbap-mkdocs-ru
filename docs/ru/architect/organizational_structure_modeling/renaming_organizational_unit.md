@@ -32,13 +32,13 @@ hide:
 
     *![Переименование оргединицы с помощью формы свойств](organizational_structure_modeling_rename_from_properties.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Просмотр реестра оргединиц][architect_organizational_structure_modelling]*
-- *[Создание оргединицы][architect_creating_organizational_unit]*
-- *[Настройка оргединицы][architect_configuring_organizational_unit]*
+- _[Просмотр реестра оргединиц][architect_organizational_structure_modelling]_
+- _[Создание оргединицы][architect_creating_organizational_unit]_
+- _[Настройка оргединицы][architect_configuring_organizational_unit]_
 
 </div>
 

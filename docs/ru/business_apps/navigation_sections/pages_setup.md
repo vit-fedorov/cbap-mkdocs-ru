@@ -505,14 +505,14 @@ _![Настройка списка](img/pages_setup_list_setting.png)_
 
 _![Настройка шагов](img/pages_setup_steps_setting.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Информационные страницы. Использование][pages]*
-- *[Настройка разделов навигации][navigation_sections_setup]*
-- *[Настройка рабочего стола][desktop_setup]*
-- *[«Контроль доступа к информационным страницам»][page_access_control]*
+- _[Информационные страницы. Использование][pages]_
+- _[Настройка разделов навигации][navigation_sections_setup]_
+- _[Настройка рабочего стола][desktop_setup]_
+- _[«Контроль доступа к информационным страницам»][page_access_control]_
 
 </div>
 

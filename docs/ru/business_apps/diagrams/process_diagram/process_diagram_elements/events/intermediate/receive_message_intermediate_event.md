@@ -77,17 +77,17 @@ kbId: 2382
 
 *![Настройка данных сообщения для промежуточного события-получения сообщения](receive_message_intermediate_event_message_data.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[События][process_diagram_elements_events]*
-- *[Типы промежуточных событий][process_diagram_elements_events_intermediate]*
-- *[Конечные события][process_diagram_elements_events_end]*
-- *[Пути передачи данных][communication_routes]*
-- *[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]*
-- *[Элементы диаграммы процесса][process_diagram_elements]*
-- *[Редактирование диаграммы процесса][process_diagram_designer]*
+- _[События][process_diagram_elements_events]_
+- _[Типы промежуточных событий][process_diagram_elements_events_intermediate]_
+- _[Конечные события][process_diagram_elements_events_end]_
+- _[Пути передачи данных][communication_routes]_
+- _[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]_
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
 </div>
 

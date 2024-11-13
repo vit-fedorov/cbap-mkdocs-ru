@@ -56,13 +56,13 @@ kbId: 2222
 
 _![Свойства шаблона процесса](process_templates_properties.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Диаграмма процесса. Определения][process_diagram]*
-- *[Общие свойства шаблонов][template_common_properties]*
-- *[Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление][templates]*
+- _[Диаграмма процесса. Определения][process_diagram]_
+- _[Общие свойства шаблонов][template_common_properties]_
+- _[Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление][templates]_
 
 </div>
 

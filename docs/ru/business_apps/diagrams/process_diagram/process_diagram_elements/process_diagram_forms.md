@@ -83,16 +83,16 @@ hide:
 4. Нажмите кнопку «**Удалить**».
 5. Подтвердите удаление.
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Редактирование формы][form_designer]*
-- *[Использование вложенной формы][forms_embedded]*
-- *[Простое начальное событие][process_diagram_elements_none_start_event]*
-- *[Пользовательская задача][process_diagram_elements_user_task]*
-- *[Элементы диаграммы процесса][process_diagram_elements]*
-- *[Редактирование диаграммы процесса][process_diagram_designer]*
+- _[Редактирование формы][form_designer]_
+- _[Использование вложенной формы][forms_embedded]_
+- _[Простое начальное событие][process_diagram_elements_none_start_event]_
+- _[Пользовательская задача][process_diagram_elements_user_task]_
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
 </div>
 

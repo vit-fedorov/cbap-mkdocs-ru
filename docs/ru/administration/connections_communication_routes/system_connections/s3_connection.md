@@ -111,15 +111,12 @@ kbId: 2594
 
 **![Настройка подключения к хранилищу S3](https://kb.comindware.ru/assets/img_65e9b87a6e895.png)**
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
+- _[Пути и содержимое папок экземпляра ПО]({{kbArticleURLPrefix}}2502)_
 
 </div>
 
-**[Пути и содержимое папок экземпляра ПО]({{kbArticleURLPrefix}}2502)**
-
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

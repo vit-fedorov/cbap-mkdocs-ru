@@ -62,12 +62,12 @@ _![Кнопка выхода из полноэкранного режима](pag
 
 _![Выбор и упорядочивание разделов страницы](img/page_sections_config.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Использование рабочего стола][desktop]*
-- *[Использование панели навигации][navigation_panel]*
+- _[Использование рабочего стола][desktop]_
+- _[Использование панели навигации][navigation_panel]_
 
 </div>
 

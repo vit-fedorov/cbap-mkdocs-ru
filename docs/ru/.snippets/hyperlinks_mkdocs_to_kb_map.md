@@ -1,7 +1,5 @@
 <!-- Любые руководства -->
 
-[administration_utility_configure]: {{ kbArticleURLPrefix }}2029
-
 [api_calls]: {{ kbCategoryURLPrefix }}513
 
 [api_web]: {{ kbArticleURLPrefix }}1940
@@ -655,6 +653,8 @@
 {% if userGuide or (adminGuideLinux and not adminGuideWindows) or kbExport %}
 
 <!-- Руководство пользователя, администратора для Linux или экспорт в БЗ  -->
+
+[admin_utility_configure]: {{ kbArticleURLPrefix }}2029
 
 [admin_utility_install_launch]: {{ kbArticleURLPrefix }}2027
 

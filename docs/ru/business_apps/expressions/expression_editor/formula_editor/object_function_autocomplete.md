@@ -38,11 +38,11 @@ hide:
 OBJECT("Upravlenieavtoparkom", "Avtomobil", "Marka", "Лада")
 ```
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Редактор выражений][expression_editor]*
+- _[Редактор выражений][expression_editor]_
 
 </div>
 

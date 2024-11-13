@@ -157,18 +157,14 @@ _![Настройка свойств роли](img/role_properties.png)_
 3. Подтвердите удаление роли.
 <!--role-delete-end-->
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
-**[Системные роли. Определения, настройка, объединение, удаление][system_roles]**
+
+- _[Системные роли. Определения, настройка, объединение, удаление][system_roles]_
+- _[Шаблон роли][role_templates]_
+- _[Панель и разделы навигации. Определения, настройка, удаление][navigation_sections_setup]_
 
 </div>
 
-
-**[Шаблон роли][role_templates]**
-
-**[Панель и разделы навигации. Определения, настройка, удаление][navigation_sections_setup]**
-
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

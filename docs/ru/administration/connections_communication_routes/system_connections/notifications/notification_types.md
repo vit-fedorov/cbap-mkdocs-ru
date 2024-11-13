@@ -88,19 +88,19 @@ _![Просмотр уведомлений о задачах](task_notifications
 - **Внешний сокет** — выберите или создайте **путь передачи данных** типа «**[Отправка эл. почты из процесса][process_sending_connection]**» для отправки сообщения.
 - **Общее уведомление** — выберите или создайте **путь передачи данных** типа «**[Общие уведомления][common_notifications]**» для отправки сообщения.
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Глобальная конфигурация][global_configuration]*
-- *[Общие уведомления. Настройка пути передачи данных, диаграммы процесса и глобальной конфигурации][common_notifications]*
-- *[Уведомления о задачах. Настройка пути передачи данных][task_notifications]*
-- *[Настройка периодических напоминаний об открытых задачах][periodic_task_notifications]*
-- *[Отправка эл. почты из процесса. Настройка подключения, пути передачи данных и события на диаграмме процесса][process_sending_connection]*
-- *[Промежуточное событие-отправка сообщения][process_diagram_elements_send_message_intermediate_event]*
-- *[Конечное событие-отправка сообщения][process_diagram_elements_send_message_end_event]*
-- *[Промежуточное событие-получение сообщения][process_diagram_elements_receive_message_intermediate_event]*
-- *[Начальное событие-получение сообщения][process_diagram_elements_receive_message_start_event]*
+- _[Глобальная конфигурация][global_configuration]_
+- _[Общие уведомления. Настройка пути передачи данных, диаграммы процесса и глобальной конфигурации][common_notifications]_
+- _[Уведомления о задачах. Настройка пути передачи данных][task_notifications]_
+- _[Настройка периодических напоминаний об открытых задачах][periodic_task_notifications]_
+- _[Отправка эл. почты из процесса. Настройка подключения, пути передачи данных и события на диаграмме процесса][process_sending_connection]_
+- _[Промежуточное событие-отправка сообщения][process_diagram_elements_send_message_intermediate_event]_
+- _[Конечное событие-отправка сообщения][process_diagram_elements_send_message_end_event]_
+- _[Промежуточное событие-получение сообщения][process_diagram_elements_receive_message_intermediate_event]_
+- _[Начальное событие-получение сообщения][process_diagram_elements_receive_message_start_event]_
 
 </div>
 

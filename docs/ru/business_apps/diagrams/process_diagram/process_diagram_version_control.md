@@ -89,14 +89,14 @@ kbId: 2358
 
     _![Сообщение при попытке удаления версии диаграммы выполняющегося экземпляра процесса](img/diagram_version_deletion_denied.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Публикация диаграммы процесса][process_diagram_publish]*
-- *[Просмотр диаграммы процесса][process_diagram_view]*
-- *[Конструктор диаграммы процесса][process_diagram_designer]*
-- *[Использование диаграммы экземпляра процесса][process_diagram_view_instance]*
+- _[Публикация диаграммы процесса][process_diagram_publish]_
+- _[Просмотр диаграммы процесса][process_diagram_view]_
+- _[Конструктор диаграммы процесса][process_diagram_designer]_
+- _[Использование диаграммы экземпляра процесса][process_diagram_view_instance]_
 
 </div>
 

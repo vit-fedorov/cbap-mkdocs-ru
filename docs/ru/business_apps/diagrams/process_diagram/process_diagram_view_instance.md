@@ -126,13 +126,13 @@ _![Диаграмма экземпляра процесса](img/process_diagram
 
 _![Просмотр цепочки событий экземпляра процесса](img/process_diagram_view_events_chain.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Управление версиями диаграммы процесса][process_diagram_version_control]*
-- *[Публикация диаграммы процесса][process_diagram_publish]*
-- *[Просмотр диаграммы процесса][process_diagram_view]*
+- _[Управление версиями диаграммы процесса][process_diagram_version_control]_
+- _[Публикация диаграммы процесса][process_diagram_publish]_
+- _[Просмотр диаграммы процесса][process_diagram_view]_
 
 </div>
 

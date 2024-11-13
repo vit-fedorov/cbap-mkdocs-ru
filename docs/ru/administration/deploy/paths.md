@@ -64,19 +64,16 @@ kbId: 2502
 
 {% endif %}
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
+{% if adminGuideWindows or kbExport %}
+- _[Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта][instance_configure_windows]_
+{% endif %}
+- _[Антивирусное ПО. Настройка исключений: пути и файлы {{ productName }}][antivirus_exceptions_configure]_
+- _[Подсистема журналирования][logging_engine]_
 
 </div>
-
-{% if adminGuideWindows or kbExport %}
-**[Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта][instance_configure_windows]**
-{% endif %}
-
-**[Антивирусное ПО. Настройка исключений: пути и файлы {{ productName }}][antivirus_exceptions_configure]**
-
-**[Подсистема журналирования][logging_engine]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -71,12 +71,12 @@ hide:
 
 _![Пример карты и таблицы меток на карте](img/map_use_example.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Карты. Настройка][map_configure]*
-- *[Динамические элементы формы. Настройка карты][form_dynamic_elements_map]*
+- _[Карты. Настройка][map_configure]_
+- _[Динамические элементы формы. Настройка карты][form_dynamic_elements_map]_
 
 </div>
 

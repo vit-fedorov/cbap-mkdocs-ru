@@ -44,14 +44,14 @@ hide:
 
 *![Свойства развилки «и»](parallel_gateway_general_properties.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Развилка «или/или»][process_diagram_elements_gateway_exclusive]*
-- *[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]*
-- *[Элементы диаграммы процесса][process_diagram_elements]*
-- *[Редактирование диаграммы процесса][process_diagram_designer]*
+- _[Развилка «или/или»][process_diagram_elements_gateway_exclusive]_
+- _[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]_
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
 </div>
 

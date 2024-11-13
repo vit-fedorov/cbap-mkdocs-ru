@@ -29,11 +29,11 @@ hide:
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
 ```
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Редактор выражений][expression_editor]*
+- _[Редактор выражений][expression_editor]_
 
 </div>
 

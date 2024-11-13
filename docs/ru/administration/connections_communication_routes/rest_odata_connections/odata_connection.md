@@ -66,12 +66,12 @@ _![Создание подключения для синхронизации с 
 
 _![Настройка свойств подключения для синхронизации с веб-сервисом](odata_integration_connection_properties.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Синхронизация с веб-сервисом. Интеграция по OData][odata_integration]*
-- *[Интеграция с 1С по OData. Настройка для импорта данных][1c_integrations]*
+- _[Синхронизация с веб-сервисом. Интеграция по OData][odata_integration]_
+- _[Интеграция с 1С по OData. Настройка для импорта данных][1c_integrations]_
 
 </div>
 

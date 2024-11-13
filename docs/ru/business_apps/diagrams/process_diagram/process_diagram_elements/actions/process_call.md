@@ -148,14 +148,14 @@ hide:
 
 *![Настройка передачи данных в текущий процесс из вызываемого](process_call_output_data.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Встроенный подпроцесс][process_diagram_elements_embedded_subprocess]*
-- *[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]*
-- *[Элементы диаграммы процесса][process_diagram_elements]*
-- *[Редактирование диаграммы процесса][process_diagram_designer]*
+- _[Встроенный подпроцесс][process_diagram_elements_embedded_subprocess]_
+- _[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]_
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
 </div>
 

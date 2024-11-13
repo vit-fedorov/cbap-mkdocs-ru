@@ -88,12 +88,12 @@ kbId: 2038
 
     _![Настройка пути к файлам резервной копии](https://kb.comindware.ru/assets/img_6683f69f9922d.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Резервное копирование. Настройка и запуск {{ productName }}][backup]*
-- *[Резервное копирование и восстановление {{ productName }} в ОС Windows][backup_restore_windows]*
+- _[Резервное копирование. Настройка и запуск {{ productName }}][backup]_
+- _[Резервное копирование и восстановление {{ productName }} в ОС Windows][backup_restore_windows]_
 
 </div>
 

@@ -76,15 +76,19 @@ kbId: 2376
 
 *![Настройка данных сообщения для начального события-получения сообщения](receive_message_start_event_message_data.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[События][process_diagram_elements_events]*
-- *[Типы начальных событий][типы-начальных-событий]*
-- *[Конечные события][process_diagram_elements_events_end]*
-- *[Промежуточные события][process_diagram_elements_events_intermediate]*
-- *[Пути передачи данных][communication_routes]*
-- *[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]*
-- *[Элементы диаграммы процесса][process_diagram_elements]*
-- *[Редактирование диаграммы процесса][process_diagram_designer]*
+- _[События][process_diagram_elements_events]_
+- _[Типы начальных событий][типы-начальных-событий]_
+- _[Конечные события][process_diagram_elements_events_end]_
+- _[Промежуточные события][process_diagram_elements_events_intermediate]_
+- _[Пути передачи данных][communication_routes]_
+- _[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]_
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
+
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

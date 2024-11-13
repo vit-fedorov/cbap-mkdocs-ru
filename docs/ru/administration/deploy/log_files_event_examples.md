@@ -1021,7 +1021,7 @@ Stack:
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 systemAccount    PerformanceHelper.Perform: FullTextSearchService.RebuildThreadWorker() succeed Time:59184ms TotalGCMemory:472MB DeltaGCMemory:-146MB TotalProcessMemory:462MB DeltaProcessMemory:0MB
 ```
 
-{% if completeGuide or adminGuideWindows or kbExport %}
+{% if completeGuide or userGuide or adminGuideWindows or kbExport %}
 
 #### Версия 4.2 (Windows) {: .pageBreakAfterAvoid }
 

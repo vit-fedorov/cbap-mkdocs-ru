@@ -15,7 +15,7 @@ kbId: 2569
 
 По умолчанию файлы, загружаемые конечными пользователями и формируемые автоматически, хранятся в следующем каталоге:
 
-{% if completeGuide or kbExport %}
+{% if completeGuide or userGuide or kbExport %}
 - `/var/lib/comindware/<instanceName>/Streams` — Linux
 - `C:\ProgramData\Comindware\`  `Instances\<instanceName>\Streams` — Windows
 {% endif %}
@@ -48,7 +48,7 @@ kbId: 2569
             - Можно прикрепить к одному полю типа «**Документ**» файл объёмом 300 МБ.
             - Нельзя прикрепить к полям типа «**Документ**» три файла по 110 МБ.
 
-{% if completeGuide or adminGuideLinux or kbExport %}
+{% if completeGuide or userGuide or adminGuideLinux or kbExport %}
 ### Изменение лимита в Linux {: .pageBreakBefore }
 
 Для изменения лимита на размер загружаемых файлов в ОС Linux необходимо отредактировать конфигурацию экземпляра ПО, а также конфигурацию NGINX.
@@ -103,7 +103,7 @@ kbId: 2569
 
 {% endif%}
 
-{% if completeGuide or adminGuideWindows or kbExport %}
+{% if completeGuide or userGuide or adminGuideWindows or kbExport %}
 ### Изменение лимита в Windows
 
 Для изменения лимита на размер загружаемых файлов в ОС Windows необходимо отредактировать конфигурацию экземпляра ПО.

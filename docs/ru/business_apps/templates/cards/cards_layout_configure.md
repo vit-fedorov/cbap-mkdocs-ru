@@ -120,10 +120,13 @@ _![Выбор представления карточек для таблицы]
 
 _![Удаление представления карточек](img/cards_layout_delete.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Карточки. Использование в браузере и мобильном приложении][cards_view]**
+- *[Карточки. Использование в браузере и мобильном приложении][cards_view]*
+- *[Таблицы. Определения, настройка, удаление][table_configure]*
 
-**[Таблицы. Определения, настройка, удаление][table_configure]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

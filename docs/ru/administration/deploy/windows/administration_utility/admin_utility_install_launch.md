@@ -51,8 +51,12 @@ kbId: 2027
 
     _![Главное окно Утилиты администрирования](https://kb.{{ companyName }}.ru/assets/img_667988719e042.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Установка продукта {{ productName }}][admin_utility_install_software]**
+- *[Установка продукта {{ productName }}][admin_utility_install_software]*
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

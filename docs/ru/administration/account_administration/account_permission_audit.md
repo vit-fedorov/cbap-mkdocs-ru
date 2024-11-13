@@ -47,9 +47,13 @@ _![Список членов групп](img/account_permission_audit_group_memb
 
 _![Список членов ролей](img/account_permission_audit_role_members.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Аккаунты. Создание, настройка, замещение, привязка к шаблону аккаунта, назначение лицензий, удаление][accounts]**
+- *[Аккаунты. Создание, настройка, замещение, привязка к шаблону аккаунта, назначение лицензий, удаление][accounts]*
+
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

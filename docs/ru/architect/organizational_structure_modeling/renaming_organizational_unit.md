@@ -32,12 +32,14 @@ hide:
 
     *![Переименование оргединицы с помощью формы свойств](organizational_structure_modeling_rename_from_properties.png)*
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра оргединиц][architect_organizational_structure_modelling]**
+- *[Просмотр реестра оргединиц][architect_organizational_structure_modelling]*
+- *[Создание оргединицы][architect_creating_organizational_unit]*
+- *[Настройка оргединицы][architect_configuring_organizational_unit]*
 
-**[Создание оргединицы][architect_creating_organizational_unit]**
-
-**[Настройка оргединицы][architect_configuring_organizational_unit]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

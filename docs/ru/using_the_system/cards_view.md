@@ -33,8 +33,12 @@ hide:
 
     _![Переход к таблице из представления карточек](img/cards_switch_to_table_mobile.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Настройка представления карточек][cards_configure]**
+- *[Настройка представления карточек][cards_configure]*
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

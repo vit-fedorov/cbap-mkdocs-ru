@@ -69,10 +69,13 @@ hide:
 
     _![Переход к ручному управлению версиями](img/verstion_control_switch_to_manual.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Управление версиями через Git][version_control_git]**
+- *[Управление версиями через Git][version_control_git]*
+- *[Ручное управление версиями][version_control_manual]*
 
-**[Ручное управление версиями][version_control_manual]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

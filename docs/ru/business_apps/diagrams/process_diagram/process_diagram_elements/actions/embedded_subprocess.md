@@ -40,12 +40,11 @@ hide:
 
 *![Свойства встроенного подпроцесса](embedded_subprocess_properties.png)*
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Вызов процесса][process_diagram_elements_process_call]**
-
-**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
-
-**[Элементы диаграммы процесса][process_diagram_elements]**
-
-**[Редактирование диаграммы процесса][process_diagram_designer]**
+- *[Вызов процесса][process_diagram_elements_process_call]*
+- *[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]*
+- *[Элементы диаграммы процесса][process_diagram_elements]*
+- *[Редактирование диаграммы процесса][process_diagram_designer]*

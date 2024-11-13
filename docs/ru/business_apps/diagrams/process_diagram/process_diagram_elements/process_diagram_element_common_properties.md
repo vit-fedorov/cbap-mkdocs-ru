@@ -50,12 +50,14 @@ _![Свойства выбранного элемента в панели сво
 
     _![Настройка общих свойств элемента диаграммы процесса](process_diagram_element_common_properties.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Элементы диаграммы процесса][process_diagram_elements]**
+- *[Элементы диаграммы процесса][process_diagram_elements]*
+- *[Диаграмма процесса][process_diagram]*
+- *[Конструктор диаграммы процесса][process_diagram_designer]*
 
-**[Диаграмма процесса][process_diagram]**
-
-**[Конструктор диаграммы процесса][process_diagram_designer]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

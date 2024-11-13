@@ -53,11 +53,14 @@ kbId: 2221
 
 _![Свойства шаблона записи](record_templates_properties.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Общие свойства шаблонов][template_common_properties]**
+- *[Общие свойства шаблонов][template_common_properties]*
+- *[Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление][templates]*
 
-**[Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление][templates]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

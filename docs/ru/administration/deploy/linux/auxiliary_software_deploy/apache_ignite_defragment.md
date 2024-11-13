@@ -149,7 +149,12 @@ kbId: 2495
 
 8. Перезагрузите машину и экземпляр ПО.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
+
+
+</div>
 
 {% if kbExport %}
 **[Резервное копирование и восстановление]({{ kbArticleURLPrefix }})489**

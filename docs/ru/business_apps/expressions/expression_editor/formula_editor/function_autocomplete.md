@@ -30,11 +30,14 @@ hide:
 
 *![Подсказка при предиктивном вводе имени функции](formula_editor_function_autocomplete.png)*
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Справочник по функциям][справочник-по-функциям]**
+- *[Справочник по функциям][справочник-по-функциям]*
+- *[Редактор выражений][expression_editor]*
 
-**[Редактор выражений][expression_editor]**
+</div>
 
 **[Примеры использования формул. База знаний Comindware]({{ kbCategoryURLPrefix }}409){:target="_blank"}**
 

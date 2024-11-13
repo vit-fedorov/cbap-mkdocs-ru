@@ -99,11 +99,14 @@ hide:
 
 _![Настройка импорта приложения из файла CTF](img/manual_version_import_properties.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Управление версиями приложения][version_control]**
+- *[Управление версиями приложения][version_control]*
+- *[Управление версиями через Git][version_control_git]*
 
-**[Управление версиями через Git][version_control_git]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

@@ -50,12 +50,14 @@ hide:
 !!! Note "Примечание"
     [Редактировать][architect_edit_diagram] можно только текущую версию диаграммы.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра процессов][architect_process_architecture_modelling]**
+- *[Просмотр реестра процессов][architect_process_architecture_modelling]*
+- *[Просмотр реестра оргединиц][architect_organizational_structure_modelling]*
+- *[Использование системы — Панель навигации][navigation_panel]*
 
-**[Просмотр реестра оргединиц][architect_organizational_structure_modelling]**
-
-**[Использование системы — Панель навигации][navigation_panel]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

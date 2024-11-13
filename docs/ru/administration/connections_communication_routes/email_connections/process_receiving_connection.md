@@ -151,18 +151,17 @@ _![Настройка атрибутов сообщения в пути пере
 ПО НАСТРОЙКЕ СОБЫТИЯ НА ДИАГРАММЕ ПО ОБРАЗЦУ:
 process_sending_connection.md-->
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Начальное событие-получение сообщения][process_diagram_elements_receive_message_start_event]**
+- *[Начальное событие-получение сообщения][process_diagram_elements_receive_message_start_event]*
+- *[Промежуточное событие-получение сообщения][process_diagram_elements_receive_message_intermediate_event]*
+- *[Отправка, получение и обработка эл. почты в процессе. Пример: настройка подключений, путей передачи данных, диаграммы процесса и сценария][process_email_configure]*
+- *[Отправка эл. почты из процесса. Настройка подключения, пути передачи данных и события на диаграмме процесса][process_sending_connection]*
+- *[Получение эл. почты с помощью сценария через Exchange и IMAP. Настройка подключения, пути передачи данных и сценария][scenario_receive_email]*
+- *[Отправка эл. почты из сценариев через SMTP и Exchange. Настройка подключения, пути передачи данных и сценария][scenario_send_email]*
 
-**[Промежуточное событие-получение сообщения][process_diagram_elements_receive_message_intermediate_event]**
-
-**[Отправка, получение и обработка эл. почты в процессе. Пример: настройка подключений, путей передачи данных, диаграммы процесса и сценария][process_email_configure]**
-
-**[Отправка эл. почты из процесса. Настройка подключения, пути передачи данных и события на диаграмме процесса][process_sending_connection]**
-
-**[Получение эл. почты с помощью сценария через Exchange и IMAP. Настройка подключения, пути передачи данных и сценария][scenario_receive_email]**
-
-**[Отправка эл. почты из сценариев через SMTP и Exchange. Настройка подключения, пути передачи данных и сценария][scenario_send_email]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

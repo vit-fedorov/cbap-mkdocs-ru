@@ -27,14 +27,15 @@ _![Свойства атрибута типа «Аккаунт»](attribute_acco
 
 --8<-- "attribute_property_attribute_linking_example.md"
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Общие свойства атрибутов][attribute_common_properties]**
+- *[Общие свойства атрибутов][attribute_common_properties]*
+- *[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]*
+- *[Шаблон аккаунта][account_templates]*
+- *[Атрибут типа «Запись»][attribute_record]*
 
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
-
-**[Шаблон аккаунта][account_templates]**
-
-**[Атрибут типа «Запись»][attribute_record]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

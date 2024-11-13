@@ -48,13 +48,15 @@ _![Свойства атрибута типа «Число»](img/attribute_numb
 
         - `22000`
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Настройка поля атрибута «Число» на форме][form_dynamic_elements]**
+- *[Настройка поля атрибута «Число» на форме][form_dynamic_elements]*
+- *[Общие свойства атрибутов][attribute_common_properties]*
+- *[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]*
 
-**[Общие свойства атрибутов][attribute_common_properties]**
-
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
+</div>
 
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -80,9 +80,13 @@ _![Удаление элементов из списка значений](attri
 
     _![Раскрывающийся список значений на форме](img/attribute_enum_example.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Атрибут типа «Список значений». Вычисление значения по справочнику][attribute_enum_calculate_registry]**
+- *[Атрибут типа «Список значений». Вычисление значения по справочнику][attribute_enum_calculate_registry]*
+
+</div>
 
 [**Атрибут типа «Список значений». Вычисление текущего значения**][attribute_enum_calculate_current_value]
 

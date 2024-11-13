@@ -19,9 +19,13 @@ kbId: 2246
 
 _![Свойства атрибута типа «Дата и время»](attribute_date_time_properties.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Работа с атрибутом типа «Дата и время»][attribute_date_time_use]**
+- *[Работа с атрибутом типа «Дата и время»][attribute_date_time_use]*
+
+</div>
 
 [**Настройка поля атрибута типа «Дата и время» на форме**][form_dynamic_elements]
 

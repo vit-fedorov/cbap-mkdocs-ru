@@ -59,7 +59,12 @@ _![Токен подключения в файле конфигурации Р7-
 
 _![Настройка подключения к Р7-Офис](r7_connection_settings.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
+
+
+</div>
 
 **[Р7 Офис и Collabora Online. Использование для работы с документами]({{ kbArticleURLPrefix }}2343)**
 

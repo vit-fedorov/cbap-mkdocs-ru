@@ -34,8 +34,12 @@ kbId: 2186
 
 _![Настройка конфигурации журналирования](img/logging_configuration_settings.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Подсистема журналирования][logging_engine]**
+- *[Подсистема журналирования][logging_engine]*
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

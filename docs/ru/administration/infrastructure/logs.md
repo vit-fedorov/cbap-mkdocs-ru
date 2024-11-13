@@ -138,14 +138,15 @@ _![Журнал трассировки событий](logs_event_tracing.png)_
 
 Для просмотра [цепочки событий](#logs_event_chain_view) дважды нажмите строку в журнале.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Глобальная конфигурация][global_configuration]**
+- *[Глобальная конфигурация][global_configuration]*
+- *[Мониторинг][monitoring]*
+- *[Производительность][performance]*
+- *[Подсистема журналирования][logging_engine]*
 
-**[Мониторинг][monitoring]**
-
-**[Производительность][performance]**
-
-**[Подсистема журналирования][logging_engine]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -45,13 +45,15 @@ hide:
 3. Перетащите страницу за пределы макета раздела навигации.
 4. При необходимости подтвердите удаление элемента из раздела навигации.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Рабочий стол. Использование][desktop]**
+- *[Рабочий стол. Использование][desktop]*
+- *[Панель и разделы навигации. Настройка][navigation_sections_setup]*
+- *[Информационные страницы. Настройка][pages_setup]*
 
-**[Панель и разделы навигации. Настройка][navigation_sections_setup]**
-
-**[Информационные страницы. Настройка][pages_setup]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

@@ -457,13 +457,15 @@ _[https://github.com/NLog/NLog/wiki/EventLog-target](https://github.com/NLog/NLo
 
 {% endif %}
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Примеры событий в файловых журналах][log_files_event_examples]**
+- *[Примеры событий в файловых журналах][log_files_event_examples]*
+- *[Пути и содержимое папок экземпляра ПО][paths]*
+- *[Адаптеры][adapters]*
 
-**[Пути и содержимое папок экземпляра ПО][paths]**
-
-**[Адаптеры][adapters]**
+</div>
 
 [**Просмотр показателей мониторинга с помощью страницы «Администрирование»**][monitoring]
 

@@ -47,16 +47,13 @@ hide:
 
 *![Дополнительные свойства конечного события-остановки процесса](stop_process_end_event_advanced_properties.png)*
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[События][process_diagram_elements_events]**
-
-**[Типы конечных событий][типы-конечных-событий]**
-
-**[Простое промежуточное событие][process_diagram_elements_none_intermediate_event]**
-
-**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
-
-**[Элементы диаграммы процесса][process_diagram_elements]**
-
-**[Редактирование диаграммы процесса][process_diagram_designer]**
+- *[События][process_diagram_elements_events]*
+- *[Типы конечных событий][типы-конечных-событий]*
+- *[Простое промежуточное событие][process_diagram_elements_none_intermediate_event]*
+- *[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]*
+- *[Элементы диаграммы процесса][process_diagram_elements]*
+- *[Редактирование диаграммы процесса][process_diagram_designer]*

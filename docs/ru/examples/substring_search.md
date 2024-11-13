@@ -91,11 +91,14 @@ kbId: 2628
 8. В поле _«Важная заявка»_ флажок будет снят.
 9. Поэкспериментируйте с регистром и формами слов из реестра, чтобы понять, как работает выражение на N3.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Атрибут типа «Текст»][attribute_text]**
+- *[Атрибут типа «Текст»][attribute_text]*
+- *[Написание выражений на языке N3][manual_n3]*
 
-**[Написание выражений на языке N3][manual_n3]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

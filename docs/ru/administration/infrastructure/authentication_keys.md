@@ -45,10 +45,13 @@ kbId: 2604
 3. Нажмите кнопку «**Удалить**».
 4. Подтвердите удаление ключей.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Введение в API][api_intro]**
+- *[Введение в API][api_intro]*
+- *[Системные роли. Определения, настройка, объединение, удаление][system_roles]*
 
-**[Системные роли. Определения, настройка, объединение, удаление][system_roles]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

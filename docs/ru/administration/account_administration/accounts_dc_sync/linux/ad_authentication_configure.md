@@ -213,12 +213,14 @@ kbId: 2517
 
     Здесь `<username>` — имя любого пользователя домена, для которого известен пароль.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Сервер каталогов. Настройка подключения][ad_connection]**
+- *[Сервер каталогов. Настройка подключения][ad_connection]*
+- *[Синхронизация с сервером каталогов (Active Directory)][accounts_dc_sync]*
+- *[Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя][sso_authenticatation_configure]*
 
-**[Синхронизация с сервером каталогов (Active Directory)][accounts_dc_sync]**
-
-**[Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя][sso_authenticatation_configure]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -43,8 +43,12 @@ _![Пример отображения имени заявителя в заго
 
 _![Флажок «Использовать как заголовок записей»](displayed_attribute.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
+- *[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]*
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

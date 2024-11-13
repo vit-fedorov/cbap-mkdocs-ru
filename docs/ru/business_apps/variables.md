@@ -98,11 +98,14 @@ _![Список переменных приложения](img/variable_list.png
 
 _![Настройка переменной приложения](img/variable_properties.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Использование переменных в сценарии][scenario_variables]**
+- *[Использование переменных в сценарии][scenario_variables]*
+- *[Автонумерация записей с помощью формулы, C#-скрипта или выражения N3][auto_numerating_records]*
 
-**[Автонумерация записей с помощью формулы, C#-скрипта или выражения N3][auto_numerating_records]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

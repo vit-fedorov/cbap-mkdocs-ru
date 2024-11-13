@@ -212,16 +212,16 @@ hide:
 
 3. Используйте в файле Excel шаблона экспорта только шрифты, перенесённые с сервера.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Пример настройки и использования шаблона экспорта авансового отчёта][export_template_file_example]**
+- *[Пример настройки и использования шаблона экспорта авансового отчёта][export_template_file_example]*
+- *[Настройка выгрузки нескольких коллекций и изображений][export_template_csharp_collection_download]*
+- *[Настройка шаблона экспорта с использованием C#][export_template_csharp_configure]*
+- *[Настройка шаблона экспорта][export_templates]*
+- *[Настройка кнопки экспорта][export_template_button_configure]*
 
-**[Настройка выгрузки нескольких коллекций и изображений][export_template_csharp_collection_download]**
-
-**[Настройка шаблона экспорта с использованием C#][export_template_csharp_configure]**
-
-**[Настройка шаблона экспорта][export_templates]**
-
-**[Настройка кнопки экспорта][export_template_button_configure]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

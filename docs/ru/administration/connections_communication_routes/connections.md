@@ -107,11 +107,14 @@ _![Список подключений](connection_list.png)_
 2. Нажмите кнопку «**Удалить**».
 3. Подтвердите удаление.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Пути передачи данных. Определения, типы, создание, настройка, удаление][communication_routes]**
+- *[Пути передачи данных. Определения, типы, создание, настройка, удаление][communication_routes]*
+- *[Примеры интеграций][integration_examples]*
 
-**[Примеры интеграций][integration_examples]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

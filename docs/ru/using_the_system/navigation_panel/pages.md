@@ -62,11 +62,14 @@ _![Кнопка выхода из полноэкранного режима](pag
 
 _![Выбор и упорядочивание разделов страницы](img/page_sections_config.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Использование рабочего стола][desktop]**
+- *[Использование рабочего стола][desktop]*
+- *[Использование панели навигации][navigation_panel]*
 
-**[Использование панели навигации][navigation_panel]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

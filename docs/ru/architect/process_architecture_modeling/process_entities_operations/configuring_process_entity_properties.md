@@ -30,18 +30,17 @@ hide:
 
 *![Настройка свойств элемента процессной архитектуры](configuring_process_entity_properties.png)*
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Редактирование формы и атрибутов оргединицы][architect_configuring_organizational_unit_form_and_attributes]**
+- *[Редактирование формы и атрибутов оргединицы][architect_configuring_organizational_unit_form_and_attributes]*
+- *[Изменение свойств оргединицы][architect_configuring_organizational_unit]*
+- *[Просмотр реестра процессов][architect_process_architecture_modelling]*
+- *[Создание элемента процессной архитектуры][architect_creating_process_entity]*
+- *[Переименование элемента процессной архитектуры][architect_renaming_process_entity]*
+- *[Использование системы — Панель навигации][navigation_panel]*
 
-**[Изменение свойств оргединицы][architect_configuring_organizational_unit]**
-
-**[Просмотр реестра процессов][architect_process_architecture_modelling]**
-
-**[Создание элемента процессной архитектуры][architect_creating_process_entity]**
-
-**[Переименование элемента процессной архитектуры][architect_renaming_process_entity]**
-
-**[Использование системы — Панель навигации][navigation_panel]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -157,12 +157,14 @@ kbId: 2107
 
     *![Свойства таблицы работ на форме](creating_gantt_chart_table_properties.png)*
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Диаграмма Ганта. Использование][gantt_chart_use]**
+- *[Диаграмма Ганта. Использование][gantt_chart_use]*
+- *[Шаблон записи][record_templates]*
+- *[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]*
 
-**[Шаблон записи][record_templates]**
-
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

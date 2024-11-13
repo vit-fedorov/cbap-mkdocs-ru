@@ -64,7 +64,12 @@ kbId: 2502
 
 {% endif %}
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
+
+
+</div>
 
 {% if adminGuideWindows or kbExport %}
 **[Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта][instance_configure_windows]**

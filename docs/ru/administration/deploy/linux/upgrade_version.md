@@ -244,6 +244,8 @@ kbId: 2499
     tail -f /var/log/comindware/<instanceName>/Log/sys*
     ```
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]**
+- *[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]*

@@ -85,12 +85,14 @@ hide:
 !!! Note "Примечание"
     При удалении с диаграммы элемента «**Встроенный подпроцесс**», «**Группа процессов**», «**Ссылка на процесс**» или «**Ссылка на группу процессов**» этот элемент также будет удалён из [реестра процессов][architect_process_architecture_modelling]. Кроме того, будут удалены все ссылки на данный элемент на других диаграммах.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Конструктор диаграмм][architect_process_diagram_designer]**
+- *[Конструктор диаграмм][architect_process_diagram_designer]*
+- *[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]*
+- *[Редактирование формы свойств и атрибутов элемента][architect_configuring_process_entity_properties_form_and_attributes]*
 
-**[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]**
-
-**[Редактирование формы свойств и атрибутов элемента][architect_configuring_process_entity_properties_form_and_attributes]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -28,10 +28,13 @@ hide:
 
     Если окно не отобразилось, экспортированный файл будет сохранен в папку загрузок, заданную в настройках браузера.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра процессов][architect_process_architecture_modelling]**
+- *[Просмотр реестра процессов][architect_process_architecture_modelling]*
+- *[Использование системы — Панель навигации][navigation_panel]*
 
-**[Использование системы — Панель навигации][navigation_panel]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

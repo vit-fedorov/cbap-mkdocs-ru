@@ -61,11 +61,14 @@ hide:
 3. Перетащите таблицу за пределы макета раздела навигации.
 4. При необходимости подтвердите удаление элемента из раздела навигации.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Панель и разделы навигации. Определения, настройка, удаление][navigation_sections_setup]**
+- *[Панель и разделы навигации. Определения, настройка, удаление][navigation_sections_setup]*
+- *[Настройка рабочего стола][desktop_setup]*
 
-**[Настройка рабочего стола][desktop_setup]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

@@ -808,8 +808,12 @@ kbId: 2596
     rm /var/www/.cmw_environment/nginx
     ```
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Пути и содержимое папок экземпляра ПО][paths]**
+- *[Пути и содержимое папок экземпляра ПО][paths]*
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

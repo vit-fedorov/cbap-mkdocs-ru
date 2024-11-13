@@ -70,17 +70,17 @@ _![Выбор глобальной функции для задачи-вызов
 
 В последнем столбце «**Значение**» позволяет выбрать атрибут текущего или связанного шаблона записи. Тип данных атрибута должен совпадать с типом данных атрибута сигнатуры функции.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Функции][functions]**
+- *[Функции][functions]*
+- *[Пользовательская задача][process_diagram_elements_user_task]*
+- *[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]*
+- *[Элементы диаграммы процесса][process_diagram_elements]*
+- *[Редактирование диаграммы процесса][diagrams]*
 
-**[Пользовательская задача][process_diagram_elements_user_task]**
-
-**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
-
-**[Элементы диаграммы процесса][process_diagram_elements]**
-
-**[Редактирование диаграммы процесса][diagrams]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

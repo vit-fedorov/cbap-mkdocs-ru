@@ -29,9 +29,13 @@ hide:
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
 ```
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Редактор выражений][expression_editor]**
+- *[Редактор выражений][expression_editor]*
+
+</div>
 
 **[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}**
 

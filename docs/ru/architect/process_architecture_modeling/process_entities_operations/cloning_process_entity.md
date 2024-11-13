@@ -34,12 +34,14 @@ hide:
 3. Будет создан дубликат элемента процессной архитектуры на том же уровне иерархии.
 4. Присвойте наглядное название созданному элементу. См. «_[Переименование элемента процессной архитектуры][architect_renaming_process_entity]_».
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра процессов][architect_process_architecture_modelling]**
+- *[Просмотр реестра процессов][architect_process_architecture_modelling]*
+- *[Переименование элемента процессной архитектуры][architect_renaming_process_entity]*
+- *[Использование системы — Панель навигации][navigation_panel]*
 
-**[Переименование элемента процессной архитектуры][architect_renaming_process_entity]**
-
-**[Использование системы — Панель навигации][navigation_panel]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

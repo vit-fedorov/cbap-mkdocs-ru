@@ -33,11 +33,14 @@ _![Настройка подключения для получения веб-з
 
 _![Пример веб-страницы с ответом на запрос](get_connection_example.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Отправка веб-запросов. Настройка подключения][send_http_request_connection]**
+- *[Отправка веб-запросов. Настройка подключения][send_http_request_connection]*
+- *[Получение эл. почты в процессе. Настройка подключения и пути передачи данных][process_receiving_connection]*
 
-**[Получение эл. почты в процессе. Настройка подключения и пути передачи данных][process_receiving_connection]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

@@ -48,10 +48,13 @@ hide:
 
 <!--navigating-to-child-end-->
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра процессов][architect_process_architecture_modelling]**
+- *[Просмотр реестра процессов][architect_process_architecture_modelling]*
+- *[Редактирование диаграммы][architect_edit_diagram]*
 
-**[Редактирование диаграммы][architect_edit_diagram]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -36,8 +36,12 @@ kbId: 2593
 
 _![Настройка подключения к Elasticsearch](elasticsearch_connection_settings.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Инициализация {{ productName }}][deploy_guide_linux_initialize]**
+- *[Инициализация {{ productName }}][deploy_guide_linux_initialize]*
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -30,8 +30,12 @@ hide:
 
     В выражениях, задающих фильтры (например, фильтр для таблиц), доступна только переменная `item`, в которую помещается результат вычисления выражения.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Редактор выражений][expression_editor]**
+- *[Редактор выражений][expression_editor]*
+
+</div>
 
 **[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}**

@@ -88,25 +88,21 @@ _![Просмотр уведомлений о задачах](task_notifications
 - **Внешний сокет** — выберите или создайте **путь передачи данных** типа «**[Отправка эл. почты из процесса][process_sending_connection]**» для отправки сообщения.
 - **Общее уведомление** — выберите или создайте **путь передачи данных** типа «**[Общие уведомления][common_notifications]**» для отправки сообщения.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Глобальная конфигурация][global_configuration]**
+- *[Глобальная конфигурация][global_configuration]*
+- *[Общие уведомления. Настройка пути передачи данных, диаграммы процесса и глобальной конфигурации][common_notifications]*
+- *[Уведомления о задачах. Настройка пути передачи данных][task_notifications]*
+- *[Настройка периодических напоминаний об открытых задачах][periodic_task_notifications]*
+- *[Отправка эл. почты из процесса. Настройка подключения, пути передачи данных и события на диаграмме процесса][process_sending_connection]*
+- *[Промежуточное событие-отправка сообщения][process_diagram_elements_send_message_intermediate_event]*
+- *[Конечное событие-отправка сообщения][process_diagram_elements_send_message_end_event]*
+- *[Промежуточное событие-получение сообщения][process_diagram_elements_receive_message_intermediate_event]*
+- *[Начальное событие-получение сообщения][process_diagram_elements_receive_message_start_event]*
 
-**[Общие уведомления. Настройка пути передачи данных, диаграммы процесса и глобальной конфигурации][common_notifications]**
-
-**[Уведомления о задачах. Настройка пути передачи данных][task_notifications]**
-
-**[Настройка периодических напоминаний об открытых задачах][periodic_task_notifications]**
-
-**[Отправка эл. почты из процесса. Настройка подключения, пути передачи данных и события на диаграмме процесса][process_sending_connection]**
-
-**[Промежуточное событие-отправка сообщения][process_diagram_elements_send_message_intermediate_event]**
-
-**[Конечное событие-отправка сообщения][process_diagram_elements_send_message_end_event]**
-
-**[Промежуточное событие-получение сообщения][process_diagram_elements_receive_message_intermediate_event]**
-
-**[Начальное событие-получение сообщения][process_diagram_elements_receive_message_start_event]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

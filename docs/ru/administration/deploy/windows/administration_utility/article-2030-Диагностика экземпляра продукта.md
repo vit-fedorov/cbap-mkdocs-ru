@@ -103,7 +103,12 @@ kbId: 2030
 
 Содержимое папки с результатами диагностики
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
+
+
+</div>
 
 **[Настройка конфигурации Утилиты администрирования Comindware]({{ kbArticleURLPrefix }}2029)**
 

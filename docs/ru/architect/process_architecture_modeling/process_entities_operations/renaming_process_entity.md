@@ -30,13 +30,15 @@ hide:
 6. В панели свойств справа введите требуемое название в поле «**Наименование**».
     *![Переименование процесса с помощью конструктора диаграммы](process_architecture_modeling_rename_from_properties.png)*
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра процессов][architect_process_architecture_modelling]**
+- *[Просмотр реестра процессов][architect_process_architecture_modelling]*
+- *[Создание элемента процессной архитектуры][architect_creating_process_entity]*
+- *[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]*
 
-**[Создание элемента процессной архитектуры][architect_creating_process_entity]**
-
-**[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]**
+</div>
 
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -83,14 +83,15 @@ _![Подробные сведения на диаграмме](img/monitoring_c
 
 _![Панель сведений с кнопкой «Просмотреть журнал»](img/monitoring_details.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Глобальная конфигурация][global_configuration]**
+- *[Глобальная конфигурация][global_configuration]*
+- *[Журналы событий][logs]*
+- *[Производительность][performance]*
+- *[Подсистема журналирования][logging_engine]*
 
-**[Журналы событий][logs]**
-
-**[Производительность][performance]**
-
-**[Подсистема журналирования][logging_engine]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -42,22 +42,19 @@ hide:
 
 *![Конструктор формы оргединицы](configuring_organizational_unit_form_designer.png)*
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Изменение свойств оргединицы][architect_configuring_organizational_unit]**
+- *[Изменение свойств оргединицы][architect_configuring_organizational_unit]*
+- *[Редактирование формы свойств и атрибутов элемента процессной архитектуры][architect_configuring_process_entity_properties]*
+- *[Просмотр реестра оргединиц][architect_organizational_structure_modelling]*
+- *[Конструктор формы][form_designer]*
+- *[Создание атрибута][создание-атрибута]*
+- *[Редактирование атрибута, кнопки или формы][редактирование-атрибута-кнопки-или-формы]*
+- *[Редактирование формы][form_designer]*
+- *[Использование системы — Панель навигации][navigation_panel]*
 
-**[Редактирование формы свойств и атрибутов элемента процессной архитектуры][architect_configuring_process_entity_properties]**
-
-**[Просмотр реестра оргединиц][architect_organizational_structure_modelling]**
-
-**[Конструктор формы][form_designer]**
-
-**[Создание атрибута][создание-атрибута]**
-
-**[Редактирование атрибута, кнопки или формы][редактирование-атрибута-кнопки-или-формы]**
-
-**[Редактирование формы][form_designer]**
-
-**[Использование системы — Панель навигации][navigation_panel]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

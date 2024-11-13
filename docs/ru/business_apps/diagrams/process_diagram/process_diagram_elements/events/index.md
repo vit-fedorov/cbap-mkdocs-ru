@@ -38,10 +38,13 @@ hide:
     * **[Конечное событие-остановка процесса][process_diagram_elements_stop_process_end_event]**
     * **[Конечное событие-отправка сообщения][process_diagram_elements_send_message_end_event]**
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Элементы диаграммы процесса][process_diagram_elements]**
+- *[Элементы диаграммы процесса][process_diagram_elements]*
+- *[Редактирование диаграммы процесса][process_diagram_designer]*
 
-**[Редактирование диаграммы процесса][process_diagram_designer]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

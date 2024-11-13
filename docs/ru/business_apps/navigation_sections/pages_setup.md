@@ -505,15 +505,16 @@ _![Настройка списка](img/pages_setup_list_setting.png)_
 
 _![Настройка шагов](img/pages_setup_steps_setting.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Информационные страницы. Использование][pages]**
+- *[Информационные страницы. Использование][pages]*
+- *[Настройка разделов навигации][navigation_sections_setup]*
+- *[Настройка рабочего стола][desktop_setup]*
+- *[«Контроль доступа к информационным страницам»][page_access_control]*
 
-**[Настройка разделов навигации][navigation_sections_setup]**
-
-**[Настройка рабочего стола][desktop_setup]**
-
-**[«Контроль доступа к информационным страницам»][page_access_control]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

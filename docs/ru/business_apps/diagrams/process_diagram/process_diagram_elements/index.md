@@ -52,14 +52,15 @@ hide:
     * [Поток управления][process_diagram_elements_sequence_flow]
     * [Комментарий][process_diagram_elements_text_annotation]
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
+- *[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]*
+- *[Диаграмма процесса][process_diagram]*
+- *[Просмотр диаграммы процесса][process_diagram_view]*
+- *[Редактирование диаграммы процесса][process_diagram_designer]*
 
-**[Диаграмма процесса][process_diagram]**
-
-**[Просмотр диаграммы процесса][process_diagram_view]**
-
-**[Редактирование диаграммы процесса][process_diagram_designer]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

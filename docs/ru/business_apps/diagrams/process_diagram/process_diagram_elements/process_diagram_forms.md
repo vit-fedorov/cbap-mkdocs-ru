@@ -83,18 +83,17 @@ hide:
 4. Нажмите кнопку «**Удалить**».
 5. Подтвердите удаление.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Редактирование формы][form_designer]**
+- *[Редактирование формы][form_designer]*
+- *[Использование вложенной формы][forms_embedded]*
+- *[Простое начальное событие][process_diagram_elements_none_start_event]*
+- *[Пользовательская задача][process_diagram_elements_user_task]*
+- *[Элементы диаграммы процесса][process_diagram_elements]*
+- *[Редактирование диаграммы процесса][process_diagram_designer]*
 
-**[Использование вложенной формы][forms_embedded]**
-
-**[Простое начальное событие][process_diagram_elements_none_start_event]**
-
-**[Пользовательская задача][process_diagram_elements_user_task]**
-
-**[Элементы диаграммы процесса][process_diagram_elements]**
-
-**[Редактирование диаграммы процесса][process_diagram_designer]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

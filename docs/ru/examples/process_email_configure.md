@@ -998,27 +998,22 @@ _![Диаграмма процесса «Обработка ответа рук�
 
 16. Аналогичным образом протестируйте работу процесса в случае отказа в отпуске.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Диаграмма процесса][process_diagram]**
+- *[Диаграмма процесса][process_diagram]*
+- *[Конструктор диаграммы процесса][process_diagram_designer]*
+- *[Простое начальное событие][process_diagram_elements_none_start_event]*
+- *[Начальное событие-получение сообщения][process_diagram_elements_receive_message_start_event]*
+- *[Стартовая форма][process_diagram_forms]*
+- *[Промежуточное событие-получение сообщения][process_diagram_elements_receive_message_intermediate_event]*
+- *[Конечное событие-отправка сообщения][process_diagram_elements_send_message_end_event]*
+- *[Сценарии][scenarios]*
+- *[Использование переменных в сценарии][scenario_variables]*
+- *[Список функций языка формул Comindware][formula_function_list]*
 
-**[Конструктор диаграммы процесса][process_diagram_designer]**
-
-**[Простое начальное событие][process_diagram_elements_none_start_event]**
-
-**[Начальное событие-получение сообщения][process_diagram_elements_receive_message_start_event]**
-
-**[Стартовая форма][process_diagram_forms]**
-
-**[Промежуточное событие-получение сообщения][process_diagram_elements_receive_message_intermediate_event]**
-
-**[Конечное событие-отправка сообщения][process_diagram_elements_send_message_end_event]**
-
-**[Сценарии][scenarios]**
-
-**[Использование переменных в сценарии][scenario_variables]**
-
-**[Список функций языка формул Comindware][formula_function_list]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}
 <!--include-end-->

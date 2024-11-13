@@ -47,8 +47,12 @@ _![Проверка значения атрибута](attribute_common_properti
 
 _![Связи атрибута](attribute_common_properties_relations.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
+- *[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]*
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

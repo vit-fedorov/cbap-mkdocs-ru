@@ -63,8 +63,12 @@ kbId: 2108
 
     *![Сведения о зависимости работ на диаграмме](img/using_gantt_chart_dependency_details.png)*
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Диаграмма Ганта. Настройка][gantt_chart_create]**
+- *[Диаграмма Ганта. Настройка][gantt_chart_create]*
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

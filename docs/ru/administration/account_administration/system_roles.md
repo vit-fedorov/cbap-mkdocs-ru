@@ -198,11 +198,14 @@ end="<!--role-delete-end-->"
 rewrite-relative-urls=false
 %}
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Роли в приложении][roles]**
+- *[Роли в приложении][roles]*
+- *[Шаблон роли][role_templates]*
 
-**[Шаблон роли][role_templates]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

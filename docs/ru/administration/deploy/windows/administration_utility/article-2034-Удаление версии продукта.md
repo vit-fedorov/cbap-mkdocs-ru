@@ -34,7 +34,12 @@ kbId: 2034
 
 Сообщение об успешном удалении версии продукта
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
+
+
+</div>
 
 **[Запуск, остановка и удаление экземпляра продукта]({{ kbArticleURLPrefix }}2035)**
 

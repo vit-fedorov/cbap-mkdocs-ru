@@ -74,20 +74,18 @@ hide:
 4. Нажмите кнопку «**Удалить**».
 5. Подтвердите удаление шаблонов.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Подготовка файла шаблона экспорта][export_template_file_configure]**
+- *[Подготовка файла шаблона экспорта][export_template_file_configure]*
+- *[Настройка кнопки экспорта записи][export_template_button_configure]*
+- *[Настройка шаблона экспорта][export_templates]*
+- *[Пример настройки и использования шаблона экспорта авансового отчёта][export_template_file_example]*
+- *[Действие «Создать документ по шаблону» в сценарии][scenario_actions]*
+- *[Шаблон экспорта. Настройка с использованием C#][export_template_csharp_configure]*
+- *[Шаблон экспорта. Выгрузка нескольких коллекций и изображений с помощью C#][export_template_csharp_collection_download]*
 
-**[Настройка кнопки экспорта записи][export_template_button_configure]**
-
-**[Настройка шаблона экспорта][export_templates]**
-
-**[Пример настройки и использования шаблона экспорта авансового отчёта][export_template_file_example]**
-
-**[Действие «Создать документ по шаблону» в сценарии][scenario_actions]**
-
-**[Шаблон экспорта. Настройка с использованием C#][export_template_csharp_configure]**
-
-**[Шаблон экспорта. Выгрузка нескольких коллекций и изображений с помощью C#][export_template_csharp_collection_download]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

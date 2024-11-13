@@ -82,9 +82,13 @@ kbId: 2560
 
     Основные шаги аутентификации регистрируются в [журнале аудита][logging_engine_audit_log].
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Глобальная конфигурация][global_configuration]**
+- *[Глобальная конфигурация][global_configuration]*
+
+</div>
 
 **[Пути и содержимое папок экземпляра ПО]({{ kbArticleURLPrefix }}2502)**
 

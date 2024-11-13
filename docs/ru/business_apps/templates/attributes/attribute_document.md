@@ -43,12 +43,14 @@ _![Свойства атрибута типа «Документ»](img/attribut
 
     *![Поле «Документы на подпись»: документы с цифровой подписью](img/attribute_document_example_digital_signature.png)*
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Копирование записи вместе с прикреплённым документом. Настройка сценария][attribute_document_clone_scenario]**
+- *[Копирование записи вместе с прикреплённым документом. Настройка сценария][attribute_document_clone_scenario]*
+- *[Общие свойства атрибутов][attribute_common_properties]*
+- *[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]*
 
-**[Общие свойства атрибутов][attribute_common_properties]**
-
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

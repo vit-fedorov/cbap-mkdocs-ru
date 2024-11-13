@@ -68,10 +68,13 @@ kbId: 2032
 
     _![Обновление сведений в списке экземпляров продукта](https://kb.comindware.ru/assets/img_667c238e8347c.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта][instance_configure_windows]**
+- *[Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта][instance_configure_windows]*
+- *[Восстановление экземпляра продукта из резервной копии в ОС Windows][restore_windows]*
 
-**[Восстановление экземпляра продукта из резервной копии в ОС Windows][restore_windows]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

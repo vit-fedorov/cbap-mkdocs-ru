@@ -32,8 +32,12 @@ _![Поиск записей в таблице](img/searcheable_attribute_table_
 
 _![Флажок «Использовать для поиска записей»](img/searcheable_attribute.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
+- *[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]*
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -31,12 +31,14 @@ _![Свойства атрибута типа «Запись»](img/attribute_re
 
 --8<-- "attribute_property_attribute_linking_example.md"
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Общие свойства атрибутов][attribute_common_properties]**
+- *[Общие свойства атрибутов][attribute_common_properties]*
+- *[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]*
+- *[Атрибут типа «Аккаунт»][attribute_account]*
 
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
-
-**[Атрибут типа «Аккаунт»][attribute_account]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

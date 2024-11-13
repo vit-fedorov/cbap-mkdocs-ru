@@ -49,12 +49,14 @@ kbId: 2348
 
 *![Добавление разрешения на использование кнопки экспорта для роли](export_template_button_configure_permission.png)*
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Настройка шаблона экспорта][export_templates]**
+- *[Настройка шаблона экспорта][export_templates]*
+- *[Подготовка файла шаблона экспорта][export_template_file_configure]*
+- *[Кнопки. Определение, настройка, удаление][buttons]*
 
-**[Подготовка файла шаблона экспорта][export_template_file_configure]**
-
-**[Кнопки. Определение, настройка, удаление][buttons]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

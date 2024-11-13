@@ -29,11 +29,14 @@ hide:
 
 _![Страница «Мои задачи»](my_tasks.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Использование панели навигации][navigation_panel]**
+- *[Использование панели навигации][navigation_panel]*
+- *[Использование рабочего стола][desktop]*
 
-**[Использование рабочего стола][desktop]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

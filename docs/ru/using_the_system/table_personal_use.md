@@ -230,9 +230,13 @@ _![Настройка подсчёта итогов по столбцу](table_p
 
     _![Полный сброс персональных настроек таблицы](table_personal_use_full_drop_settings.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Настройка таблицы в шаблоне][table_configure_template]**
+- *[Настройка таблицы в шаблоне][table_configure_template]*
+
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

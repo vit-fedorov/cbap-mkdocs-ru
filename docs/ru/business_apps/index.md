@@ -108,10 +108,13 @@ _![Настройка свойств нового приложения](img/buss
 
 _![Удаление приложения с помощью API](img/applications_delete_api.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Введение в API][api_intro]**
+- *[Введение в API][api_intro]*
+- *[Web API][api_web]*
 
-**[Web API][api_web]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

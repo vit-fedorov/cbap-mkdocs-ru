@@ -117,8 +117,12 @@ kbId: 2581
 
 {% endif %}
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Пути и содержимое папок экземпляра ПО][paths]**
+- *[Пути и содержимое папок экземпляра ПО][paths]*
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

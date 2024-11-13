@@ -175,11 +175,14 @@ _![Кнопки настройки элемента сценария](scenario_e
 
 _![Удаление действия из сценария](scenario_delete_action.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Событие и действия сценария. Определения, типы, свойства, настройка][scenario_elements]**
+- *[Событие и действия сценария. Определения, типы, свойства, настройка][scenario_elements]*
+- *[Использование переменных в сценарии][scenario_variables]*
 
-**[Использование переменных в сценарии][scenario_variables]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

@@ -33,7 +33,12 @@ if { }
 }
 ```
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
+
+
+</div>
 
 [Ввод префикса][n3_editor_prefix_autocomplete]
 

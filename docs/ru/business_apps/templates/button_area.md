@@ -166,8 +166,12 @@ _![Конструктор области кнопок на форме](button_ar
 2. Нажмите кнопку «**Удалить**».
 3. Подтвердите удаление области.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Кнопки. Определение, настройка, удаление][buttons]**
+- *[Кнопки. Определение, настройка, удаление][buttons]*
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

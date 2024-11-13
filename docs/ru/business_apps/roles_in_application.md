@@ -157,8 +157,13 @@ _![Настройка свойств роли](img/role_properties.png)_
 3. Подтвердите удаление роли.
 <!--role-delete-end-->
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 **[Системные роли. Определения, настройка, объединение, удаление][system_roles]**
+
+</div>
+
 
 **[Шаблон роли][role_templates]**
 

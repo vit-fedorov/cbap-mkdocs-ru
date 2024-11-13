@@ -71,12 +71,14 @@ _![Свойства атрибута типа «Гиперссылка»](img/at
         
     {{ pdfEndOfBlockHack }}
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Общие свойства атрибутов][attribute_common_properties]**
+- *[Общие свойства атрибутов][attribute_common_properties]*
+- *[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]*
+- *[Динамические элементы формы. Настройка представления гиперссылки][form_dynamic_elements_hyperlink]*
 
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
-
-**[Динамические элементы формы. Настройка представления гиперссылки][form_dynamic_elements_hyperlink]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -498,10 +498,13 @@ _Статус_
 
     _![Использование плана на форме](img/attribute_drawing_plan_usage.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Чертёж. Подготовка и импорт файла DWG][attribute_drawing_file_import]**
+- *[Чертёж. Подготовка и импорт файла DWG][attribute_drawing_file_import]*
+- *[Чертёж. Настройка поля на форме][form_dynamic_elements_drawing]*
 
-**[Чертёж. Настройка поля на форме][form_dynamic_elements_drawing]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

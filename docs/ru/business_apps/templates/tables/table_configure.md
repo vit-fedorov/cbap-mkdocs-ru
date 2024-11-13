@@ -315,16 +315,16 @@ _![Клонирование таблицы](img/table_clone_clone.png)_
 4. Нажмите кнопку «**Удалить**».
 5. Подтвердите удаление.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Настройка таблицы на форме][form_dynamic_elements_table]**
+- *[Настройка таблицы на форме][form_dynamic_elements_table]*
+- *[Таблицы. Использование и персональная настройка][table_personal_use]*
+- *[Настройка страницы «Мои задачи»][my_tasks_page_configure]*
+- *[Просмотр и настройка свойств шаблона][template_common_properties]*
+- *[Настройка разделов навигации][navigation_sections_setup]*
 
-**[Таблицы. Использование и персональная настройка][table_personal_use]**
-
-**[Настройка страницы «Мои задачи»][my_tasks_page_configure]**
-
-**[Просмотр и настройка свойств шаблона][template_common_properties]**
-
-**[Настройка разделов навигации][navigation_sections_setup]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

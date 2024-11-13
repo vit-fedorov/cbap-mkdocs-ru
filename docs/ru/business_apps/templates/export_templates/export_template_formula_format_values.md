@@ -224,12 +224,14 @@ FORMAT("{0}",LIST(IF($attributeSystemName == true,"Согласовано","Не
     - `Name` — системное имя атрибута *«Название»* типа «**Текст**» в шаблоне *«Тип».*
 - `{end:Collection}` — конец цикла по коллекции записей в последнем столбце строки.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Системные имена атрибутов аккаунтов][account_attribute_system_names]**
+- *[Системные имена атрибутов аккаунтов][account_attribute_system_names]*
+- *[Подготовка файла шаблона экспорта][export_template_file_configure]*
+- *[Список функций языка формул Comindware][formula_function_list]*
 
-**[Подготовка файла шаблона экспорта][export_template_file_configure]**
-
-**[Список функций языка формул Comindware][formula_function_list]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

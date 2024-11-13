@@ -197,9 +197,13 @@ _![Настройка интеграции](json4.png)_
 
 _![Полученные заказы](json9.jpg)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Настройка действий сценария][scenarios]**
+- *[Настройка действий сценария][scenarios]*
+
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

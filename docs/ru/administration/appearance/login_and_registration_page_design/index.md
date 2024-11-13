@@ -185,8 +185,12 @@ _![Настройка блока «Ссылки»](img/link_properties_email.png
 
 _![Настройка фона страниц входа и регистрации](img/background_properties_new_image.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Темы. Настройка, применение, предпросмотр][themes]**
+- *[Темы. Настройка, применение, предпросмотр][themes]*
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

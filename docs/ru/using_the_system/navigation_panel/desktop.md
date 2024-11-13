@@ -60,11 +60,14 @@ end="<!--page-view-config-end-->"
 %}
 _![Выбор и упорядочивание разделов рабочего стола](desktop_sections_config.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Использование страниц][pages]**
+- *[Использование страниц][pages]*
+- *[Использование панели навигации][navigation_panel]*
 
-**[Использование панели навигации][navigation_panel]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

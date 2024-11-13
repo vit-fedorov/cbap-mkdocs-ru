@@ -47,9 +47,13 @@ hide:
   EQUALS($Statuszayavki, "Odobrena")
   ```
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Редактор выражений][expression_editor]**
+- *[Редактор выражений][expression_editor]*
+
+</div>
 
 **[Примеры использования формул. База знаний Comindware]({{ kbCategoryURLPrefix }}409){:target="_blank"}**
 

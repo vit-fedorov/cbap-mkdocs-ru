@@ -82,16 +82,16 @@ hide:
 
     *![Файл, сформированный по шаблону экспорта](export_template_file_result.png)*
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Настройка шаблона экспорта с использованием C#][export_template_csharp_configure]**
+- *[Настройка шаблона экспорта с использованием C#][export_template_csharp_configure]*
+- *[Настройка выгрузки нескольких коллекций и изображений][export_template_csharp_collection_download]*
+- *[Настройка шаблона экспорта][export_templates]*
+- *[Подготовка файла шаблона экспорта][export_template_file_configure]*
+- *[Настройка кнопки экспорта][export_template_button_configure]*
 
-**[Настройка выгрузки нескольких коллекций и изображений][export_template_csharp_collection_download]**
-
-**[Настройка шаблона экспорта][export_templates]**
-
-**[Подготовка файла шаблона экспорта][export_template_file_configure]**
-
-**[Настройка кнопки экспорта][export_template_button_configure]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

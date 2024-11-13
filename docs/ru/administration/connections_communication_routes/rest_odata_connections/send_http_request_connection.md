@@ -32,11 +32,14 @@ kbId: 2589
 
 _![Настройка подключения для отправки веб-запросов](send_http_request_connection_settings.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Получение веб-запросов. Настройка подключения][get_connection]**
+- *[Получение веб-запросов. Настройка подключения][get_connection]*
+- *[Функции][functions]*
 
-**[Функции][functions]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

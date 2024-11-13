@@ -216,8 +216,12 @@ _![Предварительный просмотр — Формы](img/preview_f
 
 _![Предварительный просмотр — Формы](img/preview_tables.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Дизайн страниц входа и регистрации][login_and_registration_page_design]**
+- *[Дизайн страниц входа и регистрации][login_and_registration_page_design]*
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

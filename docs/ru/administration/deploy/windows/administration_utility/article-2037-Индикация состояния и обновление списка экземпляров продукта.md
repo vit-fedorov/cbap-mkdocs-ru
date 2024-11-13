@@ -27,7 +27,12 @@ kbId: 2037
 
 Обновление списка экземпляров продукта
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
+
+
+</div>
 
 **[Запуск, остановка и удаление экземпляра продукта]({{ kbArticleURLPrefix }}2035)**
 

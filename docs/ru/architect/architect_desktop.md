@@ -41,14 +41,15 @@ _![Рабочий стол {{ productNameArchitect }}](architect_desktop.png)_
         - **[Системные роли][system_roles]**
         - **[Аккаунты][accounts]**
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Построение процессной архитектуры][architect_process_architecture_modelling]**
+- *[Построение процессной архитектуры][architect_process_architecture_modelling]*
+- *[Построение организационной структуры][architect_organizational_structure_modelling]*
+- *[Рабочий стол. Использование][desktop]*
+- *[Рабочий стол. Определения и настройка][desktop_setup]*
 
-**[Построение организационной структуры][architect_organizational_structure_modelling]**
-
-**[Рабочий стол. Использование][desktop]**
-
-**[Рабочий стол. Определения и настройка][desktop_setup]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

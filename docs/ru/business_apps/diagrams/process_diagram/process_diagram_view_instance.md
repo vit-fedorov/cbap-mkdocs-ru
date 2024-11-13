@@ -126,12 +126,14 @@ _![Диаграмма экземпляра процесса](img/process_diagram
 
 _![Просмотр цепочки событий экземпляра процесса](img/process_diagram_view_events_chain.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Управление версиями диаграммы процесса][process_diagram_version_control]**
+- *[Управление версиями диаграммы процесса][process_diagram_version_control]*
+- *[Публикация диаграммы процесса][process_diagram_publish]*
+- *[Просмотр диаграммы процесса][process_diagram_view]*
 
-**[Публикация диаграммы процесса][process_diagram_publish]**
-
-**[Просмотр диаграммы процесса][process_diagram_view]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

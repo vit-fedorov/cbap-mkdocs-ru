@@ -62,12 +62,14 @@ _![Свойства атрибута типа «Изображение»](img/at
 
     _![Исходный и преобразованный файлы](img/attribute_image_example.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Представление атрибута «Изображение» на форме][form_dynamic_elements_image]**
+- *[Представление атрибута «Изображение» на форме][form_dynamic_elements_image]*
+- *[Общие свойства атрибутов][attribute_common_properties]*
+- *[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]*
 
-**[Общие свойства атрибутов][attribute_common_properties]**
-
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

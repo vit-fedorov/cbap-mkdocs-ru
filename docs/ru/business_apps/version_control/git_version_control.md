@@ -175,11 +175,14 @@ hide:
 
 5. Если импорт версии приложения не удалось выполнить, устраните обнаруженные проблемы и конфликты в исходном и целевом приложениях, экспортируйте исходное приложение заново и повторите импорт.
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Управление версиями приложения][version_control]**
+- *[Управление версиями приложения][version_control]*
+- *[Ручное управление версиями][version_control_manual]*
 
-**[Ручное управление версиями][version_control_manual]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

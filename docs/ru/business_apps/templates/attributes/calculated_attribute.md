@@ -73,8 +73,12 @@ _![Полный редактор выражений](img/calculated_attribute_fu
 - [Примеры использования формул][formula_use_examples]
 - [Примеры использования языка N3][N3_use_examples]
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
+- *[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]*
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

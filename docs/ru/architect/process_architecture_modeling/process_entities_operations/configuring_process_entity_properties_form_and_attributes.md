@@ -45,26 +45,21 @@ hide:
 
 *![Конструктор формы элемента процессной архитектуры](configuring_process_entity_form_designer.png)*
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]**
+- *[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]*
+- *[Редактирование формы и атрибутов оргединицы][architect_configuring_organizational_unit_form_and_attributes]*
+- *[Конструктор формы][form_designer]*
+- *[Создание атрибута][создание-атрибута]*
+- *[Редактирование атрибута, кнопки или формы][редактирование-атрибута-кнопки-или-формы]*
+- *[Редактирование формы][form_designer]*
+- *[Просмотр реестра процессов][architect_process_architecture_modelling]*
+- *[Создание элемента процессной архитектуры][architect_creating_process_entity]*
+- *[Переименование элемента процессной архитектуры][architect_renaming_process_entity]*
+- *[Использование системы — Панель навигации][navigation_panel]*
 
-**[Редактирование формы и атрибутов оргединицы][architect_configuring_organizational_unit_form_and_attributes]**
-
-**[Конструктор формы][form_designer]**
-
-**[Создание атрибута][создание-атрибута]**
-
-**[Редактирование атрибута, кнопки или формы][редактирование-атрибута-кнопки-или-формы]**
-
-**[Редактирование формы][form_designer]**
-
-**[Просмотр реестра процессов][architect_process_architecture_modelling]**
-
-**[Создание элемента процессной архитектуры][architect_creating_process_entity]**
-
-**[Переименование элемента процессной архитектуры][architect_renaming_process_entity]**
-
-**[Использование системы — Панель навигации][navigation_panel]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

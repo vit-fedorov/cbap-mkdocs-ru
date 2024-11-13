@@ -29,7 +29,12 @@ kbId: 2220
 
 _![Свойства шаблона роли](role_templates_properties.png)_
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
+
+
+</div>
 
 **[Роли в приложении. Определения, настройка, объединение, удаление][roles]** 
 

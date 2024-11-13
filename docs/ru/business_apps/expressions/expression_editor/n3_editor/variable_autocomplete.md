@@ -33,7 +33,12 @@ hide:
 }
 ```
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
+
+
+</div>
 
 [Ввод предиката][n3_editor_predicate_autocomplete]
 

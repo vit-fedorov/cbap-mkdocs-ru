@@ -141,7 +141,12 @@ xpack.security.transport.ssl:
 http.host: 0.0.0.0
 ```
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
+
+
+</div>
 
 **[Официальный сайт Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/targz.html)** (английский язык)
 

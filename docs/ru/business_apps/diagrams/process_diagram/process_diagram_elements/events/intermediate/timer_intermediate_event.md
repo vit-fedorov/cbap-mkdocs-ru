@@ -49,16 +49,16 @@ hide:
 
 *![Дополнительные свойства промежуточного события-таймера](timer_intermediate_event_advanced_properties.png)*
 
+<div class="relatedTopics">
+
 --8<-- "related_topics_heading.md"
 
-**[События][process_diagram_elements_events]**
+- *[События][process_diagram_elements_events]*
+- *[Типы промежуточных событий][process_diagram_elements_events_intermediate]*
+- *[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]*
+- *[Элементы диаграммы процесса][process_diagram_elements]*
+- *[Редактирование диаграммы процесса][process_diagram_designer]*
 
-**[Типы промежуточных событий][process_diagram_elements_events_intermediate]**
-
-**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
-
-**[Элементы диаграммы процесса][process_diagram_elements]**
-
-**[Редактирование диаграммы процесса][process_diagram_designer]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

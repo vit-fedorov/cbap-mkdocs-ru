@@ -168,9 +168,9 @@ kbId: 2329
 
     _![Добавление авторизованного адреса перенаправления после входа в клиент OAuth в Google Cloud](openid_connection_google_cloud.png)_
 
-{% if adminGuideWindows or userGuide or kbExport %}
+{% if adminGuideWindows or completeGuide or userGuide or kbExport %}
 
-## Настройка реестра Windows для включения аутентификации через OpenID Connect в {{ productName }}
+## Настройка реестра Windows для включения аутентификации через OpenID Connect в {{ productName }} {: .pageBreakBefore }
 
 1. Запустите редактор реестра Windows: `regedit.exe`.
 2. Откройте раздел реестра `Computer -> HKEY_LOCAL_MACHINE -> SOWTWARE->Сomindware -> Instances -> имя_экземпляра_Comindware_Business_Application_Platform`.
@@ -187,7 +187,7 @@ kbId: 2329
 
 {% endif %}
 
-{% if adminGuideLinux or userGuide or kbExport %}
+{% if adminGuideLinux or completeGuide or userGuide or kbExport %}
 
 ## Настройка ОС Linux для включения аутентификации через OpenID Connect в {{ productName }} {: .pageBreakBefore }
 

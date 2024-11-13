@@ -48,12 +48,12 @@ hide:
 
 *![Иерархический реестр процессов](process_architecture_modeling_registry.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Построение организационной структуры][architect_organizational_structure_modelling]*
-- *[Использование системы — Панель навигации][navigation_panel]*
+- _[Построение организационной структуры][architect_organizational_structure_modelling]_
+- _[Использование системы — Панель навигации][navigation_panel]_
 
 </div>
 

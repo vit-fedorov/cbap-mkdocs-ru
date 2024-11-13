@@ -249,16 +249,16 @@ _![Просмотр ошибок диаграммы процесса](img/proces
     - **Причина**: поток управления не соединен с целевым элементом.
     - **Способ устранения**: соедините поток управления с целевым элементом диаграммы.
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Элементы диаграммы процесса][process_diagram_elements]*
-- *[Стартовая форма и форма пользовательской задачи][process_diagram_forms]*
-- *[Использование диаграммы экземпляра процесса][process_diagram_view_instance]*
-- *[Управление версиями диаграммы процесса][process_diagram_version_control]*
-- *[Диаграммы в приложении][diagrams]*
-- *[Шаблон процесса][process_templates]*
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Стартовая форма и форма пользовательской задачи][process_diagram_forms]_
+- _[Использование диаграммы экземпляра процесса][process_diagram_view_instance]_
+- _[Управление версиями диаграммы процесса][process_diagram_version_control]_
+- _[Диаграммы в приложении][diagrams]_
+- _[Шаблон процесса][process_templates]_
 
 </div>
 

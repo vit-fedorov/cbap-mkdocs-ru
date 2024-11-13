@@ -197,18 +197,17 @@ _![Список сеансов резервного копирования](back
 4. Выбранные сеансы резервного копирования будут удалены из журнала резервного копирования.
 5. Соответствующие файлы резервных копий будут удалены из хранилища.
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Хранилище S3. Настройка экземпляра ПО и подключения][s3_connection]*
-- *[Восстановление базы данных из файла резервной копии в формате .CDBBZ][backup_restore_cdbbz]*
+- _[Хранилище S3. Настройка экземпляра ПО и подключения][s3_connection]_
+- _[Восстановление базы данных из файла резервной копии в формате .CDBBZ][backup_restore_cdbbz]_
+{% if adminGuide or kbExport %}
+- _[Резервное копирование и восстановление][backup_and_restore]_*
+{% endif %}
 
 </div>
-
-{% if adminGuide or kbExport %}
-**[Резервное копирование и восстановление][backup_and_restore]**
-{% endif %}
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

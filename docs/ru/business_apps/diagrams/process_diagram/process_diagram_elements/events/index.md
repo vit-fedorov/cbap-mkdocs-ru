@@ -38,12 +38,12 @@ hide:
     * **[Конечное событие-остановка процесса][process_diagram_elements_stop_process_end_event]**
     * **[Конечное событие-отправка сообщения][process_diagram_elements_send_message_end_event]**
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Элементы диаграммы процесса][process_diagram_elements]*
-- *[Редактирование диаграммы процесса][process_diagram_designer]*
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
 </div>
 

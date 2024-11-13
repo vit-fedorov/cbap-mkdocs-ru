@@ -185,11 +185,11 @@ _![Настройка блока «Ссылки»](img/link_properties_email.png
 
 _![Настройка фона страниц входа и регистрации](img/background_properties_new_image.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Темы. Настройка, применение, предпросмотр][themes]*
+- _[Темы. Настройка, применение, предпросмотр][themes]_
 
 </div>
 

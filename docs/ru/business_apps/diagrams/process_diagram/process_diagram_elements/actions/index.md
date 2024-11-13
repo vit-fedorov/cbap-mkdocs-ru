@@ -30,9 +30,9 @@ kbId: 2390
     - **[Вызов процесса][process_diagram_elements_process_call]**
     - **[Встроенный подпроцесс][process_diagram_elements_embedded_subprocess]**
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Элементы диаграммы процесса][process_diagram_elements]*
-- *[Редактирование диаграммы процесса][process_diagram_designer]*
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_

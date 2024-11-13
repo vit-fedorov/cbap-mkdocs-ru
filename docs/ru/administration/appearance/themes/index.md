@@ -216,11 +216,11 @@ _![Предварительный просмотр — Формы](img/preview_f
 
 _![Предварительный просмотр — Формы](img/preview_tables.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Дизайн страниц входа и регистрации][login_and_registration_page_design]*
+- _[Дизайн страниц входа и регистрации][login_and_registration_page_design]_
 
 </div>
 

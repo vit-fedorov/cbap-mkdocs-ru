@@ -52,14 +52,14 @@ hide:
     * [Поток управления][process_diagram_elements_sequence_flow]
     * [Комментарий][process_diagram_elements_text_annotation]
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]*
-- *[Диаграмма процесса][process_diagram]*
-- *[Просмотр диаграммы процесса][process_diagram_view]*
-- *[Редактирование диаграммы процесса][process_diagram_designer]*
+- _[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]_
+- _[Диаграмма процесса][process_diagram]_
+- _[Просмотр диаграммы процесса][process_diagram_view]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
 </div>
 

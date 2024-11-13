@@ -93,16 +93,15 @@ hide:
 
 *![Поиск текста в выражении](expression_editor_found_text.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Предиктивный ввод в выражениях на языке N3][предиктивный-ввод-в-выражениях-на-языке-n3]*
+- _[Предиктивный ввод в выражениях на языке N3][предиктивный-ввод-в-выражениях-на-языке-n3]_
+- _[Примеры использования формул. База знаний Comindware]({{ kbCategoryURLPrefix }}409){:target="_blank"}_
+- _[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}_
+- _[Вычисляемые атрибуты][attribute_calculated]_
 
 </div>
 
-**[Примеры использования формул. База знаний Comindware]({{ kbCategoryURLPrefix }}409){:target="_blank"}**
-
-**[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}**
-
-**[Вычисляемые атрибуты][attribute_calculated]**
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -22,12 +22,12 @@ hide:
 - **[Развилка «или/или»][process_diagram_elements_gateway_exclusive]**
 - **[Развилка «и»][process_diagram_elements_gateway_parallel]**
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Элементы диаграммы процесса][process_diagram_elements]*
-- *[Редактирование диаграммы процесса][process_diagram_designer]*
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
 </div>
 

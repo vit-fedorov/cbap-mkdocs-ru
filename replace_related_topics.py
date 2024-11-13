@@ -25,6 +25,7 @@ def process_file(filepath):
             inside_section = True
             first_new_line_in_section = True
             previous_line_found = False
+            output_lines.append('<div class="relatedTopics">\n\n')
             output_lines.append(line)  # Keep the section header as is
             modified = True
             continue
@@ -42,7 +43,7 @@ def process_file(filepath):
                 # Stop processing the section once a non-bold link line is found
                 if not re.match(bold_link_pattern, line):
                     inside_section = False
-                    output_lines.append("\n")
+                    output_lines.append('\n</div>\n\n')
                     print(line)
                 else:
                     line = re.sub(bold_link_pattern, replacement_format, line.strip())

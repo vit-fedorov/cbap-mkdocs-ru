@@ -43,12 +43,12 @@ kbId: 2204
 
 _![Настройка подключения типа «Управление версиями через Git»](git_connection_properties_edit.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Управление версиями приложения через Git. Инициализация репозитория, экспорт и импорт][version_control_git]*
-- *[Подключения. Типы, создание, настройка, удаление][connections]*
+- _[Управление версиями приложения через Git. Инициализация репозитория, экспорт и импорт][version_control_git]_
+- _[Подключения. Типы, создание, настройка, удаление][connections]_
 
 </div>
 

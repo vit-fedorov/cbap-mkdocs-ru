@@ -69,12 +69,12 @@ hide:
 
     _![Переход к ручному управлению версиями](img/verstion_control_switch_to_manual.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Управление версиями через Git][version_control_git]*
-- *[Ручное управление версиями][version_control_manual]*
+- _[Управление версиями через Git][version_control_git]_
+- _[Ручное управление версиями][version_control_manual]_
 
 </div>
 

@@ -453,28 +453,22 @@ _[https://github.com/NLog/NLog/wiki/EventLog-target](https://github.com/NLog/NLo
     writeTo="errorsFile,EventLogCBAPErrors"/>
     ```
 
-6. Перезагрузите экземпляр ПО, чтобы изменения вступили в силу. См. раздел _[«Настройка конфигурации Утилиты администрирования Comindware»][administration_utility_configure]_.
+6. Перезагрузите экземпляр ПО, чтобы изменения вступили в силу. См. раздел _[«Настройка конфигурации Утилиты администрирования Comindware»][admin_utility_configure]_.
 
 {% endif %}
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Примеры событий в файловых журналах][log_files_event_examples]*
-- *[Пути и содержимое папок экземпляра ПО][paths]*
-- *[Адаптеры][adapters]*
+- _[Примеры событий в файловых журналах][log_files_event_examples]_
+- _[Пути и содержимое папок экземпляра ПО][paths]_
+- _[Адаптеры][adapters]_
+- _[Просмотр показателей мониторинга с помощью страницы «Администрирование»][monitoring]_
+- _[Просмотр журналов событий с помощью страницы «Администрирование»][logs]_
+- _[Просмотр показателей производительности с помощью страницы «Администрирование»][performance]_
+- _[Конфигурация журналирования. Настройка, скачивание журналов][logging_configuration]_
 
 </div>
 
-[**Просмотр показателей мониторинга с помощью страницы «Администрирование»**][monitoring]
-
-[**Просмотр журналов событий с помощью страницы «Администрирование»**][logs]
-
-**[Просмотр показателей производительности с помощью страницы «Администрирование»][performance]**
-
-**[Конфигурация журналирования. Настройка, скачивание журналов][logging_configuration]**
-
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

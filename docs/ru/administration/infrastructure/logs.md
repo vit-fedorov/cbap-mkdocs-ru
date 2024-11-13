@@ -138,14 +138,14 @@ _![Журнал трассировки событий](logs_event_tracing.png)_
 
 Для просмотра [цепочки событий](#logs_event_chain_view) дважды нажмите строку в журнале.
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Глобальная конфигурация][global_configuration]*
-- *[Мониторинг][monitoring]*
-- *[Производительность][performance]*
-- *[Подсистема журналирования][logging_engine]*
+- _[Глобальная конфигурация][global_configuration]_
+- _[Мониторинг][monitoring]_
+- _[Производительность][performance]_
+- _[Подсистема журналирования][logging_engine]_
 
 </div>
 

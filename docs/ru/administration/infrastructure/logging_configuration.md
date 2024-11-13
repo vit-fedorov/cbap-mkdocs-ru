@@ -34,11 +34,11 @@ kbId: 2186
 
 _![Настройка конфигурации журналирования](img/logging_configuration_settings.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Подсистема журналирования][logging_engine]*
+- _[Подсистема журналирования][logging_engine]_
 
 </div>
 

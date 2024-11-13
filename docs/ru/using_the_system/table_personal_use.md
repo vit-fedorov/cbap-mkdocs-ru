@@ -230,11 +230,11 @@ _![Настройка подсчёта итогов по столбцу](table_p
 
     _![Полный сброс персональных настроек таблицы](table_personal_use_full_drop_settings.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Настройка таблицы в шаблоне][table_configure_template]*
+- _[Настройка таблицы в шаблоне][table_configure_template]_
 
 </div>
 

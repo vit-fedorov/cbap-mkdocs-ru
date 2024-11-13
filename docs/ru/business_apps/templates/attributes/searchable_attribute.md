@@ -32,11 +32,11 @@ _![Поиск записей в таблице](img/searcheable_attribute_table_
 
 _![Флажок «Использовать для поиска записей»](img/searcheable_attribute.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]*
+- _[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]_
 
 </div>
 

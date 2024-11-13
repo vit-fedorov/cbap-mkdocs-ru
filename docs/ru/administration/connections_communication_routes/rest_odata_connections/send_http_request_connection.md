@@ -32,12 +32,12 @@ kbId: 2589
 
 _![Настройка подключения для отправки веб-запросов](send_http_request_connection_settings.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Получение веб-запросов. Настройка подключения][get_connection]*
-- *[Функции][functions]*
+- _[Получение веб-запросов. Настройка подключения][get_connection]_
+- _[Функции][functions]_
 
 </div>
 

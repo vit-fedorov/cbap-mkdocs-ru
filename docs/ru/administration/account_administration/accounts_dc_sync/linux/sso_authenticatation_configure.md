@@ -640,12 +640,12 @@ _![Пример файла instanceName.yml с директивой  isLinuxSSOA
     KRB5_TRACE=/dev/stdout kinit -k -t /etc/nginx/<authuser>.keytab HTTP/<DCName>.<domain.name>
     ```
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО][ad_authentication_configure]*
-- *[Аутентификация через OpenID Connect. Настройка подключения и служб][openid_connection]*
+- _[Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО][ad_authentication_configure]_
+- _[Аутентификация через OpenID Connect. Настройка подключения и служб][openid_connection]_
 
 </div>
 

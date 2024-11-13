@@ -315,15 +315,15 @@ _![Клонирование таблицы](img/table_clone_clone.png)_
 4. Нажмите кнопку «**Удалить**».
 5. Подтвердите удаление.
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Настройка таблицы на форме][form_dynamic_elements_table]*
-- *[Таблицы. Использование и персональная настройка][table_personal_use]*
-- *[Настройка страницы «Мои задачи»][my_tasks_page_configure]*
-- *[Просмотр и настройка свойств шаблона][template_common_properties]*
-- *[Настройка разделов навигации][navigation_sections_setup]*
+- _[Настройка таблицы на форме][form_dynamic_elements_table]_
+- _[Таблицы. Использование и персональная настройка][table_personal_use]_
+- _[Настройка страницы «Мои задачи»][my_tasks_page_configure]_
+- _[Просмотр и настройка свойств шаблона][template_common_properties]_
+- _[Настройка разделов навигации][navigation_sections_setup]_
 
 </div>
 

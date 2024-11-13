@@ -63,11 +63,11 @@ kbId: 2108
 
     *![Сведения о зависимости работ на диаграмме](img/using_gantt_chart_dependency_details.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Диаграмма Ганта. Настройка][gantt_chart_create]*
+- _[Диаграмма Ганта. Настройка][gantt_chart_create]_
 
 </div>
 

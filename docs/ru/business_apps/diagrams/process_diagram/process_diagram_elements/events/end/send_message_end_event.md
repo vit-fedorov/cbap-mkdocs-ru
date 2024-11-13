@@ -84,18 +84,18 @@ hide:
 
     *![Настройка данных сообщения для конечного события-отправки сообщения](send_message_end_event_message_data.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[События][process_diagram_elements_events]*
-- *[Типы конечных событий][типы-конечных-событий]*
-- *[Простое промежуточное событие][process_diagram_elements_none_intermediate_event]*
-- *[Промежуточное событие-отправка сообщения][process_diagram_elements_send_message_intermediate_event]*
-- *[Пути передачи данных][communication_routes]*
-- *[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]*
-- *[Элементы диаграммы процесса][process_diagram_elements]*
-- *[Редактирование диаграммы процесса][process_diagram_designer]*
+- _[События][process_diagram_elements_events]_
+- _[Типы конечных событий][типы-конечных-событий]_
+- _[Простое промежуточное событие][process_diagram_elements_none_intermediate_event]_
+- _[Промежуточное событие-отправка сообщения][process_diagram_elements_send_message_intermediate_event]_
+- _[Пути передачи данных][communication_routes]_
+- _[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]_
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
 </div>
 

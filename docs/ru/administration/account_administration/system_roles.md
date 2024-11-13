@@ -198,12 +198,12 @@ end="<!--role-delete-end-->"
 rewrite-relative-urls=false
 %}
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Роли в приложении][roles]*
-- *[Шаблон роли][role_templates]*
+- _[Роли в приложении][roles]_
+- _[Шаблон роли][role_templates]_
 
 </div>
 

@@ -457,17 +457,15 @@ public class Script {
 
 _![Настройка действия «Изменить значения скриптом»](img/scenario_actions_change_value_script.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Сценарии. Определение, создание, настройка, использование][scenarios]*
-- *[Использование переменных в сценарии][scenario_variables]*
-- *[Сценарий. Проверка данных записи перед сохранением][scenario_verify_data]*
-- *[Отладка формул, выражений N3, сценариев и C#-скриптов][expression_debug]*
+- _[Сценарии. Определение, создание, настройка, использование][scenarios]_
+- _[Использование переменных в сценарии][scenario_variables]_
+- _[Сценарий. Проверка данных записи перед сохранением][scenario_verify_data]_
+- _[Отладка формул, выражений N3, сценариев и C#-скриптов][expression_debug]_
 
 </div>
 
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

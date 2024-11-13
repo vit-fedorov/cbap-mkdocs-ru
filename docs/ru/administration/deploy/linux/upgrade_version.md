@@ -244,8 +244,12 @@ kbId: 2499
     tail -f /var/log/comindware/<instanceName>/Log/sys*
     ```
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]*
+- _[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]_
+
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

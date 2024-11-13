@@ -48,12 +48,12 @@ hide:
 
 <!--navigating-to-child-end-->
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Просмотр реестра процессов][architect_process_architecture_modelling]*
-- *[Редактирование диаграммы][architect_edit_diagram]*
+- _[Просмотр реестра процессов][architect_process_architecture_modelling]_
+- _[Редактирование диаграммы][architect_edit_diagram]_
 
 </div>
 

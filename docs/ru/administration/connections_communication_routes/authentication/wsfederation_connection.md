@@ -82,20 +82,15 @@ kbId: 2560
 
     Основные шаги аутентификации регистрируются в [журнале аудита][logging_engine_audit_log].
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Глобальная конфигурация][global_configuration]*
+- _[Глобальная конфигурация][global_configuration]_
+- _[Пути и содержимое папок экземпляра ПО][paths]_
+- _[Подсистема журналирования][logging_engine]_
+- _[Создание отношений доверия с проверяющей стороной](https://learn.microsoft.com/ru-ru/windows-server/identity/ad-fs/operations/create-a-relying-party-trust)_ (документация Microsoft)
 
 </div>
 
-**[Пути и содержимое папок экземпляра ПО]({{ kbArticleURLPrefix }}2502)**
-
-**[Подсистема журналирования][logging_engine]**
-
-**[Создание отношений доверия с проверяющей стороной](https://learn.microsoft.com/ru-ru/windows-server/identity/ad-fs/operations/create-a-relying-party-trust)**(документация Microsoft)
-
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -26,7 +26,9 @@ hide:
 
 1. Внутри фигурных скобок нажмите клавиши ++ctrl+space++.
 2. В отобразившемся списке конструкций дважды нажмите функцию `FindProperty`.
-*![Список конструкций на языке N3](n3_editor_findproperty_autocomplete.png)*
+
+    *![Список конструкций на языке N3](n3_editor_findproperty_autocomplete.png)*
+
 3. В выражение будет вставлена заготовка функции:
 
     ```#!turtle
@@ -35,12 +37,18 @@ hide:
 
 4. В позиции первого аргумента (после открывающей скобки) нажмите клавиши ++ctrl+space++.
 5. Отобразится список подходящих шаблонов в приложении.
-*![Список шаблонов в приложении](n3_editor_findproperty_argument1_autocomplete.png)*
+
+    *![Список шаблонов в приложении](n3_editor_findproperty_argument1_autocomplete.png)*
+
 6. Дважды нажмите системное имя шаблона, например `Zayavkanaotpusk`, чтобы вставить его в выражение.
 7. В позиции второго аргумента (через пробел после первого) нажмите клавиши ++ctrl+space++.
 8. Отобразится список атрибутов шаблона, выбранного на шаге 4.
-*![Список атрибутов шаблона](n3_editor_findproperty_argument2_autocomplete.png)*
+
+    *![Список атрибутов шаблона](n3_editor_findproperty_argument2_autocomplete.png)*
+
 9. Дважды нажмите системное имя атрибута, например `_creationDate`, чтобы вставить его в выражение.
+
+{{ pdfPageBreakHard }}
 
 ```turtle title="Пример: выражение, возвращающее месяц по значению атрибута типа «Дата и время»"
 @prefix object: <http://comindware.com/ontology/object#>.
@@ -61,8 +69,8 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-- _[Редактор выражений][expression_editor]_
-- _[Примеры использования языка N3. База знаний Comindware][n3_use_examples]_
+- *[Редактор выражений][expression_editor]*
+- *[Примеры использования языка N3. База знаний Comindware][n3_use_examples]*
 
 </div>
 

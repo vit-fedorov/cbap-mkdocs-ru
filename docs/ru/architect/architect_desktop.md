@@ -21,7 +21,7 @@ hide:
 
 _![Рабочий стол {{ productNameArchitect }}](architect_desktop.png)_
 
-## Операции на Рабочем столе Architect
+## Операции на Рабочем столе Architect {: .pageBreakBefore }
 
 * **Создание архитектуры**
     - **Процессы** — [построение процессной архитектуры][architect_process_architecture_modelling] организации.

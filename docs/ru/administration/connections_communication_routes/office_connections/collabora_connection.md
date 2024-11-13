@@ -35,7 +35,7 @@ _![Настройка подключения к Collabora Online](collabora_conn
 
 --8<-- "related_topics_heading.md"
 
-**[Р7 Офис и Collabora Online. Использование для работы с документами][office_connection_use]**
+- _[Р7 Офис и Collabora Online. Использование для работы с документами][office_connection_use]_
 
 </div>
 

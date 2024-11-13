@@ -73,7 +73,7 @@ kbId: 2575
 Шаблоны и атрибуты необходимо будет привязать к объектам в файле DWG во время настройки поля атрибута типа «**Чертёж**» и при импорте файла DWG конечным пользователем.
 
 1. Создайте три шаблона записей: _Этажи, Помещения, Рабочие места, Заявки_.
-2. Настройте в шаблонах атрибуты, как указано в следующей таблице.
+2. Настройте в шаблонах атрибуты, как указано ниже.
 
 <table markdown="block">
 <tbody markdown="block">
@@ -115,6 +115,13 @@ _План_
 По умолчанию
 </td>
 </tr>
+{% if pdfOutput %}
+</tbody>
+</table>
+{{ pdfPageBreakHard }}
+<table markdown="block">
+<tbody markdown="block">
+{% endif %}
 <tr markdown="block">
 <th markdown="block" colspan="3">
 **Атрибуты шаблона «_Помещения»_**
@@ -198,6 +205,12 @@ _Вид_
 
 </td>
 </tr>
+{% if pdfOutput %}
+</tbody>
+</table>
+<table markdown="block">
+<tbody markdown="block">
+{% endif %}
 <tr markdown="block">
 <th markdown="block" colspan="3">
 **Атрибуты шаблона «_Рабочие места»_**
@@ -305,6 +318,12 @@ _Этаж_
 
 </td>
 </tr>
+{% if pdfOutput %}
+</tbody>
+</table>
+<table markdown="block">
+<tbody markdown="block">
+{% endif %}
 <tr markdown="block">
 <th markdown="block" colspan="3">
 **Атрибуты шаблона «_Заявки»_**
@@ -397,7 +416,7 @@ _Статус_
 </tbody>
 </table>
 
-## Настройка форм и полей
+## Настройка форм и полей {: .pageBreakBefore }
 
 1. Вынесите созданные атрибуты на основные формы шаблонов.
 2. В шаблоне записи «Этажи» откройте основную форму и выберите поле атрибута «**План**».

@@ -219,6 +219,12 @@ article.md-typeset {
     break-inside: avoid;
 }
 
+.md-typeset li table {
+
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
 .md-typeset__table {
     break-inside: avoid;
     display: table !important;

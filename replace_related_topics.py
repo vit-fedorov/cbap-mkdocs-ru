@@ -7,7 +7,7 @@ directory = 'docs/ru/using_the_system'
 # Define patterns for identifying the section and transforming the bold links
 section_start_pattern = r'(--8<-- "related_topics_heading\.md")'
 bold_link_pattern = r'^\*\*(\[[^\]]+\]\[[^\]]+\])\*\*$'
-replacement_format = r'- *\1*'
+replacement_format = r'- _\1_'
 
 def process_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as file:
@@ -25,7 +25,7 @@ def process_file(filepath):
             inside_section = True
             first_new_line_in_section = True
             previous_line_found = False
-            output_lines.append('<div class="relatedTopics">\n\n')
+            output_lines.append('<div class="relatedTopics" markdown="block">\n\n')
             output_lines.append(line)  # Keep the section header as is
             modified = True
             continue

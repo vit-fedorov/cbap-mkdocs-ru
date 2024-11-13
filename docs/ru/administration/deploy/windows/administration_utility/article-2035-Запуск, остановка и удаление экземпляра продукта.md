@@ -52,8 +52,8 @@ _![Остановка экземпляра ПО с помощью Утилиты
 
 --8<-- "related_topics_heading.md"
 
-- _[Индикация состояния и обновление списка экземпляров продукта]({{ kbArticleURLPrefix }}2037)_
-- _[Запуск Утилиты администрирования Comindware]({{ kbArticleURLPrefix }}2027#mcetoc_1i15bgv5s4)_
+- _[Индикация состояния и обновление списка экземпляров продукта][admin_utility_instance_status_update]_
+- _[Запуск Утилиты администрирования Comindware][admin_utility_install_launch]_
 - _[Инициализация экземпляра продукта][admin_utility_instance_installize]_
 
 </div>

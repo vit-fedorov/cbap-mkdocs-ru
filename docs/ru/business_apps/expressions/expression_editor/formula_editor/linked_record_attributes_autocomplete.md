@@ -34,7 +34,8 @@ ADD($Zatraty->Summa, $Nalog)
 --8<-- "related_topics_heading.md"
 
 - _[Редактор выражений][expression_editor]_
+- _[Примеры использования формул. База знаний Comindware][formula_use_examples]_
 
 </div>
 
-**[Примеры использования формул. База знаний Comindware]({{ kbCategoryURLPrefix }}409){:target="_blank"}**
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

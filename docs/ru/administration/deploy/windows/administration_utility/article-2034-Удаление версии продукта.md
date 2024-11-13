@@ -38,7 +38,7 @@ kbId: 2034
 
 --8<-- "related_topics_heading.md"
 
-- _[Запуск, остановка и удаление экземпляра продукта]({{ kbArticleURLPrefix }}2035)_
+- _[Запуск, остановка и удаление экземпляра продукта][admin_utility_instance_start_stop]_
 
 </div>
 

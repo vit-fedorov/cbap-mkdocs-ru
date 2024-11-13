@@ -41,6 +41,6 @@ ADDDAYS($$requestTime, 1)
 
 </div>
 
-**[Примеры использования формул. База знаний Comindware]({{ kbCategoryURLPrefix }}409){:target="_blank"}**
+**[Примеры использования формул. База знаний Comindware][formula_use_examples]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

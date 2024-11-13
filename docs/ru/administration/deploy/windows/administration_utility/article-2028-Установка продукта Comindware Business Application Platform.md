@@ -78,8 +78,8 @@ kbId: 2028
 
 --8<-- "related_topics_heading.md"
 
-- _[Настройка конфигурации Утилиты администрирования Comindware]({{ kbArticleURLPrefix }}2029)_
-- _[Создание экземпляра продукта, добавление скрытого экземпляра]({{ kbArticleURLPrefix }}2032)_
+- _[Настройка конфигурации Утилиты администрирования Comindware][admin_utility_configure]_
+- _[Создание экземпляра продукта, добавление скрытого экземпляра][admin_utility_instance_create]_
 - _[Инициализация экземпляра продукта][admin_utility_instance_installize]_
 - _[Установка Elasticsearch. Краткое руководство для Windows][elasticsearch_deploy_windows]_
 

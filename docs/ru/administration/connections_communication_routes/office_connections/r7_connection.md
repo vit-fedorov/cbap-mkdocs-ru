@@ -11,7 +11,7 @@ kbId: 2342
 
 Здесь представлены инструкции по настройке конфигурации сервера **Р7-Офис** и подключения к **Р7-Офис** в **{{ productName }}**.
 
-См. также статью _«[Р7 Офис и Collabora Online. Использование для работы с документами]({{ kbArticleURLPrefix }}2343)»._
+См. также статью _«[Р7 Офис и Collabora Online. Использование для работы с документами][office_connection_use]»._
 
 ### Требования к серверу Р7-Офис
 
@@ -63,10 +63,8 @@ _![Настройка подключения к Р7-Офис](r7_connection_sett
 
 --8<-- "related_topics_heading.md"
 
-- _[Р7 Офис и Collabora Online. Использование для работы с документами]({{ kbArticleURLPrefix }}2343)_
+- _[Р7 Офис и Collabora Online. Использование для работы с документами][office_connection_use]_
 
 </div>
 
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

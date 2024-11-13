@@ -3,7 +3,7 @@ title: Zabbix Agent. Инструкции по установке для Windows
 kbId: 2304
 ---
 
-# Zabbix Agent. Инструкции по установке для Windows
+# Zabbix Agent. Инструкции по установке для Windows {: #zabbix_agent_deploy_windows }
 
 ## Введение
 

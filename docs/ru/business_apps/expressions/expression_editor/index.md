@@ -1,5 +1,6 @@
 ---
 title: Редактор выражений
+kbId: 2463
 tags:
   - выражения
   - формулы
@@ -97,9 +98,9 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-- _[Предиктивный ввод в выражениях на языке N3][предиктивный-ввод-в-выражениях-на-языке-n3]_
-- _[Примеры использования формул. База знаний Comindware]({{ kbCategoryURLPrefix }}409){:target="_blank"}_
-- _[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}_
+- _[Предиктивный ввод в выражениях на языке N3][n3_editor_autocomplete]_
+- _[Примеры использования формул. База знаний Comindware][formula_use_examples]_
+- _[Примеры использования языка N3. База знаний Comindware][n3_use_examples]_
 - _[Вычисляемые атрибуты][attribute_calculated]_
 
 </div>

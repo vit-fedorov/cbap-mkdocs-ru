@@ -1,4 +1,6 @@
 ---
+title: Предиктивный ввод в выражениях на языке N3
+kbId: 2482
 tags:
   - выражения
   - N3
@@ -13,7 +15,7 @@ hide:
   - tags
 ---
 
-# Предиктивный ввод в выражениях на языке N3
+# Предиктивный ввод в выражениях на языке N3 {: n3_editor_autocomplete }
 
 Для ввода выражений на языке N3 в редакторе выражений предусмотрены предиктивный ввод и подсказки:
 
@@ -35,7 +37,8 @@ hide:
 --8<-- "related_topics_heading.md"
 
 - _[Редактор выражений][expression_editor]_
+- _[Примеры использования языка N3. База знаний Comindware]([n3_use_examples])_
 
 </div>
 
-**[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}**
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

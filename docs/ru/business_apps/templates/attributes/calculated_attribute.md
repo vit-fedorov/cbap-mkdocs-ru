@@ -71,7 +71,7 @@ _![Полный редактор выражений](img/calculated_attribute_fu
 Подробное описание формул и языка N3 с примерами см. в базе знаний Comindware:
 
 - [Примеры использования формул][formula_use_examples]
-- [Примеры использования языка N3][N3_use_examples]
+- [Примеры использования языка N3][n3_use_examples]
 
 <div class="relatedTopics" markdown="block">
 

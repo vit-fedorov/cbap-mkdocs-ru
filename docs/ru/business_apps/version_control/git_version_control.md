@@ -36,7 +36,7 @@ hide:
 
 ## Переход к странице управления версиями через Git {: .pageBreakBefore }
 
-1. На странице **«[Администрирование]({{ kbArticleURLPrefix }}2209)»** приложения выберите пункт «**Управление версиями**» <i class="fa-light fa-code-branch"></i>.
+1. На странице **«[Администрирование][apps]»** приложения выберите пункт «**Управление версиями**» <i class="fa-light fa-code-branch"></i>.
 2. Если отображается страница ручного управления версиями, нажмите заголовок «**Ручное управление версиями**» и в раскрывающемся меню выберите пункт «**Управление версиями через Git**».
 
       _![Переход к управлению версиями через Git](img/verstion_control_switch_to_git.png)_
@@ -184,6 +184,4 @@ hide:
 
 </div>
 
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -68,7 +68,8 @@ hide:
 --8<-- "related_topics_heading.md"
 
 - _[Редактор выражений][expression_editor]_
+- _[Примеры использования языка N3. База знаний Comindware]([n3_use_examples])_
 
 </div>
 
-**[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}**
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

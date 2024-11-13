@@ -40,7 +40,7 @@ hide:
 - _[Ввод предиката][n3_editor_predicate_autocomplete]_
 - _[Ввод префикса][n3_editor_prefix_autocomplete]_
 - _[Редактор выражений][expression_editor]_
-- _[Примеры использования языка N3. База знаний Comindware][N3_use_examples]_
+- _[Примеры использования языка N3. База знаний Comindware][n3_use_examples]_
 
 </div>
 

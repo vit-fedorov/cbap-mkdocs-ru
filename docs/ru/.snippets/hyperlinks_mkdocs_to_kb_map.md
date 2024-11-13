@@ -6,6 +6,8 @@
 
 [api_intro]: {{ kbArticleURLPrefix }}2080
 
+[account_attributes_system_names]: {{ kbArticleURLPrefix }}1354
+
 [attribute_date_time_use]: {{ kbArticleURLPrefix }}2004
 
 [attribute_document_clone_scenario]: {{ kbArticleURLPrefix }}2608
@@ -32,6 +34,8 @@
 
 [document_digital_signature]: {{ kbArticleURLPrefix }}2139
 
+[example_n3_button_local_variable]: {{ kbArticleURLPrefix }}2140
+
 [example_csharp_my_profile_button]: {{ kbArticleURLPrefix }}2646
 
 [example_csharp_object_copy]: {{ kbArticleURLPrefix }}2645
@@ -49,6 +53,8 @@
 [export_template_csharp_configure]: {{ kbArticleURLPrefix }}1942
 
 [export_template_csharp_collection_download]: {{ kbArticleURLPrefix }}1944
+
+[formula_context]: {{ kbArticleURLPrefix }}2104
 
 [formula_examples]: {{ kbCategoryURLPrefix }}500
 
@@ -72,9 +78,7 @@
 
 [n3_guide]: {{ kbCategoryURLPrefix }}509
 
-[N3_use_examples]: {{ kbCategoryURLPrefix }}408
-
-[office_connection_use]: {{ kbArticleURLPrefix }}2343
+[n3_use_examples]: {{ kbCategoryURLPrefix }}408
 
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}2318
 
@@ -106,7 +110,7 @@
 
 [authentication_keys]: {{ kbArticleURLPrefix }}2604
 
-[backup]: {{ kbArticleURLPrefix }}2190
+[backup]: {{ kbArticleURLPrefix }}2579
 
 [changelog]: {{ kbArticleURLPrefix }}2634
 
@@ -120,7 +124,7 @@
 
 [connections]: {{ kbArticleURLPrefix }}2205
 
-[connections_delete]: {{ kbArticleURLPrefix }}2205#mcetoc_1gjrlqi4l6
+[connections_delete]: {{ kbArticleURLPrefix }}2205#connections_delete
 
 [db_migrate_4.2_to_4.7]: {{ kbArticleURLPrefix }}2340
 
@@ -456,6 +460,8 @@
 
 [expression_editor]: {{ kbArticleURLPrefix }}2463
 
+[n3_editor_autocomplete]: {{ kbArticleURLPrefix }}2482
+
 [expression_debug]: {{ kbArticleURLPrefix }}2636
 
 [form_access_control]: {{ kbArticleURLPrefix }}2632
@@ -508,7 +514,7 @@
 
 [form_personal_use]: {{ kbArticleURLPrefix }}2568
 
-[formula_editor]: {{ kbArticleURLPrefix }}2468
+[formula_editor_autocomplete]: {{ kbArticleURLPrefix }}2468
 
 [formula_editor_function_autocompete]: {{ kbArticleURLPrefix }}2465
 
@@ -533,6 +539,8 @@
 [n3_editor_prefix_autocomplete]: {{ kbArticleURLPrefix }}2477
 
 [navigation_panel]: {{ kbArticleURLPrefix }}2283
+
+[office_connection_use]: {{ kbArticleURLPrefix }}2343
 
 [process_diagram_elements_none_intermediate_event]: {{ kbArticleURLPrefix }}2380
 
@@ -656,13 +664,19 @@
 
 [admin_utility_configure]: {{ kbArticleURLPrefix }}2029
 
+[admin_utility_instance_diagnose]: {{ kbArticleURLPrefix }}2030
+
+[admin_utility_instance_create]: {{ kbArticleURLPrefix }}2032
+
 [admin_utility_install_launch]: {{ kbArticleURLPrefix }}2027
 
 [admin_utility_install_software]: {{ kbArticleURLPrefix }}2028
 
 [admin_utility_instance_installize]: {{ kbArticleURLPrefix }}2296
 
-[admin_utility_instance_start_stop]: {{ kbArticleURLPrefix }}2027
+[admin_utility_instance_start_stop]: {{ kbArticleURLPrefix }}2035
+
+[admin_utility_instance_status_update]: {{ kbArticleURLPrefix }}2037
 
 [admin_utility_instance_upgrade_3_2_to_4_2]: {{ kbArticleURLPrefix }}2129
 
@@ -683,6 +697,8 @@
 [restore_windows]: {{ kbArticleURLPrefix }}2038
 
 [sso_authentication_configure_windows]: {{ kbArticleURLPrefix }}2309
+
+[zabbix_agent_deploy_windows]: {{ kbArticleURLPrefix }}2304
 
 {% endif %}
 

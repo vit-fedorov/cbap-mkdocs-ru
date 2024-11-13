@@ -35,12 +35,12 @@ hide:
 
 *![Перемещение оргединицы в панели навигации](organizational_structure_modeling_moving_unit_in_navigation.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Просмотр реестра оргединиц][architect_organizational_structure_modelling]*
-- *[Использование системы — Панель навигации][navigation_panel]*
+- _[Просмотр реестра оргединиц][architect_organizational_structure_modelling]_
+- _[Использование системы — Панель навигации][navigation_panel]_
 
 </div>
 

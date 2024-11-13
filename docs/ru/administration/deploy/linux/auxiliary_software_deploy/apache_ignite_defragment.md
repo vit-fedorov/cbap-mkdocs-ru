@@ -149,20 +149,18 @@ kbId: 2495
 
 8. Перезагрузите машину и экземпляр ПО.
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
-
-
-</div>
 
 {% if kbExport %}
 **[Резервное копирование и восстановление]({{ kbArticleURLPrefix }})489**
 {% else %}
-**[Резервное копирование и восстановление][backup]**
-{% endif %}
-**[Дефрагментация персистентного хранилища](https://ignite.apache.org/docs/2.11.1/persistence/native-persistence-defragmentation)** (руководство Apache Ignite, английский язык)
+- _[Резервное копирование и восстановление][backup]_
+- {% endif %}
+- _[Дефрагментация персистентного хранилища](https://ignite.apache.org/docs/2.11.1/persistence/native-persistence-defragmentation)_ (руководство Apache Ignite, английский язык)
+- _ [Активация, деактивация и управление топологией](https://ignite.apache.org/docs/2.11.1/tools/control-script#activation-deactivation-and-topology-management)_ (руководство Apache Ignite, английский язык)
 
-**[Активация, деактивация и управление топологией](https://ignite.apache.org/docs/2.11.1/tools/control-script#activation-deactivation-and-topology-management)** (руководство Apache Ignite, английский язык)
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

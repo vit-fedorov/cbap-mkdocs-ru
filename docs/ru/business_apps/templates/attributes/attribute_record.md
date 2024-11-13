@@ -31,13 +31,13 @@ _![Свойства атрибута типа «Запись»](img/attribute_re
 
 --8<-- "attribute_property_attribute_linking_example.md"
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Общие свойства атрибутов][attribute_common_properties]*
-- *[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]*
-- *[Атрибут типа «Аккаунт»][attribute_account]*
+- _[Общие свойства атрибутов][attribute_common_properties]_
+- _[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]_
+- _[Атрибут типа «Аккаунт»][attribute_account]_
 
 </div>
 

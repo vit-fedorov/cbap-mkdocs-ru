@@ -51,12 +51,12 @@ kbId: 2296
 
 16. На этом этапе развёртывание экземпляра продукта завершено и можно приступать к созданию и использованию приложений.
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"{{ productName }}
 
-- *[Установка продукта {{ productName }}][admin_utility_install_software]*
-- *[Установка Elasticsearch. Краткое руководство для Windows][elasticsearch_deploy_windows]*
+- _[Установка продукта {{ productName }}][admin_utility_install_software]_
+- _[Установка Elasticsearch. Краткое руководство для Windows][elasticsearch_deploy_windows]_
 
 </div>
 

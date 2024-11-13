@@ -47,11 +47,11 @@ _![Проверка значения атрибута](attribute_common_properti
 
 _![Связи атрибута](attribute_common_properties_relations.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]*
+- _[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]_
 
 </div>
 

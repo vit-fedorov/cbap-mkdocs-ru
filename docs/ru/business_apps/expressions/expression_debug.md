@@ -352,14 +352,14 @@ hide:
 8. Снова запустите сценарий и проверьте его выполнение.
 9. Проверьте весь сценарий, последовательно перемещая отладочное действие «**Проверить результат выражения**».
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Редактор выражений][expression_editor]*
-- *[Введение в язык формул Comindware][formula_introduction]*
-- *[Список функций языка формул Comindware][formula_function_list]*
-- *[Настройка действий сценария][scenario_elements]*
+- _[Редактор выражений][expression_editor]_
+- _[Введение в язык формул Comindware][formula_introduction]_
+- _[Список функций языка формул Comindware][formula_function_list]_
+- _[Настройка действий сценария][scenario_elements]_
 
 </div>
 

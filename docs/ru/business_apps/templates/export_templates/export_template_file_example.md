@@ -82,15 +82,15 @@ hide:
 
     *![Файл, сформированный по шаблону экспорта](export_template_file_result.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Настройка шаблона экспорта с использованием C#][export_template_csharp_configure]*
-- *[Настройка выгрузки нескольких коллекций и изображений][export_template_csharp_collection_download]*
-- *[Настройка шаблона экспорта][export_templates]*
-- *[Подготовка файла шаблона экспорта][export_template_file_configure]*
-- *[Настройка кнопки экспорта][export_template_button_configure]*
+- _[Настройка шаблона экспорта с использованием C#][export_template_csharp_configure]_
+- _[Настройка выгрузки нескольких коллекций и изображений][export_template_csharp_collection_download]_
+- _[Настройка шаблона экспорта][export_templates]_
+- _[Подготовка файла шаблона экспорта][export_template_file_configure]_
+- _[Настройка кнопки экспорта][export_template_button_configure]_
 
 </div>
 

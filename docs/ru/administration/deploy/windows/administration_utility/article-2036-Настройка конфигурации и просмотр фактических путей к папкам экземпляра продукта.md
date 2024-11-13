@@ -62,11 +62,11 @@ kbId: 2036
 
 _![Настройка путей к файлам экземпляра продукта](https://kb.comindware.ru/assets/img_667eb879062fe.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Пути и содержимое папок экземпляра ПО][paths]*
+- _[Пути и содержимое папок экземпляра ПО][paths]_
 
 </div>
 

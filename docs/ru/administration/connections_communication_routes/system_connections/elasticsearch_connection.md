@@ -36,11 +36,11 @@ kbId: 2593
 
 _![Настройка подключения к Elasticsearch](elasticsearch_connection_settings.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Инициализация {{ productName }}][deploy_guide_linux_initialize]*
+- _[Инициализация {{ productName }}][deploy_guide_linux_initialize]_
 
 </div>
 

@@ -62,13 +62,13 @@ _![Свойства атрибута типа «Изображение»](img/at
 
     _![Исходный и преобразованный файлы](img/attribute_image_example.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Представление атрибута «Изображение» на форме][form_dynamic_elements_image]*
-- *[Общие свойства атрибутов][attribute_common_properties]*
-- *[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]*
+- _[Представление атрибута «Изображение» на форме][form_dynamic_elements_image]_
+- _[Общие свойства атрибутов][attribute_common_properties]_
+- _[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]_
 
 </div>
 

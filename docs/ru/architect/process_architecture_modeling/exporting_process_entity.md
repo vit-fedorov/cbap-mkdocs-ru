@@ -28,12 +28,12 @@ hide:
 
     Если окно не отобразилось, экспортированный файл будет сохранен в папку загрузок, заданную в настройках браузера.
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Просмотр реестра процессов][architect_process_architecture_modelling]*
-- *[Использование системы — Панель навигации][navigation_panel]*
+- _[Просмотр реестра процессов][architect_process_architecture_modelling]_
+- _[Использование системы — Панель навигации][navigation_panel]_
 
 </div>
 

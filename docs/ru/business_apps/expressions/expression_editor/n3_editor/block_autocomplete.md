@@ -33,17 +33,14 @@ if { }
 }
 ```
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
+- _[Ввод префикса][n3_editor_prefix_autocomplete]_
+- _[Редактор выражений][expression_editor]_
+- _[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}_
 
 </div>
-
-[Ввод префикса][n3_editor_prefix_autocomplete]
-
-**[Редактор выражений][expression_editor]**
-
-**[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -60,12 +60,12 @@ end="<!--page-view-config-end-->"
 %}
 _![Выбор и упорядочивание разделов рабочего стола](desktop_sections_config.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Использование страниц][pages]*
-- *[Использование панели навигации][navigation_panel]*
+- _[Использование страниц][pages]_
+- _[Использование панели навигации][navigation_panel]_
 
 </div>
 

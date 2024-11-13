@@ -141,17 +141,14 @@ xpack.security.transport.ssl:
 http.host: 0.0.0.0
 ```
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
+- _[Официальный сайт Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/targz.html)_ (английский язык)
+- _[Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности][elasticsearch_cluster_deploy_no_certificates]_
+- _[Установка, запуск, инициализация и остановка ПО {{ productName }}][deploy_guide_linux]_
 
 </div>
-
-**[Официальный сайт Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/targz.html)** (английский язык)
-
-**[Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности][elasticsearch_cluster_deploy_no_certificates]**
-
-**[Установка, запуск, инициализация и остановка ПО {{ productName }}][deploy_guide_linux]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

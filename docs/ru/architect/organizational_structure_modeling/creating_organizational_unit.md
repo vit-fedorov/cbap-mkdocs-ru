@@ -59,14 +59,14 @@ hide:
 
     *![Ввод названия новой оргединицы на панели навигации](organizational_structure_modeling_rename_on_creation.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Просмотр реестра оргединиц][architect_organizational_structure_modelling]*
-- *[Настройка оргединицы][architect_configuring_organizational_unit]*
-- *[Переименование оргединицы][architect_renaming_organizational_unit]*
-- *[Использование системы — Панель навигации][navigation_panel]*
+- _[Просмотр реестра оргединиц][architect_organizational_structure_modelling]_
+- _[Настройка оргединицы][architect_configuring_organizational_unit]_
+- _[Переименование оргединицы][architect_renaming_organizational_unit]_
+- _[Использование системы — Панель навигации][navigation_panel]_
 
 </div>
 

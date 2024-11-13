@@ -73,11 +73,11 @@ _![Полный редактор выражений](img/calculated_attribute_fu
 - [Примеры использования формул][formula_use_examples]
 - [Примеры использования языка N3][N3_use_examples]
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]*
+- _[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]_
 
 </div>
 

@@ -60,14 +60,14 @@ hide:
 
 *![Дополнительные свойства развилки «или/или»](exclusive_gateway_advanced_propertes.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Развилка «и»][process_diagram_elements_gateway_parallel]*
-- *[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]*
-- *[Элементы диаграммы процесса][process_diagram_elements]*
-- *[Редактирование диаграммы процесса][process_diagram_designer]*
+- _[Развилка «и»][process_diagram_elements_gateway_parallel]_
+- _[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]_
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
 </div>
 

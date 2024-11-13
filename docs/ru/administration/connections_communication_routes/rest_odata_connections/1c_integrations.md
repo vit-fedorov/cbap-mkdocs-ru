@@ -85,13 +85,13 @@ _![Настройка подключения к OData-сервису](1c_connect
 
 _![Журнал сеансов интеграции по OData](1c_connection_log.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Синхронизация с веб-сервисом. Настройка подключения][odata_connection]*
-- *[Синхронизация с веб-сервисом. Интеграция по OData][odata_integration]*
-- *[Журналы событий][logs]*
+- _[Синхронизация с веб-сервисом. Настройка подключения][odata_connection]_
+- _[Синхронизация с веб-сервисом. Интеграция по OData][odata_integration]_
+- _[Журналы событий][logs]_
 
 </div>
 

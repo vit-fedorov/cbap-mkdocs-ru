@@ -25,15 +25,15 @@ hide:
 
 *![Форма оргединицы](configuring_organizational_unit_properties.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Редактирование формы и атрибутов оргединицы][architect_configuring_organizational_unit_form_and_attributes]*
-- *[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]*
-- *[Просмотр реестра оргединиц][architect_organizational_structure_modelling]*
-- *[Переименование оргединицы][architect_renaming_organizational_unit]*
-- *[Использование системы — Панель навигации][navigation_panel]*
+- _[Редактирование формы и атрибутов оргединицы][architect_configuring_organizational_unit_form_and_attributes]_
+- _[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]_
+- _[Просмотр реестра оргединиц][architect_organizational_structure_modelling]_
+- _[Переименование оргединицы][architect_renaming_organizational_unit]_
+- _[Использование системы — Панель навигации][navigation_panel]_
 
 </div>
 

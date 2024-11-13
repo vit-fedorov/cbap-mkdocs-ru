@@ -48,17 +48,14 @@ _![Остановка экземпляра ПО с помощью Утилиты
 9. Утилита администрирования удалит выбранный экземпляр продукта.
 10. После удаления экземпляра продукта отобразится сообщение «**Экземпляр продукта удален**».
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
+- _[Индикация состояния и обновление списка экземпляров продукта]({{ kbArticleURLPrefix }}2037)_
+- _[Запуск Утилиты администрирования Comindware]({{ kbArticleURLPrefix }}2027#mcetoc_1i15bgv5s4)_
+- _[Инициализация экземпляра продукта][admin_utility_instance_installize]_
 
 </div>
-
-**[Индикация состояния и обновление списка экземпляров продукта]({{ kbArticleURLPrefix }}2037)**
-
-[**Запуск Утилиты администрирования Comindware**]({{ kbArticleURLPrefix }}2027#mcetoc_1i15bgv5s4)
-
-**[Инициализация экземпляра продукта][admin_utility_instance_installize]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

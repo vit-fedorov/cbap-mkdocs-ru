@@ -49,13 +49,13 @@ kbId: 2031
 
     _![Страница входа на сайт экземпляра продукта](https://kb.comindware.ru/assets/img_667ad67cbfae0.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]*
-- *[Пути и содержимое папок экземпляра ПО][paths]*
-- *[Установка продукта {{ productName }}][admin_utility_install_software]*
+- _[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]_
+- _[Пути и содержимое папок экземпляра ПО][paths]_
+- _[Установка продукта {{ productName }}][admin_utility_install_software]_
 
 </div>
 

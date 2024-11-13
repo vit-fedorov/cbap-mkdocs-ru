@@ -196,13 +196,13 @@ kbId: 2623
 
     _![Отображение кнопки «Скачать вложения» в таблице записей шаблона «Реестр документов»](download_archive_csharp_button.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Атрибут типа «Документ»][attribute_document]*
-- *[Кнопки. Определение, настройка, удаление][buttons]*
-- *[Написание скриптов на языке C#][manual_csharp]*
+- _[Атрибут типа «Документ»][attribute_document]_
+- _[Кнопки. Определение, настройка, удаление][buttons]_
+- _[Написание скриптов на языке C#][manual_csharp]_
 
 </div>
 

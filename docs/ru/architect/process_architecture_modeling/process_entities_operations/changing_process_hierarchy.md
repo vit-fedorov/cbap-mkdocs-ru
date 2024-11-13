@@ -36,12 +36,12 @@ hide:
 
 *![Перемещение группы процессов в панели навигации](process_architecture_modeling_moving_entity_in_navigation.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Просмотр реестра процессов][architect_process_architecture_modelling]*
-- *[Использование системы — Панель навигации][navigation_panel]*
+- _[Просмотр реестра процессов][architect_process_architecture_modelling]_
+- _[Использование системы — Панель навигации][navigation_panel]_
 
 </div>
 

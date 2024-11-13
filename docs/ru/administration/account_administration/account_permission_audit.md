@@ -47,11 +47,11 @@ _![Список членов групп](img/account_permission_audit_group_memb
 
 _![Список членов ролей](img/account_permission_audit_role_members.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Аккаунты. Создание, настройка, замещение, привязка к шаблону аккаунта, назначение лицензий, удаление][accounts]*
+- _[Аккаунты. Создание, настройка, замещение, привязка к шаблону аккаунта, назначение лицензий, удаление][accounts]_
 
 </div>
 

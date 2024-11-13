@@ -117,11 +117,11 @@ kbId: 2581
 
 {% endif %}
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Пути и содержимое папок экземпляра ПО][paths]*
+- _[Пути и содержимое папок экземпляра ПО][paths]_
 
 </div>
 

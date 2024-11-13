@@ -3,7 +3,7 @@ title: Настройка конфигурации Утилиты админис
 kbId: 2029
 ---
 
-# Настройка конфигурации Утилиты администрирования Comindware {: #administration_utility_configure}
+# Настройка конфигурации Утилиты администрирования Comindware {: #admin_utility_configure}
 
 ## Переход к окну «Конфигурация утилиты администрирования»
 
@@ -115,11 +115,11 @@ kbId: 2029
 
 Настройка путей для диагностических журналов Утилиты администрирования
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта][instance_configure_windows]*
+- _[Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта][instance_configure_windows]_
 
 </div>
 

@@ -58,12 +58,12 @@ _![Свойства атрибута типа «Текст»](img/attribute_text
 
         - `77:16:260101:3`
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Общие свойства атрибутов][attribute_common_properties]*
-- *[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]*
+- _[Общие свойства атрибутов][attribute_common_properties]_
+- _[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]_
 
 </div>
 

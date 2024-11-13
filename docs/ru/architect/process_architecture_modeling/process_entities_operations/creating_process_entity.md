@@ -58,11 +58,11 @@ hide:
 
 --8<-- "process_architecture_name_element.md"
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Просмотр реестра процессов][architect_process_architecture_modelling]*
-- *[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]*
-- *[Переименование элемента процессной архитектуры][architect_renaming_process_entity]*
-- *[Использование системы — Панель навигации][navigation_panel]*
+- _[Просмотр реестра процессов][architect_process_architecture_modelling]_
+- _[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]_
+- _[Переименование элемента процессной архитектуры][architect_renaming_process_entity]_
+- _[Использование системы — Панель навигации][navigation_panel]_

@@ -103,12 +103,12 @@ kbId: 2030
 
 Содержимое папки с результатами диагностики
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
+- _[Настройка конфигурации Утилиты администрирования Comindware]({{ kbArticleURLPrefix }}2029)_
 
 </div>
 
-**[Настройка конфигурации Утилиты администрирования Comindware]({{ kbArticleURLPrefix }}2029)**
-
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

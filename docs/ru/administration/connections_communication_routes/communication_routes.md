@@ -91,12 +91,12 @@ _![Список путей передачи данных](communication_routes_p
 2. Нажмите кнопку «**Удалить**».
 3. Подтвердите удаление.
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Подключения. Определения, типы, создание, настройка, удаление][connections]*
-- *[Примеры интеграций][integration_examples]*
+- _[Подключения. Определения, типы, создание, настройка, удаление][connections]_
+- _[Примеры интеграций][integration_examples]_
 
 </div>
 

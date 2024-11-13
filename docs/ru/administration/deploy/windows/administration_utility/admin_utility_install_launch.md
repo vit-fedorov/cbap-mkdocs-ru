@@ -51,11 +51,11 @@ kbId: 2027
 
     _![Главное окно Утилиты администрирования](https://kb.{{ companyName }}.ru/assets/img_667988719e042.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Установка продукта {{ productName }}][admin_utility_install_software]*
+- _[Установка продукта {{ productName }}][admin_utility_install_software]_
 
 </div>
 

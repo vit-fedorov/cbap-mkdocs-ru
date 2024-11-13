@@ -157,13 +157,13 @@ kbId: 2107
 
     *![Свойства таблицы работ на форме](creating_gantt_chart_table_properties.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Диаграмма Ганта. Использование][gantt_chart_use]*
-- *[Шаблон записи][record_templates]*
-- *[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]*
+- _[Диаграмма Ганта. Использование][gantt_chart_use]_
+- _[Шаблон записи][record_templates]_
+- _[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]_
 
 </div>
 

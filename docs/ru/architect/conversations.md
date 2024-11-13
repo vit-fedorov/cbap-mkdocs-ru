@@ -52,12 +52,12 @@ hide:
 
 *![Просмотр списка обсуждений процессов](viewing_process_conversations_list.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Просмотр диаграммы][architect_viewing_diagram]*
-- *[Просмотр реестра оргединиц][architect_organizational_structure_modelling]*
+- _[Просмотр диаграммы][architect_viewing_diagram]_
+- _[Просмотр реестра оргединиц][architect_organizational_structure_modelling]_
 
 </div>
 

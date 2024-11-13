@@ -80,18 +80,14 @@ _![Удаление элементов из списка значений](attri
 
     _![Раскрывающийся список значений на форме](img/attribute_enum_example.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Атрибут типа «Список значений». Вычисление значения по справочнику][attribute_enum_calculate_registry]*
+- _[Атрибут типа «Список значений». Вычисление значения по справочнику][attribute_enum_calculate_registry]_
+- _[Атрибут типа «Список значений». Вычисление текущего значения**][attribute_enum_calculate_current_value]_
+- _[Общие свойства атрибутов][attribute_common_properties]_
+- _[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]_
 
 </div>
-
-[**Атрибут типа «Список значений». Вычисление текущего значения**][attribute_enum_calculate_current_value]
-
-**[Общие свойства атрибутов][attribute_common_properties]**
-
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
-
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

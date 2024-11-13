@@ -33,11 +33,11 @@ hide:
 
     _![Переход к таблице из представления карточек](img/cards_switch_to_table_mobile.png)_
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Настройка представления карточек][cards_configure]*
+- _[Настройка представления карточек][cards_configure]_
 
 </div>
 

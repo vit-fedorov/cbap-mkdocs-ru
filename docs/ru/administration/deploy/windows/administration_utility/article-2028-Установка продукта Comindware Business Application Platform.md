@@ -74,19 +74,15 @@ kbId: 2028
     "C:\Program Files\Elasticsearch\elasticsearch-<номер.версии>\bin\elasticsearch-service.bat" start
     ```
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
+- _[Настройка конфигурации Утилиты администрирования Comindware]({{ kbArticleURLPrefix }}2029)_
+- _[Создание экземпляра продукта, добавление скрытого экземпляра]({{ kbArticleURLPrefix }}2032)_
+- _[Инициализация экземпляра продукта][admin_utility_instance_installize]_
+- _[Установка Elasticsearch. Краткое руководство для Windows][elasticsearch_deploy_windows]_
 
 </div>
-
-**[Настройка конфигурации Утилиты администрирования Comindware]({{ kbArticleURLPrefix }}2029)**
-
-**[Создание экземпляра продукта, добавление скрытого экземпляра]({{ kbArticleURLPrefix }}2032)**
-
-**[Инициализация экземпляра продукта][admin_utility_instance_installize]**
-
-**[Установка Elasticsearch. Краткое руководство для Windows][elasticsearch_deploy_windows]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

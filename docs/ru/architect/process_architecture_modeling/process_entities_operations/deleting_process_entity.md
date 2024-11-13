@@ -38,12 +38,12 @@ hide:
 
 *![Удаление элемента процессной архитектуры с помощью панели навигации](deleting_process_entity_using_diagram.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Просмотр реестра процессов][architect_process_architecture_modelling]*
-- *[Использование системы — Панель навигации][navigation_panel]*
+- _[Просмотр реестра процессов][architect_process_architecture_modelling]_
+- _[Использование системы — Панель навигации][navigation_panel]_
 
 </div>
 

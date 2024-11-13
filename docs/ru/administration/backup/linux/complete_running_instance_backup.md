@@ -208,11 +208,11 @@ kbId: 2117
 
 8. Перенесите архив с резервной копией во внешнее хранилище.
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии][restore_complete_backup]*
+- _[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии][restore_complete_backup]_
 
 </div>
 

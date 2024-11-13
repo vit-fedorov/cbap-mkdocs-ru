@@ -204,15 +204,15 @@ _![Настройка свойств сообщения для общего ув
     _![Критически важное уведомление на странице входа](img/common_notifications_entry_page_urgent_message.png)_
     {{ pdfEndOfBlockHack }}
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Глобальная конфигурация][global_configuration]*
-- *[Простое начальное событие][process_diagram_elements_none_start_event]*
-- *[Конечное событие-отправка сообщения][process_diagram_elements_send_message_end_event]*
-- *[Промежуточное событие-отправка сообщения][process_diagram_elements_send_message_intermediate_event]*
-- *[Редактирование формы. Создание атрибута][form_designer]*
+- _[Глобальная конфигурация][global_configuration]_
+- _[Простое начальное событие][process_diagram_elements_none_start_event]_
+- _[Конечное событие-отправка сообщения][process_diagram_elements_send_message_end_event]_
+- _[Промежуточное событие-отправка сообщения][process_diagram_elements_send_message_intermediate_event]_
+- _[Редактирование формы. Создание атрибута][form_designer]_
 
 </div>
 

@@ -42,12 +42,12 @@ hide:
 
 *![Удаление оргединицы с помощью панели навигации](deleting_organizational_unit_using_navigation.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Просмотр реестра оргединиц][architect_organizational_structure_modelling]*
-- *[Использование системы — Панель навигации][navigation_panel]*
+- _[Просмотр реестра оргединиц][architect_organizational_structure_modelling]_
+- _[Использование системы — Панель навигации][navigation_panel]_
 
 </div>
 

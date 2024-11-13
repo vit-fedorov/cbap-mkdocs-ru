@@ -159,16 +159,16 @@ _![Окрашивание строк таблицы по справочнику]
 
 </div>
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Таблица. Настройка в шаблоне][table_configure_template]*
-- *[Таблица. Настройка на форме][form_dynamic_elements_table]*
-- *[Шевроны. Настройка представления][form_dynamic_elements_chevron]*
-- *[Сектора диаграмм. Окрашивание по атрибуту «Цвет»][form_dynamic_elements_color_diagram_example]*
-- *[Системные атрибуты][attributes_system]*
-- *[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]*
+- _[Таблица. Настройка в шаблоне][table_configure_template]_
+- _[Таблица. Настройка на форме][form_dynamic_elements_table]_
+- _[Шевроны. Настройка представления][form_dynamic_elements_chevron]_
+- _[Сектора диаграмм. Окрашивание по атрибуту «Цвет»][form_dynamic_elements_color_diagram_example]_
+- _[Системные атрибуты][attributes_system]_
+- _[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]_
 
 </div>
 

@@ -27,15 +27,13 @@ kbId: 2037
 
 Обновление списка экземпляров продукта
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
+- _[Запуск, остановка и удаление экземпляра продукта]({{ kbArticleURLPrefix }}2035)_
+- _[Добавление ранее установленного экземпляра продукта]({{ kbArticleURLPrefix }}2032#mcetoc_1i1abi2m82)_
 
 </div>
-
-**[Запуск, остановка и удаление экземпляра продукта]({{ kbArticleURLPrefix }}2035)**
-
-**[Добавление ранее установленного экземпляра продукта]({{ kbArticleURLPrefix }}2032#mcetoc_1i1abi2m82)**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

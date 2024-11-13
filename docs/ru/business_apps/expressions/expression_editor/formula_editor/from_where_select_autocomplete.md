@@ -205,16 +205,13 @@ from a in $RequestedCars where a->_creator->username == "admin" select a->id
     * `#!mysql where a->Make == "Лада"` — выборка в переменную `a` записей, связанных с атрибутом `RequestedCars`, у которых атрибут `Make` имеет значение `"Лада".
     * `#!mysql select a->id` — выборка значений атрибута `id` полученных записей и передача списка этих значений в функцию `COUNT()`.
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Редактор выражений][expression_editor]*
+- _[Редактор выражений][expression_editor]_
+- _[Примеры использования формул. База знаний Comindware]({{ kbCategoryURLPrefix }}409){:target="_blank"}_
+- _[Ввод имени функции и просмотр подсказки по функции][formula_editor_function_autocompete]_
 
 </div>
-
-**[Примеры использования формул. База знаний Comindware]({{ kbCategoryURLPrefix }}409){:target="_blank"}**
-
-**[Ввод имени функции и просмотр подсказки по функции][formula_editor_function_autocompete]**
-
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

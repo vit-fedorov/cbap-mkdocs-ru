@@ -39,6 +39,4 @@ _![Настройка подключения к Collabora Online](collabora_conn
 
 </div>
 
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

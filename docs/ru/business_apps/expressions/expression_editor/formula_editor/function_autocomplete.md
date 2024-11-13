@@ -30,12 +30,12 @@ hide:
 
 *![Подсказка при предиктивном вводе имени функции](formula_editor_function_autocomplete.png)*
 
-<div class="relatedTopics">
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- *[Справочник по функциям][справочник-по-функциям]*
-- *[Редактор выражений][expression_editor]*
+- _[Справочник по функциям][справочник-по-функциям]_
+- _[Редактор выражений][expression_editor]_
 
 </div>
 

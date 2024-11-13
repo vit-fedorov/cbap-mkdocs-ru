@@ -66,3 +66,7 @@ hide:
 - _[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]_
 - _[Переименование элемента процессной архитектуры][architect_renaming_process_entity]_
 - _[Использование системы — Панель навигации][navigation_panel]_
+
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

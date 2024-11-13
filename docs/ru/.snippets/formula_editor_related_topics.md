@@ -1,3 +1,2 @@
-**[Редактор выражений][expression_editor]**
-
-**[Примеры использования формул. База знаний Comindware]({{ kbCategoryURLPrefix }}409){:target="_blank"}**
+- _[Редактор выражений][expression_editor]_
+- _[Примеры использования формул. База знаний Comindware]({{ kbCategoryURLPrefix }}409){:target="_blank"}_

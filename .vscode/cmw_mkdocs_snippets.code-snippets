@@ -18,7 +18,7 @@
 
 	"Page break hard": {
 		"scope": "markdown",
-		"prefix": "hard page break",
+		"prefix": "hard page break pdf",
 		"body":	[
 			"{{ pdfPageBreakHard }}"
 		],
@@ -27,7 +27,7 @@
 
 	"PDF end of block hack": {
 		"scope": "markdown",
-		"prefix": "pdf end of block",
+		"prefix": "end of block pdf",
 		"body":	[
 			"{{ pdfEndOfBlockHack }}"
 		],
@@ -36,7 +36,7 @@
 
 	"Page break before attribute": {
 		"scope": "markdown",
-		"prefix": "page break before",
+		"prefix": "page break before pdf",
 		"body":	[
 			"{: .pageBreakBefore }"
 		],

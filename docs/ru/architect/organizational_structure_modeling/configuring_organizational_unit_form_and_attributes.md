@@ -33,14 +33,14 @@ hide:
 2. Отобразится [форма оргединицы][architect_configuring_organizational_unit].
 3. Нажмите кнопку «**Информация**» <i class="fa-light fa-edit"></i> и в раскрывающемся меню выберите пункт «**Редактировать форму**».
 
-*![Переход к конструктору формы оргединицы](configuring_organizational_unit_edit_form.png)*
+    *![Переход к конструктору формы оргединицы](configuring_organizational_unit_edit_form.png)*
 
 4. Отобразится [конструктор формы][form_designer].
 5. [Создайте][создание-атрибута] или [отредактируйте][редактирование-атрибута-кнопки-или-формы] атрибуты оргединицы.
 6. [Отредактируйте форму][form_designer]: перетащите на неё новые визуальные элементы и атрибуты или удалите ненужные.
 7. Нажмите кнопку «**Сохранить**».
 
-*![Конструктор формы оргединицы](configuring_organizational_unit_form_designer.png)*
+    *![Конструктор формы оргединицы](configuring_organizational_unit_form_designer.png)*
 
 <div class="relatedTopics" markdown="block">
 

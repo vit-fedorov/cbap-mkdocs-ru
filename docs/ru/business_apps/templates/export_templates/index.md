@@ -66,7 +66,7 @@ hide:
 
 *![Настройка свойств шаблона экспорта](img/export_template_configure.png)*
 
-## Удаление шаблона экспорта
+## Удаление шаблона экспорта {: .pageBreakBefore }
 
 1. Откройте [шаблон записи][record_templates], [аккаунта][account_templates], [оргединицы][organizational_unit_templates] или [роли][role_templates].
 2. Откройте вкладку «**Шаблоны экспорта**».

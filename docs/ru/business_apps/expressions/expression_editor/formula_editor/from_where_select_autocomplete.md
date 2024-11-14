@@ -130,6 +130,7 @@ COUNT(from a in db->Cars where a->Make == $Make select a->id)
 
 ```mysql title="Пример: формула, возвращающая количество записей в шаблоне, связанном с атрибутом RequestedCars, созданных под текущим аккаунтом"
 COUNT(from a in $RequestedCars where a->_creator == USER() select a->id)
+```
 
 ## Ввод системного имени атрибута из цепочки связанных шаблонов
 
@@ -155,7 +156,8 @@ from a in $RequestedCars where a->_creator->username == "admin" select a->id
 
 !!! example "Подсчёт количества автомобилей марки «Лада» в заявке"
 
-    **Конфигурация приложения**{:#app-configuration}
+    **Конфигурация приложения**
+    {: #app-configuration}
 
     * Шаблон записи _«Заявка на автомобили»_
         - Атрибут _«Запрошенные автомобили»_
@@ -179,21 +181,24 @@ from a in $RequestedCars where a->_creator->username == "admin" select a->id
          *![Список источников данных для запроса](formula_editor_from_where_select_autocomplete.png)*
     4. Дважды нажмите в списке пункт _$RequestedCars (запрос)_, чтобы вставить в формулу заготовку конструкции `#!mysql from where select` для него:
          *![Заготовка запроса](formula_editor_from_where_select_autocomplete_entered.png)*
-    5. Выделите строку `Ваше условие` после оператора `#!mysql where`, чтобы заменить её на условие выборки записей из шаблона _«Автомобили»_.
-{% if pdfOutput %}
 
+    {% if pdfOutput %}
 !!! example "Подсчёт количества автомобилей марки «Лада» в заявке — продолжение"
-
-{% endif %}
+    <div markdown="block" class="olReset" style="counter-increment: start 4;">
+    {% endif %}
+    5. Выделите строку `Ваше условие` после оператора `#!mysql where`, чтобы заменить её на условие выборки записей из шаблона _«Автомобили»_.
     6. Введите строку `#!mysql where a->`.
     7. В отобразившемся списке атрибутов шаблона _«Автомобили»_ дважды нажмите системное имя атрибута _Make_, чтобы вставить его в формулу. См. «**Ввод системного имени атрибута после переменной-селектора**»
         *![Список атрибутов шаблона _«Автомобили»_](formula_editor_from_where_select_autocomplete_condition_record_attribute_list.png)*
     8. Введите оператор `==` и нажмите клавиши ++ctrl+space++.
     9.  Отобразится список записей шаблона _«Автомобили»_ в виде марок автомобилей. См. «**[Ввод заголовка записи связанного шаблона][formula_editor_record_heading_autocomplete]**».
          *![Список записей в шаблоне _«Автомобили»_](formula_editor_from_where_select_autocomplete_condition_record_heading_list.png)*
-    10.  Дважды нажмите пункт _«Лада»_, чтобы вставить в формулу строковый литерал `#!mysql "Лада"`.
+    10.   Дважды нажмите пункт _«Лада»_, чтобы вставить в формулу строковый литерал `#!mysql "Лада"`.
+    {% if pdfOutput %}
+    </div>
+    {% endif %}
 
-    ```mysql title="Формула, возвращающая количество записей, связанных с атрибутом RequestedCars, у которых атрибут Make имеет значение «Лада»"
+    ```mysql title="Формула, подсчитывающая автомобили «Лада» в заявке"
     COUNT(from a in $RequestedCars where a->Make == "Лада" select a->id)
     ```
 
@@ -202,8 +207,9 @@ from a in $RequestedCars where a->_creator->username == "admin" select a->id
     * `COUNT()` — возвращает количество элементов в списке, переданном в качестве аргумента.
     * `#!mysql from a` — объявление локальной переменной `a`.
     * `#!mysql in $RequestedCars` — объявление атрибута `RequestedCars` в качестве источника данных.
-    * `#!mysql where a->Make == "Лада"` — выборка в переменную `a` записей, связанных с атрибутом `RequestedCars`, у которых атрибут `Make` имеет значение `"Лада".
+    * `#!mysql where a->Make == "Лада"` — выборка в переменную `a` записей, связанных с атрибутом `RequestedCars`, у которых атрибут `Make` имеет значение `"Лада"`.
     * `#!mysql select a->id` — выборка значений атрибута `id` полученных записей и передача списка этих значений в функцию `COUNT()`.
+    {{ pdfEndOfBlockHack }}
 
 <div class="relatedTopics" markdown="block">
 

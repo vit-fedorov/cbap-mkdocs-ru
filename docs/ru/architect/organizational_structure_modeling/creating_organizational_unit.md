@@ -37,7 +37,7 @@ hide:
 --8<-- "organizational_structure_unit_created.md"
 --8<-- "organizational_structure_name_unit.md"
 
-### Создание с помощью кнопки «Создать»
+### Создание с помощью кнопки «Создать» {: .pageBreakBefore }
 
 1. В [реестре оргединиц][architect_organizational_structure_modelling] установите флажок выбора в строке оргединицы.
 2. Нажмите кнопку «**Создать**» и в раскрывающемся меню выберите пункт «**Подразделение**» или «**Должность**».

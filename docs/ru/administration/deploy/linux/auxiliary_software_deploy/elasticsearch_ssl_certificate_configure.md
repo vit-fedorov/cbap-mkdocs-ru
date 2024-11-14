@@ -216,8 +216,8 @@ kbId: 2337
         certificate_authorities: [ "certs/ExampleRootCA.crt" ]    # [<-] specify path to CACert.crt here
     ```
 
-2. Сохраните изменения и закройте текстовый редактор Nano, нажав клавиши: `Ctrl O, Ввод, Ctrl X`.
-3. Повторите шаги 2.2.1–2.2.2 для каждого из узлов Elasticsearch.
+2. Сохраните изменения и закройте текстовый редактор Nano, нажав клавиши: ++ctrl+O++, ++enter++, ++ctrl+x++.
+3. Повторите шаги 1–2 для каждого из узлов Elasticsearch.
 
 ## Запуск Elasticsearch {: .pageBreakBefore }
 

@@ -23,7 +23,7 @@ hide:
 
     *![Ввод названия элемента на панели навигации](process_architecture_modeling_rename_on_creation.png)*
 
-## Переименование с помощью конструктора диаграммы
+## Переименование с помощью конструктора диаграммы {: .pageBreakBefore }
 
 --8<-- "process_architecture_edit_diagram.md"
 --8<-- "process_architecture_edit_diagram_click_properties.md"

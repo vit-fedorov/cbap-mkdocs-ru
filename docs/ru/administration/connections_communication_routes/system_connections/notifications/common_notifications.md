@@ -20,7 +20,7 @@ _![Вызов панели «Уведомления»](img/common_notifications_
 
 _![Критически важное уведомление на странице входа](img/common_notifications_entry_page_urgent_message_generic.png)_
 
-## Порядок настройки общих уведомлений
+## Порядок настройки общих уведомлений {: .pageBreakBefore }
 
 1. Включите получение уведомлений в [**Глобальной конфигурации**](#global_configuration_setting).
 2. Настройте [**путь передачи данных**](#communication_routes_setting) типа «**Общие уведомления**».

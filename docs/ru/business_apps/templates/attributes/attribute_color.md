@@ -71,7 +71,7 @@ kbId: 2627
 </div>
 <div class="admonition example" markdown="block">
 
-Условное окрашивание строк таблицы
+Условное окрашивание строк таблицы — продолжение
 {: .admonition-title }
 
 {% endif %}

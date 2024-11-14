@@ -31,6 +31,19 @@ article>.md-typeset>h1,
     margin-left: -0.5rem !important;
 }
 
+.olReset {
+    margin-left: -1.2rem;
+}
+
+.olReset > ol {
+    list-style: none;
+}
+
+.olReset > ol > li::before {
+    content: counter(start, decimal) ". ";
+    counter-increment: start;
+}
+
 .md-typeset .relatedTopics h2 {
     margin-left: -0.7rem !important;
 }
@@ -78,7 +91,8 @@ article>.md-typeset>h1,
     }
 
     .fa-light,
-    .fl {
+    .fl,
+    kbd {
         display: inline;
     }
 
@@ -123,7 +137,7 @@ article.md-typeset {
     text-indent: 1.5rem
 }
 
-.pdfEndOfBlockHack
+* .pdfEndOfBlockHack
  {
     visibility: hidden !important;
     font-size: 0px !important;
@@ -132,8 +146,8 @@ article.md-typeset {
     margin: 0px !important;
 }
 
-.pdfEndOfBlockHack + p:empty,
-.pageBreakAfter + p:empty,
+* .pdfEndOfBlockHack + p:empty,
+* .pageBreakAfter + p:empty,
 .md-typeset p:empty
 {
     display: none !important;

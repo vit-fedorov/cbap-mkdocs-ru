@@ -20,7 +20,18 @@ def on_post_page (output, page, config, **kwargs):
     if (h1):
         # print ('deleting redundant H1: ' + h1.string)
         h1.decompose()
-    
+
+    # Cleanup empty Ps        
+    for i in p.findAll('p'):
+        if (not i.contents):
+            print ('deleting empty P from ' + page.title)
+            i.decompose()
+            
+    # Cleanup comments    
+    for i in p.findAll(string=lambda text: isinstance(text, Comment)):
+        # print ('deleting comment from ' + page.title)
+        i.extract()
+   
     # Add &zwnj; within Fontawesome icons, otherwise PHPKB will delete them
     for i in p.find_all('i', class_=re.compile("fa.+")):
         i.string = '&zwnj;'
@@ -66,5 +77,9 @@ def on_post_page (output, page, config, **kwargs):
     # Do not use prettify(), it adds redundant spaces in PHPKB
     # Fix &zwnj; after BeautifulSoup's redundant escaping
     kb_html = str(p.body).replace('&amp;zwnj;', '&zwnj;')
-    
+
+    # Cleanup redundant new lines
+    pattern = re.compile(r'\n+', flags=re.MULTILINE)
+    kb_html = re.sub(pattern, r'\n', kb_html)
+
     return kb_html

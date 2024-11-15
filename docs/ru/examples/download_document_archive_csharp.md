@@ -125,7 +125,6 @@ kbId: 2623
                 var content = memStream.ToArray();
     {% if pdfOutput %}
     ```
-    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
     ``` cs title="Скрипт для скачивания архива с файлами — продолжение"
     {% endif %}
     // Заполняем объект resulterr, который возвращает операция кнопки.

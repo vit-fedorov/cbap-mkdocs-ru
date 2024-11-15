@@ -136,10 +136,17 @@ article.md-typeset {
 }
 
 * .pdfEndOfBlockHack + p:empty,
-* .pageBreakAfter + p:empty,
-.md-typeset p:empty:not([class])
+* .pageBreakAfter + p:empty
+//.md-typeset p:empty
 {
     display: none !important;
+}
+
+//* .pdfEndOfBlockHack + *,
+* .pdfPageBreakHard + *,
+* .pageBreakAfter + *
+{
+    margin-top: 0rem;
 }
 
 * p.pdfEndOfBlockHack,
@@ -149,7 +156,6 @@ article.md-typeset {
     max-height: 0px !important;
     padding: 0px !important;
     margin: 0px !important;
-
 }
 
 

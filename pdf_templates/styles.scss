@@ -31,9 +31,6 @@ article>.md-typeset>h1,
     margin-left: -0.5rem !important;
 }
 
-.olReset {
-    margin-left: -1.2rem;
-}
 
 .olReset > ol {
     list-style: none;
@@ -42,6 +39,7 @@ article>.md-typeset>h1,
 .olReset > ol > li::before {
     content: counter(start, decimal) ". ";
     counter-increment: start;
+    margin-left: -1.2rem;
 }
 
 .md-typeset .relatedTopics h2 {
@@ -137,22 +135,23 @@ article.md-typeset {
     text-indent: 1.5rem
 }
 
-* .pdfEndOfBlockHack
- {
+* .pdfEndOfBlockHack + p:empty,
+* .pageBreakAfter + p:empty,
+.md-typeset p:empty:not([class])
+{
+    display: none !important;
+}
+
+* p.pdfEndOfBlockHack,
+* p.pdfPageBreakHard {
     visibility: hidden !important;
     font-size: 0px !important;
     max-height: 0px !important;
     padding: 0px !important;
     margin: 0px !important;
-    content: '.';
+
 }
 
-* .pdfEndOfBlockHack + p:empty,
-* .pageBreakAfter + p:empty,
-.md-typeset p:empty
-{
-    display: none !important;
-}
 
 .pageBreakAfter {
     break-after: always !important;

@@ -55,7 +55,7 @@ kbId: 2623
     * **Результат выполнения:** **скачать документ**.
 4. На вкладке «**Скрипт**» добавьте следующий C#-скрипт:
 
-    ``` cs title="Скрипт для скачивания архива с файлами — продолжение"
+    ``` cs title="Скрипт для скачивания архива с файлами"
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -65,6 +65,11 @@ kbId: 2623
     using System.IO;
     using System.IO.Compression;
 
+    {% if pdfOutput %}
+    ```
+    {{ pdfPageBreakHard }}
+    ```cs title="Скрипт для скачивания архива с файлами — продолжение"
+    {% endif %}
     class Script
     {
         public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)
@@ -74,10 +79,6 @@ kbId: 2623
     // Создаем массив compressedBytes для хранения архива с файлами.
             byte[] compressedBytes;
 
-    {% if pdfOutput %}
-    ```
-    ```cs title="Скрипт для скачивания архива с файлами — продолжение"
-    {% endif %}
             try
             {
     // Vlozheniya — системное имя атрибута «Вложения» шаблона записи «Реестр документов».
@@ -122,7 +123,10 @@ kbId: 2623
                 }
                 var memStream = new MemoryStream(compressedBytes);
                 var content = memStream.ToArray();
-
+    {% if pdfOutput %}
+    ```
+    ```cs title="Скрипт для скачивания архива с файлами — продолжение"
+    {% endif %}
     // Заполняем объект resulterr, который возвращает операция кнопки.
                 var resulterr = new UserCommandResult
                 {
@@ -147,10 +151,6 @@ kbId: 2623
                 };
                 return resulterr;
             }
-    {% if pdfOutput %}
-    ```
-    ```cs title="Скрипт для скачивания архива с файлами — продолжение"
-    {% endif %}
     // Обрабатываем любые ошибки
             catch
             {

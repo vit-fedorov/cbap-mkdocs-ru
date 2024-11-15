@@ -26,8 +26,6 @@ extra:
   productName: 'Comindware Business Application Platform'
   productNameArchitect: 'Comindware Architect'
   productVersion: 4.7
-  pdfEndOfBlockHack: ''
-  pdfPageBreakHard: ''
   pdfOutput: False
   kbExport: False
   adminGuideLinux: True
@@ -62,6 +60,17 @@ plugins:
     auto_caption: true
   htmlproofer:
     enabled: !ENV [ENABLE_HTMLPROOFER, False]
+  with-pdf:
+    cover: true
+    toc_level: 3
+    custom_template_path: pdf_templates
+    two_columns_level: 0
+    heading_shift: false
+    ordered_chapter_level: 3
+    debug_html: true
+    cover_title: '' # defined as productName + productVersion in cover.html.j2
+    cover_subtitle: '' # defined in the child yml
+    enabled_if_env: PDF_OUTPUT
 
 markdown_extensions:
   meta: {}

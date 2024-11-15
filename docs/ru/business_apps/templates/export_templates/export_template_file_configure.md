@@ -74,7 +74,7 @@ hide:
 {% endraw %}
 
 *![Пример синтаксиса полей шаблона экспорта](img/export_template_file_advanced_syntax_example.png)*
-{{ pdfEndOfBlockHack }}
+{% include-markdown ".snippets/pdfEndOfBlockHack.md" %}
 
 ### Синтаксис для экспорта с использованием C\# {: .pageBreakBefore }
 

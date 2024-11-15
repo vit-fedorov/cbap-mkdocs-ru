@@ -49,7 +49,7 @@ kbId: 2495
     cd /home/username/ignite/bin
     ```
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 8. В файле `control.sh` измените директиву `DEFAULT_CONFIG`:
 

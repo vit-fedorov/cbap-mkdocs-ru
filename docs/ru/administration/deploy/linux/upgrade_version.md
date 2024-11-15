@@ -185,7 +185,7 @@ kbId: 2499
             - 3
         ```
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 9. Удостоверьтесь, что итоговый файл конфигурации `/usr/share/comindware/configs/instance/<instanceName>.yml` выглядит аналогично следующему примеру:
 

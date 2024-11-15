@@ -210,7 +210,7 @@ _![Цветовая палитра — Пользовательские стил
 
 _![Предварительный просмотр — Основные элементы](img/preview_basic.png)_
 
-{{ pdfEndOfBlockHack }}
+{% include-markdown ".snippets/pdfEndOfBlockHack.md" %}
 
 _![Предварительный просмотр — Формы](img/preview_forms.png)_
 

@@ -217,7 +217,7 @@ kbId: 2292
 
     _![Завершение установки Zabbix Frontend](https://kb.comindware.ru/assets/img_63af071cc182b.png)_
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 5. В открывшейся форме ведите учётные данные встроенного суперпользователя:
 
@@ -278,7 +278,7 @@ kbId: 2292
     sudo ufw reload
     ```
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 6. Запустите *Zabbix Agent* и добавьте его в список автозагрузки:
 

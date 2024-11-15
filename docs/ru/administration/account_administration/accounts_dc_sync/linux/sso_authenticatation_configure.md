@@ -246,7 +246,7 @@ _![Настройка свойств сервисного аккаунта дл�
     vim /etc/resolv.conf
     ```
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 3. Укажите машину `<DCName>` в качестве сервера имён `nameserver`:
 {: .pageBreakBefore }
@@ -297,7 +297,7 @@ _![Настройка свойств сервисного аккаунта дл�
     vim /etc/ntp.conf
     ```
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 3. Добавьте в файл конфигурации `ntp.conf` поле `server <DOMAIN.NAME> iburst burst prefer`:
 

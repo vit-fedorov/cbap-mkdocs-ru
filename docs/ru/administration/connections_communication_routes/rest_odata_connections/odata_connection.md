@@ -42,7 +42,7 @@ _![Создание подключения для синхронизации с 
 
         [https://www.odata.org/odata-services/](https://www.odata.org/odata-services/) 
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 - **Тип аутентификации**:
 {: .pageBreakBefore }

@@ -142,7 +142,7 @@ _![Конструктор области кнопок на форме](button_ar
 8. Чтобы удалить элемент, перетащите его за пределы макета.
 
     _![Добавление разделителя в группу кнопок](button_area_divide_add.png)_
-    {{ pdfEndOfBlockHack }}
+    {% include-markdown ".snippets/pdfEndOfBlockHack.md" %}
 
 ## Клонирование области кнопок шаблона {: .pageBreakBefore }
 

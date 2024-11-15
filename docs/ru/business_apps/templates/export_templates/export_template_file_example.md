@@ -55,7 +55,7 @@ hide:
     * _Сумма_
         * **Системное имя**: `Summa`
         * **Тип данных**: **число**
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 4. В шаблоне _«Тип затрат»_ создайте атрибуты:
 

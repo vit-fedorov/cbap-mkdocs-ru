@@ -125,7 +125,7 @@ kbId: 2095
     sudo nano /etc/elasticsearch/elasticsearch.yml
     ```
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 6. Скопируйте в созданный файл конфигурации следующее содержимое:
 
@@ -296,7 +296,7 @@ kbId: 2095
     "tagline" : "You Know, for Search"
     }
     ```
-    {{ pdfEndOfBlockHack }}
+    {% include-markdown ".snippets/pdfEndOfBlockHack.md" %}
 
 ## Проверка состояния кластера
 

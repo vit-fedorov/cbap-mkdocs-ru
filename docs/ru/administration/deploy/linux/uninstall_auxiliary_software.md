@@ -495,7 +495,7 @@ kbId: 2596
         /usr/bin/asp-*
     ```
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 3. Удалите конфигурацию Mono:
 
@@ -657,7 +657,7 @@ kbId: 2596
         /usr/bin/asp-*
     ```
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 3. Удалите конфигурацию Mono:
 

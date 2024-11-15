@@ -144,7 +144,7 @@ _![Настройка свойств сообщения для общего ув
 6. Сохраните стартовую форму.
 7. Вернитесь к диаграмме процесса, нажав в браузере кнопку «**Назад**».
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 8. Добавьте на диаграмму процесса **промежуточное событие-отправку сообщения**.
 
@@ -202,7 +202,7 @@ _![Настройка свойств сообщения для общего ув
 8. Выйдите из системы, чтобы просмотреть уведомление на странице входа.
 
     _![Критически важное уведомление на странице входа](img/common_notifications_entry_page_urgent_message.png)_
-    {{ pdfEndOfBlockHack }}
+    {% include-markdown ".snippets/pdfEndOfBlockHack.md" %}
 
 <div class="relatedTopics" markdown="block">
 

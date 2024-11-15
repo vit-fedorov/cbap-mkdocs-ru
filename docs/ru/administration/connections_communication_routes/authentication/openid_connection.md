@@ -34,7 +34,7 @@ kbId: 2329
 
     _![Поиск Site Verification API](openid_connection_api_search.png)_
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 9. Перейдите к разделу «**Site Verification API**».
 
@@ -79,7 +79,7 @@ kbId: 2329
 
     _![Настройка страницы согласия OAuth — сохранение настроенных разрешений](openid_connection_oath_permission_saving.png)_
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 4. На странице «**Test users**» кнопку «**Save and continue**».
 
@@ -228,7 +228,7 @@ kbId: 2329
     vim /etc/nginx/sites-available/comindware<instanceName>
     ```
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 6. Настройте конфигурацию SSL-сертификата аналогично следующему примеру:
 
@@ -255,7 +255,7 @@ kbId: 2329
                         }
     }
     ```
-    {{ pdfEndOfBlockHack }}
+    {% include-markdown ".snippets/pdfEndOfBlockHack.md" %}
 
 7. Проверьте конфигурацию NGINX:
 
@@ -282,7 +282,7 @@ kbId: 2329
 
     _![Вход с аккаунтом администратора](openid_connection_administrator.png)_
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 4. Выйдите из системы.
 5. Отобразится страница входа с кнопкой «**Войти с помощью Google**».

@@ -81,7 +81,7 @@ kbId: 2500
     chmod -R 766 /var/lib/comindware/<instanceName>
     ```
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 9. Назначьте перенесенным каталогам владельца:
 
@@ -137,7 +137,7 @@ kbId: 2500
     systemctl start elasticsearch.service
     ```
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 7. Зарегистрируйте репозиторий (например, `repostory_backup`) с резервной копией снимка Elasticsearch:
 

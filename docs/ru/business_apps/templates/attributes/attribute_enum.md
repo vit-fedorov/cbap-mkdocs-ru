@@ -20,7 +20,7 @@ kbId: 2244
 
     _![Свойства атрибута типа «Список значений»](attribute_enum_properties.png)_
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 - Вкладка «**Список значений**»
     - **Системное имя** **(обязательное поле)** — системное имя элемента списка.

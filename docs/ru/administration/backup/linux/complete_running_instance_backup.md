@@ -188,7 +188,7 @@ kbId: 2117
     mkdir /var/www/backups/backup_$now/wal
     ```
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 6. Перенесите и скопируйте компоненты в директорию резервной копии:
 

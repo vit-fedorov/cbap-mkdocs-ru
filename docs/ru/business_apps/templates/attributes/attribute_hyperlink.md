@@ -69,7 +69,7 @@ _![Свойства атрибута типа «Гиперссылка»](img/at
 
         _![Проверка формата гиперссылки](attribute_hyperlink_example_telegram_invalid.png)_
         
-    {{ pdfEndOfBlockHack }}
+    {% include-markdown ".snippets/pdfEndOfBlockHack.md" %}
 
 <div class="relatedTopics" markdown="block">
 

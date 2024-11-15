@@ -38,7 +38,7 @@ kbId: 2137
 
     ```
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 3. Откройте файл `Ignite.config` в текстовом редакторе nano:
 

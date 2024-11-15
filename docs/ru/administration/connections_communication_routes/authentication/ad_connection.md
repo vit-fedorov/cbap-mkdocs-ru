@@ -81,7 +81,7 @@ kbId: 2206
     Если не создать новый keytab-файл, пользователи, добавленные с сервера каталогов после создания имеющегося keytab-файла, не смогут войти в систему.
 
     См. параграф [_«Обновление keytab-файла аутентификации»_][sso_authentication_configure_keytab_update].
-    {{ pdfEndOfBlockHack }}
+    {% include-markdown ".snippets/pdfEndOfBlockHack.md" %}
 
 _![Настройка основных свойств подключения к серверу каталогов](ad_connection_properties_settings.png)_
   

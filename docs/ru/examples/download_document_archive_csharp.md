@@ -67,8 +67,8 @@ kbId: 2623
 
     {% if pdfOutput %}
     ```
-    {{ pdfPageBreakHard }}
-    ```cs title="Скрипт для скачивания архива с файлами — продолжение"
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+    ``` cs title="Скрипт для скачивания архива с файлами — продолжение"
     {% endif %}
     class Script
     {
@@ -125,7 +125,8 @@ kbId: 2623
                 var content = memStream.ToArray();
     {% if pdfOutput %}
     ```
-    ```cs title="Скрипт для скачивания архива с файлами — продолжение"
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+    ``` cs title="Скрипт для скачивания архива с файлами — продолжение"
     {% endif %}
     // Заполняем объект resulterr, который возвращает операция кнопки.
                 var resulterr = new UserCommandResult
@@ -214,6 +215,4 @@ kbId: 2623
 
 </div>
 
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

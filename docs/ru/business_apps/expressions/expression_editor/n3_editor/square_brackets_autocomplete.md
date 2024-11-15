@@ -45,7 +45,7 @@ hide:
   ```
 8. Чтобы присвоить результат выражения значению вычисляемого атрибута, замените имя переменной `objectZayavkanaotpusk` на `value`.
 
-{{ pdfPageBreakHard }}
+{% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 ```turtle title="Пример: компактное выражение, возвращающее все записи шаблона по его системному имени"
 @prefix object: <http://comindware.com/ontology/object#>.

@@ -104,7 +104,7 @@ hide:
     DECIMAL($AmountText)
     ```
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 3. Поместите атрибуты на форму.
 4. Введите в поле _AmountText_ значение `10500`, в поле _AmountNumber_ должно отобразиться значение `10 500`.
@@ -233,7 +233,7 @@ hide:
     {% if pdfOutput %}
     ```
 
-    {{ pdfPageBreakHard }}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
     ``` cs title="C#-скрипт с отладкой — продолжение"
             var result = new UserCommandResult

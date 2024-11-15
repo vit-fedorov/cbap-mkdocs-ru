@@ -48,7 +48,7 @@ hide:
 
 9. Дважды нажмите системное имя атрибута, например `_creationDate`, чтобы вставить его в выражение.
 
-{{ pdfPageBreakHard }}
+{% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 ```turtle title="Пример: выражение, возвращающее месяц по значению атрибута типа «Дата и время»"
 @prefix object: <http://comindware.com/ontology/object#>.

@@ -20,7 +20,7 @@
 		"scope": "markdown",
 		"prefix": "hard page break pdf",
 		"body":	[
-			"{{ pdfPageBreakHard }}"
+			"{% include-markdown \".snippets/pdfPageBreakHard.md\" %}"
 		],
 		"description": "Add {{ pdfPageBreakHard }} placeholder for PDF output"
 	},
@@ -29,7 +29,7 @@
 		"scope": "markdown",
 		"prefix": "end of block pdf",
 		"body":	[
-			"{{ pdfEndOfBlockHack }}"
+			"{% include-markdown \".snippets/pdfEndOfBlockHack.md\" %}"
 		],
 		"description": "Add {{ pdfEndOfBlockHack }} placeholder for PDF output"
 	},
@@ -42,5 +42,12 @@
 		],
 		"description": "Add {: .pageBreakBefore } for PDF output"
 	},
-
+	"Page break before attribute": {
+		"scope": "markdown",
+		"prefix": "hyperlinks kb map",
+		"body":	[
+			"{% include-markdown \".snippets/hyperlinks_mkdocs_to_kb_map.md\" %}"
+		],
+		"description": "Include hyperlinks_mkdocs_to_kb_map.md"
+	},
 }

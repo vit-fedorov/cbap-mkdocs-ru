@@ -4,7 +4,7 @@
 # Command: 
 # py -m mkdocs build -f mkdocs_admin_guide_ru_linux_pdf.yml
 
-INHERIT: mkdocs_guide_admin_ru_linux.yml
+INHERIT: mkdocs_guide_admin_linux_ru.yml
 
 site_dir: pdf/
 
@@ -20,5 +20,5 @@ plugins:
     manual: true
   with-pdf:
     cover_subtitle: Руководство системного администратора для Linux
-    output_path: ../Comindware Business Application Platform 4.7. Руководство системного администратора для OS Linux.pdf
+    output_path: ../Comindware Business Application Platform 4.7. Руководство системного администратора для Linux.pdf
     enabled_if_env: ''

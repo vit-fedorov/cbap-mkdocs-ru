@@ -33,12 +33,15 @@ CATEGORY_MAPPING = dict()
 ARTICLE_MAPPING = dict()
 # CATEGORY_COUNTER = 0
 
-def cloneCategoryChildren(parent):
+def cloneCategoryChildren(parent, newParentId=''):
     c = CONNECTION.cursor(buffered=True)
     
     id = parent[0]
     title = parent[1]
     parentId = parent[2]
+    
+    if newParentId:
+        parentId = newParentId
     
     newCategoryId = cloneCategory(id, parentId)
     CATEGORY_MAPPING.update({id:newCategoryId})
@@ -57,7 +60,7 @@ def cloneCategoryChildren(parent):
     print(f'Cloning articles from Category {id}. {title}.')
     cloneArticlesInCategory(id, newCategoryId)
     for child in children:
-        cloneCategoryChildren(child)
+        cloneCategoryChildren(child, newCategoryId)
     return children
     
         

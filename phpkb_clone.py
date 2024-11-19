@@ -45,6 +45,7 @@ def cloneCategoryChildren(parent, newParentId=''):
     
     newCategoryId = cloneCategory(id, parentId)
     CATEGORY_MAPPING.update({id:newCategoryId})
+    updateMappingJson()
     
     #for id, title, parent_id, in parent:
     c.execute(f"""
@@ -84,6 +85,7 @@ def cloneArticlesInCategory (category_id, newCategoryId):
         pages += 1
         newArticleId = cloneArticle(id, category_id, newCategoryId)
         ARTICLE_MAPPING.update({id:newArticleId})
+        updateMappingJson()
     TOTAL_PAGES_CLONED += pages
     print(f"\nCloned {pages} articles, total {TOTAL_PAGES_CLONED}\n\n-----\n")
     return pages
@@ -277,13 +279,15 @@ def main():
     CONNECTION.close()
     server.close()
     server.stop()
-    
+    updateMappingJson()
+
+def updateMappingJson():
     MAPPING.update({'Categories':CATEGORY_MAPPING, 'Articles':ARTICLE_MAPPING})
-    if input('Save mapping? Y / N\n').lower() == 'y':
-        with open(".mapping.json", "w") as mappingFile: 
-            mappingJson = json.dumps(MAPPING, indent = 4, ensure_ascii=False)
-            print(mappingJson)
-            mappingFile.write(mappingJson)
+    #if input('Save mapping? Y / N\n').lower() == 'y':
+    with open(".mapping.json", "w") as mappingFile: 
+        mappingJson = json.dumps(MAPPING, indent = 4, ensure_ascii=False)
+        print(mappingJson)
+        mappingFile.write(mappingJson)
 
 if __name__ == "__main__":
     main()

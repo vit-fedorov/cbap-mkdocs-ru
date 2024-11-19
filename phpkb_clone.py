@@ -113,7 +113,7 @@ def cloneArticle(article_id, category_id, newCategoryId):
         
         newArticleId = str(c.fetchone()[0])
     else:
-        newArticleId = article_id
+        newArticleId = ARTICLE_MAPPING[article_id]
     
     print(newArticleId)
 

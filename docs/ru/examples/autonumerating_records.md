@@ -206,31 +206,6 @@ C#-скрипт также можно применять для автонуме
     - **Операция со значениями: заменить**
     - **Значение: N3**
 
-        **По системному имени переменной**
-
-        ``` turtle
-        # Импортируем функции для работы с переменными
-        @prefix globalvariable: <http://comindware.com/ontology/variable#>.
-        @prefix cmwnullable: <http://comindware.com/ontology/entity/nullable#>.
-
-        {
-            # Находим переменную «Порядковый номер» (SequenceNumber) в приложении SolutionSystemName
-            # по их системным именам
-            # и помещаем переменную в ?globalVar.
-            ("SolutionSystemName" "SequenceNumber") globalvariable:getValueByAlias ?globalVar.
-            ?globalVar -> ?globalVarOriginal.
-            # Увеличиваем значение переменной «Порядковый номер»
-            # на 1 и сохраняем в ?resultSum.
-            (?globalVar 1) cmwnullable:sum ?resultSum.
-            # Присваиваем переменной значение ?resultSum.
-            ?globalVar globalvariable:setValue ?resultSum.
-            # Передаем в атрибут значение ?globalVar (переменной до её увеличения).
-            ?globalVarOriginal -> ?value.
-        }
-        ```
-
-        **По ID переменной**
-
         ``` turtle
         # Импортируем функции для работы с переменными
         @prefix globalvariable: <http://comindware.com/ontology/variable#>.

@@ -54,7 +54,7 @@ _![Свойства атрибута типа «Гиперссылка»](img/at
     3. Создайте новую запись.
     4. В поле _«Эл. почта»_ введите адрес электронной почты в формате `address@site.ru`
     5. В поле _«Телеграм»_ введите ссылку на Telegram в формате `https://t.me/username`.
-    
+
         _![Корректно заполненные гиперссылки](attribute_hyperlink_example_telegram_valid.png)_
 
 {% if pdfOutput %}
@@ -68,7 +68,7 @@ _![Свойства атрибута типа «Гиперссылка»](img/at
     4. При попытке ввода в поле _«Телеграм»_ ссылки `t.me/username` без префикса `https://` отобразится сообщение об ошибке «**Не соответствует формату ссылки на Telegram**».
 
         _![Проверка формата гиперссылки](attribute_hyperlink_example_telegram_invalid.png)_
-        
+
     {% include-markdown ".snippets/pdfEndOfBlockHack.md" %}
 
 <div class="relatedTopics" markdown="block">

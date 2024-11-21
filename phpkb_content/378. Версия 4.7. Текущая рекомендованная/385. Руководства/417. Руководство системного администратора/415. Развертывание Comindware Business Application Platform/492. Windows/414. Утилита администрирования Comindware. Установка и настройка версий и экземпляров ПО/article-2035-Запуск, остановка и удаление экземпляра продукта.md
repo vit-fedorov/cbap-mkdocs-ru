@@ -49,9 +49,9 @@ _![Подтверждение удаления экземпляра продук
 
 --8<-- "related_topics_heading.md"
 
-**[Индикация состояния и обновление списка экземпляров продукта](https://kb.comindware.ru/article.php?id=2037)**
+**[Индикация состояния и обновление списка экземпляров продукта][admin_utility_instance_status_update]**
 
-[**Запуск Утилиты администрирования Comindware**][admin_utility_instance_start_stop]
+[**Запуск Утилиты администрирования Comindware**][admin_utility_install_launch]
 
 **[Инициализация экземпляра продукта][admin_utility_instance_installize]**
 

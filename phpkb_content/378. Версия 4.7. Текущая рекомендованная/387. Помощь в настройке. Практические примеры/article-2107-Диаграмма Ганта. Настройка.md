@@ -68,8 +68,8 @@ _![Пример диаграммы Ганта](https://kb.comindware.ru/assets/g
         - **Вычисляемое значение**:
     
     ```
-    CONCAT(LIST($Predshestvuyuschayarabota->Naimenovanieraboty,  
-        " -> ",  
+    CONCAT(LIST($Predshestvuyuschayarabota->Naimenovanieraboty,
+        " -> ",
         $Zavisimayarabota->Naimenovanieraboty))
     ```
     

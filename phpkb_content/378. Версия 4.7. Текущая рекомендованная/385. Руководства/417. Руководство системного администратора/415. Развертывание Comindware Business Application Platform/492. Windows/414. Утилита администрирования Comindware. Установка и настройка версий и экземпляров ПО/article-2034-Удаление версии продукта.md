@@ -28,6 +28,6 @@ _![Сообщение об успешном удалении версии про
 
 --8<-- "related_topics_heading.md"
 
-**[Запуск, остановка и удаление экземпляра продукта](https://kb.comindware.ru/article.php?id=2035)**
+**[Запуск, остановка и удаление экземпляра продукта][admin_utility_instance_start_stop]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

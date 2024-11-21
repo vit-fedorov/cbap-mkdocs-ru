@@ -11,7 +11,7 @@ kbId: 2027
 2. Откройте папку `ComindwarePlatform``_<номер
  версии>.``windows`
 3. Перейдите в папку `CMW``_``Windows`
-4. Запустите файл `Platform``.``Install``.``msi` 
+4. Запустите файл `Platform``.``Install``.``msi`
 
 Изменение пути установки Утилиты администрирования Comindware
 

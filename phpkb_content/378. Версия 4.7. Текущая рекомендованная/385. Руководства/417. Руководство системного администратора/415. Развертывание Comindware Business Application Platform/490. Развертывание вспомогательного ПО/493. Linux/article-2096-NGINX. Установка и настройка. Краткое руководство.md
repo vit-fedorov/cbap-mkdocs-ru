@@ -20,7 +20,7 @@ kbId: 2096
 Войдите в систему под учётной записью, имеющей разрешение на запуск команды `sudo`, и выполните следующие команды:
 
 ```
-sudo apt update  
+sudo apt update
 sudo apt install NGINX
 ```
 
@@ -38,39 +38,39 @@ sudo apt install NGINX
 ### Пример конфигурации прокси-сервера
 
 ```
-server {  
-    server_name  domain.com;  
-    reset_timedout_connection  on;  
-    listen 80;  
-    location /robots.txt { root /var/www/html; }  
-    return 301 https://$host$request_uri;  
-}  
-  
-server {  
-    server_name  domain.com;  
-    reset_timedout_connection  on;  
-    listen 443 ssl;  
-    location / {  
-    proxy_pass http://backend-server:8081/;  
-    proxy_next_upstream error timeout invalid_header http_500 http_503;  
-  
-    # do not set HOST header  
-    proxy_set_header  Host                $host;  
-    proxy_set_header  X-Forwarded-For     $proxy_add_x_forwarded_for;  
-    proxy_set_header  X-Forwarded-Proto   $scheme;  
-    proxy_set_header  X-Real-IP           $remote_addr;  
-    proxy_connect_timeout     90;  
-    proxy_send_timeout        1000;  
-    proxy_read_timeout        1000;  
-  
-    # enable WebSockets  
-    proxy_http_version 1.1;  
-    proxy_set_header Upgrade $http_upgrade;  
-    proxy_set_header Connection "upgrade";  
-    client_max_body_size 100m;  
-    error_log /var/log/NGINX/domain-error.log error;  
-    access_log /var/log/NGINX/domain-access.log;  
-  }  
+server {
+    server_name  domain.com;
+    reset_timedout_connection  on;
+    listen 80;
+    location /robots.txt { root /var/www/html; }
+    return 301 https://$host$request_uri;
+}
+
+server {
+    server_name  domain.com;
+    reset_timedout_connection  on;
+    listen 443 ssl;
+    location / {
+    proxy_pass http://backend-server:8081/;
+    proxy_next_upstream error timeout invalid_header http_500 http_503;
+
+    # do not set HOST header
+    proxy_set_header  Host                $host;
+    proxy_set_header  X-Forwarded-For     $proxy_add_x_forwarded_for;
+    proxy_set_header  X-Forwarded-Proto   $scheme;
+    proxy_set_header  X-Real-IP           $remote_addr;
+    proxy_connect_timeout     90;
+    proxy_send_timeout        1000;
+    proxy_read_timeout        1000;
+
+    # enable WebSockets
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+    client_max_body_size 100m;
+    error_log /var/log/NGINX/domain-error.log error;
+    access_log /var/log/NGINX/domain-access.log;
+  }
 }
 ```
 

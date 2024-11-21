@@ -65,7 +65,7 @@ sudo dpkg --install elasticsearch-8.5.1-amd64.deb
 
 ```
 Setting up elasticsearch (8.10.2) ...
----------------------------   
+---------------------------
 Security autoconfiguration information
 Authentication and authorization are enabled.
 TLS for the transport and HTTP layers is enabled and configured.
@@ -104,13 +104,13 @@ sudo mkdir /var/elasticsearch/backups
 
 ```
 sudo chown elasticsearch:elasticsearch --recursive /var/elasticsearch/
-sudo chmod  764 --recursive /var/elasticsearch/      
+sudo chmod  764 --recursive /var/elasticsearch/
 ```
 
 3.3. Создайте папку для хранения резервной копии `yml`-файла конфигурации Elasticsearch:
 
 ```
-sudo mkdir /etc/elasticsearch/backupConfig        
+sudo mkdir /etc/elasticsearch/backupConfig
 ```
 
 3.4. Переместите `yml`-файл конфигурации Elasticsearch в папку `/etc/elasticsearch/backupConfig`:
@@ -151,9 +151,9 @@ discovery.seed_hosts : ["192.168.1.43", "192.168.1.42","1.1.1.3"]
 cluster.initial_master_nodes:
   - elasticsearch1
   - elasticsearch2
-  - elasticsearch3  
-  
-#Этот флаг требуется для записи данных в индексы  
+  - elasticsearch3
+
+#Этот флаг требуется для записи данных в индексы
 indices.id_field_data.enabled: true
 ```
 
@@ -169,21 +169,21 @@ sudo chmod 764 --recursive /etc/elasticsearch/elasticsearch.yml
 3.8. Откройте в текстовом редакторе Nano `yml`-файл конфигурации Elasticsearch:
 
 ```
-sudo nano /etc/elasticsearch/elasticsearch.yml        
+sudo nano /etc/elasticsearch/elasticsearch.yml
 ```
 
 3.9. Задайте имя кластера с помощью директивы `cluster.name` в строке 2 `yml`-файла конфигурации: 
 
 ```
-cluster.name: elasticsearch.example.cbap 
+cluster.name: elasticsearch.example.cbap
 ```
 
-**Примечание**    
+**Примечание** 
 Имя кластера должно быть одинаковым для всех узлов кластера Elasticsearch.
 
 3.10. Задайте имя узла с помощью директивы `node.name` в строке 11 `yml`-файла конфигурации. 
 
-**Примечание**   
+**Примечание**
 Имя узла должно быть уникальным для каждого из узлов кластера Elasticsearch:
 
 ```
@@ -260,14 +260,14 @@ Main PID: 3597 (java)
           ├─3656 /usr/share/elasticsearch/jdk/bin/java -Des.networkaddress.cache.ttl=60 -Des.networkaddress.cache.n>
           └─3676 /usr/share/elasticsearch/modules/x-pack-ml/platform/linux-x86_64/bin/controller
 Dec 01 10:11:12 penguin-02 systemd[1]: Starting Elasticsearch...
-Dec 01 10:12:27 penguin-02 systemd[1]: Started Elasticsearch.        
+Dec 01 10:12:27 penguin-02 systemd[1]: Started Elasticsearch.
 ```
 
-**Примечание**   
+**Примечание**
 В случае возникновения ошибок при запуске процесса `elasticsearch.service` рекомендуется изучить файл журнала:
 
 ```
-sudo less /var/elasticsearch/logs/yourClusterName.log        
+sudo less /var/elasticsearch/logs/yourClusterName.log
 ```
 
 4.4. С помощью curl убедитесь, что REST API узла Elasticsearch доступен:
@@ -295,7 +295,7 @@ sudo curl <http://192.168.XXX.XX>Х:9200
     "minimum_index_compatibility_version" : "7.0.0"
     },
 "tagline" : "You Know, for Search"
-}        
+}
 ```
 
 Повторите шаги, описанные в этом разделе, для каждого из узлов Elasticsearch.
@@ -327,7 +327,7 @@ sudo curl <http://192.168.XXX.XX1:9200/_cluster/health?pretty>>
 "number_of_in_flight_fetch" : 0,
 "task_max_waiting_in_queue_millis" : 0,
 "active_shards_percent_as_number" : 100.0
-}        
+}
 ```
 
 ## Пример yml-файла конфигурации узла Elasticsearch
@@ -356,7 +356,7 @@ discovery.seed_hosts : ["192.168.1.43", "192.168.1.42","1.1.1.3"]
 cluster.initial_master_nodes:
   - elasticsearch1
   - elasticsearch2
-  - elasticsearch3      
+  - elasticsearch3
 ```
 
 

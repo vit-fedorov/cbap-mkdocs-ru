@@ -54,7 +54,7 @@ kbId: 2190
             
             
             ```
-            chmod 777 /var/lib/comindware/<instanceName>chown -R www-data:www-data /var/lib/comindware/<instanceName>  
+            chmod 777 /var/lib/comindware/<instanceName>chown -R www-data:www-data /var/lib/comindware/<instanceName>
             chown -R www-data:www-data /var/lib/comindware/<instanceName>
             ```
             
@@ -65,7 +65,7 @@ kbId: 2190
             
             
             ```
-            chmod 777 /var/lib/comindware/<instanceName>chown -R _nginx:_nginx /var/lib/comindware/<instanceName>  
+            chmod 777 /var/lib/comindware/<instanceName>chown -R _nginx:_nginx /var/lib/comindware/<instanceName>
             chown -R _nginx:_nginx /var/lib/comindware/<instanceName>
             ```
         - **Хранилище S3** — сохранять резервные копии во [внешнем сервисе S3][s3_connection].
@@ -107,17 +107,17 @@ _![Настройка свойств резервного копирования
 **Для репозитория на локальном диске**
 
 ```
-# Директория репозитория должна быть доступна экземпляру ПО  
-# {{ productName }}  
-# При необходимости установите доступ с помощью команды chmod 777  
+# Директория репозитория должна быть доступна экземпляру ПО
+# {{ productName }}
+# При необходимости установите доступ с помощью команды chmod 777
 path.repo: /var/www/backups/elasticsearch
 ```
 
 **Для репозитория в хранилище S3**
 
 ```
-s3.client.default.endpoint: localhost:9000  
-s3.client.default.protocol: http  
+s3.client.default.endpoint: localhost:9000
+s3.client.default.protocol: http
 s3.client.default.path_style_access: true
 ```
 - В файле конфигурации экземпляра ПО (`/usr/share/comindware/configs/instance/<instanceName>.yml`) необходимо указать тип репозитория резервных копий Elasticsearch (`LocalDisk` или `S3`) и путь к репозиторию, например:
@@ -125,33 +125,33 @@ s3.client.default.path_style_access: true
 **Для репозитория на локальном диске**
 
 ```
-backup.elasticRepository.type: LocalDisk  
-# В данном примере Elasticsearch и {{ productName }}   
-# работают на одной машине.   
-# В противном случае следует примонтировать папку репозитория Elasticsearch   
-# на машине с {{ productName }} и указать её в директиве ниже  
+backup.elasticRepository.type: LocalDisk
+# В данном примере Elasticsearch и {{ productName }}
+# работают на одной машине.
+# В противном случае следует примонтировать папку репозитория Elasticsearch
+# на машине с {{ productName }} и указать её в директиве ниже
 backup.elasticRepository.localDisk.path: /var/www/backups/elasticsearch
 ```
 
 **Для репозитория в хранилище S3**
 
 ```
-# Конфигурация подключения к хранилищу S3, используемого по умолчанию   
-s3Connection.default.endpointURL: http://localhost:9000   
-s3Connection.default.accessKey: xxxxx   
-s3Connection.default.secretKey: xxxxx   
-s3Connection.default.pathStyleAccess: true   
-s3Connection.default.description: Подключение к S3 по умолчанию   
-  
-# Конфигурация репозитория резервных копий Elasticsearch в хранилище S3   
-backup.elasticRepository.type: S3   
-# Имя корзины в хранилище S3 для хранения резервных копий данных Elasticsearch  
-backup.elasticRepository.s3.bucket: <instanceName>-backups  
-# Имя подключения к хранилищу S3, используемому по умолчанию  
-# на стороне {{ productName }}    
-backup.elasticRepository.s3.platformConnection: default  
-# Имя подключения к хранилищу S3, используемому по умолчанию на стороне Elasticsearch    
-backup.elasticRepository.s3.elasticConnection: default 
+# Конфигурация подключения к хранилищу S3, используемого по умолчанию
+s3Connection.default.endpointURL: http://localhost:9000
+s3Connection.default.accessKey: xxxxx
+s3Connection.default.secretKey: xxxxx
+s3Connection.default.pathStyleAccess: true
+s3Connection.default.description: Подключение к S3 по умолчанию
+
+# Конфигурация репозитория резервных копий Elasticsearch в хранилище S3
+backup.elasticRepository.type: S3
+# Имя корзины в хранилище S3 для хранения резервных копий данных Elasticsearch
+backup.elasticRepository.s3.bucket: <instanceName>-backups
+# Имя подключения к хранилищу S3, используемому по умолчанию
+# на стороне {{ productName }}
+backup.elasticRepository.s3.platformConnection: default
+# Имя подключения к хранилищу S3, используемому по умолчанию на стороне Elasticsearch
+backup.elasticRepository.s3.elasticConnection: default
 ```
 
 ## Запуск резервного копирования

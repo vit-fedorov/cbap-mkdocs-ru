@@ -7,7 +7,7 @@ kbId: 2094
 
 ## Введение
 
-Для работы **{{ productName }}** требуется сервер Elasticsearch. См. [системные требования](https://kb.comindware.ru/article.php?id=1271).
+Для работы **{{ productName }}** требуется сервер Elasticsearch. См. [системные требования][system_requirements].
 
 В случае установки **{{ productName }}** версии 4.7 в Windows [Утилита администрирования](https://kb.comindware.ru/category.php?id=414) устанавливает службу Elasticsearch в папку `C:\Program Files\Elasticsearch\elasticsearch-8.1.0\`. Эта служба имеет базовую конфигурацию и доступна по адресу `localhost:9200`.
 
@@ -105,55 +105,55 @@ _![Настройка свойств подключения к Elasticsearch](ht
 - путь к файлу конфигурации: `C:\Program Files\Elastic\Elasticsearch\<8.XX.X>\config\elasticsearch.yml`
 
 ```
-#Начало файла конфигурации   
-#Разрешить свопинг памяти   
-bootstrap.memory_lock: false   
-  
-#Название кластера   
-cluster.name: cmw   
-  
-#Максимальное возможное количество шардов в кластере   
-#Система создает отдельный индекс для каждого объекта мониторинга, поэтому рекомендуется увеличить количество шардов до 3000   
-cluster.max_shards_per_node: 3000   
-  
-#Стандартный номер порта 9200 изменен по соображениям безопасности   
-http.port: 9201   
-  
-#Сетевые параметры   
-#Если доступ по сети не требуется, то закомментируйте строки #network.host и discovery.seed_hosts   
-#Замените имя компьютера — testhost — на реальное имя   
-network.host: testhost   
-discovery.seed_hosts:   
-  - testhost   
-  
-#Простейшая конфигурация с одним узлом   
-discovery.type: single-node   
-  
-#Название узла   
-node.name: cmw   
-  
-#Путь к папке с данными   
-path.data: d:\ProgramData\Elasticsearch\elasticsearch-<8.XX.X>\data   
-  
-#Путь к папке с журналами   
-path.logs: d:\ProgramData\Elasticsearch\elasticsearch-<8.XX.X>\logs   
-  
-#Путь к папке с резервными копиями   
-#Путь должен указывать на существующий диск   
-#Резервные копии должны храниться на отдельном диске отдельно от #основных данных   
-#Раскомментируйте директиву path.repo, если требуется создавать резервные копии   
-#path.repo: d:elastic_backup   
-  
-#Обычная лицензия   
-xpack.license.self_generated.type: basic   
-  
-#Аутентификация включена   
-xpack.security.enabled: true   
-  
-#Этот флаг требуется для записи данных в индексы   
-indices.id_field_data.enabled: true   
-  
-#отключить геолокацию    
+#Начало файла конфигурации
+#Разрешить свопинг памяти
+bootstrap.memory_lock: false
+
+#Название кластера
+cluster.name: cmw
+
+#Максимальное возможное количество шардов в кластере
+#Система создает отдельный индекс для каждого объекта мониторинга, поэтому рекомендуется увеличить количество шардов до 3000
+cluster.max_shards_per_node: 3000
+
+#Стандартный номер порта 9200 изменен по соображениям безопасности
+http.port: 9201
+
+#Сетевые параметры
+#Если доступ по сети не требуется, то закомментируйте строки #network.host и discovery.seed_hosts
+#Замените имя компьютера — testhost — на реальное имя
+network.host: testhost
+discovery.seed_hosts:
+  - testhost
+
+#Простейшая конфигурация с одним узлом
+discovery.type: single-node
+
+#Название узла
+node.name: cmw
+
+#Путь к папке с данными
+path.data: d:\ProgramData\Elasticsearch\elasticsearch-<8.XX.X>\data
+
+#Путь к папке с журналами
+path.logs: d:\ProgramData\Elasticsearch\elasticsearch-<8.XX.X>\logs
+
+#Путь к папке с резервными копиями
+#Путь должен указывать на существующий диск
+#Резервные копии должны храниться на отдельном диске отдельно от #основных данных
+#Раскомментируйте директиву path.repo, если требуется создавать резервные копии
+#path.repo: d:elastic_backup
+
+#Обычная лицензия
+xpack.license.self_generated.type: basic
+
+#Аутентификация включена
+xpack.security.enabled: true
+
+#Этот флаг требуется для записи данных в индексы
+indices.id_field_data.enabled: true
+
+#отключить геолокацию
 ingest.geoip.downloader.enabled: false
 ```
 

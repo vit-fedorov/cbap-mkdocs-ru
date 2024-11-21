@@ -10,7 +10,7 @@ kbId: 1089
 | @prefix object: <http://comindware.com/ontology/object#>. @prefix account: <http://comindware.com/ontology/account#>. {     ("Sotrudniki" "Uchastvuet") object:findProperty ?Uchastvuet.                  ?value a account:Account.     ?value ?Uchastvuet true.      } |
 | --- |
 
-**где:** 
+**где:**
 
  **Sotrudniki** – системное имя Шаблона пользователя;
 

@@ -9,8 +9,8 @@ kbId: 2080
 
 **{{ productName }}** может обращаться к API внешних систем через [подключения](https://kb.comindware.ru/category.php?id=437) и [пути передачи данных](https://kb.comindware.ru/category.php?id=515), а также может обрабатывать запросы из внешних систем через интерфейсы **REST API** трех типов:
 
-- [**Solution API**](https://kb.comindware.ru/article.php?id=2150)
-- [**System Core API**](https://kb.comindware.ru/article.php?id=2073)
+- [**Solution API**](https://kb.comindware.ru/article.php?id=2073)
+- [**System Core API**](https://kb.comindware.ru/article.php?id=2150)
 - [**Web API**][api_web]
 
 ### Определения

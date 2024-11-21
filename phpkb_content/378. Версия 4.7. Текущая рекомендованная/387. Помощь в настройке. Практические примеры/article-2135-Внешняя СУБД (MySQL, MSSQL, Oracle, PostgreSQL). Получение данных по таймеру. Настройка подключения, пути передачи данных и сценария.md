@@ -88,7 +88,7 @@ kbId: 2135
 ```
 host    all    all    123.45.67.89    md5
 ```
-5. Перезапустите службу `postgresql`:   
+5. Перезапустите службу `postgresql`:
 **Linux**
 
 ```
@@ -98,7 +98,7 @@ sudo systemctl restart postgresql
 **Windows**
 
 ```
-net stop postgresql-x64-<номер_версии>   
+net stop postgresql-x64-<номер_версии>
 net start postgresql-x64-<номер_версии>
 ```
 
@@ -114,7 +114,7 @@ _![Меню создания подключения для получения д
     - **Полные сведения об обработке сообщения**
     - **Только ошибки**
     - **Отключить**
-6. В поле «**Строка подключения**» введите адрес сервера, имя базы данных, имя пользователя и пароль для подключения к СУБД:   
+6. В поле «**Строка подключения**» введите адрес сервера, имя базы данных, имя пользователя и пароль для подключения к СУБД:
 **MySQL**
 
 ```
@@ -221,11 +221,11 @@ _![Добавление действия в сценарий](https://kb.comindw
         
         
         ```
-        @prefix session: <http://comindware.com/ontology/session#>.    
-        @prefix var: <http://comindware.com/ontology/session/variable#>.    
-        {    
-            session:context var:CityRecords ?message.    
-            ?message var:City ?value.    
+        @prefix session: <http://comindware.com/ontology/session#>.
+        @prefix var: <http://comindware.com/ontology/session/variable#>.
+        {
+            session:context var:CityRecords ?message.
+            ?message var:City ?value.
         }
         ```
         - Здесь:
@@ -260,11 +260,11 @@ _![Добавление действия в сценарий](https://kb.comindw
         
         
         ```
-        @prefix session: <http://comindware.com/ontology/session#>.    
-        @prefix variable: <http://comindware.com/ontology/session/variable#>.    
-        {    
-            session:context variable:record ?records.    
-            ?records variable:Name ?value.    
+        @prefix session: <http://comindware.com/ontology/session#>.
+        @prefix variable: <http://comindware.com/ontology/session/variable#>.
+        {
+            session:context variable:record ?records.
+            ?records variable:Name ?value.
         }
         ```
         - Здесь:

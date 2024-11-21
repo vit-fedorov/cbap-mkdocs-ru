@@ -59,7 +59,7 @@ sudo nano /var/www/comindwareinstancename/Web.config
 ```
 <httpRuntime maxRequestLength="1048576" maxUrlLength="4096" requestValidationMode="2.0" shutdownTimeout="300" executionTimeout="3000" targetFramework="4.8" enableVersionHeader="false" />
 ...
-<requestLimits maxAllowedContentLength="1073741824" />       
+<requestLimits maxAllowedContentLength="1073741824" />
 ```
 4. Откройте для редактирования файл `/etc/nginx/sites-available/comindwareinstancename`:
 
@@ -79,7 +79,7 @@ client_max_body_size 1024m;
 7. Перезагрузите экземпляр ПО и NGINX:
 
 ```
-systemctl restart nginx  
+systemctl restart nginx
 systemctl restart comindwareinstancename
 ```
 

@@ -110,7 +110,7 @@
 
 [authentication_keys]: {{ kbArticleURLPrefix }}2604
 
-[backup]: {{ kbArticleURLPrefix }}2579
+[backup]: {{ kbArticleURLPrefix }}2190
 
 [changelog]: {{ kbArticleURLPrefix }}2634
 

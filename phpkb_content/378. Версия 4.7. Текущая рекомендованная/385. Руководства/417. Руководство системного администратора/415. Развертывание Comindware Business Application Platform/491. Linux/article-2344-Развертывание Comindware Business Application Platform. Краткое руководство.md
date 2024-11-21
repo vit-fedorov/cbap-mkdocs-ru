@@ -39,7 +39,7 @@ cd CMW_<osname>/
 4. Установите ПО из дистрибутива:
 
 ```
-sh install.sh -p -k [-i=<instanceName>] [-e] [-d=demo] [-u=www-data] [-g=www-data]  
+sh install.sh -p -k [-i=<instanceName>] [-e] [-d=demo] [-u=www-data] [-g=www-data]
 ```
 
 Скрипт `install.sh` поддерживает следующие ключи:
@@ -62,9 +62,9 @@ sh install.sh -p -k [-i=<instanceName>] [-e] [-d=demo] [-u=www-data] [-g=www-dat
 Для создания экземпляра ПО при наличии установленной версии используйте скрипт `create.sh`, выполните следующие команды:
 
 ```
-cd CMW_<osname>/scripts/instance    
-  
-sh create.sh -n=<instanceName> [-p=<portNumber>] -v=<versionNumber>  
+cd CMW_<osname>/scripts/instance
+
+sh create.sh -n=<instanceName> [-p=<portNumber>] -v=<versionNumber>
 ```
 
     - `-n=<instanceName>` — создать экземпляр ПО с указанным именем (**обязательный** ключ);
@@ -97,20 +97,20 @@ su -
 2. Удостоверьтесь, что основные сервисы установлены, запущены и имеют статус `Active (running)`:
 
 ```
-systemctl status comindware<instanceName>    
-systemctl status kafka    
-systemctl status nginx    
-systemctl status elasticsearch 
+systemctl status comindware<instanceName>
+systemctl status kafka
+systemctl status nginx
+systemctl status elasticsearch
 ```
 
 Здесь `<instanceName>` — имя экземпляра ПО.
 3. Если какой-либо сервис не работает, запустите его:
 
 ```
-systemctl start comindware<instanceName>    
-systemctl start kafka    
-systemctl start nginx    
-systemctl start elasticsearch  
+systemctl start comindware<instanceName>
+systemctl start kafka
+systemctl start nginx
+systemctl start elasticsearch
 ```
 
 ## Остановка экземпляра ПО
@@ -129,18 +129,18 @@ su -
 2. Перед тем как выполнять любые действия с файлами ПО и базы данных, остановите службы, поддерживающие работу ПО:
 
 ```
-systemctl stop comindware<instanceName>    
-systemctl stop kafka    
-systemctl stop nginx    
-systemctl stop elasticsearch 
+systemctl stop comindware<instanceName>
+systemctl stop kafka
+systemctl stop nginx
+systemctl stop elasticsearch
 ```
 3. Удостоверьтесь, что службы остановлены:
 
 ```
-systemctl status comindware<instanceName>    
-systemctl status kafka    
-systemctl status nginx    
-systemctl status elasticsearch 
+systemctl status comindware<instanceName>
+systemctl status kafka
+systemctl status nginx
+systemctl status elasticsearch
 ```
 
 ## Инициализация {{ productName }}

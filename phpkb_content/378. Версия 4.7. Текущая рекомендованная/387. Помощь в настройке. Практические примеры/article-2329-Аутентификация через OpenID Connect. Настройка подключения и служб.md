@@ -5,7 +5,7 @@ kbId: 2329
 
 # Аутентификация через OpenID Connect. Настройка подключения и служб
 
-    - [Настройка страницы согласия OAuth](#настройка-страницы-согласия-oauth) 
+    - [Настройка страницы согласия OAuth](#настройка-страницы-согласия-oauth)
     
         - [Настройка сведений о приложении](#настройка-сведений-о-приложении)
         - [Настройка запрашиваемых разрешений для приложения](#настройка-запрашиваемых-разрешений-для-приложения)
@@ -205,26 +205,26 @@ vim /etc/nginx/sites-available/comindware<instanceName>
 6. Настройте конфигурацию SSL-сертификата согласно следующему примеру (добавьте выделенные жёлтым цветом директивы):
 
 ```
-server {   
-    listen 80 default;   
-    listen 443 ssl;  
-  
-    root /var/www/<instanceName>;   
-    server_name mycompany.ru;   
-  
-    ssl_certificate /etc/nginx/ssl/nginx.crt;  
-    ssl_certificate_key /etc/nginx/ssl/nginx.key;  
-  
-    client_max_body_size 300m;   
-    fastcgi_read_timeout 10000;   
-    location / {   
-        proxy_read_timeout 10000;  
-                    proxy_connect_timeout 10000;  
-                    proxy_send_timeout 10000;  
-                    root          /var/www/<instanceName>/;  
-                    fastcgi_pass  unix:/var/www/<instanceName>/App_Data/comindware.socket;  
-                    include       /etc/nginx/fastcgi.conf  
-                    }   
+server {
+    listen 80 default;
+    listen 443 ssl;
+
+    root /var/www/<instanceName>;
+    server_name mycompany.ru;
+
+    ssl_certificate /etc/nginx/ssl/nginx.crt;
+    ssl_certificate_key /etc/nginx/ssl/nginx.key;
+
+    client_max_body_size 300m;
+    fastcgi_read_timeout 10000;
+    location / {
+        proxy_read_timeout 10000;
+                    proxy_connect_timeout 10000;
+                    proxy_send_timeout 10000;
+                    root          /var/www/<instanceName>/;
+                    fastcgi_pass  unix:/var/www/<instanceName>/App_Data/comindware.socket;
+                    include       /etc/nginx/fastcgi.conf
+                    }
 }
 ```
 

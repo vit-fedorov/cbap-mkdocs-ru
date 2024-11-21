@@ -40,17 +40,17 @@ kbId: 2345
 - Запрос записей районов Москвы с сортировкой по убыванию названия района.
 
 ```
-from a in db->Cities   
-where a->CityName == "Москва"   
-orderby a->Districts->DistrictName descending   
+from a in db->Cities
+where a->CityName == "Москва"
+orderby a->Districts->DistrictName descending
 select a->Districts
 ```
 - Запрос названий и авторов книг, у которых указан автор, с сортировкой по возрастанию имени автора и выводом в формате «*Название: название книги. Автор: имя автора*».
 
 ```
-from book in db->Books   
-where NOT(EMPTY(book->Author))   
-orderby book->Author->Name   
+from book in db->Books
+where NOT(EMPTY(book->Author))
+orderby book->Author->Name
 select CONCAT(LIST('Название: ', book->Name, '. Автор: ', book->Author->Name))
 ```
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

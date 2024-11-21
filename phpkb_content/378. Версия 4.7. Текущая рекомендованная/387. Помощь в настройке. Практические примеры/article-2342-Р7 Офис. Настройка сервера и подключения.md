@@ -24,15 +24,15 @@ kbId: 2342
 
 ## Настройка конфигурации Р7-Офис
 
-1. Откройте в текстовом редакторе файл конфигурации **Р-7 Офис**:   
+1. Откройте в текстовом редакторе файл конфигурации **Р-7 Офис**:
 
 ```
 /etc/r7-office/documentserver/local.json
 ```
-2. Установите следующие значения:   
+2. Установите следующие значения:
 
 ```
-services.CoAuthoring.token.enable.request.inbox: true   
+services.CoAuthoring.token.enable.request.inbox: true
 services.CoAuthoring.token.enable.browser: true
 ```
 

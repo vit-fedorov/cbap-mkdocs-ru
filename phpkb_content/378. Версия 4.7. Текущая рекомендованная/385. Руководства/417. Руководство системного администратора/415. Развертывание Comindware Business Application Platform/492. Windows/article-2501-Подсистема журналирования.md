@@ -13,7 +13,7 @@ kbId: 2501
     - [Журнал исправности](#журнал-исправности)
     - [Журнал обновления](#журнал-обновления)
     - [Журнал ошибок](#журнал-ошибок)
-    - [Журнал процессов](#журнал-процессов) 
+    - [Журнал процессов](#журнал-процессов)
     
         - [Рекомендации по чтению журнала процессов](#рекомендации-по-чтению-журнала-процессов)
     - [Журнал резервного копирования](#журнал-резервного-копирования)
@@ -416,15 +416,15 @@ _![Пример журнала аудита](https://kb.comindware.ru/assets/log
 2. Создайте скрипт по приведённому ниже образцу на языке VisualBasic и сохраните его в файл с расширением .VBS (например, `CreateEventSource.vbs`):
 
 ```
-Set Args = WScript.Arguments     
-If Args.Count < 1 then WScript.Echo "USAGE: CreateEventSource.vbs <EventSourceName>"     
-    WScript.Quit     
-End If     
-EventSourceName = Args(0)     
-Set WshShell = WScript.CreateObject("WScript.Shell")     
-'Create event source     
-KeyName = "HKLM\SYSTEM\CurrentControlSet\Services\Eventlog\Application\" & EventSourceName & "\EventMessageFile"     
-'Change path to .NET Framework version used     
+Set Args = WScript.Arguments
+If Args.Count < 1 then WScript.Echo "USAGE: CreateEventSource.vbs <EventSourceName>"
+    WScript.Quit
+End If
+EventSourceName = Args(0)
+Set WshShell = WScript.CreateObject("WScript.Shell")
+'Create event source
+KeyName = "HKLM\SYSTEM\CurrentControlSet\Services\Eventlog\Application\" & EventSourceName & "\EventMessageFile"
+'Change path to .NET Framework version used
 WshShell.RegWrite KeyName,"%windir%\Microsoft.NET\Framework64\v2.0.50727\EventLogMessages.dll", "REG_EXPAND_SZ"
 ```
 3. Запустите скрипт, который создаст источник событий (`EventSource`) в журнале событий Windows.
@@ -439,16 +439,16 @@ CreateEventSource.vbs "CBAP"
 4. Создайте в файле `logs.config` в подразделе `nlog.targets` (с конфигурацией файловых журналов) подраздел `target` с параметрами записи данных в журнал событий Windows:
 
 ```
-<target xsi:type="EventLogCBAPErrors" name="eventlog" layout="${message}"     
+<target xsi:type="EventLogCBAPErrors" name="eventlog" layout="${message}"
 log="Application" source="CBAP"/>
 ```
 5. Создайте в файле `logs.config` правило (подраздел `logger` в разделе `nlog.rules`), которое будет определять сообщения, подлежащие записи в журнал событий Windows:
 
 ```
-<logger name="*" minlevel="Warn" maxlevel="Fatal"     
+<logger name="*" minlevel="Warn" maxlevel="Fatal"
 writeTo="errorsFile,EventLogCBAPErrors"/>
 ```
-6. Перезагрузите экземпляр ПО, чтобы изменения вступили в силу. См. раздел *[«Настройка конфигурации Утилиты администрирования Comindware»][administration_utility_configure]*.
+6. Перезагрузите экземпляр ПО, чтобы изменения вступили в силу. См. раздел *[«Настройка конфигурации Утилиты администрирования Comindware»][admin_utility_configure]*.
 
 --8<-- "related_topics_heading.md"
 

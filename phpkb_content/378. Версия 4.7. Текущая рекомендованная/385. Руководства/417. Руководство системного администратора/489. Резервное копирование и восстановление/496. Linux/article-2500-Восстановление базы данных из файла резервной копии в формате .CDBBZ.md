@@ -50,7 +50,7 @@ sh install.sh -k -p [-i=<instanceName>] [-e] -d=clear [-u=www-data] [-g=www-data
 4. Остановите сервисы NGINX и comindware`<instanceName>` (где `<instanceName>` — имя экземпляра ПО) и удостоверьтесь, что они остановлены:
 
 ```
-systemctl stop nginx comindware<instanceName>     
+systemctl stop nginx comindware<instanceName>
 systemctl status nginx comindware<instanceName>
 ```
 5. Распакуйте архив резервной копии в каталог `/var/lib/comindware/<instanceName>/`:
@@ -61,7 +61,7 @@ unzip /tmp/BackupFileName.202302161625.cdbbz -d /var/lib/comindware/<instanceNam
 6. Если в папке резервной копии (`/var/lib/comindware/<instanceName>/`) имеется каталог `Ignite`, переименуйте его в `Database`:
 
 ```
-cd /var/lib/comindware/<instanceName>/     
+cd /var/lib/comindware/<instanceName>/
 mv Ignite Database
 ```
 7. Перенесите каталог `Scripts` резервной копии в каталог `Database`:
@@ -93,24 +93,24 @@ chown -R _nginx:_nginx /var/lib/comindware/<instanceName>
 1. Остановите службу Elasticsearch и удостоверьтесь, что она остановлена:
 
 ```
-systemctl stop elasticsearch     
+systemctl stop elasticsearch
 systemctl status elasticsearch
 ```
 2. Создайте папку репозитория Elasticsearch (например, `/var/www/backups/elasticsearch/`) и перенесите в неё файлы из каталога `History` ранее [распакованной резервной копии](#unpack_backup):
 
 ```
-mkdir /var/www/backups/elasticsearch/     
+mkdir /var/www/backups/elasticsearch/
 mv /var/lib/comindware/<instanceName>/History/* /var/www/backups/elasticsearch/
 ```
 3. Назначьте папке репозитория и её содержимому права `rwxr-xr-x`:
 
 ```
-chmod -R 755 /var/www/backups/ 
+chmod -R 755 /var/www/backups/
 ```
 4. Назначьте владельца `elasticsearch` папке репозитория и её содержимому:
 
 ```
-chown -R elasticsearch:elasticsearch /var/www/backups/ 
+chown -R elasticsearch:elasticsearch /var/www/backups/
 ```
 5. В файле конфигурации `/etc/elasticsearch/elasticsearch.yml` укажите путь к созданному репозиторию:
 
@@ -120,18 +120,18 @@ path.repo: /var/www/backups/elasticsearch
 6. Запустите службу Elasticsearch:
 
 ```
-systemctl start elasticsearch.service 
+systemctl start elasticsearch.service
 ```
 7. Зарегистрируйте репозиторий (например, `repostory_backup`) с резервной копией снимка Elasticsearch:
 
 ```
-curl -X PUT "localhost:9200/_snapshot/repostory_backup?pretty" -H ’Content-Type: application/json’ -d’    
-{    
-"type": "fs",    
-"settings": {    
-            "location": "/var/www/backups/elasticsearch"    
-            }    
-}  
+curl -X PUT "localhost:9200/_snapshot/repostory_backup?pretty" -H ’Content-Type: application/json’ -d’
+{
+"type": "fs",
+"settings": {
+            "location": "/var/www/backups/elasticsearch"
+            }
+}
 ```
 
  
@@ -153,7 +153,7 @@ curl -X GET "localhost:9200/_cat/snapshots/repostory_backup?pretty"
 9. Восстановите снимок Elasticsearch:
 
 ```
-curl -X POST "localhost:9200/_snapshot/repostory_backup/backupSession123/_restore?pretty" 
+curl -X POST "localhost:9200/_snapshot/repostory_backup/backupSession123/_restore?pretty"
 ```
 
     - В качестве репозитория укажите имя репозитория, созданного на шаге 7, или префикс индекса Elasticsearch (см. [примечание](#s3_repository) выше).
@@ -169,7 +169,7 @@ curl -X GET "localhost:9200/_cat/indices?pretty"
 1. Запустите необходимые службы и проверьте их статус:
 
 ```
-systemctl start nginx comindware<instanceName>     
+systemctl start nginx comindware<instanceName>
 systemctl status nginx comindware<instanceName>
 ```
 2. Откройте веб-сайт экземпляра ПО.

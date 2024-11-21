@@ -8,12 +8,12 @@ kbId: 2488
 Для вычисления пользователей, входящих в определённую группу без учета подгрупп и их участников (в случае, если в группе нет вложенности), введите следующее выражение:
 
 ```
-@prefix account: <http://comindware.com/ontology/account#>.  
-{  
-    ?projectOffice account:groupName "Менеджеры".  
-    ?users account:userGroupMembership ?projectOffice.  
-    ?users account:fullName ?.  
-    ?users -> ?value.  
+@prefix account: <http://comindware.com/ontology/account#>.
+{
+    ?projectOffice account:groupName "Менеджеры".
+    ?users account:userGroupMembership ?projectOffice.
+    ?users account:fullName ?.
+    ?users -> ?value.
 }
 ```
 
@@ -21,6 +21,6 @@ kbId: 2488
 
 **"Менеджеры"** — название группы, пользователей которой требуется получить.
 
-Альтернатива статье [Вычисление всех пользователей группы/групп](https://kb.comindware.ru/article.php?id=1082).
+Альтернатива статье [Вычисление всех пользователей группы](https://kb.comindware.ru/article.php?id=1082).
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

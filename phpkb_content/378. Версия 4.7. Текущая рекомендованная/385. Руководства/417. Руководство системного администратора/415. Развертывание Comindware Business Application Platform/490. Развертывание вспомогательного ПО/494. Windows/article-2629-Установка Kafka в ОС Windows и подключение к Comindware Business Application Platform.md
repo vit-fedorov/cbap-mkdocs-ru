@@ -41,46 +41,46 @@ kbId: 2629
 5. Отредактируйте файл конфигурации, указав IP-адрес сервера Kafka и папку для журналов. При указании пути к папке журналов используйте косую черту `/`:
 
 ```
-process.roles=broker,controller  
-node.id=1  
-# Укажите IP-адрес сервера Kafka  
-controller.quorum.voters=1@10.9.8.7:9093  
-# Укажите IP-адрес сервера Kafka  
-listeners=PLAINTEXT://10.9.8.7:9092,CONTROLLER://10.9.8.7:9093  
-inter.broker.listener.name=PLAINTEXT  
-# Укажите IP-адрес сервера Kafka  
-advertised.listeners=PLAINTEXT://10.9.8.7:9092  
-controller.listener.names=CONTROLLER  
-listener.security.protocol.map=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL  
-num.network.threads=3  
-num.io.threads=8  
-socket.send.buffer.bytes=102400  
-socket.receive.buffer.bytes=102400  
-socket.request.max.bytes=104857600  
-# Укажите путь к папке журналов  
-log.dirs=X:/kafka/logs  
-num.partitions=1  
-num.recovery.threads.per.data.dir=1  
-offsets.topic.replication.factor=1  
-transaction.state.log.replication.factor=1  
-transaction.state.log.min.isr=1  
-log.retention.hours=168  
-log.segment.bytes=1073741824  
-log.retention.check.interval.ms=300000  
+process.roles=broker,controller
+node.id=1
+# Укажите IP-адрес сервера Kafka
+controller.quorum.voters=1@10.9.8.7:9093
+# Укажите IP-адрес сервера Kafka
+listeners=PLAINTEXT://10.9.8.7:9092,CONTROLLER://10.9.8.7:9093
+inter.broker.listener.name=PLAINTEXT
+# Укажите IP-адрес сервера Kafka
+advertised.listeners=PLAINTEXT://10.9.8.7:9092
+controller.listener.names=CONTROLLER
+listener.security.protocol.map=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+num.network.threads=3
+num.io.threads=8
+socket.send.buffer.bytes=102400
+socket.receive.buffer.bytes=102400
+socket.request.max.bytes=104857600
+# Укажите путь к папке журналов
+log.dirs=X:/kafka/logs
+num.partitions=1
+num.recovery.threads.per.data.dir=1
+offsets.topic.replication.factor=1
+transaction.state.log.replication.factor=1
+transaction.state.log.min.isr=1
+log.retention.hours=168
+log.segment.bytes=1073741824
+log.retention.check.interval.ms=300000
 
 ```
 6. Откройте *PowerShell* от имени администратора и выполните команды:
 
 ```
-cd "C:\kafka\kafka\bin\windows\"  
-.\kafka-storage.bat random-uuid  
+cd "C:\kafka\kafka\bin\windows\"
+.\kafka-storage.bat random-uuid
 
 ```
 7. Kafka выдаст UID, например, `kNZtrWDsRvW0udJeaEahsg`
 8. Используйте полученный UID в следующей команде:
 
 ```
-.\kafka-storage.bat format -t kNZtrWDsRvW0udJeaEahsg -c C:\kafka\kafka\config\kraft\server.properties  
+.\kafka-storage.bat format -t kNZtrWDsRvW0udJeaEahsg -c C:\kafka\kafka\config\kraft\server.properties
 
 ```
 9. Загрузите с **[официального сайта](https://nssm.cc/download)** архив *NSSM* и распакуйте его.
@@ -88,7 +88,7 @@ cd "C:\kafka\kafka\bin\windows\"
 11. В *PowerShell* от имени администратора выполните следующую команду:
 
 ```
-.\nssm install kafka  
+.\nssm install kafka
 
 ```
 12. Запустится программа `NSSM service installer`.
@@ -100,21 +100,21 @@ _![Диалоговое окно NSSM service installer](https://kb.comindware.r
     - **Path**
 
 ```
-C:\kafka\kafka\bin\windows\kafka-server-start.bat  
+C:\kafka\kafka\bin\windows\kafka-server-start.bat
 
 ```
 
     - **Startup directory**
 
 ```
-C:\kafka\kafka\bin\windows\  
+C:\kafka\kafka\bin\windows\
 
 ```
 
     - **Arguments**
 
 ```
-C:\kafka\kafka\config\kraft\server.properties  
+C:\kafka\kafka\config\kraft\server.properties
 
 ```
 14. Нажмите кнопку «**Install service**».
@@ -128,10 +128,10 @@ _![Окно настройки службы Kafka](https://kb.comindware.ru/asse
 18. Протестируйте работу Kafka, выполнив в *PowerShell* следующие команды:
 
 ```
-cd "C:\kafka\kafka\bin\windows\"  
-.\kafka-console-producer.bat --bootstrap-server 10.9.8.7:9092 --topic TEST  
-# Отправьте любое сообщение, например:  
-hello  
+cd "C:\kafka\kafka\bin\windows\"
+.\kafka-console-producer.bat --bootstrap-server 10.9.8.7:9092 --topic TEST
+# Отправьте любое сообщение, например:
+hello
 
 ```
 19. При правильной работе Kafka выдаст предупреждение, что раннее такой ветки сообщений не было, и создаст её.
@@ -144,23 +144,23 @@ _![Создание ветки сообщений Kafka в powershell.exe](https
 2. Откройте файл с именем экземпляра ПО `.yml` и измените или добавьте следующую директиву:
 
 ```
-# Укажите IP-адрес сервера Kafka  
-mq.server: 10.9.8.7:9092  
-# Укажите имя экземпляра ПО  
-mq.name: <instanceName>  
+# Укажите IP-адрес сервера Kafka
+mq.server: 10.9.8.7:9092
+# Укажите имя экземпляра ПО
+mq.name: <instanceName>
 
 ```
 3. Удалите следующую строку из файла `.yml`:
 
 ```
-kafkaBootstrapServer:  
+kafkaBootstrapServer:
 
 ```
 4. Перезапустите экземпляр ПО с помощью Утилиты администрирования.
 5. Проверьте соединение с Kafka в браузере по ссылке:
 
 ```
-<instanceName>/async  
+<instanceName>/async
 
 ```
 

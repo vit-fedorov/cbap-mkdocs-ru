@@ -6,13 +6,13 @@ kbId: 2583
 # Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя
 
     - [Требования к машине](#требования-к-машине)
-    - [Настройка параметров сети для разрешения DC FQDN](#настройка-параметров-сети-для-разрешения-dc-fqdn) 
+    - [Настройка параметров сети для разрешения DC FQDN](#настройка-параметров-сети-для-разрешения-dc-fqdn)
     
         - [Изменение файла hosts](#изменение-файла-hosts)
         - [Изменение файла resolv.conf](#изменение-файла-resolvconf)
     - [Проверка корректности настроек сети](#проверка-корректности-настроек-сети)
     - [Синхронизация времени между машинами DCName и linuxHost](#синхронизация-времени-между-машинами-dcname-и-linuxhost)
-    - [Настройка конфигурации Kerberos](#настройка-конфигурации-kerberos) 
+    - [Настройка конфигурации Kerberos](#настройка-конфигурации-kerberos)
     
         - [Установка вспомогательных пакетов](#установка-вспомогательных-пакетов)
         - [Настройка аутентификации Kerberos](#настройка-аутентификации-kerberos)
@@ -188,7 +188,7 @@ ktpass /out <authuser>.keytab /mapuser <authuser> /princ HTTP/<DCName>.<domain.n
 7. Поместите keytab-файл `<authuser>.keytab` в директорию `/etc/nginx/sasl` и сделайте его доступным для чтения:
 
 ```
-cp /<path_to_keytab>/<authuser>.keytab /etc/nginx/sasl  
+cp /<path_to_keytab>/<authuser>.keytab /etc/nginx/sasl
 chmod 664 /etc/nginx/sasl/<authuser>.keytab
 ```
 
@@ -234,8 +234,8 @@ vim /etc/hosts
 2. Добавьте в файл `hosts` правила для разрешения машины `<linuxHost>` с экземпляром ПО:
 
 ```
-127.0.0.1                       localhost localhost.localdomain  
-127.0.1.1                       <linuxHost>.<domain.name> <linuxHost>  
+127.0.0.1                       localhost localhost.localdomain
+127.0.1.1                       <linuxHost>.<domain.name> <linuxHost>
 <domain.controller.ip.address>  <DCName>.<domain.name> <DCName>
 ```
 
@@ -256,8 +256,8 @@ vim /etc/resolv.conf
 3. Укажите машину `<DCName>` в качестве сервера имён `nameserver`:
 
 ```
-domain     <domain.name>  
-search     <domain.name>  
+domain     <domain.name>
+search     <domain.name>
 nameserver <domain.controller.ip.address>
 ```
 4. Запретите редактирование файла `resolv.conf`:
@@ -271,13 +271,13 @@ chattr +i /etc/resolv.conf
 1. Убедитесь, что FQDN `<DCName>.<domain.name>` разрешается:
 
 ```
-# DNS Lookup of DC  
-nslookup <DCName>  
-nslookup <DCName>.<domain.name>  
-  
-host <DCName>.<domain.name>  
-  
-# Reverse DNS lookup of `nameserver`  
+# DNS Lookup of DC
+nslookup <DCName>
+nslookup <DCName>.<domain.name>
+
+host <DCName>.<domain.name>
+
+# Reverse DNS lookup of `nameserver`
 host <domain.controller.ip.address>
 ```
 
@@ -301,12 +301,12 @@ vim /etc/ntp.conf
 3. Добавьте в файл конфигурации `ntp.conf` поле `server <DOMAIN.NAME> iburst burst prefer`:
 
 ```
-driftfile /etc/ntp/drift  
-server <DOMAIN.NAME> iburst burst prefer  
-server 127.127.1.0 iburst  
-fudge  127.127.1.0 stratum 10  
-  
-restrict default noquery nomodify  
+driftfile /etc/ntp/drift
+server <DOMAIN.NAME> iburst burst prefer
+server 127.127.1.0 iburst
+fudge  127.127.1.0 stratum 10
+
+restrict default noquery nomodify
 restrict 127.0.0.1
 ```
 4. Примените настройки:
@@ -337,7 +337,7 @@ apt list libsasl*
 3. Убедитесь, что установлены пакеты `krb5-user`, `krb5-config` и зависимости для них:
 
 ```
-which krb5-user  
+which krb5-user
 which krb5-config
 ```
 4. Установите пакеты `samba-dc` и `kerberos-kdc`:
@@ -363,71 +363,71 @@ vim /etc/krb5.conf
 **Astra Linux, Debian**
 
 ```
-#astra/debian-winbind  
-[libdefaults]  
-    default_realm = <DOMAIN.NAME>  
-    kdc_timesync = 1  
-    ccache_type = 4  
-    forwardable = true  
-    proxiable = true  
-  
-    fcc-mit-ticketflags = true  
-    dns_lookup_realm = false  
-    dns_lookup_kdc = false  
-    v4_instance_resolve = false  
-    v4_name_convert = {  
-        host = {  
-            rcmd = host  
-            ftp = ftp  
-        }  
-        plain = {  
-            something = something-else  
-        }  
-    }  
-  
-[realms]  
-    <DOMAIN.NAME> = {  
-        kdc = <DCName>.<domain.name>  
-        admin_server = <DCName>.<domain.name>  
-        default_domain = <domain.name>  
-    }  
-  
-[domain_realm]  
-    .<domain.name> = <DOMAIN.NAME>  
-    <domain.name> = <DOMAIN.NAME>  
-[login]  
-    krb4_convert = false  
+#astra/debian-winbind
+[libdefaults]
+    default_realm = <DOMAIN.NAME>
+    kdc_timesync = 1
+    ccache_type = 4
+    forwardable = true
+    proxiable = true
+
+    fcc-mit-ticketflags = true
+    dns_lookup_realm = false
+    dns_lookup_kdc = false
+    v4_instance_resolve = false
+    v4_name_convert = {
+        host = {
+            rcmd = host
+            ftp = ftp
+        }
+        plain = {
+            something = something-else
+        }
+    }
+
+[realms]
+    <DOMAIN.NAME> = {
+        kdc = <DCName>.<domain.name>
+        admin_server = <DCName>.<domain.name>
+        default_domain = <domain.name>
+    }
+
+[domain_realm]
+    .<domain.name> = <DOMAIN.NAME>
+    <domain.name> = <DOMAIN.NAME>
+[login]
+    krb4_convert = false
     krb4_get_tickets = false
 ```
 
 **Альт**
 
 ```
-includedir /etc/krb5.conf.d/  
-[logging]  
-# default = FILE:/var/log/krb5libs.log  
-# kdc = FILE:/var/log/krb5kdc.log  
-# admin_server = FILE:/var/log/kadmind.log  
-  
-[libdefaults]  
-dns_lookup_kdc = true  
-dns_lookup_realm = false  
-ticket_lifetime = 24h  
-renew_lifetime = 7d  
-forwardable = true  
-rdns = false  
-default_realm = <DOMAIN.NAME>  
-default_ccache_name = KEYRING:persistent:%{uid}  
-  
-[realms]  
-<DOMAIN.NAME> = {  
-    kdc = <DCName>.<domain.name>  
-    admin_server = <DCName>.<domain.name>  
-    default_domain = <domain.name>  
-}  
-  
-[domain_realm]  
-<.domain.name> = <DOMAIN.NAME>  {{ productName }}  
+includedir /etc/krb5.conf.d/
+[logging]
+# default = FILE:/var/log/krb5libs.log
+# kdc = FILE:/var/log/krb5kdc.log
+# admin_server = FILE:/var/log/kadmind.log
+
+[libdefaults]
+dns_lookup_kdc = true
+dns_lookup_realm = false
+ticket_lifetime = 24h
+renew_lifetime = 7d
+forwardable = true
+rdns = false
+default_realm = <DOMAIN.NAME>
+default_ccache_name = KEYRING:persistent:%{uid}
+
+[realms]
+<DOMAIN.NAME> = {
+    kdc = <DCName>.<domain.name>
+    admin_server = <DCName>.<domain.name>
+    default_domain = <domain.name>
+}
+
+[domain_realm]
+<.domain.name> = <DOMAIN.NAME>  {{ productName }}
 <domain.name> = <DOMAIN.NAME>
 ```
 
@@ -441,14 +441,14 @@ vim /etc/security/pam_winbind.conf
 2. Отредактировать файл конфигурации `pam_winbind.conf` согласно следующему примеру:
 
 ```
-[global]  
-debug = no  
-debug_state = no  
-try_first_pass = yes  
-cached_login = yes  
-krb5_auth = yes  
-krb_ccache_type = FILE  
-silent = yes  
+[global]
+debug = no
+debug_state = no
+try_first_pass = yes
+cached_login = yes
+krb5_auth = yes
+krb_ccache_type = FILE
+silent = yes
 mkhomedir = yes
 ```
 
@@ -457,7 +457,7 @@ mkhomedir = yes
 1. Скачайте и распакуйте дистрибутив ПО **{{ productName }}** в директорию `/home/<username>` и перейдите в директорию с распакованным ПО (`X.X.XXXX.X` — номер версии ПО, `<osname>` — название операционной системы):
 
 ```
-tar -xvzf X.X.XXXX.X.<osname>.tar.gz -C /home/<username>  
+tar -xvzf X.X.XXXX.X.<osname>.tar.gz -C /home/<username>
 cd /home/<username>/CMW_<osname>/
 ```
 2. Установите ПО **{{ productName }}** без создания экземпляра ПО и с ключом `-d=clear` — без демонстрационной базы данных:
@@ -468,7 +468,7 @@ sh install.sh -p -d=clear
 3. Создайте экземпляр ПО, указав вместо `<instanceName>` требуемое имя экземпляра (`X.X.XXXX.X` — номер версии ПО):
 
 ```
-cd scripts/instance/  
+cd scripts/instance/
 sh create.sh -n=<instanceName> -p=80 -v=X.X.XXXX.X
 ```
 
@@ -502,7 +502,7 @@ ln -s /etc/nginx/modules-available.d/http_auth_spnego.conf /etc/nginx/modules-en
 3. Поместить keytab-файл `<authuser>.keytab` в директорию конфигурации NGINX и сделать его доступным для чтения:
 
 ```
-cp /<path_to_keytab>/<authuser>.keytab /etc/nginx  
+cp /<path_to_keytab>/<authuser>.keytab /etc/nginx
 chmod 664 /etc/nginx/<authuser>.keytab
 ```
 
@@ -515,47 +515,47 @@ vim /etc/nginx/sites-available.d/comindware<instanceName>
 5. Отредактируйте файл `comindware<instanceName>` согласно следующему примеру:
 
 ```
-server {  
-        listen 8999 http2;  
-        root /var/www/cmwdata;  
-  
-            location /async {  
-                grpc_pass grpc_cmwdata;  
-        }  
-}  
-  
-server {  
-        listen       80 default;  
-        root         /var/www/cmwdata;  
-  
-        client_header_timeout 3h;  
-        client_body_timeout 3h;  
-        grpc_read_timeout 3h;  
-        grpc_send_timeout 3h;  
-  
-        client_max_body_size 300m;  
-        fastcgi_read_timeout 10000;  
-  
-            location /async {  
-                grpc_pass grpc_cmwdata;  
-            }  
-  
-            location / {  
-                # SPNEGO Configuration  
-                add_header Set-Cookie "cmw_user=$remote_user";  
-                auth_gss on;  
-                auth_gss_realm <DOMAIN.NAME>;  
-                auth_gss_keytab /etc/nginx/<authuser>.keytab;  
-                auth_gss_service_name HTTP/<authuser>.<domain.name>;  
-                auth_gss_allow_basic_fallback on;  
-  
-                proxy_read_timeout 10000;  
-                proxy_connect_timeout 10000;  
-                proxy_send_timeout 10000;  
-                root                /var/www/cmwdata/;  
-                fastcgi_pass        unix:/var/www/cmwdata/App_Data/cmwdata.socket;  
-                include             /etc/nginx/fastcgi.conf;  
-            }  
+server {
+        listen 8999 http2;
+        root /var/www/cmwdata;
+
+            location /async {
+                grpc_pass grpc_cmwdata;
+        }
+}
+
+server {
+        listen       80 default;
+        root         /var/www/cmwdata;
+
+        client_header_timeout 3h;
+        client_body_timeout 3h;
+        grpc_read_timeout 3h;
+        grpc_send_timeout 3h;
+
+        client_max_body_size 300m;
+        fastcgi_read_timeout 10000;
+
+            location /async {
+                grpc_pass grpc_cmwdata;
+            }
+
+            location / {
+                # SPNEGO Configuration
+                add_header Set-Cookie "cmw_user=$remote_user";
+                auth_gss on;
+                auth_gss_realm <DOMAIN.NAME>;
+                auth_gss_keytab /etc/nginx/<authuser>.keytab;
+                auth_gss_service_name HTTP/<authuser>.<domain.name>;
+                auth_gss_allow_basic_fallback on;
+
+                proxy_read_timeout 10000;
+                proxy_connect_timeout 10000;
+                proxy_send_timeout 10000;
+                root                /var/www/cmwdata/;
+                fastcgi_pass        unix:/var/www/cmwdata/App_Data/cmwdata.socket;
+                include             /etc/nginx/fastcgi.conf;
+            }
 }
 ```
 6. Проверьте синтаксис веб-приложения *NGINX* для экземпляра ПО `<instanceName>`:

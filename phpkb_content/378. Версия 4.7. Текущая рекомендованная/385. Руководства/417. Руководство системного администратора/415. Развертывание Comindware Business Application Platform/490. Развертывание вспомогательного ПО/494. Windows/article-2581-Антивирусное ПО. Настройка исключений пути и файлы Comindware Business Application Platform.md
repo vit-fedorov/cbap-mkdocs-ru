@@ -5,13 +5,13 @@ kbId: 2581
 
 # Антивирусное ПО. Настройка исключений: пути и файлы {{ productName }}
 
-    - [Linux](#linux) 
+    - [Linux](#linux)
     
         - [ПО {{ productName }}](#по-comindware-business-application-platform)
         - [Apache Ignite](#apache-ignite)
         - [Apache Kafka](#apache-kafka)
         - [ElasticSearch](#elasticsearch)
-    - [Windows](#windows) 
+    - [Windows](#windows)
     
         - [ПО {{ productName }}](#по-comindware-business-application-platform_1)
         - [Apache Ignite](#apache-ignite_1)

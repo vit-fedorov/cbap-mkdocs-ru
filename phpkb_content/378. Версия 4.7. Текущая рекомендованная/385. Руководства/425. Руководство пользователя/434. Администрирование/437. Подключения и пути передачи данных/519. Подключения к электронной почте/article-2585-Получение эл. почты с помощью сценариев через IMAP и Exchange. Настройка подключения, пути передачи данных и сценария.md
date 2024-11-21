@@ -6,13 +6,13 @@ kbId: 2585
 # Получение эл. почты с помощью сценариев через IMAP и Exchange. Настройка подключения, пути передачи данных и сценария
 
     - [Основные свойства](#основные-свойства)
-    - [Атрибуты сообщений](#атрибуты-сообщений) 
+    - [Атрибуты сообщений](#атрибуты-сообщений)
     
         - [Атрибуты для получения эл. почты через IMAP и Exchange](#атрибуты-для-получения-эл-почты-через-imap-и-exchange)
         - [Атрибуты для получения событий календаря через Exchange](#атрибуты-для-получения-событий-календаря-через-exchange)
         - [Атрибуты для ответа почтовому серверу](#атрибуты-для-ответа-почтовому-серверу)
         - [Настройка собственного атрибута сообщения](#настройка-собственного-атрибута-сообщения)
-- [Настройка шаблона записи и сценария для получения эл. писем](#настройка-шаблона-записи-и-сценария-для-получения-эл-писем) 
+- [Настройка шаблона записи и сценария для получения эл. писем](#настройка-шаблона-записи-и-сценария-для-получения-эл-писем)
 
     - [Настройка шаблона записи](#настройка-шаблона-записи)
     - [Настройка сценария](#настройка-сценария)
@@ -270,28 +270,28 @@ $$message->Attachments
 - **Значение: N3**
 
 ```
-# Импортируем функции для работы с документами и данными текущего сеанса.  
-@prefix session: <http://comindware.com/ontology/session#>.  
-@prefix variable: <http://comindware.com/ontology/session/variable#>.  
-@prefix document: <http://comindware.com/ontology/document#>.  
-@prefix cmwstring: <http://comindware.com/logics/string#>.  
-{  
-    # Помещаем переменную attachment   
-    # из действия «Повторять по количеству объектов»  
-    # в локальную переменную ?attachment.  
-    session:context variable:attachment ?attachment.  
-    # Помещаем содержимое файла в переменную ?contentValue.  
-    ?attachment variable:Content ?contentValue.  
-    # Помещаем расширение файла в переменную ?extension.  
-    ?attachment variable:Extension ?extension.  
-    # Помещаем имя файла в переменную ?filename.  
-    ?attachment variable:Name ?filename.  
-    # Соединяем имя файла и расширение в переменную ?filenameValue.  
-    (?filename ?extension) cmwstring:concatenation ?filenameValue.  
-    # Собираем новый файл из имени и содержимого,   
-    # сохраняем его в папку Streams  
-    # и возвращаем ID нового документа с прикреплённым файлом.  
-    (?contentValue ?filenameValue) document:attach ?value.  
+# Импортируем функции для работы с документами и данными текущего сеанса.
+@prefix session: <http://comindware.com/ontology/session#>.
+@prefix variable: <http://comindware.com/ontology/session/variable#>.
+@prefix document: <http://comindware.com/ontology/document#>.
+@prefix cmwstring: <http://comindware.com/logics/string#>.
+{
+    # Помещаем переменную attachment
+    # из действия «Повторять по количеству объектов»
+    # в локальную переменную ?attachment.
+    session:context variable:attachment ?attachment.
+    # Помещаем содержимое файла в переменную ?contentValue.
+    ?attachment variable:Content ?contentValue.
+    # Помещаем расширение файла в переменную ?extension.
+    ?attachment variable:Extension ?extension.
+    # Помещаем имя файла в переменную ?filename.
+    ?attachment variable:Name ?filename.
+    # Соединяем имя файла и расширение в переменную ?filenameValue.
+    (?filename ?extension) cmwstring:concatenation ?filenameValue.
+    # Собираем новый файл из имени и содержимого,
+    # сохраняем его в папку Streams
+    # и возвращаем ID нового документа с прикреплённым файлом.
+    (?contentValue ?filenameValue) document:attach ?value.
 }
 ```
 

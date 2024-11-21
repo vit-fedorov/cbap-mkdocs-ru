@@ -6,11 +6,11 @@ kbId: 2584
 # Отправка эл. почты из сценариев через SMTP и Exchange. Настройка подключения, пути передачи данных и сценария
 
     - [Основные свойства](#основные-свойства)
-    - [Атрибуты сообщения](#атрибуты-сообщения) 
+    - [Атрибуты сообщения](#атрибуты-сообщения)
     
         - [Создание собственного атрибута сообщения](#создание-собственного-атрибута-сообщения)
     - [Интеграция](#интеграция)
-- [Настройка шаблона записи и сценария для отправки эл. почты](#настройка-шаблона-записи-и-сценария-для-отправки-эл-почты) 
+- [Настройка шаблона записи и сценария для отправки эл. почты](#настройка-шаблона-записи-и-сценария-для-отправки-эл-почты)
 
     - [Настройка шаблона записи](#настройка-шаблона-записи)
     - [Настройка сценария](#настройка-сценария)
@@ -171,7 +171,7 @@ kbId: 2584
 - Например, в поле «**Шаблон темы**» можно ввести строку:
 
 ```
-Уведомление «{Title}» от {Date} 
+Уведомление «{Title}» от {Date}
 ```
 
 Здесь: `{Title}` и `{Date}` — заполнители атрибутов сообщения, содержащее название и дату уведомления.
@@ -188,8 +188,8 @@ kbId: 2584
 - **Шаблон текста сообщения** — введите текст письма, например:
 
 ```
-Здравствуйте, {FullName}!  
-  
+Здравствуйте, {FullName}!
+
 Рассмотрите документ {Filename}.
 ```
 - **Дополнительные заголовки** — введите служебные заголовки письма с помощью строковых литералов или заполнителей:
@@ -200,7 +200,7 @@ kbId: 2584
     
     
     ```
-    # Заголовок адреса для ответа  
+    # Заголовок адреса для ответа
     Reply-To
     ```
     - Значение заголовка — строка или заполнитель, например:
@@ -209,7 +209,7 @@ kbId: 2584
     
     
     ```
-    # Адрес для ответа на письмо  
+    # Адрес для ответа на письмо
     {ReplyAddress}
     ```
 - **Получатели**, **Копия**, **Скрытая копия** — укажите адресатов письма с помощью строковых литералов или заполнителей, например:
@@ -343,20 +343,20 @@ example.txt
     
     
     ```
-    # Импортируем функции для работы с записями и документами  
-    @prefix object: <http://comindware.com/ontology/object#>.  
-    @prefix document: <http://comindware.com/ontology/document#>.  
-      
-    {  
-        # Находим атрибут Vlozhenie (Вложение) в шаблоне Elpisma (Эл. письма).  
-        ("Elpisma" "Vlozhenie") object:findProperty ?VlozhenieAttribute.  
-        # Присваиваем переменной ?Vlozhenie объект из атрибута «Вложение».  
-        ?item ?VlozhenieAttribute ?Vlozhenie.  
-        # В переменную ?currentDocument помещаем  
-        # последнюю добавленную версию документа.  
-        ?Vlozhenie document:currentRevision ?currentDocument.  
-        # Возвращаем имя текущего файла.  
-        ?currentDocument document:name ?value.  
+    # Импортируем функции для работы с записями и документами
+    @prefix object: <http://comindware.com/ontology/object#>.
+    @prefix document: <http://comindware.com/ontology/document#>.
+    
+    {
+        # Находим атрибут Vlozhenie (Вложение) в шаблоне Elpisma (Эл. письма).
+        ("Elpisma" "Vlozhenie") object:findProperty ?VlozhenieAttribute.
+        # Присваиваем переменной ?Vlozhenie объект из атрибута «Вложение».
+        ?item ?VlozhenieAttribute ?Vlozhenie.
+        # В переменную ?currentDocument помещаем
+        # последнюю добавленную версию документа.
+        ?Vlozhenie document:currentRevision ?currentDocument.
+        # Возвращаем имя текущего файла.
+        ?currentDocument document:name ?value.
     }
     ```
     - *Attachments* — с дочерними переменными:
@@ -365,20 +365,20 @@ example.txt
         - *Name* — **значение: N3**
     
     ```
-    # Импортируем функции для работы с записями и документами  
-    @prefix object: <http://comindware.com/ontology/object#>.  
-    @prefix document: <http://comindware.com/ontology/document#>.  
-      
-    {  
-        # Находим атрибут Vlozhenie (Вложение) в шаблоне Elpisma (Эл. письма).  
-        ("Elpisma" "Vlozhenie") object:findProperty ?VlozhenieAttribute.  
-        # Присваиваем переменной ?Vlozhenie объект из атрибута «Вложение».  
-        ?item ?VlozhenieAttribute ?Vlozhenie.  
-        # В переменную ?currentDocument помещаем  
-        # последнюю добавленную версию документа.  
-        ?Vlozhenie document:currentRevision ?currentDocument.  
-        # Возвращаем имя текущего файла.  
-        ?currentDocument document:name ?value.  
+    # Импортируем функции для работы с записями и документами
+    @prefix object: <http://comindware.com/ontology/object#>.
+    @prefix document: <http://comindware.com/ontology/document#>.
+    
+    {
+        # Находим атрибут Vlozhenie (Вложение) в шаблоне Elpisma (Эл. письма).
+        ("Elpisma" "Vlozhenie") object:findProperty ?VlozhenieAttribute.
+        # Присваиваем переменной ?Vlozhenie объект из атрибута «Вложение».
+        ?item ?VlozhenieAttribute ?Vlozhenie.
+        # В переменную ?currentDocument помещаем
+        # последнюю добавленную версию документа.
+        ?Vlozhenie document:currentRevision ?currentDocument.
+        # Возвращаем имя текущего файла.
+        ?currentDocument document:name ?value.
     }
     ```
     
@@ -386,20 +386,20 @@ example.txt
         - *Extension* — **значение: N3**
     
     ```
-    # Импортируем функции для работы с записями и документами  
-    @prefix object: <http://comindware.com/ontology/object#>.  
-    @prefix document: <http://comindware.com/ontology/document#>.  
-      
-    {  
-        # Находим атрибут Vlozhenie (Вложение) в шаблоне Elpisma (Эл. письма).  
-        ("Elpisma" "Vlozhenie") object:findProperty ?VlozhenieAttribute.  
-        # Присваиваем переменной ?Vlozhenie объект из атрибута «Вложение».  
-        ?item ?VlozhenieAttribute ?Vlozhenie.  
-        # В переменную ?currentDocument помещаем  
-        # последнюю добавленную версию документа.  
-        ?Vlozhenie document:currentRevision ?currentDocument.  
-        # Возвращаем расширение текущего файла.  
-        ?currentDocument document:revisionExtension ?value.  
+    # Импортируем функции для работы с записями и документами
+    @prefix object: <http://comindware.com/ontology/object#>.
+    @prefix document: <http://comindware.com/ontology/document#>.
+    
+    {
+        # Находим атрибут Vlozhenie (Вложение) в шаблоне Elpisma (Эл. письма).
+        ("Elpisma" "Vlozhenie") object:findProperty ?VlozhenieAttribute.
+        # Присваиваем переменной ?Vlozhenie объект из атрибута «Вложение».
+        ?item ?VlozhenieAttribute ?Vlozhenie.
+        # В переменную ?currentDocument помещаем
+        # последнюю добавленную версию документа.
+        ?Vlozhenie document:currentRevision ?currentDocument.
+        # Возвращаем расширение текущего файла.
+        ?currentDocument document:revisionExtension ?value.
     }
     ```
     
@@ -407,20 +407,20 @@ example.txt
         - *Content* — **значение: N3**
     
     ```
-    # Импортируем функции для работы с записями и документами  
-    @prefix object: <http://comindware.com/ontology/object#>.  
-    @prefix document: <http://comindware.com/ontology/document#>.  
-      
-    {  
-        # Находим атрибут Vlozhenie (Вложение) в шаблоне Elpisma (Эл. письма).  
-        ("Elpisma" "Vlozhenie") object:findProperty ?VlozhenieAttribute.  
-        # Присваиваем переменной ?Vlozhenie объект из атрибута «Вложение».  
-        ?item ?VlozhenieAttribute ?Vlozhenie.  
-        # В переменную ?currentDocument помещаем  
-        # последнюю добавленную версию документа.  
-        ?Vlozhenie document:currentRevision ?currentDocument.  
-        # Возвращаем содержимое текущего документа.  
-        ?currentDocument document:content ?value.  
+    # Импортируем функции для работы с записями и документами
+    @prefix object: <http://comindware.com/ontology/object#>.
+    @prefix document: <http://comindware.com/ontology/document#>.
+    
+    {
+        # Находим атрибут Vlozhenie (Вложение) в шаблоне Elpisma (Эл. письма).
+        ("Elpisma" "Vlozhenie") object:findProperty ?VlozhenieAttribute.
+        # Присваиваем переменной ?Vlozhenie объект из атрибута «Вложение».
+        ?item ?VlozhenieAttribute ?Vlozhenie.
+        # В переменную ?currentDocument помещаем
+        # последнюю добавленную версию документа.
+        ?Vlozhenie document:currentRevision ?currentDocument.
+        # Возвращаем содержимое текущего документа.
+        ?currentDocument document:content ?value.
     }
     ```
 5. Создайте действие «**Отправить сообщение**» со следующими свойствами:
@@ -440,7 +440,7 @@ example.txt
 
 --8<-- "related_topics_heading.md"
 
-**[Получение эл. почты с помощью сценариев через IMAP и Exchange. Настройка подключения, пути передачи данных и сценария][scenario_receive_email]** 
+**[Получение эл. почты с помощью сценариев через IMAP и Exchange. Настройка подключения, пути передачи данных и сценария][scenario_receive_email]**
 
 **[Отправка эл. почты из процесса. Настройка подключения][process_sending_connection]**
 

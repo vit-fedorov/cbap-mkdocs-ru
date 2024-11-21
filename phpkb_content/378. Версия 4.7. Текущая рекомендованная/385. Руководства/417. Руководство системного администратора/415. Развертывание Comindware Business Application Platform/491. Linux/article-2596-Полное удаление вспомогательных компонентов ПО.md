@@ -45,8 +45,8 @@ sudo -i
 2. Остановите экземпляр ПО (*`<instancename>`* — имя экземпляра ) и удостоверьтесь, что он остановлен:
 
 ```
-systemctl stop comindware<instancename>  
-systemctl status comindware<instancename> 
+systemctl stop comindware<instancename>
+systemctl status comindware<instancename>
 ```
 3. Если развёрнуто несколько экземпляров ПО, повторите шаг 2 для остальных экземпляров.
 
@@ -81,10 +81,10 @@ rm /var/www/.cmw_environment/java
 1. Удалите службу Kafka:
 
 ```
-systemctl stop kafka.service  
-systemctl disable kafka.service  
-rm /usr/lib/systemd/system/kafka.service  
-systemctl daemon-reload  
+systemctl stop kafka.service
+systemctl disable kafka.service
+rm /usr/lib/systemd/system/kafka.service
+systemctl daemon-reload
 systemctl reset-failed
 ```
 2. Удалите бинарные файлы Kafka:
@@ -118,7 +118,7 @@ rm /var/www/.cmw_environment/mono
 
 ### Удаление .NET 6.0
 
-1. Удалите бинарные файлы .NET:   
+1. Удалите бинарные файлы .NET:
 
 ```
 rm -rf /usr/share/dotnet/
@@ -174,10 +174,10 @@ rm /var/www/.cmw_environment/java
 1. Удалите службу Kafka:
 
 ```
-systemctl stop kafka.service  
-systemctl disable kafka.service  
-rm /usr/lib/systemd/system/kafka.service  
-systemctl daemon-reload  
+systemctl stop kafka.service
+systemctl disable kafka.service
+rm /usr/lib/systemd/system/kafka.service
+systemctl daemon-reload
 systemctl reset-failed
 ```
 2. Удалите бинарные файлы Kafka:
@@ -201,30 +201,30 @@ rm /var/www/.cmw_environment/kafka
 1. Удалите бинарные файлы Mono:
 
 ```
-rm -rf /etc/mono/ \  
-    /usr/lib/libmono* \  
-    /usr/lib/libMono* \  
-    /usr/lib/mono/ \  
+rm -rf /etc/mono/ \
+    /usr/lib/libmono* \
+    /usr/lib/libMono* \
+    /usr/lib/mono/ \
     /usr/lib/mono-source-libs
 ```
 2. Удалите ссылки на исполняемые файлы:
 
 ```
-rm -rf /usr/bin/mono \  
-    /usr/bin/mono-* \  
-    /usr/bin/monop \  
-    /usr/bin/monop2 \  
-    /usr/bin/monolinker \  
-    /usr/bin/mcs \  
-    /usr/bin/dmcs \  
+rm -rf /usr/bin/mono \
+    /usr/bin/mono-* \
+    /usr/bin/monop \
+    /usr/bin/monop2 \
+    /usr/bin/monolinker \
+    /usr/bin/mcs \
+    /usr/bin/dmcs \
     /usr/bin/fastcgi-mono-server4
 ```
 3. Удалите справочные файлы (man-страницы):
 
 ```
-rm -rf /usr/share/man/man1/xsp4.1.gz \  
-    /usr/share/man/man1/mono.1.gz \  
-    /usr/share/man/man1/fastcgi-mono-server4.1.gz  
+rm -rf /usr/share/man/man1/xsp4.1.gz \
+    /usr/share/man/man1/mono.1.gz \
+    /usr/share/man/man1/fastcgi-mono-server4.1.gz
 
 ```
 4. Удалите конфигурацию Mono:
@@ -235,7 +235,7 @@ rm /var/www/.cmw_environment/mono
 
 ### Удаление .NET 6.0
 
-1. Удалите бинарные файлы .NET:   
+1. Удалите бинарные файлы .NET:
 
 ```
 rm -rf /usr/share/dotnet/
@@ -296,10 +296,10 @@ rm /var/www/.cmw_environment/java
 1. Удалите службу Kafka:
 
 ```
-systemctl stop kafka.service  
-systemctl disable kafka.service  
-rm /usr/lib/systemd/system/kafka.service  
-systemctl daemon-reload  
+systemctl stop kafka.service
+systemctl disable kafka.service
+rm /usr/lib/systemd/system/kafka.service
+systemctl daemon-reload
 systemctl reset-failed
 ```
 2. Удалите бинарные файлы Kafka:
@@ -333,7 +333,7 @@ rm /var/www/.cmw_environment/mono
 
 ### Удаление .NET 6.0
 
-1. Удалите бинарные файлы .NET:   
+1. Удалите бинарные файлы .NET:
 
 ```
 rm -rf /usr/share/dotnet/
@@ -355,7 +355,7 @@ rm /var/www/.cmw_environment/dotnet
 2. Удалите пакет `nginx-common` и его зависимости:
 
 ```
-apt-get remove --purge -y nginx-common  
+apt-get remove --purge -y nginx-common
 
 ```
 3. Удалите конфигурацию NGINX:
@@ -389,10 +389,10 @@ rm /var/www/.cmw_environment/java
 1. Удалите службу Kafka:
 
 ```
-systemctl stop kafka.service  
-systemctl disable kafka.service  
-rm /usr/lib/systemd/system/kafka.service  
-systemctl daemon-reload  
+systemctl stop kafka.service
+systemctl disable kafka.service
+rm /usr/lib/systemd/system/kafka.service
+systemctl daemon-reload
 systemctl reset-failed
 ```
 2. Удалите бинарные файлы Kafka:
@@ -416,58 +416,58 @@ rm /var/www/.cmw_environment/kafka
 1. Удалите бинарные файлы Mono:
 
 ```
-rm -rf /etc/mono/ \  
-    /usr/share/pkgconfig \  
-    /usr/share/mono-2.0 \  
-    /usr/share/locale \  
-    /usr/share/gdb \   
-    /usr/share/aclocal \  
-    /usr/lib64/pkgconfig \  
-    /usr/lib64/mono \  
-    /usr/lib64/libMono* \  
-    /usr/lib64/libmono* \  
-    /usr/lib64/libcairo* \  
-    /usr/lib64/libgdiplus* \  
-    /usr/lib/xsp \  
-    /usr/lib/monodoc \  
-    /usr/lib/mono-source-libs \  
-    /usr/lib/mono \  
+rm -rf /etc/mono/ \
+    /usr/share/pkgconfig \
+    /usr/share/mono-2.0 \
+    /usr/share/locale \
+    /usr/share/gdb \
+    /usr/share/aclocal \
+    /usr/lib64/pkgconfig \
+    /usr/lib64/mono \
+    /usr/lib64/libMono* \
+    /usr/lib64/libmono* \
+    /usr/lib64/libcairo* \
+    /usr/lib64/libgdiplus* \
+    /usr/lib/xsp \
+    /usr/lib/monodoc \
+    /usr/lib/mono-source-libs \
+    /usr/lib/mono \
     /usr/include/mono-2.0
 ```
 2. Удалите ссылки на исполняемые файлы:
 
 ```
-rm -rf /usr/bin/xsp* \  
-    /usr/bin/xbuild \  
-    /usr/bin/x86_64-redhat-linux-gnu-pkg-config \  
-    /usr/bin/wsdl* \  
-    /usr/bin/svcutil \  
-    /usr/bin/sqlmetal \  
-    /usr/bin/sgen* \  
-    /usr/bin/setreg \  
-    /usr/bin/resgen* \  
-    /usr/bin/pkgconf \  
-    /usr/bin/pkg-config \  
-    /usr/bin/mozroots \  
-    /usr/bin/peverify \  
-    /usr/bin/permview \  
-    /usr/bin/pedumb \  
-    /usr/bin/pdb2mdb \  
-    /usr/bin/pcre-config \  
-    /usr/bin/mprof-report \  
-    /usr/bin/monop* \  
-    /usr/bin/monolinker \  
-    /usr/bin/monodoc* \  
-    /usr/bin/monodis \  
-    /usr/bin/mono-* \  
-    /usr/bin/mono \  
-    /usr/bin/mod-mono* \  
-    /usr/bin/mkbundle \  
-    /usr/bin/mcs \  
-    /usr/bin/ilasm \  
-    /usr/bin/ikdasm \  
-    /usr/bin/fastcgi* \  
-    /usr/bin/csharp \  
+rm -rf /usr/bin/xsp* \
+    /usr/bin/xbuild \
+    /usr/bin/x86_64-redhat-linux-gnu-pkg-config \
+    /usr/bin/wsdl* \
+    /usr/bin/svcutil \
+    /usr/bin/sqlmetal \
+    /usr/bin/sgen* \
+    /usr/bin/setreg \
+    /usr/bin/resgen* \
+    /usr/bin/pkgconf \
+    /usr/bin/pkg-config \
+    /usr/bin/mozroots \
+    /usr/bin/peverify \
+    /usr/bin/permview \
+    /usr/bin/pedumb \
+    /usr/bin/pdb2mdb \
+    /usr/bin/pcre-config \
+    /usr/bin/mprof-report \
+    /usr/bin/monop* \
+    /usr/bin/monolinker \
+    /usr/bin/monodoc* \
+    /usr/bin/monodis \
+    /usr/bin/mono-* \
+    /usr/bin/mono \
+    /usr/bin/mod-mono* \
+    /usr/bin/mkbundle \
+    /usr/bin/mcs \
+    /usr/bin/ilasm \
+    /usr/bin/ikdasm \
+    /usr/bin/fastcgi* \
+    /usr/bin/csharp \
     /usr/bin/asp-*
 ```
 3. Удалите конфигурацию Mono:
@@ -478,7 +478,7 @@ rm /var/www/.cmw_environment/mono
 
 ### Удаление .NET 6.0
 
-1. Удалите бинарные файлы .NET:   
+1. Удалите бинарные файлы .NET:
 
 ```
 rm -rf /usr/share/dotnet/
@@ -539,10 +539,10 @@ rm /var/www/.cmw_environment/java
 1. Удалите службу Kafka:
 
 ```
-systemctl stop kafka.service  
-systemctl disable kafka.service  
-rm /usr/lib/systemd/system/kafka.service  
-systemctl daemon-reload  
+systemctl stop kafka.service
+systemctl disable kafka.service
+rm /usr/lib/systemd/system/kafka.service
+systemctl daemon-reload
 systemctl reset-failed
 ```
 2. Удалите бинарные файлы Kafka:
@@ -566,58 +566,58 @@ rm /var/www/.cmw_environment/kafka
 1. Удалите бинарные файлы Mono:
 
 ```
-rm -rf /etc/mono/ \  
-    /usr/share/pkgconfig \  
-    /usr/share/mono-2.0 \  
-    /usr/share/locale \  
-    /usr/share/gdb \   
-    /usr/share/aclocal \  
-    /usr/lib64/pkgconfig \  
-    /usr/lib64/mono \  
-    /usr/lib64/libMono* \  
-    /usr/lib64/libmono* \  
-    /usr/lib64/libcairo* \  
-    /usr/lib64/libgdiplus* \  
-    /usr/lib/xsp \  
-    /usr/lib/monodoc \  
-    /usr/lib/mono-source-libs \  
-    /usr/lib/mono \  
+rm -rf /etc/mono/ \
+    /usr/share/pkgconfig \
+    /usr/share/mono-2.0 \
+    /usr/share/locale \
+    /usr/share/gdb \
+    /usr/share/aclocal \
+    /usr/lib64/pkgconfig \
+    /usr/lib64/mono \
+    /usr/lib64/libMono* \
+    /usr/lib64/libmono* \
+    /usr/lib64/libcairo* \
+    /usr/lib64/libgdiplus* \
+    /usr/lib/xsp \
+    /usr/lib/monodoc \
+    /usr/lib/mono-source-libs \
+    /usr/lib/mono \
     /usr/include/mono-2.0
 ```
 2. Удалите ссылки на исполняемые файлы:
 
 ```
-rm -rf /usr/bin/xsp* \  
-    /usr/bin/xbuild \  
-    /usr/bin/x86_64-redhat-linux-gnu-pkg-config \  
-    /usr/bin/wsdl* \  
-    /usr/bin/svcutil \  
-    /usr/bin/sqlmetal \  
-    /usr/bin/sgen* \  
-    /usr/bin/setreg \  
-    /usr/bin/resgen* \  
-    /usr/bin/pkgconf \  
-    /usr/bin/pkg-config \  
-    /usr/bin/mozroots \  
-    /usr/bin/peverify \  
-    /usr/bin/permview \  
-    /usr/bin/pedumb \  
-    /usr/bin/pdb2mdb \  
-    /usr/bin/pcre-config \  
-    /usr/bin/mprof-report \  
-    /usr/bin/monop* \  
-    /usr/bin/monolinker \  
-    /usr/bin/monodoc* \  
-    /usr/bin/monodis \  
-    /usr/bin/mono-* \  
-    /usr/bin/mono \  
-    /usr/bin/mod-mono* \  
-    /usr/bin/mkbundle \  
-    /usr/bin/mcs \  
-    /usr/bin/ilasm \  
-    /usr/bin/ikdasm \  
-    /usr/bin/fastcgi* \  
-    /usr/bin/csharp \  
+rm -rf /usr/bin/xsp* \
+    /usr/bin/xbuild \
+    /usr/bin/x86_64-redhat-linux-gnu-pkg-config \
+    /usr/bin/wsdl* \
+    /usr/bin/svcutil \
+    /usr/bin/sqlmetal \
+    /usr/bin/sgen* \
+    /usr/bin/setreg \
+    /usr/bin/resgen* \
+    /usr/bin/pkgconf \
+    /usr/bin/pkg-config \
+    /usr/bin/mozroots \
+    /usr/bin/peverify \
+    /usr/bin/permview \
+    /usr/bin/pedumb \
+    /usr/bin/pdb2mdb \
+    /usr/bin/pcre-config \
+    /usr/bin/mprof-report \
+    /usr/bin/monop* \
+    /usr/bin/monolinker \
+    /usr/bin/monodoc* \
+    /usr/bin/monodis \
+    /usr/bin/mono-* \
+    /usr/bin/mono \
+    /usr/bin/mod-mono* \
+    /usr/bin/mkbundle \
+    /usr/bin/mcs \
+    /usr/bin/ilasm \
+    /usr/bin/ikdasm \
+    /usr/bin/fastcgi* \
+    /usr/bin/csharp \
     /usr/bin/asp-*
 ```
 3. Удалите конфигурацию Mono:
@@ -628,7 +628,7 @@ rm /var/www/.cmw_environment/mono
 
 ### Удаление .NET 6.0
 
-1. Удалите бинарные файлы .NET:   
+1. Удалите бинарные файлы .NET:
 
 ```
 rm -rf /usr/share/dotnet/Rocky
@@ -689,10 +689,10 @@ rm /var/www/.cmw_environment/java
 1. Удалите службу Kafka:
 
 ```
-systemctl stop kafka.service  
-systemctl disable kafka.service  
-rm /usr/lib/systemd/system/kafka.service  
-systemctl daemon-reload  
+systemctl stop kafka.service
+systemctl disable kafka.service
+rm /usr/lib/systemd/system/kafka.service
+systemctl daemon-reload
 systemctl reset-failed
 ```
 2. Удалите бинарные файлы Kafka:
@@ -726,16 +726,16 @@ rm /var/www/.cmw_environment/mono
 
 ### Удаление .NET 6.0
 
-1. Удалите пакеты .NET:   
+1. Удалите пакеты .NET:
 
 ```
-apt-get remove --purge -y dotnet-sdk-6.0 \  
-    dotnet-runtime-6.0 \  
-    dotnet-targeting-pack-6.0 \  
-    aspnetcore-targeting-pack-6.0 \  
-    netstandard-targeting-pack-2.1 \  
-    dotnet-templates-6.0 \  
-    dotnet-host \  
+apt-get remove --purge -y dotnet-sdk-6.0 \
+    dotnet-runtime-6.0 \
+    dotnet-targeting-pack-6.0 \
+    aspnetcore-targeting-pack-6.0 \
+    netstandard-targeting-pack-2.1 \
+    dotnet-templates-6.0 \
+    dotnet-host \
     dotnet-apphost-pack-6.0
 ```
 2. Удалите конфигурацию .NET:

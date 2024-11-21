@@ -8,11 +8,11 @@ kbId: 2641
 Для фильтрации списка шаблона процесса, который бы показывал записи процессов с ошибками, введите следующее выражение:
 
 ```
-@prefix process: <http://comindware.com/ontology/process#>.   
-@prefix cmw: <http://comindware.com/logics#>.   
-{  
-?item process:businessObject ?.   
-?item process:hasTokenError true.  
+@prefix process: <http://comindware.com/ontology/process#>.
+@prefix cmw: <http://comindware.com/logics#>.
+{
+?item process:businessObject ?.
+?item process:hasTokenError true.
 }
 ```
 

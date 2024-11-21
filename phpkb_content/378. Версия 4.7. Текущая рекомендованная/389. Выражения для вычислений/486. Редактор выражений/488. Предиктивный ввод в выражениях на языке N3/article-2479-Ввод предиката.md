@@ -22,18 +22,18 @@ _![Список функций для префикса](https://kb.comindware.ru
 **Пример: выражение, возвращающее ID исполнителей выполняющихся задач для текущей записи**
 
 ```
-@prefix cmw: <http://comindware.com/logics#>.   
-@prefix task: <http://comindware.com/ontology/task#>.   
-@prefix taskStatus: <http://comindware.com/ontology/taskStatus#>.   
-{   
-  # Получаем список ID задач, связанных с текущей записью   
-  ?task task:objectId ?item.   
-  # Получаем ID задач со статусом inProgress (Выполняется)   
-  ?task cmw:taskStatus taskStatus:inProgress.   
-  
-  # Возвращаем ID назначенных исполнителей задач   
-  or {?task cmw:assignee ?value.}   
-  or {?task cmw:possibleAssignee ?value.}.   
+@prefix cmw: <http://comindware.com/logics#>.
+@prefix task: <http://comindware.com/ontology/task#>.
+@prefix taskStatus: <http://comindware.com/ontology/taskStatus#>.
+{
+  # Получаем список ID задач, связанных с текущей записью
+  ?task task:objectId ?item.
+  # Получаем ID задач со статусом inProgress (Выполняется)
+  ?task cmw:taskStatus taskStatus:inProgress.
+
+  # Возвращаем ID назначенных исполнителей задач
+  or {?task cmw:assignee ?value.}
+  or {?task cmw:possibleAssignee ?value.}.
 }
 ```
 

@@ -162,78 +162,78 @@ try...catch
 2. Чтобы выводить определённое сообщение об ошибке, если возникло исключение при нажатии кнопки, воспользуйтесь следующим образцом кода:
 
 ```
-using System;   
-using System.Collections.Generic;  
-using System.Linq;  
-using Comindware.Data.Entity;  
-using Comindware.TeamNetwork.Api.Data.UserCommands;  
-using Comindware.TeamNetwork.Api.Data;  
-  
-class Script  
-{  
-    public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)  
-    {   
-        // Добавьте код, в котором не требуется обрабатывать исключения.  
-        string ResultDescription = "";  
-        try  
-        {  
-            // Добавьте код, который должен отработать в штатном режиме.  
-            ResultDescription = "Успех";  
-        }  
-        catch  
-        {  
-            // Добавьте код, который должен отработать в случае ошибки.  
-            ResultDescription = "Ошибка";  
-  
-            var resultError = new UserCommandResult  
-            {  
-                // Указываем, что скрипт завершился с ошибкой,   
-                // и формируем об этом уведомление  
-                Success = false,  
-                // Ставим флаг необходимости сохранения   
-                // результирующей записи в базу данных.  
-                Commited = true,  
-                // Указываем, что следует   
-                // вывести уведомление.  
-                ResultType = UserCommandResultType.Notificate,  
-                // Формируем уведомление.  
-                Messages = new[]  
-                {  
-                    new UserCommandMessage  
-                    {  
-                        // Указываем уровень важности уведомления:   
-                        // Critical, Fatal, Low, Major, None, Normal  
-                        Severity = SeverityLevel.Normal,  
-                        // Этот текст будет выведен в уведомлении и   
-                        // журнале действий и ошибок   
-                        // в случае срабатывания исключения.  
-                        Text = string.Format("Результат: {0}", ResultDescription)  
-                    }  
-                }  
-            };  
-            return resultError;  
-        }  
-        var result = new UserCommandResult  
-            {  
-                // Указываем, что скрипт выполнен успешно,  
-                // и формируем об этом уведомление  
-                Success = true,  
-                Commited = true,  
-                ResultType = UserCommandResultType.Notificate,  
-                Messages = new[]  
-                {  
-                    new UserCommandMessage  
-                    {  
-                        Severity = SeverityLevel.Normal,  
-                        // Этот текст будет выведен в уведомлении и   
-                        // журнале действий и ошибок   
-                        // в случае штатного завершения работы скрипта.  
-                        Text = string.Format("Результат: {0}", ResultDescription)  
-                    }  
-                }          
-            };  
-            return result;      
-    }  
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Comindware.Data.Entity;
+using Comindware.TeamNetwork.Api.Data.UserCommands;
+using Comindware.TeamNetwork.Api.Data;
+
+class Script
+{
+    public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)
+    {
+        // Добавьте код, в котором не требуется обрабатывать исключения.
+        string ResultDescription = "";
+        try
+        {
+            // Добавьте код, который должен отработать в штатном режиме.
+            ResultDescription = "Успех";
+        }
+        catch
+        {
+            // Добавьте код, который должен отработать в случае ошибки.
+            ResultDescription = "Ошибка";
+
+            var resultError = new UserCommandResult
+            {
+                // Указываем, что скрипт завершился с ошибкой,
+                // и формируем об этом уведомление
+                Success = false,
+                // Ставим флаг необходимости сохранения
+                // результирующей записи в базу данных.
+                Commited = true,
+                // Указываем, что следует
+                // вывести уведомление.
+                ResultType = UserCommandResultType.Notificate,
+                // Формируем уведомление.
+                Messages = new[]
+                {
+                    new UserCommandMessage
+                    {
+                        // Указываем уровень важности уведомления:
+                        // Critical, Fatal, Low, Major, None, Normal
+                        Severity = SeverityLevel.Normal,
+                        // Этот текст будет выведен в уведомлении и
+                        // журнале действий и ошибок
+                        // в случае срабатывания исключения.
+                        Text = string.Format("Результат: {0}", ResultDescription)
+                    }
+                }
+            };
+            return resultError;
+        }
+        var result = new UserCommandResult
+            {
+                // Указываем, что скрипт выполнен успешно,
+                // и формируем об этом уведомление
+                Success = true,
+                Commited = true,
+                ResultType = UserCommandResultType.Notificate,
+                Messages = new[]
+                {
+                    new UserCommandMessage
+                    {
+                        Severity = SeverityLevel.Normal,
+                        // Этот текст будет выведен в уведомлении и
+                        // журнале действий и ошибок
+                        // в случае штатного завершения работы скрипта.
+                        Text = string.Format("Результат: {0}", ResultDescription)
+                    }
+                }
+            };
+            return result;    
+    }
 }
 ```
 3. После нажатия кнопки уведомление об успешном выполнении скрипта (или ошибке) отобразится во всплывающем сообщении в браузере и в **журнале действий и ошибок** *‌* на информационной панели.
@@ -244,34 +244,34 @@ class Script
 2. Чтобы выводить определённое сообщение об ошибке, если возникло исключение при выполнении задачи, воспользуйтесь следующим образцом кода:
 
 ```
-using System;  
-using System.Collections.Generic;  
-using System.Linq;  
-using Comindware.Data.Entity;  
-using Comindware.TeamNetwork.Api.Data.UserCommands;  
-using Comindware.TeamNetwork.Api.Data;  
-  
-class Script  
-{  
-    public static string Main(Comindware.Process.Api.Data.ScriptContext context, Comindware.Entities entities)  
-    {  
-        // Добавьте код, в котором не требуется обрабатывать исключения.  
-        string ResultDescription = "";  
-        try  
-        {  
-            // Добавьте код, который должен работать в штатном режиме.  
-            ResultDescription = "Успех";  
-        }  
-        catch  
-        {  
-            // Добавьте код, который должен отработать в случае ошибки.  
-            ResultDescription = "Ошибка";  
-        }  
-        // Эта строка отобразится в поле «Выходные данные»   
-        // для события «Скрипт выполнен» в цепочке событий   
-        // для задачи-выполнения сценария.  
-        return string.Format("Результат: {0}", ResultDescription);  
-    }  
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Comindware.Data.Entity;
+using Comindware.TeamNetwork.Api.Data.UserCommands;
+using Comindware.TeamNetwork.Api.Data;
+
+class Script
+{
+    public static string Main(Comindware.Process.Api.Data.ScriptContext context, Comindware.Entities entities)
+    {
+        // Добавьте код, в котором не требуется обрабатывать исключения.
+        string ResultDescription = "";
+        try
+        {
+            // Добавьте код, который должен работать в штатном режиме.
+            ResultDescription = "Успех";
+        }
+        catch
+        {
+            // Добавьте код, который должен отработать в случае ошибки.
+            ResultDescription = "Ошибка";
+        }
+        // Эта строка отобразится в поле «Выходные данные»
+        // для события «Скрипт выполнен» в цепочке событий
+        // для задачи-выполнения сценария.
+        return string.Format("Результат: {0}", ResultDescription);
+    }
 }
 ```
 3. Опубликуйте диаграмму процесса.

@@ -33,17 +33,17 @@ _![Список атрибутов шаблона](https://kb.comindware.ru/asse
 **Пример: выражение, возвращающее месяц по значению атрибута типа «Дата и время»**
 
 ```
-@prefix object: <http://comindware.com/ontology/object#>.   
-@prefix cmwtime: <http://comindware.com/logics/time#>.  
-{  
-    # Находим атрибут _creationDate шаблона Zayavkanaotpusk  
-    ("Zayavkanaotpusk" "_creationDate") object:findProperty ?dtProperty.  
-  
-    # Определяем значение атрибута _creationDate   
-    # в текущей записи шаблона Zayavkanaotpusk  
-    ?item ?dtProperty ?dmonth.  
-    # Извлекаем номер месяца из значения атрибута _creationDate  
-    ?dmonth cmwutc:month ?value.        
+@prefix object: <http://comindware.com/ontology/object#>.
+@prefix cmwtime: <http://comindware.com/logics/time#>.
+{
+    # Находим атрибут _creationDate шаблона Zayavkanaotpusk
+    ("Zayavkanaotpusk" "_creationDate") object:findProperty ?dtProperty.
+
+    # Определяем значение атрибута _creationDate
+    # в текущей записи шаблона Zayavkanaotpusk
+    ?item ?dtProperty ?dmonth.
+    # Извлекаем номер месяца из значения атрибута _creationDate
+    ?dmonth cmwutc:month ?value.
 }
 ```
 

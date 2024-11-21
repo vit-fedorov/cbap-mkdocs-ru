@@ -18,13 +18,13 @@ _![Список доступных переменных](https://kb.comindware.r
 Пример: выражение, возвращающее список всех записей из шаблона аккаунта
 
 ```
-@prefix account: <http://comindware.com/ontology/account#>.  
-@prefix container: <http://comindware.com/ontology/container#>.  
-{  
-  # Получаем ID шаблона аккаунта Zakazchiki  
-  ?user container:alias "Zakazchiki".  
-  # Получаем список аккаунтов из шаблона Zakazchiki  
-  ?value account:extendedBy ?user.  
+@prefix account: <http://comindware.com/ontology/account#>.
+@prefix container: <http://comindware.com/ontology/container#>.
+{
+  # Получаем ID шаблона аккаунта Zakazchiki
+  ?user container:alias "Zakazchiki".
+  # Получаем список аккаунтов из шаблона Zakazchiki
+  ?value account:extendedBy ?user.
 }
 ```
 

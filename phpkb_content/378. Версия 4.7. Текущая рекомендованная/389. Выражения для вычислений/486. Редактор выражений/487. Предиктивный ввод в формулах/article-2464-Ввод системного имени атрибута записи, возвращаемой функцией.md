@@ -19,7 +19,7 @@ kbId: 2464
 **Пример: формула, возвращающая имя пользователя текущего аккаунта**
 
 ```
-USER()->username 
+USER()->username
 ```
 
 --8<-- "related_topics_heading.md"

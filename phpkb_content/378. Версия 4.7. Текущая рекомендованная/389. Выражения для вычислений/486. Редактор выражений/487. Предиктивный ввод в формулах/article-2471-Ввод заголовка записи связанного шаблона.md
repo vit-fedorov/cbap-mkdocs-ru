@@ -38,7 +38,7 @@ kbId: 2471
 4. Строку `Ваше условие замените` в заготовке замените на `b->Status->Nazvanie ==`, чтобы привести формулу к виду:
 
 ```
-COUNT(from b in db->Zayavkanaavtomobil  where b->Status->Nazvanie == select b->id) 
+COUNT(from b in db->Zayavkanaavtomobil  where b->Status->Nazvanie == select b->id)
 ```
 5. Нажмите клавиши `Ctrl` `Пробел` в позиции после оператора `==`.
 6. Отобразится список записей шаблона *«Статус заявки»*.
@@ -49,7 +49,7 @@ COUNT(from b in db->Zayavkanaavtomobil  where b->Status->Nazvanie == select b->i
 **Формула, возвращающая количество записей в шаблоне Zayavkanaavtomobil, связанных с записью «Выполняется» в шаблоне Status**
 
 ```
-COUNT(from b in db->Zayavkanaavtomobil  where b->Status->Nazvanie == "Выполняется"  select b->id) 
+COUNT(from b in db->Zayavkanaavtomobil  where b->Status->Nazvanie == "Выполняется"  select b->id)
 ```
 
 --8<-- "related_topics_heading.md"

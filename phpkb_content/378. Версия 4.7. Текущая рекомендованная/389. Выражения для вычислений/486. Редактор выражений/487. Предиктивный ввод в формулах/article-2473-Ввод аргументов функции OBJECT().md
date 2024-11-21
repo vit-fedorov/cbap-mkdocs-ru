@@ -26,7 +26,7 @@ kbId: 2473
 **Пример: формула, возвращающая список записей шаблона Avtomobil из приложения Upravlenieavtoparkom, в которых атрибут Marka имеет значение «Лада»**
 
 ```
-OBJECT("Upravlenieavtoparkom", "Avtomobil", "Marka", "Лада") 
+OBJECT("Upravlenieavtoparkom", "Avtomobil", "Marka", "Лада")
 ```
 
 --8<-- "related_topics_heading.md"

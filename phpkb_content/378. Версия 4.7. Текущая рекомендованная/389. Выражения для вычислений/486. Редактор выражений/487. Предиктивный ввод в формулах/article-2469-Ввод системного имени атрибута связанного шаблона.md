@@ -17,7 +17,7 @@ kbId: 2469
 **Пример: формула, возвращающая сумму значений атрибута Summa из шаблона, связанного с атрибутом Zatraty, и атрибута Nalog в текущей записи**
 
 ```
-ADD($Zatraty->Summa, $Nalog) 
+ADD($Zatraty->Summa, $Nalog)
 ```
 
 --8<-- "related_topics_heading.md"

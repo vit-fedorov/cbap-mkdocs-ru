@@ -17,7 +17,7 @@ _![Список конструкций на языке N3](https://kb.comindware
 3. В выражение будет вставлена заготовка функции:
 
 ```
-a [object:alias ]. 
+a [object:alias ].
 ```
 
 4. В позиции перед закрывающей квадратной скобкой нажмите клавиши `Ctrl` `Пробел`.
@@ -29,29 +29,29 @@ _![Список шаблонов в приложении](https://kb.comindware.
 7. В выражение будет вставлен запрос записей выбранного шаблона:
 
 ```
-?objectZayavkanaotpusk a [object:alias "Zayavkanaotpusk"]. 
+?objectZayavkanaotpusk a [object:alias "Zayavkanaotpusk"].
 ```
 8. Чтобы присвоить результат выражения значению вычисляемого атрибута, замените имя переменной `objectZayavkanaotpusk` на `value`.
 
 **Пример: компактное выражение, возвращающее все записи шаблона по его системному имени**
 
 ```
-@prefix object: <http://comindware.com/ontology/object#>.  
-{  
-  # Получаем список записей шаблона Zayavkanaotpusk  
-  ?value a [object:alias "Zayavkanaotpusk"].  
+@prefix object: <http://comindware.com/ontology/object#>.
+{
+  # Получаем список записей шаблона Zayavkanaotpusk
+  ?value a [object:alias "Zayavkanaotpusk"].
 }
 ```
 
 **Эквивалентное выражение без квадратных скобок**
 
 ```
-@prefix object: <http://comindware.com/ontology/object#>.  
-{  
-  # Получаем ID шаблона Zayavkanaotpusk  
-  ?zayavkiTemplate object:alias "Zayavkanaotpusk".  
-  # Получаем список записей шаблона Zayavkanaotpusk  
-  ?value a ?zayavkiTemplate.  
+@prefix object: <http://comindware.com/ontology/object#>.
+{
+  # Получаем ID шаблона Zayavkanaotpusk
+  ?zayavkiTemplate object:alias "Zayavkanaotpusk".
+  # Получаем список записей шаблона Zayavkanaotpusk
+  ?value a ?zayavkiTemplate.
 }
 ```
 

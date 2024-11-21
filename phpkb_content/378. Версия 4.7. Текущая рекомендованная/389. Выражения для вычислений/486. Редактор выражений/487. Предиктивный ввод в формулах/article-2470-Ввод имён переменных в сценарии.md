@@ -18,7 +18,7 @@ _![Список локальных переменных в сценарии](htt
 **Пример: формула, прибавляющая 1 день к текущей дате**
 
 ```
-ADDDAYS($$requestTime, 1) 
+ADDDAYS($$requestTime, 1)
 ```
 
 --8<-- "related_topics_heading.md"

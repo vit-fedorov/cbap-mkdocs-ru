@@ -17,7 +17,7 @@ kbId: 2467
 **Пример: формула, возвращающая количество записей в шаблоне Zayavkanaotpusk со значением атрибута Statuszayavki, равным Odobrena**
 
 ```
-COUNT(from b in db->Zayavkanaotpusk  where b->Statuszayavki == "Odobrena"  select b->id) 
+COUNT(from b in db->Zayavkanaotpusk  where b->Statuszayavki == "Odobrena"  select b->id)
 ```
 
 ## В качестве аргумента функции
@@ -33,7 +33,7 @@ COUNT(from b in db->Zayavkanaotpusk  where b->Statuszayavki == "Odobrena"  selec
 **Пример: формула возвращающая true, если в текущей записи атрибут Statuszayavki имеет значение Odobrena**
 
 ```
-EQUALS($Statuszayavki, "Odobrena") 
+EQUALS($Statuszayavki, "Odobrena")
 ```
 
 --8<-- "related_topics_heading.md"

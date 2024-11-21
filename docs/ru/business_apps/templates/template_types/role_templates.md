@@ -29,14 +29,14 @@ kbId: 2220
 
 _![Свойства шаблона роли](role_templates_properties.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Роли в приложении. Определения, настройка, объединение, удаление][roles]** 
+- _[Роли в приложении. Определения, настройка, объединение, удаление][roles]_
+- _[Общие свойства шаблонов][template_common_properties]_
+- _[Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление][templates]_
 
-**[Общие свойства шаблонов][template_common_properties]**
+</div>
 
-**[Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление][templates]**
-
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -1,9 +1,10 @@
 ---
 title: Регистрация и вход
+kbTitle: Регистрация и вход. Настройка самостоятельной регистрации, CAPTCHA и входа через OpenID и Active Directory
 kbId: 2196
 ---
 
-# Регистрация и вход. Настройка самостоятельной регистрации, CAPTCHA и входа через OpenID и Active Directory {: #registration_and_login}
+# Настройка самостоятельной регистрации, CAPTCHA и входа через OpenID и AD {: #registration_and_login}
 
 ## Введение
 
@@ -16,7 +17,7 @@ kbId: 2196
 
 _![Страница «Регистрация и вход»](img/registration_and_login.png)_
 
-## Настройка самостоятельной регистрации аккаунтов
+## Настройка самостоятельной регистрации аккаунтов {: .pageBreakBefore }
 
 Помимо создания аккаунтов с помощью раздела «[**Аккаунты**][accounts]» можно разрешить их самостоятельную регистрацию со страницы входа в систему.
 
@@ -34,7 +35,7 @@ _![Страница «Регистрация и вход»](img/registration_and
 
 _![Настройка подключения к AD](img/registration_and_login_connection_tile.png)_
 
-## Создание подключения к серверу каталогов
+## Создание подключения к серверу каталогов {: .pageBreakBefore }
 
 1. Нажмите плитку Active Directory со ссылкой «**Добавить**».
 2. Отобразится окно «**Новое подключение: Сервер каталогов**».
@@ -43,26 +44,25 @@ _![Настройка подключения к AD](img/registration_and_login_c
 
 _![Плитка нового подключения к серверу каталогов](img/registration_and_login_add_ad.png)_
 
-## Удаление подключения к серверу каталогов
+## Удаление подключения к серверу каталогов {: .pageBreakBefore }
 
 1. В меню с троеточием на плитке подключения выберите пункт «**Удалить**».
 2. Подтвердите удаление в отобразившемся окне.
 
 _![Удаление подключения к серверу каталогов](img/registration_and_login_connection_ellipsis_menu.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Сервер каталогов. Настройка подключения][ad_connection]**
+- _[Сервер каталогов. Настройка подключения][ad_connection]_
+- _[Аутентификация через WS-Federation. Настройка подключения, федеративного сервера и глобальной конфигурации][wsfederation_connection]_
+- _[Аутентификация через OpenID Connect. Настройка подключения и служб][openid_connection]_
+- _[Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО][ad_authentication_configure_dc_instance]_
+- _[Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя][sso_authenticatation_configure]_
+- _[Настройка единого входа (SSO-аутентификации) в ОС Windows][sso_authentication_configure_windows]_
 
-**[Аутентификация через WS-Federation. Настройка подключения, федеративного сервера и глобальной конфигурации][wsfederation_connection]**
-
-**[Аутентификация через OpenID Connect. Настройка подключения и служб][openid_connection]**
-
-**[Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО][ad_authentication_configure_dc_instance]**
-
-**[Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя][sso_authentication]**
-
-**[Настройка единого входа (SSO-аутентификации) в ОС Windows][sso_authentication_windows_configure]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

@@ -71,10 +71,14 @@ _![Полный редактор выражений](img/calculated_attribute_fu
 Подробное описание формул и языка N3 с примерами см. в базе знаний Comindware:
 
 - [Примеры использования формул][formula_use_examples]
-- [Примеры использования языка N3][N3_use_examples]
+- [Примеры использования языка N3][n3_use_examples]
+
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
+- _[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]_
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

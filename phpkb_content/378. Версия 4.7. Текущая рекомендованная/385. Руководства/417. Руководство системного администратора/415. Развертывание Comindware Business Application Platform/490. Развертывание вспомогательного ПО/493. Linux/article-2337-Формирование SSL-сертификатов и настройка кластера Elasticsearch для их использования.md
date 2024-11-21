@@ -13,7 +13,7 @@ kbId: 2337
 
 Перед выполнением нижеприведённых инструкций необходимо развернуть кластер Elasticsearch без сертификатов подлинности.
 
-Дальнейшие инструкции предполагают, что кластер и служба Elasticsearch развёрнуты согласно инструкциям в статье «**[Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности](https://kb.comindware.ru/article.php?id=2095)**» на виртуальных машинах с ОС Ubuntu 22.04.4 LTS.
+Дальнейшие инструкции предполагают, что кластер и служба Elasticsearch развёрнуты согласно инструкциям в статье «**[Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности][elasticsearch_cluster_deploy_no_certificates]**» на виртуальных машинах с ОС Ubuntu 22.04.4 LTS.
 
 ## 1. Формирование SSL-сертификатов
 
@@ -22,14 +22,14 @@ kbId: 2337
 1.1.1 Перед установкой OpenSSL обновите ПО:
 
 ```
-sudo apt update   
-sudo apt upgrade 
+sudo apt update
+sudo apt upgrade
 ```
 
 1.1.2. Установите OpenSSL:
 
 ```
- sudo apt install openssl 
+ sudo apt install openssl
 ```
 
 ### 1.2. Формирование сертификата СА
@@ -37,19 +37,19 @@ sudo apt upgrade
 1.2.1. В домашней папке пользователя `username` создайте папку, в которой предстоит работать:
 
 ```
-mkdir certsGen 
+mkdir certsGen
 ```
 
 1.2.2. Перейдите в папку `certsGen`:
 
 ```
-cd certsGen/ 
+cd certsGen/
 ```
 
 1.2.3. Создайте ключи для СА:
 
 ```
-sudo openssl genrsa -aes256 -out ExampleRootCA.key 4096 
+sudo openssl genrsa -aes256 -out ExampleRootCA.key 4096
 ```
 
 1.2.4. Придумайте, запишите и введите пароль для формирования ключа.
@@ -59,7 +59,7 @@ sudo openssl genrsa -aes256 -out ExampleRootCA.key 4096
 1.2.6. Создайте сертификат СА:
 
 ```
-sudo openssl req -x509 -new -nodes -key ExampleRootCA.key -sha256 -days 10000 -out ExampleRootCA.crt -subj '/CN=Xmpl Root CA/C=RU/ST=Moscow/O=Xmpl' 
+sudo openssl req -x509 -new -nodes -key ExampleRootCA.key -sha256 -days 10000 -out ExampleRootCA.crt -subj '/CN=Xmpl Root CA/C=RU/ST=Moscow/O=Xmpl'
 ```
 
 1.2.6. В результате вы получите файл `ExampleRootCA.crt` — сертификат СА.
@@ -71,7 +71,7 @@ sudo openssl req -x509 -new -nodes -key ExampleRootCA.key -sha256 -days 10000 -o
 1.3.1. Создайте ключ и сертификат для узла `es1`:
 
 ```
-sudo openssl req -new -nodes -out es1.csr -newkey rsa:4096 -keyout es1.key -subj '/CN=Elasticsearch 1/C=RU/ST=Moscow/O=Xmpl/OU=Xmpl Cloud' 
+sudo openssl req -new -nodes -out es1.csr -newkey rsa:4096 -keyout es1.key -subj '/CN=Elasticsearch 1/C=RU/ST=Moscow/O=Xmpl/OU=Xmpl Cloud'
 ```
 
 1.3.2. Аналогично [шагу 1.3.1](#P1_3_1) создайте сертификат для каждого узла, подставляя вместо `es1.csr` и `es1.key` соответствующие значения.
@@ -131,7 +131,7 @@ sudo scp es2.p12 username@192.168.0.1:/home/username/
 1.4.2. В каждом из узлов перенесите сгенерированные файлы (подставьте фактическое имя файла вместо `esX`)  в папку `/etc/elasticsearch/certs`:
 
 ```
-sudo mv /home/username/esX.* /etc/elasticsearch/certs 
+sudo mv /home/username/esX.* /etc/elasticsearch/certs
 ```
 
 1.4.3. Измените пользователя для директории и настройте права доступа:
@@ -171,7 +171,7 @@ Enter value for xpack.security.transport.ssl.truststore.secure_password: ВВЕ�
 2.2.1. Для каждого узла кластера Elasticsearch отредактируйте `yml`-файл конфигурации Elasticsearch, как показано в примерах ниже. Внимательно следите за сохранением отступов. Воспользуйтесь редактором текстовым редактором Nano:
 
 ```
-sudo nano /etc/elasticsearch/elasticsearch.yml 
+sudo nano /etc/elasticsearch/elasticsearch.yml
 ```
 
 Исходный файл конфигурации Elasticsearch:
@@ -230,19 +230,19 @@ xpack.security.transport.ssl:
 3.1. Перезагрузите конфигурацию `systemd`:
 
 ```
-sudo systemctl daemon-reload 
+sudo systemctl daemon-reload
 ```
 
 3.2. Перезапустите процесс `elasticsearch.service`:
 
 ```
-sudo systemctl restart elasticsearch.service 
+sudo systemctl restart elasticsearch.service
 ```
 
 3.3. Убедитесь, что процесс `elasticsearch.service` запустился:
 
 ```
-sudo systemctl status elasticsearch.service 
+sudo systemctl status elasticsearch.service
 ```
 
 ```
@@ -269,7 +269,7 @@ Dec 01 10:12:27 penguin-02 systemd[1]: Started Elasticsearch.
 В случае ошибок с запуском процесса `elasticsearch.service` рекомендуется изучить файл журнала:
 
 ```
-sudo less /var/elasticsearch/logs/yourClusterName.log 
+sudo less /var/elasticsearch/logs/yourClusterName.log
 ```
 
 3.4. Повторите шаги, описанные в этом разделе, для каждого из узлов Elasticsearch.
@@ -307,7 +307,7 @@ sudo less /var/elasticsearch/logs/yourClusterName.log
 5.1. После того как для каждого из узлов кластера Elasticsearch были выполнены шаги, описанные в предыдущих разделах, с любого из узлов выполните `GET`-запрос в веб-браузере:
 
 ```
-https://192.168.XXX.XX1:9200/_cluster/health?pretty 
+https://192.168.XXX.XX1:9200/_cluster/health?pretty
 ```
 
 5.2. Браузер отобразит форму для ввода учётных данных.

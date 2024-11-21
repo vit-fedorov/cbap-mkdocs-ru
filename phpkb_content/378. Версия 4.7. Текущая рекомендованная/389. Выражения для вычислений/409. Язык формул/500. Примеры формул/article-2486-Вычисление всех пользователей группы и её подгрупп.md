@@ -8,7 +8,7 @@ kbId: 2486
 Для того, чтобы получить всех пользователей из определенной группы, включая пользователей подгрупп первого уровня, которые включены в состав указанной группы, введите следующее выражение:
 
 ```
-UNION(from a in (from b in db->_AccountGroup where b->groupName == "Менеджеры" select b->subGroups->id) select a->cmw.account.groupUsers,  
+UNION(from a in (from b in db->_AccountGroup where b->groupName == "Менеджеры" select b->subGroups->id) select a->cmw.account.groupUsers,
     (from b in db->_AccountGroup where b->groupName == "Менеджеры" select b->cmw.account.groupUsers))
 ```
 

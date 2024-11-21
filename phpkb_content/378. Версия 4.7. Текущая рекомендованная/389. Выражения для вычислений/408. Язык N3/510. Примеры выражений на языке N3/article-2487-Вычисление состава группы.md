@@ -8,10 +8,10 @@ kbId: 2487
 Для вычисления пользователей и подгрупп, входящих в определённую группу, введите следующее выражение:
 
 ```
-@prefix account: <http://comindware.com/ontology/account#>.  
-{  
-    ?projectOffice account:groupName "Менеджеры".  
-    ?value account:userGroupMembership ?projectOffice.   
+@prefix account: <http://comindware.com/ontology/account#>.
+{
+    ?projectOffice account:groupName "Менеджеры".
+    ?value account:userGroupMembership ?projectOffice.
  }
 ```
 

@@ -23,21 +23,21 @@ hide:
 
 ## После оператора сравнения
 
-1. Введите символ `$`, системное имя **[атрибута типа «Список значений»](attribute_enum.md)** и оператор `==` или `!=`.
+1. Введите символ `$`, системное имя **[атрибута типа «Список значений»][attribute_enum]** и оператор `==` или `!=`.
 2. Нажмите клавиши ++ctrl+space++.
 3. Отобразится список системных имён значений атрибута.
     *![Список значений атрибута после оператора](formula_editor_enum_autocomplete.png)*
 4. Дважды нажмите системное имя значения атрибута, чтобы вставить его в формулу.
   ```mysql title="Пример: формула, возвращающая количество записей в шаблоне Zayavkanaotpusk со значением атрибута Statuszayavki, равным Odobrena"
-  COUNT(from b in db->Zayavkanaotpusk 
-  where b->Statuszayavki == "Odobrena" 
+  COUNT(from b in db->Zayavkanaotpusk
+  where b->Statuszayavki == "Odobrena"
   select b->id)
   ```
 
-## В качестве аргумента функции
+## В качестве аргумента функции {: .pageBreakBefore }
 
 1. Введите функцию `#!mysql EQUALS()` (возвращает `true`, если её аргументы равны).
-2. В позицию первого аргумента введите символ `$` и системное имя **[атрибута типа «Список значений»](attribute_enum.md)**.
+2. В позицию первого аргумента введите символ `$` и системное имя **[атрибута типа «Список значений»][attribute_enum]**.
 2. В позиции второго аргумента нажмите клавиши ++ctrl+space++.
 3. Отобразится список значений атрибута.
     *![Список значений атрибута при вводе аргумента функции](formula_editor_enum_function_autocomplete.png)*
@@ -47,8 +47,13 @@ hide:
   EQUALS($Statuszayavki, "Odobrena")
   ```
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Редактор выражений][expression_editor]**
+- _[Редактор выражений][expression_editor]_
+- _[Примеры использования формул. База знаний Comindware][formula_use_examples]_
 
-**[Примеры использования формул. База знаний Comindware]({{ kbCategoryURLPrefix }}409){:target="_blank"}**
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

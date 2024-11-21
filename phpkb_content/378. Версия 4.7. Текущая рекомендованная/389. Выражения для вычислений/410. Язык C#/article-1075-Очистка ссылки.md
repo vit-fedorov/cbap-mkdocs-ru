@@ -10,7 +10,7 @@ kbId: 1075
 | using System;using System.Collections.Generic;using System.Linq;using Comindware.Data.Entity;using Comindware.TeamNetwork.Api.Data.UserCommands;using Comindware.TeamNetwork.Api.Data; class Script{    public static void Main(Comindware.Process.Api.Data.ScriptContext context, Comindware.Entities entities)    {        Dictionary<string, object> d = new Dictionary<string, object>();    d["SoglasovanoLink"] = null;     Api.TeamNetwork.ObjectService.EditWithAlias("StoreOpeningLocation", context.BusinessObjectId, d);   }} |
 | --- |
 
-  **где:**  
+  **где:**
 
   **SoglasovanoLink**  = системное имя атрибута-ссылка (при необходимости можно указать в столбец несколько ссылок);
 

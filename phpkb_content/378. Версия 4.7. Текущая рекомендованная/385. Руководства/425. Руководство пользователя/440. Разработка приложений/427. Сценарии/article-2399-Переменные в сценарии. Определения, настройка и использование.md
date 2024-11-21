@@ -74,20 +74,20 @@ FORMAT("{0}", LIST($$ProcessObject))
 Например, чтобы присвоить атрибуту значение ID процесса, связанного с шаблоном записи, используйте выражение:
 
 ```
-# Импортируем функции для работы с переменными  
-@prefix variable: <http://comindware.com/ontology/session/variable#>.  
-@prefix session: <http://comindware.com/ontology/session#>.  
-@prefix string: <http://www.w3.org/2000/10/swap/string#>.  
-@prefix cmwstring: <http://comindware.com/logics/string#>.  
-  
-{  
-    # Находим значение системной переменной ProcessObject  
-    # и помещаем его в ?ProcessObject.  
-    session:context variable:ProcessObject ?ProcessObject.  
-    # Форматируем ?ProcessObject в строку и помещаем в ?FullId.  
-    ("{0}" ?ProcessObject) string:format ?FullId.  
-    # Обрезаем префикс "user." и помещаем ID процесса в атрибут.  
-    (?FullId 5) cmwstring:substring ?value.  
+# Импортируем функции для работы с переменными
+@prefix variable: <http://comindware.com/ontology/session/variable#>.
+@prefix session: <http://comindware.com/ontology/session#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix cmwstring: <http://comindware.com/logics/string#>.
+
+{
+    # Находим значение системной переменной ProcessObject
+    # и помещаем его в ?ProcessObject.
+    session:context variable:ProcessObject ?ProcessObject.
+    # Форматируем ?ProcessObject в строку и помещаем в ?FullId.
+    ("{0}" ?ProcessObject) string:format ?FullId.
+    # Обрезаем префикс "user." и помещаем ID процесса в атрибут.
+    (?FullId 5) cmwstring:substring ?value.
 }
 ```
 
@@ -146,15 +146,15 @@ FORMAT("{0}", LIST($$ProcessObject))
         - **N3:**
     
     ```
-    # Импортируем функции для работы с переменными  
-    @prefix variable: <http://comindware.com/ontology/session/variable#>.  
-    @prefix session: <http://comindware.com/ontology/session#>.  
-      
-    {  
-        # Помещаем системную переменную dialogVariables в ?dialogVariables.  
-        session:context variable:dialogVariables ?dialogVariables.  
-        # Находим в ?dialogVariables значение переменной newTime.  
-        ?dialogVariables variable:newTime ?value.  
+    # Импортируем функции для работы с переменными
+    @prefix variable: <http://comindware.com/ontology/session/variable#>.
+    @prefix session: <http://comindware.com/ontology/session#>.
+    
+    {
+        # Помещаем системную переменную dialogVariables в ?dialogVariables.
+        session:context variable:dialogVariables ?dialogVariables.
+        # Находим в ?dialogVariables значение переменной newTime.
+        ?dialogVariables variable:newTime ?value.
     }
     ```
 

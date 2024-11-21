@@ -28,7 +28,7 @@ sudo -i
 4. Распакуйте дистрибутив Apache Ignite в домашнюю папку (здесь и далее `username` — имя текущего пользователя):
 
 ```
-unzip apache-ignite-2.16.0-bin.zip -d /home/username/ignite        
+unzip apache-ignite-2.16.0-bin.zip -d /home/username/ignite
 ```
 
 5. Задайте переменную среды `IGNITE_HOME`:
@@ -46,7 +46,7 @@ cp /var/www/instancename/Ignite.config /home/username/ignite/
 7. Перейдите в папку `bin` Apache Ignite:
 
 ```
-cd /home/username/ignite/bin 
+cd /home/username/ignite/bin
 ```
 
 8. В файле `control.sh` измените директиву `DEFAULT_CONFIG`:
@@ -70,14 +70,14 @@ sh control.sh --defragmentation schedule --nodes <id>
 11. Деактивируйте кластер Apache Ignite:
 
 ```
-sh control.sh --set-state INACTIVE --force 
+sh control.sh --set-state INACTIVE --force
 ```
 
 12. Остановите и запустите экземпляр ПО:
 
 ```
-systemctl stop comindwareinstancename  
-systemctl start comindwareinstancename  
+systemctl stop comindwareinstancename
+systemctl start comindwareinstancename
 
 ```
 
@@ -97,13 +97,13 @@ systemctl restart comindwareinstancename
 1. Добавьте в файл `/etc/security/limits.conf` строки:
 
 ```
-* soft nproc 65535   
-* hard nproc 65535   
-* soft nofile 65535   
-* hard nofile 65535   
-www-data soft nproc 200000   
-www-data hard nproc 200000   
-www-data soft nofile 200000   
+* soft nproc 65535
+* hard nproc 65535
+* soft nofile 65535
+* hard nofile 65535
+www-data soft nproc 200000
+www-data hard nproc 200000
+www-data soft nofile 200000
 www-data hard nofile 200000
 ```
 2. Добавьте в файл `/etc/pam.d/common-session` строку:
@@ -134,17 +134,17 @@ systemctl edit comindwareinstancename.service
 7. Добавьте в него строки:
 
 ```
-[Service]    
-LimitNOFILE=65536    
+[Service]
+LimitNOFILE=65536
 LimitNOFILESoft=65536
 ```
 8. Перезагрузите машину и экземпляр ПО.
 
 --8<-- "related_topics_heading.md"
 
-**[Руководство системного администратора. Резервное копирование и восстановление в ОС Linux](https://kb.comindware.ru/category.php?id=496)**   
-**[Руководство пользователя. Резервное копирование](https://kb.comindware.ru/category.php?id=436)**   
-**[Дефрагментация персистентного хранилища](https://ignite.apache.org/docs/2.11.1/persistence/native-persistence-defragmentation)** (руководство Apache Ignite, английский язык))   
+**[Руководство системного администратора. Резервное копирование и восстановление в ОС Linux](https://kb.comindware.ru/category.php?id=496)**
+**[Руководство пользователя. Резервное копирование](https://kb.comindware.ru/category.php?id=436)**
+**[Дефрагментация персистентного хранилища](https://ignite.apache.org/docs/2.11.1/persistence/native-persistence-defragmentation)** (руководство Apache Ignite, английский язык))
 **[Активация, деактивация и управление топологией](https://ignite.apache.org/docs/2.11.1/tools/control-script#activation-deactivation-and-topology-management)** (руководство Apache Ignite, английский язык)
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

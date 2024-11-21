@@ -7,7 +7,7 @@ kbId: 2340
 
 Экспериментальная функция
 
-Представленная здесь функция находится на стадии разработки. См. *«[Поддержка экспериментальных функций][experimental_functions_support]»*.
+Представленная здесь функция находится на стадии разработки. См. *«[Поддержка экспериментальных функций](https://kb.comindware.ru/article.php?id=1339#mcetoc_1hsfq7ksu2)»*.
 
 ## Введение
 
@@ -29,7 +29,7 @@ kbId: 2340
         
         
         ```
-        -Xms512m -Xmx16g -XX:MaxDirectMemorySize=1g -Djava.net.preferIPv4Stack=true -XX:+AlwaysPreTouch -XX:+UseG1GC -XX:+ScavengeBeforeFullGC -XX:+DisableExplicitGC --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.management/com.sun.jmx.mbeanserver=ALL-UNNAMED --add-exports=jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED --add-exports=java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED --add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED -DIGNITE_QUIET=false -DIGNITE_NO_ASCII=true 
+        -Xms512m -Xmx16g -XX:MaxDirectMemorySize=1g -Djava.net.preferIPv4Stack=true -XX:+AlwaysPreTouch -XX:+UseG1GC -XX:+ScavengeBeforeFullGC -XX:+DisableExplicitGC --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.management/com.sun.jmx.mbeanserver=ALL-UNNAMED --add-exports=jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED --add-exports=java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED --add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED -DIGNITE_QUIET=false -DIGNITE_NO_ASCII=true
         ```
 
 ### Требования к аппаратному обеспечению
@@ -58,23 +58,23 @@ _![Запуск резервного копирования экземпляра
     - Найдите блок конфигурации выделенной памяти, например:
     
     ```
-    <property name="dataRegionConfigurations">  
-              <list>  
-                <bean class="org.apache.ignite.configuration.DataRegionConfiguration">  
-                  <property name="warmUpConfiguration">  
-                    <bean class="org.apache.ignite.configuration.LoadAllWarmUpConfiguration" />  
-                  </property>  
-                  <property name="name" value="Persistent" />  
-                  <property name="persistenceEnabled" value="true" />  
-                  <property name="initialSize" value="#{20L * 1024 * 1024}" />  
-                  <property name="maxSize" value="#{3L * 1024 * 1024 * 1024}" />  
-                  <property name="pageEvictionMode" value="RANDOM_2_LRU" />  
-                  <!--   
-                  < 1 GB             : MIN (256 MB, Data_Region_Size)  
-                  between 1 GB and 8 : GB Data_Region_Size / 4  
-                  > 8 GB             : 2 GB   
-                  -->  
-                  <property name="checkpointPageBufferSize" value="#{256L * 1024 * 1024}" />  
+    <property name="dataRegionConfigurations">
+              <list>
+                <bean class="org.apache.ignite.configuration.DataRegionConfiguration">
+                  <property name="warmUpConfiguration">
+                    <bean class="org.apache.ignite.configuration.LoadAllWarmUpConfiguration" />
+                  </property>
+                  <property name="name" value="Persistent" />
+                  <property name="persistenceEnabled" value="true" />
+                  <property name="initialSize" value="#{20L * 1024 * 1024}" />
+                  <property name="maxSize" value="#{3L * 1024 * 1024 * 1024}" />
+                  <property name="pageEvictionMode" value="RANDOM_2_LRU" />
+                  <!--
+                  < 1 GB             : MIN (256 MB, Data_Region_Size)
+                  between 1 GB and 8 : GB Data_Region_Size / 4
+                  > 8 GB             : 2 GB
+                  -->
+                  <property name="checkpointPageBufferSize" value="#{256L * 1024 * 1024}" />
                 </bean>
     ```
     - В показанном выше блоке измените директивы начального и максимального объема памяти, а также объема буфера контрольных точек, как указано ниже:
@@ -82,9 +82,9 @@ _![Запуск резервного копирования экземпляра
     
     
     ```
-    <property name="initialSize" value="#{1L * 1024 * 1024 * 1024}" />  
-    <property name="maxSize" value="#{8L * 1024 * 1024 * 1024}" />  
-    ...  
+    <property name="initialSize" value="#{1L * 1024 * 1024 * 1024}" />
+    <property name="maxSize" value="#{8L * 1024 * 1024 * 1024}" />
+    ...
     <property name="checkpointPageBufferSize" value="#{2L * 1024 * 1024 * 1024}" />
     ```
     - Сохраните изменённый файл.
@@ -94,7 +94,7 @@ _![Путь к папке с резервными копиями экземпл�
 5. Измените расширение файла резервной копии с `cdbbz` на `zip`.
 
 _![Переименование файла резервной копии экземпляра ПО](https://kb.comindware.ru/assets/Pasted image 20230313150026.png)_
-6. Распакуйте архив резервной копии, например в папку `C:\DatabaseBackup`  
+6. Распакуйте архив резервной копии, например в папку `C:\DatabaseBackup`
 
 _![Распакованное содержимое резервной копии экземпляра ПО](https://kb.comindware.ru/assets/Pasted image 20230313153125.png)_
 7. Создайте **пустую** папку, в которую будут помещены файлы базы данных, преобразованные утилитой миграции, например `C:\DatabaseMigrated`.
@@ -102,8 +102,8 @@ _![Распакованное содержимое резервной копии
 9. В окно скриптов скопируйте следующие строки:
 
 ```
-Get-ChildItem "C:\migrationTool" -recurse | Unblock-File -confirm  
-[Environment]::SetEnvironmentVariable("IsMigrationMode", "true")  
+Get-ChildItem "C:\migrationTool" -recurse | Unblock-File -confirm
+[Environment]::SetEnvironmentVariable("IsMigrationMode", "true")
 C:\MigrationTool\bin\Comindware.Platform.Migration.exe "C:\DataвaseBackup" "C:\DatabaseMigrated" <instanceName>
 ```
 
@@ -112,7 +112,7 @@ C:\MigrationTool\bin\Comindware.Platform.Migration.exe "C:\DataвaseBackup" "C:\
     - `C:\MigrationTool\bin\Comindware.Platform.Migration.exe` — путь к распакованному на [шаге 2](#step_2_conversion) исполняемому файлу утилиты миграции базы данных.
     - `C:\DataвaseBackup` — путь к папке с базой данных, подлежащей миграции.
     - `C:\DatabaseMigrated` — путь к папке, в которую будут помещены преобразованные файлы базы данных.
-    - `instanceName` — имя нового экземпляра ПО, который будет создан после миграции. Рекомендуется указывать такое же имя экземпляра ПО, как использовалось в среде Windows. См. статью *«[Изменение конфигурации экземпляра ПО](https://kb.comindware.ru/article.php?id=2036)»*.
+    - `instanceName` — имя нового экземпляра ПО, который будет создан после миграции. Рекомендуется указывать такое же имя экземпляра ПО, как использовалось в среде Windows. См. статью *«[Изменение конфигурации экземпляра ПО][instance_configure_windows]»*.
 10. Выделите первую строку скрипта:
 
 ```
@@ -123,7 +123,7 @@ Get-ChildItem "C:\migrationTool" -recurse | Unblock-File -confirm
 13. Выделите и выполните вторую и третьи строки скрипта:
 
 ```
-[Environment]::SetEnvironmentVariable("IsMigrationMode", "true")  
+[Environment]::SetEnvironmentVariable("IsMigrationMode", "true")
 C:\MigrationTool\bin\Comindware.Platform.Migration.exe "C:\DataвaseBackup" "C:\DatabaseMigrated" <instanceName>
 ```
 14. Утилита миграции выведет на экран данные о процессе миграции.
@@ -134,11 +134,11 @@ _![Папки преобразованной базы данных](https://kb.c
 
 ## Развёртывание преобразованной базы данных в экземпляре ПО под управлением Linux
 
-1. Перейдите в режим суперпользователя:   
+1. Перейдите в режим суперпользователя:
 **Astra Linux, Ubuntu**
 
 ```
-sudo -i   
+sudo -i
 
 ```
 
@@ -148,11 +148,11 @@ sudo -i
 su -
 ```
 2. Скачайте, разверните и инициализируйте экземпляр ПО.
-    - См. *[Развертывание Comindware Business Application Platform. Краткое руководство](https://kb.comindware.ru/article.php?id=2344)*
+    - См. *[Развертывание Comindware Business Application Platform. Краткое руководство][deploy_guide_linux]*
     - При установке ПО используйте ключ `d=clear` — установить ПО без демонстрационной базы данных:*Astra Linux, Ubuntu*
 
 ```
-sh install.sh -e -p -k -d=clear -u=www-data -g=www-data -i=<instanceName>   
+sh install.sh -e -p -k -d=clear -u=www-data -g=www-data -i=<instanceName>
 
 ```
 
@@ -166,29 +166,29 @@ sh install.sh -e -p -k -d=clear -u=_nginx -g=_nginx -i=<instanceName>
 3. Остановите сервисы Elasticsearch, NGINX, comindwareinstanceName и Kafka и удостоверьтесь, что они остановлены:
 
 ```
-systemctl stop elasticsearch  
-systemctl stop nginx   
-systemctl stop kafka  
-systemctl stop comindware<instanceName>   
-  
-systemctl status elasticsearch  
-systemctl status nginx   
-systemctl status kafka  
-systemctl status comindware<instanceName>  
+systemctl stop elasticsearch
+systemctl stop nginx
+systemctl stop kafka
+systemctl stop comindware<instanceName>
+
+systemctl status elasticsearch
+systemctl status nginx
+systemctl status kafka
+systemctl status comindware<instanceName>
 
 ```
 4. Поместите в папку `/var/lib/comindware/<instanceName>``/Database/` содержимое папки с преобразованной базой данных. См. раздел «**[Преобразование базы данных в Windows](#mcetoc_1gs760qqh5)**».
-5. Смените владельца папки `/var/lib/comindware/`:   
-**Astra Linux, Ubuntu**    
+5. Смените владельца папки `/var/lib/comindware/`:
+**Astra Linux, Ubuntu**
 
 ```
-chown -R www-data:www-data /var/lib/comindware/ 
+chown -R www-data:www-data /var/lib/comindware/
 ```
 
-**Альт Сервер, РЕД ОС**   
+**Альт Сервер, РЕД ОС**
 
 ```
-chown -R _nginx:_nginx /var/lib/comindware/ 
+chown -R _nginx:_nginx /var/lib/comindware/
 ```
 
 ## Запуск и проверка конфигурации экземпляра ПО
@@ -196,7 +196,7 @@ chown -R _nginx:_nginx /var/lib/comindware/
 1. Запустите необходимые службы и проверьте их статус:
 
 ```
-systemctl start elasticsearch kafka nginx comindware<instanceName>  
+systemctl start elasticsearch kafka nginx comindware<instanceName>
 systemctl status elasticsearch kafka nginx comindware<instanceName>
 ```
 2. Перезапустите систему:
@@ -206,15 +206,15 @@ reboot
 ```
 3. Откройте в браузере веб-сайт с экземпляром ПО.
 4. Дождитесь инициализации экземпляра ПО. Этот процесс может занять некоторое время. Может потребоваться обновить страницу браузера.
-5. Проверьте и исправьте конфигурацию экземпляра. См. *«[Проверка и настройка конфигурации экземпляра ПО после восстановления из резервной копии](https://kb.comindware.ru/article.php?id=2618)».*
+5. Проверьте и исправьте конфигурацию экземпляра. См. *«[Проверка и настройка конфигурации экземпляра ПО после восстановления из резервной копии][restore_test_configure]».*
 
 --8<-- "related_topics_heading.md"
 
-**[Проверка и настройка конфигурации экземпляра ПО после восстановления из резервной копии](https://kb.comindware.ru/article.php?id=2618)**
+**[Проверка и настройка конфигурации экземпляра ПО после восстановления из резервной копии][restore_test_configure]**
 
 **[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]**
 
-**[Развертывание Comindware Business Application Platform. Краткое руководство](https://kb.comindware.ru/article.php?id=2344)**
+**[Развертывание Comindware Business Application Platform. Краткое руководство][deploy_guide_linux]**
 
 
 

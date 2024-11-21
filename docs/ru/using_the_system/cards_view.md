@@ -22,7 +22,7 @@ hide:
 
     _![Переход к таблице из представления карточек](img/cards_switch_to_table_desktop.png)_
 
-## Просмотр карточек в мобильном приложении
+## Просмотр карточек в мобильном приложении {: .pageBreakBefore }
 
 1. Откройте таблицу, для которой назначено представление карточек.
 2. Нажмите кнопку «**…**» над таблицей и выберите пункт «**Карточки**» над таблицей.
@@ -33,8 +33,12 @@ hide:
 
     _![Переход к таблице из представления карточек](img/cards_switch_to_table_mobile.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Настройка представления карточек][cards_configure]**
+- _[Настройка представления карточек][cards_configure]_
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

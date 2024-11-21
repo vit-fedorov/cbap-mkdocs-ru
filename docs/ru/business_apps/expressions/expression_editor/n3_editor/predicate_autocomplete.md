@@ -1,4 +1,6 @@
 ---
+title: Ввод предиката
+kbId: 2479
 tags:
   - выражения
   - n3
@@ -15,10 +17,10 @@ hide:
   - tags
 ---
 
-# Ввод предиката
+# Ввод предиката {: #n3_editor_predicate_autocomplete}
 
 1. В позиции предиката нажмите клавиши ++ctrl+space++.
-2. Отобразится список [объявленных префиксов](prefix_autocomplete.md).
+2. Отобразится список [объявленных префиксов][n3_editor_prefix_autocomplete].
 *![Список доступных префиксов](n3_editor_predicate_prefix_autocomplete.png)*
 3. Выберите префикс в списке, чтобы просмотреть его описание.
 4. Дважды нажмите префикс, например `task`, чтобы вставить его в выражение.
@@ -26,7 +28,7 @@ hide:
 6. Отобразится список функций для префикса.
 *![Список функций для префикса](n3_editor_predicate_prefix_function_autocomplete.png)*
 7. Дважды нажмите имя функции, например `objectId`, чтобы вставить его в выражение.
-  
+
 ```turtle title="Пример: выражение, возвращающее ID исполнителей выполняющихся задач для текущей записи"
 @prefix cmw: <http://comindware.com/logics#>.
 @prefix task: <http://comindware.com/ontology/task#>.
@@ -43,8 +45,14 @@ hide:
 }
 ```
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Редактор выражений][expression_editor]**
+- _[Редактор выражений][expression_editor]_
+- _[Примеры использования языка N3. База знаний Comindware][n3_use_examples]_
 
-**[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}**
+</div>
+
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

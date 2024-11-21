@@ -17,7 +17,7 @@ _![Список конструкций на языке N3](https://kb.comindware
 3. В выражение будет вставлена заготовка функции:
 
 ```
-( ) object:findObject ?foundObject 
+( ) object:findObject ?foundObject
 ```
 4. Чтобы присвоить результат выражения значению вычисляемого атрибута, замените имя переменной `foundObject` на `value`.
 5. В позиции первого аргумента (после открывающей скобки) нажмите клавиши `Ctrl` `Пробел`.
@@ -43,12 +43,12 @@ _![Список атрибутов шаблона](https://kb.comindware.ru/asse
 Пример: выражение, возвращающее список записей шаблона с заданным значением атрибута
 
 ```
-@prefix object: <http://comindware.com/ontology/object#>.  
-{   
-# Получаем список записей шаблона Avtomobil из приложения Upravlenieavtoparkom,   
-# в которых атрибут Marka имеет значение «Лада»   
-("Upravlenieavtoparkom""Avtomobil""Marka""Лада") object:findObject ?value.   
-} 
+@prefix object: <http://comindware.com/ontology/object#>.
+{
+# Получаем список записей шаблона Avtomobil из приложения Upravlenieavtoparkom,
+# в которых атрибут Marka имеет значение «Лада»
+("Upravlenieavtoparkom""Avtomobil""Marka""Лада") object:findObject ?value.
+}
 ```
 
 --8<-- "related_topics_heading.md"

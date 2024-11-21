@@ -40,8 +40,8 @@ su -
 3. Остановите экземпляр ПО и его вспомогательные службы и удостоверьтесь, что они остановлены:
 
 ```
-systemctl stop apigateway<instanceName> comindware<instanceName>  
-systemctl status apigateway<instanceName> comindware<instanceName> 
+systemctl stop apigateway<instanceName> comindware<instanceName>
+systemctl status apigateway<instanceName> comindware<instanceName>
 ```
 
 Здесь *`<instanceName>`*— имя экземпляра ПО.
@@ -56,18 +56,18 @@ ps fax | grep Agent
     ```
     kill -9 <PID>
     ```
-5. Если используется нестандартная конфигурация NGINX для экземпляра ПО, cохраните её резервную копию:   
+5. Если используется нестандартная конфигурация NGINX для экземпляра ПО, cохраните её резервную копию:
 
 ```
-cp /etc/nginx/sites-available/comindware<instanceName> $HOME            
+cp /etc/nginx/sites-available/comindware<instanceName> $HOME
 ```
 
-или   
+или
 
 ```
 cp /etc/nginx/conf.d/comindware<instanceName> $HOME
 ```
-6. Проверьте имя и статус экземпляра:   
+6. Проверьте имя и статус экземпляра:
 
 ```
 systemctl status comindware*
@@ -95,7 +95,7 @@ cd CMW_<osname>/scripts/cbap
 ```
 bash install.sh
 ```
-4. Проверьте наличие и имя директории установленной версии ПО:   
+4. Проверьте наличие и имя директории установленной версии ПО:
 
 ```
 ls /var/www/.cmw_version/
@@ -103,7 +103,7 @@ ls /var/www/.cmw_version/
 5. Перейдите в директорию скриптов для работы с экземпляром ПО и запустите его обновление до требуемой версии:
 
 ```
-cd ../instance/   
+cd ../instance/
 bash upgrade.sh -n=<instanceName> -vp=/var/www/.cmw_version/X.X.XXX.X
 ```
 
@@ -111,7 +111,7 @@ bash upgrade.sh -n=<instanceName> -vp=/var/www/.cmw_version/X.X.XXX.X
 
     - `X.X.XXX.X` — номер устанавливаемой версии ПО;
     - `<instanceName>` — имя обновляемого экземпляра ПО.
-6. Проверьте корректность конфигурации NGINX для экземпляра ПО:   
+6. Проверьте корректность конфигурации NGINX для экземпляра ПО:
 
 ```
 cat /etc/nginx/sites-available/comindware<instanceName>
@@ -123,82 +123,82 @@ cat /etc/nginx/sites-available/comindware<instanceName>
     - Замените в конфигурации адрес сервера Kafka:
     
     ```
-    "Kafka": {  
-        "BootstrapServer": "<KAFKAIP>:9092",  
-        "GroupId": "<instanceName>"  
-    }  
+    "Kafka": {
+        "BootstrapServer": "<KAFKAIP>:9092",
+        "GroupId": "<instanceName>"
+    }
     
     ```
 8. Если выполняется обновление с версии ниже 4.6.1140.0, откройте для редактирования файл конфигурации экземпляра ПО `/usr/share/comindware/configs/instance/<instanceName>.yml`.
     - Замените в конфигурации следующие директивы:
     
     ```
-    # исходная директива  
-    # backupPath: /var/backups/<instanceName>  
-    # заменить на:  
-    backup.config.default.repository.type: LocalDisk  
-    # директория для резервных копий  
-    backup.config.default.repository.localDisk.path: /var/backups/<instanceName>  
-      
-    # исходная директива  
-    # tempPath: /var/lib/comindware/<instanceName>/Temp  
-    # заменить на:  
-    tempStorage.type: LocalDisk  
-    # директория временных файлов  
-    tempStorage.localDisk.path: /var/lib/comindware/<instanceName>/Temp  
-      
-    # исходная директива  
-    # streamsPath: /var/streams/<instanceName>  
-    # заменить на:  
-    userStorage.type: LocalDisk   
+    # исходная директива
+    # backupPath: /var/backups/<instanceName>
+    # заменить на:
+    backup.config.default.repository.type: LocalDisk
+    # директория для резервных копий
+    backup.config.default.repository.localDisk.path: /var/backups/<instanceName>
+    
+    # исходная директива
+    # tempPath: /var/lib/comindware/<instanceName>/Temp
+    # заменить на:
+    tempStorage.type: LocalDisk
+    # директория временных файлов
+    tempStorage.localDisk.path: /var/lib/comindware/<instanceName>/Temp
+    
+    # исходная директива
+    # streamsPath: /var/streams/<instanceName>
+    # заменить на:
+    userStorage.type: LocalDisk
     userStorage.localDisk.path: /var/streams/<instanceName>
     ```
     - Добавьте в конфигурацию следующие директивы:
     
     ```
-    # Имя конфигурации   
-    configName: <instanceName>    
-      
-    # Имя базы данных Apache Ignite   
-    instanceName: <instanceName>    
-      
-    manageAdapterHost: true  
-    useDataBusNumbers:  
-        - 0  
-        - 1  
-        - 2  
+    # Имя конфигурации
+    configName: <instanceName>
+    
+    # Имя базы данных Apache Ignite
+    instanceName: <instanceName>
+    
+    manageAdapterHost: true
+    useDataBusNumbers:
+        - 0
+        - 1
+        - 2
         - 3
     ```
 9. Удостоверьтесь, что итоговый файл конфигурации `/usr/share/comindware/configs/instance/<instanceName>.yml` выглядит аналогично следующему примеру:
 
 ```
-databasePath: /var/lib/comindware/<instanceName>/Database/   
-configPath: /var/www/<instanceName>   
-backup.config.default.repository.type: LocalDisk   
-backup.config.default.repository.localDisk.path: /var/lib/comindware/<instanceName>/Backup   
-userStorage.type: LocalDisk   
-userStorage.localDisk.path: /var/lib/comindware/<instanceName>/Streams     
-tempStorage.type: LocalDisk   
-tempStorage.localDisk.path: /var/lib/comindware/<instanceName>/Temp   
-elasticsearchUri: XXX.XXX.XXX.XXX:9200 #адрес сервера ElasticSearch   
-instanceName: <instanceName>    
-configName: <instanceName>    
-databaseName: <instanceName>    
-nodeName: prod_0   
-linuxAuthenticationType: 1   
-ldapAuthenticationType: 1   
-isFederationAuthEnabled: 0   
-manageAdapterHost: true   
-isTestEnvironment: false   
-mq.enabled: true   
-mq.server: XXX.XXX.XXX.XXX:9092 #адрес сервера Kafka   
-mq.group: <instanceName> #имя группы в Kafka    
-mq.node: prod_0   
-mq.name: <instanceName> #имя очереди в Kafka    
-mq.adapter.0.enabled: true   
-mq.adapter.1.enabled: true   
-mq.adapter.2.enabled: true   
-mq.adapter.3.enabled: true   
+databasePath: /var/lib/comindware/<instanceName>/Database/
+configPath: /var/www/<instanceName>
+backup.config.default.repository.type: LocalDisk
+backup.config.default.repository.localDisk.path: /var/lib/comindware/<instanceName>/Backup
+userStorage.type: LocalDisk
+userStorage.localDisk.path: /var/lib/comindware/<instanceName>/Streams
+tempStorage.type: LocalDisk
+tempStorage.localDisk.path: /var/lib/comindware/<instanceName>/Temp
+elasticsearchUri: XXX.XXX.XXX.XXX:9200 #адрес сервера ElasticSearch
+instanceName: <instanceName>
+configName: <instanceName>
+databaseName: <instanceName>
+nodeName: prod_0
+linuxAuthenticationType: 1
+ldapAuthenticationType: 1
+isFederationAuthEnabled: 0
+manageAdapterHost: true
+isTestEnvironment: false
+mq.enabled: true
+mq.server: XXX.XXX.XXX.XXX:9092 #адрес сервера Kafka
+mq.group: <instanceName> #имя группы в Kafka
+mq.node: prod_0
+mq.name: <instanceName> #имя очереди в Kafka
+mq.adapter.0.enabled: true
+mq.adapter.1.enabled: true
+mq.adapter.2.enabled: true
+mq.adapter.3.enabled: true
 version: 4.7.2XXX.X
 ```
 10. Перезапустите сервисы, настройки которых были изменены:
@@ -217,7 +217,7 @@ systemctl restart apigateway<instanceName> comindware<instanceName>
     ```
     nginx -s reload
     ```
-11. Откройте сайт экземпляра ПО в браузере, дождитесь окончания загрузки, одновременно открыв выдачу журналов экземпляра в терминале:   
+11. Откройте сайт экземпляра ПО в браузере, дождитесь окончания загрузки, одновременно открыв выдачу журналов экземпляра в терминале:
 
 ```
 tail -f /var/log/comindware/<instanceName>/Log/sys*
@@ -227,7 +227,7 @@ tail -f /var/log/comindware/<instanceName>/Log/sys*
 
 **[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]**
 
-**[Пути и содержимое папок экземпляра ПО](https://kb.comindware.ru/article.php?id=2502)**
+**[Пути и содержимое папок экземпляра ПО][paths]**
 
 
 

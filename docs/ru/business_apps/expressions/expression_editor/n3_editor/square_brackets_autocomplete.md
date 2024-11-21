@@ -45,6 +45,8 @@ hide:
   ```
 8. Чтобы присвоить результат выражения значению вычисляемого атрибута, замените имя переменной `objectZayavkanaotpusk` на `value`.
 
+{% include-markdown ".snippets/pdfPageBreakHard.md" %}
+
 ```turtle title="Пример: компактное выражение, возвращающее все записи шаблона по его системному имени"
 @prefix object: <http://comindware.com/ontology/object#>.
 {
@@ -63,8 +65,13 @@ hide:
 }
 ```
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Редактор выражений][expression_editor]**
+- _[Редактор выражений][expression_editor]_
+- _[Примеры использования языка N3. База знаний Comindware][n3_use_examples]_
 
-**[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}**
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

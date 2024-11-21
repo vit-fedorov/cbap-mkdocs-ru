@@ -1,0 +1,34 @@
+# This file is used only to build RU help to import it in the kb.comindware.com
+# Run this build script:
+# buildhelp_for_kb_import_ru.ps1
+
+INHERIT: mkdocs_ru.yml
+
+docs_dir: docs/ru
+
+site_url: https://kb.comindware.ru/platform/v5.0/
+
+use_directory_urls: false
+
+site_dir: for_kb_import_ru
+
+site_name: "Импорт из справочной системы"
+
+theme:
+  custom_dir: overrides_for_kb_import
+
+
+plugins:
+  glightbox:
+    manual: true
+
+markdown_extensions:
+  toc:
+    title: Содержание
+    permalink: false
+
+extra:
+    kbExport: true
+
+hooks:
+  - kb_html_cleanup_hook.py

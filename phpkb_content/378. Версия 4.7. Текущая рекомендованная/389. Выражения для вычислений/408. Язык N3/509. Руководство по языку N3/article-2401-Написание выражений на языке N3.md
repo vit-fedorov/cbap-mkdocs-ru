@@ -57,9 +57,9 @@ Comindware Business Application позволяет составлять выра
 - Ризонер (Reasoner) — специальный механизм, выполняющий запросы.
 
 ```
-in ?item.   
-{   
-#наш код   
+in ?item.
+{
+#наш код
 } => { ?item attribute:value ?value. }.
 ```
 
@@ -129,114 +129,114 @@ _![Рисунок 2. Порядок обработки запроса для п�
 **Функция .?**
 
 ```
-@prefix object: <http://comindware.com/ontology/object#>.   
-{   
-("currentTemplate" "Region") object:findProperty ?Region.   
-# Проверяем, что в текущей записи, атрибут Region содержит непустое значение   
-?item ?Region ?.   
-?item -> ?value.   
+@prefix object: <http://comindware.com/ontology/object#>.
+{
+("currentTemplate" "Region") object:findProperty ?Region.
+# Проверяем, что в текущей записи, атрибут Region содержит непустое значение
+?item ?Region ?.
+?item -> ?value.
 }
 ```
 
 **Функция once**
 
 ```
-@prefix object: <http://comindware.com/ontology/object#>.   
-{   
-("currentTemplate" "Region") object:findProperty ?Region.   
-("Biznesstruktura" "Region") object:findProperty ?Region2.   
-  
-once {   
-?item ?Region ?RegionVal.   
-?check ?Region2 ?RegionVal.   
-}.   
-true -> ?value.   
+@prefix object: <http://comindware.com/ontology/object#>.
+{
+("currentTemplate" "Region") object:findProperty ?Region.
+("Biznesstruktura" "Region") object:findProperty ?Region2.
+
+once {
+?item ?Region ?RegionVal.
+?check ?Region2 ?RegionVal.
+}.
+true -> ?value.
 }
 ```
 
 **Оператор if**
 
 ```
-@prefix cmw: <http://comindware.com/logics#>.   
-@prefix session: <http://comindware.com/ontology/session#>.    
-@prefix math: <http://www.w3.org/2000/10/swap/math#>.   
-{   
-session:context session:requestTime ?now. #получим текущую дату   
-?tasks a cmw:UserTask.   
-if {?tasks cmw:dueDate ?.}   
-then {   
-?tasks cmw:dueDate ?dueDateVal.   
-?dueDateVal math:greaterThan ?now.   
-?tasks -> ?value.   
-}   
-else {?tasks -> ?value.}.   
-}  
+@prefix cmw: <http://comindware.com/logics#>.
+@prefix session: <http://comindware.com/ontology/session#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+{
+session:context session:requestTime ?now. #получим текущую дату
+?tasks a cmw:UserTask.
+if {?tasks cmw:dueDate ?.}
+then {
+?tasks cmw:dueDate ?dueDateVal.
+?dueDateVal math:greaterThan ?now.
+?tasks -> ?value.
+}
+else {?tasks -> ?value.}.
+}
 
 ```
 
 **Оператор from и функция sum**
 
 ```
-@prefix math: <http://www.w3.org/2000/10/swap/math#>.   
-@prefix object: <http://comindware.com/ontology/object#>.   
-{   
-("Nakladnaya" "PoziciiNakladnoy") object:findProperty ?Positions.   
-("PoziciiNakladnoy" "Summa") object:findProperty ?Summa.   
-  
-from  {   
-  ?item ?Positions ?PositionsVal.   
-  ?PositionsVal ?Summa ?SummaVal.   
-} select ?SummaVal -> ?SummaList.   
-  
-?SummaList math:sum ?value.   
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix object: <http://comindware.com/ontology/object#>.
+{
+("Nakladnaya" "PoziciiNakladnoy") object:findProperty ?Positions.
+("PoziciiNakladnoy" "Summa") object:findProperty ?Summa.
+
+from  {
+  ?item ?Positions ?PositionsVal.
+  ?PositionsVal ?Summa ?SummaVal.
+} select ?SummaVal -> ?SummaList.
+
+?SummaList math:sum ?value.
 }
 ```
 
 **Функция count**
 
 ```
-@prefix object: <http://comindware.com/ontology/object#>.   
-@prefix assert: <http://comindware.com/logics/assert#>.   
-{   
-("Nakladnaya" "PoziciiNakladnoy") object:findProperty ?Positions.   
-  
-{   
-?item ?Positions ?PositionsVal.   
-} assert:count ?value.   
+@prefix object: <http://comindware.com/ontology/object#>.
+@prefix assert: <http://comindware.com/logics/assert#>.
+{
+("Nakladnaya" "PoziciiNakladnoy") object:findProperty ?Positions.
+
+{
+?item ?Positions ?PositionsVal.
+} assert:count ?value.
 }
 ```
 
 **Функция distinct**
 
 ```
-@prefix object: <http://comindware.com/ontology/object#>.   
-@prefix assert: <http://comindware.com/logics/assert#>.   
-{   
-("Nakladnaya" "PoziciiNakladnoy") object:findProperty ?Positions.   
-("PoziciiNakladnoy" "Nomenklatura") object:findProperty ?Items.   
-{   
-{   
-?item ?Positions ?PositionsVal.   
-?PositionsVal ?Items ?ItemsVal.   
-} assert:distinct ?ItemsVal.   
-} assert:count ?value.   
+@prefix object: <http://comindware.com/ontology/object#>.
+@prefix assert: <http://comindware.com/logics/assert#>.
+{
+("Nakladnaya" "PoziciiNakladnoy") object:findProperty ?Positions.
+("PoziciiNakladnoy" "Nomenklatura") object:findProperty ?Items.
+{
+{
+?item ?Positions ?PositionsVal.
+?PositionsVal ?Items ?ItemsVal.
+} assert:distinct ?ItemsVal.
+} assert:count ?value.
 }
 ```
 
 **Оператор union**
 
 ```
-@prefix assert: <http://comindware.com/logics/assert#>.   
-@prefix object: <http://comindware.com/ontology/object#>.   
-{   
-("Nakladnaya" "Gruzootpravitel") object:findProperty ?ShippedBy.   
-("Nakladnaya" "Poluchatel") object:findProperty ?Receiver.   
-  
-(   
-{?item ?ShippedBy ?Contractor.}   
-{?item ?Receiver ?Contractor.}   
-) assert:union true.   
-?Contractor -> ?value.   
+@prefix assert: <http://comindware.com/logics/assert#>.
+@prefix object: <http://comindware.com/ontology/object#>.
+{
+("Nakladnaya" "Gruzootpravitel") object:findProperty ?ShippedBy.
+("Nakladnaya" "Poluchatel") object:findProperty ?Receiver.
+
+(
+{?item ?ShippedBy ?Contractor.}
+{?item ?Receiver ?Contractor.}
+) assert:union true.
+?Contractor -> ?value.
 }
 ```
 
@@ -245,111 +245,111 @@ from  {
 **Задача**: вывести заявки, у которых значение атрибута Status не равно «Завершен» и дата начала уже прошла относительно текущей даты.
 
 ```
-@prefix object: <http://comindware.com/ontology/object#>.   
-@prefix session: <http://comindware.com/ontology/session#>.   
-@prefix math: <http://www.w3.org/2000/10/swap/math#>.   
-{   
-("Proekt" "Status") object:findProperty ?StatusProp.   
-?Proekty ?StatusProp ?Status.   
-("Proekt" "Datanachala") object:findProperty ?DatanachalaProp.   
-?Proekty ?DatanachalaProp ?Datanachala.   
-session:context session:requestTime ?now.   
-?now math:greaterThan ?Datanachala.   
-?Status != "Завершен".   
-?value == ?Proekty.   
+@prefix object: <http://comindware.com/ontology/object#>.
+@prefix session: <http://comindware.com/ontology/session#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+{
+("Proekt" "Status") object:findProperty ?StatusProp.
+?Proekty ?StatusProp ?Status.
+("Proekt" "Datanachala") object:findProperty ?DatanachalaProp.
+?Proekty ?DatanachalaProp ?Datanachala.
+session:context session:requestTime ?now.
+?now math:greaterThan ?Datanachala.
+?Status != "Завершен".
+?value == ?Proekty.
 }
 ```
 
 **Задача**: при добавлении существующих записей в коллекцию отображать в списке только те проекты, у которых прошла проверка (атрибут Proverka имеет значение `true`) или у которых атрибут Status имеет значение «Создан».
 
 ```
-@prefix object: <http://comindware.com/ontology/object#>.   
-{   
-("Proekt" "Status") object:findProperty ?StatusProp.   
-?Proekty ?StatusProp ?Status.   
-("Proekt" "Proverka") object:findProperty ?ProverkaProp.   
-?Proekty ?ProverkaProp ?Proverka.   
-or {   
-?Proverka == true.   
-}   
-or {   
-?Status == "Создан".   
-}.   
-?value == ?Proekty.   
+@prefix object: <http://comindware.com/ontology/object#>.
+{
+("Proekt" "Status") object:findProperty ?StatusProp.
+?Proekty ?StatusProp ?Status.
+("Proekt" "Proverka") object:findProperty ?ProverkaProp.
+?Proekty ?ProverkaProp ?Proverka.
+or {
+?Proverka == true.
+}
+or {
+?Status == "Создан".
+}.
+?value == ?Proekty.
 }
 ```
 
 **Задача**: выводить в списке на добавление только руководителей текущего пользователя (атрибут manager типа «Аккаунт») или пользователей с должностью «Менеджер» (атрибут title типа «Текст»)
 
 ```
-@prefix cmw: <http://comindware.com/logics#>.   
-@prefix account: <http://comindware.com/ontology/account#>.   
-@prefix string: <http://www.w3.org/2000/10/swap/string#>.   
-{   
-cmw:securityContext cmw:currentUser ?currUser.   
-?users a account:Account.   
-or {   
-?currUser account:manager ?users. #users - руководители   
-}    
-or {   
-?users account:title ?title.   
-?title string:matches "Менеджер".   
-}.   
-?value == ?users.   
+@prefix cmw: <http://comindware.com/logics#>.
+@prefix account: <http://comindware.com/ontology/account#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+{
+cmw:securityContext cmw:currentUser ?currUser.
+?users a account:Account.
+or {
+?currUser account:manager ?users. #users - руководители
+}
+or {
+?users account:title ?title.
+?title string:matches "Менеджер".
+}.
+?value == ?users.
 }
 ```
 
 **Задача:** выводить только тех заявителей, которые прикреплены к заявкам.
 
 ```
-@prefix object: <http://comindware.com/ontology/object#>.   
-{   
-("Zayavitel" "Application") object:findProperty ?ApplicationProp.   
-?Zayavitel ?ApplicationProp ? .   
+@prefix object: <http://comindware.com/ontology/object#>.
+{
+("Zayavitel" "Application") object:findProperty ?ApplicationProp.
+?Zayavitel ?ApplicationProp ? .
 }
 ```
 
 **Задача:** выполнять действия с полем на форме при условии, что процент выполнения заявки больше 70, при этом действие не должно выполняться, если этап (атрибут Etap) выполнения равен 1.
 
 ```
-@prefix object: <http://comindware.com/ontology/object#>.   
-@prefix math: <http://www.w3.org/2000/10/swap/math#>.   
-{   
-  ("Application" "Etap") object:findProperty ?EtapProp.   
-  ?item ?EtapProp ?Etap.    
-  ("Application" "percent") object:findProperty ?percentProp.   
-  ?item ?percentProp ?percent.   
-  or {   
-    ?Etap == 1.   
-    ?value == false.   
-  }   
-  or {   
-    ?percent math:greaterThan 70.   
-    ?value == true.   
+@prefix object: <http://comindware.com/ontology/object#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+{
+  ("Application" "Etap") object:findProperty ?EtapProp.
+  ?item ?EtapProp ?Etap.
+  ("Application" "percent") object:findProperty ?percentProp.
+  ?item ?percentProp ?percent.
+  or {
+    ?Etap == 1.
+    ?value == false.
+  }
+  or {
+    ?percent math:greaterThan 70.
+    ?value == true.
   }.
 ```
 
 **Задача:** при выполнении вышеописанного условия, выполнять для поля «Статус» заявки следующие действия: сменить тип доступа на «Только для чтения», установить значение «Завершена» и показать предупреждение с текстом «Заявка <Название заявки (атрибут Name)> завершена».
 
 ```
-@prefix object: <http://comindware.com/ontology/object#>.   
-@prefix math: <http://www.w3.org/2000/10/swap/math#>.   
-@prefix string: <http://www.w3.org/2000/10/swap/string#>.   
-@prefix output: <http://comindware.com/ontology/tableOutput#>.   
-{   
-output:result a output:Result.   
-("Application" "Etap") object:findProperty ?EtapProp.   
-?item ?EtapProp ?Etap.    
-("Application" "percent") object:findProperty ?percentProp.   
-?item ?percentProp ?percent.    
-?Etap != 1.   
-?percent math:greaterThan 70.   
-output:result output:typeOfAccess "Только чтения".   
-output:result output:value "Завершена".   
-("Application" "Name") object:findProperty ?NameProp.   
-?item ?NameProp ?Name.    
-("Заявка" ?Name "завершена") string:format ?warning.   
-output:result output:warning "Завершена".   
+@prefix object: <http://comindware.com/ontology/object#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix output: <http://comindware.com/ontology/tableOutput#>.
+{
+output:result a output:Result.
+("Application" "Etap") object:findProperty ?EtapProp.
+?item ?EtapProp ?Etap.
+("Application" "percent") object:findProperty ?percentProp.
+?item ?percentProp ?percent.
+?Etap != 1.
+?percent math:greaterThan 70.
+output:result output:typeOfAccess "Только чтения".
+output:result output:value "Завершена".
+("Application" "Name") object:findProperty ?NameProp.
+?item ?NameProp ?Name.
+("Заявка" ?Name "завершена") string:format ?warning.
+output:result output:warning "Завершена".
 }
 ```
 

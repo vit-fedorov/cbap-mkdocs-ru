@@ -17,7 +17,7 @@ System Core API предоставляет системные RESTful-метод
 
 ## Доступ к System Core API
 
-- Базовый URL-адрес для запросов к System Core API:   
+- Базовый URL-адрес для запросов к System Core API:
 `https://your-host/api/public/system/`
 - System Core API поддерживает запросы `POST`.
 - Методы System Core API передают данные в формате JSON.
@@ -28,7 +28,7 @@ System Core API предоставляет системные RESTful-метод
 
 Чтобы вызвать метод System Core API, отправьте HTTP-запрос на адрес метода (указанный в Swagger), например:
 
-- Для создания шаблона записи с помощью System Core API отправьте POST-запрос на адрес:   
+- Для создания шаблона записи с помощью System Core API отправьте POST-запрос на адрес:
 `http://your-host/api/public/system/TeamNetwork/ObjectAppService/Create`
     - В теле запроса (`body`) укажите системное имя шаблона записи (например, `"Car"`).
     - В ответ на запрос ПО отправит ID созданного шаблона записи (например, `"oa.1"`).

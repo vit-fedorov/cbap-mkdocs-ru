@@ -7,7 +7,7 @@ kbId: 2619
 
 ## Введение
 
-При проектировании бизнес-процессов можно назначить исполнителями **[пользовательской задачи][user_task]** аккаунты и (или) роли:
+При проектировании бизнес-процессов можно назначить исполнителями **[пользовательской задачи][process_diagram_elements_user_task]** аккаунты и (или) роли:
 
 - выбрать определённые аккаунты и роли;
 - указать атрибут типа «[**Аккаунт**][attribute_account]» или «[**Роль**][attribute_role]», содержащий ID исполнителей;
@@ -49,37 +49,37 @@ kbId: 2619
 6. В поле **«Вычисляемое выражение»** атрибута *«Исполнители задачи»* вставьте следующее выражение на **N3**:
 
 ```
-# Импортируем функции для работы с записями, аккаунтами и базой данных  
-@prefix object: <http://comindware.com/ontology/object#>.  
-@prefix account: <http://comindware.com/ontology/account#>.  
-@prefix cmw: <http://comindware.com/logics#>.  
-{  
-# Находим атрибут Nazvaniegruppy (Название группы) в шаблоне Spravochnikgrupp (Справочник групп)  
-# и помещаем его в переменную nazvaniegruppyAttribute  
-("Spravochnikgrupp" "Nazvaniegruppy") object:findProperty ?nazvaniegruppyAttribute.  
-  
-# Находим атрибут Zayavka (Заявка) в шаблоне Gruppaispolniteley (Группа исполнителей)  
-# и помещаем его в переменную gruppaispolniteleyAttribute  
-("Zayavka" "Gruppaispolniteley") object:findProperty ?gruppaispolniteleyAttribute.     
-  
-# Помещаем значение атрибута Gruppaispolniteley, то есть группу,  
-# выбранную в текущей заявке item,   
-# в переменную gruppaispolniteleyValue,  
-?item ?gruppaispolniteleyAttribute ?gruppaispolniteleyValue.  
-  
-# Находим название выбранной группы шаблоне Spravochnikgrupp,  
-# то есть значение атрибута Nazvaniegruppy,  
-# и помещаем его в переменную nazvaniegruppy   
-?gruppaispolniteleyValue ?nazvaniegruppyAttribute ?nazvaniegruppy.  
-  
-# Находим группу по названию из переменной nazvaniegruppy   
-# и помещаем группу в переменную gruppaispolniteley  
-?gruppaispolniteley account:groupName ?nazvaniegruppy.  
-  
-# Находим все аккаунты в группе из переменной gruppaispolniteley  
-# и помещаем их в переменную value,  
-# то есть заполняем значение атрибута «Исполнители задачи»  
-?gruppaispolniteley account:groupUsers ?value.  
+# Импортируем функции для работы с записями, аккаунтами и базой данных
+@prefix object: <http://comindware.com/ontology/object#>.
+@prefix account: <http://comindware.com/ontology/account#>.
+@prefix cmw: <http://comindware.com/logics#>.
+{
+# Находим атрибут Nazvaniegruppy (Название группы) в шаблоне Spravochnikgrupp (Справочник групп)
+# и помещаем его в переменную nazvaniegruppyAttribute
+("Spravochnikgrupp" "Nazvaniegruppy") object:findProperty ?nazvaniegruppyAttribute.
+
+# Находим атрибут Zayavka (Заявка) в шаблоне Gruppaispolniteley (Группа исполнителей)
+# и помещаем его в переменную gruppaispolniteleyAttribute
+("Zayavka" "Gruppaispolniteley") object:findProperty ?gruppaispolniteleyAttribute.
+
+# Помещаем значение атрибута Gruppaispolniteley, то есть группу,
+# выбранную в текущей заявке item,
+# в переменную gruppaispolniteleyValue,
+?item ?gruppaispolniteleyAttribute ?gruppaispolniteleyValue.
+
+# Находим название выбранной группы шаблоне Spravochnikgrupp,
+# то есть значение атрибута Nazvaniegruppy,
+# и помещаем его в переменную nazvaniegruppy
+?gruppaispolniteleyValue ?nazvaniegruppyAttribute ?nazvaniegruppy.
+
+# Находим группу по названию из переменной nazvaniegruppy
+# и помещаем группу в переменную gruppaispolniteley
+?gruppaispolniteley account:groupName ?nazvaniegruppy.
+
+# Находим все аккаунты в группе из переменной gruppaispolniteley
+# и помещаем их в переменную value,
+# то есть заполняем значение атрибута «Исполнители задачи»
+?gruppaispolniteley account:groupUsers ?value.
 }
 ```
 7. Создайте процесс *«Оформление заявок»* и добавьте на диаграмму **пользовательскую задачу** *«Обработать заявку»*.
@@ -101,7 +101,7 @@ _![Диаграмма процесса «Оформление заявок»](ht
 
 **[Группы. Создание, настройка, выбор участников, синхронизация с AD, удаление][groups]**
 
-**[Пользовательская задача][user_task]**
+**[Пользовательская задача][process_diagram_elements_user_task]**
 
 **[Атрибут типа «Аккаунт»][attribute_account]**
 

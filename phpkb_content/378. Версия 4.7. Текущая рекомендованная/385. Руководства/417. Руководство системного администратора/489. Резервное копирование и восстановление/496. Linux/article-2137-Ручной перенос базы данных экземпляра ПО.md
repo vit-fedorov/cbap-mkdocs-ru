@@ -33,7 +33,7 @@ sudo -i
 2. Перейдите в папку ПО:
 
 ```
-cd /var/www/comindware/  
+cd /var/www/comindware/
 
 ```
 3. Откройте файл `Ignite.config` в текстовом редакторе nano:
@@ -62,7 +62,7 @@ ctrl+X
 6. Перейдите в папку с базой данных экземпляра ПО в рабочей папке и выведите на экран её содержимое:
 
 ```
-cd /var/lib/ignite/db/ && ll  
+cd /var/lib/ignite/db/ && ll
 
 ```
 
@@ -76,7 +76,7 @@ cd /tmp/
 9. Создайте с помощью nano скрипт `snapshot.sh`:
 
 ```
-nano snapshot.sh  
+nano snapshot.sh
 
 ```
 
@@ -84,7 +84,7 @@ _![Создание скрипта с помощью nano](https://kb.comindware
 10. Введите скрипт создания снимка, например:
 
 ```
-now=$(date +%Y_%m_%d)   
+now=$(date +%Y_%m_%d)
 /usr/share/ignite/bin/control.sh --snapshot create snapshot_$now
 ```
 11. Сохраните скрипт: `ctrl+O` и закройте nano: `ctrl+X`.
@@ -130,7 +130,7 @@ systemctl stop elasticsearch.service comindwareinstancename.service nginx.servic
 5. Убедитесь, что сервисы остановлены. Статус должен быть `Active: inactive (dead)`:
 
 ```
-systemctl status zookeeper.service kafka.service nginx.service comindwareinstancename.service elasticsearch.service  
+systemctl status zookeeper.service kafka.service nginx.service comindwareinstancename.service elasticsearch.service
 
 ```
 
@@ -150,14 +150,14 @@ _![Содержимое папки снимка](https://kb.comindware.ru/assets
 ```
 nano Ignite.config
 ```
-11. Найдите директиву `<workDirectory>` и укажите в ней путь папке базы данных экземпляра ПО:   
+11. Найдите директиву `<workDirectory>` и укажите в ней путь папке базы данных экземпляра ПО:
 `<workDirectory>/var/www/cmw-db</workDirectory>`
 
 _![Путь к новой папке базы данных в файле конфигурации Apache Ignite](https://kb.comindware.ru/assets/img_63567eabb2a14.png)_
 12. Проверьте наличие, а также дату и время создания файлов и папок в папке с базой данных экземпляра ПО:
 
 ```
-cd /var/www/cmw-db/ && ll  
+cd /var/www/cmw-db/ && ll
 cd /var/www/cmw-db/db/ && ll
 ```
 
@@ -167,8 +167,8 @@ _![Проверка наличия, даты и времени создания 
 13. Замените права доступа и владельцев папок:
 
 ```
-cd /var/www/  
-chmod -R 777 cmw-db/  
+cd /var/www/
+chmod -R 777 cmw-db/
 sudo chown -R www-data:www-data cmw-db/
 ```
 14. Проверьте права доступа и владельцев папок:
@@ -184,7 +184,7 @@ _![Проверка прав доступа и владельцев папок](
 1. Запустите необходимые службы и проверьте их статус. Статус должен быть `Active: running`:
 
 ```
-systemctl start elasticsearch kafka nginx comindwareinstancename  
+systemctl start elasticsearch kafka nginx comindwareinstancename
 systemctl status elasticsearch kafka nginx comindwareinstancename
 ```
 
@@ -193,7 +193,7 @@ _![Проверка активного состояния сервисов](http
 3. Откройте в браузере веб-сайт с экземпляром ПО, например `localhost`.
 4. Дождитесь инициализации экземпляра ПО после перезапуска. Этот процесс может занять некоторое время. Может потребоваться обновить страницу браузера.
     - Если загрузка веб-страницы экземпляра ПО завершается ошибкой, заново выполните перенос базы данных с полным удалением всего содержимого папки базы данных экземпляра ПО и использованием предыдущей резервной копии.
-5. Проверьте и исправьте конфигурацию экземпляра ПО, как указано в статье *«[Проверка и настройка конфигурации экземпляра ПО после восстановления из резервной копии](https://kb.comindware.ru/article.php?id=2618)».*
+5. Проверьте и исправьте конфигурацию экземпляра ПО, как указано в статье *«[Проверка и настройка конфигурации экземпляра ПО после восстановления из резервной копии][restore_test_configure]».*
 
 --8<-- "related_topics_heading.md"
 

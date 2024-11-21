@@ -42,7 +42,7 @@ kbId: 2211
 
 _![Список диаграмм приложения](img/diagram_list.png)_
 
-## Создание диаграммы {: #diagram_creation}
+## Создание диаграммы {: #diagram_creation .pageBreakBefore }
 
 !!! note "Примечание"
 
@@ -63,16 +63,20 @@ _![Список диаграмм приложения](img/diagram_list.png)_
 
 _![Окно создания новой диаграммы с выбором приложения](img/diagram_creation_with_app_selection.png)_
 
-## Удаление диаграмм
+## Удаление диаграмм {: .pageBreakBefore }
 
 1. Откройте [список диаграмм][diagram_list].
 2. Установите для подлежащих удалению диаграмм флажки выбора.
 3. Нажмите кнопку «**Удалить**» над списком диаграмм.
 4. Подтвердите удаление диаграмм.
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Управление версиями диаграммы процесса][process_diagram_version_control]**
+- _[Управление версиями диаграммы процесса][process_diagram_version_control]_
+
+</div>
 
 {%
 include-markdown "../../.snippets/hyperlinks_mkdocs_to_kb_map.md"

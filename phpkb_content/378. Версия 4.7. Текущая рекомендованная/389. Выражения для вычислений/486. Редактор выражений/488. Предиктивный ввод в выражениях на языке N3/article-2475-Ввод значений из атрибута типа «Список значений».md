@@ -18,10 +18,10 @@ _![Список значений атрибута taskStatus](https://kb.comindw
 **Пример: выражение, возвращающее список задач со статусом «Выполняется»**
 
 ```
-@prefix cmw: <http://comindware.com/logics#>.  
-@prefix taskStatus: <http://comindware.com/ontology/taskStatus#>.  
-{  
-  ?value cmw:taskStatus taskStatus:inProgress.                   
+@prefix cmw: <http://comindware.com/logics#>.
+@prefix taskStatus: <http://comindware.com/ontology/taskStatus#>.
+{
+  ?value cmw:taskStatus taskStatus:inProgress.
 }
 ```
 

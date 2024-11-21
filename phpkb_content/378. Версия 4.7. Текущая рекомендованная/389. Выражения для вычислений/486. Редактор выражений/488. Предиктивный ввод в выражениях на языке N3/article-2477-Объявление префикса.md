@@ -18,7 +18,7 @@ _![Список доступных префиксов N3 с описанием](
 **Пример: префикс math для математических функций**
 
 ```
-@prefix math: <http://www.w3.org/2000/10/swap/math#>.               
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
 ```
 
 --8<-- "related_topics_heading.md"

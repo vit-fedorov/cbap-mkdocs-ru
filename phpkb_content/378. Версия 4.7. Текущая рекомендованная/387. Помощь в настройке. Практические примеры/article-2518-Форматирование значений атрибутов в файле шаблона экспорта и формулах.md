@@ -186,7 +186,7 @@ FORMAT("{0}",LIST(IF($attributeSystemName == true,"Согласовано","Не
 - `{accountAttributeSystemName.birthday:dd MMMM yyyy 'г.'}` — дата рождения в формате: *29 мая 2024 г.*;
 - `{accountAttributeSystemName.title}` — должность.
 
-См. также [полный перечень атрибутов аккаунта](https://kb.comindware.ru/article.php?id=1354).
+См. также [полный перечень атрибутов аккаунта][account_attributes_system_names].
 
 ## Форматирование атрибутов связанных записей
 

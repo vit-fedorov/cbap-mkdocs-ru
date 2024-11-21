@@ -25,14 +25,30 @@ kbId: 2207
 
 - Чтобы получить значение переменной приложения с помощью N3, используйте следующее выражение:
 
+**По системному имени переменной**
+
 ```
-# Импортируем функции для работы с переменными  
-@prefix globalvariable: <http://comindware.com/ontology/variable#>.  
-  
-{  
-    # Получаем значение глобальной переменной  
-    # по её ID (svar.1) и возвращаем её значение.  
-    "svar.1" globalvariable:getValueById ?value.  
+# Импортируем функции для работы с переменными
+@prefix globalvariable: <http://comindware.com/ontology/variable#>.
+
+{
+    # Находим переменную VariableSystemName в приложении SolutionSystemName
+    # по их системным именам
+    # и возвращаем значение переменной.
+    ("SolutionSystemName" "VariableSystemName") globalvariable:getValueByAlias ?value.
+}
+```
+
+**По ID переменной**
+
+```
+# Импортируем функции для работы с переменными
+@prefix globalvariable: <http://comindware.com/ontology/variable#>.
+
+{
+    # Получаем значение переменной приложения
+    # по её ID (svar.1) и возвращаем её значение.
+    "svar.1" globalvariable:getValueById ?value.
 }
 ```
 - Чтобы присвоить атрибуту значение переменной приложения с помощью C#-скрипта в сценарии, используйте действие «**Изменить значения скриптом**» со следующими свойствами:
@@ -45,28 +61,26 @@ kbId: 2207
     
     
     ```
-    public class Script {  
-        // Задайте тип метода Main(),   
-        // соответствующий типу атрибута и переменной приложения:  
-        // string — Текст, int, decimal — Число, dateTime — Дата и время,  
-        // bool — Логический, TimeSpan — Длительность,   
-        // IEnumerable<string> — Список значений.  
-        // ObjectID — переменная, в которой хранится   
-        // ID экземпляра шаблона записи,  
-        // в контексте которого выполняется скрипт.  
-        // Чтобы просмотреть доступные методы   
-        // в пространстве имён Comindware,   
-        // введите Comindware и точку  
-      
-        public static decimal Main(string ObjectID) {           
-            var result = (decimal)Api.Solution.SolutionVariableService.GetValue("svar.1");  
-            return result;  
-        }  
+    public class Script {
+        // Задайте тип метода Main(),
+        // соответствующий типу атрибута и переменной приложения:
+        // string — Текст, int, decimal — Число, dateTime — Дата и время,
+        // bool — Логический, TimeSpan — Длительность,
+        // IEnumerable<string> — Список значений.
+        // ObjectID — переменная, в которой хранится
+        // ID экземпляра шаблона записи,
+        // в контексте которого выполняется скрипт.
+        // Чтобы просмотреть доступные методы
+        // в пространстве имён Comindware,
+        // введите Comindware и точку
+    
+        public static decimal Main(string ObjectID) {
+            var result = (decimal)Api.Solution.SolutionVariableService.GetValue("svar.1");
+            return result;
+        }
     }
     ```
-    
-    
-    - Чтобы использовать значение переменной приложения в **Задаче-вызове сценария** используйте образец C#-скрипта из статьи [*«Автонумерация записей с помощью формулы, C#-скрипта или выражения N3»*][auto_numerating_records].
+- Чтобы использовать значение переменной приложения в **Задаче-вызове сценария** используйте образец C#-скрипта из статьи [*«Автонумерация записей с помощью формулы, C#-скрипта или выражения N3»*][auto_numerating_records].
 
 ## Просмотр списка и настройка переменных приложения
 
@@ -93,8 +107,7 @@ _![Настройка переменной приложения](https://kb.comi
 
 --8<-- "related_topics_heading.md"
 
-**[Использование переменных в сценарии][scenario_variables]**
-
-**[Автонумерация записей с помощью формулы, C#-скрипта или выражения N3][auto_numerating_records]**
+- *[Использование переменных в сценарии][scenario_variables]*
+- *[Автонумерация записей с помощью формулы, C#-скрипта или выражения N3][auto_numerating_records]*
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

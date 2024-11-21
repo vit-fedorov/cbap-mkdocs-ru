@@ -1,0 +1,7 @@
+title: Инструкции для Linux
+categoryId: 528
+
+nav:
+    - ad_authentication_configure.md
+    - sso_authenticatation_configure.md
+    - ...

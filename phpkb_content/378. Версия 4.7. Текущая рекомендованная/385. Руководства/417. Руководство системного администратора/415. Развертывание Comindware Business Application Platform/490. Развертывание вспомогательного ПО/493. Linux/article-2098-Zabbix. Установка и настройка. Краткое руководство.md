@@ -31,9 +31,9 @@ Zabbix состоит из сервера и агентов:
 
 Подробные инструкции по установке настройке сервера и агентов Zabbix представлены в следующих статьях:
 
-- [Zabbix Server, Zabbix Agent, Zabbix Frontend и MySQL. Инструкции по установке](https://kb.comindware.ru/article.php?id=2292)
-- [Zabbix Agent. Инструкции по установке](https://kb.comindware.ru/article.php?id=2291)
-- [Zabbix Agent. Инструкции по установке для Windows](https://kb.comindware.ru/article.php?id=2304)
+- [Zabbix Server, Zabbix Agent, Zabbix Frontend и MySQL. Инструкции по установке][zabbix_server_deploy]
+- [Zabbix Agent. Инструкции по установке][zabbix_agent_deploy]
+- [Zabbix Agent. Инструкции по установке для Windows][zabbix_agent_deploy_windows]
 - [Официальная инструкция по установке Zabbix (на английском языке)](https://www.zabbix.com/documentation/5.4/ru/manual/appendix/install)
 - [Установка и настройка Zabbix 5.0 (на русском языке, serveradmin.ru)](https://serveradmin.ru/ustanovka-i-nastrojka-zabbix-5-0/)
 - [Мониторинг web сайта в Zabbix (на русском языке, serveradmin.ru)](https://serveradmin.ru/monitoring-web-sayta-v-zabbix/)

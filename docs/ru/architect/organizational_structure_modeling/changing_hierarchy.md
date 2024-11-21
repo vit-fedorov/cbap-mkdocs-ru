@@ -15,11 +15,11 @@ hide:
     - tags
 ---
 
-# Изменение иерархии оргединиц {: #changing_hierarchy}
+# Изменение иерархии оргединиц {: #architect_changing_hierarchy}
 
 ## Перемещение оргединицы с помощью реестра
 
-1. В [реестре оргединиц][просмотр-реестра-оргединиц] наведите указатель мыши на первую ячейку в строке оргединицы, которую требуется переместить на другой уровень иерархии.
+1. В [реестре оргединиц][architect_organizational_structure_modelling] наведите указатель мыши на первую ячейку в строке оргединицы, которую требуется переместить на другой уровень иерархии.
 2. Отобразится значок с вертикальными троеточиями <i class="fa-light fa-grip-dots-vertical"></i>.
 3. Удерживая значок <i class="fa-light fa-grip-dots-vertical"></i>, перетащите оргединицу на строку её новой родительской оргединицы.
 
@@ -35,8 +35,13 @@ hide:
 
 *![Перемещение оргединицы в панели навигации](organizational_structure_modeling_moving_unit_in_navigation.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра оргединиц][просмотр-реестра-оргединиц]**
+- _[Просмотр реестра оргединиц][architect_organizational_structure_modelling]_
+- _[Использование системы — Панель навигации][navigation_panel]_
 
-**[Использование системы — Панель навигации][navigation_panel]**
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

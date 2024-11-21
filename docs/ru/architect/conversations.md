@@ -1,5 +1,5 @@
 ---
-title: Обсуждение элементов архитектуры организации
+title: Обсуждение элементов копроративной архитектуры
 kbId: 2417
 tags:
     - процессная архитектура
@@ -15,7 +15,7 @@ hide:
     - tags
 ---
 
-# Обсуждение элементов архитектуры организации {: #conversations}
+# Обсуждение элементов копроративной архитектуры {: #architect_conversations}
 
 В {{ productNameArchitect }} можно вести обсуждения диаграмм, элементов диаграмм и организационных единиц.
 
@@ -52,8 +52,13 @@ hide:
 
 *![Просмотр списка обсуждений процессов](viewing_process_conversations_list.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Просмотр диаграммы](viewing_diagram.md)**
+- _[Просмотр диаграммы][architect_viewing_diagram]_
+- _[Просмотр реестра оргединиц][architect_organizational_structure_modelling]_
 
-**[Просмотр реестра оргединиц][просмотр-реестра-оргединиц]**
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

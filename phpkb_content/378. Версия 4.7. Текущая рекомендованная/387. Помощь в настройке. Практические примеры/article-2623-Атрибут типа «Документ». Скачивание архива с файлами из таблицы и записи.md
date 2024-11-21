@@ -46,111 +46,111 @@ kbId: 2623
 4. На вкладке «**Скрипт**» добавьте следующий C#-скрипт:
 
 ```
-using System;  
-using System.Collections.Generic;  
-using System.Linq;  
-using Comindware.Data.Entity;  
-using Comindware.TeamNetwork.Api.Data.UserCommands;  
-using Comindware.TeamNetwork.Api.Data;  
-using System.IO;  
-using System.IO.Compression;  
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Comindware.Data.Entity;
+using Comindware.TeamNetwork.Api.Data.UserCommands;
+using Comindware.TeamNetwork.Api.Data;
+using System.IO;
+using System.IO.Compression;
 
-class Script  
-{  
-    public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)  
-    {  
-// ObjectIds — массив выбранных записей, полученный из контекста операции кнопки.  
-        var selected_Ids = userCommandContext.ObjectIds;  
-// Создаем массив compressedBytes для хранения архива с файлами.  
-        byte[] compressedBytes;  
+class Script
+{
+    public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)
+    {
+// ObjectIds — массив выбранных записей, полученный из контекста операции кнопки.
+        var selected_Ids = userCommandContext.ObjectIds;
+// Создаем массив compressedBytes для хранения архива с файлами.
+        byte[] compressedBytes;
 
-        try  
-        {  
-// Vlozheniya — системное имя атрибута «Вложения» шаблона записи «Реестр документов».  
-// Помещаем в массив data значения атрибутов «Вложения» из выбранных записей.  
-// Создаём поток resultStream для архива  
-            var data = Api.TeamNetwork.ObjectService.GetPropertyValues(selected_Ids, new[] { "Vlozheniya" });  
-            using (var resultStream = new MemoryStream())  
-            {  
-                using (var zip = new ZipArchive(resultStream, ZipArchiveMode.Update))  
-                {  
-                    foreach (var id in selected_Ids)  
+        try
+        {
+// Vlozheniya — системное имя атрибута «Вложения» шаблона записи «Реестр документов».
+// Помещаем в массив data значения атрибутов «Вложения» из выбранных записей.
+// Создаём поток resultStream для архива
+            var data = Api.TeamNetwork.ObjectService.GetPropertyValues(selected_Ids, new[] { "Vlozheniya" });
+            using (var resultStream = new MemoryStream())
+            {
+                using (var zip = new ZipArchive(resultStream, ZipArchiveMode.Update))
+                {
+                    foreach (var id in selected_Ids)
                     {
-                        // Присваиваем переменной doc_Obj значение атрибута «Вложения».  
-                        if (data[id].TryGetValue("Vlozheniya", out object doc_Obj) && doc_Obj != null)  
-                        {  
-// Файлы из атрибута «Вложения» помещаем в массив doc_Array.  
-// Проверяем, что количество файлов больше 0.  
-                            var doc_Array = doc_Obj as object[];  
-                            if(doc_Array.Length > 0)  
-                            {  
-// Каждый файл в массиве doc_Array преобразуем в строку Base64   
-// и помещаем в архив fileInArchive.  
-                                foreach(var doc in doc_Array)  
-                                {  
-                                    var documentData = Api.TeamNetwork.DocumentService.GetContent(doc.ToString());  
-                                    var startStream = new MemoryStream();  
-                                    startStream.Write(documentData.Data, 0, documentData.Data.Length);  
-                                    startStream.Seek(0, SeekOrigin.Begin);  
-                                    var fileInArchive = zip.CreateEntry(documentData.Name, CompressionLevel.Optimal);  
-                                    using (var entryStream = fileInArchive.Open())  
-                                    {  
-                                        startStream.CopyTo(entryStream);  
-                                    }  
-                                }  
-                            }  
-                        }  
-                    }  
-                }  
-// Помещаем поток с результирующим архивом в массив content.  
-                compressedBytes = resultStream.ToArray();  
-            }  
-            var memStream = new MemoryStream(compressedBytes);  
-            var content = memStream.ToArray();  
-// Заполняем объект resulterr, который возвращает операция кнопки.  
-            var resulterr = new UserCommandResult  
-            {  
-                Success = true,  
-                Commited = true,  
-// Собираем файл архива с именем ZipedFiles.zip и содержимым из массива content.  
-// Этот файл скачает браузер после нажатия кнопки.  
-                File = new UserCommandFileResult()  
-                {  
-                    Content = content,  
-                    Name = "ZipedFiles.zip"  
-                    },  
-// Формируем сообщение об успешном выполнении операции кнопки.  
-                Messages = new[]  
-                {  
-                    new UserCommandMessage  
+                        // Присваиваем переменной doc_Obj значение атрибута «Вложения».
+                        if (data[id].TryGetValue("Vlozheniya", out object doc_Obj) && doc_Obj != null)
+                        {
+// Файлы из атрибута «Вложения» помещаем в массив doc_Array.
+// Проверяем, что количество файлов больше 0.
+                            var doc_Array = doc_Obj as object[];
+                            if(doc_Array.Length > 0)
+                            {
+// Каждый файл в массиве doc_Array преобразуем в строку Base64
+// и помещаем в архив fileInArchive.
+                                foreach(var doc in doc_Array)
+                                {
+                                    var documentData = Api.TeamNetwork.DocumentService.GetContent(doc.ToString());
+                                    var startStream = new MemoryStream();
+                                    startStream.Write(documentData.Data, 0, documentData.Data.Length);
+                                    startStream.Seek(0, SeekOrigin.Begin);
+                                    var fileInArchive = zip.CreateEntry(documentData.Name, CompressionLevel.Optimal);
+                                    using (var entryStream = fileInArchive.Open())
+                                    {
+                                        startStream.CopyTo(entryStream);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+// Помещаем поток с результирующим архивом в массив content.
+                compressedBytes = resultStream.ToArray();
+            }
+            var memStream = new MemoryStream(compressedBytes);
+            var content = memStream.ToArray();
+// Заполняем объект resulterr, который возвращает операция кнопки.
+            var resulterr = new UserCommandResult
+            {
+                Success = true,
+                Commited = true,
+// Собираем файл архива с именем ZipedFiles.zip и содержимым из массива content.
+// Этот файл скачает браузер после нажатия кнопки.
+                File = new UserCommandFileResult()
+                {
+                    Content = content,
+                    Name = "ZipedFiles.zip"
+                    },
+// Формируем сообщение об успешном выполнении операции кнопки.
+                Messages = new[]
+                {
+                    new UserCommandMessage
                     {
-                        Severity = SeverityLevel.Normal,  
-                        Text = "Успешно"  
-                        }  
+                        Severity = SeverityLevel.Normal,
+                        Text = "Успешно"
+                        }
                 }
-                        };  
-            return resulterr;  
+                        };
+            return resulterr;
         }
-// Обрабатываем любые ошибки  
-        catch  
-        {  
-            var resulterr = new UserCommandResult  
-            {  
-                Success = false,  
-                Commited = true,  
-                ResultType = UserCommandResultType.Notificate,  
-                Messages = new[]  
-                {  
-                    new UserCommandMessage  
-                    {  
-                        Severity = SeverityLevel.Normal,  
-                        Text = "Ошибка"  
-                        }  
-                }  
-            };  
-            return resulterr;  
-        }  
-    }  
+// Обрабатываем любые ошибки
+        catch
+        {
+            var resulterr = new UserCommandResult
+            {
+                Success = false,
+                Commited = true,
+                ResultType = UserCommandResultType.Notificate,
+                Messages = new[]
+                {
+                    new UserCommandMessage
+                    {
+                        Severity = SeverityLevel.Normal,
+                        Text = "Ошибка"
+                        }
+                }
+            };
+            return resulterr;
+        }
+    }
 }
 ```
 5. Поместите атрибуты *«Наименование»* и *«Вложения»* в таблицу *«Все записи»* и на форму шаблона *«Реестр документов»*.

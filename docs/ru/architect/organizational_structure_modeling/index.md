@@ -13,7 +13,7 @@ hide:
     - tags
 ---
 
-# Построение организационной структуры
+# Построение организационной структуры {: #architect_organizational_structure_modelling}
 
 Для построения организационно-штатной структуры в **{{ productNameArchitect }}** используется иерархический [реестр организационных единиц](#просмотр-реестра-оргединиц).
 
@@ -22,9 +22,9 @@ hide:
 * подразделение;
 * должность.
 
-Оргединицы можно использовать в качестве ресурсов и исполнителей в [процессной архитектуре][построение-процессной-архитектуры] организации.
+Оргединицы можно использовать в качестве ресурсов и исполнителей в [процессной архитектуре][architect_process_architecture_modelling] организации.
 
-Атрибуты и визуальное представление оргединицы можно [изменить](configuring_organizational_unit_form_and_attributes.md).
+Атрибуты и визуальное представление оргединицы можно [изменить][architect_configuring_organizational_unit_form_and_attributes].
 
 ## Просмотр реестра оргединиц
 
@@ -36,8 +36,13 @@ hide:
 
 *![Иерархический реестр оргединиц](organizational_structure_modeling_registry.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Построение процессной архитектуры][построение-процессной-архитектуры]**
+- _[Построение процессной архитектуры][architect_process_architecture_modelling]_
+- _[Использование системы — Панель навигации][navigation_panel]_
 
-**[Использование системы — Панель навигации][navigation_panel]**
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

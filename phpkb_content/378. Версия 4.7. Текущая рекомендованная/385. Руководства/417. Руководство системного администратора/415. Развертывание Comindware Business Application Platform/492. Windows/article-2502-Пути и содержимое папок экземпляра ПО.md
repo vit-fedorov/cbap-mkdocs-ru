@@ -7,62 +7,61 @@ kbId: 2502
 
 ## Введение
 
-В этой статье представлена информация о расположении файлов и папок экземпляра ПО **{{ productName }}**в операционных системах семейства [Linux](#mcetoc_1hchr2nua1) (Альт Сервер, Astra Linux, РЕД ОС, Rocky Linux и Ubuntu) и [Windows.](#mcetoc_1hpdpt8tk1)
+Здесь представлена информация о расположении файлов и папок экземпляра ПО **{{ productName }}**.
 
-## Содержимое каталогов — Linux
+## Содержимое директорий — Linux
 
-По умолчанию файлы экземпляра ПО находятся в каталоге `/var/lib/comindware/instancename`
+По умолчанию файлы экземпляра ПО находятся в директории `/var/lib/comindware/<instanceName>`
 
-Здесь и далее `instancename` — имя экземпляра ПО.
+Здесь и далее `<instanceName>` — имя экземпляра ПО.
 
-- `/usr/share/comindware/configs/instance/instancename.yml` — файл конфигурации. В этом файле задаются все остальные пути, перечисленные ниже.
-- `/var/www/instancename` — исполняемые и конфигурационные файлы экземпляра ПО.
-- `/var/lib/comindware``/instancename/Database/db` — файлы базы данных.
-- `/var/lib/comindware``/instancename/Database/log` — файлы журналов Apache Ignite.
-- `/var/log/comindware/instancename/Logs/` — файлы журналов.
-- `/var/log/comindware/instancename/Logs/Archive` — архивы журналов.
-- `/var/lib/comindware``/instancename/Database/Scripts` — скомпилированные библиотеки для скриптов на языке С#.
-- `/var/lib/comindware``/instancename/Database/``snapshots` — снимки данных Apache Ignite.
-- `/var/lib/comindware``/instancename/Database/wal` — файлы журнала предварительной записи.
-- `/var/lib/comindware``/instancename/Streams` — загруженные пользователями и сформированные системой файлы, которые прикреплены к соответствующим атрибутам.
+- `/usr/share/comindware/configs/instance/<instanceName>.yml` — файл конфигурации. В этом файле задаются все остальные пути, перечисленные ниже.
+- `/var/www/<instanceName>` — исполняемые и конфигурационные файлы экземпляра ПО.
+- `/var/lib/comindware/<instanceName>/Database/db` — файлы базы данных.
+- `/var/lib/comindware/<instanceName>/Database/log` — файлы журналов Apache Ignite.
+- `/var/log/comindware/<instanceName>/Logs/` — файлы журналов.
+- `/var/log/comindware/<instanceName>/Logs/Archive` — архивы журналов.
+- `/var/lib/comindware/<instanceName>/Database/Scripts` — скомпилированные библиотеки для скриптов на языке С#.
+- `/var/lib/comindware/<instanceName>/Database/snapshots` — снимки данных Apache Ignite.
+- `/var/lib/comindware/<instanceName>/Database/wal` — файлы журнала предварительной записи.
+- `/var/lib/comindware/<instanceName>/Streams` — загруженные пользователями и сформированные системой файлы, которые прикреплены к соответствующим атрибутам.
 - Временные данные, обеспечивающие работу экземпляра ПО. В этих папках нет пользовательских данных и файлов базы данных экземпляра ПО:
-    - `/var/lib/comindware``/instancename/Temp`
-    - `/var/lib/comindware``/instancename/Database/cache`
-    - `/var/lib/comindware``/instancename/Database/diagnostic`
-    - `/var/lib/comindware``/instancename/Database/FullTextSearch`
 
-_![Пример файла конфигурации instancename.yml](https://kb.comindware.ru/assets/img_66546f9baeb01.png)_
+    - `/var/lib/comindware/<instanceName>/Temp`
+    - `/var/lib/comindware/<instanceName>/Database/cache`
+    - `/var/lib/comindware/<instanceName>/Database/diagnostic`
+    - `/var/lib/comindware/<instanceName>/Database/FullTextSearch`![Пример файла конфигурации <instanceName>.yml](https://kb.comindware.ru/assets/img_66546f9baeb01.png)
+
+Пример файла конфигурации .yml
 
 ## Содержимое папок — Windows
 
-База данных по умолчанию находится в папке с экземпляром ПО: `C``:\``ProgramData``\``Comindware``\``Instances``\instancename`. Здесь `instancename` — имя экземпляра ПО.
+База данных по умолчанию находится в папке с экземпляром ПО: `C:\ProgramData\Comindware\Instances\<instanceName>`. Здесь `<instanceName>` — имя экземпляра ПО.
 
-Просмотреть фактические пути к папкам экземпляра ПО можно в Утилите администрирования. См. статью *«[Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта](https://kb.comindware.ru/article.php?id=2036)»*).
+Просмотреть фактические пути к папкам экземпляра ПО можно в Утилите администрирования. См. статью *«[Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта][instance_configure_windows]»*.
 
 - `C:\Program Files\Comindware\CBAP` — исполняемые файлы ПО разных версий.
 - `C:\ProgramData\сomindware\configs` — общие файлы конфигурации ПО.
-- `C:\ProgramData\сomindware\configs\instance\instancename.yml` — файл конфигурации. В этом файле задаются все остальные пути, перечисленные ниже..
-- `C``:\` `ProgramData``\сomindware``\``Instances` — папка с экземплярами ПО.
-- `C``:\``ProgramData``\сomindware``\``Instances``\instancename` — экземпляр ПО.
-- `C``:\``ProgramData``\сomindware``\``Instances``\instancename``\``Config` — конфигурационные файлы:
+- `C:\ProgramData\сomindware\configs\instance\<instanceName>.yml` — файл конфигурации. В этом файле задаются все остальные пути, перечисленные ниже..
+- `C:\ProgramData\сomindware\Instances` — папка с экземплярами ПО.
+- `C:\ProgramData\сomindware\Instances\<instanceName>` — экземпляр ПО.
+- `C:\ProgramData\сomindware\Instances\<instanceName>\Config` — конфигурационные файлы:
     - `logs.config` (конфигурация журналов, см. статью *«[Подсистема журналирования][logging_engine]»*);
     - `Web.config` (конфигурация экземпляра системы);
     - `Workers.config` (конфигурация системных служб экземпляра системы).
-- `C``:\``ProgramData``\``сomindware``\``Instances``\instancename``\``Data` — файлы базы данных.
-- `C``:\``ProgramData``\с``omindware``\``Instances``\instancename\Data\Scripts` — DLL-файлы, скомпилированные из скриптов на языке C#.
-- `C``:\``ProgramData``\с``omindware``\``Instances``\instancename\Data\FullTextSearch` — индексы полнотекстового поиска.
-- `C``:\``ProgramData``\с``omindware``\``Instances``\instancename\Streams` — файлы, загруженные пользователями и сформированные ПО.
-- `C``:\``ProgramData``\с``omindware``\``Instances``\instancename\Logs` — журналы экземпляра ПО.
-- `C``:\``ProgramData``\с``omindware``\``Instances``\instancename\Temp` — временные файлы.
+- `C:\ProgramData\сomindware\Instances\<instanceName>\Data` — файлы базы данных.
+- `C:\ProgramData\сomindware\Instances\<instanceName>\Data\Scripts` — DLL-файлы, скомпилированные из скриптов на языке C#.
+- `C:\ProgramData\сomindware\Instances\<instanceName>\Data\FullTextSearch` — индексы полнотекстового поиска.
+- `C:\ProgramData\сomindware\Instances\<instanceName>\Streams` — файлы, загруженные пользователями и сформированные ПО.
+- `C:\ProgramData\сomindware\Instances\<instanceName>\Logs` — журналы экземпляра ПО.
+- `C:\ProgramData\сomindware\Instances\<instanceName>\Temp` — временные файлы.
 
 --8<-- "related_topics_heading.md"
 
-**[Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта](https://kb.comindware.ru/article.php?id=2036)**
+**[Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта][instance_configure_windows]**
 
-**[Антивирусное ПО. Настройка исключений: пути и файлы Comindware Business Application Platform](https://kb.comindware.ru/article.php?id=2581)**
+**[Антивирусное ПО. Настройка исключений: пути и файлы {{ productName }}][antivirus_exceptions_configure]**
 
 **[Подсистема журналирования][logging_engine]**
-
-
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

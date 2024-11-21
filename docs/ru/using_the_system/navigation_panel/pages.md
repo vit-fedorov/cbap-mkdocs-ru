@@ -23,7 +23,7 @@ hide:
 
 _![Представление страницы](img/page.png)_
 
-## Разделы страницы
+## Разделы страницы {: .pageBreakBefore }
 
 <!--page-view-expand-collapse-start-->
 ### Свертывание и развертывание раздела
@@ -42,7 +42,7 @@ _![Развертывание раздела на весь экран](page_sect
 
 _![Кнопка выхода из полноэкранного режима](page_section_full_screen_close.png)_
 
-### Настройка персональной конфигурации страницы
+### Настройка персональной конфигурации страницы {: .pageBreakBefore }
 
 Отдельные разделы страницы можно скрыть.
 
@@ -62,11 +62,14 @@ _![Кнопка выхода из полноэкранного режима](pag
 
 _![Выбор и упорядочивание разделов страницы](img/page_sections_config.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Использование рабочего стола][desktop]**
+- _[Использование рабочего стола][desktop]_
+- _[Использование панели навигации][navigation_panel]_
 
-**[Использование панели навигации][navigation_panel]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

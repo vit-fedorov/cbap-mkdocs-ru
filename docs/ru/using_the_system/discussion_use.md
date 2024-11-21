@@ -30,6 +30,12 @@ hide:
     * На форме может отображаться одно или несколько обсуждений, относящихся к разным записям (не обязательно к текущей записи).
     * Обсуждение на панели справа от формы всегда относится к текущей записи или задаче.
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Настройка обсуждений](discussion_configure.md)**
+- _[Настройка обсуждений][discussion_configure]_
+
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

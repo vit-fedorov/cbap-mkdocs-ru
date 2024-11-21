@@ -78,7 +78,7 @@ _![Страница входа в систему с кнопкой «Войти 
 
 **[[Глобальная конфигурация][global_configuration]](https://kb.comindware.ru/article.php?id=2310)**
 
-**[Пути и содержимое папок экземпляра ПО](https://kb.comindware.ru/article.php?id=2502)**
+**[Пути и содержимое папок экземпляра ПО][paths]**
 
 **[Подсистема журналирования][logging_engine]**
 

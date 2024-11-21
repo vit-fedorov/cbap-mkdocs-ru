@@ -32,13 +32,13 @@ kbId: 2471
 
 **Составление формулы**
 
-1. Введите функцию `COUNT()`, которая возвращает количество элементов в списке, переданном в качестве аргумента. См. также раздел «**[Ввод имени функции и просмотр подсказки по функции](https://kb.comindware.ru/article.php?id=2465)**».
+1. Введите функцию `COUNT()`, которая возвращает количество элементов в списке, переданном в качестве аргумента. См. также раздел «**[Ввод имени функции и просмотр подсказки по функции][formula_editor_function_autocompete]**».
 2. В позиции аргумента функции нажмите клавиши `Ctrl` `Пробел` и выберите шаблон *Zayavkanaavtomobil*.
 3. В формулу будет вставлена заготовка конструкции from-where-select для шаблона *Zayavkanaavtomobil*.
 4. Строку `Ваше условие замените` в заготовке замените на `b->Status->Nazvanie ==`, чтобы привести формулу к виду:
 
 ```
-COUNT(from b in db->Zayavkanaavtomobil  where b->Status->Nazvanie == select b->id) 
+COUNT(from b in db->Zayavkanaavtomobil  where b->Status->Nazvanie == select b->id)
 ```
 5. Нажмите клавиши `Ctrl` `Пробел` в позиции после оператора `==`.
 6. Отобразится список записей шаблона *«Статус заявки»*.
@@ -49,7 +49,7 @@ COUNT(from b in db->Zayavkanaavtomobil  where b->Status->Nazvanie == select b->i
 **Формула, возвращающая количество записей в шаблоне Zayavkanaavtomobil, связанных с записью «Выполняется» в шаблоне Status**
 
 ```
-COUNT(from b in db->Zayavkanaavtomobil  where b->Status->Nazvanie == "Выполняется"  select b->id) 
+COUNT(from b in db->Zayavkanaavtomobil  where b->Status->Nazvanie == "Выполняется"  select b->id)
 ```
 
 --8<-- "related_topics_heading.md"
@@ -58,6 +58,6 @@ COUNT(from b in db->Zayavkanaavtomobil  where b->Status->Nazvanie == "Выпол
 
 **[Примеры использования формул](https://kb.comindware.ru/category.php?id=409)**
 
-**[Ввод имени функции и просмотр подсказки по функции](https://kb.comindware.ru/article.php?id=2465)**
+**[Ввод имени функции и просмотр подсказки по функции][formula_editor_function_autocompete]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

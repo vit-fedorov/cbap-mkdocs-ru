@@ -38,7 +38,7 @@ kbId: 2348
 
 *![Перетаскивание кнопки экспорта на форму](export_template_button_form_placement.png)*
 
-## Настройка разрешения на использование кнопки
+## Настройка разрешения на использование кнопки {: .pageBreakBefore }
 
 1. Откройте раздел «**[Роли][roles]**» приложения.
 2. Откройте роль, участникам которой требуется использовать кнопку экспорта.
@@ -49,12 +49,14 @@ kbId: 2348
 
 *![Добавление разрешения на использование кнопки экспорта для роли](export_template_button_configure_permission.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Настройка шаблона экспорта][export_templates]**
+- _[Настройка шаблона экспорта][export_templates]_
+- _[Подготовка файла шаблона экспорта][export_template_file_configure]_
+- _[Кнопки. Определение, настройка, удаление][buttons]_
 
-**[Подготовка файла шаблона экспорта][export_template_file_configure]**
-
-**[Кнопки. Определение, настройка, удаление][buttons]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

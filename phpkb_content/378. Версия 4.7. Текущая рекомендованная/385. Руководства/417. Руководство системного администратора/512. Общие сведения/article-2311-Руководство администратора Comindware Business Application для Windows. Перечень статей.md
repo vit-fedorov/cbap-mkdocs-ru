@@ -16,34 +16,34 @@ kbId: 2311
 **Система** — развёрнутый программно-аппаратный комплекс на основе ПО.
 
 1. Утилита администрирования Comindware
-    1. [Установка и запуск Утилиты администрирования Comindware](https://kb.comindware.ru/article.php?id=2027)
+    1. [Установка и запуск Утилиты администрирования Comindware][admin_utility_install_launch]
     2. [Установка продукта Comindware Business Application Platform](https://kb.comindware.ru/article.php?id=2294)
     3. [Настройка конфигурации Утилиты администрирования Comindware](https://kb.comindware.ru/article.php?id=2295)
-    4. [Диагностика экземпляра продукта](https://kb.comindware.ru/article.php?id=2028)
-    5. [Обновление версии продукта для экземпляра](https://kb.comindware.ru/article.php?id=2029)
-    6. [Создание экземпляра продукта, добавление скрытого экземпляра](https://kb.comindware.ru/article.php?id=2030)
-    7. [Удаление версии продукта](https://kb.comindware.ru/article.php?id=2031)
-    8. [Запуск, остановка и удаление экземпляра продукта](https://kb.comindware.ru/article.php?id=2032)
+    4. [Диагностика экземпляра продукта][admin_utility_install_software]
+    5. [Обновление версии продукта для экземпляра][admin_utility_configure]
+    6. [Создание экземпляра продукта, добавление скрытого экземпляра][admin_utility_instance_diagnose]
+    7. [Удаление версии продукта][admin_utility_instance_upgrade_version]
+    8. [Запуск, остановка и удаление экземпляра продукта][admin_utility_instance_create]
     9. [Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта](https://kb.comindware.ru/article.php?id=2033)
     10. [Индикация состояния и обновление списка экземпляров продукта](https://kb.comindware.ru/article.php?id=2034)
-    11. [Восстановление экземпляра продукта из резервной копии в ОС Windows](https://kb.comindware.ru/article.php?id=2035)
-    12. [Инициализация экземпляра продукта](https://kb.comindware.ru/article.php?id=2036)
-    13. [Остановка экземпляра системы с помощью Диспетчера служб IIS](https://kb.comindware.ru/article.php?id=2037)
-    14. [Запуск экземпляра системы с помощью Диспетчера служб IIS](https://kb.comindware.ru/article.php?id=2038)
+    11. [Восстановление экземпляра продукта из резервной копии в ОС Windows][admin_utility_instance_start_stop]
+    12. [Инициализация экземпляра продукта][instance_configure_windows]
+    13. [Остановка экземпляра системы с помощью Диспетчера служб IIS][admin_utility_instance_status_update]
+    14. [Запуск экземпляра системы с помощью Диспетчера служб IIS][restore_windows]
     15. [Резервное копирование с помощью внешних средств в ОС Windows](https://kb.comindware.ru/article.php?id=2039)
     16. [Ручной перенос базы данных экземпляра ПО в ОС Windows](https://kb.comindware.ru/article.php?id=2040)
-2. [Администрирование аккаунтов](https://kb.comindware.ru/article.php?id=2296)
+2. [Аутентификация, авторизация и сессии пользователей][admin_utility_instance_installize]
 3. Остановка и запуск экземпляра ПО
-    1. [Аутентификация, авторизация и сессии пользователей](https://kb.comindware.ru/article.php?id=2297)
-    2. [Синхронизация с сервером каталогов (Active Directory)](https://kb.comindware.ru/article.php?id=2298)
-    3. [Настройка единого входа (SSO-аутентификации) в ОС Windows](https://kb.comindware.ru/article.php?id=2299)
-    4. [Безопасность](https://kb.comindware.ru/article.php?id=2300)
-4. [Панель и разделы навигации. Определения, настройка, удаление](https://kb.comindware.ru/article.php?id=2301)
-5. [Рабочий стол. Определения и настройка](https://kb.comindware.ru/article.php?id=2302)
+    1. [Синхронизация с сервером каталогов (Active Directory)](https://kb.comindware.ru/article.php?id=2297)
+    2. [Настройка единого входа (SSO-аутентификации) в ОС Windows](https://kb.comindware.ru/article.php?id=2298)
+    3. [Безопасность](https://kb.comindware.ru/article.php?id=2299)
+    4. [Панель и разделы навигации. Определения, настройка, удаление](https://kb.comindware.ru/article.php?id=2300)
+4. [Рабочий стол. Определения и настройка][backup_windows_external]
+5. [Информационные страницы. Использование](https://kb.comindware.ru/article.php?id=2302)
 6. Резервное копирование и восстановление
     1. [Резервное копирование встроенными средствами ПО][backup]
-    2. [Информационные страницы. Использование](https://kb.comindware.ru/article.php?id=2303)
-    3. [Диаграммы. Определения, создание, просмотр, удаление](https://kb.comindware.ru/article.php?id=2154)
+    2. [Диаграммы. Определения, создание, просмотр, удаление](https://kb.comindware.ru/article.php?id=2303)
+    3. [Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление][db_move_manual_windows]
 7. Мониторинг и журналирование работы Системы
     1. [Подсистема журналирования][logging_engine]
     2. [Перенаправление сообщений из файлов журналов в журнал событий Windows][logging_engine]
@@ -57,8 +57,8 @@ kbId: 2311
     1. [Конфигурация серверов приложений](https://kb.comindware.ru/article.php?id=2085#mcetoc_1g7ebfaqq1)
     2. [Конфигурация подсистем](https://kb.comindware.ru/article.php?id=2085#mcetoc_1g7ebvhdq0)
 10. Безопасность Системы
-    1. [Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление](https://kb.comindware.ru/article.php?id=2306)
-    2. [Синхронизация с веб-сервисом. Интеграция по OData](https://kb.comindware.ru/article.php?id=2307)
+    1. [Синхронизация с веб-сервисом. Интеграция по OData](https://kb.comindware.ru/article.php?id=2306)
+    2. `![](https://kb.comindware.ru/images/marker.png){Article-ID:2307}`
     3. `![](https://kb.comindware.ru/images/marker.png){Article-ID:2308}`
     4. `![](https://kb.comindware.ru/images/marker.png){Article-ID:2309}`
     5. `![](https://kb.comindware.ru/images/marker.png){Article-ID:2310}`
@@ -157,7 +157,7 @@ kbId: 2311
     3. [Создание подключения][connections]
     4. [Настройка подключения][connections]
     5. [Проверка соединения][connections]
-    6. [Удаление подключения][connections_delete]
+    6. [Удаление подключения][connections]
 26. Просмотр показателей производительности
     1. [Просмотр показателей производительности][performance]
     2. [Сброс показателей][performance]

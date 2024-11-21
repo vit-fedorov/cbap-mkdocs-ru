@@ -12,11 +12,11 @@ kbId: 2390
 ## Типы действий
 
 - **Задачи** — определяют действие, выполняемое человеком или системой.
-    - **[Пользовательская задача][user_task]**
-    - **[Задача-выполнение сценария](https://kb.comindware.ru/article.php?id=2388)**
+    - **[Пользовательская задача][process_diagram_elements_user_task]**
+    - **[Задача-выполнение сценария][process_diagram_elements_script_task]**
 - **Подпроцессы** — запускают другие процессы в контексте текущего процесса.
-    - **[Вызов процесса](https://kb.comindware.ru/article.php?id=2389)**
-    - **[Встроенный подпроцесс](https://kb.comindware.ru/article.php?id=2391)**
+    - **[Вызов процесса][process_diagram_elements_process_call]**
+    - **[Встроенный подпроцесс][process_diagram_elements_embedded_subprocess]**
 
 --8<-- "related_topics_heading.md"
 

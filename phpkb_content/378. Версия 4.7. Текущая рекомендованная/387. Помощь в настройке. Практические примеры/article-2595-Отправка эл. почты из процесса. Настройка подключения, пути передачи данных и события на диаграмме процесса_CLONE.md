@@ -7,7 +7,7 @@ kbId: 2595
 
 ## Введение
 
-На диаграмме процесса можно использовать [промежуточные][send_message_intermediate_event] и [конечные][send_message_end_event] события для отправки электронных писем с данными бизнес-процесса. Эти письма могут содержать произвольные бизнес-данные, в отличие от системных уведомлений о задачах.
+На диаграмме процесса можно использовать [промежуточные][process_diagram_elements_send_message_intermediate_event] и [конечные][process_diagram_elements_send_message_end_event] события для отправки электронных писем с данными бизнес-процесса. Эти письма могут содержать произвольные бизнес-данные, в отличие от системных уведомлений о задачах.
 
 ## Порядок настройки отправки эл. почты
 
@@ -103,7 +103,7 @@ kbId: 2595
             
             
             ```
-            Уведомление «{Title}» от {Date} 
+            Уведомление «{Title}» от {Date}
             ```
             
             
@@ -144,7 +144,7 @@ kbId: 2595
 
 ## Настройка события-отправки сообщения
 
-1. Поместите на диаграмму процесса [промежуточное][send_message_intermediate_event] или [конечное][send_message_end_event] событие-отправку сообщения.
+1. Поместите на диаграмму процесса [промежуточное][process_diagram_elements_send_message_intermediate_event] или [конечное][process_diagram_elements_send_message_end_event] событие-отправку сообщения.
 
 ![События отправки сообщения на диаграмме процесса](https://kb.comindware.ru/assets/outgoing_email_configure_send_message_event.png)
 События отправки сообщения на диаграмме процесса
@@ -173,8 +173,8 @@ kbId: 2595
 
 **[Диаграмма процесса](https://kb.comindware.ru/article.php?id=2362)**
 
-**[Промежуточное событие-отправка сообщения][send_message_intermediate_event]**
+**[Промежуточное событие-отправка сообщения][process_diagram_elements_send_message_intermediate_event]**
 
-**[Конечное событие-отправка сообщения][send_message_end_event]**
+**[Конечное событие-отправка сообщения][process_diagram_elements_send_message_end_event]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

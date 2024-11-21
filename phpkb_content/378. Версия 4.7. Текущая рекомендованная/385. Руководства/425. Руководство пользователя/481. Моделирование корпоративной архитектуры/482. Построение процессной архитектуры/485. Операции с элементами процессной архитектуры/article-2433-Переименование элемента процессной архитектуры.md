@@ -23,7 +23,7 @@ kbId: 2433
 
 ## Переименование с помощью конструктора диаграммы
 
-1. Перейдите к [конструктору диаграммы][конструктор-диаграмм] элемента процессной архитектуры.
+1. Перейдите к [конструктору диаграммы][architect_process_diagram_designer] элемента процессной архитектуры.
 2. Нажмите кнопку «**Свойства**» *‌*.
 3. В панели свойств справа введите требуемое название в поле «**Наименование**».
 ![Переименование процесса с помощью конструктора диаграммы](https://kb.comindware.ru/assets/process_architecture_modeling_rename_from_properties.png)
@@ -31,10 +31,10 @@ kbId: 2433
 
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра процессов][построение-процессной-архитектуры]**
+**[Просмотр реестра процессов][architect_process_architecture_modelling]**
 
-**[Создание элемента процессной архитектуры][creating_process_entity]**
+**[Создание элемента процессной архитектуры][architect_creating_process_entity]**
 
-**[Изменение свойств элемента процессной архитектуры][configuring_process_entity_properties]**
+**[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

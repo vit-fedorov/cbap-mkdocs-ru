@@ -1,5 +1,6 @@
 ---
-
+title: Развилки
+kbId: 2372
 tags:
   - диаграммы
   - диаграмма процесса
@@ -12,17 +13,22 @@ hide:
   - tags
 ---
 
-# Развилки
+# Развилки {: #process_diagram_elements_gateways}
 
-**Развилки** позволяют формировать расходящиеся и сходящиеся [потоки](sequence_flow.md). 
+**Развилки** позволяют формировать расходящиеся и сходящиеся [потоки][process_diagram_elements_sequence_flow].
 
 ## Типы развилок
 
-- **[Развилка «или/или»](exclusive_gateway.md)**
-- **[Развилка «и»](parallel_gateway.md)**
+- **[Развилка «или/или»][process_diagram_elements_gateway_exclusive]**
+- **[Развилка «и»][process_diagram_elements_gateway_parallel]**
+
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-**[Элементы диаграммы процесса][process_diagram_elements]**
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
-**[Редактирование диаграммы процесса][process_diagram_designer]**
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

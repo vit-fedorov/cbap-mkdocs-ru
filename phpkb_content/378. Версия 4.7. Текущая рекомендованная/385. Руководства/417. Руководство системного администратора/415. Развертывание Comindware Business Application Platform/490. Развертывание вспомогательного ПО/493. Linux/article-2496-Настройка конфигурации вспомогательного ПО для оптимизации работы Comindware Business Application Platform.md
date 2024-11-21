@@ -28,7 +28,7 @@ kbId: 2496
 4. Установите требуемый размер области памяти, например 8 ГБ:
 
 ```
-<property name="maxSize" value="#{8L * 1024 * 1024 * 1024}" />        
+<property name="maxSize" value="#{8L * 1024 * 1024 * 1024}" />
 ```
 5. Перезапустите экземпляр ПО, чтобы изменения вступили в силу.
 
@@ -44,24 +44,24 @@ kbId: 2496
 1. Установите переменную среды `JVM_OPTS`, указав в ней требуемый начальный и максимальный размер кучи, например `-Xms10m` (начальный. 10 МБ) и `-Xmx16g` (макс. 16 ГБ):
 
 ```
-export JVM_OPTS="-Xms10m -Xmx16g   
--XX:MaxDirectMemorySize=1g   
--Djava.net.preferIPv4Stack=true   
--XX:+AlwaysPreTouch -XX:+UseG1GC   
--XX:+ScavengeBeforeFullGC -XX:+DisableExplicitGC  
---add-opens=java.base/sun.nio.ch=ALL-UNNAMED   
---add-opens=java.base/java.io=ALL-UNNAMED  
---add-opens=java.base/java.nio=ALL-UNNAMED   
---add-opens=java.base/java.util=ALL-UNNAMED  
---add-opens=java.base/java.lang=ALL-UNNAMED   
---add-exports=java.base/jdk.internal.misc=ALL-UNNAMED  
---add-exports=java.base/sun.nio.ch=ALL-UNNAMED   
---add-exports=java.management/com.sun.jmx.mbeanserver=ALL-UNNAMED  
---add-exports=jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED   
---add-exports=java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED  
---add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED  
--DIGNITE_QUIET=false   
--DIGNITE_NO_ASCII=true"       
+export JVM_OPTS="-Xms10m -Xmx16g
+-XX:MaxDirectMemorySize=1g
+-Djava.net.preferIPv4Stack=true
+-XX:+AlwaysPreTouch -XX:+UseG1GC
+-XX:+ScavengeBeforeFullGC -XX:+DisableExplicitGC
+--add-opens=java.base/sun.nio.ch=ALL-UNNAMED
+--add-opens=java.base/java.io=ALL-UNNAMED
+--add-opens=java.base/java.nio=ALL-UNNAMED
+--add-opens=java.base/java.util=ALL-UNNAMED
+--add-opens=java.base/java.lang=ALL-UNNAMED
+--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+--add-exports=java.base/sun.nio.ch=ALL-UNNAMED
+--add-exports=java.management/com.sun.jmx.mbeanserver=ALL-UNNAMED
+--add-exports=jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED
+--add-exports=java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED
+--add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED
+-DIGNITE_QUIET=false
+-DIGNITE_NO_ASCII=true"
 ```
 2. Перезапустите экземпляр ПО, чтобы изменения вступили в силу.
 
@@ -83,7 +83,7 @@ export JVM_OPTS="-Xms10m -Xmx16g
 2. Установите требуемое количество шардов с помощью директивы `cluster.max_shards_per_node`:
 
 ```
-сluster.max_shards_per_node: 3000  
+сluster.max_shards_per_node: 3000
 
 ```
 3. Перезапустите службу Elasticsearch, чтобы изменения вступили в силу.
@@ -104,7 +104,7 @@ export JVM_OPTS="-Xms10m -Xmx16g
 2. Установите размер кучи начальный и максимальный размер кучи, например `-Xms4g` (начальный. 4 ГБ) и `-Xmx32g` (макс. 32 ГБ):
 
 ```
--Xms4g   
+-Xms4g
 -Xmx32g
 ```
 3. Перезапустите службу Elasticsearch, чтобы изменения вступили в силу.
@@ -128,27 +128,27 @@ export JVM_OPTS="-Xms10m -Xmx16g
 2. В разделе `events` задайте количество подключений с помощью директивы `worker_connections`:
 
 ```
-events {   
-...  
-worker_connections 768;   
-...  
+events {
+...
+worker_connections 768;
+...
 }
 ```
-3. В разделе http включите и настройте сжатие:  
+3. В разделе http включите и настройте сжатие:
 
 ```
-http {   
-...   
-gzip on;   
-gzip_vary on;   
-gzip_proxied any;   
-gzip_comp_level 6;   
-gzip_buffers 16 8k;   
-gzip_http_version 1.1;   
-gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;   
-...   
-}   
-  
+http {
+...
+gzip on;
+gzip_vary on;
+gzip_proxied any;
+gzip_comp_level 6;
+gzip_buffers 16 8k;
+gzip_http_version 1.1;
+gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+...
+}
+
 
 ```
 

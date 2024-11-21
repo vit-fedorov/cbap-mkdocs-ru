@@ -19,17 +19,17 @@ _![Список доступных типов литералов](https://kb.com
 **Пример: выражение, возвращающее конец текущего дня**
 
 ```
-@prefix session: <http://comindware.com/ontology/session#>.  
-@prefix cmwutc: <http://comindware.com/logics/time/utc#>.  
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.  
-@prefix cmwdur: <http://comindware.com/logics/time/duration#>.  
-{  
-  # Текущее время в UTC  
-  session:context session:requestTime ?nowUTC.  
-  # Время начала текущего дня  
-  ?nowUTC cmwutc:startOfDay ?startOfTodayUTC.  
-  # Начало следующих суток = время начала текущего дня + 1 сутки  
-  (?startOfTodayUTC "P1D"^^xsd:duration) cmwdur:add ?value.  
+@prefix session: <http://comindware.com/ontology/session#>.
+@prefix cmwutc: <http://comindware.com/logics/time/utc#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix cmwdur: <http://comindware.com/logics/time/duration#>.
+{
+  # Текущее время в UTC
+  session:context session:requestTime ?nowUTC.
+  # Время начала текущего дня
+  ?nowUTC cmwutc:startOfDay ?startOfTodayUTC.
+  # Начало следующих суток = время начала текущего дня + 1 сутки
+  (?startOfTodayUTC "P1D"^^xsd:duration) cmwdur:add ?value.
 }
 ```
 

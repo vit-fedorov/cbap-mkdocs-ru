@@ -9,8 +9,8 @@ kbId: 2080
 
 **{{ productName }}** может обращаться к API внешних систем через [подключения](https://kb.comindware.ru/category.php?id=437) и [пути передачи данных](https://kb.comindware.ru/category.php?id=515), а также может обрабатывать запросы из внешних систем через интерфейсы **REST API** трех типов:
 
-- [**Solution API**](https://kb.comindware.ru/article.php?id=2150)
-- [**System Core API**](https://kb.comindware.ru/article.php?id=2073)
+- [**Solution API**](https://kb.comindware.ru/article.php?id=2073)
+- [**System Core API**](https://kb.comindware.ru/article.php?id=2150)
 - [**Web API**][api_web]
 
 ### Определения
@@ -81,7 +81,7 @@ API **{{ productName }}** поддерживает два способа аут
 
 - Запрос отправляет скрипт на C# (вызываемый [кнопкой][buttons] или [задачей выполнения сценария](https://kb.comindware.ru/article.php?id=22388) в процессе). Скрипт устанавливает подключение к внешней системе, формирует запрос, отправляет его и получает ответ.
 - Запрос формирует и отправляет [сценарий](https://kb.comindware.ru/article.php?id=2153) посредством настроенного подключения к внешней системе. Сценарий позволяет сформировать тело запроса, проанализировать полученный ответ и поместить из него данные в атрибуты записей.
-- Запрос формирует и отправляет [промежуточное][send_message_intermediate_event] или [конечное событие][send_message_end_event] отправки сообщения в процессе.
+- Запрос формирует и отправляет [промежуточное][process_diagram_elements_send_message_intermediate_event] или [конечное событие][process_diagram_elements_send_message_end_event] отправки сообщения в процессе.
 
 Примечание
 

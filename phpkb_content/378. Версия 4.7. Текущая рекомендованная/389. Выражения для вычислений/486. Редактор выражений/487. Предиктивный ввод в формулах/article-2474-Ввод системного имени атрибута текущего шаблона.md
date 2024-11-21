@@ -16,7 +16,7 @@ kbId: 2474
 **Пример: формула, возвращающая целочисленное значение атрибута Passazhiry в текущей записи**
 
 ```
-INT($Passazhiry) 
+INT($Passazhiry)
 ```
 
 --8<-- "related_topics_heading.md"

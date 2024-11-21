@@ -75,94 +75,94 @@ kbId: 2630
 7. На вкладке «**Скрипт**» вставьте следующий код:
 
 ```
-using System;    
-using System.Collections.Generic;   
-using System.Linq;   
-using Comindware.Data.Entity;   
-using Comindware.TeamNetwork.Api.Data.UserCommands;   
-using Comindware.TeamNetwork.Api.Data;   
-   
-class Script   
-{   
-    public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)   
-    {   
-        var data = userCommandContext.LocalVariables;   
-        string konkursId = "";   
-        string notify = "Позиции добавлены в выбранный конкурс";   
-        // Получаем ID конкурса из локальной переменной с системным именем konkurs   
-        data.TryGetValue("konkurs", out object obj_);   
-        if (obj_ != null)   
-        {   
-            konkursId = (obj_ as object[]).FirstOrDefault().ToString();   
-        }   
-        // Проверяем, что в таблице выбрана хотя бы одна строка   
-        if (userCommandContext.ObjectIds.Count() == 0)   
-        {   
-            var resultBad0 = new UserCommandResult   
-            {   
-        Success = false,   
-        Commited = false,   
-        ResultType = UserCommandResultType.Notificate,   
-        Messages = new[]   
-        {   
-        new UserCommandMessage   
-        {   
-            Severity = SeverityLevel.Normal,   
-            Text = "Ни одной позиции не выбрано"   
-        }   
-        }   
-    };   
-    return resultBad0;   
-        }   
-   
-        Decimal posNum = 0;   
-        foreach (string selectId in userCommandContext.ObjectIds)   
-        {   
-            Dictionary<string,object> data_new = new Dictionary<string,object>();   
-   
-            // Собираем данные из шаблона записи «Номенклатура продукции»   
-            var data_selectId = Api.TeamNetwork.ObjectService.GetPropertyValues(new String[]{selectId}, new String[]{"Naimenovanie", "Edinitsaizmereniya", "Tsena"});   
-            // Копируем значения атрибутов шаблона «Номенклатура продукции» в атрибуты позиции в конкурсе   
-            if (data_selectId[selectId].ContainsKey("Naimenovanie"))   
-                data_new.Add("Naimenovanie", data_selectId[selectId]["Naimenovanie"]);   
-            if (data_selectId[selectId].ContainsKey("Edinitsaizmereniya"))   
-                data_new.Add("Edinitsaizmereniya", data_selectId[selectId]["Edinitsaizmereniya"]);   
-            if (data_selectId[selectId].ContainsKey("Tsena"))   
-                            data_new.Add("Tsena", data_selectId[selectId]["Tsena"]);   
-            data_new.Add("Produktsiyanazakupku", data_selectId[selectId]["id"]);   
-            // Если конкурс выбран, проставляем ссылку на него в текущую позицию   
-            if (konkursId != "")    
-            {   
-                // Konkurs — системное имя атрибута «Конкурс» шаблона записи «Позиции в конкурсе»   
-                data_new.Add("Konkurs", konkursId);   
-            }   
-            posNum++;   
-   
-            // Создаём запись в шаблоне Pozitsiivkonkurse (Позиции в конкурсе) со скопированными данными   
-            Api.TeamNetwork.ObjectService.CreateWithAlias("Pozitsiivkonkurse", data_new);   
-        }   
-   
-    // Завершаем работу скрипта       
-    var result = new UserCommandResult   
-    {   
-            Success = true,   
-            Commited = true,   
-            ResultType = UserCommandResultType.Navigate,   
-            NavigationResult = new UserCommandNavigationResult   
-            {   
-                Context = ContextType.Task,   
-            },   
-            Messages = new[]   
-    {   
-        new UserCommandMessage   
-        {   
-            Severity = SeverityLevel.Normal,   
-            Text = notify   
-        }   
-    }   
-    };   
-    return result;   
-    }   
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Comindware.Data.Entity;
+using Comindware.TeamNetwork.Api.Data.UserCommands;
+using Comindware.TeamNetwork.Api.Data;
+
+class Script
+{
+    public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)
+    {
+        var data = userCommandContext.LocalVariables;
+        string konkursId = "";
+        string notify = "Позиции добавлены в выбранный конкурс";
+        // Получаем ID конкурса из локальной переменной с системным именем konkurs
+        data.TryGetValue("konkurs", out object obj_);
+        if (obj_ != null)
+        {
+            konkursId = (obj_ as object[]).FirstOrDefault().ToString();
+        }
+        // Проверяем, что в таблице выбрана хотя бы одна строка
+        if (userCommandContext.ObjectIds.Count() == 0)
+        {
+            var resultBad0 = new UserCommandResult
+            {
+        Success = false,
+        Commited = false,
+        ResultType = UserCommandResultType.Notificate,
+        Messages = new[]
+        {
+        new UserCommandMessage
+        {
+            Severity = SeverityLevel.Normal,
+            Text = "Ни одной позиции не выбрано"
+        }
+        }
+    };
+    return resultBad0;
+        }
+
+        Decimal posNum = 0;
+        foreach (string selectId in userCommandContext.ObjectIds)
+        {
+            Dictionary<string,object> data_new = new Dictionary<string,object>();
+
+            // Собираем данные из шаблона записи «Номенклатура продукции»
+            var data_selectId = Api.TeamNetwork.ObjectService.GetPropertyValues(new String[]{selectId}, new String[]{"Naimenovanie", "Edinitsaizmereniya", "Tsena"});
+            // Копируем значения атрибутов шаблона «Номенклатура продукции» в атрибуты позиции в конкурсе
+            if (data_selectId[selectId].ContainsKey("Naimenovanie"))
+                data_new.Add("Naimenovanie", data_selectId[selectId]["Naimenovanie"]);
+            if (data_selectId[selectId].ContainsKey("Edinitsaizmereniya"))
+                data_new.Add("Edinitsaizmereniya", data_selectId[selectId]["Edinitsaizmereniya"]);
+            if (data_selectId[selectId].ContainsKey("Tsena"))
+                            data_new.Add("Tsena", data_selectId[selectId]["Tsena"]);
+            data_new.Add("Produktsiyanazakupku", data_selectId[selectId]["id"]);
+            // Если конкурс выбран, проставляем ссылку на него в текущую позицию
+            if (konkursId != "")
+            {
+                // Konkurs — системное имя атрибута «Конкурс» шаблона записи «Позиции в конкурсе»
+                data_new.Add("Konkurs", konkursId);
+            }
+            posNum++;
+
+            // Создаём запись в шаблоне Pozitsiivkonkurse (Позиции в конкурсе) со скопированными данными
+            Api.TeamNetwork.ObjectService.CreateWithAlias("Pozitsiivkonkurse", data_new);
+        }
+
+    // Завершаем работу скрипта
+    var result = new UserCommandResult
+    {
+            Success = true,
+            Commited = true,
+            ResultType = UserCommandResultType.Navigate,
+            NavigationResult = new UserCommandNavigationResult
+            {
+                Context = ContextType.Task,
+            },
+            Messages = new[]
+    {
+        new UserCommandMessage
+        {
+            Severity = SeverityLevel.Normal,
+            Text = notify
+        }
+    }
+    };
+    return result;
+    }
 }
 ```
 8. Сохраните С#-скрипт.

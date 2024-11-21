@@ -14,7 +14,7 @@ kbId: 2117
 - создать снимки состояния памяти Apache Ignite и Elasticsearch;
 - скопировать содержимое папок со скриптами и вложенными файлами.
 
-Сведения о последующем восстановлении данных см. в статье *«[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии](https://kb.comindware.ru/article.php?id=2335)»*.
+Сведения о последующем восстановлении данных см. в статье *«[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии][restore_complete_backup]»*.
 
 ## 1. Сбор данных об экземпляре ПО
 
@@ -46,19 +46,19 @@ _![Определение пути для резервных копий Elastics
 2.1. Для установки исполняемых скриптов перейдите в режим суперпользователя `root`:
 
 ```
-sudo -i 
+sudo -i
 ```
 
 или
 
 ```
-su - 
+su -
 ```
 
 2.2. Проверьте наличие пакета `apache-ignite` на машине:
 
 ```
-dpkg -s apache-ignite 
+dpkg -s apache-ignite
 ```
 
 Если пакет имеется, пропустите шаги 2.3–2.7.
@@ -66,37 +66,37 @@ dpkg -s apache-ignite
 2.3. Если пакета нет, загрузите zip-архив со скриптами:
 
 ```
-wget -P /tmp/ https://archive.apache.org/dist/ignite/2.16.0/apache-ignite-2.16.0-bin.zip 
+wget -P /tmp/ https://archive.apache.org/dist/ignite/2.16.0/apache-ignite-2.16.0-bin.zip
 ```
 
 2.4. Если на машине ранее не был установлен пакет `zip`, установите его:
 
 ```
-apt install zip 
+apt install zip
 ```
 
 2.5. Разархивируйте пакет в директорию `/var/www/`:
 
 ```
-unzip /tmp/apache-ignite-2.16.0-bin.zip -d /var/www 
+unzip /tmp/apache-ignite-2.16.0-bin.zip -d /var/www
 ```
 
 2.6. Переименуйте получившуюся директорию со скриптами `Apache Ignite` в `apache-ignite`:
 
 ```
-mv /var/www/apache-ignite-2.16.0-bin /var/www/apache-ignite 
+mv /var/www/apache-ignite-2.16.0-bin /var/www/apache-ignite
 ```
 
 2.7. Прейдите в директорию `/var/www/`:
 
 ```
-cd /var/www/ 
+cd /var/www/
 ```
 
 2.8. Назначьте папке `apache-ignite` права на чтение-запись `rwxrwxrwx`:
 
 ```
-chmod -R 777 apache-ignite/ 
+chmod -R 777 apache-ignite/
 ```
 
 2.9. Смените владельца директории `apache-ignite`:
@@ -104,32 +104,32 @@ chmod -R 777 apache-ignite/
 *Astra Linux, Ubuntu, Rocky*
 
 ```
-chown -R www-data:www-data apache-ignite/   
+chown -R www-data:www-data apache-ignite/
 
 ```
 
 *Альт Сервер*
 
 ```
-chown -R _nginx:_nginx apache-ignite/ 
+chown -R _nginx:_nginx apache-ignite/
 ```
 
 2.10. Создайте директории для сохранения резервных копий:
 
 ```
-mkdir /var/www/backups/ 
+mkdir /var/www/backups/
 ```
 
 2.11. Создайте директорию репозитория Elasticsearch:
 
 ```
-mkdir /var/www/backups/elasticsearch 
+mkdir /var/www/backups/elasticsearch
 ```
 
 2.12. Присвойте директории `backups` права на чтение-запись `rwxrwxrwx`:
 
 ```
-chmod -R 777 backups/ 
+chmod -R 777 backups/
 ```
 
 2.13. Смените владельца директории `backups`:
@@ -137,7 +137,7 @@ chmod -R 777 backups/
 *Astra Linux, Ubuntu, Rocky*
 
 ```
-chown -R www-data:www-data backups/  
+chown -R www-data:www-data backups/
 
 ```
 
@@ -162,8 +162,8 @@ now=$(date  %Y_%m_%d_%H_%M)
 3.2. Проверьте окружение и создайте снимок состояния Apache Ignite:
 
 ```
-bash /var/www/apache-ignite/bin/control.sh --baseline   
-bash /var/www/apache-ignite/bin/control.sh --snapshot create snapshot_name_$now --sync  
+bash /var/www/apache-ignite/bin/control.sh --baseline
+bash /var/www/apache-ignite/bin/control.sh --snapshot create snapshot_name_$now --sync
 
 ```
 
@@ -182,22 +182,22 @@ curl -X PUT "localhost:9200/_snapshot/elasticsearch_repo_name/snapshot_name_$now
 3.5. Создайте директории для хранения компонентов резервной копии:
 
 ```
-mkdir /var/www/backups/backup_$now  
-mkdir /var/www/backups/backup_$now/Database   
-mkdir /var/www/backups/backup_$now/elastic   
-mkdir /var/www/backups/backup_$now/Streams   
-mkdir /var/www/backups/backup_$now/Scripts   
+mkdir /var/www/backups/backup_$now
+mkdir /var/www/backups/backup_$now/Database
+mkdir /var/www/backups/backup_$now/elastic
+mkdir /var/www/backups/backup_$now/Streams
+mkdir /var/www/backups/backup_$now/Scripts
 mkdir /var/www/backups/backup_$now/wal
 ```
 
 3.6. Перенесите и скопируйте компоненты в директорию резервной копии:
 
 ```
-mv /var/www/comindware/data/Database/snapshots/snapshot_name_$now /var/www/backups/backup_$now/Database   
-cp -r /var/www/backups/elasticsearch/* /var/www/backups/backup_$now/elastic   
-cp -r /var/www/comindware/data/Database/wal/* /var/www/backups/backup_$now/wal   
-cp -r /var/www/comindware/data/Database/Scripts/* /var/www/backups/backup_$now/Scripts   
-cp -r /var/www/comindware/data/Streams/* /var/www/backups/backup_$now/Streams 
+mv /var/www/comindware/data/Database/snapshots/snapshot_name_$now /var/www/backups/backup_$now/Database
+cp -r /var/www/backups/elasticsearch/* /var/www/backups/backup_$now/elastic
+cp -r /var/www/comindware/data/Database/wal/* /var/www/backups/backup_$now/wal
+cp -r /var/www/comindware/data/Database/Scripts/* /var/www/backups/backup_$now/Scripts
+cp -r /var/www/comindware/data/Streams/* /var/www/backups/backup_$now/Streams
 ```
 
 3.7. Создайте архив с резервной копией:
@@ -210,7 +210,7 @@ tar -cvjf backup_$now.tar.bz2 /var/www/backups/backup_$now
 
 --8<-- "related_topics_heading.md"
 
-***[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии](https://kb.comindware.ru/article.php?id=2335)***
+***[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии][restore_complete_backup]***
 
 
 

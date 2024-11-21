@@ -126,6 +126,9 @@ def importArtciclesInCategory (categoryId, categoryDir):
             # Remove redundant new lines
             pattern = re.compile(r'^\n^\n\n*', flags=re.MULTILINE)
             markdown = re.sub(pattern, r'\n', markdown)
+            # Remove redundant spaces before new lines
+            pattern = re.compile(r' +\n', flags=re.MULTILINE)
+            markdown = re.sub(pattern, r'\n', markdown)
             # Remove redundant TOC
             pattern = re.compile(r'(#+ +|\*\* ?)Содержание.*\n*((( {0,4}|\t*)(\d\.|-).*\n+)*\n* {0,4})*\n', flags=re.MULTILINE)
             markdown = re.sub(pattern, r'', markdown)

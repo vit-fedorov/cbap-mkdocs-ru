@@ -24,7 +24,7 @@ hide:
 4. Отобразится список доступных типов литералов.
 *![Список доступных типов литералов](n3_editor_literal_autocomplete.png)*
 4. Дважды нажмите тип литерала, например `duration`, чтобы вставить его в выражение.
-  
+
 ```turtle title="Пример: выражение, возвращающее конец текущего дня"
 @prefix session: <http://comindware.com/ontology/session#>.
 @prefix cmwutc: <http://comindware.com/logics/time/utc#>.
@@ -40,8 +40,13 @@ hide:
 }
 ```
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Редактор выражений][expression_editor]**
+- _[Редактор выражений][expression_editor]_
+- _[Примеры использования языка N3. База знаний Comindware][n3_use_examples]_
 
-**[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}**
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -7,10 +7,10 @@ kbId: 2418
 
 ## Инструкции
 
-1. Выберите организационную единицу в [панели навигации][navigation_panel], либо в [реестре оргединиц][построение-организационной-структуры].
+1. Выберите организационную единицу в [панели навигации][navigation_panel], либо в [реестре оргединиц][architect_organizational_structure_modelling].
 2. Отобразится форма оргединицы.
 3. Настройте свойства оргединицы, заполнив поля формы.
-4. При необходимости [отредактируйте форму и атрибуты оргединицы][configuring_organizational_unit_form_and_attributes].
+4. При необходимости [отредактируйте форму и атрибуты оргединицы][architect_configuring_organizational_unit_form_and_attributes].
 5. Нажмите кнопку «**Сохранить**».
 
 _![Форма оргединицы](https://kb.comindware.ru/assets/configuring_organizational_unit_properties.png)_
@@ -19,11 +19,11 @@ _![Форма оргединицы](https://kb.comindware.ru/assets/configuring_
 
 **[Редактирование формы и атрибутов оргединицы][navigation_panel]**
 
-**[Изменение свойств элемента процессной архитектуры][configuring_process_entity_properties]**
+**[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]**
 
-**[Просмотр реестра оргединиц][построение-организационной-структуры]**
+**[Просмотр реестра оргединиц][architect_organizational_structure_modelling]**
 
-**[Переименование оргединицы][renaming_organizational_unit]**
+**[Переименование оргединицы][architect_renaming_organizational_unit]**
 
 **[Использование панели навигации][navigation_panel]**
 

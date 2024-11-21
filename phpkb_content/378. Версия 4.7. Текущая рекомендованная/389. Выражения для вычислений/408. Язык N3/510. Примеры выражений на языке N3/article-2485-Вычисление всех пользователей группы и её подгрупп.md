@@ -8,20 +8,20 @@ kbId: 2485
 Для того, чтобы получить всех пользователей из определенной группы, включая пользователей подгрупп первого уровня, которые включены в состав указанной группы, введите следующее выражение:
 
 ```
-@prefix account: <http://comindware.com/ontology/account#>.  
-@prefix assert: <http://comindware.com/logics/assert#>.  
-{  
-    ?projectOffice account:groupName "Менеджеры".  
-    ?users account:userGroupMembership ?projectOffice.  
-    ?projectOffice account:subGroups ?subgroups.  
-    ?subusers account:userGroupMembership ?subgroups.  
-    (  
-        {?subusers account:fullName ?.  
-         ?subusers -> ?value.}  
-        {?users account:fullName ?.  
-         ?users -> ?value.}  
-    )assert:union true.  
-}  
+@prefix account: <http://comindware.com/ontology/account#>.
+@prefix assert: <http://comindware.com/logics/assert#>.
+{
+    ?projectOffice account:groupName "Менеджеры".
+    ?users account:userGroupMembership ?projectOffice.
+    ?projectOffice account:subGroups ?subgroups.
+    ?subusers account:userGroupMembership ?subgroups.
+    (
+        {?subusers account:fullName ?.
+         ?subusers -> ?value.}
+        {?users account:fullName ?.
+         ?users -> ?value.}
+    )assert:union true.
+}
 
 ```
 

@@ -36,29 +36,29 @@ sudo -i
 vim /usr/share/comindware/configs/instance/instancename.yml
 ```
 
-Здесь  `instancename` — имя экземпляра ПО.   
-См. также статью *«[Пути и содержимое папок экземпляра ПО](https://kb.comindware.ru/article.php?id=2502)».*
+Здесь  `instancename` — имя экземпляра ПО.
+См. также статью *«[Пути и содержимое папок экземпляра ПО][paths]».*
 3. Добавьте в файл `instancename.yml` следующие директивы:
 
 ```
 # Адрес сервера S3 с указанием порта, идентификатор ключа доступа и секретный ключ
-s3Connection.default.endpointURL: http://s3.example.com:9000  
-s3Connection.default.accessKey: xxxxx  
-s3Connection.default.secretKey: xxxxx  
-# Установите значение true, если сервер принимает только запросы path-style вида:  
-# https://s3.region-code.amazonaws.com/bucket-name/key-name  
-s3Connection.default.pathStyle: true  
+s3Connection.default.endpointURL: http://s3.example.com:9000
+s3Connection.default.accessKey: xxxxx
+s3Connection.default.secretKey: xxxxx
+# Установите значение true, если сервер принимает только запросы path-style вида:
+# https://s3.region-code.amazonaws.com/bucket-name/key-name
+s3Connection.default.pathStyle: true
 s3Connection.default.description: Подключение к S3
-                          
-# Параметры контейнера загруженных файлов  
-userStorage.type: S3  
-userStorage.s3.bucket: user-files-bucket  
-userStorage.s3.connection: default  
-  
-# Параметры контейнера временных файлов  
-tempStorage.type: S3  
-tempStorage.s3.bucket: temp-files-bucket  
-tempStorage.s3.connection: default                   
+
+# Параметры контейнера загруженных файлов
+userStorage.type: S3
+userStorage.s3.bucket: user-files-bucket
+userStorage.s3.connection: default
+
+# Параметры контейнера временных файлов
+tempStorage.type: S3
+tempStorage.s3.bucket: temp-files-bucket
+tempStorage.s3.connection: default
 ```
 
 Внимание!
@@ -76,7 +76,7 @@ systemctl restart comindwareinstancename
 
 1. Перейдите в [список подключений][connections].
 2. Дважды нажмите в списке подключение типа «**S3**» (название подключения задаётся директивой `s3Connection.default.description` в [файле конфигурации](#mcetoc_1gjrlqj8j2)).
-3. Просмотрите свойства подключения:   
+3. Просмотрите свойства подключения:
 
     - **Отключить** — этот флажок установлен, если подключение неактивно;
     - **Название** — наглядное наименование подключения;
@@ -103,7 +103,7 @@ systemctl restart comindwareinstancename
 
 --8<-- "related_topics_heading.md"
 
-**[Пути и содержимое папок экземпляра ПО](https://kb.comindware.ru/article.php?id=2502)**
+**[Пути и содержимое папок экземпляра ПО][paths]**
 
 
 

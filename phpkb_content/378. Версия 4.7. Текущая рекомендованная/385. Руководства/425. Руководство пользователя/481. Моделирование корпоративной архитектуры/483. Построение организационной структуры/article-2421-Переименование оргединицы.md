@@ -20,7 +20,7 @@ kbId: 2421
 
 ## Переименование с помощью формы свойств оргединицы
 
-1. Выберите оргединицу в [панели навигации][navigation_panel] или дважды нажмите её строку в [реестре оргединиц][построение-организационной-структуры].
+1. Выберите оргединицу в [панели навигации][navigation_panel] или дважды нажмите её строку в [реестре оргединиц][architect_organizational_structure_modelling].
 2. В отобразившейся форме введите требуемое название в поле «**Название**».
 
  
@@ -30,10 +30,10 @@ kbId: 2421
 
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра оргединиц][построение-организационной-структуры]**
+**[Просмотр реестра оргединиц][architect_organizational_structure_modelling]**
 
-**[Создание оргединицы][creating_organizational_unit]**
+**[Создание оргединицы][architect_creating_organizational_unit]**
 
-**[Настройка оргединицы][configuring_organizational_unit]**
+**[Настройка оргединицы][architect_configuring_organizational_unit]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

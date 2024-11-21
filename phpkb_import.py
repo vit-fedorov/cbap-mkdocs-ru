@@ -11,33 +11,24 @@ from pathvalidate import sanitize_filename
 from pathlib import Path
 import shutil
 from cryptography.fernet import Fernet
-
-class myparser(HTMLParser):
-	def handle_starttag(self, tag, attrs):
-		if tag == 'img':
-			print("IMG tag with attrs %s\n" % repr(attrs))
-
 import os
-
 import os.path
-
 import json
-
 from sshtunnel import SSHTunnelForwarder
 
 KB_ID_TO_FILENAME_MAP = None
 THIS_FILE_DIR = os.path.dirname(os.path.realpath(__file__))
-importPathDefault = 'phpkb_content'
-importPath = input(f'Path to import (default `{importPathDefault}`): ') 
-KB_DIR = os.path.dirname(importPath) if importPath else importPathDefault
+IMPORT_PATH_DEFAULT = 'phpkb_content'
+importPath = input(f'Path to import (default `{IMPORT_PATH_DEFAULT}`): ') 
+KB_DIR = os.path.dirname(importPath) if importPath else IMPORT_PATH_DEFAULT
 TOTAL_PAGES_IMPORTED = 0
 CONNECTION = None
-docs_ru_folder = 'docs/ru'
-hyperlinks_file = os.path.join(docs_ru_folder, '.snippets/hyperlinks_mkdocs_to_kb_map.md')
+DOCS_RU_FOLDER = 'docs/ru'
+HYPERLINKS_FILE = os.path.join(DOCS_RU_FOLDER, '.snippets/hyperlinks_mkdocs_to_kb_map.md')
 
 # Function to search for pattern in hyperlinks file and replace
 def find_url_in_snippet(article_id, anchor):
-    with open(hyperlinks_file, 'r', encoding='utf-8') as file:
+    with open(HYPERLINKS_FILE, 'r', encoding='utf-8') as file:
         lines = file.readlines()
     url = ''
     for line in lines:
@@ -53,22 +44,9 @@ def find_url_in_snippet(article_id, anchor):
             #print(f"Found link and URL for articleId {article_id}: {url}")
     return url
 
-
-def encrypt(message: bytes, key: bytes) -> bytes:
-    return Fernet(key).encrypt(message)
-
-def decrypt(token: bytes, key: bytes) -> bytes:
-    return Fernet(key).decrypt(token)
-
 def importCategoryChildren(parent, categoryDirectory):
-        # category = dict()
-        # category['id', 'title', 'parent_id'] = parent
-        # print(category)
         id = parent[0]
         title = parent[1]
-        # print(id, title)
-        
-        #for id, title, parent_id, in parent:
         c4 = CONNECTION.cursor()    
         c4.execute("""
             SELECT DISTINCT (category_id), category_name, parent_id
@@ -95,7 +73,6 @@ def importCategoryChildren(parent, categoryDirectory):
         
 def importArtciclesInCategory (categoryId, categoryDir):
     c = CONNECTION.cursor()
-    #c2 = CONNECTION.cursor()
     c.execute(f"""
             SELECT DISTINCT (phpkb_articles.article_id), phpkb_articles.article_content, phpkb_articles.article_title 
             FROM phpkb_articles, phpkb_relations, phpkb_categories 
@@ -110,7 +87,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
     for id, content, title in articles:
      
         sanitizedTitle = sanitize_filename(str(title))
-        existingFilename = findFilenameByArticleId(id, docs_ru_folder)
+        existingFilename = findFilenameByArticleId(id, DOCS_RU_FOLDER)
         if existingFilename:
             sanitizedTitle = existingFilename
         filename = os.path.join(categoryDir, f"{id}-{sanitizedTitle}.md")

@@ -3,7 +3,7 @@ title: Установка ПО
 kbId: 2028
 ---
 
-# Установка {{ productName }} {: #admin_utility_install_software}
+# Установка {{ productName }} {: #admin_utility_sw_install}
 ## Порядок установки
 
 1. Запустите Утилиту администрирования (см. *[Установка и запуск Утилиты администрирования Comindware][admin_utility_instance_start_stop]*).
@@ -52,7 +52,7 @@ kbId: 2028
 
 По умолчанию Утилита администрирования устанавливает службу Elasticsearch (например, в папку `C:\Program Files\Elasticsearch\elasticsearch-8.1.0`).
 
-При [инициализации экземпляра][admin_utility_instance_installize] продукта необходимо указать службу Elasticsearch:
+При [инициализации экземпляра][admin_utility_instance_instalize] продукта необходимо указать службу Elasticsearch:
 
 - развёрнутую Утилитой администрирования (см. параграф *«[Порядок установки](#порядок-установки)»);*
 - внешнюю (см. статью *«[Установка Elasticsearch. Краткое руководство для Windows][elasticsearch_deploy_windows]»*).
@@ -80,7 +80,7 @@ kbId: 2028
 
 - _[Настройка конфигурации Утилиты администрирования Comindware][admin_utility_configure]_
 - _[Создание экземпляра продукта, добавление скрытого экземпляра][admin_utility_instance_create]_
-- _[Инициализация экземпляра продукта][admin_utility_instance_installize]_
+- _[Инициализация экземпляра продукта][admin_utility_instance_instalize]_
 - _[Установка Elasticsearch. Краткое руководство для Windows][elasticsearch_deploy_windows]_
 
 </div>

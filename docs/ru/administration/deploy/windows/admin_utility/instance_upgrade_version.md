@@ -55,7 +55,7 @@ kbId: 2031
 
 - _[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]_
 - _[Пути и содержимое папок экземпляра ПО][paths]_
-- _[Установка продукта {{ productName }}][admin_utility_install_software]_
+- _[Установка продукта {{ productName }}][admin_utility_sw_install]_
 
 </div>
 

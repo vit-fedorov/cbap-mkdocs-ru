@@ -53,6 +53,6 @@ _![Подтверждение удаления экземпляра продук
 
 [**Запуск Утилиты администрирования Comindware**][admin_utility_install_launch]
 
-**[Инициализация экземпляра продукта][admin_utility_instance_installize]**
+**[Инициализация экземпляра продукта][admin_utility_instance_instalize]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

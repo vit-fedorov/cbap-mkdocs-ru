@@ -58,6 +58,6 @@ _![Главное окно Утилиты администрирования](ht
 
 --8<-- "related_topics_heading.md"
 
-**[Установка продукта Comindware Business Application Platform][admin_utility_install_software]**
+**[Установка продукта Comindware Business Application Platform][admin_utility_sw_install]**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -3,7 +3,7 @@ title: Инициализация экземпляра продукта
 kbId: 2296
 ---
 
-# Инициализация экземпляра продукта {: #admin_utility_instance_installize}
+# Инициализация экземпляра продукта {: #admin_utility_instance_instalize}
 
 ## Введение
 
@@ -32,7 +32,7 @@ kbId: 2296
 
     _![Страница активации экземпляра системы](https://kb.comindware.ru/assets/administration_tool7.png)_
 
-8. Откроется страница настройки подключения к службе Elasticsearch. См. параграф *«[Использование службы Elasticsearch, установленной Утилитой администрирования][admin_utility_install_software]»*.
+8. Откроется страница настройки подключения к службе Elasticsearch. См. параграф *«[Использование службы Elasticsearch, установленной Утилитой администрирования][admin_utility_sw_install]»*.
 9. В поле «**URI**» введите адрес сервера Elasticsearch, например: `http://localhost:9200`.
 10. При необходимости введите учётные данные для сервера Elasticsearch в поля «**Имя пользователя**» и «**Пароль**».
 11. Укажите необходимый **префикс индекса** Elasticsearch.
@@ -55,7 +55,7 @@ kbId: 2296
 
 --8<-- "related_topics_heading.md"{{ productName }}
 
-- _[Установка продукта {{ productName }}][admin_utility_install_software]_
+- _[Установка продукта {{ productName }}][admin_utility_sw_install]_
 - _[Установка Elasticsearch. Краткое руководство для Windows][elasticsearch_deploy_windows]_
 
 </div>

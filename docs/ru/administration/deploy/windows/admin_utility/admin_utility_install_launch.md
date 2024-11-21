@@ -55,7 +55,7 @@ kbId: 2027
 
 --8<-- "related_topics_heading.md"
 
-- _[Установка продукта {{ productName }}][admin_utility_install_software]_
+- _[Установка продукта {{ productName }}][admin_utility_sw_install]_
 
 </div>
 

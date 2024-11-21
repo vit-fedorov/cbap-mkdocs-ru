@@ -19,7 +19,7 @@ kbId: 2311
     1. [Установка и запуск Утилиты администрирования Comindware][admin_utility_install_launch]
     2. [Установка продукта Comindware Business Application Platform](https://kb.comindware.ru/article.php?id=2294)
     3. [Настройка конфигурации Утилиты администрирования Comindware](https://kb.comindware.ru/article.php?id=2295)
-    4. [Диагностика экземпляра продукта][admin_utility_install_software]
+    4. [Диагностика экземпляра продукта][admin_utility_sw_install]
     5. [Обновление версии продукта для экземпляра][admin_utility_configure]
     6. [Создание экземпляра продукта, добавление скрытого экземпляра][admin_utility_instance_diagnose]
     7. [Удаление версии продукта][admin_utility_instance_upgrade_version]
@@ -27,12 +27,12 @@ kbId: 2311
     9. [Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта](https://kb.comindware.ru/article.php?id=2033)
     10. [Индикация состояния и обновление списка экземпляров продукта](https://kb.comindware.ru/article.php?id=2034)
     11. [Восстановление экземпляра продукта из резервной копии в ОС Windows][admin_utility_instance_start_stop]
-    12. [Инициализация экземпляра продукта][instance_configure_windows]
+    12. [Инициализация экземпляра продукта][admin_utility_instance_configure]
     13. [Остановка экземпляра системы с помощью Диспетчера служб IIS][admin_utility_instance_status_update]
-    14. [Запуск экземпляра системы с помощью Диспетчера служб IIS][restore_windows]
+    14. [Запуск экземпляра системы с помощью Диспетчера служб IIS][admin_utility_instance_backup_restore]
     15. [Резервное копирование с помощью внешних средств в ОС Windows](https://kb.comindware.ru/article.php?id=2039)
     16. [Ручной перенос базы данных экземпляра ПО в ОС Windows](https://kb.comindware.ru/article.php?id=2040)
-2. [Аутентификация, авторизация и сессии пользователей][admin_utility_instance_installize]
+2. [Аутентификация, авторизация и сессии пользователей][admin_utility_instance_instalize]
 3. Остановка и запуск экземпляра ПО
     1. [Синхронизация с сервером каталогов (Active Directory)](https://kb.comindware.ru/article.php?id=2297)
     2. [Настройка единого входа (SSO-аутентификации) в ОС Windows](https://kb.comindware.ru/article.php?id=2298)

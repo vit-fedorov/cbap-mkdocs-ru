@@ -54,7 +54,7 @@ _![Остановка экземпляра ПО с помощью Утилиты
 
 - _[Индикация состояния и обновление списка экземпляров продукта][admin_utility_instance_status_update]_
 - _[Запуск Утилиты администрирования Comindware][admin_utility_install_launch]_
-- _[Инициализация экземпляра продукта][admin_utility_instance_installize]_
+- _[Инициализация экземпляра продукта][admin_utility_instance_instalize]_
 
 </div>
 

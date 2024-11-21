@@ -3,7 +3,7 @@ title: Comindware Architect. Инструкции по установке экз
 kbId: 2316
 ---
 
-# Comindware Architect. Инструкции по установке экземпляра ПО в ОС Windows
+# Comindware Architect. Инструкции по установке экземпляра ПО в ОС Windows {: #architect_install_windows }
 
 ## Введение
 

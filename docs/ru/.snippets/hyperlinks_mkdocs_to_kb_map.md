@@ -670,15 +670,15 @@
 
 [admin_utility_install_launch]: {{ kbArticleURLPrefix }}2027
 
-[admin_utility_install_software]: {{ kbArticleURLPrefix }}2028
+[admin_utility_sw_install]: {{ kbArticleURLPrefix }}2028
 
-[admin_utility_instance_installize]: {{ kbArticleURLPrefix }}2296
+[admin_utility_instance_instalize]: {{ kbArticleURLPrefix }}2296
 
 [admin_utility_instance_start_stop]: {{ kbArticleURLPrefix }}2035
 
 [admin_utility_instance_status_update]: {{ kbArticleURLPrefix }}2037
 
-[admin_utility_instance_upgrade_3_2_to_4_2]: {{ kbArticleURLPrefix }}2129
+[instance_upgrade_3_2_to_4_2_windows]: {{ kbArticleURLPrefix }}2129
 
 [admin_utility_instance_upgrade_version]: {{ kbArticleURLPrefix }}2031
 
@@ -690,11 +690,9 @@
 
 [elasticsearch_deploy_windows]: {{ kbArticleURLPrefix }}2094
 
-[instance_configure_windows]: {{ kbArticleURLPrefix }}2036
+[admin_utility_instance_configure]: {{ kbArticleURLPrefix }}2036
 
-[instance_configure_windows]: {{ kbArticleURLPrefix }}2036
-
-[restore_windows]: {{ kbArticleURLPrefix }}2038
+[admin_utility_instance_backup_restore]: {{ kbArticleURLPrefix }}2038
 
 [sso_authentication_configure_windows]: {{ kbArticleURLPrefix }}2309
 
@@ -738,11 +736,11 @@
 
 [accounts_dc_sync]: {{ kbArticleURLPrefix }}2308
 
+[admin_utility_instance_configure]: {{ kbArticleURLPrefix }}2036
+
 [deploy_guide_linux]: {{ kbArticleURLPrefix }}2344
 
 [deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}2344#deploy_guide_linux_initialize
-
-[instance_configure_windows]: {{ kbArticleURLPrefix }}2036
 
 [logging_engine]: {{ kbArticleURLPrefix }}2501
 

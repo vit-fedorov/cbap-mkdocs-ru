@@ -111,12 +111,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
      
         sanitizedTitle = sanitize_filename(str(title))
         existingFilename = findFilenameByArticleId(id, docs_ru_folder)
-        if not existingFilename or existingFilename=='index':
-            articleAnchor = find_url_in_snippet(id, None)
-            if articleAnchor:
-                articleAnchor = re.sub(r'\[(.*)\]', r'\1', articleAnchor)
-                sanitizedTitle = articleAnchor
-        elif existingFilename:
+        if existingFilename:
             sanitizedTitle = existingFilename
         filename = os.path.join(categoryDir, f"{id}-{sanitizedTitle}.md")
         filename_html = os.path.join(categoryDir, f"{id}-{sanitizedTitle}.html")
@@ -353,14 +348,23 @@ def findFilenameByArticleId(article_id, docs_dir):
             for file in files:
                 if file.endswith(".md"):
                     file_path = os.path.join(root, file)
-                    with open(file_path, "r", encoding="utf-8") as f:
-                        for line in f:
-                            match = re.match(r"kbId:\s*(\S+)", line.strip())
-                            if match:
-                                kb_id = match.group(1)
-                                KB_ID_TO_FILENAME_MAP[kb_id] = os.path.splitext(file)[0]
-                                break  # Stop scanning this file after finding kbId
+                    filename = os.path.splitext(file)[0]
+                    if not filename=='index':
+                        with open(file_path, "r", encoding="utf-8") as f:
+                            for line in f:
+                                match = re.match(r"kbId:\s*(\S+)", line.strip())
+                                if match:
+                                    kb_id = match.group(1)
+                                    KB_ID_TO_FILENAME_MAP[kb_id] = filename
+                                    break  # Stop scanning this file after finding kbId
     
+    foundFilename = KB_ID_TO_FILENAME_MAP.get(str(article_id))
+    if not foundFilename:
+            articleAnchor = find_url_in_snippet(article_id, None)
+            if articleAnchor:
+                articleAnchor = re.sub(r'\[(.*)\]', r'\1', articleAnchor)
+                KB_ID_TO_FILENAME_MAP[str(article_id)] = articleAnchor
+            
     # Lookup in the cached dictionary
     return KB_ID_TO_FILENAME_MAP.get(str(article_id))
 

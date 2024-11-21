@@ -77,34 +77,34 @@ kbId: 2607
 5. В свойствах задачи-выполнения сценария на вкладке «**Дополнительные**» добавьте следующий **C#-скрипт**:
 
 ```
-using System;  
-using System.Collections.Generic;  
-using System.Linq;  
-using Comindware.Data.Entity;  
-using Comindware.TeamNetwork.Api.Data.UserCommands;  
-using Comindware.TeamNetwork.Api.Data;  
-public class Script  
-{  
-    public static void Main(Comindware.Process.Api.Data.ScriptContext context, Comindware.Entities entities)  
-    {  
-// BusinessObjectId — запись, связанная с экземпляром процесса.  
-        var objectId = context.BusinessObjectId;     
-// Получаем значение переменной «Порядковый номер» по её ID — svar.1.  
-// Присваиваем полученное значение переменной sequenceNumber.  
-        var sequenceNumber = (decimal)Api.Solution.SolutionVariableService.GetValue("svar.1");  
-// Nomerzayavki — системное имя атрибута «Номер заявки».  
-// Создаём словарь data со значением атрибута «Номер заявки»,   
-// равным значению переменной «Порядковый номер».  
-        var data = new Dictionary<string, object>  
-        {  
-            {"Nomerzayavki", sequenceNumber}  
-        };  
-// Zayavki — системное имя шаблона записи «Заявки».  
-// Записываем значение атрибута «Порядковый номер» в текущей Заявке  
-        Api.TeamNetwork.ObjectService.EditWithAlias("Zayavki", objectId, data);  
-// Приращиваем на 1 значение переменной «Порядковый номер»  
-        Api.Solution.SolutionVariableService.SetValue("svar.1", sequenceNumber+1);  
-    }  
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Comindware.Data.Entity;
+using Comindware.TeamNetwork.Api.Data.UserCommands;
+using Comindware.TeamNetwork.Api.Data;
+public class Script
+{
+    public static void Main(Comindware.Process.Api.Data.ScriptContext context, Comindware.Entities entities)
+    {
+// BusinessObjectId — запись, связанная с экземпляром процесса.
+        var objectId = context.BusinessObjectId;
+// Получаем значение переменной «Порядковый номер» по её ID — svar.1.
+// Присваиваем полученное значение переменной sequenceNumber.
+        var sequenceNumber = (decimal)Api.Solution.SolutionVariableService.GetValue("svar.1");
+// Nomerzayavki — системное имя атрибута «Номер заявки».
+// Создаём словарь data со значением атрибута «Номер заявки»,
+// равным значению переменной «Порядковый номер».
+        var data = new Dictionary<string, object>
+        {
+            {"Nomerzayavki", sequenceNumber}
+        };
+// Zayavki — системное имя шаблона записи «Заявки».
+// Записываем значение атрибута «Порядковый номер» в текущей Заявке
+        Api.TeamNetwork.ObjectService.EditWithAlias("Zayavki", objectId, data);
+// Приращиваем на 1 значение переменной «Порядковый номер»
+        Api.Solution.SolutionVariableService.SetValue("svar.1", sequenceNumber+1);
+    }
 }
 ```
 6. Опубликуйте диаграмму.
@@ -142,19 +142,19 @@ C#-скрипт также можно применять для автонуме
     
     
     ```
-    public class Script   
-    {  
-    // ObjectID — запись, в контексте которой выполняется скрипт.  
-        public static decimal Main(string ObjectID)   
-        {           
-    // Получаем значение переменной «Порядковый номер» по её ID — svar.1.  
-    // Присваиваем полученное значение переменной sequenceNumber.  
-            var sequenceNumber = (decimal)Api.Solution.SolutionVariableService.GetValue("svar.1");  
-    // Приращиваем на 1 значение переменной «Порядковый номер»  
-            Api.Solution.SolutionVariableService.SetValue("svar.1", sequenceNumber+1);  
-    // Возвращаем значение sequenceNumber в указанный атрибут.  
-            return sequenceNumber;  
-        }  
+    public class Script
+    {
+    // ObjectID — запись, в контексте которой выполняется скрипт.
+        public static decimal Main(string ObjectID)
+        {
+    // Получаем значение переменной «Порядковый номер» по её ID — svar.1.
+    // Присваиваем полученное значение переменной sequenceNumber.
+            var sequenceNumber = (decimal)Api.Solution.SolutionVariableService.GetValue("svar.1");
+    // Приращиваем на 1 значение переменной «Порядковый номер»
+            Api.Solution.SolutionVariableService.SetValue("svar.1", sequenceNumber+1);
+    // Возвращаем значение sequenceNumber в указанный атрибут.
+            return sequenceNumber;
+        }
     }
     ```
 
@@ -189,21 +189,21 @@ C#-скрипт также можно применять для автонуме
     
     
     ```
-    # Импортируем функции для работы с переменными  
-    @prefix globalvariable: <http://comindware.com/ontology/variable#>.  
-    @prefix cmwnullable: <http://comindware.com/ontology/entity/nullable#>.  
-      
-    {  
-        # Получаем значение глобальной переменной «Порядковый номер»   
-        # по её ID — svar.1 и помещаем в ?globalVar.  
-        "svar.1" globalvariable:getValueById ?globalVar.  
-        # Увеличиваем значение глобальной переменной «Порядковый номер»   
-        # на 1 и сохраняем в ?resultSum.  
-        (?globalVar 1) cmwnullable:sum ?resultSum.  
-        # Присваиваем глобальной переменной значение ?resultSum.  
-        "svar.1" globalvariable:setValue ?resultSum.  
-        # Передаем в атрибут значение ?globalVar (глобальной переменной до её увеличения).  
-        ?globalVar -> ?value.  
+    # Импортируем функции для работы с переменными
+    @prefix globalvariable: <http://comindware.com/ontology/variable#>.
+    @prefix cmwnullable: <http://comindware.com/ontology/entity/nullable#>.
+    
+    {
+        # Получаем значение переменной «Порядковый номер»
+        # по её ID — svar.1 и помещаем в ?globalVar.
+        "svar.1" globalvariable:getValueById ?globalVar.
+        # Увеличиваем значение переменной «Порядковый номер»
+        # на 1 и сохраняем в ?resultSum.
+        (?globalVar 1) cmwnullable:sum ?resultSum.
+        # Присваиваем переменной значение ?resultSum.
+        "svar.1" globalvariable:setValue ?resultSum.
+        # Передаем в атрибут значение ?globalVar (переменной до её увеличения).
+        ?globalVar -> ?value.
     }
     ```
 
@@ -215,10 +215,8 @@ C#-скрипт также можно применять для автонуме
 
 --8<-- "related_topics_heading.md"
 
-**[Список функций языка формул Comindware][formula_function_list]**
-
-**[Переменные приложения. Просмотр списка, настройка и использование][variables]**
-
-**[Написание скриптов на языке C#][manual_csharp]**
+- *[Список функций языка формул Comindware][formula_function_list]*
+- *[Переменные приложения. Просмотр списка, настройка и использование][variables]*
+- *[Написание скриптов на языке C#][manual_csharp]*
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

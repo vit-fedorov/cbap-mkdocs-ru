@@ -71,30 +71,30 @@ kbId: 2608
 Бизнес-логика
 
 Это действие будет сохранять в переменную `originalRecord.id` идентификатор исходной записи в шаблоне *«Пакеты документов»* для использования в последующих действиях.
-7. После события «**Изменить значения переменных**» создайте и настройте действие «**Выполнить по условиям**» следующим образом:   
+7. После события «**Изменить значения переменных**» создайте и настройте действие «**Выполнить по условиям**» следующим образом:
 
     - Название условия: *Файл прикреплён*
     - **Выражение:** **N3**
     
     ```
-    # Импортируем функции для работы с данными текущего сеанса, переменными и записями   
-    @prefix variable: <http://comindware.com/ontology/session/variable#>.   
-    @prefix session: <http://comindware.com/ontology/session#>.   
-    @prefix object: <http://comindware.com/ontology/object#>.   
-    {   
-        #Находим атрибут «Файлы документов» в шаблоне «Пакеты документов»   
-        #и помещаем ID атрибута в локальную переменную AttachedFilesAttribute    
-        ("DocumentPacks" "AttachedFiles") object:findProperty ?AttachedFilesAttribute.    
-        #Находим переменную originalRecord из предыдущего действия  
-        #и помещаем её в локальную переменную originalRecordVariable  
-        session:context variable:originalRecord ?originalRecordVariable.    
-        #Находим переменную originalRecord.id с ID исходной записи в шаблоне «Пакеты документов»  
-        #и помещаем ID записи в локальную переменную docPackRecordId  
-        ?originalRecordVariable variable:id ?docPackRecordId.    
-        #Считываем значение атрибута «Файлы документов» в исходной записи   
-        ?docPackRecordId ?AttachedFilesAttribute ?.      
-        #Возвращаем true, если к атрибуту «Файлы документов» прикреплён хотя бы один файл   
-        true -> ?value.    
+    # Импортируем функции для работы с данными текущего сеанса, переменными и записями 
+    @prefix variable: <http://comindware.com/ontology/session/variable#>.
+    @prefix session: <http://comindware.com/ontology/session#>.
+    @prefix object: <http://comindware.com/ontology/object#>.
+    {
+        #Находим атрибут «Файлы документов» в шаблоне «Пакеты документов»
+        #и помещаем ID атрибута в локальную переменную AttachedFilesAttribute
+        ("DocumentPacks" "AttachedFiles") object:findProperty ?AttachedFilesAttribute.
+        #Находим переменную originalRecord из предыдущего действия
+        #и помещаем её в локальную переменную originalRecordVariable
+        session:context variable:originalRecord ?originalRecordVariable.
+        #Находим переменную originalRecord.id с ID исходной записи в шаблоне «Пакеты документов»
+        #и помещаем ID записи в локальную переменную docPackRecordId
+        ?originalRecordVariable variable:id ?docPackRecordId.
+        #Считываем значение атрибута «Файлы документов» в исходной записи
+        ?docPackRecordId ?AttachedFilesAttribute ?.
+        #Возвращаем true, если к атрибуту «Файлы документов» прикреплён хотя бы один файл
+        true -> ?value.
     }
     ```
 Бизнес-логика
@@ -105,28 +105,28 @@ kbId: 2608
 Бизнес-логика
 
 Это действие создаёт пустую запись в шаблоне *«Пакеты документов»*, в которую последующие действия скопируют значения атрибутов *«Наименование пакета документов»* и *«Файлы документов»*.
-9. Внутри действия «**Создать запись**» создайте и настройте действие «**Изменить значение атрибутов**» следующим образом:   
+9. Внутри действия «**Создать запись**» создайте и настройте действие «**Изменить значение атрибутов**» следующим образом:
 
     - **Атрибут:***Наименование пакета документов*
     - **Операция со значениями: заменить**
     - **Значение:****N3**
     
     ```
-    # Импортируем функции для работы с данными текущего сеанса, переменными и записями   
-    @prefix variable: <http://comindware.com/ontology/session/variable#>.    
-    @prefix session: <http://comindware.com/ontology/session#>.    
-    @prefix object: <http://comindware.com/ontology/object#>.    
-    {    
-        #Находим атрибут «Наименование пакета документов» в шаблоне «Пакеты документов»   
-        #и помещаем ID атрибута в локальную переменную PackNameAttribute  
-        ("DocumentPacks" "DocumentPackName") object:findProperty ?PackNameAttribute.     
-        #Помещаем переменную originalRecord в локальную переменную originalRecordVariable   
-        session:context variable:originalRecord ?originalRecordVariable.  
-        #Помещаем ID исходной записи в шаблоне «Пакеты документов»    
-        #в локальную переменную docPackRecordId   
-        ?originalRecordVariable variable:id ?docPackRecordId.   
-        #Возвращшаем значение атрибута «Наименование пакета документов» из исходной записи   
-        ?docPackRecordId ?PackNameAttribute ?value.   
+    # Импортируем функции для работы с данными текущего сеанса, переменными и записями 
+    @prefix variable: <http://comindware.com/ontology/session/variable#>.
+    @prefix session: <http://comindware.com/ontology/session#>.
+    @prefix object: <http://comindware.com/ontology/object#>.
+    {
+        #Находим атрибут «Наименование пакета документов» в шаблоне «Пакеты документов»
+        #и помещаем ID атрибута в локальную переменную PackNameAttribute
+        ("DocumentPacks" "DocumentPackName") object:findProperty ?PackNameAttribute.
+        #Помещаем переменную originalRecord в локальную переменную originalRecordVariable
+        session:context variable:originalRecord ?originalRecordVariable.
+        #Помещаем ID исходной записи в шаблоне «Пакеты документов»
+        #в локальную переменную docPackRecordId
+        ?originalRecordVariable variable:id ?docPackRecordId.
+        #Возвращшаем значение атрибута «Наименование пакета документов» из исходной записи
+        ?docPackRecordId ?PackNameAttribute ?value.
     }
     ```
 Бизнес-логика
@@ -134,53 +134,53 @@ kbId: 2608
 Это действие копирует значение атрибута *«Наименование пакета документов»* из исходной записи в новую.
 10. После действия «**Изменить значение атрибутов**» внутри действия «**Создать запись**» создайте и настройте действие «**Повторять по количеству объектов**» следующим образом:
     - **Переменная:** *document*
-    - **Атрибут или выражение для поиска объектов:** ******формула****** 
+    - **Атрибут или выражение для поиска объектов:** ******формула******
     
     ```
-    # Импортируем функции для работы с данными текущего сеанса, переменными и записями   
-    @prefix variable: <http://comindware.com/ontology/session/variable#>.    
-    @prefix session: <http://comindware.com/ontology/session#>.    
-    @prefix object: <http://comindware.com/ontology/object#>.    
-    {    
-        #Находим атрибут «Файлы документов» в шаблоне «Пакеты документов»   
-        #и помещаем ID атрибута в локальную переменную AttachedFilesAttribute    
-        ("DocumentPacks" "AttachedFiles") object:findProperty ?AttachedFilesAttribute.    
-        #Помещаем переменную originalRecord в локальную переменную originalRecordVariable   
-        session:context variable:originalRecord ?originalRecordVariable.   
-        #Помещаем ID исходной записи в шаблоне «Пакеты документов»    
-        #в локальную переменную docPackRecordId   
-        ?originalRecordVariable variable:id ?docPackRecordId.   
-        #Возвращшаем значение атрибута «Файлы документов» из исходной записи   
-        ?docPackRecordId ?AttachedFilesAttribute ?value.   
+    # Импортируем функции для работы с данными текущего сеанса, переменными и записями 
+    @prefix variable: <http://comindware.com/ontology/session/variable#>.
+    @prefix session: <http://comindware.com/ontology/session#>.
+    @prefix object: <http://comindware.com/ontology/object#>.
+    {
+        #Находим атрибут «Файлы документов» в шаблоне «Пакеты документов»
+        #и помещаем ID атрибута в локальную переменную AttachedFilesAttribute  
+        ("DocumentPacks" "AttachedFiles") object:findProperty ?AttachedFilesAttribute.
+        #Помещаем переменную originalRecord в локальную переменную originalRecordVariable
+        session:context variable:originalRecord ?originalRecordVariable.
+        #Помещаем ID исходной записи в шаблоне «Пакеты документов»
+        #в локальную переменную docPackRecordId
+        ?originalRecordVariable variable:id ?docPackRecordId.
+        #Возвращшаем значение атрибута «Файлы документов» из исходной записи
+        ?docPackRecordId ?AttachedFilesAttribute ?value.
     }
     ```
 Бизнес-логика
 
 На каждой итерации цикла в переменную `document` будет помещаться ссылка на запись в *системном* **шаблоне документа** с файлом, прикреплённым к атрибуту *«Файлы документов»* из исходной записи.
-11. Внутри действия «**Повторять по количеству объектов**» создайте и настройте действие «**Изменить значение атрибутов**» следующим образом:   
+11. Внутри действия «**Повторять по количеству объектов**» создайте и настройте действие «**Изменить значение атрибутов**» следующим образом:
 
     - **Атрибут:** *Файлы документов*
     - **Операция со значениями: добавить**
     - ****Значение:****  **N3**
     
     ```
-    # Импортируем функции для работы с документами и данными текущего сеанса  
-    @prefix document: <http://comindware.com/ontology/document#>.  
-    @prefix variable: <http://comindware.com/ontology/session/variable#>.    
-    @prefix session: <http://comindware.com/ontology/session#>.    
-    {    
-        #Помещаем переменную document из действия «Повторять по количеству объектов»  
-        #в локальную переменную doc  
-        session:context variable:document ?doc.   
-        #Помещаем ссылку на прикреплённый файл в локальную переменную revision  
-        ?doc document:currentRevision ?revision.  
-        #Помещаем содержимое файла в формате Base64 в локальную переменную content  
-        ?revision document:content ?content.  
-        #Помещаем имя файла в локальную переменную filename  
-        ?doc document:title ?filename.  
-        #Собирем новый файл из имени и содержимого, сохраняем его в папку Streams,  
-        #и возвращаем ID нового документа с прикреплённым файлом  
-        (?content ?filename) document:attach ?value.   
+    # Импортируем функции для работы с документами и данными текущего сеанса
+    @prefix document: <http://comindware.com/ontology/document#>.
+    @prefix variable: <http://comindware.com/ontology/session/variable#>.
+    @prefix session: <http://comindware.com/ontology/session#>.
+    {
+        #Помещаем переменную document из действия «Повторять по количеству объектов»
+        #в локальную переменную doc
+        session:context variable:document ?doc.
+        #Помещаем ссылку на прикреплённый файл в локальную переменную revision
+        ?doc document:currentRevision ?revision.
+        #Помещаем содержимое файла в формате Base64 в локальную переменную content
+        ?revision document:content ?content.
+        #Помещаем имя файла в локальную переменную filename
+        ?doc document:title ?filename.
+        #Собирем новый файл из имени и содержимого, сохраняем его в папку Streams,
+        #и возвращаем ID нового документа с прикреплённым файлом
+        (?content ?filename) document:attach ?value.
     }
     ```
 Бизнес-логика

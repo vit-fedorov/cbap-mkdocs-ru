@@ -17,6 +17,8 @@ import json
 from sshtunnel import SSHTunnelForwarder
 
 KB_ID_TO_FILENAME_MAP = None
+KB_ID_TO_TITLE_MAP = None
+KB_ID_TO_TITLE_MAP_FILE = '.article_id_filename_map.json'
 THIS_FILE_DIR = os.path.dirname(os.path.realpath(__file__))
 IMPORT_PATH_DEFAULT = 'phpkb_content'
 importPath = input(f'Path to import (default `{IMPORT_PATH_DEFAULT}`): ') 
@@ -90,6 +92,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
         existingFilename = findFilenameByArticleId(id, DOCS_RU_FOLDER)
         if existingFilename:
             sanitizedTitle = existingFilename
+        else: updateMappingJson(id, sanitizedTitle, KB_ID_TO_TITLE_MAP, KB_ID_TO_TITLE_MAP_FILE)
         filename = os.path.join(categoryDir, f"{id}-{sanitizedTitle}.md")
         filename_html = os.path.join(categoryDir, f"{id}-{sanitizedTitle}.html")
         print ('    Importing article: ' + filename)
@@ -199,6 +202,13 @@ def listCategories(categories):
         index += 1
 
 def main():
+    
+    global KB_ID_TO_TITLE_MAP
+        
+    KB_ID_TO_TITLE_MAP = loadMappingJson(KB_ID_TO_TITLE_MAP_FILE)
+    
+    if len(KB_ID_TO_TITLE_MAP) == 0:
+        KB_ID_TO_TITLE_MAP = dict()
     
     with open(".serverCredentials.json", "r") as serverCredentialsFile: 
         
@@ -336,14 +346,32 @@ def findFilenameByArticleId(article_id, docs_dir):
                                     break  # Stop scanning this file after finding kbId
     
     foundFilename = KB_ID_TO_FILENAME_MAP.get(str(article_id))
+    foundTitle = KB_ID_TO_TITLE_MAP.get(str(article_id))
     if not foundFilename:
             articleAnchor = find_url_in_snippet(article_id, None)
             if articleAnchor:
                 articleAnchor = re.sub(r'\[(.*)\]', r'\1', articleAnchor)
                 KB_ID_TO_FILENAME_MAP[str(article_id)] = articleAnchor
-            
+            elif foundTitle:
+                KB_ID_TO_FILENAME_MAP[str(article_id)] = foundTitle
+                
+                
     # Lookup in the cached dictionary
     return KB_ID_TO_FILENAME_MAP.get(str(article_id))
+
+def updateMappingJson(key, value, mapping, mappingFilename):
+    mapping.update({str(key):value})
+    with open(mappingFilename, "w") as mappingFile: 
+        mappingJson = json.dumps(mapping, indent = 4, ensure_ascii=False)
+        print(mappingJson)
+        mappingFile.write(mappingJson)
+        
+def loadMappingJson(mappingFilename):
+
+    with open(mappingFilename, "r") as mappingJsonFile: 
+        mappingJsonFileContent = mappingJsonFile.read()
+        mappingJson = json.loads(mappingJsonFileContent) if mappingJsonFileContent else dict()
+        return mappingJson
 
 if __name__ == "__main__":
     main()

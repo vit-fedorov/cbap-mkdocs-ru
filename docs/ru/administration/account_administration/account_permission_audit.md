@@ -5,7 +5,7 @@ tags:
     - права пользователей
     - аккаунты
 hide: tags
-kbId: 2195
+kbId: 4664
 ---
 
 # Аудит разрешений аккаунтов {: #account_permission_audit}

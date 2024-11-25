@@ -1,6 +1,6 @@
 ---
 title: Шаблон процесса
-kbId: 2222
+kbId: 4758
 ---
 
 # Шаблон процесса {: #process_templates}

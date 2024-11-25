@@ -8,7 +8,7 @@ tags:
   - конструктор форм
 hide:
   - tags
-kbId: 2107
+kbId: 4891
 ---
 
 # Диаграмма Ганта. Настройка {: #gantt_chart_create}

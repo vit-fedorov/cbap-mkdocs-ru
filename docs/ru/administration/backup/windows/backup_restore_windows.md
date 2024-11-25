@@ -1,6 +1,6 @@
 ---
 title: Резервное копирование и восстановление в Windows
-kbId: 2101
+kbId: 4644
 ---
 
 # Резервное копирование и восстановление {{ productName }} в ОС Windows {: #backup_restore_windows}

@@ -8,7 +8,7 @@ tags:
   - внешние системы
 hide:
   - tags
-kbId: 2201
+kbId: 4676
 ---
 
 # Пути передачи данных {: #communication_routes}

@@ -1,6 +1,6 @@
 ---
 title: NGINX. Установка и настройка
-kbId: 2096
+kbId: 4611
 ---
 
 # NGINX. Установка и настройка {: #nginx_deploy}

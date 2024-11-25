@@ -1,6 +1,6 @@
 ---
 title: Аутентификация через OpenID Connect
-kbId: 2329
+kbId: 4685
 ---
 
 # Аутентификация через OpenID Connect. Настройка подключения и служб {: #openid_connection}

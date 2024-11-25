@@ -12,7 +12,7 @@ tags:
   - путь передачи данных
 hide:
   - tags
-kbId: 2376
+kbId: 4736
 ---
 
 # Начальное событие-получение сообщения {: #process_diagram_elements_receive_message_start_event}

@@ -1,6 +1,6 @@
 ---
 title: Рабочий стол Architect
-kbId: 2415
+kbId: 4828
 tags:
     - рабочий стол Architect
     - начальная страница

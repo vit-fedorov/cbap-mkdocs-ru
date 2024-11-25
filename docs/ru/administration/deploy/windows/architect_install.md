@@ -1,6 +1,6 @@
 ---
 title: Comindware Architect. Инструкции по установке экземпляра ПО в ОС Windows
-kbId: 2316
+kbId: 4629
 ---
 
 # Comindware Architect. Инструкции по установке экземпляра ПО в ОС Windows {: #architect_install_windows }

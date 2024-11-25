@@ -1,6 +1,6 @@
 ---
 title: Настройка единого входа (SSO-аутентификации) в ОС Windows
-kbId: 2309
+kbId: 4657
 ---
 
 # Настройка единого входа (SSO-аутентификации) в ОС Windows {: #sso_authentication_configure_windows}

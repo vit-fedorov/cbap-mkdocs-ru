@@ -1,6 +1,6 @@
 ---
 title: Установка ПО
-kbId: 2028
+kbId: 4640
 ---
 
 # Установка {{ productName }} {: #admin_utility_sw_install}

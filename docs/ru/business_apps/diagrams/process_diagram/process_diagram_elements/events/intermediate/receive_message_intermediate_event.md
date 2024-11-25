@@ -12,7 +12,7 @@ tags:
   - путь передачи данных
 hide:
   - tags
-kbId: 2382
+kbId: 4739
 ---
 
 # Промежуточное событие-получение сообщения {: #process_diagram_elements_receive_message_intermediate_event}

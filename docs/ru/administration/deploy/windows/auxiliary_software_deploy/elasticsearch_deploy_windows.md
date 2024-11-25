@@ -1,6 +1,6 @@
 ---
 title: Elasticsearch. Установка в базовой конфигурации для Windows
-kbId: 2094
+kbId: 4617
 ---
 
 # Elasticsearch. Установка в базовой конфигурации для Windows {: #elasticsearch_deploy_windows}

@@ -4,7 +4,7 @@ tags:
   - свойства атрибута
 hide:
   - tags
-kbId: 2260
+kbId: 4765
 ---
 
 # Общие свойства атрибутов {: #attribute_common_properties}

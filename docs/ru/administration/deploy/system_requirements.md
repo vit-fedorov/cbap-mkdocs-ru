@@ -1,6 +1,6 @@
 ---
 title: Системные требования
-kbId: 1271
+kbId: 4659
 ---
 
 # Системные требования {{ productName }} {: #system_requirements}

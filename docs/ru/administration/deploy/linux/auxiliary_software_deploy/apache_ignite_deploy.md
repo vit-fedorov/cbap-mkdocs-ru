@@ -1,6 +1,6 @@
 ---
 title: Apache Ignite. Установка и настройка
-kbId: 2093
+kbId: 4600
 ---
 
 # Apache Ignite. Установка и настройка {: #apache_ignite_deploy}

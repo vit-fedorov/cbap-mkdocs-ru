@@ -1,6 +1,6 @@
 ---
 title: Дефрагментация данных Apache Ignite
-kbId: 2495
+kbId: 4603
 ---
 
 # Дефрагментация данных Apache Ignite {: #apache_ignite_defragment}

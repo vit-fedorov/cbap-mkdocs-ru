@@ -1,6 +1,6 @@
 ---
 title: Развёртывание кластера Elasticsearch без сертификатов подлинности
-kbId: 2095
+kbId: 4612
 ---
 
 # Развёртывание кластера Elasticsearch без сертификатов подлинности {: #elasticsearch_cluster_deploy_no_certificates}

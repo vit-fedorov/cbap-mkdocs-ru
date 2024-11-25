@@ -157,8 +157,6 @@ def importArtciclesInCategory (categoryId, categoryDir):
                     replacementRegex = fr'[{articleName}](https://kb.comindware.ru/article.php?id=\2)'
                     markdown = re.sub(pattern, replacementRegex, markdown, count=1)
             # Replace article links in markdown with URL from hyperlinks map
-            markdown = markdown.replace('article\\.php\\?id', 'article.php?id')
-            markdown = markdown.replace('category\\.php\\?id', 'category.php?id')
             pattern = r'\(https://kb\.comindware\.ru.+?((article\\?\.php\\?\?id=)|-)(\d+)(?(2)|\.html)(#?)(.*?)\)'
             foundLinks = re.finditer(pattern, markdown)
             for link in foundLinks:

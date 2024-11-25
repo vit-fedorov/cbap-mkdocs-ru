@@ -171,7 +171,7 @@ namespace Telegram
 Вы можете воспользоваться аналогичным кодом простейшей реализации бота на языке Python из файла `TelegramBotPrimer.py` по ссылке: [TelegramBotComindwareIntegrationPython.zip](https://kb.comindware.ru/file.php?id=193)
 
 _![Запуск бота](https://kb.comindware.ru/assets/img_664f1796168fe.png)_
-13. Для взаимодействия с **{{ productName }}** воспользуемся **[Solution API](https://kb.comindware.ru/article\.php\?id=4863)**.
+13. Для взаимодействия с **{{ productName }}** воспользуемся **[Solution API](https://kb.comindware.ru/article.php?id=4863)**.
 14. Допишите `/Docs/SolutionApi/` в адресной строке браузера после адреса экземпляра **{{ productName }}**.
 15. Отобразится страница Swagger с перечнем доступных методов **Solution API**.
 

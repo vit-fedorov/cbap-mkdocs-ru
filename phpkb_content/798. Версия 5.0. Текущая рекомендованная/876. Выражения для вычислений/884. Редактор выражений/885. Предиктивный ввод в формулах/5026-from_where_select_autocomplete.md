@@ -213,7 +213,7 @@ COUNT(from a in $RequestedCars where a->Make == "Лада" select a->id)
 
 **[Редактор выражений][expression_editor]**
 
-**[Примеры использования формул](https://kb.comindware.ru/category\.php\?id=880)**
+**[Примеры использования формул](https://kb.comindware.ru/category.php?id=880)**
 
 **[Ввод имени функции и просмотр подсказки по функции][formula_editor_function_autocompete]**
 

@@ -16,7 +16,7 @@ kbId: 5035
 
 **[Редактор выражений][expression_editor]**
 
-**[Примеры использования формул](https://kb.comindware.ru/category\.php\?id=880)**
+**[Примеры использования формул](https://kb.comindware.ru/category.php?id=880)**
 
 
 

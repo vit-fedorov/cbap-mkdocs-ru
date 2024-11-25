@@ -59,6 +59,6 @@ _![Список шаблонов в приложении](https://kb.comindware.
 
 **[Редактор выражений][expression_editor]**
 
-**[Примеры использования языка N3](https://kb.comindware.ru/category\.php\?id=877)**
+**[Примеры использования языка N3](https://kb.comindware.ru/category.php?id=877)**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

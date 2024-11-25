@@ -27,7 +27,7 @@ su -
 ```
 sudo -i
 ```
-2. Разверните чистый экземпляр ПО {{ productName }} *без демонстрационной базы данных* (с параметром `-d=clear`). См. «[**Развертывание {{ productName }}**](https://kb.comindware.ru/category\.php\?id=807)». Например:
+2. Разверните чистый экземпляр ПО {{ productName }} *без демонстрационной базы данных* (с параметром `-d=clear`). См. «[**Развертывание {{ productName }}**](https://kb.comindware.ru/category.php?id=807)». Например:
 
 ```
 sh install.sh -k -p [-i=<instanceName>] [-e] -d=clear [-u=www-data] [-g=www-data]
@@ -46,7 +46,7 @@ sh install.sh -k -p [-i=<instanceName>] [-e] -d=clear [-u=www-data] [-g=www-data
     - `kh=hostname` — использовать указанный хост для подключения к ПО Kafka (необязательный ключ);
     - `kp=portnumber` — использовать указанный порт для подключения к ПО Kafka (необязательный ключ);
     - `i=<instanceName>` — создать экземпляр ПО с указанным именем (необязательный ключ). Имя экземпляра п{{ productName }}
-3. Инициализируйте экземпляр ПО. См. *«[Развертывание](https://kb.comindware.ru/category\.php\?id=807)*[*{{ productName }}*](https://kb.comindware.ru/category\.php\?id=807)*»*.
+3. Инициализируйте экземпляр ПО. См. *«[Развертывание](https://kb.comindware.ru/category.php?id=807)*[*{{ productName }}*](https://kb.comindware.ru/category.php?id=807)*»*.
 4. Остановите сервисы NGINX и comindware`<instanceName>` (где `<instanceName>` — имя экземпляра ПО) и удостоверьтесь, что они остановлены:
 
 ```

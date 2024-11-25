@@ -56,7 +56,7 @@ COUNT(from b in db->Zayavkanaavtomobil  where b->Status->Nazvanie == "Выпол
 
 **[Редактор выражений][expression_editor]**
 
-**[Примеры использования формул](https://kb.comindware.ru/category\.php\?id=880)**
+**[Примеры использования формул](https://kb.comindware.ru/category.php?id=880)**
 
 **[Ввод имени функции и просмотр подсказки по функции][formula_editor_function_autocompete]**
 

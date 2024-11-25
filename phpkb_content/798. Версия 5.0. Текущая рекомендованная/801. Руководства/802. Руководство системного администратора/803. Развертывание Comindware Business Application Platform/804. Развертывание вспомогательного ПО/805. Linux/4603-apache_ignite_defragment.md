@@ -142,7 +142,7 @@ LimitNOFILESoft=65536
 
 --8<-- "related_topics_heading.md"
 
-**[Руководство системного администратора. Резервное копирование и восстановление в ОС Linux](https://kb.comindware.ru/category\.php\?id=812)**
+**[Руководство системного администратора. Резервное копирование и восстановление в ОС Linux](https://kb.comindware.ru/category.php?id=812)**
 **[Руководство пользователя. Резервное копирование](https://kb.comindware.ru/category.php?id=436)**
 **[Дефрагментация персистентного хранилища](https://ignite.apache.org/docs/2.11.1/persistence/native-persistence-defragmentation)** (руководство Apache Ignite, английский язык))
 **[Активация, деактивация и управление топологией](https://ignite.apache.org/docs/2.11.1/tools/control-script#activation-deactivation-and-topology-management)** (руководство Apache Ignite, английский язык)

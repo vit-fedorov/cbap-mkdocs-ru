@@ -29,7 +29,7 @@ _![Список значений атрибута taskStatus](https://kb.comindw
 
 **[Редактор выражений][expression_editor]**
 
-**[Примеры использования языка N3](https://kb.comindware.ru/category\.php\?id=877)**
+**[Примеры использования языка N3](https://kb.comindware.ru/category.php?id=877)**
 
 **[Атрибут типа «Список значений»][attribute_enum]**
 

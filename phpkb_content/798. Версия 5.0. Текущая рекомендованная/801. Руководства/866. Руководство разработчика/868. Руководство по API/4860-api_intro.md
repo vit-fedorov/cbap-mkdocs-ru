@@ -7,10 +7,10 @@ kbId: 4860
 
 ## Введение
 
-**{{ productName }}** может обращаться к API внешних систем через [подключения](https://kb.comindware.ru/category\.php\?id=821) и [пути передачи данных](https://kb.comindware.ru/category.php?id=515), а также может обрабатывать запросы из внешних систем через интерфейсы **REST API** трех типов:
+**{{ productName }}** может обращаться к API внешних систем через [подключения](https://kb.comindware.ru/category.php?id=821) и [пути передачи данных](https://kb.comindware.ru/category.php?id=515), а также может обрабатывать запросы из внешних систем через интерфейсы **REST API** трех типов:
 
-- [**Solution API**](https://kb.comindware.ru/article\.php\?id=4863)
-- [**System Core API**](https://kb.comindware.ru/article\.php\?id=4862)
+- [**Solution API**](https://kb.comindware.ru/article.php?id=4863)
+- [**System Core API**](https://kb.comindware.ru/article.php?id=4862)
 - [**Web API**][api_web]
 
 ### Определения

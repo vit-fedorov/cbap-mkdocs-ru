@@ -33,6 +33,6 @@ OBJECT("Upravlenieavtoparkom", "Avtomobil", "Marka", "Лада")
 
 **[Редактор выражений][expression_editor]**
 
-**[Примеры использования формул](https://kb.comindware.ru/category\.php\?id=880)**
+**[Примеры использования формул](https://kb.comindware.ru/category.php?id=880)**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

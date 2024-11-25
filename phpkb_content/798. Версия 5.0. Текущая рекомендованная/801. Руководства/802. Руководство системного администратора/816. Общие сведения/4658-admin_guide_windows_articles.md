@@ -49,13 +49,13 @@ kbId: 4658
     2. [Перенаправление сообщений из файлов журналов в журнал событий Windows][logging_engine]
     3. [Файловые журналы][logging_engine]
 8. Архитектура и ландшафт развёртывания Системы
-    1. [Определения](https://kb.comindware.ru/article\.php\?id=4596#mcetoc_1g78u77lo2)
-    2. [Архитектура Системы](https://kb.comindware.ru/article\.php\?id=4596#mcetoc_1g7eahlrr0)
-    3. [Рекомендуемые варианты развёртывания Системы](https://kb.comindware.ru/article\.php\?id=4596#mcetoc_1g7eauu4b2)
-    4. [Рекомендуемый набор серверов приложений](https://kb.comindware.ru/article\.php\?id=4596#mcetoc_1g7ebavmr4)
+    1. [Определения](https://kb.comindware.ru/article.php?id=4596#mcetoc_1g78u77lo2)
+    2. [Архитектура Системы](https://kb.comindware.ru/article.php?id=4596#mcetoc_1g7eahlrr0)
+    3. [Рекомендуемые варианты развёртывания Системы](https://kb.comindware.ru/article.php?id=4596#mcetoc_1g7eauu4b2)
+    4. [Рекомендуемый набор серверов приложений](https://kb.comindware.ru/article.php?id=4596#mcetoc_1g7ebavmr4)
 9. Техническое обеспечение Системы
-    1. [Конфигурация серверов приложений](https://kb.comindware.ru/article\.php\?id=4596#mcetoc_1g7ebfaqq1)
-    2. [Конфигурация подсистем](https://kb.comindware.ru/article\.php\?id=4596#mcetoc_1g7ebvhdq0)
+    1. [Конфигурация серверов приложений](https://kb.comindware.ru/article.php?id=4596#mcetoc_1g7ebfaqq1)
+    2. [Конфигурация подсистем](https://kb.comindware.ru/article.php?id=4596#mcetoc_1g7ebvhdq0)
 10. Безопасность Системы
     1. [Синхронизация с веб-сервисом. Интеграция по OData](https://kb.comindware.ru/article.php?id=2306)
     2. `![](https://kb.comindware.ru/images/marker.png){Article-ID:4656}`

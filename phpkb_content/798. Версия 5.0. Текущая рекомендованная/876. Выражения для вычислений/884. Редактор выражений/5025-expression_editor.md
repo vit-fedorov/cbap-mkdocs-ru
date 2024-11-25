@@ -95,9 +95,9 @@ _![Поиск текста в выражении](https://kb.comindware.ru/asset
 
 **[Предиктивный ввод в выражениях на языке N3](https://kb.comindware.ru/article.php?id=2460)**
 
-**[Примеры использования формул](https://kb.comindware.ru/category\.php\?id=880)**
+**[Примеры использования формул](https://kb.comindware.ru/category.php?id=880)**
 
-**[Примеры использования языка N3](https://kb.comindware.ru/category\.php\?id=877)**
+**[Примеры использования языка N3](https://kb.comindware.ru/category.php?id=877)**
 
 **[Вычисляемые атрибуты][attribute_calculated]**
 

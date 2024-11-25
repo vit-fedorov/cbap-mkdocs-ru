@@ -53,7 +53,7 @@ _![Выбор и упорядочивание разделов страницы]
 
 --8<-- "related_topics_heading.md"
 
-**[Использование системы](https://kb.comindware.ru/category\.php\?id=859)**
+**[Использование системы](https://kb.comindware.ru/category.php?id=859)**
 
 
 

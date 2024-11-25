@@ -6,7 +6,7 @@
 
 [api_intro]: {{ kbArticleURLPrefix }}4860
 
-[account_attributes_system_names]: {{ kbArticleURLPrefix }}1354
+[account_attributes_system_names]: {{ kbArticleURLPrefix }}4994
 
 [attribute_date_time_use]: {{ kbArticleURLPrefix }}4886
 

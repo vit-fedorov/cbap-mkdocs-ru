@@ -54,7 +54,7 @@ def importCategoryChildren(parent, categoryDirectory):
             SELECT DISTINCT (category_id), category_name, parent_id
             FROM phpkb_categories 
             WHERE category_show='yes' 
-            AND category_status = 'public'
+            AND category_status = 'private'
             AND phpkb_categories.language_id = 2
             AND parent_id = {}
             """.format(id))
@@ -178,19 +178,18 @@ def importArtciclesInCategory (categoryId, categoryDir):
     return pages
 
 
-def fetchCategories(show='yes', status='public', language_id=2, parent_id=''):
+def fetchCategories(show='yes', status='private', language_id=2, parent_id=''):
 
     c = CONNECTION.cursor()    
 
-    c.execute("""
+    c.execute(f"""
             SELECT DISTINCT category_id, category_name, parent_id
             FROM phpkb_categories 
-            WHERE category_show='yes' 
-            AND category_status = 'public'
-            AND phpkb_categories.language_id = 2
+            WHERE category_show='{show}' 
+            AND category_status = '{status}'
+            AND phpkb_categories.language_id = {language_id}
             AND parent_id = '{parent_id}'
-            """.format(parent_id = parent_id))
-
+            """)
     categories = c.fetchall()
     return categories
 

@@ -18,7 +18,7 @@ from sshtunnel import SSHTunnelForwarder
 
 KB_ID_TO_FILENAME_MAP = None
 KB_ID_TO_TITLE_MAP = None
-KB_ID_TO_TITLE_MAP_FILE = '.article_id_filename_map.json'
+KB_ID_TO_TITLE_MAP_FILE = '.article_id_filename_map_v5.json'
 THIS_FILE_DIR = os.path.dirname(os.path.realpath(__file__))
 IMPORT_PATH_DEFAULT = 'phpkb_content'
 importPath = input(f'Path to import (default `{IMPORT_PATH_DEFAULT}`): ') 
@@ -123,7 +123,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
             # Replace Related Articles heading with placeholder
             markdown = markdown.replace('## Связанные статьи', '--8<-- "related_topics_heading.md"')
             # Replace product name with placeholder
-            markdown = markdown.replace('Comindware Business Application Platform', '{{ productName }}')
+            markdown = markdown.replace('Comindware Platform', '{{ productName }}')
             # Reformat images with captions
             pattern = re.compile(r'(!\[(.*)\]\(.*\))\n\n\2', flags=re.MULTILINE)
             markdown = re.sub(pattern, r'_\1_', markdown)

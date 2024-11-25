@@ -4,7 +4,7 @@
 
 INHERIT: mkdocs_ru.yml
 
-site_name: Comindware Business Application Platform. Руководство пользователя
+site_name: Comindware Platform. Руководство пользователя
 
 extra:
   adminGuideWindows: False

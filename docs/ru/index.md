@@ -13,11 +13,11 @@ hide:
 
 {% elif completeGuide %}
 
-Это полное руководство ПО **{{ productName }}**.
+Это полное руководство ПО **{{ productNameEnterprise }}**.
 
 {% elif userGuide %}
 
-Это руководство пользователя ПО **{{ productName }}** с модулем **{{ productNameArchitect }}**.
+Это руководство пользователя ПО **{{ productNameEnterprise }}** с модулем «**{{ productNameArchitect }}**».
 
 {% elif adminGuideLinux %}
 

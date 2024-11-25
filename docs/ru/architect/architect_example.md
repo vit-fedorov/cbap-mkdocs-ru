@@ -37,7 +37,7 @@ kbId: 4826
 
 Прежде чем проходить этот урок, ознакомьтесь со следующими статьями:
 
-- **Использование {{ productNameArchitect }}**
+- **Моделирование корпоративной архитектуры**
     - _[Построение процессной архитектуры][architect_process_architecture_modelling]_
         - _[Конструктор диаграмм][architect_process_diagram_designer]_
         - _[Редактирование диаграммы][architect_edit_diagram]_

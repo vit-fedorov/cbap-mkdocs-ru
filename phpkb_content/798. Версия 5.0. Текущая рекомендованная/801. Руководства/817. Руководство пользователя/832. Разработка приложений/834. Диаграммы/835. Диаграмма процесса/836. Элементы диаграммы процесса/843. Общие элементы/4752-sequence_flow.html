@@ -21,8 +21,8 @@
 <h3 class="admonition-title" id="mcetoc_1hpjae7vv0">Определения</h3>
 <p><strong>Поток управления</strong> соединяет два последовательных элемента процесса. Предусмотрено два типа потоков:</p>
 <ul>
-<li><strong>Поток управления</strong> — обычный поток управления, соединяющий любые два элемента. Если поток выходит из <strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4747">развилки «или/или»</a></strong>, то для него можно <a class="mkdocs_imported_link" href="#mcetoc_1h2aub4ah5">задать условие</a>, при выполнении которого по нему пойдёт токен.</li>
-<li><strong>Поток управления «иначе»</strong> — если поток выходит из <strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4747">развилки «или/или»</a></strong>, то его можно назначить <a class="mkdocs_imported_link" href="#mcetoc_1h2aub4ah5">потоком «иначе»</a>. Токен идёт по потоку «иначе», если не выполнены условия ни для одного другого потока, выходящего из развилки.</li>
+<li><strong>Поток управления</strong> — обычный поток управления, соединяющий любые два элемента. Если поток выходит из <strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4747">развилки «или/или»</a></strong>, то для него можно <a class="mkdocs_imported_link" href="#mcetoc_1h2aub4ah5">задать условие</a>, при выполнении которого по нему пойдёт токен.</li>
+<li><strong>Поток управления «иначе»</strong> — если поток выходит из <strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4747">развилки «или/или»</a></strong>, то его можно назначить <a class="mkdocs_imported_link" href="#mcetoc_1h2aub4ah5">потоком «иначе»</a>. Токен идёт по потоку «иначе», если не выполнены условия ни для одного другого потока, выходящего из развилки.</li>
 </ul>
 </div>
 <div class="screenshot_with_caption">
@@ -60,26 +60,26 @@
 <h2 id="mcetoc_1h2aub4ah3">Свойства потока управления</h2>
 <p>В окне свойств <strong>потока</strong> предусмотрены перечисленные ниже вкладки.</p>
 <h3 id="mcetoc_1h2aub4ah4">Основные</h3>
-<p>На этой вкладке можно настроить <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4725">общие свойства элемента диаграммы процесса</a>.</p>
+<p>На этой вкладке можно настроить <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4725">общие свойства элемента диаграммы процесса</a>.</p>
 <div class="screenshot_with_caption">
 <p><img alt="Основные свойства потока управления" src="https://kb.comindware.ru/assets/sequence_flow_general_properties.png"/></p>
 <p class="caption">Основные свойства потока управления</p>
 </div>
 <h3 id="mcetoc_1h2aub4ah5">Дополнительные</h3>
-<p>На этой вкладке можно настроить специфические свойства <strong>потока управления</strong>, соединённого с <strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4747">развилкой «или/или»</a></strong>. Она не отображается для потоков, соединённых с другими элементами.</p>
+<p>На этой вкладке можно настроить специфические свойства <strong>потока управления</strong>, соединённого с <strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4747">развилкой «или/или»</a></strong>. Она не отображается для потоков, соединённых с другими элементами.</p>
 <ul>
 <li><strong>Поток «иначе»</strong> — если установлен этот флажок, то токен идёт по потоку, если не выполнены <strong>условия</strong> ни для одного другого потока, выходящего из развилки. Этот флажок можно установить только для одного потока, выходящего из развилки.</li>
-<li><strong>Условие</strong> — введите <strong>формулу</strong> или скрипт <strong>C#</strong>, возвращающие <code>true</code>, когда токен должен идти по данному потоку. Это поле отображается, если снят флажок «<strong>Поток «иначе»</strong>. Это <strong>обязательное поле</strong> — условие необходимо указать для всех потоков, выходящих из <strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4747">развилки «или/или»</a></strong> кроме <strong>потока «иначе»</strong>.</li>
+<li><strong>Условие</strong> — введите <strong>формулу</strong> или скрипт <strong>C#</strong>, возвращающие <code>true</code>, когда токен должен идти по данному потоку. Это поле отображается, если снят флажок «<strong>Поток «иначе»</strong>. Это <strong>обязательное поле</strong> — условие необходимо указать для всех потоков, выходящих из <strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4747">развилки «или/или»</a></strong> кроме <strong>потока «иначе»</strong>.</li>
 </ul>
 <div class="screenshot_with_caption">
 <p><img alt="Дополнительные свойства потока управления" src="https://kb.comindware.ru/assets/sequence_flow_advanced_properties.png"/></p>
 <p class="caption">Дополнительные свойства потока управления</p>
 </div>
 <h2 id="mcetoc_1h2aub4ah6">Связанные статьи</h2>
-<p><strong><a class="autorefs autorefs-internal mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4748">Развилки</a></strong></p>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4725">Общие свойства элементов диаграммы процесса</a></strong></p>
-<p><strong><a class="autorefs autorefs-internal mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4724">Элементы диаграммы процесса</a></strong></p>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4721">Редактирование диаграммы процесса</a></strong></p>
+<p><strong><a class="autorefs autorefs-internal mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4748">Развилки</a></strong></p>
+<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4725">Общие свойства элементов диаграммы процесса</a></strong></p>
+<p><strong><a class="autorefs autorefs-internal mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4724">Элементы диаграммы процесса</a></strong></p>
+<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4721">Редактирование диаграммы процесса</a></strong></p>
 </div>
 </div>
 <a class="md-top md-icon mkdocs_imported_link" href="#"> <em class="fa-light fa-arrow-up">‌</em> К началу </a></div>

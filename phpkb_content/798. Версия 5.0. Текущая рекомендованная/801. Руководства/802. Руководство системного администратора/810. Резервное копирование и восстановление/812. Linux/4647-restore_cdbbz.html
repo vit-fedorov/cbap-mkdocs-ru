@@ -14,11 +14,11 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h2 id="введение">Введение</h2>
-<p>Здесь представлены инструкции по восстановлению на чистом экземпляре ПО <strong>Comindware Platform</strong> под управлением ОС Linux базы данных из файла резервной копии с расширением <code>.CDBBZ</code>, созданного с помощью встроенной в ПО функции «<strong>Резервное копирование</strong> ». См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4642">Резервное копирование. Настройка и запуск, просмотр журнала сеансов</a>»</em>.</p>
+<p>Здесь представлены инструкции по восстановлению на чистом экземпляре ПО <strong>Comindware Platform</strong> под управлением ОС Linux базы данных из файла резервной копии с расширением <code>.CDBBZ</code>, созданного с помощью встроенной в ПО функции «<strong>Резервное копирование</strong> ». См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4642">Резервное копирование. Настройка и запуск, просмотр журнала сеансов</a>»</em>.</p>
 <p>См. также инструкции по полному резервному копированию и восстановлению базы данных внешними средствами:</p>
 <ul>
-<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4650">Создание полной резервной копии (базы данных, вложенных файлов и журналов) без остановки экземпляра ПО</a></em></li>
-<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4648">Восстановление базы данных, вложенных файлов и журналов из полной резервной копии</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4650">Создание полной резервной копии (базы данных, вложенных файлов и журналов) без остановки экземпляра ПО</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4648">Восстановление базы данных, вложенных файлов и журналов из полной резервной копии</a></em></li>
 </ul>
 <h2 id="восстановление-базы-данных-и-скриптов">Восстановление базы данных и скриптов</h2>
 <ol class="colored_numbers_list">
@@ -33,7 +33,7 @@
 </div>
 </li>
 <li>
-<p>Разверните чистый экземпляр ПО Comindware Platform <em>без демонстрационной базы данных</em> (с параметром <code>-d=clear</code>). См. «<a class="mkdocs_imported_link" href="https://kb.comindware.ru/category\.php\?id=807"><strong>Развертывание Comindware Platform</strong></a>». Например:</p>
+<p>Разверните чистый экземпляр ПО Comindware Platform <em>без демонстрационной базы данных</em> (с параметром <code>-d=clear</code>). См. «<a class="mkdocs_imported_link" href="https://kb.comindware.ru/category.php?id=807"><strong>Развертывание Comindware Platform</strong></a>». Например:</p>
 <div class="highlight"><code><code></code></code>
 <pre><code>sh install.sh -k -p <span class="o">[</span>-i<span class="o">=</span>&lt;instanceName&gt;<span class="o">]</span> <span class="o">[</span>-e<span class="o">]</span> -d<span class="o">=</span>clear <span class="o">[</span>-u<span class="o">=</span>www-data<span class="o">]</span> <span class="o">[</span>-g<span class="o">=</span>www-data<span class="o">]</span></code></pre>
 </div>
@@ -53,7 +53,7 @@
 </ul>
 </li>
 <li>
-<p>Инициализируйте экземпляр ПО. См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/category\.php\?id=807">Развертывание</a></em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/category\.php\?id=807"><em>Comindware Platform</em></a><em>»</em>.</p>
+<p>Инициализируйте экземпляр ПО. См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/category.php?id=807">Развертывание</a></em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/category.php?id=807"><em>Comindware Platform</em></a><em>»</em>.</p>
 </li>
 <li>
 <p>Остановите сервисы NGINX и comindware<code>&lt;instanceName&gt;</code> (где <code>&lt;instanceName&gt;</code> — имя экземпляра ПО) и удостоверьтесь, что они остановлены:</p>
@@ -146,7 +146,7 @@
 <p>Шаги 7 и 8 не требуются при восстановлении снимка из хранилища S3.</p>
 <p>Для восстановления снимка из хранилища S3 используйте репозиторий с именем, совпадающим с префиксом индекса Elasticsearch.</p>
 <p>Этот репозиторий создаётся автоматически при запуске резервного копирования</p>
-<p>Префикс индекса задаётся в <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4678">свойствах подключения к Elasticsearch</a>, используемого по умолчанию.</p>
+<p>Префикс индекса задаётся в <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4678">свойствах подключения к Elasticsearch</a>, используемого по умолчанию.</p>
 </div>
 </li>
 <li>
@@ -162,7 +162,7 @@
 </div>
 <ul>
 <li>В качестве репозитория укажите имя репозитория, созданного на шаге 7, или префикс индекса Elasticsearch (см. <a class="mkdocs_imported_link" href="#s3_repository">примечание</a> выше).</li>
-<li>В качестве имени снимка укажите идентификатор резервной копии <strong>без точки перед номером</strong> (например, <code>backupSession.123</code> указывайте как <code>backupSession123</code>) со страницы <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4642#mcetoc_1gjrihkcn1">«Администрирование» – «Инфраструктура» – «Резервное копирование» – «Журнал»</a>.</li>
+<li>В качестве имени снимка укажите идентификатор резервной копии <strong>без точки перед номером</strong> (например, <code>backupSession.123</code> указывайте как <code>backupSession123</code>) со страницы <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4642#mcetoc_1gjrihkcn1">«Администрирование» – «Инфраструктура» – «Резервное копирование» – «Журнал»</a>.</li>
 </ul>
 </li>
 <li>
@@ -185,16 +185,16 @@
 </li>
 <li>Дождитесь инициализации экземпляра ПО. Этот процесс может занять некоторое время. Может потребоваться обновить страницу браузера.</li>
 <li>Удостоверьтесь, что все данные из резервной копии восстановлены.</li>
-<li>Проверьте и исправьте конфигурацию экземпляра. См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4651">Проверка и настройка конфигурации экземпляра ПО Comindware Platform после восстановления из резервной копии</a>».</em></li>
+<li>Проверьте и исправьте конфигурацию экземпляра. См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4651">Проверка и настройка конфигурации экземпляра ПО Comindware Platform после восстановления из резервной копии</a>».</em></li>
 </ol>
 <h2 id="связанные-статьи">Связанные статьи</h2>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4650">Создание полной резервной копии (базы данных, вложенных файлов и журналов) без остановки экземпляра ПО</a></strong></p>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4648">Восстановление базы данных, вложенных файлов и журналов из полной резервной копии</a></strong></p>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4642">Резервное копирование. Настройка и запуск, просмотр журнала сеансов</a></strong></p>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4622">Установка и запуск Comindware Platform</a></strong></p>
+<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4650">Создание полной резервной копии (базы данных, вложенных файлов и журналов) без остановки экземпляра ПО</a></strong></p>
+<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4648">Восстановление базы данных, вложенных файлов и журналов из полной резервной копии</a></strong></p>
+<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4642">Резервное копирование. Настройка и запуск, просмотр журнала сеансов</a></strong></p>
+<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4622">Установка и запуск Comindware Platform</a></strong></p>
 <p><strong><a class="mkdocs_imported_link" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-filesystem-repository.html">Регистрация репозитория Elasticsearch (официальное руководство, английский язык)</a></strong></p>
 <p><strong><a class="mkdocs_imported_link" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/restore-snapshot-api.html">Восстановление снимка Elasticsearch (официальное руководство, английский язык)</a></strong></p>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article\.php\?id=4678">Elasticsearch. Настройка подключения</a></strong></p>
+<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4678">Elasticsearch. Настройка подключения</a></strong></p>
 </article>
 </div>
 </div>

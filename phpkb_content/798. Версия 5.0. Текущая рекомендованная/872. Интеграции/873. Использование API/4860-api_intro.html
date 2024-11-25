@@ -21,11 +21,11 @@
 </ul>
 </div>
 <h2 id="mcetoc_1h7csek432">Введение</h2>
-<p><strong>Comindware Platform</strong> может обращаться к API внешних систем через <a href="https://kb.comindware.ru/category\.php\?id=821">подключения</a> и <a href="https://kb.comindware.ru/category.php?id=515">пути передачи данных</a>, а также может обрабатывать запросы из внешних систем через интерфейсы <strong>REST API</strong> трех типов:</p>
+<p><strong>Comindware Platform</strong> может обращаться к API внешних систем через <a href="https://kb.comindware.ru/category.php?id=821">подключения</a> и <a href="https://kb.comindware.ru/category.php?id=515">пути передачи данных</a>, а также может обрабатывать запросы из внешних систем через интерфейсы <strong>REST API</strong> трех типов:</p>
 <ul>
-<li><a href="https://kb.comindware.ru/article\.php\?id=4863"><strong>Solution API</strong></a></li>
-<li><a href="https://kb.comindware.ru/article\.php\?id=4862"><strong>System Core API</strong></a></li>
-<li><a href="https://kb.comindware.ru/article\.php\?id=4861"><strong>Web API</strong></a></li>
+<li><a href="https://kb.comindware.ru/article.php?id=4863"><strong>Solution API</strong></a></li>
+<li><a href="https://kb.comindware.ru/article.php?id=4862"><strong>System Core API</strong></a></li>
+<li><a href="https://kb.comindware.ru/article.php?id=4861"><strong>Web API</strong></a></li>
 </ul>
 <div class="notice notice-success">
 <h3 class="admonition-title" id="mcetoc_1hrgqoepi4">Определения</h3>
@@ -99,13 +99,13 @@
 <p><strong>REST API</strong> широко применяется в современных системах, и зачастую найти документацию по использованию API конкретной системы можно, введя в поисковой системе запрос вида <em>«&lt;название системы&gt; REST API»</em>.</p>
 <p>В <strong>Comindware Platform </strong>поддерживает перечисленные ниже способы обращения к API внешних систем:</p>
 <ul>
-<li>Запрос отправляет скрипт на C# (вызываемый <a href="https://kb.comindware.ru/article\.php\?id=4790#mcetoc_1gk3dof774">кнопкой</a> или <a href="https://kb.comindware.ru/article.php?id=22388">задачей выполнения сценария</a> в процессе). Скрипт устанавливает подключение к внешней системе, формирует запрос, отправляет его и получает ответ.</li>
+<li>Запрос отправляет скрипт на C# (вызываемый <a href="https://kb.comindware.ru/article.php?id=4790#mcetoc_1gk3dof774">кнопкой</a> или <a href="https://kb.comindware.ru/article.php?id=22388">задачей выполнения сценария</a> в процессе). Скрипт устанавливает подключение к внешней системе, формирует запрос, отправляет его и получает ответ.</li>
 <li>Запрос формирует и отправляет <a href="https://kb.comindware.ru/article.php?id=2153" style="letter-spacing: 0.2px; background-color: #ffffff;">сценарий</a><span style="letter-spacing: 0.2px;"> посредством настроенного подключения к внешней системе. </span>Сценарий позволяет сформировать тело запроса, проанализировать полученный ответ и поместить из него данные в атрибуты записей. </li>
-<li>Запрос формирует и отправляет <a href="https://kb.comindware.ru/article\.php\?id=4740">промежуточное</a> или <a href="https://kb.comindware.ru/article\.php\?id=4745">конечное событие</a> отправки сообщения в процессе.</li>
+<li>Запрос формирует и отправляет <a href="https://kb.comindware.ru/article.php?id=4740">промежуточное</a> или <a href="https://kb.comindware.ru/article.php?id=4745">конечное событие</a> отправки сообщения в процессе.</li>
 </ul>
 <div class="notice notice-info">
 <p class="admonition-title">Примечание</p>
-<p>Для отправки запросов с помощью сценариев и событий процесса требуется настроить <a href="https://kb.comindware.ru/article\.php\?id=4675">подключение</a> к внешней службе и <a href="https://kb.comindware.ru/article\.php\?id=4676">путь передачи данных</a>. </p>
+<p>Для отправки запросов с помощью сценариев и событий процесса требуется настроить <a href="https://kb.comindware.ru/article.php?id=4675">подключение</a> к внешней службе и <a href="https://kb.comindware.ru/article.php?id=4676">путь передачи данных</a>. </p>
 </div>
 <h3 id="mcetoc_1hrj95ij20">Аутентификация при доступе к API внешних систем</h3>
 <p>При доступе из к внешним API используйте метод аутентификации, который поддерживает внешняя система. Обратитесь документации API этой системы, чтобы узнать, следует ли указывать имя пользователя b пароль в URL-адресе или теле запроса, или необходимо сгенерировать и использовать токен безопасности вместо передачи пароля в виде обычного текста.</p>

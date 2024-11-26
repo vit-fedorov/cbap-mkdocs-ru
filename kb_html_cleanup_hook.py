@@ -73,9 +73,13 @@ def on_post_page (output, page, config, **kwargs):
                       pre)
         i.replace_with(bs4.BeautifulSoup(pre, 'html.parser'))
     
+    # turn <body> into <div> for PHPKB compatibility, as PHPKB provides <body>
+    body = p.body
+    body.name = 'div'
+    body['class'] = 'md-body'
     # Do not use prettify(), it adds redundant spaces in PHPKB
     # Fix &zwnj; after BeautifulSoup's redundant escaping
-    kb_html = str(p.body).replace('&amp;zwnj;', '&zwnj;')
+    kb_html = str(body).replace('&amp;zwnj;', '&zwnj;')
 
     # Cleanup redundant new lines
     pattern = re.compile(r'\n+', flags=re.MULTILINE)

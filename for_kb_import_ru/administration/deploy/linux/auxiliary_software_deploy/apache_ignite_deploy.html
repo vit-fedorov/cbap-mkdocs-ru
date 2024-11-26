@@ -56,16 +56,16 @@
 <code>mv<span class="w"> </span>apache-ignite-2.16.0-bin<span class="w"> </span>/usr/share/ignite</code><br/>
 <code>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/usr/share/ignite</code><br/>
 </pre></code></div></li>
-<li>Установите переменную среды <code>IGNITE_HOME</code>, указав путь к папке Ignite без завершающего символа <code>/</code>: <code>export IGNITE_HOME=var/www/ignite</code></li>
+<li>Установите переменную среды <code>IGNITE_HOME</code>, указав путь к папке Ignite без завершающего символа <code>/</code>: <code>export IGNITE_HOME=/usr/share/ignite</code></li>
 <li>Дополнительные модули для использования Ignite в сочетании с Comindware Platform не требуются.</li>
-<li>Скопируйте в папку <code>/usr/share/ignite</code> файл <code>Ignite.config</code> из папки <code>/var/www/&lt;instanceName&gt;</code> (где <code>instanceName</code> — имя экземпляра ПО).</li>
+<li>Скопируйте в папку <code>/usr/share/ignite</code> файл <code>Ignite.config</code> из папки <code>/var/www/&lt;instanceName&gt;</code> (где <code>&lt;instanceName&gt;</code> — имя экземпляра ПО).</li>
 <li>Пример файла <code>Ignite.config</code> представлен в параграфе <a class="mkdocs_imported_link" href="#3-пример-файла-конфигурации-ignite">«Пример файла конфигурации Ignite»</a>.</li>
 <li>Откройте для редактирования скрипт запуска Ignite <code>ignite.sh</code>:
     <div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/usr/share/ignite/bin/</code><br/>
 <code>nano<span class="w"> </span>ignite.sh</code><br/>
 </pre></code></div></li>
 <li>Добавьте в начало скрипта <code>ignite.sh</code> следующие строки:
-    <div class="highlight"><span class="filename">ignite.sh</span><code><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="s2">"JVM_OPTS=-Xms512m -Xmx4g -XX:MaxDirectMemorySize=1g -Djava.net.preferIPv4Stack=true -XX:+AlwaysPreTouch -XX:+UseG1GC -XX:+ScavengeBeforeFullGC -XX:+DisableExplicitGC -XX:MinHeapFreeRatio=1 -XX:MaxHeapFreeRatio=10 -DIGNITE_QUIET=false -DIGNITE_NO_ASCII=true--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.management/com.sun.jmx.mbeanserver=ALL-UNNAMED --add-opens=jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED --add-opens=java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED --add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.locks=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.math=ALL-UNNAMED --add-opens=java.sql/java.sql=ALL-UNNAMED"</span></code><br/>
+    <div class="highlight"><code><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="s2">"JVM_OPTS=-Xms512m -Xmx4g -XX:MaxDirectMemorySize=1g -Djava.net.preferIPv4Stack=true -XX:+AlwaysPreTouch -XX:+UseG1GC -XX:+ScavengeBeforeFullGC -XX:+DisableExplicitGC -XX:MinHeapFreeRatio=1 -XX:MaxHeapFreeRatio=10 -DIGNITE_QUIET=false -DIGNITE_NO_ASCII=true--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.management/com.sun.jmx.mbeanserver=ALL-UNNAMED --add-opens=jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED --add-opens=java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED --add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.locks=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.math=ALL-UNNAMED --add-opens=java.sql/java.sql=ALL-UNNAMED"</span></code><br/>
 <code><span class="nb">export</span><span class="w"> </span><span class="nv">IGNITE_WORK_DIR</span><span class="o">=</span>/var/lib/comindware/&lt;instanceName&gt;/Database</code><br/>
 <code><span class="nb">export</span><span class="w"> </span><span class="nv">DEFAULT_CONFIG</span><span class="o">=</span>/usr/share/ignite/config/Ignite.config</code><br/>
 </pre></code></div></li>
@@ -76,7 +76,7 @@
 9. Добавьте в скрипт <code>control.sh</code> следующие строки:
 <div class="highlight"><code><pre><span></span><code><span class="nv">DEFAULT_CONFIG</span><span class="o">=</span>config/Ignite.config</code><br/>
 </pre></code></div>
-10. Создайте скрипт создания сервиса <code>ignite_service_create.sh</code>:
+10. Создайте и откройте для редактирования скрипт <code>ignite_service_create.sh</code>. Этот скрипт будет создавать и запускать службу Apache Ignite:
 <div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>ignite_service_create.sh</code><br/>
 </pre></code></div>
 11. Введите в скрипт <code>ignite_service_create.sh</code> следующие директивы:
@@ -110,7 +110,7 @@
 <code>systemctl<span class="w"> </span>daemon-reload</code><br/>
 <code>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>ignite.service</code><br/>
 </pre></code></div>
-12. Запустите скрипт <code>ignite_service_create.sh</code>:
+12. Инициализируйте и запустите службу Apache Ignite с помощью скрипта <code>ignite_service_create.sh</code>:
 <div class="highlight"><code><pre><span></span><code>bash<span class="w"> </span>ignite_service_create.sh</code><br/>
 </pre></code></div></p>
 </li>

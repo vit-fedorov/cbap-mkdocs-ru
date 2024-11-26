@@ -10,7 +10,7 @@ def on_post_page (output, page, config, **kwargs):
     kb_html = kb_html.replace('class="admonition question"', 'class="notice notice-success"')
     kb_html = kb_html.replace('class="admonition example"', 'class="notice notice-example"')
     kb_html = kb_html.replace('class="admonition danger"', 'class="notice notice-error"')
-    kb_html = kb_html.replace('class="admonition tip"', 'class="notice notice-tip"') 
+    kb_html = kb_html.replace('class="admonition tip"', 'class="notice notice-tip"')
     
     p = bs4.BeautifulSoup(kb_html, 'html.parser')
     
@@ -51,8 +51,11 @@ def on_post_page (output, page, config, **kwargs):
         
     # Base all image links on https://kb.comindware.ru/assets/
     for i in p.find_all('img'):
-        filename = pathlib.PurePath(str(i['src'])).name
-        i['src'] = 'https://kb.comindware.ru/assets/' + filename
+        # filename = pathlib.PurePath(str(i['src'])).name
+        dir = pathlib.PurePosixPath(page.abs_url).parents[0]
+        imgPath = pathlib.PurePosixPath(config.site_name, str(dir), str(i['src']))
+        i['src'] = imgPath
+        # print (i['src'])
 
     # Classify all links as imported from MkDocs            
     for i in p.find_all('a'):

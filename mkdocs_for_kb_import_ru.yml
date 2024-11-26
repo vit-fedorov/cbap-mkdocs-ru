@@ -6,7 +6,7 @@ INHERIT: mkdocs_ru.yml
 
 docs_dir: docs/ru
 
-site_url: ""
+site_url: https://kb.comindware.ru/platform/v5.0/
 
 use_directory_urls: false
 
@@ -37,4 +37,4 @@ extra:
     kbExport: true
 
 hooks:
-  - kb_html_cleanup_hook.py
+  - kb_html_cleanup_hook_v5.py

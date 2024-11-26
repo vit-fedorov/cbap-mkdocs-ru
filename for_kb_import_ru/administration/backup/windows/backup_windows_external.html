@@ -1,0 +1,72 @@
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4645">
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+</nav>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<p>Запустить резервное копирование по расписанию можно с помощью встроенного инструмента Windows – Планировщика заданий.</p>
+<ol class="colored_numbers_list">
+<li>
+<p>Создайте файл <code>powershell</code> со скриптом для запуска резервного копирования, например <code>backupscript.ps1</code>.</p>
+</li>
+<li>
+<p>В созданном файле укажите <code>login</code> — имя пользователя, <code>password</code> — пароль для входа в экземпляр ПО, <code>backupID</code> — идентификатор конфигурации резервного копирования в экземпляре системы. См. раздел <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4642">Просмотр списка конфигураций резервного копирования</a>»</em>.</p>
+<p><div class="highlight"><code><pre><span></span><code># Enter your credential</code><br/>
+<code>$login = «admin»</code><br/>
+<code>$password = «admin»</code><br/>
+<code></code><br/>
+<code># Enter required backup</code><br/>
+<code></code><br/>
+<code>configuration ID</code><br/>
+<code>$backupID = «backupConfig.1»</code><br/>
+<code></code><br/>
+<code># Execution</code><br/>
+<code>$localhost = «http://localhost:8081/»</code><br/>
+<code>$api = «webapi/backupsession?ConfigurationId=»</code><br/>
+<code>$uri = $localhost + $api + $backupID</code><br/>
+<code></code><br/>
+<code>$WebClient = New-Object System.Net.WebClient</code><br/>
+<code>$WebClient.Credentials = New-Object System.Net.NetworkCredential($login, $password)</code><br/>
+<code>$WebClient.Encoding = [System.Text.Encoding]::UTF8</code><br/>
+<code>$response = $WebClient.UploadString($uri, «POST»,»»)</code><br/>
+<code>$response</code><br/>
+</pre></code></div>
+3. Откройте Планировщик заданий. До этого удостоверьтесь, что служба планировщика запускается автоматически.</p>
+</li>
+<li>
+<p>Откройте раздел «<strong>Windows</strong>».</p>
+</li>
+<li>
+<p>Создайте новую задачу, нажав кнопку «<strong>Создать задачу</strong>».</p>
+<p><figure class="screenshot_with_caption" markdown=""><img alt="Планировщик заданий" src="/platform/v5.0/administration/backup/windows/https:/kb.comindware.ru/assets/img_63bbd8e851cae.png"/><figcaption class="caption">Планировщик заданий</figcaption></figure></p>
+</li>
+<li>
+<p>Укажите имя задачи и условия её выполнения.</p>
+<p><figure class="screenshot_with_caption" markdown=""><img alt="Создание задачи" src="/platform/v5.0/administration/backup/windows/https:/kb.comindware.ru/assets/img_63bbd93ec6e19.jpeg"/><figcaption class="caption">Создание задачи</figcaption></figure></p>
+</li>
+<li>
+<p>Перейдите на вкладку «<strong>Действия</strong>» и нажмите кнопку «<strong>Создать</strong>». В поле «<strong>Программа или сценарий</strong>» укажите программу, с помощью которой будет запущен скрипт. В поле «<strong>Добавить аргументы</strong>» укажите путь к файлу со скриптом.</p>
+<p><figure class="screenshot_with_caption" markdown=""><img alt="Создание действия" src="/platform/v5.0/administration/backup/windows/https:/kb.comindware.ru/assets/img_63bbd9aa494e5.png"/><figcaption class="caption">Создание действия</figcaption></figure></p>
+</li>
+<li>
+<p>Перейдите на вкладку «<strong>Триггеры</strong>» и нажмите кнопку «<strong>Создать</strong>».</p>
+</li>
+<li>
+<p>Составьте расписание, по которому будет запускаться скрипт.</p>
+<p><figure class="screenshot_with_caption" markdown=""><img alt="Создание расписания" src="/platform/v5.0/administration/backup/windows/https:/kb.comindware.ru/assets/img_63bbda3654a2d.png"/><figcaption class="caption">Создание расписания</figcaption></figure></p>
+</li>
+</ol>
+</article>
+</div>
+</div>
+<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#">
+<i class="fa-light fa-arrow-up">&zwnj;<!--icon--></i>
+            К началу
+          </a>
+</main>
+</div>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>

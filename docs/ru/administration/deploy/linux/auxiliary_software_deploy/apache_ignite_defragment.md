@@ -28,25 +28,25 @@ kbId: 4603
 4. Распакуйте дистрибутив Apache Ignite в домашнюю папку (здесь и далее `username` — имя текущего пользователя):
 
     ```
-    unzip apache-ignite-2.16.0-bin.zip -d /home/username/ignite
+    unzip apache-ignite-2.16.0-bin.zip -d /usr/share/ignite
     ```
 
 5. Задайте переменную среды `IGNITE_HOME`:
 
     ```
-    export IGNITE_HOME=/home/username/ignite
+    export IGNITE_HOME=/usr/share/ignite
     ```
 
-6. Скопируйте в папку `/home/username/ignite` файл `Ignite.config` из папки `/var/www/instancename` (где `instancename` — имя экземпляра ПО):
+6. Скопируйте в папку `/usr/share/ignite` файл `Ignite.config` из папки `/var/www/instancename` (где `instancename` — имя экземпляра ПО):
 
     ```
-    cp /var/www/instancename/Ignite.config /home/username/ignite/
+    cp /var/www/instancename/Ignite.config /usr/share/ignite/
     ```
 
 7. Перейдите в папку `bin` Apache Ignite:
 
     ```
-    cd /home/username/ignite/bin
+    cd /usr/share/ignite/bin
     ```
 
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
@@ -60,22 +60,15 @@ kbId: 4603
 9. Получите список узлов, зарегистрированных в базовой топологии:
 
     ```
-    sh control.sh --baseline
+    bash control.sh --baseline
     ```
 
 10. Назначьте дефрагментацию данных Apache Ignite при перезапуске экземпляра ПО, указав вместо `<id>` идентификаторы узлов, полученные на шаге 9:
 
     ```
-    sh control.sh --defragmentation schedule --nodes <id>
+    bash control.sh --defragmentation schedule --nodes <id>
     ```
-
-11. Деактивируйте кластер Apache Ignite:
-
-    ```
-    sh control.sh --set-state INACTIVE --force
-    ```
-
-12. Остановите и запустите экземпляр ПО:
+11. Остановите и запустите экземпляр ПО:
 
     ```
     systemctl stop comindwareinstancename
@@ -85,12 +78,57 @@ kbId: 4603
 
     Здесь `instancename` — имя экземпляра ПО.
 
-13. Дождитесь завершения дефрагментации данных. В процессе дефрагментации Apache Ignite будет вносить сведения в файл журнала вида `/var/lib/comindware/instancename/Database/log/ignite-xxxxxxxx.0.log`. Признаком окончания дефрагментации служит появление в журнале Apache Ignite события: `Defragmentation process complete`.
-14. Перезапустите экземпляр ПО, чтобы его снова можно было использовать.
+12. Дождитесь завершения дефрагментации данных.
+
+    !!! note "Примечание"
+
+        - В процессе дефрагментации для просмотра статуса используйте команду:
+        
+        ```
+        watch -cd bash control.sh --defragmentation status
+        ```
+
+        - В процессе дефрагментации Apache Ignite будет вносить сведения в файл журнала вида `/var/lib/comindware/instancename/Database/log/ignite-xxxxxxxx.0.log`. 
+        - По завершении дефрагментации:
+            - в журнале Apache Ignite должно появиться событие: `Defragmentation process complete`;
+            - команда  `watch -cd bash control.sh --defragmentation status` должна вывести сообщение `Defragmentation process complete`.
+
+13. Перезапустите экземпляр ПО, чтобы его снова можно было использовать.
 
     ```
     systemctl restart comindwareinstancename
     ```
+
+14. Инициируйте экземпляр ПО:
+
+    - С помощью командной строки:
+
+    ``` sh
+    curl localhost:<port>
+    ```
+
+    **или**
+
+    ``` sh
+    curl <instance_fqdn>
+    ```
+
+    - Или с помощью браузера, перейдя по адресу:
+
+    ``` sh
+    <ip>:<port>
+    ```
+
+    или
+
+    ``` sh
+    <instance_fqdn>
+    ```
+
+    Здесь:
+
+    - `<ip>, <port>` — IP-адрес и порт экземпляра ПО;
+    - `<instance_fqdn>` — адрес веб-сайта с экземпляром ПО.
 
 ## Решение возможных проблем {: .pageBreakBefore }
 
@@ -133,7 +171,7 @@ kbId: 4603
     DefaultLimitNOFILE=65536
     ```
 
-6. Откройте для редактирования конфигурацию сервиса экземпляра ПО: 
+6. Откройте для редактирования конфигурацию сервиса экземпляра ПО:
 
     ```
     systemctl edit comindwareinstancename.service

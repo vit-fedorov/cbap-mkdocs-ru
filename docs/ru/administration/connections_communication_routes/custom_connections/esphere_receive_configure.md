@@ -15,9 +15,9 @@ hide: tags
 ## Введение
 
 {%
-include-markdown "./esphere_receive_configure.md"
+include-markdown "./esphere_send_configure.md"
 start="<!--intro-start-->"
-end="<!---intro-end-->"
+end="<!--intro-end-->"
 %}
 
 ## Прикладная задача

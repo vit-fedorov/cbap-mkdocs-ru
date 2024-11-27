@@ -37,4 +37,4 @@ extra:
     kbExport: true
 
 hooks:
-  - kb_html_cleanup_hook_v5.py
+  - kb_html_cleanup_hook.py

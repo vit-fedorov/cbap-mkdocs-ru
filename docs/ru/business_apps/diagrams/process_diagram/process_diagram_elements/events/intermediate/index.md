@@ -1,4 +1,6 @@
 ---
+title: Промежуточные события
+kbId: 4742
 tags:
   - диаграмма процесса
   - элементы диаграммы процесса
@@ -12,34 +14,38 @@ hide:
   - tags
 ---
 
-# Промежуточные события
+# Промежуточные события {: #process_diagram_elements_events_intermediate}
 
 **Промежуточные события** служат для управления ходом процесса и контроля его выполнения в срок, а также для обмена данными между процессами, элементами процесса и с внешними системами.
 
 ## Типы промежуточных событий
 
-- **[Промежуточное событие-таймер](timer_intermediate_event.md)**
-- **[Промежуточное событие-отправка сообщения](send_message_intermediate_event.md)**
-- **[Промежуточное событие-получение сообщения](receive_message_intermediate_event.md)**
-- **[Простое промежуточное событие](none_intermediate_event.md)**
+- **[Промежуточное событие-таймер][process_diagram_elements_timer_intermediate_event]**
+- **[Промежуточное событие-отправка сообщения][process_diagram_elements_send_message_intermediate_event]**
+- **[Промежуточное событие-получение сообщения][process_diagram_elements_receive_message_intermediate_event]**
+- **[Простое промежуточное событие][process_diagram_elements_none_intermediate_event]**
 
 ## Способы использования промежуточного события
 
 1. Любое промежуточное событие можно соединить с потоком управления. В этом случае токен остановится на промежуточном событии до его наступления, а после наступления события перейдёт на следующий элемент.
-2. **[Промежуточное событие-таймер](timer_intermediate_event.md)** и **[промежуточное событие-получение сообщения](receive_message_intermediate_event.md)** можно присоединить к [действию][actions]. В этом случае при наступлении данного события на нём будет создан новый токен, который перейдёт на элемент, соединённый с событием.
+2. **[Промежуточное событие-таймер][process_diagram_elements_timer_intermediate_event]** и **[промежуточное событие-получение сообщения][process_diagram_elements_receive_message_intermediate_event]** можно присоединить к [действию][process_diagram_elements_actions]. В этом случае при наступлении данного события на нём будет создан новый токен, который перейдёт на элемент, соединённый с событием.
 
 *![Варианты расположения промежуточного события](intermediate_event_pacement_types.png)*
 
 ## Создание промежуточного события на диаграмме
 
-1. Перетащите промежуточное событие с панели элементов на поток управления, границу [actions][actions] или пустое место диаграммы.
-2. Будет создано **[промежуточное событие-таймер](timer_intermediate_event.md)**.
-3. При необходимости смените [тип события](#типы-промежуточных-событий) с помощью [меню элемента][call_element_menu].
+1. Перетащите промежуточное событие с панели элементов на поток управления, границу [process_diagram_elements_actions][process_diagram_elements_actions] или пустое место диаграммы.
+2. Будет создано **[промежуточное событие-таймер][process_diagram_elements_timer_intermediate_event]**.
+3. При необходимости смените [тип события](#process_diagram_elements_events_intermediate) с помощью [меню элемента][process_diagram_call_element_menu].
+
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-**[События][события]**
+- _[События][process_diagram_elements_events]_
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
-**[Элементы диаграммы процесса][process_diagram_elements]**
+</div>
 
-**[Редактирование диаграммы процесса][process_diagram_designer]**
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

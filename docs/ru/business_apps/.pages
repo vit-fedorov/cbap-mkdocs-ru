@@ -1,6 +1,10 @@
 title: Разработка приложений
 
 nav:
+    - application_configure_recommendations.md
+    - elasticdata_description.md
+    - data_model.md
+    - identifiers_system_names.md
     - index.md
     - diagrams
     - templates

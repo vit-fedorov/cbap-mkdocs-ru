@@ -1,4 +1,6 @@
 ---
+title: Переименование оргединицы
+kbId: 4846
 tags:
     - организационная структура
     - организационно-штатная структура
@@ -11,7 +13,7 @@ hide:
     - tags
 ---
 
-# Переименование оргединицы
+# Переименование оргединицы {: #architect_renaming_organizational_unit}
 
 ## Переименование с помощью панели навигации
 
@@ -25,15 +27,19 @@ hide:
 
 ## Переименование с помощью формы свойств оргединицы
 
-1. Выберите оргединицу в [панели навигации][navigation_panel] или дважды нажмите её строку в [реестре оргединиц][просмотр-реестра-оргединиц].
+1. Выберите оргединицу в [панели навигации][navigation_panel] или дважды нажмите её строку в [реестре оргединиц][architect_organizational_structure_modelling].
 1. В отобразившейся форме введите требуемое название в поле «**Название**».
 
     *![Переименование оргединицы с помощью формы свойств](organizational_structure_modeling_rename_from_properties.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра оргединиц][просмотр-реестра-оргединиц]**
+- _[Просмотр реестра оргединиц][architect_organizational_structure_modelling]_
+- _[Создание оргединицы][architect_creating_organizational_unit]_
+- _[Настройка оргединицы][architect_configuring_organizational_unit]_
 
-**[Создание оргединицы](creating_organizational_unit.md)**
+</div>
 
-**[Настройка оргединицы](configuring_organizational_unit.md)**
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

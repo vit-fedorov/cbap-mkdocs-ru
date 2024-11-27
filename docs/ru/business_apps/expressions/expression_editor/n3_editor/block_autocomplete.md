@@ -1,4 +1,6 @@
 ---
+title: Ввод заготовки конструкции на языке
+kbId: 5041
 tags:
   - выражения
   - n3
@@ -14,9 +16,9 @@ hide:
   - tags
 ---
 
-# Ввод заготовки конструкции на языке N3
+# Ввод заготовки конструкции на языке N3 {: #n3_editor_block_autocomplete}
 
-1. Введите фигурные скобки `{  }` в пустое выражение (после [префиксов](prefix_autocomplete.md)).
+1. Введите фигурные скобки `{  }` в пустое выражение (после [префиксов][n3_editor_prefix_autocomplete]).
 2. Внутри фигурных скобок нажмите клавиши ++ctrl+space++.
 3. Отобразится список доступных конструкций.
 4. Выберите конструкцию в списке, чтобы просмотреть её описание.
@@ -31,10 +33,14 @@ if { }
 }
 ```
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-[Ввод префикса](predicate_autocomplete.md)
+- _[Ввод префикса][n3_editor_prefix_autocomplete]_
+- _[Редактор выражений][expression_editor]_
+- _[Примеры использования языка N3. База знаний Comindware][n3_use_examples]_
 
-**[Редактор выражений][expression_editor]**
+</div>
 
-**[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}**
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

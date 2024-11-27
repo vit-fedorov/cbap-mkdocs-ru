@@ -7,7 +7,7 @@ tags:
   - проверка соединения
 hide:
   - tags
-kbId: 2205
+kbId: 4675
 ---
 
 # Подключения. Определения, типы, создание, настройка, удаление {: #connections}
@@ -107,11 +107,14 @@ _![Список подключений](connection_list.png)_
 2. Нажмите кнопку «**Удалить**».
 3. Подтвердите удаление.
 
-## Связанные статьи
+<div class="relatedTopics" markdown="block">
 
-**[Пути передачи данных. Определения, типы, создание, настройка, удаление][communication_routes]**
+--8<-- "related_topics_heading.md"
 
-**[Примеры интеграций][integration_examples]**
+- _[Пути передачи данных. Определения, типы, создание, настройка, удаление][communication_routes]_
+- _[Примеры интеграций][integration_examples]_
+
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

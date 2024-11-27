@@ -1,0 +1,192 @@
+# This file is used for local authoring and testing the Russian help system without actually building the help.
+# To actually build the help with all the dependencies run `buildhelp.ps1`.
+# To test and author the Russian help run:
+# py -m mkdocs serve (`mkdocs serve` might also work depending on the environment PATH variable)
+# To test and author the English help run: py -m mkdocs serve -f mkdocs_en_local.yml
+
+INHERIT: mkdocs_ru.yml
+
+site_name: Comindware Platform. Руководство администратора для Linux
+
+extra:
+  adminGuideLinux: True
+  adminGuideWindows: False
+  userGuide: False
+  completeGuide: False
+
+nav:
+
+  - Введение:
+    - index.md
+  - Развёртывание ПО:
+    - administration/deploy/system_requirements.md
+    - administration/deploy/architecture_landscape.md
+    - administration/deploy/security.md
+    - administration/deploy/logging_engine.md
+    - administration/deploy/log_files_event_examples.md
+    - administration/deploy/paths.md
+    - Установка и запуск Comindware Business Application Platform: administration/deploy/linux/deploy_guide.md
+    - administration/deploy/linux/db_migrate_4.2_to_4.7.md
+    - administration/deploy/linux/uninstall_auxiliary_software.md
+    - administration/deploy/linux/upgrade_version.md
+    - administration/deploy/linux/upload_size_limit_configure.md
+    - Вспомогательное ПО. Оптимизация:
+      - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_optimize.md
+      - administration/deploy/linux/auxiliary_software_deploy/antivirus_exceptions_configure.md
+      - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_defragment.md
+    - Вспомогательное ПО. Развёртывание:
+      - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_deploy_linux.md
+      - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_cluster_deploy_no_certificates.md
+      - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_ssl_certificate_configure.md
+      - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_deploy.md
+      - administration/deploy/linux/auxiliary_software_deploy/nginx_deploy.md
+      - administration/deploy/linux/auxiliary_software_deploy/nginx_geoip_deploy.md
+      - administration/deploy/linux/auxiliary_software_deploy/zabbix_agent_deploy.md
+      - administration/deploy/linux/auxiliary_software_deploy/zabbix_deploy.md
+      - administration/deploy/linux/auxiliary_software_deploy/zabbix_server_deploy.md
+  - Резервное копирование и восстановление:
+    - administration/backup/index.md
+    - administration/backup/linux/complete_running_instance_backup.md
+    - administration/backup/linux/db_move_manually.md
+    - administration/backup/linux/restore_cdbbz.md
+    - administration/backup/linux/restore_complete_backup.md
+    - administration/backup/linux/restore_test_configure.md
+  - Администрирование системы:
+    - administration/administration_page.md
+    - Внешний вид:
+      - Темы: administration/appearance/themes/index.md
+      - Дизайн страниц входа и регистрации: administration/appearance/login_and_registration_page_design/index.md
+    - Аккаунты и группы:
+      - administration/account_administration/authentication_authorization_sessions.md
+      - administration/account_administration/accounts.md
+      - administration/account_administration/groups.md
+      - administration/account_administration/system_roles.md
+      - administration/account_administration/account_permission_audit.md
+      - administration/account_administration/substitution.md
+      - administration/account_administration/registration_and_login.md
+      - administration/account_administration/two_factor_authentication.md
+      - Синхронизация с сервером каталогов:
+        - administration/account_administration/accounts_dc_sync/index.md
+        - administration/account_administration/accounts_dc_sync/linux/ad_authentication_configure.md
+        - administration/account_administration/accounts_dc_sync/linux/sso_authenticatation_configure.md
+    - Инфраструктура:
+      - administration/infrastructure/monitoring.md
+      - administration/infrastructure/logs.md
+      - administration/infrastructure/licensing.md
+      - administration/infrastructure/system_service_management.md
+      - administration/infrastructure/performance.md
+      - administration/infrastructure/logging_configuration.md
+      - administration/infrastructure/global_configuration.md
+      - administration/infrastructure/adapters.md
+      - administration/infrastructure/authentication_keys.md
+    - Интеграции с внешними системами:
+      - administration/connections_communication_routes/connections.md
+      - administration/connections_communication_routes/communication_routes.md
+      - Системные подключения:
+        - Уведомления:
+          - administration/connections_communication_routes/system_connections/notifications/notification_types.md
+          - administration/connections_communication_routes/system_connections/notifications/common_notifications.md
+          - administration/connections_communication_routes/system_connections/notifications/task_notifications.md
+        - administration/connections_communication_routes/system_connections/elasticsearch_connection.md
+        - administration/connections_communication_routes/system_connections/map_configure.md
+        - administration/connections_communication_routes/system_connections/git_connection.md
+        - administration/connections_communication_routes/system_connections/s3_connection.md
+      - Аутентификация:
+        - administration/connections_communication_routes/authentication/openid_connection.md
+        - administration/connections_communication_routes/authentication/wsfederation_connection.md
+        - administration/connections_communication_routes/authentication/ad_connection.md
+      - Подключения к офисным приложениям:
+        - administration/connections_communication_routes/office_connections/collabora_connection.md
+        - administration/connections_communication_routes/office_connections/r7_connection.md
+      - Подключения к электронной почте:
+        - administration/connections_communication_routes/email_connections/process_sending_connection.md
+        - administration/connections_communication_routes/email_connections/scenario_send_email.md
+        - administration/connections_communication_routes/email_connections/process_receiving_connection.md
+        - administration/connections_communication_routes/email_connections/scenario_receive_email.md
+      - Подключения REST и OData:
+        - administration/connections_communication_routes/rest_odata_connections/get_connection.md
+        - administration/connections_communication_routes/rest_odata_connections/odata_connection.md
+        - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
+        - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
+        - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
+        - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
+      - SQL-подключения:
+        - administration/connections_communication_routes/sql_connections/sql_send_connection.md
+        - administration/connections_communication_routes/sql_connections/sql_receive_connection.md
+      - Подключения к шинам сообщений:
+        - administration/connections_communication_routes/message_queue_connections/kafka_connection.md
+  - Администрирование приложений:
+    - business_apps/index.md
+    - Диаграммы:
+      - business_apps/diagrams/index.md
+      - Диаграмма процесса:
+        - business_apps/diagrams/process_diagram/index.md
+        - business_apps/diagrams/process_diagram/process_diagram_version_control.md
+        - business_apps/diagrams/process_diagram/process_diagram_view_instance.md
+    - Шаблоны:
+      - business_apps/templates/index.md
+      - Типы и свойства шаблонов:
+        - business_apps/templates/template_types/template_common_properties.md
+        - business_apps/templates/template_types/record_templates.md
+        - business_apps/templates/template_types/process_templates.md
+        - business_apps/templates/template_types/account_templates.md
+        - business_apps/templates/template_types/role_templates.md
+        - business_apps/templates/template_types/organizational_unit_templates.md
+    - business_apps/roles_in_application.md
+    - Панель навигации. Настройка:
+      - business_apps/navigation_sections/navigation_sections_setup.md
+      # - business_apps/navigation_sections/desktop_setup.md
+      # - business_apps/navigation_sections/pages_setup.md
+      - business_apps/navigation_sections/page_access_control.md
+      # - business_apps/navigation_sections/my_tasks_page_configure.md
+    - Управление версиями:
+      - business_apps/version_control/index.md
+      - business_apps/version_control/manual_version_control.md
+      - business_apps/version_control/git_version_control.md
+  - Обзор версий:
+    - general/changelog/changelog.md
+    - general/changelog/release_notes_4.7.3084.md
+    - general/changelog/release_notes_4.7.3023.md
+    - general/changelog/release_notes_4.7.2902.md
+    - general/changelog/release_notes_4.7.2721.md
+    - general/changelog/release_notes_4.7.2285.md
+
+
+exclude_docs: |
+  administration/deploy/windows/**
+  administration/deploy/windows/auxiliary_software_deploy/**
+  administration/backup/windows/**
+  administration/architecture/functions.md
+  administration/account_administration/accounts_dc_sync/windows/sso_authenticatation_configure_windows.md
+  administration/connections_communication_routes/email_connections/process_email_configure_include.md
+  administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
+  administration/connections_communication_routes/rest_odata_connections/send_http_example.md
+  product_description.md
+  architect/**
+  business_apps/application_configure_recommendations.md
+  business_apps/data_model.md
+  business_apps/elasticdata_description.md
+  business_apps/identifiers_system_names.md
+  business_apps/online_store.md
+  business_apps/variables.md
+  business_apps/diagrams/process_diagram/process_diagram_build_advice.md
+  business_apps/diagrams/process_diagram/process_diagram_elements/**
+  business_apps/expressions/**
+  business_apps/scenarios/**
+  business_apps/templates/button_area.md
+  business_apps/templates/import_data.md
+  business_apps/templates/attributes/**
+  business_apps/templates/buttons/**
+  business_apps/templates/cards/**
+  business_apps/templates/export_templates/**
+  business_apps/templates/forms/index.md
+  business_apps/templates/forms/discussion_configure.md
+  business_apps/templates/forms/form_access_control.md
+  business_apps/templates/forms/form_dynamic_elements.md
+  business_apps/templates/forms/form_rules.md
+  business_apps/templates/forms/form_static_elements.md
+  business_apps/templates/tables/table_configure.md
+  devops_wiki/**
+  examples/**
+  using_the_system/**
+  !examples/img/*

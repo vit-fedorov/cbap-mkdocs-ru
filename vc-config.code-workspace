@@ -31,6 +31,7 @@
 
 			"no-inline-html": false
 		},
+		"markdown.extension.toc.updateOnSave": false,
 	},
 	"extensions": {
 		"recommendations": [

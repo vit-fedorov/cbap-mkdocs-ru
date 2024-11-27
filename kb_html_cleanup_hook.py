@@ -4,14 +4,13 @@ import re
 import pathlib
 
 
-def on_post_page (output, **kwargs):
+def on_post_page (output, page, config, **kwargs):
     kb_html = output.replace('class="admonition note"', 'class="notice notice-info"')
     kb_html = kb_html.replace('class="admonition warning"', 'class="notice notice-warning"')
     kb_html = kb_html.replace('class="admonition question"', 'class="notice notice-success"')
     kb_html = kb_html.replace('class="admonition example"', 'class="notice notice-example"')
     kb_html = kb_html.replace('class="admonition danger"', 'class="notice notice-error"')
     kb_html = kb_html.replace('class="admonition tip"', 'class="notice notice-tip"')
-    
     
     p = bs4.BeautifulSoup(kb_html, 'html.parser')
     
@@ -20,7 +19,18 @@ def on_post_page (output, **kwargs):
     if (h1):
         # print ('deleting redundant H1: ' + h1.string)
         h1.decompose()
-    
+
+    # Cleanup empty Ps        
+    for i in p.findAll('p'):
+        if (not i.contents):
+            print ('deleting empty P from ' + page.title)
+            i.decompose()
+            
+    # Cleanup comments    
+    for i in p.findAll(string=lambda text: isinstance(text, Comment)):
+        # print ('deleting comment from ' + page.title)
+        i.extract()
+   
     # Add &zwnj; within Fontawesome icons, otherwise PHPKB will delete them
     for i in p.find_all('i', class_=re.compile("fa.+")):
         i.string = '&zwnj;'
@@ -41,8 +51,11 @@ def on_post_page (output, **kwargs):
         
     # Base all image links on https://kb.comindware.ru/assets/
     for i in p.find_all('img'):
-        filename = pathlib.PurePath(str(i['src'])).name
-        i['src'] = 'https://kb.comindware.ru/assets/' + filename
+        # filename = pathlib.PurePath(str(i['src'])).name
+        dir = pathlib.PurePosixPath(page.abs_url).parents[0]
+        imgPath = pathlib.PurePosixPath(config.site_name, str(dir), str(i['src']))
+        i['src'] = imgPath
+        # print (i['src'])
 
     # Classify all links as imported from MkDocs            
     for i in p.find_all('a'):
@@ -60,8 +73,16 @@ def on_post_page (output, **kwargs):
                       pre)
         i.replace_with(bs4.BeautifulSoup(pre, 'html.parser'))
     
+    # turn <body> into <div> for PHPKB compatibility, as PHPKB provides <body>
+    body = p.body
+    body.name = 'div'
+    body['class'] = 'md-body'
     # Do not use prettify(), it adds redundant spaces in PHPKB
     # Fix &zwnj; after BeautifulSoup's redundant escaping
-    kb_html = str(p.body).replace('&amp;zwnj;', '&zwnj;')
-    
+    kb_html = str(body).replace('&amp;zwnj;', '&zwnj;')
+
+    # Cleanup redundant new lines
+    pattern = re.compile(r'\n+', flags=re.MULTILINE)
+    kb_html = re.sub(pattern, r'\n', kb_html)
+
     return kb_html

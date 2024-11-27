@@ -1,4 +1,6 @@
 ---
+title: Ввод запроса from where select
+kbId: 5026
 tags:
   - выражения
   - формулы
@@ -22,7 +24,7 @@ hide:
   - tags
 ---
 
-# Ввод запроса from where select
+# Ввод запроса from where select {: #formula_editor_from_where_select_autocomplete}
 
 Запрос `#!mysql from where select` возвращает список значений из указанного источника данных, соответствующих заданному условию.
 
@@ -44,15 +46,15 @@ hide:
     * В качестве источника данных можно использовать атрибуты типа «**Запись**», у которых установлен флажок «**Хранить несколько значений**».
     * Атрибуты, подходящие для запроса, отображаются в подсказке в начале списка с префиксом `$` и суффиксом `(запрос)`: `$AttributeName (запрос)`.
 
-## Синтаксис запроса from where select
+## Синтаксис запроса from where select {: .pageBreakBefore }
 
 * `#!mysql from a` — объявление локальной переменной-селектора `a`, в которую будут помещены записи из источника данных.
 * `#!mysql in` — объявление источника данных:
     - `#!mysql db->TemplateName` — шаблон записи с системным именем `TemplateName`;
     - `#!mysql $RecordAttributeName` — атрибут типа «**Запись**» с системным именем `RecordAttributeName`, хранящий несколько значений;
-    - `#!mysql (from where select)` — вложенный запрос. Вложенный запрос необходимо заключить в скобки и использовать в нём уникальную переменную-селектор: 
+    - `#!mysql (from where select)` — вложенный запрос. Вложенный запрос необходимо заключить в скобки и использовать в нём уникальную переменную-селектор:
     ```mysql
-    from a in (from b in $DataSource2 where Condition2 select b->Attribute2) 
+    from a in (from b in $DataSource2 where Condition2 select b->Attribute2)
     where Condition1 select a->Attribute1
     ```
 * `#!mysql where Condition` — выбор записей, для которых выражение `Condition` возвращает `true`.
@@ -60,16 +62,16 @@ hide:
 * `#!mysql select a->ReturnAttribute` — выборка значений атрибута `ReturnAttribute` записей из источника данных. Оператор `select` может содержать выражение.
 
 ```mysql title="Пример: запрос записей районов Москвы с сортировкой по убыванию названия района"
-from a in $Cities 
-where a->CityName == "Москва" 
-orderby a->Districts->DistrictName descending 
+from a in $Cities
+where a->CityName == "Москва"
+orderby a->Districts->DistrictName descending
 select a->Districts
 ```
 
 ```mysql title="Пример: запрос названий и авторов книг, у которых указан автор, с сортировкой по возрастанию имени автора и выводом в формате «Название: название книги. Автор: имя автора»"
-from book in $Books 
-where NOT(EMPTY(book->Author)) 
-orderby a->boook->Author->Name 
+from book in $Books
+where NOT(EMPTY(book->Author))
+orderby a->boook->Author->Name
 select CONCAT(LIST('Название: ', book->Name, '. Автор: ', book->Author->Name))
 ```
 
@@ -80,11 +82,11 @@ select CONCAT(LIST('Название: ', book->Name, '. Автор: ', book->Aut
     * слова, начинающиеся с подчеркивания (`_`)
     * имена функций и литералы
 
-## Ввод запроса из атрибута текущего шаблона
+## Ввод запроса из атрибута текущего шаблона {: .pageBreakBefore }
 
 1. Введите строку:
       ```mysql
-      from a in 
+      from a in
       ```
 2. После ввода оператора `in` отобразится список доступных источников данных. Этот список также можно вызвать, нажав клавиши ++ctrl+space++ в позиции после оператора `in`.
       *![Список источников данных](formula_editor_application_templates_autocomplete_attribute_source.png)*
@@ -95,11 +97,11 @@ select CONCAT(LIST('Название: ', book->Name, '. Автор: ', book->Aut
 from a in $Costs where a->TotalAmount > $PlannedCosts select a->id
 ```
 
-## Ввод запроса из шаблона текущего приложения
+## Ввод запроса из шаблона текущего приложения {: .pageBreakBefore }
 
 1. Введите строку:
       ```mysql
-      from a in db-> 
+      from a in db->
       ```
 2. После ввода символов `db->` отобразится список шаблонов текущего приложения. Этот список также можно вызвать, нажав клавиши ++ctrl+space++ в позиции после `db->`.
       *![Список шаблонов в текущем приложении](formula_editor_application_templates_autocomplete.png)*
@@ -110,7 +112,7 @@ from a in $Costs where a->TotalAmount > $PlannedCosts select a->id
 COUNT(from a in db->Cars where a->Make == $Make select a->id)
 ```
 
-## Ввод системного имени атрибута после переменной-селектора
+## Ввод системного имени атрибута после переменной-селектора {: .pageBreakBefore }
 
 Здесь используется приведённый ниже [пример конфигурации приложения](#app-configuration).
 
@@ -128,6 +130,7 @@ COUNT(from a in db->Cars where a->Make == $Make select a->id)
 
 ```mysql title="Пример: формула, возвращающая количество записей в шаблоне, связанном с атрибутом RequestedCars, созданных под текущим аккаунтом"
 COUNT(from a in $RequestedCars where a->_creator == USER() select a->id)
+```
 
 ## Ввод системного имени атрибута из цепочки связанных шаблонов
 
@@ -137,7 +140,7 @@ COUNT(from a in $RequestedCars where a->_creator == USER() select a->id)
       ```mysql
       from a in $$RequestedCars where b->_creator->
       ```
-2. После ввода символов `_creator->` отобразится список атрибутов системного **[шаблона аккаунта](attribute_account.md)**, с которым связан системный атрибут `_creator`. Этот список также можно вызвать, нажав клавиши ++ctrl+space++ в позиции после оператора `->`.
+2. После ввода символов `_creator->` отобразится список атрибутов системного **[шаблона аккаунта][attribute_account]**, с которым связан системный атрибут `_creator`. Этот список также можно вызвать, нажав клавиши ++ctrl+space++ в позиции после оператора `->`.
 *![Список атрибутов, вызванный по цепочке связанных шаблонов](formula_editor_linked_record_attributes_selector_nested_autocomplete.png)*
 3. Дважды нажмите системное имя атрибута username, чтобы вставить его в формулу.
 4. Введите строку:
@@ -151,9 +154,10 @@ from a in $RequestedCars where a->_creator->username == "admin" select a->id
 
 ## Практический пример
 
-!!! Tip "Подсчёт количества автомобилей марки «Лада» в заявке"
+!!! example "Подсчёт количества автомобилей марки «Лада» в заявке"
 
-    **Конфигурация приложения**{:#app-configuration}
+    **Конфигурация приложения**
+    {: #app-configuration}
 
     * Шаблон записи _«Заявка на автомобили»_
         - Атрибут _«Запрошенные автомобили»_
@@ -168,25 +172,33 @@ from a in $RequestedCars where a->_creator->username == "admin" select a->id
             - **Тип данных**: **текст**
             -  **Использовать как заголовок записей**: флажок установлен
         - Записи: `УАЗ`, `Москвич`, `Лада`
-     
+
     **Составление формулы**
-       
-    1. Введите функцию `#!mysql COUNT()`. См. «**[Ввод имени функции и просмотр подсказки по функции](function_autocomplete.md)**».
+
+    1. Введите функцию `#!mysql COUNT()`. См. «**[Ввод имени функции и просмотр подсказки по функции][formula_editor_function_autocompete]**».
     2. В позиции аргумента функции нажмите клавиши ++ctrl+space++.
     3. Отобразится список источников данных.
          *![Список источников данных для запроса](formula_editor_from_where_select_autocomplete.png)*
     4. Дважды нажмите в списке пункт _$RequestedCars (запрос)_, чтобы вставить в формулу заготовку конструкции `#!mysql from where select` для него:
          *![Заготовка запроса](formula_editor_from_where_select_autocomplete_entered.png)*
+
+    {% if pdfOutput %}
+!!! example "Подсчёт количества автомобилей марки «Лада» в заявке — продолжение"
+    <div markdown="block" class="olReset" style="counter-increment: start 4;">
+    {% endif %}
     5. Выделите строку `Ваше условие` после оператора `#!mysql where`, чтобы заменить её на условие выборки записей из шаблона _«Автомобили»_.
     6. Введите строку `#!mysql where a->`.
-    7. В отобразившемся списке атрибутов шаблона _«Автомобили»_ дважды нажмите системное имя атрибута _Make_, чтобы вставить его в формулу. См. «**Ввод системного имени атрибута после переменной-селектора**»
+    7. В отобразившемся списке атрибутов шаблона _«Автомобили»_ дважды нажмите системное имя атрибута _Make_, чтобы вставить его в формулу. См. «**[Ввод системного имени атрибута после переменной-селектора](#ввод-системного-имени-атрибута-после-переменной-селектора)**»
         *![Список атрибутов шаблона _«Автомобили»_](formula_editor_from_where_select_autocomplete_condition_record_attribute_list.png)*
     8. Введите оператор `==` и нажмите клавиши ++ctrl+space++.
-    9. Отобразится список записей шаблона _«Автомобили»_ в виде марок автомобилей. См. «**[Ввод заголовка записи связанного шаблона](record_heading_autocomplete.md)**».
+    9.  Отобразится список записей шаблона _«Автомобили»_ в виде марок автомобилей. См. «**[Ввод заголовка записи связанного шаблона][formula_editor_record_heading_autocomplete]**».
          *![Список записей в шаблоне _«Автомобили»_](formula_editor_from_where_select_autocomplete_condition_record_heading_list.png)*
-    10.  Дважды нажмите пункт _«Лада»_, чтобы вставить в формулу строковый литерал `#!mysql "Лада"`.
-    
-    ```mysql title="Формула, возвращающая количество записей, связанных с атрибутом RequestedCars, у которых атрибут Make имеет значение «Лада»"
+    10.   Дважды нажмите пункт _«Лада»_, чтобы вставить в формулу строковый литерал `#!mysql "Лада"`.
+    {% if pdfOutput %}
+    </div>
+    {% endif %}
+
+    ```mysql title="Формула, подсчитывающая автомобили «Лада» в заявке"
     COUNT(from a in $RequestedCars where a->Make == "Лада" select a->id)
     ```
 
@@ -195,17 +207,18 @@ from a in $RequestedCars where a->_creator->username == "admin" select a->id
     * `COUNT()` — возвращает количество элементов в списке, переданном в качестве аргумента.
     * `#!mysql from a` — объявление локальной переменной `a`.
     * `#!mysql in $RequestedCars` — объявление атрибута `RequestedCars` в качестве источника данных.
-    * `#!mysql where a->Make == "Лада"` — выборка в переменную `a` записей, связанных с атрибутом `RequestedCars`, у которых атрибут `Make` имеет значение `"Лада".
+    * `#!mysql where a->Make == "Лада"` — выборка в переменную `a` записей, связанных с атрибутом `RequestedCars`, у которых атрибут `Make` имеет значение `"Лада"`.
     * `#!mysql select a->id` — выборка значений атрибута `id` полученных записей и передача списка этих значений в функцию `COUNT()`.
+    {% include-markdown ".snippets/pdfEndOfBlockHack.md" %}
+
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-**[Редактор выражений][expression_editor]**
+- _[Редактор выражений][expression_editor]_
+- _[Примеры использования формул. База знаний Comindware][formula_use_examples]_
+- _[Ввод имени функции и просмотр подсказки по функции][formula_editor_function_autocompete]_
 
-**[Примеры использования формул. База знаний Comindware]({{ kbCategoryURLPrefix }}409){:target="_blank"}**
+</div>
 
-**[Ввод имени функции и просмотр подсказки по функции](function_autocomplete.md)**
-
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

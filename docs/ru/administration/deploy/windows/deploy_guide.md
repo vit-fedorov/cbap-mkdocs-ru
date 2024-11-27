@@ -17,10 +17,10 @@ kbId:
 
 1. Распакуйте архив с диструбутивом.
 2. Запустите _PowerShell_ от имени администратора.
-3. Перейдите в папку:
+3. Перейдите в папку (`X` — диск, `X.X.XXXX.X` — номер версии ПО):
 
     ``` sh
-    cd "X:\<>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
+    cd "X:\...\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
     ```
 
 4. Выполните следующую команду для изменения политики выполнения:
@@ -44,7 +44,7 @@ kbId:
 7. Перейдите в папку:
 
     ``` sh
-    cd "X:\<>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\prerequisites"
+    cd "X:\...\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\prerequisites"
     ```
 
 8. Выполните следующую команду:
@@ -58,7 +58,7 @@ kbId:
 11. Перейдите в папку:
 
     ``` sh
-    cd "X:\<>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\prerequisites"
+    cd "X:\...\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\prerequisites"
     ```
 
 12. Проверьте, что дополнительные компоненты установились:
@@ -72,7 +72,7 @@ kbId:
 13. Перейдите в папку `platform`:
 
     ``` sh
-    cd "X:\<>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
+    cd "X:\...\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
     ```
 
 14. Установите платформу с помощью скрипта:
@@ -88,14 +88,23 @@ kbId:
     ```
 
 16. Отобразится список установленных версий платформы.
-17. 
+17. Для установки экземпляра платформы выполните следующую команду (`X.X.XXXX.X` — номер версии ПО):
 
- 
+    ``` sh
+    .\instance_create.ps1 -name <instanceName> -port <portNumber>  -version X.X.XXXX.X
+    ```
 
-13.	Далее ставим инстанс. Команда вызова справки по запуску скрипта создания инстанса
-.\instance_create.ps1 -h
-14.	Для создания instance необходимо выполнить скрипт, указав наименование инстанса (name), порт (port), версию продукта (version).
-.\instance_create.ps1 -name cmwdata -port 9050  -version 4.7.32876.0
-Проверить создан ли инстанс
-.\instance_list.ps1 
-15.	Можно пробовать стучаться на localhost:9050
+    Скрипт `instance_create.ps1` поддерживает следующие ключи:
+
+    - `-name <instanceName>` — ключ для создания экземпляра ПО с указанным именем.
+    - `-port <portNumber>` — ключ для указания порта.
+    - `-version` — ключ для указания номера версии ПО.
+    - `-h` — вызов краткой справки по использованию скрипта (этот ключ следует указывать только без остальных ключей).
+
+15.	Введите в браузере ссылку следующего типа, указав порт, на котором был развёрнут экземпляр платформы:
+
+    ```
+    http://localhost:<portNumber>
+    ```
+
+16. Откроется страница создания аккаунта администратора продукта.

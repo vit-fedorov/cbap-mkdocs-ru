@@ -142,6 +142,10 @@
 
 [elasticsearch_connection]: {{ kbArticleURLPrefix }}4678
 
+[esphere_receive_configure]: {{ kbArticleURLPrefix }}5061
+
+[esphere_send_configure]: {{ kbArticleURLPrefix }}5062
+
 [experimental_feature_support]: {{ kbArticleURLPrefix }}4579#experimental_feature_support
 
 [get_connection]: {{ kbArticleURLPrefix }}4701

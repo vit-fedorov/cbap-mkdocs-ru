@@ -40,6 +40,6 @@ hide:
 
     - _[Фильтр списка по создателю][example_n3_list_by_creator_filter]_;
     - _[Сравнение двух атрибутов типа «Аккаунт»][example_n3_account_attributes_compare]_;
-    - больше примеров: _[Примеры на N3][n3_examples]_.
+    - больше примеров: _[Примеры на N3][n3_use_examples]_.
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

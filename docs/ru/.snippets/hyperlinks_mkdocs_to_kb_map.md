@@ -72,11 +72,9 @@
 
 [manual_n3]: {{ kbArticleURLPrefix }}4852
 
-[n3_examples]: {{ kbCategoryURLPrefix }}879
+[n3_guide]: {{ kbCategoryURLPrefix }}877
 
-[n3_guide]: {{ kbCategoryURLPrefix }}878
-
-[n3_use_examples]: {{ kbCategoryURLPrefix }}877
+[n3_use_examples]: {{ kbCategoryURLPrefix }}879
 
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}4905
 

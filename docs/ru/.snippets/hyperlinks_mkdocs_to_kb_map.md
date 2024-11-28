@@ -56,11 +56,9 @@
 
 [formula_context]: {{ kbArticleURLPrefix }}4892
 
-[formula_examples]: {{ kbCategoryURLPrefix }}881
+[formula_guide]: {{ kbCategoryURLPrefix }}880
 
-[formula_guide]: {{ kbCategoryURLPrefix }}882
-
-[formula_use_examples]: {{ kbCategoryURLPrefix }}880
+[formula_use_examples]: {{ kbCategoryURLPrefix }}881
 
 [formula_function_list]: {{ kbArticleURLPrefix }}4993
 

@@ -12,6 +12,7 @@ extra:
   adminGuideWindows: True
   adminGuideLinux: False
   userGuide: False
+  tutorial: False
   completeGuide: False
 
 nav:

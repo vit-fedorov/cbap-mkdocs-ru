@@ -331,7 +331,7 @@ nav:
           - business_apps/expressions/expression_editor/n3_editor/findobject_autocomplete.md
           - business_apps/expressions/expression_editor/n3_editor/enum_autocomplete_n3.md
           - business_apps/expressions/expression_editor/n3_editor/literal_autocomplete.md
-  - Моделирование корпоративной-архитектуры:
+  - Моделирование корпоративной архитектуры:
     - architect/architect_desktop.md
     - architect/architect_example.md
     - architect/version_control.md
@@ -371,3 +371,14 @@ nav:
     - examples/scenario_verify_data.md
     - examples/process_email_configure.md
     - examples/script_using_local_variable.md
+  - Обучение:
+    - tutorial/lesson_1.md
+    - tutorial/lesson_2.md
+    - tutorial/lesson_3.md
+    - tutorial/lesson_4.md
+    - tutorial/lesson_5.md
+    - tutorial/lesson_6.md
+    - tutorial/lesson_7.md
+    - tutorial/lesson_8.md
+    - tutorial/lesson_9.md
+    - tutorial/lesson_10.md

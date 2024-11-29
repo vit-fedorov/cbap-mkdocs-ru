@@ -159,8 +159,8 @@
 <ol class="colored_numbers_list">
 <li>Настройте <a class="mkdocs_imported_link" href="#настройка-подключения-для-получения-id-документов">подключение</a> типа «<strong>Получение сообщений из системы «СФЕРА Курьер</strong>».</li>
 <li>Настройте <a class="mkdocs_imported_link" href="#настройка-пути-передачи-данных-для-получения-id-документов">путь передачи данных</a> «<strong>Приём сообщений из «СФЕРА Курьер</strong>», использующий созданное подключение.</li>
-<li>Настройте <a class="mkdocs_imported_link" href="#настройка-подключения-для-отправки-запроса-к-сфера-курьер">подключение</a> типа «<strong>Отправка сообщений в систему «СФЕРА Курьер</strong>».</li>
-<li>Настройте <a class="mkdocs_imported_link" href="#настройка-пути-передачи-данных-для-отправки-запроса-к-сфера-курьер">путь передачи данных</a> «<strong>Отправка сообщений в «СФЕРА Курьер</strong>» типа «<strong>Получить документ</strong>», использующий созданное подключение.</li>
+<li>Настройте <a class="mkdocs_imported_link" href="#configure_connection_send_request">подключение</a> типа «<strong>Отправка сообщений в систему «СФЕРА Курьер</strong>».</li>
+<li>Настройте <a class="mkdocs_imported_link" href="#настройка-пути-передачи-данных-для-запроса-документов-из-сфера-курьер">путь передачи данных</a> «<strong>Отправка сообщений в «СФЕРА Курьер</strong>» типа «<strong>Получить документ</strong>», использующий созданное подключение.</li>
 <li>Настройте <a class="mkdocs_imported_link" href="#настройка-шаблона-записи">шаблон записи</a> для хранения данных электронных документов.</li>
 <li>Настройте <a class="mkdocs_imported_link" href="#настройка-сценария">сценарий</a> для получения данных о контрагенте из системы «СФЕРА Курьер».</li>
 </ol>
@@ -219,11 +219,7 @@
 <h3 id="основные-свойства">Основные свойства</h3>
 <p>На вкладке «<strong>Основные свойства</strong>» настройте параметры использования пути передачи данных.</p>
 <ul>
-<li><strong>Подключение</strong> — выберите <a class="mkdocs_imported_link" href="#настройка-подключения-для-получения-id-документов">подключение для получения ID контрагентов из «СФЕРА Курьер»</a>.</li>
-</ul>
-<p>На вкладке «<strong>Основные свойства</strong>» настройте параметры использования пути передачи данных.</p>
-<ul>
-<li><strong>Подключение</strong> — выберите <a class="mkdocs_imported_link" href=".#configure_connection_send_request">подключение для отправки сообщений в систему «СФЕРА Курьер»</a>.</li>
+<li><strong>Подключение</strong> — выберите <a class="mkdocs_imported_link" href="#configure_connection_send_request">подключение для отправки сообщений в систему «СФЕРА Курьер»</a>.</li>
 <li><strong>Системное имя</strong> — введите уникальное имя пути передачи данных.</li>
 <li><strong>Отключить</strong> — установите этот флажок, если требуется временно деактивировать данный путь передачи данных.</li>
 <li><strong>Описание</strong> — введите наглядное описание пути передачи данных.</li>
@@ -272,8 +268,6 @@
 <ol class="colored_numbers_list">
 <li>Откройте страницу «<strong>Администрирование</strong>» — «<strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4675">Подключения</a></strong>».</li>
 <li>В списке подключений откройте или создайте подключение типа «<strong>Пользовательские подключения</strong>» — «<strong>Отправка сообщений в систему «СФЕРА Курьер</strong>».</li>
-</ol>
-<ol class="colored_numbers_list" start="3">
 <li>
 <p>Настройте свойства подключения:</p>
 <ul>
@@ -307,8 +301,8 @@
 <li>
 <p>Настройте свойства пути передачи данных на следующих вкладках:</p>
 <ul>
-<li><a class="mkdocs_imported_link" href=".#configure_communication_route_send_request_main_properties"><strong>Основные свойства</strong></a></li>
-<li><a class="mkdocs_imported_link" href=".#configure_communication_route_send_request_message_attributes"><strong>Атрибуты сообщения</strong></a></li>
+<li><a class="mkdocs_imported_link" href="#configure_communication_route_send_request_main_properties"><strong>Основные свойства</strong></a></li>
+<li><a class="mkdocs_imported_link" href="#configure_communication_route_send_request_message_attributes"><strong>Атрибуты сообщения</strong></a></li>
 </ul>
 </li>
 <li>
@@ -318,7 +312,7 @@
 <h3 id="configure_communication_route_send_request_main_properties">Основные свойства</h3>
 <p>На вкладке «<strong>Основные свойства</strong>» настройте параметры использования пути передачи данных.</p>
 <ul>
-<li><strong>Подключение</strong> — выберите <a class="mkdocs_imported_link" href=".#configure_connection_send_request">подключение для отправки сообщений в систему «СФЕРА Курьер»</a>.</li>
+<li><strong>Подключение</strong> — выберите <a class="mkdocs_imported_link" href="#configure_connection_send_request">подключение для отправки сообщений в систему «СФЕРА Курьер»</a>.</li>
 <li><strong>Системное имя</strong> — введите уникальное имя пути передачи данных.</li>
 <li><strong>Отключить</strong> — установите этот флажок, если требуется временно деактивировать данный путь передачи данных.</li>
 <li><strong>Описание</strong> — введите наглядное описание пути передачи данных.</li>
@@ -600,7 +594,7 @@
 </ol>
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <ul>
-<li><em><a class="autorefs autorefs-internal mkdocs_imported_link" href="esphere_send_configure.html#esphere_send_configure">Отправка документов через «СФЕРА Курьер»</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5062">Отправка документов через «СФЕРА Курьер»</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4675">Подключения. Определения, типы, создание, настройка, удаление</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4676">Пути передачи данных</a></em></li>
 </ul>

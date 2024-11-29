@@ -1,0 +1,116 @@
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4866">
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<div class="mce-toc">
+<h2 class="toc-heading">
+      Содержание
+      </h2>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#введение">
+<span class="md-ellipsis">
+      Введение
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#загрузка-документов-и-изображений">
+<span class="md-ellipsis">
+      Загрузка документов и изображений
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#тестирование-загрузки-документа">
+<span class="md-ellipsis">
+      Тестирование загрузки документа
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#результаты">
+<span class="md-ellipsis">
+      Результаты
+    </span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h2 id="введение">Введение</h2>
+<p>Из этого урока вы узнаете, как загружать в систему и скачивать файлы: документы и изображения.</p>
+<p><strong>Предусловие:</strong> пройден <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4868">Урок 9.  Формирование документов</a>.</p>
+<p><strong>Расчетная продолжительность:</strong> 10 мин.</p>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>В данном уроке представлен продукт <strong>Comindware Platform</strong> версии 5.0, внешний вид страниц и меню в других версиях продукта может отличаться.</p>
+</div>
+<h2 id="загрузка-документов-и-изображений">Загрузка документов и изображений</h2>
+<p>Чтобы водитель, выполняющий рейс, мог загружать в систему сканы квитанций и другие документы, следует добавить соответствующий атрибут на экранную форму.</p>
+<p>Добавим атрибут типа «<strong>Документ</strong>» в шаблон <em>«Затраты»</em>…</p>
+<ol class="colored_numbers_list">
+<li>Перейдите на вкладку «<strong>Атрибуты</strong>» шаблона <em>«Затраты»</em>.</li>
+<li>Создайте атрибут <em>«Приложение»</em> с <strong>типом данных</strong> «<strong>Документ</strong>».</li>
+<li>Установите флажок «<strong>Хранить несколько значений</strong>», чтобы к записи можно было прикреплять несколько файлов одновременно.</li>
+<li>
+<p>Сохраните атрибут.</p>
+<p><figure class="screenshot_with_caption" markdown=""><img alt="Создание атрибута типа &lt;em&gt;«Документ»&lt;/em&gt;" src="https://kb.comindware.ru/assets/img_6317ce3eebdfe.png"/><figcaption class="caption">Создание атрибута типа <em>«Документ»</em></figcaption></figure></p>
+</li>
+</ol>
+<p>Добавим созданный атрибут в таблицу затрат на форме задачи <em>«Выполнить рейс»</em>…</p>
+<ol class="colored_numbers_list">
+<li>Перейдите к вкладке «<strong>Диаграмма</strong>» шаблона процесса <em>«Заказ автотранспорта»</em> нажмите кнопку «<strong>Редактировать</strong>».</li>
+<li>Выберите задачу <em>«Выполнить рейс»</em> и в меню элемента нажмите кнопку «<strong>Форма</strong>».</li>
+<li>На панели элементов разверните шаблоны <em>«Заявка на автомобиль»</em> и <em>«Затраты»</em>.</li>
+<li>Перетащите атрибут <em>«Приложение»</em> на форму в таблицу <em>«Затраты»</em>.</li>
+<li>
+<p>Сохраните форму.</p>
+<p><figure class="screenshot_with_caption" markdown=""><img alt="Добавление атрибута типа «Документ» на экранную форму" src="https://kb.comindware.ru/assets/img_6317cf4a7c256.png"/><figcaption class="caption">Добавление атрибута типа «Документ» на экранную форму</figcaption></figure></p>
+</li>
+<li>
+<p>Вернитесь к диаграмме процесса и опубликуйте ее.</p>
+</li>
+</ol>
+<h2 id="тестирование-загрузки-документа">Тестирование загрузки документа</h2>
+<ol class="colored_numbers_list">
+<li>Создайте новую заявку на автомобиль и пройдите бизнес-процесс до задачи <em>«Выполнить рейс»</em>.</li>
+</ol>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Для тестирования работы бизнес-приложения вы можете выполнять пользовательские задачи одним из трех способов:</p>
+<ul>
+<li>войти в систему несколько раз с разными учетными записями: <em>Заказчик, Секретарь, Водитель, Диспетчер</em>;</li>
+<li>создать заявку на автомобиль, затем открыть диаграмму запущенного бизнес-процесса <em>«Заказ автотранспорта»</em> и переходить к задачам с помощью кнопки «<strong>Перейти</strong>» <img alt="Перейти" src="https://kb.comindware.ru/assets/img_6317cf670d9c3.png"/>  в панели «<strong>Токены</strong>» ;</li>
+<li>назначить себя исполнителем всех пользовательских задач.</li>
+</ul>
+</div>
+<ol class="colored_numbers_list" start="2">
+<li>На форме задачи <em>«Выполнить рейс»</em> создайте запись в таблице <em>«Затраты»</em>.</li>
+<li>Загрузите текстовый документ к созданной записи. Для этого нажмите в строке затраты поле <em>«Приложение»</em> и нажмите кнопку «<strong>Добавить документ</strong>».</li>
+<li>Создайте еще одну запись в коллекции <em>«Затраты»</em></li>
+<li>Загрузите изображение ко второй записи затрат.</li>
+<li>Нажмите кнопку «<strong>Сохранить</strong>».</li>
+<li>Проверим возможность скачивания загруженных документов с сохраненной формы…</li>
+<li>Нажмите название загруженного текстового документа или изображения в коллекции затрат. Браузер скачает прикрепленный файл.</li>
+</ol>
+<figure class="screenshot_with_caption">
+<p><img alt="Загрузка в систему и скачивание файла с помощью экранной формы" src="https://kb.comindware.ru/assets/img_6317d1a7c99ba.png"/><figcaption class="caption">Загрузка в систему и скачивание файла с помощью экранной формы</figcaption></p>
+</figure>
+<h2 id="результаты">Результаты</h2>
+<p>Поздравляем! Вы научились работать с файлами: загружать в систему и скачивать документы и изображения.</p>
+</article>
+</div>
+</div>
+<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#">
+<i class="fa-light fa-arrow-up">&zwnj;<!--icon--></i>
+            К началу
+          </a>
+</main>
+</div>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></div>

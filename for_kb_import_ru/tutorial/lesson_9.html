@@ -1,0 +1,239 @@
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4868">
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<div class="mce-toc">
+<h2 class="toc-heading">
+      Содержание
+      </h2>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#введение">
+<span class="md-ellipsis">
+      Введение
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#формирование-авансового-отчета">
+<span class="md-ellipsis">
+      Формирование авансового отчета
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#синтаксис-файла-шаблона-экспорта">
+<span class="md-ellipsis">
+      Синтаксис файла шаблона экспорта
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#настройка-шаблона-экспорта">
+<span class="md-ellipsis">
+      Настройка шаблона экспорта
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#настройка-кнопки-экспорта-отчета">
+<span class="md-ellipsis">
+      Настройка кнопки экспорта отчета
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#настройка-разрешения-на-использование-кнопки">
+<span class="md-ellipsis">
+      Настройка разрешения на использование кнопки
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#тестирование">
+<span class="md-ellipsis">
+      Тестирование
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#результаты">
+<span class="md-ellipsis">
+      Результаты
+    </span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h2 id="введение">Введение</h2>
+<p>Следуя указаниям в этом уроке, вы настроите автоматический экспорт отчета о затратах на основе данных процесса и по шаблону, созданному с помощью Microsoft Excel.</p>
+<p><strong>Предусловие:</strong> пройден <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4870">Урок 6. Усовершенствованный процесс</a>.</p>
+<p><strong>Расчетная продолжительность:</strong> 15 мин.</p>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>В данном уроке представлен продукт <strong>Comindware Platform</strong> версии 5.0, внешний вид страниц и меню в других версиях продукта может отличаться.</p>
+</div>
+<h2 id="формирование-авансового-отчета">Формирование авансового отчета</h2>
+<p>Настроим генерацию отчета по затратам по кнопке в задаче <em>«Выполнение рейса»</em>.</p>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Настройка экспорта данных состоит из следующих этапов: сначала мы создадим файл Excel с шаблоном, по которому будет формироваться отчет (также можно создать шаблон в формате Word), затем загрузим этот файл в систему и настроим операцию, которая будет выполняться при нажатии кнопки.</p>
+</div>
+<p>Создадим файл для шаблона экспорта…</p>
+<ol class="colored_numbers_list">
+<li>
+<p>Создайте файл Excel (в формате XLSX).</p>
+</li>
+<li>
+<p>Заполните лист Excel, как показано на следующей иллюстрации.</p>
+</li>
+</ol>
+<div class="notice notice-warning">
+<p class="admonition-title">Внимание!</p>
+<p>В файле шаблона экспорта необходимо указывать те системные имена, которые вы фактически использовали в своём приложении.</p>
+<p>Например, если вы присвоили атрибуту <em>«Номер заявки»</em> системное имя <code>Номерзаявки123</code>, то именно это имя следует использовать в файле шаблона экспорта.</p>
+<p>То есть, если системные имена, приведённые в уроках, не совпадают с фактическими системными именами в вашем приложении, используйте фактические системные имена, а не копируйте их из текста уроков.</p>
+</div>
+<figure class="screenshot_with_caption">
+<p><img alt="Шаблон авансового отчета в формате Excel" src="https://kb.comindware.ru/assets/img_624594abce6ec.png"/><figcaption class="caption">Шаблон авансового отчета в формате Excel</figcaption></p>
+</figure>
+<h2 id="синтаксис-файла-шаблона-экспорта">Синтаксис файла шаблона экспорта</h2>
+<p>Подробные сведения об использовании шаблонов экспорта см. в разделе <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/category.php?id=849">Шаблоны экспорта</a>»</em>.</p>
+<p>В файле шаблона экспорта в фигурных скобках <code>{ }</code> указывайте системные имена <strong>атрибутов</strong>, значения которых должны отображаться в отчете.</p>
+<p>Текст без фигурных скобок будет отображаться как обычный текст.</p>
+<p>Для вывода значений из шаблона, связанного с атрибутом типа «<strong>Запись</strong><em>»</em>, используйте оператор <code>foreach</code>:</p>
+<ul>
+<li>в начале строки в фигурных скобках указываются оператор <code>foreach</code> и системное имя атрибута типа «<strong>Запись</strong>» — <code>{foreach:Затраты}</code>;</li>
+<li>затем перечисляются системные имена атрибутов из связанного с этим атрибутом шаблона записи, также в фигурных скобках — <code>{Типзатрат.Название}</code> <code>{Сумма}</code>;</li>
+<li>в конце строки указывается оператор <code>end</code> и системное имя атрибута типа «<strong>Запись</strong>» — <code>{end:Затраты}</code>;</li>
+<li><code>Затраты</code> — системное имя атрибута типа «<strong>Запись</strong><em>» шаблона </em>«Заявка на автомобиль»<em>, связанного с шаблоном </em>«Затраты»<em>.</em></li>
+<li><code>Сумма</code> и <code>Типзатрат</code> — системные имена атрибутов шаблона <em>«Затраты»</em>.</li>
+<li><code>Типзатрат</code> — атрибут типа «<strong>Запись</strong>» в шаблоне <em>«Затраты»</em>, связанный с шаблоном <em>«Тип затрат»</em>. С помощью символа точки мы обращаемся к атрибуту <code>Название</code> шаблона <em>«Тип затрат»</em>.</li>
+</ul>
+<p>Кроме того, мы используем системные имена следующих атрибутов шаблона <em>«Заявка на автомобиль»</em>:</p>
+<ul>
+<li><code>Итоговаясуммазатрат</code>  — итоговая сумма затрат;</li>
+<li><code>Номерзаявки</code>  — номер заявки;</li>
+<li><code>Времяподачи</code>  — время подачи.</li>
+</ul>
+<h2 id="настройка-шаблона-экспорта">Настройка шаблона экспорта</h2>
+<ol class="colored_numbers_list">
+<li>Перейдите на вкладку «<strong>Шаблоны экспорта</strong>» шаблона записи <em>«Заявка на автомобиль»</em>.</li>
+<li>
+<p>Нажмите кнопку «<strong>Создать</strong>».</p>
+<p><figure class="screenshot_with_caption" markdown=""><img alt="Создание шаблона экспорта для шаблона записи «&lt;em&gt;Заявка на автомобиль&lt;/em&gt;»" src="https://kb.comindware.ru/assets/img_63175c2c30b3d.png"/><figcaption class="caption">Создание шаблона экспорта для шаблона записи «<em>Заявка на автомобиль</em>»</figcaption></figure></p>
+</li>
+<li>
+<p>Отобразится окно «<strong>Новый шаблон экспорта</strong>».</p>
+</li>
+<li>Укажите <strong>название</strong> шаблона экспорта <em>«Авансовый отчет»</em>.</li>
+<li>В поле «<strong>Файл шаблона</strong>» выберите пункт «<strong><em>*Значение</em></strong>*  »  и загрузите созданный ранее файл шаблона в формате XLSX.</li>
+<li>В поле «<strong>Имя выходного файла</strong>» выберите пункт «<strong>Значение</strong>» и укажите требуемое имя экспортируемого файла с данными.</li>
+<li>Установите флажок «<strong>Экспортировать как PDF</strong>».</li>
+<li>Нажмите кнопку «<strong>Сохранить</strong>».</li>
+</ol>
+<figure class="screenshot_with_caption">
+<p><img alt="Настройка свойств шаблона экспорта" src="https://kb.comindware.ru/assets/img_63175def9edd8.png"/><figcaption class="caption">Настройка свойств шаблона экспорта</figcaption></p>
+</figure>
+<h2 id="настройка-кнопки-экспорта-отчета">Настройка кнопки экспорта отчета</h2>
+<p>При создании шаблона экспорта автоматически создается кнопка экспорта. Удостоверимся, что эта кнопка экспорта соответствует нашим требованиям…</p>
+<ol class="colored_numbers_list">
+<li>
+<p>Перейдите на вкладку «<strong>Кнопки</strong><em>» шаблона </em>«Заявка на автомобиль»<em>.</em></p>
+<p><figure class="screenshot_with_caption" markdown=""><img alt="Список кнопок шаблона записи" src="https://kb.comindware.ru/assets/img_6317c3362c2cf.png"/><figcaption class="caption">Список кнопок шаблона записи</figcaption></figure></p>
+</li>
+<li>
+<p>Откройте кнопку <em>«Авансовый отчет»</em>. Проверьте корректность её свойств:</p>
+<ul>
+<li><strong>отображаемое название</strong> — Авансовый отчет;</li>
+<li><strong>контекст операции</strong>— <strong>Запись</strong>;</li>
+<li><strong>операция —</strong> <strong>Экспорт записи</strong>;</li>
+<li><strong>результат выполнения</strong> — <strong>Скачать документ</strong>;</li>
+<li><strong>шаблон экспорта</strong> — Авансовый отчет.</li>
+</ul>
+<p><figure class="screenshot_with_caption" markdown=""><img alt="Свойства кнопки экспорта документа, сформированному по шаблону экспорта" src="https://kb.comindware.ru/assets/img_6475e53906e3b.png"/><figcaption class="caption">Свойства кнопки экспорта документа, сформированному по шаблону экспорта</figcaption></figure></p>
+</li>
+</ol>
+<p>Добавим кнопку для экспорта данных на экранную форму. Для этого создадим новую форму…</p>
+<ol class="colored_numbers_list">
+<li>Перейдите на вкладку «<strong>Формы</strong>» шаблона <em>«Заявка на автомобиль»</em>.</li>
+<li>Нажмите кнопку «<strong>Создать</strong>».</li>
+<li>Введите <strong>отображаемое название</strong> формы — <em>«Выгрузка отчета»</em>.</li>
+<li>Измените <strong>отображаемое название</strong> автоматически созданной <strong>новой области</strong> на <em>«Выгрузка отчета»</em>.</li>
+<li>Выделите область кнопок <em>«Выгрузка отчета»</em> и перетащите на неё кнопку <em>«Авансовый отчет»</em>.</li>
+<li>Сохраните форму.</li>
+</ol>
+<figure class="screenshot_with_caption">
+<p><img alt="Добавление кнопки на форму выгрузки отчета" src="https://kb.comindware.ru/assets/img_6317c544eb9bd.png"/><figcaption class="caption">Добавление кнопки на форму выгрузки отчета</figcaption></p>
+</figure>
+<p>Теперь добавим созданную форму на форму задачи <em>«Выполнить рейс»</em>…</p>
+<ol class="colored_numbers_list">
+<li>Перейдите на вкладку «<strong>Диаграмма</strong><em>» шаблона процесса </em>«Заказ автотранспорта»<em> и нажмите кнопку</em> «<strong>Редактировать</strong>».</li>
+<li>Выберите задачу <em>«Выполнить рейс»</em> и в меню элемента нажмите кнопку «<strong>Форма</strong>».</li>
+<li>Разверните в панели элементов шаблон <em>«Заявка на автомобиль»</em> и перетащите форму <em>«Выгрузка отчета»</em> под область <em>«Выполнить рейс»</em>.</li>
+<li>
+<p>Сохраните форму.</p>
+<p><figure class="screenshot_with_caption" markdown=""><img alt="Добавление вложенной формы с кнопкой выгрузки отчета на форму задачи «&lt;em&gt;Выполнить рейс&lt;/em&gt;»" src="https://kb.comindware.ru/assets/img_6317c6a560b8b.png"/><figcaption class="caption">Добавление вложенной формы с кнопкой выгрузки отчета на форму задачи «<em>Выполнить рейс</em>»</figcaption></figure></p>
+</li>
+<li>
+<p>Опубликуйте диаграмму бизнес-процесса <em>«Заказ автотранспорта»</em>.</p>
+</li>
+</ol>
+<h2 id="настройка-разрешения-на-использование-кнопки">Настройка разрешения на использование кнопки</h2>
+<p>Для того, чтобы водитель мог воспользоваться кнопкой <em>«Авансовый отчет»</em>, необходимо предоставить ему соответствующее разрешение с помощью роли <em>«Водитель»</em>.</p>
+<ol class="colored_numbers_list">
+<li>Откройте раздел «<strong>Роли</strong><em>» приложения </em>«Управление автопарком»*.</li>
+<li>Откройте роль <em>«Водитель»</em> и перейдите на вкладку «<strong>Разрешения</strong>».</li>
+<li>Раскройте в панели ресурсов шаблон <em>«Заявка на автомобиль»</em> и перетащите из него на таблицу разрешений кнопку <em>«Авансовый отчет»</em>.</li>
+<li>Установите для кнопки <em>«Авансовый отчет»</em> разрешение «<strong>Использование кнопки</strong>»*.</li>
+<li>
+<p>Сохраните роль.</p>
+<p><figure class="screenshot_with_caption" markdown=""><img alt="Добавление для роли «&lt;em&gt;Водитель&lt;/em&gt;» разрешения на использование кнопки «&lt;em&gt;Авансовый отчет&lt;/em&gt;»" src="https://kb.comindware.ru/assets/img_6317c77750dd6.png"/><figcaption class="caption">Добавление для роли «<em>Водитель</em>» разрешения на использование кнопки «<em>Авансовый отчет</em>»</figcaption></figure></p>
+</li>
+</ol>
+<h2 id="тестирование">Тестирование</h2>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Если вы проходите этот урок после прохождения <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4867">Урока 8 <em>«Аккаунты»</em></a>, то для тестирования работы приложения вы можете выполнять пользовательские задачи одним из трех способов:</p>
+<ul>
+<li>войти в систему несколько раз с разными учетными записями: заказчик, секретарь, водитель, диспетчер;</li>
+<li>создать заявку на автомобиль, затем открыть диаграмму запущенного бизнес-процесса <em>«Заказ автотранспорта»</em> и переходить к задачам с помощью кнопки «<strong>Перейти</strong><em>»  <img alt="Перейти" src="https://kb.comindware.ru/assets/img_6317c8a89172d.png"/>  в панели «</em><strong>Токены</strong>**  »;</li>
+<li>назначить себя исполнителем всех пользовательских задач.</li>
+</ul>
+</div>
+<ol class="colored_numbers_list">
+<li>Перейдите к списку экземпляров шаблона <em>«Заказ автотранспорта»</em> и создайте новую заявку.</li>
+<li>С помощью раздела «<strong>Мои задачи</strong>» пройдите бизнес-процесс до задачи <em>«Выполнение рейса»</em>.</li>
+<li>Откройте форму задачи <em>«Выполнить рейс»</em> и заполните коллекцию затрат.</li>
+<li>Нажмите кнопку «<strong>Сохранить</strong>».</li>
+<li>
+<p>Нажмите кнопку <em>«Авансовый отчет»</em> и дождитесь экспорта (скачивания) сформированного PDF-документа.</p>
+<p><figure class="screenshot_with_caption" markdown=""><img alt="Выгрузка сформированного по шаблону экспорта документа с помощью кнопки на форме" src="https://kb.comindware.ru/assets/img_6317ca7944c7f.png"/><figcaption class="caption">Выгрузка сформированного по шаблону экспорта документа с помощью кнопки на форме</figcaption></figure></p>
+</li>
+<li>
+<p>Откройте экспортированный документ.</p>
+</li>
+<li>
+<p>Завершите задачу.</p>
+<p><figure class="screenshot_with_caption" markdown=""><img alt="PDF-документ авансового отчета, экспортированный по шаблону в формате Excel из Comindware Platform" src="https://kb.comindware.ru/assets/img_6245b16fd7334.png"/><figcaption class="caption">PDF-документ авансового отчета, экспортированный по шаблону в формате Excel из Comindware Platform</figcaption></figure></p>
+</li>
+</ol>
+<h2 id="результаты">Результаты</h2>
+<p>Поздравляем! Вы научились автоматически формировать и экспортировать документы по шаблонам, подставляя в них фактические данные из бизнес-приложения.</p>
+<p>В <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4866">следующем уроке</a> вы научитесь работать с контентом.</p>
+</article>
+</div>
+</div>
+<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#">
+<i class="fa-light fa-arrow-up">&zwnj;<!--icon--></i>
+            К началу
+          </a>
+</main>
+</div>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></div>

@@ -80,6 +80,8 @@
 
 [tutorial]: {{ kbCategoryURLPrefix }}870
 
+[apps_kb]: {{ kbCategoryURLPrefix }}832
+
 [telegram_send_notification]: {{ kbArticleURLPrefix }}4926
 
 {% if kbExport %}

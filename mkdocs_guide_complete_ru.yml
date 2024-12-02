@@ -56,23 +56,10 @@ nav:
           - administration/deploy/linux/auxiliary_software_deploy/zabbix_deploy.md
           - administration/deploy/linux/auxiliary_software_deploy/zabbix_server_deploy.md
       - Развёртывание в Windows:
-        - Утилита администрирования Comindware. Установка и настройка версий и экземпляров ПО:
-          - administration/deploy/windows/admin_utility/admin_utility_install_launch.md
-          - administration/deploy/windows/admin_utility/sw_install.md
-          - administration/deploy/windows/admin_utility/admin_utility_configure.md
-          - administration/deploy/windows/admin_utility/instance_diagnose.md
-          - administration/deploy/windows/admin_utility/instance_upgrade_version.md
-          - administration/deploy/windows/admin_utility/instance_create.md
-          - administration/deploy/windows/admin_utility/sw_version_delete.md
-          - administration/deploy/windows/admin_utility/instance_start_stop.md
-          - administration/deploy/windows/admin_utility/instance_configure.md
-          - administration/deploy/windows/admin_utility/instance_status_update.md
-          - administration/deploy/windows/admin_utility/instance_backup_restore.md
-          - administration/deploy/windows/admin_utility/instance_instalize.md
+        - administration/deploy/windows/deploy_guide.md
         - administration/deploy/windows/instance_upgrade_3_2_to_4_2_windows.md
         - administration/deploy/windows/instance_stop_IIS.md
         - administration/deploy/windows/instance_start_IIS.md
-        - administration/deploy/windows/architect_install.md
         - Вспомогательное ПО. Развёртывание:
           - administration/deploy/windows/auxiliary_software_deploy/zabbix_agent_deploy_windows.md
           - administration/deploy/windows/auxiliary_software_deploy/apache_ignite_deploy_windows.md
@@ -371,3 +358,7 @@ nav:
     - examples/scenario_verify_data.md
     - examples/process_email_configure.md
     - examples/script_using_local_variable.md
+
+exclude_docs: |
+  administration/deploy/windows/admin_utility/**
+  administration/deploy/windows/architect_install.md

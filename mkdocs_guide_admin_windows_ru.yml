@@ -23,26 +23,13 @@ nav:
     - administration/deploy/system_requirements.md
     - administration/deploy/architecture_landscape.md
     - administration/deploy/security.md
+    - administration/deploy/windows/deploy_guide.md
+    - administration/deploy/paths.md
     - administration/deploy/logging_engine.md
     - administration/deploy/log_files_event_examples.md
-    - administration/deploy/paths.md
-    - Утилита администрирования Comindware. Установка и настройка версий и экземпляров ПО:
-      - administration/deploy/windows/admin_utility/admin_utility_install_launch.md
-      - administration/deploy/windows/admin_utility/sw_install.md
-      - administration/deploy/windows/admin_utility/admin_utility_configure.md
-      - administration/deploy/windows/admin_utility/instance_diagnose.md
-      - administration/deploy/windows/admin_utility/instance_upgrade_version.md
-      - administration/deploy/windows/admin_utility/instance_create.md
-      - administration/deploy/windows/admin_utility/sw_version_delete.md
-      - administration/deploy/windows/admin_utility/instance_start_stop.md
-      - administration/deploy/windows/admin_utility/instance_configure.md
-      - administration/deploy/windows/admin_utility/instance_status_update.md
-      - administration/deploy/windows/admin_utility/instance_backup_restore.md
-      - administration/deploy/windows/admin_utility/instance_instalize.md
     - administration/deploy/windows/instance_upgrade_3_2_to_4_2_windows.md
     - administration/deploy/windows/instance_stop_IIS.md
     - administration/deploy/windows/instance_start_IIS.md
-    - administration/deploy/windows/architect_install.md
     - Вспомогательное ПО. Оптимизация:
       - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_optimize.md
       - administration/deploy/linux/auxiliary_software_deploy/antivirus_exceptions_configure.md
@@ -171,6 +158,8 @@ exclude_docs: |
   administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
   administration/connections_communication_routes/rest_odata_connections/send_http_example.md
   administration/backup/linux/**
+  administration/deploy/windows/admin_utility/**
+  administration/deploy/windows/architect_install.md
   product_description.md
   architect/**
   business_apps/application_configure_recommendations.md

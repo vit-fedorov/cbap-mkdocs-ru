@@ -335,7 +335,7 @@
 <p><figure class="screenshot_with_caption" markdown=""><img alt="Настройка цикла по количеству объектов в сценарии" src="/platform/v5.0/administration/connections_communication_routes/sql_connections/img/sql_receive_connection_scenario_cycle_settings.png"/><figcaption class="caption">Настройка цикла по количеству объектов в сценарии</figcaption></figure></p>
 </li>
 <li>
-<p id="create_record">Добавьте в действие «<strong>Повторять по количеству объектов</strong>» вложенное действие «<strong>Создать запись</strong>» и настройте его:</p>
+<p id="create_record">Внутри действия «<strong>Повторять по количеству объектов</strong>» добавьте действие «<strong>Создать запись</strong>» и настройте его:</p>
 <ul>
 <li>В поле «<strong>Целевой шаблон записи</strong>» выберите шаблон, в котором требуется создавать записи с данными, полученными из внешней БД.</li>
 <li>Сохраните действие «<strong>Создать запись</strong>».</li>
@@ -343,7 +343,11 @@
 <p><figure class="screenshot_with_caption" markdown=""><img alt="Настройка действия «Создать запись» в сценарии" src="/platform/v5.0/administration/connections_communication_routes/sql_connections/img/sql_receive_connection_scenario_create_record_settings.png"/><figcaption class="caption">Настройка действия «Создать запись» в сценарии</figcaption></figure></p>
 </li>
 <li>
-<p>Добавьте в действие «<strong>Создать запись</strong>» вложенное действие «<strong>Изменить значения атрибутов</strong>» и настройте его.</p>
+<p>Внутри действия «<strong>Создать запись</strong>» добавьте действие «<strong>Изменить значения атрибутов</strong>».</p>
+</li>
+<li>В действии «<strong>Изменить значения атрибутов</strong>» на вкладке «<strong>Дополнительно</strong>» установите флажок «<strong>Сбрасывать кэш значений</strong>».</li>
+<li>
+<p>На вкладке «<strong>Основные</strong>»:</p>
 <ul>
 <li>Нажмите кнопку «<strong>Создать</strong>».</li>
 <li>В столбце «<strong>Атрибут</strong>» выберите атрибут указанного в <a class="mkdocs_imported_link" href="#create_record">действии «Создать запись»</a> шаблона, в который будут помещаться названия городов, полученные из внешней БД.</li>

@@ -27,7 +27,7 @@ kbId: 4871
 4. Нажмите кнопку «**Войти**».
 5. Отобразится начальная страница **{{ productName }}**.
 
-    _![Страница входа в {{ productName }}](https://kb.comindware.ru/assets/img_6241ba621eb66.png)_
+    _![Страница входа в {{ productName }}](img/lesson_1_login_page.png)_
 
 ## Настройка аккаунта
 

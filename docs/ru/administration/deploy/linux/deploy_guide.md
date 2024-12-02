@@ -157,7 +157,7 @@ kbId: 4622
     ```
 
 ## Инициализация {{ productName }} {: #deploy_guide_linux_initialize}
-<!--initializate-start-->
+<!--initialize-start-->
 1. Запустите веб-браузер и в адресной строке введите ссылку следующего вида, при необходимости указав порт, на котором был развёрнут экземпляр ПО:
 
     ``` sh
@@ -196,5 +196,5 @@ kbId: 4622
     _![Начальная страница {{ productName }}](img/deploy_guide_desktop.png)_
 
 15. На этом этапе развертывание экземпляра **{{ productName }}** завершено и можно приступать к созданию и использованию бизнес-приложений.
-<!--initializate-end-->
+<!--initialize-end-->
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -156,8 +156,8 @@ kbId: 5063
 
 {%
 include-markdown "../linux/deploy_guide.md"
-start="<!--initializate-start-->"
-end="<!--initializate-end-->"
+start="<!--initialize-start-->"
+end="<!--initialize-end-->"
 %}
 
 ## Обновление экземпляра ПО

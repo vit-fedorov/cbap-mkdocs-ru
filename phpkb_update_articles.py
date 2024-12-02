@@ -186,6 +186,11 @@ def main():
     categoryId = ''
     parent_category = ''
     categoryChoice = ''
+    
+    while input('Update specific articles? Y/N\n').lower() == 'y':
+        article_id = str(input('Enter article ID to update: '))
+        if article_id: 
+            updateArticle(article_id)
 
     print('\nRoot categories:\n')
 

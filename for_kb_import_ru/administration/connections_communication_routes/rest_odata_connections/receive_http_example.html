@@ -73,22 +73,22 @@
 <code><span class="w">        </span><span class="p">{</span></code><br/>
 <code><span class="w">            </span><span class="s2">"Zakaz"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span></code><br/>
 <code><span class="w">            </span><span class="s2">"Client"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Петров"</span><span class="p">,</span></code><br/>
-<code><span class="w">            </span><span class="s2">"nomer"</span><span class="o">:</span><span class="w"> </span><span class="mf">54</span><span class="p">,</span></code><br/>
-<code><span class="w">            </span><span class="s2">"tovar"</span><span class="o">:</span><span class="s2">"Яблоко"</span></code><br/>
+<code><span class="w">            </span><span class="s2">"Nomer"</span><span class="o">:</span><span class="w"> </span><span class="mf">54</span><span class="p">,</span></code><br/>
+<code><span class="w">            </span><span class="s2">"Tovar"</span><span class="o">:</span><span class="s2">"Яблоко"</span></code><br/>
 <code><span class="w">            </span><span class="p">}</span></code><br/>
 <code><span class="w">        </span><span class="p">},</span></code><br/>
 <code><span class="w">        </span><span class="p">{</span></code><br/>
 <code><span class="w">            </span><span class="s2">"Zakaz"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span></code><br/>
 <code><span class="w">            </span><span class="s2">"Client"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Иванов"</span><span class="p">,</span></code><br/>
-<code><span class="w">            </span><span class="s2">"nomer"</span><span class="o">:</span><span class="w"> </span><span class="mf">60</span><span class="p">,</span></code><br/>
-<code><span class="w">            </span><span class="s2">"tovar"</span><span class="o">:</span><span class="s2">"Банан"</span></code><br/>
+<code><span class="w">            </span><span class="s2">"Nomer"</span><span class="o">:</span><span class="w"> </span><span class="mf">60</span><span class="p">,</span></code><br/>
+<code><span class="w">            </span><span class="s2">"Tovar"</span><span class="o">:</span><span class="s2">"Банан"</span></code><br/>
 <code><span class="w">            </span><span class="p">}</span></code><br/>
 <code><span class="w">        </span><span class="p">},</span></code><br/>
 <code><span class="w">        </span><span class="p">{</span></code><br/>
 <code><span class="w">            </span><span class="s2">"Zakaz"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span></code><br/>
 <code><span class="w">            </span><span class="s2">"Client"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Сидоров"</span><span class="p">,</span></code><br/>
-<code><span class="w">            </span><span class="s2">"nomer"</span><span class="o">:</span><span class="w"> </span><span class="mf">61</span><span class="p">,</span></code><br/>
-<code><span class="w">            </span><span class="s2">"tovar"</span><span class="o">:</span><span class="s2">"Груша"</span></code><br/>
+<code><span class="w">            </span><span class="s2">"Nomer"</span><span class="o">:</span><span class="w"> </span><span class="mf">61</span><span class="p">,</span></code><br/>
+<code><span class="w">            </span><span class="s2">"Tovar"</span><span class="o">:</span><span class="s2">"Груша"</span></code><br/>
 <code><span class="w">            </span><span class="p">}</span></code><br/>
 <code><span class="w">        </span><span class="p">}</span></code><br/>
 <code><span class="w">    </span><span class="p">]</span></code><br/>
@@ -144,9 +144,9 @@
 <ul>
 <li><em>ListZakazov</em> — атрибут, который содержит в себе данные по всем заказам. <strong>Тип</strong> — <strong>объект</strong>;</li>
 <li><em>Zakaz</em> — атрибут, который тоже в себе содержит данные по одному заказу. <strong>Тип</strong> — <strong>объект</strong>;</li>
-<li><em>nomer</em> — атрибут, содержащий значение номера заказа. <strong>Тип</strong> — <strong>число</strong>;</li>
+<li><em>Nomer</em> — атрибут, содержащий значение номера заказа. <strong>Тип</strong> — <strong>число</strong>;</li>
 <li><em>Client</em> — атрибут, содержащий значение клиента заказа. <strong>Тип</strong> — <strong>строка</strong>;</li>
-<li><em>tovar</em> — атрибут, содержащий значение товара заказа. <strong>Тип</strong> — <strong>строка</strong>.</li>
+<li><em>Tovar</em> — атрибут, содержащий значение товара заказа. <strong>Тип</strong> — <strong>строка</strong>.</li>
 </ul>
 </li>
 <li>
@@ -201,29 +201,54 @@
 <p>Внутрь действия «<strong>Повторять по количеству объектов</strong>» добавьте действие «<strong>Создать запись</strong>» и укажите  шаблон записи «Заказы».</p>
 </li>
 <li>
-<p>Внутрь действия «<strong>Создать запись</strong>» добавьте действие «<strong>Изменить значения атрибутов</strong>» и настройте его.</p>
-<ul>
-<li>Добавьте три атрибута (<em>Клиент, Товар</em> и <em>Номер</em>);</li>
-<li>Операцию со значениями у всех атрибутов укажите «<strong>Заменить</strong>»;</li>
-<li>Значением будет формула <code>$$local—Zakaz—Client</code> (для клиента), для остальных атрибутов будет такая же формула, только в конце в место <code>Client</code> будет название соответствующего атрибута JSON.</li>
-</ul>
+<p>Внутрь действия «<strong>Создать запись</strong>» добавьте действие «<strong>Изменить значения атрибутов</strong>».</p>
+</li>
+<li>В действии «<strong>Изменить значения атрибутов</strong>» на вкладке «<strong>Дополнительно</strong>» установите флажок «<strong>Сбрасывать кэш значений</strong>».</li>
+<li>
+<p>На вкладке «<strong>Основные</strong>» настройте следующие атрибуты::</p>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th>Атрибут</th>
+<th>Операция со значениями</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Клиент</em></td>
+<td><strong>Заменить</strong></td>
+<td><strong>Формула:</strong> <code>$$local—Zakaz—Client</code></td>
+</tr>
+<tr>
+<td><em>Номер</em></td>
+<td><strong>Заменить</strong></td>
+<td><strong>Формула:</strong> <code>$$local—Zakaz—Nomer</code></td>
+</tr>
+<tr>
+<td><em>Товар</em></td>
+<td><strong>Заменить</strong></td>
+<td><strong>Формула:</strong> <code>$$local—Zakaz—Tovar</code></td>
+</tr>
+</tbody>
+</table>
 <p>Переменная <code>$$local</code> — хранит значение текущего объекта итерации. Пример:</p>
 <div class="highlight"><code><pre><span></span><code><span class="p">{</span></code><br/>
 <code><span class="s2">"Zakaz"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span></code><br/>
 <code><span class="w">            </span><span class="s2">"Client"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Петров"</span><span class="p">,</span></code><br/>
-<code><span class="w">            </span><span class="s2">"nomer"</span><span class="o">:</span><span class="w"> </span><span class="mf">54</span><span class="p">,</span></code><br/>
-<code><span class="w">            </span><span class="s2">"tovar"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Яблоко"</span></code><br/>
+<code><span class="w">            </span><span class="s2">"Nomer"</span><span class="o">:</span><span class="w"> </span><span class="mf">54</span><span class="p">,</span></code><br/>
+<code><span class="w">            </span><span class="s2">"Tovar"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Яблоко"</span></code><br/>
 <code><span class="w">            </span><span class="p">}</span></code><br/>
 <code><span class="p">},</span></code><br/>
 </pre></code></div>
-<p>Переменная <code>$$local—Zakaz</code> будет содержать массив данных по заказу из текущего объекта итерации. Пример:</p>
+<p>Переменная <code>$$local—Zakaz</code> содержит массив данных по заказу из текущего объекта итерации. Пример:</p>
 <div class="highlight"><code><pre><span></span><code><span class="p">{</span></code><br/>
 <code><span class="s2">"Client"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Петров"</span><span class="p">,</span></code><br/>
-<code><span class="s2">"nomer"</span><span class="o">:</span><span class="w"> </span><span class="mf">54</span><span class="p">,</span></code><br/>
-<code><span class="s2">"tovar"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Яблоко"</span></code><br/>
+<code><span class="s2">"Nomer"</span><span class="o">:</span><span class="w"> </span><span class="mf">54</span><span class="p">,</span></code><br/>
+<code><span class="s2">"Tovar"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Яблоко"</span></code><br/>
 <code><span class="p">}</span></code><br/>
 </pre></code></div>
-<p>Переменная <code>$$local—Zakaz—Tovar</code> будет данные информации о товаре по заказу из текущего объекта итерации. Пример:</p>
+<p>Переменная <code>$$local—Zakaz—Tovar</code> содержит данные о товаре по заказу из текущего объекта итерации. Пример:</p>
 <div class="highlight"><code><pre><span></span><code><span class="s2">"Яблоко"</span></code><br/>
 </pre></code></div>
 <p><figure class="screenshot_with_caption" markdown=""><img alt="Настройка действия «Изменить значения атрибутов»" src="/platform/v5.0/administration/connections_communication_routes/rest_odata_connections/img/json8.jpg"/><figcaption class="caption">Настройка действия «Изменить значения атрибутов»</figcaption></figure></p>

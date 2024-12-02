@@ -444,14 +444,18 @@
 <p><figure class="screenshot_with_caption" markdown=""><img alt="Настройка цикла по количеству объектрв в сценарии" src="/platform/v5.0/administration/connections_communication_routes/sql_connections/img/sql_send_connection_scenario_cycle_settings.png"/><figcaption class="caption">Настройка цикла по количеству объектрв в сценарии</figcaption></figure></p>
 </li>
 <li>
-<p id="create_record">Добавьте в действие «<strong>Цикл по объектам</strong>» вложенное действие «<strong>Создать запись</strong>» и настройте его свойства:</p>
+<p id="create_record">Внутри действия «<strong>Повторять по количеству объектов</strong>» добавьте действие «<strong>Создать запись</strong>» и настройте его свойства:</p>
 <ul>
 <li>В поле «<strong>Целевой шаблон записи</strong>» выберите шаблон <em>«Города»</em>, в котором будут создаваться записи с данными, полученными из внешней БД.</li>
 </ul>
 <p><figure class="screenshot_with_caption" markdown=""><img alt="Настройка действия «Создать запись» в сценарии" src="/platform/v5.0/administration/connections_communication_routes/sql_connections/img/sql_send_connection_create_record_settings.png"/><figcaption class="caption">Настройка действия «Создать запись» в сценарии</figcaption></figure></p>
 </li>
 <li>
-<p>Добавьте в действие «<strong>Создать запись</strong>» вложенное действие «<strong>Изменить значения атрибутов</strong>» и настройте его:</p>
+<p>Внутри действия «<strong>Создать запись</strong>» добавьте действие «<strong>Изменить значения атрибутов</strong>».</p>
+</li>
+<li>В действии «<strong>Изменить значения атрибутов</strong>» на вкладке «<strong>Дополнительно</strong>» установите флажок «<strong>Сбрасывать кэш значений</strong>».</li>
+<li>
+<p>На вкладке «<strong>Основные</strong>»:</p>
 <ul>
 <li>Нажмите кнопку «<strong>Создать</strong>».</li>
 <li>В столбце «<strong>Атрибут</strong>» выберите атрибут шаблона, указанного <a class="mkdocs_imported_link" href="#create_record">в свойствах действия «<strong>Создать запись</strong>»</a>, в который будут помещаться названия городов, полученные из внешней БД.</li>

@@ -114,6 +114,7 @@ nav:
         - business_apps/diagrams/process_diagram/index.md
         - business_apps/diagrams/process_diagram/process_diagram_version_control.md
         - business_apps/diagrams/process_diagram/process_diagram_view_instance.md
+        - business_apps/diagrams/process_diagram/process_error_monitor.md
         - Элементы диаграммы процесса: 
           - business_apps/diagrams/process_diagram/process_diagram_elements/index.md
           - Общие свойства элементов: business_apps/diagrams/process_diagram/process_diagram_elements/process_diagram_element_common_properties.md

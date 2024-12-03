@@ -1,6 +1,6 @@
 ---
 title: Общие свойства элементов диаграммы процесса
-kbId: 2364
+kbId: 4725
 tags:
   - диаграммы
   - диаграмма процесса
@@ -38,7 +38,7 @@ hide:
 
 _![Свойства выбранного элемента в панели свойств элемента](img/process_diagram_element_common_properties_in_properties_panel.png)_
 
-## Настройка свойств элемента {: #process_diagram_element_properties_setting}
+## Настройка свойств элемента {: #process_diagram_element_properties_setting .pageBreakBefore }
 
 1. Нажмите элемент диаграммы.
 2. Нажмите кнопку «**Свойства**» <i class="fa-light fa-gear"></i> в меню элемента.
@@ -47,15 +47,17 @@ _![Свойства выбранного элемента в панели сво
 
 3. Отобразится окно свойств элемента.
 4. Настройте и сохраните элемент.
-  
+
     _![Настройка общих свойств элемента диаграммы процесса](process_diagram_element_common_properties.png)_
+
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-**[Элементы диаграммы процесса][process_diagram_elements]**
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Диаграмма процесса][process_diagram]_
+- _[Конструктор диаграммы процесса][process_diagram_designer]_
 
-**[Диаграмма процесса][process_diagram]**
-
-**[Конструктор диаграммы процесса][process_diagram_designer]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -1,6 +1,6 @@
 ---
-title: Рабочий стол Architect
-kbId: 2415
+title: Рабочий стол «Корпоративная архитектура»
+kbId: 4828
 tags:
     - рабочий стол Architect
     - начальная страница
@@ -9,23 +9,23 @@ hide:
     - tags
 ---
 
-# Рабочий стол Architect {: #architect_desktop}
+# Рабочий стол «{{ productNameArchitect }}» {: #architect_desktop}
 
 --8<-- "experimental_feature.md"
 
 ## Введение
 
-После входа в **{{ productNameArchitect }}** отображается Рабочий стол со ссылками для выполнения [базовых операций](#операции-на-рабочем-столе-architect).
+После входа в **{{ productNameEnterprise }}** отображается Рабочий стол «**{{ productNameArchitect }}**» со ссылками для выполнения [базовых операций](#операции-на-рабочем-столе-architect).
 
 Сведения об использовании и настройке Рабочего стола см. в разделах «_[Рабочий стол. Использование][desktop]_» и _«[Рабочий стол. Определения и настройка][desktop_setup]»_.
 
-_![Рабочий стол {{ productNameArchitect }}](architect_desktop.png)_
+_![Рабочий стол модуля «{{ productNameArchitect }}»](architect_desktop.png)_
 
-## Операции на Рабочем столе Architect
+## Операции на Рабочем столе «{{ productNameArchitect }}» {: .pageBreakBefore }
 
 * **Создание архитектуры**
-    - **Процессы** — [построение процессной архитектуры][построение-процессной-архитектуры] организации.
-    - **Оргструктура** — [построение организационной структуры][построение-организационной-структуры].
+    - **Процессы** — [построение процессной архитектуры][architect_process_architecture_modelling] организации.
+    - **Оргструктура** — [построение организационной структуры][architect_organizational_structure_modelling].
     - **Версии** — [управление версиями][architect_version_control] процессной архитектуры и организационной структуры.
 * **Настройка продукта**
     - **Внешний вид**
@@ -41,14 +41,15 @@ _![Рабочий стол {{ productNameArchitect }}](architect_desktop.png)_
         - **[Системные роли][system_roles]**
         - **[Аккаунты][accounts]**
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Построение процессной архитектуры][построение-процессной-архитектуры]**
+- _[Построение процессной архитектуры][architect_process_architecture_modelling]_
+- _[Построение организационной структуры][architect_organizational_structure_modelling]_
+- _[Рабочий стол. Использование][desktop]_
+- _[Рабочий стол. Определения и настройка][desktop_setup]_
 
-**[Построение организационной структуры][построение-организационной-структуры]**
-
-**[Рабочий стол. Использование][desktop]**
-
-**[Рабочий стол. Определения и настройка][desktop_setup]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

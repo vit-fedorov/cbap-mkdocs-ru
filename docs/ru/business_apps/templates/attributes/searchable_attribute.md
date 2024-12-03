@@ -1,6 +1,6 @@
 ---
 title: Атрибуты для поиска записей шаблона
-kbId: 2247
+kbId: 4776
 ---
 
 # Атрибуты для поиска записей шаблона {: #attribute_searchable}
@@ -20,18 +20,24 @@ kbId: 2247
 - [Документ][attribute_document]
 - [Изображение][attribute_image]
 
+</div>
+
 _![Поиск записей в системе](img/searcheable_attribute_global_search.png)_
 
 _![Поиск записей в таблице](img/searcheable_attribute_table_search.png)_
 
-## Включение атрибута в поиск
+## Включение атрибута в поиск {: .pageBreakBefore }
 
 Установите флажок «**Использовать для поиска записей**» в [свойствах атрибута][attributes_configure].
 
 _![Флажок «Использовать для поиска записей»](img/searcheable_attribute.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
+- _[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]_
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

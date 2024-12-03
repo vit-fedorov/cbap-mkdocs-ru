@@ -6,7 +6,7 @@ INHERIT: mkdocs_ru.yml
 
 docs_dir: docs/ru
 
-site_url: ""
+site_url: https://kb.comindware.ru/platform/v5.0/
 
 use_directory_urls: false
 
@@ -21,6 +21,12 @@ theme:
 plugins:
   glightbox:
     manual: true
+  minify:
+      minify_html: false
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+          remove_comments: true
 
 markdown_extensions:
   toc:

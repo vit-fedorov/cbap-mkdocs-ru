@@ -11,32 +11,26 @@ from pathvalidate import sanitize_filename
 from pathlib import Path
 import shutil
 from cryptography.fernet import Fernet
-
-class myparser(HTMLParser):
-	def handle_starttag(self, tag, attrs):
-		if tag == 'img':
-			print("IMG tag with attrs %s\n" % repr(attrs))
-
 import os
-
 import os.path
-
 import json
-
 from sshtunnel import SSHTunnelForwarder
 
+KB_ID_TO_FILENAME_MAP = None
+KB_ID_TO_TITLE_MAP = None
+KB_ID_TO_TITLE_MAP_FILE = '.article_id_filename_map_v5.json'
 THIS_FILE_DIR = os.path.dirname(os.path.realpath(__file__))
-importPathDefault = 'phpkb_content'
-importPath = input(f'Path to import (default `{importPathDefault}`): ') 
-KB_DIR = os.path.dirname(importPath) if importPath else importPathDefault
+IMPORT_PATH_DEFAULT = 'phpkb_content'
+importPath = input(f'Path to import (default `{IMPORT_PATH_DEFAULT}`): ') 
+KB_DIR = os.path.dirname(importPath) if importPath else IMPORT_PATH_DEFAULT
 TOTAL_PAGES_IMPORTED = 0
 CONNECTION = None
-docs_ru_folder = 'docs/ru'
-hyperlinks_file = os.path.join(docs_ru_folder, '.snippets/hyperlinks_mkdocs_to_kb_map.md')
+DOCS_RU_FOLDER = 'docs/ru'
+HYPERLINKS_FILE = os.path.join(DOCS_RU_FOLDER, '.snippets/hyperlinks_mkdocs_to_kb_map.md')
 
 # Function to search for pattern in hyperlinks file and replace
 def find_url_in_snippet(article_id, anchor):
-    with open(hyperlinks_file, 'r', encoding='utf-8') as file:
+    with open(HYPERLINKS_FILE, 'r', encoding='utf-8') as file:
         lines = file.readlines()
     url = ''
     for line in lines:
@@ -52,34 +46,21 @@ def find_url_in_snippet(article_id, anchor):
             #print(f"Found link and URL for articleId {article_id}: {url}")
     return url
 
-
-def encrypt(message: bytes, key: bytes) -> bytes:
-    return Fernet(key).encrypt(message)
-
-def decrypt(token: bytes, key: bytes) -> bytes:
-    return Fernet(key).decrypt(token)
-
 def importCategoryChildren(parent, categoryDirectory):
-        # category = dict()
-        # category['id', 'title', 'parent_id'] = parent
-        # print(category)
         id = parent[0]
         title = parent[1]
-        # print(id, title)
-        
-        #for id, title, parent_id, in parent:
         c4 = CONNECTION.cursor()    
         c4.execute("""
             SELECT DISTINCT (category_id), category_name, parent_id
             FROM phpkb_categories 
             WHERE category_show='yes' 
-            AND category_status = 'public'
+            AND category_status = 'private'
             AND phpkb_categories.language_id = 2
             AND parent_id = {}
             """.format(id))
         children = c4.fetchall()
         print("\n-----\n\nCategory {}. {}. Children: {}\n".format(id, title, children))
-        dirName = sanitize_filename('{}. {}'.format(id, title))
+        dirName = sanitize_filename('{}. {}'.format(id, str(title)))
         categoryDir = os.path.join(categoryDirectory, dirName)
         if os.path.exists(categoryDir): 
             print('Deleting dir:' + categoryDir)
@@ -94,7 +75,6 @@ def importCategoryChildren(parent, categoryDirectory):
         
 def importArtciclesInCategory (categoryId, categoryDir):
     c = CONNECTION.cursor()
-    #c2 = CONNECTION.cursor()
     c.execute(f"""
             SELECT DISTINCT (phpkb_articles.article_id), phpkb_articles.article_content, phpkb_articles.article_title 
             FROM phpkb_articles, phpkb_relations, phpkb_categories 
@@ -108,10 +88,13 @@ def importArtciclesInCategory (categoryId, categoryDir):
     pages = 0
     for id, content, title in articles:
      
-        # if os.path.exists(os.path.join(categoryDir, "article-{id}-{title}.md".format( id=id, title= sanitize_filename(title))): continue
-        sanitizedTitle=sanitize_filename(title)
-        filename = os.path.join(categoryDir, f"article-{id}-{sanitizedTitle}.md")
-        filename_html = os.path.join(categoryDir, f"article-{id}-{sanitizedTitle}.html")
+        sanitizedTitle = sanitize_filename(str(title))
+        existingFilename = findFilenameByArticleId(id, DOCS_RU_FOLDER)
+        if existingFilename:
+            sanitizedTitle = existingFilename
+        else: updateMappingJson(id, sanitizedTitle, KB_ID_TO_TITLE_MAP, KB_ID_TO_TITLE_MAP_FILE)
+        filename = os.path.join(categoryDir, f"{id}-{sanitizedTitle}.md")
+        filename_html = os.path.join(categoryDir, f"{id}-{sanitizedTitle}.html")
         print ('    Importing article: ' + filename)
         
         with open(filename, "w+") as b:
@@ -126,6 +109,9 @@ def importArtciclesInCategory (categoryId, categoryDir):
             # Remove redundant new lines
             pattern = re.compile(r'^\n^\n\n*', flags=re.MULTILINE)
             markdown = re.sub(pattern, r'\n', markdown)
+            # Remove redundant spaces before new lines
+            pattern = re.compile(r' +\n', flags=re.MULTILINE)
+            markdown = re.sub(pattern, r'\n', markdown)
             # Remove redundant TOC
             pattern = re.compile(r'(#+ +|\*\* ?)Содержание.*\n*((( {0,4}|\t*)(\d\.|-).*\n+)*\n* {0,4})*\n', flags=re.MULTILINE)
             markdown = re.sub(pattern, r'', markdown)
@@ -137,7 +123,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
             # Replace Related Articles heading with placeholder
             markdown = markdown.replace('## Связанные статьи', '--8<-- "related_topics_heading.md"')
             # Replace product name with placeholder
-            markdown = markdown.replace('Comindware Business Application Platform', '{{ productName }}')
+            markdown = markdown.replace('Comindware Platform', '{{ productName }}')
             # Reformat images with captions
             pattern = re.compile(r'(!\[(.*)\]\(.*\))\n\n\2', flags=re.MULTILINE)
             markdown = re.sub(pattern, r'_\1_', markdown)
@@ -171,7 +157,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
                     replacementRegex = fr'[{articleName}](https://kb.comindware.ru/article.php?id=\2)'
                     markdown = re.sub(pattern, replacementRegex, markdown, count=1)
             # Replace article links in markdown with URL from hyperlinks map
-            pattern = r'\(https://kb\.comindware\.ru.+?((article.php\?id=)|-)(\d+)(?(2)|\.html)(#?)(.*?)\)'
+            pattern = r'\(https://kb\.comindware\.ru.+?((article\\?\.php\\?\?id=)|-)(\d+)(?(2)|\.html)(#?)(.*?)\)'
             foundLinks = re.finditer(pattern, markdown)
             for link in foundLinks:
                 article_id = link.group(3)
@@ -180,7 +166,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
                     anchor = link.group(5)
                 url = find_url_in_snippet(article_id, anchor)
                 if url:
-                    pattern = r'\(https://kb\.comindware\.ru.+?((article.php\?id=)|-)({0})(?(2)|\.html).*?\)'.format(article_id)
+                    pattern = r'\(https://kb\.comindware\.ru.+?((article\\?\.php\\?\?id=)|-)({0})(?(2)|\.html).*?\)'.format(article_id)
                     markdown = re.sub(pattern, url, markdown, count=1)
                     print (f'Replaced {link.group(0)} with {url}')
             #markdown = markdown.replace('https://kb.comindware.ru/category.php?id=', '{{ kbCategoryURLPrefix }}')
@@ -192,19 +178,18 @@ def importArtciclesInCategory (categoryId, categoryDir):
     return pages
 
 
-def fetchCategories(show='yes', status='public', language_id=2, parent_id=''):
+def fetchCategories(show='yes', status='private', language_id=2, parent_id=''):
 
     c = CONNECTION.cursor()    
 
-    c.execute("""
+    c.execute(f"""
             SELECT DISTINCT category_id, category_name, parent_id
             FROM phpkb_categories 
-            WHERE category_show='yes' 
-            AND category_status = 'public'
-            AND phpkb_categories.language_id = 2
+            WHERE category_show='{show}' 
+            AND category_status = '{status}'
+            AND phpkb_categories.language_id = {language_id}
             AND parent_id = '{parent_id}'
-            """.format(parent_id = parent_id))
-
+            """)
     categories = c.fetchall()
     return categories
 
@@ -216,6 +201,13 @@ def listCategories(categories):
         index += 1
 
 def main():
+    
+    global KB_ID_TO_TITLE_MAP
+        
+    KB_ID_TO_TITLE_MAP = loadMappingJson(KB_ID_TO_TITLE_MAP_FILE)
+    
+    if len(KB_ID_TO_TITLE_MAP) == 0:
+        KB_ID_TO_TITLE_MAP = dict()
     
     with open(".serverCredentials.json", "r") as serverCredentialsFile: 
         
@@ -316,6 +308,69 @@ def main():
     CONNECTION.close()
     server.close()
     server.stop()
+    
+def findFilenameByArticleId(article_id, docs_dir):
+    """
+    Find the filename in the specified docs directory containing the specified kbId.
+    Uses a cached dictionary to speed up subsequent lookups.
+    
+    Args:
+        article_id (str): The kbId to search for.
+        docs_dir (str): The directory to scan for markdown files.
+        
+    Returns:
+        str: The filename without the .md extension if found, else None.
+    """
+    global KB_ID_TO_FILENAME_MAP
+    
+    # Initialize and populate the mapping if not already done
+    if KB_ID_TO_FILENAME_MAP is None:
+        KB_ID_TO_FILENAME_MAP = {}
+        if not os.path.isdir(docs_dir):
+            raise FileNotFoundError(f"The directory '{docs_dir}' does not exist.")
+        
+        # Build the mapping from kbId to filenames
+        for root, _, files in os.walk(docs_dir):
+            for file in files:
+                if file.endswith(".md"):
+                    file_path = os.path.join(root, file)
+                    filename = os.path.splitext(file)[0]
+                    if not filename=='index':
+                        with open(file_path, "r", encoding="utf-8") as f:
+                            for line in f:
+                                match = re.match(r"kbId:\s*(\S+)", line.strip())
+                                if match:
+                                    kb_id = match.group(1)
+                                    KB_ID_TO_FILENAME_MAP[kb_id] = filename
+                                    break  # Stop scanning this file after finding kbId
+    
+    foundFilename = KB_ID_TO_FILENAME_MAP.get(str(article_id))
+    foundTitle = KB_ID_TO_TITLE_MAP.get(str(article_id))
+    if not foundFilename:
+            articleAnchor = find_url_in_snippet(article_id, None)
+            if articleAnchor:
+                articleAnchor = re.sub(r'\[(.*)\]', r'\1', articleAnchor)
+                KB_ID_TO_FILENAME_MAP[str(article_id)] = articleAnchor
+            elif foundTitle:
+                KB_ID_TO_FILENAME_MAP[str(article_id)] = foundTitle
+                
+                
+    # Lookup in the cached dictionary
+    return KB_ID_TO_FILENAME_MAP.get(str(article_id))
+
+def updateMappingJson(key, value, mapping, mappingFilename):
+    mapping.update({str(key):value})
+    with open(mappingFilename, "w") as mappingFile: 
+        mappingJson = json.dumps(mapping, indent = 4, ensure_ascii=False)
+        print(mappingJson)
+        mappingFile.write(mappingJson)
+        
+def loadMappingJson(mappingFilename):
+
+    with open(mappingFilename, "r") as mappingJsonFile: 
+        mappingJsonFileContent = mappingJsonFile.read()
+        mappingJson = json.loads(mappingJsonFileContent) if mappingJsonFileContent else dict()
+        return mappingJson
 
 if __name__ == "__main__":
     main()

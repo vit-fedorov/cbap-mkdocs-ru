@@ -1,6 +1,6 @@
 ---
 title: Атрибут типа «Список значений»
-kbId: 2244
+kbId: 4779
 ---
 
 # Атрибут типа «Список значений» {: #attribute_enum}
@@ -20,6 +20,8 @@ kbId: 2244
 
     _![Свойства атрибута типа «Список значений»](attribute_enum_properties.png)_
 
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+
 - Вкладка «**Список значений**»
     - **Системное имя** **(обязательное поле)** — системное имя элемента списка.
     - **EN** — английское название пункта в списке.
@@ -30,7 +32,7 @@ kbId: 2244
 
     _![Список значений](attribute_enum_properties_value_list_tab.png)_
 
-## Создание элементов списка значений
+## Создание элементов списка значений {: .pageBreakBefore }
 
 1. На вкладке «**Список значений**» нажмите кнопку «**Создать**».
 2. Нажмите поле «**Системное имя**» и введите системное имя элемента списка.
@@ -54,7 +56,7 @@ _![Удаление элементов из списка значений](attri
 
 ## Пример использования
 
-!!! Tip "Выбор типа транспортного средства из списка значений"
+!!! example "Выбор типа транспортного средства из списка значений"
 
     См. также статьи *«[Атрибут типа «Список значений». Вычисление значения по справочнику][attribute_enum_calculate_registry]»* и *«[Атрибут типа «Список значений». Вычисление текущего значения][attribute_enum_calculate_current_value]»*.
 
@@ -72,22 +74,22 @@ _![Удаление элементов из списка значений](attri
         | passengerCar  | Car     | Легковой автомобиль | <span style="background-color: #0000ff; color: #ffffff;">#0000ff</span> | <i class="fa-light fa-car">‌</i> car                 |
         | truck         | Truck   | Пикап               | <span style="background-color: #00ff00;">#00ff00</span>                 | <i class="fa-light fa-truck">‌</i> truck             |
         | van           | Minivan | Микроавтобус        | <span style="background-color: #ffff00;">#ffff00</span>                 | <i class="fa-light fa-van-shuttle">‌</i> van-shuttle |
-            
+
 
     **Результирующее поведение**
 
     - Поле _«Тип транспортного средства»_ будет отображаться как раскрывающийся список с названиями и значками автомобилей, пункты списка будут окрашены указанными цветами:
-        
+
     _![Раскрывающийся список значений на форме](img/attribute_enum_example.png)_
+
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-**[Атрибут типа «Список значений». Вычисление значения по справочнику][attribute_enum_calculate_registry]**
+- _[Атрибут типа «Список значений». Вычисление значения по справочнику][attribute_enum_calculate_registry]_
+- _[Атрибут типа «Список значений». Вычисление текущего значения**][attribute_enum_calculate_current_value]_
+- _[Общие свойства атрибутов][attribute_common_properties]_
+- _[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]_
 
-[**Атрибут типа «Список значений». Вычисление текущего значения**][attribute_enum_calculate_current_value]
-
-**[Общие свойства атрибутов][attribute_common_properties]**
-
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
-
+</div>
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

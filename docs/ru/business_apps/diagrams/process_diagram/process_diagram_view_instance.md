@@ -1,6 +1,6 @@
 ---
 title: Использование диаграммы экземпляра процесса
-kbId: 2355
+kbId: 4723
 tags:
   - диаграмма экземпляра процесса
   - цепочка событий
@@ -52,9 +52,7 @@ hide:
 4. В столбце «**Запущенные экземпляры**» нажмите гиперссылку с ID экземпляра процесса.
 5. Отобразится диаграмма экземпляра.
 
-_![Диаграмма экземпляра процесса](img/process_diagram_view_instance.png)_
-
-## Области на странице диаграммы экземпляра процесса
+## Области на странице диаграммы экземпляра процесса {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 1. **Кнопки операций с экземпляром и элементами процесса**
 
@@ -90,13 +88,17 @@ _![Диаграмма экземпляра процесса](img/process_diagram
 
     - **Журнал изменений** — [список событий](#events_chain_view), произошедших в ходе выполнения процесса.
 
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+
 3. **Кнопки масштабирования диаграммы**
 
       --8<-- "process_diagram_scale_buttons.md"
 
-4. **Позиции токенов** — элементы, на которых находятся токены, выделяются жёлтой или зелёной рамкой.
+4. **Позиции токенов** — элементы, на которых находятся токены, выделяются жёлтой или зелёной рамкой. {% include-markdown ".snippets/pdfEndOfBlockHack.md" %}
 
-## Создание токена {: #token_create}
+_![Диаграмма экземпляра процесса](img/process_diagram_view_instance.png)_
+
+## Создание токена {: #token_create .pageBreakBefore }
 
 На диаграмме процесса может быть одновременно несколько токенов на разных элементах.
 
@@ -126,12 +128,14 @@ _![Диаграмма экземпляра процесса](img/process_diagram
 
 _![Просмотр цепочки событий экземпляра процесса](img/process_diagram_view_events_chain.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Управление версиями диаграммы процесса][process_diagram_version_control]**
+- _[Управление версиями диаграммы процесса][process_diagram_version_control]_
+- _[Публикация диаграммы процесса][process_diagram_publish]_
+- _[Просмотр диаграммы процесса][process_diagram_view]_
 
-**[Публикация диаграммы процесса][process_diagram_publish]**
-
-**[Просмотр диаграммы процесса][process_diagram_view]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

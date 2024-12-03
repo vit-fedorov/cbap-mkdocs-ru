@@ -8,7 +8,7 @@ tags:
   - QR-код
 hide:
   - tags
-kbId: 2393
+kbId: 4764
 ---
 
 # Атрибут типа «Штрихкод» {: #attribute_barcode}
@@ -27,7 +27,7 @@ _![Свойства атрибута типа «Штрихкод»](img/attribut
 
 ## Пример использования
 
-!!! Tip "Формирование на форме QR-кода со ссылкой на веб-сайт"
+!!! example "Формирование на форме QR-кода со ссылкой на веб-сайт"
 
     **Конфигурация приложения**
 
@@ -47,10 +47,13 @@ _![Свойства атрибута типа «Штрихкод»](img/attribut
 
     _![Редактирование QR-кода на форме](attribute_qrcode_example.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Общие свойства атрибутов][attribute_common_properties]**
+- _[Общие свойства атрибутов][attribute_common_properties]_
+- _[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]_
 
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

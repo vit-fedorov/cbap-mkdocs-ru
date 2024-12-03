@@ -1,6 +1,6 @@
 ---
 title: Атрибут типа «Аккаунт»
-kbId: 2249
+kbId: 4774
 ---
 
 # Атрибут типа «Аккаунт» {: #attribute_account}
@@ -23,18 +23,19 @@ kbId: 2249
 
 _![Свойства атрибута типа «Аккаунт»](attribute_account_properties.png)_
 
-## Пример использования
+## Пример использования {: #example}
 
 --8<-- "attribute_property_attribute_linking_example.md"
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Общие свойства атрибутов][attribute_common_properties]**
+- _[Общие свойства атрибутов][attribute_common_properties]_
+- _[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]_
+- _[Шаблон аккаунта][account_templates]_
+- _[Атрибут типа «Запись»][attribute_record]_
 
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
-
-**[Шаблон аккаунта][account_templates]**
-
-**[Атрибут типа «Запись»][attribute_record]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

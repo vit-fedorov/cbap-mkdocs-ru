@@ -31,7 +31,7 @@ docker images
 
 ```bash
 docker tag IMAGE-NAME[:TAG] \
-	REGISTRY-NAME/REPO-NAME[:TAG]
+    REGISTRY-NAME/REPO-NAME[:TAG]
 docker push REGISTRY-NAME/REPO-NAME[:TAG]
 ```
 

@@ -1,6 +1,6 @@
 ---
 title: Шаблон записи
-kbId: 2221
+kbId: 4759
 ---
 
 # Шаблон записи {: #record_templates}
@@ -53,11 +53,14 @@ kbId: 2221
 
 _![Свойства шаблона записи](record_templates_properties.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Общие свойства шаблонов][template_common_properties]**
+- _[Общие свойства шаблонов][template_common_properties]_
+- _[Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление][templates]_
 
-**[Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление][templates]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

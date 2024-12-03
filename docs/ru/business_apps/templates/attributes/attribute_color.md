@@ -10,7 +10,7 @@ tags:
   - вычислить цвет
 hide:
   - tags
-kbId: 2627
+kbId: 4763
 ---
 
 # Атрибут «Цвет» {: #attribute_color}
@@ -35,7 +35,7 @@ kbId: 2627
 
 ### Условное окрашивание строк таблицы {: .admonition-title #table_conditional_color_example}
 
-**Конфигурация приложения** 
+**Конфигурация приложения**
 
 - Шаблон записи _«Этапы заявки»_
     - Атрибут _«Процент выполнения»_
@@ -62,11 +62,19 @@ kbId: 2627
         ``` turtle
         # 16711680 — десятичный код красного цвета,
         # 16776960 — жёлтого, 65280 — зелёного.
-        IF($Protsentvypolneniya < 30, 16711680, 
-            IF($Protsentvypolneniya < 50, 16776960, 
+        IF($Protsentvypolneniya < 30, 16711680,
+            IF($Protsentvypolneniya < 50, 16776960,
                 65280))
-        ``` 
+        ```
 
+{% if pdfOutput %}
+</div>
+<div class="admonition example" markdown="block">
+
+Условное окрашивание строк таблицы — продолжение
+{: .admonition-title }
+
+{% endif %}
 **Результирующее поведение**
 
 1. Создайте запись в шаблоне _«Этапы заявки»_.
@@ -110,6 +118,16 @@ _![Окрашивание строк таблицы с помощью форму
         - _Дата создания_
         - _Статус заявки_
         - _Цвет_
+
+{% if pdfOutput %}
+</div>
+<div class="admonition example" markdown="block">
+
+Окрашивание строк таблицы по справочнику статусов — продолжение
+{: .admonition-title }
+
+{% endif %}
+
 - Сценарий
     - **Событие**
         - **Тип: изменение записи**
@@ -141,18 +159,17 @@ _![Окрашивание строк таблицы по справочнику]
 
 </div>
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Таблица. Настройка в шаблоне][table_configure_template]**
+- _[Таблица. Настройка в шаблоне][table_configure_template]_
+- _[Таблица. Настройка на форме][form_dynamic_elements_table]_
+- _[Шевроны. Настройка представления][form_dynamic_elements_chevron]_
+- _[Сектора диаграмм. Окрашивание по атрибуту «Цвет»][form_dynamic_elements_color_diagram_example]_
+- _[Системные атрибуты][attributes_system]_
+- _[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]_
 
-**[Таблица. Настройка на форме][form_dynamic_elements_table]**
-
-**[Шевроны. Настройка представления][form_dynamic_elements_chevron]**
-
-**[Сектора диаграмм. Окрашивание по атрибуту «Цвет»][form_dynamic_elements_color_diagram_example]**
-
-**[Системные атрибуты][attributes_system]**
-
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

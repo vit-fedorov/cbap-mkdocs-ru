@@ -1,5 +1,6 @@
 nav:
     - architect_desktop.md
+    - architect_example.md
     - version_control.md
     - conversations.md
     - process_architecture_modeling

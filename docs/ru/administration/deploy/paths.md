@@ -1,6 +1,6 @@
 ---
 title: Пути и содержимое директорий экземпляра ПО
-kbId: 2502
+kbId: 4620
 ---
 
 # Пути и содержимое директорий экземпляра ПО {: #paths}
@@ -27,6 +27,7 @@ kbId: 2502
 - `/var/lib/comindware/<instanceName>/Database/snapshots` — снимки данных Apache Ignite.
 - `/var/lib/comindware/<instanceName>/Database/wal` — файлы журнала предварительной записи.
 - `/var/lib/comindware/<instanceName>/Streams` — загруженные пользователями и сформированные системой файлы, которые прикреплены к соответствующим атрибутам.
+{: .pageBreakAfter }
 - Временные данные, обеспечивающие работу экземпляра ПО. В этих папках нет пользовательских данных и файлов базы данных экземпляра ПО:
     - `/var/lib/comindware/<instanceName>/Temp`
     - `/var/lib/comindware/<instanceName>/Database/cache`
@@ -43,7 +44,7 @@ kbId: 2502
 
 База данных по умолчанию находится в директории с экземпляром ПО: `C:\ProgramData\Comindware\Instances\<instanceName>`. Здесь `<instanceName>` — имя экземпляра ПО.
 
-Просмотреть фактические пути к директориям экземпляра ПО можно в Утилите администрирования. См. статью *«[Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта][instance_configure_windows]»*.
+Просмотреть фактические пути к директориям экземпляра ПО можно в Утилите администрирования. См. статью *«[Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта][admin_utility_instance_configure]»*.
 
 - `C:\Program Files\Comindware\CBAP` — исполняемые файлы ПО разных версий.
 - `C:\ProgramData\сomindware\configs` — общие файлы конфигурации ПО.
@@ -63,14 +64,16 @@ kbId: 2502
 
 {% endif %}
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
 {% if adminGuideWindows or kbExport %}
-**[Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта][instance_configure_windows]**
+- _[Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта][admin_utility_instance_configure]_
 {% endif %}
+- _[Антивирусное ПО. Настройка исключений: пути и файлы {{ productName }}][antivirus_exceptions_configure]_
+- _[Подсистема журналирования][logging_engine]_
 
-**[Антивирусное ПО. Настройка исключений: пути и файлы {{ productName }}][antivirus_exceptions_configure]**
-
-**[Подсистема журналирования][logging_engine]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

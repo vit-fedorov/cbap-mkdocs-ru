@@ -1,7 +1,7 @@
 ---
 title: Аутентификация через AD. Настройка контроллера домена и экземпляра ПО
 kbTitle: Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО
-kbId: 2517
+kbId: 4605
 ---
 
 # Аутентификация через AD. Настройка контроллера домена и экземпляра ПО {: #ad_authentication_configure}
@@ -213,12 +213,14 @@ kbId: 2517
 
     Здесь `<username>` — имя любого пользователя домена, для которого известен пароль.
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Сервер каталогов. Настройка подключения][ad_connection]**
+- _[Сервер каталогов. Настройка подключения][ad_connection]_
+- _[Синхронизация с сервером каталогов (Active Directory)][accounts_dc_sync]_
+- _[Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя][sso_authenticatation_configure]_
 
-**[Синхронизация с сервером каталогов (Active Directory)][accounts_dc_sync]**
-
-**[Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя][sso_authenticatation_configure]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

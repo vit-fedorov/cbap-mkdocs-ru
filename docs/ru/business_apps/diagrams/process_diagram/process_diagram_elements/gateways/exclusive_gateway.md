@@ -1,6 +1,6 @@
 ---
 title: Развилка «или/или»
-kbId: 2373
+kbId: 4747
 tags:
   - диаграммы
   - диаграмма процесса
@@ -29,7 +29,7 @@ hide:
 
 *![Пример использования развилок «или/или»](exclusive_gateway_example.png)*
 
-## Операции в меню элемента «Развилка «или/или»
+## Операции в меню элемента «Развилка «или/или» {: .pageBreakBefore }
 
 - **Действия**
     - **Свойства** <i class="fa-light fa-gear"></i> — переход к окну [свойств развилки «или/или»](#свойства-развилки-илиили).
@@ -48,7 +48,7 @@ hide:
 
 *![Основные свойства развилки «или/или»](exclusive_gateway_general_properties.png)*
 
-### Дополнительные
+### Дополнительные {: .pageBreakBefore }
 
 На этой вкладке можно настроить специфические свойства **развилки «или/или»**.
 
@@ -60,14 +60,15 @@ hide:
 
 *![Дополнительные свойства развилки «или/или»](exclusive_gateway_advanced_propertes.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Развилка «и»][process_diagram_elements_gateway_parallel]**
+- _[Развилка «и»][process_diagram_elements_gateway_parallel]_
+- _[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]_
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
-**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
-
-**[Элементы диаграммы процесса][process_diagram_elements]**
-
-**[Редактирование диаграммы процесса][process_diagram_designer]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -1,6 +1,6 @@
 ---
 title: Создание оргединицы
-kbId: 2420
+kbId: 4849
 tags:
     - организационная структура
     - организационно-штатная структура
@@ -37,7 +37,7 @@ hide:
 --8<-- "organizational_structure_unit_created.md"
 --8<-- "organizational_structure_name_unit.md"
 
-### Создание с помощью кнопки «Создать»
+### Создание с помощью кнопки «Создать» {: .pageBreakBefore }
 
 1. В [реестре оргединиц][architect_organizational_structure_modelling] установите флажок выбора в строке оргединицы.
 2. Нажмите кнопку «**Создать**» и в раскрывающемся меню выберите пункт «**Подразделение**» или «**Должность**».
@@ -59,14 +59,15 @@ hide:
 
     *![Ввод названия новой оргединицы на панели навигации](organizational_structure_modeling_rename_on_creation.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра оргединиц][architect_organizational_structure_modelling]**
+- _[Просмотр реестра оргединиц][architect_organizational_structure_modelling]_
+- _[Настройка оргединицы][architect_configuring_organizational_unit]_
+- _[Переименование оргединицы][architect_renaming_organizational_unit]_
+- _[Использование системы — Панель навигации][navigation_panel]_
 
-**[Настройка оргединицы][architect_configuring_organizational_unit]**
-
-**[Переименование оргединицы][architect_renaming_organizational_unit]**
-
-**[Использование системы — Панель навигации][navigation_panel]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

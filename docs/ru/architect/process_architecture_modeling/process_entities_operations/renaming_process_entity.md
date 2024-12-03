@@ -1,6 +1,6 @@
 ---
 title: Переименование элемента процессной архитектуры
-kbId: 2433
+kbId: 4838
 tags:
     - процессная архитектура
     - элемент процессной архитектуры
@@ -23,20 +23,21 @@ hide:
 
     *![Ввод названия элемента на панели навигации](process_architecture_modeling_rename_on_creation.png)*
 
-## Переименование с помощью конструктора диаграммы
+## Переименование с помощью конструктора диаграммы {: .pageBreakBefore }
 
 --8<-- "process_architecture_edit_diagram.md"
 --8<-- "process_architecture_edit_diagram_click_properties.md"
 6. В панели свойств справа введите требуемое название в поле «**Наименование**».
     *![Переименование процесса с помощью конструктора диаграммы](process_architecture_modeling_rename_from_properties.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра процессов][architect_process_architecture_modelling]**
+- _[Просмотр реестра процессов][architect_process_architecture_modelling]_
+- _[Создание элемента процессной архитектуры][architect_creating_process_entity]_
+- _[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]_
 
-**[Создание элемента процессной архитектуры][architect_creating_process_entity]**
-
-**[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]**
-
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

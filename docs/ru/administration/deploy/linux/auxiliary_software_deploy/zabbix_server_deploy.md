@@ -1,6 +1,6 @@
 ---
 title: Zabbix Server, Zabbix Agent, Zabbix Frontend и MySQL. Установка и настройка
-kbId: 2292
+kbId: 4607
 ---
 
 # Zabbix Server, Zabbix Agent, Zabbix Frontend и MySQL. Установка и настройка {: #zabbix_server_deploy}
@@ -11,7 +11,7 @@ kbId: 2292
 
 *Zabbix Server* можно развернуть только на Linux-машине, здесь приведён пример установки и конфигурирования на Ubuntu 22.04 LTS. В работе *Zabbix Server* использует СУБД MySQL, либо PostgreSQL. Здесь представлены настройки для MySQL.
 
-*Zabbix Agent* можно установить на машину под управлением ОС Windows или Linux. Здесь представлены краткие инструкции по установке и настройке агента на машине с Ubuntu 22.04 LTS и установленным сервером Zabbix. Инструкции по установке Zabbix Agent на отдельной машине см. в статье «[Zabbix Agent. Инструкции по установке]({{ kbArticleURLPrefix }}2291)».
+*Zabbix Agent* можно установить на машину под управлением ОС Windows или Linux. Здесь представлены краткие инструкции по установке и настройке агента на машине с Ubuntu 22.04 LTS и установленным сервером Zabbix. Инструкции по установке Zabbix Agent на отдельной машине см. в статье «[Zabbix Agent. Инструкции по установке][zabbix_agent_deploy]».
 
 ## Установка  Zabbix Server
 
@@ -69,9 +69,8 @@ kbId: 2292
     ```
 
 6. Запустите скрипт `mysql_secure_installation` и в интерактивном режиме согласитесь удалить тестовую базу данных и аккаунт анонимного пользователя:
-{: .pageBreakBefore }
 
-    ``` sh
+    ``` { .sh .pageBreakAfter title="Удаление анонимного пользователя MySQL" }
     /usr/bin/mysql_secure_installation
 
     Securing the MySQL server deployment.
@@ -88,7 +87,11 @@ kbId: 2292
     Using existing password for root.
 
     Change the password for root ? (Press y|Y for Yes, any other key for No) : n
+    {% if pdfOutput %}
+    ```
 
+    ``` {: .sh title="Удаление анонимного пользователя MySQL — продолжение" .pageBreakBefore }
+    {% endif %}
     By default, a MySQL installation has an anonymous user,
     allowing anyone to log into MySQL without having to have
     a user account created for them. This is intended only for
@@ -135,7 +138,7 @@ kbId: 2292
 3. Создайте пользователя `zabbix`. Не забудьте задать пароль:
 
     ``` sh
-    create user zabbix@localhost identified by 'password'; 
+    create user zabbix@localhost identified by 'password';
     grant all privileges on zabbix.* to zabbix@localhost;
     SET GLOBAL log_bin_trust_function_creators = 1;
     quit;
@@ -214,6 +217,8 @@ kbId: 2292
 
     _![Завершение установки Zabbix Frontend](https://kb.comindware.ru/assets/img_63af071cc182b.png)_
 
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+
 5. В открывшейся форме ведите учётные данные встроенного суперпользователя:
 
     ``` sh
@@ -227,8 +232,8 @@ kbId: 2292
 
 !!! note "Примечание"
 
-    Следующие шаги предназначены исключительно для настройки мониторинга ресурсов машины с установленным Zabbix Server.   
-  
+    Следующие шаги предназначены исключительно для настройки мониторинга ресурсов машины с установленным Zabbix Server.
+
     Для установки и настройки Zabbix Agent на сторонние машины используйте соответствующие инструкции. См. статью «[Zabbix Agent. Инструкции по установке][zabbix_agent_deploy]».
 
 1. Отредактируйте файл конфигурации `/etc/zabbix/zabbix_agentd.conf`:
@@ -251,7 +256,7 @@ kbId: 2292
     # Mandatory: yes, if StartAgents is not explicitly set to 0
     # Default:
     # Server=your.server.ip.address
-    Server=127.0.0.1 
+    Server=127.0.0.1
     ```
 
 3. Отредактируйте директиву `ServerActive`:
@@ -272,6 +277,8 @@ kbId: 2292
     sudo systemctl daemon-reload
     sudo ufw reload
     ```
+
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 6. Запустите *Zabbix Agent* и добавьте его в список автозагрузки:
 

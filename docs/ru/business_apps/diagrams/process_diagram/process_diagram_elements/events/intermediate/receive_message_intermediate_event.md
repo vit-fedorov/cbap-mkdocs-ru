@@ -12,7 +12,7 @@ tags:
   - путь передачи данных
 hide:
   - tags
-kbId: 2382
+kbId: 4739
 ---
 
 # Промежуточное событие-получение сообщения {: #process_diagram_elements_receive_message_intermediate_event}
@@ -36,7 +36,7 @@ kbId: 2382
 - **Изменить тип** — смена типа события.
 --8<-- "process_diagram_quick_create.md"
 
-## Свойства промежуточного события-получения сообщения
+## Свойства промежуточного события-получения сообщения {: .pageBreakBefore }
 
 В окне свойств **промежуточного события-получения сообщения** предусмотрены перечисленные ниже вкладки.
 
@@ -62,7 +62,7 @@ kbId: 2382
 
 - **Прерывающее** — этот флажок отображается, если **промежуточное событие-получение сообщения** [прикреплено к действию][способы-использования-промежуточного-события]. Если флажок установлен, то при наступлении данного события прикреплённое к нему [действие][process_diagram_elements_actions] будет прервано.
 
-### Данные сообщения
+### Данные сообщения {: .pageBreakBefore }
 
 На этой вкладке можно настроить передачу данных из полученного сообщения в процесс.
 
@@ -77,21 +77,19 @@ kbId: 2382
 
 *![Настройка данных сообщения для промежуточного события-получения сообщения](receive_message_intermediate_event_message_data.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[События][process_diagram_elements_events]**
+- _[События][process_diagram_elements_events]_
+- _[Типы промежуточных событий][process_diagram_elements_events_intermediate]_
+- _[Конечные события][process_diagram_elements_events_end]_
+- _[Пути передачи данных][communication_routes]_
+- _[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]_
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
-**[Типы промежуточных событий][process_diagram_elements_events_intermediate]**
-
-**[Конечные события][process_diagram_elements_events_end]**
-
-**[Пути передачи данных][communication_routes]**
-
-**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
-
-**[Элементы диаграммы процесса][process_diagram_elements]**
-
-**[Редактирование диаграммы процесса][process_diagram_designer]**
+</div>
 
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -1,7 +1,7 @@
 ---
 title: Антивирусное ПО. Настройка исключений
 kbTitle: 'Антивирусное ПО. Настройка исключений: пути и файлы {{ productName }}'
-kbId: 2581
+kbId: 4602
 ---
 
 # Антивирусное ПО. Настройка исключений {: #antivirus_exceptions_configure }
@@ -117,8 +117,12 @@ kbId: 2581
 
 {% endif %}
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Пути и содержимое папок экземпляра ПО][paths]**
+- _[Пути и содержимое папок экземпляра ПО][paths]_
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

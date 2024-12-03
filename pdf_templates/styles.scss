@@ -13,12 +13,37 @@
     display: inline;
 }
 
-.md-typeset ul > li {
+.md-typeset ul > li,
+.md-typeset > .admonition,
+.md-typeset * + div.highlight, 
+section + section * + div.highlight,
+.md-typeset > table,
+article>.md-typeset>h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
     margin-left: 0rem !important;
 }
 
 .md-typeset ol > li {
     margin-left: -0.5rem !important;
+}
+
+
+.olReset > ol {
+    list-style: none;
+}
+
+.olReset > ol > li::before {
+    content: counter(start, decimal) ". ";
+    counter-increment: start;
+    margin-left: -1.2rem;
+}
+
+.md-typeset .relatedTopics h2 {
+    margin-left: -0.7rem !important;
 }
 
 .md-typeset ul li > ul {
@@ -38,18 +63,9 @@
     margin-left: 2.7rem !important;
 }
 
-.md-typeset > .admonition {
-    margin-left: 0 !important;
-}
 
-.md-typeset pre,
-.md-typeset * + div.highlight, section + section * + div.highlight {
-    margin-left: 0rem !important;
-}
-
-.md-typeset > table {
-    margin-left: 0 !important;
-    // margin-right: 0rem !important;
+.md-typeset pre {
+    text-indent: 0;
 }
 
 .md-typeset > ul {
@@ -72,7 +88,9 @@
         margin-left: 0.1rem;
     }
 
-    .fa-light {
+    .fa-light,
+    .fl,
+    kbd {
         display: inline;
     }
 
@@ -94,14 +112,7 @@ article.md-typeset {
     margin-right: 0;
 }
 
-article>.md-typeset>h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin-left: 0em !important;
-}
+
 
 .md-typeset h1 {
     margin-top: 0em !important;
@@ -124,13 +135,29 @@ h6 {
     text-indent: 1.5rem
 }
 
-.pdfEndOfBlockHack {
+* .pdfEndOfBlockHack + p:empty,
+* .pageBreakAfter + p:empty
+//.md-typeset p:empty
+{
+    display: none !important;
+}
+
+//* .pdfEndOfBlockHack + *,
+* .pdfPageBreakHard + *,
+* .pageBreakAfter + *
+{
+    margin-top: 0rem;
+}
+
+* p.pdfEndOfBlockHack,
+* p.pdfPageBreakHard {
     visibility: hidden !important;
     font-size: 0px !important;
     max-height: 0px !important;
     padding: 0px !important;
     margin: 0px !important;
 }
+
 
 .pageBreakAfter {
     break-after: always !important;
@@ -154,11 +181,16 @@ h6 {
     margin-right: -1.2rem;
 }
 
+.md-typeset li .admonition p.admonition-title {
+    text-indent: 0rem;
+}
+
 .pageBreakAfterAvoid {
     break-after: avoid !important;
 }
 
-.pageBreakInsideAvoid {
+.pageBreakInsideAvoid,
+.relatedTopics {
     break-inside: avoid !important;
 }
 
@@ -206,6 +238,12 @@ h6 {
 .md-typeset td,
 .md-typeset th {
     break-inside: avoid;
+}
+
+.md-typeset li table {
+
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
 }
 
 .md-typeset__table {
@@ -430,8 +468,6 @@ h3 {
         margin: 0 auto;
     }
 }
-
-/* ]] **/
 
 .md-typeset .tx-content__footer hr,
 footer.md-typeset hr {

@@ -1,6 +1,6 @@
 ---
 title: Переименование оргединицы
-kbId: 2421
+kbId: 4846
 tags:
     - организационная структура
     - организационно-штатная структура
@@ -32,12 +32,14 @@ hide:
 
     *![Переименование оргединицы с помощью формы свойств](organizational_structure_modeling_rename_from_properties.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра оргединиц][architect_organizational_structure_modelling]**
+- _[Просмотр реестра оргединиц][architect_organizational_structure_modelling]_
+- _[Создание оргединицы][architect_creating_organizational_unit]_
+- _[Настройка оргединицы][architect_configuring_organizational_unit]_
 
-**[Создание оргединицы][architect_creating_organizational_unit]**
-
-**[Настройка оргединицы][architect_configuring_organizational_unit]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

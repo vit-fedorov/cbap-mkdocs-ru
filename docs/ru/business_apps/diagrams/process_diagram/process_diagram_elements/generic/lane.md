@@ -1,6 +1,6 @@
 ---
 title: Lane
-kbId: 2369
+kbId: 4751
 tags:
   - диаграммы
   - диаграмма процесса
@@ -37,12 +37,14 @@ hide:
 
 *![Свойства дорожки](lane_general_properties.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
+- _[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]_
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
-**[Элементы диаграммы процесса][process_diagram_elements]**
-
-**[Редактирование диаграммы процесса][process_diagram_designer]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

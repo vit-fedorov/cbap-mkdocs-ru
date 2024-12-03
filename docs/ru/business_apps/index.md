@@ -1,6 +1,6 @@
 ---
 title: Приложения. Определения и настройка
-kbId: 2209
+kbId: 4714
 ---
 
 # Приложения. Определения, создание, настройка, администрирование, удаление {: #apps}
@@ -108,10 +108,13 @@ _![Настройка свойств нового приложения](img/buss
 
 _![Удаление приложения с помощью API](img/applications_delete_api.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Введение в API][api_intro]**
+- _[Введение в API][api_intro]_
+- _[Web API][api_web]_
 
-**[Web API][api_web]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

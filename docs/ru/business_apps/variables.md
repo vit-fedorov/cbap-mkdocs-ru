@@ -6,7 +6,7 @@ tags:
     - глобальные переменные
 hide:
     - tags
-kbId: 2207
+kbId: 4804
 ---
 
 # Переменные приложения. Просмотр списка, настройка и использование {: #variables}
@@ -27,7 +27,7 @@ kbId: 2207
 
 </div>
 
-## Использование переменных приложения в выражениях N3 и C#-скриптах
+## Использование переменных приложения в выражениях N3 и C#-скриптах {: .pageBreakBefore }
 
 !!! warning "Внимание!"
 
@@ -35,12 +35,28 @@ kbId: 2207
 
 - Чтобы получить значение переменной приложения с помощью N3, используйте следующее выражение:
 
+    **По системному имени переменной**
+
     ``` turtle
     # Импортируем функции для работы с переменными
     @prefix globalvariable: <http://comindware.com/ontology/variable#>.
 
     {
-        # Получаем значение глобальной переменной
+        # Находим переменную VariableSystemName в приложении SolutionSystemName
+        # по их системным именам
+        # и возвращаем значение переменной.
+        ("SolutionSystemName" "VariableSystemName") globalvariable:getValueByAlias ?value.
+    }
+    ```
+
+    **По ID переменной**
+
+    ``` turtle
+    # Импортируем функции для работы с переменными
+    @prefix globalvariable: <http://comindware.com/ontology/variable#>.
+
+    {
+        # Получаем значение переменной приложения
         # по её ID (svar.1) и возвращаем её значение.
         "svar.1" globalvariable:getValueById ?value.
     }
@@ -54,27 +70,28 @@ kbId: 2207
 
         ``` cs
         public class Script {
-            // Задайте тип метода Main(), 
+            // Задайте тип метода Main(),
             // соответствующий типу атрибута и переменной приложения:
             // string — Текст, int, decimal — Число, dateTime — Дата и время,
-            // bool — Логический, TimeSpan — Длительность, 
+            // bool — Логический, TimeSpan — Длительность,
             // IEnumerable<string> — Список значений.
-            // ObjectID — переменная, в которой хранится 
+            // ObjectID — переменная, в которой хранится
             // ID экземпляра шаблона записи,
             // в контексте которого выполняется скрипт.
-            // Чтобы просмотреть доступные методы 
-            // в пространстве имён Comindware, 
+            // Чтобы просмотреть доступные методы
+            // в пространстве имён Comindware,
             // введите Comindware и точку
-            
-            public static decimal Main(string ObjectID) {         
+
+            public static decimal Main(string ObjectID) {
                 var result = (decimal)Api.Solution.SolutionVariableService.GetValue("svar.1");
                 return result;
             }
         }
         ```
+
 - Чтобы использовать значение переменной приложения в **Задаче-вызове сценария** используйте образец C#-скрипта из статьи [_«Автонумерация записей с помощью формулы, C#-скрипта или выражения N3»_][auto_numerating_records].
 
-## Просмотр списка и настройка переменных приложения
+## Просмотр списка и настройка переменных приложения {: .pageBreakBefore }
 
 1. На странице «**[Администрирование][apps]**» приложения выберите пункт «**Переменные**» <i class="fa-light fa-dice-five"></i>.
 2. Отобразится список переменных приложения со свойствами переменных:
@@ -98,12 +115,13 @@ _![Список переменных приложения](img/variable_list.png
 
 _![Настройка переменной приложения](img/variable_properties.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Использование переменных в сценарии][scenario_variables]**
+- _[Использование переменных в сценарии][scenario_variables]_
+- _[Автонумерация записей с помощью формулы, C#-скрипта или выражения N3][auto_numerating_records]_
 
-**[Автонумерация записей с помощью формулы, C#-скрипта или выражения N3][auto_numerating_records]**
+</div>
 
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -1,4 +1,5 @@
 ---
+kbId: 5037
 tags:
   - выражения
   - n3
@@ -21,7 +22,7 @@ hide:
 3. Отобразится список доступных переменных.
 *![Список доступных переменных](n3_editor_variable_autocomplete.png)*
 4. Дважды нажмите имя переменной, например `value`, чтобы вставить его в выражение.
-  
+
 ```turtle title="Пример: выражение, возвращающее список всех записей из шаблона аккаунта"
 @prefix account: <http://comindware.com/ontology/account#>.
 @prefix container: <http://comindware.com/ontology/container#>.
@@ -33,14 +34,15 @@ hide:
 }
 ```
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-[Ввод предиката][n3_editor_predicate_autocomplete]
+- _[Ввод предиката][n3_editor_predicate_autocomplete]_
+- _[Ввод префикса][n3_editor_prefix_autocomplete]_
+- _[Редактор выражений][expression_editor]_
+- _[Примеры использования языка N3. База знаний Comindware][n3_use_examples]_
 
-[Ввод префикса][n3_editor_prefix_autocomplete]
-
-**[Редактор выражений][expression_editor]**
-
-**[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

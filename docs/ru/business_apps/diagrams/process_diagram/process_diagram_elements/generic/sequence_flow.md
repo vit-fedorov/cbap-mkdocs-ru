@@ -1,6 +1,6 @@
 ---
 title: Поток управления
-kbId: 2368
+kbId: 4752
 tags:
   - диаграммы
   - диаграмма процесса
@@ -42,7 +42,7 @@ hide:
 *![Подсоединение потока управления к элементу](sequence_flow_connecting.gif)*
 {% endif %}
 
-## Операции в меню элемента «Поток управления»
+## Операции в меню элемента «Поток управления» {: .pageBreakBefore }
 
 - **Действия**
     - **Свойства** <i class="fa-light fa-gear"></i> — переход к окну [свойств потока управления](#свойства-потока-управления).
@@ -59,7 +59,7 @@ hide:
 
 *![Основные свойства потока управления](sequence_flow_general_properties.png)*
 
-### Дополнительные
+### Дополнительные {: .pageBreakBefore }
 
 На этой вкладке можно настроить специфические свойства **потока управления**, соединённого с **[развилкой «или/или»][process_diagram_elements_gateway_exclusive]**. Она не отображается для потоков, соединённых с другими элементами.
 
@@ -68,14 +68,15 @@ hide:
 
 *![Дополнительные свойства потока управления](sequence_flow_advanced_properties.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Развилки][process_diagram_elements_gateways]**
+- _[Развилки][process_diagram_elements_gateways]_
+- _[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]_
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
-**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
-
-**[Элементы диаграммы процесса][process_diagram_elements]**
-
-**[Редактирование диаграммы процесса][process_diagram_designer]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

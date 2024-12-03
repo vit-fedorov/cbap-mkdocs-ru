@@ -1,6 +1,6 @@
 ---
 title: Развилка «и»
-kbId: 2371
+kbId: 4749
 tags:
   - диаграммы
   - диаграмма процесса
@@ -29,7 +29,7 @@ hide:
 
 *![Пример использования развилок «и»](parallel_gateway_example.png)*
 
-## Операции в меню элемента «Развилка «и»
+## Операции в меню элемента «Развилка «и» {: .pageBreakBefore }
 
 - **Действия**
     - **Свойства** <i class="fa-light fa-gear"></i> — переход к окну [свойств развилки «и»](#свойства-развилки-и).
@@ -44,14 +44,15 @@ hide:
 
 *![Свойства развилки «и»](parallel_gateway_general_properties.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Развилка «или/или»][process_diagram_elements_gateway_exclusive]**
+- _[Развилка «или/или»][process_diagram_elements_gateway_exclusive]_
+- _[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]_
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
-**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
-
-**[Элементы диаграммы процесса][process_diagram_elements]**
-
-**[Редактирование диаграммы процесса][process_diagram_designer]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

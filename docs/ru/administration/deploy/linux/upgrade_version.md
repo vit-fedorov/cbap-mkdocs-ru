@@ -1,6 +1,6 @@
 ---
 title: Обновление версии экземпляра ПО
-kbId: 2499
+kbId: 4624
 ---
 
 # Обновление версии экземпляра ПО
@@ -185,8 +185,7 @@ kbId: 2499
             - 3
         ```
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakBefore }
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 9. Удостоверьтесь, что итоговый файл конфигурации `/usr/share/comindware/configs/instance/<instanceName>.yml` выглядит аналогично следующему примеру:
 
@@ -245,6 +244,12 @@ kbId: 2499
     tail -f /var/log/comindware/<instanceName>/Log/sys*
     ```
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]**
+- _[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]_
+
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

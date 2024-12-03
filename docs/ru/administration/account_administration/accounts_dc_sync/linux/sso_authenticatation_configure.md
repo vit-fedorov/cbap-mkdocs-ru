@@ -1,7 +1,7 @@
 ---
 title: SSO-аутентификация. Настройка ПО, контроллера домена и ПК пользователя
 kbTitle: Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя
-kbId: 2583
+kbId: 4613
 ---
 
 # SSO-аутентификация. Настройка ПО, контроллера домена и ПК пользователя {: #sso_authenticatation_configure}
@@ -115,7 +115,7 @@ _![Настройка свойств сервисного аккаунта дл�
 
 3. Создайте keytab-файл аутентификации `<authuser>.keytab`:
 
-    **Альт, Astra Linux, Debian**
+    **Альт Сервер, Astra Linux, Debian**
 
     ``` sh
     ktpass /out <authuser>.keytab /mapuser <authuser> /princ HTTP/<DCName>.<domain.name>@<DOMAIN.NAME> /pass <P@$$W0RD> /crypto RC4-HMAC-NT /ptype KRB5_NT_PRINCIPAL
@@ -246,8 +246,7 @@ _![Настройка свойств сервисного аккаунта дл�
     vim /etc/resolv.conf
     ```
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakBefore }
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 3. Укажите машину `<DCName>` в качестве сервера имён `nameserver`:
 {: .pageBreakBefore }
@@ -298,8 +297,7 @@ _![Настройка свойств сервисного аккаунта дл�
     vim /etc/ntp.conf
     ```
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakAfter}
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 3. Добавьте в файл конфигурации `ntp.conf` поле `server <DOMAIN.NAME> iburst burst prefer`:
 
@@ -412,7 +410,7 @@ _![Настройка свойств сервисного аккаунта дл�
 
     ```
 
-    **Альт**
+    **Альт Сервер**
     {: .pageBreakBefore }
 
     ``` sh
@@ -444,7 +442,7 @@ _![Настройка свойств сервисного аккаунта дл�
     <domain.name> = <DOMAIN.NAME>
     ```
 
-#### Для ОС «Альт»: настройка pam\_winbind.conf
+#### Для ОС «Альт Сервер»: настройка pam\_winbind.conf
 
 1. Откройте для редактирования файл конфигурации `pam_winbind.conf`:
 
@@ -503,7 +501,7 @@ _![Настройка свойств сервисного аккаунта дл�
 
 _![Пример файла instanceName.yml с директивой  isLinuxSSOAuthorization: true](img/sso_authenticatation_configure_yml_file_example.png)_
 
-#### Установка и настройка модуля NGINX SPNEGO
+#### Установка и настройка модуля NGINX SPNEGO {: .pageBreakBefore }
 
 1. Установите модуль _NGINX-SPNEGO_:
 
@@ -534,7 +532,7 @@ _![Пример файла instanceName.yml с директивой  isLinuxSSOA
 
 5. Отредактируйте файл `comindware<instanceName>` согласно следующему примеру:
 
-    ``` sh
+    ``` { .sh .pageBreakAfter title="Пример файла comindware&lt;instanceName&gt;" }
     server {
             listen 8999 http2;
             root /var/www/cmwdata;
@@ -557,7 +555,7 @@ _![Пример файла instanceName.yml с директивой  isLinuxSSOA
     {% if pdfOutput %}
     ```
 
-    ``` sh
+    ``` sh title="Пример файла comindware&lt;instanceName&gt; — продолжение"
     {% endif %}
                 location /async {
                     grpc_pass grpc_cmwdata;
@@ -642,10 +640,13 @@ _![Пример файла instanceName.yml с директивой  isLinuxSSOA
     KRB5_TRACE=/dev/stdout kinit -k -t /etc/nginx/<authuser>.keytab HTTP/<DCName>.<domain.name>
     ```
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО][ad_authentication_configure]**
+- _[Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО][ad_authentication_configure]_
+- _[Аутентификация через OpenID Connect. Настройка подключения и служб][openid_connection]_
 
-**[Аутентификация через OpenID Connect. Настройка подключения и служб][openid_connection]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

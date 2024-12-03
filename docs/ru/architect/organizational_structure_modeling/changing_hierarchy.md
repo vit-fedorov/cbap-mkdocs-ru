@@ -1,6 +1,6 @@
 ---
 title: Изменение иерархии оргединиц
-kbId: 2419
+kbId: 4844
 tags:
     - организационная структура
     - организационно-штатная структура
@@ -35,10 +35,13 @@ hide:
 
 *![Перемещение оргединицы в панели навигации](organizational_structure_modeling_moving_unit_in_navigation.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра оргединиц][architect_organizational_structure_modelling]**
+- _[Просмотр реестра оргединиц][architect_organizational_structure_modelling]_
+- _[Использование системы — Панель навигации][navigation_panel]_
 
-**[Использование системы — Панель навигации][navigation_panel]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

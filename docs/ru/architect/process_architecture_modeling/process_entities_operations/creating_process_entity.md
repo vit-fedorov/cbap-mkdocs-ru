@@ -1,6 +1,6 @@
 ---
 title: Создание элемента процессной архитектуры
-kbId: 2432
+kbId: 4840
 tags:
     - процессная архитектура
     - элемент процессной архитектуры
@@ -34,7 +34,7 @@ hide:
 --8<-- "process_architecture_element_created.md"
 --8<-- "process_architecture_name_element.md"
 
-### Создание с помощью кнопки «Создать»
+### Создание с помощью кнопки «Создать» {: .pageBreakBefore }
 
 1. В [реестре процессов][architect_process_architecture_modelling] установите флажок выбора в строке группы процессов.
 2. Нажмите кнопку «**Создать**» и в раскрывающемся меню выберите пункт «**Группа процессов**», «**Процесс**», «**Ссылка на группу процессов**» или «**Ссылка на процесс**».
@@ -58,13 +58,15 @@ hide:
 
 --8<-- "process_architecture_name_element.md"
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра процессов][architect_process_architecture_modelling]**
+- _[Просмотр реестра процессов][architect_process_architecture_modelling]_
+- _[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]_
+- _[Переименование элемента процессной архитектуры][architect_renaming_process_entity]_
+- _[Использование системы — Панель навигации][navigation_panel]_
 
-**[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]**
+</div>
 
-**[Переименование элемента процессной архитектуры][architect_renaming_process_entity]**
-
-**[Использование системы — Панель навигации][navigation_panel]**
-
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

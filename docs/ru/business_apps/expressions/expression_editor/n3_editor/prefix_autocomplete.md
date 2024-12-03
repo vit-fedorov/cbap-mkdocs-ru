@@ -1,6 +1,6 @@
 ---
 title: Объявление префикса
-kbId: 2477
+kbId: 5042
 tags:
   - выражения
   - n3
@@ -24,15 +24,18 @@ hide:
 3. Выберите префикс в списке, чтобы просмотреть его описание и URI.
 *![Список доступных префиксов N3 с описанием](n3_editor_prefix_autocomplete.png)*
 4. Дважды нажмите префикс, например `math`, чтобы вставить его в выражение.
-  
+
 ```turtle title="Пример: префикс math для математических функций"
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
 ```
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Редактор выражений][expression_editor]**
+- _[Редактор выражений][expression_editor]_
+- _[Примеры использования языка N3. База знаний Comindware][n3_use_examples]_
 
-**[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

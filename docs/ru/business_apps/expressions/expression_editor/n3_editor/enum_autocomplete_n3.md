@@ -1,4 +1,5 @@
 ---
+kbId: 5044
 tags:
   - выражения
   - n3
@@ -35,16 +36,18 @@ hide:
 @prefix cmw: <http://comindware.com/logics#>.
 @prefix taskStatus: <http://comindware.com/ontology/taskStatus#>.
 {
-  ?value cmw:taskStatus taskStatus:inProgress.                 
+  ?value cmw:taskStatus taskStatus:inProgress.
 }
 ```
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Редактор выражений][expression_editor]**
+- _[Редактор выражений][expression_editor]_
+- _[Примеры использования языка N3. База знаний Comindware][n3_use_examples]_
+- _[Атрибут типа «Список значений»][attribute_enum]_
 
-**[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}**
-
-**[Атрибут типа «Список значений»][attribute_enum]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

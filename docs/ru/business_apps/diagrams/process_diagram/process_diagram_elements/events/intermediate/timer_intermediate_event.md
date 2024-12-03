@@ -1,6 +1,6 @@
 ---
 title: Промежуточное событие-таймер
-kbId: 2383
+kbId: 4738
 tags:
   - диаграмма процесса
   - элементы диаграммы процесса
@@ -29,7 +29,7 @@ hide:
 - **Изменить тип** — смена типа события.
 --8<-- "process_diagram_quick_create.md"
 
-## Свойства промежуточного события-таймера
+## Свойства промежуточного события-таймера {: .pageBreakBefore }
 
 В окне свойств **промежуточного события-таймера** предусмотрены перечисленные ниже вкладки.
 
@@ -49,16 +49,16 @@ hide:
 
 *![Дополнительные свойства промежуточного события-таймера](timer_intermediate_event_advanced_properties.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[События][process_diagram_elements_events]**
+- _[События][process_diagram_elements_events]_
+- _[Типы промежуточных событий][process_diagram_elements_events_intermediate]_
+- _[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]_
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
-**[Типы промежуточных событий][process_diagram_elements_events_intermediate]**
-
-**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
-
-**[Элементы диаграммы процесса][process_diagram_elements]**
-
-**[Редактирование диаграммы процесса][process_diagram_designer]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -1,6 +1,6 @@
 ---
 title: Elasticsearch. Настройка подключения
-kbId: 2593
+kbId: 4678
 ---
 
 # Elasticsearch. Настройка подключения {: #elasticsearch_connection}
@@ -17,7 +17,7 @@ kbId: 2593
 
 1. Перейдите в [список подключений][connections].
 2. Дважды нажмите в списке подключение _«ElasticsearchChannel»_ или создайте подключение типа «**Системные подключения**» — «**Elasticsearch**».
-3. Настройте свойства подключения:  
+3. Настройте свойства подключения:
 
     - **Отключить** — установите этот флажок, чтобы временно деактивировать подключение;
     - **Префикс индекса** — введите _уникальный_ префикс записей в БД Elasticsearch для данного экземпляра **{{ productName }}**;
@@ -36,8 +36,12 @@ kbId: 2593
 
 _![Настройка подключения к Elasticsearch](elasticsearch_connection_settings.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Инициализация {{ productName }}][deploy_guide_linux_initialize]**
+- _[Инициализация {{ productName }}][deploy_guide_linux_initialize]_
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

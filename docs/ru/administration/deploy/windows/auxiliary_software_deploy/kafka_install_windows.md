@@ -1,6 +1,6 @@
 ---
 title: Установка Kafka в Windows
-kbId: 2629
+kbId: 4614
 tags:
     - установка Kafka
     - Kafka
@@ -109,19 +109,19 @@ hide:
 13. Укажите следующие пути к файлам службы Kafka:
 
     - **Path**
-  
+
     ``` powershell
     C:\kafka\kafka\bin\windows\kafka-server-start.bat
     ```
 
     - **Startup directory**
-  
+
     ``` powershell
     C:\kafka\kafka\bin\windows\
     ```
 
     - **Arguments**
-  
+
     ``` powershell
     C:\kafka\kafka\config\kraft\server.properties
     ```

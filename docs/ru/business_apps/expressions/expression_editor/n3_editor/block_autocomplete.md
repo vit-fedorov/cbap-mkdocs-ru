@@ -1,6 +1,6 @@
 ---
 title: Ввод заготовки конструкции на языке
-kbId: 2480
+kbId: 5041
 tags:
   - выражения
   - n3
@@ -33,12 +33,14 @@ if { }
 }
 ```
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-[Ввод префикса][n3_editor_prefix_autocomplete]
+- _[Ввод префикса][n3_editor_prefix_autocomplete]_
+- _[Редактор выражений][expression_editor]_
+- _[Примеры использования языка N3. База знаний Comindware][n3_use_examples]_
 
-**[Редактор выражений][expression_editor]**
-
-**[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

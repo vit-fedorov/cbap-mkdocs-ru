@@ -1,6 +1,6 @@
 ---
 title: Apache Ignite. Установка и настройка
-kbId: 2093
+kbId: 4600
 ---
 
 # Apache Ignite. Установка и настройка {: #apache_ignite_deploy}
@@ -21,19 +21,91 @@ Apache Ignite в минимально необходимой конфигура�
 
 ## Установка Apache Ignite
 
-1. Скачайте установочный файл Ignite с веб-сайта: <https://ignite.apache.org/download.cgi#binaries>
-2. Распакуйте архив в папку Ignite, например: `/var/www/ignite`
-3. Установите переменную среды `IGNITE_HOME`, указав путь к папке Ignite без завершающего символа `/`: `export IGNITE_HOME=var/www/ignite`
-4. Дополнительные модули для использования Ignite в сочетании с {{ productName }} не требуются.
-5. Настройте конфигурацию Ignite, изменив файл `Apache.Ignite.exe.config`: `$IGNITE_HOME/platforms/dotnet/bin/Apache.Ignite.exe.config`
-6. Пример файла `Apache.Ignite.exe.config` приведён в разделе [«Пример файла конфигурации Ignite»](#3-пример-файла-конфигурации-ignite).
+1. Скачайте, распакуйте и установите Apache Ignite и задайте права:
+    ```sh
+    wget https://downloads.apache.org/ignite/2.16.0/apache-ignite-2.16.0-bin.zip
+    unzip -q apache-ignite-2.16.0-bin.zip
+    mv apache-ignite-2.16.0-bin /usr/share/ignite
+    chown -R www-data:www-data /usr/share/ignite
+    ```
+2. Установите переменную среды `IGNITE_HOME`, указав путь к папке Ignite без завершающего символа `/`: `export IGNITE_HOME=/usr/share/ignite`
+3. Дополнительные модули для использования Ignite в сочетании с {{ productName }} не требуются.
+4. Скопируйте в папку `/usr/share/ignite` файл `Ignite.config` из папки `/var/www/<instanceName>` (где `<instanceName>` — имя экземпляра ПО).
+5. Пример файла `Ignite.config` представлен в параграфе [«Пример файла конфигурации Ignite»](#3-пример-файла-конфигурации-ignite).
+6. Откройте для редактирования скрипт запуска Ignite `ignite.sh`:
+    ``` sh
+    cd /usr/share/ignite/bin/
+    nano ignite.sh
+    ```
+7. Добавьте в начало скрипта `ignite.sh` следующие строки:
+    ``` sh
+    export "JVM_OPTS=-Xms512m -Xmx4g -XX:MaxDirectMemorySize=1g -Djava.net.preferIPv4Stack=true -XX:+AlwaysPreTouch -XX:+UseG1GC -XX:+ScavengeBeforeFullGC -XX:+DisableExplicitGC -XX:MinHeapFreeRatio=1 -XX:MaxHeapFreeRatio=10 -DIGNITE_QUIET=false -DIGNITE_NO_ASCII=true--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.management/com.sun.jmx.mbeanserver=ALL-UNNAMED --add-opens=jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED --add-opens=java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED --add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.locks=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.math=ALL-UNNAMED --add-opens=java.sql/java.sql=ALL-UNNAMED"
+    export IGNITE_WORK_DIR=/var/lib/comindware/<instanceName>/Database
+    export DEFAULT_CONFIG=/usr/share/ignite/config/Ignite.config
+    ```
+8. Откройте для редактирования скрипт `control.sh`:
+
+    ``` sh
+    nano control.sh
+    ```
+9. Добавьте в скрипт `control.sh` следующие строки:
+    ``` sh
+    DEFAULT_CONFIG=config/Ignite.config
+    ```
+10. Создайте и откройте для редактирования скрипт `ignite_service_create.sh`. Этот скрипт будет создавать и запускать службу Apache Ignite:
+    ``` sh
+    nano ignite_service_create.sh
+    ```
+11. Введите в скрипт `ignite_service_create.sh` следующие директивы:
+    ``` sh
+    #!/bin/bash
+    # create apache ignite daemon service
+    # ver 0.1
+    #
+    sudo cat <<EOF >/lib/systemd/system/ignite.service
+    [Unit]
+    Description=Apache Ignite Service
+    After=network.target
+    [Service]
+    WorkingDirectory=/usr/share/ignite
+    User=www-data
+    Group=www-data
+    PrivateDevices=yes
+    ProtectSystem=full
+    Type=simple
+    ExecReload=/bin/kill -HUP $MAINPID
+    KillMode=mixed
+    KillSignal=SIGTERM
+    TimeoutStopSec=10
+    ExecStart=/usr/share/ignite/bin/ignite.sh
+    SyslogIdentifier=Ignite
+    Restart=on-failure
+    RestartSec=5s
+    [Install]
+    WantedBy=multi-user.target
+    Alias=ignite.service
+    EOF
+    systemctl daemon-reload
+    systemctl enable ignite.service
+    ```
+12. Инициализируйте и запустите службу Apache Ignite с помощью скрипта `ignite_service_create.sh`:
+    ``` sh
+    bash ignite_service_create.sh
+    ```
 
 ## Запуск Apache Ignite {: .pageBreakBefore }
 
-1. Запустите службу Apache Ignite с помощью команды: `/$IGNITE_HOME/bin/ignite.sh -v`; параметр `-v` включает вывод подробных данных в журнал (по умолчанию в журнал Ignite выводятся только краткие сведения).
-2. Если запустить Ignite не удалось, проверьте информацию в журнале, по умолчанию он хранится в папке `$IGNITE_HOME/work/log`.
+1. Запустите службу Apache Ignite:
+    ``` sh
+    systemctl start ignite
+    ```
+2. Проверьте статус узла Apache Ignite:
+    ``` sh
+    cd /usr/share/ignite/bin/
+    bash control.sh --baseline
+    ```
 
-## Пример файла конфигурации Ignite
+## Пример файла конфигурации Ignite {: .pageBreakBefore }
 
 Для стабильной работы Ignite вместе с **{{ productName }}** важны следующие директивы в данном примере:
 
@@ -41,10 +113,9 @@ Apache Ignite в минимально необходимой конфигура�
 - `<discoverySpi type="TcpDiscoverySpi"><ipFinder type="TcpDiscoveryStaticIpFinder"><endpoints> <string>127.0.0.1</string></endpoints></ipFinder></discoverySpi>` — в параметре `TcpDiscoveryStaticIpFinder` укажите адрес сервера.
 - `<dataRegionConfigurations type="DataRegionConfiguration"> <dataRegionConfiguration><name>Persistent</name><persistenceEnabled>true</persistenceEnabled>` — в директиве `dataRegionConfiguration` укажите `<persistenceEnabled>true</persistenceEnabled>`.
 - `<workDirectory>/var/lib/ignite/</workDirectory>>` — укажите рабочую папку Ignite.
-- `<igniteInstanceName>Comindware_Instance2</igniteInstanceName>` — укажите имя экземпляра Ignite.
-{: .pageBreakAvtoAvoid}
+- `<igniteinstanceName>Comindware_Instance2</igniteinstanceName>` — укажите имя экземпляра Ignite.
 
-``` xml
+``` {: .xml title="Пример файла конфигурации Ignite" .pageBreakAfter }
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <configSections>
@@ -60,7 +131,7 @@ Apache Ignite в минимально необходимой конфигура�
 {% if pdfOutput %}
 ```
 
-``` xml title="Пример файла конфигурации Ignite — продолжение"
+``` {: .xml title="Пример файла конфигурации Ignite — продолжение" .pageBreakBefore }
 {% endif %}
       <jvmOptions>
           <string>-Xms512m</string>
@@ -115,8 +186,8 @@ Apache Ignite в минимально необходимой конфигура�
       <includedEventTypes></includedEventTypes>
       <workDirectory>/var/lib/ignite/</workDirectory>
       <jvmDllPath></jvmDllPath>
-      <igniteInstanceName>Comindware_Instance2</igniteInstanceName>
-      <autoGenerateIgniteInstanceName>false</autoGenerateIgniteInstanceName>
+      <igniteinstanceName>Comindware_Instance2</igniteinstanceName>
+      <autoGenerateIgniteinstanceName>false</autoGenerateIgniteinstanceName>
 </igniteConfiguration>
 </configuration>
 ```

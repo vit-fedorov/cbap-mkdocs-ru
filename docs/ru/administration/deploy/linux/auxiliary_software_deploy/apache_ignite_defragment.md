@@ -1,9 +1,11 @@
 ---
 title: Дефрагментация данных Apache Ignite
-kbId: 2495
+kbId: 4603
 ---
 
 # Дефрагментация данных Apache Ignite {: #apache_ignite_defragment}
+
+## Введение
 
 Здесь представлены инструкции по дефрагментации хранилища данных Apache Ignite для ПО **{{ productName }}** в Linux. Дефрагментация хранилища Apache Ignite позволяет повысить производительность работы ПО и сократить объем данных хранилища на диске.
 
@@ -11,86 +13,128 @@ kbId: 2495
 
     Во время дефрагментации хранилища Apache Ignite экземпляр ПО будет недоступен. Поэтому дефрагментацию следует выполнять в нерабочее время.
 
+## Порядок дефрагментации
+
 1. Создайте резервную копию базы данных экземпляра ПО.
 2. Скачайте бинарный дистрибутив Apache Ignite, например [apache-ignite-2.16.0-bin.zip](https://downloads.apache.org/ignite/2.16.0/apache-ignite-2.16.0-bin.zip) или более новую версию.
 3. Перейдите в режим суперпользователя:
 
-    ```
+    ``` sh
     su -
     ```
 
     или
 
-    ```
+    ``` sh
     sudo -i
     ```
 
 4. Распакуйте дистрибутив Apache Ignite в домашнюю папку (здесь и далее `username` — имя текущего пользователя):
 
-    ```
-    unzip apache-ignite-2.16.0-bin.zip -d /home/username/ignite
+    ``` sh
+    unzip apache-ignite-2.16.0-bin.zip -d /usr/share/ignite
     ```
 
 5. Задайте переменную среды `IGNITE_HOME`:
 
-    ```
-    export IGNITE_HOME=/home/username/ignite
+    ``` sh
+    export IGNITE_HOME=/usr/share/ignite
     ```
 
-6. Скопируйте в папку `/home/username/ignite` файл `Ignite.config` из папки `/var/www/instancename` (где `instancename` — имя экземпляра ПО):
+6. Скопируйте в папку `/usr/share/ignite` файл `Ignite.config` из папки `/var/www/<instanceName>` (где `<instanceName>` — имя экземпляра ПО):
 
-    ```
-    cp /var/www/instancename/Ignite.config /home/username/ignite/
+    ``` sh
+    cp /var/www/<instanceName>/Ignite.config /usr/share/ignite/
     ```
 
 7. Перейдите в папку `bin` Apache Ignite:
 
+    ``` sh
+    cd /usr/share/ignite/bin
     ```
-    cd /home/username/ignite/bin
-    ```
-    {{ pdfEndOfBlockHack }}
+
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 8. В файле `control.sh` измените директиву `DEFAULT_CONFIG`:
-{: .pageBreakBefore }
 
-    ```
+    ``` sh
     DEFAULT_CONFIG=config/Ignite.config
     ```
 
 9. Получите список узлов, зарегистрированных в базовой топологии:
 
-    ```
-    sh control.sh --baseline
+    ``` sh
+    bash control.sh --baseline
     ```
 
 10. Назначьте дефрагментацию данных Apache Ignite при перезапуске экземпляра ПО, указав вместо `<id>` идентификаторы узлов, полученные на шаге 9:
 
+    ``` sh
+    bash control.sh --defragmentation schedule --nodes <id>
     ```
-    sh control.sh --defragmentation schedule --nodes <id>
-    ```
+11. Остановите и запустите экземпляр ПО:
 
-11. Деактивируйте кластер Apache Ignite:
-
-    ```
-    sh control.sh --set-state INACTIVE --force
-    ```
-
-12. Остановите и запустите экземпляр ПО:
-
-    ```
-    systemctl stop comindwareinstancename
-    systemctl start comindwareinstancename
+    ``` sh
+    systemctl stop comindware<instanceName>
+    systemctl start comindware<instanceName>
 
     ```
 
-    Здесь `instancename` — имя экземпляра ПО.
+    Здесь `<instanceName>` — имя экземпляра ПО.
 
-13. Дождитесь завершения дефрагментации данных. В процессе дефрагментации Apache Ignite будет вносить сведения в файл журнала вида `/var/lib/comindware/instancename/Database/log/ignite-xxxxxxxx.0.log`. Признаком окончания дефрагментации служит появление в журнале Apache Ignite события: `Defragmentation process complete`.
+12. Инициируйте экземпляр ПО:
+
+    - С помощью командной строки:
+
+        ``` sh
+        curl localhost:<port>
+        ```
+
+        или
+
+        ``` sh
+        curl <instance_fqdn>
+        ```
+
+    - Либо с помощью браузера, перейдя по адресу:
+
+        ``` sh
+        <ip>:<port>
+        ```
+
+        или
+
+        ``` sh
+        <instance_fqdn>
+        ```
+
+    Здесь:
+
+    - `<instance_ip>, <port>` — IP-адрес и порт экземпляра ПО;
+    - `<instance_fqdn>` — адрес веб-сайта с экземпляром ПО.
+
+13. Дождитесь завершения дефрагментации данных.
+
+    !!! note "Примечание"
+
+        - В процессе дефрагментации для просмотра статуса используйте команду:
+        
+        ```
+        watch -cd bash control.sh --defragmentation status
+        ```
+
+        - В процессе дефрагментации Apache Ignite будет вносить сведения в файл журнала вида `/var/lib/comindware/<instanceName>/Database/log/ignite-xxxxxxxx.0.log`. 
+        - По завершении дефрагментации:
+            - в журнале Apache Ignite должно появиться событие: `Defragmentation process complete`;
+            - команда  `watch -cd bash control.sh --defragmentation status` должна вывести сообщение `Defragmentation process complete`.
+
 14. Перезапустите экземпляр ПО, чтобы его снова можно было использовать.
 
+    ``` sh
+    systemctl restart comindware<instanceName>
     ```
-    systemctl restart comindwareinstancename
-    ```
+
+15. Инициируйте экземпляр ПО, также как на шаге 12.
 
 ## Решение возможных проблем {: .pageBreakBefore }
 
@@ -98,7 +142,7 @@ kbId: 2495
 
 1. Добавьте в файл `/etc/security/limits.conf` строки:
 
-    ```
+    ``` sh
     * soft nproc 65535
     * hard nproc 65535
     * soft nofile 65535
@@ -111,19 +155,19 @@ kbId: 2495
 
 2. Добавьте в файл `/etc/pam.d/common-session` строку:
 
-    ```
+    ``` sh
     session required pam_limits.so
     ```
 
 3. Добавьте в файл `/etc/sysctl.conf` строку:
 
-    ```
+    ``` sh
     fs.file-max = 2097152
     ```
 
 4. Раскомментируйте строку и задайте значение в файле `/etc/systemd/user.conf`:
 
-    ```
+    ```  sh
     DefaultLimitNOFILE=65536
     ```
 
@@ -133,15 +177,15 @@ kbId: 2495
     DefaultLimitNOFILE=65536
     ```
 
-6. Откройте для редактирования конфигурацию сервиса экземпляра ПО: 
+6. Откройте для редактирования конфигурацию сервиса экземпляра ПО:
 
-    ```
-    systemctl edit comindwareinstancename.service
+    ```  sh
+    systemctl edit comindware<instanceName>.service
     ```
 
 7. Добавьте в него строки:
 
-    ```
+    ```  sh
     [Service]
     LimitNOFILE=65536
     LimitNOFILESoft=65536
@@ -149,15 +193,14 @@ kbId: 2495
 
 8. Перезагрузите машину и экземпляр ПО.
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-{% if kbExport %}
-**[Резервное копирование и восстановление]({{ kbArticleURLPrefix }})489**
-{% else %}
-**[Резервное копирование и восстановление][backup]**
-{% endif %}
-**[Дефрагментация персистентного хранилища](https://ignite.apache.org/docs/2.11.1/persistence/native-persistence-defragmentation)** (руководство Apache Ignite, английский язык)
+- _[Резервное копирование и восстановление][backup]_
+- _[Дефрагментация персистентного хранилища](https://ignite.apache.org/docs/2.11.1/persistence/native-persistence-defragmentation)_ (руководство Apache Ignite, английский язык)
+- _[Активация, деактивация и управление топологией](https://ignite.apache.org/docs/2.11.1/tools/control-script#activation-deactivation-and-topology-management)_ (руководство Apache Ignite, английский язык)
 
-**[Активация, деактивация и управление топологией](https://ignite.apache.org/docs/2.11.1/tools/control-script#activation-deactivation-and-topology-management)** (руководство Apache Ignite, английский язык)
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

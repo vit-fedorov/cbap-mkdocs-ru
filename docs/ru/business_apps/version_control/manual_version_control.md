@@ -1,7 +1,7 @@
 ---
 title: Ручное управление версиями
 kbTitle: Ручное управление версиями приложения. Экспорт и импорт
-kbId: 2218
+kbId: 4807
 tags:
   - трансфер
   - трансфер метаданных
@@ -99,11 +99,14 @@ hide:
 
 _![Настройка импорта приложения из файла CTF](img/manual_version_import_properties.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Управление версиями приложения][version_control]**
+- _[Управление версиями приложения][version_control]_
+- _[Управление версиями через Git][version_control_git]_
 
-**[Управление версиями через Git][version_control_git]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

@@ -174,29 +174,29 @@ nav:
       - administration/deploy/linux/upload_size_limit_configure.md
     - Развёртывание Comindware Business Application Platform в Windows:
       - Утилита администрирования Comindware. Установка и настройка версий и экземпляров ПО:
-        - administration/deploy/windows/administration_utility/article-2027-Установка
+        - administration/deploy/windows/admin_utility/article-2027-Установка
           и запуск Утилиты администрирования Comindware.md
-        - administration/deploy/windows/administration_utility/article-2028-Установка
+        - administration/deploy/windows/admin_utility/article-2028-Установка
           продукта Comindware Business Application Platform.md
-        - administration/deploy/windows/administration_utility/article-2029-Настройка
+        - administration/deploy/windows/admin_utility/article-2029-Настройка
           конфигурации Утилиты администрирования Comindware.md
-        - administration/deploy/windows/administration_utility/article-2030-Диагностика
+        - administration/deploy/windows/admin_utility/article-2030-Диагностика
           экземпляра продукта.md
-        - administration/deploy/windows/administration_utility/article-2031-Обновление
+        - administration/deploy/windows/admin_utility/article-2031-Обновление
           версии продукта для экземпляра.md
-        - administration/deploy/windows/administration_utility/article-2032-Создание
+        - administration/deploy/windows/admin_utility/article-2032-Создание
           экземпляра продукта, добавление скрытого экземпляра.md
-        - administration/deploy/windows/administration_utility/article-2034-Удаление
+        - administration/deploy/windows/admin_utility/article-2034-Удаление
           версии продукта.md
-        - administration/deploy/windows/administration_utility/article-2035-Запуск,
+        - administration/deploy/windows/admin_utility/article-2035-Запуск,
           остановка и удаление экземпляра продукта.md
-        - administration/deploy/windows/administration_utility/article-2036-Настройка
+        - administration/deploy/windows/admin_utility/article-2036-Настройка
           конфигурации и просмотр фактических путей к папкам экземпляра продукта.md
-        - administration/deploy/windows/administration_utility/article-2037-Индикация
+        - administration/deploy/windows/admin_utility/article-2037-Индикация
           состояния и обновление списка экземпляров продукта.md
-        - administration/deploy/windows/administration_utility/article-2038-Восстановление
+        - administration/deploy/windows/admin_utility/article-2038-Восстановление
           экземпляра продукта из резервной копии в ОС Windows.md
-        - administration/deploy/windows/administration_utility/article-2296-Инициализация
+        - administration/deploy/windows/admin_utility/article-2296-Инициализация
           экземпляра продукта.md
       - administration/deploy/windows/article-2129-Обновление версии экземпляра ПО
         с 3.5 на 4.2. Инструкции, подготовка базы данных, устранение проблем.md

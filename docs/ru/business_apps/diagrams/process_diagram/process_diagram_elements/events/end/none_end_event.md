@@ -1,6 +1,6 @@
 ---
 title: Простое конечное событие
-kbId: 2387
+kbId: 4743
 tags:
   - диаграмма процесса
   - элементы диаграммы процесса
@@ -47,18 +47,17 @@ hide:
 
 *![Дополнительные свойства простого конечного события](none_end_event_advanced_properties.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[События][process_diagram_elements_events]**
+- _[События][process_diagram_elements_events]_
+- _[Типы конечных событий][типы-конечных-событий]_
+- _[Простое промежуточное событие][process_diagram_elements_none_intermediate_event]_
+- _[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]_
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
-**[Типы конечных событий][типы-конечных-событий]**
-
-**[Простое промежуточное событие][process_diagram_elements_none_intermediate_event]**
-
-**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
-
-**[Элементы диаграммы процесса][process_diagram_elements]**
-
-**[Редактирование диаграммы процесса][process_diagram_designer]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

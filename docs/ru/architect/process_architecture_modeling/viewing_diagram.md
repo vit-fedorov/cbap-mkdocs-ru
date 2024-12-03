@@ -1,6 +1,6 @@
 ---
 title: Просмотр диаграммы
-kbId: 2428
+kbId: 4830
 tags:
     - процессная архитектура
     - диаграмма процесса
@@ -31,8 +31,8 @@ hide:
 4. Панель свойств. В этой области также отображаются панель обсуждения и панель версий диаграммы.
 
 <!--navigating-to-child-start-->
-
-## Переход к дочерним элементам диаграммы
+{% if not pdfOutput %}
+## Переход к дочерним элементам диаграммы {: .pageBreakBefore }
 
 Для перехода к диаграмме подпроцесса или дочерней группы процессов нажмите значок перехода к дочернему элементу:
 
@@ -45,13 +45,16 @@ hide:
 *![Переход к дочернему элементу с диаграммы бизнес-способностей](img/diagram_navigating_to_child_element.png)*
 
 *![Переход к диаграмме подпроцесса с диаграммы процесса](img/diagram_navigating_to_subprocess.png)*
-
+{% endif %}
 <!--navigating-to-child-end-->
+
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра процессов][architect_process_architecture_modelling]**
+- _[Просмотр реестра процессов][architect_process_architecture_modelling]_
+- _[Редактирование диаграммы][architect_edit_diagram]_
 
-**[Редактирование диаграммы][architect_edit_diagram]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

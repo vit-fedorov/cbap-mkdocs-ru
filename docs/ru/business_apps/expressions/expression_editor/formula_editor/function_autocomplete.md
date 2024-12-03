@@ -1,6 +1,6 @@
 ---
 title: Ввод имени функции и просмотр подсказки по функции
-kbId: 2465
+kbId: 5027
 tags:
   - выражения
   - формулы
@@ -30,12 +30,15 @@ hide:
 
 *![Подсказка при предиктивном вводе имени функции](formula_editor_function_autocomplete.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Справочник по функциям][справочник-по-функциям]**
+- _[Справочник по функциям][справочник-по-функциям]_
+- _[Редактор выражений][expression_editor]_
+- _[Примеры использования формул. База знаний Comindware][formula_use_examples]_
 
-**[Редактор выражений][expression_editor]**
+</div>
 
-**[Примеры использования формул. База знаний Comindware]({{ kbCategoryURLPrefix }}409){:target="_blank"}**
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

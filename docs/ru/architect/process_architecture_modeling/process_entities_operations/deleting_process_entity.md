@@ -1,6 +1,6 @@
 ---
 title: Удаление элементов процессной архитектуры
-kbId: 2434
+kbId: 4837
 tags:
     - процессная архитектура
     - элемент процессной архитектуры
@@ -38,10 +38,13 @@ hide:
 
 *![Удаление элемента процессной архитектуры с помощью панели навигации](deleting_process_entity_using_diagram.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра процессов][architect_process_architecture_modelling]**
+- _[Просмотр реестра процессов][architect_process_architecture_modelling]_
+- _[Использование системы — Панель навигации][navigation_panel]_
 
-**[Использование системы — Панель навигации][navigation_panel]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

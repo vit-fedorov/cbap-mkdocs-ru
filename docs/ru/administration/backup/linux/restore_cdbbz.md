@@ -1,6 +1,6 @@
 ---
 title: Восстановление базы данных из файла резервной копии в формате .CDBBZ
-kbId: 2500
+kbId: 4647
 ---
 
 # Восстановление базы данных из файла резервной копии в формате .CDBBZ {: #backup_restore_cdbbz}
@@ -11,8 +11,8 @@ kbId: 2500
 
 См. также инструкции по полному резервному копированию и восстановлению базы данных внешними средствами:
 
-- *[Создание полной резервной копии (базы данных, вложенных файлов и журналов) без остановки экземпляра ПО][complete_running_instance_backup]*
-- *[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии][restore_complete_backup]*
+- _[Создание полной резервной копии (базы данных, вложенных файлов и журналов) без остановки экземпляра ПО][complete_running_instance_backup]_
+- _[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии][restore_complete_backup]_
 
 ## Восстановление базы данных и скриптов
 
@@ -52,7 +52,7 @@ kbId: 2500
 4. Остановите сервисы NGINX и comindware`<instanceName>` (где `<instanceName>` — имя экземпляра ПО) и удостоверьтесь, что они остановлены:
 
     ```
-    systemctl stop nginx comindware<instanceName>   
+    systemctl stop nginx comindware<instanceName>
     systemctl status nginx comindware<instanceName>
     ```
 
@@ -65,7 +65,7 @@ kbId: 2500
 6. Если в папке резервной копии (`/var/lib/comindware/<instanceName>/`) имеется каталог `Ignite`, переименуйте его в `Database`:
 
     ```
-    cd /var/lib/comindware/<instanceName>/   
+    cd /var/lib/comindware/<instanceName>/
     mv Ignite Database
     ```
 
@@ -81,8 +81,7 @@ kbId: 2500
     chmod -R 766 /var/lib/comindware/<instanceName>
     ```
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakBefore }
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 9. Назначьте перенесенным каталогам владельца:
 
@@ -103,27 +102,27 @@ kbId: 2500
 1. Остановите службу Elasticsearch и удостоверьтесь, что она остановлена:
 
     ```
-    systemctl stop elasticsearch   
+    systemctl stop elasticsearch
     systemctl status elasticsearch
     ```
 
 2. Создайте папку репозитория Elasticsearch (например, `/var/www/backups/elasticsearch/`) и перенесите в неё файлы из каталога `History` ранее [распакованной резервной копии](#unpack_backup):
 
     ```
-    mkdir /var/www/backups/elasticsearch/   
+    mkdir /var/www/backups/elasticsearch/
     mv /var/lib/comindware/<instanceName>/History/* /var/www/backups/elasticsearch/
     ```
 
 3. Назначьте папке репозитория и её содержимому права `rwxr-xr-x`:
 
     ```
-    chmod -R 755 /var/www/backups/ 
+    chmod -R 755 /var/www/backups/
     ```
 
 4. Назначьте владельца `elasticsearch` папке репозитория и её содержимому:
 
     ```
-    chown -R elasticsearch:elasticsearch /var/www/backups/ 
+    chown -R elasticsearch:elasticsearch /var/www/backups/
     ```
 
 5. В файле конфигурации `/etc/elasticsearch/elasticsearch.yml` укажите путь к созданному репозиторию:
@@ -135,19 +134,21 @@ kbId: 2500
 6. Запустите службу Elasticsearch:
 
     ```
-    systemctl start elasticsearch.service 
+    systemctl start elasticsearch.service
     ```
+
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 7. Зарегистрируйте репозиторий (например, `repostory_backup`) с резервной копией снимка Elasticsearch:
 
     ```
-    curl -X PUT "localhost:9200/_snapshot/repostory_backup?pretty" -H ’Content-Type: application/json’ -d’  
-    {  
-    "type": "fs",  
-    "settings": {  
-                "location": "/var/www/backups/elasticsearch"  
-                }  
-    }  
+    curl -X PUT "localhost:9200/_snapshot/repostory_backup?pretty" -H ’Content-Type: application/json’ -d’
+    {
+    "type": "fs",
+    "settings": {
+                "location": "/var/www/backups/elasticsearch"
+                }
+    }
 
     ```
 
@@ -171,11 +172,11 @@ kbId: 2500
 9. Восстановите снимок Elasticsearch:
 
     ```
-    curl -X POST "localhost:9200/_snapshot/repostory_backup/backupSession123/_restore?pretty" 
+    curl -X POST "localhost:9200/_snapshot/repostory_backup/backupSession123/_restore?pretty"
     ```
 
     - В качестве репозитория укажите имя репозитория, созданного на шаге 7, или префикс индекса Elasticsearch (см. [примечание](#s3_repository) выше).
-    - В качестве имени снимка укажите идентификатор резервной копии **без точки перед номером** (например, `backupSession.123` указывайте как `backupSession123`) со страницы [«Администрирование» – «Инфраструктура» – «Резервное копирование» – «Журнал»]({{ kbArticleURLPrefix }}2190#mcetoc_1gjrihkcn1).
+    - В качестве имени снимка укажите идентификатор резервной копии **без точки перед номером** (например, `backupSession.123` указывайте как `backupSession123`) со страницы [«Администрирование» – «Инфраструктура» – «Резервное копирование» – «Журнал»][backup].
 
 10. Проверьте наличие индексов в восстановленном каталоге:
 
@@ -188,7 +189,7 @@ kbId: 2500
 1. Запустите необходимые службы и проверьте их статус:
 
     ```
-    systemctl start nginx comindware<instanceName>   
+    systemctl start nginx comindware<instanceName>
     systemctl status nginx comindware<instanceName>
     ```
 
@@ -197,20 +198,18 @@ kbId: 2500
 4. Удостоверьтесь, что все данные из резервной копии восстановлены.
 5. Проверьте и исправьте конфигурацию экземпляра. См. *«[Проверка и настройка конфигурации экземпляра ПО {{ productName }} после восстановления из резервной копии][restore_test_configure]».*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Создание полной резервной копии (базы данных, вложенных файлов и журналов) без остановки экземпляра ПО][complete_running_instance_backup]**
+- _[Создание полной резервной копии (базы данных, вложенных файлов и журналов) без остановки экземпляра ПО][complete_running_instance_backup]_
+- _[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии][restore_complete_backup]_
+- _[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]_
+- _[Установка и запуск {{ productName }}][deploy_guide_linux]_
+- _[Регистрация репозитория Elasticsearch (официальное руководство, английский язык)](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-filesystem-repository.html)_
+- _[Восстановление снимка Elasticsearch (официальное руководство, английский язык)](https://www.elastic.co/guide/en/elasticsearch/reference/current/restore-snapshot-api.html)_
+- _[Elasticsearch. Настройка подключения][elasticsearch_connection]_
 
-**[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии][restore_complete_backup]**
-
-**[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]**
-
-**[Установка и запуск {{ productName }}][deploy_guide_linux]**
-
-**[Регистрация репозитория Elasticsearch (официальное руководство, английский язык)](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-filesystem-repository.html)**
-
-**[Восстановление снимка Elasticsearch (официальное руководство, английский язык)](https://www.elastic.co/guide/en/elasticsearch/reference/current/restore-snapshot-api.html)**
-
-**[Elasticsearch. Настройка подключения][elasticsearch_connection]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

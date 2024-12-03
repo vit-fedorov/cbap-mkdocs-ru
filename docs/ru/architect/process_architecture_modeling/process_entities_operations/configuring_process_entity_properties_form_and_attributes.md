@@ -1,6 +1,6 @@
 ---
 title: Редактирование формы свойств и атрибутов элемента процессной архитектуры
-kbId: 2435
+kbId: 4839
 tags:
     - процессная архитектура
     - элемент процессной архитектуры
@@ -36,35 +36,30 @@ hide:
 4. При необходимости выберите любой элемент диаграммы, чтобы отредактировать его атрибуты и форму свойств.
 5. В панели свойств нажмите кнопку «**Изменить**» <i class="fa-light fa-arrow-up-right-from-square"></i>.
 
-*![Конструктор формы элемента процессной архитектуры](configuring_process_entity_form_designer_edit_form.png)*
+    *![Конструктор формы элемента процессной архитектуры](configuring_process_entity_form_designer_edit_form.png)*
 
 6. Отобразится [конструктор формы][form_designer].
 7.  [Создайте][создание-атрибута] или [отредактируйте][редактирование-атрибута-кнопки-или-формы] атрибуты элемента процессной архитектуры.
 8. [Отредактируйте форму][form_designer]: перетащите на неё новые визуальные элементы и атрибуты или удалите ненужные.
 9. Нажмите кнопку «**Сохранить**».
 
-*![Конструктор формы элемента процессной архитектуры](configuring_process_entity_form_designer.png)*
+    *![Конструктор формы элемента процессной архитектуры](configuring_process_entity_form_designer.png)*
+
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-**[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]**
+- _[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]_
+- _[Редактирование формы и атрибутов оргединицы][architect_configuring_organizational_unit_form_and_attributes]_
+- _[Конструктор формы][form_designer]_
+- _[Создание атрибута][создание-атрибута]_
+- _[Редактирование атрибута, кнопки или формы][редактирование-атрибута-кнопки-или-формы]_
+- _[Редактирование формы][form_designer]_
+- _[Просмотр реестра процессов][architect_process_architecture_modelling]_
+- _[Создание элемента процессной архитектуры][architect_creating_process_entity]_
+- _[Переименование элемента процессной архитектуры][architect_renaming_process_entity]_
+- _[Использование системы — Панель навигации][navigation_panel]_
 
-**[Редактирование формы и атрибутов оргединицы][architect_configuring_organizational_unit_form_and_attributes]**
-
-**[Конструктор формы][form_designer]**
-
-**[Создание атрибута][создание-атрибута]**
-
-**[Редактирование атрибута, кнопки или формы][редактирование-атрибута-кнопки-или-формы]**
-
-**[Редактирование формы][form_designer]**
-
-**[Просмотр реестра процессов][architect_process_architecture_modelling]**
-
-**[Создание элемента процессной архитектуры][architect_creating_process_entity]**
-
-**[Переименование элемента процессной архитектуры][architect_renaming_process_entity]**
-
-**[Использование системы — Панель навигации][navigation_panel]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -1,6 +1,6 @@
 ---
 title: Задача-вызов сервиса
-kbId: 2609
+kbId: 4729
 ---
 
 # Задача-вызов сервиса {: #service_call_task}
@@ -70,17 +70,17 @@ _![Выбор глобальной функции для задачи-вызов
 
 В последнем столбце «**Значение**» позволяет выбрать атрибут текущего или связанного шаблона записи. Тип данных атрибута должен совпадать с типом данных атрибута сигнатуры функции.
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Функции][functions]**
+- _[Функции][functions]_
+- _[Пользовательская задача][process_diagram_elements_user_task]_
+- _[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]_
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][diagrams]_
 
-**[Пользовательская задача][process_diagram_elements_user_task]**
-
-**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
-
-**[Элементы диаграммы процесса][process_diagram_elements]**
-
-**[Редактирование диаграммы процесса][diagrams]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

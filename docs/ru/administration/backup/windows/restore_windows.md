@@ -1,6 +1,6 @@
 ---
 title: Восстановление экземпляра продукта из резервной копии в ОС Windows
-kbId: 2038
+kbId: 4639
 ---
 
 # Восстановление экземпляра продукта из резервной копии в ОС Windows {: #restore_windows}
@@ -75,9 +75,8 @@ kbId: 2038
 6. Откройте подключение к серверу Elasticsearch.
 7. Удостоверьтесь, что корректно указаны **префикс индекса** и **URL подключения** к серверу Elasticsearch.
 
-    _![Свойства подключения к серверу Elasticsearch](https://kb.comindware.ru/assets/img_64d0a41fc5e0b.png)_
+    _![Проверка свойств подключения к серверу Elasticsearch](https://kb.comindware.ru/assets/img_64d0a41fc5e0b.png)_
 
-Проверка свойств подключения к серверу Elasticsearch
 8. Откройте страницу «**Администрирование**» — «**Глобальная конфигурация**».
 9. Удостоверьтесь, что указан корректный **URL-адрес сервера**.
 
@@ -89,10 +88,13 @@ kbId: 2038
 
     _![Настройка пути к файлам резервной копии](https://kb.comindware.ru/assets/img_6683f69f9922d.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Резервное копирование. Настройка и запуск {{ productName }}][backup]**
+- _[Резервное копирование. Настройка и запуск {{ productName }}][backup]_
+- _[Резервное копирование и восстановление {{ productName }} в ОС Windows][backup_restore_windows]_
 
-**[Резервное копирование и восстановление {{ productName }} в ОС Windows][backup_restore_windows]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

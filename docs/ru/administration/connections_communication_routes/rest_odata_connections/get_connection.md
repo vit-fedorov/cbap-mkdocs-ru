@@ -1,6 +1,6 @@
 ---
 title: Получение веб-запросов в процессе
-kbId: 2259
+kbId: 4766
 ---
 
 # Получение веб-запросов в процессе. Настройка подключения {: #get_connection}
@@ -33,11 +33,14 @@ _![Настройка подключения для получения веб-з
 
 _![Пример веб-страницы с ответом на запрос](get_connection_example.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Отправка веб-запросов. Настройка подключения][send_http_request_connection]**
+- _[Отправка веб-запросов. Настройка подключения][send_http_request_connection]_
+- _[Получение эл. почты в процессе. Настройка подключения и пути передачи данных][process_receiving_connection]_
 
-**[Получение эл. почты в процессе. Настройка подключения и пути передачи данных][process_receiving_connection]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

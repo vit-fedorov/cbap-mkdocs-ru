@@ -1,6 +1,6 @@
 ---
 title: Мониторинг
-kbId: 2187
+kbId: 4666
 ---
 
 # Мониторинг. Просмотр диаграмм {:#monitoring}
@@ -56,7 +56,7 @@ _![Страница «Мониторинг»](img/monitoring_page_1.png)_
 
 _![Кнопки масштабирования диаграмм](img/monitoring_zoom_buttons.png)_
 
-## Просмотр данных за определенное время
+## Просмотр данных за определенное время {: .pageBreakBefore }
 
 1. Обведите требуемую область на диаграмме.
 2. На диаграмме отобразятся данные за выбранный интервал.
@@ -83,14 +83,15 @@ _![Подробные сведения на диаграмме](img/monitoring_c
 
 _![Панель сведений с кнопкой «Просмотреть журнал»](img/monitoring_details.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Глобальная конфигурация][global_configuration]**
+- _[Глобальная конфигурация][global_configuration]_
+- _[Журналы событий][logs]_
+- _[Производительность][performance]_
+- _[Подсистема журналирования][logging_engine]_
 
-**[Журналы событий][logs]**
-
-**[Производительность][performance]**
-
-**[Подсистема журналирования][logging_engine]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

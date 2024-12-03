@@ -1,6 +1,6 @@
 ---
 title: Шаблоны экспорта
-kbId: 2349
+kbId: 4797
 tags:
   - шаблоны
   - шаблон экспорта
@@ -66,7 +66,7 @@ hide:
 
 *![Настройка свойств шаблона экспорта](img/export_template_configure.png)*
 
-## Удаление шаблона экспорта
+## Удаление шаблона экспорта {: .pageBreakBefore }
 
 1. Откройте [шаблон записи][record_templates], [аккаунта][account_templates], [оргединицы][organizational_unit_templates] или [роли][role_templates].
 2. Откройте вкладку «**Шаблоны экспорта**».
@@ -74,20 +74,18 @@ hide:
 4. Нажмите кнопку «**Удалить**».
 5. Подтвердите удаление шаблонов.
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Подготовка файла шаблона экспорта][export_template_file_configure]**
+- _[Подготовка файла шаблона экспорта][export_template_file_configure]_
+- _[Настройка кнопки экспорта записи][export_template_button_configure]_
+- _[Настройка шаблона экспорта][export_templates]_
+- _[Пример настройки и использования шаблона экспорта авансового отчёта][export_template_file_example]_
+- _[Действие «Создать документ по шаблону» в сценарии][scenario_actions]_
+- _[Шаблон экспорта. Настройка с использованием C#][export_template_csharp_configure]_
+- _[Шаблон экспорта. Выгрузка нескольких коллекций и изображений с помощью C#][export_template_csharp_collection_download]_
 
-**[Настройка кнопки экспорта записи][export_template_button_configure]**
-
-**[Настройка шаблона экспорта][export_templates]**
-
-**[Пример настройки и использования шаблона экспорта авансового отчёта][export_template_file_example]**
-
-**[Действие «Создать документ по шаблону» в сценарии][scenario_actions]**
-
-**[Шаблон экспорта. Настройка с использованием C#][export_template_csharp_configure]**
-
-**[Шаблон экспорта. Выгрузка нескольких коллекций и изображений с помощью C#][export_template_csharp_collection_download]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -1,6 +1,6 @@
 ---
 title: Резервное копирование с помощью внешних средств в ОС Windows
-kbId: 2303
+kbId: 4645
 ---
 
 # Резервное копирование с помощью внешних средств в ОС Windows {: #backup_windows_external}
@@ -12,24 +12,24 @@ kbId: 2303
 2. В созданном файле укажите `login` — имя пользователя, `password` — пароль для входа в экземпляр ПО, `backupID` — идентификатор конфигурации резервного копирования в экземпляре системы. См. раздел *«[Просмотр списка конфигураций резервного копирования][backup]»*.
 
     ```
-    # Enter your credential  
-    $login = «admin»  
-    $password = «admin»  
-    
+    # Enter your credential
+    $login = «admin»
+    $password = «admin»
+
     # Enter required backup
 
-    configuration ID  
-    $backupID = «backupConfig.1»  
-    
-    # Execution  
-    $localhost = «http://localhost:8081/»  
-    $api = «webapi/backupsession?ConfigurationId=»  
-    $uri = $localhost + $api + $backupID  
-    
-    $WebClient = New-Object System.Net.WebClient  
-    $WebClient.Credentials = New-Object System.Net.NetworkCredential($login, $password)  
-    $WebClient.Encoding = [System.Text.Encoding]::UTF8  
-    $response = $WebClient.UploadString($uri, «POST»,»»)  
+    configuration ID
+    $backupID = «backupConfig.1»
+
+    # Execution
+    $localhost = «http://localhost:8081/»
+    $api = «webapi/backupsession?ConfigurationId=»
+    $uri = $localhost + $api + $backupID
+
+    $WebClient = New-Object System.Net.WebClient
+    $WebClient.Credentials = New-Object System.Net.NetworkCredential($login, $password)
+    $WebClient.Encoding = [System.Text.Encoding]::UTF8
+    $response = $WebClient.UploadString($uri, «POST»,»»)
     $response
     ```
 3. Откройте Планировщик заданий. До этого удостоверьтесь, что служба планировщика запускается автоматически.

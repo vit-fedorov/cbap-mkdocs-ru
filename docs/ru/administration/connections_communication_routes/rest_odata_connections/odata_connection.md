@@ -10,7 +10,7 @@ tags:
   - синхронизация
 hide:
   - tags
-kbId: 2504
+kbId: 4702
 ---
 
 # Синхронизация с веб-сервисом. Настройка подключения {: #odata_connection}
@@ -31,16 +31,18 @@ _![Создание подключения для синхронизации с 
     !!! tip "Совет"
 
         Для экспериментов с синхронизацией по OData можно использовать общедоступные серверы, предоставляемые OData.org.
-        
+
         Например, для тестирования импорта данных в качестве **адреса веб-сервиса** можно указать: 
-        
+
         [https://services.odata.org/V3/OData/OData.svc/](https://services.odata.org/V3/OData/OData.svc/)
-        
+
         Адреса остальных тестовых серверов OData.org представлены на следующих сайтах:
-        
+
         [https://services.odata.org/](https://services.odata.org/) 
-        
+
         [https://www.odata.org/odata-services/](https://www.odata.org/odata-services/) 
+
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 - **Тип аутентификации**:
 {: .pageBreakBefore }
@@ -64,11 +66,14 @@ _![Создание подключения для синхронизации с 
 
 _![Настройка свойств подключения для синхронизации с веб-сервисом](odata_integration_connection_properties.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Синхронизация с веб-сервисом. Интеграция по OData][odata_integration]**
+- _[Синхронизация с веб-сервисом. Интеграция по OData][odata_integration]_
+- _[Интеграция с 1С по OData. Настройка для импорта данных][1c_integrations]_
 
-**[Интеграция с 1С по OData. Настройка для импорта данных][1c_integrations]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

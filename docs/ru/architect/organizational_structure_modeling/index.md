@@ -1,6 +1,6 @@
 ---
 title: Построение организационной структуры
-kbId: 2423
+kbId: 4850
 tags:
     - организационная структура
     - организационно-штатная структура
@@ -15,7 +15,7 @@ hide:
 
 # Построение организационной структуры {: #architect_organizational_structure_modelling}
 
-Для построения организационно-штатной структуры в **{{ productNameArchitect }}** используется иерархический [реестр организационных единиц](#просмотр-реестра-оргединиц).
+Для построения организационно-штатной структуры в **{{ productNameEnterprise }}** используется иерархический [реестр организационных единиц](#просмотр-реестра-оргединиц).
 
 Предусмотрены следующие оргединицы:
 
@@ -36,10 +36,13 @@ hide:
 
 *![Иерархический реестр оргединиц](organizational_structure_modeling_registry.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Построение процессной архитектуры][architect_process_architecture_modelling]**
+- _[Построение процессной архитектуры][architect_process_architecture_modelling]_
+- _[Использование системы — Панель навигации][navigation_panel]_
 
-**[Использование системы — Панель навигации][navigation_panel]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

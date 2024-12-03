@@ -1,6 +1,6 @@
 ---
 title: Zabbix Agent. Установка и настройка
-kbId: 2291
+kbId: 4608
 ---
 
 # Zabbix Agent. Установка и настройка {: #zabbix_agent_deploy}
@@ -43,7 +43,7 @@ kbId: 2291
     sudo apt install --yes zabbix-agent
     ```
 
-## Настройка сервиса Zabbix Agent
+## Настройка сервиса Zabbix Agent {: .pageBreakBefore }
 
 1. На каждой из машин с *Zabbix Agent* отредактируйте файл конфигурации: `/etc/zabbix/zabbix_agentd.conf`:
 
@@ -63,7 +63,7 @@ kbId: 2291
     ServerActive=your.server.ip.address
     ```
 
-## Запуск сервиса Zabbix Agent
+## Запуск сервиса Zabbix Agent {: .pageBreakBefore }
 
 1. Разрешите в сетевом экране обращения через порт `10050`:
 
@@ -93,7 +93,7 @@ kbId: 2291
 
     _![Ожидаемый статус сервиса Zabbix Agent](https://kb.comindware.ru/assets/img_63ad99c681d0a.png)_
 
-## Добавление Linux-хоста в сеть мониторинга
+## Добавление Linux-хоста в сеть мониторинга {: .pageBreakBefore }
 
 1. Откройте *Zabbix Frontend* (см. «[Zabbix Server, Zabbix Agent, Zabbix Frontend и MySQL. Инструкции по установке][zabbix_server_deploy]). Для э того в адресной строке браузера наберите: `http://zabbix-server-ip-address:8080`
 
@@ -134,7 +134,7 @@ kbId: 2291
 
 !!! note "Примечание"
     При любых изменениях в файле конфигурации необходимо остановить и снова запустить (при перезапуске используется конфигурация из памяти) сервис Zabbix Agent или перезагрузить компьютер.
-{{ pdfEndOfBlockHack }}
+{% include-markdown ".snippets/pdfEndOfBlockHack.md" %}
 
 ## Использованные ресурсы
 

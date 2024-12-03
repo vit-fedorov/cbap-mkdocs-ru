@@ -1,6 +1,6 @@
 ---
 title: Подсистема журналирования
-kbId: 2501
+kbId: 4623
 ---
 
 # Подсистема журналирования {: #logging_engine}
@@ -13,6 +13,8 @@ kbId: 2501
 
 ПО позволяет настроить уровень журналирования, правила формирования событий в журналах, место хранения журналов, порядок и набор параметров именования файлов журналов, а также ограничения по размеру и предельному количеству файлов журналов, с помощью конфигурационных файлов:
 
+{% if completeGuide or userGuide or kbExport %}
+
 - Linux
     - `/var/www/<instanceName>/logs.config` — конфигурация всех журналов экземпляра ПО, включая журналы встроенных адаптеров;
     - `/var/www/<instanceName>/data/Plugins/Agent/logs.config` — конфигурация журналов пользовательских адаптеров.
@@ -20,20 +22,39 @@ kbId: 2501
     - `C:\ProgramData\Comindware\Instances\<instanceName>\Config\logs.config` — конфигурация всех журналов экземпляра ПО, включая журналы встроенных адаптеров;
     - `C:\ProgramData\Comindware\Instances\<instanceName>\Config\data\Plugins\Agent\logs.config`{: style="word-break: break-all"} — конфигурация журналов пользовательских адаптеров.
 
+{% elif adminGuideLinux %}
+
+- `/var/www/<instanceName>/logs.config` — конфигурация всех журналов экземпляра ПО, включая журналы встроенных адаптеров;
+- `/var/www/<instanceName>/data/Plugins/Agent/logs.config` — конфигурация журналов пользовательских адаптеров.
+
+{% elif adminGuideWindows %}
+
+- `C:\ProgramData\Comindware\Instances\<instanceName>\Config\logs.config` — конфигурация всех журналов экземпляра ПО, включая журналы встроенных адаптеров;
+- `C:\ProgramData\Comindware\Instances\<instanceName>\Config\data\Plugins\Agent\logs.config`{: style="word-break: break-all"} — конфигурация журналов пользовательских адаптеров.
+
+{% endif %}
+
 Здесь и далее _`<instanceName>`_ — имя экземпляра ПО.
 
 Подробное описание структуры конфигурационного файла см. в документации _NLog_ по адресу: _[https://github.com/NLog/NLog/wiki/Tutorial](https://github.com/NLog/NLog/wiki/Tutorial)_
 
 По умолчанию файлы журналов хранятся на сервере с экземпляром ПО в следующей директории:
 
+{% if completeGuide or userGuide or kbExport %}
 - Linux
     - `/var/log/comindware/<instanceName>/Logs`
 - Windows
     - `C:\ProgramData\comindware\Instances\<instanceName>\Logs`
+{% elif adminGuideLinux %}
+- `/var/log/comindware/<instanceName>/Logs`
+{% elif adminGuideWindows %}
+- `C:\ProgramData\comindware\Instances\<instanceName>\Logs`
+{% endif %}
 
 Сведения о фактическом расположении файлов см. в статье _«[Пути и содержимое папок экземпляра ПО][paths]»_.
 
-## Файловые журналы
+## Файловые журналы {: .pageBreakBefore }
+
 
 ПО поддерживает следующие файловые журналы:
 
@@ -53,8 +74,7 @@ kbId: 2501
 
 В качестве инструментов чтения и анализа файлов журналов можно использовать любой инструмент, представленный на рынке. Например, есть мощный инструмент Kibana _[https://www.elastic.co/products/kibana](https://www.elastic.co/products/kibana)_, который обладает широким спектром функций по сбору журналов с различных ресурсов и их глубокому анализу с различными визуальными представлениями, в том числе в виде графиков.
 
-#### Правила формирования и архивирования файлов журналов {: #logging_engine_rules}
-
+#### Правила формирования и архивирования файлов журналов {: #logging_engine_rules }
 Каждый журнал (кроме журнала обновления) формируется как один файл на каждый день.
 
 Журнал обновления формируется при выполнении обновления версии ПО и заменяет предыдущий файл журнала обновления.
@@ -62,9 +82,8 @@ kbId: 2501
 В конце дня файлы журналов архивируются в папку `\Archive` в архивы вида `CBAP_ГГГГ-ММ-ДД`.
 
 По умолчанию ПО сохраняет в архиве до 5 файлов журнала каждого типа (кроме журнала интеграции с сырыми данными, см. _[«Журнал интеграции с сырыми данными»](#журнал-интеграции-с-сырыми-данными)_), т. е. за день в архиве будет храниться не более 5 файлов каждого журнала, а остальные будут удаляться в очерёдности их создания.
-{: .pageBreakBefore }
 
-#### Типы событий в журналах
+#### Типы событий в журналах {: .pageBreakBefore }
 
 В журналах предусмотрены следующие типы событий:
 
@@ -75,7 +94,7 @@ kbId: 2501
 - `Debug` — выполнение запросов, аутентификация пользователей;
 - `Trace` — запуск методов, завершение методов.
 
-#### Журнал аудита {: #logging_engine_audit_log}
+#### Журнал аудита {: #logging_engine_audit_log .pageBreakBefore }
 
 Журнал аудита содержит перечисленные ниже события:
 
@@ -146,7 +165,7 @@ kbId: 2501
 
 _![Пример журнала аудита](img/logging_engine_audit_log.png)_
 
-#### Журнал интеграции
+#### Журнал интеграции {: .pageBreakBefore }
 
 Журнал интеграции содержит информационные сообщения по событиям, возникающим в ходе работы интеграционных сервисов ПО (таких, как подключения и адаптеры).
 
@@ -168,7 +187,7 @@ _![Пример журнала аудита](img/logging_engine_audit_log.png)_
 
 _![Пример журнала интеграции](img/logging_engine_integration_log.png)_
 
-#### Журнал интеграции с сырыми данными
+#### Журнал интеграции с сырыми данными {: .pageBreakBefore }
 
 Журнал интеграции с сырыми данными содержит те же сведения, что журнал интеграции, но с полным содержимым сообщений от внешних систем.
 
@@ -192,7 +211,7 @@ _![Пример журнала интеграции](img/logging_engine_integrat
 
 _![Пример журнала интеграции с сырыми данными](img/logging_engine_integration_raw.png)_
 
-#### Журнал исправности
+#### Журнал исправности {: .pageBreakBefore }
 
 Журнал исправности содержит сведения о состоянии экземпляра ПО: дисковом пространстве, использовании подключений, работе сервиса Elasticsearch, работе подсистем, выполнении экземпляров процессов.
 
@@ -212,7 +231,7 @@ _![Пример журнала интеграции с сырыми данным
 
 _![Пример журнала исправности](img/logging_engine_heartbeat_log.png)_
 
-#### Журнал обновления
+#### Журнал обновления {: .pageBreakBefore }
 
 Журнал обновления содержит сведения о результатах обновления версий ПО.
 
@@ -232,7 +251,7 @@ _![Пример журнала исправности](img/logging_engine_heartb
 
 _![Пример журнала обновления](img/logging_engine_update_log.png)_
 
-#### Журнал ошибок
+#### Журнал ошибок {: .pageBreakBefore }
 
 Журнал ошибок содержит данные обо всех ошибках, возникающих в ходе работы экземпляра ПО, а также об [импорте и экспорте версий приложений][version_control].
 
@@ -258,7 +277,7 @@ _![Пример журнала обновления](img/logging_engine_update_l
 
 _![Пример журнала ошибок](img/logging_engine_errror_log.png)_
 
-#### Журнал процессов
+#### Журнал процессов {: .pageBreakBefore }
 
 Журнал процессов содержит сведения о движении токенов по элементам экземпляров процессов.
 
@@ -277,7 +296,7 @@ _![Пример журнала ошибок](img/logging_engine_errror_log.png)_
 
 _![Пример журнала процессов](img/logging_engine_process_log.png)_
 
-##### Рекомендации по чтению журнала процессов
+##### Рекомендации по чтению журнала процессов {: .pageBreakBefore }
 
 - В журнале процессов отражается факт создания экземпляра процесса с указанием его идентификатора.
 - Чтобы журнал процессов содержал более наглядные сведения, при настройке диаграммы процесса давайте элементам понятные системные имена.
@@ -293,7 +312,7 @@ _![Пример журнала процессов](img/logging_engine_process_lo
     - идентификатор потока с идентификатором потока вида `Flow:psf.XXX`;
     - перечень последующих элементов, начинающийся с ключевого слова `NextActions`.
 
-#### Журнал резервного копирования
+#### Журнал резервного копирования {: .pageBreakBefore }
 
 Журнал резервного копирования содержит информационные сообщения по результатам резервного копирования экземпляра ПО.
 
@@ -313,7 +332,7 @@ _![Пример журнала процессов](img/logging_engine_process_lo
 
 _![Пример журнала резервного копирования](img/logging_engine_backup_log.png)_
 
-#### Журнал сценариев
+#### Журнал сценариев {: .pageBreakBefore }
 
 Журнал сценариев содержит сведения о ходе выполнения сценариев.
 
@@ -339,7 +358,7 @@ _![Пример журнала резервного копирования](img/
 
 _![Пример журнала сценариев](img/logging_engine_trigger_log.png)_
 
-#### Системный журнал
+#### Системный журнал {: .pageBreakBefore }
 
 Системный журнал содержит данные о событиях системного уровня в экземпляре ПО.
 
@@ -359,7 +378,7 @@ _![Пример журнала сценариев](img/logging_engine_trigger_lo
 
 _![Пример системного журнала](img/logging_engine_system_log.png)_
 
-#### Журналы адаптеров
+#### Журналы адаптеров {: .pageBreakBefore }
 
 Журналы адаптеров содержат данные о событиях подключений и путей передачи данных, относящихся к [адаптерам][adapters] в экземпляре ПО.
 
@@ -384,7 +403,7 @@ _![Пример журнала аудита](img/logging_engine_adapter_log.png)
 
 {% if adminGuideWindows or kbExport %}
 
-## Перенаправление сообщений из файлов журналов в журнал событий Windows
+## Перенаправление сообщений из файлов журналов в журнал событий Windows {: .pageBreakBefore }
 
 Библиотека NLog позволяет записывать журналы помимо файлов в другие хранилища, например в службу «Журнал событий Windows» (EventLog), который можно просмотреть с помощью приложения **Просмотр событий**.
 
@@ -398,15 +417,15 @@ _[https://github.com/NLog/NLog/wiki/EventLog-target](https://github.com/NLog/NLo
 2. Создайте скрипт по приведённому ниже образцу на языке VisualBasic и сохраните его в файл с расширением .VBS (например, `CreateEventSource.vbs`):
 
     ``` sh
-    Set Args = WScript.Arguments   
-    If Args.Count < 1 then WScript.Echo "USAGE: CreateEventSource.vbs <EventSourceName>"   
-        WScript.Quit   
-    End If   
-    EventSourceName = Args(0)   
-    Set WshShell = WScript.CreateObject("WScript.Shell")   
-    'Create event source   
-    KeyName = "HKLM\SYSTEM\CurrentControlSet\Services\Eventlog\Application\" & EventSourceName & "\EventMessageFile"   
-    'Change path to .NET Framework version used   
+    Set Args = WScript.Arguments
+    If Args.Count < 1 then WScript.Echo "USAGE: CreateEventSource.vbs <EventSourceName>"
+        WScript.Quit
+    End If
+    EventSourceName = Args(0)
+    Set WshShell = WScript.CreateObject("WScript.Shell")
+    'Create event source
+    KeyName = "HKLM\SYSTEM\CurrentControlSet\Services\Eventlog\Application\" & EventSourceName & "\EventMessageFile"
+    'Change path to .NET Framework version used
     WshShell.RegWrite KeyName,"%windir%\Microsoft.NET\Framework64\v2.0.50727\EventLogMessages.dll", "REG_EXPAND_SZ"
     ```
 
@@ -423,37 +442,33 @@ _[https://github.com/NLog/NLog/wiki/EventLog-target](https://github.com/NLog/NLo
 4. Создайте в файле `logs.config` в подразделе `nlog.targets` (с конфигурацией файловых журналов) подраздел `target` с параметрами записи данных в журнал событий Windows:
 
     ``` log
-    <target xsi:type="EventLogCBAPErrors" name="eventlog" layout="${message}"   
+    <target xsi:type="EventLogCBAPErrors" name="eventlog" layout="${message}"
     log="Application" source="CBAP"/>
     ```
 
 5. Создайте в файле `logs.config` правило (подраздел `logger` в разделе `nlog.rules`), которое будет определять сообщения, подлежащие записи в журнал событий Windows:
 
     ``` log
-    <logger name="*" minlevel="Warn" maxlevel="Fatal"   
+    <logger name="*" minlevel="Warn" maxlevel="Fatal"
     writeTo="errorsFile,EventLogCBAPErrors"/>
     ```
 
-6. Перезагрузите экземпляр ПО, чтобы изменения вступили в силу. См. раздел _[«Настройка конфигурации Утилиты администрирования Comindware»][administration_utility_configure]_.
+6. Перезагрузите экземпляр ПО, чтобы изменения вступили в силу. См. раздел _[«Настройка конфигурации Утилиты администрирования Comindware»][admin_utility_configure]_.
 
 {% endif %}
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Примеры событий в файловых журналах][log_files_event_examples]**
+- _[Примеры событий в файловых журналах][log_files_event_examples]_
+- _[Пути и содержимое папок экземпляра ПО][paths]_
+- _[Адаптеры][adapters]_
+- _[Просмотр показателей мониторинга с помощью страницы «Администрирование»][monitoring]_
+- _[Просмотр журналов событий с помощью страницы «Администрирование»][logs]_
+- _[Просмотр показателей производительности с помощью страницы «Администрирование»][performance]_
+- _[Конфигурация журналирования. Настройка, скачивание журналов][logging_configuration]_
 
-**[Пути и содержимое папок экземпляра ПО][paths]**
+</div>
 
-**[Адаптеры][adapters]**
-
-[**Просмотр показателей мониторинга с помощью страницы «Администрирование»**][monitoring]
-
-[**Просмотр журналов событий с помощью страницы «Администрирование»**][logs]
-
-**[Просмотр показателей производительности с помощью страницы «Администрирование»][performance]**
-
-**[Конфигурация журналирования. Настройка, скачивание журналов][logging_configuration]**
-
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

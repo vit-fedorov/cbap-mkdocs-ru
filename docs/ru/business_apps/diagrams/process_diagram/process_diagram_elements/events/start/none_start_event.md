@@ -33,24 +33,23 @@ hide:
 - **Изменить тип** — смена типа события.
 --8<-- "process_diagram_quick_create.md"
 
-## Свойства простого начального события
+## Свойства простого начального события {: .pageBreakBefore }
 
 В  окне свойств **простого начального события** можно настроить только [общие свойства элемента диаграммы процесса][process_diagram_element_common_properties].
 
 *![Свойства простого начального события](none_start_event_general_properties.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[События][process_diagram_elements_events]**
+- _[События][process_diagram_elements_events]_
+- _[Типы начальных событий][типы-начальных-событий]_
+- _[Стартовая форма и форма пользовательской задачи][process_diagram_forms]_
+- _[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]_
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
-**[Типы начальных событий][типы-начальных-событий]**
-
-**[Стартовая форма и форма пользовательской задачи][process_diagram_forms]**
-
-**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
-
-**[Элементы диаграммы процесса][process_diagram_elements]**
-
-**[Редактирование диаграммы процесса][process_diagram_designer]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

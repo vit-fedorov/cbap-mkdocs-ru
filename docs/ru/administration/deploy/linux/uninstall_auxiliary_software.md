@@ -1,6 +1,6 @@
 ---
 title: Полное удаление вспомогательных компонентов ПО
-kbId: 2596
+kbId: 4625
 ---
 
 # Полное удаление вспомогательных компонентов ПО {: #uninstall_auxiliary_software}
@@ -310,7 +310,6 @@ kbId: 2596
     ```
 
 ### Удаление Kafka
-{: .pageBreakBefore }
 
 1. Удалите службу Kafka:
 
@@ -340,7 +339,7 @@ kbId: 2596
     rm /var/www/.cmw_environment/kafka
     ```
 
-### Удаление Mono
+### Удаление Mono {: .pageBreakBefore }
 
 1. Удалите пакет Mono `mono-runtime` и его зависимости:
 
@@ -496,8 +495,7 @@ kbId: 2596
         /usr/bin/asp-*
     ```
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakAfter }
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 3. Удалите конфигурацию Mono:
 
@@ -659,8 +657,7 @@ kbId: 2596
         /usr/bin/asp-*
     ```
 
-    {{ pdfEndOfBlockHack }}
-    {: .pageBreakAfter }
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 3. Удалите конфигурацию Mono:
 
@@ -811,8 +808,12 @@ kbId: 2596
     rm /var/www/.cmw_environment/nginx
     ```
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Пути и содержимое папок экземпляра ПО][paths]**
+- _[Пути и содержимое папок экземпляра ПО][paths]_
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -1,6 +1,6 @@
 ---
 title: Р7 Офис
-kbId: 2342
+kbId: 4689
 ---
 
 # Р7 Офис. Настройка сервера и подключения {: #r7_connection}
@@ -11,7 +11,7 @@ kbId: 2342
 
 Здесь представлены инструкции по настройке конфигурации сервера **Р7-Офис** и подключения к **Р7-Офис** в **{{ productName }}**.
 
-См. также статью _«[Р7 Офис и Collabora Online. Использование для работы с документами]({{ kbArticleURLPrefix }}2343)»._
+См. также статью _«[Р7 Офис и Collabora Online. Использование для работы с документами][office_connection_use]»._
 
 ### Требования к серверу Р7-Офис
 
@@ -24,13 +24,13 @@ kbId: 2342
 
 ## Настройка конфигурации Р7-Офис {: .pageBreakBefore }
 
-1. Откройте в текстовом редакторе файл конфигурации **Р-7 Офис**:  
+1. Откройте в текстовом редакторе файл конфигурации **Р-7 Офис**:
 
     ```
     /etc/r7-office/documentserver/local.json
     ```
 
-2. Установите следующие значения:  
+2. Установите следующие значения:
 
     ```
     services.CoAuthoring.token.enable.request.inbox: **true**
@@ -59,10 +59,12 @@ _![Токен подключения в файле конфигурации Р7-
 
 _![Настройка подключения к Р7-Офис](r7_connection_settings.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Р7 Офис и Collabora Online. Использование для работы с документами]({{ kbArticleURLPrefix }}2343)**
+- _[Р7 Офис и Collabora Online. Использование для работы с документами][office_connection_use]_
 
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

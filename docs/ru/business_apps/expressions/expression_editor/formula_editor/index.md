@@ -1,6 +1,6 @@
 ---
 title: Предиктивный ввод в формулах
-kbId: 2468
+kbId: 5035
 tags:
   - выражения
   - формулы
@@ -20,17 +20,20 @@ hide:
   - tags
 ---
 
-# Предиктивный ввод в формулах {: #formula_editor}
+# Предиктивный ввод в формулах {: #formula_editor_autocomplete }
 
 Для ввода формул в редакторе выражений предусмотрены предиктивный ввод и подсказки:
 
 * При вводе символов `$`, `$$`, `->`, `<-`, `==`, `!=`, имён объектов, функций и аргументов, а также при нажатии клавиш ++ctrl+space++ отображается список подходящих по контексту сущностей.
 * При вводе имён функций отображаются подсказки с их описанием.
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Редактор выражений][expression_editor]**
+- _[Редактор выражений][expression_editor]_
+- _[Примеры использования формул. База знаний Comindware][formula_use_examples]_
 
-**[Примеры использования формул. База знаний Comindware]({{ kbCategoryURLPrefix }}409){:target="_blank"}**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

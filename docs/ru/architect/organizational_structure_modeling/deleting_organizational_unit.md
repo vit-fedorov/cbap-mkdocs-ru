@@ -1,6 +1,6 @@
 ---
 title: Удаление оргединиц
-kbId: 2424
+kbId: 4845
 tags:
     - организационная структура
     - организационно-штатная структура
@@ -34,7 +34,7 @@ hide:
 
 *![Удаление оргединицы с помощью контекстного меню в реестре оргединиц](deleting_organizational_unit_using_registry_context_menu.png)*
 
-## Удаление с помощью панели навигации
+## Удаление с помощью панели навигации {: .pageBreakBefore }
 
 1. Нажмите кнопку «**Действия**» <i class="fa-light fa-ellipsis-vertical"></i> у оргединицы, подлежащей удалению.
 3. В раскрывающемся меню выберите пункт «**Удалить**».
@@ -42,10 +42,13 @@ hide:
 
 *![Удаление оргединицы с помощью панели навигации](deleting_organizational_unit_using_navigation.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра оргединиц][architect_organizational_structure_modelling]**
+- _[Просмотр реестра оргединиц][architect_organizational_structure_modelling]_
+- _[Использование системы — Панель навигации][navigation_panel]_
 
-**[Использование системы — Панель навигации][navigation_panel]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

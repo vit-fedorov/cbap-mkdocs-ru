@@ -7,7 +7,7 @@ tags:
   - Active Directory
 hide:
   - tags
-kbId: 2594
+kbId: 4677
 ---
 
 # Хранилище S3. Настройка экземпляра ПО и подключения {: #s3_connection}
@@ -44,9 +44,9 @@ kbId: 2594
     vim /usr/share/comindware/configs/instance/instancename.yml
     ```
 
-    Здесь  `instanceName` — имя экземпляра ПО.  
+    Здесь  `instanceName` — имя экземпляра ПО.
 
-    См. также статью _«[Пути и содержимое папок экземпляра ПО]({{kbArticleURLPrefix}}2502)»._
+    См. также статью _«[Пути и содержимое папок экземпляра ПО][paths]»._
 
 3.  Добавьте в файл `instanceName.yml` следующие директивы:
 
@@ -59,7 +59,7 @@ kbId: 2594
     # https://s3.region-code.amazonaws.com/bucket-name/key-name
     s3Connection.default.pathStyle: true
     s3Connection.default.description: Подключение к S3
-                            
+
     # Параметры контейнера загруженных файлов
     userStorage.type: S3
     userStorage.s3.bucket: user-files-bucket
@@ -68,7 +68,7 @@ kbId: 2594
     # Параметры контейнера временных файлов
     tempStorage.type: S3
     tempStorage.s3.bucket: temp-files-bucket
-    tempStorage.s3.connection: default         
+    tempStorage.s3.connection: default
     ```
 
     !!! warning "Внимание!"
@@ -86,35 +86,37 @@ kbId: 2594
 
 ## Проверка подключения к хранилищу S3 {: .pageBreakBefore }
 
-1. Перейдите в [список подключений]({{ kbArticleURLPrefix }}2205#mcetoc_1gjrlqi4l1).
-2. Дважды нажмите в списке подключение типа «**S3**» (название подключения задаётся директивой `s3Connection.default.description` в [файле конфигурации]({{ kbArticleURLPrefix }}2594#mcetoc_1gjrlqj8j2)).
-3. Просмотрите свойства подключения:  
+1. Перейдите в [список подключений][connections].
+2. Дважды нажмите в списке подключение типа «**S3**» (название подключения задаётся директивой `s3Connection.default.description` в [файле конфигурации](#настройка-конфигурации-экземпляра-по)).
+3. Просмотрите свойства подключения:
     - **Отключить** — этот флажок установлен, если подключение неактивно;
     - **Название** — наглядное наименование подключения;
     - **Адрес конечной точки** — адрес сервера S3;
     - **Ключ доступа** — идентификатор секретного ключа доступа к серверу S3;
     - **Секретный ключ** — ключ для доступа к серверу S3;
     - **Запросы типа path-style** — флажок установлен, если сервер принимает только запросы path-style вида:
-        
+
         ```
         https://s3.region-code.amazonaws.com/bucket-name/key-name
         ```
-        
+
 4. Нажмите кнопку «**Проверить соединение**».
     - Должно отобразиться сообщение «**Соединение установлено**».
 
 !!! warning "Внимание!"
 
-    Не вносите изменения в окне свойств подключения к хранилищу S3, заданному в [файле конфигурации]({{ kbArticleURLPrefix }}2594#mcetoc_1gjrlqj8j2) экземпляра ПО (`/usr/share/comindware/configs/instance/instanceName.yml`) с помощью директивы `s3Connection.default`. Они не будут применены к конфигурации экземпляра ПО и при перезапуске сервера будут заменены на значения из файла конфигурации `instanceName.yml`
+    Не вносите изменения в окне свойств подключения к хранилищу S3, заданному в [файле конфигурации](#настройка-конфигурации-экземпляра-по) экземпляра ПО (`/usr/share/comindware/configs/instance/instanceName.yml`) с помощью директивы `s3Connection.default`. Они не будут применены к конфигурации экземпляра ПО и при перезапуске сервера будут заменены на значения из файла конфигурации `instanceName.yml`
 
-Настраивать подключение к хранилищу S3 следует только в файле `/usr/share/comindware/configs/instance/instanceName.yml`
+    Настраивать подключение к хранилищу S3 следует только в файле `/usr/share/comindware/configs/instance/instanceName.yml`
 
 **![Настройка подключения к хранилищу S3](https://kb.comindware.ru/assets/img_65e9b87a6e895.png)**
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Пути и содержимое папок экземпляра ПО]({{kbArticleURLPrefix}}2502)**
+- _[Пути и содержимое папок экземпляра ПО][paths]_
 
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

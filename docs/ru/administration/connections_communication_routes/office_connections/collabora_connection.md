@@ -1,6 +1,6 @@
 ---
 title: Collabora Online
-kbId: 2588
+kbId: 4688
 ---
 
 # Collabora Online. Настройка подключения {: #collabora_connection}
@@ -13,7 +13,7 @@ kbId: 2588
 
 Здесь представлены инструкции по настройке подключения к серверу **Collabora Online**.
 
-См. также статью _«[Р7 Офис и Collabora Online. Использование для работы с документами]({{ kbArticleURLPrefix }}2343)»._
+См. также статью _«[Р7 Офис и Collabora Online. Использование для работы с документами][office_connection_use]»._
 
 ## Настройка подключения к Collabora Online
 
@@ -31,10 +31,12 @@ kbId: 2588
 
 _![Настройка подключения к Collabora Online](collabora_connection_settings.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Р7 Офис и Collabora Online. Использование для работы с документами]({{ kbArticleURLPrefix }}2343)**
+- _[Р7 Офис и Collabora Online. Использование для работы с документами][office_connection_use]_
 
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

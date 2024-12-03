@@ -43,22 +43,22 @@ nav:
         - administration/deploy/linux/auxiliary_software_deploy/zabbix_server_deploy.md  
     - Развёртывание в Windows:
       - Утилита администрирования Comindware. Установка и настройка версий и экземпляров ПО:
-        - administration/deploy/windows/administration_utility/admin_utility_install_launch.md
-        - administration/deploy/windows/administration_utility/article-2028-Установка продукта Comindware Business Application Platform.md
-        - administration/deploy/windows/administration_utility/article-2029-Настройка конфигурации Утилиты администрирования Comindware.md
-        - administration/deploy/windows/administration_utility/article-2030-Диагностика экземпляра продукта.md
-        - administration/deploy/windows/administration_utility/article-2031-Обновление версии продукта для экземпляра.md
-        - administration/deploy/windows/administration_utility/article-2032-Создание экземпляра продукта, добавление скрытого экземпляра.md
-        - administration/deploy/windows/administration_utility/article-2034-Удаление версии продукта.md
-        - administration/deploy/windows/administration_utility/article-2035-Запуск, остановка и удаление экземпляра продукта.md
-        - administration/deploy/windows/administration_utility/article-2036-Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта.md
-        - administration/deploy/windows/administration_utility/article-2037-Индикация состояния и обновление списка экземпляров продукта.md
-        - administration/deploy/windows/administration_utility/article-2038-Восстановление экземпляра продукта из резервной копии в ОС Windows.md
-        - administration/deploy/windows/administration_utility/article-2296-Инициализация экземпляра продукта.md
-      - administration/deploy/windows/article-2129-Обновление версии экземпляра ПО с 3.5 на 4.2. Инструкции, подготовка базы данных, устранение проблем.md
-      - administration/deploy/windows/article-2298-Остановка экземпляра системы с помощью Диспетчера служб IIS.md
-      - administration/deploy/windows/article-2300-Запуск экземпляра системы с помощью Диспетчера служб IIS.md
-      - administration/deploy/windows/article-2316-Comindware Architect. Инструкции по установке экземпляра ПО в ОС Windows.md
+        - administration/deploy/windows/admin_utility/admin_utility_install_launch.md
+        - administration/deploy/windows/admin_utility/sw_install.md
+        - administration/deploy/windows/admin_utility/admin_utility_configure.md
+        - administration/deploy/windows/admin_utility/instance_diagnose.md
+        - administration/deploy/windows/admin_utility/instance_upgrade_version.md
+        - administration/deploy/windows/admin_utility/instance_create.md
+        - administration/deploy/windows/admin_utility/sw_version_delete.md
+        - administration/deploy/windows/admin_utility/instance_start_stop.md
+        - administration/deploy/windows/admin_utility/instance_configure.md
+        - administration/deploy/windows/admin_utility/instance_status_update.md
+        - administration/deploy/windows/admin_utility/instance_backup_restore.md
+        - administration/deploy/windows/admin_utility/instance_instalize.md
+      - administration/deploy/windows/instance_upgrade_3_2_to_4_2_windows.md
+      - administration/deploy/windows/instance_stop_IIS.md
+      - administration/deploy/windows/instance_start_IIS.md
+      - administration/deploy/windows/architect_install.md
       - Вспомогательное ПО. Развёртывание:
         - administration/deploy/windows/auxiliary_software_deploy/zabbix_agent_deploy_windows.md
         - administration/deploy/windows/auxiliary_software_deploy/apache_ignite_deploy_windows.md
@@ -148,6 +148,9 @@ nav:
         - administration/connections_communication_routes/sql_connections/sql_receive_connection.md
       - Подключения к шинам сообщений:
         - administration/connections_communication_routes/message_queue_connections/kafka_connection.md
+      - Пользовательские подключения:
+        - administration/connections_communication_routes/custom_connections/esphere_receive_configure.md
+        - administration/connections_communication_routes/custom_connections/esphere_send_configure.md
   - Администрирование приложений:
     - business_apps/index.md
     - Диаграммы:

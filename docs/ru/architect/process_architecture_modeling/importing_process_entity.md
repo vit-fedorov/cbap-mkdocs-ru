@@ -1,6 +1,6 @@
 ---
 title: Импорт диаграмм процессов
-kbId: 2425
+kbId: 4832
 tags:
     - процессная архитектура
     - импорт диаграммы процесса
@@ -13,7 +13,7 @@ hide:
 
 ## Импорт с помощью реестра процессов
 
-**{{ productNameArchitect }}** позволяет импортировать диаграммы процессов в формате BPMN из файлов и внешних BPM-систем.
+**{{ productNameEnterprise }}** позволяет импортировать диаграммы процессов в формате BPMN из файлов и внешних BPM-систем.
 
 !!! Note "Примечание"
 
@@ -28,7 +28,7 @@ hide:
 
 *![Импорт диаграмм процессов с помощью реестра процессов](process_architecture_modelling_import_diagram_from_registry.png)*
 
-## Импорт с помощью панели навигации
+## Импорт с помощью панели навигации {: .pageBreakBefore }
 
 --8<-- "process_architecture_call_actions_context_menu.md"
 2. В раскрывающемся меню выберите пункт «**Импорт**».
@@ -44,7 +44,7 @@ hide:
 
 *![Импорт диаграмм процессов с помощью конструктора диаграммы](importing_process_entity_import_diagram_from_designer.png)*
 
-## Выбор источника импорта и импорт диаграмм
+## Выбор источника импорта и импорт диаграмм {: .pageBreakBefore }
 
 1. Перейдите к окну «**Импорт**» с помощью реестра процессов, панели навигации или конструктора диаграммы.
 2. Выберите **источник импорта** и импортируйте диаграммы.
@@ -62,10 +62,13 @@ hide:
 
 *![Выбор процессов для импорта](importing_process_entity_select_processes.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Просмотр реестра процессов][architect_process_architecture_modelling]**
+- _[Просмотр реестра процессов][architect_process_architecture_modelling]_
+- _[Использование системы — Панель навигации][navigation_panel]_
 
-**[Использование системы — Панель навигации][navigation_panel]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

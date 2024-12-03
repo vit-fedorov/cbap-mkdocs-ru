@@ -1,6 +1,6 @@
 ---
 title: Построение процессной архитектуры
-kbId: 2426
+kbId: 4833
 tags:
     - процессная архитектура
     - группы процессов
@@ -22,7 +22,7 @@ hide:
 
 # Построение процессной архитектуры {: #architect_process_architecture_modelling}
 
-Для построения процессной архитектуры в **{{ productNameArchitect }}** предусмотрены следующие инструменты:
+Для построения процессной архитектуры в «**{{ productNameArchitect }}**» предусмотрены следующие инструменты:
 
 * иерархический [реестр процессов](#architect_process_architecture_modelling);
 * [конструктор диаграмм][architect_process_diagram_designer] бизнес-способностей и процессов;
@@ -48,10 +48,13 @@ hide:
 
 *![Иерархический реестр процессов](process_architecture_modeling_registry.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Построение организационной структуры][architect_organizational_structure_modelling]**
+- _[Построение организационной структуры][architect_organizational_structure_modelling]_
+- _[Использование системы — Панель навигации][navigation_panel]_
 
-**[Использование системы — Панель навигации][navigation_panel]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

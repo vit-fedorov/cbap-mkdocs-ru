@@ -1,6 +1,6 @@
 ---
 title: Максимальный размер загружаемых файлов. Настройка для экземпляра ПО
-kbId: 2569
+kbId: 4619
 ---
 
 # Максимальный размер загружаемых файлов. Настройка для экземпляра ПО { #upload_size_limit_configure}
@@ -15,7 +15,7 @@ kbId: 2569
 
 По умолчанию файлы, загружаемые конечными пользователями и формируемые автоматически, хранятся в следующем каталоге:
 
-{% if completeGuide or kbExport %}
+{% if completeGuide or userGuide or kbExport %}
 - `/var/lib/comindware/<instanceName>/Streams` — Linux
 - `C:\ProgramData\Comindware\`  `Instances\<instanceName>\Streams` — Windows
 {% endif %}
@@ -48,8 +48,8 @@ kbId: 2569
             - Можно прикрепить к одному полю типа «**Документ**» файл объёмом 300 МБ.
             - Нельзя прикрепить к полям типа «**Документ**» три файла по 110 МБ.
 
-{% if completeGuide or adminGuideLinux or kbExport %}
-### Изменение лимита в Linux
+{% if completeGuide or userGuide or adminGuideLinux or kbExport %}
+### Изменение лимита в Linux {: .pageBreakBefore }
 
 Для изменения лимита на размер загружаемых файлов в ОС Linux необходимо отредактировать конфигурацию экземпляра ПО, а также конфигурацию NGINX.
 
@@ -73,7 +73,7 @@ kbId: 2569
 
     ...
 
-    <requestLimits maxAllowedContentLength="1073741824" />       
+    <requestLimits maxAllowedContentLength="1073741824" />
     ```
 
 4. Откройте для редактирования файл `/etc/nginx/sites-available/comindware<instanceName>`:
@@ -97,13 +97,13 @@ kbId: 2569
 7. Перезагрузите экземпляр ПО и NGINX:
 
     ```
-    systemctl restart nginx  
+    systemctl restart nginx
     systemctl restart comindware<instanceName>
     ```
 
 {% endif%}
 
-{% if completeGuide or adminGuideWindows or kbExport %}
+{% if completeGuide or userGuide or adminGuideWindows or kbExport %}
 ### Изменение лимита в Windows
 
 Для изменения лимита на размер загружаемых файлов в ОС Windows необходимо отредактировать конфигурацию экземпляра ПО.
@@ -123,8 +123,12 @@ kbId: 2569
 
 {% endif%}
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Пути и содержимое папок экземпляра ПО][paths]**
+- _[Пути и содержимое папок экземпляра ПО][paths]_
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

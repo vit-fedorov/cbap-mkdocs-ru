@@ -12,7 +12,7 @@ tags:
   - путь передачи данных
 hide:
   - tags
-kbId: 2376
+kbId: 4736
 ---
 
 # Начальное событие-получение сообщения {: #process_diagram_elements_receive_message_start_event}
@@ -35,7 +35,7 @@ kbId: 2376
 - **Изменить тип** — смена типа события.
 --8<-- "process_diagram_quick_create.md"
 
-## Свойства начального события-получения сообщения
+## Свойства начального события-получения сообщения {: .pageBreakBefore }
 
 В окне свойств **начального события-получения сообщения** предусмотрены перечисленные ниже вкладки.
 
@@ -53,13 +53,15 @@ kbId: 2376
 
 *![Настройка пути передачи данных для начального события-получения сообщения](receive_message_start_event_advanced_use_communication_route.png)*
 
+{% include-markdown ".snippets/pdfPageBreakHard.md" %}
+
 - **Имя сообщения** — укажите _уникальный_ идентификатор сообщения, который будет служить для передачи данных из другого события. Это же имя необходимо указать в **[конечном][process_diagram_elements_send_message_end_event]** или **[промежуточном][process_diagram_elements_send_message_intermediate_event]** **событии-отправке сообщения**. Процесс будет запускаться при поступлении сообщений с заданным именем от других событий в этом или других процессах.
 
 --8<-- "process_message_event_name.md"
 
 *![Настройка имени сообщения для начального события-получения сообщения](receive_message_start_event_advanced_message_name.png)*
 
-### Данные сообщения
+### Данные сообщения {: .pageBreakBefore }
 
 На этой вкладке можно настроить передачу данных из полученного сообщения в процесс.
 
@@ -74,20 +76,19 @@ kbId: 2376
 
 *![Настройка данных сообщения для начального события-получения сообщения](receive_message_start_event_message_data.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[События][process_diagram_elements_events]**
+- _[События][process_diagram_elements_events]_
+- _[Типы начальных событий][типы-начальных-событий]_
+- _[Конечные события][process_diagram_elements_events_end]_
+- _[Промежуточные события][process_diagram_elements_events_intermediate]_
+- _[Пути передачи данных][communication_routes]_
+- _[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]_
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
-**[Типы начальных событий][типы-начальных-событий]**
+</div>
 
-**[Конечные события][process_diagram_elements_events_end]**
-
-**[Промежуточные события][process_diagram_elements_events_intermediate]**
-
-**[Пути передачи данных][communication_routes]**
-
-**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
-
-**[Элементы диаграммы процесса][process_diagram_elements]**
-
-**[Редактирование диаграммы процесса][process_diagram_designer]**
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

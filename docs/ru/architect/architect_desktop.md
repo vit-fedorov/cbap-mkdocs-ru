@@ -15,13 +15,13 @@ hide:
 
 ## Введение
 
-После входа в **{{ productNameEnterprise }}** отображается Рабочий стол «**{{ productNameArchitect }}**» со ссылками для выполнения [базовых операций](#операции-на-рабочем-столе-architect).
+После входа в **{{ productNameEnterprise }}** отображается Рабочий стол «**{{ productNameArchitect }}**» со ссылками для выполнения [базовых операций](#architect_desktop_operations).
 
 Сведения об использовании и настройке Рабочего стола см. в разделах «_[Рабочий стол. Использование][desktop]_» и _«[Рабочий стол. Определения и настройка][desktop_setup]»_.
 
 _![Рабочий стол модуля «{{ productNameArchitect }}»](architect_desktop.png)_
 
-## Операции на Рабочем столе «{{ productNameArchitect }}» {: .pageBreakBefore }
+## Операции на Рабочем столе «{{ productNameArchitect }}» {: #architect_desktop_operations .pageBreakBefore }
 
 * **Создание архитектуры**
     - **Процессы** — [построение процессной архитектуры][architect_process_architecture_modelling] организации.

@@ -182,6 +182,7 @@ nav:
         - business_apps/diagrams/process_diagram/index.md
         - business_apps/diagrams/process_diagram/process_diagram_version_control.md
         - business_apps/diagrams/process_diagram/process_diagram_view_instance.md
+        - business_apps/diagrams/process_diagram/process_error_monitor.md
         - Элементы диаграммы процесса: 
           - business_apps/diagrams/process_diagram/process_diagram_elements/index.md
           - Общие свойства элементов: business_apps/diagrams/process_diagram/process_diagram_elements/process_diagram_element_common_properties.md
@@ -358,6 +359,7 @@ nav:
     - examples/scenario_verify_data.md
     - examples/process_email_configure.md
     - examples/script_using_local_variable.md
+    - examples/multilingual_app.md
   - Обучение:
     - tutorial/lesson_1.md
     - tutorial/lesson_2.md
@@ -369,7 +371,7 @@ nav:
     - tutorial/lesson_8.md
     - tutorial/lesson_9.md
     - tutorial/lesson_10.md
-    
+
 exclude_docs: |
   administration/deploy/windows/admin_utility/**
   administration/deploy/windows/architect_install.md

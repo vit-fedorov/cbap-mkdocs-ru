@@ -49,13 +49,12 @@ def on_post_page (output, page, config, **kwargs):
         i['class'] = 'screenshot_with_caption'
         i.find('figcaption')['class'] = 'caption'
         
-    # Base all image links on https://kb.comindware.ru/assets/
+    # Base img src on site_name or leave as is
     for i in p.find_all('img'):
-        # filename = pathlib.PurePath(str(i['src'])).name
-        dir = pathlib.PurePosixPath(page.abs_url).parents[0]
-        imgPath = pathlib.PurePosixPath(config.site_name, str(dir), str(i['src']))
-        i['src'] = imgPath
-        # print (i['src'])
+        if not i['src'].startswith(('https://', 'http://')):
+            dir = pathlib.PurePosixPath(page.abs_url).parents[0]
+            imgPath = pathlib.PurePosixPath(config.site_name, str(dir), str(i['src']))
+            i['src'] = imgPath
 
     # Classify all links as imported from MkDocs            
     for i in p.find_all('a'):

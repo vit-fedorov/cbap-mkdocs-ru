@@ -1,5 +1,5 @@
 ``` sh
-sudo -i
+sudo -s
 ```
 
 или

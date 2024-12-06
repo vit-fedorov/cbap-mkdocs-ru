@@ -68,7 +68,7 @@ def on_post_page (output, page, config, **kwargs):
         pattern = re.compile(r'^(.*)\n', flags=re.MULTILINE)
         pre = str(i)
         pre = re.sub(pattern, 
-                      r'<code>\1</code><br/>\n', 
+                      r'<code>\1</code> <br />', 
                       pre)
         i.replace_with(bs4.BeautifulSoup(pre, 'html.parser'))
     

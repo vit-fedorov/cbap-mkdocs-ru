@@ -102,7 +102,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в режим суперпользователя:</p>
-<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-i</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-s</code> <br/></pre></code></div>
 <p>или</p>
 <div class="highlight"><code><pre><span></span><code>su<span class="w"> </span>-</code> <br/></pre></code></div>
 </li>
@@ -117,7 +117,8 @@
 </li>
 <li>
 <p>Перейдите в распакованную директорию:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>CMW_&lt;osname&gt;/</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;path&gt;/CMW_&lt;osname&gt;/</code> <br/></pre></code></div>
+<p>Здесь:  <code>&lt;path&gt;/CMW_&lt;osname&gt;/</code> — путь к распакованному дистрибутиву ПО.</p>
 </li>
 <li>
 <p id="install.sh">Установите ПО из дистрибутива:</p>
@@ -129,10 +130,26 @@
 <li><code>e</code> — установить ПО Elasticsearch.</li>
 <li><code>h</code> — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).</li>
 </ul>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>Скрипт <code>install.sh</code> установливает необходимые компоненты для работы ПО, включая Java, .NET, Mono, NGINX.</p>
+</div>
 <div class="notice notice-tip">
 <p class="admonition-title">Вызов справки для скриптов</p>
 <p>Для ознакомления с ключами и назначением любого скрипта используйте ключ <code>-h</code> без каких-либо других ключей, например:</p>
 <div class="highlight"><code><pre><span></span><code>sh<span class="w"> </span>install.sh<span class="w"> </span>-h</code> <br/></pre></code></div>
+</div>
+</li>
+<li>
+<p>По окончании установки скрипт выведет информацию об установленных компонентах. Удостоверьтесь, что компоненты успешно установлены.</p>
+<p>Пример результата выполнения скрипта с ключом <code>-p</code> без установки Elasticsearch и Kafka:</p>
+<div class="highlight"><code><pre><span></span><code>Environment<span class="w"> </span>details</code> <br/><code>Status<span class="w">     </span><span class="p">|</span><span class="w"> </span>Software<span class="w">   </span><span class="p">|</span><span class="w"> </span>Version<span class="w">   </span></code> <br/><code>-----------------------------------------</code> <br/><code>OK<span class="w">         </span><span class="p">|</span><span class="w"> </span>mono<span class="w">       </span><span class="p">|</span><span class="w"> </span><span class="m">6</span>.12.0.182<span class="w">     </span></code> <br/><code>OK<span class="w">         </span><span class="p">|</span><span class="w"> </span>dotnet<span class="w">     </span><span class="p">|</span><span class="w"> </span><span class="m">6</span>.0.417<span class="w">        </span></code> <br/><code>OK<span class="w">         </span><span class="p">|</span><span class="w"> </span>java<span class="w">       </span><span class="p">|</span><span class="w"> </span><span class="m">17</span>.0.7<span class="w">         </span></code> <br/><code>OK<span class="w">     </span>NGINX<span class="w"> </span>installed.</code> <br/><code>FAILED<span class="w"> </span>NGINX<span class="w"> </span>started.</code> <br/><code>OK<span class="w">     </span>CBAP<span class="w"> </span>version<span class="w"> </span>folder<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>CBAP<span class="w"> </span>configs<span class="w"> </span>folder<span class="w"> </span>created.</code> <br/><code>FAILED<span class="w"> </span>CBAP<span class="w"> </span>data<span class="w"> </span>folder<span class="w"> </span>created.</code> <br/><code>FAILED<span class="w"> </span>CBAP<span class="w"> </span>logs<span class="w"> </span>folder<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>CBAP<span class="w"> </span>dotnet<span class="w"> </span>folder<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>Local<span class="w"> </span>elasticsearch<span class="w"> </span>server<span class="w"> </span>installed:<span class="w"> </span>No<span class="w"> </span></code> <br/><code>OK<span class="w">     </span>Local<span class="w"> </span>elasticsearch<span class="w"> </span>server<span class="w"> </span>started:<span class="w"> </span>No<span class="w"> </span></code> <br/><code>OK<span class="w">     </span>Local<span class="w"> </span>kafka<span class="w"> </span>server<span class="w"> </span>installed:<span class="w"> </span>No<span class="w"> </span></code> <br/><code>OK<span class="w">     </span>Local<span class="w"> </span>kafka<span class="w"> </span>server<span class="w"> </span>started:<span class="w"> </span>No<span class="w"> </span></code> <br/><code>FAILED<span class="w"> </span>Final<span class="w"> </span>status.</code> <br/></pre></code></div>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>В примере выше для большинства пунктов указан статус <code>OK</code>.</p>
+<p>При этом указан статус <code>FAILED</code> для <code>NGINX started</code>, <code>CBAP data folder created</code>, <code>CBAP logs folder created</code> и <code>Final status</code>.</p>
+<p>Это означает, что установлены необходимые компоненты, но не создан экземпляр ПО, то есть установка ПО выполнена успешно.</p>
+<p>Экземпляр ПО следует создать отдельно согласно инструкциям в параграфе <em>«<a class="mkdocs_imported_link" href="#создание-экземпляра-по">Создание экземпляра ПО</a>»</em>.</p>
 </div>
 </li>
 <li>
@@ -141,9 +158,8 @@
 <p>После перезагрузки ОС заново запустите <a class="mkdocs_imported_link" href="#install.sh">установку ПО из дистрибутива (шаг 4)</a>.</p>
 </li>
 <li>
-<p>Дождитесь завершения установки ПО.</p>
+<p>После успешного завершения установки подождите 3–5 минут. Этого времени обычно достаточно для автоматического запуска и инициализации установленных служб (в зависимости от конфигурации машины).</p>
 </li>
-<li>После успешного завершения установки подождите 3–5 минут. Этого времени обычно достаточно для автоматического запуска и инициализации установленных служб (в зависимости от конфигурации машины).</li>
 <li>
 <p>Удостоверьтесь, что ПО установлено, просмотрев список установленных версий ПО:</p>
 <div class="highlight"><code><pre><span></span><code>ls<span class="w"> </span>/var/www/.cmw_version/</code> <br/></pre></code></div>
@@ -155,7 +171,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в режим суперпользователя:</p>
-<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-i</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-s</code> <br/></pre></code></div>
 <p>или</p>
 <div class="highlight"><code><pre><span></span><code>su<span class="w"> </span>-</code> <br/></pre></code></div>
 </li>
@@ -165,7 +181,18 @@
 </li>
 <li>
 <p>Установите следующие директивы:</p>
-<div class="highlight"><code><pre><span></span><code><span class="err">* soft nproc 65536</span></code> <br/><code><span class="err">* hard nproc 65536</span></code> <br/><code><span class="err">* soft nofile 65536</span></code> <br/><code><span class="err">* hard nofile 65536</span></code> <br/><code><span class="err">www-data soft nproc 200000</span></code> <br/><code><span class="err">www-data hard nproc 200000</span></code> <br/><code><span class="err">www-data soft nofile 200000</span></code> <br/><code><span class="err">www-data hard nofile 200000</span></code> <br/></pre></code></div>
+<ul>
+<li><strong>Astra Linux</strong>, <strong>Ubuntu</strong>, <strong>Debian</strong></li>
+</ul>
+<div class="highlight"><code><pre><span></span><code><span class="err">www-data soft nproc 200000</span></code> <br/><code><span class="err">www-data hard nproc 200000</span></code> <br/><code><span class="err">www-data soft nofile 200000</span></code> <br/><code><span class="err">www-data hard nofile 200000</span></code> <br/></pre></code></div>
+<ul>
+<li><strong>РЕД ОС</strong>, <strong>Rocky</strong></li>
+</ul>
+<div class="highlight"><code><pre><span></span><code><span class="err">nginx soft nproc 200000</span></code> <br/><code><span class="err">nginx hard nproc 200000</span></code> <br/><code><span class="err">nginx soft nofile 200000</span></code> <br/><code><span class="err">nginx hard nofile 200000</span></code> <br/></pre></code></div>
+<ul>
+<li><strong>Альт Сервер</strong></li>
+</ul>
+<div class="highlight"><code><pre><span></span><code><span class="err">_nginx soft nproc 200000</span></code> <br/><code><span class="err">_nginx hard nproc 200000</span></code> <br/><code><span class="err">_nginx soft nofile 200000</span></code> <br/><code><span class="err">_nginx hard nofile 200000</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Откройте для редактирования файл <code>common-session</code>:</p>
@@ -208,14 +235,14 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в режим суперпользователя:</p>
-<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-i</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-s</code> <br/></pre></code></div>
 <p>или</p>
 <div class="highlight"><code><pre><span></span><code>su<span class="w"> </span>-</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Перейдите в директорию со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
 <div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;path&gt;/CMW_&lt;osname&gt;/scripts/instance</code> <br/></pre></code></div>
-<p>Здесь:  <code>&lt;path&gt;/CMW_&lt;osname&gt;</code> — путь к распакованному дистрибутиву ПО.</p>
+<p>Здесь:  <code>&lt;path&gt;/CMW_&lt;osname&gt;/</code> — путь к распакованному дистрибутиву ПО.</p>
 </li>
 <li>
 <p>Разверните экземпляр ПО:</p>
@@ -242,7 +269,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в режим суперпользователя:</p>
-<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-i</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-s</code> <br/></pre></code></div>
 <p>или</p>
 <div class="highlight"><code><pre><span></span><code>su<span class="w"> </span>-</code> <br/></pre></code></div>
 </li>
@@ -265,11 +292,11 @@
 </li>
 <li>
 <p>Откройте для редактирования три службы каждого из установленных экземпляров ПО (<code>&lt;instanceName&gt;</code>):</p>
-<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/lib/systemd/system/comindware&lt;instanceName&gt;.service</code> <br/><code>nano<span class="w"> </span>/lib/systemd/system/apigateway&lt;instanceName&gt;.service</code> <br/><code>nano<span class="w"> </span>/lib/systemd/system/adapterhost&lt;instanceName&gt;.service</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/usr/lib/systemd/system/comindware&lt;instanceName&gt;.service</code> <br/><code>nano<span class="w"> </span>/usr/lib/systemd/system/apigateway&lt;instanceName&gt;.service</code> <br/><code>nano<span class="w"> </span>/usr/lib/systemd/system/adapterhost&lt;instanceName&gt;.service</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Если используются локальные службы Kafka и Elasticsearch, откройте их для редактирования:</p>
-<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/lib/systemd/system/kafka.service</code> <br/><code>nano<span class="w"> </span>/lib/systemd/system/elasticsearch.service</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/usr/lib/systemd/system/kafka.service</code> <br/><code>nano<span class="w"> </span>/usr/lib/systemd/system/elasticsearch.service</code> <br/></pre></code></div>
 </li>
 <li>
 <p>В каждом файле службы установите следующие директивы:</p>
@@ -280,7 +307,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в режим суперпользователя:</p>
-<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-i</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-s</code> <br/></pre></code></div>
 <p>или</p>
 <div class="highlight"><code><pre><span></span><code>su<span class="w"> </span>-</code> <br/></pre></code></div>
 </li>
@@ -350,7 +377,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в режим суперпользователя:</p>
-<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-i</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-s</code> <br/></pre></code></div>
 <p>или</p>
 <div class="highlight"><code><pre><span></span><code>su<span class="w"> </span>-</code> <br/></pre></code></div>
 </li>
@@ -367,7 +394,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в режим суперпользователя:</p>
-<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-i</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-s</code> <br/></pre></code></div>
 <p>или</p>
 <div class="highlight"><code><pre><span></span><code>su<span class="w"> </span>-</code> <br/></pre></code></div>
 </li>
@@ -376,7 +403,7 @@
 </li>
 <li>
 <p>Перейдите в директорию со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>CMW_&lt;osname&gt;/scripts/instance</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;path&gt;/CMW_&lt;osname&gt;/scripts/instance</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Запустите удаление экземпляра ПО:</p>
@@ -392,7 +419,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в режим суперпользователя:</p>
-<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-i</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-s</code> <br/></pre></code></div>
 <p>или</p>
 <div class="highlight"><code><pre><span></span><code>su<span class="w"> </span>-</code> <br/></pre></code></div>
 </li>

@@ -55,9 +55,7 @@ kbId: 2569
 
 1. Перейдите в режим суперпользователя `root`:
 
-    ```
-    sudo -i
-    ```
+    --8<-- "linux_sudo.md"
 
 2. Откройте для редактирования файл `/var/www/comindware<instanceName>/Web.config`:
 {: .pageBreakBefore }

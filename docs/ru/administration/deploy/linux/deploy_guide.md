@@ -223,7 +223,7 @@ kbId: 2344
 2. Просмотрите список имеющихся экземпляров ПО **{{ productName }}**:
 
     ``` sh
-    ls /var/lib/comindware/
+    cat /usr/share/comindware/configs/instance/* | grep -E '(configPath:)'
     ```
 
 3. Просмотрите список используемых портов:

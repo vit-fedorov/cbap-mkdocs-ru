@@ -103,7 +103,7 @@ _![Запуск резервного копирования экземпляра
 8. Запустите приложение *Windows PowerShell ISE* от *имени администратора* Windows.
 9. В окно скриптов скопируйте следующие строки:
 
-    ``` sh
+    ``` powershell
     Get-ChildItem "C:\migrationTool" -recurse | Unblock-File -confirm
     [Environment]::SetEnvironmentVariable("IsMigrationMode", "true")
     C:\MigrationTool\bin\Comindware.Platform.Migration.exe "C:\DatabaseBackup" "C:\DatabaseMigrated" <instanceName>
@@ -119,7 +119,7 @@ _![Запуск резервного копирования экземпляра
 
 10. Выделите первую строку скрипта:
 
-    ``` sh
+    ``` powershell
     Get-ChildItem "C:\migrationTool" -recurse | Unblock-File -confirm
     ```
 
@@ -127,7 +127,7 @@ _![Запуск резервного копирования экземпляра
 12. Дождитесь завершения выполнения команды.
 13. Выделите и выполните вторую и третьи строки скрипта:
 
-    ``` sh
+    ``` powershell
     [Environment]::SetEnvironmentVariable("IsMigrationMode", "true")
     C:\MigrationTool\bin\Comindware.Platform.Migration.exe "C:\DataвaseBackup" "C:\DatabaseMigrated" <instanceName>
     ```

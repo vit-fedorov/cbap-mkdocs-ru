@@ -19,14 +19,14 @@ kbId: 5063
 2. Запустите _PowerShell_ от имени администратора.
 3. Установите неограниченную политику выполнения _PowerShell_:
 
-    ``` sh
+    ``` powershell
     Set-ExecutionPolicy Unrestricted
     ```
 
 4. В запросе на изменение политики выберите вариант «**Да для всех**», введя букву ++a++.
 5. Перейдите в папку со скриптами для развёртывания ПО:
 
-    ``` sh
+    ``` powershell
     cd "X:\<path>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
     ```
 
@@ -34,7 +34,7 @@ kbId: 5063
 
 6. Разблокируйте доступ к скачанным из Интернета установочным файлам:
 
-    ``` sh
+    ``` powershell
     .\files_unblock.ps1
     ```
 
@@ -42,19 +42,19 @@ kbId: 5063
 
         Для ознакомления с ключами и назначением любого скрипта используйте ключ `-h` без каких-либо других ключей, например:
 
-        ``` sh
+        ``` powershell
         .\files_unblock.ps1 -h
         ```
 
 7. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
 
-    ``` sh
+    ``` powershell
     cd "X:\<path>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\prerequisites"
     ```
 
 8. Установите необходимое вспомогательное ПО:
 
-    ``` sh
+    ``` powershell
     .\prerequisites_install.ps1
     ```
 
@@ -62,13 +62,13 @@ kbId: 5063
 10. Запустите _PowerShell_ от имени администратора.
 11. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
 
-    ``` sh
+    ``` powershell
     cd "X:\<path>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\prerequisites"
     ```
 
 12. Проверьте, что дополнительные компоненты установлены:
 
-    ``` sh
+    ``` powershell
     .\prerequisites_list.ps1
     ```
 
@@ -76,19 +76,19 @@ kbId: 5063
 
 13. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
-    ``` sh
+    ``` powershell
     cd "X:\<path>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
     ```
 
 14. Установите ПО:
 
-    ``` sh
+    ``` powershell
     .\version_install.ps1
     ```
 
 15. Удостоверьтесь, что ПО установлено, вызывав список установленных версий ПО:
 
-    ``` sh
+    ``` powershell
     .\version_list.ps1
     ```
 
@@ -96,13 +96,13 @@ kbId: 5063
 
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
-    ``` sh
+    ``` powershell
     cd "X:\<path>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
     ```
 
 2. Разверните экземпляр ПО:
 
-    ``` sh
+    ``` powershell
     .\instance_create.ps1 -name <instanceName> -port <portNumber> -version <versionNumber> 
     ```
 
@@ -124,13 +124,13 @@ kbId: 5063
 
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
-    ``` sh
+    ``` powershell
     cd "X:\<path>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
     ```
 
 2. Запустите экземпляр ПО:
 
-    ``` sh
+    ``` powershell
     .\instance_start.ps1 -name <instanceName>
     ```
 
@@ -140,13 +140,13 @@ kbId: 5063
 
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
-    ``` sh
+    ``` powershell
     cd "X:\<path>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
     ```
 
 2. Остановите экземпляр ПО:
 
-    ``` sh
+    ``` powershell
     .\instance_stop.ps1 -name <instanceName>
     ```
 
@@ -165,13 +165,13 @@ end="<!--initialize-end-->"
 1. Скачайте и установите ПО новой версии согласно инструкциям в параграфе _«[Установка {{ productName }}](#deploy_guide_windows_install_sw)»_.
 2. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
-    ``` sh
+    ``` powershell
     cd "X:\<path>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
     ```
 
 3. Запустите обновление экземпляра ПО:
 
-    ``` sh
+    ``` powershell
     .\instance_upgrade.ps1 -name <instanceName> -version <versionNumber> 
     ```
 
@@ -184,7 +184,7 @@ end="<!--initialize-end-->"
 
 4. Просмотрите список установленных экземпляров ПО:
 
-    ``` sh
+    ``` powershell
     .\instance_list.ps1
     ```
 
@@ -194,13 +194,13 @@ end="<!--initialize-end-->"
 
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
-    ``` sh
+    ``` powershell
     cd "X:\<path>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
     ```
 
 2. Удалите экземпляр ПО:
 
-    ``` sh
+    ``` powershell
     .\instance_delete.ps1 -name <instanceName>
     ```
 
@@ -214,20 +214,20 @@ end="<!--initialize-end-->"
 
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
-    ``` sh
+    ``` powershell
     cd "X:\<path>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
     ```
 
 2. Просмотрите список установленных экземпляров ПО:
 
-    ``` sh
+    ``` powershell
     .\instance_list.ps1
     ```
 
 3. Удалите все экземпляры с версией ПО, которую требуется удалить, или обновите их до другой версии. Удалить версию ПО, которая используется в каких-либо экземплярах, не удастся. См. _«[Удаление экземпляра ПО](#удаление-экземпляра-по)»_.
 4. Удалите версию ПО:
 
-    ``` sh
+    ``` powershell
     .\version_delete.ps1 -version <versionNumber>
     ```
 

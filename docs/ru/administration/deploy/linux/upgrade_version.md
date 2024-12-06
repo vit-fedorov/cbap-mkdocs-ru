@@ -217,7 +217,7 @@ kbId: 4624
     mq.adapter.1.enabled: true
     mq.adapter.2.enabled: true
     mq.adapter.3.enabled: true
-    version: 4.7.2XXX.X
+    version: 5.X.XXXX.X
     ```
 
 10. Перезапустите сервисы, настройки которых были изменены:

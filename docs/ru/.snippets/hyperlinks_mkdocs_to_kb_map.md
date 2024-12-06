@@ -126,7 +126,7 @@
 
 [connections_delete]: {{ kbArticleURLPrefix }}4675#connections_delete
 
-[db_migrate_4.2_to_4.7]: {{ kbArticleURLPrefix }}4621
+[db_migrate_4.2_to_5]: {{ kbArticleURLPrefix }}4621
 
 [db_move_manually]: {{ kbArticleURLPrefix }}4649
 

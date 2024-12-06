@@ -96,15 +96,31 @@ kbId: 2344
 
 3. Установите следующие директивы:
 
+    - **Astra Linux**, **Ubuntu**, **Debian**
+    
     ``` systemd
-    * soft nproc 65536
-    * hard nproc 65536
-    * soft nofile 65536
-    * hard nofile 65536
     www-data soft nproc 200000
     www-data hard nproc 200000
     www-data soft nofile 200000
     www-data hard nofile 200000
+    ```
+
+    - **РЕД ОС**, **Rocky**
+
+    ``` systemd
+    nginx soft nproc 200000
+    nginx hard nproc 200000
+    nginx soft nofile 200000
+    nginx hard nofile 200000
+    ```
+
+    - **Альт Сервер**
+
+    ``` systemd
+    _nginx soft nproc 200000
+    _nginx hard nproc 200000
+    _nginx soft nofile 200000
+    _nginx hard nofile 200000
     ```
 
 4. Откройте для редактирования файл `common-session`:
@@ -248,16 +264,16 @@ kbId: 2344
 6. Откройте для редактирования три службы каждого из установленных экземпляров ПО (`<instanceName>`):
 
     ``` sh
-    nano /lib/systemd/system/comindware<instanceName>.service
-    nano /lib/systemd/system/apigateway<instanceName>.service
-    nano /lib/systemd/system/adapterhost<instanceName>.service
+    nano /usr/lib/systemd/system/comindware<instanceName>.service
+    nano /usr/lib/systemd/system/apigateway<instanceName>.service
+    nano /usr/lib/systemd/system/adapterhost<instanceName>.service
     ```
 
 7. Если используются локальные службы Kafka и Elasticsearch, откройте их для редактирования:
 
     ``` sh
-    nano /lib/systemd/system/kafka.service
-    nano /lib/systemd/system/elasticsearch.service
+    nano /usr/lib/systemd/system/kafka.service
+    nano /usr/lib/systemd/system/elasticsearch.service
     ```
 
 8. В каждом файле службы установите следующие директивы:

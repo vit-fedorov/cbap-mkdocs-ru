@@ -119,26 +119,10 @@
 <h2 class="pageBreakBefore" id="использование-переменных-в-формулах-и-выражениях-n3">Использование переменных в формулах и выражениях N3</h2>
 <p>Чтобы обратиться к переменной в формуле, укажите её системное имя с префиксом <code>$$</code>.</p>
 <p>Например, чтобы присвоить атрибуту значение ID процесса, связанного с шаблоном записи, используйте формулу:</p>
-<div class="highlight"><code><pre><span></span><code><span class="n">FORMAT</span><span class="p">(</span><span class="s">"{0}"</span><span class="p">,</span><span class="w"> </span><span class="n">LIST</span><span class="p">(</span><span class="err">$$</span><span class="n">ProcessObject</span><span class="p">))</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="n">FORMAT</span><span class="p">(</span><span class="s">"{0}"</span><span class="p">,</span><span class="w"> </span><span class="n">LIST</span><span class="p">(</span><span class="err">$$</span><span class="n">ProcessObject</span><span class="p">))</span></code> <br/></pre></code></div>
 <p>В выражениях N3 с переменными следует работать как с атрибутами. Чтобы обратиться к переменной, требуется импортировать функции для работы с ними.</p>
 <p>Например, чтобы присвоить атрибуту значение ID процесса, связанного с шаблоном записи, используйте выражение:</p>
-<div class="highlight"><code><pre><span></span><code><span class="c"># Импортируем функции для работы с переменными</span></code><br/>
-<code><span class="k">@prefix</span><span class="w"> </span><span class="nn">variable:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/variable#&gt;</span><span class="p">.</span></code><br/>
-<code><span class="k">@prefix</span><span class="w"> </span><span class="nn">session:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session#&gt;</span><span class="p">.</span></code><br/>
-<code><span class="k">@prefix</span><span class="w"> </span><span class="nn">string:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/10/swap/string#&gt;</span><span class="p">.</span></code><br/>
-<code><span class="k">@prefix</span><span class="w"> </span><span class="nn">cmwstring:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/logics/string#&gt;</span><span class="p">.</span></code><br/>
-<code></code><br/>
-<code><span class="p">{</span></code><br/>
-<code>    <span class="c"># Находим значение системной переменной ProcessObject</span></code><br/>
-<code>    <span class="c"># и помещаем его в ?ProcessObject.</span></code><br/>
-<code>    <span class="nn">session</span><span class="p">:</span><span class="nt">context</span> <span class="nn">variable</span><span class="p">:</span><span class="nt">ProcessObject</span> <span class="err">?ProcessObject</span><span class="p">.</span></code><br/>
-<code>    <span class="c"># Форматируем ?ProcessObject в строку и помещаем в ?FullId.</span></code><br/>
-<code>    <span class="p">(</span><span class="s">"{0}"</span> <span class="err">?ProcessObject</span><span class="p">)</span> <span class="nn">string</span><span class="p">:</span><span class="nt">format</span> <span class="err">?FullId</span><span class="p">.</span></code><br/>
-<code>    <span class="c"># Обрезаем префикс "user." и помещаем ID процесса в атрибут.</span></code><br/>
-<code>    <span class="p">(</span><span class="err">?FullId</span> <span class="mi">5</span><span class="p">)</span> <span class="nn">cmwstring</span><span class="p">:</span><span class="nt">substring</span> <span class="err">?value</span><span class="p">.</span></code><br/>
-<code><span class="p">}</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="c"># Импортируем функции для работы с переменными</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">variable:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/variable#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">session:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">string:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/10/swap/string#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">cmwstring:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/logics/string#&gt;</span><span class="p">.</span></code> <br/><code></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="c"># Находим значение системной переменной ProcessObject</span></code> <br/><code>    <span class="c"># и помещаем его в ?ProcessObject.</span></code> <br/><code>    <span class="nn">session</span><span class="p">:</span><span class="nt">context</span> <span class="nn">variable</span><span class="p">:</span><span class="nt">ProcessObject</span> <span class="err">?ProcessObject</span><span class="p">.</span></code> <br/><code>    <span class="c"># Форматируем ?ProcessObject в строку и помещаем в ?FullId.</span></code> <br/><code>    <span class="p">(</span><span class="s">"{0}"</span> <span class="err">?ProcessObject</span><span class="p">)</span> <span class="nn">string</span><span class="p">:</span><span class="nt">format</span> <span class="err">?FullId</span><span class="p">.</span></code> <br/><code>    <span class="c"># Обрезаем префикс "user." и помещаем ID процесса в атрибут.</span></code> <br/><code>    <span class="p">(</span><span class="err">?FullId</span> <span class="mi">5</span><span class="p">)</span> <span class="nn">cmwstring</span><span class="p">:</span><span class="nt">substring</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 <h2 class="pageBreakBefore" id="практический-пример">Практический пример</h2>
 <p>Настроим сценарий для массовой корректировки записей в табеле трудозатрат с использованием локальных переменных кнопки.</p>
 <ol class="colored_numbers_list">
@@ -221,17 +205,7 @@
 <ul>
 <li><strong>N3:</strong></li>
 </ul>
-<div class="highlight"><code><pre><span></span><code><span class="c"># Импортируем функции для работы с переменными</span></code><br/>
-<code><span class="k">@prefix</span><span class="w"> </span><span class="nn">variable:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/variable#&gt;</span><span class="p">.</span></code><br/>
-<code><span class="k">@prefix</span><span class="w"> </span><span class="nn">session:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session#&gt;</span><span class="p">.</span></code><br/>
-<code></code><br/>
-<code><span class="p">{</span></code><br/>
-<code>    <span class="c"># Помещаем системную переменную dialogVariables в ?dialogVariables.</span></code><br/>
-<code>    <span class="nn">session</span><span class="p">:</span><span class="nt">context</span> <span class="nn">variable</span><span class="p">:</span><span class="nt">dialogVariables</span> <span class="err">?dialogVariables</span><span class="p">.</span></code><br/>
-<code>    <span class="c"># Находим в ?dialogVariables значение переменной newTime.</span></code><br/>
-<code>    <span class="err">?dialogVariables</span> <span class="nn">variable</span><span class="p">:</span><span class="nt">newTime</span> <span class="err">?value</span><span class="p">.</span></code><br/>
-<code><span class="p">}</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="c"># Импортируем функции для работы с переменными</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">variable:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/variable#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">session:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session#&gt;</span><span class="p">.</span></code> <br/><code></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="c"># Помещаем системную переменную dialogVariables в ?dialogVariables.</span></code> <br/><code>    <span class="nn">session</span><span class="p">:</span><span class="nt">context</span> <span class="nn">variable</span><span class="p">:</span><span class="nt">dialogVariables</span> <span class="err">?dialogVariables</span><span class="p">.</span></code> <br/><code>    <span class="c"># Находим в ?dialogVariables значение переменной newTime.</span></code> <br/><code>    <span class="err">?dialogVariables</span> <span class="nn">variable</span><span class="p">:</span><span class="nt">newTime</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 </li>
 </ul>
 </li>

@@ -31,8 +31,7 @@
 <ol class="colored_numbers_list" start="3">
 <li>В выражение будет вставлена заготовка функции:</li>
 </ol>
-<div class="highlight"><code><pre><span></span><code><span class="err">a</span> <span class="p">[</span><span class="nn">object</span><span class="p">:</span><span class="nt">alias</span> <span class="p">].</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="err">a</span> <span class="p">[</span><span class="nn">object</span><span class="p">:</span><span class="nt">alias</span> <span class="p">].</span></code> <br/></pre></code></div>
 <ol class="colored_numbers_list" start="4">
 <li>В позиции перед закрывающей квадратной скобкой нажмите клавиши <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-space">Пробел</kbd></span>.</li>
 <li>Отобразится список шаблонов в приложении.</li>
@@ -43,24 +42,11 @@
 <ol class="colored_numbers_list" start="6">
 <li>Дважды нажмите системное имя шаблона, например <code>Zayavkanaotpusk</code>.</li>
 <li>В выражение будет вставлен запрос записей выбранного шаблона:
-  <div class="highlight"><code><pre><span></span><code><span class="err">?objectZayavkanaotpusk</span> <span class="kt">a</span> <span class="p">[</span><span class="nn">object</span><span class="p">:</span><span class="nt">alias</span> <span class="s">"Zayavkanaotpusk"</span><span class="p">].</span></code><br/>
-</pre></code></div></li>
+  <div class="highlight"><code><pre><span></span><code><span class="err">?objectZayavkanaotpusk</span> <span class="kt">a</span> <span class="p">[</span><span class="nn">object</span><span class="p">:</span><span class="nt">alias</span> <span class="s">"Zayavkanaotpusk"</span><span class="p">].</span></code> <br/></pre></code></div></li>
 <li>Чтобы присвоить результат выражения значению вычисляемого атрибута, замените имя переменной <code>objectZayavkanaotpusk</code> на <code>value</code>.</li>
 </ol>
-<div class="highlight"><span class="filename">Пример: компактное выражение, возвращающее все записи шаблона по его системному имени</span><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code><br/>
-<code><span class="p">{</span></code><br/>
-<code>  <span class="c"># Получаем список записей шаблона Zayavkanaotpusk</span></code><br/>
-<code>  <span class="err">?value</span> <span class="kt">a</span> <span class="p">[</span><span class="nn">object</span><span class="p">:</span><span class="nt">alias</span> <span class="s">"Zayavkanaotpusk"</span><span class="p">].</span></code><br/>
-<code><span class="p">}</span></code><br/>
-</pre></code></div>
-<div class="highlight"><span class="filename">Эквивалентное выражение без квадратных скобок</span><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code><br/>
-<code><span class="p">{</span></code><br/>
-<code>  <span class="c"># Получаем ID шаблона Zayavkanaotpusk</span></code><br/>
-<code>  <span class="err">?zayavkiTemplate</span> <span class="nn">object</span><span class="p">:</span><span class="nt">alias</span> <span class="s">"Zayavkanaotpusk"</span><span class="p">.</span></code><br/>
-<code>  <span class="c"># Получаем список записей шаблона Zayavkanaotpusk</span></code><br/>
-<code>  <span class="err">?value</span> <span class="kt">a</span> <span class="err">?zayavkiTemplate</span><span class="p">.</span></code><br/>
-<code><span class="p">}</span></code><br/>
-</pre></code></div>
+<div class="highlight"><span class="filename">Пример: компактное выражение, возвращающее все записи шаблона по его системному имени</span><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code>  <span class="c"># Получаем список записей шаблона Zayavkanaotpusk</span></code> <br/><code>  <span class="err">?value</span> <span class="kt">a</span> <span class="p">[</span><span class="nn">object</span><span class="p">:</span><span class="nt">alias</span> <span class="s">"Zayavkanaotpusk"</span><span class="p">].</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<div class="highlight"><span class="filename">Эквивалентное выражение без квадратных скобок</span><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code>  <span class="c"># Получаем ID шаблона Zayavkanaotpusk</span></code> <br/><code>  <span class="err">?zayavkiTemplate</span> <span class="nn">object</span><span class="p">:</span><span class="nt">alias</span> <span class="s">"Zayavkanaotpusk"</span><span class="p">.</span></code> <br/><code>  <span class="c"># Получаем список записей шаблона Zayavkanaotpusk</span></code> <br/><code>  <span class="err">?value</span> <span class="kt">a</span> <span class="err">?zayavkiTemplate</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 <div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <ul>

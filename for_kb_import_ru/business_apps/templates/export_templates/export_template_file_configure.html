@@ -179,8 +179,7 @@
 <ul>
 <li>
 <p>Скрипт C# должен передавать данные в функцию:</p>
-<div class="highlight"><code><pre><span></span><code><span class="n">Api</span><span class="p">.</span><span class="n">TeamNetwork</span><span class="p">.</span><span class="n">ObjectAppExportService</span><span class="p">.</span><span class="n">ExecuteExcelExportTemplate</span><span class="p">(</span><span class="s">"exportTemplate.N"</span><span class="p">,</span><span class="w"> </span><span class="n">dataToExport</span><span class="p">)</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="n">Api</span><span class="p">.</span><span class="n">TeamNetwork</span><span class="p">.</span><span class="n">ObjectAppExportService</span><span class="p">.</span><span class="n">ExecuteExcelExportTemplate</span><span class="p">(</span><span class="s">"exportTemplate.N"</span><span class="p">,</span><span class="w"> </span><span class="n">dataToExport</span><span class="p">)</span></code> <br/></pre></code></div>
 <p>Здесь:</p>
 <ul>
 <li><code>exportTemplate.N</code> — ID шаблона экспорта;</li>
@@ -220,8 +219,7 @@
 <ul>
 <li>
 <p>Скрипт C# должен передавать данные в функцию:</p>
-<div class="highlight"><code><pre><span></span><code><span class="n">Api</span><span class="p">.</span><span class="n">TeamNetwork</span><span class="p">.</span><span class="n">ObjectAppExportService</span><span class="p">.</span><span class="n">ExecuteWordExportTemplate</span><span class="p">(</span><span class="s">"exportTemplate.N"</span><span class="p">,</span><span class="w"> </span><span class="n">dataToExport</span><span class="p">)</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="n">Api</span><span class="p">.</span><span class="n">TeamNetwork</span><span class="p">.</span><span class="n">ObjectAppExportService</span><span class="p">.</span><span class="n">ExecuteWordExportTemplate</span><span class="p">(</span><span class="s">"exportTemplate.N"</span><span class="p">,</span><span class="w"> </span><span class="n">dataToExport</span><span class="p">)</span></code> <br/></pre></code></div>
 <p>Здесь:</p>
 <ul>
 <li><code>exportTemplate.N</code> — ID шаблона экспорта;</li>
@@ -233,11 +231,9 @@
 </li>
 <li>
 <p>Чтобы экспортировать массив данных, используйте в строке таблицы или абзаце следующую конструкцию:</p>
-<div class="highlight"><code><pre><span></span><code>&lt;&lt;foreach [row in dataArray]&gt;&gt;&lt;&lt;[row.property0]&gt;&gt; &lt;&lt;[row.property1]&gt;&gt; ... &lt;&lt;[row.propertyN]&gt;&gt;&lt;&lt;/foreach&gt;&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>&lt;&lt;foreach [row in dataArray]&gt;&gt;&lt;&lt;[row.property0]&gt;&gt; &lt;&lt;[row.property1]&gt;&gt; ... &lt;&lt;[row.propertyN]&gt;&gt;&lt;&lt;/foreach&gt;&gt;</code> <br/></pre></code></div>
 <p>или</p>
-<div class="highlight"><code><pre><span></span><code>&lt;&lt;foreach [in dataArray]&gt;&gt;&lt;&lt;[property0]&gt;&gt; &lt;&lt;[property1]&gt;&gt; ... &lt;&lt;[propertyN]&gt;&gt;&lt;&lt;/foreach&gt;&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>&lt;&lt;foreach [in dataArray]&gt;&gt;&lt;&lt;[property0]&gt;&gt; &lt;&lt;[property1]&gt;&gt; ... &lt;&lt;[propertyN]&gt;&gt;&lt;&lt;/foreach&gt;&gt;</code> <br/></pre></code></div>
 <p>Здесь:</p>
 <ul>
 <li><code>foreach</code> — оператор цикла по массиву <code>dataArray</code></li>

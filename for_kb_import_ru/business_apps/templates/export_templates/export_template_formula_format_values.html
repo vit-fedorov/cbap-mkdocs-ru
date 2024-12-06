@@ -147,8 +147,7 @@
 <div class="notice notice-tip">
 <p class="admonition-title">Синтаксис для формулы</p>
 <p>Аналогичным образом можно форматировать числа при использовании функции <code>FORMAT()</code>, например:</p>
-<div class="highlight"><code><pre><span></span><code>FORMAT("{0:N2}",LIST($numberAttributeSystemName))</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>FORMAT("{0:N2}",LIST($numberAttributeSystemName))</code> <br/></pre></code></div>
 </div>
 <h2 class="pageBreakBefore" id="форматирование-дат-и-времени">Форматирование дат и времени</h2>
 <p>Значение атрибута типа «<strong>Дата и время</strong>» экспортируется в документ Word как текст.</p>
@@ -160,8 +159,7 @@
 <div class="notice notice-tip">
 <p class="admonition-title">Синтаксис для формулы</p>
 <p>Аналогичным образом можно форматировать даты и время при использовании функций <code>FORMAT()</code> и <code>FORMATLOC()</code>, например:</p>
-<div class="highlight"><code><pre><span></span><code>FORMAT("{0:dddd, dd MMMM yyyy 'г.'}",LIST($dateAttributeSystemName))</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>FORMAT("{0:dddd, dd MMMM yyyy 'г.'}",LIST($dateAttributeSystemName))</code> <br/></pre></code></div>
 </div>
 <h3 id="примеры-форматирования-дат-и-времени">Примеры форматирования дат и времени</h3>
 <table style="width: 100%;">
@@ -373,8 +371,7 @@
 <div class="notice notice-tip">
 <p class="admonition-title">Синтаксис для формулы</p>
 <p>Аналогичным образом можно форматировать даты и время при использовании функций <code>FORMAT()</code> и <code>FORMATLOC()</code>, например:</p>
-<div class="highlight"><code><pre><span></span><code>FORMAT("{0:dd' д. 'hh':'mm':'ss}",LIST($durationAttributeSystemName))</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>FORMAT("{0:dd' д. 'hh':'mm':'ss}",LIST($durationAttributeSystemName))</code> <br/></pre></code></div>
 </div>
 <h3 id="примеры-форматирования-значений-длительности">Примеры форматирования значений длительности</h3>
 <table style="width: 100%;">
@@ -485,8 +482,7 @@
 <h2 class="pageBreakBefore" id="форматирование-логических-значений">Форматирование логических значений</h2>
 <p>Значение атрибута типа «<strong>Логический</strong>» экспортируется как строка «<em>Истина»</em> или <em>«Ложь</em>».</p>
 <p>Для экспорта значения в другом виде (например, <code>"Согласовано","Не согласовано"</code>) можно привести его к требуемому формату. Для этого создайте новый текстовый атрибут и сделайте его вычисляемым с помощью формулы, например:</p>
-<div class="highlight"><code><pre><span></span><code>FORMAT("{0}",LIST(IF($attributeSystemName == true,"Согласовано","Не согласовано")))</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>FORMAT("{0}",LIST(IF($attributeSystemName == true,"Согласовано","Не согласовано")))</code> <br/></pre></code></div>
 <h2 id="форматирование-данных-аккаунта">Форматирование данных аккаунта</h2>
 <p>Посредством атрибута типа «<strong>Аккаунт</strong>» можно экспортировать данные пользователя (значения атрибутов аккаунта), например, адрес эл. почты и должность.</p>
 <p>При этом можно форматировать значения атрибутов. Например:</p>

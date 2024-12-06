@@ -422,8 +422,7 @@
 <li markdown=""><strong>Тип данных: текст</strong></li>
 <li markdown=""><strong>Вычислять автоматически:</strong> флажок установлен</li>
 <li markdown="block"><strong>Вычисляемое выражение: формула</strong>
-<div class="highlight"><code><pre><span></span><code><span class="n">FORMAT</span><span class="p">(</span><span class="s">"{0}"</span><span class="p">,</span><span class="n">LIST</span><span class="p">(</span><span class="err">$</span><span class="n">unitType</span><span class="p">))</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="n">FORMAT</span><span class="p">(</span><span class="s">"{0}"</span><span class="p">,</span><span class="n">LIST</span><span class="p">(</span><span class="err">$</span><span class="n">unitType</span><span class="p">))</span></code> <br/></pre></code></div>
 </li>
 </ul>
 </td>
@@ -436,20 +435,7 @@
 <li markdown=""><strong>Тип данных: текст</strong></li>
 <li markdown=""><strong>Вычислять автоматически:</strong> флажок установлен</li>
 <li markdown="block"><strong>Вычисляемое выражение: N3</strong>
-<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code><br/>
-<code><span class="p">{</span></code><br/>
-<code>    <span class="p">(</span><span class="s">"systemSolution"</span> <span class="s">"Tipsluzhebnyy"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?foundProperty</span><span class="p">.</span></code><br/>
-<code>    <span class="p">(</span><span class="s">"systemSolution"</span> <span class="s">"superiorUnit"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?superiorUnitProp</span><span class="p">.</span></code><br/>
-<code>    <span class="p">(</span><span class="s">"systemSolution"</span> <span class="s">"Otdel"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?Otdel</span><span class="p">.</span></code><br/>
-<code>    <span class="p">(</span><span class="s">"systemSolution"</span> <span class="s">"unitName"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?name</span><span class="p">.</span></code><br/>
-<code>    <span class="err">if</span> <span class="p">{</span><span class="err">?item</span> <span class="err">?foundProperty</span> <span class="s">"Department"</span><span class="p">.</span> <span class="p">}</span></code><br/>
-<code>    <span class="err">then</span> <span class="p">{</span> <span class="err">?item</span> <span class="err">?name</span> <span class="err">?value</span><span class="p">.}</span></code><br/>
-<code>    <span class="err">else</span> <span class="p">{</span></code><br/>
-<code>    <span class="err">?item</span> <span class="err">?superiorUnitProp</span> <span class="err">?superiorUnit</span><span class="p">.</span></code><br/>
-<code>        <span class="err">?superiorUnit</span> <span class="err">?Otdel</span> <span class="err">?value</span><span class="p">.</span></code><br/>
-<code>    <span class="p">}.</span></code><br/>
-<code><span class="p">}</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="p">(</span><span class="s">"systemSolution"</span> <span class="s">"Tipsluzhebnyy"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?foundProperty</span><span class="p">.</span></code> <br/><code>    <span class="p">(</span><span class="s">"systemSolution"</span> <span class="s">"superiorUnit"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?superiorUnitProp</span><span class="p">.</span></code> <br/><code>    <span class="p">(</span><span class="s">"systemSolution"</span> <span class="s">"Otdel"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?Otdel</span><span class="p">.</span></code> <br/><code>    <span class="p">(</span><span class="s">"systemSolution"</span> <span class="s">"unitName"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?name</span><span class="p">.</span></code> <br/><code>    <span class="err">if</span> <span class="p">{</span><span class="err">?item</span> <span class="err">?foundProperty</span> <span class="s">"Department"</span><span class="p">.</span> <span class="p">}</span></code> <br/><code>    <span class="err">then</span> <span class="p">{</span> <span class="err">?item</span> <span class="err">?name</span> <span class="err">?value</span><span class="p">.}</span></code> <br/><code>    <span class="err">else</span> <span class="p">{</span></code> <br/><code>    <span class="err">?item</span> <span class="err">?superiorUnitProp</span> <span class="err">?superiorUnit</span><span class="p">.</span></code> <br/><code>        <span class="err">?superiorUnit</span> <span class="err">?Otdel</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code>    <span class="p">}.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 </li>
 </ul>
 </td>
@@ -467,8 +453,7 @@
 <li><strong>Новое значение: скрыть</strong></li>
 <li>
 <p><strong>Условие выполнения: формула</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="err">$</span><span class="n">Otdel</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="err">$</span><span class="n">unitName</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="err">$</span><span class="n">Otdel</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="err">$</span><span class="n">unitName</span></code> <br/></pre></code></div>
 </li>
 </ul>
 </li>

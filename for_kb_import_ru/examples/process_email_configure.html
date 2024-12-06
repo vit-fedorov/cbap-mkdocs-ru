@@ -335,8 +335,7 @@
 <p><strong>Тип данных: текст</strong></p>
 <p><strong>Вычислять автоматически</strong>: флажок установлен</p>
 <p><strong>Вычисляемое значение: формула</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="err">$</span><span class="n">_creator</span><span class="o">-&gt;</span><span class="n">fullName</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="err">$</span><span class="n">_creator</span><span class="o">-&gt;</span><span class="n">fullName</span></code> <br/></pre></code></div>
 <ul>
 <li><code>$</code> — ссылка на текущую запись в <a class="mkdocs_imported_link" href="#attributes_record_template_vacation_application">шаблоне <em>«Заявления на отпуск»</em></a>.</li>
 <li><code>_creator</code> — системный атрибут, содержащий ID аккаунта, который создал запись.</li>
@@ -355,8 +354,7 @@
 <p><strong>Тип данных: текст</strong></p>
 <p><strong>Вычислять автоматически</strong>: флажок установлен</p>
 <p><strong>Вычисляемое значение: формула</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="err">$</span><span class="n">_creator</span><span class="o">-&gt;</span><span class="n">mbox</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="err">$</span><span class="n">_creator</span><span class="o">-&gt;</span><span class="n">mbox</span></code> <br/></pre></code></div>
 <ul>
 <li><code>$</code> — ссылка на текущую запись в <a class="mkdocs_imported_link" href="#attributes_record_template_vacation_application">шаблоне <em>«Заявления на отпуск»</em></a>.</li>
 <li><code>_creator</code> — системный атрибут, содержащий ID аккаунта, который создал запись.</li>
@@ -397,8 +395,7 @@
 <p><strong>Тип данных: дата и время</strong></p>
 <p><strong>Вычислять автоматически</strong>: флажок установлен</p>
 <p><strong>Вычисляемое значение: формула</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="n">ADDDAYS</span><span class="p">(</span><span class="err">$</span><span class="n">StartDate</span><span class="p">,</span><span class="w"> </span><span class="err">$</span><span class="n">Duration</span><span class="p">)</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="n">ADDDAYS</span><span class="p">(</span><span class="err">$</span><span class="n">StartDate</span><span class="p">,</span><span class="w"> </span><span class="err">$</span><span class="n">Duration</span><span class="p">)</span></code> <br/></pre></code></div>
 <ul>
 <li><code>ADDDAYS()</code> — эта функция принимает дату и число, прибавляет к дате указанное число
 дней и возвращает новую дату.</li>
@@ -471,13 +468,7 @@
 <p><strong>Тип данных: текст</strong></p>
 <p><strong>Вычислять автоматически</strong>: флажок установлен</p>
 <p><strong>Вычисляемое значение: формула</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="n">SUBSTRING</span><span class="p">(</span></code><br/>
-<code><span class="w">    </span><span class="err">$</span><span class="n">ResponseEmailSubject</span><span class="p">,</span></code><br/>
-<code><span class="w">    </span><span class="n">INDEXOF</span><span class="p">(</span><span class="err">$</span><span class="n">ResponseEmailSubject</span><span class="p">,</span><span class="s">"["</span><span class="p">)</span><span class="o">+</span><span class="m">1</span><span class="p">,</span></code><br/>
-<code><span class="w">    </span><span class="n">INDEXOF</span><span class="p">(</span><span class="err">$</span><span class="n">ResponseEmailSubject</span><span class="p">,</span><span class="s">"]"</span><span class="p">)</span><span class="o">-</span></code><br/>
-<code><span class="w">    </span><span class="n">INDEXOF</span><span class="p">(</span><span class="err">$</span><span class="n">ResponseEmailSubject</span><span class="p">,</span><span class="s">"["</span><span class="p">)</span><span class="o">-</span><span class="m">1</span></code><br/>
-<code><span class="p">)</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="n">SUBSTRING</span><span class="p">(</span></code> <br/><code><span class="w">    </span><span class="err">$</span><span class="n">ResponseEmailSubject</span><span class="p">,</span></code> <br/><code><span class="w">    </span><span class="n">INDEXOF</span><span class="p">(</span><span class="err">$</span><span class="n">ResponseEmailSubject</span><span class="p">,</span><span class="s">"["</span><span class="p">)</span><span class="o">+</span><span class="m">1</span><span class="p">,</span></code> <br/><code><span class="w">    </span><span class="n">INDEXOF</span><span class="p">(</span><span class="err">$</span><span class="n">ResponseEmailSubject</span><span class="p">,</span><span class="s">"]"</span><span class="p">)</span><span class="o">-</span></code> <br/><code><span class="w">    </span><span class="n">INDEXOF</span><span class="p">(</span><span class="err">$</span><span class="n">ResponseEmailSubject</span><span class="p">,</span><span class="s">"["</span><span class="p">)</span><span class="o">-</span><span class="m">1</span></code> <br/><code><span class="p">)</span></code> <br/></pre></code></div>
 <ul>
 <li><code>SUBSTRING()</code> — эта функция принимает строку, позиции начала и конца подстроки и возвращает фрагмент исходной строки между указанными позициями.</li>
 <li><code>INDEXOF()</code> — эта функция принимает две строки, ищет в первой строке вторую строку и возвращает число — позицию искомой строки в исходной строке. В противном случае функция возвращает <code>null</code>.</li>
@@ -498,13 +489,7 @@
 <p><strong>Тип данных: логический</strong></p>
 <p><strong>Вычислять автоматически</strong>: флажок установлен</p>
 <p><strong>Вычисляемое значение: формула</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="n">IF</span><span class="p">(</span></code><br/>
-<code><span class="w">   </span><span class="n">MATCHES</span><span class="p">(</span><span class="err">$</span><span class="n">ResponseEmailSubject</span><span class="p">,</span></code><br/>
-<code><span class="w">   </span><span class="s">".*Отпуск согласован\. Заявление № \[[0-9]+\].*"</span><span class="p">),</span></code><br/>
-<code><span class="w">   </span><span class="k">true</span><span class="p">,</span></code><br/>
-<code><span class="w">   </span><span class="k">false</span></code><br/>
-<code><span class="p">)</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="n">IF</span><span class="p">(</span></code> <br/><code><span class="w">   </span><span class="n">MATCHES</span><span class="p">(</span><span class="err">$</span><span class="n">ResponseEmailSubject</span><span class="p">,</span></code> <br/><code><span class="w">   </span><span class="s">".*Отпуск согласован\. Заявление № \[[0-9]+\].*"</span><span class="p">),</span></code> <br/><code><span class="w">   </span><span class="k">true</span><span class="p">,</span></code> <br/><code><span class="w">   </span><span class="k">false</span></code> <br/><code><span class="p">)</span></code> <br/></pre></code></div>
 <ul>
 <li><code>IF()</code> — эта функция принимает логическое выражение и два аргумента любого типа. Функция возвращает второй аргумент, если выражение возвращает <code>true</code>. В противном случае функция возвращает третий аргумент.</li>
 <li><code>MATCHES()</code> — эта функция принимает строку с темой письма в атрибуте <code>$ResponseEmailSubject</code> и регулярное выражение <code>.*Отпуск согласован\. Заявление № \[[0-9]+\].*</code>, ищет в строке регулярное выражение и возвращает <code>true</code>, если выражение найдено. В противном случае функция возвращает <code>false</code>.</li>
@@ -535,8 +520,7 @@
 <ul>
 <li>Дано регулярное выражение:</li>
 </ul>
-<div class="highlight"><code><pre><span></span><code><span class="o">.*</span><span class="nt">Отпуск</span><span class="w"> </span><span class="nt">согласован</span><span class="err">\</span><span class="o">.</span><span class="w"> </span><span class="nt">Заявление</span><span class="w"> </span><span class="err">№</span><span class="w"> </span><span class="err">\</span><span class="o">[[</span><span class="nt">0-9</span><span class="o">]+</span><span class="err">\</span><span class="o">].*</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="o">.*</span><span class="nt">Отпуск</span><span class="w"> </span><span class="nt">согласован</span><span class="err">\</span><span class="o">.</span><span class="w"> </span><span class="nt">Заявление</span><span class="w"> </span><span class="err">№</span><span class="w"> </span><span class="err">\</span><span class="o">[[</span><span class="nt">0-9</span><span class="o">]+</span><span class="err">\</span><span class="o">].*</span></code> <br/></pre></code></div>
 <ul>
 <li><code>"Здравствуйте! Отпуск согласован. Заявление № [12345] одобрено."</code> —
 <strong>удовлетворяет</strong> регулярному выражению.</li>
@@ -688,41 +672,7 @@
     1. Перейдите в поле «<strong>Сообщение</strong>».
     2. В панели инструментов нажмите кнопку «<strong>Источник</strong>» <i class="fa-light fa-file-code">&zwnj;<!--icon--></i>.
     3. Введите следующий HTML-код:</p>
-<div class="highlight"><code><pre><span></span><code>    ``` html</code><br/>
-<code>    &lt;p&gt;Уважаемый коллега!&lt;/p&gt;</code><br/>
-<code>    &lt;p&gt;Поступило заявление на отпуск № {ApplicationNumber}.&lt;/p&gt;</code><br/>
-<code>    &lt;p&gt;Заявитель: {ApplicantName}&lt;/p&gt;</code><br/>
-<code>    &lt;p&gt;Количество дней: {Duration}&lt;/p&gt;</code><br/>
-<code>    &lt;p&gt;Даты отпуска: {StartDate}&amp;ndash;{EndDate}&lt;/p&gt;</code><br/>
-<code>    &lt;p&gt;Просьба согласовать отпуск или отказать в отпуске:&lt;/p&gt;</code><br/>
-<code>    &lt;ol&gt;</code><br/>
-<code>    &lt;li&gt;Нажмите соответствующую кнопку ниже.&lt;/li&gt;</code><br/>
-<code>    &lt;li&gt;Будет создано новое письмо.&lt;/li&gt;</code><br/>
-<code>    &lt;li&gt;В теме письма будет указано Ваше решение по заявлению и номер заявления.&lt;/li&gt;</code><br/>
-<code>    &lt;li&gt;&lt;u&gt;Не меняйте тему письма и адрес получателя.&lt;/u&gt;&lt;/li&gt;</code><br/>
-<code>    &lt;li&gt;При необходимости укажите причину решения в тексте письма.&lt;/li&gt;</code><br/>
-<code>    &lt;li&gt;Отправьте письмо.&lt;/li&gt;</code><br/>
-<code>    &lt;/ol&gt;</code><br/>
-<code>    &lt;table border="0" cellpadding="6" cellspacing="0"&gt;</code><br/>
-<code>    &lt;tbody markdown="block"&gt;</code><br/>
-<code>    &lt;tr markdown="block"&gt;</code><br/>
-<code>        &lt;td markdown="block"&gt;</code><br/>
-<code>    &lt;a href="mailto:leavedecisions@example.com?subject=Отпуск согласован. Заявление № [{ApplicationNumber}]"&gt;</code><br/>
-<code>    Согласовать отпуск&lt;/a&gt;</code><br/>
-<code>        &lt;/td&gt;</code><br/>
-<code>        &lt;td markdown="block"&gt;</code><br/>
-<code>            &lt;a href="mailto:leavedecisions@example.com?subject=В отпуске отказано. Заявление № [{ApplicationNumber}]&amp;body=Причина отказа:"&gt;</code><br/>
-<code>            Отказать в отпуске&lt;/a&gt;</code><br/>
-<code>        &lt;/td&gt;</code><br/>
-<code>    &lt;/tr&gt;</code><br/>
-<code>    &lt;/table&gt;</code><br/>
-<code>    ```</code><br/>
-<code></code><br/>
-<code>4. Снова нажмите кнопку «**Источник**» &lt;i class="fa-light fa-file-code"&gt;‌&lt;/i&gt;.</code><br/>
-<code>5. Должно отобразиться показанное на следующей иллюстрации письмо:</code><br/>
-<code></code><br/>
-<code>&lt;figure markdown&gt;![Тема и текст письма для Руководителя с заполнителями для подстановки значений атрибутов](img/process_email_configure_email_manager_example.png)&lt;figcaption&gt;Тема и текст письма для Руководителя с заполнителями для подстановки значений атрибутов&lt;/figcaption&gt;&lt;/figure&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>    ``` html</code> <br/><code>    &lt;p&gt;Уважаемый коллега!&lt;/p&gt;</code> <br/><code>    &lt;p&gt;Поступило заявление на отпуск № {ApplicationNumber}.&lt;/p&gt;</code> <br/><code>    &lt;p&gt;Заявитель: {ApplicantName}&lt;/p&gt;</code> <br/><code>    &lt;p&gt;Количество дней: {Duration}&lt;/p&gt;</code> <br/><code>    &lt;p&gt;Даты отпуска: {StartDate}&amp;ndash;{EndDate}&lt;/p&gt;</code> <br/><code>    &lt;p&gt;Просьба согласовать отпуск или отказать в отпуске:&lt;/p&gt;</code> <br/><code>    &lt;ol&gt;</code> <br/><code>    &lt;li&gt;Нажмите соответствующую кнопку ниже.&lt;/li&gt;</code> <br/><code>    &lt;li&gt;Будет создано новое письмо.&lt;/li&gt;</code> <br/><code>    &lt;li&gt;В теме письма будет указано Ваше решение по заявлению и номер заявления.&lt;/li&gt;</code> <br/><code>    &lt;li&gt;&lt;u&gt;Не меняйте тему письма и адрес получателя.&lt;/u&gt;&lt;/li&gt;</code> <br/><code>    &lt;li&gt;При необходимости укажите причину решения в тексте письма.&lt;/li&gt;</code> <br/><code>    &lt;li&gt;Отправьте письмо.&lt;/li&gt;</code> <br/><code>    &lt;/ol&gt;</code> <br/><code>    &lt;table border="0" cellpadding="6" cellspacing="0"&gt;</code> <br/><code>    &lt;tbody markdown="block"&gt;</code> <br/><code>    &lt;tr markdown="block"&gt;</code> <br/><code>        &lt;td markdown="block"&gt;</code> <br/><code>    &lt;a href="mailto:leavedecisions@example.com?subject=Отпуск согласован. Заявление № [{ApplicationNumber}]"&gt;</code> <br/><code>    Согласовать отпуск&lt;/a&gt;</code> <br/><code>        &lt;/td&gt;</code> <br/><code>        &lt;td markdown="block"&gt;</code> <br/><code>            &lt;a href="mailto:leavedecisions@example.com?subject=В отпуске отказано. Заявление № [{ApplicationNumber}]&amp;body=Причина отказа:"&gt;</code> <br/><code>            Отказать в отпуске&lt;/a&gt;</code> <br/><code>        &lt;/td&gt;</code> <br/><code>    &lt;/tr&gt;</code> <br/><code>    &lt;/table&gt;</code> <br/><code>    ```</code> <br/><code></code> <br/><code>4. Снова нажмите кнопку «**Источник**» &lt;i class="fa-light fa-file-code"&gt;‌&lt;/i&gt;.</code> <br/><code>5. Должно отобразиться показанное на следующей иллюстрации письмо:</code> <br/><code></code> <br/><code>&lt;figure markdown&gt;![Тема и текст письма для Руководителя с заполнителями для подстановки значений атрибутов](img/process_email_configure_email_manager_example.png)&lt;figcaption&gt;Тема и текст письма для Руководителя с заполнителями для подстановки значений атрибутов&lt;/figcaption&gt;&lt;/figure&gt;</code> <br/></pre></code></div>
 </li>
 </ul>
 </li>
@@ -898,14 +848,7 @@
 <li>В панели инструментов нажмите кнопку «<strong>Источник</strong>» <i class="fa-light fa-file-code">&zwnj;<!--icon--></i>.</li>
 <li>
 <p>В поле введите следующий HTML-код «<strong>Сообщение</strong>»:</p>
-<div class="highlight"><code><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Здравствуйте, {ApplicantName}!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code><br/>
-<code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Ваш отпуск согласован.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code><br/>
-<code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Заявление №: {ApplicationNumber}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code><br/>
-<code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Количество дней: {Duration}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code><br/>
-<code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Даты отпуска: {StartDate}<span class="ni">&amp;ndash;</span>{EndDate}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code><br/>
-<code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Комментарий руководителя:<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code><br/>
-<code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{ManagerComment}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Здравствуйте, {ApplicantName}!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code> <br/><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Ваш отпуск согласован.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code> <br/><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Заявление №: {ApplicationNumber}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code> <br/><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Количество дней: {Duration}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code> <br/><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Даты отпуска: {StartDate}<span class="ni">&amp;ndash;</span>{EndDate}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code> <br/><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Комментарий руководителя:<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code> <br/><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{ManagerComment}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Снова нажмите кнопку «<strong>Источник</strong>» <i class="fa-light fa-file-code">&zwnj;<!--icon--></i>.</p>
@@ -1011,14 +954,7 @@
 <li>В панели инструментов нажмите кнопку «<strong>Источник</strong>» <i class="fa-light fa-file-code">&zwnj;<!--icon--></i>.</li>
 <li>
 <p>В поле введите следующий HTML-код «<strong>Сообщение</strong>»:</p>
-<div class="highlight"><code><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Здравствуйте, {ApplicantName}!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code><br/>
-<code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>По Вашему заявлению на отпуск получен отказ.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code><br/>
-<code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Заявление №: {ApplicationNumber}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code><br/>
-<code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Количество дней: {Duration}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code><br/>
-<code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Даты отпуска: {StartDate}<span class="ni">&amp;ndash;</span>{EndDate}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code><br/>
-<code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Комментарий руководителя:<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code><br/>
-<code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{ManagerComment}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Здравствуйте, {ApplicantName}!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code> <br/><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>По Вашему заявлению на отпуск получен отказ.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code> <br/><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Заявление №: {ApplicationNumber}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code> <br/><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Количество дней: {Duration}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code> <br/><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Даты отпуска: {StartDate}<span class="ni">&amp;ndash;</span>{EndDate}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code> <br/><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Комментарий руководителя:<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code> <br/><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{ManagerComment}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Снова нажмите кнопку «<strong>Источник</strong>» <i class="fa-light fa-file-code">&zwnj;<!--icon--></i>.</p>
@@ -1116,8 +1052,7 @@
 </td>
 <td>
 <p><strong>Формула:</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="n">FORMAT</span><span class="p">(</span><span class="s">"{0}"</span><span class="p">,</span><span class="w"> </span><span class="n">LIST</span><span class="p">(</span><span class="err">$$</span><span class="n">ProcessObject</span><span class="p">))</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="n">FORMAT</span><span class="p">(</span><span class="s">"{0}"</span><span class="p">,</span><span class="w"> </span><span class="n">LIST</span><span class="p">(</span><span class="err">$$</span><span class="n">ProcessObject</span><span class="p">))</span></code> <br/></pre></code></div>
 <ul>
 <li><code>FORMAT()</code> — эта функция принимает строку заполнителями
     вида <code>{0}</code>…<code>{N}</code> и список значений. Функция подставляет значения из
@@ -1314,8 +1249,7 @@
 </td>
 <td>
 <p><strong>Формула:</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="err">$</span><span class="n">ManagerDecision</span><span class="o">-&gt;</span><span class="n">LeaveApproved</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="err">$</span><span class="n">ManagerDecision</span><span class="o">-&gt;</span><span class="n">LeaveApproved</span></code> <br/></pre></code></div>
 <ul>
 <li><code>$</code> — ссылка на текущую запись в  <a class="mkdocs_imported_link" href="#attributes_record_template_vacation_application">шаблоне <em>«Заявления на отпуск»</em></a>.</li>
 <li><code>ManagerDecision</code> — атрибут <em>«Решение руководителя»</em>, ссылающийся на запись в <a class="mkdocs_imported_link" href="#attributes_record_template_manager_decision">шаблоне <em>«Решения руководителя»</em></a>.</li>

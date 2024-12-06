@@ -19,15 +19,8 @@ kbId: 4603
 2. Скачайте бинарный дистрибутив Apache Ignite, например [apache-ignite-2.16.0-bin.zip](https://downloads.apache.org/ignite/2.16.0/apache-ignite-2.16.0-bin.zip) или более новую версию.
 3. Перейдите в режим суперпользователя:
 
-    ``` sh
-    su -
-    ```
 
-    или
-
-    ``` sh
-    sudo -i
-    ```
+    --8<-- "linux_sudo.md"
 
 4. Распакуйте дистрибутив Apache Ignite в домашнюю папку (здесь и далее `username` — имя текущего пользователя):
 

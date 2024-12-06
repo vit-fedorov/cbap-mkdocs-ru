@@ -58,26 +58,9 @@
 <li>
 <p>Чтобы получить значение переменной приложения с помощью N3, используйте следующее выражение:</p>
 <p><strong>По системному имени переменной</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="c"># Импортируем функции для работы с переменными</span></code><br/>
-<code><span class="k">@prefix</span><span class="w"> </span><span class="nn">globalvariable:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/variable#&gt;</span><span class="p">.</span></code><br/>
-<code></code><br/>
-<code><span class="p">{</span></code><br/>
-<code>    <span class="c"># Находим переменную VariableSystemName в приложении SolutionSystemName</span></code><br/>
-<code>    <span class="c"># по их системным именам</span></code><br/>
-<code>    <span class="c"># и возвращаем значение переменной.</span></code><br/>
-<code>    <span class="p">(</span><span class="s">"SolutionSystemName"</span> <span class="s">"VariableSystemName"</span><span class="p">)</span> <span class="nn">globalvariable</span><span class="p">:</span><span class="nt">getValueByAlias</span> <span class="err">?value</span><span class="p">.</span></code><br/>
-<code><span class="p">}</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="c"># Импортируем функции для работы с переменными</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">globalvariable:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/variable#&gt;</span><span class="p">.</span></code> <br/><code></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="c"># Находим переменную VariableSystemName в приложении SolutionSystemName</span></code> <br/><code>    <span class="c"># по их системным именам</span></code> <br/><code>    <span class="c"># и возвращаем значение переменной.</span></code> <br/><code>    <span class="p">(</span><span class="s">"SolutionSystemName"</span> <span class="s">"VariableSystemName"</span><span class="p">)</span> <span class="nn">globalvariable</span><span class="p">:</span><span class="nt">getValueByAlias</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 <p><strong>По ID переменной</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="c"># Импортируем функции для работы с переменными</span></code><br/>
-<code><span class="k">@prefix</span><span class="w"> </span><span class="nn">globalvariable:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/variable#&gt;</span><span class="p">.</span></code><br/>
-<code></code><br/>
-<code><span class="p">{</span></code><br/>
-<code>    <span class="c"># Получаем значение переменной приложения</span></code><br/>
-<code>    <span class="c"># по её ID (svar.1) и возвращаем её значение.</span></code><br/>
-<code>    <span class="s">"svar.1"</span> <span class="nn">globalvariable</span><span class="p">:</span><span class="nt">getValueById</span> <span class="err">?value</span><span class="p">.</span></code><br/>
-<code><span class="p">}</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="c"># Импортируем функции для работы с переменными</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">globalvariable:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/variable#&gt;</span><span class="p">.</span></code> <br/><code></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="c"># Получаем значение переменной приложения</span></code> <br/><code>    <span class="c"># по её ID (svar.1) и возвращаем её значение.</span></code> <br/><code>    <span class="s">"svar.1"</span> <span class="nn">globalvariable</span><span class="p">:</span><span class="nt">getValueById</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Чтобы присвоить атрибуту значение переменной приложения с помощью C#-скрипта в сценарии, используйте действие «<strong>Изменить значения скриптом</strong>» со следующими свойствами:</p>
@@ -86,25 +69,7 @@
 <li><strong>Операция со значениями: заменить</strong></li>
 <li>
 <p><strong>Значение:</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Script</span><span class="w"> </span><span class="p">{</span></code><br/>
-<code><span class="w">    </span><span class="c1">// Задайте тип метода Main(),</span></code><br/>
-<code><span class="w">    </span><span class="c1">// соответствующий типу атрибута и переменной приложения:</span></code><br/>
-<code><span class="w">    </span><span class="c1">// string — Текст, int, decimal — Число, dateTime — Дата и время,</span></code><br/>
-<code><span class="w">    </span><span class="c1">// bool — Логический, TimeSpan — Длительность,</span></code><br/>
-<code><span class="w">    </span><span class="c1">// IEnumerable&lt;string&gt; — Список значений.</span></code><br/>
-<code><span class="w">    </span><span class="c1">// ObjectID — переменная, в которой хранится</span></code><br/>
-<code><span class="w">    </span><span class="c1">// ID экземпляра шаблона записи,</span></code><br/>
-<code><span class="w">    </span><span class="c1">// в контексте которого выполняется скрипт.</span></code><br/>
-<code><span class="w">    </span><span class="c1">// Чтобы просмотреть доступные методы</span></code><br/>
-<code><span class="w">    </span><span class="c1">// в пространстве имён Comindware,</span></code><br/>
-<code><span class="w">    </span><span class="c1">// введите Comindware и точку</span></code><br/>
-<code></code><br/>
-<code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">decimal</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ObjectID</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></code><br/>
-<code><span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="n">Api</span><span class="p">.</span><span class="n">Solution</span><span class="p">.</span><span class="n">SolutionVariableService</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="s">"svar.1"</span><span class="p">);</span></code><br/>
-<code><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span></code><br/>
-<code><span class="w">    </span><span class="p">}</span></code><br/>
-<code><span class="p">}</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Script</span><span class="w"> </span><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="c1">// Задайте тип метода Main(),</span></code> <br/><code><span class="w">    </span><span class="c1">// соответствующий типу атрибута и переменной приложения:</span></code> <br/><code><span class="w">    </span><span class="c1">// string — Текст, int, decimal — Число, dateTime — Дата и время,</span></code> <br/><code><span class="w">    </span><span class="c1">// bool — Логический, TimeSpan — Длительность,</span></code> <br/><code><span class="w">    </span><span class="c1">// IEnumerable&lt;string&gt; — Список значений.</span></code> <br/><code><span class="w">    </span><span class="c1">// ObjectID — переменная, в которой хранится</span></code> <br/><code><span class="w">    </span><span class="c1">// ID экземпляра шаблона записи,</span></code> <br/><code><span class="w">    </span><span class="c1">// в контексте которого выполняется скрипт.</span></code> <br/><code><span class="w">    </span><span class="c1">// Чтобы просмотреть доступные методы</span></code> <br/><code><span class="w">    </span><span class="c1">// в пространстве имён Comindware,</span></code> <br/><code><span class="w">    </span><span class="c1">// введите Comindware и точку</span></code> <br/><code></code> <br/><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">decimal</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ObjectID</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></code> <br/><code><span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="n">Api</span><span class="p">.</span><span class="n">Solution</span><span class="p">.</span><span class="n">SolutionVariableService</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="s">"svar.1"</span><span class="p">);</span></code> <br/><code><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span></code> <br/><code><span class="w">    </span><span class="p">}</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 </li>
 </ul>
 </li>

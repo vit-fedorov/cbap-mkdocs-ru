@@ -1,0 +1,130 @@
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr">
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<div class="mce-toc">
+<h2 class="toc-heading">
+      Содержание
+      </h2>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#настройка-конфигурации-экземпляра-продукта">
+<span class="md-ellipsis">
+      Настройка конфигурации экземпляра продукта
+    </span>
+</a>
+<nav aria-label="Настройка конфигурации экземпляра продукта" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#настройка-параметров-iis">
+<span class="md-ellipsis">
+      Настройка параметров IIS
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#просмотр-и-настройка-путей-к-файлам-экземпляра-продукта">
+<span class="md-ellipsis">
+      Просмотр и настройка путей к файлам экземпляра продукта
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#связанные-статьи">
+<span class="md-ellipsis">
+      Связанные статьи
+    </span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h2 id="настройка-конфигурации-экземпляра-продукта">Настройка конфигурации экземпляра продукта</h2>
+<ol class="colored_numbers_list">
+<li>Выберите экземпляр в списке «<strong>Экземпляры продукта</strong>» в главном окне Утилиты администрирования.</li>
+<li>Нажмите кнопку «<strong>Настроить</strong>».</li>
+<li>
+<p>Отобразится окно «<strong>Конфигурация экземпляра продукта</strong>» с вкладками «<strong>IIS</strong>» и «<strong>Пути к файлам</strong>».</p>
+<p><figure class="screenshot_with_caption" markdown=""><img alt="Выбор экземпляра продукта и переход к его настройке" src="https://kb.comindware.ru/assets/img_6679711a2b4a6.png"/><figcaption class="caption">Выбор экземпляра продукта и переход к его настройке</figcaption></figure></p>
+</li>
+</ol>
+<h3 id="настройка-параметров-iis">Настройка параметров IIS</h3>
+<ol class="colored_numbers_list">
+<li>Выберите вкладку «<strong>IIS</strong>» в окне «<strong>Конфигурация экземпляра продукта</strong>».</li>
+<li>Настройте параметры службы ISS для экземпляра продукта:<ul>
+<li>
+<ul>
+<li><strong>Имя экземпляра</strong> — имя экземпляра продукта изменить нельзя, оно задается только при его создании.</li>
+<li><strong>Database</strong> <strong>name</strong> —  укажите имя базы данных Apache Ignite экземпляра продукта.</li>
+<li><strong>Доменное имя</strong> — укажите доменное имя, по которому будет доступен веб-сайт экземпляра продукта.</li>
+<li><strong>Порт</strong> — укажите порт, по которому будет доступен веб-сайт экземпляра продукта.</li>
+<li><strong>Включить запись журналов IIS</strong> — установите этот флажок, чтобы вести журналы работы Internet Information Services для данного экземпляра продукта.</li>
+<li><strong>Использовать единый вход через</strong> <strong>Active</strong> <strong>Directory</strong> — установите этот флажок, чтобы включить единый вход через сервер каталогов для данного экземпляра продукта.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Чтобы сохранить конфигурацию IIS, нажмите кнопку «<strong>Применить</strong>».</li>
+<li>Должно отобразиться сообщение об успешном обновлении конфигурации экземпляра продукта.</li>
+</ol>
+<p><img alt="Настройка параметров IIS для экземпляра продукта" src="https://kb.comindware.ru/assets/img_667eb89815ab5.png"/></p>
+<p>Настройка параметров IIS для экземпляра продукта</p>
+<h3 id="просмотр-и-настройка-путей-к-файлам-экземпляра-продукта">Просмотр и настройка путей к файлам экземпляра продукта</h3>
+<p>По умолчанию экземпляр продукта развёртывается в папке <code>C:\ProgramData\comindware\Instances\InstanceName</code>, где <em><code>InstanceName</code></em> — имя экземпляра.</p>
+<p>Чтобы просмотреть и изменить пути к файлам экземпляра продукта, выполните указанные ниже действия.</p>
+<ol class="colored_numbers_list">
+<li>Выберите вкладку «<strong>Пути к файлам</strong>» в окне «<strong>Конфигурация экземпляра продукта</strong>».</li>
+<li>Просмотрите или настройте пути для файлов экземпляра продукта:<ul>
+<li><strong>Файлы конфигурации</strong> — папка для общих файлов конфигурации экземпляра продукта.</li>
+<li><strong>Файлы базы данных</strong> — папка для файлов базы данных экземпляра продукта.</li>
+<li><strong>Загруженные файлы</strong> — папка для файлов, загруженных пользователями и сформированными экземпляром продукта.</li>
+<li><strong>Журнал системы</strong> — папка для журналов экземпляра продукта.</li>
+<li><strong>Резервные копии</strong> — папка для хранения резервных копий экземпляра продукта.</li>
+<li><strong>Временная папка</strong> — папка для хранения временных файлов экземпляра продукта.Подробные сведения о расположении файлов см. в статье <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2502">Пути и содержимое папок экземпляра ПО</a></em></li>
+</ul>
+</li>
+<li>Чтобы сохранить переместить данные экземпляра продукта в новые папки, нажмите кнопку «<strong>Переместить</strong>» и подтвердите перенос.</li>
+</ol>
+<div class="notice notice-warning">
+<p class="admonition-title">Внимание!</p>
+<p>При переносе экземпляра продукта все его данные будут перенесены в новые папки.</p>
+</div>
+<ol class="colored_numbers_list" start="4">
+<li>Чтобы изменить пути экземпляра продукта, но не перемещать в них имеющиеся данные, нажмите кнопку «<strong>Сохранить</strong>» и подтвердите смену путей.</li>
+</ol>
+<div class="notice notice-warning">
+<p class="admonition-title">Внимание!</p>
+<p>При смене путей экземпляра продукта без переноса данных все данные по старому пути останутся без изменений. Новые пути не будут содержать старых данных, это будут пустые папки.</p>
+</div>
+<ol class="colored_numbers_list" start="5">
+<li>Утилита администрирования изменит пути к экземпляру продукта и при необходимости переместит данные в новые папки.</li>
+<li>Если отобразит окно программы <code>powershell.exe</code>, дождитесь завершения её работы.</li>
+<li>Должно отобразиться сообщение об успешном изменении путей экземпляра продукта.</li>
+</ol>
+<figure class="screenshot_with_caption">
+<p><img alt="Настройка путей к файлам экземпляра продукта" src="https://kb.comindware.ru/assets/img_667eb879062fe.png"/><figcaption class="caption">Настройка путей к файлам экземпляра продукта</figcaption></p>
+</figure>
+<div class="relatedTopics">
+<h2 id="связанные-статьи">Связанные статьи</h2>
+<ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2502">Пути и содержимое папок экземпляра ПО</a></em></li>
+</ul>
+</div>
+</article>
+</div>
+</div>
+<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#">
+<i class="fa-light fa-arrow-up">&zwnj;<!--icon--></i>
+            К началу
+          </a>
+</main>
+</div>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>

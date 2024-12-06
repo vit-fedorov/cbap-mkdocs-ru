@@ -541,20 +541,7 @@
 <li><strong>Выражение</strong> — C#-скрипт, выполняющий проверку. Действие сработает, если скрипт вернёт значение <code>false</code>. Любое значение кроме <code>true</code> типа <code>bool</code> будет считаться значением <code>false</code>.</li>
 </ul>
 <p class="pageBreakBefore">Составьте скрипт по следующему образцу:</p>
-<div class="highlight"><code><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Script</span></code><br/>
-<code><span class="p">{</span></code><br/>
-<code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span></code><br/>
-<code><span class="w">    </span><span class="p">{</span></code><br/>
-<code><span class="w">    </span><span class="c1">// Чтобы просмотреть доступные методы</span></code><br/>
-<code><span class="w">    </span><span class="c1">// в пространстве имён Comindware,</span></code><br/>
-<code><span class="w">    </span><span class="c1">// введите Comindware и точку</span></code><br/>
-<code><span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// или false</span></code><br/>
-<code><span class="w">        </span><span class="c1">// Добавьте код, который будет</span></code><br/>
-<code><span class="w">        </span><span class="c1">// менять возвращаемое значение.</span></code><br/>
-<code><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span></code><br/>
-<code><span class="w">    </span><span class="p">}</span></code><br/>
-<code><span class="p">}</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Script</span></code> <br/><code><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span></code> <br/><code><span class="w">    </span><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="c1">// Чтобы просмотреть доступные методы</span></code> <br/><code><span class="w">    </span><span class="c1">// в пространстве имён Comindware,</span></code> <br/><code><span class="w">    </span><span class="c1">// введите Comindware и точку</span></code> <br/><code><span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// или false</span></code> <br/><code><span class="w">        </span><span class="c1">// Добавьте код, который будет</span></code> <br/><code><span class="w">        </span><span class="c1">// менять возвращаемое значение.</span></code> <br/><code><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span></code> <br/><code><span class="w">    </span><span class="p">}</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 <figure class="screenshot_with_caption">
 <p><img alt="Настройка действия «Проверить результат скрипта»" src="/platform/v5.0/business_apps/scenarios/img/scenario_actions_check_script_result.png"/><figcaption class="caption">Настройка действия «Проверить результат скрипта»</figcaption></p>
 </figure>
@@ -671,23 +658,7 @@
 <li><strong>Значение</strong> — задайте значение или список значений атрибута посредством C#-скрипта.</li>
 </ul>
 <p class="pageBreakBefore">Составьте скрипт по следующему образцу:</p>
-<div class="highlight"><code><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Script</span><span class="w"> </span><span class="p">{</span></code><br/>
-<code><span class="w">    </span><span class="c1">// Выберите тип метода Main() в зависимости от типа атрибута:</span></code><br/>
-<code><span class="w">    </span><span class="c1">// string — Текст, int, decimal — Число, dateTime — Дата и время,</span></code><br/>
-<code><span class="w">    </span><span class="c1">// bool — Логический, TimeSpan — Длительность,</span></code><br/>
-<code><span class="w">    </span><span class="c1">// IEnumerable&lt;string&gt; — Список значений.</span></code><br/>
-<code><span class="w">    </span><span class="c1">// ObjectID — переменная, в которой хранится ID экземпляра шаблона записи,</span></code><br/>
-<code><span class="w">    </span><span class="c1">// в контексте которого выполняется скрипт.</span></code><br/>
-<code><span class="w">    </span><span class="c1">// Чтобы просмотреть доступные методы</span></code><br/>
-<code><span class="w">    </span><span class="c1">// в пространстве имён Comindware,</span></code><br/>
-<code><span class="w">    </span><span class="c1">// введите Comindware и точку</span></code><br/>
-<code></code><br/>
-<code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ObjectID</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></code><br/>
-<code><span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Текстовый результат действия «Изменить значения скриптом»"</span><span class="p">;</span></code><br/>
-<code><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span></code><br/>
-<code><span class="w">    </span><span class="p">}</span></code><br/>
-<code><span class="p">}</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Script</span><span class="w"> </span><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="c1">// Выберите тип метода Main() в зависимости от типа атрибута:</span></code> <br/><code><span class="w">    </span><span class="c1">// string — Текст, int, decimal — Число, dateTime — Дата и время,</span></code> <br/><code><span class="w">    </span><span class="c1">// bool — Логический, TimeSpan — Длительность,</span></code> <br/><code><span class="w">    </span><span class="c1">// IEnumerable&lt;string&gt; — Список значений.</span></code> <br/><code><span class="w">    </span><span class="c1">// ObjectID — переменная, в которой хранится ID экземпляра шаблона записи,</span></code> <br/><code><span class="w">    </span><span class="c1">// в контексте которого выполняется скрипт.</span></code> <br/><code><span class="w">    </span><span class="c1">// Чтобы просмотреть доступные методы</span></code> <br/><code><span class="w">    </span><span class="c1">// в пространстве имён Comindware,</span></code> <br/><code><span class="w">    </span><span class="c1">// введите Comindware и точку</span></code> <br/><code></code> <br/><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ObjectID</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></code> <br/><code><span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Текстовый результат действия «Изменить значения скриптом»"</span><span class="p">;</span></code> <br/><code><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span></code> <br/><code><span class="w">    </span><span class="p">}</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 <figure class="screenshot_with_caption">
 <p><img alt="Настройка действия «Изменить значения скриптом»" src="/platform/v5.0/business_apps/scenarios/img/scenario_actions_change_value_script.png"/><figcaption class="caption">Настройка действия «Изменить значения скриптом»</figcaption></p>
 </figure>

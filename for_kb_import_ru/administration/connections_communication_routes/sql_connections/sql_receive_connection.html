@@ -126,13 +126,11 @@
 <ul>
 <li>
 <p>В ОС Linux путь к этому файлу можно узнать с помощью следующей команды:</p>
-<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>psql<span class="w"> </span>-c<span class="w"> </span><span class="s1">'SHOW config_file'</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>psql<span class="w"> </span>-c<span class="w"> </span><span class="s1">'SHOW config_file'</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>В ОС Windows путь к файлу по умолчанию:</p>
-<div class="highlight"><code><pre><span></span><code><span class="n">C</span><span class="p">:\</span><span class="n">ProgramData</span><span class="p">\</span><span class="n">PostgreSQL</span><span class="p">\</span><span class="n">X</span><span class="p">.</span><span class="n">X</span><span class="p">\</span><span class="n">data</span><span class="p">\</span><span class="n">postgresql</span><span class="p">.</span><span class="n">conf</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="n">C</span><span class="p">:\</span><span class="n">ProgramData</span><span class="p">\</span><span class="n">PostgreSQL</span><span class="p">\</span><span class="n">X</span><span class="p">.</span><span class="n">X</span><span class="p">\</span><span class="n">data</span><span class="p">\</span><span class="n">postgresql</span><span class="p">.</span><span class="n">conf</span></code> <br/></pre></code></div>
 <p>Здесь <code>X.X</code> — номер версии PostgreSQL.</p>
 </li>
 </ul>
@@ -142,13 +140,11 @@
 <ul>
 <li>
 <p>Разрешите подключение со всех IP адресов:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nv">listen_addresses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'*'</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nv">listen_addresses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'*'</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Задайте локаль для вывода сообщений об ошибках:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nv">lc_messages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'en_EN.utf-8'</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nv">lc_messages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'en_EN.utf-8'</span></code> <br/></pre></code></div>
 </li>
 </ul>
 </li>
@@ -157,18 +153,14 @@
 </li>
 <li>
 <p>В файле <code>pg_hba.conf</code> разрешите подключение с адреса сервера <strong>Comindware Platform</strong> (например, <code>123.45.67.89</code>):</p>
-<div class="highlight"><code><pre><span></span><code><span class="n">host</span><span class="w">    </span><span class="n">all</span><span class="w">    </span><span class="n">all</span><span class="w">    </span><span class="m">123.45</span><span class="p">.</span><span class="m">67.89</span><span class="w">    </span><span class="n">md5</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="n">host</span><span class="w">    </span><span class="n">all</span><span class="w">    </span><span class="n">all</span><span class="w">    </span><span class="m">123.45</span><span class="p">.</span><span class="m">67.89</span><span class="w">    </span><span class="n">md5</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Перезапустите службу <code>postgresql</code>:</p>
 <p><strong>Linux</strong></p>
-<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>postgresql</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>postgresql</code> <br/></pre></code></div>
 <p><strong>Windows</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="n">net</span> <span class="n">stop</span> <span class="n">postgresql-x64</span><span class="p">-&lt;</span><span class="n">номер_версии</span><span class="p">&gt;</span></code><br/>
-<code><span class="n">net</span> <span class="nb">start </span><span class="n">postgresql-x64</span><span class="p">-&lt;</span><span class="n">номер_версии</span><span class="p">&gt;</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="n">net</span> <span class="n">stop</span> <span class="n">postgresql-x64</span><span class="p">-&lt;</span><span class="n">номер_версии</span><span class="p">&gt;</span></code> <br/><code><span class="n">net</span> <span class="nb">start </span><span class="n">postgresql-x64</span><span class="p">-&lt;</span><span class="n">номер_версии</span><span class="p">&gt;</span></code> <br/></pre></code></div>
 </li>
 </ol>
 <h2 class="pageBreakBefore" id="создание-подключения-к-субд">Создание подключения к СУБД</h2>
@@ -193,17 +185,13 @@
 <li>
 <p>В поле «<strong>Строка подключения</strong>» введите адрес сервера, имя базы данных, имя пользователя и пароль для подключения к СУБД:</p>
 <p><strong>MySQL</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="nv">Server</span><span class="o">=</span>ServerAddress<span class="p">;</span><span class="nv">Database</span><span class="o">=</span>DataBaseName<span class="p">;</span><span class="nv">Uid</span><span class="o">=</span>Username<span class="p">;</span><span class="nv">Pwd</span><span class="o">=</span>Password<span class="p">;</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nv">Server</span><span class="o">=</span>ServerAddress<span class="p">;</span><span class="nv">Database</span><span class="o">=</span>DataBaseName<span class="p">;</span><span class="nv">Uid</span><span class="o">=</span>Username<span class="p">;</span><span class="nv">Pwd</span><span class="o">=</span>Password<span class="p">;</span></code> <br/></pre></code></div>
 <p><strong>MSSQL</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="nv">Server</span><span class="o">=</span>ServerAddress<span class="p">;</span><span class="nv">Database</span><span class="o">=</span>DataBaseName<span class="p">;</span>User<span class="w"> </span><span class="nv">Id</span><span class="o">=</span>Username<span class="p">;</span><span class="nv">Pwd</span><span class="o">=</span>Password<span class="p">;</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nv">Server</span><span class="o">=</span>ServerAddress<span class="p">;</span><span class="nv">Database</span><span class="o">=</span>DataBaseName<span class="p">;</span>User<span class="w"> </span><span class="nv">Id</span><span class="o">=</span>Username<span class="p">;</span><span class="nv">Pwd</span><span class="o">=</span>Password<span class="p">;</span></code> <br/></pre></code></div>
 <p><strong>Oracle</strong></p>
-<div class="highlight"><code><pre><span></span><code>Data<span class="w"> </span><span class="nv">Source</span><span class="o">=</span>DataBaseName<span class="p">;</span>User<span class="w"> </span><span class="nv">Id</span><span class="o">=</span>Username<span class="p">;</span><span class="nv">Password</span><span class="o">=</span>Password<span class="p">;</span>Integrated<span class="w"> </span><span class="nv">Security</span><span class="o">=</span>no<span class="p">;</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>Data<span class="w"> </span><span class="nv">Source</span><span class="o">=</span>DataBaseName<span class="p">;</span>User<span class="w"> </span><span class="nv">Id</span><span class="o">=</span>Username<span class="p">;</span><span class="nv">Password</span><span class="o">=</span>Password<span class="p">;</span>Integrated<span class="w"> </span><span class="nv">Security</span><span class="o">=</span>no<span class="p">;</span></code> <br/></pre></code></div>
 <p><strong>PostgreSQL</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="nv">Host</span><span class="o">=</span>ServerAddress<span class="p">;</span><span class="nv">Database</span><span class="o">=</span>DataBaseName<span class="p">;</span>User<span class="w"> </span><span class="nv">ID</span><span class="o">=</span>Username<span class="p">;</span><span class="nv">Password</span><span class="o">=</span>Password<span class="p">;</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nv">Host</span><span class="o">=</span>ServerAddress<span class="p">;</span><span class="nv">Database</span><span class="o">=</span>DataBaseName<span class="p">;</span>User<span class="w"> </span><span class="nv">ID</span><span class="o">=</span>Username<span class="p">;</span><span class="nv">Password</span><span class="o">=</span>Password<span class="p">;</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>В поле «<strong>Интервал опроса</strong>» укажите периодичность автоматической отправки SQL-запросов в СУБД для получения из неё данных. Интервал опроса необходимо указать, чтобы настроить сценарий на срабатывание по событию «<strong>Получение сообщения</strong>».</p>
@@ -255,8 +243,7 @@
 <li>В поле «<strong>Атрибут для хранения полученных записей</strong>» укажите системное имя  атрибута <code>City</code>, созданного на вкладке «<strong><a class="mkdocs_imported_link" href="#message_attributes">Атрибуты сообщений</a></strong>».</li>
 <li>
 <p>В поле «<strong>SQL-запрос</strong>» введите запрос для получения записей с названиями городов из внешней БД, указав имя таблицы с названиями городов, которые будут помещены в атрибут <code>Name</code>, созданный на <a class="mkdocs_imported_link" href="#message_attributes">шаге 8</a>. Например:</p>
-<div class="highlight"><code><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cities</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cities</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Сохраните путь для получения данных из СУБД.</p>
@@ -306,18 +293,11 @@
 <ul>
 <li>
 <p><strong>Формула</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="err">$$</span><span class="n">CityRecords</span><span class="o">-&gt;</span><span class="n">City</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="err">$$</span><span class="n">CityRecords</span><span class="o">-&gt;</span><span class="n">City</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p><strong>N3</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">session:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session#&gt;</span><span class="p">.</span></code><br/>
-<code><span class="k">@prefix</span><span class="w"> </span><span class="nn">var:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/variable#&gt;</span><span class="p">.</span></code><br/>
-<code><span class="p">{</span></code><br/>
-<code>    <span class="nn">session</span><span class="p">:</span><span class="nt">context</span> <span class="nn">var</span><span class="p">:</span><span class="nt">CityRecords</span> <span class="err">?message</span><span class="p">.</span></code><br/>
-<code>    <span class="err">?message</span> <span class="nn">var</span><span class="p">:</span><span class="nt">City</span> <span class="err">?value</span><span class="p">.</span></code><br/>
-<code><span class="p">}</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">session:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">var:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/variable#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="nn">session</span><span class="p">:</span><span class="nt">context</span> <span class="nn">var</span><span class="p">:</span><span class="nt">CityRecords</span> <span class="err">?message</span><span class="p">.</span></code> <br/><code>    <span class="err">?message</span> <span class="nn">var</span><span class="p">:</span><span class="nt">City</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 </li>
 </ul>
 <ul>
@@ -357,18 +337,11 @@
 <ul>
 <li>
 <p><strong>Формула</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="err">$$</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">Name</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="err">$$</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">Name</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p><strong>N3</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">session:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session#&gt;</span><span class="p">.</span></code><br/>
-<code><span class="k">@prefix</span><span class="w"> </span><span class="nn">variable:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/variable#&gt;</span><span class="p">.</span></code><br/>
-<code><span class="p">{</span></code><br/>
-<code>    <span class="nn">session</span><span class="p">:</span><span class="nt">context</span> <span class="nn">variable</span><span class="p">:</span><span class="nt">record</span> <span class="err">?records</span><span class="p">.</span></code><br/>
-<code>    <span class="err">?records</span> <span class="nn">variable</span><span class="p">:</span><span class="nt">Name</span> <span class="err">?value</span><span class="p">.</span></code><br/>
-<code><span class="p">}</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">session:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">variable:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/variable#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="nn">session</span><span class="p">:</span><span class="nt">context</span> <span class="nn">variable</span><span class="p">:</span><span class="nt">record</span> <span class="err">?records</span><span class="p">.</span></code> <br/><code>    <span class="err">?records</span> <span class="nn">variable</span><span class="p">:</span><span class="nt">Name</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Здесь:</p>

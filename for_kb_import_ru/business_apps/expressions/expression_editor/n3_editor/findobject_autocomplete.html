@@ -32,8 +32,7 @@
 <ol class="colored_numbers_list" start="3">
 <li>
 <p>В выражение будет вставлена заготовка функции:</p>
-<div class="highlight"><code><pre><span></span><code><span class="p">(</span> <span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findObject</span> <span class="err">?foundObject</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">(</span> <span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findObject</span> <span class="err">?foundObject</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Чтобы присвоить результат выражения значению вычисляемого атрибута, замените имя переменной <code>foundObject</code> на <code>value</code>.</p>
@@ -64,13 +63,7 @@
 <li>Дважды нажмите системное имя атрибута, например <code>Marka</code>, чтобы вставить его в выражение.</li>
 <li>В позиции четвёртого аргумента (через пробела после третьего) введите в искомое значение выбранного атрибута, например <code>"Лада"</code>.</li>
 </ol>
-<div class="highlight"><span class="filename">Пример: выражение, возвращающее список записей шаблона с заданным значением атрибута</span><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code><br/>
-<code><span class="p">{</span></code><br/>
-<code>  <span class="c"># Получаем список записей шаблона Avtomobil из приложения Upravlenieavtoparkom,</span></code><br/>
-<code>  <span class="c"># в которых атрибут Marka имеет значение «Лада»</span></code><br/>
-<code>  <span class="p">(</span><span class="s">"Upravlenieavtoparkom""Avtomobil""Marka""Лада"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findObject</span> <span class="err">?value</span><span class="p">.</span></code><br/>
-<code><span class="p">}</span></code><br/>
-</pre></code></div>
+<div class="highlight"><span class="filename">Пример: выражение, возвращающее список записей шаблона с заданным значением атрибута</span><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code>  <span class="c"># Получаем список записей шаблона Avtomobil из приложения Upravlenieavtoparkom,</span></code> <br/><code>  <span class="c"># в которых атрибут Marka имеет значение «Лада»</span></code> <br/><code>  <span class="p">(</span><span class="s">"Upravlenieavtoparkom""Avtomobil""Marka""Лада"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findObject</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 <div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <ul>

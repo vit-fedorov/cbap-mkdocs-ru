@@ -60,37 +60,17 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в режим суперпользователя:</p>
-<div class="highlight"><code><pre><span></span><code>sudo -i</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo -i</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Откройте для редактирования файл конфигурации экземпляра ПО:</p>
-<div class="highlight"><code><pre><span></span><code>vim /usr/share/comindware/configs/instance/instancename.yml</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>vim /usr/share/comindware/configs/instance/instancename.yml</code> <br/></pre></code></div>
 <p>Здесь  <code>instanceName</code> — имя экземпляра ПО.</p>
 <p>См. также статью <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4620">Пути и содержимое папок экземпляра ПО</a>».</em></p>
 </li>
 <li>
 <p>Добавьте в файл <code>instanceName.yml</code> следующие директивы:</p>
-<div class="highlight"><code><pre><span></span><code><span class="c1"># Адрес сервера S3 с указанием порта, идентификатор ключа доступа и секретный ключ</span></code><br/>
-<code><span class="na">s3Connection.default.endpointURL</span><span class="o">:</span><span class="w"> </span><span class="s">http://s3.example.com:9000</span></code><br/>
-<code><span class="na">s3Connection.default.accessKey</span><span class="o">:</span><span class="w"> </span><span class="s">xxxxx</span></code><br/>
-<code><span class="na">s3Connection.default.secretKey</span><span class="o">:</span><span class="w"> </span><span class="s">xxxxx</span></code><br/>
-<code><span class="c1"># Установите значение true, если сервер принимает только запросы path-style вида:</span></code><br/>
-<code><span class="c1"># https://s3.region-code.amazonaws.com/bucket-name/key-name</span></code><br/>
-<code><span class="na">s3Connection.default.pathStyle</span><span class="o">:</span><span class="w"> </span><span class="s">true</span></code><br/>
-<code><span class="na">s3Connection.default.description</span><span class="o">:</span><span class="w"> </span><span class="s">Подключение к S3</span></code><br/>
-<code></code><br/>
-<code><span class="c1"># Параметры контейнера загруженных файлов</span></code><br/>
-<code><span class="na">userStorage.type</span><span class="o">:</span><span class="w"> </span><span class="s">S3</span></code><br/>
-<code><span class="na">userStorage.s3.bucket</span><span class="o">:</span><span class="w"> </span><span class="s">user-files-bucket</span></code><br/>
-<code><span class="na">userStorage.s3.connection</span><span class="o">:</span><span class="w"> </span><span class="s">default</span></code><br/>
-<code></code><br/>
-<code><span class="c1"># Параметры контейнера временных файлов</span></code><br/>
-<code><span class="na">tempStorage.type</span><span class="o">:</span><span class="w"> </span><span class="s">S3</span></code><br/>
-<code><span class="na">tempStorage.s3.bucket</span><span class="o">:</span><span class="w"> </span><span class="s">temp-files-bucket</span></code><br/>
-<code><span class="na">tempStorage.s3.connection</span><span class="o">:</span><span class="w"> </span><span class="s">default</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="c1"># Адрес сервера S3 с указанием порта, идентификатор ключа доступа и секретный ключ</span></code> <br/><code><span class="na">s3Connection.default.endpointURL</span><span class="o">:</span><span class="w"> </span><span class="s">http://s3.example.com:9000</span></code> <br/><code><span class="na">s3Connection.default.accessKey</span><span class="o">:</span><span class="w"> </span><span class="s">xxxxx</span></code> <br/><code><span class="na">s3Connection.default.secretKey</span><span class="o">:</span><span class="w"> </span><span class="s">xxxxx</span></code> <br/><code><span class="c1"># Установите значение true, если сервер принимает только запросы path-style вида:</span></code> <br/><code><span class="c1"># https://s3.region-code.amazonaws.com/bucket-name/key-name</span></code> <br/><code><span class="na">s3Connection.default.pathStyle</span><span class="o">:</span><span class="w"> </span><span class="s">true</span></code> <br/><code><span class="na">s3Connection.default.description</span><span class="o">:</span><span class="w"> </span><span class="s">Подключение к S3</span></code> <br/><code></code> <br/><code><span class="c1"># Параметры контейнера загруженных файлов</span></code> <br/><code><span class="na">userStorage.type</span><span class="o">:</span><span class="w"> </span><span class="s">S3</span></code> <br/><code><span class="na">userStorage.s3.bucket</span><span class="o">:</span><span class="w"> </span><span class="s">user-files-bucket</span></code> <br/><code><span class="na">userStorage.s3.connection</span><span class="o">:</span><span class="w"> </span><span class="s">default</span></code> <br/><code></code> <br/><code><span class="c1"># Параметры контейнера временных файлов</span></code> <br/><code><span class="na">tempStorage.type</span><span class="o">:</span><span class="w"> </span><span class="s">S3</span></code> <br/><code><span class="na">tempStorage.s3.bucket</span><span class="o">:</span><span class="w"> </span><span class="s">temp-files-bucket</span></code> <br/><code><span class="na">tempStorage.s3.connection</span><span class="o">:</span><span class="w"> </span><span class="s">default</span></code> <br/></pre></code></div>
 <div class="notice notice-warning">
 <p class="admonition-title">Внимание!</p>
 <ul>
@@ -101,8 +81,7 @@
 </li>
 <li>
 <p>Перезагрузите экземпляр ПО:</p>
-<div class="highlight"><code><pre><span></span><code>systemctl restart comindwareinstancename</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>systemctl restart comindwareinstancename</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Проверьте подключение хранилищу S3 в экземпляре ПО.</p>
@@ -122,8 +101,7 @@
 <li><strong>Секретный ключ</strong> — ключ для доступа к серверу S3;</li>
 <li>
 <p><strong>Запросы типа path-style</strong> — флажок установлен, если сервер принимает только запросы path-style вида:</p>
-<div class="highlight"><code><pre><span></span><code>https://s3.region-code.amazonaws.com/bucket-name/key-name</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>https://s3.region-code.amazonaws.com/bucket-name/key-name</code> <br/></pre></code></div>
 </li>
 </ul>
 </li>

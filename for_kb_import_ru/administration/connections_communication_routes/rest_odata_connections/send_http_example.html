@@ -94,24 +94,7 @@
 <li>Запрос содержит параметры <code>orderDate</code> с датой создания заказов и <code>clientName</code> с идентификатором клиента.</li>
 <li>В ответ на запрос сервер возвращает JSON-ответ с массивом данных заказов следующего вида:</li>
 </ul>
-<div class="highlight"><code><pre><span></span><code><span class="p">{</span></code><br/>
-<code><span class="w">    </span><span class="s2">"error"</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span></code><br/>
-<code><span class="w">    </span><span class="s2">"status"</span><span class="o">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span></code><br/>
-<code><span class="w">    </span><span class="s2">"statusCode"</span><span class="o">:</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span></code><br/>
-<code><span class="w">    </span><span class="s2">"orders"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span></code><br/>
-<code><span class="w">        </span><span class="p">{</span></code><br/>
-<code><span class="w">         </span><span class="s2">"orderAmount"</span><span class="o">:</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span></code><br/>
-<code><span class="w">         </span><span class="s2">"orderNumber"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Order-1"</span><span class="p">,</span></code><br/>
-<code><span class="w">         </span><span class="s2">"orderStatus"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Fulfilled"</span></code><br/>
-<code><span class="w">        </span><span class="p">},</span></code><br/>
-<code><span class="w">        </span><span class="p">{</span></code><br/>
-<code><span class="w">         </span><span class="s2">"orderAmount"</span><span class="o">:</span><span class="w"> </span><span class="mf">5000</span><span class="p">,</span></code><br/>
-<code><span class="w">         </span><span class="s2">"orderNumber"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Order-2"</span><span class="p">,</span></code><br/>
-<code><span class="w">         </span><span class="s2">"orderStatus"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Canceled"</span></code><br/>
-<code><span class="w">        </span><span class="p">},</span></code><br/>
-<code><span class="w">     </span><span class="p">]</span></code><br/>
-<code><span class="p">}</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="s2">"error"</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span></code> <br/><code><span class="w">    </span><span class="s2">"status"</span><span class="o">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span></code> <br/><code><span class="w">    </span><span class="s2">"statusCode"</span><span class="o">:</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span></code> <br/><code><span class="w">    </span><span class="s2">"orders"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span></code> <br/><code><span class="w">        </span><span class="p">{</span></code> <br/><code><span class="w">         </span><span class="s2">"orderAmount"</span><span class="o">:</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span></code> <br/><code><span class="w">         </span><span class="s2">"orderNumber"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Order-1"</span><span class="p">,</span></code> <br/><code><span class="w">         </span><span class="s2">"orderStatus"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Fulfilled"</span></code> <br/><code><span class="w">        </span><span class="p">},</span></code> <br/><code><span class="w">        </span><span class="p">{</span></code> <br/><code><span class="w">         </span><span class="s2">"orderAmount"</span><span class="o">:</span><span class="w"> </span><span class="mf">5000</span><span class="p">,</span></code> <br/><code><span class="w">         </span><span class="s2">"orderNumber"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Order-2"</span><span class="p">,</span></code> <br/><code><span class="w">         </span><span class="s2">"orderStatus"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Canceled"</span></code> <br/><code><span class="w">        </span><span class="p">},</span></code> <br/><code><span class="w">     </span><span class="p">]</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 <h2 class="pageBreakBefore" id="настройка-подключения">Настройка подключения</h2>
 <ol class="colored_numbers_list">
 <li>Откройте раздел «<strong>Администрирование</strong>» — «<strong>Подключения</strong>».</li>
@@ -201,12 +184,7 @@
 <p>
 - <strong>Атрибуты для десериализации ответа без ошибки</strong> и  <strong>Атрибуты для десериализации ответа с ошибкой</strong>
 - Создайте одну строку в каждой таблице и введите символ <code>$</code> в столбцы «<strong>Путь к атрибуту</strong>» и «<strong>Выражение на языке запросов</strong>».</p>
-<div class="highlight"><code><pre><span></span><code>&lt;figure markdown&gt;![Настройка атрибутов для десериализации ответа в пути передачи данных для отправки HTTP-запросов](img/send_http_example_attribute_serialization_settings.png)&lt;figcaption&gt;Настройка атрибутов для десериализации ответа в пути передачи данных для отправки HTTP-запросов&lt;/figcaption&gt;&lt;/figure&gt;</code><br/>
-<code>&lt;!-- BEGIN INCLUDE .snippets/pdfEndOfBlockHack.md --&gt;</code><br/>
-<code></code><br/>
-<code>&lt;!--hack for PDF output, prevents PDF build crash after indented paragraphs--&gt;</code><br/>
-<code>&lt;!-- END INCLUDE --&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>&lt;figure markdown&gt;![Настройка атрибутов для десериализации ответа в пути передачи данных для отправки HTTP-запросов](img/send_http_example_attribute_serialization_settings.png)&lt;figcaption&gt;Настройка атрибутов для десериализации ответа в пути передачи данных для отправки HTTP-запросов&lt;/figcaption&gt;&lt;/figure&gt;</code> <br/><code>&lt;!-- BEGIN INCLUDE .snippets/pdfEndOfBlockHack.md --&gt;</code> <br/><code></code> <br/><code>&lt;!--hack for PDF output, prevents PDF build crash after indented paragraphs--&gt;</code> <br/><code>&lt;!-- END INCLUDE --&gt;</code> <br/></pre></code></div>
 </li>
 </ul>
 <h2 class="pageBreakBefore" id="настройка-сценария-отправки-http-запроса">Настройка сценария отправки HTTP-запроса</h2>

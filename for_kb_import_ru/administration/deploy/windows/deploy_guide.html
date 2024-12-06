@@ -93,38 +93,32 @@
 <li>Запустите <em>PowerShell</em> от имени администратора.</li>
 <li>
 <p>Установите неограниченную политику выполнения <em>PowerShell</em>:</p>
-<div class="highlight"><code><pre><span></span><code>Set-ExecutionPolicy<span class="w"> </span>Unrestricted</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">Set-ExecutionPolicy</span> <span class="n">Unrestricted</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>В запросе на изменение политики выберите вариант «<strong>Да для всех</strong>», введя букву <span class="keys"><kbd class="key-a">A</kbd></span>.</p>
 </li>
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"</span></code> <br/></pre></code></div>
 <p>Здесь: <code>X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows</code> — путь к распакованному дистрибутиву продукта, а <code>X.X.XXXX.X</code> — номер версии ПО.</p>
 </li>
 <li>
 <p>Разблокируйте доступ к скачанным из Интернета установочным файлам:</p>
-<div class="highlight"><code><pre><span></span><code>.<span class="se">\f</span>iles_unblock.ps1</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">files_unblock</span><span class="p">.</span><span class="n">ps1</span></code> <br/></pre></code></div>
 <div class="notice notice-tip">
 <p class="admonition-title">Вызов справки для скриптов</p>
 <p>Для ознакомления с ключами и назначением любого скрипта используйте ключ <code>-h</code> без каких-либо других ключей, например:</p>
-<div class="highlight"><code><pre><span></span><code>.<span class="se">\f</span>iles_unblock.ps1<span class="w"> </span>-h</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">files_unblock</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-h</span></code> <br/></pre></code></div>
 </div>
 </li>
 <li>
 <p>Перейдите в папку со скриптами для развёртывания вспомогательного ПО:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\prerequisites"</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\prerequisites"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Установите необходимое вспомогательное ПО:</p>
-<div class="highlight"><code><pre><span></span><code>.<span class="se">\p</span>rerequisites_install.ps1</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">prerequisites_install</span><span class="p">.</span><span class="n">ps1</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Перезагрузите машину.</p>
@@ -132,42 +126,35 @@
 <li>Запустите <em>PowerShell</em> от имени администратора.</li>
 <li>
 <p>Перейдите в папку со скриптами для развёртывания вспомогательного ПО:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\prerequisites"</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\prerequisites"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Проверьте, что дополнительные компоненты установлены:</p>
-<div class="highlight"><code><pre><span></span><code>.<span class="se">\p</span>rerequisites_list.ps1</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">prerequisites_list</span><span class="p">.</span><span class="n">ps1</span></code> <br/></pre></code></div>
 <p>Если какие-либо дополнительные компоненты не были установлены, повторите шаги 8–12.</p>
 </li>
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Установите ПО:</p>
-<div class="highlight"><code><pre><span></span><code>.<span class="se">\v</span>ersion_install.ps1</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">version_install</span><span class="p">.</span><span class="n">ps1</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Удостоверьтесь, что ПО установлено, вызывав список установленных версий ПО:</p>
-<div class="highlight"><code><pre><span></span><code>.<span class="se">\v</span>ersion_list.ps1</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">version_list</span><span class="p">.</span><span class="n">ps1</span></code> <br/></pre></code></div>
 </li>
 </ol>
 <h2 id="создание-экземпляра-по">Создание экземпляра ПО</h2>
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Разверните экземпляр ПО:</p>
-<div class="highlight"><code><pre><span></span><code>.<span class="se">\i</span>nstance_create.ps1<span class="w"> </span>-name<span class="w"> </span>&lt;instanceName&gt;<span class="w"> </span>-port<span class="w"> </span>&lt;portNumber&gt;<span class="w"> </span>-version<span class="w"> </span>&lt;versionNumber&gt;<span class="w"> </span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">instance_create</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-name</span> <span class="p">&lt;</span><span class="n">instanceName</span><span class="p">&gt;</span> <span class="n">-port</span> <span class="p">&lt;</span><span class="n">portNumber</span><span class="p">&gt;</span> <span class="n">-version</span> <span class="p">&lt;</span><span class="n">versionNumber</span><span class="p">&gt;</span> </code> <br/></pre></code></div>
 <p>Скрипт <code>instance_create.ps1</code> поддерживает следующие ключи:</p>
 <ul>
 <li><code>name &lt;instanceName&gt;</code> — <strong>обязательный</strong> ключ с именем экземпляра ПО.</li>
@@ -188,13 +175,11 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Запустите экземпляр ПО:</p>
-<div class="highlight"><code><pre><span></span><code>.<span class="se">\i</span>nstance_start.ps1<span class="w"> </span>-name<span class="w"> </span>&lt;instanceName&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">instance_start</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-name</span> <span class="p">&lt;</span><span class="n">instanceName</span><span class="p">&gt;</span></code> <br/></pre></code></div>
 <p>Здесь: <code>name &lt;instanceName&gt;</code> — <strong>обязательный</strong> ключ с именем экземпляра ПО.</p>
 </li>
 </ol>
@@ -202,13 +187,11 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Остановите экземпляр ПО:</p>
-<div class="highlight"><code><pre><span></span><code>.<span class="se">\i</span>nstance_stop.ps1<span class="w"> </span>-name<span class="w"> </span>&lt;instanceName&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">instance_stop</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-name</span> <span class="p">&lt;</span><span class="n">instanceName</span><span class="p">&gt;</span></code> <br/></pre></code></div>
 <p>Здесь: <code>-name &lt;instanceName&gt;</code> — <strong>обязательный</strong> ключ с именем экземпляра ПО.</p>
 </li>
 </ol>
@@ -216,8 +199,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Запустите веб-браузер и в адресной строке введите ссылку следующего вида, при необходимости указав порт, на котором был развёрнут экземпляр ПО:</p>
-<div class="highlight"><code><pre><span></span><code>http://localhost:&lt;portNumber&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>http://localhost:&lt;portNumber&gt;</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Дождитесь запуска и отображения веб-сайта <strong>Comindware Platform</strong>, что может занять примерно 5 минут.</p>
@@ -268,13 +250,11 @@
 <li>Скачайте и установите ПО новой версии согласно инструкциям в параграфе <em>«<a class="mkdocs_imported_link" href="#deploy_guide_windows_install_sw">Установка Comindware Platform</a>»</em>.</li>
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Запустите обновление экземпляра ПО:</p>
-<div class="highlight"><code><pre><span></span><code>.<span class="se">\i</span>nstance_upgrade.ps1<span class="w"> </span>-name<span class="w"> </span>&lt;instanceName&gt;<span class="w"> </span>-version<span class="w"> </span>&lt;versionNumber&gt;<span class="w"> </span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">instance_upgrade</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-name</span> <span class="p">&lt;</span><span class="n">instanceName</span><span class="p">&gt;</span> <span class="n">-version</span> <span class="p">&lt;</span><span class="n">versionNumber</span><span class="p">&gt;</span> </code> <br/></pre></code></div>
 <p>Скрипт <code>instance_upgrade.ps1</code> поддерживает следующие ключи:</p>
 <ul>
 <li><code>name &lt;instanceName&gt;</code> — <strong>обязательный</strong> ключ с именем экземпляра ПО.</li>
@@ -285,8 +265,7 @@
 </li>
 <li>
 <p>Просмотрите список установленных экземпляров ПО:</p>
-<div class="highlight"><code><pre><span></span><code>.<span class="se">\i</span>nstance_list.ps1</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">instance_list</span><span class="p">.</span><span class="n">ps1</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Рядом с именем экземпляра ПО отобразится номер версии.</p>
@@ -296,13 +275,11 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Удалите экземпляр ПО:</p>
-<div class="highlight"><code><pre><span></span><code>.<span class="se">\i</span>nstance_delete.ps1<span class="w"> </span>-name<span class="w"> </span>&lt;instanceName&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">instance_delete</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-name</span> <span class="p">&lt;</span><span class="n">instanceName</span><span class="p">&gt;</span></code> <br/></pre></code></div>
 <p>Скрипт <code>instance_delete.ps1</code> поддерживает следующие ключи:</p>
 <ul>
 <li><code>name &lt;instanceName&gt;</code> — <strong>обязательный</strong> ключ с именем экземпляра ПО. Если не указать другие ключи, будет удалена только служба <code>comindware&lt;instanceName&gt;</code>.</li>
@@ -315,21 +292,18 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;path&gt;\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Просмотрите список установленных экземпляров ПО:</p>
-<div class="highlight"><code><pre><span></span><code>.<span class="se">\i</span>nstance_list.ps1</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">instance_list</span><span class="p">.</span><span class="n">ps1</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Удалите все экземпляры с версией ПО, которую требуется удалить, или обновите их до другой версии. Удалить версию ПО, которая используется в каких-либо экземплярах, не удастся. См. <em>«<a class="mkdocs_imported_link" href="#удаление-экземпляра-по">Удаление экземпляра ПО</a>»</em>.</p>
 </li>
 <li>
 <p>Удалите версию ПО:</p>
-<div class="highlight"><code><pre><span></span><code>.<span class="se">\v</span>ersion_delete.ps1<span class="w"> </span>-version<span class="w"> </span>&lt;versionNumber&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">version_delete</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-version</span> <span class="p">&lt;</span><span class="n">versionNumber</span><span class="p">&gt;</span></code> <br/></pre></code></div>
 <p>Здесь: <code>-version &lt;versionNumber&gt;</code> — указать номер версии ПО вида <code>X.X.XXXX.X</code> (например: <code>5.0.1234.0</code>).</p>
 </li>
 </ol>

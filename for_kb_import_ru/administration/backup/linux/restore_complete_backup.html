@@ -73,17 +73,13 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Для выполнения всех операций перейдите в режим суперпользователя <code>root</code>:</p>
-<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-i</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-i</code> <br/></pre></code></div>
 <p>или</p>
-<div class="highlight"><code><pre><span></span><code>su<span class="w"> </span>-</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>su<span class="w"> </span>-</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Перед тем как выполнять любые действия с файлами ПО и базы данных, остановите экземпляр ПО и его вспомогательные службы и удостоверьтесь, что они остановлены:</p>
-<div class="highlight"><code><pre><span></span><code>systemctl stop elasticsearch nginx kafka comindware&lt;instancename&gt;</code><br/>
-<code>systemctl status elasticsearch nginx kafka comindware&lt;instancename&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>systemctl stop elasticsearch nginx kafka comindware&lt;instancename&gt;</code> <br/><code>systemctl status elasticsearch nginx kafka comindware&lt;instancename&gt;</code> <br/></pre></code></div>
 <p>Здесь <code>&lt;instancename&gt;</code> — имя экземпляра ПО.</p>
 </li>
 <li>
@@ -91,28 +87,22 @@
 </li>
 <li>
 <p>Для сохранения целостности данных перед восстановлением из резервной копии требуется очистить директории c базой данных и загруженными файлами:</p>
-<div class="highlight"><code><pre><span></span><code>rm -rf /var/lib/comindware/&lt;instancename&gt;/Database/*</code><br/>
-<code>rm -rf /var/lib/comindware/&lt;instancename&gt;/Streams/*</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>rm -rf /var/lib/comindware/&lt;instancename&gt;/Database/*</code> <br/><code>rm -rf /var/lib/comindware/&lt;instancename&gt;/Streams/*</code> <br/></pre></code></div>
 </li>
 </ol>
 <h2 id="восстановление-базы-данных-из-резервной-копии">Восстановление базы данных из резервной копии</h2>
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в директорию с загруженным архивом резервной копии (например, <code>tmp</code>):</p>
-<div class="highlight"><code><pre><span></span><code>cd /tmp/</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>cd /tmp/</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Распакуйте архив с резервной копией (например, <code>backup_2023_01_23_10_17.tar.bz2</code>):</p>
-<div class="highlight"><code><pre><span></span><code>tar -xf backup_2023_01_23_10_17.tar.bz2</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>tar -xf backup_2023_01_23_10_17.tar.bz2</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Войдите в директорию резервной копии и просмотрите её содержимое:</p>
-<div class="highlight"><code><pre><span></span><code>cd backup_2023_01_23_10_17/</code><br/>
-<code>ll</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>cd backup_2023_01_23_10_17/</code> <br/><code>ll</code> <br/></pre></code></div>
 <p><figure class="screenshot_with_caption" markdown=""><img alt="Содержимое папки резервной копии" src="https://kb.comindware.ru/assets/Pasted image 20230125133846.png"/><figcaption class="caption">Содержимое папки резервной копии</figcaption></figure></p>
 <p>Распакованная директория резервной копии должна иметь следующую структуру:</p>
 <ul>
@@ -129,80 +119,63 @@
 </li>
 <li>
 <p>Перенесите снимок данных Apache Ignite (в примере — содержимое директории <code>/tmp/backup_2023_01_23_10_17/Database/snapshots/snapshot_2023_01_23_10_17/</code>) в рабочую директорию Apache Ignite (<code>/var/www/comindware/data/Database/</code>):</p>
-<div class="highlight"><code><pre><span></span><code>mv Database/snapshots/snapshot_2023_01_23_10_17/* /var/lib/comindware/&lt;instancename&gt;/Database/</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>mv Database/snapshots/snapshot_2023_01_23_10_17/* /var/lib/comindware/&lt;instancename&gt;/Database/</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Перенесите директорию со скриптами из резервной копии в рабочую директорию Apache Ignite:</p>
-<div class="highlight"><code><pre><span></span><code>mv Database/Scripts /var/lib/comindware/&lt;instancename&gt;/Database/</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>mv Database/Scripts /var/lib/comindware/&lt;instancename&gt;/Database/</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Перенесите директорию с загруженными файлами из резервной копии в целевую директорию:</p>
-<div class="highlight"><code><pre><span></span><code>mv Streams /var/lib/comindware/&lt;instancename&gt;/Database/</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>mv Streams /var/lib/comindware/&lt;instancename&gt;/Database/</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Назначьте перенесённым папкам права <code>rwxr-xr-x</code>:</p>
-<div class="highlight"><code><pre><span></span><code>chmod -R 755 /var/lib/comindware/&lt;instancename&gt;/Database/Streams/</code><br/>
-<code>chmod -R 755 /var/lib/comindware/&lt;instancename&gt;/Database/</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>chmod -R 755 /var/lib/comindware/&lt;instancename&gt;/Database/Streams/</code> <br/><code>chmod -R 755 /var/lib/comindware/&lt;instancename&gt;/Database/</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Назначьте перенесенным папкам владельца <code>www-data</code>:</p>
-<div class="highlight"><code><pre><span></span><code>chown -R www-data:www-data /var/lib/comindware/&lt;instancename&gt;/Database/Streams/</code><br/>
-<code>chown -R www-data:www-data /var/lib/comindware/&lt;instancename&gt;/Database/</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>chown -R www-data:www-data /var/lib/comindware/&lt;instancename&gt;/Database/Streams/</code> <br/><code>chown -R www-data:www-data /var/lib/comindware/&lt;instancename&gt;/Database/</code> <br/></pre></code></div>
 </li>
 </ol>
 <h2 id="восстановление-индексов-elasticsearch-из-резервной-копии-репозитория">Восстановление индексов Elasticsearch из резервной копии репозитория</h2>
 <ol class="colored_numbers_list">
 <li>
 <p>Создайте директорию репозитория Elasticsearch и перенесите в неё файлы из резервной копии:</p>
-<div class="highlight"><code><pre><span></span><code>mkdir /var/www/backups/elasticsearch/</code><br/>
-<code>mv elastic/* /var/www/backups/elasticsearch/</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>mkdir /var/www/backups/elasticsearch/</code> <br/><code>mv elastic/* /var/www/backups/elasticsearch/</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Назначьте папке репозитория и её содержимому права <code>rwxr-xr-x</code>:</p>
-<div class="highlight"><code><pre><span></span><code>chmod -R 755 /var/www/backups/</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>chmod -R 755 /var/www/backups/</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Назначьте владельца <code>elasticsearch</code> директории репозитория и её содержимому:</p>
-<div class="highlight"><code><pre><span></span><code>chown -R elasticsearch:elasticsearch /var/www/backups/</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>chown -R elasticsearch:elasticsearch /var/www/backups/</code> <br/></pre></code></div>
 </li>
 <li>
 <p>В файле конфигурации <code>elasticsearch.yml</code> с помощью директивы <code>path.repo: /var/www/backups/elasticsearch</code> укажите путь к созданному репозиторию (например, с помощью редактора <code>nano</code>):</p>
-<div class="highlight"><code><pre><span></span><code>nano /etc/elasticsearch/elasticsearch.yml</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>nano /etc/elasticsearch/elasticsearch.yml</code> <br/></pre></code></div>
 <p><figure class="screenshot_with_caption" markdown=""><img alt="Путь к репозиторию в файле конфигурации Elasticsearch" src="https://kb.comindware.ru/assets/Pasted image 20230125204737.png"/><figcaption class="caption">Путь к репозиторию в файле конфигурации Elasticsearch</figcaption></figure></p>
 </li>
 <li>
 <p>Запустите службу Elasticsearch:</p>
-<div class="highlight"><code><pre><span></span><code>systemctl start elasticsearch.service</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>systemctl start elasticsearch.service</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Зарегистрируйте новый репозиторий снимков Elasticsearch:</p>
-<div class="highlight"><code><pre><span></span><code>curl -X PUT "localhost:9200/_snapshot/elastic_snap?pretty" -H 'Content-Type: application/json' -d' {"type": "fs", "settings": {"location": "/var/www/backups/elasticsearch"}}'</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>curl -X PUT "localhost:9200/_snapshot/elastic_snap?pretty" -H 'Content-Type: application/json' -d' {"type": "fs", "settings": {"location": "/var/www/backups/elasticsearch"}}'</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Проверьте содержимое зарегистрированного репозитория:</p>
-<div class="highlight"><code><pre><span></span><code>curl -X GET "localhost:9200/_cat/snapshots/elastic_snap?pretty"</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>curl -X GET "localhost:9200/_cat/snapshots/elastic_snap?pretty"</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Выберите необходимый снимок и восстановите состояние Elasticsearch:</p>
-<div class="highlight"><code><pre><span></span><code>curl -X POST "localhost:9200/_snapshot/elastic_snap/snapshot2023_01_23_10_17/_restore?pretty"</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>curl -X POST "localhost:9200/_snapshot/elastic_snap/snapshot2023_01_23_10_17/_restore?pretty"</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Проверьте наличие индексов в восстановленном каталоге:</p>
-<div class="highlight"><code><pre><span></span><code>curl -X GET "localhost:9200/_cat/indices?pretty"</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>curl -X GET "localhost:9200/_cat/indices?pretty"</code> <br/></pre></code></div>
 </li>
 </ol>
 <figure class="screenshot_with_caption">
@@ -212,9 +185,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Запустите необходимые службы и проверьте их статус:</p>
-<div class="highlight"><code><pre><span></span><code>systemctl start elasticsearch kafka nginx comindware&lt;instancename&gt;</code><br/>
-<code>systemctl status elasticsearch kafka nginx comindware&lt;instancename&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>systemctl start elasticsearch kafka nginx comindware&lt;instancename&gt;</code> <br/><code>systemctl status elasticsearch kafka nginx comindware&lt;instancename&gt;</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Откройте в браузере веб-сайт с экземпляром ПО.</p>

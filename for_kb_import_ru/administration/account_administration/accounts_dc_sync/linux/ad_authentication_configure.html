@@ -223,39 +223,15 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Установите пакеты <code>krb5-user</code>, <code>krb5-config</code> и зависимости для них:</p>
-<div class="highlight"><code><pre><span></span><code>apt<span class="w"> </span>install<span class="w"> </span>krb5-user<span class="w"> </span>krb5-config</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>apt<span class="w"> </span>install<span class="w"> </span>krb5-user<span class="w"> </span>krb5-config</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Откройте файл конфигурации Kerberos для редактирования:</p>
-<div class="highlight"><code><pre><span></span><code>vim<span class="w"> </span>/etc/krb5.conf</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>vim<span class="w"> </span>/etc/krb5.conf</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Отредактируйте файл <code>krb5.conf</code> согласно следующему примеру:</p>
-<div class="highlight"><code><pre><span></span><code><span class="c1">#astra-winbind</span></code><br/>
-<code><span class="o">[</span>libdefaults<span class="o">]</span></code><br/>
-<code><span class="w">    </span><span class="nv">default_realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DOMAIN.NAME&gt;</code><br/>
-<code><span class="w">    </span><span class="nv">kdc_timesync</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span></code><br/>
-<code><span class="w">    </span><span class="nv">ccache_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span></code><br/>
-<code><span class="w">    </span><span class="nv">forwardable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span></code><br/>
-<code><span class="w">    </span><span class="nv">proxiable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span></code><br/>
-<code><span class="w">    </span>fcc-mit-ticketflags<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span></code><br/>
-<code><span class="w">    </span><span class="nv">dns_lookup_realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span></code><br/>
-<code><span class="w">    </span><span class="nv">default_ccache_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>DIR:/tmp</code><br/>
-<code><span class="o">[</span>realms<span class="o">]</span></code><br/>
-<code><span class="w">    </span>&lt;DOMAIN.NAME&gt;<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span></code><br/>
-<code><span class="w">        </span><span class="nv">kdc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DCName&gt;.&lt;domain.name&gt;</code><br/>
-<code><span class="w">        </span><span class="nv">admin_server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DCName&gt;.&lt;domain.name&gt;</code><br/>
-<code><span class="w">        </span><span class="nv">default_domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;domain.name&gt;</code><br/>
-<code><span class="w">    </span><span class="o">}</span></code><br/>
-<code><span class="o">[</span>domain_realm<span class="o">]</span></code><br/>
-<code><span class="w">    </span>.&lt;domain.name&gt;<span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DOMAIN.NAME&gt;</code><br/>
-<code><span class="w">    </span>&lt;domain.name&gt;<span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DOMAIN.NAME&gt;</code><br/>
-<code><span class="o">[</span>login<span class="o">]</span></code><br/>
-<code><span class="w">    </span><span class="nv">krb4_convert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span></code><br/>
-<code><span class="w">    </span><span class="nv">krb4_get_tickets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="c1">#astra-winbind</span></code> <br/><code><span class="o">[</span>libdefaults<span class="o">]</span></code> <br/><code><span class="w">    </span><span class="nv">default_realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DOMAIN.NAME&gt;</code> <br/><code><span class="w">    </span><span class="nv">kdc_timesync</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span></code> <br/><code><span class="w">    </span><span class="nv">ccache_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span></code> <br/><code><span class="w">    </span><span class="nv">forwardable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span></code> <br/><code><span class="w">    </span><span class="nv">proxiable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span></code> <br/><code><span class="w">    </span>fcc-mit-ticketflags<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span></code> <br/><code><span class="w">    </span><span class="nv">dns_lookup_realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span></code> <br/><code><span class="w">    </span><span class="nv">default_ccache_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>DIR:/tmp</code> <br/><code><span class="o">[</span>realms<span class="o">]</span></code> <br/><code><span class="w">    </span>&lt;DOMAIN.NAME&gt;<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span></code> <br/><code><span class="w">        </span><span class="nv">kdc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DCName&gt;.&lt;domain.name&gt;</code> <br/><code><span class="w">        </span><span class="nv">admin_server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DCName&gt;.&lt;domain.name&gt;</code> <br/><code><span class="w">        </span><span class="nv">default_domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;domain.name&gt;</code> <br/><code><span class="w">    </span><span class="o">}</span></code> <br/><code><span class="o">[</span>domain_realm<span class="o">]</span></code> <br/><code><span class="w">    </span>.&lt;domain.name&gt;<span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DOMAIN.NAME&gt;</code> <br/><code><span class="w">    </span>&lt;domain.name&gt;<span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DOMAIN.NAME&gt;</code> <br/><code><span class="o">[</span>login<span class="o">]</span></code> <br/><code><span class="w">    </span><span class="nv">krb4_convert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span></code> <br/><code><span class="w">    </span><span class="nv">krb4_get_tickets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span></code> <br/></pre></code></div>
 </li>
 </ol>
 <h3 class="pageBreakBefore" id="настройка-конфигурации-экземпляра-по">Настройка конфигурации экземпляра ПО</h3>
@@ -275,8 +251,7 @@
 <li>Сохраните свойства подключения.</li>
 <li>
 <p>Перезапустите экземпляр ПО:</p>
-<div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>comindware&lt;instance_name&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>comindware&lt;instance_name&gt;</code> <br/></pre></code></div>
 <p>Здесь <code>&lt;instance_name&gt;</code> — имя экземпляра ПО.</p>
 </li>
 </ol>
@@ -284,8 +259,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Выполните команду, чтобы проверить работоспособность Kerberos:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nv">KRB5_TRACE</span><span class="o">=</span>/dev/stdout<span class="w"> </span>kinit<span class="w"> </span>&lt;username&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nv">KRB5_TRACE</span><span class="o">=</span>/dev/stdout<span class="w"> </span>kinit<span class="w"> </span>&lt;username&gt;</code> <br/></pre></code></div>
 <p>Здесь <code>&lt;username&gt;</code> — любой пользователь домена, для которого известен пароль.</p>
 </li>
 </ol>
@@ -294,48 +268,23 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Установите пакеты <code>krb5-user</code>, <code>krb5-config</code> и зависимости для них:</p>
-<div class="highlight"><code><pre><span></span><code>yum<span class="w"> </span>install<span class="w"> </span>krb5-workstation</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>yum<span class="w"> </span>install<span class="w"> </span>krb5-workstation</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Откройте файла конфигурации Kerberos для редактирования:</p>
-<div class="highlight"><code><pre><span></span><code>vim<span class="w"> </span>/etc/krb5.conf</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>vim<span class="w"> </span>/etc/krb5.conf</code> <br/></pre></code></div>
 </li>
 <li>
 <p class="pageBreakInsideAvoid">Отредактируйте файл <code>krb5.conf</code> согласно следующему примеру:</p>
-<div class="highlight"><code><pre><span></span><code><span class="o">[</span>libdefaults<span class="o">]</span></code><br/>
-<code><span class="w">    </span><span class="nv">default_realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DOMAIN.NAME&gt;</code><br/>
-<code><span class="w">    </span><span class="nv">kdc_timesync</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span></code><br/>
-<code><span class="w">    </span><span class="nv">ccache_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span></code><br/>
-<code><span class="w">    </span><span class="nv">forwardable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span></code><br/>
-<code><span class="w">    </span><span class="nv">proxiable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span></code><br/>
-<code><span class="w">    </span>fcc-mit-ticketflags<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span></code><br/>
-<code><span class="w">    </span><span class="nv">dns_lookup_realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span></code><br/>
-<code><span class="o">[</span>realms<span class="o">]</span></code><br/>
-<code><span class="w">    </span>&lt;DOMAIN.NAME&gt;<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span></code><br/>
-<code><span class="w">        </span><span class="nv">kdc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DCName&gt;.&lt;domain.name&gt;</code><br/>
-<code><span class="w">        </span><span class="nv">admin_server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DCName&gt;.&lt;domain.name&gt;</code><br/>
-<code><span class="w">        </span><span class="nv">default_domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;domain.name&gt;</code><br/>
-<code><span class="w">    </span><span class="o">}</span></code><br/>
-<code><span class="o">[</span>domain_realm<span class="o">]</span></code><br/>
-<code><span class="w">    </span>.&lt;domain.name&gt;<span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DOMAIN.NAME&gt;</code><br/>
-<code><span class="w">    </span>&lt;domain.name&gt;<span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DOMAIN.NAME&gt;</code><br/>
-<code><span class="o">[</span>login<span class="o">]</span></code><br/>
-<code><span class="w">    </span><span class="nv">krb4_convert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span></code><br/>
-<code><span class="w">    </span><span class="nv">krb4_get_tickets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="o">[</span>libdefaults<span class="o">]</span></code> <br/><code><span class="w">    </span><span class="nv">default_realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DOMAIN.NAME&gt;</code> <br/><code><span class="w">    </span><span class="nv">kdc_timesync</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span></code> <br/><code><span class="w">    </span><span class="nv">ccache_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span></code> <br/><code><span class="w">    </span><span class="nv">forwardable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span></code> <br/><code><span class="w">    </span><span class="nv">proxiable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span></code> <br/><code><span class="w">    </span>fcc-mit-ticketflags<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span></code> <br/><code><span class="w">    </span><span class="nv">dns_lookup_realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span></code> <br/><code><span class="o">[</span>realms<span class="o">]</span></code> <br/><code><span class="w">    </span>&lt;DOMAIN.NAME&gt;<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span></code> <br/><code><span class="w">        </span><span class="nv">kdc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DCName&gt;.&lt;domain.name&gt;</code> <br/><code><span class="w">        </span><span class="nv">admin_server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DCName&gt;.&lt;domain.name&gt;</code> <br/><code><span class="w">        </span><span class="nv">default_domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;domain.name&gt;</code> <br/><code><span class="w">    </span><span class="o">}</span></code> <br/><code><span class="o">[</span>domain_realm<span class="o">]</span></code> <br/><code><span class="w">    </span>.&lt;domain.name&gt;<span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DOMAIN.NAME&gt;</code> <br/><code><span class="w">    </span>&lt;domain.name&gt;<span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;DOMAIN.NAME&gt;</code> <br/><code><span class="o">[</span>login<span class="o">]</span></code> <br/><code><span class="w">    </span><span class="nv">krb4_convert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span></code> <br/><code><span class="w">    </span><span class="nv">krb4_get_tickets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Откройте файл конфигурации <code>kcm_default_ccache</code> для редактирования:</p>
-<div class="highlight"><code><pre><span></span><code>vim<span class="w"> </span>/etc/krb5.conf.d/kcm_default_ccache</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>vim<span class="w"> </span>/etc/krb5.conf.d/kcm_default_ccache</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Отредактируйте файл <code>kcm_default_ccache</code> согласно следующему примеру:</p>
-<div class="highlight"><code><pre><span></span><code><span class="o">[</span>libdefaults<span class="o">]</span></code><br/>
-<code><span class="nv">default_ccache_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>DIR:/tmp</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="o">[</span>libdefaults<span class="o">]</span></code> <br/><code><span class="nv">default_ccache_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>DIR:/tmp</code> <br/></pre></code></div>
 </li>
 </ol>
 <h3 class="pageBreakBefore" id="настройка-конфигурации-экземпляра-по_1">Настройка конфигурации экземпляра ПО</h3>
@@ -355,16 +304,14 @@
 <li>Сохраните свойства подключения.</li>
 <li>
 <p>Перезапустите экземпляр ПО:</p>
-<div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>comindware&lt;instance_name&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>comindware&lt;instance_name&gt;</code> <br/></pre></code></div>
 </li>
 </ol>
 <h3 id="проверка-вывода-трассировщика-ошибок-в-shell_1">Проверка вывода трассировщика ошибок в Shell</h3>
 <ol class="colored_numbers_list">
 <li>
 <p>Выполните команду, чтобы проверить работоспособность Kerberos:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nv">KRB5_TRACE</span><span class="o">=</span>/dev/stdout<span class="w"> </span>kinit<span class="w"> </span>&lt;username&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nv">KRB5_TRACE</span><span class="o">=</span>/dev/stdout<span class="w"> </span>kinit<span class="w"> </span>&lt;username&gt;</code> <br/></pre></code></div>
 <p>Здесь <code>&lt;username&gt;</code> — имя любого пользователя домена, для которого известен пароль.</p>
 </li>
 </ol>

@@ -13,26 +13,7 @@
 </li>
 <li>
 <p>В созданном файле укажите <code>login</code> — имя пользователя, <code>password</code> — пароль для входа в экземпляр ПО, <code>backupID</code> — идентификатор конфигурации резервного копирования в экземпляре системы. См. раздел <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4642">Просмотр списка конфигураций резервного копирования</a>»</em>.</p>
-<p><div class="highlight"><code><pre><span></span><code># Enter your credential</code><br/>
-<code>$login = «admin»</code><br/>
-<code>$password = «admin»</code><br/>
-<code></code><br/>
-<code># Enter required backup</code><br/>
-<code></code><br/>
-<code>configuration ID</code><br/>
-<code>$backupID = «backupConfig.1»</code><br/>
-<code></code><br/>
-<code># Execution</code><br/>
-<code>$localhost = «http://localhost:8081/»</code><br/>
-<code>$api = «webapi/backupsession?ConfigurationId=»</code><br/>
-<code>$uri = $localhost + $api + $backupID</code><br/>
-<code></code><br/>
-<code>$WebClient = New-Object System.Net.WebClient</code><br/>
-<code>$WebClient.Credentials = New-Object System.Net.NetworkCredential($login, $password)</code><br/>
-<code>$WebClient.Encoding = [System.Text.Encoding]::UTF8</code><br/>
-<code>$response = $WebClient.UploadString($uri, «POST»,»»)</code><br/>
-<code>$response</code><br/>
-</pre></code></div>
+<p><div class="highlight"><code><pre><span></span><code># Enter your credential</code> <br/><code>$login = «admin»</code> <br/><code>$password = «admin»</code> <br/><code></code> <br/><code># Enter required backup</code> <br/><code></code> <br/><code>configuration ID</code> <br/><code>$backupID = «backupConfig.1»</code> <br/><code></code> <br/><code># Execution</code> <br/><code>$localhost = «http://localhost:8081/»</code> <br/><code>$api = «webapi/backupsession?ConfigurationId=»</code> <br/><code>$uri = $localhost + $api + $backupID</code> <br/><code></code> <br/><code>$WebClient = New-Object System.Net.WebClient</code> <br/><code>$WebClient.Credentials = New-Object System.Net.NetworkCredential($login, $password)</code> <br/><code>$WebClient.Encoding = [System.Text.Encoding]::UTF8</code> <br/><code>$response = $WebClient.UploadString($uri, «POST»,»»)</code> <br/><code>$response</code> <br/></pre></code></div>
 3. Откройте Планировщик заданий. До этого удостоверьтесь, что служба планировщика запускается автоматически.</p>
 </li>
 <li>

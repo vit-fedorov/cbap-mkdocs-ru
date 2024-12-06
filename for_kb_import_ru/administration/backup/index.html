@@ -112,13 +112,9 @@
 <li>
 <p><strong>Путь к папке</strong> — путь к директории на сервере, в которой будут сохраняться резервные копии, например <code>/var/lib/comindware/&lt;instanceName&gt;/Backups</code> (здесь <code>&lt;instanceName&gt;</code> — имя экземпляра ПО). Для этой директории предоставьте разрешения на полный доступ, чтобы система могла сохранять в неё резервные копии, например:</p>
 <p><strong>Astra Linux, Ubuntu, Rocky</strong></p>
-<div class="highlight"><code><pre><span></span><code>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;</code><br/>
-<code>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;</code> <br/><code>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;</code> <br/></pre></code></div>
 <p><strong>Альт Сервер</strong></p>
-<div class="highlight"><code><pre><span></span><code>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;chown<span class="w"> </span>-R<span class="w"> </span>_nginx:_nginx<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;</code><br/>
-<code>chown<span class="w"> </span>-R<span class="w"> </span>_nginx:_nginx<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;chown<span class="w"> </span>-R<span class="w"> </span>_nginx:_nginx<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;</code> <br/><code>chown<span class="w"> </span>-R<span class="w"> </span>_nginx:_nginx<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;</code> <br/></pre></code></div>
 </li>
 </ul>
 </li>
@@ -172,45 +168,16 @@
 <li>
 <p>В файле конфигурации Elasticsearch (<code>/etc/elasticsearch/elasticsearch.yml</code>) должен быть указан путь к репозиторию резервных копий, например:</p>
 <p><strong>Для репозитория на локальном диске</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="c1"># Директория репозитория должна быть доступна экземпляру ПО</span></code><br/>
-<code><span class="c1"># Comindware Platform</span></code><br/>
-<code><span class="c1"># При необходимости установите доступ с помощью команды chmod 777</span></code><br/>
-<code>path.repo:<span class="w"> </span>/var/www/backups/elasticsearch</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="c1"># Директория репозитория должна быть доступна экземпляру ПО</span></code> <br/><code><span class="c1"># Comindware Platform</span></code> <br/><code><span class="c1"># При необходимости установите доступ с помощью команды chmod 777</span></code> <br/><code>path.repo:<span class="w"> </span>/var/www/backups/elasticsearch</code> <br/></pre></code></div>
 <p><strong>Для репозитория в хранилище S3</strong></p>
-<div class="highlight"><code><pre><span></span><code>s3.client.default.endpoint:<span class="w"> </span>localhost:9000</code><br/>
-<code>s3.client.default.protocol:<span class="w"> </span>http</code><br/>
-<code>s3.client.default.path_style_access:<span class="w"> </span><span class="nb">true</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>s3.client.default.endpoint:<span class="w"> </span>localhost:9000</code> <br/><code>s3.client.default.protocol:<span class="w"> </span>http</code> <br/><code>s3.client.default.path_style_access:<span class="w"> </span><span class="nb">true</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>В файле конфигурации экземпляра ПО (<code>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code>) необходимо указать тип репозитория резервных копий Elasticsearch (<code>LocalDisk</code> или <code>S3</code>) и путь к репозиторию, например:</p>
 <p><strong>Для репозитория на локальном диске</strong></p>
-<div class="highlight"><code><pre><span></span><code>backup.elasticRepository.type:<span class="w"> </span>LocalDisk</code><br/>
-<code><span class="c1"># В данном примере Elasticsearch и Comindware Platform</span></code><br/>
-<code><span class="c1"># работают на одной машине.</span></code><br/>
-<code><span class="c1"># В противном случае следует примонтировать папку репозитория Elasticsearch</span></code><br/>
-<code><span class="c1"># на машине с Comindware Platform и указать её в директиве ниже</span></code><br/>
-<code>backup.elasticRepository.localDisk.path:<span class="w"> </span>/var/www/backups/elasticsearch</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>backup.elasticRepository.type:<span class="w"> </span>LocalDisk</code> <br/><code><span class="c1"># В данном примере Elasticsearch и Comindware Platform</span></code> <br/><code><span class="c1"># работают на одной машине.</span></code> <br/><code><span class="c1"># В противном случае следует примонтировать папку репозитория Elasticsearch</span></code> <br/><code><span class="c1"># на машине с Comindware Platform и указать её в директиве ниже</span></code> <br/><code>backup.elasticRepository.localDisk.path:<span class="w"> </span>/var/www/backups/elasticsearch</code> <br/></pre></code></div>
 <p class="pageBreakBefore"><strong>Для репозитория в хранилище S3</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="c1"># Конфигурация подключения к хранилищу S3, используемого по умолчанию</span></code><br/>
-<code>s3Connection.default.endpointURL:<span class="w"> </span>http://localhost:9000</code><br/>
-<code>s3Connection.default.accessKey:<span class="w"> </span>xxxxx</code><br/>
-<code>s3Connection.default.secretKey:<span class="w"> </span>xxxxx</code><br/>
-<code>s3Connection.default.pathStyleAccess:<span class="w"> </span><span class="nb">true</span></code><br/>
-<code>s3Connection.default.description:<span class="w"> </span>Подключение<span class="w"> </span>к<span class="w"> </span>S3<span class="w"> </span>по<span class="w"> </span>умолчанию</code><br/>
-<code></code><br/>
-<code><span class="c1"># Конфигурация репозитория резервных копий Elasticsearch в хранилище S3</span></code><br/>
-<code>backup.elasticRepository.type:<span class="w"> </span>S3</code><br/>
-<code><span class="c1"># Имя корзины в хранилище S3 для хранения резервных копий данных Elasticsearch</span></code><br/>
-<code>backup.elasticRepository.s3.bucket:<span class="w"> </span>&lt;instanceName&gt;-backups</code><br/>
-<code><span class="c1"># Имя подключения к хранилищу S3, используемому по умолчанию</span></code><br/>
-<code><span class="c1"># на стороне Comindware Platform</span></code><br/>
-<code>backup.elasticRepository.s3.platformConnection:<span class="w"> </span>default</code><br/>
-<code><span class="c1"># Имя подключения к хранилищу S3, используемому по умолчанию на стороне Elasticsearch</span></code><br/>
-<code>backup.elasticRepository.s3.elasticConnection:<span class="w"> </span>default</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="c1"># Конфигурация подключения к хранилищу S3, используемого по умолчанию</span></code> <br/><code>s3Connection.default.endpointURL:<span class="w"> </span>http://localhost:9000</code> <br/><code>s3Connection.default.accessKey:<span class="w"> </span>xxxxx</code> <br/><code>s3Connection.default.secretKey:<span class="w"> </span>xxxxx</code> <br/><code>s3Connection.default.pathStyleAccess:<span class="w"> </span><span class="nb">true</span></code> <br/><code>s3Connection.default.description:<span class="w"> </span>Подключение<span class="w"> </span>к<span class="w"> </span>S3<span class="w"> </span>по<span class="w"> </span>умолчанию</code> <br/><code></code> <br/><code><span class="c1"># Конфигурация репозитория резервных копий Elasticsearch в хранилище S3</span></code> <br/><code>backup.elasticRepository.type:<span class="w"> </span>S3</code> <br/><code><span class="c1"># Имя корзины в хранилище S3 для хранения резервных копий данных Elasticsearch</span></code> <br/><code>backup.elasticRepository.s3.bucket:<span class="w"> </span>&lt;instanceName&gt;-backups</code> <br/><code><span class="c1"># Имя подключения к хранилищу S3, используемому по умолчанию</span></code> <br/><code><span class="c1"># на стороне Comindware Platform</span></code> <br/><code>backup.elasticRepository.s3.platformConnection:<span class="w"> </span>default</code> <br/><code><span class="c1"># Имя подключения к хранилищу S3, используемому по умолчанию на стороне Elasticsearch</span></code> <br/><code>backup.elasticRepository.s3.elasticConnection:<span class="w"> </span>default</code> <br/></pre></code></div>
 </li>
 </ul>
 <h2 class="pageBreakBefore" id="запуск-резервного-копирования">Запуск резервного копирования</h2>

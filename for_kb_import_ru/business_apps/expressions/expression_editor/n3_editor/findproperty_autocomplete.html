@@ -51,19 +51,7 @@
 <p>Дважды нажмите системное имя атрибута, например <code>_creationDate</code>, чтобы вставить его в выражение.</p>
 </li>
 </ol>
-<div class="highlight"><span class="filename">Пример: выражение, возвращающее месяц по значению атрибута типа «Дата и время»</span><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code><br/>
-<code><span class="k">@prefix</span><span class="w"> </span><span class="nn">cmwtime:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/logics/time#&gt;</span><span class="p">.</span></code><br/>
-<code><span class="p">{</span></code><br/>
-<code>    <span class="c"># Находим атрибут _creationDate шаблона Zayavkanaotpusk</span></code><br/>
-<code>    <span class="p">(</span><span class="s">"Zayavkanaotpusk"</span> <span class="s">"_creationDate"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?dtProperty</span><span class="p">.</span></code><br/>
-<code></code><br/>
-<code>    <span class="c"># Определяем значение атрибута _creationDate</span></code><br/>
-<code>    <span class="c"># в текущей записи шаблона Zayavkanaotpusk</span></code><br/>
-<code>    <span class="err">?item</span> <span class="err">?dtProperty</span> <span class="err">?dmonth</span><span class="p">.</span></code><br/>
-<code>    <span class="c"># Извлекаем номер месяца из значения атрибута _creationDate</span></code><br/>
-<code>    <span class="err">?dmonth</span> <span class="nn">cmwutc</span><span class="p">:</span><span class="nt">month</span> <span class="err">?value</span><span class="p">.</span></code><br/>
-<code><span class="p">}</span></code><br/>
-</pre></code></div>
+<div class="highlight"><span class="filename">Пример: выражение, возвращающее месяц по значению атрибута типа «Дата и время»</span><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">cmwtime:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/logics/time#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="c"># Находим атрибут _creationDate шаблона Zayavkanaotpusk</span></code> <br/><code>    <span class="p">(</span><span class="s">"Zayavkanaotpusk"</span> <span class="s">"_creationDate"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?dtProperty</span><span class="p">.</span></code> <br/><code></code> <br/><code>    <span class="c"># Определяем значение атрибута _creationDate</span></code> <br/><code>    <span class="c"># в текущей записи шаблона Zayavkanaotpusk</span></code> <br/><code>    <span class="err">?item</span> <span class="err">?dtProperty</span> <span class="err">?dmonth</span><span class="p">.</span></code> <br/><code>    <span class="c"># Извлекаем номер месяца из значения атрибута _creationDate</span></code> <br/><code>    <span class="err">?dmonth</span> <span class="nn">cmwutc</span><span class="p">:</span><span class="nt">month</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 <div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <ul>

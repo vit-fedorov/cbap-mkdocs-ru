@@ -31,15 +31,7 @@
 <ol class="colored_numbers_list" start="4">
 <li>Дважды нажмите имя переменной, например <code>value</code>, чтобы вставить его в выражение.</li>
 </ol>
-<div class="highlight"><span class="filename">Пример: выражение, возвращающее список всех записей из шаблона аккаунта</span><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">account:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/account#&gt;</span><span class="p">.</span></code><br/>
-<code><span class="k">@prefix</span><span class="w"> </span><span class="nn">container:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/container#&gt;</span><span class="p">.</span></code><br/>
-<code><span class="p">{</span></code><br/>
-<code>  <span class="c"># Получаем ID шаблона аккаунта Zakazchiki</span></code><br/>
-<code>  <span class="err">?user</span> <span class="nn">container</span><span class="p">:</span><span class="nt">alias</span> <span class="s">"Zakazchiki"</span><span class="p">.</span></code><br/>
-<code>  <span class="c"># Получаем список аккаунтов из шаблона Zakazchiki</span></code><br/>
-<code>  <span class="err">?value</span> <span class="nn">account</span><span class="p">:</span><span class="nt">extendedBy</span> <span class="err">?user</span><span class="p">.</span></code><br/>
-<code><span class="p">}</span></code><br/>
-</pre></code></div>
+<div class="highlight"><span class="filename">Пример: выражение, возвращающее список всех записей из шаблона аккаунта</span><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">account:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/account#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">container:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/container#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code>  <span class="c"># Получаем ID шаблона аккаунта Zakazchiki</span></code> <br/><code>  <span class="err">?user</span> <span class="nn">container</span><span class="p">:</span><span class="nt">alias</span> <span class="s">"Zakazchiki"</span><span class="p">.</span></code> <br/><code>  <span class="c"># Получаем список аккаунтов из шаблона Zakazchiki</span></code> <br/><code>  <span class="err">?value</span> <span class="nn">account</span><span class="p">:</span><span class="nt">extendedBy</span> <span class="err">?user</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 <div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <ul>

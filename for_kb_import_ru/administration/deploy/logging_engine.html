@@ -516,36 +516,21 @@
 <li>Создайте в журнале событий Windows новый источник событий (<code>EventSource</code>), если его ещё нет.</li>
 <li>
 <p>Создайте скрипт по приведённому ниже образцу на языке VisualBasic и сохраните его в файл с расширением .VBS (например, <code>CreateEventSource.vbs</code>):</p>
-<div class="highlight"><code><pre><span></span><code>Set<span class="w"> </span><span class="nv">Args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>WScript.Arguments</code><br/>
-<code>If<span class="w"> </span>Args.Count<span class="w"> </span>&lt;<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="k">then</span><span class="w"> </span>WScript.Echo<span class="w"> </span><span class="s2">"USAGE: CreateEventSource.vbs &lt;EventSourceName&gt;"</span></code><br/>
-<code><span class="w">    </span>WScript.Quit</code><br/>
-<code>End<span class="w"> </span>If</code><br/>
-<code><span class="nv">EventSourceName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Args<span class="o">(</span><span class="m">0</span><span class="o">)</span></code><br/>
-<code>Set<span class="w"> </span><span class="nv">WshShell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>WScript.CreateObject<span class="o">(</span><span class="s2">"WScript.Shell"</span><span class="o">)</span></code><br/>
-<code><span class="s1">'Create event source</span></code><br/>
-<code><span class="s1">KeyName = "HKLM\SYSTEM\CurrentControlSet\Services\Eventlog\Application\" &amp; EventSourceName &amp; "\EventMessageFile"</span></code><br/>
-<code><span class="s1">'</span>Change<span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>.NET<span class="w"> </span>Framework<span class="w"> </span>version<span class="w"> </span>used</code><br/>
-<code>WshShell.RegWrite<span class="w"> </span>KeyName,<span class="s2">"%windir%\Microsoft.NET\Framework64\v2.0.50727\EventLogMessages.dll"</span>,<span class="w"> </span><span class="s2">"REG_EXPAND_SZ"</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>Set<span class="w"> </span><span class="nv">Args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>WScript.Arguments</code> <br/><code>If<span class="w"> </span>Args.Count<span class="w"> </span>&lt;<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="k">then</span><span class="w"> </span>WScript.Echo<span class="w"> </span><span class="s2">"USAGE: CreateEventSource.vbs &lt;EventSourceName&gt;"</span></code> <br/><code><span class="w">    </span>WScript.Quit</code> <br/><code>End<span class="w"> </span>If</code> <br/><code><span class="nv">EventSourceName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Args<span class="o">(</span><span class="m">0</span><span class="o">)</span></code> <br/><code>Set<span class="w"> </span><span class="nv">WshShell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>WScript.CreateObject<span class="o">(</span><span class="s2">"WScript.Shell"</span><span class="o">)</span></code> <br/><code><span class="s1">'Create event source</span></code> <br/><code><span class="s1">KeyName = "HKLM\SYSTEM\CurrentControlSet\Services\Eventlog\Application\" &amp; EventSourceName &amp; "\EventMessageFile"</span></code> <br/><code><span class="s1">'</span>Change<span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>.NET<span class="w"> </span>Framework<span class="w"> </span>version<span class="w"> </span>used</code> <br/><code>WshShell.RegWrite<span class="w"> </span>KeyName,<span class="s2">"%windir%\Microsoft.NET\Framework64\v2.0.50727\EventLogMessages.dll"</span>,<span class="w"> </span><span class="s2">"REG_EXPAND_SZ"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Запустите скрипт, который создаст источник событий (<code>EventSource</code>) в журнале событий Windows.</p>
 <p>В качестве параметра передайте название источника событий, которое будет отображаться в разделе «Журналы Windows / Приложение» (Windows Logs / Application) приложения приложении «Просмотр событий».</p>
 <p>Пример команды запуска скрипта:</p>
-<div class="highlight"><code><pre><span></span><code>CreateEventSource.vbs<span class="w"> </span><span class="s2">"CBAP"</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>CreateEventSource.vbs<span class="w"> </span><span class="s2">"CBAP"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Создайте в файле <code>logs.config</code> в подразделе <code>nlog.targets</code> (с конфигурацией файловых журналов) подраздел <code>target</code> с параметрами записи данных в журнал событий Windows:</p>
-<div class="highlight"><code><pre><span></span><code>&lt;target xsi:type="EventLogCBAPErrors" name="eventlog" layout="${message}"</code><br/>
-<code>log="Application" source="CBAP"/&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>&lt;target xsi:type="EventLogCBAPErrors" name="eventlog" layout="${message}"</code> <br/><code>log="Application" source="CBAP"/&gt;</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Создайте в файле <code>logs.config</code> правило (подраздел <code>logger</code> в разделе <code>nlog.rules</code>), которое будет определять сообщения, подлежащие записи в журнал событий Windows:</p>
-<div class="highlight"><code><pre><span></span><code>&lt;logger name="*" minlevel="Warn" maxlevel="Fatal"</code><br/>
-<code>writeTo="errorsFile,EventLogCBAPErrors"/&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>&lt;logger name="*" minlevel="Warn" maxlevel="Fatal"</code> <br/><code>writeTo="errorsFile,EventLogCBAPErrors"/&gt;</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Перезагрузите экземпляр ПО, чтобы изменения вступили в силу. См. раздел <em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4638">«Настройка конфигурации Утилиты администрирования Comindware»</a></em>.</p>

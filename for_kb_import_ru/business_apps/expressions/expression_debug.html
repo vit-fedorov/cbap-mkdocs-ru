@@ -228,8 +228,7 @@
 <li><strong>Вычислять автоматически:</strong> флажок установлен</li>
 <li><strong>Вычисляемое значение: формула</strong></li>
 </ul>
-<div class="highlight"><code><pre><span></span><code>DECIMAL($AmountText)</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>DECIMAL($AmountText)</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Поместите атрибуты на форму.</p>
@@ -258,8 +257,7 @@
 <li><strong>Вычислять автоматически:</strong> флажок установлен</li>
 <li><strong>Вычисляемое значение: формула</strong></li>
 </ul>
-<div class="highlight"><code><pre><span></span><code><span class="n">VALUE</span><span class="p">(</span><span class="err">$</span><span class="n">Amount</span><span class="p">,</span><span class="w"> </span><span class="s">"Не заполнено поле Amount"</span><span class="p">)</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="n">VALUE</span><span class="p">(</span><span class="err">$</span><span class="n">Amount</span><span class="p">,</span><span class="w"> </span><span class="s">"Не заполнено поле Amount"</span><span class="p">)</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Поместите атрибуты на форму.</p>
@@ -366,36 +364,7 @@ using Comindware.TeamNetwork.Api.Data;</p>
 <li>Откройте на диаграмме процесса задачу-выполнение сценария.</li>
 <li>
 <p>Чтобы выводить определённое сообщение об ошибке, если возникло исключение при выполнении задачи, воспользуйтесь следующим образцом кода:</p>
-<div class="highlight"><code><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span></code><br/>
-<code><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span></code><br/>
-<code><span class="k">using</span><span class="w"> </span><span class="nn">System.Linq</span><span class="p">;</span></code><br/>
-<code><span class="k">using</span><span class="w"> </span><span class="nn">Comindware.Data.Entity</span><span class="p">;</span></code><br/>
-<code><span class="k">using</span><span class="w"> </span><span class="nn">Comindware.TeamNetwork.Api.Data.UserCommands</span><span class="p">;</span></code><br/>
-<code><span class="k">using</span><span class="w"> </span><span class="nn">Comindware.TeamNetwork.Api.Data</span><span class="p">;</span></code><br/>
-<code></code><br/>
-<code><span class="k">class</span><span class="w"> </span><span class="nc">Script</span></code><br/>
-<code><span class="p">{</span></code><br/>
-<code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="n">Comindware</span><span class="p">.</span><span class="n">Process</span><span class="p">.</span><span class="n">Api</span><span class="p">.</span><span class="n">Data</span><span class="p">.</span><span class="n">ScriptContext</span><span class="w"> </span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">Comindware</span><span class="p">.</span><span class="n">Entities</span><span class="w"> </span><span class="n">entities</span><span class="p">)</span></code><br/>
-<code><span class="w">    </span><span class="p">{</span></code><br/>
-<code><span class="w">        </span><span class="c1">// Добавьте код, в котором не требуется обрабатывать исключения.</span></code><br/>
-<code><span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">ResultDescription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">""</span><span class="p">;</span></code><br/>
-<code><span class="w">        </span><span class="k">try</span></code><br/>
-<code><span class="w">        </span><span class="p">{</span></code><br/>
-<code><span class="w">            </span><span class="c1">// Добавьте код, который должен работать в штатном режиме.</span></code><br/>
-<code><span class="w">            </span><span class="n">ResultDescription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Успех"</span><span class="p">;</span></code><br/>
-<code><span class="w">        </span><span class="p">}</span></code><br/>
-<code><span class="w">        </span><span class="k">catch</span></code><br/>
-<code><span class="w">        </span><span class="p">{</span></code><br/>
-<code><span class="w">            </span><span class="c1">// Добавьте код, который должен отработать в случае ошибки.</span></code><br/>
-<code><span class="w">            </span><span class="n">ResultDescription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Ошибка"</span><span class="p">;</span></code><br/>
-<code><span class="w">        </span><span class="p">}</span></code><br/>
-<code><span class="w">        </span><span class="c1">// Эта строка отобразится в поле «Выходные данные»</span></code><br/>
-<code><span class="w">        </span><span class="c1">// для события «Скрипт выполнен» в цепочке событий</span></code><br/>
-<code><span class="w">        </span><span class="c1">// для задачи-выполнения сценария.</span></code><br/>
-<code><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="s">"Результат: {0}"</span><span class="p">,</span><span class="w"> </span><span class="n">ResultDescription</span><span class="p">);</span></code><br/>
-<code><span class="w">    </span><span class="p">}</span></code><br/>
-<code><span class="p">}</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span></code> <br/><code><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span></code> <br/><code><span class="k">using</span><span class="w"> </span><span class="nn">System.Linq</span><span class="p">;</span></code> <br/><code><span class="k">using</span><span class="w"> </span><span class="nn">Comindware.Data.Entity</span><span class="p">;</span></code> <br/><code><span class="k">using</span><span class="w"> </span><span class="nn">Comindware.TeamNetwork.Api.Data.UserCommands</span><span class="p">;</span></code> <br/><code><span class="k">using</span><span class="w"> </span><span class="nn">Comindware.TeamNetwork.Api.Data</span><span class="p">;</span></code> <br/><code></code> <br/><code><span class="k">class</span><span class="w"> </span><span class="nc">Script</span></code> <br/><code><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="n">Comindware</span><span class="p">.</span><span class="n">Process</span><span class="p">.</span><span class="n">Api</span><span class="p">.</span><span class="n">Data</span><span class="p">.</span><span class="n">ScriptContext</span><span class="w"> </span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">Comindware</span><span class="p">.</span><span class="n">Entities</span><span class="w"> </span><span class="n">entities</span><span class="p">)</span></code> <br/><code><span class="w">    </span><span class="p">{</span></code> <br/><code><span class="w">        </span><span class="c1">// Добавьте код, в котором не требуется обрабатывать исключения.</span></code> <br/><code><span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">ResultDescription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">""</span><span class="p">;</span></code> <br/><code><span class="w">        </span><span class="k">try</span></code> <br/><code><span class="w">        </span><span class="p">{</span></code> <br/><code><span class="w">            </span><span class="c1">// Добавьте код, который должен работать в штатном режиме.</span></code> <br/><code><span class="w">            </span><span class="n">ResultDescription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Успех"</span><span class="p">;</span></code> <br/><code><span class="w">        </span><span class="p">}</span></code> <br/><code><span class="w">        </span><span class="k">catch</span></code> <br/><code><span class="w">        </span><span class="p">{</span></code> <br/><code><span class="w">            </span><span class="c1">// Добавьте код, который должен отработать в случае ошибки.</span></code> <br/><code><span class="w">            </span><span class="n">ResultDescription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Ошибка"</span><span class="p">;</span></code> <br/><code><span class="w">        </span><span class="p">}</span></code> <br/><code><span class="w">        </span><span class="c1">// Эта строка отобразится в поле «Выходные данные»</span></code> <br/><code><span class="w">        </span><span class="c1">// для события «Скрипт выполнен» в цепочке событий</span></code> <br/><code><span class="w">        </span><span class="c1">// для задачи-выполнения сценария.</span></code> <br/><code><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="s">"Результат: {0}"</span><span class="p">,</span><span class="w"> </span><span class="n">ResultDescription</span><span class="p">);</span></code> <br/><code><span class="w">    </span><span class="p">}</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Опубликуйте диаграмму процесса.</p>
@@ -436,13 +405,11 @@ using Comindware.TeamNetwork.Api.Data;</p>
 <li>После элемента сценария, работу которого требуется проверить, добавьте действие «<strong>Проверить результат выражения</strong>» и настройте его.</li>
 <li>
 <p>В поле «<strong>Выражение</strong>» введите формулу:</p>
-<div class="highlight"><code><pre><span></span><code><span class="k">false</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="k">false</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>В поле «<strong>Сообщение об ошибке</strong>» введите отладочное сообщение, например:</p>
-<div class="highlight"><code><pre><span></span><code><span class="n">Сценарий</span><span class="w"> </span><span class="n">отработал</span><span class="w"> </span><span class="n">корректно</span><span class="w"> </span><span class="n">до</span><span class="w"> </span><span class="n">элемента</span><span class="w"> </span><span class="err">«</span><span class="o">&lt;</span><span class="n">название</span><span class="w"> </span><span class="n">действия</span><span class="o">&gt;</span><span class="err">»</span><span class="w"> </span><span class="n">включительно</span><span class="p">.</span></code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="n">Сценарий</span><span class="w"> </span><span class="n">отработал</span><span class="w"> </span><span class="n">корректно</span><span class="w"> </span><span class="n">до</span><span class="w"> </span><span class="n">элемента</span><span class="w"> </span><span class="err">«</span><span class="o">&lt;</span><span class="n">название</span><span class="w"> </span><span class="n">действия</span><span class="o">&gt;</span><span class="err">»</span><span class="w"> </span><span class="n">включительно</span><span class="p">.</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Запустите сценарий.</p>

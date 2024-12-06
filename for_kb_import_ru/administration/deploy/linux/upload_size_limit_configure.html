@@ -101,46 +101,33 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в режим суперпользователя <code>root</code>:</p>
-<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-i</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-i</code> <br/></pre></code></div>
 <p>или</p>
-<div class="highlight"><code><pre><span></span><code>su<span class="w"> </span>-</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>su<span class="w"> </span>-</code> <br/></pre></code></div>
 </li>
 <li>
 <p class="pageBreakBefore">Откройте для редактирования файл <code>/var/www/comindware&lt;instanceName&gt;/Web.config</code>:</p>
-<div class="highlight"><code><pre><span></span><code>sudo nano /var/www/comindware&lt;instanceName&gt;/Web.config</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo nano /var/www/comindware&lt;instanceName&gt;/Web.config</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Установите лимит (например, 1 ГБ) с помощью директив <code>httpRuntime maxRequestLength</code> (в килобайтах) и <code>requestLimits maxAllowedContentLength</code> (в байтах):</p>
-<div class="highlight"><code><pre><span></span><code>&lt;httpRuntime maxRequestLength="1048576" maxUrlLength="4096" requestValidationMode="2.0" shutdownTimeout="300" executionTimeout="3000" targetFramework="4.8" enableVersionHeader="false" /&gt;</code><br/>
-<code></code><br/>
-<code>...</code><br/>
-<code></code><br/>
-<code>&lt;requestLimits maxAllowedContentLength="1073741824" /&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>&lt;httpRuntime maxRequestLength="1048576" maxUrlLength="4096" requestValidationMode="2.0" shutdownTimeout="300" executionTimeout="3000" targetFramework="4.8" enableVersionHeader="false" /&gt;</code> <br/><code></code> <br/><code>...</code> <br/><code></code> <br/><code>&lt;requestLimits maxAllowedContentLength="1073741824" /&gt;</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Откройте для редактирования файл <code>/etc/nginx/sites-available/comindware&lt;instanceName&gt;</code>:</p>
-<div class="highlight"><code><pre><span></span><code>sudo nano /etc/nginx/sites-available/comindware&lt;instanceName&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo nano /etc/nginx/sites-available/comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Откройте для редактирования файл <code>/etc/nginx/sites-available/comindware&lt;instanceName&gt;</code>:</p>
-<div class="highlight"><code><pre><span></span><code>sudo nano /etc/nginx/sites-available/comindware&lt;instanceName&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo nano /etc/nginx/sites-available/comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Установите лимит в мегабайтах с помощью директивы <code>client_max_body_size</code>:</p>
-<div class="highlight"><code><pre><span></span><code>client_max_body_size 1024m;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>client_max_body_size 1024m;</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Перезагрузите экземпляр ПО и NGINX:</p>
-<div class="highlight"><code><pre><span></span><code>systemctl restart nginx</code><br/>
-<code>systemctl restart comindware&lt;instanceName&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>systemctl restart nginx</code> <br/><code>systemctl restart comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
 </li>
 </ol>
 <h3 id="изменение-лимита-в-windows">Изменение лимита в Windows</h3>
@@ -149,12 +136,7 @@
 <li>Откройте для редактирования файл <code>C:\ProgramData\Comindware\Instances\&lt;instanceName&gt;\Config\Web.config</code>.</li>
 <li>
 <p>Установите лимит (например, 1 ГБ) с помощью директив <code>httpRuntime maxRequestLength</code> (в килобайтах) и <code>requestLimits maxAllowedContentLength</code> (в байтах):</p>
-<div class="highlight"><code><pre><span></span><code>&lt;httpRuntime maxRequestLength="1048576" maxUrlLength="4096" requestValidationMode="2.0" shutdownTimeout="300" executionTimeout="3000" targetFramework="4.8" enableVersionHeader="false" /&gt;</code><br/>
-<code></code><br/>
-<code>...</code><br/>
-<code></code><br/>
-<code>&lt;requestLimits maxAllowedContentLength="1073741824" /&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>&lt;httpRuntime maxRequestLength="1048576" maxUrlLength="4096" requestValidationMode="2.0" shutdownTimeout="300" executionTimeout="3000" targetFramework="4.8" enableVersionHeader="false" /&gt;</code> <br/><code></code> <br/><code>...</code> <br/><code></code> <br/><code>&lt;requestLimits maxAllowedContentLength="1073741824" /&gt;</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Перезагрузите экземпляр ПО с помощью Утилиты администрирования (либо с помощью <em>Диспетчера служб IIS</em> перезагрузите сервер приложений и сайт экземпляра ПО).</p>

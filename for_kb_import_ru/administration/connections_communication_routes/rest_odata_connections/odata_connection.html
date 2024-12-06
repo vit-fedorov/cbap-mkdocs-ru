@@ -30,47 +30,9 @@
 <h2 id="настройка-подключения-к-odata-сервису">Настройка подключения к OData-сервису</h2>
 <p>1. Откройте раздел «<strong>Администрирование</strong>» — «<strong>Подключения</strong>».
 2. Создайте подключение типа «<strong>Синхронизация с веб-сервисом</strong>».</p>
-<div class="highlight"><code><pre><span></span><code>&lt;figure markdown&gt;![Создание подключения для синхронизации с веб-сервисом](../img/odata_integration_connection_create.png)&lt;figcaption&gt;Создание подключения для синхронизации с веб-сервисом&lt;/figcaption&gt;&lt;/figure&gt;</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>&lt;figure markdown&gt;![Создание подключения для синхронизации с веб-сервисом](../img/odata_integration_connection_create.png)&lt;figcaption&gt;Создание подключения для синхронизации с веб-сервисом&lt;/figcaption&gt;&lt;/figure&gt;</code> <br/></pre></code></div>
 <p>3. Настройте свойства подключения.</p>
-<div class="highlight"><code><pre><span></span><code>- **Название** — наглядное название подключения к OData-сервису.</code><br/>
-<code>- **Адрес веб-сервиса** — URL для подключения к серверу OData.</code><br/>
-<code></code><br/>
-<code>    !!! tip "Совет"</code><br/>
-<code></code><br/>
-<code>        Для экспериментов с синхронизацией по OData можно использовать общедоступные серверы, предоставляемые OData.org.</code><br/>
-<code></code><br/>
-<code>        Например, для тестирования импорта данных в качестве **адреса веб-сервиса** можно указать:</code><br/>
-<code></code><br/>
-<code>        [https://services.odata.org/V3/OData/OData.svc/](https://services.odata.org/V3/OData/OData.svc/)</code><br/>
-<code></code><br/>
-<code>        Адреса остальных тестовых серверов OData.org представлены на следующих сайтах:</code><br/>
-<code></code><br/>
-<code>        [https://services.odata.org/](https://services.odata.org/)</code><br/>
-<code></code><br/>
-<code>        [https://www.odata.org/odata-services/](https://www.odata.org/odata-services/)</code><br/>
-<code></code><br/>
-<code>    &lt;!-- BEGIN INCLUDE .snippets/pdfPageBreakHard.md --&gt;</code><br/>
-<code></code><br/>
-<code>    &lt;!-- END INCLUDE --&gt;</code><br/>
-<code></code><br/>
-<code>- **Тип аутентификации**:</code><br/>
-<code>{: .pageBreakBefore }</code><br/>
-<code>    - **Без аутентификации**</code><br/>
-<code>    - **Обычная**</code><br/>
-<code>    - **Windows**</code><br/>
-<code>- **Имя пользователя** — укажите в случае выбора **типа аутентификации** «**Обычная**» или «**Windows**».</code><br/>
-<code>- **Пароль** — укажите в случае выбора **типа аутентификации** «**Обычная**» или «**Windows**».</code><br/>
-<code>- **Тайм-аут запроса** — время ожидания выполнения запроса, по истечении которого запрос отменяется.</code><br/>
-<code>- **Версия OData**</code><br/>
-<code>    - **V2**</code><br/>
-<code>    - **V3**</code><br/>
-<code>    - **V4**</code><br/>
-<code>- **Заголовки** — при необходимости укажите особые заголовки запроса:</code><br/>
-<code>    - **Заголовок** — имя заголовка;</code><br/>
-<code>    - **Значение заголовка** — содержимое заголовка.</code><br/>
-<code>- **Отключить** — установите этот флажок, если требуется деактивировать данное подключение.</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>- **Название** — наглядное название подключения к OData-сервису.</code> <br/><code>- **Адрес веб-сервиса** — URL для подключения к серверу OData.</code> <br/><code></code> <br/><code>    !!! tip "Совет"</code> <br/><code></code> <br/><code>        Для экспериментов с синхронизацией по OData можно использовать общедоступные серверы, предоставляемые OData.org.</code> <br/><code></code> <br/><code>        Например, для тестирования импорта данных в качестве **адреса веб-сервиса** можно указать:</code> <br/><code></code> <br/><code>        [https://services.odata.org/V3/OData/OData.svc/](https://services.odata.org/V3/OData/OData.svc/)</code> <br/><code></code> <br/><code>        Адреса остальных тестовых серверов OData.org представлены на следующих сайтах:</code> <br/><code></code> <br/><code>        [https://services.odata.org/](https://services.odata.org/)</code> <br/><code></code> <br/><code>        [https://www.odata.org/odata-services/](https://www.odata.org/odata-services/)</code> <br/><code></code> <br/><code>    &lt;!-- BEGIN INCLUDE .snippets/pdfPageBreakHard.md --&gt;</code> <br/><code></code> <br/><code>    &lt;!-- END INCLUDE --&gt;</code> <br/><code></code> <br/><code>- **Тип аутентификации**:</code> <br/><code>{: .pageBreakBefore }</code> <br/><code>    - **Без аутентификации**</code> <br/><code>    - **Обычная**</code> <br/><code>    - **Windows**</code> <br/><code>- **Имя пользователя** — укажите в случае выбора **типа аутентификации** «**Обычная**» или «**Windows**».</code> <br/><code>- **Пароль** — укажите в случае выбора **типа аутентификации** «**Обычная**» или «**Windows**».</code> <br/><code>- **Тайм-аут запроса** — время ожидания выполнения запроса, по истечении которого запрос отменяется.</code> <br/><code>- **Версия OData**</code> <br/><code>    - **V2**</code> <br/><code>    - **V3**</code> <br/><code>    - **V4**</code> <br/><code>- **Заголовки** — при необходимости укажите особые заголовки запроса:</code> <br/><code>    - **Заголовок** — имя заголовка;</code> <br/><code>    - **Значение заголовка** — содержимое заголовка.</code> <br/><code>- **Отключить** — установите этот флажок, если требуется деактивировать данное подключение.</code> <br/></pre></code></div>
 <p>4. Сохраните подключение.
 5. Нажмите кнопку «<strong>Проверить соединение</strong>». В области «<strong>Результаты</strong>» отобразятся полученные с сервера сущности.</p>
 <figure class="screenshot_with_caption">

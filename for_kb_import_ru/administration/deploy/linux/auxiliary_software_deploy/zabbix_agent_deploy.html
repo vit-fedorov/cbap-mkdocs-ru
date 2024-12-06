@@ -55,71 +55,57 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в папку пользователя <code>username</code>:</p>
-<div class="highlight"><code><pre><span></span><code>cd /home/username</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>cd /home/username</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Для добавления репозитория Zabbix загрузите его deb-пакет:</p>
-<div class="highlight"><code><pre><span></span><code>wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4%2Bubuntu22.04_all.deb</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4%2Bubuntu22.04_all.deb</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Распакуйте deb-пакет:</p>
-<div class="highlight"><code><pre><span></span><code>sudo dpkg -i zabbix-release_6.0-4+ubuntu22.04_all.deb</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo dpkg -i zabbix-release_6.0-4+ubuntu22.04_all.deb</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Обновите базу данных пакетов в операционной системе:</p>
-<div class="highlight"><code><pre><span></span><code>sudo apt update</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo apt update</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Установите <em>Zabbix Agent</em>:</p>
-<div class="highlight"><code><pre><span></span><code>sudo apt install --yes zabbix-agent</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo apt install --yes zabbix-agent</code> <br/></pre></code></div>
 </li>
 </ol>
 <h2 class="pageBreakBefore" id="настройка-сервиса-zabbix-agent">Настройка сервиса Zabbix Agent</h2>
 <ol class="colored_numbers_list">
 <li>
 <p>На каждой из машин с <em>Zabbix Agent</em> отредактируйте файл конфигурации: <code>/etc/zabbix/zabbix_agentd.conf</code>:</p>
-<div class="highlight"><code><pre><span></span><code>sudo nano /etc/zabbix/zabbix_agentd.conf</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo nano /etc/zabbix/zabbix_agentd.conf</code> <br/></pre></code></div>
 </li>
 <li>
 <p>В файле конфигурации укажите IP-адрес <em>Zabbix Server</em> — в подключениях с неизвестных IP-адресов будет отказано:</p>
-<div class="highlight"><code><pre><span></span><code>Server=your.server.ip.address</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>Server=your.server.ip.address</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Отредактируйте директиву <code>ServerActive</code>:</p>
-<div class="highlight"><code><pre><span></span><code>ServerActive=your.server.ip.address</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>ServerActive=your.server.ip.address</code> <br/></pre></code></div>
 </li>
 </ol>
 <h2 class="pageBreakBefore" id="запуск-сервиса-zabbix-agent">Запуск сервиса Zabbix Agent</h2>
 <ol class="colored_numbers_list">
 <li>
 <p>Разрешите в сетевом экране обращения через порт <code>10050</code>:</p>
-<div class="highlight"><code><pre><span></span><code>sudo ufw allow 10050/tcp</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo ufw allow 10050/tcp</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Примените изменения:</p>
-<div class="highlight"><code><pre><span></span><code>sudo systemctl daemon-reload</code><br/>
-<code></code><br/>
-<code>sudo ufw reload</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo systemctl daemon-reload</code> <br/><code></code> <br/><code>sudo ufw reload</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Запустите службу <em>Zabbix Agent</em> и добавьте его в список автозагрузки:</p>
-<div class="highlight"><code><pre><span></span><code>sudo systemctl enable --now zabbix-agent</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo systemctl enable --now zabbix-agent</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Удостоверьтесь, что служба работает:</p>
-<div class="highlight"><code><pre><span></span><code>systemctl status zabbix-agent </code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>systemctl status zabbix-agent </code> <br/></pre></code></div>
 <p><figure class="screenshot_with_caption" markdown=""><img alt="Ожидаемый статус сервиса Zabbix Agent" src="https://kb.comindware.ru/assets/img_63ad99c681d0a.png"/><figcaption class="caption">Ожидаемый статус сервиса Zabbix Agent</figcaption></figure></p>
 </li>
 </ol>
@@ -163,9 +149,7 @@
 <li>сетевой экран на машине, где развернут <em>Zabbix Agent</em>, разрешает обмен данными через порт 10050;</li>
 <li>значения <code>Server</code> и <code>ServerActive</code> в файле конфигурации <em>Zabbix Agent</em> <code>/etc/zabbix/zabbix_agentd.conf</code> соответствуют IP-адресу <em>Zabbix Server</em>:</li>
 </ul>
-<div class="highlight"><code><pre><span></span><code>Server=192.168.0.1 # ip-адрес приведён как пример</code><br/>
-<code>ServerActive=192.168.0.1 # ip-адрес приведён как пример</code><br/>
-</pre></code></div>
+<div class="highlight"><code><pre><span></span><code>Server=192.168.0.1 # ip-адрес приведён как пример</code> <br/><code>ServerActive=192.168.0.1 # ip-адрес приведён как пример</code> <br/></pre></code></div>
 </li>
 </ol>
 <div class="notice notice-info">

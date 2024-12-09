@@ -1,26 +1,31 @@
 ---
-title:
+title: Конфигурация экземпляра и компонентов ПО. Настройка
 kbId:
 ---
 
-# Файлы конфигурации
+# Конфигурация экземпляра и компонентов ПО. Настройка {: #configuration_files_linux }
 
-## Настройка конфигурации файла конфигурации экземпляра ПО
+## Введение
 
-1. Откройте для редактирования файл конфигурации экземпляра ПО (`<instanceName>` — имя экземпляра ПО):
+Здесь представлены инструкции по настройке файлов конфигурации после развёртывания и обновления ПО **{{ productName }}**, его компонентов и служб.
+
+## Конфигурации экземпляра ПО
+
+1. Откройте файл конфигурации экземпляра ПО (`<instanceName>` — имя экземпляра ПО) для редактирования:
 
     ``` sh
     nano /usr/share/comindware/configs/instance/<instanceName>.yml
     ```
 
-2. Отредактируйте необходимые параметры и сохраните. Для редактирования доступны:
+2. Измените необходимые параметры, например:
 
-    - `databasePath` — директория для хранения базы данных экземпляра.
-    - `backup.config.default.repository.localDisk.path` или `backup.defaultFolder` — директория для хранения данных резервного копирования.
-    - `userStorage.localDisk.path` — директория для хранения загружаемых файлов.
-    - `mq.server` — адрес подключения к службе Kafka.
+    - `databasePath` — путь к базе данных экземпляра ПО.
+    - `backup.config.default.repository.localDisk.path` или `backup.defaultFolder` — директория для хранения резервных копий.
+    - `userStorage.localDisk.path` — директория для хранения пользовательских файлов.
+    - `mq.server` — адрес сервера Kafka.
 
-3. Убедитесь, что папки, указанные в файле конфигурации, существуют. При необходимости создайте их и задайте права доступа:
+3. Сохраните файл конфигурации.
+4. Убедитесь, что директории, указанные в файле конфигурации, существуют. При необходимости создайте их и задайте права доступа:
 
     ``` sh
     mkdir -p <path/to/Database>
@@ -30,9 +35,9 @@ kbId:
     chown -R <User>:<Group> <path/to/Database> <path/to/Streams> <path/to/Backup>
     ```
 
-    Здесь: значения `<User>` и `<Group>` должны совпадать с такими же параметрами в `/usr/lib/systemd/system/comindware<instanceName>.service`
+    Здесь значения `<User>` и `<Group>` должны совпадать с такими же параметрами в файле `/usr/lib/systemd/system/comindware<instanceName>.service`
 
-4. После внесения изменений перезапустите службу экземпляра ПО:
+5. Перезапустите службу экземпляра ПО:
 
     ``` sh
     systemctl restart comindware<instanceName>
@@ -41,81 +46,100 @@ kbId:
 ### Пример YML-файла конфигурации экземпляра ПО
 
 ``` yml
+# Федеративная аутентификация отключена (1 — вкл.)
 isFederationAuthEnabled: 0
+# Путь к базе данных
 databasePath: /var/lib/comindware/<instanceName>/Database
+# Путь к исполняемым и конфигурационным файлам экземпляра ПО
 configPath: /var/www/<instanceName>
+# Тип хранилища резервных копий: LocalDisk или S3
 backup.config.default.repository.type: LocalDisk
+# Путь к директории резервных копий
 backup.config.default.repository.localDisk.path: /var/backups/<instanceName>
+# Тип хранилища пользовательских файлов: LocalDisk или S3
 userStorage.type: LocalDisk
+# Путь к директории пользовательских файлов
 userStorage.localDisk.path: /var/lib/comindware/<instanceName>/Streams
+# Тип хранилища временных файлов: LocalDisk или S3
 tempStorage.type: LocalDisk
+# Путь к директории временных файлов
 tempStorage.localDisk.path: /var/lib/comindware/<instanceName>/Temp
+# Адрес и порт сервера очереди сообщений (Kafka)
 mq.server: <kafkaBrokerIP>:<kafkaBrokerPort>
+# Идентификатор группы очереди сообщений. Должно быть уникальным для каждого экземпляра
 mq.group: <instanceName>
+# Управление службой adapterhost включено
 manageAdapterHost: true
-elasticsearchUri: http://localhost:9200
+# Адрес и порт сервера Elasticsearch
+elasticsearchUri: <elasticsearchIP>:<elasticsearchPort>
+# Имя экземпляра ПО
 instanceName: <instanceName>
-version: 4.7.XXXX.0
+# Версия ПО
+version: <versionNumber>
 ```
 
-## Настройка конфигурации apigateway.json
+## Конфигурация службы apigateway
 
-1. Откройте для редактирования файл конфигурации `apigateway.json` экземпляра ПО:
+1. Откройте файл конфигурации `apigateway.json` экземпляра ПО для редактирования:
 
     ``` sh
     nano /var/www/<instanceName>/apigateway.json
     ```
 
-2. Отредактируйте необходимые параметры и сохраните. Удостоверьтесь, что значение параметра `BootstrapServer` совпадает с `mq.server`, а `GroupId` — с `mq.group` в [файле конфигурации экземпляра ПО](#пример-yml-файла-конфигурации-экземпляра-по).
-3. После внесения изменений перезапустите службу:
+2. Измените необходимые параметры.
+3. Удостоверьтесь, что значение параметра `BootstrapServer` (адрес и порт сервера очереди сообщений) совпадает с `mq.server`, а `GroupId` (идентификатор группы очереди сообщений) — с `mq.group` в [файле конфигурации экземпляра ПО](#пример-yml-файла-конфигурации-экземпляра-по).
+4. Сохраните файл конфигурации.
+5. Перезапустите службу apigateway:
 
     ``` sh
     systemctl restart apigateway<instanceName>
     ```
 
-### Пример конфигурации apigateway.json
+### Пример конфигурации службы apigateway.json
 
 ```json
 {
-"Instance": {
-    "Name": "<instanceName>"
-},
-"Log": {
-    "Enabled": true,
-    "ConfigurationFile": "/var/www/<instanceName>/logs.config"
-},
-"Kata": {
-    "Enabled": false
-},
-"Kafka": {
-    "BootstrapServer": "<kafkaBrokerIP>:<kafkaBrokerPort>",
-    "GroupId": "<instanceName>"
-},
-"Grpc": {
-    "SocketPath": "/var/www/<instanceName>/App_Data/apigateway.socket",
-    "Protocol": "Http2"
-}
+   "Instance":{
+      "Name":"<instanceName>"
+   },
+   "Log":{
+      "Enabled":true,
+      "ConfigurationFile":"/var/www/<instanceName>/logs.config"
+   },
+   "Kata":{
+      "Enabled":false
+   },
+   "Kafka":{
+      "BootstrapServer":"<kafkaBrokerIP>:<kafkaBrokerPort>",
+      "GroupId":"<instanceName>"
+   },
+   "Grpc":{
+      "SocketPath":"/var/www/<instanceName>/App_Data/apigateway.socket",
+      "Protocol":"Http2"
+   }
 }
 ```
 
-## Настройка конфигурации adapterhost
+## Конфигурация службы adapterhost
 
-1. Откройте для редактирования файл конфигурации `adapterhost.config` экземпляра ПО:
+1. Откройте файл конфигурации `adapterhost.config` экземпляра ПО для редактирования:
 
     ``` sh
     nano /var/www/<instanceName>/adapterhost.config
     ```
 
-2. Отредактируйте необходимые параметры и сохраните. Удостоверьтесь, что значение параметра `BootstrapServers` совпадает с `mq.server`, а `groupId` — с `mq.group` в [файле конфигурации экземпляра](#настройка-конфигурации-файла-конфигурации-экземпляра-по).
-3. После внесения изменений перезапустите службу:
+2. Отредактируйте необходимые параметры.
+3. Удостоверьтесь, что значение параметра `BootstrapServers` совпадает с `mq.server`, а `groupId` — с `mq.group` в [файле конфигурации экземпляра](#настройка-конфигурации-файла-конфигурации-экземпляра-по).
+4. Сохраните файл конфигурации.
+5. После внесения изменений перезапустите службу adapterhost:
 
     ``` sh
     kill -9 $(ps -eo pid,args | grep $<instanceName> | grep Agent | awk {'print $1'}) && systemctl restart comindware<instanceName>
     ```
 
-### Пример конфигурации adapterhost
+### Пример файла конфигурации adapterhost.config
 
-```yml
+``` yml
 platformKey: <instanceName>
 loaderFolder: /var/log/comindware/.adapterhost/<instanceName>/LoadData
 deployRequestQueue: request_queue_<hostname>_<instanceName>_deploy_external
@@ -140,7 +164,7 @@ maxArchiveFiles: 30
 archiveAboveSize: 104857600
 ```
 
-## Настройка конфигурации Ignite
+## Конфигурация Apache Ignite
 
 1. Откройте файл конфигурации Ignite для редактирования:
 
@@ -148,48 +172,46 @@ archiveAboveSize: 104857600
     nano /var/www/<instanceName>/Ignite.config
     ```
 
-2. В блоке `<bean class="org.apache.ignite.configuration.DataRegionConfiguration">` настройте максимальный объём выделяемой памяти:
+2. В блоке `<bean class="org.apache.ignite.configuration.DataRegionConfiguration">` задайте максимальный объём выделяемой памяти:
 
-    - 3 Гб:
-    
+    - 3 ГБ:
+
         ``` xml
         <property name="maxSize" value="#{3L * 1024 * 1024 * 1024}" />
         ```
-    
-    - 8 Гб:
+
+    - 8 ГБ:
 
         ``` xml
         <property name="maxSize" value="#{8L * 1024 * 1024 * 1024}" />
         ```
 
-3. В случае изменения максимального объёма выделяемой памяти отредактируйте параметр `checkpointPageBufferSize`. Чтобы рассчитать размер значения, разделите размер `maxSize` на четыре, но при это значение не должно быть менее 256 Мб и более 2 Гб. Для максимального объёма выделяемой памяти в 8 Гб, значение будет следующим:
+3. В случае изменения максимального объёма выделяемой памяти отредактируйте параметр `checkpointPageBufferSize`. Чтобы рассчитать размер значения, разделите размер `maxSize` на четыре, при этом значение не должно в диапазоне 256 МБ — 2 ГБ. Для максимального объёма выделяемой памяти в 8 Гб, значение будет следующим:
 
     ``` xml
     <property name="checkpointPageBufferSize" value="#{2L * 1024 * 1024 * 1024}" />
     ```
 
-4. После внесения изменений перезапустите службу экземпляра ПО:
+4. Перезапустите службу экземпляра ПО:
 
     ``` sh
     systemctl restart comindware<instanceName>
     ```
 
-## Настройка конфигурации памяти кучи Java
+## Конфигурация кучи Java
 
-В зависимости от размера оперативной памяти на сервере следует отредактировать конфигурацию памяти Java.
+В зависимости от объёма оперативной памяти на сервере следует отредактировать конфигурацию области памяти для кучи Java.
 
-1. Откройте конфигурацию кучи Java экземпляра ПО для редактирования:
+1. Откройте файл конфигурации среды экземпляра ПО для редактирования:
 
-    ```sh
+    ``` sh
     nano /etc/sysconfig/comindware<instanceName>-env
     ```
 
-2. Отредактируйте объём памяти, который выделяется для кучи Java:
+2. Задайте объём памяти, который выделяется для кучи Java:
 
-    ``` sh
-    ...
+    ``` ini
     JVM_OPTS=-Xms512m -Xmx16g -XX:MaxDirectMemorySize=1g ...
-    ...
     ```
 
     Здесь:
@@ -197,16 +219,17 @@ archiveAboveSize: 104857600
     - `-Xms` — начальный размер кучи;
     - `-Xmx` — максимальный размер кучи.
 
-3. После внесения изменений перезапустите службу экземпляра ПО:
+3. Сохраните файл конфигурации.
+4. Перезапустите службу экземпляра ПО:
 
-    ```sh
+    ``` sh
     systemctl daemon-reload
     systemctl restart comindware<instanceName>
     ```
 
-## Настройка конфигурации NGINX
+## Конфигурация NGINX
 
-1. Откройте конфигурацию NGINX для редактирования:
+1. Откройте файл конфигурации NGINX для редактирования:
 
     - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
 
@@ -240,22 +263,20 @@ archiveAboveSize: 104857600
 3. Для записи событий в отдельные журналы укажите их:
 
     ``` sh
-    ...
-            }
         error_log /var/log/nginx/<instanceName>-error.log;
         access_log /var/log/nginx/<instanceName>-access.log;
-    }
     ```
 
-4. Проверьте, что изменения работают корректно:
+4. Сохраните файл конфигурации.
+5. Проверьте, что изменения работают корректно:
 
-    ```sh
+    ``` sh
     nginx -t
     ```
 
-5. При успешном вступлении изменений в силу перезагрузите NGINX:
+6. При успешном вступлении изменений в силу перезагрузите NGINX:
 
-    ```sh
+    ``` sh
     nginx -s reload
     ```
 
@@ -264,6 +285,7 @@ archiveAboveSize: 104857600
 --8<-- "related_topics_heading.md"
 
 - _[Пути и содержимое директорий экземпляра ПО][paths]_
+- _[Настройка конфигурации вспомогательного ПО для оптимизации работы {{ productName }}][auxiliary_software_optimize]_
 
 </div>
 

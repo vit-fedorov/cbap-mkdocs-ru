@@ -102,11 +102,11 @@ kbId: 2499
 
 Выполните шаги 6–13 для каждого экземпляра ПО, версию которого требуется обновить, так как скрипт обновления выполняется отдельно для указанного экземпляра ПО.
 
-1. Скачайте и распакуйте дистрибутив с новой версией ПО (`X.X.XXXX.X` — номер версии ПО):
+1. Скачайте и распакуйте дистрибутив с новой версией ПО (`X.X`, `<versionNumber>` — номер версии ПО):
 
     ``` sh
     cd <distPath>
-    tar -xf X.X-release-ru-X.X.XXXX.X.<osname>.tar.gz
+    tar -xf X.X-release-ru-<versionNumber>.<osname>.tar.gz
     ```
 
 2. Перейдите в распакованную папку:
@@ -156,7 +156,7 @@ kbId: 2499
     OK     Database folder created: Yes
     OK     Streams folder created: No 
     OK     Logs folder created: Yes
-    OK     Used version: 4.7.3084.0
+    OK     Used version: <versionNumber>
     OK     Logs configured.
     OK     Sites created.
     OK     Sites enabled.
@@ -195,32 +195,32 @@ kbId: 2499
         nano /etc/nginx/sites-available.d/comindware<instanceName>
         ```
 
-    При необходимости восстановите конфигурацию NGINX, [сохранённую ранее](#NginxBackup).
+    - При необходимости восстановите конфигурацию NGINX, [сохранённую ранее](#NginxBackup).
 
-    - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
+        - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
 
-    ``` sh
-    cp /var/backups/config_tmp/comindware<instanceName>  /etc/nginx/sites-available/
-    nginx -t && nginx -s reload
-    ```
+        ``` sh
+        cp /var/backups/config_tmp/comindware<instanceName>  /etc/nginx/sites-available/
+        nginx -t && nginx -s reload
+        ```
 
-    - **РЕД ОС**, **Rocky** (RPM-based)
+        - **РЕД ОС**, **Rocky** (RPM-based)
 
-    ``` sh
-    cp /var/backups/config_tmp/comindware<instanceName> /etc/nginx/conf.d/
-    nginx -t && nginx -s reload
-    ```
+        ``` sh
+        cp /var/backups/config_tmp/comindware<instanceName> /etc/nginx/conf.d/
+        nginx -t && nginx -s reload
+        ```
 
-    - **Альт Сервер**
+        - **Альт Сервер**
 
-    ``` sh
-    cp /var/backups/config_tmp/comindware<instanceName> /etc/nginx/sites-available.d/
-    nginx -t && nginx -s reload
-    ```
+        ``` sh
+        cp /var/backups/config_tmp/comindware<instanceName> /etc/nginx/sites-available.d/
+        nginx -t && nginx -s reload
+        ```
 
 9. Откройте для редактирования файл конфигурации `/var/www/<instanceName>/apigateway.json`.
 
-    - Проверьте и при необходимости отредактируйте в конфигурации адрес сервера Kafka:
+    - Проверьте и при необходимости отредактируйте адрес сервера Kafka:
 
         ``` sh
         "Kafka": {

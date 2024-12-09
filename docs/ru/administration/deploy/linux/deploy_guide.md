@@ -19,10 +19,10 @@ kbId: 2344
 
     --8<-- "linux_sudo.md"
 
-2. Скачайте и распакуйте дистрибутив **{{ productName }}**, полученный по ссылке от компании **{{ companyName }}** (`X.X.XXXX.X` — номер версии ПО, `<osname>` — название операционной системы):
+2. Скачайте и распакуйте дистрибутив **{{ productName }}**, полученный по ссылке от компании **{{ companyName }}** (`X.X`, `<versionNumber>` — номер версии ПО, `<osname>` — название операционной системы):
 
     ``` sh
-    tar -xf X.X-release-ru-X.X.XXXX.X.<osname>.tar.gz
+    tar -xf X.X-release-ru-<versionNumber>.<osname>.tar.gz
     ```
 
     !!! tip "Совет"
@@ -30,7 +30,7 @@ kbId: 2344
         По завершению распаковки архив можно удалить для экономии места:
 
         ``` sh
-        rm -f X.X-release-ru-X.X.XXXX.X.<osname>.tar.gz
+        rm -f X.X-release-ru-<versionNumber>.<osname>.tar.gz
         ```
 
 3. Перейдите в распакованную директорию:
@@ -137,7 +137,7 @@ kbId: 2344
 3. Установите следующие директивы:
 
     - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
-    
+
     ``` systemd
     www-data soft nproc 200000
     www-data hard nproc 200000

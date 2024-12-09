@@ -31,17 +31,28 @@ kbId: 2499
 1. Создайте и перенесите во внешнее хранилище резервную копию базы данных экземпляра ПО. См. статью _«[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]»_.
 2. Перейдите в режим суперпользователя:
 
-    ``` sh
-    sudo -i
-    ```
+    --8<-- "linux_sudo.md"
 
-    или
+3. Скопируйте конфигурационные файлы (`/var/backups/config_tmp` — директория для хранения конфигурационных файлов, <instanceName> — имя экземпляра ПО):
 
     ``` sh
-    su -
+    mkdir -p /var/backups/config_tmp/
+    cd /var/www/<instanceName>/
+    cp *.config apigateway.json </var/backups/config_tmp/>
     ```
 
-3. Остановите экземпляр ПО и его вспомогательные службы и удостоверьтесь, что они остановлены:
+    Для astra, ubuntu, debian
+
+    ```sh
+    cp /etc/nginx/sites-available/comindware<instanceName> /var/backups/config_tmp/
+    ```
+
+    для rpm-based
+    ```sh
+    cp /etc/nginx/conf.d/comindware<instanceName> /var/backups/config_tmp/
+    ```
+
+4. Остановите экземпляр ПО и его вспомогательные службы и удостоверьтесь, что они остановлены:
 
     ``` sh
     systemctl stop apigateway<instanceName> comindware<instanceName>
@@ -50,7 +61,7 @@ kbId: 2499
 
     Здесь `<instanceName>` — имя экземпляра ПО.
 
-4. Проверьте, выполняется ли сервис `Comindware.Adapter.Agent.exe`:
+5. Проверьте, выполняется ли сервис `Comindware.Adapter.Agent.exe`:
 
     ``` sh
     ps fax | grep Agent
@@ -62,7 +73,7 @@ kbId: 2499
         kill -9 <PID>
         ```
 
-5. Если используется нестандартная конфигурация NGINX для экземпляра ПО, сохраните её резервную копию:
+6. Если используется нестандартная конфигурация NGINX для экземпляра ПО, сохраните её резервную копию:
 {: #NginxBackup}
 
     ``` sh
@@ -75,13 +86,13 @@ kbId: 2499
     cp /etc/nginx/conf.d/comindware<instanceName> $HOME
     ```
 
-6. Проверьте имя и статус экземпляра:
+1. Проверьте имя и статус экземпляра:
 
     ``` sh
     systemctl status comindware*
     ```
 
-7. Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО (`<osname>` — название операционной системы):
+2. Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО (`<osname>` — название операционной системы):
 
     ``` sh
     rm -rf CMW_<osname>

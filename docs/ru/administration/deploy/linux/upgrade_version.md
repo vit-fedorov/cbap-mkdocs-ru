@@ -189,6 +189,12 @@ kbId: 2499
         nano /etc/nginx/conf.d/comindware<instanceName>
         ```
 
+    - **Альт Сервер**
+
+        ``` sh
+        nano /etc/nginx/sites-available.d/comindware<instanceName>
+        ```
+
     При необходимости восстановите конфигурацию NGINX, [сохранённую ранее](#NginxBackup).
 
     - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
@@ -202,6 +208,13 @@ kbId: 2499
 
     ``` sh
     cp /var/backups/config_tmp/comindware<instanceName> /etc/nginx/conf.d/
+    nginx -t && nginx -s reload
+    ```
+
+    - **Альт Сервер**
+
+    ``` sh
+    cp /var/backups/config_tmp/comindware<instanceName> /etc/nginx/sites-available.d/
     nginx -t && nginx -s reload
     ```
 

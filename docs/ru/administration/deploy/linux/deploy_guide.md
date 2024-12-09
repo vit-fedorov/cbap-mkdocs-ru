@@ -52,13 +52,13 @@ kbId: 4622
     {: .pageBreakBefore }
 
     - `p` — установить ПО {{ productName }}.
-    - `k` — установить ПО Kafka.
-    - `e` — установить ПО Elasticsearch.
+    - `k` — установить ПО Kafka (необязательный ключ).
+    - `e` — установить ПО Elasticsearch (необязательный ключ).
     - `h` — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).
 
     !!! note "Примечание"
 
-        Скрипт `install.sh` установливает необходимые компоненты для работы ПО, включая Java, .NET, Mono, NGINX.
+        Скрипт `install.sh` устанавливает ПО {{ productName }} и необходимые для него компоненты, включая Java, .NET, Mono, NGINX.
 
     !!! tip "Вызов справки для скриптов"
 
@@ -136,8 +136,8 @@ kbId: 4622
 
 3. Установите следующие директивы:
 
-    - **Astra Linux**, **Ubuntu**, **Debian**
-    
+    - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
+
     ``` systemd
     www-data soft nproc 200000
     www-data hard nproc 200000
@@ -145,7 +145,7 @@ kbId: 4622
     www-data hard nofile 200000
     ```
 
-    - **РЕД ОС**, **Rocky**
+    - **РЕД ОС**, **Rocky** (RPM-based)
 
     ``` systemd
     nginx soft nproc 200000
@@ -243,7 +243,7 @@ kbId: 4622
     Скрипт `create.sh` поддерживает следующие ключи:
 
     - `-n=<instanceName>` — имя экземпляра ПО (**обязательный** ключ).
-    - `-v=<versionNumber>` — номер версии ПО вида `<versionNumber>` (например: 5.0.0000.0, **обязательный** ключ). Версия должна быть установлена, см. _«[Установка {{ productName }}](#deploy_guide_linux_install_sw)»_.
+    - `-v=<versionNumber>` — номер версии ПО вида `X.X.XXXX.X` (например: 5.0.0000.0, **обязательный** ключ). Версия должна быть установлена, см. _«[Установка {{ productName }}](#deploy_guide_linux_install_sw)»_.
     - `-p=<portNumber>` — порт для экземпляра ПО, по умолчанию: 80 (необязательный ключ).
     - `-h` — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).
 
@@ -442,7 +442,7 @@ kbId: 4622
     - `-n=<instanceName>` — создать экземпляр ПО с указанным именем (**обязательный** ключ).
     - `-h` — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).
 
-## Удаление версии ПО {: .pageBreakBefore }
+## Удаление версии ПО {: #deploy_guide_linux_delete_version .pageBreakBefore }
 
 1. Перейдите в режим суперпользователя:
 
@@ -461,6 +461,6 @@ kbId: 4622
     rm -r /var/www/.cmw_version/<versionNumber>
     ```
 
-    Здесь: `<versionNumber>` — номер версии ПО вида `<versionNumber>` (например: `5.0.0000.0`).
+    Здесь: `<versionNumber>` — номер версии ПО вида `X.X.XXXX.X` (например: `5.0.0000.0`).
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

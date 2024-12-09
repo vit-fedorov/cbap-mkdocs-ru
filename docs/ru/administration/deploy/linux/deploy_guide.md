@@ -36,8 +36,10 @@ kbId: 2344
 3. Перейдите в распакованную директорию:
 
     ``` sh
-    cd CMW_<osname>/
+    cd <path>/CMW_<osname>/
     ```
+
+    Здесь:  `<path>/CMW_<osname>/` — путь к распакованному дистрибутиву ПО.
 
 4. Установите ПО из дистрибутива:
 {: #install.sh}
@@ -54,6 +56,10 @@ kbId: 2344
     - `e` — установить ПО Elasticsearch.
     - `h` — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).
 
+    !!! note "Примечание"
+
+        Скрипт `install.sh` установливает необходимые компоненты для работы ПО, включая Java, .NET, Mono, NGINX.
+
     !!! tip "Вызов справки для скриптов"
 
         Для ознакомления с ключами и назначением любого скрипта используйте ключ `-h` без каких-либо других ключей, например:
@@ -62,7 +68,42 @@ kbId: 2344
         sh install.sh -h
         ```
 
-5. Если отобразится запрос на перезагрузку ОС, выполните перезагрузку:
+5. По окончании установки скрипт выведет информацию об установленных компонентах. Удостоверьтесь, что компоненты успешно установлены.
+
+    Пример результата выполнения скрипта с ключом `-p` без установки Elasticsearch и Kafka:
+
+    ``` sh
+    Environment details
+    Status     | Software   | Version   
+    -----------------------------------------
+    OK         | mono       | 6.12.0.182     
+    OK         | dotnet     | 6.0.417        
+    OK         | java       | 17.0.7         
+    OK     NGINX installed.
+    FAILED NGINX started.
+    OK     CBAP version folder created.
+    OK     CBAP configs folder created.
+    FAILED CBAP data folder created.
+    FAILED CBAP logs folder created.
+    OK     CBAP dotnet folder created.
+    OK     Local elasticsearch server installed: No 
+    OK     Local elasticsearch server started: No 
+    OK     Local kafka server installed: No 
+    OK     Local kafka server started: No 
+    FAILED Final status.
+    ```
+
+    !!! note "Примечание"
+
+        В примере выше для большинства пунктов указан статус `OK`.
+        
+        При этом указан статус `FAILED` для `NGINX started`, `CBAP data folder created`, `CBAP logs folder created` и `Final status`.
+        
+        Это означает, что установлены необходимые компоненты, но не создан экземпляр ПО, то есть установка ПО выполнена успешно.
+
+        Экземпляр ПО следует создать отдельно согласно инструкциям в параграфе _«[Создание экземпляра ПО](#создание-экземпляра-по)»_.
+
+6. Если отобразится запрос на перезагрузку ОС, выполните перезагрузку:
 
     ``` sh
     reboot
@@ -70,7 +111,6 @@ kbId: 2344
 
     После перезагрузки ОС заново запустите [установку ПО из дистрибутива (шаг 4)](#install.sh).
 
-6. Дождитесь завершения установки ПО.
 7. После успешного завершения установки подождите 3–5 минут. Этого времени обычно достаточно для автоматического запуска и инициализации установленных служб (в зависимости от конфигурации машины).
 8. Удостоверьтесь, что ПО установлено, просмотрев список установленных версий ПО:
 
@@ -96,15 +136,31 @@ kbId: 2344
 
 3. Установите следующие директивы:
 
+    - **Astra Linux**, **Ubuntu**, **Debian**
+    
     ``` systemd
-    * soft nproc 65536
-    * hard nproc 65536
-    * soft nofile 65536
-    * hard nofile 65536
     www-data soft nproc 200000
     www-data hard nproc 200000
     www-data soft nofile 200000
     www-data hard nofile 200000
+    ```
+
+    - **РЕД ОС**, **Rocky**
+
+    ``` systemd
+    nginx soft nproc 200000
+    nginx hard nproc 200000
+    nginx soft nofile 200000
+    nginx hard nofile 200000
+    ```
+
+    - **Альт Сервер**
+
+    ``` systemd
+    _nginx soft nproc 200000
+    _nginx hard nproc 200000
+    _nginx soft nofile 200000
+    _nginx hard nofile 200000
     ```
 
 4. Откройте для редактирования файл `common-session`:
@@ -176,7 +232,7 @@ kbId: 2344
     cd <path>/CMW_<osname>/scripts/instance
     ```
 
-    Здесь:  `<path>/CMW_<osname>` — путь к распакованному дистрибутиву ПО.
+    Здесь:  `<path>/CMW_<osname>/` — путь к распакованному дистрибутиву ПО.
 
 3. Разверните экземпляр ПО:
 
@@ -223,7 +279,7 @@ kbId: 2344
 2. Просмотрите список имеющихся экземпляров ПО **{{ productName }}**:
 
     ``` sh
-    ls /var/lib/comindware/
+    cat /usr/share/comindware/configs/instance/* | grep -E '(configPath:)'
     ```
 
 3. Просмотрите список используемых портов:
@@ -248,16 +304,16 @@ kbId: 2344
 6. Откройте для редактирования три службы каждого из установленных экземпляров ПО (`<instanceName>`):
 
     ``` sh
-    nano /lib/systemd/system/comindware<instanceName>.service
-    nano /lib/systemd/system/apigateway<instanceName>.service
-    nano /lib/systemd/system/adapterhost<instanceName>.service
+    nano /usr/lib/systemd/system/comindware<instanceName>.service
+    nano /usr/lib/systemd/system/apigateway<instanceName>.service
+    nano /usr/lib/systemd/system/adapterhost<instanceName>.service
     ```
 
 7. Если используются локальные службы Kafka и Elasticsearch, откройте их для редактирования:
 
     ``` sh
-    nano /lib/systemd/system/kafka.service
-    nano /lib/systemd/system/elasticsearch.service
+    nano /usr/lib/systemd/system/kafka.service
+    nano /usr/lib/systemd/system/elasticsearch.service
     ```
 
 8. В каждом файле службы установите следующие директивы:
@@ -370,7 +426,7 @@ kbId: 2344
 3. Перейдите в директорию со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` sh
-    cd CMW_<osname>/scripts/instance
+    cd <path>/CMW_<osname>/scripts/instance
     ```
 
 4. Запустите удаление экземпляра ПО:

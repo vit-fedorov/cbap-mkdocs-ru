@@ -36,10 +36,10 @@ kbId: 4622
 3. Перейдите в распакованную директорию:
 
     ``` sh
-    cd <path>/CMW_<osname>/
+    cd <distPath>/CMW_<osname>/
     ```
 
-    Здесь:  `<path>/CMW_<osname>/` — путь к распакованному дистрибутиву ПО.
+    Здесь:  `<distPath>/CMW_<osname>/` — путь к распакованному дистрибутиву ПО.
 
 4. Установите ПО из дистрибутива:
 {: #install.sh}
@@ -229,10 +229,10 @@ kbId: 4622
 2. Перейдите в директорию со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` sh
-    cd <path>/CMW_<osname>/scripts/instance
+    cd <distPath>/CMW_<osname>/scripts/instance
     ```
 
-    Здесь:  `<path>/CMW_<osname>/` — путь к распакованному дистрибутиву ПО.
+    Здесь:  `<distPath>/CMW_<osname>/` — путь к распакованному дистрибутиву ПО.
 
 3. Разверните экземпляр ПО:
 
@@ -428,7 +428,7 @@ kbId: 4622
 3. Перейдите в директорию со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` sh
-    cd <path>/CMW_<osname>/scripts/instance
+    cd <distPath>/CMW_<osname>/scripts/instance
     ```
 
 4. Запустите удаление экземпляра ПО:

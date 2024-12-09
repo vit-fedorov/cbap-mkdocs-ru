@@ -197,7 +197,7 @@
 <li><strong>Зависит от</strong> — укажите интеграцию, синхронизацию по которой необходимо запускать перед запуском синхронизации по данной интеграции. Это может быть необходимо, например, для того, чтобы предварительно обновить данные в связанных шаблонах, к которым требуется привязать синхронизируемые записи.</li>
 <li>
 <p><strong>Фильтр</strong> — задайте фильтр данных посредством выражений OData. Синтаксис фильтров см. в статье «<strong><a class="mkdocs_imported_link" href="https://msdn.microsoft.com/ru-ru/library/hh169248(v=nav.90).aspx">Using Filter Expressions in OData URIs</a></strong> » (учебник Microsoft, английский язык). Например, следующий фильтр выбирает записи с порядковым номером (<code>SequenceNumber</code>) от 11 до 14:</p>
-<div class="highlight"><code><pre><span></span><code>filter=SequenceNumber gt 10 and SequenceNumber lt 15</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>SequenceNumber gt 10 and SequenceNumber lt 15</code> <br/></pre></code></div>
 </li>
 <li>
 <p><strong>Количество объектов в одном запросе</strong> — укажите максимальное количество данных, передаваемых в одном запросе. При превышении этого количества будет формироваться новый запрос к внешнему сервису.</p>

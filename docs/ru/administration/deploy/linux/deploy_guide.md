@@ -19,10 +19,10 @@ kbId: 4622
 
     --8<-- "linux_sudo.md"
 
-2. Скачайте и распакуйте дистрибутив **{{ productName }}**, полученный по ссылке от компании **{{ companyName }}** (`X.X.XXXX.X` — номер версии ПО, `<osname>` — название операционной системы):
+2. Скачайте и распакуйте дистрибутив **{{ productName }}**, полученный по ссылке от компании **{{ companyName }}** (`X.X`, `<versionNumber>` — номер версии ПО, `<osname>` — название операционной системы):
 
     ``` sh
-    tar -xf X.X-release-ru-X.X.XXXX.X.<osname>.tar.gz
+    tar -xf X.X-release-ru-<versionNumber>.<osname>.tar.gz
     ```
 
     !!! tip "Совет"
@@ -30,7 +30,7 @@ kbId: 4622
         По завершению распаковки архив можно удалить для экономии места:
 
         ``` sh
-        rm -f X.X-release-ru-X.X.XXXX.X.<osname>.tar.gz
+        rm -f X.X-release-ru-<versionNumber>.<osname>.tar.gz
         ```
 
 3. Перейдите в распакованную директорию:
@@ -243,7 +243,7 @@ kbId: 4622
     Скрипт `create.sh` поддерживает следующие ключи:
 
     - `-n=<instanceName>` — имя экземпляра ПО (**обязательный** ключ).
-    - `-v=<versionNumber>` — номер версии ПО вида `X.X.XXXX.X` (например: 5.0.0000.0, **обязательный** ключ). Версия должна быть установлена, см. _«[Установка {{ productName }}](#deploy_guide_linux_install_sw)»_.
+    - `-v=<versionNumber>` — номер версии ПО вида `<versionNumber>` (например: 5.0.0000.0, **обязательный** ключ). Версия должна быть установлена, см. _«[Установка {{ productName }}](#deploy_guide_linux_install_sw)»_.
     - `-p=<portNumber>` — порт для экземпляра ПО, по умолчанию: 80 (необязательный ключ).
     - `-h` — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).
 
@@ -461,6 +461,6 @@ kbId: 4622
     rm -r /var/www/.cmw_version/<versionNumber>
     ```
 
-    Здесь: `<versionNumber>` — номер версии ПО вида `X.X.XXXX.X` (например: `5.0.0000.0`).
+    Здесь: `<versionNumber>` — номер версии ПО вида `<versionNumber>` (например: `5.0.0000.0`).
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

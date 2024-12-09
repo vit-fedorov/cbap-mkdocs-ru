@@ -1,4 +1,4 @@
-<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="">
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="5066">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -95,7 +95,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h2 id="введение">Введение</h2>
-<p><strong>Comindware Platform</strong> позволяет отправлять HTTP-запросы типов <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code> для взаимодействия с внешними системами.</p>
+<p><strong>Comindware Platform</strong> позволяет отправлять HTTP-запросы типа <code>POST</code> для взаимодействия с внешними системами.</p>
 <p>Здесь представлены инструкции по настройке подключения, пути передачи данных, шаблона записи и сценария для отправки запросов типа <code>POST</code> в формате <code>JSON</code> с составным содержимым и прикреплёнными файлами.</p>
 <h2 id="прикладная-задача">Прикладная задача</h2>
 <p>Имеется шаблон <em>«Реестр документов»</em>, содержащий записи с прикреплёнными файлами.</p>
@@ -139,7 +139,7 @@
 </ol>
 <h2 id="настройка-пути-передачи-данных">Настройка пути передачи данных</h2>
 <ol class="colored_numbers_list">
-<li>На странице «<strong>Администрирование</strong>» в разделе «<strong>Архитектура</strong>» выберите пункт «<a class="autorefs autorefs-internal mkdocs_imported_link" href="../communication_routes.html#communication_routes"><strong>Пути передачи данных</strong></a>» <i aria-hidden="true" class="fa-light fa-route">&zwnj;<!--icon--></i>.</li>
+<li>На странице «<strong>Администрирование</strong>» в разделе «<strong>Архитектура</strong>» выберите пункт «<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4676"><strong>Пути передачи данных</strong></a>» <i aria-hidden="true" class="fa-light fa-route">&zwnj;<!--icon--></i>.</li>
 <li>Откройте двойным нажатием в списке или создайте путь передачи данных типа «<strong>Подключения REST и OData</strong>» — «<strong>Отправка HTTP-запросов</strong>».</li>
 <li>
 <p>Настройте свойства пути передачи данных на следующих вкладках:</p>
@@ -222,9 +222,20 @@
 </ol>
 <h2 id="настройка-сценария">Настройка сценария</h2>
 <div class="notice notice-warning">
-<p class="admonition-title">Логика работы сценария</p>
+<p class="admonition-title">Логика работы сценария отправки файлов</p>
 <ul>
-<li>Сценарий срабатывает при нажатии кнопки </li>
+<li>Сценарий срабатывает при нажатии кнопки <em>«Отправить вложения»</em> на форме записи с прикреплёнными файлами.</li>
+<li>Запускается цикл, перебирающий все прикреплённые файлы.</li>
+<li>На каждой итерации цикла формируется и отправляется отдельный HTTP-запрос, содержащий данные файла в формате JSON:<ul>
+<li>Формируются переменные с именем и содержимым файла: <code>$$Name</code> и <code>$$Content</code>.</li>
+<li>Формируется переменная-объект для отправки в теле HTTP-запроса:
+<div class="highlight"><code><pre><span></span><code><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="nt">"Message"</span><span class="p">:{</span></code> <br/><code><span class="w">        </span><span class="nt">"File"</span><span class="p">:{</span></code> <br/><code><span class="w">            </span><span class="nt">"Name"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code><span class="w">            </span><span class="nt">"Content"</span><span class="p">:</span><span class="s2">"STRING"</span></code> <br/><code><span class="w">        </span><span class="p">}</span></code> <br/><code><span class="w">    </span><span class="p">}</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div></li>
+<li><code>$$Message-&gt;File-&gt;Name</code> присваивается значение переменной <code>$$Name</code>.</li>
+<li><code>$$Message-&gt;File-&gt;Content</code> присваивается значение переменной <code>$$Content</code>.</li>
+<li>Содержимое переменной <code>$$Message</code> в формате JSON отправляется в качестве HTTP-запроса.</li>
+<li>Содержимое переменной <code>$$Message</code> очищается для использования в следующей итерации цикла.</li>
+</ul>
+</li>
 </ul>
 </div>
 <ol class="colored_numbers_list">
@@ -347,7 +358,14 @@
 <li>Нажмите кнопку <em>«Отправить вложения»</em>.</li>
 <li>На сервер, настроенный в <em><a class="mkdocs_imported_link" href="#настройка-подключения">подключении для отправки файлов по HTTP</a></em>, должен поступить HTTP-запрос, содержащий файлы, прикреплённые к атрибуту <em>«Вложения»</em>.</li>
 </ol>
+<div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
+<ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4703">Отправка HTTP-запросов. Настройка подключения</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4699">Отправка HTTP-запросов типа GET. Пример: настройка подключения, пути передачи данных и сценария для обработки запросов в формате JSON</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4718#scenario_actions_send_message">Действие «Отправить сообщение» в сценарии</a></em></li>
+</ul>
+</div>
 </article>
 </div>
 </div>

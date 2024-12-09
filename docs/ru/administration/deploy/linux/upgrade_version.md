@@ -200,7 +200,7 @@ kbId: 4624
         - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
 
         ``` sh
-        cp /var/backups/config_tmp/comindware<instanceName>  /etc/nginx/sites-available/
+        cp /var/backups/config_tmp/comindware<instanceName> /etc/nginx/sites-available/
         nginx -t && nginx -s reload
         ```
 

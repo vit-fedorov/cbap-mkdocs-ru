@@ -147,7 +147,7 @@ hide:
                 ("DocumentRegistry" "Attachment") object:findProperty ?Attachment.
                 # Помещаем объект с файлом из ?Attachment в ?AttachmentItem.
                 ?item ?Attachment ?AttachmentItem.
-                # Помещаем содержимое файла в ?AttachmentItem в ?Content.
+                # Помещаем содержимое файла из ?AttachmentItem в ?Content.
                 ?AttachmentItem document:content ?Content.
                 # Помещаем имя файла из ?AttachmentItem в ?Name.
                 ?AttachmentItem document:title ?Name.
@@ -185,18 +185,18 @@ hide:
         - Присвойте дочерней переменной **имя** и **значение**.
 
     
-        - _File_ — с дочерними переменными:
-            - _Content_ — **значение: формула**
+    - _File_ — с дочерними переменными:
+        - _Content_ — **значение: формула**
 
-                ``` cs
-                $$Content
-                ```
+           ``` cs
+           $$Content
+           ```
 
-            - _Name_ — **значение: формула**
+        - _Name_ — **значение: формула**
 
-                ``` cs
-                $$Name
-                ```
+           ``` cs
+           $$Name
+           ```
 
 7. Внутрь действия «**Повторять по количеству объектов**» добавьте действие «**Отправить сообщение**» со следующими свойствами:
 

@@ -56,6 +56,15 @@ kbId: 2499
     cp /etc/nginx/conf.d/comindware<instanceName> /var/backups/config_tmp/
     ```
 
+    - **Альт Сервер**
+
+    ``` sh
+    mkdir -p /var/backups/config_tmp/
+    cd /var/www/<instanceName>/
+    cp *.config apigateway.json /var/backups/config_tmp/
+    cp /etc/nginx/sites-available.d/comindware<instanceName> /var/backups/config_tmp/
+    ```
+
     Здесь `<instanceName>` — имя экземпляра ПО.
 
 4. Остановите экземпляр ПО и его вспомогательные службы и удостоверьтесь, что они остановлены:

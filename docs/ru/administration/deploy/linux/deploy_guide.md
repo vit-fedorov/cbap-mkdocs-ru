@@ -52,13 +52,13 @@ kbId: 2344
     {: .pageBreakBefore }
 
     - `p` — установить ПО {{ productName }}.
-    - `k` — установить ПО Kafka.
-    - `e` — установить ПО Elasticsearch.
+    - `k` — установить ПО Kafka (необязательный ключ).
+    - `e` — установить ПО Elasticsearch (необязательный ключ).
     - `h` — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).
 
     !!! note "Примечание"
 
-        Скрипт `install.sh` установливает необходимые компоненты для работы ПО, включая Java, .NET, Mono, NGINX.
+        Скрипт `install.sh` устанавливает ПО {{ productName }} и необходимые для него компоненты, включая Java, .NET, Mono, NGINX.
 
     !!! tip "Вызов справки для скриптов"
 
@@ -136,7 +136,7 @@ kbId: 2344
 
 3. Установите следующие директивы:
 
-    - **Astra Linux**, **Ubuntu**, **Debian**
+    - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
     
     ``` systemd
     www-data soft nproc 200000
@@ -145,7 +145,7 @@ kbId: 2344
     www-data hard nofile 200000
     ```
 
-    - **РЕД ОС**, **Rocky**
+    - **РЕД ОС**, **Rocky** (RPM-based)
 
     ``` systemd
     nginx soft nproc 200000

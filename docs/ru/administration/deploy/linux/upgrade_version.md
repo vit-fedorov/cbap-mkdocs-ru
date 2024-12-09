@@ -180,7 +180,7 @@ kbId: 2499
     - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
 
         ``` sh
-        cat /etc/nginx/sites-available/comindware<instanceName>
+        nano /etc/nginx/sites-available/comindware<instanceName>
         ```
 
     - **РЕД ОС**, **Rocky** (RPM-based)

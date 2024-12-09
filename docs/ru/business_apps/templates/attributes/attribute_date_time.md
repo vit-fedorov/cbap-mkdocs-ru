@@ -1,6 +1,6 @@
 ---
 title: Атрибут типа «Дата и время»
-kbId: 2246
+kbId: 4777
 ---
 
 # Атрибут типа «Дата и время» {: #attribute_date_time}
@@ -19,15 +19,14 @@ kbId: 2246
 
 _![Свойства атрибута типа «Дата и время»](attribute_date_time_properties.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Работа с атрибутом типа «Дата и время»][attribute_date_time_use]**
+- _[Работа с атрибутом типа «Дата и время»][attribute_date_time_use]_
+- _[Настройка поля атрибута типа «Дата и время» на форме][form_dynamic_elements]_
+- _[Общие свойства атрибутов][attribute_common_properties]_
+- _[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]_
 
-[**Настройка поля атрибута типа «Дата и время» на форме**][form_dynamic_elements]
-
-**[Общие свойства атрибутов][attribute_common_properties]**
-
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
-
-
+</div>
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

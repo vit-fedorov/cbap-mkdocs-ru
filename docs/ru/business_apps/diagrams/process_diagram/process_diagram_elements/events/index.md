@@ -1,5 +1,6 @@
 ---
-
+title: События
+kbId: 4733
 tags:
   - диаграммы
   - диаграмма процесса
@@ -17,28 +18,33 @@ hide:
   - tags
 ---
 
-# События
+# События {: #process_diagram_elements_events}
 
 **Событие** задаёт ожидаемое действие. События классифицируются по положению на диаграмме процесса: начальное, промежуточное, конечное.
 
 ## Типы событий
 
-* [Начальные события][начальные-события]
-    * **[Простое начальное событие](none_start_event.md)**
-    * **[Начальное событие-таймер](timer_start_event.md)**
-    * **[Начальное событие-получение сообщения](receive_message_start_event.md)**
-* [Промежуточные события][промежуточные-события]
-    * **[Промежуточное событие-таймер](timer_intermediate_event.md)**
-    * **[Промежуточное событие-отправка сообщения](send_message_intermediate_event.md)**
-    * **[Промежуточное событие-получение сообщения](receive_message_intermediate_event.md)**
-    * **[Простое событие](none_intermediate_event.md)**
-* [Конечные события][конечные-события]
-    * **[Простое конечное событие](none_end_event.md)**
-    * **[Конечное событие-остановка процесса](stop_process_end_event.md)**
-    * **[Конечное событие-отправка сообщения](send_message_end_event.md)**
+* [Начальные события][process_diagram_elements_events_start]
+    * **[Простое начальное событие][process_diagram_elements_none_start_event]**
+    * **[Начальное событие-таймер][process_diagram_elements_timer_start_event]**
+    * **[Начальное событие-получение сообщения][process_diagram_elements_receive_message_start_event]**
+* [Промежуточные события][process_diagram_elements_events_intermediate]
+    * **[Промежуточное событие-таймер][process_diagram_elements_timer_intermediate_event]**
+    * **[Промежуточное событие-отправка сообщения][process_diagram_elements_send_message_intermediate_event]**
+    * **[Промежуточное событие-получение сообщения][process_diagram_elements_receive_message_intermediate_event]**
+    * **[Простое событие][process_diagram_elements_none_intermediate_event]**
+* [Конечные события][process_diagram_elements_events_end]
+    * **[Простое конечное событие][process_diagram_elements_none_end_event]**
+    * **[Конечное событие-остановка процесса][process_diagram_elements_stop_process_end_event]**
+    * **[Конечное событие-отправка сообщения][process_diagram_elements_send_message_end_event]**
+
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-**[Элементы диаграммы процесса][process_diagram_elements]**
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
-**[Редактирование диаграммы процесса][process_diagram_designer]**
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

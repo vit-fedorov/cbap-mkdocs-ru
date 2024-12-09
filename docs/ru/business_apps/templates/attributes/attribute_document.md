@@ -1,6 +1,6 @@
 ---
 title: Атрибут типа «Документ»
-kbId: 2241
+kbId: 4782
 ---
 
 # Атрибут типа «Документ» {: #attribute_document}
@@ -34,7 +34,7 @@ _![Свойства атрибута типа «Документ»](img/attribut
     Акты                    | Без предпросмотра             | Флажок установлен
     Приложение              | С предпросмотром              | Флажок снят
     Документы на подпись    | Документ с цифровой подписью  | Флажок установлен
-  
+
     **Результирующее поведение**
 
     *![Поле «Акты»: документы без предпросмотра](img/attribute_document_example_no_preview.png)*
@@ -43,12 +43,14 @@ _![Свойства атрибута типа «Документ»](img/attribut
 
     *![Поле «Документы на подпись»: документы с цифровой подписью](img/attribute_document_example_digital_signature.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Копирование записи вместе с прикреплённым документом. Настройка сценария][attribute_document_clone_scenario]**
+- _[Копирование записи вместе с прикреплённым документом. Настройка сценария][attribute_document_clone_scenario]_
+- _[Общие свойства атрибутов][attribute_common_properties]_
+- _[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]_
 
-**[Общие свойства атрибутов][attribute_common_properties]**
-
-**[Атрибуты. Определения, типы, настройка, архивирование, удаление][attributes]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

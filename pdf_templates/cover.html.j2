@@ -1,0 +1,47 @@
+<style>
+
+@media print {
+    @page: first {
+        {
+            % if copyright is defined %
+        }
+
+        @bottom-right {
+            content: '{{ copyright | e }}';
+        }
+
+        @bottom-left {
+            content: '{{ publicationDate | e }}'
+        }
+
+            {
+            % endif %
+        }
+    }
+}
+</style>
+
+
+<article id="doc-cover">
+    {% if cover_logo is defined %}
+        <div class="wrapper upper">
+            <div class="header">
+                <!--<div class="logo" style="background-image: url();"></div>-->
+                {% set imgUrl = cover_logo | to_url | replace('\\', '/') | replace('file://', 'file:///')  %}
+                <div class="logotype"><img src={{ imgUrl }}></div>
+                {% if author is defined %}<div class="author">{{ author | e }}</div>{% endif %}
+            </div>
+        </div>
+    {% else %}
+        <div class="wrapper"></div>
+    {% endif %}
+    <div class="wrapper">
+        <h1>{{ productName | e }} {{ productVersion | e }}</h1>
+        <h2>{{ cover_subtitle | e }}</h2>
+    </div>
+    <div class="properties">
+        <address>
+            <!--{% if author is defined %}<p id="author">{{ author | e }}</p>{% endif %}</div>-->            
+        </address>
+    </div>
+</article>

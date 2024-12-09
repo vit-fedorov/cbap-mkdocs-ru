@@ -5,7 +5,7 @@ tags:
     - права пользователей
     - аккаунты
 hide: tags
-kbId: 2195
+kbId: 4664
 ---
 
 # Аудит разрешений аккаунтов {: #account_permission_audit}
@@ -29,7 +29,7 @@ kbId: 2195
 
 _![Список разрешений для приложений](img/accounts_permission_audit_business_app.png)_
 
-### Системные разрешения
+### Системные разрешения {: .pageBreakBefore }
 
 На этой вкладке отображаются разрешения на доступ к ресурсам системы. См. разделы «**[Системные роли][system_roles]**» и «**[Аккаунты][accounts]**».
 
@@ -47,9 +47,13 @@ _![Список членов групп](img/account_permission_audit_group_memb
 
 _![Список членов ролей](img/account_permission_audit_role_members.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Аккаунты. Создание, настройка, замещение, привязка к шаблону аккаунта, назначение лицензий, удаление][accounts]**
+- _[Аккаунты. Создание, настройка, замещение, привязка к шаблону аккаунта, назначение лицензий, удаление][accounts]_
+
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

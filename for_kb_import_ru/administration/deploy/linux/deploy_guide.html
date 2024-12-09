@@ -83,7 +83,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#удаление-версии-по">
+<a class="md-nav__link mkdocs_imported_link" href="#deploy_guide_linux_delete_version">
 <span class="md-ellipsis">
       Удаление версии ПО
     </span>
@@ -107,18 +107,18 @@
 <div class="highlight"><code><pre><span></span><code>su<span class="w"> </span>-</code> <br/></pre></code></div>
 </li>
 <li>
-<p>Скачайте и распакуйте дистрибутив <strong>Comindware Platform</strong>, полученный по ссылке от компании <strong>Comindware</strong> (<code>X.X.XXXX.X</code> — номер версии ПО, <code>&lt;osname&gt;</code> — название операционной системы):</p>
-<div class="highlight"><code><pre><span></span><code>tar<span class="w"> </span>-xf<span class="w"> </span>X.X-release-ru-X.X.XXXX.X.&lt;osname&gt;.tar.gz</code> <br/></pre></code></div>
+<p>Скачайте и распакуйте дистрибутив <strong>Comindware Platform</strong>, полученный по ссылке от компании <strong>Comindware</strong> (<code>X.X</code>, <code>&lt;versionNumber&gt;</code> — номер версии ПО, <code>&lt;osname&gt;</code> — название операционной системы):</p>
+<div class="highlight"><code><pre><span></span><code>tar<span class="w"> </span>-xf<span class="w"> </span>X.X-release-ru-&lt;versionNumber&gt;.&lt;osname&gt;.tar.gz</code> <br/></pre></code></div>
 <div class="notice notice-tip">
 <p class="admonition-title">Совет</p>
 <p>По завершению распаковки архив можно удалить для экономии места:</p>
-<div class="highlight"><code><pre><span></span><code>rm<span class="w"> </span>-f<span class="w"> </span>X.X-release-ru-X.X.XXXX.X.&lt;osname&gt;.tar.gz</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>rm<span class="w"> </span>-f<span class="w"> </span>X.X-release-ru-&lt;versionNumber&gt;.&lt;osname&gt;.tar.gz</code> <br/></pre></code></div>
 </div>
 </li>
 <li>
 <p>Перейдите в распакованную директорию:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;path&gt;/CMW_&lt;osname&gt;/</code> <br/></pre></code></div>
-<p>Здесь:  <code>&lt;path&gt;/CMW_&lt;osname&gt;/</code> — путь к распакованному дистрибутиву ПО.</p>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;distPath&gt;/CMW_&lt;osname&gt;/</code> <br/></pre></code></div>
+<p>Здесь:  <code>&lt;distPath&gt;/CMW_&lt;osname&gt;/</code> — путь к распакованному дистрибутиву ПО.</p>
 </li>
 <li>
 <p id="install.sh">Установите ПО из дистрибутива:</p>
@@ -126,13 +126,13 @@
 <p class="pageBreakBefore">Скрипт <code>install.sh</code> поддерживает следующие ключи:</p>
 <ul>
 <li><code>p</code> — установить ПО Comindware Platform.</li>
-<li><code>k</code> — установить ПО Kafka.</li>
-<li><code>e</code> — установить ПО Elasticsearch.</li>
+<li><code>k</code> — установить ПО Kafka (необязательный ключ).</li>
+<li><code>e</code> — установить ПО Elasticsearch (необязательный ключ).</li>
 <li><code>h</code> — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).</li>
 </ul>
 <div class="notice notice-info">
 <p class="admonition-title">Примечание</p>
-<p>Скрипт <code>install.sh</code> установливает необходимые компоненты для работы ПО, включая Java, .NET, Mono, NGINX.</p>
+<p>Скрипт <code>install.sh</code> устанавливает ПО Comindware Platform и необходимые для него компоненты, включая Java, .NET, Mono, NGINX.</p>
 </div>
 <div class="notice notice-tip">
 <p class="admonition-title">Вызов справки для скриптов</p>
@@ -182,11 +182,11 @@
 <li>
 <p>Установите следующие директивы:</p>
 <ul>
-<li><strong>Astra Linux</strong>, <strong>Ubuntu</strong>, <strong>Debian</strong></li>
+<li><strong>Astra Linux</strong>, <strong>Ubuntu</strong>, <strong>Debian</strong> (DEB-based)</li>
 </ul>
 <div class="highlight"><code><pre><span></span><code><span class="err">www-data soft nproc 200000</span></code> <br/><code><span class="err">www-data hard nproc 200000</span></code> <br/><code><span class="err">www-data soft nofile 200000</span></code> <br/><code><span class="err">www-data hard nofile 200000</span></code> <br/></pre></code></div>
 <ul>
-<li><strong>РЕД ОС</strong>, <strong>Rocky</strong></li>
+<li><strong>РЕД ОС</strong>, <strong>Rocky</strong> (RPM-based)</li>
 </ul>
 <div class="highlight"><code><pre><span></span><code><span class="err">nginx soft nproc 200000</span></code> <br/><code><span class="err">nginx hard nproc 200000</span></code> <br/><code><span class="err">nginx soft nofile 200000</span></code> <br/><code><span class="err">nginx hard nofile 200000</span></code> <br/></pre></code></div>
 <ul>
@@ -241,8 +241,8 @@
 </li>
 <li>
 <p>Перейдите в директорию со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;path&gt;/CMW_&lt;osname&gt;/scripts/instance</code> <br/></pre></code></div>
-<p>Здесь:  <code>&lt;path&gt;/CMW_&lt;osname&gt;/</code> — путь к распакованному дистрибутиву ПО.</p>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;distPath&gt;/CMW_&lt;osname&gt;/scripts/instance</code> <br/></pre></code></div>
+<p>Здесь:  <code>&lt;distPath&gt;/CMW_&lt;osname&gt;/</code> — путь к распакованному дистрибутиву ПО.</p>
 </li>
 <li>
 <p>Разверните экземпляр ПО:</p>
@@ -403,7 +403,7 @@
 </li>
 <li>
 <p>Перейдите в директорию со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;path&gt;/CMW_&lt;osname&gt;/scripts/instance</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;distPath&gt;/CMW_&lt;osname&gt;/scripts/instance</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Запустите удаление экземпляра ПО:</p>
@@ -415,7 +415,7 @@
 </ul>
 </li>
 </ol>
-<h2 class="pageBreakBefore" id="удаление-версии-по">Удаление версии ПО</h2>
+<h2 class="pageBreakBefore" id="deploy_guide_linux_delete_version">Удаление версии ПО</h2>
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в режим суперпользователя:</p>

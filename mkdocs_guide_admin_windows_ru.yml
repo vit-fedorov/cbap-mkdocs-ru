@@ -102,6 +102,7 @@ nav:
           - administration/connections_communication_routes/rest_odata_connections/odata_connection.md
           - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
           - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
+          - administration/connections_communication_routes/rest_odata_connections/http_send_file.md
           - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
           - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
         - SQL-подключения:

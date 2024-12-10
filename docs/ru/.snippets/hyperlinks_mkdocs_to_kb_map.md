@@ -702,7 +702,7 @@
 
 {% endif %}
 
-{% if userGuide or (not adminGuideLinux and adminGuideWindows) or kbExport %}
+{% if (userGuide and not adminGuideLinux) or (not adminGuideLinux and adminGuideWindows) or kbExport %}
 
 <!-- Руководство пользователя, администратора для Windows или экспорт в БЗ  -->
 

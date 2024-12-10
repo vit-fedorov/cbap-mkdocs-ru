@@ -463,4 +463,12 @@ kbId: 4622
 
     Здесь: `<versionNumber>` — номер версии ПО вида `X.X.XXXX.X` (например: `5.0.0000.0`).
 
+<div class="relatedTopics" markdown="block">
+
+--8<-- "related_topics_heading.md"
+
+- _[Пути и содержимое директорий экземпляра ПО][paths]_
+
+</div>
+
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

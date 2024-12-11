@@ -51,7 +51,7 @@ kbId: 4659
 <td>Windows Server Standard 2022</td>
 <td markdown="block">
 - Astra Linux Special Edition 1.7.5
-- Альт Сервер 11, Альт СП 10
+- Альт Сервер 11, Альт СП 11
 - РЕД ОС 8</td>
 </tr>
 <tr>

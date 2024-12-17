@@ -8,7 +8,7 @@ tags:
   - QR-код
 hide:
   - tags
-kbId: 2393
+kbId: 4764
 ---
 
 # Атрибут типа «Штрихкод» {: #attribute_barcode}

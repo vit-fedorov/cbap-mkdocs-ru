@@ -1,6 +1,6 @@
 ---
 title: Ввод запроса from where select
-kbId: 2466
+kbId: 5026
 tags:
   - выражения
   - формулы

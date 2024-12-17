@@ -1,6 +1,6 @@
 ---
 title: Системные требования
-kbId: 1271
+kbId: 4659
 ---
 
 # Системные требования {{ productName }} {: #system_requirements}
@@ -37,12 +37,47 @@ kbId: 1271
 
 ### Сервер баз данных и приложений
 
-| Характеристика | Windows | Linux |
-| --- | --- | --- |
-| ОС | Windows Server Standard 2022 | - Astra Linux Special Edition 1.7.5 - Альт Сервер 10.1, Альт СП 10 - РЕД ОС 8 |
-| СУБД | Apache Ignite | |
-| Веб-сервер | Internet Information Services (IIS) 10 и выше | NGINX 1.24 и выше |
-| Дополнительное ПО(поставляется и устанавливается вместе с основным пакетом) | - NET 6.0 - .NET Framework 4.8.1 - Kafka 3.6.0 и выше - Elasticsearch 8.10 и выше | - NET 6.0 - Mono 6.12 - Kafka 3.6.0 и выше - Elasticsearch 8.10 и выше |
+<table markdown="block">
+<thead>
+<tr>
+<th>Характеристика</th>
+<th>Windows</th>
+<th>Linux</th>
+</tr>
+</thead>
+<tbody markdown="block">
+<tr markdown="block">
+<td>ОС</td>
+<td>Windows Server Standard 2022</td>
+<td markdown="block">
+- Astra Linux Special Edition 1.7.5
+- Альт Сервер 11, Альт СП 11
+- РЕД ОС 8</td>
+</tr>
+<tr>
+<td>СУБД</td>
+<td colspan=2 style="text-align: center;">Apache Ignite</td>
+</tr>
+<tr>
+<td>Веб-сервер</td>
+<td>Internet Information Services (IIS) 10 и выше</td>
+<td>NGINX 1.24 и выше</td>
+</tr>
+<tr markdown="block">
+<td>Дополнительное ПО(поставляется и устанавливается вместе с основным пакетом)</td>
+<td markdown="block">
+- NET 6.0
+- .NET Framework 4.8.1
+- Kafka 3.6.0 и выше
+- Opensearch 2.18.0 и выше</td>
+<td markdown="block">
+- NET 6.0
+- Mono 6.12
+- Kafka 3.6.0 и выше
+- Opensearch 2.18.0 и выше</td>
+</tr>
+</tbody>
+</table>
 
 ### Клиентское рабочее место
 

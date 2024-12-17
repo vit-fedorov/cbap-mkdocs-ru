@@ -1,22 +1,22 @@
 ---
-title: Перенос базы данных из ПО версии 4.2 для Windows в ПО версии 4.7 для Linux
-kbId: 2340
+title: Перенос базы данных из ПО версии 4.2 для Windows в ПО версии 5 для Linux
+kbId: 4621
 ---
 
-# Перенос базы данных из ПО версии 4.2 для Windows в ПО версии 4.7 для Linux {: #db_migrate_4.2_to_4.7}
+# Перенос базы данных из ПО версии 4.2 для Windows в ПО версии 5 для Linux {: #db_migrate_4.2_to_5}
 
 --8<-- "experimental_feature.md"
 
 ## Введение
 
-Здесь представлены краткие инструкции по переносу базы данных (БД) **{{ productName }}** (далее «экземпляр ПО») версии 4.2 из ОС Windows 10 в экземпляр ПО версии 4.7 под управлением ОС Linux.
+Здесь представлены краткие инструкции по переносу базы данных (БД) **{{ productName }}** (далее «экземпляр ПО») версии 4.2 из ОС Windows 10 в экземпляр ПО версии 5 под управлением ОС Linux.
 
 ## Предварительные условия
 
 ### Необходимое программное обеспечение
 
 - Развёрнутый и работоспособный экземпляр ПО **{{ productName }}** *версии 4.2* под управлением ОС Windows.
-- Установленная утилита миграции *версии 4.7* под управлением ОС Windows для преобразования базы данных.
+- Установленная утилита миграции *версии 5* под управлением ОС Windows для преобразования базы данных.
 - Установленное ПО [Open JDK 17](https://download.java.net/openjdk/jdk17.0.0.1/ri/openjdk-17.0.0.1+2_windows-x64_bin.zip "https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_windows-x64_bin.zip") для ОС Windows.
     - В переменных среды Windows должна быть заданы следующие переменные для Open JDK (здесь `<version>` — номер версии Open JDK):
         - `JAVA_HOME` — путь к исполняемым файлам Open JDK 17, например `C:\Program Files\jdk\jdk-<version>`
@@ -103,7 +103,7 @@ _![Запуск резервного копирования экземпляра
 8. Запустите приложение *Windows PowerShell ISE* от *имени администратора* Windows.
 9. В окно скриптов скопируйте следующие строки:
 
-    ``` sh
+    ``` powershell
     Get-ChildItem "C:\migrationTool" -recurse | Unblock-File -confirm
     [Environment]::SetEnvironmentVariable("IsMigrationMode", "true")
     C:\MigrationTool\bin\Comindware.Platform.Migration.exe "C:\DatabaseBackup" "C:\DatabaseMigrated" <instanceName>
@@ -112,14 +112,14 @@ _![Запуск резервного копирования экземпляра
     Здесь:
     {: .pageBreakBefore }
 
-    - `C:\MigrationTool\bin\Comindware.Platform.Migration.exe` — путь к распакованному на [шаге 2](#step_2_conversion) исполняемому файлу утилиты миграции базы данных.
+    - `C:\MigrationTool\bin\Comindware.Platform.Migration.exe` — путь к распакованному на [шаге 2](#преобразование-базы-данных-в-windows) исполняемому файлу утилиты миграции базы данных.
     - `C:\DataвaseBackup` — путь к папке с базой данных, подлежащей миграции.
     - `C:\DatabaseMigrated` — путь к папке, в которую будут помещены преобразованные файлы базы данных.
-    - `instanceName` — имя нового экземпляра ПО, который будет создан после миграции. Рекомендуется указывать такое же имя экземпляра ПО, как использовалось в среде Windows. См. статью *«[Изменение конфигурации экземпляра ПО][instance_configure_windows]»*.
+    - `instanceName` — имя нового экземпляра ПО, который будет создан после миграции. Рекомендуется указывать такое же имя экземпляра ПО, как использовалось в среде Windows. См. статью *«[Изменение конфигурации экземпляра ПО][admin_utility_instance_configure]»*.
 
 10. Выделите первую строку скрипта:
 
-    ``` sh
+    ``` powershell
     Get-ChildItem "C:\migrationTool" -recurse | Unblock-File -confirm
     ```
 
@@ -127,7 +127,7 @@ _![Запуск резервного копирования экземпляра
 12. Дождитесь завершения выполнения команды.
 13. Выделите и выполните вторую и третьи строки скрипта:
 
-    ``` sh
+    ``` powershell
     [Environment]::SetEnvironmentVariable("IsMigrationMode", "true")
     C:\MigrationTool\bin\Comindware.Platform.Migration.exe "C:\DataвaseBackup" "C:\DatabaseMigrated" <instanceName>
     ```

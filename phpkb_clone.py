@@ -1,15 +1,12 @@
 import mysql.connector
 from sshtunnel import SSHTunnelForwarder
 from getpass import getpass
-import html
 from html.parser import HTMLParser
 import bs4
 from markdownify import markdownify as md
-from markdownify import MarkdownConverter
 import re
 from pathvalidate import sanitize_filename
 from pathlib import Path
-import shutil
 from cryptography.fernet import Fernet
 
 class myparser(HTMLParser):
@@ -22,8 +19,6 @@ import os
 import os.path
 
 import json
-
-from sshtunnel import SSHTunnelForwarder
 
 TOTAL_PAGES_CLONED = 0
 CONNECTION = None
@@ -113,7 +108,7 @@ def cloneArticle(article_id, category_id, newCategoryId):
         
         newArticleId = str(c.fetchone()[0])
     else:
-        newArticleId = article_id
+        newArticleId = ARTICLE_MAPPING[article_id]
     
     print(newArticleId)
 

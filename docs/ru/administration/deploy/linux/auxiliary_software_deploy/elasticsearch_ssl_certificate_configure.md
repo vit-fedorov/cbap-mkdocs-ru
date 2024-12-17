@@ -1,6 +1,6 @@
 ---
 title: Настройка SSL-сертификатов на кластере Elasticsearch
-kbId: 2337
+kbId: 4606
 ---
 
 # Настройка SSL-сертификатов на кластере Elasticsearch {: #elasticsearch_ssl_certificate_configure}

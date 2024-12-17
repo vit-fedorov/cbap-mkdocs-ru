@@ -1,6 +1,6 @@
 ---
 title: Elasticsearch. Настройка подключения
-kbId: 2593
+kbId: 4678
 ---
 
 # Elasticsearch. Настройка подключения {: #elasticsearch_connection}

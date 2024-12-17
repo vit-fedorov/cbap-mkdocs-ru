@@ -6,7 +6,7 @@
 
 INHERIT: mkdocs_ru.yml
 
-site_name: Comindware Business Application Platform. Руководство администратора для Linux
+site_name: Comindware Platform. Руководство администратора для Linux
 
 extra:
   adminGuideLinux: True
@@ -26,6 +26,7 @@ nav:
     - administration/deploy/log_files_event_examples.md
     - administration/deploy/paths.md
     - Установка и запуск Comindware Business Application Platform: administration/deploy/linux/deploy_guide.md
+    - administration/deploy/linux/configuration_files.md
     - administration/deploy/linux/db_migrate_4.2_to_4.7.md
     - administration/deploy/linux/uninstall_auxiliary_software.md
     - administration/deploy/linux/upgrade_version.md
@@ -108,6 +109,7 @@ nav:
         - administration/connections_communication_routes/rest_odata_connections/odata_connection.md
         - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
+        - administration/connections_communication_routes/rest_odata_connections/http_send_file.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
         - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
       - SQL-подключения:
@@ -115,6 +117,9 @@ nav:
         - administration/connections_communication_routes/sql_connections/sql_receive_connection.md
       - Подключения к шинам сообщений:
         - administration/connections_communication_routes/message_queue_connections/kafka_connection.md
+      - Пользовательские подключения:
+        - administration/connections_communication_routes/custom_connections/esphere_receive_configure.md
+        - administration/connections_communication_routes/custom_connections/esphere_send_configure.md
   - Администрирование приложений:
     - business_apps/index.md
     - Диаграммы:

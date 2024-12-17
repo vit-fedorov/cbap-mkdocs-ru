@@ -11,7 +11,7 @@ tags:
     - выражения
 hide:
     - tags
-kbId: 2607
+kbId: 4895
 ---
 
 # Автонумерация записей с помощью формулы, C#-скрипта или выражения N3 {: #auto_numerating_records}
@@ -212,15 +212,15 @@ C#-скрипт также можно применять для автонуме
         @prefix cmwnullable: <http://comindware.com/ontology/entity/nullable#>.
 
         {
-            # Получаем значение глобальной переменной «Порядковый номер»
+            # Получаем значение переменной «Порядковый номер»
             # по её ID — svar.1 и помещаем в ?globalVar.
             "svar.1" globalvariable:getValueById ?globalVar.
-            # Увеличиваем значение глобальной переменной «Порядковый номер»
+            # Увеличиваем значение переменной «Порядковый номер»
             # на 1 и сохраняем в ?resultSum.
             (?globalVar 1) cmwnullable:sum ?resultSum.
-            # Присваиваем глобальной переменной значение ?resultSum.
+            # Присваиваем переменной значение ?resultSum.
             "svar.1" globalvariable:setValue ?resultSum.
-            # Передаем в атрибут значение ?globalVar (глобальной переменной до её увеличения).
+            # Передаем в атрибут значение ?globalVar (переменной до её увеличения).
             ?globalVar -> ?value.
         }
         ```

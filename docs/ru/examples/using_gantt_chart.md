@@ -5,7 +5,7 @@ tags:
   - Gantt chart
 hide:
   - tags
-kbId: 2108
+kbId: 4817
 ---
 
 # Диаграмма Ганта. Использование {: #gantt_chart_use}

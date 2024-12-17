@@ -1,6 +1,6 @@
 ---
 title: Максимальный размер загружаемых файлов. Настройка для экземпляра ПО
-kbId: 2569
+kbId: 4619
 ---
 
 # Максимальный размер загружаемых файлов. Настройка для экземпляра ПО { #upload_size_limit_configure}
@@ -55,9 +55,7 @@ kbId: 2569
 
 1. Перейдите в режим суперпользователя `root`:
 
-    ```
-    sudo -i
-    ```
+    --8<-- "linux_sudo.md"
 
 2. Откройте для редактирования файл `/var/www/comindware<instanceName>/Web.config`:
 {: .pageBreakBefore }
@@ -112,10 +110,9 @@ kbId: 2569
 2. Установите лимит (например, 1 ГБ) с помощью директив `httpRuntime maxRequestLength` (в килобайтах) и `requestLimits maxAllowedContentLength` (в байтах):
 
     ```
-    <httpRuntime maxRequestLength="1048576" maxUrlLength="4096" requestValidationMode="2.0" shutdownTimeout="300" executionTimeout="3000" targetFramework="4.8" enableVersionHeader="false" />
-
+    <httpRuntime maxRequestLength="1048576" maxUrlLength="4096" requestValidationMode="2.0" 
+    shutdownTimeout="300" executionTimeout="3000" targetFramework="4.8" enableVersionHeader="false" />
     ...
-
     <requestLimits maxAllowedContentLength="1073741824" />
     ```
 

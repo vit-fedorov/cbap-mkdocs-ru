@@ -78,6 +78,12 @@ hide:
     log.retention.hours=168
     log.segment.bytes=1073741824
     log.retention.check.interval.ms=300000
+    # Настройте размеры запросов и сообщений
+    max.request.size=104857600
+    max.message.bytes=104857600
+    message.max.bytes=104857600
+    fetch.message.max.bytes=104857600
+    replica.fetch.max.bytes=104857600
     ```
 
 6. Откройте _PowerShell_ от имени администратора и выполните команды:

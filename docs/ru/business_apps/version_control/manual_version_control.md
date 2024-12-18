@@ -13,7 +13,7 @@ hide:
   - tags
 ---
 
-# Экспорт и импорт версий приложения вручную {: #version_control_manual}
+# Экспорт и импорт версий приложения вручную {: #version_control_manual }
 
 --8<-- "experimental_feature.md"
 

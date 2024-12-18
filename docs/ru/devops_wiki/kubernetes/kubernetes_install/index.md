@@ -46,7 +46,7 @@ echo "deb https://deb.debian.org/debian/               buster         main contr
 
 echo "deb https://security.debian.org/debian-security/ buster/updates main contrib non-free" | sudo tee -a /etc/apt/sources.list.d/debian.list
 
-sudo chmod 644 /etc/apt/sources.list.d/debian.list 
+sudo chmod 644 /etc/apt/sources.list.d/debian.list
 
 sudo apt-get update
 ```

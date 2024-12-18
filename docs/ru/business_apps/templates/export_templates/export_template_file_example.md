@@ -1,6 +1,6 @@
 ---
 title: Пример использования шаблона экспорта
-kbId: 2353
+kbId: 4795
 tags:
   - шаблон экспорта
   - настройка файла шаблона экспорта
@@ -42,7 +42,7 @@ hide:
         * **Тип данных**: **запись**
         * **Связанный шаблон**: _Затраты_
         * **Хранить несколько значений**: флажок установлен
-    * _Итоговая сумма затрат_  
+    * _Итоговая сумма затрат_
         * **Системное имя**: `Itogovayasummazatrat`
         * **Тип данных**: **число**
 
@@ -55,6 +55,7 @@ hide:
     * _Сумма_
         * **Системное имя**: `Summa`
         * **Тип данных**: **число**
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 4. В шаблоне _«Тип затрат»_ создайте атрибуты:
 
@@ -82,16 +83,16 @@ hide:
 
     *![Файл, сформированный по шаблону экспорта](export_template_file_result.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Настройка шаблона экспорта с использованием C#][export_template_csharp_configure]**
+- _[Настройка шаблона экспорта с использованием C#][export_template_csharp_configure]_
+- _[Настройка выгрузки нескольких коллекций и изображений][export_template_csharp_collection_download]_
+- _[Настройка шаблона экспорта][export_templates]_
+- _[Подготовка файла шаблона экспорта][export_template_file_configure]_
+- _[Настройка кнопки экспорта][export_template_button_configure]_
 
-**[Настройка выгрузки нескольких коллекций и изображений][export_template_csharp_collection_download]**
-
-**[Настройка шаблона экспорта][export_templates]**
-
-**[Подготовка файла шаблона экспорта][export_template_file_configure]**
-
-**[Настройка кнопки экспорта][export_template_button_configure]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

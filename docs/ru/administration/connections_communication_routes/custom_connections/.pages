@@ -1,0 +1,6 @@
+title: Пользовательские подключения
+
+nav:
+    - esphere_receive_configure.md
+    - esphere_send_configure.md
+    - ...

@@ -1,6 +1,6 @@
 ---
 title: Приложения. Определения и настройка
-kbId: 2209
+kbId: 4714
 ---
 
 # Приложения. Определения, создание, настройка, администрирование, удаление {: #apps}
@@ -51,7 +51,7 @@ _![Настройка свойств нового приложения](img/buss
     - [Интернет-магазин][online_store]
     - [Интеграции][odata_integration]
     - [Пути передачи данных][communication_routes]
-    - [Сервер каталогов][directory_server]
+    - [Сервер каталогов][accounts_dc_sync]
     - [Аудит разрешений аккаунтов][account_permission_audit]
     - Активность компонентов
     - [Управление версиями][version_control]
@@ -89,6 +89,7 @@ _![Настройка свойств нового приложения](img/buss
 - во время знакомства с **{{ productName }}** были созданы экспериментальные приложения, которые более не требуются.
 
 Удалить приложение можно с помощью *[Web API][api_web]*. См. также *[Введение в API][api_intro]*.
+{: .pageBreakBefore }
 
 1. В адресной строке браузера введите:
 
@@ -107,10 +108,13 @@ _![Настройка свойств нового приложения](img/buss
 
 _![Удаление приложения с помощью API](img/applications_delete_api.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Введение в API][api_intro]**
+- _[Введение в API][api_intro]_
+- _[Web API][api_web]_
 
-**[Web API][api_web]**
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -1,6 +1,0 @@
-title: Развертывание вспомогательного ПО
-collapse_single_pages: false
-
-nav:
-    - kafka_install_windows.md
-    - ...

@@ -12,8 +12,8 @@ class myparser(HTMLParser):
 import os.path
 
 conn = mysql.connector.connect(database='phpkbv9',
-	user='nikita',
-	password=getpass("Password for phpkbv9:"))
+	user=input("User:\n"),
+	password=getpass("Password for phpkbv9:\n"))
 if conn:
 	c = conn.cursor()
 	c.execute("SELECT article_id, article_content from phpkb_articles")

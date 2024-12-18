@@ -1,6 +1,6 @@
 ---
 title: Рабочий стол. Использование
-kbId: 2284
+kbId: 4823
 tags:
   - использование системы
   - использование рабочего стола
@@ -21,7 +21,7 @@ hide:
 
         - на [панели навигации][navigation_panel] отображается пункт «**Рабочий стол**»;
         - он отображается в качестве начальной страницы при входе в систему пользователя с данным аккаунтом.
-        {{ pdfEndOfBlockHack }}
+        {% include-markdown ".snippets/pdfEndOfBlockHack.md" %}
 
 ## Просмотр рабочего стола
 
@@ -30,7 +30,7 @@ hide:
 
 _![Рабочий стол](desktop.png)_
 
-## Разделы рабочего стола
+## Разделы рабочего стола {: .pageBreakBefore }
 
 {%
 include-markdown "./pages.md"
@@ -42,7 +42,7 @@ _![Развертывание раздела на весь экран](desktop_s
 
 _![Кнопка выхода из полноэкранного режима](desktop_section_full_screen_close.png)_
 
-### Настройка персональной конфигурации рабочего стола
+### Настройка персональной конфигурации рабочего стола {: .pageBreakBefore }
 
 Отдельные разделы рабочего стола можно скрыть.
 
@@ -60,11 +60,14 @@ end="<!--page-view-config-end-->"
 %}
 _![Выбор и упорядочивание разделов рабочего стола](desktop_sections_config.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Использование страниц][pages]**
+- _[Использование страниц][pages]_
+- _[Использование панели навигации][navigation_panel]_
 
-**[Использование панели навигации][navigation_panel]**
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

@@ -36,7 +36,7 @@ hide:
 
         Для корректной работы Kafka рекомендуется скачивать архив с бинарными файлами.
 
-2. Распакуйте файлы архива, например в папку `C:\kafka\kafka`
+2. Распакуйте файлы архива, например в папку `C:\kafka`
 
     !!! warning "Внимание!"
 
@@ -48,19 +48,23 @@ hide:
 
         Рекомендуется создавать папку для журналов на отдельном диске, а не на диске где установлено ПО Kafka.
 
-4. Откройте файл конфигурации Kafka `C:\kafka\kafka\config\kraft\server.properties`.
-5. Отредактируйте файл конфигурации, указав IP-адрес сервера Kafka и папку для журналов. При указании пути к папке журналов используйте косую черту `/`:
+4. Откройте файл конфигурации Kafka `C:\kafka\config\kraft\server.properties`.
+5. Отредактируйте файл конфигурации, указав IP-адрес сервера Kafka, папку для журналов и размеры сообщений.
+
+    !!! warning "Внимание!"
+
+        При указании пути к папке журналов используйте косую черту `/` вместо `\`:
 
     ``` ini
     process.roles=broker,controller
     node.id=1
     # Укажите IP-адрес сервера Kafka
-    controller.quorum.voters=1@10.9.8.7:9093
+    controller.quorum.voters=1@10.2.3.4:9093
     # Укажите IP-адрес сервера Kafka
-    listeners=PLAINTEXT://10.9.8.7:9092,CONTROLLER://10.9.8.7:9093
+    listeners=PLAINTEXT://10.2.3.4:9092,CONTROLLER://10.2.3.4:9093
     inter.broker.listener.name=PLAINTEXT
     # Укажите IP-адрес сервера Kafka
-    advertised.listeners=PLAINTEXT://10.9.8.7:9092
+    advertised.listeners=PLAINTEXT://10.2.3.4:9092
     controller.listener.names=CONTROLLER
     listener.security.protocol.map=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
     num.network.threads=3
@@ -78,12 +82,18 @@ hide:
     log.retention.hours=168
     log.segment.bytes=1073741824
     log.retention.check.interval.ms=300000
+    # Настройте размеры запросов и сообщений
+    max.request.size=104857600
+    max.message.bytes=104857600
+    message.max.bytes=104857600
+    fetch.message.max.bytes=104857600
+    replica.fetch.max.bytes=104857600
     ```
 
 6. Откройте _PowerShell_ от имени администратора и выполните команды:
 
     ``` powershell
-    cd "C:\kafka\kafka\bin\windows\"
+    cd "C:\kafka\bin\windows\"
     .\kafka-storage.bat random-uuid
     ```
 
@@ -91,11 +101,11 @@ hide:
 8. Используйте полученный UID в следующей команде:
 
     ``` powershell
-    .\kafka-storage.bat format -t kNZtrWDsRvW0udJeaEahsg -c C:\kafka\kafka\config\kraft\server.properties
+    .\kafka-storage.bat format -t kNZtrWDsRvW0udJeaEahsg -c C:\kafka\config\kraft\server.properties
     ```
 
 9. Загрузите с **[официального сайта](https://nssm.cc/download)** архив _NSSM_ и распакуйте его.
-10. В папке `\win64` найдите файл `nssm.exe` и скопируйте его в папку `C:\kafka\kafka\bin\windows\`.
+10. В папке `\win64` найдите файл `nssm.exe` и скопируйте его в папку `C:\kafka\bin\windows\`.
 11. В _PowerShell_ от имени администратора выполните следующую команду:
 
     ``` powershell
@@ -111,19 +121,19 @@ hide:
     - **Path**
 
     ``` powershell
-    C:\kafka\kafka\bin\windows\kafka-server-start.bat
+    C:\kafka\bin\windows\kafka-server-start.bat
     ```
 
     - **Startup directory**
 
     ``` powershell
-    C:\kafka\kafka\bin\windows\
+    C:\kafka\bin\windows\
     ```
 
     - **Arguments**
 
     ``` powershell
-    C:\kafka\kafka\config\kraft\server.properties
+    C:\kafka\config\kraft\server.properties
     ```
 
 14. Нажмите кнопку «**Install service**».
@@ -139,8 +149,8 @@ hide:
 18. Протестируйте работу Kafka, выполнив в _PowerShell_ следующие команды:
 
     ``` powershell
-    cd "C:\kafka\kafka\bin\windows\"
-    .\kafka-console-producer.bat --bootstrap-server 10.9.8.7:9092 --topic TEST
+    cd "C:\kafka\bin\windows\"
+    .\kafka-console-producer.bat --bootstrap-server 10.2.3.4:9092 --topic TEST
     # Отправьте любое сообщение, например:
     hello
     ```
@@ -153,11 +163,11 @@ hide:
 
 1. Откройте папку `C:\ProgramData\comindware\configs\instance`
 
-2. Откройте файл с именем экземпляра ПО `<instanceName>.yml` и измените или добавьте следующую директиву:
+2. Откройте файл конфигурации экземпляра ПО `<instanceName>.yml` (`<instanceName>` — имя экземпляра) и измените или добавьте следующие директивы:
 
     ``` powershell
     # Укажите IP-адрес сервера Kafka
-    mq.server: 10.9.8.7:9092
+    mq.server: 10.2.3.4:9092
     # Укажите имя экземпляра ПО
     mq.name: <instanceName>
     ```

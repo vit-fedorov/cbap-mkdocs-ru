@@ -10,6 +10,7 @@ extra:
   adminGuideWindows: False
   adminGuideLinux: False
   userGuide: True
+  tutorial: False
   completeGuide: False
 
 nav:
@@ -254,7 +255,7 @@ nav:
           - business_apps/expressions/expression_editor/n3_editor/findobject_autocomplete.md
           - business_apps/expressions/expression_editor/n3_editor/enum_autocomplete_n3.md
           - business_apps/expressions/expression_editor/n3_editor/literal_autocomplete.md
-  - Моделирование корпоративной-архитектуры:
+  - Моделирование корпоративной архитектуры:
     - architect/architect_desktop.md
     - architect/architect_example.md
     - architect/version_control.md

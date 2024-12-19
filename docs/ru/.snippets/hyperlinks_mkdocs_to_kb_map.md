@@ -56,11 +56,9 @@
 
 [formula_context]: {{ kbArticleURLPrefix }}4892
 
-[formula_examples]: {{ kbCategoryURLPrefix }}881
+[formula_guide]: {{ kbCategoryURLPrefix }}880
 
-[formula_guide]: {{ kbCategoryURLPrefix }}882
-
-[formula_use_examples]: {{ kbCategoryURLPrefix }}880
+[formula_use_examples]: {{ kbCategoryURLPrefix }}881
 
 [formula_function_list]: {{ kbArticleURLPrefix }}4993
 
@@ -74,15 +72,15 @@
 
 [manual_n3]: {{ kbArticleURLPrefix }}4852
 
-[n3_examples]: {{ kbCategoryURLPrefix }}879
+[n3_guide]: {{ kbCategoryURLPrefix }}877
 
-[n3_guide]: {{ kbCategoryURLPrefix }}878
-
-[n3_use_examples]: {{ kbCategoryURLPrefix }}877
+[n3_use_examples]: {{ kbCategoryURLPrefix }}879
 
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}4905
 
 [tutorial]: {{ kbCategoryURLPrefix }}870
+
+[apps_kb]: {{ kbCategoryURLPrefix }}832
 
 [telegram_send_notification]: {{ kbArticleURLPrefix }}4926
 
@@ -302,9 +300,9 @@
 
 {% endif %}
 
-{% if (not userGuide and (adminGuideLinux or adminGuideWindows)) or kbExport %}
+{% if (not userGuide and (adminGuideLinux or adminGuideWindows)) or (tutorial and not userGuide) or kbExport %}
 
-<!-- Руководство администратора для Linux/Windows или экспорт в БЗ -->
+<!-- Руководство администратора для Linux/Windows, отдельный учебник или экспорт в БЗ -->
 
 [1c_integrations]: {{ kbArticleURLPrefix }}4698
 
@@ -757,5 +755,22 @@
 [system_requirements]: {{ kbArticleURLPrefix }}4659
 
 [upload_size_limit_configure]: {{ kbArticleURLPrefix }}4619
+
+{% endif %}
+
+{% if (not tutorial) or kbExport %}
+
+<!-- Руководства без учебника или экспорт в БЗ  -->
+
+[lesson_1]: {{ kbArticleURLPrefix }}4871
+[lesson_2]: {{ kbArticleURLPrefix }}4873
+[lesson_3]: {{ kbArticleURLPrefix }}4874
+[lesson_4]: {{ kbArticleURLPrefix }}4865
+[lesson_5]: {{ kbArticleURLPrefix }}4869
+[lesson_6]: {{ kbArticleURLPrefix }}4870
+[lesson_7]: {{ kbArticleURLPrefix }}4872
+[lesson_8]: {{ kbArticleURLPrefix }}4867
+[lesson_9]: {{ kbArticleURLPrefix }}4868
+[lesson_10]: {{ kbArticleURLPrefix }}4866
 
 {% endif %}

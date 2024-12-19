@@ -10,6 +10,7 @@ extra:
   adminGuideLinux: True
   adminGuideWindows: True
   userGuide: False
+  tutorial: False
   completeGuide: False
 
 site_name: Comindware Business Application Platform. Руководство администратора

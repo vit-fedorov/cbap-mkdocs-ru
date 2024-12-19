@@ -232,11 +232,16 @@ kbId: 4624
         mq.group: <instanceName>
         ```
 
-10. Если выполняется обновление с версии ниже 4.6.1140.0, откройте для редактирования файл конфигурации экземпляра ПО `/usr/share/comindware/configs/instance/<instanceName>.yml`.
+10. Если выполняется обновление с версии ниже 4.7.3084.0, отредактируйте конфигурационные файлы экземпляра ПО.
 
-    - Замените в конфигурации следующие директивы:
+    - В файле `/usr/share/comindware/configs/instance/<instanceName>.yml` замените следующие директивы:
 
-        ``` sh
+        ``` yml
+        # исходная директива
+        # databasePath: /var/lib/comindware/<instanceName>/Database
+        # заменить на:
+        db.workDir: /var/lib/comindware/<instanceName>/Database
+        
         # исходная директива
         # backupPath: /var/backups/<instanceName>
         # заменить на:
@@ -256,56 +261,119 @@ kbId: 4624
         userStorage.localDisk.path: /var/streams/<instanceName>
         ```
 
-    - Добавьте в конфигурацию следующие директивы:
+    - Замените `/var/www/<instanceName>/adapterhost.json` на `/var/www/<instanceName>/adapterhost.yml` со следующими директивами:
 
-        ``` sh
-        # Имя конфигурации
-        configName: <instanceName>
+        ``` yml
+        clusterName: <instanceName>
+        loaderFolder: <instanceName>
+        serverLanguage: ru-RU
+        mq.server: <kafkaBrokerIp>:<kafkaBrokerPort>
+        #mq.name: <instanceName>
+        #mq.group: <instanceName>
+        #mq.node: <instanceName>
+        mq.securityProtocol: Plaintext
+        #mq.sasl.username: <username>
+        #mq.sasl.password: <password>
+        mq.sasl.mechanism: None
+        #mq.ssl.caLocation: <path/to/CA>
+        #mq.ssl.endpointIdentificationEnabled: default
+        mq.securityProtocol: Plaintext
+        log.folder: /var/log/comindware/<instanceName>/Logs/
+        log.maxArchiveFiles: 100
+        log.archiveAboveSize: 1048576000
+        log.archiveFolder: /var/log/comindware/<instanceName>/Logs/Archive/
+        ```
 
-        # Имя базы данных Apache Ignite
-        instanceName: <instanceName>
+    - Замените `/var/www/<instanceName>/apigateway.json` на `/var/www/<instanceName>/apigateway.yml` со следующими директивами:
 
-        manageAdapterHost: true
-        useDataBusNumbers:
-            - 0
-            - 1
-            - 2
-            - 3
+        ``` yml
+        cluster.name: <instanceName>
+        #nodeName:
+        log.enabled: true
+        log.configurationFile: /var/www/<instanceName>/logs.config
+        kata.enabled: false
+        #kata.certificatePath:
+        #kata.certificateKeyPath:
+        #kata.sensorId:
+        #kata.kataUri:
+        mq.server: <kafkaBrokerIp>:<kafkaBrokerPort>
+        mq.group: <instanceName>
+        mq.node: <instanceName>
+        #mq.name: <instanceName>
+        #mq.sasl.username: <username>
+        #mq.sasl.password: <password>
+        mq.sasl.mechanism: None
+        #mq.ssl.caLocation: default
+        #mq.ssl.endpointIdentificationEnabled: default
+        mq.securityProtocol: Plaintext
+        #listen.port:
+        #listen.protocol:
+        listen.socketPath: /var/www/<instanceName>/App_Data/apigateway.socket
+        fileStorage.enabled: true
+        fileStorage.type: Platform
+        fileStorage.attachmentServerUri: http://localhost/
+        #fileStorage.uploadAttachment.method:
+        fileStorage.uploadAttachment.path: /api/Attachment/Upload
+        #fileStorage.downloadAttachment.method:
+        fileStorage.downloadAttachment.path: /api/Attachment/GetReferenceContent/{0}
+        #fileStorage.removeAttachment.method:
+        fileStorage.removeAttachment.path: /api/Attachment/Remove/{0}
+        services:
+        - apiPrefix: conversation
+        - apiPrefix: useractivity
+        - apiPrefix: notification
+        - apiPrefix: architect
         ```
 
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 11. Удостоверьтесь, что итоговый файл конфигурации `/usr/share/comindware/configs/instance/<instanceName>.yml` выглядит аналогично следующему примеру:
 
-    ``` sh
-    databasePath: /var/lib/comindware/<instanceName>/Database/
-    configPath: /var/www/<instanceName>
-    backup.config.default.repository.type: LocalDisk
-    backup.config.default.repository.localDisk.path: /var/lib/comindware/<instanceName>/Backup
-    userStorage.type: LocalDisk
-    userStorage.localDisk.path: /var/lib/comindware/<instanceName>/Streams
-    tempStorage.type: LocalDisk
-    tempStorage.localDisk.path: /var/lib/comindware/<instanceName>/Temp
-    elasticsearchUri: XXX.XXX.XXX.XXX:9200 #адрес сервера ElasticSearch
-    instanceName: <instanceName>
-    configName: <instanceName>
-    databaseName: <instanceName>
-    nodeName: prod_0
-    linuxAuthenticationType: 1
-    ldapAuthenticationType: 1
-    isFederationAuthEnabled: 0
-    manageAdapterHost: true
-    isTestEnvironment: false
-    mq.enabled: true
-    mq.server: XXX.XXX.XXX.XXX:9092 #адрес сервера Kafka
-    mq.group: <instanceName> #имя группы в Kafka
-    mq.node: prod_0
-    mq.name: <instanceName> #имя очереди в Kafka
-    mq.adapter.0.enabled: true
-    mq.adapter.1.enabled: true
-    mq.adapter.2.enabled: true
-    mq.adapter.3.enabled: true
+    ``` yml
+    #################### Базовая настройка платформы ####################
+    # Имя экземпляра платформы
+    clusterName: <instanceName>
+    # Название узла экземпляра
+    #nodeName: <instanceName>
+    # Путь к экземпляру, по которому ПО находит свою конфигурацию
+    configPath: <configPath>
+    # Адрес службы журналирования
+    journal.server: http://<esHostIP>:<esHostPort>
+    # Индекс службы журналирования
+    #journal.name: <instanceName>
+    # URI-адрес платформы
+    fqdn: <hostName>
+    # Порт платформы
+    port: <portNumber>
+    # Версия платформы
     version: <versionNumber>
+    #################### Настройка базы данных ####################
+    # Путь к базе данных
+    db.workDir: /var/lib/comindware/<instanceName>/Database
+    # Используемый префикс кэшей в базе данных
+    db.name: <instanceName>
+    #################### Настройка хранения пользовательских файлов ####################
+    # Тип хранилища: LocalDisk или S3
+    userStorage.type: LocalDisk
+    # Путь к пользовательским файлам экземпляра
+    userStorage.localDisk.path: /var/lib/comindware/<instanceName>/Streams
+    #################### Настройка хранения временных файлов ####################
+    # Тип хранилища: LocalDisk или S3
+    tempStorage.type: LocalDisk
+    # Путь к временным файлам экземпляра
+    tempStorage.localDisk.path: /var/lib/comindware/<instanceName>/Temp
+    # Временная папка
+    tempWorkingDir: /var/lib/comindware/fooo/LocalTemp
+    #################### Настройки очереди сообщений ####################
+    # Адрес сервера очереди сообщений (Kafka) с портом.
+    mq.server: <kafkaBrokerIP>:<kafkaBrokerPort>
+    # Идентификатор группы очереди сообщений
+    mq.group: <instanceName>
+    #################### Конфигурация резервного копирования ####################
+    # Папка для резервного копирования по умолчанию
+    backup.defaultFolder: /var/lib/comindware/<instanceName>/Backup
+    # Имя файла для резервного копирования по умолчанию
+    backup.defaultFileName: Backup
     ```
 
 12. Перезапустите сервисы, настройки которых были изменены:

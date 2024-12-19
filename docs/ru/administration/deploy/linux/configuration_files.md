@@ -17,12 +17,16 @@ kbId: 5067
     nano /usr/share/comindware/configs/instance/<instanceName>.yml
     ```
 
-2. Измените необходимые параметры, например:
+2. При необходимости измените параметры, например:
 
-    - `databasePath` — путь к базе данных экземпляра ПО.
-    - `backup.config.default.repository.localDisk.path` или `backup.defaultFolder` — директория для хранения резервных копий.
+    - `journal.server` — адрес сервера Elasticsearch или Opensearch.
+    - `journal.name` — индекс сервера Elasticsearch или Opensearch.
+    - `db.workDir` — директория для хранения базы данных экземпляра ПО.
+    - `db.name` — префикс кэшей в базе данных экземпляра ПО.
     - `userStorage.localDisk.path` — директория для хранения пользовательских файлов.
     - `mq.server` — адрес сервера Kafka.
+    - `backup.defaultFolder` — директория для хранения резервных копий экземпляра ПО.
+    - `backup.defaultFileName` — имя файла резервной копии экземпляра ПО.
 
 3. Сохраните файл конфигурации.
 4. Убедитесь, что директории, указанные в файле конфигурации, существуют. При необходимости создайте их и задайте права доступа:
@@ -46,48 +50,62 @@ kbId: 5067
 ### Пример YML-файла конфигурации экземпляра ПО
 
 ``` yml
-# Федеративная аутентификация отключена (1 — вкл.)
-isFederationAuthEnabled: 0
-# Путь к базе данных
-databasePath: /var/lib/comindware/<instanceName>/Database
-# Путь к исполняемым и конфигурационным файлам экземпляра ПО
-configPath: /var/www/<instanceName>
-# Тип хранилища резервных копий: LocalDisk или S3
-backup.config.default.repository.type: LocalDisk
-# Путь к директории резервных копий
-backup.config.default.repository.localDisk.path: /var/backups/<instanceName>
-# Тип хранилища пользовательских файлов: LocalDisk или S3
-userStorage.type: LocalDisk
-# Путь к директории пользовательских файлов
-userStorage.localDisk.path: /var/lib/comindware/<instanceName>/Streams
-# Тип хранилища временных файлов: LocalDisk или S3
-tempStorage.type: LocalDisk
-# Путь к директории временных файлов
-tempStorage.localDisk.path: /var/lib/comindware/<instanceName>/Temp
-# Адрес и порт сервера очереди сообщений (Kafka)
-mq.server: <kafkaBrokerIP>:<kafkaBrokerPort>
-# Идентификатор группы очереди сообщений. Должно быть уникальным для каждого экземпляра
-mq.group: <instanceName>
-# Управление службой adapterhost включено
-manageAdapterHost: true
-# Адрес и порт сервера Elasticsearch
-elasticsearchUri: <elasticsearchIP>:<elasticsearchPort>
-# Имя экземпляра ПО
-instanceName: <instanceName>
-# Версия ПО
+#################### Базовая настройка платформы ####################
+# Имя экземпляра платформы
+clusterName: <instanceName>
+# Название узла экземпляра
+#nodeName: <instanceName>
+# Путь к экземпляру, по которому ПО находит свою конфигурацию
+configPath: <configPath>
+# Адрес службы журналирования
+journal.server: http://<esHostIP>:<esHostPort>
+# Индекс службы журналирования
+#journal.name: <instanceName>
+# URI-адрес платформы
+fqdn: <hostName>
+# Порт платформы
+port: <portNumber>
+# Версия платформы
 version: <versionNumber>
+#################### Настройка базы данных ####################
+# Путь к базе данных
+db.workDir: /var/lib/comindware/<instanceName>/Database
+# Используемый префикс кэшей в базе данных
+db.name: <instanceName>
+#################### Настройка хранения пользовательских файлов ####################
+# Тип хранилища: LocalDisk или S3
+userStorage.type: LocalDisk
+# Путь к пользовательским файлам экземпляра
+userStorage.localDisk.path: /var/lib/comindware/<instanceName>/Streams
+#################### Настройка хранения временных файлов ####################
+# Тип хранилища: LocalDisk или S3
+tempStorage.type: LocalDisk
+# Путь к временным файлам экземпляра
+tempStorage.localDisk.path: /var/lib/comindware/<instanceName>/Temp
+# Временная папка
+tempWorkingDir: /var/lib/comindware/fooo/LocalTemp
+#################### Настройки очереди сообщений ####################
+# Адрес сервера очереди сообщений (Kafka) с портом.
+mq.server: <kafkaBrokerIP>:<kafkaBrokerPort>
+# Идентификатор группы очереди сообщений
+mq.group: <instanceName>
+#################### Конфигурация резервного копирования ####################
+# Папка для резервного копирования по умолчанию
+backup.defaultFolder: /var/lib/comindware/<instanceName>/Backup
+# Имя файла для резервного копирования по умолчанию
+backup.defaultFileName: Backup
 ```
 
 ## Конфигурация службы apigateway
 
-1. Откройте файл конфигурации `apigateway.json` экземпляра ПО для редактирования:
+1. Откройте файл конфигурации `apigateway.yml` экземпляра ПО для редактирования:
 
     ``` sh
-    nano /var/www/<instanceName>/apigateway.json
+    nano /var/www/<instanceName>/apigateway.yml
     ```
 
 2. Измените необходимые параметры.
-3. Удостоверьтесь, что значение параметра `BootstrapServer` (адрес и порт сервера очереди сообщений) совпадает с `mq.server`, а `GroupId` (идентификатор группы очереди сообщений) — с `mq.group` в [файле конфигурации экземпляра ПО](#пример-yml-файла-конфигурации-экземпляра-по).
+3. Удостоверьтесь, что значение параметра `cluster.name` (имя экземпляра ПО) совпадает с `clusterName` и значение параметров `mq.server` (адрес и порт сервера очереди сообщений), `mq.group` (идентификатор группы очереди сообщений), `mq.node` (идентификатор узла очереди сообщений) — с аналогичными параметрами в [файле конфигурации экземпляра](#конфигурация-экземпляра-по).
 4. Сохраните файл конфигурации.
 5. Перезапустите службу apigateway:
 
@@ -95,41 +113,57 @@ version: <versionNumber>
     systemctl restart apigateway<instanceName>
     ```
 
-### Пример конфигурации службы apigateway.json
+### Пример конфигурации службы apigateway.yml
 
-```json
-{
-   "Instance":{
-      "Name":"<instanceName>"
-   },
-   "Log":{
-      "Enabled":true,
-      "ConfigurationFile":"/var/www/<instanceName>/logs.config"
-   },
-   "Kata":{
-      "Enabled":false
-   },
-   "Kafka":{
-      "BootstrapServer":"<kafkaBrokerIP>:<kafkaBrokerPort>",
-      "GroupId":"<instanceName>"
-   },
-   "Grpc":{
-      "SocketPath":"/var/www/<instanceName>/App_Data/apigateway.socket",
-      "Protocol":"Http2"
-   }
-}
+``` yml
+cluster.name: <instanceName>
+#nodeName:
+log.enabled: true
+log.configurationFile: /var/www/<instanceName>/logs.config
+kata.enabled: false
+#kata.certificatePath:
+#kata.certificateKeyPath:
+#kata.sensorId:
+#kata.kataUri:
+mq.server: <kafkaBrokerIp>:<kafkaBrokerPort>
+mq.group: <instanceName>
+mq.node: <instanceName>
+#mq.name: <instanceName>
+#mq.sasl.username: <username>
+#mq.sasl.password: <password>
+mq.sasl.mechanism: None
+#mq.ssl.caLocation: default
+#mq.ssl.endpointIdentificationEnabled: default
+mq.securityProtocol: Plaintext
+#listen.port:
+#listen.protocol:
+listen.socketPath: /var/www/<instanceName>/App_Data/apigateway.socket
+fileStorage.enabled: true
+fileStorage.type: Platform
+fileStorage.attachmentServerUri: http://localhost/
+#fileStorage.uploadAttachment.method:
+fileStorage.uploadAttachment.path: /api/Attachment/Upload
+#fileStorage.downloadAttachment.method:
+fileStorage.downloadAttachment.path: /api/Attachment/GetReferenceContent/{0}
+#fileStorage.removeAttachment.method:
+fileStorage.removeAttachment.path: /api/Attachment/Remove/{0}
+services:
+- apiPrefix: conversation
+- apiPrefix: useractivity
+- apiPrefix: notification
+- apiPrefix: architect
 ```
 
 ## Конфигурация службы adapterhost
 
-1. Откройте файл конфигурации `adapterhost.config` экземпляра ПО для редактирования:
+1. Откройте файл конфигурации `adapterhost.yml` экземпляра ПО для редактирования:
 
     ``` sh
-    nano /var/www/<instanceName>/adapterhost.config
+    nano /var/www/<instanceName>/adapterhost.yml
     ```
 
 2. Отредактируйте необходимые параметры.
-3. Удостоверьтесь, что значение параметра `BootstrapServers` совпадает с `mq.server`, а `groupId` — с `mq.group` в [файле конфигурации экземпляра](#конфигурация-экземпляра-по).
+3. Удостоверьтесь, что значения параметров `mq.server` (адрес и порт сервера очереди сообщений), `mq.group` (идентификатор группы очереди сообщений), `mq.node` (идентификатор узла очереди сообщений) и `clusterName` (имя экземпляра ПО) совпадают с аналогичными параметрами в [файле конфигурации экземпляра ПО](#пример-yml-файла-конфигурации-экземпляра-по)..
 4. Сохраните файл конфигурации.
 5. После внесения изменений перезапустите службу adapterhost:
 
@@ -137,31 +171,27 @@ version: <versionNumber>
     kill -9 $(ps -eo pid,args | grep $<instanceName> | grep Agent | awk {'print $1'}) && systemctl restart comindware<instanceName>
     ```
 
-### Пример файла конфигурации adapterhost.config
+### Пример файла конфигурации adapterhost.yml
 
 ``` yml
-platformKey: <instanceName>
-loaderFolder: /var/log/comindware/.adapterhost/<instanceName>/LoadData
-deployRequestQueue: request_queue_<hostname>_<instanceName>_deploy_external
-deployReplyQueue: reply_queue_<hostname>_<instanceName>_deploy_external
-outgoingRequestQueue: request_queue_<hostname>_<instanceName>_outgoing_external
-outgoingReplyQueue: reply_queue_<hostname>_<instanceName>_outgoing_external
-incomingRequestQueue: request_queue_<hostname>_<instanceName>_incoming_external
-incomingReplyQueue: reply_queue_<hostname>_<instanceName>_incoming_external
-bootstrapServers: <kafkaBrokerIP>:<kafkaBrokerPort>
-groupId: <instanceName>
-exclusiveGroupId:
+clusterName: <instanceName>
+loaderFolder: <instanceName>
 serverLanguage: ru-RU
-securityProtocol: Plaintext
-caLocation:
-endpointIdentificationEnabled: true
-saslMechanism: None
-username:
-password:
-logFolder: /var/log/comindware/<instanceName>/Logs/
-archiveFolder: /var/log/comindware/<instanceName>/Logs/Archive/
-maxArchiveFiles: 30
-archiveAboveSize: 104857600
+mq.server: <kafkaBrokerIp>:<kafkaBrokerPort>
+#mq.name: <instanceName>
+#mq.group: <instanceName>
+#mq.node: <instanceName>
+mq.securityProtocol: Plaintext
+#mq.sasl.username: <username>
+#mq.sasl.password: <password>
+mq.sasl.mechanism: None
+#mq.ssl.caLocation: <path/to/CA>
+#mq.ssl.endpointIdentificationEnabled: default
+mq.securityProtocol: Plaintext
+log.folder: /var/log/comindware/<instanceName>/Logs/
+log.maxArchiveFiles: 100
+log.archiveAboveSize: 1048576000
+log.archiveFolder: /var/log/comindware/<instanceName>/Logs/Archive/
 ```
 
 ## Конфигурация Apache Ignite
@@ -186,7 +216,7 @@ archiveAboveSize: 104857600
         <property name="maxSize" value="#{8L * 1024 * 1024 * 1024}" />
         ```
 
-3. В случае изменения максимального объёма выделяемой памяти отредактируйте параметр `checkpointPageBufferSize`. Чтобы рассчитать размер значения, разделите размер `maxSize` на четыре, при этом значение не должно в диапазоне 256 МБ — 2 ГБ. Для максимального объёма выделяемой памяти в 8 Гб, значение будет следующим:
+3. В случае изменения максимального объёма выделяемой памяти отредактируйте параметр `checkpointPageBufferSize`. Чтобы рассчитать размер значения, разделите размер `maxSize` на четыре, при этом значение должно быть в диапазоне 256 МБ — 2 ГБ. Для максимального объёма выделяемой памяти в 8 Гб, значение будет следующим:
 
     ``` xml
     <property name="checkpointPageBufferSize" value="#{2L * 1024 * 1024 * 1024}" />
@@ -254,7 +284,7 @@ archiveAboveSize: 104857600
     ``` sh
     server {
         # Укажите адрес сервера для доступа к экземпляра ПО.
-        server_name <host_name>
+        server_name <hostName>
         # Укажите номер порта для доступа к экземпляра ПО.
         listen <portNumber>
     }

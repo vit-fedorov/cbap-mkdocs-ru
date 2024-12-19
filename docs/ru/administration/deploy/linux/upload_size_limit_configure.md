@@ -110,10 +110,9 @@ kbId: 4619
 2. Установите лимит (например, 1 ГБ) с помощью директив `httpRuntime maxRequestLength` (в килобайтах) и `requestLimits maxAllowedContentLength` (в байтах):
 
     ```
-    <httpRuntime maxRequestLength="1048576" maxUrlLength="4096" requestValidationMode="2.0" shutdownTimeout="300" executionTimeout="3000" targetFramework="4.8" enableVersionHeader="false" />
-
+    <httpRuntime maxRequestLength="1048576" maxUrlLength="4096" requestValidationMode="2.0" 
+    shutdownTimeout="300" executionTimeout="3000" targetFramework="4.8" enableVersionHeader="false" />
     ...
-
     <requestLimits maxAllowedContentLength="1073741824" />
     ```
 

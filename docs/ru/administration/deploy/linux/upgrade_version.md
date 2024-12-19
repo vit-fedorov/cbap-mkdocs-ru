@@ -7,9 +7,9 @@ kbId: 4624
 
 ## Введение
 
-Здесь представлены краткие инструкции по обновлению до 4.7.2XXX версии экземпляра ПО **{{ productName }}** под управлением ОС Linux.
+Здесь представлены краткие инструкции по обновлению до 5.0.XXXX версии экземпляра ПО **{{ productName }}** под управлением ОС Linux.
 
-## Порядок обновления версии ПО
+## Порядок обновления версии экземпляра ПО
 
 1. Подготовьте экземпляр ПО к обновлению:
 
@@ -28,29 +28,53 @@ kbId: 4624
 
 ## Подготовка экземпляра ПО к обновлению
 
+Выполните подготовительные действия для каждого экземпляра ПО, версию которого требуется обновить.
+
 1. Создайте и перенесите во внешнее хранилище резервную копию базы данных экземпляра ПО. См. статью _«[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]»_.
 2. Перейдите в режим суперпользователя:
 
+    --8<-- "linux_sudo.md"
+
+3. Сохраните резервную копию конфигурационных файлов, например в директорию `/var/backups/config_tmp`:
+{: #NginxBackup}
+
+    - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
+
     ``` sh
-    sudo -i
+    mkdir -p /var/backups/config_tmp/
+    cd /var/www/<instanceName>/
+    cp *.config apigateway.json /var/backups/config_tmp/
+    cp /etc/nginx/sites-available/comindware<instanceName> /var/backups/config_tmp/
     ```
 
-    или
+    - **РЕД ОС**, **Rocky** (RPM-based)
 
     ``` sh
-    su -
+    mkdir -p /var/backups/config_tmp/
+    cd /var/www/<instanceName>/
+    cp *.config apigateway.json /var/backups/config_tmp/
+    cp /etc/nginx/conf.d/comindware<instanceName> /var/backups/config_tmp/
     ```
 
-3. Остановите экземпляр ПО и его вспомогательные службы и удостоверьтесь, что они остановлены:
+    - **Альт Сервер**
+
+    ``` sh
+    mkdir -p /var/backups/config_tmp/
+    cd /var/www/<instanceName>/
+    cp *.config apigateway.json /var/backups/config_tmp/
+    cp /etc/nginx/sites-available.d/comindware<instanceName> /var/backups/config_tmp/
+    ```
+
+    Здесь `<instanceName>` — имя экземпляра ПО.
+
+4. Остановите экземпляр ПО и его вспомогательные службы и удостоверьтесь, что они остановлены:
 
     ``` sh
     systemctl stop apigateway<instanceName> comindware<instanceName>
     systemctl status apigateway<instanceName> comindware<instanceName>
     ```
 
-    Здесь `<instanceName>` — имя экземпляра ПО.
-
-4. Проверьте, выполняется ли сервис `Comindware.Adapter.Agent.exe`:
+5. Проверьте, выполняется ли сервис `Comindware.Adapter.Agent.exe`:
 
     ``` sh
     ps fax | grep Agent
@@ -62,37 +86,27 @@ kbId: 4624
         kill -9 <PID>
         ```
 
-5. Если используется нестандартная конфигурация NGINX для экземпляра ПО, сохраните её резервную копию:
-{: #NginxBackup}
-
-    ``` sh
-    cp /etc/nginx/sites-available/comindware<instanceName> $HOME
-    ```
-
-    или
-
-    ``` sh
-    cp /etc/nginx/conf.d/comindware<instanceName> $HOME
-    ```
-
 6. Проверьте имя и статус экземпляра:
 
     ``` sh
     systemctl status comindware*
     ```
 
-7. Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО (`<osname>` — название операционной системы):
+7. Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО (`<distPath>` — путь к директории с дистрибутивом, `<osname>` — название операционной системы):
 
     ``` sh
-    rm -rf CMW_<osname>
+    rm -rf <distPath>/CMW_<osname>
     ```
 
 ## Обновление версии ПО для экземпляра {: .pageBreakBefore }
 
-1. Скачайте и распакуйте дистрибутив с новой версией ПО (`X.X.XXX.X` — номер версии ПО, `<osname>` — название операционной системы):
+Выполните шаги 6–13 для каждого экземпляра ПО, версию которого требуется обновить, так как скрипт обновления выполняется отдельно для указанного экземпляра ПО.
+
+1. Скачайте и распакуйте дистрибутив с новой версией ПО (`X.X`, `<versionNumber>` — номер версии ПО):
 
     ``` sh
-    tar -xf X.X.XXX.X.<osname>.tar.gz
+    cd <distPath>
+    tar -xf X.X-release-ru-<versionNumber>.<osname>.tar.gz
     ```
 
 2. Перейдите в распакованную папку:
@@ -101,50 +115,127 @@ kbId: 4624
     cd CMW_<osname>/scripts/cbap
     ```
 
-3.  Запустите установку распакованного дистрибутива ПО:
+3. Запустите установку распакованного дистрибутива ПО:
 
     ``` sh
     bash install.sh
     ```
 
-4.  Проверьте наличие и имя директории установленной версии ПО:
+4. Проверьте наличие и имя директории установленной версии ПО:
 
     ``` sh
-    ls /var/www/.cmw_version/
+    bash list.sh
     ```
 
-5. Перейдите в директорию скриптов для работы с экземпляром ПО и запустите его обновление до требуемой версии:
+5. Отобразится список установленных версий ПО на сервере.
+6. Перейдите в директорию скриптов для работы с экземпляром ПО и запустите его обновление до требуемой версии:
 
     ``` sh
     cd ../instance/
-    bash upgrade.sh -n=<instanceName> -vp=/var/www/.cmw_version/X.X.XXX.X
+    bash upgrade.sh -n=<instanceName> -vp=/var/www/.cmw_version/<versionNumber>
     ```
 
     Здесь:
 
-    - `X.X.XXX.X` — номер устанавливаемой версии ПО;
-    - `<instanceName>` — имя обновляемого экземпляра ПО.
+    - `-n=<instanceName>` — имя обновляемого экземпляра ПО;
+    - `-vp=/var/www/.cmw_version/<versionNumber>` — укажите путь к папке с установленной версией ПО, где `<versionNumber>` — номер версии ПО.
 
-6. Проверьте корректность конфигурации NGINX для экземпляра ПО:
+7. По окончании обновления скрипт выведет информацию о компонентах экземпляра ПО. Удостоверьтесь, что компоненты успешно обновлены.
+
+    Пример результата выполнения скрипта:
 
     ``` sh
-    cat /etc/nginx/sites-available/comindware<instanceName>
+    ...
+    [Done] Creating Log Directories.
+    OK     Instance folder created.
+    OK     Instance Web config created.
+    OK     Instance Ignite config created.
+    OK     Instance binaries linked.
+    OK     Instance config created.
+    OK     Data folder created.
+    OK     Database folder created: Yes
+    OK     Streams folder created: No 
+    OK     Logs folder created: Yes
+    OK     Used version: <versionNumber>
+    OK     Logs configured.
+    OK     Sites created.
+    OK     Sites enabled.
+    OK     API Gateway configured.
+    OK     Link to binaries is valid.
+    OK     Instance service started.
+    FAILED Instance API gateway service started.
+    OK     NGINX started.
+    FAILED Final status.
+    [Done] Upgrade CBAP instance.
     ```
+
+    Если какая-либо из служб имеет статус `FAILED`, перезапустите её (`<serviceName>` — имя службы):
+
+    ``` sh
+    systemctl restart <serviceName>.service
+    ```
+
+8. Проверьте корректность конфигурации NGINX для экземпляра ПО:
+
+    - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
+
+        ``` sh
+        cat /etc/nginx/sites-available/comindware<instanceName>
+        ```
+
+    - **РЕД ОС**, **Rocky** (RPM-based)
+
+        ``` sh
+        nano /etc/nginx/conf.d/comindware<instanceName>
+        ```
+
+    - **Альт Сервер**
+
+        ``` sh
+        nano /etc/nginx/sites-available.d/comindware<instanceName>
+        ```
 
     - При необходимости восстановите конфигурацию NGINX, [сохранённую ранее](#NginxBackup).
 
-7. Откройте для редактирования файл конфигурации `/var/www/<instanceName>/apigateway.json`.
+        - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
 
-    - Замените в конфигурации адрес сервера Kafka:
+        ``` sh
+        cp /var/backups/config_tmp/comindware<instanceName> /etc/nginx/sites-available/
+        nginx -t && nginx -s reload
+        ```
+
+        - **РЕД ОС**, **Rocky** (RPM-based)
+
+        ``` sh
+        cp /var/backups/config_tmp/comindware<instanceName> /etc/nginx/conf.d/
+        nginx -t && nginx -s reload
+        ```
+
+        - **Альт Сервер**
+
+        ``` sh
+        cp /var/backups/config_tmp/comindware<instanceName> /etc/nginx/sites-available.d/
+        nginx -t && nginx -s reload
+        ```
+
+9. Откройте для редактирования файл конфигурации `/var/www/<instanceName>/apigateway.json`.
+
+    - Проверьте и при необходимости отредактируйте адрес сервера Kafka:
 
         ``` sh
         "Kafka": {
+            # Укажите адрес сервера Kafka
+            # Должен совпадать с mq.server
+            # в /usr/share/comindware/configs/instance/<instanceName>.yml
             "BootstrapServer": "<KAFKAIP>:9092",
+            # Укажите имя экземпляра ПО
+            # Должно совпадать с mq.group
+            # в /usr/share/comindware/configs/instance/<instanceName>.yml
             "GroupId": "<instanceName>"
         }
         ```
 
-8. Если выполняется обновление с версии ниже 4.6.1140.0, откройте для редактирования файл конфигурации экземпляра ПО `/usr/share/comindware/configs/instance/<instanceName>.yml`.
+10. Если выполняется обновление с версии ниже 4.6.1140.0, откройте для редактирования файл конфигурации экземпляра ПО `/usr/share/comindware/configs/instance/<instanceName>.yml`.
 
     - Замените в конфигурации следующие директивы:
 
@@ -187,7 +278,7 @@ kbId: 4624
 
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-9. Удостоверьтесь, что итоговый файл конфигурации `/usr/share/comindware/configs/instance/<instanceName>.yml` выглядит аналогично следующему примеру:
+11. Удостоверьтесь, что итоговый файл конфигурации `/usr/share/comindware/configs/instance/<instanceName>.yml` выглядит аналогично следующему примеру:
 
     ``` sh
     databasePath: /var/lib/comindware/<instanceName>/Database/
@@ -217,37 +308,28 @@ kbId: 4624
     mq.adapter.1.enabled: true
     mq.adapter.2.enabled: true
     mq.adapter.3.enabled: true
-    version: 5.X.XXXX.X
+    version: <versionNumber>
     ```
 
-10. Перезапустите сервисы, настройки которых были изменены:
+12. Перезапустите сервисы, настройки которых были изменены:
 
     ``` sh
     systemctl restart apigateway<instanceName> comindware<instanceName>
     ```
 
-    - Проверьте конфигурацию NGINX:
-
-        ``` sh
-        nginx -t
-        ```
-
-    - Если тест пройден, перезапустите NGINX:
-
-        ``` sh
-        nginx -s reload
-        ```
-
-11. Откройте сайт экземпляра ПО в браузере, дождитесь окончания загрузки, одновременно открыв выдачу журналов экземпляра в терминале:
+13. Откройте сайт экземпляра ПО в браузере, дождитесь окончания загрузки, одновременно открыв выдачу журналов экземпляра в терминале:
 
     ``` sh
     tail -f /var/log/comindware/<instanceName>/Log/sys*
     ```
 
+14. После обновления всех экземпляров ПО, старую версию ПО можно удалить согласно инструкции _«[Удаление версии ПО][deploy_guide_linux_delete_version]»_.
+
 <div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
+- _[Установка, запуск, инициализация и остановка ПО][deploy_guide_linux]_
 - _[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]_
 
 </div>

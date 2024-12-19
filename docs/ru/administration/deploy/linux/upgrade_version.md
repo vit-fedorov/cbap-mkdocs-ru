@@ -233,32 +233,55 @@ kbId: 4624
         ```
 
 10. Если выполняется обновление с версии ниже 4.7.3084.0, отредактируйте конфигурационные файлы экземпляра ПО.
+{: #step_10}
 
-    - В файле `/usr/share/comindware/configs/instance/<instanceName>.yml` замените следующие директивы:
+    - Отредактируйте файл `/usr/share/comindware/configs/instance/<instanceName>.yml` так, чтобы он выглядел следующим образом:
 
         ``` yml
-        # исходная директива
-        # databasePath: /var/lib/comindware/<instanceName>/Database
-        # заменить на:
+        #################### Базовая настройка платформы ####################
+        # Имя экземпляра платформы
+        clusterName: <instanceName>
+        # Название узла экземпляра
+        #nodeName: <instanceName>
+        # Путь к экземпляру, по которому ПО находит свою конфигурацию
+        configPath: <configPath>
+        # Адрес службы журналирования
+        journal.server: http://<esHostIP>:<esHostPort>
+        # Индекс службы журналирования
+        #journal.name: <instanceName>
+        # URI-адрес платформы
+        fqdn: <hostName>
+        # Порт платформы
+        port: <portNumber>
+        # Версия платформы
+        version: <versionNumber>
+        #################### Настройка базы данных ####################
+        # Путь к базе данных
         db.workDir: /var/lib/comindware/<instanceName>/Database
-        
-        # исходная директива
-        # backupPath: /var/backups/<instanceName>
-        # заменить на:
-        backup.config.default.repository.type: LocalDisk
-        backup.config.default.repository.localDisk.path: /var/backups/<instanceName> ## backupPath
-
-        # исходная директива
-        # tempPath: /var/lib/comindware/<instanceName>/Temp
-        # заменить на:
-        tempStorage.type: LocalDisk
-        tempStorage.localDisk.path: /var/lib/comindware/<instanceName>/Temp ## tempPath
-
-        # исходная директива
-        # streamsPath: /var/streams/<instanceName>
-        # заменить на:
+        # Используемый префикс кэшей в базе данных
+        db.name: <instanceName>
+        #################### Настройка хранения пользовательских файлов ####################
+        # Тип хранилища: LocalDisk или S3
         userStorage.type: LocalDisk
-        userStorage.localDisk.path: /var/streams/<instanceName>
+        # Путь к пользовательским файлам экземпляра
+        userStorage.localDisk.path: /var/lib/comindware/<instanceName>/Streams
+        #################### Настройка хранения временных файлов ####################
+        # Тип хранилища: LocalDisk или S3
+        tempStorage.type: LocalDisk
+        # Путь к временным файлам экземпляра
+        tempStorage.localDisk.path: /var/lib/comindware/<instanceName>/Temp
+        # Временная папка
+        tempWorkingDir: /var/lib/comindware/fooo/LocalTemp
+        #################### Настройки очереди сообщений ####################
+        # Адрес сервера очереди сообщений (Kafka) с портом.
+        mq.server: <kafkaBrokerIP>:<kafkaBrokerPort>
+        # Идентификатор группы очереди сообщений
+        mq.group: <instanceName>
+        #################### Конфигурация резервного копирования ####################
+        # Папка для резервного копирования по умолчанию
+        backup.defaultFolder: /var/lib/comindware/<instanceName>/Backup
+        # Имя файла для резервного копирования по умолчанию
+        backup.defaultFileName: Backup
         ```
 
     - Замените `/var/www/<instanceName>/adapterhost.json` на `/var/www/<instanceName>/adapterhost.yml` со следующими директивами:
@@ -327,55 +350,7 @@ kbId: 4624
 
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-11. Удостоверьтесь, что итоговый файл конфигурации `/usr/share/comindware/configs/instance/<instanceName>.yml` выглядит аналогично следующему примеру:
-
-    ``` yml
-    #################### Базовая настройка платформы ####################
-    # Имя экземпляра платформы
-    clusterName: <instanceName>
-    # Название узла экземпляра
-    #nodeName: <instanceName>
-    # Путь к экземпляру, по которому ПО находит свою конфигурацию
-    configPath: <configPath>
-    # Адрес службы журналирования
-    journal.server: http://<esHostIP>:<esHostPort>
-    # Индекс службы журналирования
-    #journal.name: <instanceName>
-    # URI-адрес платформы
-    fqdn: <hostName>
-    # Порт платформы
-    port: <portNumber>
-    # Версия платформы
-    version: <versionNumber>
-    #################### Настройка базы данных ####################
-    # Путь к базе данных
-    db.workDir: /var/lib/comindware/<instanceName>/Database
-    # Используемый префикс кэшей в базе данных
-    db.name: <instanceName>
-    #################### Настройка хранения пользовательских файлов ####################
-    # Тип хранилища: LocalDisk или S3
-    userStorage.type: LocalDisk
-    # Путь к пользовательским файлам экземпляра
-    userStorage.localDisk.path: /var/lib/comindware/<instanceName>/Streams
-    #################### Настройка хранения временных файлов ####################
-    # Тип хранилища: LocalDisk или S3
-    tempStorage.type: LocalDisk
-    # Путь к временным файлам экземпляра
-    tempStorage.localDisk.path: /var/lib/comindware/<instanceName>/Temp
-    # Временная папка
-    tempWorkingDir: /var/lib/comindware/fooo/LocalTemp
-    #################### Настройки очереди сообщений ####################
-    # Адрес сервера очереди сообщений (Kafka) с портом.
-    mq.server: <kafkaBrokerIP>:<kafkaBrokerPort>
-    # Идентификатор группы очереди сообщений
-    mq.group: <instanceName>
-    #################### Конфигурация резервного копирования ####################
-    # Папка для резервного копирования по умолчанию
-    backup.defaultFolder: /var/lib/comindware/<instanceName>/Backup
-    # Имя файла для резервного копирования по умолчанию
-    backup.defaultFileName: Backup
-    ```
-
+11. Удостоверьтесь, что итоговый файл конфигурации `/usr/share/comindware/configs/instance/<instanceName>.yml` выглядит аналогично примеру на [шаге 10](#step_10).
 12. Перезапустите сервисы, настройки которых были изменены:
 
     ``` sh

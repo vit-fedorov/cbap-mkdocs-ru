@@ -43,7 +43,7 @@ kbId: 4624
     ``` sh
     mkdir -p /var/backups/config_tmp/
     cd /var/www/<instanceName>/
-    cp *.config apigateway.json /var/backups/config_tmp/
+    cp *.config *.yml /var/backups/config_tmp/
     cp /etc/nginx/sites-available/comindware<instanceName> /var/backups/config_tmp/
     ```
 
@@ -52,7 +52,7 @@ kbId: 4624
     ``` sh
     mkdir -p /var/backups/config_tmp/
     cd /var/www/<instanceName>/
-    cp *.config apigateway.json /var/backups/config_tmp/
+    cp *.config *.yml /var/backups/config_tmp/
     cp /etc/nginx/conf.d/comindware<instanceName> /var/backups/config_tmp/
     ```
 
@@ -61,7 +61,7 @@ kbId: 4624
     ``` sh
     mkdir -p /var/backups/config_tmp/
     cd /var/www/<instanceName>/
-    cp *.config apigateway.json /var/backups/config_tmp/
+    cp *.config *.yml /var/backups/config_tmp/
     cp /etc/nginx/sites-available.d/comindware<instanceName> /var/backups/config_tmp/
     ```
 
@@ -112,27 +112,26 @@ kbId: 4624
 2. Перейдите в распакованную папку:
 
     ``` sh
-    cd CMW_<osname>/scripts/cbap
+    cd CMW_<osname>_<versionNumber>/scripts/
     ```
 
 3. Запустите установку распакованного дистрибутива ПО:
 
     ``` sh
-    bash install.sh
+    bash version_install.sh
     ```
 
 4. Проверьте наличие и имя директории установленной версии ПО:
 
     ``` sh
-    bash list.sh
+    bash version_list.sh
     ```
 
 5. Отобразится список установленных версий ПО на сервере.
 6. Перейдите в директорию скриптов для работы с экземпляром ПО и запустите его обновление до требуемой версии:
 
     ``` sh
-    cd ../instance/
-    bash upgrade.sh -n=<instanceName> -vp=/var/www/.cmw_version/<versionNumber>
+    bash instance_upgrade.sh -n=<instanceName> -vp=/var/www/.cmw_version/<versionNumber>
     ```
 
     Здесь:
@@ -163,9 +162,9 @@ kbId: 4624
     OK     API Gateway configured.
     OK     Link to binaries is valid.
     OK     Instance service started.
-    FAILED Instance API gateway service started.
+    OK     Instance API gateway service started.
     OK     NGINX started.
-    FAILED Final status.
+    OK     Final status.
     [Done] Upgrade CBAP instance.
     ```
 
@@ -218,21 +217,19 @@ kbId: 4624
         nginx -t && nginx -s reload
         ```
 
-9. Откройте для редактирования файл конфигурации `/var/www/<instanceName>/apigateway.json`.
+9. Откройте для редактирования файл конфигурации `/var/www/<instanceName>/apigateway.yml`.
 
     - Проверьте и при необходимости отредактируйте адрес сервера Kafka:
 
         ``` sh
-        "Kafka": {
-            # Укажите адрес сервера Kafka
-            # Должен совпадать с mq.server
-            # в /usr/share/comindware/configs/instance/<instanceName>.yml
-            "BootstrapServer": "<KAFKAIP>:9092",
-            # Укажите имя экземпляра ПО
-            # Должно совпадать с mq.group
-            # в /usr/share/comindware/configs/instance/<instanceName>.yml
-            "GroupId": "<instanceName>"
-        }
+        # Укажите адрес сервера Kafka
+        # Должен совпадать с mq.server
+        # в /usr/share/comindware/configs/instance/<instanceName>.yml
+        mq.server: <kafkaBrokerIP>:<kafkaBrokerPort>,
+        # Укажите имя экземпляра ПО
+        # Должно совпадать с mq.group
+        # в /usr/share/comindware/configs/instance/<instanceName>.yml
+        mq.group: <instanceName>
         ```
 
 10. Если выполняется обновление с версии ниже 4.6.1140.0, откройте для редактирования файл конфигурации экземпляра ПО `/usr/share/comindware/configs/instance/<instanceName>.yml`.

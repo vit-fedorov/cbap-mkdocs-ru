@@ -265,6 +265,7 @@ nav:
         - business_apps/templates/forms/form_static_elements.md
         - business_apps/templates/forms/form_dynamic_elements.md
         - business_apps/templates/forms/discussion_configure.md
+        - business_apps/templates/forms/search_forms.md
       - Кнопки: business_apps/templates/buttons/index.md
       - business_apps/templates/button_area.md
       - Карточки: business_apps/templates/cards/cards_layout_configure.md

@@ -264,6 +264,10 @@
 
 [table_personal_use]: {{ kbArticleURLPrefix }}4815
 
+[table_personal_use_filter]: {{ kbArticleURLPrefix }}4815#table_personal_use_filter
+
+[table_personal_use_filter_extended]: {{ kbArticleURLPrefix }}4815#table_personal_use_filter_extended
+
 [task_notifications]: {{ kbArticleURLPrefix }}4684
 
 [task_notifications_email]: {{ kbArticleURLPrefix }}4684#task_notifications_email
@@ -492,6 +496,8 @@
 
 [form_dynamic_elements_drawing]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_drawing
 
+[form_dynamic_elements_dropdown]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_dropdown
+
 [form_dynamic_elements_embedded_form]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_embedded_form
 
 [form_dynamic_elements_hyperlink]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_hyperlink
@@ -637,6 +643,8 @@
 [scenario_variables]: {{ kbArticleURLPrefix }}4719
 
 [scenario_verify_data]: {{ kbArticleURLPrefix }}4919
+
+[search_forms]: {{ kbArticleURLPrefix }}5069
 
 [send_http_example]: {{ kbArticleURLPrefix }}4699
 

@@ -195,6 +195,7 @@ nav:
         - business_apps/templates/forms/form_rules.md
         - business_apps/templates/forms/form_static_elements.md
         - business_apps/templates/forms/form_dynamic_elements.md
+        - business_apps/templates/forms/search_forms.md
         - examples/creating_gantt_chart.md
         - examples/using_gantt_chart.md
         - business_apps/templates/forms/discussion_configure.md

@@ -296,7 +296,7 @@ kbId: 4622
     OK     Database folder created: No 
     OK     Streams folder created: No 
     OK     Logs folder created: Yes
-    OK     Used version: 4.7.33191.0
+    OK     Used version: 5.0.0000.0
     OK     Logs configured.
     OK     Sites created.
     OK     Sites enabled.

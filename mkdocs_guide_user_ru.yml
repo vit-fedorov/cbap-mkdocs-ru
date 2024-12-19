@@ -260,6 +260,7 @@ nav:
     - architect/architect_example.md
     - architect/version_control.md
     - architect/conversations.md
+    - architect/architect_demo.md
     - Построение процессной архитектуры:
       - architect/process_architecture_modeling/index.md
       - architect/process_architecture_modeling/viewing_diagram.md

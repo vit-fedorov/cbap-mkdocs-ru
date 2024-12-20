@@ -67,7 +67,7 @@ hide: tags
     Файл Excel с экспортированным приложением содержит несколько листов с данными различных сущностей, например:
     
     - **Templates** — шаблоны всех типов.
-    - **Attributes** — атрибуты всех типов кроме списков значений.
+    - **Attributes** — атрибуты всех типов, кроме списков значений.
     - **AttributesVariants** — атрибуты типа «**Список значений**».
     - **UserCommands** — кнопки.
         - **UserCommandsRelatedActions** — операции кнопок.
@@ -88,7 +88,7 @@ hide: tags
     - **FormRuleRuleActions** — действия правил для форм.
     - **Toolbars** — области кнопок.
         - **ToolbarItems** — элементы областей кнопок.
-        - ToolbarItemCollectionActions
+        - **ToolbarItemCollectionActions** — свойства форм для кнопок.
     - **Datasets** — таблицы.
         - **DatasetPagings** — параметры разбиения таблиц на страницы.
         - **DatasetSortings** — параметры сортировки данных в таблицах.
@@ -122,7 +122,7 @@ hide: tags
     - **Property** — атрибут.
     - **Record template** — связанный шаблон.
     - **Solution** — приложение.
-    - **Script** — С#—скрипт.
+    - **Script** — С#-скрипт.
     - **Toolbar** — область кнопок.
     - **User command** — кнопка.
 

@@ -1,6 +1,6 @@
 ---
 title: Экспорт и импорт версий приложения с помощью Excel
-kbId:
+kbId: 5071
 tags:
   - трансфер
   - импорт приложения
@@ -72,23 +72,25 @@ hide: tags
     - **UserCommands** — кнопки.
         - **UserCommandsRelatedActions** — операции кнопок.
         - **ConfirmationModelConfigurations** — диалоговые окна кнопок.
-        - **UserCommandsScriptRules** — C#-скрипты кнопок.
-        - **UserCommandsScriptRuleActions**
-        - **ScriptRuleDefinitions**
-        - **ScriptRulePropertyMaps**
-        - **ScriptRulePropertyMapKeys**
+        - **UserCommandsScriptRules** — C#-скрипты кнопок и их компоненты:
+            - **UserCommandsScriptRuleActions**
+            - **ScriptRuleDefinitions**
+            - **ScriptRulePropertyMaps**
+                - **ScriptRulePropertyMapKeys**
     - **Forms** — формы.
         - **FormComponents** — элементы форм.
-        - **FormCompsLabels** — подписи элементов форм.
-        - **FormCompsPredefinedValueLabels**
-        - **FormCompsUserCommandLabels** — подписи кнопок на формах.
-        - **FormComponentColorMaps** — цвета кнопок на формах.
-        - **FormComponentConnections**
+            - **FormCompsLabels** — подписи элементов форм.
+                - **FormCompsPredefinedValueLabels** — компоненты подписей форм.
+            - Компоненты полей чертежей:
+                - **FormComponentColorMaps** — цвета на чертежах.
+                - **FormComponentConnections** - сопоставления слоёв DWG и шаблонов.
+                    - **ReferencesToConnection** — ссылки на слои DWG.
+            - **FormCompsUserCommandLabels** — подписи кнопок на формах.
     - **FormRules** — правила для форм.
-    - **FormRuleRuleActions** — действия правил для форм.
+        - **FormRuleRuleActions** — действия правил для форм.
     - **Toolbars** — области кнопок.
         - **ToolbarItems** — элементы областей кнопок.
-        - ToolbarItemCollectionActions
+            - ToolbarItemCollectionActions — свойства форм для кнопок.
     - **Datasets** — таблицы.
         - **DatasetPagings** — параметры разбиения таблиц на страницы.
         - **DatasetSortings** — параметры сортировки данных в таблицах.
@@ -104,11 +106,10 @@ hide: tags
         - **ResourcePrivilegeDescriptors** — разрешения ролей.
     - **Workspaces** — разделы навигации.
         - **WorkspaceNavigationItems** — пункты разделов навигации.
-    - **Pages** — страницы в разделах навигации.
-        - **PageComponents** — компоненты страниц.
-        - **Steps** — виджеты «**Шаги**».
-        - **Links** — виджеты «**Баннеры**».
-    - **ReferencesToConnection** — ссылки на подключения.
+        - **Pages** — информационные страницы.
+            - **PageComponents** — компоненты страниц.
+            - **Steps** — виджеты «**Шаги**».
+            - **Links** — виджеты «**Баннеры**».
 
     В файле Excel c экспортированным приложением используются следующие специальные термины:
 
@@ -116,11 +117,11 @@ hide: tags
     - **Disabled** — архивный объект.
     - **Global alias** — глобальный псевдоним объекта вида: 
         ```
-        Attribute@templateSystemName.attributeSystemName
+        ObjectType@[ContainerSystemName].ObjectSystemName
         ```
     - **Instance** — экземпляр **{{ productName }}**.
-    - **Property** — атрибут.
-    - **Record template** — связанный шаблон.
+    - **Property** — свойство объекта.
+    - **Record template** — шаблон записи.
     - **Solution** — приложение.
     - **Script** — С#—скрипт.
     - **Toolbar** — область кнопок.

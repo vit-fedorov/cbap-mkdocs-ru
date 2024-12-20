@@ -23,9 +23,10 @@ extra_css:
 
 extra:
   companyName: 'Comindware'
-  productName: 'Comindware Business Application Platform'
-  productNameArchitect: 'Comindware Architect'
-  productVersion: 4.7
+  productName: 'Comindware Platform'
+  productNameEnterprise: 'Comindware Platform Enterprise'
+  productNameArchitect: 'Корпоративная архитектура'
+  productVersion: 5.0
   pdfOutput: False
   kbExport: False
   adminGuideLinux: True

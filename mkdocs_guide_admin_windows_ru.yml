@@ -6,7 +6,7 @@
 
 INHERIT: mkdocs_ru.yml
 
-site_name: Comindware Business Application Platform. Руководство администратора для Windows
+site_name: Comindware Platform. Руководство администратора для Windows
 
 extra:
   adminGuideWindows: True
@@ -22,26 +22,13 @@ nav:
     - administration/deploy/system_requirements.md
     - administration/deploy/architecture_landscape.md
     - administration/deploy/security.md
+    - administration/deploy/windows/deploy_guide.md
+    - administration/deploy/paths.md
     - administration/deploy/logging_engine.md
     - administration/deploy/log_files_event_examples.md
-    - administration/deploy/paths.md
-    - Утилита администрирования Comindware. Установка и настройка версий и экземпляров ПО:
-      - administration/deploy/windows/admin_utility/admin_utility_install_launch.md
-      - administration/deploy/windows/admin_utility/sw_install.md
-      - administration/deploy/windows/admin_utility/admin_utility_configure.md
-      - administration/deploy/windows/admin_utility/instance_diagnose.md
-      - administration/deploy/windows/admin_utility/instance_upgrade_version.md
-      - administration/deploy/windows/admin_utility/instance_create.md
-      - administration/deploy/windows/admin_utility/sw_version_delete.md
-      - administration/deploy/windows/admin_utility/instance_start_stop.md
-      - administration/deploy/windows/admin_utility/instance_configure.md
-      - administration/deploy/windows/admin_utility/instance_status_update.md
-      - administration/deploy/windows/admin_utility/instance_backup_restore.md
-      - administration/deploy/windows/admin_utility/instance_instalize.md
     - administration/deploy/windows/instance_upgrade_3_2_to_4_2_windows.md
     - administration/deploy/windows/instance_stop_IIS.md
     - administration/deploy/windows/instance_start_IIS.md
-    - administration/deploy/windows/architect_install.md
     - Вспомогательное ПО. Оптимизация:
       - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_optimize.md
       - administration/deploy/linux/auxiliary_software_deploy/antivirus_exceptions_configure.md
@@ -114,6 +101,7 @@ nav:
           - administration/connections_communication_routes/rest_odata_connections/odata_connection.md
           - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
           - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
+          - administration/connections_communication_routes/rest_odata_connections/http_send_file.md
           - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
           - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
         - SQL-подключения:
@@ -121,6 +109,9 @@ nav:
           - administration/connections_communication_routes/sql_connections/sql_receive_connection.md
         - Подключения к шинам сообщений:
           - administration/connections_communication_routes/message_queue_connections/kafka_connection.md
+        - Пользовательские подключения:
+          - administration/connections_communication_routes/custom_connections/esphere_receive_configure.md
+          - administration/connections_communication_routes/custom_connections/esphere_send_configure.md
   - Администрирование приложений:
     - business_apps/index.md
     - Диаграммы:
@@ -168,6 +159,8 @@ exclude_docs: |
   administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
   administration/connections_communication_routes/rest_odata_connections/send_http_example.md
   administration/backup/linux/**
+  administration/deploy/windows/admin_utility/**
+  administration/deploy/windows/architect_install.md
   product_description.md
   architect/**
   business_apps/application_configure_recommendations.md
@@ -186,12 +179,7 @@ exclude_docs: |
   business_apps/templates/buttons/**
   business_apps/templates/cards/**
   business_apps/templates/export_templates/**
-  business_apps/templates/forms/index.md
-  business_apps/templates/forms/discussion_configure.md
-  business_apps/templates/forms/form_access_control.md
-  business_apps/templates/forms/form_dynamic_elements.md
-  business_apps/templates/forms/form_rules.md
-  business_apps/templates/forms/form_static_elements.md
+  business_apps/templates/forms/**
   business_apps/templates/tables/table_configure.md
   business_apps/templates/template_types/article-2110-Шаблон аккаунта. Использование.md
   devops_wiki/**

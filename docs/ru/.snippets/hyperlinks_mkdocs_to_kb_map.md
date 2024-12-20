@@ -6,7 +6,7 @@
 
 [api_intro]: {{ kbArticleURLPrefix }}4860
 
-[account_attributes_system_names]: {{ kbArticleURLPrefix }}1354
+[account_attributes_system_names]: {{ kbArticleURLPrefix }}4994
 
 [attribute_date_time_use]: {{ kbArticleURLPrefix }}4886
 
@@ -126,7 +126,7 @@
 
 [connections_delete]: {{ kbArticleURLPrefix }}4675#connections_delete
 
-[db_migrate_4.2_to_4.7]: {{ kbArticleURLPrefix }}4621
+[db_migrate_4.2_to_5]: {{ kbArticleURLPrefix }}4621
 
 [db_move_manually]: {{ kbArticleURLPrefix }}4649
 
@@ -141,6 +141,10 @@
 [elasticsearch_ssl_certificate_configure]: {{ kbArticleURLPrefix }}4606
 
 [elasticsearch_connection]: {{ kbArticleURLPrefix }}4678
+
+[esphere_receive_configure]: {{ kbArticleURLPrefix }}5061
+
+[esphere_send_configure]: {{ kbArticleURLPrefix }}5062
 
 [experimental_feature_support]: {{ kbArticleURLPrefix }}4579#experimental_feature_support
 
@@ -259,6 +263,10 @@
 [table_configure_template]: {{ kbArticleURLPrefix }}2550
 
 [table_personal_use]: {{ kbArticleURLPrefix }}4815
+
+[table_personal_use_filter]: {{ kbArticleURLPrefix }}4815#table_personal_use_filter
+
+[table_personal_use_filter_extended]: {{ kbArticleURLPrefix }}4815#table_personal_use_filter_extended
 
 [task_notifications]: {{ kbArticleURLPrefix }}4684
 
@@ -488,6 +496,8 @@
 
 [form_dynamic_elements_drawing]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_drawing
 
+[form_dynamic_elements_dropdown]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_dropdown
+
 [form_dynamic_elements_embedded_form]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_embedded_form
 
 [form_dynamic_elements_hyperlink]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_hyperlink
@@ -634,6 +644,8 @@
 
 [scenario_verify_data]: {{ kbArticleURLPrefix }}4919
 
+[search_forms]: {{ kbArticleURLPrefix }}5069
+
 [send_http_example]: {{ kbArticleURLPrefix }}4699
 
 [service_call_task]: {{ kbArticleURLPrefix }}4729
@@ -700,7 +712,7 @@
 
 {% endif %}
 
-{% if userGuide or (not adminGuideLinux and adminGuideWindows) or kbExport %}
+{% if (userGuide and not adminGuideLinux) or (not adminGuideLinux and adminGuideWindows) or kbExport %}
 
 <!-- Руководство пользователя, администратора для Windows или экспорт в БЗ  -->
 

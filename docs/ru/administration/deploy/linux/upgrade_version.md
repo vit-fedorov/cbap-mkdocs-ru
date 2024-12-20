@@ -217,22 +217,7 @@ kbId: 4624
         nginx -t && nginx -s reload
         ```
 
-9. Откройте для редактирования файл конфигурации `/var/www/<instanceName>/apigateway.yml`.
-
-    - Проверьте и при необходимости отредактируйте адрес сервера Kafka:
-
-        ``` sh
-        # Укажите адрес сервера Kafka
-        # Должен совпадать с mq.server
-        # в /usr/share/comindware/configs/instance/<instanceName>.yml
-        mq.server: <kafkaBrokerIP>:<kafkaBrokerPort>,
-        # Укажите имя экземпляра ПО
-        # Должно совпадать с mq.group
-        # в /usr/share/comindware/configs/instance/<instanceName>.yml
-        mq.group: <instanceName>
-        ```
-
-10. Удостоверьтесь, что конфигурационные файлы соответствуют приведённым ниже образцам, и при необходимости отредактируйте их.
+9. Удостоверьтесь, что конфигурационные файлы соответствуют приведённым ниже образцам, и при необходимости отредактируйте их.
 
     - Отредактируйте файл `/usr/share/comindware/configs/instance/<instanceName>.yml` так, чтобы в нём присутствовали следующие директивы:
 
@@ -242,7 +227,7 @@ kbId: 4624
     end="<!--instanceYML-end-->"
     %}
 
-    - Отредактируйте файл `/var/www/<instanceName>/adapterhost.yml` так, чтобы в нём присутствовали следующие директивы:
+    - Отредактируйте файл `/var/www/<instanceName>/adapterhost.yml`. Обратите внимание, чтобы директивы `mq.group` и `mq.server` совпадали с аналогичными в `/usr/share/comindware/configs/instance/<instanceName>.yml`:
 
     {%
     include-markdown "./configuration_files.md"
@@ -250,7 +235,7 @@ kbId: 4624
     end="<!--adapterhostYML-end-->"
     %}
 
-    - Отредактируйте файл `/var/www/<instanceName>/apigateway.yml` так, чтобы в нём присутствовали следующие директивы:
+    - Отредактируйте файл `/var/www/<instanceName>/apigateway.yml`. Обратите внимание, чтобы директивы `mq.group` и `mq.server` совпадали с аналогичными в `/usr/share/comindware/configs/instance/<instanceName>.yml`:
 
     {%
     include-markdown "./configuration_files.md"
@@ -258,19 +243,19 @@ kbId: 4624
     end="<!--apigatewayYML-end-->"
     %}
 
-11. Перезапустите сервисы, настройки которых были изменены:
+10. Перезапустите сервисы, настройки которых были изменены:
 
     ``` sh
     systemctl restart apigateway<instanceName> comindware<instanceName>
     ```
 
-12. Откройте сайт экземпляра ПО в браузере, дождитесь окончания загрузки, одновременно открыв выдачу журналов экземпляра в терминале:
+11. Откройте сайт экземпляра ПО в браузере, дождитесь окончания загрузки, одновременно открыв выдачу журналов экземпляра в терминале:
 
     ``` sh
     tail -f /var/log/comindware/<instanceName>/Log/sys*
     ```
 
-13. После обновления всех экземпляров ПО, старую версию ПО можно удалить согласно инструкции _«[Удаление версии ПО][deploy_guide_linux_delete_version]»_.
+12. После обновления всех экземпляров ПО, старую версию ПО можно удалить согласно инструкции _«[Удаление версии ПО][deploy_guide_linux_delete_version]»_.
 
 <div class="relatedTopics" markdown="block">
 

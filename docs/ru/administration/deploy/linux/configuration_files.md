@@ -49,6 +49,7 @@ kbId: 5067
 
 ### Пример YML-файла конфигурации экземпляра ПО
 
+<!--instanceYML-start-->
 ``` yml
 #################### Базовая настройка платформы ####################
 # Имя экземпляра платформы
@@ -57,9 +58,9 @@ clusterName: <instanceName>
 #nodeName: <instanceName>
 # Путь к экземпляру, по которому ПО находит свою конфигурацию
 configPath: <configPath>
-# Адрес службы журналирования
-journal.server: http://<esHostIP>:<esHostPort>
-# Индекс службы журналирования
+# Адрес службы журналирования Elasticsearch или Opensearch
+journal.server: http://<searchHostIP>:<searchHostPort>
+# Индекс службы журналирования Elasticsearch или Opensearch
 #journal.name: <instanceName>
 # URI-адрес платформы
 fqdn: <hostName>
@@ -95,6 +96,7 @@ backup.defaultFolder: /var/lib/comindware/<instanceName>/Backup
 # Имя файла для резервного копирования по умолчанию
 backup.defaultFileName: Backup
 ```
+<!--instanceYML-end-->
 
 ## Конфигурация службы apigateway
 
@@ -115,6 +117,7 @@ backup.defaultFileName: Backup
 
 ### Пример конфигурации службы apigateway.yml
 
+<!--apigatewayYML-start-->
 ``` yml
 cluster.name: <instanceName>
 #nodeName:
@@ -153,6 +156,7 @@ services:
 - apiPrefix: notification
 - apiPrefix: architect
 ```
+<!--apigatewayYML-end-->
 
 ## Конфигурация службы adapterhost
 
@@ -173,6 +177,7 @@ services:
 
 ### Пример файла конфигурации adapterhost.yml
 
+<!--adapterhostYML-start-->
 ``` yml
 clusterName: <instanceName>
 loaderFolder: <instanceName>
@@ -193,6 +198,7 @@ log.maxArchiveFiles: 100
 log.archiveAboveSize: 1048576000
 log.archiveFolder: /var/log/comindware/<instanceName>/Logs/Archive/
 ```
+<!--adapterhostYML-end-->
 
 ## Конфигурация Apache Ignite
 

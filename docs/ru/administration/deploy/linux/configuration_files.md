@@ -59,6 +59,7 @@ clusterName: <instanceName>
 # Путь к экземпляру, по которому ПО находит свою конфигурацию
 configPath: <configPath>
 # Адрес службы журналирования Elasticsearch или Opensearch
+# Устаревшая директива: elasticsearchUri
 journal.server: http://<searchHostIP>:<searchHostPort>
 # Индекс службы журналирования Elasticsearch или Opensearch
 #journal.name: <instanceName>
@@ -70,6 +71,7 @@ port: <portNumber>
 version: <versionNumber>
 #################### Настройка базы данных ####################
 # Путь к базе данных
+# Устаревшая директива: databasePath
 db.workDir: /var/lib/comindware/<instanceName>/Database
 # Используемый префикс кэшей в базе данных
 db.name: <instanceName>

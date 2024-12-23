@@ -121,16 +121,22 @@ backup.defaultFileName: Backup
 
 <!--apigatewayYML-start-->
 ``` yml
+# Имя экземпляра ПО
 cluster.name: <instanceName>
+# Название узла экземпляра
 #nodeName:
+# 
 log.enabled: true
+# Путь к файлу конфигурации журналирования экземпляра
 log.configurationFile: /var/www/<instanceName>/logs.config
 kata.enabled: false
 #kata.certificatePath:
 #kata.certificateKeyPath:
 #kata.sensorId:
 #kata.kataUri:
+# Адрес сервера очереди сообщений (Kafka) с портом.
 mq.server: <kafkaBrokerIp>:<kafkaBrokerPort>
+# Идентификатор группы очереди сообщений
 mq.group: <instanceName>
 mq.node: <instanceName>
 #mq.name: <instanceName>

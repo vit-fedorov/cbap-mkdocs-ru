@@ -13,13 +13,124 @@ kbId: 4622
 
 Здесь представлены инструкции по развёртыванию и инициализации **{{ productName }}** из дистрибутива в ОС Linux.
 
-## Установка {{ productName }} {: #deploy_guide_linux_install_sw }
+## Установка вспомогательного ПО
+
+Прежде чем приступать к установке вспомогательного ПО, необходимого для работы **{{ productName }}**, ознакомьтесь с демонстрационным роликом и инструкциями, представленными ниже.
+
+### Видеоинструкция
+
+<video controls="controls" width="100%" height="100%">
+<source src="https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/deploy_guide_linux_auxiliary_software.mp4" type="video/mp4" />
+</video>
+
+### Порядок установки вспомогательного ПО
 
 1. Перейдите в режим суперпользователя:
 
     --8<-- "linux_sudo.md"
 
-2. Скачайте и распакуйте дистрибутив **{{ productName }}**, полученный по ссылке от компании **{{ companyName }}** (`X.X`, `<versionNumber>` — номер версии ПО, `<osname>` — название операционной системы):
+2. Скачайте и распакуйте дистрибутив с вспомогательным ПО **{{ productName }}**, полученный по ссылке от компании **{{ companyName }}** (`X.X`, `<versionNumber>` — номер версии ПО, `<osname>` — название операционной системы):
+
+    ``` sh
+    tar -xf X.X-release-ru-<versionNumber>.prerequisites.<osname>.tar.gz
+    ```
+
+    !!! tip "Совет"
+
+        По завершению распаковки архив можно удалить для экономии места:
+
+        ``` sh
+        rm -f X.X-release-ru-<versionNumber>.prerequisites.<osname>.tar.gz
+        ```
+
+3. Перейдите в директорию со скриптами для развёртывания вспомогательного ПО:
+
+    ``` sh
+    cd <distPath>/CMW_<osname>/scripts
+    ```
+
+    Здесь:  `<distPath>/CMW_<osname>/` — путь к распакованному дистрибутиву ПО.
+
+4. Установите ПО из дистрибутива:
+
+    ``` sh
+    sh prerequisites_install.sh -p [-k] [-e]
+    ```
+
+    Скрипт `prerequisites_install.sh` поддерживает следующие ключи:
+    {: .pageBreakBefore }
+
+    - `-p` — установить обязательное вспомогательное ПО {{ productName }}.
+    - `-k` — установить ПО Kafka (необязательный ключ).
+    - `-e` — установить ПО Elasticsearch (необязательный ключ).
+    - `-kh=<hostname>` или `--kafkaHost=<hostname>` — использовать указанный хост для подключения к ПО Kafka (необязательный ключ).
+    - `-kp=<portNumber>` или `--kafkaPort=<portNumber>` — использовать указанный порт для подключения к ПО Kafka (необязательный ключ).
+    - `-h` — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).
+
+    !!! note "Примечание"
+
+        Скрипт `prerequisites_install.sh` устанавливает необходимые для {{ productName }} компоненты, включая Java, .NET, Mono, NGINX.
+
+    !!! tip "Вызов справки для скриптов"
+
+        Для ознакомления с ключами и назначением любого скрипта используйте ключ `-h` без каких-либо других ключей, например:
+
+        ``` sh
+        sh prerequisites_install.sh -h
+        ```
+
+    {% include-markdown ".snippets/elasticsearch_opensearch_configure.md" %}
+
+5. По окончании установки скрипт выведет информацию об установленных компонентах. Удостоверьтесь, что компоненты успешно установлены (имеют статус `OK`).
+
+    Пример результата выполнения скрипта с ключом `-p` без установки Elasticsearch и Kafka:
+
+    ``` sh
+    [Done] Creating CBAP Data Dir.
+    -----------------------------------------
+    Environment details
+    Status     | Software   | Version   
+    -----------------------------------------
+    OK         | mono       | 6.12.0.182     
+    OK         | dotnet     | 6.0.417        
+    OK         | java       | 17.0.7            
+    OK     NGINX installed.
+    OK     NGINX started.
+    OK     CBAP version folder created.
+    OK     CBAP configs folder created.
+    OK     CBAP data folder created.
+    OK     CBAP logs folder created.
+    OK     CBAP dotnet folder created.
+    OK     Local elasticsearch server installed: No 
+    OK     Local elasticsearch server started: No 
+    OK     Local kafka server installed: No 
+    OK     Local kafka server started: No 
+    OK     Final status.
+    ```
+
+6. Проверьте, что компоненты были установлены:
+
+    ``` sh
+    sh prerequisites_list.sh
+    ```
+
+## Установка ПО {{ productName }} {: #deploy_guide_linux_install_sw }
+
+Прежде чем приступать к установке ПО **{{ productName }}**, ознакомьтесь с демонстрационным роликом и инструкциями, представленными ниже.
+
+### Видеоинструкция
+
+<video controls="controls" width="100%" height="100%">
+<source src="https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/deploy_guide_linux_software.mp4" type="video/mp4" />
+</video>
+
+### Порядок установки ПО {{ productName }}
+
+1. Перейдите в режим суперпользователя:
+
+    --8<-- "linux_sudo.md"
+
+2. Скачайте и распакуйте дистрибутив ПО **{{ productName }}**, полученный по ссылке от компании **{{ companyName }}**:
 
     ``` sh
     tar -xf X.X-release-ru-<versionNumber>.<osname>.tar.gz
@@ -33,77 +144,20 @@ kbId: 4622
         rm -f X.X-release-ru-<versionNumber>.<osname>.tar.gz
         ```
 
-3. Перейдите в распакованную директорию:
+3. Перейдите в директорию со скриптами для развёртывания ПО:
 
     ``` sh
-    cd <distPath>/CMW_<osname>/
+    cd <distPath>/CMW_<osname>_<versionNumber>/scripts
     ```
-
-    Здесь:  `<distPath>/CMW_<osname>/` — путь к распакованному дистрибутиву ПО.
 
 4. Установите ПО из дистрибутива:
 {: #install.sh}
 
     ``` sh
-    sh install.sh -p [-k] [-e]
+    sh version_install.sh
     ```
 
-    Скрипт `install.sh` поддерживает следующие ключи:
-    {: .pageBreakBefore }
-
-    - `p` — установить ПО {{ productName }}.
-    - `k` — установить ПО Kafka (необязательный ключ).
-    - `e` — установить ПО Elasticsearch (необязательный ключ).
-    - `h` — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).
-
-    !!! note "Примечание"
-
-        Скрипт `install.sh` устанавливает ПО {{ productName }} и необходимые для него компоненты, включая Java, .NET, Mono, NGINX.
-
-    !!! tip "Вызов справки для скриптов"
-
-        Для ознакомления с ключами и назначением любого скрипта используйте ключ `-h` без каких-либо других ключей, например:
-
-        ``` sh
-        sh install.sh -h
-        ```
-
-5. По окончании установки скрипт выведет информацию об установленных компонентах. Удостоверьтесь, что компоненты успешно установлены.
-
-    Пример результата выполнения скрипта с ключом `-p` без установки Elasticsearch и Kafka:
-
-    ``` sh
-    Environment details
-    Status     | Software   | Version   
-    -----------------------------------------
-    OK         | mono       | 6.12.0.182     
-    OK         | dotnet     | 6.0.417        
-    OK         | java       | 17.0.7         
-    OK     NGINX installed.
-    FAILED NGINX started.
-    OK     CBAP version folder created.
-    OK     CBAP configs folder created.
-    FAILED CBAP data folder created.
-    FAILED CBAP logs folder created.
-    OK     CBAP dotnet folder created.
-    OK     Local elasticsearch server installed: No 
-    OK     Local elasticsearch server started: No 
-    OK     Local kafka server installed: No 
-    OK     Local kafka server started: No 
-    FAILED Final status.
-    ```
-
-    !!! note "Примечание"
-
-        В примере выше для большинства пунктов указан статус `OK`.
-        
-        При этом указан статус `FAILED` для `NGINX started`, `CBAP data folder created`, `CBAP logs folder created` и `Final status`.
-        
-        Это означает, что установлены необходимые компоненты, но не создан экземпляр ПО, то есть установка ПО выполнена успешно.
-
-        Экземпляр ПО следует создать отдельно согласно инструкциям в параграфе _«[Создание экземпляра ПО](#создание-экземпляра-по)»_.
-
-6. Если отобразится запрос на перезагрузку ОС, выполните перезагрузку:
+5. Если отобразится запрос на перезагрузку ОС, выполните перезагрузку:
 
     ``` sh
     reboot
@@ -111,14 +165,22 @@ kbId: 4622
 
     После перезагрузки ОС заново запустите [установку ПО из дистрибутива (шаг 4)](#install.sh).
 
-7. После успешного завершения установки подождите 3–5 минут. Этого времени обычно достаточно для автоматического запуска и инициализации установленных служб (в зависимости от конфигурации машины).
-8. Удостоверьтесь, что ПО установлено, просмотрев список установленных версий ПО:
+6. После успешного завершения установки подождите 3–5 минут. Этого времени обычно достаточно для автоматического запуска и инициализации установленных служб (в зависимости от конфигурации машины).
+7. Удостоверьтесь, что ПО установлено, просмотрев список установленных версий ПО:
 
     ``` sh
-    ls /var/www/.cmw_version/
+    sh version_list.sh
     ```
 
 ## Создание экземпляра ПО {: .pageBreakBefore }
+
+Прежде чем приступать к установке экземпляра ПО **{{ productName }}**, ознакомьтесь с демонстрационным роликом и инструкциями, представленными ниже.
+
+### Видеоинструкция
+
+<video controls="controls" width="100%" height="100%">
+<source src="https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/deploy_guide_linux_instance.mp4" type="video/mp4" />
+</video>
 
 ### Подготовка к созданию экземпляра ПО
 
@@ -229,31 +291,62 @@ kbId: 4622
 2. Перейдите в директорию со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` sh
-    cd <distPath>/CMW_<osname>/scripts/instance
+    cd <distPath>/CMW_<osname>_<versionNumber>/scripts
     ```
 
-    Здесь:  `<distPath>/CMW_<osname>/` — путь к распакованному дистрибутиву ПО.
+    Здесь:  `<distPath>/CMW_<osname>_<versionNumber>/` — путь к распакованному дистрибутиву ПО.
 
 3. Разверните экземпляр ПО:
 
     ``` sh
-    sh create.sh -n=<instanceName> -v=<versionNumber> [-p=<portNumber>]
+    sh instance_create.sh -n=<instanceName> -v=<versionNumber> [-p=<portNumber>]
     ```
 
-    Скрипт `create.sh` поддерживает следующие ключи:
+    Скрипт `instance_create.sh` поддерживает следующие ключи:
 
     - `-n=<instanceName>` — имя экземпляра ПО (**обязательный** ключ).
-    - `-v=<versionNumber>` — номер версии ПО вида `X.X.XXXX.X` (например: 5.0.0000.0, **обязательный** ключ). Версия должна быть установлена, см. _«[Установка {{ productName }}](#deploy_guide_linux_install_sw)»_.
+    - `-v=<versionNumber>` — номер версии ПО вида `X.X.XXXXX.X` (например: 5.0.00000.0, **обязательный** ключ). Версия должна быть установлена, см. _«[Установка {{ productName }}](#deploy_guide_linux_install_sw)»_.
     - `-p=<portNumber>` — порт для экземпляра ПО, по умолчанию: 80 (необязательный ключ).
+    - `-fqdn=<hostName>` или `--instance-fqdn=<hostName>` -  имя хоста для экземпляра ПО (необязательный ключ). По умолчанию: localhost.
+    - `-el=<hostName>` или `--elasticsearch-url=<hostName>` - использовать указанный URL или IP для подключения к ПО Elasticsearch (OpenSearch).
+    - `-kf=<hostName>` или `--kafka-url=<hostName>` - использовать указанный URL или IP для подключения к ПО Kafka.
     - `-h` — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).
 
-4. Удостоверьтесь, что была создана директория с файлами конфигурации экземпляра ПО.
+4. По окончании установки скрипт выведет информацию об установленных компонентах. Удостоверьтесь, что компоненты успешно установлены (имеют статус `OK`).
+
+    Пример результата выполнения скрипта:
+
+    ``` sh
+    OK     Instance folder created.
+    OK     Instance Web config created.
+    OK     Instance Ignite config created.
+    OK     Instance binaries linked.
+    OK     Instance config created.
+    OK     Data folder created.
+    OK     Database folder created: No 
+    OK     Streams folder created: No 
+    OK     Logs folder created: Yes
+    OK     Used version: 5.0.0000.0
+    OK     Logs configured.
+    OK     Sites created.
+    OK     Sites enabled.
+    OK     API Gateway configured.
+    OK     Link to binaries is valid.
+    OK     Instance service started.
+    OK     Instance API gateway service started.
+    OK     Instance adapter host service started.
+    OK     NGINX started.
+    OK     Final status.
+    [Done] Creating a new CBAP instance.
+    ```
+
+5. Удостоверьтесь, что была создана директория с файлами конфигурации экземпляра ПО.
 
     ``` sh
     ls -lhF /var/www/<instanceName>/
     ```
 
-5. По ответу команды `ls` удостоверьтесь, что в путях указана верная версия ПО, например `5.0.0000.0`:
+6. По ответу команды `ls` удостоверьтесь, что в путях указана верная версия ПО, например `5.0.0000.0`:
 
     ``` sh
     lrwxrwxrwx. 1 nginx nginx   36 Oct 11 17:54 bin -> /var/www/.cmw_version/5.0.0000.0/bin/
@@ -309,7 +402,7 @@ kbId: 4622
     nano /usr/lib/systemd/system/adapterhost<instanceName>.service
     ```
 
-7. Если используются локальные службы Kafka и Elasticsearch, откройте их для редактирования:
+7. Если используются локальные службы Kafka и Elasticsearch (OpenSearch), откройте их для редактирования:
 
     ``` sh
     nano /usr/lib/systemd/system/kafka.service
@@ -377,21 +470,24 @@ kbId: 4622
     _![Страница инициализации служб](img/deploy_guide_system_initialize.png)_
 
 6. При необходимости откроется страница активации ПО. Выполните **онлайн-** или **ручную активацию** либо нажмите кнопку «**Пропустить**» для первоначального ознакомления с ПО без активации.
-7. При необходимости откроется страница настройки подключения к службе Elasticsearch.
-8. В поле «**URI**» введите адрес сервера Elasticsearch, например: `http://localhost:9200`
-9. Оставьте **имя пользователя** и **пароль** Elasticsearch пустыми. Или введите их, если в конфигурации Elasticsearch включена аутентификация.
-10. Установите уникальный **префикс индекса**, например `mycompanyprefix`. Он служит для идентификации в Elasticsearch данных экземпляра ПО. Поэтому во избежание конфликтов данных для каждого экземпляра ПО следует указывать собственный префикс индекса.
-11. Нажмите кнопку «**Далее**».
-12. При необходимости откроется страница инициализации данных в Elasticsearch.
+7. При необходимости откроется страница настройки подключения к службе Elasticsearch (OpenSearch).
+
+    - В поле «**URI**» введите адрес сервера Elasticsearch (OpenSearch), например: `http://localhost:9200`.
+    - При необходимости введите **имя пользователя** и **пароль** Elasticsearch (OpenSearch).
+    - Установите уникальный **префикс индекса**, например `mycompanyprefix`.
+    - Экземпляр ПО будет взаимодействовать с Elasticsearch (OpenSearch) под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.
+    - Нажмите кнопку «**Далее**».
+
+8. При необходимости откроется страница инициализации данных в Elasticsearch (OpenSearch).
 
     _![Страница инициализации данных в Elasticsearch](img/deploy_guide_elasticsearch_initialize.png)_
 
-13. Нажмите кнопку «**Обновить**».
-14. Дождитесь открытия начальной страницы **{{ productName }}**.
+9. Нажмите кнопку «**Обновить**».
+10. Дождитесь открытия начальной страницы **{{ productName }}**.
 
     _![Начальная страница {{ productName }}](img/deploy_guide_desktop.png)_
 
-15. На этом этапе развертывание экземпляра **{{ productName }}** завершено и можно приступать к созданию и использованию приложений.
+11. На этом этапе развертывание экземпляра **{{ productName }}** завершено и можно приступать к созданию и использованию приложений.
 <!--initialize-end-->
 
 ## Остановка экземпляра ПО {: .pageBreakBefore }
@@ -420,6 +516,10 @@ kbId: 4622
 
 ## Удаление экземпляра ПО {: .pageBreakBefore }
 
+<!--<video controls="controls" width="100%" height="100%">
+<source src="https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/deploy_guide_linux_delete_version_instance.mp4" type="video/mp4" />
+</video>-->
+
 1. Перейдите в режим суперпользователя:
 
     --8<-- "linux_sudo.md"
@@ -428,19 +528,26 @@ kbId: 4622
 3. Перейдите в директорию со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` sh
-    cd <distPath>/CMW_<osname>/scripts/instance
+    cd <distPath>/CMW_<osname>_<versionNumber>/scripts
     ```
 
 4. Запустите удаление экземпляра ПО:
 
     ``` sh
-    sh delete.sh -n=<instanceName>
+    sh instance_delete.sh -n=<instanceName>
     ```
 
     Скрипт `delete.sh` поддерживает следующие ключи:
 
     - `-n=<instanceName>` — создать экземпляр ПО с указанным именем (**обязательный** ключ).
+    - `--delete-data=true` — удалить все файлы базы данных экземпляра ПО (необязательный ключ).
     - `-h` — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).
+
+5. Удостоверьтесь, что экземпляр ПО был успешно удалён, просмотрев список установленных экземпляров ПО:
+
+    ``` sh
+    sh instance_list.sh
+    ```
 
 ## Удаление версии ПО {: #deploy_guide_linux_delete_version .pageBreakBefore }
 
@@ -451,17 +558,41 @@ kbId: 4622
 2. Просмотрите список экземпляров ПО с указанием версий:
 
     ``` sh
-    cat /usr/share/comindware/configs/instance/* | grep -E '(configPath:|version:)'
+    sh instance_list.sh
     ```
 
 3. Удалите все экземпляры с версией ПО, которую требуется удалить, или обновите их до другой версии. Удалить версию ПО, которая используется в каких-либо экземплярах, не удастся. См. _«[Удаление экземпляра ПО](#удаление-экземпляра-по)»_.
-4. Удалите версию ПО:
+4. Перейдите в директорию со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` sh
-    rm -r /var/www/.cmw_version/<versionNumber>
+    cd <distPath>/CMW_<osname>_<versionNumber>/scripts
     ```
 
-    Здесь: `<versionNumber>` — номер версии ПО вида `X.X.XXXX.X` (например: `5.0.0000.0`).
+5. Просмотрите список установленных версий ПО:
+
+    ``` sh
+    sh version_list.sh
+    ```
+
+6. Удалите версию ПО:
+
+    ``` sh
+    sh version_delete.sh -v=<versionNumber>
+    ```
+
+    Здесь: `-v=<versionNumber>` — укажите номер версии ПО вида `X.X.XXXX.X` (например: `5.0.0000.0`).
+
+7. Проверьте, что версия ПО была удалена успешно:
+
+    ``` sh
+    sh version_list.sh
+    ```
+
+    или
+
+    ``` sh
+    ls /var/www/.cmw_version
+    ```
 
 <div class="relatedTopics" markdown="block">
 

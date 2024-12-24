@@ -19,8 +19,8 @@ kbId: 5067
 
 2. При необходимости измените параметры, например:
 
-    - `journal.server` — адрес сервера Elasticsearch или Opensearch.
-    - `journal.name` — индекс сервера Elasticsearch или Opensearch.
+    - `journal.server` — адрес сервера Elasticsearch (OpenSearch).
+    - `journal.name` — индекс сервера Elasticsearch (OpenSearch).
     - `db.workDir` — директория для хранения базы данных экземпляра ПО.
     - `db.name` — префикс кэшей в базе данных экземпляра ПО.
     - `userStorage.localDisk.path` — директория для хранения пользовательских файлов.
@@ -53,15 +53,16 @@ kbId: 5067
 ``` yml
 #################### Базовая настройка платформы ####################
 # Имя экземпляра платформы
+# Устаревшая директива: instanceName
 clusterName: <instanceName>
 # Название узла экземпляра
 #nodeName: <instanceName>
 # Путь к экземпляру, по которому ПО находит свою конфигурацию
 configPath: <configPath>
-# Адрес службы журналирования Elasticsearch или Opensearch
+# Адрес службы журналирования Elasticsearch (OpenSearch)
 # Устаревшая директива: elasticsearchUri
 journal.server: http://<searchHostIP>:<searchHostPort>
-# Индекс службы журналирования Elasticsearch или Opensearch
+# Индекс службы журналирования Elasticsearch (OpenSearch)
 #journal.name: <instanceName>
 # URI-адрес платформы
 fqdn: <hostName>
@@ -74,6 +75,7 @@ version: <versionNumber>
 # Устаревшая директива: databasePath
 db.workDir: /var/lib/comindware/<instanceName>/Database
 # Используемый префикс кэшей в базе данных
+# Устаревшая директива: databaseName
 db.name: <instanceName>
 #################### Настройка хранения пользовательских файлов ####################
 # Тип хранилища: LocalDisk или S3
@@ -94,6 +96,7 @@ mq.server: <kafkaBrokerIP>:<kafkaBrokerPort>
 mq.group: <instanceName>
 #################### Конфигурация резервного копирования ####################
 # Папка для резервного копирования по умолчанию
+# Устаревшая директива: backup.config.default.repository.localDisk.path
 backup.defaultFolder: /var/lib/comindware/<instanceName>/Backup
 # Имя файла для резервного копирования по умолчанию
 backup.defaultFileName: Backup
@@ -125,39 +128,37 @@ backup.defaultFileName: Backup
 cluster.name: <instanceName>
 # Название узла экземпляра
 #nodeName:
-# 
+# Выключение конфигурации журналирования экземпляра
 log.enabled: true
 # Путь к файлу конфигурации журналирования экземпляра
 log.configurationFile: /var/www/<instanceName>/logs.config
 kata.enabled: false
-#kata.certificatePath:
-#kata.certificateKeyPath:
-#kata.sensorId:
-#kata.kataUri:
 # Адрес сервера очереди сообщений (Kafka) с портом.
 mq.server: <kafkaBrokerIp>:<kafkaBrokerPort>
 # Идентификатор группы очереди сообщений
 mq.group: <instanceName>
+# Идентификатор узла очереди сообщений
 mq.node: <instanceName>
-#mq.name: <instanceName>
-#mq.sasl.username: <username>
-#mq.sasl.password: <password>
+# Тип механизма SASL. (None | Plain | ScramSha256 | ScramSha512)
 mq.sasl.mechanism: None
-#mq.ssl.caLocation: default
-#mq.ssl.endpointIdentificationEnabled: default
+# Протокол безопасности очереди сообщений. (Plaintext | Ssl | SaslPlaintext | SaslSsl)
 mq.securityProtocol: Plaintext
-#listen.port:
-#listen.protocol:
+# Путь к сокету apigateway
 listen.socketPath: /var/www/<instanceName>/App_Data/apigateway.socket
+# Выключение файлового хранилища
 fileStorage.enabled: true
+# Тип файлового хранилища
 fileStorage.type: Platform
+# Адрес сервера для загрузки файлов
+# Требуется заменить на IP-адрес
 fileStorage.attachmentServerUri: http://localhost/
-#fileStorage.uploadAttachment.method:
+# Путь к загружаемым файлам
 fileStorage.uploadAttachment.path: /api/Attachment/Upload
-#fileStorage.downloadAttachment.method:
+# Путь к скачиванию файла
 fileStorage.downloadAttachment.path: /api/Attachment/GetReferenceContent/{0}
-#fileStorage.removeAttachment.method:
+# Путь к удаляемому файлу
 fileStorage.removeAttachment.path: /api/Attachment/Remove/{0}
+# Префикс служб API
 services:
 - apiPrefix: conversation
 - apiPrefix: useractivity
@@ -187,23 +188,25 @@ services:
 
 <!--adapterhostYML-start-->
 ``` yml
+# Имя экземпляра ПО
 clusterName: <instanceName>
+# Имя папки загрузки
 loaderFolder: <instanceName>
+# Язык сервера
 serverLanguage: ru-RU
+# Адрес сервера очереди сообщений (Kafka) с портом.
 mq.server: <kafkaBrokerIp>:<kafkaBrokerPort>
-#mq.name: <instanceName>
-#mq.group: <instanceName>
-#mq.node: <instanceName>
+# Протокол безопасности очереди сообщений. (Plaintext | Ssl | SaslPlaintext | SaslSsl)
 mq.securityProtocol: Plaintext
-#mq.sasl.username: <username>
-#mq.sasl.password: <password>
+# Тип механизма SASL. (None | Plain | ScramSha256 | ScramSha512)
 mq.sasl.mechanism: None
-#mq.ssl.caLocation: <path/to/CA>
-#mq.ssl.endpointIdentificationEnabled: default
-mq.securityProtocol: Plaintext
+# Путь к файлам журналирования экземпляра
 log.folder: /var/log/comindware/<instanceName>/Logs/
+# Максимальное число файлов
 log.maxArchiveFiles: 100
+# Максимальный размер файлов
 log.archiveAboveSize: 1048576000
+# Путь к архивам журналирования
 log.archiveFolder: /var/log/comindware/<instanceName>/Logs/Archive/
 ```
 <!--adapterhostYML-end-->

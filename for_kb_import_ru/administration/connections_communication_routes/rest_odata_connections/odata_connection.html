@@ -28,52 +28,13 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h2 id="настройка-подключения-к-odata-сервису">Настройка подключения к OData-сервису</h2>
-<p><strong>1.</strong> Откройте раздел «<strong>Администрирование</strong>» — «<strong>Подключения</strong>».</p>
-<p><strong>2.</strong> Создайте подключение типа «<strong>Синхронизация с веб-сервисом</strong>».</p>
-<figure class="screenshot_with_caption">
-<p><img alt="Создание подключения для синхронизации с веб-сервисом" src="/platform/v5.0/administration/connections_communication_routes/rest_odata_connections/../img/odata_integration_connection_create.png"/><figcaption class="caption">Создание подключения для синхронизации с веб-сервисом</figcaption></p>
-</figure>
-<p><strong>3.</strong> Настройте свойства подключения.</p>
-<ul>
-<li><strong>Название</strong> — наглядное название подключения к OData-сервису.</li>
-<li>
-<p><strong>Адрес веб-сервиса</strong> — URL для подключения к серверу OData.</p>
-<div class="notice notice-tip">
-<p class="admonition-title">Совет</p>
-<p>Для экспериментов с синхронизацией по OData можно использовать общедоступные серверы, предоставляемые OData.org.</p>
-<p>Например, для тестирования импорта данных в качестве <strong>адреса веб-сервиса</strong> можно указать: </p>
-<p><a class="mkdocs_imported_link" href="https://services.odata.org/V3/OData/OData.svc/">https://services.odata.org/V3/OData/OData.svc/</a></p>
-<p>Адреса остальных тестовых серверов OData.org представлены на следующих сайтах:</p>
-<p><a class="mkdocs_imported_link" href="https://services.odata.org/">https://services.odata.org/</a> </p>
-<p><a class="mkdocs_imported_link" href="https://www.odata.org/odata-services/">https://www.odata.org/odata-services/</a> </p>
-</div>
-</li>
-<li>
-<p class="pageBreakBefore"><strong>Тип аутентификации</strong>:</p>
-<ul>
-<li><strong>Без аутентификации</strong></li>
-<li><strong>Обычная</strong></li>
-<li><strong>Windows</strong></li>
-</ul>
-</li>
-<li><strong>Имя пользователя</strong> — укажите в случае выбора <strong>типа аутентификации</strong> «<strong>Обычная</strong>» или «<strong>Windows</strong>».</li>
-<li><strong>Пароль</strong> — укажите в случае выбора <strong>типа аутентификации</strong> «<strong>Обычная</strong>» или «<strong>Windows</strong>».</li>
-<li><strong>Тайм-аут запроса</strong> — время ожидания выполнения запроса, по истечении которого запрос отменяется.</li>
-<li><strong>Версия OData</strong><ul>
-<li><strong>V2</strong></li>
-<li><strong>V3</strong></li>
-<li><strong>V4</strong></li>
-</ul>
-</li>
-<li><strong>Заголовки</strong> — при необходимости укажите особые заголовки запроса:<ul>
-<li><strong>Заголовок</strong> — имя заголовка;</li>
-<li><strong>Значение заголовка</strong> — содержимое заголовка.</li>
-</ul>
-</li>
-<li><strong>Отключить</strong> — установите этот флажок, если требуется деактивировать данное подключение.
-<strong>4.</strong> Сохраните подключение.</li>
-</ul>
-<p><strong>5.</strong> Нажмите кнопку «<strong>Проверить соединение</strong>». В области «<strong>Результаты</strong>» отобразятся полученные с сервера сущности.</p>
+<p>1. Откройте раздел «<strong>Администрирование</strong>» — «<strong>Подключения</strong>».
+2. Создайте подключение типа «<strong>Синхронизация с веб-сервисом</strong>».</p>
+<div class="highlight"><code><pre><span></span><code>&lt;figure markdown&gt;![Создание подключения для синхронизации с веб-сервисом](../img/odata_integration_connection_create.png)&lt;figcaption&gt;Создание подключения для синхронизации с веб-сервисом&lt;/figcaption&gt;&lt;/figure&gt;</code> <br/></pre></code></div>
+<p>3. Настройте свойства подключения.</p>
+<div class="highlight"><code><pre><span></span><code>- **Название** — наглядное название подключения к OData-сервису.</code> <br/><code>- **Адрес веб-сервиса** — URL для подключения к серверу OData.</code> <br/><code></code> <br/><code>    !!! tip "Совет"</code> <br/><code></code> <br/><code>        Для экспериментов с синхронизацией по OData можно использовать общедоступные серверы, предоставляемые OData.org.</code> <br/><code></code> <br/><code>        Например, для тестирования импорта данных в качестве **адреса веб-сервиса** можно указать:</code> <br/><code></code> <br/><code>        [https://services.odata.org/V3/OData/OData.svc/](https://services.odata.org/V3/OData/OData.svc/)</code> <br/><code></code> <br/><code>        Адреса остальных тестовых серверов OData.org представлены на следующих сайтах:</code> <br/><code></code> <br/><code>        [https://services.odata.org/](https://services.odata.org/)</code> <br/><code></code> <br/><code>        [https://www.odata.org/odata-services/](https://www.odata.org/odata-services/)</code> <br/><code></code> <br/><code>    &lt;!-- BEGIN INCLUDE .snippets/pdfPageBreakHard.md --&gt;</code> <br/><code></code> <br/><code>    &lt;!-- END INCLUDE --&gt;</code> <br/><code></code> <br/><code>- **Тип аутентификации**:</code> <br/><code>{: .pageBreakBefore }</code> <br/><code>    - **Без аутентификации**</code> <br/><code>    - **Обычная**</code> <br/><code>    - **Windows**</code> <br/><code>- **Имя пользователя** — укажите в случае выбора **типа аутентификации** «**Обычная**» или «**Windows**».</code> <br/><code>- **Пароль** — укажите в случае выбора **типа аутентификации** «**Обычная**» или «**Windows**».</code> <br/><code>- **Тайм-аут запроса** — время ожидания выполнения запроса, по истечении которого запрос отменяется.</code> <br/><code>- **Версия OData**</code> <br/><code>    - **V2**</code> <br/><code>    - **V3**</code> <br/><code>    - **V4**</code> <br/><code>- **Заголовки** — при необходимости укажите особые заголовки запроса:</code> <br/><code>    - **Заголовок** — имя заголовка;</code> <br/><code>    - **Значение заголовка** — содержимое заголовка.</code> <br/><code>- **Отключить** — установите этот флажок, если требуется деактивировать данное подключение.</code> <br/></pre></code></div>
+<p>4. Сохраните подключение.
+5. Нажмите кнопку «<strong>Проверить соединение</strong>». В области «<strong>Результаты</strong>» отобразятся полученные с сервера сущности.</p>
 <figure class="screenshot_with_caption">
 <p><img alt="Настройка свойств подключения для синхронизации с веб-сервисом" src="/platform/v5.0/administration/connections_communication_routes/rest_odata_connections/../img/odata_integration_connection_properties.png"/><figcaption class="caption">Настройка свойств подключения для синхронизации с веб-сервисом</figcaption></p>
 </figure>

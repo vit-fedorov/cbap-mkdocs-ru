@@ -1,4 +1,5 @@
 ---
+kbId: 5034
 tags:
   - выражения
   - формулы
@@ -19,7 +20,7 @@ hide:
 
 # Ввод системного имени атрибута связанного шаблона
 
-1. Введите символ `$` и системное имя [**атрибута типа «Запись»**](attribute_record.md) текущего шаблона.
+1. Введите символ `$` и системное имя [**атрибута типа «Запись»**][attribute_record] текущего шаблона.
 2. Введите оператор `->`.
 3. Отобразится список атрибутов шаблона, связанного с указанным на шаге 1 атрибутом. Этот список также можно вызвать, нажав клавиши ++ctrl+space++ в позиции после оператора `->`.
     *![Список атрибутов связанного шаблона](formula_editor_linked_record_attributes_autocomplete.png)*
@@ -29,8 +30,13 @@ hide:
 ADD($Zatraty->Summa, $Nalog)
 ```
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Редактор выражений][expression_editor]**
+- _[Редактор выражений][expression_editor]_
+- _[Примеры использования формул. База знаний Comindware][formula_use_examples]_
 
-**[Примеры использования формул. База знаний Comindware]({{ kbCategoryURLPrefix }}409){:target="_blank"}**
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

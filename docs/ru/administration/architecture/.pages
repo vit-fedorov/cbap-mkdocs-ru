@@ -3,7 +3,9 @@ title: Архитектура
 collapse_single_pages: false
 
 nav:
+    - Приложения: business_apps
     - Шаблоны: business_apps/templates
     - Диаграммы: business_apps/diagrams
+    - Разделы навигации: navigation_sections
     - functions.md
     - ...

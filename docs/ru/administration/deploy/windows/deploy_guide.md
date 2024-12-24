@@ -9,11 +9,22 @@ kbId: 5063
 
 Для работы **{{ productName }}** требуются операционная система, сервер базы данных, веб-сервер, обратный прокси-сервер и сервер журналирования.
 
-{% include-markdown ".snippets/elasticsearch_opensearch_configure.md" %}
+{%
+include-markdown ".snippets/elasticsearch_opensearch_configure.md"
+rewrite-relative-urls=false
+%}
 
 Для быстрого развёртывания **{{ productName }}** в Windows компания **{{ companyName }}** предоставляет дистрибутив с установщиком, настраивающим необходимое программное обеспечение.
 
 Здесь представлены инструкции по развёртыванию и инициализации **{{ productName }}** из дистрибутива в ОС Windows.
+
+## Порядок установки ПО
+
+1. Установите и настройте необходимое вспомогательное ПО.
+2. Установите ПО **{{ productName }}**.
+3. Создайте экземпляр ПО.
+4. Запустите экземпляр ПО.
+5. Инициализируйте экземпляр ПО.
 
 ## Установка {{ productName }} {: #deploy_guide_windows_install_sw}
 
@@ -154,7 +165,7 @@ kbId: 5063
 
     Здесь: `-name <instanceName>` — **обязательный** ключ с именем экземпляра ПО.
 
-## Инициализация {{ productName }}
+## Инициализация {{ productName }} {: #initialize_instance}
 
 {%
 include-markdown "../linux/deploy_guide.md"

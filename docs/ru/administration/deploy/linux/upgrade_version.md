@@ -35,7 +35,41 @@ kbId: 4624
 
     --8<-- "linux_sudo.md"
 
-3. Сохраните резервную копию конфигурационных файлов, например в директорию `/var/backups/config_tmp`:
+3. Удостоверьтесь, что конфигурационные файлы соответствуют приведённым ниже образцам, и при необходимости создайте и отредактируйте их.
+
+    - Отредактируйте файл `/usr/share/comindware/configs/instance/<instanceName>.yml` по следующему образцу:
+
+    {%
+    include-markdown "./configuration_files.md"
+    start="<!--instanceYML-start-->"
+    end="<!--instanceYML-end-->"
+    %}
+
+    !!! warning "Внимание"
+
+        Директивы `isFederationAuthEnabled` и `manageAdapterHost` требуется обязательно удалить.
+
+    - Отредактируйте файл `/var/www/<instanceName>/adapterhost.yml` по следующему образцу:
+
+    {%
+    include-markdown "./configuration_files.md"
+    start="<!--adapterhostYML-start-->"
+    end="<!--adapterhostYML-end-->"
+    %}
+
+    !!! warning "Внимание"
+
+        Файл `adapterhost.yml` не должен содержать пустых строчек.
+
+    - Отредактируйте файл `/var/www/<instanceName>/apigateway.yml` по следующему образцу:
+
+    {%
+    include-markdown "./configuration_files.md"
+    start="<!--apigatewayYML-start-->"
+    end="<!--apigatewayYML-end-->"
+    %}
+
+4. Сохраните резервную копию конфигурационных файлов, например в директорию `/var/backups/config_tmp`:
 {: #NginxBackup}
 
     - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
@@ -67,14 +101,14 @@ kbId: 4624
 
     Здесь `<instanceName>` — имя экземпляра ПО.
 
-4. Остановите экземпляр ПО и его вспомогательные службы и удостоверьтесь, что они остановлены:
+1. Остановите экземпляр ПО и его вспомогательные службы и удостоверьтесь, что они остановлены:
 
     ``` sh
     systemctl stop apigateway<instanceName> comindware<instanceName>
     systemctl status apigateway<instanceName> comindware<instanceName>
     ```
 
-5. Проверьте, выполняется ли сервис `Comindware.Adapter.Agent.exe`:
+2. Проверьте, выполняется ли сервис `Comindware.Adapter.Agent.exe`:
 
     ``` sh
     ps fax | grep Agent
@@ -86,13 +120,13 @@ kbId: 4624
         kill -9 <PID>
         ```
 
-6. Проверьте имя и статус экземпляра:
+3. Проверьте имя и статус экземпляра:
 
     ``` sh
     systemctl status comindware*
     ```
 
-7. Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО (`<distPath>` — путь к директории с дистрибутивом, `<osname>` — название операционной системы):
+4. Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО (`<distPath>` — путь к директории с дистрибутивом, `<osname>` — название операционной системы):
 
     ``` sh
     rm -rf <distPath>/CMW_<osname>
@@ -171,7 +205,11 @@ kbId: 4624
     Если какая-либо из служб имеет статус `FAILED`, перезапустите её (`<serviceName>` — имя службы):
 
     ``` sh
-    systemctl restart <serviceName>.service
+    systemctl restart comindware<instanceName>.service
+    systemctl restart apigateway<instanceName>.service
+    systemctl restart adaperhost<instanceName>.service
+    systemctl restart kafka.service
+    systemctl restart elasticsearch.service 
     ```
 
 8. Проверьте корректность конфигурации NGINX для экземпляра ПО:

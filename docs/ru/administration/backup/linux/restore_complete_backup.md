@@ -80,7 +80,7 @@ kbId: 4648
         - `Scripts` — скомпилированные библиотеки для скриптов на языке C#.
         - `snapshots` — снимок данных Apache Ignite Ignite.
         - `wal` — журнал предварительной записи.
-        - `elastic` — копия репозитория Elasticsearch.
+        - `elastic` — копия репозитория Elasticsearch (OpenSearch).
         - `Streams` — загруженные пользователями и сформированные системой файлы, которые прикреплены к соответствующим атрибутам.
 
     _![Структура резервной копии](https://kb.comindware.ru/assets/Pasted image 20230125134843.png)_

@@ -158,7 +158,7 @@
 <p><figure class="screenshot_with_caption" markdown=""><img alt="Настройка страницы согласия OAuth — название приложения и адрес службы поддержки" src="/platform/v5.0/administration/connections_communication_routes/authentication/img/openid_connection_oath_new_app.png"/><figcaption class="caption">Настройка страницы согласия OAuth — название приложения и адрес службы поддержки</figcaption></figure></p>
 </li>
 <li>
-<p>В разделе «<strong>App domain</strong>» в поле «<strong>Application home page</strong>» введите <a class="mkdocs_imported_link" href="#проверка-адреса-сервера-comindware-business-application-platform">адрес сервера</a>, указанный в глобальной конфигурации Comindware Platform, например <a class="mkdocs_imported_link" href="https://mycompany.ru/">https://mycompany.ru</a></p>
+<p>В разделе «<strong>App domain</strong>» в поле «<strong>Application home page</strong>» введите <a class="mkdocs_imported_link" href="#проверка-адреса-сервера-comindware-platform">адрес сервера</a>, указанный в глобальной конфигурации Comindware Platform, например <a class="mkdocs_imported_link" href="https://mycompany.ru/">https://mycompany.ru</a></p>
 </li>
 <li>В разделе «<strong>Authorized domains</strong>» нажмите кнопку «<strong>Add domain</strong>» и введите в поле «<strong>Authorized domain 1</strong>» доменное имя сервера без префикса <code>https://</code>, например <em>mycompany.ru</em></li>
 <li class="pageBreakAfter">В разделе «<strong>Developer contact information</strong>» в поле «<strong>Email addresses</strong>» введите, например, свой адрес эл. почты.</li>
@@ -211,7 +211,7 @@
 </li>
 <li>В поле «Name» введите имя клиента, например «<em>OAuth client 1</em>».</li>
 <li>В разделе «<strong>Authorized JavaScript origins</strong>» нажмите кнопку «<strong>Add URI</strong>».</li>
-<li>Введите <a class="mkdocs_imported_link" href="#проверка-адреса-сервера-comindware-business-application-platform">адрес сервера</a>, указанный в глобальной конфигурации Comindware Platform, например <a class="mkdocs_imported_link" href="https://mycompany.ru/">https://mycompany.ru</a></li>
+<li>Введите <a class="mkdocs_imported_link" href="#проверка-адреса-сервера-comindware-platform">адрес сервера</a>, указанный в глобальной конфигурации Comindware Platform, например <a class="mkdocs_imported_link" href="https://mycompany.ru/">https://mycompany.ru</a></li>
 <li>
 <p>Нажмите кнопку «<strong>Create</strong>».</p>
 <p><figure class="screenshot_with_caption" markdown=""><img alt="Настройка и сохранение учётных данных клиента OAuth" src="/platform/v5.0/administration/connections_communication_routes/authentication/img/openid_connection_oath_client_settings.png"/><figcaption class="caption">Настройка и сохранение учётных данных клиента OAuth</figcaption></figure></p>
@@ -310,7 +310,7 @@
 <li>
 <p>Добавьте в файл <code>/etc/hosts</code> строку:</p>
 <div class="highlight"><code><pre><span></span><code>"xxx.xxx.xxx.xxx" "mycompany.ru"</code> <br/></pre></code></div>
-<p>Здесь <code>xxx.xxx.xxx.xxx</code> — IP-адрес, <code>mycompany.ru</code> адрес сервера <strong>Comindware Platform</strong>, указанный в <a class="mkdocs_imported_link" href="#проверка-адреса-сервера-comindware-business-application-platform"><em>глобальной конфигурации Comindware Platform</em></a> (без указания протокола <code>HTTP</code> или <code>HTTPS</code>).</p>
+<p>Здесь <code>xxx.xxx.xxx.xxx</code> — IP-адрес, <code>mycompany.ru</code> адрес сервера <strong>Comindware Platform</strong>, указанный в <a class="mkdocs_imported_link" href="#проверка-адреса-сервера-comindware-platform"><em>глобальной конфигурации Comindware Platform</em></a> (без указания протокола <code>HTTP</code> или <code>HTTPS</code>).</p>
 </li>
 <li>
 <p>В файле <code>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code> для параметра <code>isFederationAuthEnabled</code> установите значение <code>1</code>:</p>

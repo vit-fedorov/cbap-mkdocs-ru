@@ -9,9 +9,22 @@ kbId: 5063
 
 Для работы **{{ productName }}** требуются операционная система, сервер базы данных, веб-сервер, обратный прокси-сервер и сервер журналирования.
 
+{%
+include-markdown ".snippets/elasticsearch_opensearch_configure.md"
+rewrite-relative-urls=false
+%}
+
 Для быстрого развёртывания **{{ productName }}** в Windows компания **{{ companyName }}** предоставляет дистрибутив с установщиком, настраивающим необходимое программное обеспечение.
 
 Здесь представлены инструкции по развёртыванию и инициализации **{{ productName }}** из дистрибутива в ОС Windows.
+
+## Порядок установки ПО
+
+1. Установите и настройте необходимое вспомогательное ПО.
+2. Установите ПО **{{ productName }}**.
+3. Создайте экземпляр ПО.
+4. Запустите экземпляр ПО.
+5. Инициализируйте экземпляр ПО.
 
 ## Установка {{ productName }} {: #deploy_guide_windows_install_sw}
 
@@ -27,10 +40,10 @@ kbId: 5063
 5. Перейдите в папку со скриптами для развёртывания ПО:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\platform"
     ```
 
-    Здесь: `X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows` — путь к распакованному дистрибутиву продукта, а `X.X.XXXX.X` — номер версии ПО.
+    Здесь: `X:\<distPath>\X.X-release-ru-<versionNumber>.windows` — путь к распакованному дистрибутиву продукта, а `<versionNumber>` — номер версии ПО.
 
 6. Разблокируйте доступ к скачанным из Интернета установочным файлам:
 
@@ -49,7 +62,7 @@ kbId: 5063
 7. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\prerequisites"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\prerequisites"
     ```
 
 8. Установите необходимое вспомогательное ПО:
@@ -63,7 +76,7 @@ kbId: 5063
 11. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\prerequisites"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\prerequisites"
     ```
 
 12. Проверьте, что дополнительные компоненты установлены:
@@ -77,7 +90,7 @@ kbId: 5063
 13. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\platform"
     ```
 
 14. Установите ПО:
@@ -97,7 +110,7 @@ kbId: 5063
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\platform"
     ```
 
 2. Разверните экземпляр ПО:
@@ -125,7 +138,7 @@ kbId: 5063
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\platform"
     ```
 
 2. Запустите экземпляр ПО:
@@ -141,7 +154,7 @@ kbId: 5063
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\platform"
     ```
 
 2. Остановите экземпляр ПО:
@@ -152,7 +165,7 @@ kbId: 5063
 
     Здесь: `-name <instanceName>` — **обязательный** ключ с именем экземпляра ПО.
 
-## Инициализация {{ productName }}
+## Инициализация {{ productName }} {: #initialize_instance}
 
 {%
 include-markdown "../linux/deploy_guide.md"
@@ -166,7 +179,7 @@ end="<!--initialize-end-->"
 2. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\platform"
     ```
 
 3. Запустите обновление экземпляра ПО:
@@ -195,7 +208,7 @@ end="<!--initialize-end-->"
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\platform"
     ```
 
 2. Удалите экземпляр ПО:
@@ -215,7 +228,7 @@ end="<!--initialize-end-->"
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\platform"
     ```
 
 2. Просмотрите список установленных экземпляров ПО:

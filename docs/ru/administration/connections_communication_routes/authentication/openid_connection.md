@@ -124,7 +124,7 @@ kbId: 4685
 
     _![Таблица учётных данных клиентов OAuth](openid_connection_oath_client_table.png)_
 
-## Настройка подключения в **{{ productName }}** {: .pageBreakBefore }
+## Настройка подключения в {{ productName }} {: .pageBreakBefore }
 
 1. Перейдите в раздел «**Администрирование**» — «**Подключения**».
 2. Нажмите кнопку «**Cоздать**».
@@ -203,18 +203,8 @@ kbId: 4685
 
     Здесь `xxx.xxx.xxx.xxx` — IP-адрес, `mycompany.ru` адрес сервера **{{ productName }}**, указанный в [_глобальной конфигурации {{ productName }}_](#проверка-адреса-сервера-comindware-platform) (без указания протокола `HTTP` или `HTTPS`).
 
-3. В файле `/usr/share/comindware/configs/instance/<instanceName>.yml` для параметра `isFederationAuthEnabled` установите значение `1`:
-
-    ```
-    isFederationAuthEnabled: 1
-    ```
-
-    !!! note "Примечание"
-
-        Здесь и далее `<instanceName>` — имя экземпляра ПО.
-
-4. Сформируйте SSL-сертификат на сервере NGINX. Например, согласно инструкциям в статье «[_Генерация SSL сертификата для NGINX (openssl)_](https://webguard.pro/web-services/nginx/generacziya-ssl-sertifikata-dlya-nginx-openssl.html)».
-5. Откройте для редактирования файл конфигурации NGINX:
+3. Сформируйте SSL-сертификат на сервере NGINX. Например, согласно инструкциям в статье «[_Генерация SSL сертификата для NGINX (openssl)_](https://webguard.pro/web-services/nginx/generacziya-ssl-sertifikata-dlya-nginx-openssl.html)».
+4. Откройте для редактирования файл конфигурации NGINX:
 
     ```
     vim /etc/nginx/sites-available/comindware<instanceName>
@@ -222,7 +212,7 @@ kbId: 4685
 
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-6. Настройте конфигурацию SSL-сертификата аналогично следующему примеру:
+5. Настройте конфигурацию SSL-сертификата аналогично следующему примеру:
 
     ``` cs
     server {

@@ -228,7 +228,7 @@
 <p><figure class="screenshot_with_caption" markdown=""><img alt="Таблица учётных данных клиентов OAuth" src="/platform/v5.0/administration/connections_communication_routes/authentication/img/openid_connection_oath_client_table.png"/><figcaption class="caption">Таблица учётных данных клиентов OAuth</figcaption></figure></p>
 </li>
 </ol>
-<h2 class="pageBreakBefore" id="настройка-подключения-в-comindware-platform">Настройка подключения в <strong>Comindware Platform</strong></h2>
+<h2 class="pageBreakBefore" id="настройка-подключения-в-comindware-platform">Настройка подключения в Comindware Platform</h2>
 <ol class="colored_numbers_list">
 <li>Перейдите в раздел «<strong>Администрирование</strong>» — «<strong>Подключения</strong>».</li>
 <li>Нажмите кнопку «<strong>Cоздать</strong>».</li>
@@ -311,14 +311,6 @@
 <p>Добавьте в файл <code>/etc/hosts</code> строку:</p>
 <div class="highlight"><code><pre><span></span><code>"xxx.xxx.xxx.xxx" "mycompany.ru"</code> <br/></pre></code></div>
 <p>Здесь <code>xxx.xxx.xxx.xxx</code> — IP-адрес, <code>mycompany.ru</code> адрес сервера <strong>Comindware Platform</strong>, указанный в <a class="mkdocs_imported_link" href="#проверка-адреса-сервера-comindware-platform"><em>глобальной конфигурации Comindware Platform</em></a> (без указания протокола <code>HTTP</code> или <code>HTTPS</code>).</p>
-</li>
-<li>
-<p>В файле <code>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code> для параметра <code>isFederationAuthEnabled</code> установите значение <code>1</code>:</p>
-<div class="highlight"><code><pre><span></span><code>isFederationAuthEnabled: 1</code> <br/></pre></code></div>
-<div class="notice notice-info">
-<p class="admonition-title">Примечание</p>
-<p>Здесь и далее <code>&lt;instanceName&gt;</code> — имя экземпляра ПО.</p>
-</div>
 </li>
 <li>
 <p>Сформируйте SSL-сертификат на сервере NGINX. Например, согласно инструкциям в статье «<a class="mkdocs_imported_link" href="https://webguard.pro/web-services/nginx/generacziya-ssl-sertifikata-dlya-nginx-openssl.html"><em>Генерация SSL сертификата для NGINX (openssl)</em></a>».</p>

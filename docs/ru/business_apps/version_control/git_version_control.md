@@ -182,6 +182,7 @@ end="<!--version-control-warning-end-->"
 
 - _[Управление версиями приложения][version_control]_
 - _[Ручное управление версиями][version_control_manual]_
+- _[Экспорт и импорт версий приложения с помощью Excel][version_control_excel]_
 
 </div>
 

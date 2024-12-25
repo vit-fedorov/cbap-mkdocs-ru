@@ -10,7 +10,7 @@ tags:
 hide: tags
 ---
 
-# Экспорт и импорт версий приложения с помощью Excel {: #excel_version_control}
+# Экспорт и импорт версий приложения с помощью Excel {: #version_control_excel }
 
 --8<-- "experimental_feature.md"
 

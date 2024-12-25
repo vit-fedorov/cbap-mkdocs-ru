@@ -748,10 +748,6 @@
 
 [admin_utility_instance_configure]: {{ kbArticleURLPrefix }}4634
 
-[deploy_guide_linux]: {{ kbArticleURLPrefix }}4622
-
-[deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_initialize
-
 [logging_engine]: {{ kbArticleURLPrefix }}4623
 
 [logging_engine_audit_log]: {{ kbArticleURLPrefix }}4623#logging_engine_audit_log

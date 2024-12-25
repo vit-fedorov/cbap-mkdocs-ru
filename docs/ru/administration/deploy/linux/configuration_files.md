@@ -28,6 +28,18 @@ kbId: 5067
     - `backup.defaultFolder` — директория для хранения резервных копий экземпляра ПО.
     - `backup.defaultFileName` — имя файла резервной копии экземпляра ПО.
 
+    <!--config-warning-start-->
+    !!! warning "Внимание!"
+
+        Директивы `isFederationAuthEnabled` и `manageAdapterHost` требуется удалить, если они присутствуют.
+
+        Директивы `mq.server` (адрес и порт сервера очереди сообщений), `mq.group` (идентификатор группы очереди сообщений), `mq.node` (идентификатор узла очереди сообщений) и `cluster.name` / `clusterName` (имя экземпляра ПО) должны совпадать в трёх файлах конфигурации:
+
+        - `/usr/share/comindware/configs/instance/<instanceName>.yml`
+        - `/var/www/<instanceName>/adapterhost.yml`
+        - `/var/www/<instanceName>/apigateway.yml`
+    <!--config-warning-end-->
+
 3. Сохраните файл конфигурации.
 4. Убедитесь, что директории, указанные в файле конфигурации, существуют. При необходимости создайте их и задайте права доступа:
 
@@ -51,24 +63,24 @@ kbId: 5067
 
 <!--instanceYML-start-->
 ``` yml
-#################### Базовая настройка платформы ####################
-# Имя экземпляра платформы
+#################### Настройка базовых параметров ПО ####################
+# Имя экземпляра ПО
 # Устаревшая директива: instanceName
 clusterName: <instanceName>
-# Название узла экземпляра
+# Имя узла экземпляра ПО
 #nodeName: <instanceName>
 # Путь к экземпляру, по которому ПО находит свою конфигурацию
 configPath: <configPath>
-# Адрес службы журналирования Elasticsearch (OpenSearch)
+# Адрес службы журналирования (Elasticsearch, OpenSearch)
 # Устаревшая директива: elasticsearchUri
 journal.server: http://<searchHostIP>:<searchHostPort>
-# Индекс службы журналирования Elasticsearch (OpenSearch)
-#journal.name: <instanceName>
-# URI-адрес платформы
+# Индекс службы журналирования (Elasticsearch, OpenSearch)
+# journal.name: <instanceName>
+# URI-адрес экземпляра ПО
 fqdn: <hostName>
-# Порт платформы
+# Порт экземпляра ПО
 port: <portNumber>
-# Версия платформы
+# Версия экземпляра ПО
 version: <versionNumber>
 #################### Настройка базы данных ####################
 # Путь к базе данных
@@ -78,19 +90,19 @@ db.workDir: /var/lib/comindware/<instanceName>/Database
 # Устаревшая директива: databaseName
 db.name: <instanceName>
 #################### Настройка хранения пользовательских файлов ####################
-# Тип хранилища: LocalDisk или S3
+# Тип хранилища (LocalDisk | S3)
 userStorage.type: LocalDisk
 # Путь к пользовательским файлам экземпляра
 userStorage.localDisk.path: /var/lib/comindware/<instanceName>/Streams
 #################### Настройка хранения временных файлов ####################
-# Тип хранилища: LocalDisk или S3
+# Тип хранилища (LocalDisk | S3)
 tempStorage.type: LocalDisk
 # Путь к временным файлам экземпляра
 tempStorage.localDisk.path: /var/lib/comindware/<instanceName>/Temp
 # Временная папка
 tempWorkingDir: /var/lib/comindware/fooo/LocalTemp
 #################### Настройки очереди сообщений ####################
-# Адрес сервера очереди сообщений (Kafka) с портом.
+# Адрес и порт сервера очереди сообщений (Kafka)
 mq.server: <kafkaBrokerIP>:<kafkaBrokerPort>
 # Идентификатор группы очереди сообщений
 mq.group: <instanceName>
@@ -114,7 +126,7 @@ backup.defaultFileName: Backup
 2. Измените необходимые параметры.
 3. Удостоверьтесь, что значение параметра `cluster.name` (имя экземпляра ПО) совпадает с `clusterName` и значение параметров `mq.server` (адрес и порт сервера очереди сообщений), `mq.group` (идентификатор группы очереди сообщений), `mq.node` (идентификатор узла очереди сообщений) — с аналогичными параметрами в [файле конфигурации экземпляра](#конфигурация-экземпляра-по).
 4. Сохраните файл конфигурации.
-5. Перезапустите службу apigateway:
+5. Перезапустите службу `apigateway`:
 
     ``` sh
     systemctl restart apigateway<instanceName>
@@ -126,9 +138,9 @@ backup.defaultFileName: Backup
 ``` yml
 # Имя экземпляра ПО
 cluster.name: <instanceName>
-# Название узла экземпляра
-#nodeName:
-# Выключение конфигурации журналирования экземпляра
+# Имя узла экземпляра
+# nodeName:
+# Включение/выключение конфигурации журналирования экземпляра (true | false)
 log.enabled: true
 # Путь к файлу конфигурации журналирования экземпляра
 log.configurationFile: /var/www/<instanceName>/logs.config
@@ -145,20 +157,19 @@ mq.sasl.mechanism: None
 mq.securityProtocol: Plaintext
 # Путь к сокету apigateway
 listen.socketPath: /var/www/<instanceName>/App_Data/apigateway.socket
-# Выключение файлового хранилища
+# Включение/выключение файлового хранилища  (true | false)
 fileStorage.enabled: true
-# Тип файлового хранилища
+# Тип файлового хранилища (Platform — встроенное | Custom — особая DLL-библиотека )
 fileStorage.type: Platform
-# Адрес сервера для загрузки файлов
-# Требуется заменить на IP-адрес
-fileStorage.attachmentServerUri: http://localhost/
+# IP-адрес сервера для загрузки файлов
+fileStorage.attachmentServerUri: http://local.host.ip.address/
 # Путь к загружаемым файлам
 fileStorage.uploadAttachment.path: /api/Attachment/Upload
-# Путь к скачиванию файла
+# Путь к скачанным файлам
 fileStorage.downloadAttachment.path: /api/Attachment/GetReferenceContent/{0}
-# Путь к удаляемому файлу
+# Путь к удалённым файлам
 fileStorage.removeAttachment.path: /api/Attachment/Remove/{0}
-# Префикс служб API
+# Префиксы служб API
 services:
 - apiPrefix: conversation
 - apiPrefix: useractivity
@@ -175,10 +186,10 @@ services:
     nano /var/www/<instanceName>/adapterhost.yml
     ```
 
-2. Отредактируйте необходимые параметры.
-3. Удостоверьтесь, что значения параметров `mq.server` (адрес и порт сервера очереди сообщений), `mq.group` (идентификатор группы очереди сообщений), `mq.node` (идентификатор узла очереди сообщений) и `clusterName` (имя экземпляра ПО) совпадают с аналогичными параметрами в [файле конфигурации экземпляра ПО](#пример-yml-файла-конфигурации-экземпляра-по)..
+2. Измените необходимые параметры.
+3. Удостоверьтесь, что значения параметров `mq.server` (адрес и порт сервера очереди сообщений), `mq.group` (идентификатор группы очереди сообщений), `mq.node` (идентификатор узла очереди сообщений) и `clusterName` (имя экземпляра ПО) совпадают с аналогичными параметрами в [файле конфигурации экземпляра ПО](#пример-yml-файла-конфигурации-экземпляра-по).
 4. Сохраните файл конфигурации.
-5. После внесения изменений перезапустите службу adapterhost:
+5. После внесения изменений перезапустите службу `adapterhost`:
 
     ``` sh
     kill -9 $(ps -eo pid,args | grep $<instanceName> | grep Agent | awk {'print $1'}) && systemctl restart comindware<instanceName>
@@ -190,23 +201,23 @@ services:
 ``` yml
 # Имя экземпляра ПО
 clusterName: <instanceName>
-# Имя папки загрузки
+# Имя папки загрузчика экземпляра ПО
 loaderFolder: <instanceName>
-# Язык сервера
+# Язык сервера (en-US | ru-RU )
 serverLanguage: ru-RU
-# Адрес сервера очереди сообщений (Kafka) с портом.
+# Адрес и порт сервера очереди сообщений (Kafka)
 mq.server: <kafkaBrokerIp>:<kafkaBrokerPort>
 # Протокол безопасности очереди сообщений. (Plaintext | Ssl | SaslPlaintext | SaslSsl)
 mq.securityProtocol: Plaintext
-# Тип механизма SASL. (None | Plain | ScramSha256 | ScramSha512)
+# Тип механизма SASL (None | Plain | ScramSha256 | ScramSha512)
 mq.sasl.mechanism: None
-# Путь к файлам журналирования экземпляра
+# Путь к файлам журналирования экземпляра ПО
 log.folder: /var/log/comindware/<instanceName>/Logs/
-# Максимальное число файлов
+# Максимальное кол-во файлов журналов
 log.maxArchiveFiles: 100
-# Максимальный размер файлов
+# Максимальный размер файлов журналов (байты)
 log.archiveAboveSize: 1048576000
-# Путь к архивам журналирования
+# Путь к архивам журналов
 log.archiveFolder: /var/log/comindware/<instanceName>/Logs/Archive/
 ```
 <!--adapterhostYML-end-->
@@ -233,11 +244,13 @@ log.archiveFolder: /var/log/comindware/<instanceName>/Logs/Archive/
         <property name="maxSize" value="#{8L * 1024 * 1024 * 1024}" />
         ```
 
-3. В случае изменения максимального объёма выделяемой памяти отредактируйте параметр `checkpointPageBufferSize`. Чтобы рассчитать размер значения, разделите размер `maxSize` на четыре, при этом значение должно быть в диапазоне 256 МБ — 2 ГБ. Для максимального объёма выделяемой памяти в 8 Гб, значение будет следующим:
+3. В случае изменения максимального объёма выделяемой памяти отредактируйте параметр `checkpointPageBufferSize`. Чтобы рассчитать размер значения, разделите размер `maxSize` на четыре, при этом значение должно быть в диапазоне 256 МБ — 2 ГБ.
 
-    ``` xml
-    <property name="checkpointPageBufferSize" value="#{2L * 1024 * 1024 * 1024}" />
-    ```
+    - 8 ГБ:
+
+        ``` xml
+        <property name="checkpointPageBufferSize" value="#{2L * 1024 * 1024 * 1024}" />
+        ```
 
 4. Перезапустите службу экземпляра ПО:
 
@@ -300,9 +313,9 @@ log.archiveFolder: /var/log/comindware/<instanceName>/Logs/Archive/
 
     ``` sh
     server {
-        # Укажите адрес сервера для доступа к экземпляра ПО.
+        # Адрес сервера для доступа к экземпляру ПО.
         server_name <hostName>
-        # Укажите номер порта для доступа к экземпляра ПО.
+        # Номер порта для доступа к экземпляру ПО.
         listen <portNumber>
     }
     ```

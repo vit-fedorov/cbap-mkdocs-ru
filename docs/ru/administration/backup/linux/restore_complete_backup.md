@@ -28,14 +28,6 @@ kbId: 4648
 
 Здесь предполагается, что архив резервной копии находится папке `/tmp/`.
 
-Прежде чем приступать к восстановлению экземпляра ПО **{{ productName }}** из резервной копии, ознакомьтесь с видеороликом и инструкциями, представленными ниже.
-
-### Видеоинструкция
-
-<video controls="controls" width="100%" height="100%">
-<source src="https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/restore_complete_backup_linux.mp4" type="video/mp4" />
-</video>
-
 ## Подготовка к восстановлению из резервной копии {: .pageBreakBefore }
 
 1. Для выполнения всех операций перейдите в режим суперпользователя `root`:

@@ -33,7 +33,7 @@ kbId: 5067
 
         Директивы `isFederationAuthEnabled` и `manageAdapterHost` требуется удалить, если они присутствуют.
 
-        Директивы `mq.server` (адрес и порт сервера очереди сообщений), `mq.group` (идентификатор группы очереди сообщений), `mq.node` (идентификатор узла очереди сообщений) и `cluster.name` / `clusterName` (имя экземпляра ПО) должны совпадать в трех файлах конфигурации:
+        Директивы `mq.server` (адрес и порт сервера очереди сообщений), `mq.group` (идентификатор группы очереди сообщений), `mq.node` (идентификатор узла очереди сообщений) и `cluster.name` / `clusterName` (имя экземпляра ПО) должны совпадать в трёх файлах конфигурации:
 
         - `/usr/share/comindware/configs/instance/<instanceName>.yml`
         - `/var/www/<instanceName>/adapterhost.yml`
@@ -126,7 +126,7 @@ backup.defaultFileName: Backup
 2. Измените необходимые параметры.
 3. Удостоверьтесь, что значение параметра `cluster.name` (имя экземпляра ПО) совпадает с `clusterName` и значение параметров `mq.server` (адрес и порт сервера очереди сообщений), `mq.group` (идентификатор группы очереди сообщений), `mq.node` (идентификатор узла очереди сообщений) — с аналогичными параметрами в [файле конфигурации экземпляра](#конфигурация-экземпляра-по).
 4. Сохраните файл конфигурации.
-5. Перезапустите службу apigateway:
+5. Перезапустите службу `apigateway`:
 
     ``` sh
     systemctl restart apigateway<instanceName>
@@ -157,7 +157,7 @@ mq.sasl.mechanism: None
 mq.securityProtocol: Plaintext
 # Путь к сокету apigateway
 listen.socketPath: /var/www/<instanceName>/App_Data/apigateway.socket
-# Выключение/выключение файлового хранилища  (true | false)
+# Включение/выключение файлового хранилища  (true | false)
 fileStorage.enabled: true
 # Тип файлового хранилища (Platform — встроенное | Custom — особая DLL-библиотека )
 fileStorage.type: Platform
@@ -189,7 +189,7 @@ services:
 2. Измените необходимые параметры.
 3. Удостоверьтесь, что значения параметров `mq.server` (адрес и порт сервера очереди сообщений), `mq.group` (идентификатор группы очереди сообщений), `mq.node` (идентификатор узла очереди сообщений) и `clusterName` (имя экземпляра ПО) совпадают с аналогичными параметрами в [файле конфигурации экземпляра ПО](#пример-yml-файла-конфигурации-экземпляра-по).
 4. Сохраните файл конфигурации.
-5. После внесения изменений перезапустите службу adapterhost:
+5. После внесения изменений перезапустите службу `adapterhost`:
 
     ``` sh
     kill -9 $(ps -eo pid,args | grep $<instanceName> | grep Agent | awk {'print $1'}) && systemctl restart comindware<instanceName>

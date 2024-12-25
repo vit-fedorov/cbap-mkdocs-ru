@@ -162,7 +162,7 @@ kbId: 4622
     cd <distPath>/CMW_<osname>_<versionNumber>/scripts
     ```
 
-    Здесь:  `<distPath>/CMW_<osname>/` — путь к распакованному дистрибутиву со ПО **{{ productName }}**.
+    Здесь:  `<distPath>/CMW_<osname>_<versionNumber>/` — путь к распакованному дистрибутиву со ПО **{{ productName }}**.
 
 4. Установите ПО из дистрибутива:
 
@@ -533,11 +533,17 @@ kbId: 4622
     systemctl status elasticsearch
     ```
 
-## Удаление экземпляра ПО {: .pageBreakBefore }
+## Удаление версии и экземпляра ПО
 
-<!--<video controls="controls" width="100%" height="100%">
+Прежде чем приступать к удалению версии и экземпляра ПО **{{ productName }}**, ознакомьтесь с видеороликом и инструкциями, представленными ниже.
+
+### Видеоинструкция
+
+<video controls="controls" width="100%" height="100%">
 <source src="https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/deploy_guide_linux_delete_version_instance.mp4" type="video/mp4" />
-</video>-->
+</video>
+
+### Удаление экземпляра ПО {: .pageBreakBefore }
 
 1. Перейдите в режим суперпользователя:
 
@@ -568,7 +574,7 @@ kbId: 4622
     sh instance_list.sh
     ```
 
-## Удаление версии ПО {: #deploy_guide_linux_delete_version .pageBreakBefore }
+### Удаление версии ПО {: #deploy_guide_linux_delete_version .pageBreakBefore }
 
 1. Перейдите в режим суперпользователя:
 

@@ -226,6 +226,8 @@
 
 [release_notes_4.7.3084]: {{ kbArticleURLPrefix }}4587
 
+[release_notes_5.0]: {{ kbArticleURLPrefix }}5073
+
 [restore_complete_backup]: {{ kbArticleURLPrefix }}4648
 
 [restore_test_configure]: {{ kbArticleURLPrefix }}4651

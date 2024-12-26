@@ -152,11 +152,7 @@ nav:
       - business_apps/version_control/excel_version_control.md
   - Обзор версий:
     - general/changelog/changelog.md
-    - general/changelog/release_notes_4.7.3084.md
-    - general/changelog/release_notes_4.7.3023.md
-    - general/changelog/release_notes_4.7.2902.md
-    - general/changelog/release_notes_4.7.2721.md
-    - general/changelog/release_notes_4.7.2285.md
+    - general/changelog/release_notes_5.0.md
 
 
 exclude_docs: |

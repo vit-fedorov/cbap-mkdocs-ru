@@ -28,17 +28,7 @@ kbId: 5067
     - `backup.defaultFolder` — директория для хранения резервных копий экземпляра ПО.
     - `backup.defaultFileName` — имя файла резервной копии экземпляра ПО.
 
-    <!--config-warning-start-->
-    !!! warning "Внимание!"
-
-        Директивы `isFederationAuthEnabled` и `manageAdapterHost` требуется удалить, если они присутствуют.
-
-        Директивы `mq.server` (адрес и порт сервера очереди сообщений), `mq.group` (идентификатор группы очереди сообщений), `mq.node` (идентификатор узла очереди сообщений) и `cluster.name` / `clusterName` (имя экземпляра ПО) должны совпадать в трёх файлах конфигурации:
-
-        - `/usr/share/comindware/configs/instance/<instanceName>.yml`
-        - `/var/www/<instanceName>/adapterhost.yml`
-        - `/var/www/<instanceName>/apigateway.yml`
-    <!--config-warning-end-->
+    --8<-- "instance_config_warning.md"
 
 3. Сохраните файл конфигурации.
 4. Убедитесь, что директории, указанные в файле конфигурации, существуют. При необходимости создайте их и задайте права доступа:

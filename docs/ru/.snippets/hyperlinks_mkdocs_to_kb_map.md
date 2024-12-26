@@ -294,6 +294,8 @@
 
 [version_control]: {{ kbArticleURLPrefix }}4808
 
+[version_control_excel]: {{ kbArticleURLPrefix }}5071
+
 [version_control_git]: {{ kbArticleURLPrefix }}4806
 
 [version_control_manual]: {{ kbArticleURLPrefix }}4807

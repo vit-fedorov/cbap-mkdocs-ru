@@ -56,11 +56,7 @@ kbId: 4624
     end="<!--instanceYML-end-->"
     %}
 
-    {%
-    include-markdown "./configuration_files.md"
-    start=" <!--config-warning-start-->"
-    end=" <!--config-warning-end-->"
-    %}
+    --8<-- "instance_config_warning.md"
 
     - Отредактируйте файл `/var/www/<instanceName>/adapterhost.yml` по следующему образцу:
 
@@ -82,7 +78,7 @@ kbId: 4624
     end="<!--apigatewayYML-end-->"
     %}
 
-4. Сохраните резервную копию конфигурационных файлов, например в директорию `/var/backups/config_tmp`:
+1. Сохраните резервную копию конфигурационных файлов, например в директорию `/var/backups/config_tmp`:
 {: #NginxBackup}
 
     - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
@@ -114,14 +110,14 @@ kbId: 4624
 
     Здесь `<instanceName>` — имя экземпляра ПО.
 
-5. Остановите экземпляр ПО и вспомогательные службы и удостоверьтесь, что они остановлены:
+1. Остановите экземпляр ПО и вспомогательные службы и удостоверьтесь, что они остановлены:
 
     ``` sh
     systemctl stop apigateway<instanceName> comindware<instanceName>
     systemctl status apigateway<instanceName> comindware<instanceName>
     ```
 
-6. Проверьте, выполняется ли сервис `Comindware.Adapter.Agent.exe`:
+2. Проверьте, выполняется ли сервис `Comindware.Adapter.Agent.exe`:
 
     ``` sh
     ps fax | grep Agent
@@ -133,13 +129,13 @@ kbId: 4624
         kill -9 <PID>
         ```
 
-7. Проверьте имя и статус экземпляра:
+3. Проверьте имя и статус экземпляра:
 
     ``` sh
     systemctl status comindware*
     ```
 
-8. Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО (`<distPath>` — путь к директории с дистрибутивом, `<osname>` — название операционной системы):
+4. Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО (`<distPath>` — путь к директории с дистрибутивом, `<osname>` — название операционной системы):
 
     ``` sh
     rm -rf <distPath>/CMW_<osname>

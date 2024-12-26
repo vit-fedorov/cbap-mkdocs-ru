@@ -82,6 +82,7 @@ hide:
 
 - _[Управление версиями через Git][version_control_git]_
 - _[Ручное управление версиями][version_control_manual]_
+- _[Экспорт и импорт версий приложения с помощью Excel][version_control_excel]_
 
 </div>
 

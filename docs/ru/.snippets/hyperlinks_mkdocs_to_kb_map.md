@@ -216,15 +216,17 @@
 
 [registration_and_login]: {{ kbArticleURLPrefix }}4663
 
-[release_notes_4.7.4822]: {{ kbArticleURLPrefix }}4590
+[release_notes_4.7.4822]: {{ kbArticleURLPrefix }}2611
 
-[release_notes_4.7.2721]: {{ kbArticleURLPrefix }}4591
+[release_notes_4.7.2721]: {{ kbArticleURLPrefix }}2633
 
-[release_notes_4.7.2902]: {{ kbArticleURLPrefix }}4588
+[release_notes_4.7.2902]: {{ kbArticleURLPrefix }}2639
 
-[release_notes_4.7.3023]: {{ kbArticleURLPrefix }}4592
+[release_notes_4.7.3023]: {{ kbArticleURLPrefix }}2642
 
-[release_notes_4.7.3084]: {{ kbArticleURLPrefix }}4587
+[release_notes_4.7.3084]: {{ kbArticleURLPrefix }}2649
+
+[release_notes_5.0]: {{ kbArticleURLPrefix }}5073
 
 [restore_complete_backup]: {{ kbArticleURLPrefix }}4648
 

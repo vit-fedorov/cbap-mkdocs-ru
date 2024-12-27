@@ -58,13 +58,48 @@ Kafka создает значительную нагрузку на вычисл
     sh prerequisites_install.sh -k
     ```
 
-5. После установки удостоверьтесь, что сервер Kafka запущен и имеет статус `Active (running)`:
+5. Отредактируйте файл `/usr/share/kafka/config/kraft/server.properties` по следующему образцу:
+
+    ``` yml
+    # Укажите роли, в которых должен выступать сервер Kafka
+    process.roles=broker,controller
+    node.id=1
+    # Укажите IP-адрес сервера Kafka
+    controller.quorum.voters=1@<KafkaIP>:9093
+    # Укажите IP-адрес сервера Kafka
+    listeners=PLAINTEXT://<KafkaIP>:9092,CONTROLLER://<KafkaIP>:9093
+    inter.broker.listener.name=PLAINTEXT
+    controller.listener.names=CONTROLLER
+    listener.security.protocol.map=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+    num.network.threads=3
+    num.io.threads=8
+    socket.send.buffer.bytes=102400
+    socket.receive.buffer.bytes=102400
+    socket.request.max.bytes=104857600
+    # Укажите путь к файлам журналирования
+    log.dirs=/var/log/comindware/.kafka
+    num.partitions=4
+    num.recovery.threads.per.data.dir=1
+    offsets.topic.replication.factor=1
+    transaction.state.log.replication.factor=1
+    transaction.state.log.min.isr=1
+    log.retention.hours=168
+    log.segment.bytes=1073741824
+    log.retention.check.interval.ms=300000
+    max.request.size=104857600
+    max.message.bytes=104857600
+    message.max.bytes=104857600
+    fetch.message.max.bytes=104857600
+    replica.fetch.max.bytes=104857600
+    ```
+
+6. После установки удостоверьтесь, что сервер Kafka запущен и имеет статус `Active (running)`:
 
     ``` sh
     systemctl status kafka
     ```
 
-6. Если сервер Kafka не работает, запустите его:
+7. Если сервер Kafka не работает, запустите его:
 
     ``` sh
     systemctl start kafka
@@ -111,49 +146,6 @@ Kafka создает значительную нагрузку на вычисл
     ``` yml
     # Адрес и порт сервера очереди сообщений (Kafka)
     mq.server: <kafkaBrokerIp>:<kafkaBrokerPort>
-    ```
-
-## Пример типового файла конфигурации Kafka
-
-1. Откройте файл конфигурации Kafka:
-
-    ``` sh
-    nano /usr/share/kafka/config/kraft/server.properties
-    ```
-
-2. Отредактируйте файл по следующему образцу:
-
-    ``` yml
-    # Укажите роли, в которых должен выступать сервер Kafka
-    process.roles=broker,controller
-    node.id=1
-    # Укажите IP-адрес сервера Kafka
-    controller.quorum.voters=1@<KafkaIP>:9093
-    # Укажите IP-адрес сервера Kafka
-    listeners=PLAINTEXT://<KafkaIP>:9092,CONTROLLER://<KafkaIP>:9093
-    inter.broker.listener.name=PLAINTEXT
-    controller.listener.names=CONTROLLER
-    listener.security.protocol.map=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
-    num.network.threads=3
-    num.io.threads=8
-    socket.send.buffer.bytes=102400
-    socket.receive.buffer.bytes=102400
-    socket.request.max.bytes=104857600
-    # Укажите путь к файлам журналирования
-    log.dirs=/var/log/comindware/.kafka
-    num.partitions=4
-    num.recovery.threads.per.data.dir=1
-    offsets.topic.replication.factor=1
-    transaction.state.log.replication.factor=1
-    transaction.state.log.min.isr=1
-    log.retention.hours=168
-    log.segment.bytes=1073741824
-    log.retention.check.interval.ms=300000
-    max.request.size=104857600
-    max.message.bytes=104857600
-    message.max.bytes=104857600
-    fetch.message.max.bytes=104857600
-    replica.fetch.max.bytes=104857600
     ```
 
 <div class="relatedTopics" markdown="block">

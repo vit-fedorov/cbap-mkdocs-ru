@@ -1,9 +1,9 @@
 ---
 title: Kafka. Установка в базовой конфигурации
-kbId:
+kbId: 5074
 ---
 
-# Kafka. Установка в базовой конфигурации {: #kafka_deploy_Linux}
+# Kafka. Установка в базовой конфигурации {: #kafka_deploy_linux}
 
 ## Введение
 
@@ -11,11 +11,16 @@ kbId:
 
 Здесь представлены инструкции по установке Kafka с помощью дистрибутива **{{ productName }}** для ОС Linux в простейшей базовой конфигурации.
 
-Инструкции по установке Kafka в иных конфигурациях:
+Инструкция по установке Kafka в иных конфигурациях на _[официальном сайте Kafka](https://kafka.apache.org/quickstart)_.
 
-- _[Официальный сайт Elasticsearch](https://kafka.apache.org/quickstart)_
+Здесь представлены требования к техническому обеспечению и инструкции по развёртыванию сервера Kafka в ОС Linux, а также приведён пример типового файла конфигурации. Инструкции представлены для версии Kafka 3.2.0, для других версий содержимое файлов конфигурации и порядок установки могут быть иными.
 
-Здесь представлены инструкции по развёртыванию сервера Kafka в ОС Linux, а также приведён пример типового файла конфигурации. Инструкции представлены для версии Kafka 3.2.0, для других версий содержимое файлов конфигурации и порядок установки могут быть иными.
+## Требования к серверу
+
+Kafka создает значительную нагрузку на вычислительные ресурсы компьютера, поэтому рекомендуется:
+
+- использовать отдельный SSD-диск для хранения журналов и данных сервера Kafka;
+- использовать высокопроизводительный компьютер с достаточным объемом ОЗУ и количеством ядер ЦП.
 
 ## Установка Kafka
 
@@ -108,80 +113,54 @@ kbId:
 
 ## Пример типового файла конфигурации Kafka
 
-``` yml
-############################# Server Basics #############################
-# The role of this server. Setting this puts us in KRaft mode
-process.roles=broker,controller
-# The node id associated with this instance's roles
-node.id=1
-# The connect string for the controller quorum
-controller.quorum.voters=1@10.9.9.113:9093
-############################# Socket Server Settings #############################
-# The address the socket server listens on.
-# Combined nodes (i.e. those with `process.roles=broker,controller`) must list the controller listener here at a minimum.
-# If the broker listener is not defined, the default listener will use a host name that is equal to the value of java.net.InetAddress.getCanonicalHostName(),
-# with PLAINTEXT listener name, and port 9092.
-#   FORMAT:
-#     listeners = listener_name://host_name:port
-#   EXAMPLE:
-#     listeners = PLAINTEXT://your.host.name:9092
-listeners=PLAINTEXT://10.9.9.113:9092,CONTROLLER://10.9.9.113:9093
-# Name of listener used for communication between brokers.
-inter.broker.listener.name=PLAINTEXT
-# Listener name, hostname and port the broker will advertise to clients.
-# If not set, it uses the value for "listeners".
-#advertised.listeners=PLAINTEXT://10.9.9.113:9092
-# A comma-separated list of the names of the listeners used by the controller.
-# If no explicit mapping set in `listener.security.protocol.map`, default will be using PLAINTEXT protocol
-# This is required if running in KRaft mode.
-controller.listener.names=CONTROLLER
-# Maps listener names to security protocols, the default is for them to be the same. See the config documentation for more details
-listener.security.protocol.map=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
-# The number of threads that the server uses for receiving requests from the network and sending responses to the network
-num.network.threads=3
-# The number of threads that the server uses for processing requests, which may include disk I/O
-num.io.threads=8
-# The send buffer (SO_SNDBUF) used by the socket server
-socket.send.buffer.bytes=102400
-# The receive buffer (SO_RCVBUF) used by the socket server
-socket.receive.buffer.bytes=102400
-# The maximum size of a request that the socket server will accept (protection against OOM)
-socket.request.max.bytes=104857600
-############################# Log Basics #############################
-# A comma separated list of directories under which to store log files
-log.dirs=/var/log/comindware/.kafka
-# The default number of log partitions per topic. More partitions allow greater
-# parallelism for consumption, but this will also result in more files across
-# the brokers.
-num.partitions=4
-# The number of threads per data directory to be used for log recovery at startup and flushing at shutdown.
-# This value is recommended to be increased for installations with data dirs located in RAID array.
-num.recovery.threads.per.data.dir=1
-############################# Internal Topic Settings  #############################
-# The replication factor for the group metadata internal topics "__consumer_offsets" and "__transaction_state"
-# For anything other than development testing, a value greater than 1 is recommended to ensure availability such as 3.
-offsets.topic.replication.factor=1
-transaction.state.log.replication.factor=1
-transaction.state.log.min.isr=1
-############################# Log Retention Policy #############################
-# The following configurations control the disposal of log segments. The policy can
-# be set to delete segments after a period of time, or after a given size has accumulated.
-# A segment will be deleted whenever *either* of these criteria are met. Deletion always happens
-# from the end of the log.
-# The minimum age of a log file to be eligible for deletion due to age
-log.retention.hours=168
-# A size-based retention policy for logs. Segments are pruned from the log unless the remaining
-# segments drop below log.retention.bytes. Functions independently of log.retention.hours.
-#log.retention.bytes=1073741824
-# The maximum size of a log segment file. When this size is reached a new log segment will be created.
-log.segment.bytes=1073741824
-# The interval at which log segments are checked to see if they can be deleted according
-# to the retention policies
-log.retention.check.interval.ms=300000
-# Max message size
-max.request.size=104857600
-max.message.bytes=104857600
-message.max.bytes=104857600
-fetch.message.max.bytes=104857600
-replica.fetch.max.bytes=104857600
-```
+1. Откройте файл конфигурации Kafka:
+
+    ``` sh
+    nano /usr/share/kafka/config/kraft/server.properties
+    ```
+
+2. Отредактируйте файл по следующему образцу:
+
+    ``` yml
+    # Укажите роли, в которых должен выступать сервер Kafka
+    process.roles=broker,controller
+    node.id=1
+    # Укажите IP-адрес сервера Kafka
+    controller.quorum.voters=1@<KafkaIP>:9093
+    # Укажите IP-адрес сервера Kafka
+    listeners=PLAINTEXT://<KafkaIP>:9092,CONTROLLER://<KafkaIP>:9093
+    inter.broker.listener.name=PLAINTEXT
+    controller.listener.names=CONTROLLER
+    listener.security.protocol.map=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+    num.network.threads=3
+    num.io.threads=8
+    socket.send.buffer.bytes=102400
+    socket.receive.buffer.bytes=102400
+    socket.request.max.bytes=104857600
+    # Укажите путь к файлам журналирования
+    log.dirs=/var/log/comindware/.kafka
+    num.partitions=4
+    num.recovery.threads.per.data.dir=1
+    offsets.topic.replication.factor=1
+    transaction.state.log.replication.factor=1
+    transaction.state.log.min.isr=1
+    log.retention.hours=168
+    log.segment.bytes=1073741824
+    log.retention.check.interval.ms=300000
+    max.request.size=104857600
+    max.message.bytes=104857600
+    message.max.bytes=104857600
+    fetch.message.max.bytes=104857600
+    replica.fetch.max.bytes=104857600
+    ```
+
+<div class="relatedTopics" markdown="block">
+
+--8<-- "related_topics_heading.md"
+
+- _[Настройка конфигурации вспомогательного ПО для оптимизации работы {{ productName }}][auxiliary_software_optimize]_
+- _[Конфигурация экземпляра, компонентов ПО и служб. Настройка][configuration_files_linux]_
+
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

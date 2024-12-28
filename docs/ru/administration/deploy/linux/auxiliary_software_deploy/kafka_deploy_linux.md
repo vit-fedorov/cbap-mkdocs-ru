@@ -1,17 +1,17 @@
 ---
-title: Kafka. Установка в базовой конфигурации
+title: Apache Kafka. Установка в базовой конфигурации
 kbId: 5074
 ---
 
-# Kafka. Установка в базовой конфигурации {: #kafka_deploy_linux}
+# Apache Kafka. Установка в базовой конфигурации {: #kafka_deploy_linux}
 
 ## Введение
 
-Для работы **{{ productName }}** требуется сервер Kafka. См. [системные требования][system_requirements].
+Для работы **{{ productName }}** требуется сервер Apache Kafka. См. [системные требования][system_requirements].
 
-Здесь представлены инструкции по установке Kafka с помощью дистрибутива **{{ productName }}** для ОС Linux в простейшей базовой конфигурации.
+Здесь представлены инструкции по установке Kafka в простейшей базовой конфигурации с помощью дистрибутива **{{ productName }}** для ОС Linux.
 
-Инструкция по установке Kafka в иных конфигурациях на _[официальном сайте Kafka](https://kafka.apache.org/quickstart)_.
+Инструкции по установке Kafka в иных конфигурациях представлены на _[официальном сайте Apache Kafka](https://kafka.apache.org/quickstart)_.
 
 С помощью дистрибутива **{{ productName }}** можно развернуть сервер Kafka вместе с экземпляром ПО или на отдельном сервере. Для этого укажите ключ `-k` при запуске скрипта `prerequisites_install.sh`. См. _«[Установка, запуск, инициализация и остановка ПО {{ productName }}][deploy_guide_linux]»_.
 
@@ -19,7 +19,7 @@ kbId: 5074
 
 ## Требования к серверу
 
-Kafka создает значительную нагрузку на вычислительные ресурсы компьютера, поэтому рекомендуется:
+Сервер Kafka создает значительную нагрузку на вычислительные ресурсы компьютера, поэтому рекомендуется:
 
 - использовать отдельный SSD-диск для хранения журналов и данных сервера Kafka;
 - использовать высокопроизводительный компьютер с достаточным объемом ОЗУ и количеством ядер ЦП.
@@ -60,40 +60,62 @@ Kafka создает значительную нагрузку на вычисл
 
 5. Отредактируйте файл `/usr/share/kafka/config/kraft/server.properties` по следующему образцу:
 
-    ``` yml
-    # Укажите роли, в которых должен выступать сервер Kafka
+    ``` ini
+    # Роли, в которых должен выступать сервер Kafka
     process.roles=broker,controller
+    # Идентификатор узла
     node.id=1
-    # Укажите IP-адрес сервера Kafka
+    # IP-адрес сервера Kafka
     controller.quorum.voters=1@<KafkaIP>:9093
-    # Укажите IP-адрес сервера Kafka
+    # IP-адрес сервера Kafka
     listeners=PLAINTEXT://<KafkaIP>:9092,CONTROLLER://<KafkaIP>:9093
+    # Имя слушателя для связи между брокерами
     inter.broker.listener.name=PLAINTEXT
+    # Имена слушателей контроллера
     controller.listener.names=CONTROLLER
+    # Карта протоколов безопасности для слушателей
     listener.security.protocol.map=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+    # Количество сетевых потоков
     num.network.threads=3
+    # Количество потоков ввода-вывода
     num.io.threads=8
+    # Размер буфера отправки сокета
     socket.send.buffer.bytes=102400
+    # Размер буфера приёма сокета
     socket.receive.buffer.bytes=102400
+    # Максимальный размер запроса
     socket.request.max.bytes=104857600
-    # Укажите путь к файлам журналирования
+    # Путь к файлам журналов
     log.dirs=/var/log/comindware/.kafka
+    # Количество разделов (партиций) по умолчанию
     num.partitions=4
+    # Количество потоков восстановления на каталог данных
     num.recovery.threads.per.data.dir=1
+    # Фактор репликации темы смещений
     offsets.topic.replication.factor=1
+    # Фактор репликации журнала состояния транзакций
     transaction.state.log.replication.factor=1
+    # Минимальное количество ISR для журнала состояния транзакций
     transaction.state.log.min.isr=1
+    # Время хранения журналов (в часах)
     log.retention.hours=168
+    # Размер сегмента журнала
     log.segment.bytes=1073741824
+    # Интервал проверки хранения журналов (в миллисекундах)
     log.retention.check.interval.ms=300000
+    # Максимальный размер запроса
     max.request.size=104857600
+    # Максимальный размер сообщения
     max.message.bytes=104857600
+    # Максимальный размер сообщения
     message.max.bytes=104857600
+    # Максимальный размер сообщения для выборки
     fetch.message.max.bytes=104857600
+    # Максимальный размер сообщения для выборки реплики
     replica.fetch.max.bytes=104857600
     ```
 
-6. После установки удостоверьтесь, что сервер Kafka запущен и имеет статус `Active (running)`:
+6. После установки удостоверьтесь, что служба Kafka запущена и имеет статус `Active (running)`:
 
     ``` sh
     systemctl status kafka
@@ -105,13 +127,13 @@ Kafka создает значительную нагрузку на вычисл
     systemctl start kafka
     ```
 
-## Подключение экземпляра ПО к Kafka
+## Подключение экземпляра {{ productName }} к Kafka
 
 1. Перейдите в режим суперпользователя:
 
     --8<-- "linux_sudo.md"
 
-2. Отредактируйте настройки подключения к Kafka в файле `/usr/share/comindware/configs/instance/<instanceName>.yml`, где `<instanceName>` — имя экземпляра ПО:
+2. Задайте параметры подключения к Kafka в файле `/usr/share/comindware/configs/instance/<instanceName>.yml` (`<instanceName>` — имя экземпляра ПО {{ productName }}):
 
     ``` yml
     # Адрес и порт сервера очереди сообщений (Kafka)
@@ -124,16 +146,16 @@ Kafka создает значительную нагрузку на вычисл
 
     !!! warning "Внимание!"
 
-        - Для корректной работы экземпляра ПО адрес и порт Kafka должны быть обязательно прописаны цифрами.
-        - Для корректной работы экземпляра ПО значение параметров `mq.server` (адрес и порт сервера очереди сообщений), `mq.group` (идентификатор группы очереди сообщений), `mq.node` (идентификатор узла очереди сообщений) должно совпадать во всех файлах конфигурации:
+        --8<-- "kafka_deploy_config_warning.md"
+
             - `/usr/share/comindware/configs/instance/<instanceName>.yml`
             - `/var/www/<instanceName>/apigateway.yml`
             - `/var/www/<instanceName>/adapterhost.yml`
 
-3. Отредактируйте настройки подключения к Kafka в файле `/var/www/<instanceName>apigateway.yml`:
+3. Задайте параметры подключения к Kafka в файле `/var/www/<instanceName>apigateway.yml`:
 
     ``` yml
-    # Адрес сервера очереди сообщений (Kafka) с портом.
+    # Адрес и порт сервера очереди сообщений (Kafka)
     mq.server: <kafkaBrokerIp>:<kafkaBrokerPort>
     # Идентификатор группы очереди сообщений
     mq.group: <instanceName>
@@ -141,12 +163,38 @@ Kafka создает значительную нагрузку на вычисл
     mq.node: <instanceName>
     ```
 
-4. Отредактируйте файл `/var/www/<instanceName>/adapterhost.yml` по следующему образцу:
+4. Задайте параметры подключения к Kafka в файле `/var/www/<instanceName>/adapterhost.yml`:
 
     ``` yml
     # Адрес и порт сервера очереди сообщений (Kafka)
     mq.server: <kafkaBrokerIp>:<kafkaBrokerPort>
     ```
+
+5. Перезапустите экземпляр ПО:
+
+    ``` sh
+    systemctl restart comindware<instanceName>
+    systemctl restart apigateway<instanceName>
+    systemctl restart adapterhost<instanceName>
+    ```
+
+6. Проверьте соединение с Kafka в браузере по ссылке (`<instanceAddress>` — URL экземпляра ПО):
+
+    ``` powershell
+    <instanceAddress>/async
+    ```
+
+<!--additional-recommendations-start-->
+## Дополнительные рекомендации
+
+### Настройка безопасности
+
+Для повышения безопасности рекомендуется настроить SSL/TLS для шифрования данных и аутентификацию с использованием SASL. Подробные инструкции см. в официальной документации Apache Kafka (на английском языке): <https://kafka.apache.org/documentation/#security>.
+
+### Мониторинг и управление
+
+Для мониторинга и управления сервером Kafka рекомендуется использовать инструменты, такие как Prometheus и Grafana. Подробные инструкции по настройке мониторинга см. в официальной документации Apache Kafka (на английском языке): <https://kafka.apache.org/documentation/#monitoring>.
+<!--additional-recommendations-end-->
 
 <div class="relatedTopics" markdown="block">
 
@@ -154,6 +202,7 @@ Kafka создает значительную нагрузку на вычисл
 
 - _[Настройка конфигурации вспомогательного ПО для оптимизации работы {{ productName }}][auxiliary_software_optimize]_
 - _[Конфигурация экземпляра, компонентов ПО и служб. Настройка][configuration_files_linux]_
+- _[Пути и содержимое директорий экземпляра ПО][paths_windows]_
 
 </div>
 

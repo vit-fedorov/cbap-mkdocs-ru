@@ -56,37 +56,57 @@ hide:
         При указании пути к папке журналов используйте косую черту `/` вместо `\`:
 
     ``` ini
+    # Роли, в которых должен выступать сервер Kafka
     process.roles=broker,controller
+    # Идентификатор узла
     node.id=1
-    # Укажите IP-адрес сервера Kafka
-    controller.quorum.voters=1@10.2.3.4:9093
-    # Укажите IP-адрес сервера Kafka
-    listeners=PLAINTEXT://10.2.3.4:9092,CONTROLLER://10.2.3.4:9093
+    # IP-адрес сервера Kafka
+    controller.quorum.voters=1@<KafkaIP>:9093
+    # IP-адрес сервера Kafka
+    listeners=PLAINTEXT://<KafkaIP>:9092,CONTROLLER://<KafkaIP>:9093
+    # Имя слушателя для связи между брокерами
     inter.broker.listener.name=PLAINTEXT
-    # Укажите IP-адрес сервера Kafka
-    advertised.listeners=PLAINTEXT://10.2.3.4:9092
+    # Имена слушателей контроллера
     controller.listener.names=CONTROLLER
+    # Карта протоколов безопасности для слушателей
     listener.security.protocol.map=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+    # Количество сетевых потоков
     num.network.threads=3
+    # Количество потоков ввода-вывода
     num.io.threads=8
+    # Размер буфера отправки сокета
     socket.send.buffer.bytes=102400
+    # Размер буфера приёма сокета
     socket.receive.buffer.bytes=102400
+    # Максимальный размер запроса
     socket.request.max.bytes=104857600
-    # Укажите путь к папке журналов
+    # Путь к файлам журналов
     log.dirs=X:/kafka/logs
-    num.partitions=1
+    # Количество разделов (партиций) по умолчанию
+    num.partitions=4
+    # Количество потоков восстановления на каталог данных
     num.recovery.threads.per.data.dir=1
+    # Фактор репликации темы смещений
     offsets.topic.replication.factor=1
+    # Фактор репликации журнала состояния транзакций
     transaction.state.log.replication.factor=1
+    # Минимальное количество ISR для журнала состояния транзакций
     transaction.state.log.min.isr=1
+    # Время хранения журналов (в часах)
     log.retention.hours=168
+    # Размер сегмента журнала
     log.segment.bytes=1073741824
+    # Интервал проверки хранения журналов (в миллисекундах)
     log.retention.check.interval.ms=300000
-    # Настройте размеры запросов и сообщений
+    # Максимальный размер запроса
     max.request.size=104857600
+    # Максимальный размер сообщения
     max.message.bytes=104857600
+    # Максимальный размер сообщения
     message.max.bytes=104857600
+    # Максимальный размер сообщения для выборки
     fetch.message.max.bytes=104857600
+    # Максимальный размер сообщения для выборки реплики
     replica.fetch.max.bytes=104857600
     ```
 
@@ -150,7 +170,7 @@ hide:
 
     ``` powershell
     cd "C:\kafka\bin\windows\"
-    .\kafka-console-producer.bat --bootstrap-server 10.2.3.4:9092 --topic TEST
+    .\kafka-console-producer.bat --bootstrap-server <KafkaIP>:9092 --topic TEST
     # Отправьте любое сообщение, например:
     hello
     ```
@@ -159,17 +179,19 @@ hide:
 
     _![Создание ветки сообщений Kafka в powershell.exe](img/kafka_install_powershell.png)_
 
-## Подключение Kafka к {{ productName }}
+## Подключение экземпляра {{ productName }} к Kafka
 
 1. Откройте папку `C:\ProgramData\comindware\configs\instance`
 
-2. Откройте файл конфигурации экземпляра ПО `<instanceName>.yml` (`<instanceName>` — имя экземпляра) и измените или добавьте следующие директивы:
+2. Задайте параметры подключения к Kafka в файле `<instanceName>.yml` (`<instanceName>` — имя экземпляра ПО):
 
-    ``` powershell
-    # Укажите IP-адрес сервера Kafka
-    mq.server: 10.2.3.4:9092
-    # Укажите имя экземпляра ПО
-    mq.name: <instanceName>
+    ``` yml
+    # IP-адрес сервера Kafka
+    mq.server: <KafkaIP>:9092
+    # Имя экземпляра ПО
+    mq.group: <instanceName>
+    # Идентификатор узла очереди сообщений
+    mq.node: <instanceName>
     ```
 
 3. Удалите следующую строку из файла `<instanceName>.yml`:
@@ -178,9 +200,52 @@ hide:
     kafkaBootstrapServer:
     ```
 
-4. Перезапустите экземпляр ПО с помощью Утилиты администрирования.
-5. Проверьте соединение с Kafka в браузере по ссылке:
+    !!! warning "Внимание!"
+
+        --8<-- "kafka_deploy_config_warning.md"
+        
+            - `C:\ProgramData\comindware\configs\instance\<instanceName>.yml`
+            - `C:\ProgramData\comindware\configs\instance\apigateway.yml`
+            - `C:\ProgramData\comindware\configs\instance\adapterhost.yml`
+
+4. Задайте параметры подключения к Kafka в файле `apigateway.yml`:
+
+    ``` yml
+    # Укажите IP-адрес сервера Kafka
+    mq.server: <KafkaIP>:9092
+    # Укажите имя экземпляра ПО
+    mq.group: <instanceName>
+    # Идентификатор узла очереди сообщений
+    mq.node: <instanceName>
+    ```
+
+5. Задайте параметры подключения к Kafka в файле `adapterhost.yml`:
+
+    ``` yml
+    # Укажите IP-адрес сервера Kafka
+    mq.server: <KafkaIP>:9092
+    ```
+
+6. Перезапустите экземпляр ПО.
+7. Проверьте соединение с Kafka в браузере по ссылке (`<instanceAddress>` — URL экземпляра ПО):
 
     ``` powershell
-    <instanceName>/async
+    <instanceAddress>/async
     ```
+
+{%
+include-markdown "administration/deploy/linux/auxiliary_software_deploy/kafka_deploy_linux.md"
+start="<!--additional-recommendations-start-->"
+end="<!--additional-recommendations-end-->"
+%}
+
+<div class="relatedTopics" markdown="block">
+
+--8<-- "related_topics_heading.md"
+
+- _[Настройка конфигурации вспомогательного ПО для оптимизации работы {{ productName }}][auxiliary_software_optimize]_
+- _[Пути и содержимое директорий экземпляра ПО][paths_windows]_
+
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

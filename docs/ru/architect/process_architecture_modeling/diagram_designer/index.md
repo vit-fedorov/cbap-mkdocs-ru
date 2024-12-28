@@ -36,10 +36,17 @@ hide:
     * **Обсуждение** <i class="fa-light fa-comment-dots"></i> — отображение чата для обсуждения диаграммы.
     * **Версии** <i class="fa-light fa-code-branch"></i> — управление версиями диаграммы.
     * **Свойства** <i class="fa-light fa-sidebar-flip"></i> — [настройка свойств][architect_configuring_process_entity_properties] выбранного элемента или всей диаграммы.
-2. Кнопки «**Импорт**» <i class="fa-light fa-arrow-down-to-bracket"></i> и «**Проверить**» <i class="fa-light  fa-circle-exclamation-check"></i> — позволяют [импортировать][architect_importing_process_entity] и [проверить диаграмму][architect_verify_diagram]. Кнопка «**Проверить**» отображается только для диаграмм процессов. Проверка диаграмм бизнес-способностей не предусмотрена.
+2. Кнопки работы с диаграммой:
+    * **Указатель** <i class=" fal  fa-arrow-pointer "></i>
+    * **Лассо** <i class=" fal  fa-square-dashed "></i>
+    * **Импорт** <i class="fa-light fa-arrow-down-to-bracket"></i>
+    * **Экспорт** <i class=" fal  fa-file-export "></i>
+    * **Проверить** <i class="fa-light  fa-circle-exclamation-check"></i> — позволяют [импортировать][architect_importing_process_entity] и [проверить диаграмму][architect_verify_diagram]. Кнопка «**Проверить**» отображается только для диаграмм процессов. Проверка диаграмм бизнес-способностей не предусмотрена.
+    * **Отменить** <i class=" fal  fa-arrow-rotate-left "></i>
+    * **Повторить** <i class=" fal  fa-arrow-rotate-right "></i>
 3. Палитра элементов — содержит либо элементы нотации BPMN 2.0, либо элементы нотации бизнес-способностей.
 --8<-- "process_architecture_diagram_zoom_controls.md"
-6. Панель свойств. В этой области также отображаются панель обсуждения и панель версий диаграммы.
+4. Панель свойств. В этой области также отображаются панель обсуждения и панель версий диаграммы.
 
 ### Меню элемента
 

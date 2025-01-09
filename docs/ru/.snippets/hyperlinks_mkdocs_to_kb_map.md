@@ -754,6 +754,8 @@
 
 [admin_utility_instance_configure]: {{ kbArticleURLPrefix }}4634
 
+[configuration_files_linux]: {{ kbArticleURLPrefix }}5067
+
 [logging_engine]: {{ kbArticleURLPrefix }}4623
 
 [logging_engine_audit_log]: {{ kbArticleURLPrefix }}4623#logging_engine_audit_log

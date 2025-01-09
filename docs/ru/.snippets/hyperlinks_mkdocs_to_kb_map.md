@@ -734,6 +734,8 @@
 
 [elasticsearch_cluster_deploy_no_certificates]: {{ kbArticleURLPrefix }}4612
 
+[kafka_deploy_linux]: {{ kbArticleURLPrefix }}5074
+
 [sso_authenticatation_configure]: {{ kbArticleURLPrefix }}4613
 
 [sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}4613#sso_authentication_configure_keytab_update

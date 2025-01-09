@@ -56,7 +56,7 @@
 <li><em><a class="mkdocs_imported_link" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/targz.html">Официальный сайт Elasticsearch</a></em> (английский язык)</li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4612">Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности</a></em></li>
 </ul>
-<p>С помощью дистрибутива <strong>Comindware Platform</strong> можно развернуть сервер Elasticsearch вместе с экземпляром ПО или на отдельном сервере. Для этого укажите ключ <code>-e</code> при запуске скрипта <code>install.sh</code>. См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4622">Установка, запуск, инициализация и остановка ПО Comindware Platform</a>»</em>.</p>
+<p>С помощью дистрибутива <strong>Comindware Platform</strong> можно развернуть сервер Elasticsearch вместе с экземпляром ПО или на отдельном сервере. Для этого укажите ключ <code>-e</code> при запуске скрипта <code>prerequisites_install.sh</code>. См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4622">Установка, запуск, инициализация и остановка ПО Comindware Platform</a>»</em>.</p>
 <p>Установленная таким образом сервер Elasticsearch имеет базовую конфигурацию: без аутентификации и с одним узлом. Он доступна по адресу <code>localhost:9200</code>.</p>
 <p>Здесь представлены требования к техническому обеспечению и инструкции по развёртыванию сервера Elasticsearch в ОС Linux, а также приведён пример типового файла конфигурации. Инструкции представлены для версии Elasticsearch 8.10.2, для других версий содержимое файлов конфигурации и порядок установки могут быть иными.</p>
 <h2 class="pageBreakBefore" id="требования-к-серверу">Требования к серверу</h2>
@@ -70,21 +70,27 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в режим суперпользователя:</p>
-<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-i</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>-s</code> <br/></pre></code></div>
 <p>или</p>
-<div class="highlight"><code><pre><span></span><code>su<span class="w"> </span>-</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>su<span class="w"> </span>-</code> <br/></pre></code></div>
 </li>
 <li>
-<p>Скачайте и распакуйте дистрибутив <strong>Comindware Platform</strong> по ссылке, предоставленной компанией <strong>Comindware</strong> (<code>X.X.XXXX.X</code> — номер версии ПО, <code>&lt;osname&gt;</code> — название операционной системы):</p>
-<div class="highlight"><code><pre><span></span><code>tar<span class="w"> </span>-xf<span class="w"> </span>X.X-release-ru-X.X.XXXX.X.&lt;osname&gt;.tar.gz</code> <br/></pre></code></div>
+<p>Скачайте и распакуйте дистрибутив с вспомогательным ПО <strong>Comindware Platform</strong>, полученный по ссылке от компании <strong>Comindware</strong> (<code>X.X</code>, <code>&lt;versionNumber&gt;</code> — номер версии ПО, <code>&lt;osname&gt;</code> — название операционной системы):</p>
+<div class="highlight"><code><pre><span></span><code>tar<span class="w"> </span>-xf<span class="w"> </span>X.X-release-ru-&lt;versionNumber&gt;.prerequisites.&lt;osname&gt;.tar.gz</code> <br/></pre></code></div>
+<div class="notice notice-tip">
+<p class="admonition-title">Совет</p>
+<p>После распаковки архив можно удалить для экономии места:</p>
+<div class="highlight"><code><pre><span></span><code>rm<span class="w"> </span>-f<span class="w"> </span>X.X-release-ru-&lt;versionNumber&gt;.prerequisites.&lt;osname&gt;.tar.gz</code> <br/></pre></code></div>
+</div>
 </li>
 <li>
-<p>Перейдите в распакованную директорию:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>CMW_&lt;osname&gt;/</code> <br/></pre></code></div>
+<p>Перейдите в директорию со скриптами для развёртывания вспомогательного ПО:</p>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;prerequisitesDistPath&gt;/CMW_&lt;osname&gt;/scripts</code> <br/></pre></code></div>
+<p>Здесь:  <code>&lt;prerequisitesDistPath&gt;/CMW_&lt;osname&gt;/</code> — путь к распакованному дистрибутиву со вспомогательным ПО.</p>
 </li>
 <li>
 <p>Установите Elasticsearch из дистрибутива с помощью ключа <code>-e</code>:</p>
-<div class="highlight"><code><pre><span></span><code>sh<span class="w"> </span>install.sh<span class="w"> </span>-e</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>sh<span class="w"> </span>prerequisites_install.sh<span class="w"> </span>-e</code> <br/></pre></code></div>
 </li>
 <li>
 <p>После установки удостоверьтесь, что сервер Elasticsearch запущен и имеет статус <code>Active (running)</code>:</p>

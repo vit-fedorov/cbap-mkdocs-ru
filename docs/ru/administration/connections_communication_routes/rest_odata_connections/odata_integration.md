@@ -10,7 +10,7 @@ tags:
   - синхронизация
 hide:
   - tags
-kbId: 2315
+kbId: 4697
 ---
 
 # Синхронизация с веб-сервисом. Интеграция по OData {: #odata_integration}
@@ -95,7 +95,7 @@ _![Настройка свойств интеграции](integrations_configur
 - **Фильтр** — задайте фильтр данных посредством выражений OData. Синтаксис фильтров см. в статье «**[Using Filter Expressions in OData URIs](https://msdn.microsoft.com/ru-ru/library/hh169248(v=nav.90).aspx)** » (учебник Microsoft, английский язык). Например, следующий фильтр выбирает записи с порядковым номером (`SequenceNumber`) от 11 до 14:
 
     ```
-    filter=SequenceNumber gt 10 and SequenceNumber lt 15
+    SequenceNumber gt 10 and SequenceNumber lt 15
     ```
 
 - **Количество объектов в одном запросе** — укажите максимальное количество данных, передаваемых в одном запросе. При превышении этого количества будет формироваться новый запрос к внешнему сервису.

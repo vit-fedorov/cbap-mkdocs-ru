@@ -13,11 +13,7 @@ nav:
     - product_description.md
     - Обзор версий:
       - general/changelog/changelog.md
-      - general/changelog/release_notes_4.7.3084.md
-      - general/changelog/release_notes_4.7.3023.md
-      - general/changelog/release_notes_4.7.2902.md
-      - general/changelog/release_notes_4.7.2721.md
-      - general/changelog/release_notes_4.7.2285.md 
+      - general/changelog/release_notes_5.0.md
   - Использование системы:
     - using_the_system/index.md
     - Панель навигации:
@@ -41,6 +37,7 @@ nav:
       - administration/deploy/paths.md
       - Развёртывание в Linux:
         - Установка и запуск Comindware Business Application Platform: administration/deploy/linux/deploy_guide.md
+        - administration/deploy/linux/configuration_files.md
         - administration/deploy/linux/db_migrate_4.2_to_4.7.md
         - administration/deploy/linux/uninstall_auxiliary_software.md
         - administration/deploy/linux/upgrade_version.md
@@ -49,6 +46,7 @@ nav:
           - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_deploy_linux.md
           - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_cluster_deploy_no_certificates.md
           - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_ssl_certificate_configure.md
+          - administration/deploy/linux/auxiliary_software_deploy/kafka_deploy_linux.md
           - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_deploy.md
           - administration/deploy/linux/auxiliary_software_deploy/nginx_deploy.md
           - administration/deploy/linux/auxiliary_software_deploy/nginx_geoip_deploy.md
@@ -56,23 +54,10 @@ nav:
           - administration/deploy/linux/auxiliary_software_deploy/zabbix_deploy.md
           - administration/deploy/linux/auxiliary_software_deploy/zabbix_server_deploy.md
       - Развёртывание в Windows:
-        - Утилита администрирования Comindware. Установка и настройка версий и экземпляров ПО:
-          - administration/deploy/windows/admin_utility/admin_utility_install_launch.md
-          - administration/deploy/windows/admin_utility/sw_install.md
-          - administration/deploy/windows/admin_utility/admin_utility_configure.md
-          - administration/deploy/windows/admin_utility/instance_diagnose.md
-          - administration/deploy/windows/admin_utility/instance_upgrade_version.md
-          - administration/deploy/windows/admin_utility/instance_create.md
-          - administration/deploy/windows/admin_utility/sw_version_delete.md
-          - administration/deploy/windows/admin_utility/instance_start_stop.md
-          - administration/deploy/windows/admin_utility/instance_configure.md
-          - administration/deploy/windows/admin_utility/instance_status_update.md
-          - administration/deploy/windows/admin_utility/instance_backup_restore.md
-          - administration/deploy/windows/admin_utility/instance_instalize.md
+        - administration/deploy/windows/deploy_guide.md
         - administration/deploy/windows/instance_upgrade_3_2_to_4_2_windows.md
         - administration/deploy/windows/instance_stop_IIS.md
         - administration/deploy/windows/instance_start_IIS.md
-        - administration/deploy/windows/architect_install.md
         - Вспомогательное ПО. Развёртывание:
           - administration/deploy/windows/auxiliary_software_deploy/zabbix_agent_deploy_windows.md
           - administration/deploy/windows/auxiliary_software_deploy/apache_ignite_deploy_windows.md
@@ -113,7 +98,6 @@ nav:
         - administration/account_administration/system_roles.md
         - administration/account_administration/account_permission_audit.md
         - administration/account_administration/substitution.md
-        
         - administration/account_administration/registration_and_login.md
         - administration/account_administration/two_factor_authentication.md
         - Синхронизация с сервером каталогов:
@@ -164,6 +148,7 @@ nav:
           - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
           - administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
           - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
+          - administration/connections_communication_routes/rest_odata_connections/http_send_file.md
           - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
           - administration/connections_communication_routes/rest_odata_connections/send_http_example.md
           - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
@@ -172,6 +157,9 @@ nav:
           - administration/connections_communication_routes/sql_connections/sql_receive_connection.md
         - Подключения к шинам сообщений:
           - administration/connections_communication_routes/message_queue_connections/kafka_connection.md
+        - Пользовательские подключения:
+          - administration/connections_communication_routes/custom_connections/esphere_receive_configure.md
+          - administration/connections_communication_routes/custom_connections/esphere_send_configure.md
     - DevOps Wiki:
       - devops_wiki/index.md
       - devops_wiki/kubernetes/index.md
@@ -192,6 +180,7 @@ nav:
         - business_apps/diagrams/process_diagram/index.md
         - business_apps/diagrams/process_diagram/process_diagram_version_control.md
         - business_apps/diagrams/process_diagram/process_diagram_view_instance.md
+        - business_apps/diagrams/process_diagram/process_error_monitor.md
         - Элементы диаграммы процесса: 
           - business_apps/diagrams/process_diagram/process_diagram_elements/index.md
           - Общие свойства элементов: business_apps/diagrams/process_diagram/process_diagram_elements/process_diagram_element_common_properties.md
@@ -272,6 +261,7 @@ nav:
         - business_apps/templates/forms/form_static_elements.md
         - business_apps/templates/forms/form_dynamic_elements.md
         - business_apps/templates/forms/discussion_configure.md
+        - business_apps/templates/forms/search_forms.md
       - Кнопки: business_apps/templates/buttons/index.md
       - business_apps/templates/button_area.md
       - Карточки: business_apps/templates/cards/cards_layout_configure.md
@@ -300,6 +290,7 @@ nav:
       - business_apps/version_control/index.md
       - business_apps/version_control/manual_version_control.md
       - business_apps/version_control/git_version_control.md
+      - business_apps/version_control/excel_version_control.md
     - Выражения для вычислений:
       - business_apps/expressions/expression_intro.md
       - business_apps/expressions/expression_debug.md
@@ -328,11 +319,12 @@ nav:
           - business_apps/expressions/expression_editor/n3_editor/findobject_autocomplete.md
           - business_apps/expressions/expression_editor/n3_editor/enum_autocomplete_n3.md
           - business_apps/expressions/expression_editor/n3_editor/literal_autocomplete.md
-  - Моделирование корпоративной-архитектуры:
+  - Моделирование корпоративной архитектуры:
     - architect/architect_desktop.md
     - architect/architect_example.md
     - architect/version_control.md
     - architect/conversations.md
+    - architect/architect_demo.md
     - Построение процессной архитектуры:
       - architect/process_architecture_modeling/index.md
       - architect/process_architecture_modeling/viewing_diagram.md
@@ -368,3 +360,19 @@ nav:
     - examples/scenario_verify_data.md
     - examples/process_email_configure.md
     - examples/script_using_local_variable.md
+    - examples/multilingual_app.md
+  - Обучение:
+    - tutorial/lesson_1.md
+    - tutorial/lesson_2.md
+    - tutorial/lesson_3.md
+    - tutorial/lesson_4.md
+    - tutorial/lesson_5.md
+    - tutorial/lesson_6.md
+    - tutorial/lesson_7.md
+    - tutorial/lesson_8.md
+    - tutorial/lesson_9.md
+    - tutorial/lesson_10.md
+
+exclude_docs: |
+  administration/deploy/windows/admin_utility/**
+  administration/deploy/windows/architect_install.md

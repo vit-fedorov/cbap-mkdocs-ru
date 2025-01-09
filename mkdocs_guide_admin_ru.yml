@@ -10,6 +10,7 @@ extra:
   adminGuideLinux: True
   adminGuideWindows: True
   userGuide: False
+  tutorial: False
   completeGuide: False
 
 site_name: Comindware Business Application Platform. Руководство администратора
@@ -27,6 +28,7 @@ nav:
     - administration/deploy/paths.md
     - Развёртывание в Linux:
       - Установка и запуск {{ productName }}: administration/deploy/linux/deploy_guide.md
+      - administration/deploy/linux/configuration_files.md
       - administration/deploy/linux/db_migrate_4.2_to_4.7.md
       - administration/deploy/linux/uninstall_auxiliary_software.md
       - administration/deploy/linux/upgrade_version.md
@@ -36,6 +38,7 @@ nav:
         - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_ssl_certificate_configure.md
         - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_optimize.md
         - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_cluster_deploy_no_certificates.md
+        - administration/deploy/linux/auxiliary_software_deploy/kafka_deploy_linux.md
         - administration/deploy/linux/auxiliary_software_deploy/nginx_deploy.md
         - administration/deploy/linux/auxiliary_software_deploy/nginx_geoip_deploy.md
         - administration/deploy/linux/auxiliary_software_deploy/zabbix_agent_deploy.md
@@ -148,6 +151,9 @@ nav:
         - administration/connections_communication_routes/sql_connections/sql_receive_connection.md
       - Подключения к шинам сообщений:
         - administration/connections_communication_routes/message_queue_connections/kafka_connection.md
+      - Пользовательские подключения:
+        - administration/connections_communication_routes/custom_connections/esphere_receive_configure.md
+        - administration/connections_communication_routes/custom_connections/esphere_send_configure.md
   - Администрирование приложений:
     - business_apps/index.md
     - Диаграммы:
@@ -176,13 +182,10 @@ nav:
       - business_apps/version_control/index.md
       - business_apps/version_control/manual_version_control.md
       - business_apps/version_control/git_version_control.md
+      - business_apps/version_control/excel_version_control.md
   - Обзор версий:
     - general/changelog/changelog.md
-    - general/changelog/release_notes_4.7.3084.md
-    - general/changelog/release_notes_4.7.3023.md
-    - general/changelog/release_notes_4.7.2902.md
-    - general/changelog/release_notes_4.7.2721.md
-    - general/changelog/release_notes_4.7.2285.md
+    - general/changelog/release_notes_5.0.md
 
 
 exclude_docs: |
@@ -208,12 +211,7 @@ exclude_docs: |
   business_apps/templates/buttons/**
   business_apps/templates/cards/**
   business_apps/templates/export_templates/**
-  business_apps/templates/forms/index.md
-  business_apps/templates/forms/discussion_configure.md
-  business_apps/templates/forms/form_access_control.md
-  business_apps/templates/forms/form_dynamic_elements.md
-  business_apps/templates/forms/form_rules.md
-  business_apps/templates/forms/form_static_elements.md
+  business_apps/templates/forms/**
   business_apps/templates/tables/table_configure.md
   devops_wiki/**
   examples/**

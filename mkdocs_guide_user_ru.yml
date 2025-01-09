@@ -4,12 +4,13 @@
 
 INHERIT: mkdocs_ru.yml
 
-site_name: Comindware Business Application Platform. Руководство пользователя
+site_name: Comindware Platform. Руководство пользователя
 
 extra:
   adminGuideWindows: False
   adminGuideLinux: False
   userGuide: True
+  tutorial: False
   completeGuide: False
 
 nav:
@@ -90,6 +91,7 @@ nav:
         - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
         - administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
+        - administration/connections_communication_routes/rest_odata_connections/http_send_file.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_example.md
         - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
@@ -98,6 +100,9 @@ nav:
         - administration/connections_communication_routes/sql_connections/sql_receive_connection.md
       - Подключения к шинам сообщений:
         - administration/connections_communication_routes/message_queue_connections/kafka_connection.md
+      - Пользовательские подключения:
+        - administration/connections_communication_routes/custom_connections/esphere_receive_configure.md
+        - administration/connections_communication_routes/custom_connections/esphere_send_configure.md
   - Разработка приложений:
     - business_apps/application_configure_recommendations.md
     - business_apps/elasticdata_description.md
@@ -111,6 +116,7 @@ nav:
         - business_apps/diagrams/process_diagram/index.md
         - business_apps/diagrams/process_diagram/process_diagram_version_control.md
         - business_apps/diagrams/process_diagram/process_diagram_view_instance.md
+        - business_apps/diagrams/process_diagram/process_error_monitor.md
         - Элементы диаграммы процесса: 
           - business_apps/diagrams/process_diagram/process_diagram_elements/index.md
           - Общие свойства элементов: business_apps/diagrams/process_diagram/process_diagram_elements/process_diagram_element_common_properties.md
@@ -190,6 +196,7 @@ nav:
         - business_apps/templates/forms/form_rules.md
         - business_apps/templates/forms/form_static_elements.md
         - business_apps/templates/forms/form_dynamic_elements.md
+        - business_apps/templates/forms/search_forms.md
         - examples/creating_gantt_chart.md
         - examples/using_gantt_chart.md
         - business_apps/templates/forms/discussion_configure.md
@@ -221,6 +228,7 @@ nav:
       - business_apps/version_control/index.md
       - business_apps/version_control/manual_version_control.md
       - business_apps/version_control/git_version_control.md
+      - business_apps/version_control/excel_version_control.md
     - Выражения для вычислений:
       - business_apps/expressions/expression_intro.md
       - business_apps/expressions/expression_debug.md
@@ -249,11 +257,12 @@ nav:
           - business_apps/expressions/expression_editor/n3_editor/findobject_autocomplete.md
           - business_apps/expressions/expression_editor/n3_editor/enum_autocomplete_n3.md
           - business_apps/expressions/expression_editor/n3_editor/literal_autocomplete.md
-  - Моделирование корпоративной-архитектуры:
+  - Моделирование корпоративной архитектуры:
     - architect/architect_desktop.md
     - architect/architect_example.md
     - architect/version_control.md
     - architect/conversations.md
+    - architect/architect_demo.md
     - Построение процессной архитектуры:
       - architect/process_architecture_modeling/index.md
       - architect/process_architecture_modeling/viewing_diagram.md
@@ -286,13 +295,10 @@ nav:
     - examples/enum_attribute_value_calculation.md
     - examples/script_using_local_variable.md
     - examples/scenario_verify_data.md
+    - examples/multilingual_app.md
   - Обзор версий:
     - general/changelog/changelog.md
-    - general/changelog/release_notes_4.7.3084.md
-    - general/changelog/release_notes_4.7.3023.md
-    - general/changelog/release_notes_4.7.2902.md
-    - general/changelog/release_notes_4.7.2721.md
-    - general/changelog/release_notes_4.7.2285.md
+    - general/changelog/release_notes_5.0.md
 
 exclude_docs: |
   

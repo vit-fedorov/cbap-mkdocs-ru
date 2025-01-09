@@ -1,6 +1,6 @@
 ---
 title: Elasticsearch. Установка в базовой конфигурации
-kbId: 2650
+kbId: 4601
 ---
 
 # Elasticsearch. Установка в базовой конфигурации {: #elasticsearch_deploy_Linux}
@@ -16,7 +16,7 @@ kbId: 2650
 - _[Официальный сайт Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/targz.html)_ (английский язык)
 - _[Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности][elasticsearch_cluster_deploy_no_certificates]_
 
-С помощью дистрибутива **{{ productName }}** можно развернуть сервер Elasticsearch вместе с экземпляром ПО или на отдельном сервере. Для этого укажите ключ `-e` при запуске скрипта `install.sh`. См. _«[Установка, запуск, инициализация и остановка ПО {{ productName }}][deploy_guide_linux]»_.
+С помощью дистрибутива **{{ productName }}** можно развернуть сервер Elasticsearch вместе с экземпляром ПО или на отдельном сервере. Для этого укажите ключ `-e` при запуске скрипта `prerequisites_install.sh`. См. _«[Установка, запуск, инициализация и остановка ПО {{ productName }}][deploy_guide_linux]»_.
 
 Установленная таким образом сервер Elasticsearch имеет базовую конфигурацию: без аутентификации и с одним узлом. Он доступна по адресу `localhost:9200`.
 
@@ -34,32 +34,34 @@ Elasticsearch создает значительную нагрузку на вы
 
 1. Перейдите в режим суперпользователя:
 
-    ``` sh
-    sudo -i
-    ```
+    --8<-- "linux_sudo.md"
 
-    или
+2. Скачайте и распакуйте дистрибутив с вспомогательным ПО **{{ productName }}**, полученный по ссылке от компании **{{ companyName }}** (`X.X`, `<versionNumber>` — номер версии ПО, `<osname>` — название операционной системы):
 
     ``` sh
-    su -
+    tar -xf X.X-release-ru-<versionNumber>.prerequisites.<osname>.tar.gz
     ```
 
-2. Скачайте и распакуйте дистрибутив **{{ productName }}** по ссылке, предоставленной компанией **{{ companyName }}** (`X.X.XXXX.X` — номер версии ПО, `<osname>` — название операционной системы):
+    !!! tip "Совет"
+
+        После распаковки архив можно удалить для экономии места:
+
+        ``` sh
+        rm -f X.X-release-ru-<versionNumber>.prerequisites.<osname>.tar.gz
+        ```
+
+3. Перейдите в директорию со скриптами для развёртывания вспомогательного ПО:
 
     ``` sh
-    tar -xf X.X-release-ru-X.X.XXXX.X.<osname>.tar.gz
+    cd <prerequisitesDistPath>/CMW_<osname>/scripts
     ```
 
-3. Перейдите в распакованную директорию:
-
-    ``` sh
-    cd CMW_<osname>/
-    ```
+    Здесь:  `<prerequisitesDistPath>/CMW_<osname>/` — путь к распакованному дистрибутиву со вспомогательным ПО.
 
 4. Установите Elasticsearch из дистрибутива с помощью ключа `-e`:
 
     ``` sh
-    sh install.sh -e
+    sh prerequisites_install.sh -e
     ```
 
 5. После установки удостоверьтесь, что сервер Elasticsearch запущен и имеет статус `Active (running)`:

@@ -1,6 +1,6 @@
 ---
 title: Синхронизация с сервером каталогов (Active Directory)
-kbId: 2308
+kbId: 4655
 ---
 
 # Синхронизация с сервером каталогов (Active Directory) {: #accounts_dc_sync}

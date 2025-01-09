@@ -1,6 +1,6 @@
 ---
 title: Модуль GeoIP для NGINX. Установка и настройка
-kbId: 2097
+kbId: 4610
 ---
 
 # Модуль GeoIP для NGINX. Установка и настройка {: #nginx_geoid_deploy}

@@ -1,6 +1,6 @@
 ---
 title: Введение в вычисления
-kbId: 2493
+kbId: 4930
 tags:
 hide:
     - tags
@@ -20,7 +20,7 @@ hide:
 
     - _[Установка значения атрибута по условию][example_formula_condition_set_value]_;
     - _[Вычисление всех аккаунтов группы][example_formula_group_account_calculate]_;
-    - больше примеров: _[Примеры формул][formula_examples]_.
+    - больше примеров: _[Примеры формул][formula_use_examples]_.
 
 - **C#** — объектно-ориентированный язык программирования, который используется для обращения к API **{{ productName }}**, API внешних систем и типовым библиотекам C#.
 
@@ -40,6 +40,6 @@ hide:
 
     - _[Фильтр списка по создателю][example_n3_list_by_creator_filter]_;
     - _[Сравнение двух атрибутов типа «Аккаунт»][example_n3_account_attributes_compare]_;
-    - больше примеров: _[Примеры на N3][n3_examples]_.
+    - больше примеров: _[Примеры на N3][n3_use_examples]_.
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -6,7 +6,7 @@ tags:
   - ссылка
 hide:
   - tags
-kbId: 2259
+kbId: 4766
 ---
 
 # Атрибут типа «Гиперссылка» {: #attribute_hyperlink}

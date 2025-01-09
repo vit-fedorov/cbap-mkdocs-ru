@@ -1,6 +1,6 @@
 ---
 title: Резервное копирование
-kbId: 2190
+kbId: 4642
 tags:
     - резервная копия
     - S3
@@ -52,20 +52,22 @@ hide: tags
 
         - **Не определено** — не использовать репозиторий для хранения резервных копий.
         - **Файловая система** — сохранять резервные копии в файловой системе сервера **{{ productName }}**.
-            - **Путь к папке** — путь к директории на сервере, в которой будут сохраняться резервные копии, например `/var/lib/comindware/<instanceName>/Backups` (здесь `<instanceName>` — имя экземпляра ПО). Для этой директории предоставьте разрешения на полный доступ, чтобы система могла сохранять в неё резервные копии, например:
+            - **Путь к папке** — путь к директории на сервере, в которой будут сохраняться резервные копии, например `/var/backups/comindware/<instanceName>` (здесь `<instanceName>` — имя экземпляра ПО). Для этой директории предоставьте разрешения на полный доступ, чтобы система могла сохранять в неё резервные копии, например:
 
                 **Astra Linux, Ubuntu, Rocky**
 
                 ``` shell
-                chmod 777 /var/lib/comindware/<instanceName>chown -R www-data:www-data /var/lib/comindware/<instanceName>
-                chown -R www-data:www-data /var/lib/comindware/<instanceName>
+                chmod 777 /var/backups/comindware/<instanceName>
+                chown -R www-data:www-data /var/backups/comindware/<instanceName>
+                chown -R www-data:www-data /var/backups/comindware/<instanceName>
                 ```
 
-                **Альт Сервер**
+                **Альт Сервер, РЕД ОС**
 
                 ``` shell
-                chmod 777 /var/lib/comindware/<instanceName>chown -R _nginx:_nginx /var/lib/comindware/<instanceName>
-                chown -R _nginx:_nginx /var/lib/comindware/<instanceName>
+                chmod 777 /var/backups/comindware/<instanceName>
+                chown -R _nginx:_nginx /var/backups/comindware/<instanceName>
+                chown -R _nginx:_nginx /var/backups/comindware/<instanceName>
                 ```
 
                 {% include-markdown ".snippets/pdfPageBreakHard.md" %}

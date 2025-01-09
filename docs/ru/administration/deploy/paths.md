@@ -1,6 +1,6 @@
 ---
 title: Пути и содержимое директорий экземпляра ПО
-kbId: 2502
+kbId: 4620
 ---
 
 # Пути и содержимое директорий экземпляра ПО {: #paths}
@@ -33,8 +33,6 @@ kbId: 2502
     - `/var/lib/comindware/<instanceName>/Database/cache`
     - `/var/lib/comindware/<instanceName>/Database/diagnostic`
     - `/var/lib/comindware/<instanceName>/Database/FullTextSearch`
-
-    _![Пример файла конфигурации <instanceName>.yml](https://kb.comindware.ru/assets/img_66546f9baeb01.png)_
 
 {% endif %}
 
@@ -71,6 +69,7 @@ kbId: 2502
 {% if adminGuideWindows or kbExport %}
 - _[Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта][admin_utility_instance_configure]_
 {% endif %}
+- _[Конфигурация экземпляра, компонентов ПО и служб. Настройка][configuration_files_linux ]_
 - _[Антивирусное ПО. Настройка исключений: пути и файлы {{ productName }}][antivirus_exceptions_configure]_
 - _[Подсистема журналирования][logging_engine]_
 

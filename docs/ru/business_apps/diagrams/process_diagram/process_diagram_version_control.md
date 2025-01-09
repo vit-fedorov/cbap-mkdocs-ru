@@ -16,7 +16,7 @@ tags:
   - определить версию процесса
 hide:
   - tags
-kbId: 2358
+kbId: 4722
 ---
 
 # Управление версиями диаграммы процесса {: #process_diagram_version_control}

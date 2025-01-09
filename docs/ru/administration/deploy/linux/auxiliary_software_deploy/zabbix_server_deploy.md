@@ -1,6 +1,6 @@
 ---
 title: Zabbix Server, Zabbix Agent, Zabbix Frontend и MySQL. Установка и настройка
-kbId: 2292
+kbId: 4607
 ---
 
 # Zabbix Server, Zabbix Agent, Zabbix Frontend и MySQL. Установка и настройка {: #zabbix_server_deploy}

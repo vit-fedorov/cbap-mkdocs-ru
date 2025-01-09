@@ -1,6 +1,6 @@
 ---
 title: Удаление версии продукта
-kbId: 2034
+kbId: 4637
 ---
 
 # Удаление версии продукта {: #admin_utility_sw_version_delete }

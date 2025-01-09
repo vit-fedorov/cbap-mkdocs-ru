@@ -18,7 +18,7 @@ from sshtunnel import SSHTunnelForwarder
 
 KB_ID_TO_FILENAME_MAP = None
 KB_ID_TO_TITLE_MAP = None
-KB_ID_TO_TITLE_MAP_FILE = '.article_id_filename_map.json'
+KB_ID_TO_TITLE_MAP_FILE = '.article_id_filename_map_v5.json'
 THIS_FILE_DIR = os.path.dirname(os.path.realpath(__file__))
 IMPORT_PATH_DEFAULT = 'phpkb_content'
 importPath = input(f'Path to import (default `{IMPORT_PATH_DEFAULT}`): ') 
@@ -54,7 +54,7 @@ def importCategoryChildren(parent, categoryDirectory):
             SELECT DISTINCT (category_id), category_name, parent_id
             FROM phpkb_categories 
             WHERE category_show='yes' 
-            AND category_status = 'public'
+            AND category_status = 'private'
             AND phpkb_categories.language_id = 2
             AND parent_id = {}
             """.format(id))
@@ -123,7 +123,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
             # Replace Related Articles heading with placeholder
             markdown = markdown.replace('## Связанные статьи', '--8<-- "related_topics_heading.md"')
             # Replace product name with placeholder
-            markdown = markdown.replace('Comindware Business Application Platform', '{{ productName }}')
+            markdown = markdown.replace('Comindware Platform', '{{ productName }}')
             # Reformat images with captions
             pattern = re.compile(r'(!\[(.*)\]\(.*\))\n\n\2', flags=re.MULTILINE)
             markdown = re.sub(pattern, r'_\1_', markdown)
@@ -178,19 +178,18 @@ def importArtciclesInCategory (categoryId, categoryDir):
     return pages
 
 
-def fetchCategories(show='yes', status='public', language_id=2, parent_id=''):
+def fetchCategories(show='yes', status='private', language_id=2, parent_id=''):
 
     c = CONNECTION.cursor()    
 
-    c.execute("""
+    c.execute(f"""
             SELECT DISTINCT category_id, category_name, parent_id
             FROM phpkb_categories 
-            WHERE category_show='yes' 
-            AND category_status = 'public'
-            AND phpkb_categories.language_id = 2
+            WHERE category_show='{show}' 
+            AND category_status = '{status}'
+            AND phpkb_categories.language_id = {language_id}
             AND parent_id = '{parent_id}'
-            """.format(parent_id = parent_id))
-
+            """)
     categories = c.fetchall()
     return categories
 

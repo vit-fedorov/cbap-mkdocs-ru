@@ -1,6 +1,6 @@
 ---
 title: Установка и настройка Apache Ignite. Краткое руководство для Windows
-kbId: 2099
+kbId: 4616
 ---
 
 # Установка и настройка Apache Ignite. Краткое руководство для Windows

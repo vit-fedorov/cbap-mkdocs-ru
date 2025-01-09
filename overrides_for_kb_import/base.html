@@ -128,6 +128,11 @@
     {% block extrahead %}{% endblock %}
   </head>
 
+  <!-- Set kbId, if defined -->
+  {% set global = namespace(kbId="") %}
+  {% if page and page.meta and page.meta.kbId %}
+    {% set global.kbId = page.meta.kbId %}
+  {% endif %}
   <!-- Set text direction and color palette, if defined -->
   {% set direction = config.theme.direction or lang.t("direction") %}
   {% if config.theme.palette %}
@@ -143,9 +148,10 @@
       data-md-color-scheme="{{ scheme | replace(' ', '-') }}"
       data-md-color-primary="{{ primary | replace(' ', '-') }}"
       data-md-color-accent="{{ accent | replace(' ', '-') }}"
+      kb-id="{{ global.kbId }}"
     >
   {% else %}
-    <body dir="{{ direction }}">
+    <body dir="{{ direction }}" kb-id="{{ global.kbId }}">
   {% endif %}
     {% set features = config.theme.features or [] %}
 

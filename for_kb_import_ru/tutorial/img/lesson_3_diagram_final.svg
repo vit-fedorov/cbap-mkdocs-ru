@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1645.3844261169434" height="752.3698043823242"><style type="text/css">tspan, text {font: normal 12px/1.4 "OpenSans" sans-serif;} :root { --theme-colors__primary: #0575bd; --theme-colors__primary_fade: #0694EF; --theme-colors__primary_fadest: #2FAAF9; --theme-colors__primary_strong: #04568B; --theme-colors__primary_strongest: #02375A; --theme-colors__primary_hsl: 203, 95%, 38%; --theme-colors__primary-txt: #ffffff; --theme-colors__secondary: #f5f5f5; --theme-colors__secondary_fade: #FFFFFF; --theme-colors__secondary_fadest: #FFFFFF; --theme-colors__secondary_strong: #DCDCDC; --theme-colors__secondary_strongest: #C2C2C2; --theme-colors__secondary-txt: #5a5a5a; --theme-colors__main: #ffffff; --theme-colors__main_fade: #FFFFFF; --theme-colors__main_fadest: #FFFFFF; --theme-colors__main_strong: #E6E6E6; --theme-colors__main_strongest: #CCCCCC; --disabled-text-color: #888888; --disabled-input-color: transparent; --theme-colors__btn: #0575bd; --theme-colors__btn_fade: #0694EF; --theme-colors__btn_strong: #04568B; --theme-colors__btn-txt: #ffffff; --theme-colors__cancel-btn: #9d9d9d; --theme-colors__cancel-btn_fade: #B6B6B6; --theme-colors__cancel-btn_strong: #848484; --theme-colors__cancel-btn-txt: #ffffff; --theme-colors__text: #5a5a5a; --theme-colors__text_fade: #747474; --theme-colors__text_fadest: #8D8D8D; --theme-colors__text_strong: #404040; --theme-colors__link: #0575bd; --theme-colors__link_fade: #0694EF; --theme-colors__link_fadest: #2FAAF9; --theme-colors__link_strong: #04568B; --theme-colors__breadcrumbs: #0575bd; --theme-colors__breadcrumbs_fade: #0694EF; --theme-colors__breadcrumbs_fadest: #2FAAF9; --theme-colors__breadcrumbs_strong: #04568B; --theme-colors__success: #74c365; --theme-colors__success-txt: #ffffff; --theme-colors__error: #e1462c; --theme-colors__error_hsl: 9, 75%, 53%; --theme-colors__error-txt: #ffffff; --theme-colors__warning: #ffda44; --theme-colors__warning-txt: #5a5a5a; --theme-colors__highlight: #e8f6ff; --theme-colors__highlight-txt: #5a5a5a; --theme-colors__background: #e3e3e3; --theme-colors__background-txt: #5a5a5a; --theme-colors__main-header: #0575bd; --theme-colors__main-header_fade: #0694EF; --theme-colors__main-header_strong: #04568B; --theme-colors__main-header-txt: #ffffff; --theme-colors__group-header: #f5f5f5; --theme-colors__group-header-txt: #5a5a5a; --theme-colors__severity-none: #0575bd; --theme-colors__severity-none_fade: #0694EF; --theme-colors__severity-none_strong: #04568B; --theme-colors__severity-none-txt: #ffffff; --theme-colors__severity-low: #8ecdf8; --theme-colors__severity-low_fade: #BEE2FB; --theme-colors__severity-low_strong: #5EB8F5; --theme-colors__severity-low-txt: #ffffff; --theme-colors__severity-normal: #0ebd73; --theme-colors__severity-normal_fade: #12EC90; --theme-colors__severity-normal_strong: #0A8E56; --theme-colors__severity-normal-txt: #ffffff; --theme-colors__severity-major: #f4bd40; --theme-colors__severity-major_fade: #F7CE70; --theme-colors__severity-major_strong: #F1AC10; --theme-colors__severity-major-txt: #ffffff; --theme-colors__severity-critical: #ff804e; --theme-colors__severity-critical_fade: #FFA581; --theme-colors__severity-critical_strong: #FF5B1B; --theme-colors__severity-critical-txt: #ffffff; --theme-colors__severity-fatal: #ce382e; --theme-colors__severity-fatal_fade: #D95E56; --theme-colors__severity-fatal_strong: #A42D25; --theme-colors__severity-fatal-txt: #ffffff; --editors-color-border: #d6d6d6; --grids-color-border: #d6d6d6; --menu-items-color-border: #d6d6d6; --base-font-family: OpenSans; --base-font-size: 14px; --platform-name: ""; --popup-shadow-color: 0, 0, 0; --popup-shadow-opacity: 0.3; --popup-shadow-blur-radius: 6px; --dropdown-shadow-color: 0, 0, 0; --dropdown-shadow-opacity: 0.3; --dropdown-shadow-blur-radius: 3px; --constructor-shadow-color: 0, 0, 0; --constructor-shadow-opacity: 0.2; --constructor-shadow-blur-radius: 6px; --menu-shadow-color: 0, 0, 0; --menu-shadow-opacity: 0.2; --menu-shadow-blur-radius: 6px; --theme-colors__dashboard-color1: #177fb0; --theme-colors__dashboard-color1-txt: #ffffff; --theme-colors__dashboard-color2: #17b9e5; --theme-colors__dashboard-color2-txt: #ffffff; --theme-colors__dashboard-color3: #1ad2eb; --theme-colors__dashboard-color3-txt: #ffffff; --theme-colors__dashboard-color4: #1bdadc; --theme-colors__dashboard-color4-txt: #ffffff; --theme-colors__dashboard-color5: #1de6c9; --theme-colors__dashboard-color5-txt: #ffffff; --theme-colors__dashboard-color6: #9155cd; --theme-colors__dashboard-color6-txt: #ffffff; --theme-colors__dashboard-color7: #bf67d7; --theme-colors__dashboard-color7-txt: #ffffff; --theme-colors__dashboard-color8: #e468bf; --theme-colors__dashboard-color8-txt: #ffffff; --theme-colors__dashboard-color9: #f16e9d; --theme-colors__dashboard-color9-txt: #ffffff; --theme-colors__dashboard-color10: #f0897c; --theme-colors__dashboard-color10-txt: #ffffff; --theme-colors__dashboard-color11: #ce382e; --theme-colors__dashboard-color11-txt: #ffffff; --theme-colors__dashboard-color12: #e76a39; --theme-colors__dashboard-color12-txt: #ffffff; --theme-colors__dashboard-color13: #f49240; --theme-colors__dashboard-color13-txt: #ffffff; --theme-colors__dashboard-color14: #f3aa4a; --theme-colors__dashboard-color14-txt: #ffffff; --theme-colors__dashboard-color15: #efc74b; --theme-colors__dashboard-color15-txt: #ffffff; --base-font-style: normal; --base-font-weight: 400; --headers-font-family: OpenSans; --headers-font-size: 19px; --headers-font-style: normal; --headers-font-weight: 400; } *, ::after, ::before { box-sizing: border-box; } svg:not(:root) { overflow: hidden; } :root { --light: 80; --threshold: 30; } :root { --group-back: var(--theme-colors__primary); } :root { --lightcoral: #f08080; --pr-history_selected: #f6f2c9; --pr-history_selected_hover: #efe79a; --pr-history_selected_list-item: #e9de78; --pr-history_selected_list-item_hover: #f2da0c; } * { box-sizing: border-box; } :root { --chart-bar-i_ontime: #72d5b3; --chart-bar-i_atrisk: #fec779; --chart-bar-i_late: #f894b0; --chevron-i-color: #338320; --notification-pink: #da4de3; --theme-colors__breadcrumbs: #0575bd; --theme-colors__breadcrumbs_fade: #0694ef; --theme-colors__breadcrumbs_fadest: #2faaf9; --theme-colors__breadcrumbs_strong: #04568b; --theme-colors__main-header: #0575bd; --theme-colors__main-header_fade: #0694ef; --theme-colors__main-header_strong: #04568b; --theme-colors__main-header-txt: #fff; } :root { --ld-draggable-helper_remove-back: #ffbaad; --ld-draggable-helper_remove-border: #e2000d; --ld-invalid-container: #eb6c16; } :root { --blue: blue; } .editor-container__diagram svg { background: var(--theme-colors__main); overflow: hidden; z-index: 3; } .no-select { user-select: none; } .drag-point-vertical, .svg-resizer.svg-east-resizer, .svg-resizer.svg-west-resizer { cursor: e-resize; } .svg-resizer.svg-north-resizer, .svg-resizer.svg-south-resizer { cursor: n-resize; } .svg-resizer { opacity: 0; } .history_icon rect.pd-task__body, .process-diagram rect.pd-task__body { fill: var(--theme-colors__main); stroke: var(--theme-colors__text_fade); stroke-opacity: 0.9; } .process-diagram rect.pd-task__body { stroke-width: 2; } path.pd-task-icon { fill: rgb(113, 119, 123); fill-rule: evenodd; } circle.dev-diagram-connector { fill: var(--theme-colors__main); stroke: rgb(100, 170, 208); stroke-width: 1px; opacity: 0; } .process-diagram .dev-activity-StartEvent circle.dev-event-outer-circle { fill: var(--theme-colors__main); stroke: rgb(14, 177, 118); stroke-width: 2; } .process-diagram .dev-activity-EndEvent circle.dev-event-outer-circle { fill: var(--theme-colors__main); stroke: rgb(234, 103, 72); stroke-width: 4; } .dev-activity-StartEvent circle.dev-event-inner-circle { display: none; } .dev-activity-EndEvent circle.dev-event-inner-circle { display: none; } .process-diagram svg text, .svg-text-editor-text { fill: var(--theme-colors__text); } .svg-text-editor-text { font-size: 12px; font-weight: 500; } .process-diagram__lane .svg-text-editor-text { font-size: 23px; } .process-diagram__lane .lane__assignee-text { fill: var(--theme-colors__text_fade); font-size: 19px; font-weight: 500; } .process-diagram__lane-text { fill: var(--theme-colors__text); stroke: transparent; } :root { --trigger-text_template-color: #5d5d5d; } :root { --validation-item_back: #b25640; --validation-item_back_hover: #d49887; --severity-low-back: #e1e1e1; --severity-normal-back: #d7fdf4; --severity-major-back: #d6f4fa; --severity-critical-back: #f9f8c9; --severity-fatal-back: #fbe2e2; --notification-severity-critical: #f74d4d; --notification-severity-major: #ff8100; --notification-severity-minor: #d8da5e; --notification-severity-trivial: #f74d4d; --pd-stroke: #888; --pd-fill: #e0f1ff; --constructor-shadow-color: var(--black); --constructor-shadow-opacity: 0.16; --constructor-shadow-blur-radius: 6px; } .dev-activity-StartEvent circle.dev-event-outer-circle { fill: transparent; stroke: rgb(14, 177, 118); stroke-width: 2; } .dev-activity-EndEvent circle.dev-event-outer-circle { fill: transparent; stroke: rgb(234, 103, 72); stroke-width: 4; } .editor-container__diagram text { fill: var(--theme-colors__text); stroke: transparent; } .activity > .svg-text-editor > text { fill: rgb(93, 93, 93); } .connectors-g {display: none},.select-g {display: none},.toolbar-g {display: none}</style><defs>
+    <!-- Clip for text-overflow -->
+    <clipPath id="clipPath">
+        <rect x="0" y="-5" width="190" height="40"></rect>
+    </clipPath>
+
+    <!-- Gradient for text-overflow mask -->
+    <linearGradient id="gradient-overflow">
+        <stop offset="0%" stop-color="#fff" stop-opacity="0"></stop>
+        <stop offset="100%" stop-color="#fff"></stop>
+    </linearGradient>
+<marker refX="3" refY="2" markerWidth="4" markerHeight="4" orient="auto" id="arrowPath" fill="#888" stroke="none"><path d="M 0,0 V 4 L4,2 Z"></path></marker><marker refX="3" refY="2" markerWidth="4" markerHeight="4" orient="auto" id="selectedArrowPath" fill="black" stroke="none"><path d="M 0,0 V 4 L4,2 Z"></path></marker></defs>
+<g class="js-form-container process-diagram" fill="#eee" transform="scale(0.995) translate(-31.64886934673369,0.6835985039946187)">
+    <g class="pool-g"><g id="95954358-1806-40e6-a53a-9d9aad476622" transform="translate(60,10)" layer="0" class="activity dev-activity process-diagram__lane"><g class="activity-g" opacity="1"><rect vector-effect="non-scaling-stroke" stroke="#a2a2a2" stroke-width="1" fill-opacity="0" fill="#FFF" width="1550" height="670.1654626522211" class="null-space js-activity-resize-pool">
+</rect>
+
+<rect vector-effect="non-scaling-stroke" stroke-width="0" fill-opacity="0" opacity="0" x="0" y="0" width="100" height="670.1654626522211" class="js-activity-shape">
+</rect>
+<line vector-effect="non-scaling-stroke" stroke="#a2a2a2" stroke-width="1px" fill-opacity="0" fill="#FFF" x1="100" y1="0" x2="100" y2="670.1654626522211"></line>
+
+<rect class="js-activity-resizers svg-resizer svg-east-resizer js-east-resizer js-east-resizer-pool js-resizer" x="1535" y="0" width="30" height="670.1654626522211">
+</rect>
+
+<g class="svg-text-editor svg-text-editor_vertical "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" transform="rotate(-90)" style="white-space: pre;" x="-335.08273132611055" y="10" text-anchor="middle"><tspan dy="23" x="-335.08273132611055" class="js-activity-shape">Пул</tspan></text></g></g>
+<g class="connectors-g"></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g></g>
+    <g class="lane-g"><g id="657ef5c7-0f6b-4650-8a92-c24ff6157700" transform="translate(160,10)" layer="0.01" class="activity dev-activity process-diagram__lane"><g class="activity-g" opacity="1"><rect vector-effect="non-scaling-stroke" stroke="#a2a2a2" stroke-width="1" fill-opacity="0" fill="#FFF" width="1450" height="215" class="null-space js-activity-resize-pool">
+</rect>
+
+<rect vector-effect="non-scaling-stroke" stroke-width="0" fill-opacity="0" opacity="0" x="0" y="0" width="100" height="215" class="js-activity-shape">
+</rect>
+<!-- <line vector-effect="non-scaling-stroke" stroke="#a2a2a2" stroke-width="1px" fill-opacity="0" fill="#FFF" x1="100" y1="0" x2="100" y2="215"></line> -->
+
+<rect class="js-activity-resizers svg-resizer svg-south-resizer js-south-resizer js-south-resizer-pool js-resizer" x="0" y="200" width="1450" height="30">
+</rect>
+<g class="svg-text-editor svg-text-editor_vertical "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" transform="rotate(-90)" style="white-space: pre;" x="-107.5" y="10" text-anchor="middle"><tspan dy="23" x="-107.5" class="js-activity-shape">Заказчик</tspan></text></g></g>
+<g class="connectors-g"></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g><g class="svg-text-editor svg-text-editor_vertical "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" transform="rotate(-90)" style="white-space: pre;" x="-107.5" y="71" text-anchor="middle"><tspan dy="19" x="-107.5" class="js-activity-shape lane__assignee-text"></tspan></text></g></g><g id="a09ccc10-683b-4035-bb1a-1d16539d0ac4" transform="translate(160,225)" layer="0.01" class="activity dev-activity process-diagram__lane"><g class="activity-g" opacity="1"><rect vector-effect="non-scaling-stroke" stroke="#a2a2a2" stroke-width="1" fill-opacity="0" fill="#FFF" width="1450" height="200" class="null-space js-activity-resize-pool">
+</rect>
+
+<rect vector-effect="non-scaling-stroke" stroke-width="0" fill-opacity="0" opacity="0" x="0" y="0" width="100" height="200" class="js-activity-shape">
+</rect>
+<!-- <line vector-effect="non-scaling-stroke" stroke="#a2a2a2" stroke-width="1px" fill-opacity="0" fill="#FFF" x1="100" y1="0" x2="100" y2="200"></line> -->
+
+<rect class="js-activity-resizers svg-resizer svg-south-resizer js-south-resizer js-south-resizer-pool js-resizer" x="0" y="185" width="1450" height="30">
+</rect>
+<g class="svg-text-editor svg-text-editor_vertical "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" transform="rotate(-90)" style="white-space: pre;" x="-100" y="10" text-anchor="middle"><tspan dy="23" x="-100" class="js-activity-shape">Секретарь</tspan></text></g></g>
+<g class="connectors-g"></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g><g class="svg-text-editor svg-text-editor_vertical "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" transform="rotate(-90)" style="white-space: pre;" x="-100" y="71" text-anchor="middle"><tspan dy="19" x="-100" class="js-activity-shape lane__assignee-text"></tspan></text></g></g><g id="642e8fc9-e741-45f4-8ce0-8a241ecb5324" transform="translate(160,425)" layer="0.01" class="activity dev-activity process-diagram__lane"><g class="activity-g" opacity="1"><rect vector-effect="non-scaling-stroke" stroke="#a2a2a2" stroke-width="1" fill-opacity="0" fill="#FFF" width="1450" height="255.1654626522211" class="null-space js-activity-resize-pool">
+</rect>
+
+<rect vector-effect="non-scaling-stroke" stroke-width="0" fill-opacity="0" opacity="0" x="0" y="0" width="100" height="255.1654626522211" class="js-activity-shape">
+</rect>
+<!-- <line vector-effect="non-scaling-stroke" stroke="#a2a2a2" stroke-width="1px" fill-opacity="0" fill="#FFF" x1="100" y1="0" x2="100" y2="255.1654626522211"></line> -->
+
+<rect class="js-activity-resizers svg-resizer svg-south-resizer js-south-resizer js-south-resizer-pool js-resizer" x="0" y="240.1654626522211" width="1450" height="30">
+</rect>
+<g class="svg-text-editor svg-text-editor_vertical "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" transform="rotate(-90)" style="white-space: pre;" x="-127.58273132611055" y="10" text-anchor="middle"><tspan dy="23" x="-127.58273132611055" class="js-activity-shape">Гараж</tspan></text></g></g>
+<g class="connectors-g"></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g><g class="svg-text-editor svg-text-editor_vertical "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" transform="rotate(-90)" style="white-space: pre;" x="-127.58273132611055" y="71" text-anchor="middle"><tspan dy="19" x="-127.58273132611055" class="js-activity-shape lane__assignee-text"></tspan></text></g></g></g>
+    <g class="object-g"><g id="93d3c623-1c3e-4851-b3d9-59f0c55b23c9" transform="translate(420,300)" layer="30" class="activity"><g class="activity-g" opacity="1"><g class="dev-activity-gate dev-activity-gate-Exclusive">
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-selected-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" stroke-width="2.5px" class="dev-activity-gate-outer js-activity-shape"></path>
+
+    <path d="M20,0L40,20L20,40L0,20L20,0" fill="white" class="dev-activity-gate-inner js-activity-shape"></path>
+
+    <g class="js-title-content"><g class="svg-text-editor svg-text-editor_horizontal "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" style="white-space: pre;" x="15" y="45" text-anchor="middle"><tspan dy="13" x="15" class="">Рассмотрение
+ </tspan><tspan dy="13" x="15" class="">заявки</tspan></text></g><title>Рассмотрение 
+заявки</title></g>
+
+
+    <g class="js-activity-connectors">
+        <circle r="4" cx="20" cy="-3" index="0" alignment="top" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="20" cy="-3" index="0" alignment="top" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="43" cy="20" index="10" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="43" cy="20" index="10" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="20" cy="43" index="20" alignment="bottom" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="20" cy="43" index="20" alignment="bottom" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="-3" cy="20" index="30" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="-3" cy="20" index="30" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="31.5" cy="8.5" index="5" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="31.5" cy="8.5" index="5" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="31.5" cy="31.5" index="15" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="31.5" cy="31.5" index="15" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="8.5" cy="31.5" index="25" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="8.5" cy="31.5" index="25" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="8.5" cy="8.5" index="35" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="8.5" cy="8.5" index="35" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+    </g>
+</g></g>
+<g class="connectors-g"></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="67344823-8a13-464c-b244-b5f02b19b7f4" transform="translate(540,285)" layer="30" class="activity"><g class="activity-g" opacity="1"><g class="dev-activity pd-task pd-task_user">
+    <rect width="120" height="70" x="0" y="0" rx="4" ry="4" class="js-activity-body diagram-activity-selected-background">
+    </rect>
+
+    <rect width="120" height="70" x="0" y="0" rx="4" ry="4" class="js-activity-body diagram-activity-background">
+    </rect>
+
+     <rect width="120" height="70" x="0" y="0" rx="4" ry="4" class="js-activity-body js-activity-shape pd-task__body">
+    </rect>
+
+    <g transform="scale(1.2, 0.7)" class="js-activity-resize-root">
+        <g class="js-activity-resizers">
+            <rect class="svg-resizer svg-north-resizer js-north-resizer js-resizer" x="0" y="-5" width="100" height="10">
+            </rect>
+            <rect class="svg-resizer svg-south-resizer js-south-resizer js-resizer" x="0" y="95" width="100" height="10">
+            </rect>
+            <rect class="svg-resizer svg-east-resizer js-east-resizer js-resizer" x="95" y="0" width="10" height="100">
+            </rect>
+            <rect class="svg-resizer svg-west-resizer js-west-resizer js-resizer" x="-5" y="0" width="10" height="100">
+            </rect>
+        </g>
+    </g>
+</g>
+
+<g class="js-activity-shape js-activity-icon">
+    <path transform="scale(1.2) translate(3, 3)" class="js-activity-icon pd-task-icon pd-task-icon__user" d="M8.3,1.2c-0.4,0-0.5,0.2-0.7,0.2C7.3,1.4,7.7,1.3,7,1.4c-0.7,0.1-1,1-1,1.4c0,0.4,0,1.7,0,1.7L5.5,5.1v1.2
+            c0,0,0,0.6,0.6,0.6c0.3,0.8,1.2,1.2,1.2,1.2v1.2c0,0,0,0.6-1.8,0.6C2.7,9.9,3,12.3,3,12.2C3,12.9,3,14,3,14
+            h11c0,0,0-0.5,0-1.2c0-0.7,0-3-2.4-3c-1.8,0-1.8-0.1-1.8-0.6c0-0.4,0-1.2,0-1.2s0.9-0.4,1.2-1.2
+            c0.6,0,0.6-0.6,0.6-0.6V5.1L11,4.5c0,0,0-0.8,0-1.2c0-1.2-0.1-1.8-1.2-1.8c0,0,0-0.6-0.6-0.6L8.3,1.2z">
+    </path>
+</g>
+
+<g class="svg-text-editor svg-text-editor_horizontal "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" style="white-space: pre;" x="62.5" y="22" text-anchor="middle"><tspan dy="13" x="62.5" class="js-activity-shape">Рассмотреть </tspan><tspan dy="13" x="62.5" class="js-activity-shape">заявку</tspan></text></g></g>
+<g class="connectors-g"><circle r="4" cx="60" cy="0" index="10" alignment="top" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="60" cy="0" index="10" alignment="top" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="120" cy="35" index="40" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="120" cy="35" index="40" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="60" cy="70" index="70" alignment="bottom" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="60" cy="70" index="70" alignment="bottom" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="0" cy="35" index="100" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="0" cy="35" index="100" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="84f6b41f-9785-4db4-bff5-9822c5b8ce12" transform="translate(700,300)" layer="30" class="activity"><g class="activity-g" opacity="1"><g class="dev-activity-gate dev-activity-gate-Exclusive">
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-selected-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" stroke-width="2.5px" class="dev-activity-gate-outer js-activity-shape"></path>
+
+    <path d="M20,0L40,20L20,40L0,20L20,0" fill="white" class="dev-activity-gate-inner js-activity-shape"></path>
+
+    <g class="js-title-content"><g class="svg-text-editor svg-text-editor_horizontal "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" style="white-space: pre;" x="15" y="45" text-anchor="middle"><tspan dy="13" x="15" class="">Одобрена?</tspan></text></g><title>Одобрена?</title></g>
+
+
+    <g class="js-activity-connectors">
+        <circle r="4" cx="20" cy="-3" index="0" alignment="top" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="20" cy="-3" index="0" alignment="top" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="43" cy="20" index="10" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="43" cy="20" index="10" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="20" cy="43" index="20" alignment="bottom" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="20" cy="43" index="20" alignment="bottom" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="-3" cy="20" index="30" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="-3" cy="20" index="30" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="31.5" cy="8.5" index="5" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="31.5" cy="8.5" index="5" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="31.5" cy="31.5" index="15" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="31.5" cy="31.5" index="15" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="8.5" cy="31.5" index="25" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="8.5" cy="31.5" index="25" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="8.5" cy="8.5" index="35" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="8.5" cy="8.5" index="35" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+    </g>
+</g></g>
+<g class="connectors-g"></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="ce9f3c58-394f-40be-bb57-1d86bc7922e0" transform="translate(843.552600118286,85)" layer="30" class="activity"><g class="activity-g" opacity="1"><g class="dev-activity pd-task pd-task_user">
+    <rect width="152.894799763428" height="70" x="0" y="0" rx="4" ry="4" class="js-activity-body diagram-activity-selected-background">
+    </rect>
+
+    <rect width="152.894799763428" height="70" x="0" y="0" rx="4" ry="4" class="js-activity-body diagram-activity-background">
+    </rect>
+
+     <rect width="152.894799763428" height="70" x="0" y="0" rx="4" ry="4" class="js-activity-body js-activity-shape pd-task__body">
+    </rect>
+
+    <g transform="scale(1.5289479976342801, 0.7)" class="js-activity-resize-root">
+        <g class="js-activity-resizers">
+            <rect class="svg-resizer svg-north-resizer js-north-resizer js-resizer" x="0" y="-5" width="100" height="10">
+            </rect>
+            <rect class="svg-resizer svg-south-resizer js-south-resizer js-resizer" x="0" y="95" width="100" height="10">
+            </rect>
+            <rect class="svg-resizer svg-east-resizer js-east-resizer js-resizer" x="95" y="0" width="10" height="100">
+            </rect>
+            <rect class="svg-resizer svg-west-resizer js-west-resizer js-resizer" x="-5" y="0" width="10" height="100">
+            </rect>
+        </g>
+    </g>
+</g>
+
+<g class="js-activity-shape js-activity-icon">
+    <path transform="scale(1.2) translate(3, 3)" class="js-activity-icon pd-task-icon pd-task-icon__user" d="M8.3,1.2c-0.4,0-0.5,0.2-0.7,0.2C7.3,1.4,7.7,1.3,7,1.4c-0.7,0.1-1,1-1,1.4c0,0.4,0,1.7,0,1.7L5.5,5.1v1.2
+            c0,0,0,0.6,0.6,0.6c0.3,0.8,1.2,1.2,1.2,1.2v1.2c0,0,0,0.6-1.8,0.6C2.7,9.9,3,12.3,3,12.2C3,12.9,3,14,3,14
+            h11c0,0,0-0.5,0-1.2c0-0.7,0-3-2.4-3c-1.8,0-1.8-0.1-1.8-0.6c0-0.4,0-1.2,0-1.2s0.9-0.4,1.2-1.2
+            c0.6,0,0.6-0.6,0.6-0.6V5.1L11,4.5c0,0,0-0.8,0-1.2c0-1.2-0.1-1.8-1.2-1.8c0,0,0-0.6-0.6-0.6L8.3,1.2z">
+    </path>
+</g>
+
+<g class="svg-text-editor svg-text-editor_horizontal "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" style="white-space: pre;" x="78.947399881714" y="28.5" text-anchor="middle"><tspan dy="13" x="78.947399881714" class="js-activity-shape">Отменить поездку</tspan></text></g></g>
+<g class="connectors-g"><circle r="4" cx="76.447399881714" cy="0" index="10" alignment="top" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="76.447399881714" cy="0" index="10" alignment="top" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="152.894799763428" cy="35" index="40" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="152.894799763428" cy="35" index="40" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="76.447399881714" cy="70" index="70" alignment="bottom" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="76.447399881714" cy="70" index="70" alignment="bottom" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="0" cy="35" index="100" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="0" cy="35" index="100" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="15439a6b-8269-4492-801d-ae2405403d81" transform="translate(850.84307033213,485)" layer="30" class="activity"><g class="activity-g" opacity="1"><g class="dev-activity pd-task pd-task_user">
+    <rect width="138.313859335741" height="70" x="0" y="0" rx="4" ry="4" class="js-activity-body diagram-activity-selected-background">
+    </rect>
+
+    <rect width="138.313859335741" height="70" x="0" y="0" rx="4" ry="4" class="js-activity-body diagram-activity-background">
+    </rect>
+
+     <rect width="138.313859335741" height="70" x="0" y="0" rx="4" ry="4" class="js-activity-body js-activity-shape pd-task__body">
+    </rect>
+
+    <g transform="scale(1.38313859335741, 0.7)" class="js-activity-resize-root">
+        <g class="js-activity-resizers">
+            <rect class="svg-resizer svg-north-resizer js-north-resizer js-resizer" x="0" y="-5" width="100" height="10">
+            </rect>
+            <rect class="svg-resizer svg-south-resizer js-south-resizer js-resizer" x="0" y="95" width="100" height="10">
+            </rect>
+            <rect class="svg-resizer svg-east-resizer js-east-resizer js-resizer" x="95" y="0" width="10" height="100">
+            </rect>
+            <rect class="svg-resizer svg-west-resizer js-west-resizer js-resizer" x="-5" y="0" width="10" height="100">
+            </rect>
+        </g>
+    </g>
+</g>
+
+<g class="js-activity-shape js-activity-icon">
+    <path transform="scale(1.2) translate(3, 3)" class="js-activity-icon pd-task-icon pd-task-icon__user" d="M8.3,1.2c-0.4,0-0.5,0.2-0.7,0.2C7.3,1.4,7.7,1.3,7,1.4c-0.7,0.1-1,1-1,1.4c0,0.4,0,1.7,0,1.7L5.5,5.1v1.2
+            c0,0,0,0.6,0.6,0.6c0.3,0.8,1.2,1.2,1.2,1.2v1.2c0,0,0,0.6-1.8,0.6C2.7,9.9,3,12.3,3,12.2C3,12.9,3,14,3,14
+            h11c0,0,0-0.5,0-1.2c0-0.7,0-3-2.4-3c-1.8,0-1.8-0.1-1.8-0.6c0-0.4,0-1.2,0-1.2s0.9-0.4,1.2-1.2
+            c0.6,0,0.6-0.6,0.6-0.6V5.1L11,4.5c0,0,0-0.8,0-1.2c0-1.2-0.1-1.8-1.2-1.8c0,0,0-0.6-0.6-0.6L8.3,1.2z">
+    </path>
+</g>
+
+<g class="svg-text-editor svg-text-editor_horizontal "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" style="white-space: pre;" x="71.6569296678705" y="28.5" text-anchor="middle"><tspan dy="13" x="71.6569296678705" class="js-activity-shape">Принять заявку</tspan></text></g></g>
+<g class="connectors-g"><circle r="4" cx="69.1569296678705" cy="0" index="10" alignment="top" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="69.1569296678705" cy="0" index="10" alignment="top" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="138.313859335741" cy="35" index="40" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="138.313859335741" cy="35" index="40" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="69.1569296678705" cy="70" index="70" alignment="bottom" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="69.1569296678705" cy="70" index="70" alignment="bottom" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="0" cy="35" index="100" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="0" cy="35" index="100" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="124c85ff-71c1-4383-9f13-e2ffc9208b6b" transform="translate(1020,580)" layer="30" class="activity"><g class="activity-g" opacity="1"><g class="dev-activity-gate dev-activity-gate-Exclusive">
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-selected-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" stroke-width="2.5px" class="dev-activity-gate-outer js-activity-shape"></path>
+
+    <path d="M20,0L40,20L20,40L0,20L20,0" fill="white" class="dev-activity-gate-inner js-activity-shape"></path>
+
+    <g class="js-title-content"><g class="svg-text-editor svg-text-editor_horizontal "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" style="white-space: pre;" x="15" y="45" text-anchor="middle"><tspan dy="13" x="15" class="">Есть машина?</tspan></text></g><title>Есть машина?</title></g>
+
+
+    <g class="js-activity-connectors">
+        <circle r="4" cx="20" cy="-3" index="0" alignment="top" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="20" cy="-3" index="0" alignment="top" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="43" cy="20" index="10" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="43" cy="20" index="10" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="20" cy="43" index="20" alignment="bottom" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="20" cy="43" index="20" alignment="bottom" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="-3" cy="20" index="30" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="-3" cy="20" index="30" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="31.5" cy="8.5" index="5" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="31.5" cy="8.5" index="5" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="31.5" cy="31.5" index="15" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="31.5" cy="31.5" index="15" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="8.5" cy="31.5" index="25" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="8.5" cy="31.5" index="25" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="8.5" cy="8.5" index="35" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="8.5" cy="8.5" index="35" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+    </g>
+</g></g>
+<g class="connectors-g"></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="7e69da95-e8f9-4952-907b-08bafafd40fc" transform="translate(1180,580)" layer="30" class="activity"><g class="activity-g" opacity="1"><g class="dev-activity-gate dev-activity-gate-Parallel">
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-selected-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" stroke-width="2.5px" class="dev-activity-gate-outer js-activity-shape"></path>
+
+    <path d="M20,0L40,20L20,40L0,20L20,0" fill="white" class="dev-activity-gate-inner js-activity-shape"></path>
+
+    <g class="js-title-content"><g class="svg-text-editor svg-text-editor_horizontal "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" style="white-space: pre;" x="15" y="45" text-anchor="middle"><tspan dy="13" x="15" class="">Машина выделена</tspan></text></g><title>Машина выделена</title></g>
+
+        <line x1="8" y1="20" x2="32" y2="20" stroke="rgb(197,196,48)" stroke-width="2.5" class="js-activity-shape"></line>
+        <line stroke="rgb(197,196,48)" stroke-width="2.5" x1="20" y1="8" x2="20" y2="32" class="js-activity-shape"></line>
+
+    <g class="js-activity-connectors">
+        <circle r="4" cx="20" cy="-3" index="0" alignment="top" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="20" cy="-3" index="0" alignment="top" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="43" cy="20" index="10" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="43" cy="20" index="10" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="20" cy="43" index="20" alignment="bottom" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="20" cy="43" index="20" alignment="bottom" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="-3" cy="20" index="30" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="-3" cy="20" index="30" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="31.5" cy="8.5" index="5" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="31.5" cy="8.5" index="5" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="31.5" cy="31.5" index="15" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="31.5" cy="31.5" index="15" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="8.5" cy="31.5" index="25" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="8.5" cy="31.5" index="25" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="8.5" cy="8.5" index="35" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="8.5" cy="8.5" index="35" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+    </g>
+</g></g>
+<g class="connectors-g"></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="c4482aee-c53c-4ca6-8164-89d371c3cbfa" transform="translate(1280,85)" layer="30" class="activity"><g class="activity-g" opacity="1"><g class="dev-activity pd-task pd-task_user">
+    <rect width="120" height="70" x="0" y="0" rx="4" ry="4" class="js-activity-body diagram-activity-selected-background">
+    </rect>
+
+    <rect width="120" height="70" x="0" y="0" rx="4" ry="4" class="js-activity-body diagram-activity-background">
+    </rect>
+
+     <rect width="120" height="70" x="0" y="0" rx="4" ry="4" class="js-activity-body js-activity-shape pd-task__body">
+    </rect>
+
+    <g transform="scale(1.2, 0.7)" class="js-activity-resize-root">
+        <g class="js-activity-resizers">
+            <rect class="svg-resizer svg-north-resizer js-north-resizer js-resizer" x="0" y="-5" width="100" height="10">
+            </rect>
+            <rect class="svg-resizer svg-south-resizer js-south-resizer js-resizer" x="0" y="95" width="100" height="10">
+            </rect>
+            <rect class="svg-resizer svg-east-resizer js-east-resizer js-resizer" x="95" y="0" width="10" height="100">
+            </rect>
+            <rect class="svg-resizer svg-west-resizer js-west-resizer js-resizer" x="-5" y="0" width="10" height="100">
+            </rect>
+        </g>
+    </g>
+</g>
+
+<g class="js-activity-shape js-activity-icon">
+    <path transform="scale(1.2) translate(3, 3)" class="js-activity-icon pd-task-icon pd-task-icon__user" d="M8.3,1.2c-0.4,0-0.5,0.2-0.7,0.2C7.3,1.4,7.7,1.3,7,1.4c-0.7,0.1-1,1-1,1.4c0,0.4,0,1.7,0,1.7L5.5,5.1v1.2
+            c0,0,0,0.6,0.6,0.6c0.3,0.8,1.2,1.2,1.2,1.2v1.2c0,0,0,0.6-1.8,0.6C2.7,9.9,3,12.3,3,12.2C3,12.9,3,14,3,14
+            h11c0,0,0-0.5,0-1.2c0-0.7,0-3-2.4-3c-1.8,0-1.8-0.1-1.8-0.6c0-0.4,0-1.2,0-1.2s0.9-0.4,1.2-1.2
+            c0.6,0,0.6-0.6,0.6-0.6V5.1L11,4.5c0,0,0-0.8,0-1.2c0-1.2-0.1-1.8-1.2-1.8c0,0,0-0.6-0.6-0.6L8.3,1.2z">
+    </path>
+</g>
+
+<g class="svg-text-editor svg-text-editor_horizontal "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" style="white-space: pre;" x="62.5" y="22" text-anchor="middle"><tspan dy="13" x="62.5" class="js-activity-shape">Совершить
+</tspan><tspan dy="13" x="62.5" class="js-activity-shape">поездку</tspan></text></g></g>
+<g class="connectors-g"><circle r="4" cx="60" cy="0" index="10" alignment="top" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="60" cy="0" index="10" alignment="top" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="120" cy="35" index="40" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="120" cy="35" index="40" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="60" cy="70" index="70" alignment="bottom" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="60" cy="70" index="70" alignment="bottom" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="0" cy="35" index="100" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="0" cy="35" index="100" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="4db2b02a-0eb7-42d8-a8cd-32927f1fc144" transform="translate(1300.05878570107,569.83453734778)" layer="30" class="activity"><g class="activity-g" opacity="1"><g class="dev-activity pd-task pd-task_user">
+    <rect width="119.882428597854" height="60.3309253044411" x="0" y="0" rx="4" ry="4" class="js-activity-body diagram-activity-selected-background">
+    </rect>
+
+    <rect width="119.882428597854" height="60.3309253044411" x="0" y="0" rx="4" ry="4" class="js-activity-body diagram-activity-background">
+    </rect>
+
+     <rect width="119.882428597854" height="60.3309253044411" x="0" y="0" rx="4" ry="4" class="js-activity-body js-activity-shape pd-task__body">
+    </rect>
+
+    <g transform="scale(1.19882428597854, 0.6033092530444111)" class="js-activity-resize-root">
+        <g class="js-activity-resizers">
+            <rect class="svg-resizer svg-north-resizer js-north-resizer js-resizer" x="0" y="-5" width="100" height="10">
+            </rect>
+            <rect class="svg-resizer svg-south-resizer js-south-resizer js-resizer" x="0" y="95" width="100" height="10">
+            </rect>
+            <rect class="svg-resizer svg-east-resizer js-east-resizer js-resizer" x="95" y="0" width="10" height="100">
+            </rect>
+            <rect class="svg-resizer svg-west-resizer js-west-resizer js-resizer" x="-5" y="0" width="10" height="100">
+            </rect>
+        </g>
+    </g>
+</g>
+
+<g class="js-activity-shape js-activity-icon">
+    <path transform="scale(1.2) translate(3, 3)" class="js-activity-icon pd-task-icon pd-task-icon__user" d="M8.3,1.2c-0.4,0-0.5,0.2-0.7,0.2C7.3,1.4,7.7,1.3,7,1.4c-0.7,0.1-1,1-1,1.4c0,0.4,0,1.7,0,1.7L5.5,5.1v1.2
+            c0,0,0,0.6,0.6,0.6c0.3,0.8,1.2,1.2,1.2,1.2v1.2c0,0,0,0.6-1.8,0.6C2.7,9.9,3,12.3,3,12.2C3,12.9,3,14,3,14
+            h11c0,0,0-0.5,0-1.2c0-0.7,0-3-2.4-3c-1.8,0-1.8-0.1-1.8-0.6c0-0.4,0-1.2,0-1.2s0.9-0.4,1.2-1.2
+            c0.6,0,0.6-0.6,0.6-0.6V5.1L11,4.5c0,0,0-0.8,0-1.2c0-1.2-0.1-1.8-1.2-1.8c0,0,0-0.6-0.6-0.6L8.3,1.2z">
+    </path>
+</g>
+
+<g class="svg-text-editor svg-text-editor_horizontal "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" style="white-space: pre;" x="62.441214298927" y="17.16546265222055" text-anchor="middle"><tspan dy="13" x="62.441214298927" class="js-activity-shape">Выполнить </tspan><tspan dy="13" x="62.441214298927" class="js-activity-shape">рейс</tspan></text></g></g>
+<g class="connectors-g"><circle r="4" cx="59.941214298927" cy="0" index="10" alignment="top" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="59.941214298927" cy="0" index="10" alignment="top" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="119.882428597854" cy="30.16546265222055" index="40" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="119.882428597854" cy="30.16546265222055" index="40" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="59.941214298927" cy="60.3309253044411" index="70" alignment="bottom" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="59.941214298927" cy="60.3309253044411" index="70" alignment="bottom" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="0" cy="30.16546265222055" index="100" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="0" cy="30.16546265222055" index="100" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="29941453-e5c5-4cc7-a129-67c6826ba022" transform="translate(1440,100)" layer="30" class="activity"><g class="activity-g" opacity="1"><g class="dev-activity-gate dev-activity-gate-Parallel">
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-selected-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" stroke-width="2.5px" class="dev-activity-gate-outer js-activity-shape"></path>
+
+    <path d="M20,0L40,20L20,40L0,20L20,0" fill="white" class="dev-activity-gate-inner js-activity-shape"></path>
+
+    <g class="js-title-content"><g class="svg-text-editor svg-text-editor_horizontal "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" style="white-space: pre;" x="15" y="45" text-anchor="middle"><tspan dy="13" x="15" class=""></tspan></text></g><title></title></g>
+
+        <line x1="8" y1="20" x2="32" y2="20" stroke="rgb(197,196,48)" stroke-width="2.5" class="js-activity-shape"></line>
+        <line stroke="rgb(197,196,48)" stroke-width="2.5" x1="20" y1="8" x2="20" y2="32" class="js-activity-shape"></line>
+
+    <g class="js-activity-connectors">
+        <circle r="4" cx="20" cy="-3" index="0" alignment="top" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="20" cy="-3" index="0" alignment="top" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="43" cy="20" index="10" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="43" cy="20" index="10" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="20" cy="43" index="20" alignment="bottom" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="20" cy="43" index="20" alignment="bottom" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="-3" cy="20" index="30" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="-3" cy="20" index="30" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="31.5" cy="8.5" index="5" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="31.5" cy="8.5" index="5" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="31.5" cy="31.5" index="15" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="31.5" cy="31.5" index="15" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="8.5" cy="31.5" index="25" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="8.5" cy="31.5" index="25" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="8.5" cy="8.5" index="35" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="8.5" cy="8.5" index="35" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+    </g>
+</g></g>
+<g class="connectors-g"></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="d905e3f5-f18f-4410-b857-54a92629ccfd" transform="translate(1540,120)" layer="40" class="activity"><g class="activity-g" opacity="1"><g class="dev-activity-event dev-activity-EndEvent">
+    <circle class="diagram-activity-selected-background" cx="0" cy="0" r="22">
+    </circle>
+
+    <circle class="diagram-activity-background" cx="0" cy="0" r="22">
+    </circle>
+
+    <circle class="dev-event-outer-circle js-activity-shape" cx="0" cy="0" r="22">
+    </circle>
+
+    <circle class="dev-activity-event-None dev-event-inner-circle js-activity-shape" cx="0" cy="0" r="18">
+    </circle>
+
+    <g class="js-title-content"><g class="svg-text-editor svg-text-editor_horizontal "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" style="white-space: pre;" x="2" y="25" text-anchor="middle"><tspan dy="13" x="2" class="">Поездка
+ </tspan><tspan dy="13" x="2" class="">завершена</tspan></text></g><title>Поездка 
+завершена</title></g>
+
+
+
+
+
+    <g class="js-activity-connectors">
+
+        <circle r="4" cx="0" cy="22" index="40" alignment="bottom" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="0" cy="22" index="40" alignment="bottom" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="0" cy="-22" index="0" alignment="top" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+            <circle r="7" cx="0" cy="-22" index="0" alignment="top" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+            <circle r="4" cx="22" cy="0" index="10" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+            <circle r="7" cx="22" cy="0" index="10" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+            <circle r="4" cx="-22" cy="0" index="30" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible js-diagram-connector-linked"></circle>
+            <circle r="7" cx="-22" cy="0" index="30" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+    </g>
+
+</g>
+</g>
+<g class="connectors-g"></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="05f2fc9a-3131-416a-a76a-eea0636422b9" transform="translate(360,120)" layer="40" class="activity"><g class="activity-g" opacity="1"><g class="dev-activity-event dev-activity-StartEvent">
+    <circle class="diagram-activity-selected-background" cx="0" cy="0" r="22">
+    </circle>
+
+    <circle class="diagram-activity-background" cx="0" cy="0" r="22">
+    </circle>
+
+    <circle class="dev-event-outer-circle js-activity-shape" cx="0" cy="0" r="22">
+    </circle>
+
+    <circle class="dev-activity-event-None dev-event-inner-circle js-activity-shape" cx="0" cy="0" r="18">
+    </circle>
+
+    <g class="js-title-content"><g class="svg-text-editor svg-text-editor_horizontal "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" style="white-space: pre;" x="2" y="25" text-anchor="middle"><tspan dy="13" x="2" class="">Заявка создана</tspan></text></g><title>Заявка создана</title></g>
+
+
+
+
+
+    <g class="js-activity-connectors">
+
+        <circle r="4" cx="0" cy="22" index="40" alignment="bottom" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="0" cy="22" index="40" alignment="bottom" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="0" cy="-22" index="0" alignment="top" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+            <circle r="7" cx="0" cy="-22" index="0" alignment="top" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+            <circle r="4" cx="22" cy="0" index="10" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+            <circle r="7" cx="22" cy="0" index="10" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+            <circle r="4" cx="-22" cy="0" index="30" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible js-diagram-connector-linked"></circle>
+            <circle r="7" cx="-22" cy="0" index="30" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+    </g>
+
+</g>
+</g>
+<g class="connectors-g"></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="fa4d8c35-6ebc-489d-bbae-0e58930b1372" transform="translate(1080,120)" layer="40" class="activity"><g class="activity-g" opacity="1"><g class="dev-activity-event dev-activity-EndEvent">
+    <circle class="diagram-activity-selected-background" cx="0" cy="0" r="22">
+    </circle>
+
+    <circle class="diagram-activity-background" cx="0" cy="0" r="22">
+    </circle>
+
+    <circle class="dev-event-outer-circle js-activity-shape" cx="0" cy="0" r="22">
+    </circle>
+
+    <circle class="dev-activity-event-None dev-event-inner-circle js-activity-shape" cx="0" cy="0" r="18">
+    </circle>
+
+    <g class="js-title-content"><g class="svg-text-editor svg-text-editor_horizontal "><text fill="#333" class="svg-text-editor-text no-select" cursor="default" style="white-space: pre;" x="2" y="25" text-anchor="middle"><tspan dy="13" x="2" class="">Отказ</tspan></text></g><title>Отказ</title></g>
+
+
+
+
+
+    <g class="js-activity-connectors">
+
+        <circle r="4" cx="0" cy="22" index="40" alignment="bottom" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+        <circle r="7" cx="0" cy="22" index="40" alignment="bottom" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+
+        <circle r="4" cx="0" cy="-22" index="0" alignment="top" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+            <circle r="7" cx="0" cy="-22" index="0" alignment="top" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+            <circle r="4" cx="22" cy="0" index="10" alignment="right" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle>
+            <circle r="7" cx="22" cy="0" index="10" alignment="right" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+            <circle r="4" cx="-22" cy="0" index="30" alignment="left" charge="-1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible js-diagram-connector-linked"></circle>
+            <circle r="7" cx="-22" cy="0" index="30" alignment="left" charge="-1" class="js-diagram-connector dev-diagram-connector"></circle>
+    </g>
+
+</g>
+</g>
+<g class="connectors-g"></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g></g>
+    <g class="select-g"><rect width="1450" height="215" stroke="#009bfe" fill="#009bfe" fill-opacity="0.03" stroke-width="2" rx="4" ry="4" class="when-selected" transform="translate(160,10)" style="display: none; pointer-events: none;"></rect><rect width="1450" height="200" stroke="#009bfe" fill="#009bfe" fill-opacity="0.03" stroke-width="2" rx="4" ry="4" class="when-selected" transform="translate(160,225)" style="display: none; pointer-events: none;"></rect><rect width="1450" height="255.1654626522211" stroke="#009bfe" fill="#009bfe" fill-opacity="0.03" stroke-width="2" rx="4" ry="4" class="when-selected" transform="translate(160,425)" style="display: none; pointer-events: none;"></rect><rect width="1550" height="670.1654626522211" stroke="#009bfe" fill="#009bfe" fill-opacity="0.03" stroke-width="2" rx="4" ry="4" class="when-selected" transform="translate(60,10)" style="display: none; pointer-events: none;"></rect></g>
+    <g class="mounted-g"></g>
+    <g class="flow-g"><g id="815ec681-ea18-4e09-9991-9eb92e698478" transform="translate(363,340)" layer="30" class="activity"><g class="activity-g"><path d="M100,-20 L120,-20 L157,-20 L173,-20" stroke-linejoin="round" fill="none" class="diagram-activity-background"></path><path flow-line="true" d="M100,-20 L120,-20 L157,-20 L173,-20" stroke-linejoin="round" fill="none" stroke-width="2" stroke="#888" selected="[object Object]" invalid="[object Object]" marker-end="url(#arrowPath)" islast="1" class="js-diagram-flow-path js-activity-shape user-visible"></path><rect x="94" y="-26" width="20" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><line x1="102.92893218813452" y1="-12.928932188134524" x2="117.07106781186548" y2="-27.071067811865476" stroke-width="2" stroke="#888" selected="[object Object]" invalid="[object Object]" class="flow-line js-activity-shape user-visible"></line><rect x="114" y="-26" width="37" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="140" y="-40" width="0" height="40" class="js-activity-shape"></rect><rect x="151" y="-26" width="20" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect x="100" y="-30" width="77" height="20" opacity="0" class="js-activity-shape"></rect></g>
+<g class="connectors-g"><circle r="4" cx="100" cy="-20" index="0" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="100" cy="-20" index="0" charge="1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="177" cy="-20" index="10" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="177" cy="-20" index="10" charge="1" class="js-diagram-connector dev-diagram-connector"></circle></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="5b766654-ee8b-4ce6-860b-f7f75c0a85ec" transform="translate(562,120)" layer="30" class="activity"><g class="activity-g"><path d="M-180,0 L-160,0 L-130,0 A8,8 0 0,1 -122,8 L-122,157  L-122,173 " stroke-linejoin="round" fill="none" class="diagram-activity-background"></path><path flow-line="true" d="M-180,0 L-160,0 L-130,0 A8,8 0 0,1 -122,8 L-122,157  L-122,173 " stroke-linejoin="round" fill="none" stroke-width="2" stroke="#888" selected="[object Object]" invalid="[object Object]" marker-end="url(#arrowPath)" islast="1" class="js-diagram-flow-path js-activity-shape user-visible"></path><rect x="-186" y="-6" width="20" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect x="-166" y="-6" width="38" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="-140" y="-20" width="0" height="40" class="js-activity-shape"></rect><rect x="-128" y="-6" width="12" height="157" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="-142" y="20" width="40" height="117" class="js-activity-shape"></rect><rect x="-128" y="151" width="12" height="20" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect></g>
+<g class="connectors-g"><circle r="4" cx="-180" cy="0" index="0" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="-180" cy="0" index="0" charge="1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="-122" cy="177" index="10" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="-122" cy="177" index="10" charge="1" class="js-diagram-connector dev-diagram-connector"></circle></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="45b4d423-1782-4b11-b132-434bdd47d898" transform="translate(585.828958950376,323.105012412213)" layer="30" class="activity"><g class="activity-g"><path d="M74.1710410496236,-3.10501241221323 L94.1710410496236,-3.10501241221323 L91.1710410496236,-3.10501241221323 L107.171041049624,-3.10501241221323" stroke-linejoin="round" fill="none" class="diagram-activity-background"></path><path flow-line="true" d="M74.1710410496236,-3.10501241221323 L94.1710410496236,-3.10501241221323 L91.1710410496236,-3.10501241221323 L107.171041049624,-3.10501241221323" stroke-linejoin="round" fill="none" stroke-width="2" stroke="#888" selected="[object Object]" invalid="[object Object]" marker-end="url(#arrowPath)" islast="1" class="js-diagram-flow-path js-activity-shape user-visible"></path><rect x="68.1710410496236" y="-9.105012412213231" width="20" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect x="91.1710410496236" y="-9.105012412213231" width="3" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="111.1710410496236" y="-23.10501241221323" width="0" height="40" class="js-activity-shape"></rect><rect x="85.1710410496236" y="-9.105012412213231" width="20.000000000000398" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect x="74.1710410496236" y="-13.105012412213231" width="37.0000000000004" height="20" opacity="0" class="js-activity-shape"></rect></g>
+<g class="connectors-g"><circle r="4" cx="74.1710410496236" cy="-3.10501241221323" index="0" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="74.1710410496236" cy="-3.10501241221323" index="0" charge="1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="111.171041049624" cy="-3.10501241221323" index="10" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="111.171041049624" cy="-3.10501241221323" index="10" charge="1" class="js-diagram-connector dev-diagram-connector"></circle></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="536ee5a5-4690-4a29-b6dc-83a9f3415082" transform="translate(674.2600944174,296.020039160647)" layer="30" class="activity"><g class="activity-g"><path d="M45.7399055826003,0.979960839352998 L45.7399055826003,-19.020039160647  L45.7399055826003,-168.020039160647  A8,8 0 0,1 53.7399055826003,-176.020039160647 L149.292505700886,-176.020039160647 L165.292505700886,-176.020039160647" stroke-linejoin="round" fill="none" class="diagram-activity-background"></path><path flow-line="true" d="M45.7399055826003,0.979960839352998 L45.7399055826003,-19.020039160647  L45.7399055826003,-168.020039160647  A8,8 0 0,1 53.7399055826003,-176.020039160647 L149.292505700886,-176.020039160647 L165.292505700886,-176.020039160647" stroke-linejoin="round" fill="none" stroke-width="2" stroke="#888" selected="[object Object]" invalid="[object Object]" marker-end="url(#arrowPath)" islast="1" class="js-diagram-flow-path js-activity-shape user-visible"></path><rect x="39.7399055826003" y="-19.020039160647" width="12" height="19.999999999999996" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><line x1="38.668837770734825" y1="-16.091106972512478" x2="52.810973394465776" y2="-1.9489713487815248" stroke-width="2" stroke="#888" selected="[object Object]" invalid="[object Object]" class="flow-line js-activity-shape user-visible"></line><text x="55.7399055826003" y="-9.020039160647" stroke-width="1px" stroke="black" class="no-select js-activity-shape process-diagram__lane-text">Нет</text><rect x="39.7399055826003" y="-176.020039160647" width="12" height="157" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="25.7399055826003" y="-156.020039160647" width="40" height="117" class="js-activity-shape"></rect><rect x="39.7399055826003" y="-182.020039160647" width="103.55260011828571" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="65.7399055826003" y="-196.020039160647" width="63.55260011828571" height="40" class="js-activity-shape"></rect><rect x="143.292505700886" y="-182.020039160647" width="20" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect></g>
+<g class="connectors-g"><circle r="4" cx="45.7399055826003" cy="0.979960839352998" index="0" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="45.7399055826003" cy="0.979960839352998" index="0" charge="1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="169.292505700886" cy="-176.020039160647" index="10" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="169.292505700886" cy="-176.020039160647" index="10" charge="1" class="js-diagram-connector dev-diagram-connector"></circle></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="a744875b-351c-4d14-a69f-14d765fef232" transform="translate(743.495063206658,340.233273300094)" layer="30" class="activity"><g class="activity-g"><path d="M-0.495063206658415,-20.2332733000943 L19.5049367933416,-20.2332733000943 L79.3480071254711,-20.2332733000943 A8,8 0 0,1 87.3480071254711,-12.2332733000943 L87.3480071254711,171.766726699906  A8,8 0 0,0 95.3480071254711,179.766726699906 L103.348007125471,179.766726699906" stroke-linejoin="round" fill="none" class="diagram-activity-background"></path><path flow-line="true" d="M-0.495063206658415,-20.2332733000943 L19.5049367933416,-20.2332733000943 L79.3480071254711,-20.2332733000943 A8,8 0 0,1 87.3480071254711,-12.2332733000943 L87.3480071254711,171.766726699906  A8,8 0 0,0 95.3480071254711,179.766726699906 L103.348007125471,179.766726699906" stroke-linejoin="round" fill="none" stroke-width="2" stroke="#888" selected="[object Object]" invalid="[object Object]" marker-end="url(#arrowPath)" islast="1" class="js-diagram-flow-path js-activity-shape user-visible"></path><rect x="-6.495063206658415" y="-26.2332733000943" width="20.000000000000014" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><text x="19.504936793341592" y="-30.2332733000943" stroke-width="1px" stroke="black" class="no-select js-activity-shape process-diagram__lane-text">Да</text><rect x="13.5049367933416" y="-26.2332733000943" width="67.8430703321295" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="39.5049367933416" y="-40.2332733000943" width="27.8430703321295" height="40" class="js-activity-shape"></rect><rect x="81.3480071254711" y="-26.2332733000943" width="12" height="200.0000000000003" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="67.3480071254711" y="-0.23327330009430014" width="40" height="160.0000000000003" class="js-activity-shape"></rect><rect x="81.3480071254711" y="173.766726699906" width="19.9999999999999" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect></g>
+<g class="connectors-g"><circle r="4" cx="-0.495063206658415" cy="-20.2332733000943" index="0" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="-0.495063206658415" cy="-20.2332733000943" index="0" charge="1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="107.348007125471" cy="179.766726699906" index="10" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="107.348007125471" cy="179.766726699906" index="10" charge="1" class="js-diagram-connector dev-diagram-connector"></circle></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="1a5cb13d-96bc-4610-a0db-91cb42afab24" transform="translate(1027.31652720814,122.74689505399)" layer="30" class="activity"><g class="activity-g"><path d="M-30.8691273264269,-2.74689505398953 L-10.8691273264269,-2.74689505398953 L10.683472791859,-2.74689505398953 L26.683472791859,-2.74689505398953" stroke-linejoin="round" fill="none" class="diagram-activity-background"></path><path flow-line="true" d="M-30.8691273264269,-2.74689505398953 L-10.8691273264269,-2.74689505398953 L10.683472791859,-2.74689505398953 L26.683472791859,-2.74689505398953" stroke-linejoin="round" fill="none" stroke-width="2" stroke="#888" selected="[object Object]" invalid="[object Object]" marker-end="url(#arrowPath)" islast="1" class="js-diagram-flow-path js-activity-shape user-visible"></path><rect x="-36.8691273264269" y="-8.74689505398953" width="20" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect x="-16.8691273264269" y="-8.74689505398953" width="21.552600118285902" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="9.1308726735731" y="-22.74689505398953" width="0" height="40" class="js-activity-shape"></rect><rect x="4.683472791859" y="-8.74689505398953" width="20" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect x="-30.8691273264269" y="-12.74689505398953" width="61.552600118285895" height="20" opacity="0" class="js-activity-shape"></rect></g>
+<g class="connectors-g"><circle r="4" cx="-30.8691273264269" cy="-2.74689505398953" index="0" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="-30.8691273264269" cy="-2.74689505398953" index="0" charge="1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="30.683472791859" cy="-2.74689505398953" index="10" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="30.683472791859" cy="-2.74689505398953" index="10" charge="1" class="js-diagram-connector dev-diagram-connector"></circle></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="edf13c68-0b41-4f09-a933-9f0f5292f2ce" transform="translate(123.555034976231,402.999910632995)" layer="30" class="activity"><g class="activity-g"><path d="M893.444965023769,197.000089367005 L873.444965023769,197.000089367005 L247.944086608254,197.000089367005 A8,8 0 0,1 239.944086608254,189.000089367005 L239.944086608254,-74.9999106329952  A8,8 0 0,1 247.944086608254,-82.9999106329952 L273.444965023769,-82.9999106329952 L289.444965023769,-82.9999106329952" stroke-linejoin="round" fill="none" class="diagram-activity-background"></path><path flow-line="true" d="M893.444965023769,197.000089367005 L873.444965023769,197.000089367005 L247.944086608254,197.000089367005 A8,8 0 0,1 239.944086608254,189.000089367005 L239.944086608254,-74.9999106329952  A8,8 0 0,1 247.944086608254,-82.9999106329952 L273.444965023769,-82.9999106329952 L289.444965023769,-82.9999106329952" stroke-linejoin="round" fill="none" stroke-width="2" stroke="#888" selected="[object Object]" invalid="[object Object]" marker-end="url(#arrowPath)" islast="1" class="js-diagram-flow-path js-activity-shape user-visible"></path><rect x="873.444965023769" y="191.000089367005" width="20" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><line x1="876.3738972119036" y1="204.07115717887046" x2="890.5160328356344" y2="189.9290215551395" stroke-width="2" stroke="#888" selected="[object Object]" invalid="[object Object]" class="flow-line js-activity-shape user-visible"></line><text x="866.944965023769" y="187.000089367005" stroke-width="1px" stroke="black" class="no-select js-activity-shape process-diagram__lane-text">Нет</text><rect x="239.944086608254" y="191.000089367005" width="633.500878415515" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="259.944086608254" y="177.000089367005" width="593.500878415515" height="40" class="js-activity-shape"></rect><rect x="233.944086608254" y="-82.9999106329952" width="12" height="280.00000000000017" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="219.944086608254" y="-62.999910632995196" width="40" height="240.00000000000017" class="js-activity-shape"></rect><rect x="233.944086608254" y="-88.9999106329952" width="33.50087841551499" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="259.944086608254" y="-102.9999106329952" width="0" height="40" class="js-activity-shape"></rect><rect x="267.444965023769" y="-88.9999106329952" width="20" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect></g>
+<g class="connectors-g"><circle r="4" cx="893.444965023769" cy="197.000089367005" index="0" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="893.444965023769" cy="197.000089367005" index="0" charge="1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="293.444965023769" cy="-82.9999106329952" index="10" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="293.444965023769" cy="-82.9999106329952" index="10" charge="1" class="js-diagram-connector dev-diagram-connector"></circle></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="1a62943d-4093-46ee-92f9-5b739650cfc5" transform="translate(938.477563189619,623.885864578216)" layer="30" class="activity"><g class="activity-g"><path d="M50.6793664782513,-103.885864578216 L70.6793664782513,-103.885864578216 L93.522436810381,-103.885864578216 A8,8 0 0,1 101.522436810381,-95.885864578216 L101.522436810381,-66.8858645782156  L101.522436810381,-50.8858645782155 " stroke-linejoin="round" fill="none" class="diagram-activity-background"></path><path flow-line="true" d="M50.6793664782513,-103.885864578216 L70.6793664782513,-103.885864578216 L93.522436810381,-103.885864578216 A8,8 0 0,1 101.522436810381,-95.885864578216 L101.522436810381,-66.8858645782156  L101.522436810381,-50.8858645782155 " stroke-linejoin="round" fill="none" stroke-width="2" stroke="#888" selected="[object Object]" invalid="[object Object]" marker-end="url(#arrowPath)" islast="1" class="js-diagram-flow-path js-activity-shape user-visible"></path><rect x="44.6793664782513" y="-109.885864578216" width="19.999999999999993" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect x="64.6793664782513" y="-109.885864578216" width="30.8430703321297" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="90.6793664782513" y="-123.885864578216" width="0" height="40" class="js-activity-shape"></rect><rect x="95.522436810381" y="-109.885864578216" width="12" height="37.0000000000004" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="81.522436810381" y="-83.885864578216" width="40" height="0" class="js-activity-shape"></rect><rect x="95.522436810381" y="-72.8858645782156" width="12" height="20.000000000000107" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect x="50.6793664782513" y="-103.885864578216" width="50.84307033212969" height="57.000000000000504" opacity="0" class="js-activity-shape"></rect></g>
+<g class="connectors-g"><circle r="4" cx="50.6793664782513" cy="-103.885864578216" index="0" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="50.6793664782513" cy="-103.885864578216" index="0" charge="1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="101.522436810381" cy="-46.8858645782155" index="10" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="101.522436810381" cy="-46.8858645782155" index="10" charge="1" class="js-diagram-connector dev-diagram-connector"></circle></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="2491689e-4a33-437a-a7fb-4277b50f2ef1" transform="translate(1090.65242880213,634.249081388118)" layer="30" class="activity"><g class="activity-g"><path d="M-27.652428802131,-34.2490813881176 L-7.652428802131,-34.2490813881176 L66.347571197869,-34.2490813881176 L82.347571197869,-34.2490813881176" stroke-linejoin="round" fill="none" class="diagram-activity-background"></path><path flow-line="true" d="M-27.652428802131,-34.2490813881176 L-7.652428802131,-34.2490813881176 L66.347571197869,-34.2490813881176 L82.347571197869,-34.2490813881176" stroke-linejoin="round" fill="none" stroke-width="2" stroke="#888" selected="[object Object]" invalid="[object Object]" marker-end="url(#arrowPath)" islast="1" class="js-diagram-flow-path js-activity-shape user-visible"></path><rect x="-33.652428802131" y="-40.2490813881176" width="20" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><text x="-7.6524288021309985" y="-44.2490813881176" stroke-width="1px" stroke="black" class="no-select js-activity-shape process-diagram__lane-text">Да</text><rect x="-13.652428802131" y="-40.2490813881176" width="74" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="12.347571197869" y="-54.2490813881176" width="34" height="40" class="js-activity-shape"></rect><rect x="60.347571197869" y="-40.2490813881176" width="20" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect></g>
+<g class="connectors-g"><circle r="4" cx="-27.652428802131" cy="-34.2490813881176" index="0" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="-27.652428802131" cy="-34.2490813881176" index="0" charge="1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="86.347571197869" cy="-34.2490813881176" index="10" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="86.347571197869" cy="-34.2490813881176" index="10" charge="1" class="js-diagram-connector dev-diagram-connector"></circle></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="c7de09a9-0591-4330-8b36-778b01d38bf8" transform="translate(1214.04948335958,568.233502358359)" layer="30" class="activity"><g class="activity-g"><path d="M8.95051664041989,31.766497641641 L28.9505166404199,31.766497641641 L66.0093023414929,31.766497641641 L82.0093023414929,31.766497641641" stroke-linejoin="round" fill="none" class="diagram-activity-background"></path><path flow-line="true" d="M8.95051664041989,31.766497641641 L28.9505166404199,31.766497641641 L66.0093023414929,31.766497641641 L82.0093023414929,31.766497641641" stroke-linejoin="round" fill="none" stroke-width="2" stroke="#888" selected="[object Object]" invalid="[object Object]" marker-end="url(#arrowPath)" islast="1" class="js-diagram-flow-path js-activity-shape user-visible"></path><rect x="2.95051664041989" y="25.766497641641" width="20.000000000000007" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect x="22.9505166404199" y="25.766497641641" width="37.058785701073" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="48.9505166404199" y="11.766497641641" width="0" height="40" class="js-activity-shape"></rect><rect x="60.0093023414929" y="25.766497641641" width="20" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect x="8.95051664041989" y="21.766497641641" width="77.058785701073" height="20" opacity="0" class="js-activity-shape"></rect></g>
+<g class="connectors-g"><circle r="4" cx="8.95051664041989" cy="31.766497641641" index="0" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="8.95051664041989" cy="31.766497641641" index="0" charge="1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="86.0093023414929" cy="31.766497641641" index="10" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="86.0093023414929" cy="31.766497641641" index="10" charge="1" class="js-diagram-connector dev-diagram-connector"></circle></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="231589e8-f654-49e5-9c42-d0e722da2523" transform="translate(639.20019840113,801.423710156512)" layer="30" class="activity"><g class="activity-g"><path d="M780.741015897797,-201.423710156512 L800.741015897797,-201.423710156512 L812.79980159887,-201.423710156512 A8,8 0 0,0 820.79980159887,-209.423710156512 L820.79980159887,-638.423710156512  L820.79980159887,-654.423710156512 " stroke-linejoin="round" fill="none" class="diagram-activity-background"></path><path flow-line="true" d="M780.741015897797,-201.423710156512 L800.741015897797,-201.423710156512 L812.79980159887,-201.423710156512 A8,8 0 0,0 820.79980159887,-209.423710156512 L820.79980159887,-638.423710156512  L820.79980159887,-654.423710156512 " stroke-linejoin="round" fill="none" stroke-width="2" stroke="#888" selected="[object Object]" invalid="[object Object]" marker-end="url(#arrowPath)" islast="1" class="js-diagram-flow-path js-activity-shape user-visible"></path><rect x="774.741015897797" y="-207.423710156512" width="20" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect x="794.741015897797" y="-207.423710156512" width="20.05878570107302" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="820.741015897797" y="-221.423710156512" width="0" height="40" class="js-activity-shape"></rect><rect x="814.79980159887" y="-638.423710156512" width="12" height="437" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="800.79980159887" y="-618.423710156512" width="40" height="397" class="js-activity-shape"></rect><rect x="814.79980159887" y="-658.423710156512" width="12" height="20" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect></g>
+<g class="connectors-g"><circle r="4" cx="780.741015897797" cy="-201.423710156512" index="0" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="780.741015897797" cy="-201.423710156512" index="0" charge="1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="820.79980159887" cy="-658.423710156512" index="10" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="820.79980159887" cy="-658.423710156512" index="10" charge="1" class="js-diagram-connector dev-diagram-connector"></circle></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="2e1fbf83-faad-4a67-86e7-a7ef6122df76" transform="translate(1456.3701357645,124.624836800633)" layer="30" class="activity"><g class="activity-g"><path d="M-56.3701357645,-4.62483680063301 L-36.3701357645,-4.62483680063301 L-39.3701357645,-4.62483680063301 L-23.3701357645,-4.62483680063301" stroke-linejoin="round" fill="none" class="diagram-activity-background"></path><path flow-line="true" d="M-56.3701357645,-4.62483680063301 L-36.3701357645,-4.62483680063301 L-39.3701357645,-4.62483680063301 L-23.3701357645,-4.62483680063301" stroke-linejoin="round" fill="none" stroke-width="2" stroke="#888" selected="[object Object]" invalid="[object Object]" marker-end="url(#arrowPath)" islast="1" class="js-diagram-flow-path js-activity-shape user-visible"></path><rect x="-62.3701357645" y="-10.624836800633009" width="20" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect x="-39.3701357645" y="-10.624836800633009" width="3" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="-19.3701357645" y="-24.62483680063301" width="0" height="40" class="js-activity-shape"></rect><rect x="-45.3701357645" y="-10.624836800633009" width="20" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect x="-56.3701357645" y="-14.624836800633009" width="37" height="20" opacity="0" class="js-activity-shape"></rect></g>
+<g class="connectors-g"><circle r="4" cx="-56.3701357645" cy="-4.62483680063301" index="0" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="-56.3701357645" cy="-4.62483680063301" index="0" charge="1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="-19.3701357645" cy="-4.62483680063301" index="10" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="-19.3701357645" cy="-4.62483680063301" index="10" charge="1" class="js-diagram-connector dev-diagram-connector"></circle></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="45581bf4-1009-4a65-952d-661e60c0c14f" transform="translate(1495.908512288,125.806620995603)" layer="30" class="activity"><g class="activity-g"><path d="M-12.9085122880022,-5.80662099560301 L7.09148771199784,-5.80662099560301 L2.09148771199784,-5.80662099560301 L18.0914877119978,-5.80662099560301" stroke-linejoin="round" fill="none" class="diagram-activity-background"></path><path flow-line="true" d="M-12.9085122880022,-5.80662099560301 L7.09148771199784,-5.80662099560301 L2.09148771199784,-5.80662099560301 L18.0914877119978,-5.80662099560301" stroke-linejoin="round" fill="none" stroke-width="2" stroke="#888" selected="[object Object]" invalid="[object Object]" marker-end="url(#arrowPath)" islast="1" class="js-diagram-flow-path js-activity-shape user-visible"></path><rect x="-18.9085122880022" y="-11.80662099560301" width="20.00000000000004" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect x="2.09148771199784" y="-11.80662099560301" width="5" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="22.09148771199784" y="-25.806620995603012" width="0" height="40" class="js-activity-shape"></rect><rect x="-3.90851228800216" y="-11.80662099560301" width="19.99999999999996" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect x="-12.9085122880022" y="-15.80662099560301" width="35" height="20" opacity="0" class="js-activity-shape"></rect></g>
+<g class="connectors-g"><circle r="4" cx="-12.9085122880022" cy="-5.80662099560301" index="0" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="-12.9085122880022" cy="-5.80662099560301" index="0" charge="1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="22.0914877119978" cy="-5.80662099560301" index="10" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="22.0914877119978" cy="-5.80662099560301" index="10" charge="1" class="js-diagram-connector dev-diagram-connector"></circle></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g><g id="3703427e-9a3e-490b-949e-884693389aeb" transform="translate(1026.03723205873,642.233273300094)" layer="30" class="activity"><g class="activity-g"><path d="M173.96276794127,-65.233273300094 L173.96276794127,-85.233273300094  L173.96276794127,-514.233273300094  A8,8 0 0,1 181.96276794127,-522.233273300094 L233.96276794127,-522.233273300094 L249.96276794127,-522.233273300094" stroke-linejoin="round" fill="none" class="diagram-activity-background"></path><path flow-line="true" d="M173.96276794127,-65.233273300094 L173.96276794127,-85.233273300094  L173.96276794127,-514.233273300094  A8,8 0 0,1 181.96276794127,-522.233273300094 L233.96276794127,-522.233273300094 L249.96276794127,-522.233273300094" stroke-linejoin="round" fill="none" stroke-width="2" stroke="#888" selected="[object Object]" invalid="[object Object]" marker-end="url(#arrowPath)" islast="1" class="js-diagram-flow-path js-activity-shape user-visible"></path><rect x="167.96276794127" y="-85.233273300094" width="12" height="20" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect x="167.96276794127" y="-522.233273300094" width="12" height="437" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="153.96276794127" y="-502.23327330009397" width="40" height="397" class="js-activity-shape"></rect><rect x="167.96276794127" y="-528.233273300094" width="60" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect><rect ry="5" fill="#BFBEBE" stroke="#fff" stroke-width="2" opacity="0" x="193.96276794127" y="-542.233273300094" width="20" height="40" class="js-activity-shape"></rect><rect x="227.96276794127" y="-528.233273300094" width="20" height="12" fill="#BFBEBE" opacity="0" class="js-activity-shape"></rect></g>
+<g class="connectors-g"><circle r="4" cx="173.96276794127" cy="-65.233273300094" index="0" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="173.96276794127" cy="-65.233273300094" index="0" charge="1" class="js-diagram-connector dev-diagram-connector"></circle><circle r="4" cx="253.96276794127" cy="-522.233273300094" index="10" charge="1" class="when-flow-drag dev-diagram-connector js-diagram-connector-visible"></circle><circle r="11" cx="253.96276794127" cy="-522.233273300094" index="10" charge="1" class="js-diagram-connector dev-diagram-connector"></circle></g>
+<g class="resizers-g"></g>
+<g class="error-g"></g></g></g>
+    <g class="toolbar-g"></g>
+    <g class="error-panel-g"></g>
+    <g class="global-object-overlay-g"></g>
+    <g class="gost-g"><rect x="0" y="0" width="1450" height="215" stroke="#009bfe" fill="#8BCCF6" stroke-width="2" stroke-dasharray="10 3" opacity="0.2" transform="translate(160,10)" style="display: none;"></rect><rect x="0" y="0" width="1450" height="200" stroke="#009bfe" fill="#8BCCF6" stroke-width="2" stroke-dasharray="10 3" opacity="0.2" transform="translate(160,225)" style="display: none;"></rect><g transform="translate(420,300)" style="display: none;"><g class="dev-activity-gate dev-activity-gate- dev-activity-ghost">
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-selected-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" stroke-width="2.5px" class="dev-activity-gate-outer js-activity-shape"></path>
+
+    <path d="M20,0L40,20L20,40L0,20L20,0" fill="white" class="dev-activity-gate-inner js-activity-shape"></path>
+
+    <g class="js-title-content"></g>
+
+
+</g></g><rect x="0" y="0" width="120" height="70" stroke="#009bfe" fill="#8BCCF6" stroke-width="2" stroke-dasharray="10 3" opacity="0.2" transform="translate(540,285)" style="display: none;"></rect><g transform="translate(700,300)" style="display: none;"><g class="dev-activity-gate dev-activity-gate- dev-activity-ghost">
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-selected-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" stroke-width="2.5px" class="dev-activity-gate-outer js-activity-shape"></path>
+
+    <path d="M20,0L40,20L20,40L0,20L20,0" fill="white" class="dev-activity-gate-inner js-activity-shape"></path>
+
+    <g class="js-title-content"></g>
+
+
+</g></g><rect x="0" y="0" width="152.894799763428" height="70" stroke="#009bfe" fill="#8BCCF6" stroke-width="2" stroke-dasharray="10 3" opacity="0.2" transform="translate(843.552600118286,85)" style="display: none;"></rect><rect x="0" y="0" width="138.313859335741" height="70" stroke="#009bfe" fill="#8BCCF6" stroke-width="2" stroke-dasharray="10 3" opacity="0.2" transform="translate(850.84307033213,485)" style="display: none;"></rect><g transform="translate(1020,580)" style="display: none;"><g class="dev-activity-gate dev-activity-gate- dev-activity-ghost">
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-selected-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" stroke-width="2.5px" class="dev-activity-gate-outer js-activity-shape"></path>
+
+    <path d="M20,0L40,20L20,40L0,20L20,0" fill="white" class="dev-activity-gate-inner js-activity-shape"></path>
+
+    <g class="js-title-content"></g>
+
+
+</g></g><g transform="translate(1180,580)" style="display: none;"><g class="dev-activity-gate dev-activity-gate- dev-activity-ghost">
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-selected-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" stroke-width="2.5px" class="dev-activity-gate-outer js-activity-shape"></path>
+
+    <path d="M20,0L40,20L20,40L0,20L20,0" fill="white" class="dev-activity-gate-inner js-activity-shape"></path>
+
+    <g class="js-title-content"></g>
+
+
+</g></g><rect x="0" y="0" width="120" height="70" stroke="#009bfe" fill="#8BCCF6" stroke-width="2" stroke-dasharray="10 3" opacity="0.2" transform="translate(1280,85)" style="display: none;"></rect><rect x="0" y="0" width="119.882428597854" height="60.3309253044411" stroke="#009bfe" fill="#8BCCF6" stroke-width="2" stroke-dasharray="10 3" opacity="0.2" transform="translate(1300.05878570107,569.83453734778)" style="display: none;"></rect><g transform="translate(1440,100)" style="display: none;"><g class="dev-activity-gate dev-activity-gate- dev-activity-ghost">
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-selected-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" class="dev-diagram-gate diagram-activity-background"></path>
+
+    <path d="M20,-4L44,20L20,44L-4,20 Z" fill="#fff" stroke="rgb(197,196,48)" stroke-width="2.5px" class="dev-activity-gate-outer js-activity-shape"></path>
+
+    <path d="M20,0L40,20L20,40L0,20L20,0" fill="white" class="dev-activity-gate-inner js-activity-shape"></path>
+
+    <g class="js-title-content"></g>
+
+
+</g></g><circle cx="0" cy="0" r="20" fill="rgb(234, 103, 72)" opacity="0.8" transform="translate(1540,120)" style="display: none;"></circle><circle cx="0" cy="0" r="20" fill="rgb(83, 199, 157)" opacity="0.8" transform="translate(360,120)" style="display: none;"></circle><circle cx="0" cy="0" r="20" fill="rgb(234, 103, 72)" opacity="0.8" transform="translate(1080,120)" style="display: none;"></circle><rect x="0" y="0" width="1450" height="255.1654626522211" stroke="#009bfe" fill="#8BCCF6" stroke-width="2" stroke-dasharray="10 3" opacity="0.2" transform="translate(160,425)" style="display: none;"></rect><rect x="0" y="0" width="1550" height="670.1654626522211" stroke="#009bfe" fill="#8BCCF6" stroke-width="2" stroke-dasharray="10 3" opacity="0.2" transform="translate(60,10)" style="display: none;"></rect></g>
+    <g class="temp-activity-container-g"></g>
+</g>
+</svg>

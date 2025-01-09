@@ -1,13 +1,13 @@
 ---
 title: Elasticsearch. Настройка подключения
-kbId: 2593
+kbId: 4678
 ---
 
 # Elasticsearch. Настройка подключения {: #elasticsearch_connection}
 
 ## Введение
 
-**{{ productName }}** использует службу Elasticsearch для записи истории всех транзакций, таких как журнал изменений записей и [экземпляров процессов][process_diagram_view_instance], [цепочка событий][logs_event_chain_view] и т. п.
+**{{ productName }}** использует службу Elasticsearch (OpenSearch) для записи истории всех транзакций, таких как журнал изменений записей и [экземпляров процессов][process_diagram_view_instance], [цепочка событий][logs_event_chain_view] и т. п.
 
 Подключение к Elasticsearch автоматически создаётся при [развёртывании][deploy_guide_linux_initialize] **{{ productName }}**.
 

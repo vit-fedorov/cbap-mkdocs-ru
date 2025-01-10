@@ -110,11 +110,11 @@
 <p><strong>Файловая система</strong> — сохранять резервные копии в файловой системе сервера <strong>Comindware Platform</strong>.</p>
 <ul>
 <li>
-<p><strong>Путь к папке</strong> — путь к директории на сервере, в которой будут сохраняться резервные копии, например <code>/var/lib/comindware/&lt;instanceName&gt;/Backups</code> (здесь <code>&lt;instanceName&gt;</code> — имя экземпляра ПО). Для этой директории предоставьте разрешения на полный доступ, чтобы система могла сохранять в неё резервные копии, например:</p>
+<p><strong>Путь к папке</strong> — путь к директории на сервере, в которой будут сохраняться резервные копии, например <code>/var/backups/comindware/&lt;instanceName&gt;</code> (здесь <code>&lt;instanceName&gt;</code> — имя экземпляра ПО). Для этой директории предоставьте разрешения на полный доступ, чтобы система могла сохранять в неё резервные копии, например:</p>
 <p><strong>Astra Linux, Ubuntu, Rocky</strong></p>
-<div class="highlight"><code><pre><span></span><code>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;</code> <br/><code>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;</code> <br/></pre></code></div>
-<p><strong>Альт Сервер</strong></p>
-<div class="highlight"><code><pre><span></span><code>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;chown<span class="w"> </span>-R<span class="w"> </span>_nginx:_nginx<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;</code> <br/><code>chown<span class="w"> </span>-R<span class="w"> </span>_nginx:_nginx<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>/var/backups/comindware/&lt;instanceName&gt;</code> <br/><code>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/backups/comindware/&lt;instanceName&gt;</code> <br/><code>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/backups/comindware/&lt;instanceName&gt;</code> <br/></pre></code></div>
+<p><strong>Альт Сервер, РЕД ОС</strong></p>
+<div class="highlight"><code><pre><span></span><code>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>/var/backups/comindware/&lt;instanceName&gt;</code> <br/><code>chown<span class="w"> </span>-R<span class="w"> </span>_nginx:_nginx<span class="w"> </span>/var/backups/comindware/&lt;instanceName&gt;</code> <br/><code>chown<span class="w"> </span>-R<span class="w"> </span>_nginx:_nginx<span class="w"> </span>/var/backups/comindware/&lt;instanceName&gt;</code> <br/></pre></code></div>
 </li>
 </ul>
 </li>

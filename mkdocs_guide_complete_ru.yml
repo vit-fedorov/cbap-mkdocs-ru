@@ -13,11 +13,7 @@ nav:
     - product_description.md
     - Обзор версий:
       - general/changelog/changelog.md
-      - general/changelog/release_notes_4.7.3084.md
-      - general/changelog/release_notes_4.7.3023.md
-      - general/changelog/release_notes_4.7.2902.md
-      - general/changelog/release_notes_4.7.2721.md
-      - general/changelog/release_notes_4.7.2285.md 
+      - general/changelog/release_notes_5.0.md
   - Использование системы:
     - using_the_system/index.md
     - Панель навигации:
@@ -50,6 +46,7 @@ nav:
           - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_deploy_linux.md
           - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_cluster_deploy_no_certificates.md
           - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_ssl_certificate_configure.md
+          - administration/deploy/linux/auxiliary_software_deploy/kafka_deploy_linux.md
           - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_deploy.md
           - administration/deploy/linux/auxiliary_software_deploy/nginx_deploy.md
           - administration/deploy/linux/auxiliary_software_deploy/nginx_geoip_deploy.md
@@ -101,7 +98,6 @@ nav:
         - administration/account_administration/system_roles.md
         - administration/account_administration/account_permission_audit.md
         - administration/account_administration/substitution.md
-        
         - administration/account_administration/registration_and_login.md
         - administration/account_administration/two_factor_authentication.md
         - Синхронизация с сервером каталогов:
@@ -265,6 +261,7 @@ nav:
         - business_apps/templates/forms/form_static_elements.md
         - business_apps/templates/forms/form_dynamic_elements.md
         - business_apps/templates/forms/discussion_configure.md
+        - business_apps/templates/forms/search_forms.md
       - Кнопки: business_apps/templates/buttons/index.md
       - business_apps/templates/button_area.md
       - Карточки: business_apps/templates/cards/cards_layout_configure.md
@@ -293,6 +290,7 @@ nav:
       - business_apps/version_control/index.md
       - business_apps/version_control/manual_version_control.md
       - business_apps/version_control/git_version_control.md
+      - business_apps/version_control/excel_version_control.md
     - Выражения для вычислений:
       - business_apps/expressions/expression_intro.md
       - business_apps/expressions/expression_debug.md
@@ -326,6 +324,7 @@ nav:
     - architect/architect_example.md
     - architect/version_control.md
     - architect/conversations.md
+    - architect/architect_demo.md
     - Построение процессной архитектуры:
       - architect/process_architecture_modeling/index.md
       - architect/process_architecture_modeling/viewing_diagram.md

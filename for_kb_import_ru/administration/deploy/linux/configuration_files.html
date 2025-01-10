@@ -42,9 +42,9 @@
 <nav aria-label="Конфигурация службы apigateway" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#пример-конфигурации-службы-apigatewayjson">
+<a class="md-nav__link mkdocs_imported_link" href="#пример-конфигурации-службы-apigatewayyml">
 <span class="md-ellipsis">
-      Пример конфигурации службы apigateway.json
+      Пример конфигурации службы apigateway.yml
     </span>
 </a>
 </li>
@@ -60,9 +60,9 @@
 <nav aria-label="Конфигурация службы adapterhost" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#пример-файла-конфигурации-adapterhostconfig">
+<a class="md-nav__link mkdocs_imported_link" href="#пример-файла-конфигурации-adapterhostyml">
 <span class="md-ellipsis">
-      Пример файла конфигурации adapterhost.config
+      Пример файла конфигурации adapterhost.yml
     </span>
 </a>
 </li>
@@ -111,13 +111,27 @@
 <div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code> <br/></pre></code></div>
 </li>
 <li>
-<p>Измените необходимые параметры, например:</p>
+<p>При необходимости измените параметры, например:</p>
 <ul>
-<li><code>databasePath</code> — путь к базе данных экземпляра ПО.</li>
-<li><code>backup.config.default.repository.localDisk.path</code> или <code>backup.defaultFolder</code> — директория для хранения резервных копий.</li>
+<li><code>journal.server</code> — адрес сервера Elasticsearch (OpenSearch).</li>
+<li><code>journal.name</code> — индекс сервера Elasticsearch (OpenSearch).</li>
+<li><code>db.workDir</code> — директория для хранения базы данных экземпляра ПО.</li>
+<li><code>db.name</code> — префикс кэшей в базе данных экземпляра ПО.</li>
 <li><code>userStorage.localDisk.path</code> — директория для хранения пользовательских файлов.</li>
 <li><code>mq.server</code> — адрес сервера Kafka.</li>
+<li><code>backup.defaultFolder</code> — директория для хранения резервных копий экземпляра ПО.</li>
+<li><code>backup.defaultFileName</code> — имя файла резервной копии экземпляра ПО.</li>
 </ul>
+<div class="notice notice-warning">
+<p class="admonition-title">Внимание!</p>
+<p>Директивы <code>isFederationAuthEnabled</code> и <code>manageAdapterHost</code> требуется удалить, если они присутствуют.</p>
+<p>Директивы <code>mq.server</code> (адрес и порт сервера очереди сообщений), <code>mq.group</code> (идентификатор группы очереди сообщений), <code>mq.node</code> (идентификатор узла очереди сообщений) и <code>cluster.name</code> / <code>clusterName</code> (имя экземпляра ПО) должны совпадать в трёх файлах конфигурации:</p>
+<ul>
+<li><code>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code></li>
+<li><code>/var/www/&lt;instanceName&gt;/adapterhost.yml</code></li>
+<li><code>/var/www/&lt;instanceName&gt;/apigateway.yml</code></li>
+</ul>
+</div>
 </li>
 <li>
 <p>Сохраните файл конфигурации.</p>
@@ -133,43 +147,43 @@
 </li>
 </ol>
 <h3 id="пример-yml-файла-конфигурации-экземпляра-по">Пример YML-файла конфигурации экземпляра ПО</h3>
-<div class="highlight"><code><pre><span></span><code># Федеративная аутентификация отключена (1 — вкл.)</code> <br/><code>isFederationAuthEnabled: 0</code> <br/><code># Путь к базе данных</code> <br/><code>databasePath: /var/lib/comindware/&lt;instanceName&gt;/Database</code> <br/><code># Путь к исполняемым и конфигурационным файлам экземпляра ПО</code> <br/><code>configPath: /var/www/&lt;instanceName&gt;</code> <br/><code># Тип хранилища резервных копий: LocalDisk или S3</code> <br/><code>backup.config.default.repository.type: LocalDisk</code> <br/><code># Путь к директории резервных копий</code> <br/><code>backup.config.default.repository.localDisk.path: /var/backups/&lt;instanceName&gt;</code> <br/><code># Тип хранилища пользовательских файлов: LocalDisk или S3</code> <br/><code>userStorage.type: LocalDisk</code> <br/><code># Путь к директории пользовательских файлов</code> <br/><code>userStorage.localDisk.path: /var/lib/comindware/&lt;instanceName&gt;/Streams</code> <br/><code># Тип хранилища временных файлов: LocalDisk или S3</code> <br/><code>tempStorage.type: LocalDisk</code> <br/><code># Путь к директории временных файлов</code> <br/><code>tempStorage.localDisk.path: /var/lib/comindware/&lt;instanceName&gt;/Temp</code> <br/><code># Адрес и порт сервера очереди сообщений (Kafka)</code> <br/><code>mq.server: &lt;kafkaBrokerIP&gt;:&lt;kafkaBrokerPort&gt;</code> <br/><code># Идентификатор группы очереди сообщений. Должно быть уникальным для каждого экземпляра</code> <br/><code>mq.group: &lt;instanceName&gt;</code> <br/><code># Управление службой adapterhost включено</code> <br/><code>manageAdapterHost: true</code> <br/><code># Адрес и порт сервера Elasticsearch</code> <br/><code>elasticsearchUri: &lt;elasticsearchIP&gt;:&lt;elasticsearchPort&gt;</code> <br/><code># Имя экземпляра ПО</code> <br/><code>instanceName: &lt;instanceName&gt;</code> <br/><code># Версия ПО</code> <br/><code>version: &lt;versionNumber&gt;</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>#################### Настройка базовых параметров ПО ####################</code> <br/><code># Имя экземпляра ПО</code> <br/><code># Устаревшая директива: instanceName</code> <br/><code>clusterName: &lt;instanceName&gt;</code> <br/><code># Имя узла экземпляра ПО</code> <br/><code>#nodeName: &lt;instanceName&gt;</code> <br/><code># Путь к экземпляру, по которому ПО находит свою конфигурацию</code> <br/><code>configPath: &lt;configPath&gt;</code> <br/><code># Адрес службы журналирования (Elasticsearch, OpenSearch)</code> <br/><code># Устаревшая директива: elasticsearchUri</code> <br/><code>journal.server: http://&lt;searchHostIP&gt;:&lt;searchHostPort&gt;</code> <br/><code># Индекс службы журналирования (Elasticsearch, OpenSearch)</code> <br/><code># journal.name: &lt;instanceName&gt;</code> <br/><code># URI-адрес экземпляра ПО</code> <br/><code>fqdn: &lt;hostName&gt;</code> <br/><code># Порт экземпляра ПО</code> <br/><code>port: &lt;portNumber&gt;</code> <br/><code># Версия экземпляра ПО</code> <br/><code>version: &lt;versionNumber&gt;</code> <br/><code>#################### Настройка базы данных ####################</code> <br/><code># Путь к базе данных</code> <br/><code># Устаревшая директива: databasePath</code> <br/><code>db.workDir: /var/lib/comindware/&lt;instanceName&gt;/Database</code> <br/><code># Используемый префикс кэшей в базе данных</code> <br/><code># Устаревшая директива: databaseName</code> <br/><code>db.name: &lt;instanceName&gt;</code> <br/><code>#################### Настройка хранения пользовательских файлов ####################</code> <br/><code># Тип хранилища (LocalDisk | S3)</code> <br/><code>userStorage.type: LocalDisk</code> <br/><code># Путь к пользовательским файлам экземпляра</code> <br/><code>userStorage.localDisk.path: /var/lib/comindware/&lt;instanceName&gt;/Streams</code> <br/><code>#################### Настройка хранения временных файлов ####################</code> <br/><code># Тип хранилища (LocalDisk | S3)</code> <br/><code>tempStorage.type: LocalDisk</code> <br/><code># Путь к временным файлам экземпляра</code> <br/><code>tempStorage.localDisk.path: /var/lib/comindware/&lt;instanceName&gt;/Temp</code> <br/><code># Временная папка</code> <br/><code>tempWorkingDir: /var/lib/comindware/fooo/LocalTemp</code> <br/><code>#################### Настройки очереди сообщений ####################</code> <br/><code># Адрес и порт сервера очереди сообщений (Kafka)</code> <br/><code>mq.server: &lt;kafkaBrokerIP&gt;:&lt;kafkaBrokerPort&gt;</code> <br/><code># Идентификатор группы очереди сообщений</code> <br/><code>mq.group: &lt;instanceName&gt;</code> <br/><code>#################### Конфигурация резервного копирования ####################</code> <br/><code># Папка для резервного копирования по умолчанию</code> <br/><code># Устаревшая директива: backup.config.default.repository.localDisk.path</code> <br/><code>backup.defaultFolder: /var/lib/comindware/&lt;instanceName&gt;/Backup</code> <br/><code># Имя файла для резервного копирования по умолчанию</code> <br/><code>backup.defaultFileName: Backup</code> <br/></pre></code></div>
 <h2 id="конфигурация-службы-apigateway">Конфигурация службы apigateway</h2>
 <ol class="colored_numbers_list">
 <li>
-<p>Откройте файл конфигурации <code>apigateway.json</code> экземпляра ПО для редактирования:</p>
-<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/var/www/&lt;instanceName&gt;/apigateway.json</code> <br/></pre></code></div>
+<p>Откройте файл конфигурации <code>apigateway.yml</code> экземпляра ПО для редактирования:</p>
+<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/var/www/&lt;instanceName&gt;/apigateway.yml</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Измените необходимые параметры.</p>
 </li>
-<li>Удостоверьтесь, что значение параметра <code>BootstrapServer</code> (адрес и порт сервера очереди сообщений) совпадает с <code>mq.server</code>, а <code>GroupId</code> (идентификатор группы очереди сообщений) — с <code>mq.group</code> в <a class="mkdocs_imported_link" href="#пример-yml-файла-конфигурации-экземпляра-по">файле конфигурации экземпляра ПО</a>.</li>
+<li>Удостоверьтесь, что значение параметра <code>cluster.name</code> (имя экземпляра ПО) совпадает с <code>clusterName</code> и значение параметров <code>mq.server</code> (адрес и порт сервера очереди сообщений), <code>mq.group</code> (идентификатор группы очереди сообщений), <code>mq.node</code> (идентификатор узла очереди сообщений) — с аналогичными параметрами в <a class="mkdocs_imported_link" href="#конфигурация-экземпляра-по">файле конфигурации экземпляра</a>.</li>
 <li>Сохраните файл конфигурации.</li>
 <li>
-<p>Перезапустите службу apigateway:</p>
+<p>Перезапустите службу <code>apigateway</code>:</p>
 <div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>apigateway&lt;instanceName&gt;</code> <br/></pre></code></div>
 </li>
 </ol>
-<h3 id="пример-конфигурации-службы-apigatewayjson">Пример конфигурации службы apigateway.json</h3>
-<div class="highlight"><code><pre><span></span><code><span class="p">{</span></code> <br/><code><span class="w">   </span><span class="nt">"Instance"</span><span class="p">:{</span></code> <br/><code><span class="w">      </span><span class="nt">"Name"</span><span class="p">:</span><span class="s2">"&lt;instanceName&gt;"</span></code> <br/><code><span class="w">   </span><span class="p">},</span></code> <br/><code><span class="w">   </span><span class="nt">"Log"</span><span class="p">:{</span></code> <br/><code><span class="w">      </span><span class="nt">"Enabled"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span></code> <br/><code><span class="w">      </span><span class="nt">"ConfigurationFile"</span><span class="p">:</span><span class="s2">"/var/www/&lt;instanceName&gt;/logs.config"</span></code> <br/><code><span class="w">   </span><span class="p">},</span></code> <br/><code><span class="w">   </span><span class="nt">"Kata"</span><span class="p">:{</span></code> <br/><code><span class="w">      </span><span class="nt">"Enabled"</span><span class="p">:</span><span class="kc">false</span></code> <br/><code><span class="w">   </span><span class="p">},</span></code> <br/><code><span class="w">   </span><span class="nt">"Kafka"</span><span class="p">:{</span></code> <br/><code><span class="w">      </span><span class="nt">"BootstrapServer"</span><span class="p">:</span><span class="s2">"&lt;kafkaBrokerIP&gt;:&lt;kafkaBrokerPort&gt;"</span><span class="p">,</span></code> <br/><code><span class="w">      </span><span class="nt">"GroupId"</span><span class="p">:</span><span class="s2">"&lt;instanceName&gt;"</span></code> <br/><code><span class="w">   </span><span class="p">},</span></code> <br/><code><span class="w">   </span><span class="nt">"Grpc"</span><span class="p">:{</span></code> <br/><code><span class="w">      </span><span class="nt">"SocketPath"</span><span class="p">:</span><span class="s2">"/var/www/&lt;instanceName&gt;/App_Data/apigateway.socket"</span><span class="p">,</span></code> <br/><code><span class="w">      </span><span class="nt">"Protocol"</span><span class="p">:</span><span class="s2">"Http2"</span></code> <br/><code><span class="w">   </span><span class="p">}</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<h3 id="пример-конфигурации-службы-apigatewayyml">Пример конфигурации службы apigateway.yml</h3>
+<div class="highlight"><code><pre><span></span><code># Имя экземпляра ПО</code> <br/><code>cluster.name: &lt;instanceName&gt;</code> <br/><code># Имя узла экземпляра</code> <br/><code># nodeName:</code> <br/><code># Включение/выключение конфигурации журналирования экземпляра (true | false)</code> <br/><code>log.enabled: true</code> <br/><code># Путь к файлу конфигурации журналирования экземпляра</code> <br/><code>log.configurationFile: /var/www/&lt;instanceName&gt;/logs.config</code> <br/><code>kata.enabled: false</code> <br/><code># Адрес сервера очереди сообщений (Kafka) с портом.</code> <br/><code>mq.server: &lt;kafkaBrokerIp&gt;:&lt;kafkaBrokerPort&gt;</code> <br/><code># Идентификатор группы очереди сообщений</code> <br/><code>mq.group: &lt;instanceName&gt;</code> <br/><code># Идентификатор узла очереди сообщений</code> <br/><code>mq.node: &lt;instanceName&gt;</code> <br/><code># Тип механизма SASL. (None | Plain | ScramSha256 | ScramSha512)</code> <br/><code>mq.sasl.mechanism: None</code> <br/><code># Протокол безопасности очереди сообщений. (Plaintext | Ssl | SaslPlaintext | SaslSsl)</code> <br/><code>mq.securityProtocol: Plaintext</code> <br/><code># Путь к сокету apigateway</code> <br/><code>listen.socketPath: /var/www/&lt;instanceName&gt;/App_Data/apigateway.socket</code> <br/><code># Включение/выключение файлового хранилища  (true | false)</code> <br/><code>fileStorage.enabled: true</code> <br/><code># Тип файлового хранилища (Platform — встроенное | Custom — особая DLL-библиотека )</code> <br/><code>fileStorage.type: Platform</code> <br/><code># IP-адрес сервера для загрузки файлов</code> <br/><code>fileStorage.attachmentServerUri: http://local.host.ip.address/</code> <br/><code># Путь к загружаемым файлам</code> <br/><code>fileStorage.uploadAttachment.path: /api/Attachment/Upload</code> <br/><code># Путь к скачанным файлам</code> <br/><code>fileStorage.downloadAttachment.path: /api/Attachment/GetReferenceContent/{0}</code> <br/><code># Путь к удалённым файлам</code> <br/><code>fileStorage.removeAttachment.path: /api/Attachment/Remove/{0}</code> <br/><code># Префиксы служб API</code> <br/><code>services:</code> <br/><code>- apiPrefix: conversation</code> <br/><code>- apiPrefix: useractivity</code> <br/><code>- apiPrefix: notification</code> <br/><code>- apiPrefix: architect</code> <br/></pre></code></div>
 <h2 id="конфигурация-службы-adapterhost">Конфигурация службы adapterhost</h2>
 <ol class="colored_numbers_list">
 <li>
-<p>Откройте файл конфигурации <code>adapterhost.config</code> экземпляра ПО для редактирования:</p>
-<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/var/www/&lt;instanceName&gt;/adapterhost.config</code> <br/></pre></code></div>
+<p>Откройте файл конфигурации <code>adapterhost.yml</code> экземпляра ПО для редактирования:</p>
+<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/var/www/&lt;instanceName&gt;/adapterhost.yml</code> <br/></pre></code></div>
 </li>
 <li>
-<p>Отредактируйте необходимые параметры.</p>
+<p>Измените необходимые параметры.</p>
 </li>
-<li>Удостоверьтесь, что значение параметра <code>BootstrapServers</code> совпадает с <code>mq.server</code>, а <code>groupId</code> — с <code>mq.group</code> в <a class="mkdocs_imported_link" href="#конфигурация-экземпляра-по">файле конфигурации экземпляра</a>.</li>
+<li>Удостоверьтесь, что значения параметров <code>mq.server</code> (адрес и порт сервера очереди сообщений), <code>mq.group</code> (идентификатор группы очереди сообщений), <code>mq.node</code> (идентификатор узла очереди сообщений) и <code>clusterName</code> (имя экземпляра ПО) совпадают с аналогичными параметрами в <a class="mkdocs_imported_link" href="#пример-yml-файла-конфигурации-экземпляра-по">файле конфигурации экземпляра ПО</a>.</li>
 <li>Сохраните файл конфигурации.</li>
 <li>
-<p>После внесения изменений перезапустите службу adapterhost:</p>
+<p>После внесения изменений перезапустите службу <code>adapterhost</code>:</p>
 <div class="highlight"><code><pre><span></span><code><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="k">$(</span>ps<span class="w"> </span>-eo<span class="w"> </span>pid,args<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>$&lt;instanceName&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Agent<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="o">{</span><span class="s1">'print $1'</span><span class="o">}</span><span class="k">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
 </li>
 </ol>
-<h3 id="пример-файла-конфигурации-adapterhostconfig">Пример файла конфигурации adapterhost.config</h3>
-<div class="highlight"><code><pre><span></span><code>platformKey: &lt;instanceName&gt;</code> <br/><code>loaderFolder: /var/log/comindware/.adapterhost/&lt;instanceName&gt;/LoadData</code> <br/><code>deployRequestQueue: request_queue_&lt;hostname&gt;_&lt;instanceName&gt;_deploy_external</code> <br/><code>deployReplyQueue: reply_queue_&lt;hostname&gt;_&lt;instanceName&gt;_deploy_external</code> <br/><code>outgoingRequestQueue: request_queue_&lt;hostname&gt;_&lt;instanceName&gt;_outgoing_external</code> <br/><code>outgoingReplyQueue: reply_queue_&lt;hostname&gt;_&lt;instanceName&gt;_outgoing_external</code> <br/><code>incomingRequestQueue: request_queue_&lt;hostname&gt;_&lt;instanceName&gt;_incoming_external</code> <br/><code>incomingReplyQueue: reply_queue_&lt;hostname&gt;_&lt;instanceName&gt;_incoming_external</code> <br/><code>bootstrapServers: &lt;kafkaBrokerIP&gt;:&lt;kafkaBrokerPort&gt;</code> <br/><code>groupId: &lt;instanceName&gt;</code> <br/><code>exclusiveGroupId:</code> <br/><code>serverLanguage: ru-RU</code> <br/><code>securityProtocol: Plaintext</code> <br/><code>caLocation:</code> <br/><code>endpointIdentificationEnabled: true</code> <br/><code>saslMechanism: None</code> <br/><code>username:</code> <br/><code>password:</code> <br/><code>logFolder: /var/log/comindware/&lt;instanceName&gt;/Logs/</code> <br/><code>archiveFolder: /var/log/comindware/&lt;instanceName&gt;/Logs/Archive/</code> <br/><code>maxArchiveFiles: 30</code> <br/><code>archiveAboveSize: 104857600</code> <br/></pre></code></div>
+<h3 id="пример-файла-конфигурации-adapterhostyml">Пример файла конфигурации adapterhost.yml</h3>
+<div class="highlight"><code><pre><span></span><code># Имя экземпляра ПО</code> <br/><code>clusterName: &lt;instanceName&gt;</code> <br/><code># Имя папки загрузчика экземпляра ПО</code> <br/><code>loaderFolder: &lt;instanceName&gt;</code> <br/><code># Язык сервера (en-US | ru-RU )</code> <br/><code>serverLanguage: ru-RU</code> <br/><code># Адрес и порт сервера очереди сообщений (Kafka)</code> <br/><code>mq.server: &lt;kafkaBrokerIp&gt;:&lt;kafkaBrokerPort&gt;</code> <br/><code># Протокол безопасности очереди сообщений. (Plaintext | Ssl | SaslPlaintext | SaslSsl)</code> <br/><code>mq.securityProtocol: Plaintext</code> <br/><code># Тип механизма SASL (None | Plain | ScramSha256 | ScramSha512)</code> <br/><code>mq.sasl.mechanism: None</code> <br/><code># Путь к файлам журналирования экземпляра ПО</code> <br/><code>log.folder: /var/log/comindware/&lt;instanceName&gt;/Logs/</code> <br/><code># Максимальное кол-во файлов журналов</code> <br/><code>log.maxArchiveFiles: 100</code> <br/><code># Максимальный размер файлов журналов (байты)</code> <br/><code>log.archiveAboveSize: 1048576000</code> <br/><code># Путь к архивам журналов</code> <br/><code>log.archiveFolder: /var/log/comindware/&lt;instanceName&gt;/Logs/Archive/</code> <br/></pre></code></div>
 <h2 id="конфигурация-apache-ignite">Конфигурация Apache Ignite</h2>
 <ol class="colored_numbers_list">
 <li>
@@ -190,8 +204,13 @@
 </ul>
 </li>
 <li>
-<p>В случае изменения максимального объёма выделяемой памяти отредактируйте параметр <code>checkpointPageBufferSize</code>. Чтобы рассчитать размер значения, разделите размер <code>maxSize</code> на четыре, при этом значение не должно в диапазоне 256 МБ — 2 ГБ. Для максимального объёма выделяемой памяти в 8 Гб, значение будет следующим:</p>
+<p>В случае изменения максимального объёма выделяемой памяти отредактируйте параметр <code>checkpointPageBufferSize</code>. Чтобы рассчитать размер значения, разделите размер <code>maxSize</code> на четыре, при этом значение должно быть в диапазоне 256 МБ — 2 ГБ.</p>
+<ul>
+<li>
+<p>8 ГБ:</p>
 <div class="highlight"><code><pre><span></span><code><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">"checkpointPageBufferSize"</span><span class="w"> </span><span class="na">value=</span><span class="s">"#{2L * 1024 * 1024 * 1024}"</span><span class="w"> </span><span class="nt">/&gt;</span></code> <br/></pre></code></div>
+</li>
+</ul>
 </li>
 <li>
 <p>Перезапустите службу экземпляра ПО:</p>
@@ -243,7 +262,7 @@
 </li>
 <li>
 <p>В директиве <code>server</code> задайте номер порта и адрес сервера, по которым будет доступен экземпляр ПО:</p>
-<div class="highlight"><code><pre><span></span><code>server<span class="w"> </span><span class="o">{</span></code> <br/><code><span class="w">    </span><span class="c1"># Укажите адрес сервера для доступа к экземпляра ПО.</span></code> <br/><code><span class="w">    </span>server_name<span class="w"> </span>&lt;host_name&gt;</code> <br/><code><span class="w">    </span><span class="c1"># Укажите номер порта для доступа к экземпляра ПО.</span></code> <br/><code><span class="w">    </span>listen<span class="w"> </span>&lt;portNumber&gt;</code> <br/><code><span class="o">}</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>server<span class="w"> </span><span class="o">{</span></code> <br/><code><span class="w">    </span><span class="c1"># Адрес сервера для доступа к экземпляру ПО.</span></code> <br/><code><span class="w">    </span>server_name<span class="w"> </span>&lt;hostName&gt;</code> <br/><code><span class="w">    </span><span class="c1"># Номер порта для доступа к экземпляру ПО.</span></code> <br/><code><span class="w">    </span>listen<span class="w"> </span>&lt;portNumber&gt;</code> <br/><code><span class="o">}</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Для записи событий в отдельные журналы укажите их:</p>

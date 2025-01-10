@@ -216,15 +216,17 @@
 
 [registration_and_login]: {{ kbArticleURLPrefix }}4663
 
-[release_notes_4.7.4822]: {{ kbArticleURLPrefix }}4590
+[release_notes_4.7.4822]: {{ kbArticleURLPrefix }}2611
 
-[release_notes_4.7.2721]: {{ kbArticleURLPrefix }}4591
+[release_notes_4.7.2721]: {{ kbArticleURLPrefix }}2633
 
-[release_notes_4.7.2902]: {{ kbArticleURLPrefix }}4588
+[release_notes_4.7.2902]: {{ kbArticleURLPrefix }}2639
 
-[release_notes_4.7.3023]: {{ kbArticleURLPrefix }}4592
+[release_notes_4.7.3023]: {{ kbArticleURLPrefix }}2642
 
-[release_notes_4.7.3084]: {{ kbArticleURLPrefix }}4587
+[release_notes_4.7.3084]: {{ kbArticleURLPrefix }}2649
+
+[release_notes_5.0]: {{ kbArticleURLPrefix }}5073
 
 [restore_complete_backup]: {{ kbArticleURLPrefix }}4648
 
@@ -262,6 +264,10 @@
 
 [table_personal_use]: {{ kbArticleURLPrefix }}4815
 
+[table_personal_use_filter]: {{ kbArticleURLPrefix }}4815#table_personal_use_filter
+
+[table_personal_use_filter_extended]: {{ kbArticleURLPrefix }}4815#table_personal_use_filter_extended
+
 [task_notifications]: {{ kbArticleURLPrefix }}4684
 
 [task_notifications_email]: {{ kbArticleURLPrefix }}4684#task_notifications_email
@@ -287,6 +293,8 @@
 [uninstall_auxiliary_software]: {{ kbArticleURLPrefix }}4625
 
 [version_control]: {{ kbArticleURLPrefix }}4808
+
+[version_control_excel]: {{ kbArticleURLPrefix }}5071
 
 [version_control_git]: {{ kbArticleURLPrefix }}4806
 
@@ -490,6 +498,8 @@
 
 [form_dynamic_elements_drawing]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_drawing
 
+[form_dynamic_elements_dropdown]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_dropdown
+
 [form_dynamic_elements_embedded_form]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_embedded_form
 
 [form_dynamic_elements_hyperlink]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_hyperlink
@@ -636,6 +646,8 @@
 
 [scenario_verify_data]: {{ kbArticleURLPrefix }}4919
 
+[search_forms]: {{ kbArticleURLPrefix }}5069
+
 [send_http_example]: {{ kbArticleURLPrefix }}4699
 
 [service_call_task]: {{ kbArticleURLPrefix }}4729
@@ -722,6 +734,8 @@
 
 [elasticsearch_cluster_deploy_no_certificates]: {{ kbArticleURLPrefix }}4612
 
+[kafka_deploy_linux]: {{ kbArticleURLPrefix }}5074
+
 [sso_authenticatation_configure]: {{ kbArticleURLPrefix }}4613
 
 [sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}4613#sso_authentication_configure_keytab_update
@@ -740,9 +754,7 @@
 
 [admin_utility_instance_configure]: {{ kbArticleURLPrefix }}4634
 
-[deploy_guide_linux]: {{ kbArticleURLPrefix }}4622
-
-[deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_initialize
+[configuration_files_linux]: {{ kbArticleURLPrefix }}5067
 
 [logging_engine]: {{ kbArticleURLPrefix }}4623
 

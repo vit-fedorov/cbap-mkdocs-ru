@@ -163,7 +163,7 @@
 <p>Рекомендуется развертывать компоненты Платформы в выделенном пространстве имен. Манифесты k8s предполагают, что в кластере K8s существует пространство имен <code>cbap</code>. Создать пространство имен <code>cbap</code> можно с помощью команды:</p>
 <div class="highlight"><code><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>cbap</code> <br/></pre></code></div>
 <div class="notice notice-warning">
-<p class="admonition-title">Внимание</p>
+<p class="admonition-title">Внимание!</p>
 <p>Если Платформа будет развернута в пространстве имен отличном от <code>cbap</code>, необходимо во всех манифестах заменить значение <code>cbap</code> на имя пространства имен.</p>
 <p>Например, если Платформа будет развернута в пространстве имен <code>MY-NS</code>, тогда необходимо:</p>
 <p>• во всех манифестах необходимо заменить значение поля <code>namespace</code> с <code>cbap</code> на <code>MY-NS</code>

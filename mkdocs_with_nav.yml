@@ -153,6 +153,9 @@ nav:
       - architect/organizational_structure_modeling/renaming_organizational_unit.md
       - architect/organizational_structure_modeling/changing_hierarchy.md
       - architect/organizational_structure_modeling/deleting_organizational_unit.md
+      - Конструктор организационных структур:
+        - architect/organizational_structure_modeling/organizational_structure_designer/index.md
+        - architect/organizational_structure_modeling/organizational_structure_designer/organizational_structure_edit.md
 
   - Разработка приложений:
     - business_apps/application_configure_recommendations.md

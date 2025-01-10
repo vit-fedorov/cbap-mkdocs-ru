@@ -30,8 +30,8 @@ hide:
 Атрибутивный состав оргединицы можно изменить, и на её форму можно вынести дополнительные визуальные элементы и атрибуты.
 
 1. Выберите оргединицу в [панели навигации][navigation_panel] или в [реестре оргединиц][architect_organizational_structure_modelling].
-2. Отобразится [форма оргединицы][architect_configuring_organizational_unit].
-3. Нажмите кнопку «**Информация**» <i class="fa-light fa-edit"></i> и в раскрывающемся меню выберите пункт «**Редактировать форму**».
+2. Отобразится [диаграмма оргединицы][architect_configuring_organizational_unit].
+3. Нажмите кнопку «**Изменить**» <i class=" fal  fa-arrow-up-right-from-square " aria-hidden="true"></i>.
 
     *![Переход к конструктору формы оргединицы](configuring_organizational_unit_edit_form.png)*
 

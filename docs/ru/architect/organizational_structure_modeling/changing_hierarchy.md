@@ -23,7 +23,7 @@ hide:
 2. Отобразится значок с вертикальными троеточиями <i class="fa-light fa-grip-dots-vertical"></i>.
 3. Удерживая значок <i class="fa-light fa-grip-dots-vertical"></i>, перетащите оргединицу на строку её новой родительской оргединицы.
 
-*![Перемещение оргединицы в реестре](organizational_structure_modeling_moving_unit_in_registry.png)*
+    *![Перемещение оргединицы в реестре](organizational_structure_modeling_moving_unit_in_registry.png)*
 
 4. Чтобы переместить оргединицу на верхний уровень иерархии, перетащите её в позицию между первой строкой и заголовками столбцов, как показано на иллюстрации.
 

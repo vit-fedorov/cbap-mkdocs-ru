@@ -102,19 +102,19 @@
 <p>Требуется настроить кнопку для отправки прикреплённых файлов во внешнюю систему с помощью HTTP-запроса типа <code>POST</code>.</p>
 <h2 id="настройка-подключения">Настройка подключения</h2>
 <ol class="colored_numbers_list">
-<li>На странице <strong>Администрирование</strong>» выберите пункт «<strong>Инфраструктура</strong>» — «<strong>Подключения</strong>».</li>
-<li>Откройте двойным нажатием или создайте подключение типа «<strong>Подключения REST и OData</strong>» — «<strong>Отправка HTTP-запросов</strong>».</li>
+<li>На странице <strong>Администрирование</strong>» выберите пункт «<strong>Инфраструктура</strong>» — «<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4675"><strong>Подключения</strong></a>».</li>
+<li>Откройте или создайте подключение типа «<strong>Подключения REST и OData</strong>» — «<strong>Отправка HTTP-запросов</strong>».</li>
 <li>
 <p>Настройте подключение к серверу:</p>
 <ul>
 <li><strong>Системное имя</strong> — введите уникальное имя подключения.
 Не должно начинаться с цифры. Разрешены английские и русские буквы, цифры и символ «_». Рекомендуется использовать английские буквы.</li>
 <li><strong>Отключить</strong> — установите этот флажок, если требуется временно деактивировать данное подключение.</li>
-<li><strong>Описание</strong> — введите наглядное описание подключения, например <em>«Подключение для отправки файлов по HTTP»</em>.</li>
+<li><strong>Описание</strong> — введите наглядное описание подключения, например <em>«Подключение для отправки запросов по HTTP»</em>.</li>
 <li><strong>Запись в файловые журналы</strong> — выберите, какие события следует записывать в журналы:<ul>
 <li><strong>Полные сведения об обработке сообщения</strong>;</li>
 <li><strong>Только ошибки</strong>;</li>
-<li><strong>Отключить</strong> — не регистрировать в журнале события получения писем.</li>
+<li><strong>Отключить</strong> — не регистрировать в журнале события отправки запросов.</li>
 </ul>
 </li>
 <li><strong>URI</strong> — укажите адрес сервера, на который будут отправляться запросы.</li>
@@ -226,14 +226,33 @@
 <ul>
 <li>Сценарий срабатывает при нажатии кнопки <em>«Отправить вложения»</em> на форме записи с прикреплёнными файлами.</li>
 <li>Запускается цикл, перебирающий все прикреплённые файлы.</li>
-<li>На каждой итерации цикла формируется и отправляется отдельный HTTP-запрос, содержащий данные файла в формате JSON:<ul>
+<li>
+<ul>
 <li>Формируются переменные с именем и содержимым файла: <code>$$Name</code> и <code>$$Content</code>.</li>
-<li>Формируется переменная-объект для отправки в теле HTTP-запроса:
-<div class="highlight"><code><pre><span></span><code><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="nt">"Message"</span><span class="p">:{</span></code> <br/><code><span class="w">        </span><span class="nt">"File"</span><span class="p">:{</span></code> <br/><code><span class="w">            </span><span class="nt">"Name"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code><span class="w">            </span><span class="nt">"Content"</span><span class="p">:</span><span class="s2">"STRING"</span></code> <br/><code><span class="w">        </span><span class="p">}</span></code> <br/><code><span class="w">    </span><span class="p">}</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div></li>
+<li>
+<p>Формируется переменная-объект для отправки в теле HTTP-запроса:</p>
+<p><code>json
+{
+    "Message":{
+        "File":{
+            "Name":"STRING",
+            "Content":"STRING"
+        }
+    }
+}</code></p>
+</li>
+</ul>
+<p>На каждой итерации цикла формируется и отправляется отдельный HTTP-запрос, содержащий данные файла в формате JSON:</p>
+<ul>
 <li><code>$$Message-&gt;File-&gt;Name</code> присваивается значение переменной <code>$$Name</code>.</li>
 <li><code>$$Message-&gt;File-&gt;Content</code> присваивается значение переменной <code>$$Content</code>.</li>
-<li>Содержимое переменной <code>$$Message</code> в формате JSON отправляется в качестве HTTP-запроса.</li>
-<li>Содержимое переменной <code>$$Message</code> очищается для использования в следующей итерации цикла.</li>
+<li>
+<p>Содержимое переменной <code>$$Message</code> в формате JSON отправляется в качестве HTTP-запроса:</p>
+<div class="highlight"><code><pre><span></span><code><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="nt">"File"</span><span class="p">:{</span></code> <br/><code><span class="w">        </span><span class="nt">"Name"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code><span class="w">        </span><span class="nt">"Content"</span><span class="p">:</span><span class="s2">"STRING"</span></code> <br/><code><span class="w">    </span><span class="p">}</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+</li>
+<li>
+<p>Содержимое переменной <code>$$Message</code> очищается для использования в следующей итерации цикла.</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -285,15 +304,16 @@
 <li>
 <p>В действии «<strong>Изменить значение переменных</strong>» на вкладке «<strong>Основные</strong>» добавьте переменные:</p>
 <div class="notice notice-warning">
-<p class="admonition-title">Создание переменной типа «Объект»</p>
-<p>Чтобы составить переменную типа «<strong>Объект</strong>» для хранения имени и содержимого файла, необходимо создать структуру из родительской и дочерних переменных:</p>
+<p class="admonition-title">Сопоставление переменных и объектов с атрибутами сообщения</p>
+<p>Для передачи значения переменной с именем и содержимым файла в атрибут сообщения типа «<strong>Объект</strong>», необходимо создать родительскую и дочерние переменные с такой же структурой, как у атрибута сообщения:</p>
 <ul>
-<li>Создайте переменную, присвойте ей <strong>имя</strong>, но оставьте <strong>значение</strong> переменной пустым. Эта переменная будет родительской.</li>
+<li>Создайте родительскую переменную, присвойте ей <strong>имя</strong>, но оставьте <strong>значение</strong> пустым.</li>
 <li>Установите флажок у имени родительской переменной в таблице и нажмите кнопку «<strong>Создать</strong>».</li>
 <li>Дважды нажмите значок <i class="fa-light fa-angle-down anchor">&zwnj;<!--icon--></i> рядом с родительской переменной.</li>
 <li>В таблице отобразится строка дочерней переменной.</li>
 <li>Присвойте дочерней переменной <strong>имя</strong> и <strong>значение</strong>.</li>
 </ul>
+<p>Имена переменных, значения которых передаются в <a class="mkdocs_imported_link" href="#атрибуты-сообщения"><strong>атрибуты сообщения</strong></a> с помощью действия сценария «<strong>Отправить сообщение</strong>», должны совпадать с системными именами атрибутов сообщения.</p>
 </div>
 <ul>
 <li>
@@ -306,7 +326,7 @@
 <li><em>Name</em> — <strong>значение: формула</strong></li>
 </ul>
 <div class="highlight"><code><pre><span></span><code><span class="err">$$</span><span class="n">Name</span></code> <br/></pre></code></div>
-<p>Здесь используются переменные <code>Content</code> и <code>Name</code>, которые были созданы на шаге 4.</p>
+<p>Здесь <code>$$Content</code> и <code>$$Name</code> — переменные, которые были созданы на шаге 4.</p>
 </li>
 </ul>
 </li>

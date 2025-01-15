@@ -5,6 +5,8 @@ title: Развёртывание Comindware Business Application Platform в к
 
 # Развёртывание {{ productName }} в кластере
 
+--8<-- "experimental_feature.md"
+
 ## Введение
 
 Экземпляр ПО **{{ productName }}** можно развернуть в кластере для увеличения производительности, улучшения отказоустойчивости и обеспечения бесперебойного функционирования.
@@ -50,7 +52,7 @@ title: Развёртывание Comindware Business Application Platform в к
 5. Добавьте в файл `exports` следующую директиву:
 
     ``` sh
-    /share <clientIP>/<netMask>(rw,sync,no_subtree_check)
+    /share <nodeIP>/<netMask>(rw,sync,no_subtree_check)
     ```
 
     Здесь:
@@ -76,7 +78,7 @@ title: Развёртывание Comindware Business Application Platform в к
     systemctl start nfs-kernel-server.service
     ```
 
-8. Создайте следующие директории (`<instanceName>` — имя экземпляра ПО):
+8. Создайте следующие директории:
 
     `` sh
     mkdir -p /share/<instanceName>/Streams
@@ -182,33 +184,53 @@ title: Развёртывание Comindware Business Application Platform в к
     ls -lh /mnt/share
     ```
 
-6. Создайте и настройте следующие директории и ссылки (`<instanceName>` — имя экземпляра ПО):
+6. Удостоверьтесь, что существует директория `/var/lib/comindware/<instanceName>` и настройте её владельца:
+
+    - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
+        
+        ``` sh
+        chown -R www-data: /var/lib/comindware/<instanceName>
+        ```
+    
+    - **РЕД ОС**, **Rocky** (RPM-based)
+
+        ``` sh
+        chown -R nginx: /var/lib/comindware/<instanceName>
+        ```
+    
+    - **Альт Сервер**
+
+        ``` sh
+        chown -R _nginx: /var/lib/comindware/<instanceName>
+        ```
+
+7. Создайте ссылку на директорию со скомпилированными скриптами на NFS-сервере:
 
     ``` sh
-    mkdir /db
-    mkdir -p /db/<instanceName>/Database/
-    mkdir /var/lib/comindware
-    ln -s /db/<instanceName> /var/lib/comindware/<instanceName>
-    ln -s /mnt/share/<instanceName>/Scripts /db/<instanceName>/Database/Scripts
-
-    chown -R www-data: /var/lib/comindware /db/<instanceName>
+    ln -s /mnt/share/<instanceName>/Scripts /var/lib/comindware/<instanceName>/Database/Scripts
     ```
 
-7. Откройте файл `comindware<instanceName>-env` для редактирования:
+8. Откройте файл `comindware<instanceName>-env` для редактирования:
 
     ``` sh
     nano /etc/sysconfig/comindware<instanceName>-env
     ```
 
-8. Проверьте значения в следующей директиве и при необходимости отредактируйте её:
+9. Проверьте и при необходимости измените лимиты памяти в директиве `JVM_OPTS` — начальный и максимальный размер кучи и максимальный объём области прямого доступа к памяти, например:
 
     `` ini
-    JVM_OPTS=-Xms512m -Xmx4g -XX:MaxDirectMemorySize=1g...
+    -Xms512m -Xmx4g -XX:MaxDirectMemorySize=1g
     ```
 
-## Настройка первого узла для работы экземпляра ПО в кластере
+## Настройка и запуск первого узла кластера
 
-### Подготовка первого узла к работе
+На машине с первым узлом кластера настройте доступ к файлам базы данных и экземпляр ПО.
+
+### Перенос базы данных на NFS-сервер
+
+Если на первом узле был развёрнут экземпляр ПО с базой данных, перенесите её на NFS-сервер.
+
+Для чистого экземпляра ПО данный этап не требуется.
 
 1. Перейдите в режим суперпользователя:
 
@@ -233,45 +255,41 @@ title: Развёртывание Comindware Business Application Platform в к
     unzip -q <backupName>.cdbbz
     ```
 
-6. Перенесите и настройте данные резервной копии экземпляра ПО (`<instanceName>` — имя экземпляра ПО):
+6. Перенесите данные экземпляра ПО на NFS-сервер:
 
     ``` sh
     cp -r Scripts/* /mnt/share/<instanceName>/Scripts/
     cp -r Streams/* /mnt/share/<instanceName>/Streams/
-    mv Database/* /db/<instanceName>/Database/
+    mv Database/* /var/lib/comindware/<instanceName>/Database/
     rm -rf Database Scripts Streams
     ```
 
-7. Настройте владельца директории `/db/<instanceName>`:
+### Настройка экземпляра ПО
 
-    ``` sh
-    chown -R www-data: /db/<instanceName>
-    ```
-
-8. Откройте файл `Ignite.config` для редактирования:
+1. Откройте файл `Ignite.config` для редактирования:
 
     ``` sh
     nano /var/www/<instanceName>/Ignite.config
     ```
 
-9.  Отредактируйте файл `Ignite.config` следующим образом:
+2. Отредактируйте файл `Ignite.config` по следующему образцу:
 
     ``` xml
     <property name="discoverySpi">
           <bean class="org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi">
-            <!-- укажите IP-адрес машины -->
-            <property name="localAddress" value="<clientIP>" />
+            <!-- Укажите IP-адрес, порт и диапазон портов первого узла -->
+            <property name="localAddress" value="<node_1_IP>" />
             <property name="localPort" value="47510" />
             <property name="localPortRange" value="9" />
             <property name="ipFinder">
               <bean class="org.apache.ignite.spi.discovery.tcp.ipfinder.vm.TcpDiscoveryVmIpFinder">
                 <property name="addresses">
                   <list>
-                    <!-- перечислите все IP-адреса машин, которые составляют кластер -->
-                    <value><clientIP>:47510..47519</value>
-                    <value><clientIP_1>:47510..47519</value>
+                    <!-- Укажите IP-адреса всех узлов кластера -->
+                    <value><node_1_IP>:47510..47519</value>
+                    <value><node_2_IP>:47510..47519</value>
                     ...
-                    <value><clientIP_n>:47510..47519</value>
+                    <value><node_N_IP>:47510..47519</value>
                   </list>
                 </property>
               </bean>
@@ -281,8 +299,8 @@ title: Развёртывание Comindware Business Application Platform в к
         <property name="communicationSpi">
           <bean class="org.apache.ignite.spi.communication.tcp.TcpCommunicationSpi">
             <property name="localPort" value="47101" />
-            <!-- укажите IP-адрес машины -->
-            <property name="localAddress" value="<clientIP>" />
+            <!-- Укажите IP-адрес первого узла -->
+            <property name="localAddress" value="<node_1_IP>" />
             <property name="messageQueueLimit" value="1024" />
           </bean>
         </property>
@@ -296,7 +314,7 @@ title: Развёртывание Comindware Business Application Platform в к
                   </property>
                   <property name="name" value="Persistent" />
                   <property name="persistenceEnabled" value="true" />
-                    <!-- проверьте и при необходимости отредактируйте размер выделяемой памяти -->
+                    <!-- Проверьте и при необходимости отредактируйте объём выделяемой памяти -->
                   <property name="initialSize" value="#{1024L * 1024 * 1024}" />
                   <property name="maxSize" value="#{4L * 1024 * 1024 * 1024}" />
                   <property name="pageEvictionMode" value="RANDOM_2_LRU" />
@@ -305,7 +323,7 @@ title: Развёртывание Comindware Business Application Platform в к
                 <bean class="org.apache.ignite.configuration.DataRegionConfiguration">
                   <property name="name" value="InMemory" />
                   <property name="persistenceEnabled" value="false" />
-                    <!-- проверьте и при необходимости отредактируйте размер выделяемой памяти -->
+                    <!-- Проверьте и при необходимости отредактируйте объём выделяемой памяти -->
                   <property name="initialSize" value="#{10 * 1024 * 1024}" />
                   <property name="maxSize" value="#{256 * 1024 * 1024}" />
                 </bean>
@@ -315,20 +333,21 @@ title: Развёртывание Comindware Business Application Platform в к
         </property>
     ```
 
-10. Откройте файл конфигурации экземпляра ПО для редактирования:
+3. Откройте файл конфигурации экземпляра ПО для редактирования:
 
     ``` sh
     nano /usr/share/comindware/configs/instance/<instanceName>.yml
     ```
 
-11. Отредактируйте файл конфигурации экземпляра ПО следующим образом:
+4. Отредактируйте файл конфигурации экземпляра ПО по следующему образцу (см. _«[Конфигурация экземпляра, компонентов ПО и служб. Настройка][configuration_files_linux]»_):
 
     ``` yml
     isFederationAuthEnabled: 0
     databasePath: /var/lib/comindware/<instanceName>/Database
     configPath: /var/www/<instanceName>
+    # Укажите примонтированные директории NFS-сервера с файлами экземпляра ПО
     backup.config.default.repository.type: LocalDisk
-    backup.config.default.repository.localDisk.path: /var/lib/comindware/<instanceName>/Backup
+    backup.config.default.repository.localDisk.path: /mnt/share/comindware/Backup
     userStorage.type: LocalDisk
     userStorage.localDisk.path: /mnt/share/<instanceName>/Streams
     tempStorage.type: LocalDisk
@@ -337,45 +356,40 @@ title: Развёртывание Comindware Business Application Platform в к
     instanceName: <instanceName>
     databaseName: <instanceName>
     configName: <instanceName>
-    # У каждого узла должно быть своё название
+    # У каждого узла должно быть уникальное имя
     nodeName: <instanceName><nodeNumber>
     
-    # Адрес и порт сервера очереди сообщений (Kafka)
     mq.server: <kafkaBrokerIP>:<kafkaBrokerPort>
     mq.group: <instanceName>
     manageAdapterHost: true
-    # Адрес и порт сервера Elasticsearch
     elasticsearchUri: <elasticsearchIP>:<elasticsearchPort>
-    # Версия ПО
     version: <versionNumber>
     ```
 
-12. При наличии файла `Workers.config` удалите его:
+5. Перейдите в режим суперпользователя:
+
+    --8<-- "linux_sudo.md"
+
+6. При наличии файла `Workers.config` удалите его:
 
     ```sh
     rm -f /var/www/npportalid/Workers.config
     ```
 
-### Запуск первого узла кластера
-
-1. Перейдите в режим суперпользователя:
-
-    --8<-- "linux_sudo.md"
-
-2. Запустите службу экземпляра ПО:
+7. Запустите службу экземпляра ПО:
 
     ``` sh
     systemctl start comindware<instanceName>
     ```
 
-3. В веб-браузере запустите сайт экземпляра ПО и выполните вход.
-4. Откройте файл `Workers.config` для редактирования (`<instanceName>` — имя экземпляра ПО):
+8. В веб-браузере запустите сайт экземпляра ПО и выполните вход.
+9. Откройте файл `Workers.config` для редактирования:
 
     ``` sh
     nano /var/www/<instanceName>/Workers.config
     ```
 
-5. Отредактируйте файл `Workers.config` следующим образом:
+10. Отредактируйте файл `Workers.config` по следующему образцу:
 
     ``` xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -391,24 +405,40 @@ title: Развёртывание Comindware Business Application Platform в к
       <SyncThread>false</SyncThread>
       <SwitchOnFullTextSearch>false</SwitchOnFullTextSearch>
       <PerformanceMonitoring>false</PerformanceMonitoring>
+        <!-- Значение ConfigurationId должно совпадать на всех узлах -->
       <ConfigurationId>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</ConfigurationId>
     </WorkerEngine>
     ```
 
-6. Скопируйте и сохраните значение из следующей строки:
-{: #ConfigurationId}
+11. Настройте владельца файла `Workers.config`:
 
-    ``` xml
-    <ConfigurationId>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</ConfigurationId>
-    ```
+    - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
+        
+        ``` sh
+        chown www-data: /var/www/<instanceName>/Workers.config
+        ```
+    
+    - **РЕД ОС**, **Rocky** (RPM-based)
 
-7. Настройте владельца файла `Workers.config`:
+        ``` sh
+        chown nginx: /var/www/<instanceName>/Workers.config
+        ```
+    
+    - **Альт Сервер**
+
+        ``` sh
+        chown _nginx: /var/www/<instanceName>/Workers.config
+        ```
+
+12. Перезапустите экземпляр ПО:
 
     ``` sh
-    chown www-data: /var/www/<instanceName>/Workers.config
+    systemctl restart comindware<instanceName>
     ```
 
-## Настройка и запуск последующих экземпляров ПО
+## Настройка и запуск второго и последующих узлов кластера
+
+На машине со вторым и последующими узлами кластера настройте конфигурацию экземпляра ПО.
 
 1. Перейдите в режим суперпользователя:
 
@@ -420,24 +450,24 @@ title: Развёртывание Comindware Business Application Platform в к
     nano /var/www/<instanceName>/Ignite.config
     ```
 
-3. Отредактируйте файл `Ignite.config` следующим образом:
+3. Отредактируйте файл `Ignite.config` по следующему образцу:
 
     ``` xml
     <property name="discoverySpi">
           <bean class="org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi">
-            <!-- укажите IP-адрес машины -->
-            <property name="localAddress" value="<clientIP>" />
+            <!-- Укажите IP-адрес, порт и диапазон портов узла N -->
+            <property name="localAddress" value="<node_N_IP>" />
             <property name="localPort" value="47510" />
             <property name="localPortRange" value="9" />
             <property name="ipFinder">
               <bean class="org.apache.ignite.spi.discovery.tcp.ipfinder.vm.TcpDiscoveryVmIpFinder">
                 <property name="addresses">
                   <list>
-                    <!-- перечислите все IP-адреса машин, которые составляют кластер -->
-                    <value><clientIP>:47510..47519</value>
-                    <value><clientIP_1>:47510..47519</value>
+                    <!-- Укажите IP-адреса всех узлов кластера -->
+                    <value><node_1_IP>:47510..47519</value>
+                    <value><node_2_IP>:47510..47519</value>
                     ...
-                    <value><clientIP_n>:47510..47519</value>
+                    <value><node_N_IP>:47510..47519</value>
                   </list>
                 </property>
               </bean>
@@ -447,8 +477,8 @@ title: Развёртывание Comindware Business Application Platform в к
         <property name="communicationSpi">
           <bean class="org.apache.ignite.spi.communication.tcp.TcpCommunicationSpi">
             <property name="localPort" value="47101" />
-            <!-- укажите IP-адрес машины -->
-            <property name="localAddress" value="<clientIP>" />
+            <!-- укажите IP-адрес узла -->
+            <property name="localAddress" value="<nodeIP_n>" />
             <property name="messageQueueLimit" value="1024" />
           </bean>
         </property>
@@ -462,7 +492,7 @@ title: Развёртывание Comindware Business Application Platform в к
                   </property>
                   <property name="name" value="Persistent" />
                   <property name="persistenceEnabled" value="true" />
-                    <!-- проверьте и при необходимости отредактируйте размер выделяемой памяти -->
+                    <!-- Проверьте и при необходимости отредактируйте размер выделяемой памяти -->
                   <property name="initialSize" value="#{1024L * 1024 * 1024}" />
                   <property name="maxSize" value="#{4L * 1024 * 1024 * 1024}" />
                   <property name="pageEvictionMode" value="RANDOM_2_LRU" />
@@ -471,7 +501,7 @@ title: Развёртывание Comindware Business Application Platform в к
                 <bean class="org.apache.ignite.configuration.DataRegionConfiguration">
                   <property name="name" value="InMemory" />
                   <property name="persistenceEnabled" value="false" />
-                    <!-- проверьте и при необходимости отредактируйте размер выделяемой памяти -->
+                    <!-- Проверьте и при необходимости отредактируйте размер выделяемой памяти -->
                   <property name="initialSize" value="#{10 * 1024 * 1024}" />
                   <property name="maxSize" value="#{256 * 1024 * 1024}" />
                 </bean>
@@ -487,121 +517,92 @@ title: Развёртывание Comindware Business Application Platform в к
     nano /usr/share/comindware/configs/instance/<instanceName>.yml
     ```
 
-5. Отредактируйте файл конфигурации экземпляра ПО следующим образом:
-
-    ``` yml
-    isFederationAuthEnabled: 0
-    databasePath: /var/lib/comindware/<instanceName>/Database
-    configPath: /var/www/<instanceName>
-    backup.config.default.repository.type: LocalDisk
-    backup.config.default.repository.localDisk.path: /var/lib/comindware/<instanceName>/Backup
-    userStorage.type: LocalDisk
-    userStorage.localDisk.path: /mnt/share/<instanceName>/Streams
-    tempStorage.type: LocalDisk
-    tempStorage.localDisk.path: /mnt/share/<instanceName>/Temp
-    
-    instanceName: <instanceName>
-    databaseName: <instanceName>
-    configName: <instanceName>
-    # У каждого узла должно быть своё название
-    nodeName: <instanceName><nodeNumber>
-    
-    # Адрес и порт сервера очереди сообщений (Kafka)
-    mq.server: <kafkaBrokerIP>:<kafkaBrokerPort>
-    mq.group: <instanceName>
-    manageAdapterHost: true
-    # Адрес и порт сервера Elasticsearch
-    elasticsearchUri: <elasticsearchIP>:<elasticsearchPort>
-    # Версия ПО
-    version: <versionNumber>
-    ```
-
+5. Скопируйте содержимое файла конфигурации первого узла и в директиве `nodeName` укажите уникальное имя узла.
 6. Откройте файл `Workers.config` для редактирования:
 
     ``` sh
     nano /var/www/<instanceName>/Workers.config
     ```
 
-7. Отредактируйте файл `Workers.config`, изменив статус служб и подставив значение параметра  `<ConfigurationId>` из [конфигурации первого узла](#ConfigurationId):
-
-    ``` xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <WorkerEngine xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-i>
-      <RebuildThreadWorker>false</RebuildThreadWorker>
-      <BackupSessionsQueue>false</BackupSessionsQueue>
-      <SessionManagerWorker>false</SessionManagerWorker>
-      <NotificationWorker>false</NotificationWorker>
-      <EmailListener>true</EmailListener>
-      <IndexTasksQueue>false</IndexTasksQueue>
-      <ProcessEngineQueueProcessing>true</ProcessEngineQueueProcessing>
-      <ProcessEngineTimerProcessing>false</ProcessEngineTimerProcessing>
-      <SyncThread>false</SyncThread>
-      <SwitchOnFullTextSearch>false</SwitchOnFullTextSearch>
-      <PerformanceMonitoring>false</PerformanceMonitoring>
-      <ConfigurationId>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</ConfigurationId>
-    </WorkerEngine>
-    ```
-
-8. Запустите экземпляр ПО:
+7. Скопируйте содержимое файла `Workers.config` первого узла.
+8. Удостоверьтесь, что значение директивы `<ConfigurationId>` совпадает на всех узлах.
+9. Запустите экземпляр ПО:
 
     ``` sh
     systemctl start comindware<instanceName>
     ```
 
-9. В веб-браузере запустите сайт экземпляра ПО и выполните вход.
-10. На машине, на которой развёрнут первый узел, перейдите в директорию со скриптами Apache Ignite:
+10. В браузере запустите сайт экземпляра ПО.
+11. На машине, на которой развёрнут первый узел, перейдите в директорию со скриптами Apache Ignite:
 
     ``` sh
     cd /home/username/ignite/bin
     ```
 
-11. Выполните запрос топологии, пока не отобразится сообщение о наличи стороннего узла:
+12. Выполняйте запрос топологии до тех пор, пока не отобразится сообщение о наличии стороннего узла:
 
     ``` sh
     bash control.sh --baseline
     ```
 
-12. Выполните запрос на включение узла в топологию:
+13. Выполните запрос на включение узла N в топологию (`<nodeNConsistenceId>` — идентификатор узла N в Ignite):
 
     ``` sh
-    bash control.sh --baseline add <nodeConsistenceId> -y
+    bash control.sh --baseline add <nodeNConsistenceId> -y
     ```
 
-13. На машине с новым узлом кластера перейдите в директорию со скриптами Apache Ignite:
+14. На машине с узлом N кластера перейдите в директорию со скриптами Apache Ignite:
 
     ``` sh
     cd /home/username/ignite/bin
     ```
 
-14. Выполните запрос топологии:
+15. Выполните запрос топологии:
 
     ``` sh
     watch bash control.sh --baseline
     ```
 
-15. Дождитесь включения нового узла в топологию.
-16. Дождитесь запуска страницы входа на сайт в веб-браузере.
+16. Дождитесь включения узла N в топологию.
+17. Дождитесь отображения страницы входа в экземпляр ПО в браузере.
 
 ## Настройка кластера после запуска
 
-1. На машине, где развёрнут первый узел, удалите директорию `LocalTemp`:
+1. На машине с первым узлом удалите директорию `LocalTemp`:
 
     ``` sh
     rf -rf /var/lib/comindware/<instanceName>/LocalTemp
     ```
 
-2. Создайте новую директорию `LocalTemp` и назначьте ей владельца:
+2. Создайте новую директорию `LocalTemp` на NFS-сервере и назначьте ей владельца:
 
-    ``` sh
-    mkdir /mnt/share/<instanceName>/LocalTemp
-    chown -R www-data:www-data /mnt/storage/<instanceName>/LocalTemp
-    ```
+    - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
+        
+        ``` sh
+        mkdir /mnt/share/<instanceName>/LocalTemp
+        chown -R www-data:www-data /mnt/storage/<instanceName>/LocalTemp
+        ```
+    
+    - **РЕД ОС**, **Rocky** (RPM-based)
+
+        ``` sh
+        mkdir /mnt/share/<instanceName>/LocalTemp
+        chown -R nginx:nginx /mnt/storage/<instanceName>/LocalTemp
+        ```
+    
+    - **Альт Сервер**
+
+        ``` sh
+        mkdir /mnt/share/<instanceName>/LocalTemp
+        chown -R _nginx:_nginx /mnt/storage/<instanceName>/LocalTemp
+        ```
 
 3. На каждой машине, на которой развёрнуты узлы кластера, создайте символьную ссылку на директорию `LocalTemp`:
 
     ``` sh
     ln -s /mnt/storage/<instanceName>/LocalTemp /var/lib/comindware/<instanceName>/LocalTemp
     ```
+
 <div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"

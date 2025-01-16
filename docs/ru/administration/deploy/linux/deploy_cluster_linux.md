@@ -3,7 +3,7 @@ kbId:
 title: Развёртывание Comindware Business Application Platform в кластере
 ---
 
-# Развёртывание {{ productName }} в кластере
+# Развёртывание {{ productName }} в кластере {: #deploy_cluster_linux}
 
 --8<-- "experimental_feature.md"
 
@@ -15,12 +15,13 @@ title: Развёртывание Comindware Business Application Platform в к
 
 ## Конфигурация кластера
 
-Кластер экземпляра ПО включает следующие компоненты:
+В минимальной конфигурации для горизонтального масштабирования кластер **{{ productName }}** включает следующие компоненты:
 
-- сервер хранения данных экземпляра ПО на отдельной машине, к которому будут обращаться узлы кластера;
+- сервер хранения данных на отдельной машине, к которому будут обращаться узлы кластера;
 - несколько машин, на каждой из которых установлено ПО **{{ productName }}** одинаковой версии и развёрнут экземпляр ПО с одинаковым именем (`<instanceName>`);
 - сервер Elasticsearch развёрнут на отдельной машине;
-- сервер Apache Kafka развёрнут на отдельной машине.
+- сервер Apache Kafka развёрнут на отдельной машине;
+- балансировщик нагрузки (при необходимости).
 
 ## Настройка сервера хранения данных (NFS)
 
@@ -177,27 +178,27 @@ title: Развёртывание Comindware Business Application Platform в к
     `<serverIP>:/share  /mnt/share  nfs  auto  0  0`
     ```
 
-5. Смонтируйте диски:
+5. Смонтируйте диски и просмотрите содержимое директории NFS-сервера:
 
     ``` sh
     mount -a
     ls -lh /mnt/share
     ```
 
-6. Удостоверьтесь, что существует директория `/var/lib/comindware/<instanceName>` и настройте её владельца:
+6. Удостоверьтесь, что существует директория `/var/lib/comindware/<instanceName>`, и настройте её владельца:
 
     - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
-        
+
         ``` sh
         chown -R www-data: /var/lib/comindware/<instanceName>
         ```
-    
+
     - **РЕД ОС**, **Rocky** (RPM-based)
 
         ``` sh
         chown -R nginx: /var/lib/comindware/<instanceName>
         ```
-    
+
     - **Альт Сервер**
 
         ``` sh
@@ -352,13 +353,13 @@ title: Развёртывание Comindware Business Application Platform в к
     userStorage.localDisk.path: /mnt/share/<instanceName>/Streams
     tempStorage.type: LocalDisk
     tempStorage.localDisk.path: /mnt/share/<instanceName>/Temp
-    
+
     instanceName: <instanceName>
     databaseName: <instanceName>
     configName: <instanceName>
     # У каждого узла должно быть уникальное имя
     nodeName: <instanceName><nodeNumber>
-    
+
     mq.server: <kafkaBrokerIP>:<kafkaBrokerPort>
     mq.group: <instanceName>
     manageAdapterHost: true
@@ -413,17 +414,17 @@ title: Развёртывание Comindware Business Application Platform в к
 11. Настройте владельца файла `Workers.config`:
 
     - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
-        
+
         ``` sh
         chown www-data: /var/www/<instanceName>/Workers.config
         ```
-    
+
     - **РЕД ОС**, **Rocky** (RPM-based)
 
         ``` sh
         chown nginx: /var/www/<instanceName>/Workers.config
         ```
-    
+
     - **Альт Сервер**
 
         ``` sh
@@ -435,6 +436,8 @@ title: Развёртывание Comindware Business Application Platform в к
     ``` sh
     systemctl restart comindware<instanceName>
     ```
+
+13. Настройте директорию `LocalTemp`. См. _«[Создание директории LocalTemp после запуска узлов кластера](#создание-директории-localtemp-после-запуска-узлов-кластера)»_.
 
 ## Настройка и запуск второго и последующих узлов кластера
 
@@ -566,41 +569,46 @@ title: Развёртывание Comindware Business Application Platform в к
 16. Дождитесь включения узла N в топологию.
 17. Дождитесь отображения страницы входа в экземпляр ПО в браузере.
 
-## Настройка кластера после запуска
+## Создание директории LocalTemp после запуска узлов кластера
 
-1. На машине с первым узлом удалите директорию `LocalTemp`:
+При каждом запуске экземпляра ПО заново создаётся локальная папка `/var/lib/comindware/<instanceName>/LocalTemp` и удаляется символьная ссылка на неё на NFS-сервере. После этого необходимо удалить директорию `/var/lib/comindware/<instanceName>/LocalTemp` и пересоздавать символьную ссылку на директорию `LocalTemp` на NFS-сервере.
+
+1. На каждом узле удалите локальную директорию `LocalTemp`:
 
     ``` sh
-    rf -rf /var/lib/comindware/<instanceName>/LocalTemp
+    rm -rf /var/lib/comindware/<instanceName>/LocalTemp
     ```
 
-2. Создайте новую директорию `LocalTemp` на NFS-сервере и назначьте ей владельца:
+2. С любого узла создайте директорию `LocalTemp` на NFS-сервере:
 
-    - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
-        
         ``` sh
         mkdir /mnt/share/<instanceName>/LocalTemp
-        chown -R www-data:www-data /mnt/storage/<instanceName>/LocalTemp
         ```
-    
+
+3. На каждом узле назначьте владельца директории `LocalTemp` на NFS-сервере:
+
+    - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
+
+        ``` sh
+        chown -R www-data:www-data /mnt/share/<instanceName>/LocalTemp
+        ```
+
     - **РЕД ОС**, **Rocky** (RPM-based)
 
         ``` sh
-        mkdir /mnt/share/<instanceName>/LocalTemp
-        chown -R nginx:nginx /mnt/storage/<instanceName>/LocalTemp
+        chown -R nginx:nginx /mnt/share/<instanceName>/LocalTemp
         ```
-    
+
     - **Альт Сервер**
 
         ``` sh
-        mkdir /mnt/share/<instanceName>/LocalTemp
-        chown -R _nginx:_nginx /mnt/storage/<instanceName>/LocalTemp
+        chown -R _nginx:_nginx /mnt/share/<instanceName>/LocalTemp
         ```
 
-3. На каждой машине, на которой развёрнуты узлы кластера, создайте символьную ссылку на директорию `LocalTemp`:
+4. На каждом узле создайте символьную ссылку на директорию `LocalTemp` с NFS-сервера:
 
     ``` sh
-    ln -s /mnt/storage/<instanceName>/LocalTemp /var/lib/comindware/<instanceName>/LocalTemp
+    ln -s /mnt/share/<instanceName>/LocalTemp /var/lib/comindware/<instanceName>/LocalTemp
     ```
 
 <div class="relatedTopics" markdown="block">
@@ -608,6 +616,8 @@ title: Развёртывание Comindware Business Application Platform в к
 --8<-- "related_topics_heading.md"
 
 - _[Установка, запуск, инициализация и остановка ПО][deploy_guide_linux]_
+- _[Пути и содержимое директорий экземпляра ПО][paths]_
+- _[Конфигурация экземпляра, компонентов ПО и служб. Настройка][configuration_files_linux]_
 
 </div>
 

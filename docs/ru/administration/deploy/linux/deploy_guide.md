@@ -466,6 +466,8 @@ kbId: 2344
 --8<-- "related_topics_heading.md"
 
 - _[Пути и содержимое директорий экземпляра ПО][paths]_
+- _[Конфигурация экземпляра, компонентов ПО и служб. Настройка][configuration_files_linux]_
+- _[Развёртывание {{ productName }} в кластере][deploy_cluster_linux]_
 
 </div>
 

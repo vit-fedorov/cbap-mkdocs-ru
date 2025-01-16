@@ -1,4 +1,5 @@
-<h1>Управление версиями приложения. Экспорт и импорт</h1><div class="md-container" data-md-component="container">
+<h1>Управление версиями приложения. Экспорт и импорт</h1><div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr">
+<div class="md-container" data-md-component="container">
 <div class="md-main__inner md-grid"><nav aria-label="Содержание" class="md-nav md-nav--secondary">
 <div class="mce-toc">
 <h2 class="toc-heading">Содержание</h2>
@@ -17,20 +18,17 @@
 <p>Представленная здесь функция находится на стадии разработки. См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4579#experimental_feature_support">Поддержка экспериментальных функций</a>»</em>.</p>
 </div>
 <h2 id="введение">Введение</h2>
-<p>В <strong>Comindware Platform</strong> предусмотрена возможность управления версиями приложения с помощью репозиториев Git и вручную.</p>
+<p>В <strong>Comindware Platform</strong> предусмотрена возможность управления версиями приложения с помощью репозиториев Git, вручную и через Excel.</p>
 <p>Управление версиями позволяет с помощью экспорта и импорта переносить приложения между серверами. Например, можно настроить и отладить приложение на сервере разработки и тестирования, экспортировать его, а затем импортировать на продуктивный сервер.</p>
 <div class="notice notice-warning">
 <p class="admonition-title">Внимание!</p>
 <ul>
-<li>
-<p>После импорта версии приложения из файла CTF или репозитория Git свойства имеющегося приложения, его шаблоны, атрибуты и другие сущности будут заменены импортированными. При этом имеющиеся записи и экземпляры процессов, а также значения атрибутов изменены не будут.</p>
-</li>
-<li>
-<p>При экспорте и импорте <strong>системное имя</strong> приложения следует оставлять неизменным во избежание неполадок. То есть системное имя приложения, в которое вы импортируете версию из файла CTF или репозитория Git, должно совпадать с системным именем импортируемой версии приложения.</p>
-</li>
+<li>После импорта версии приложения свойства имеющегося приложения, его шаблоны, атрибуты и другие сущности будут заменены импортированными. При этом имеющиеся записи и экземпляры процессов, а также значения атрибутов изменены не будут.</li>
+<li>Если в импортируемой версии приложении отсутствует шаблон, который имеется в текущей версии приложения, этот шаблон и все его записи будут безвозвратно удалены.</li>
+<li>При импорте и экспорте <strong>системное имя</strong> приложения следует оставлять неизменным во избежание неполадок. То есть системное имя приложения, в которое вы импортируете версию, должно совпадать с системным именем импортируемой версии приложения.</li>
 </ul>
 </div>
-<p>Вы можете экспортировать и импортировать следующие сущности одного приложения:</p>
+<p class="pageBreakBefore">Вы можете экспортировать и импортировать следующие сущности одного приложения:</p>
 <ul>
 <li>свойства приложения;</li>
 <li>шаблоны:
@@ -64,25 +62,37 @@
 </ul>
 </li>
 </ol>
-<h2 id="переход-к-управлению-версиями">Переход к управлению версиями</h2>
+<h2 class="pageBreakBefore" id="переход-к-управлению-версиями">Переход к управлению версиями</h2>
 <ol class="colored_numbers_list">
 <li>
 <p>Чтобы перейти к <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4806">управлению версиями приложения через Git</a>, на странице <strong>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4714">Администрирование</a>»</strong> приложения выберите пункт «<strong>Управление версиями</strong>» <em class="fa-light fa-code-branch">‌<!--icon--></em>.</p>
-<figure class="screenshot_with_caption"><img alt="Страница «Управление версиями через Git»" src="https://kb.comindware.ru/assets/version_control_git.png"/>
+<figure class="screenshot_with_caption"><img alt="Страница «Управление версиями через Git»" src="/platform/v5.0/business_apps/version_control/img/version_control_git.png"/>
 <figcaption class="caption">Страница «Управление версиями через Git»</figcaption>
 </figure>
 </li>
 <li>
 <p>Чтобы перейти к <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4807">управлению версиями приложения вручную</a>, нажмите заголовок «<strong>Управление версиями через Git</strong>» и в раскрывающемся меню выберите пункт «<strong>Ручное управление версиями</strong>».</p>
-<figure class="screenshot_with_caption"><img alt="Переход к ручному управлению версиями" src="https://kb.comindware.ru/assets/verstion_control_switch_to_manual.png"/>
+<figure class="screenshot_with_caption"><img alt="Переход к ручному управлению версиями" src="/platform/v5.0/business_apps/version_control/img/verstion_control_switch_to_manual.png"/>
 <figcaption class="caption">Переход к ручному управлению версиями</figcaption>
 </figure>
 </li>
+<li>
+<p>Чтобы перейти к <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5071">управлению версиями приложения через Excel</a>, нажмите заголовок страницы «<strong>Управление версиями через Git</strong>» и в раскрывающемся меню выберите пункт «<strong>Управление версиями через Excel</strong>».</p>
+<figure class="screenshot_with_caption"><img alt="Переход к управлению версиями через Excel" src="/platform/v5.0/business_apps/version_control/img/excel_version_control_switch_to_excel.png"/>
+<figcaption class="caption">Переход к управлению версиями через Excel</figcaption>
+</figure>
+</li>
 </ol>
+<div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4806">Управление версиями через Git</a></strong></p>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4807">Ручное управление версиями</a></strong></p>
+<ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4806">Управление версиями через Git</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4807">Ручное управление версиями</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5071">Экспорт и импорт версий приложения с помощью Excel</a></em></li>
+</ul>
+</div>
 </article>
 </div>
 </div>
 <a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#"> <em class="fa-light fa-arrow-up">‌<!--icon--></em> К началу </a></div>
+</div>

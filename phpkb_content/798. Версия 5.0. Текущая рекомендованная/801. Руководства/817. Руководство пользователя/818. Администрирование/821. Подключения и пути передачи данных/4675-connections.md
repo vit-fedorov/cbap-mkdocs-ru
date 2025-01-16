@@ -68,8 +68,8 @@ kbId: 4675
 
 ### Пользовательские подключения
 
-- Отправка сообщений в систему «СФЕРА Курьер»
-- Получение сообщений из системы «СФЕРА Курьер»
+- [Отправка сообщений в «СФЕРА Курьер»][esphere_send_configure]
+- [Получение сообщений из «СФЕРА Курьер»][esphere_receive_configure]
 
 Примечание
 
@@ -89,7 +89,7 @@ kbId: 4675
 5. Нажмите кнопку «**Проверить соединение**». В случае успешного соединения с сервером отобразится сообщение «**Соединение установлено**». Если соединение установить не удастся, отобразится сообщение об ошибке.
 6. Сохраните подключение.
 
-_![Список подключений](https://kb.comindware.ru/assets/connection_list.png)_
+_![Список подключений](/platform/v5.0/administration/connections_communication_routes/img/connection_list.png)_
 
 ## Удаление подключения
 
@@ -99,8 +99,10 @@ _![Список подключений](https://kb.comindware.ru/assets/connecti
 
 --8<-- "related_topics_heading.md"
 
-**[Пути передачи данных. Определения, типы, создание, настройка, удаление][communication_routes]**
+- *[Пути передачи данных. Определения, типы, создание, настройка, удаление][communication_routes]*
+- *[Примеры интеграций](https://kb.comindware.ru/category.php?id=875)*
 
-**[Примеры интеграций](https://kb.comindware.ru/category.php?id=875)**
+[*‌*
+ К началу](#)
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

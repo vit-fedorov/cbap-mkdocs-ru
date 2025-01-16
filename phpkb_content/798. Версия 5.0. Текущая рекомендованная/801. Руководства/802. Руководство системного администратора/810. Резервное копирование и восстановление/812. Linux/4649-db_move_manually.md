@@ -7,13 +7,13 @@ kbId: 4649
 
 ## Введение
 
-В настоящей статье представлена инструкция по переносу копии кэша всего кластера Apache Ignite (далее «Снимки») в новый экземпляр ПО **{{ productName }}** (далее «экземпляр ПО», «ПО») под управлением ОС Linux. Снимки можно создавать онлайн, на активном кластере под пользовательской нагрузкой.
+Здесь представлена инструкция по переносу копии кэша всего кластера Apache Ignite (далее «Снимки») в новый экземпляр ПО **{{ productName }}** под управлением ОС Linux. Снимки можно создавать онлайн, на активном кластере под пользовательской нагрузкой.
 
 Для примера мы рассмотрим перенос базы данных из снимка, созданного на одной машине, в экземпляр ПО, развёрнутый на другой машине.
 
 На обеих машинах ПО установлено по умолчанию в папке `/var/www/comindware/`
 
-Снимок базы данных Apache Ignite будет создан в папке `/var/lib/ignite/snapshots/`
+Снимок базы данных Apache Ignite будет создан в папке `/var/lib/comindware/<instanceName>/Database/snapshots/`
 
 Внимание!
 
@@ -28,13 +28,18 @@ kbId: 4649
 1. Все последующие команды следует выполнять от имени суперпользователя `root`. Для этого введите команду:
 
 ```
-sudo -i
+sudo -s
+```
+
+или
+
+```
+su -
 ```
 2. Перейдите в папку ПО:
 
 ```
 cd /var/www/comindware/
-
 ```
 3. Откройте файл `Ignite.config` в текстовом редакторе nano:
 
@@ -53,7 +58,7 @@ _![Путь к рабочей папке в файле конфигурации 
 
 Если директива `<workDirectory>` отсутствует, база данных экземпляра ПО хранится в папке `var/www/comindware/data/Database/`
 
-В ПО версии 4.0.8 по умолчанию задан путь к базе данных экземпляра ПО `/var/lib/ignite/`. В настоящей инструкции используется этот путь.
+Путь к базе данных экземпляра ПО: `/var/lib/comindware/<instanceName>/Database/db`. См. *«[Пути и содержимое папок экземпляра ПО][paths]»*.
 5. Закройте nano:
 
 ```
@@ -62,8 +67,7 @@ ctrl+X
 6. Перейдите в папку с базой данных экземпляра ПО в рабочей папке и выведите на экран её содержимое:
 
 ```
-cd /var/lib/ignite/db/ && ll
-
+cd /var/lib/comindware/<instanceName>/Database/dbdb/ && ll
 ```
 
 _![Просмотр содержимого папки с базой данных экземпляра ПО](https://kb.comindware.ru/assets/img_635679e668157.png)_
@@ -77,11 +81,10 @@ cd /tmp/
 
 ```
 nano snapshot.sh
-
 ```
 
 _![Создание скрипта с помощью nano](https://kb.comindware.ru/assets/img_63567a89286c4.png)_
-10. Введите скрипт создания снимка, например:
+10. Введите скрипт создания снимка, например:
 
 ```
 now=$(date +%Y_%m_%d)
@@ -98,22 +101,31 @@ _![Запуск скрипта создания снимка](https://kb.comindw
 13. Просмотрите содержимое папки со снимками Apache Ignite:
 
 ```
-cd /var/lib/ignite/snapshots/ && ll 
+cd /var/lib/comindware/<instanceName>/Database/snapshots/ && ll 
 ```
 
 _![Содержимое папки со снимками Apache Ignite](https://kb.comindware.ru/assets/img_63567d1f7a888.png)_
 14. Создайте архив папки снимка, например, /snapshot\_2022\_10\_21/, и перенесите его на внешнее хранилище.
 
-**Важно!** При перезапуске ОС содержимое папки `/tmp/` удаляется. Поэтому при необходимости перенесите созданный скрипт в личную папку пользователя.
+Важно!
+
+При перезапуске ОС содержимое папки `/tmp/` удаляется. Поэтому при необходимости перенесите созданный скрипт в личную папку пользователя.
+
 ## Восстановление базы данных экземпляра ПО из снимка на новой машине
 
-1. На чистой машине установите ОС Ubuntu Server 22.04 LTS и ПО {{ productName }} последней версии согласно инструкции в статье «[Проверка и настройка конфигурации экземпляра ПО после восстановления из резервной копии](https://kb.comindware.ru/article.php?id=2102)».
+1. На чистой машине установите ОС Linux и {{ productName }} последней версии согласно инструкции в статье «[Проверка и настройка конфигурации экземпляра ПО после восстановления из резервной копии][restore_test_configure]».
 2. Все последующие команды следует выполнять от имени суперпользователя `root`. Для этого введите команду:
 
 ```
-sudo -i
+sudo -s
 ```
-3. Создайте папку для базы данных экземпляра ПО (например, `/cmw-db/`):
+
+или
+
+```
+su -
+```
+3. Создайте папку для базы данных экземпляра ПО (например, `/cmw-db/`):
 
 ```
 mkdir /var/www/cmw-db/
@@ -121,20 +133,21 @@ mkdir /var/www/cmw-db/
 
 Примечание
 
-Любые операции копирования в папку базы данных экземпляра ПО и из неё следует выполнять только после отключения сервисов Elasticsearch, comindware***instancename*** (где  `instancename` — имя экземпляра ПО), NGINX, Kafka и Zookeeper.
+Любые операции копирования в папку базы данных экземпляра ПО и из неё следует выполнять только после отключения сервисов Elasticsearch, comindware (где  `<instanceName>` — имя экземпляра ПО), NGINX, Kafka и Zookeeper.
 4. Остановите сервисы:
 
 ```
-systemctl stop elasticsearch.service comindwareinstancename.service nginx.service kafka.service zookeeper.service
+systemctl stop elasticsearch.service comindware<instanceName>.service nginx.service kafka.service zookeeper.service
 ```
 5. Убедитесь, что сервисы остановлены. Статус должен быть `Active: inactive (dead)`:
 
 ```
-systemctl status zookeeper.service kafka.service nginx.service comindwareinstancename.service elasticsearch.service
-
+systemctl status zookeeper.service kafka.service nginx.service comindware<instanceName>.service elasticsearch.service
 ```
 
-_![Проверка остановки сервисов Elasticsearch, comindwareinstancename, NGINX, Kafka и Zookeeper](https://kb.comindware.ru/assets/img_63567da91a5c6.png)_
+![Проверка остановки сервисов Elasticsearch, comindware<instanceName>, NGINX, Kafka и Zookeeper](https://kb.comindware.ru/assets/img_63567da91a5c6.png)
+
+Проверка остановки сервисов Elasticsearch, comindware, NGINX, Kafka и Zookeeper
 6. Скопируйте архив со снимком базы данных экземпляра ПО в папку `/tmp/`.
 7. Распакуйте архив в текущую папку.
 8. Перенесите содержимое папки снимка (например, `/tmp/snapshot_2022_10_21`) в папку базы данных экземпляра ПО: `/var/www/cmw-db/`
@@ -151,7 +164,10 @@ _![Содержимое папки снимка](https://kb.comindware.ru/assets
 nano Ignite.config
 ```
 11. Найдите директиву `<workDirectory>` и укажите в ней путь папке базы данных экземпляра ПО:
-`<workDirectory>/var/www/cmw-db</workDirectory>`
+
+```
+<workDirectory>/var/www/cmw-db</workDirectory>
+```
 
 _![Путь к новой папке базы данных в файле конфигурации Apache Ignite](https://kb.comindware.ru/assets/img_63567eabb2a14.png)_
 12. Проверьте наличие, а также дату и время создания файлов и папок в папке с базой данных экземпляра ПО:
@@ -184,21 +200,21 @@ _![Проверка прав доступа и владельцев папок](
 1. Запустите необходимые службы и проверьте их статус. Статус должен быть `Active: running`:
 
 ```
-systemctl start elasticsearch kafka nginx comindwareinstancename
-systemctl status elasticsearch kafka nginx comindwareinstancename
+systemctl start elasticsearch kafka nginx comindware<instanceName>
+systemctl status elasticsearch kafka nginx comindware<instanceName>
 ```
 
 _![Проверка активного состояния сервисов](https://kb.comindware.ru/assets/img_635680edb9d1d.png)_
 2. Перезапустите машину.
 3. Откройте в браузере веб-сайт с экземпляром ПО, например `localhost`.
 4. Дождитесь инициализации экземпляра ПО после перезапуска. Этот процесс может занять некоторое время. Может потребоваться обновить страницу браузера.
+
     - Если загрузка веб-страницы экземпляра ПО завершается ошибкой, заново выполните перенос базы данных с полным удалением всего содержимого папки базы данных экземпляра ПО и использованием предыдущей резервной копии.
 5. Проверьте и исправьте конфигурацию экземпляра ПО, как указано в статье *«[Проверка и настройка конфигурации экземпляра ПО после восстановления из резервной копии][restore_test_configure]».*
 
 --8<-- "related_topics_heading.md"
 
-**`![](https://kb.comindware.ru/images/marker.png)Проверка и настройка конфигурации экземпляра ПО после восстановления из резервной копии {Article-ID:4651}`**
-
+- *[Проверка и настройка конфигурации экземпляра ПО после восстановления из резервной копии][restore_test_configure]*
 
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

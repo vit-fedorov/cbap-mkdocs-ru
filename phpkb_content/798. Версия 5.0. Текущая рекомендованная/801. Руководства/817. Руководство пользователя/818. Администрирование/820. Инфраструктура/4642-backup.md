@@ -45,29 +45,27 @@ kbId: 4642
         - **Файловая система** — сохранять резервные копии в файловой системе сервера **{{ productName }}**.
         
         
-            - **Путь к папке** — путь к директории на сервере, в которой будут сохраняться резервные копии, например `/var/lib/comindware/<instanceName>/Backups` (здесь `<instanceName>` — имя экземпляра ПО). Для этой директории предоставьте разрешения на полный доступ, чтобы система могла сохранять в неё резервные копии, например:
+            - **Путь к папке** — путь к директории на сервере, в которой будут сохраняться резервные копии, например `/var/backups/comindware/<instanceName>` (здесь `<instanceName>` — имя экземпляра ПО). Для этой директории предоставьте разрешения на полный доступ, чтобы система могла сохранять в неё резервные копии, например:
             
             
             **Astra Linux, Ubuntu, Rocky**
             
             
+            ````
+            chmod 777 /var/backups/comindware/<instanceName>
+            chown -R www-data:www-data /var/backups/comindware/<instanceName>
+            chown -R www-data:www-data /var/backups/comindware/<instanceName>
+            
+            ````
+            **Альт Сервер, РЕД ОС**
             
             
-            ```
-            chmod 777 /var/lib/comindware/<instanceName>chown -R www-data:www-data /var/lib/comindware/<instanceName>
-            chown -R www-data:www-data /var/lib/comindware/<instanceName>
-            ```
+            ````
+            chmod 777 /var/backups/comindware/<instanceName>
+            chown -R _nginx:_nginx /var/backups/comindware/<instanceName>
+            chown -R _nginx:_nginx /var/backups/comindware/<instanceName>
             
-            
-            **Альт Сервер**
-            
-            
-            
-            
-            ```
-            chmod 777 /var/lib/comindware/<instanceName>chown -R _nginx:_nginx /var/lib/comindware/<instanceName>
-            chown -R _nginx:_nginx /var/lib/comindware/<instanceName>
-            ```
+            ````
         - **Хранилище S3** — сохранять резервные копии во [внешнем сервисе S3][s3_connection].
         
         
@@ -81,8 +79,6 @@ kbId: 4642
     - **Со скриптами** — установите этот флажок, чтобы включить в состав резервной копии скрипты.
     - **С историей** — установите этот флажок, чтобы включить в состав резервной копии данные Elasticsearch. См. *«[Настройка резервного копирования данных Elasticsearch](#настройка-резервного-копирования-данных-elasticsearch)»*.
     - **Режим запуска**
-    
-    
         - **Вручную** — для запуска резервного копирования потребуется нажимать кнопку «**Запустить копирование**» в [списке конфигураций резервного копирования](#запуск-резервного-копирования).
         - **По расписанию** — резервное копирование будет выполняться по расписанию со следующими параметрами:
         
@@ -90,13 +86,11 @@ kbId: 4642
             - **Максимум копий** — максимальное количество резервных копий, которые будут храниться в папке на сервере. Укажите значение 0, чтобы хранить все резервные копии.
             - **Периодичность** — частота, с которой будет выполняться копирование.
             - **Интервал**
-            
-            
                 - **С** — время суток, начиная с которого может выполняться копирование в указанные дни недели.
                 - **До** — время суток, вплоть до которого может выполняться копирование в указанные дни недели.
             - **Дни запуска** — дни недели, по которым будет выполняться копирование с указанной периодичностью.
 
-_![Настройка свойств резервного копирования](https://kb.comindware.ru/assets/backup_create_config.png)_
+_![Настройка свойств резервного копирования](/platform/v5.0/administration/backup/../infrastructure/img/backup_create_config.png)_
 
 ## Настройка резервного копирования данных Elasticsearch
 
@@ -106,36 +100,37 @@ _![Настройка свойств резервного копирования
 
 **Для репозитория на локальном диске**
 
-```
+````
 # Директория репозитория должна быть доступна экземпляру ПО
 # {{ productName }}
 # При необходимости установите доступ с помощью команды chmod 777
 path.repo: /var/www/backups/elasticsearch
-```
 
+````
 **Для репозитория в хранилище S3**
 
-```
+````
 s3.client.default.endpoint: localhost:9000
 s3.client.default.protocol: http
 s3.client.default.path_style_access: true
-```
+
+````
 - В файле конфигурации экземпляра ПО (`/usr/share/comindware/configs/instance/<instanceName>.yml`) необходимо указать тип репозитория резервных копий Elasticsearch (`LocalDisk` или `S3`) и путь к репозиторию, например:
 
 **Для репозитория на локальном диске**
 
-```
+````
 backup.elasticRepository.type: LocalDisk
 # В данном примере Elasticsearch и {{ productName }}
 # работают на одной машине.
 # В противном случае следует примонтировать папку репозитория Elasticsearch
 # на машине с {{ productName }} и указать её в директиве ниже
 backup.elasticRepository.localDisk.path: /var/www/backups/elasticsearch
-```
 
+````
 **Для репозитория в хранилище S3**
 
-```
+````
 # Конфигурация подключения к хранилищу S3, используемого по умолчанию
 s3Connection.default.endpointURL: http://localhost:9000
 s3Connection.default.accessKey: xxxxx
@@ -152,7 +147,8 @@ backup.elasticRepository.s3.bucket: <instanceName>-backups
 backup.elasticRepository.s3.platformConnection: default
 # Имя подключения к хранилищу S3, используемому по умолчанию на стороне Elasticsearch
 backup.elasticRepository.s3.elasticConnection: default
-```
+
+````
 
 ## Запуск резервного копирования
 
@@ -161,7 +157,7 @@ backup.elasticRepository.s3.elasticConnection: default
 3. В фоновом режиме начнется процесс резервного копирования.
 4. Прогресс и результат резервного копирования можно просмотреть [в журнале резервного копирования](#просмотр-списка-сеансов-резервного-копирования).
 
-_![Запуск резервного копирования](https://kb.comindware.ru/assets/backup_start.png)_
+_![Запуск резервного копирования](/platform/v5.0/administration/backup/../infrastructure/img/backup_start.png)_
 
 ## Просмотр списка сеансов резервного копирования
 
@@ -179,7 +175,7 @@ _![Запуск резервного копирования](https://kb.comindwa
     - **Размер архива** — размер сохраненной резервной копии.
 5. Если отображаются не все ожидаемые сеансы, нажмите кнопку «**Обновить**», чтобы загрузить в список данные о текущих сеансах резервного копирования.
 
-_![Список сеансов резервного копирования](https://kb.comindware.ru/assets/backup_log.png)_
+_![Список сеансов резервного копирования](/platform/v5.0/administration/backup/../infrastructure/img/backup_log.png)_
 
 ## Удаление конфигурации резервного копирования
 
@@ -199,10 +195,11 @@ _![Список сеансов резервного копирования](http
 
 --8<-- "related_topics_heading.md"
 
-**[Хранилище S3. Настройка экземпляра ПО и подключения][s3_connection]**
+- *[Хранилище S3. Настройка экземпляра ПО и подключения][s3_connection]*
+- *[Восстановление базы данных из файла резервной копии в формате .CDBBZ][backup_restore_cdbbz]*
+- *[Резервное копирование и восстановление][backup_and_restore]*\*
 
-**[Восстановление базы данных из файла резервной копии в формате .CDBBZ][backup_restore_cdbbz]**
-
-**[Резервное копирование и восстановление][backup_and_restore]**
+[*‌*
+ К началу](#)
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

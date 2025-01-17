@@ -69,7 +69,7 @@ title: Развёртывание Comindware Business Application Platform в к
 
 ### Настройка сервера хранения данных (NFS)
 
-Для взаимодействия с узлами кластера **{{ productName }}** настройте сервер хранения хранения данных.
+Для взаимодействия с узлами кластера **{{ productName }}** настройте сервер хранения данных.
 
 1. Перейдите в режим суперпользователя:
 
@@ -104,7 +104,7 @@ title: Развёртывание Comindware Business Application Platform в к
 
     - `/share` — директория, к которой предоставляется общий доступ;
     - `<nodeIP>` — неизменная часть IP-адресов узлов кластера;
-    - `<netMask>` — маска подсети.
+    - `<netMask>` — маска подсети.
 
     Например:
 
@@ -216,10 +216,10 @@ title: Развёртывание Comindware Business Application Platform в к
     nano /etc/fstab
     ```
 
-4. Добавьте в файл `fstab` следующую директиву (`<serverIP>` — адрес [NFS-сервера](#настройка-сервера-хранения-данных-nfss)):
+4. Добавьте в файл `fstab` следующую директиву (`<serverIP>` — адрес [NFS-сервера](#настройка-сервера-хранения-данных-nfs)):
 
     ``` ini
-    `<serverIP>:/share  /mnt/share  nfs  auto  0  0`
+    <serverIP>:/share /mnt/share nfs auto 0 0
     ```
 
 5. Смонтируйте диски и просмотрите содержимое директории NFS-сервера:
@@ -282,7 +282,7 @@ title: Развёртывание Comindware Business Application Platform в к
     --8<-- "linux_sudo.md"
 
 2. Создайте [резервную копию][complete_running_instance_backup] экземпляра ПО.
-3. Скопируйте резервную копию в директорию `/home/<username>` (`<username>` — имя пользователя, `<backupName>` — имя архива резервной копии, `<pathToBackup>` — путь к архиву резервной копии):
+3. Скопируйте резервную копию в директорию `/home/<username>` (`<username>` — имя пользователя, `<backupName>` — имя архива резервной копии, `<pathToBackup>` — путь к архиву резервной копии):
 
     ``` sh
     cp /<pathToBackup>/<backupName>.cdbbz /home/<username>
@@ -321,61 +321,61 @@ title: Развёртывание Comindware Business Application Platform в к
 
     ``` xml
     <property name="discoverySpi">
-          <bean class="org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi">
-            <!-- Укажите IP-адрес, порт и диапазон портов первого узла -->
-            <property name="localAddress" value="<node_1_IP>" />
-            <property name="localPort" value="47510" />
-            <property name="localPortRange" value="9" />
-            <property name="ipFinder">
-              <bean class="org.apache.ignite.spi.discovery.tcp.ipfinder.vm.TcpDiscoveryVmIpFinder">
-                <property name="addresses">
-                  <list>
-                    <!-- Укажите IP-адреса всех узлов кластера -->
-                    <value><node_1_IP>:47510..47519</value>
-                    <value><node_2_IP>:47510..47519</value>
-                    ...
-                    <value><node_N_IP>:47510..47519</value>
-                  </list>
-                </property>
-              </bean>
-            </property>
-          </bean>
-        </property>
-        <property name="communicationSpi">
-          <bean class="org.apache.ignite.spi.communication.tcp.TcpCommunicationSpi">
-            <property name="localPort" value="47101" />
+      <bean class="org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi">
+        <!-- Укажите IP-адрес, порт и диапазон портов первого узла -->
+        <property name="localAddress" value="<node_1_IP>" />
+        <property name="localPort" value="47510" />
+        <property name="localPortRange" value="9" />
+        <property name="ipFinder">
+          <bean class="org.apache.ignite.spi.discovery.tcp.ipfinder.vm.TcpDiscoveryVmIpFinder">
+            <property name="addresses">
+              <list>
+                <!-- Укажите IP-адреса всех узлов кластера -->
+                <value><node_1_IP>:47510..47519</value>
+                <value><node_2_IP>:47510..47519</value>
+                ...
+                <value><node_N_IP>:47510..47519</value>
+              </list>
+            </property>
+          </bean>
+        </property>
+      </bean>
+    </property>
+        <property name="communicationSpi">
+          <bean class="org.apache.ignite.spi.communication.tcp.TcpCommunicationSpi">
+            <property name="localPort" value="47101" />
             <!-- Укажите IP-адрес первого узла -->
-            <property name="localAddress" value="<node_1_IP>" />
-            <property name="messageQueueLimit" value="1024" />
-          </bean>
-        </property>
+            <property name="localAddress" value="<node_1_IP>" />
+            <property name="messageQueueLimit" value="1024" />
+          </bean>
+        </property>
     ...
     ...
     <property name="dataRegionConfigurations">
-              <list>
-                <bean class="org.apache.ignite.configuration.DataRegionConfiguration">
-                  <property name="warmUpConfiguration">
-                    <bean class="org.apache.ignite.configuration.NoOpWarmUpConfiguration" />
-                  </property>
-                  <property name="name" value="Persistent" />
-                  <property name="persistenceEnabled" value="true" />
-                    <!-- Проверьте и при необходимости отредактируйте объём выделяемой памяти -->
-                  <property name="initialSize" value="#{1024L * 1024 * 1024}" />
-                  <property name="maxSize" value="#{4L * 1024 * 1024 * 1024}" />
-                  <property name="pageEvictionMode" value="RANDOM_2_LRU" />
-                  <property name="checkpointPageBufferSize" value="#{1024L * 1024 * 1024}" />
-                </bean>
-                <bean class="org.apache.ignite.configuration.DataRegionConfiguration">
-                  <property name="name" value="InMemory" />
-                  <property name="persistenceEnabled" value="false" />
-                    <!-- Проверьте и при необходимости отредактируйте объём выделяемой памяти -->
-                  <property name="initialSize" value="#{10 * 1024 * 1024}" />
-                  <property name="maxSize" value="#{256 * 1024 * 1024}" />
-                </bean>
-              </list>
-            </property>
-          </bean>
-        </property>
+      <list>
+        <bean class="org.apache.ignite.configuration.DataRegionConfiguration">
+          <property name="warmUpConfiguration">
+            <bean class="org.apache.ignite.configuration.NoOpWarmUpConfiguration" />
+          </property>
+          <property name="name" value="Persistent" />
+          <property name="persistenceEnabled" value="true" />
+            <!-- Проверьте и при необходимости отредактируйте объём выделяемой памяти -->
+          <property name="initialSize" value="#{1024L * 1024 * 1024}" />
+          <property name="maxSize" value="#{4L * 1024 * 1024 * 1024}" />
+          <property name="pageEvictionMode" value="RANDOM_2_LRU" />
+          <property name="checkpointPageBufferSize" value="#{1024L * 1024 * 1024}" />
+        </bean>
+        <bean class="org.apache.ignite.configuration.DataRegionConfiguration">
+          <property name="name" value="InMemory" />
+          <property name="persistenceEnabled" value="false" />
+            <!-- Проверьте и при необходимости отредактируйте объём выделяемой памяти -->
+          <property name="initialSize" value="#{10 * 1024 * 1024}" />
+          <property name="maxSize" value="#{256 * 1024 * 1024}" />
+        </bean>
+      </list>
+    </property>
+  </bean>
+</property>
     ```
 
 3. Откройте файл конфигурации экземпляра ПО для редактирования:
@@ -439,19 +439,19 @@ title: Развёртывание Comindware Business Application Platform в к
     ``` xml
     <?xml version="1.0" encoding="utf-8"?>
     <WorkerEngine xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-i>
-      <RebuildThreadWorker>false</RebuildThreadWorker>
-      <BackupSessionsQueue>true</BackupSessionsQueue>
-      <SessionManagerWorker>false</SessionManagerWorker>
-      <NotificationWorker>false</NotificationWorker>
-      <EmailListener>false</EmailListener>
-      <IndexTasksQueue>false</IndexTasksQueue>
-      <ProcessEngineQueueProcessing>false</ProcessEngineQueueProcessing>
-      <ProcessEngineTimerProcessing>false</ProcessEngineTimerProcessing>
-      <SyncThread>false</SyncThread>
-      <SwitchOnFullTextSearch>false</SwitchOnFullTextSearch>
-      <PerformanceMonitoring>false</PerformanceMonitoring>
-        <!-- Значение ConfigurationId должно совпадать на всех узлах -->
-      <ConfigurationId>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</ConfigurationId>
+      <RebuildThreadWorker>false</RebuildThreadWorker>
+      <BackupSessionsQueue>true</BackupSessionsQueue>
+      <SessionManagerWorker>false</SessionManagerWorker>
+      <NotificationWorker>false</NotificationWorker>
+      <EmailListener>false</EmailListener>
+      <IndexTasksQueue>false</IndexTasksQueue>
+      <ProcessEngineQueueProcessing>false</ProcessEngineQueueProcessing>
+      <ProcessEngineTimerProcessing>false</ProcessEngineTimerProcessing>
+      <SyncThread>false</SyncThread>
+      <SwitchOnFullTextSearch>false</SwitchOnFullTextSearch>
+      <PerformanceMonitoring>false</PerformanceMonitoring>
+      <!-- Значение ConfigurationId должно совпадать на всех узлах -->
+      <ConfigurationId>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</ConfigurationId>
     </WorkerEngine>
     ```
 
@@ -498,26 +498,26 @@ title: Развёртывание Comindware Business Application Platform в к
     ```
 
 3. Скопируйте содержимое файла `Ignite.config` с первого узла.
-4. Укажите в директивах `localAddress` IP-адрес узла N:
+4. Укажите в директивах `localAddress` IP-адрес узла N (остальные директивы оставьте без изменений):
 
     ``` xml
     <property name="discoverySpi">
-          <bean class="org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi">
-            <!-- укажите IP-адрес узла N -->
-            <property name="localAddress" value="<node_N_IP>" />
-            
-            ...
+      <bean class="org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi">
+        <!-- укажите IP-адрес узла N -->
+        <property name="localAddress" value="<node_N_IP>" />
+        
+        ...
 
-          </bean>
-        </property>
-        <property name="communicationSpi">
-          <bean class="org.apache.ignite.spi.communication.tcp.TcpCommunicationSpi">
-            <property name="localPort" value="47101" />
-            <!-- укажите IP-адрес узла N -->
-            <property name="localAddress" value="<node_N_IP>" />
-            <property name="messageQueueLimit" value="1024" />
-          </bean>
-        </property>
+      </bean>
+    </property>
+    <property name="communicationSpi">
+      <bean class="org.apache.ignite.spi.communication.tcp.TcpCommunicationSpi">
+        <property name="localPort" value="47101" />
+        <!-- укажите IP-адрес узла N -->
+        <property name="localAddress" value="<node_N_IP>" />
+        <property name="messageQueueLimit" value="1024" />
+      </bean>
+    </property>
     ...
     
     ```
@@ -595,9 +595,9 @@ title: Развёртывание Comindware Business Application Platform в к
 
 2. С любого узла создайте директорию `LocalTemp` на NFS-сервере:
 
-        ``` sh
-        mkdir /mnt/share/<instanceName>/LocalTemp
-        ```
+    ``` sh
+    mkdir /mnt/share/<instanceName>/LocalTemp
+    ```
 
 3. На каждом узле назначьте владельца директории `LocalTemp` на NFS-сервере:
 

@@ -728,6 +728,8 @@
 
 [backup_restore_cdbbz]: {{ kbArticleURLPrefix }}4647
 
+[configuration_files_linux]: {{ kbArticleURLPrefix }}5067
+
 [deploy_guide_linux]: {{ kbArticleURLPrefix }}4622
 
 [deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_initialize
@@ -753,8 +755,6 @@
 [accounts_dc_sync]: {{ kbArticleURLPrefix }}4655
 
 [admin_utility_instance_configure]: {{ kbArticleURLPrefix }}4634
-
-[configuration_files_linux]: {{ kbArticleURLPrefix }}5067
 
 [logging_engine]: {{ kbArticleURLPrefix }}4623
 

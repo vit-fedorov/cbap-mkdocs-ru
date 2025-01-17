@@ -124,7 +124,7 @@ kbTitle: 'HTTP-запросы типа POST. Отправка и получен�
         ``` json
         {
             "Message":{
-                "Contact" {
+                "Contact":{
                     "ID":"STRING",
                     "FullName":"STRING",
                     "PhoneNumber":"STRING"
@@ -141,7 +141,7 @@ kbTitle: 'HTTP-запросы типа POST. Отправка и получен�
         
         ``` json
         {
-            "Contact" {
+            "Contact":{
                 "ID":"STRING",
                 "FullName":"STRING",
                 "PhoneNumber":"STRING"

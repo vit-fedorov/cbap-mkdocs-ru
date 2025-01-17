@@ -142,7 +142,7 @@ title: Развёртывание Comindware Business Application Platform в к
 
 ### Развёртывание узлов кластера
 
-На каждом узле кластера **{{ productName }}** необходимо установите ПО {{ productName }}, разверните экземпляр ПО и установите бинарные пакеты Apache Ignite.
+На каждом узле кластера **{{ productName }}** установите ПО {{ productName }}, разверните экземпляр ПО и установите бинарные пакеты Apache Ignite.
 
 ### Установка ПО {{ productName }} и бинарных пакетов Apache Ignite
 
@@ -342,16 +342,17 @@ title: Развёртывание Comindware Business Application Platform в к
         </property>
       </bean>
     </property>
-        <property name="communicationSpi">
-          <bean class="org.apache.ignite.spi.communication.tcp.TcpCommunicationSpi">
-            <property name="localPort" value="47101" />
-            <!-- Укажите IP-адрес первого узла -->
-            <property name="localAddress" value="<node_1_IP>" />
-            <property name="messageQueueLimit" value="1024" />
-          </bean>
-        </property>
+    <property name="communicationSpi">
+      <bean class="org.apache.ignite.spi.communication.tcp.TcpCommunicationSpi">
+        <property name="localPort" value="47101" />
+        <!-- Укажите IP-адрес первого узла -->
+        <property name="localAddress" value="<node_1_IP>" />
+        <property name="messageQueueLimit" value="1024" />
+      </bean>
+    </property>
+    
     ...
-    ...
+    
     <property name="dataRegionConfigurations">
       <list>
         <bean class="org.apache.ignite.configuration.DataRegionConfiguration">
@@ -375,8 +376,6 @@ title: Развёртывание Comindware Business Application Platform в к
         </bean>
       </list>
     </property>
-  </bean>
-</property>
     ```
 
 3. Откройте файл конфигурации экземпляра ПО для редактирования:

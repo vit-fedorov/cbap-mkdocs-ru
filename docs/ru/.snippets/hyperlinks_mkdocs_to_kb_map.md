@@ -78,6 +78,8 @@
 
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}4905
 
+[process_end_button_example]: {{ kbArticleURLPrefix }}4911
+
 [tutorial]: {{ kbCategoryURLPrefix }}870
 
 [apps_kb]: {{ kbCategoryURLPrefix }}832

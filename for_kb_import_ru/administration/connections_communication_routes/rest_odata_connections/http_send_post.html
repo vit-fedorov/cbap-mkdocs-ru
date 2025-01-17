@@ -103,10 +103,12 @@
 <p>В ответ на HTTP-запрос с данными контакта внешний сервер отправляет ответ со значением <code>true</code>, если данные на сервере были обновлены:</p>
 <div class="highlight"><code><pre><span></span><code><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="nt">"Success"</span><span class="p">:</span><span class="s2">"BOOL"</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 <p>В <strong>Comindware Platform</strong> имеется шаблон записи <em>«Контакты клиентов»</em>.</p>
-<p>Требуется:
-- настроить кнопку, которая будет обновлять данные на внешнем сервере данными из шаблона <em>«Контакты клиентов»</em>.
-- получить ответ сервера;
-- в случае успешного обновления данных установить для логического атрибута <em>«Данные обработаны»</em> значение <code>true</code>.</p>
+<p>Требуется:</p>
+<ul>
+<li>настроить кнопку, которая будет обновлять данные на внешнем сервере данными из шаблона <em>«Контакты клиентов»</em>.</li>
+<li>получить ответ сервера;</li>
+<li>в случае успешного обновления данных установить для логического атрибута <em>«Данные обработаны»</em> значение <code>true</code>.</li>
+</ul>
 <h2 id="настройка-подключения">Настройка подключения</h2>
 <ol class="colored_numbers_list">
 <li>На странице <strong>Администрирование</strong>» выберите пункт «<strong>Инфраструктура</strong>» — «<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4675"><strong>Подключения</strong></a>».</li>
@@ -257,7 +259,7 @@
 <li>Сценарий срабатывает при нажатии кнопки <em>«Отправить контакт на сервер»</em> на форме записи с прикреплёнными файлами.</li>
 <li>
 <p>Формируется переменная-объект с данными контакта, содержащие значения соответствующих атрибутов шаблона <em>«Контакты клиентов»</em>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="nt">"Message"</span><span class="p">:{</span></code> <br/><code><span class="w">        </span><span class="s2">"Contact"</span><span class="w"> </span><span class="p">{</span></code> <br/><code><span class="w">            </span><span class="nt">"ID"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code><span class="w">            </span><span class="nt">"FullName"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code><span class="w">            </span><span class="nt">"PhoneNumber"</span><span class="p">:</span><span class="s2">"STRING"</span></code> <br/><code><span class="w">        </span><span class="p">}</span></code> <br/><code><span class="w">    </span><span class="p">}</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="nt">"Message"</span><span class="p">:{</span></code> <br/><code><span class="w">        </span><span class="nt">"Contact"</span><span class="p">:{</span></code> <br/><code><span class="w">            </span><span class="nt">"ID"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code><span class="w">            </span><span class="nt">"FullName"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code><span class="w">            </span><span class="nt">"PhoneNumber"</span><span class="p">:</span><span class="s2">"STRING"</span></code> <br/><code><span class="w">        </span><span class="p">}</span></code> <br/><code><span class="w">    </span><span class="p">}</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 <ul>
 <li><code>$$Message-&gt;Contact-&gt;ID</code> — значение атрибута <code>$ID</code>.</li>
 <li><code>$$Message-&gt;Contact-&gt;FullName</code> — значение атрибута <code>$FullName</code>.</li>
@@ -266,7 +268,7 @@
 </li>
 <li>
 <p>Формируется и отправляется HTTP-запрос, содержащий данные контакта в формате JSON из переменной <code>$$Message</code>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="s2">"Contact"</span><span class="w"> </span><span class="p">{</span></code> <br/><code><span class="w">        </span><span class="nt">"ID"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code><span class="w">        </span><span class="nt">"FullName"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code><span class="w">        </span><span class="nt">"PhoneNumber"</span><span class="p">:</span><span class="s2">"STRING"</span></code> <br/><code><span class="w">    </span><span class="p">}</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="nt">"Contact"</span><span class="p">:{</span></code> <br/><code><span class="w">        </span><span class="nt">"ID"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code><span class="w">        </span><span class="nt">"FullName"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code><span class="w">        </span><span class="nt">"PhoneNumber"</span><span class="p">:</span><span class="s2">"STRING"</span></code> <br/><code><span class="w">    </span><span class="p">}</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Ответ сервера помещается в <strong>логический</strong> атрибут <em>«Данные обновлены»</em>.</p>

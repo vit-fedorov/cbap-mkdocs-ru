@@ -29,11 +29,11 @@
 <h2 id="прикладная-задача">Прикладная задача</h2>
 <p>Имеется внешний сервер, на котором хранятся данные контактов:</p>
 <div class="highlight"><code><code></code></code>
-<pre><code><span class="p">[</span> </code> <br/><code>    <span class="p">{</span></code> <br/><code>        <span class="nt">"Contact"</span><span class="p">:{</span></code> <br/><code>            <span class="nt">"ID"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code>            <span class="nt">"FullName"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code>            <span class="nt">"PhoneNumber"</span><span class="p">:</span><span class="s2">"STRING"</span></code> <br/><code>        <span class="p">}</span></code> <br/><code>    <span class="p">}</span></code> <br/><code><span class="p">]</span></code> </pre>
+<pre><code><span class="p">[</span> </code> <br/><code>    <span class="p">{</span></code> <br/><code>        <span class="nt">"Contact"</span><span class="p">:{</span></code> <br/><code>            <span class="nt">"ID"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code>            <span class="nt">"FullName"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code>            <span class="nt">"PhoneNumber"</span><span class="p">:</span><span class="s2">"STRING"</span></code> <br/><code>        <span class="p">}</span></code> <br/><code>    <span class="p">}</span></code> <br/><code><span class="p">]</span></code></pre>
 </div>
 <p>В ответ на HTTP-запрос с данными контакта внешний сервер отправляет ответ со значением <code>true</code>, если данные на сервере были обновлены:</p>
 <div class="highlight"><code><code></code></code>
-<pre><code><span class="p">{</span></code> <br/><code>    <span class="nt">"Success"</span><span class="p">:</span><span class="s2">"BOOL"</span></code> <br/><code><span class="p">}</span></code> </pre>
+<pre><code><span class="p">{</span></code> <br/><code>    <span class="nt">"Success"</span><span class="p">:</span><span class="s2">"BOOL"</span></code> <br/><code><span class="p">}</span></code></pre>
 </div>
 <p>В <strong>Comindware Platform</strong> имеется шаблон записи <em>«Контакты клиентов»</em>.</p>
 <p>Требуется:</p>
@@ -193,7 +193,7 @@
 <li>
 <p>Формируется переменная-объект с данными контакта, содержащие значения соответствующих атрибутов шаблона <em>«Контакты клиентов»</em>:</p>
 <div class="highlight"><code><code></code></code>
-<pre><code><span class="p">{</span></code> <br/><code>    <span class="nt">"Message"</span><span class="p">:{</span></code> <br/><code>        <span class="s2">"Contact"</span> <span class="p">{</span></code> <br/><code>            <span class="nt">"ID"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code>            <span class="nt">"FullName"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code>            <span class="nt">"PhoneNumber"</span><span class="p">:</span><span class="s2">"STRING"</span></code> <br/><code>        <span class="p">}</span></code> <br/><code>    <span class="p">}</span></code> <br/><code><span class="p">}</span></code> </pre>
+<pre><code><span class="p">{</span></code> <br/><code>    <span class="nt">"Message"</span><span class="p">:{</span></code> <br/><code>        <span class="s2">"Contact"<span class="p">:</span></span><span class="p">{</span></code> <br/><code>            <span class="nt">"ID"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code>            <span class="nt">"FullName"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code>            <span class="nt">"PhoneNumber"</span><span class="p">:</span><span class="s2">"STRING"</span></code> <br/><code>        <span class="p">}</span></code> <br/><code>    <span class="p">}</span></code> <br/><code><span class="p">}</span></code></pre>
 </div>
 <ul>
 <li><code>$$Message-&gt;Contact-&gt;ID</code> — значение атрибута <code>$ID</code>.</li>
@@ -204,7 +204,7 @@
 <li>
 <p>Формируется и отправляется HTTP-запрос, содержащий данные контакта в формате JSON из переменной <code>$$Message</code>:</p>
 <div class="highlight"><code><code></code></code>
-<pre><code><span class="p">{</span></code> <br/><code>    <span class="s2">"Contact"</span> <span class="p">{</span></code> <br/><code>        <span class="nt">"ID"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code>        <span class="nt">"FullName"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code>        <span class="nt">"PhoneNumber"</span><span class="p">:</span><span class="s2">"STRING"</span></code> <br/><code>    <span class="p">}</span></code> <br/><code><span class="p">}</span></code> </pre>
+<pre><code><span class="p">{</span></code> <br/><code>    <span class="s2">"Contact"<span class="p">:</span></span><span class="p">{</span></code> <br/><code>        <span class="nt">"ID"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code>        <span class="nt">"FullName"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code>        <span class="nt">"PhoneNumber"</span><span class="p">:</span><span class="s2">"STRING"</span></code> <br/><code>    <span class="p">}</span></code> <br/><code><span class="p">}</span></code></pre>
 </div>
 </li>
 <li>
@@ -243,19 +243,19 @@
 <li>
 <p><em>ID</em> — <strong>значение: формула</strong></p>
 <div class="highlight"><code><code></code></code>
-<pre><code><span class="err">$</span><span class="n">ID</span></code> </pre>
+<pre><code><span class="err">$</span><span class="n">ID</span></code></pre>
 </div>
 </li>
 <li>
 <p><em>FullName</em> — <strong>значение: формула</strong></p>
 <div class="highlight"><code><code></code></code>
-<pre><code><span class="err">$</span><span class="n">FullName</span></code> </pre>
+<pre><code><span class="err">$</span><span class="n">FullName</span></code></pre>
 </div>
 </li>
 <li>
 <p><em>PhoneNumber</em> — <strong>значение: формула</strong></p>
 <div class="highlight"><code><code></code></code>
-<pre><code><span class="err">$</span><span class="n">PhoneNumber</span></code> </pre>
+<pre><code><span class="err">$</span><span class="n">PhoneNumber</span></code></pre>
 </div>
 </li>
 </ul>
@@ -280,7 +280,7 @@
 <li>
 <p><strong>Значение: формула</strong></p>
 <div class="highlight"><code><code></code></code>
-<pre><code><span class="err">$$</span><span class="n">Response</span><span class="o">-&gt;</span><span class="n">Success</span></code> </pre>
+<pre><code><span class="err">$$</span><span class="n">Response</span><span class="o">-&gt;</span><span class="n">Success</span></code></pre>
 </div>
 </li>
 </ul>

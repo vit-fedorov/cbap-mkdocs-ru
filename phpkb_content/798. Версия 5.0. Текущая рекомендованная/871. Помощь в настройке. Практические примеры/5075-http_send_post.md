@@ -146,7 +146,7 @@ kbId: 5075
 ```
 {
     "Message":{
-        "Contact" {
+        "Contact":{
             "ID":"STRING",
             "FullName":"STRING",
             "PhoneNumber":"STRING"
@@ -162,7 +162,7 @@ kbId: 5075
 
 ```
 {
-    "Contact" {
+    "Contact":{
         "ID":"STRING",
         "FullName":"STRING",
         "PhoneNumber":"STRING"

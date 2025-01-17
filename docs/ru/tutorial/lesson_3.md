@@ -29,12 +29,19 @@ kbId: 4874
 
 ## Определения {: .admonition-title #definitions}
 
-{%
-include-markdown "business_apps/templates/template_types/process_templates.md"
-start="<!--process-definitions-start-->"
-end="<!--process-definitions-end-->"
-rewrite-relative-urls=false
-%}
+- **Исполняемый бизнес-процесс**
+
+    {%
+    include-markdown "business_apps/templates/template_types/process_templates.md"
+    start="<!--process-definitions-start-->"
+    end="<!--process-definitions-end-->"
+    rewrite-relative-urls=false
+    %}
+
+- **Шаблон процесса**
+    - Настройка исполняемого бизнес-процесса в **{{ productName }}** выполняется с помощью шаблона процесса.
+    - Шаблон процесса состоит из [диаграммы процесса][process_diagram] в нотации BPMN 2.0, хранит экземпляры процесса и свойства, определяющие, как должны выполняться все экземпляра процесса.
+    - Каждый шаблон процесса связан с шаблоном записи, который хранит записи для экземпляров процесса.
 
 </div>
 

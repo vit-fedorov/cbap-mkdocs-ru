@@ -49,6 +49,19 @@ kbId: 4804
     }
     ```
 
+    или
+
+    ``` turtle
+    # Импортируем функции для работы с переменными
+    @prefix sln: <http://comindware.com/ontology/solution#>.
+    {
+        # Находим переменную VariableSystemName в приложении SolutionSystemName
+        # по их системным именам
+        # и возвращаем значение переменной.
+        ("SolutionSystemName" "VariableSystemName") sln:getVariableValue ?value.
+    }
+    ```
+
     **По ID переменной**
 
     ``` turtle

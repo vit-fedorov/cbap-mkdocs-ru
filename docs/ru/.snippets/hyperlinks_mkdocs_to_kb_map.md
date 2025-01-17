@@ -714,6 +714,8 @@
 
 [backup_restore_cdbbz]: {{ kbArticleURLPrefix }}2500
 
+[configuration_files_linux]: {{ kbArticleURLPrefix }}5068
+
 [deploy_cluster_linux]: {{ kbArticleURLPrefix }}5076
 
 [deploy_guide_linux]: {{ kbArticleURLPrefix }}2344

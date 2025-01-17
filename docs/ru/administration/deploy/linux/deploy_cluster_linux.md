@@ -43,7 +43,7 @@ title: Развёртывание Comindware Business Application Platform в к
 
 ## Настройка сервера хранения данных (NFS)
 
-Для взаимодействия с узлами кластера **{{ productName }}** настройте сервер хранения хранения данных, как указано ниже.
+Для взаимодействия с узлами кластера **{{ productName }}** настройте сервер хранения хранения данных.
 
 1. Перейдите в режим суперпользователя:
 
@@ -115,7 +115,7 @@ title: Развёртывание Comindware Business Application Platform в к
 
 ## Развёртывание узлов кластера
 
-На каждом узле кластера **{{ productName }}** необходимо установить ПО {{ productName }}, развернуть экземпляр ПО и установить бинарные пакеты Apache Ignite, как указано ниже.
+На каждом узле кластера **{{ productName }}** необходимо установите ПО {{ productName }}, разверните экземпляр ПО и установите бинарные пакеты Apache Ignite.
 
 ### Установка ПО {{ productName }} и бинарных пакетов Apache Ignite
 
@@ -375,7 +375,7 @@ title: Развёртывание Comindware Business Application Platform в к
     instanceName: <instanceName>
     databaseName: <instanceName>
     configName: <instanceName>
-    # У каждого узла должно быть уникальное имя
+    # Укажите для каждого узла уникальное имя, например общее имя и номер узла
     nodeName: <instanceName><nodeNumber>
 
     mq.server: <kafkaBrokerIP>:<kafkaBrokerPort>
@@ -429,7 +429,7 @@ title: Развёртывание Comindware Business Application Platform в к
     </WorkerEngine>
     ```
 
-11. Настройте владельца файла `Workers.config`:
+11. Задайте владельца файла `Workers.config`:
 
     - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
 
@@ -455,7 +455,7 @@ title: Развёртывание Comindware Business Application Platform в к
     systemctl restart comindware<instanceName>
     ```
 
-13. Настройте директорию `LocalTemp`. См. _«[Создание директории LocalTemp после запуска узлов кластера](#создание-директории-localtemp-после-запуска-узлов-кластера)»_.
+13. Настройте директорию `LocalTemp`. См. _«[Настройка директории LocalTemp после запуска узлов кластера](#Настройка-директории-localtemp-после-запуска-узлов-кластера)»_.
 
 ## Настройка и запуск второго и последующих узлов кластера
 
@@ -471,123 +471,93 @@ title: Развёртывание Comindware Business Application Platform в к
     nano /var/www/<instanceName>/Ignite.config
     ```
 
-3. Отредактируйте файл `Ignite.config` по следующему образцу:
+3. Скопируйте содержимое файла `Ignite.config` с первого узла.
+4. Укажите в директивах `localAddress` IP-адрес узла N:
 
     ``` xml
     <property name="discoverySpi">
           <bean class="org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi">
-            <!-- Укажите IP-адрес, порт и диапазон портов узла N -->
+            <!-- укажите IP-адрес узла N -->
             <property name="localAddress" value="<node_N_IP>" />
-            <property name="localPort" value="47510" />
-            <property name="localPortRange" value="9" />
-            <property name="ipFinder">
-              <bean class="org.apache.ignite.spi.discovery.tcp.ipfinder.vm.TcpDiscoveryVmIpFinder">
-                <property name="addresses">
-                  <list>
-                    <!-- Укажите IP-адреса всех узлов кластера -->
-                    <value><node_1_IP>:47510..47519</value>
-                    <value><node_2_IP>:47510..47519</value>
-                    ...
-                    <value><node_N_IP>:47510..47519</value>
-                  </list>
-                </property>
-              </bean>
-            </property>
+            
+            ...
+
           </bean>
         </property>
         <property name="communicationSpi">
           <bean class="org.apache.ignite.spi.communication.tcp.TcpCommunicationSpi">
             <property name="localPort" value="47101" />
-            <!-- укажите IP-адрес узла -->
-            <property name="localAddress" value="<nodeIP_n>" />
+            <!-- укажите IP-адрес узла N -->
+            <property name="localAddress" value="<node_N_IP>" />
             <property name="messageQueueLimit" value="1024" />
           </bean>
         </property>
     ...
-    ...
-    <property name="dataRegionConfigurations">
-              <list>
-                <bean class="org.apache.ignite.configuration.DataRegionConfiguration">
-                  <property name="warmUpConfiguration">
-                    <bean class="org.apache.ignite.configuration.NoOpWarmUpConfiguration" />
-                  </property>
-                  <property name="name" value="Persistent" />
-                  <property name="persistenceEnabled" value="true" />
-                    <!-- Проверьте и при необходимости отредактируйте размер выделяемой памяти -->
-                  <property name="initialSize" value="#{1024L * 1024 * 1024}" />
-                  <property name="maxSize" value="#{4L * 1024 * 1024 * 1024}" />
-                  <property name="pageEvictionMode" value="RANDOM_2_LRU" />
-                  <property name="checkpointPageBufferSize" value="#{1024L * 1024 * 1024}" />
-                </bean>
-                <bean class="org.apache.ignite.configuration.DataRegionConfiguration">
-                  <property name="name" value="InMemory" />
-                  <property name="persistenceEnabled" value="false" />
-                    <!-- Проверьте и при необходимости отредактируйте размер выделяемой памяти -->
-                  <property name="initialSize" value="#{10 * 1024 * 1024}" />
-                  <property name="maxSize" value="#{256 * 1024 * 1024}" />
-                </bean>
-              </list>
-            </property>
-          </bean>
-        </property>
+    
     ```
 
-4. Откройте файл конфигурации экземпляра ПО для редактирования:
+6. Откройте файл конфигурации экземпляра ПО для редактирования:
 
     ``` sh
     nano /usr/share/comindware/configs/instance/<instanceName>.yml
     ```
 
-5. Скопируйте содержимое файла конфигурации первого узла и в директиве `nodeName` укажите уникальное имя узла.
-6. Откройте файл `Workers.config` для редактирования:
+7. Скопируйте содержимое файла `<instanceName>.yml` с первого узла.
+8. В директиве `nodeName` укажите уникальное имя узла (например общее имя и номер узла):
+
+    ``` yml
+    nodeName: <instanceName><nodeNumber>
+    ```
+
+9. Откройте файл `Workers.config` для редактирования:
 
     ``` sh
     nano /var/www/<instanceName>/Workers.config
     ```
 
-7. Скопируйте содержимое файла `Workers.config` первого узла.
-8. Удостоверьтесь, что значение директивы `<ConfigurationId>` совпадает на всех узлах.
-9. Запустите экземпляр ПО:
+10. Скопируйте содержимое файла `Workers.config` c первого узла.
+11. Удостоверьтесь, что значение директивы `<ConfigurationId>` совпадает на всех узлах.
+12. Запустите экземпляр ПО:
 
     ``` sh
     systemctl start comindware<instanceName>
     ```
 
-10. В браузере запустите сайт экземпляра ПО.
-11. На машине, на которой развёрнут первый узел, перейдите в директорию со скриптами Apache Ignite:
+13. В браузере запустите сайт экземпляра ПО.
+14. На машине, на которой развёрнут первый узел, перейдите в директорию со скриптами Apache Ignite:
 
     ``` sh
     cd /home/username/ignite/bin
     ```
 
-12. Выполняйте запрос топологии до тех пор, пока не отобразится сообщение о наличии стороннего узла:
+15. Выполняйте запрос топологии до тех пор, пока не отобразится сообщение о наличии стороннего узла:
 
     ``` sh
     bash control.sh --baseline
     ```
 
-13. Выполните запрос на включение узла N в топологию (`<nodeNConsistenceId>` — идентификатор узла N в Ignite):
+16. Выполните запрос на включение узла N в топологию (`<nodeNConsistenceId>` — идентификатор узла N в Ignite):
 
     ``` sh
     bash control.sh --baseline add <nodeNConsistenceId> -y
     ```
 
-14. На машине с узлом N кластера перейдите в директорию со скриптами Apache Ignite:
+17. На машине с узлом N кластера перейдите в директорию со скриптами Apache Ignite:
 
     ``` sh
     cd /home/username/ignite/bin
     ```
 
-15. Выполните запрос топологии:
+18. Выполните запрос топологии:
 
     ``` sh
     watch bash control.sh --baseline
     ```
 
-16. Дождитесь включения узла N в топологию.
-17. Дождитесь отображения страницы входа в экземпляр ПО в браузере.
+19. Дождитесь включения узла N в топологию.
+20. Дождитесь отображения страницы входа в экземпляр ПО в браузере.
 
-## Создание директории LocalTemp после запуска узлов кластера
+## Настройка директории LocalTemp после запуска узлов кластера
 
 При каждом запуске экземпляра ПО заново создаётся локальная папка `/var/lib/comindware/<instanceName>/LocalTemp` и удаляется символьная ссылка на неё на NFS-сервере. После этого необходимо удалить директорию `/var/lib/comindware/<instanceName>/LocalTemp` и пересоздавать символьную ссылку на директорию `LocalTemp` на NFS-сервере.
 

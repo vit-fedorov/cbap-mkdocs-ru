@@ -734,8 +734,6 @@
 
 [deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}2344#deploy_guide_linux_initialize
 
-[deploy_cluster_linux]: {{ kbArticleURLPrefix }}5076
-
 [elasticsearch_cluster_deploy_no_certificates]: {{ kbArticleURLPrefix }}2095
 
 [sso_authenticatation_configure]: {{ kbArticleURLPrefix }}2583

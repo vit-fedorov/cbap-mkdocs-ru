@@ -198,7 +198,7 @@
 <li>сервер Apache Kafka на отдельной машине;</li>
 <li>балансировщик нагрузки на отдельной машине (при необходимости).</li>
 </ul>
-<h2 id="порядок-развёртывания-кластера-comindware-business-application-platform">Порядок развёртывания кластера <strong>Comindware Business Application Platform</strong></h2>
+<h2 id="порядок-развёртывания-кластера-comindware-business-application-platform">Порядок развёртывания кластера Comindware Business Application Platform</h2>
 <ol class="colored_numbers_list">
 <li><strong>Подготовьте серверы</strong>: убедитесь, что все машины, на которых будет развёрнут кластер, соответствуют системным требованиям, установите необходимое программное обеспечение. См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=1271">Системные требования Comindware Business Application Platform</a>».</em></li>
 <li><strong>Установите и настройте компоненты</strong>: установите и настройте все необходимые компоненты, включая серверы приложений, базы данных, серверы журналов и балансировщики нагрузки. См. <em>«<a class="mkdocs_imported_link" href="#пример-настройки-кластера">Пример настройки кластера</a>»</em>.</li>
@@ -208,7 +208,7 @@
 </ol>
 <h2 id="пример-настройки-кластера">Пример настройки кластера</h2>
 <h3 id="настройка-сервера-хранения-данных-nfs">Настройка сервера хранения данных (NFS)</h3>
-<p>Для взаимодействия с узлами кластера <strong>Comindware Business Application Platform</strong> настройте сервер хранения данных.</p>
+<p>Настройте сервер хранения данных для кластера <strong>Comindware Business Application Platform</strong>.</p>
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в режим суперпользователя:</p>
@@ -512,7 +512,7 @@
 </pre></code></div>
 </li>
 <li>
-<p>Отредактируйте файл конфигурации экземпляра ПО по следующему образцу (см. <em>«<a class="autorefs autorefs-internal mkdocs_imported_link" href="configuration_files.html#configuration_files_linux">Конфигурация экземпляра, компонентов ПО и служб. Настройка</a>»</em>):</p>
+<p>Отредактируйте файл конфигурации экземпляра ПО по следующему образцу (см. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5068">Конфигурация экземпляра, компонентов ПО и служб. Настройка</a>»</em>):</p>
 <div class="highlight"><code><pre><span></span><code>isFederationAuthEnabled: 0</code><br/>
 <code>databasePath: /var/lib/comindware/&lt;instanceName&gt;/Database</code><br/>
 <code>configPath: /var/www/&lt;instanceName&gt;</code><br/>
@@ -757,7 +757,7 @@
 <ul>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2344">Установка, запуск, инициализация и остановка ПО</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2502">Пути и содержимое директорий экземпляра ПО</a></em></li>
-<li><em><a class="autorefs autorefs-internal mkdocs_imported_link" href="configuration_files.html#configuration_files_linux">Конфигурация экземпляра, компонентов ПО и служб. Настройка</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5068">Конфигурация экземпляра, компонентов ПО и служб. Настройка</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=1271">Системные требования Comindware Business Application Platform</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=2190">Резервное копирование. Настройка и запуск, просмотр журнала сеансов</a></em></li>
 </ul>

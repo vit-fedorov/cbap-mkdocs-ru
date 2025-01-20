@@ -14,7 +14,7 @@ hide: tags
 kbId: 4921
 ---
 
-# Атрибуты типа «Запись» и «Документ». Скачивание архива с файлами из связанных записей {: #download_document_archive_related_record}
+# Атрибуты типа «Запись» и «Документ». Формирование и скачивание архива с файлами из связанных записей {: #download_document_archive_related_record}
 
 ## Введение
 
@@ -22,7 +22,9 @@ kbId: 4921
 
 Атрибут типа «**Запись**» позволяет настроить связь записи шаблона с документами, которые хранятся в отдельном реестре. С помощью C#-скрипта можно настроить кнопку для скачивания в одном архиве всех файлов, связанных с определённой записью.
 
-Здесь представлен пример настройки кнопки, скачивающей файлы из всех записей, которые связаны с текущей записью посредством атрибута.
+Также при помощи сценария и C#-скрипта можно настроить добавление архива файлов в атрибут типа «**Документ**».
+
+Здесь представлен пример настройки добавление архива файлов в атрибут по нажатию кнопки «**Сохранить**» и кнопки, скачивающей файлы из всех записей, которые связаны с текущей записью посредством атрибута.
 
 ## Прикладная задача
 
@@ -71,7 +73,8 @@ kbId: 4921
 
     class Script
     {
-        public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)
+        // Функция UserCommandResult указывает, что скрипт выполняется в контексте кнопки
+        public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)
         { 
             var id = userCommandContext.ObjectIds[0];
             // Укажите системное имя атрибута «Документы» шаблона «Заявки»
@@ -119,11 +122,106 @@ kbId: 4921
 8. В область кнопок таблицы _«Документы»_ поместите кнопки «**Создать**».
 9. В область кнопок формы шаблона _«Заявки»_ поместите кнопку _«Скачать все вложения»_.
 
+## Настройка кнопки для добавления архива с вложениями в атрибут
+
+1. В шаблоне _«Реестр документов»_ создайте атрибут _«Архив с вложениями»_ типа «**Документ**».
+2. Поместите атрибут _«Архив с вложениями»_ на форму.
+3. Создайте сценарий _«Добавление архива с вложениями»_.
+4. Настройте событие «**Нажата кнопка**»:
+
+    - **Контекстный шаблон:** _Реестр документов_
+    - **Кнопка: сохранить**
+
+5. Добавьте действие «**Изменить значение скриптом**» со следующими свойствами:
+
+    - **Атрибут** _Архив с вложениями_
+    - **Операция со значениями: заменить**
+    - **Значение:**
+
+        ``` cs
+        using System;
+        using System.Collections.Generic;
+        using System.Linq;
+        using Comindware.Data.Entity;
+        using Comindware.TeamNetwork.Api.Data.UserCommands;
+        using Comindware.TeamNetwork.Api.Data;
+        using System.IO;
+        using System.IO.Compression;
+
+        class Script
+        {
+            public static void Main(Comindware.Process.Api.Data.ScriptContext context, Comindware.Entities entities)
+            {
+                var id = context.BusinessObjectId;
+                byte[] compressedBytes;
+                try
+                {
+                    using(var resultStream = new MemoryStream())
+                    {
+                        using(var zip = new ZipArchive(resultStream, ZipArchiveMode.Update))
+                        {
+                            // Укажите системное имя атрибута «Документы» шаблона «Заявки»
+                            var data = Api.TeamNetwork.ObjectService.GetPropertyValues(new string[] {id}, new string[] {"Documents"});
+                            // Укажите системное имя атрибута «Документы» шаблона «Заявки»
+                            var documentIdsObj = data[id]["Documents"];
+
+                            var documentIds = documentIdsObj as IEnumerable<object>;
+                            if (documentIds == null)
+                            {
+                                documentIds = new string[] {documentIdsObj as string};
+                            }
+                            var newDocuments = new List<string>();
+                            foreach (var documentIdObj in documentIds)
+                            {
+                                var documentId = documentIdObj as string;
+                                // Укажите системное имя атрибута «Вложение» шаблона «Реестр документов»
+                                if (!documentId.StartsWith("Attachment"))
+                                    continue;
+                                var documentData = Api.TeamNetwork.DocumentService.GetContent(documentId);
+
+                                var startStream = new MemoryStream();
+                                startStream.Write(documentData.Data, 0, documentData.Data.Length);
+                                startStream.Seek(0, SeekOrigin.Begin);
+
+                                var fileInArchive = zip.CreateEntry(documentData.Name , CompressionLevel.Optimal);
+                                using (var entryStream = fileInArchive.Open())
+                                {
+                                    startStream.CopyTo(entryStream);
+                                }
+                            }
+                        }
+                        compressedBytes = resultStream.ToArray();
+                    }
+                    var docData = new Document 
+                    {
+                        Title = "Data"+".zip",
+                        Extension = ".zip"
+                        };
+                    var resultStream2 = new MemoryStream();
+                    resultStream2.Write(compressedBytes, 0, compressedBytes.Length);
+                    resultStream2.Seek(0, SeekOrigin.Begin);
+
+                    string doc = Api.TeamNetwork.DocumentService.CreateDocumentWithStream(docData, resultStream2, "");
+                    var data2 = new Dictionary<string,object>
+                    {
+                        // Укажите ID атрибута «Архив с вложениями»
+                        { "op.3732", doc }
+                    };
+                    Api.TeamNetwork.ObjectService.Edit(id, data2);
+                }
+                catch
+                {}
+            }
+        }
+        ```
+
 ## Тестирование
 
 1. Создайте новую запись шаблона _«Заявки»_ и добавьте несколько строк с документами в таблицу _«Документы»_.
-2. Нажмите кнопку _«Скачать все вложения»_.
-3. Браузер скачает архив со всеми файлами, которые связаны с записью шаблона _«Заявки»_.
+2. Сохраните запись.
+3. В поле атрибута _«Архив с вложениями»_ отобразится архив с файлами, которые связаны с записью шаблона _«Заявки»_.
+4. Нажмите кнопку _«Скачать все вложения»_.
+5. Браузер скачает архив со всеми файлами, которые связаны с записью шаблона _«Заявки»_.
 
     !!! note "Примечание"
 

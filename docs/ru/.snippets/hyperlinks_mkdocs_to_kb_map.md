@@ -1,5 +1,7 @@
 <!-- Любые руководства -->
 
+[apache_ignite_clustering]: https://ignite.apache.org/docs/latest/clustering/clustering
+
 [api_calls]: {{ kbCategoryURLPrefix }}513
 
 [api_web]: {{ kbArticleURLPrefix }}1940
@@ -721,6 +723,8 @@
 [deploy_guide_linux]: {{ kbArticleURLPrefix }}2344
 
 [deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}2344#deploy_guide_linux_initialize
+
+[deploy_cluster_linux]: {{ availability_fault_tolerance }}5077
 
 [elasticsearch_cluster_deploy_no_certificates]: {{ kbArticleURLPrefix }}2095
 

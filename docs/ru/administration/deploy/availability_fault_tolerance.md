@@ -1,5 +1,5 @@
 ---
-kbId: 5077
+kbId: 5078
 title: Обеспечение высокой доступности и отказоустойчивости Comindware Business Application Platform
 tags:
     - отказоустойчивость
@@ -60,10 +60,11 @@ hide: tags
 
 --8<-- "related_topics_heading.md"
 
-- _[Обеспечение высокой доступности и отказоустойчивости {{ productName }}][availability_fault_tolerance]_
+- _[Развёртывание {{ productName }} в кластере][deploy_cluster_linux]_
 - _[Установка, запуск, инициализация и остановка ПО][deploy_guide_linux]_
 - _[Системные требования {{ productName }}][system_requirements]_
 - _[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]_
+- _[Настройка кластеризации. Документация Apache Ignite (на английском языке)][apache_ignite_clustering]_
 
 </div>
 

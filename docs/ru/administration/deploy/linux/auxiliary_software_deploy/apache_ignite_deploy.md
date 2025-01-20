@@ -3,7 +3,7 @@ title: Apache Ignite. Установка и настройка
 kbId: 4600
 ---
 
-# Apache Ignite. Установка и настройка {: #apache_ignite_deploy}
+# Apache Ignite. Установка и настройка {: #apache_ignite_deploy }
 
 ## Введение
 

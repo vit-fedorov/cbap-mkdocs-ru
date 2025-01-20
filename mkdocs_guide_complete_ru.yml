@@ -356,6 +356,7 @@ nav:
     - examples/download_document_archive_csharp.md
     - examples/substring_search.md
     - examples/enum_attribute_value_calculation.md
+    - examples/enum_attribute_value_filter.md
     - examples/creating_gantt_chart.md
     - examples/using_gantt_chart.md
     - examples/scenario_verify_data.md

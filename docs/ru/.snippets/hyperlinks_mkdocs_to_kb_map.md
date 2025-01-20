@@ -452,6 +452,10 @@
 
 [elasticdata_description]: {{ kbArticleURLPrefix }}4584
 
+[enum_attribute_value_calculation]: {{ kbArticleURLPrefix }}4920
+
+[enum_attribute_value_filter]: {{ kbArticleURLPrefix }}5077
+
 [process_diagram_elements_events_end]: {{ kbArticleURLPrefix }}4744
 
 [process_diagram_elements_events_intermediate]: {{ kbArticleURLPrefix }}4742

@@ -40,7 +40,7 @@ nav:
         - Установка и запуск Comindware Business Application Platform: administration/deploy/linux/deploy_guide.md
         - administration/deploy/linux/configuration_files.md
         - administration/deploy/linux/db_migrate_4.2_to_4.7.md
-        - administration/deploy/linux/deploy_cluster.md
+        # - administration/deploy/linux/deploy_cluster.md
         - administration/deploy/linux/uninstall_auxiliary_software.md
         - administration/deploy/linux/upgrade_version.md
         - administration/deploy/linux/upload_size_limit_configure.md

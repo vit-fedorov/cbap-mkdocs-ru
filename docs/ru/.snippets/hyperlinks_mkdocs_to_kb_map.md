@@ -728,7 +728,7 @@
 
 [auxiliary_software_optimize]: {{ kbArticleURLPrefix }}4604
 
-[availability_fault_tolerance]: {{ kbArticleURLPrefix }}5078
+[availability_fault_tolerance]: {{ kbArticleURLPrefix }}5079
 
 [backup_restore_cdbbz]: {{ kbArticleURLPrefix }}4647
 
@@ -738,7 +738,7 @@
 
 [deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_initialize
 
-[deploy_cluster_linux]: {{ kbArticleURLPrefix }}5076
+[deploy_cluster_linux]: {{ kbArticleURLPrefix }}5080
 
 [elasticsearch_cluster_deploy_no_certificates]: {{ kbArticleURLPrefix }}4612
 

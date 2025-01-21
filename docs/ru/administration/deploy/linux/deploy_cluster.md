@@ -1,6 +1,6 @@
 ---
-kbId: 5076
-title: Развёртывание Comindware Business Application Platform в кластере
+kbId: 5080
+title: Развёртывание Comindware Platform в кластере
 tags:
     - отказоустойчивость
     - доступность

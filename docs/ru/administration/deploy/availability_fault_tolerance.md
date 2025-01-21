@@ -1,6 +1,6 @@
 ---
-kbId: 5078
-title: Обеспечение высокой доступности и отказоустойчивости Comindware Business Application Platform
+kbId: 5079
+title: Обеспечение высокой доступности и отказоустойчивости Comindware Platform
 tags:
     - отказоустойчивость
     - доступность

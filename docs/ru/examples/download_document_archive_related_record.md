@@ -76,40 +76,46 @@ kbId: 4921
         // Функция UserCommandResult указывает, что скрипт выполняется в контексте кнопки
         public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)
         { 
+            // Получаем ID текущей записи шаблона «Заявки» из контекста операции кнопки.
             var id = userCommandContext.ObjectIds[0];
-            // Укажите системное имя атрибута «Документы» шаблона «Заявки»
+            // Помещаем в массив data идентификаторы записей шаблона «Реестр документов»
+            // из атрибута «Документы» текущей записи.
+            // Documents — системное имя атрибута «Документы».
             var data = Api.TeamNetwork.ObjectService.GetPropertyValues(new string[] {id}, new [] {"Documents"});
-            // Из контекста записи шаблона «Заявки» получаем ID связанных записей
-            // Укажите системное имя атрибута «Документы» шаблона «Заявки»
-            var documentIdsObjs = data[id].TryGetValue("Documents", out object id_Documents_Obj) && id_Documents_Obj != null ? id_Documents_Obj as object[] : null;
-            var streamsToZip = new Dictionary<string, byte[]>();
-
-            // Добавляем вложения в поток для дальнейшего архивирования
-            foreach (var documentIdObj in documentIdsObjs)
+            // По идентификаторам получаем массив записей шаблона «Реестр документов», связанных с текущей записью.
+            var DocumentsRecords = data[id].TryGetValue("Documents", out object OutputRecordArray) && OutputRecordArray != null ? OutputRecordArray as object[] : null;
+            // Инициализируем словарь файлов для архива в виде пар «имя:содержимое».
+            var files = new Dictionary<string, byte[]>();
+            // Добавляем файлы в поток для дальнейшего архивирования
+            // из каждой записи шаблона «Реестр документов».
+            foreach (var DocumentRecord in DocumentsRecords)
             {
-                var idDoc = documentIdObj.ToString();
-                // Укажите системное имя атрибута «Вложение» шаблона «Реестр документов»
-                var documentDataVal = Api.TeamNetwork.ObjectService.GetPropertyValues(new []{idDoc} , new [] {"Attachment"});
-
-                // Укажите системное имя атрибута «Вложение» шаблона «Реестр документов»
-                var documentId = documentDataVal[idDoc].TryGetValue("Attachment", out object doc_Obj) && doc_Obj != null ? doc_Obj as string : null;
+                // Получаем идентификатор записи шаблона «Реестр документов».
+                var idDoc = DocumentRecord.ToString();
+                // Помещаем в массив documentIds идентификаторы прикреплённых документов.
+                // Attachment — системное имя атрибута «Вложение» шаблона «Реестр документов».
+                var documentIds = Api.TeamNetwork.ObjectService.GetPropertyValues(new []{idDoc} , new [] {"Attachment"});
+                // Из текущей записи берём идентификатор прикреплённого документа.
+                var documentId = documentIds[idDoc].TryGetValue("Attachment", out object doc_Obj) && doc_Obj != null ? doc_Obj as string : null;
                 if(documentId != null)
                 {
-                    var documentData = Api.TeamNetwork.DocumentService.GetContent(documentId);
-
-                    streamsToZip[documentData.Name] = documentData.Data;
+                    // Получаем содержимое прикреплённого файла.
+                    var documentData = Api.TeamNetwork.DocumentService.GetContent(documentId);
+                    // Помещаем содержимое файла в словарь файлов для архива.
+                    files[documentData.Name] = documentData.Data;
                 }
             }
-
-            var resultStream = Api.TeamNetwork.DocumentService.GetZippedStreams(streamsToZip);
-            return new UserCommandResult
+            // Формируем архив файлов из словаря files.
+            var resultingArchive = Api.TeamNetwork.DocumentService.GetZippedStreams(files);
+            // Возвращаем архив в качестве результата кнопки.
+            return new UserCommandResult
             {
                 Success = true,
                 Commited = true,
                 File = new UserCommandFileResult
                 {
-                    Content = resultStream,
-                // Укажите имя архива
+                    Content = resultingArchive,
+                    // Укажите имя архива
                     Name = "Data.zip"
                 }
             };
@@ -124,12 +130,12 @@ kbId: 4921
 
 ## Настройка кнопки для добавления архива с вложениями в атрибут
 
-1. В шаблоне _«Реестр документов»_ создайте атрибут _«Архив с вложениями»_ типа «**Документ**».
+1. В шаблоне _«Заявки»_ создайте атрибут _«Архив с вложениями»_ типа «**Документ**».эээээ
 2. Поместите атрибут _«Архив с вложениями»_ на форму.
 3. Создайте сценарий _«Добавление архива с вложениями»_.
 4. Настройте событие «**Нажата кнопка**»:
 
-    - **Контекстный шаблон:** _Реестр документов_
+    - **Контекстный шаблон:** _Заявки_
     - **Кнопка: сохранить**
 
 5. Добавьте действие «**Изменить значение скриптом**» со следующими свойствами:
@@ -205,7 +211,7 @@ kbId: 4921
                     var data2 = new Dictionary<string,object>
                     {
                         // Укажите ID атрибута «Архив с вложениями»
-                        { "op.3732", doc }
+                        { "op.1", doc }
                     };
                     Api.TeamNetwork.ObjectService.Edit(id, data2);
                 }

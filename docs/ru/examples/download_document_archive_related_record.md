@@ -36,7 +36,7 @@ kbId: 5081
         - создать поток (`Stream`) для прикрепления документа к атрибуту;
         - преобразовать поток в документ для прикрепления к атрибуту с помощью функции `string Comindware.TeamNetwork.Api.Services.DocumentService.CreateDocumentWithStream(Document document, string streamId, [string fileName])`;
         - сформировать словарь, состоящий из системного имени атрибута и документа;
-        - прикрепить полученный документ к атрибуту типа «Документ» с помощью функции `void Comindware.TeamNetwork.Api.Services.ObjectService.EditWithAlias(string id, Dictionary data)`.
+        - прикрепить полученный документ к атрибуту типа «**Документ**» с помощью функции `void Comindware.TeamNetwork.Api.Services.ObjectService.EditWithAlias(string id, Dictionary data)`.
 
 ## Прикладная задача
 

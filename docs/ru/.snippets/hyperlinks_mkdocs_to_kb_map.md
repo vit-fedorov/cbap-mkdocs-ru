@@ -1,5 +1,15 @@
 <!-- Любые руководства -->
 
+[apache_ignite_clustering]: https://ignite.apache.org/docs/latest/clustering/clustering
+
+[apache_ignite_partition_loss_policy]: https://ignite.apache.org/docs/latest/configuring-caches/partition-loss-policy
+
+[apache_ignite_partition_zookeeper_discovery]: https://ignite.apache.org/docs/latest/clustering/zookeeper-discovery
+
+[apache_ignite_partition_baseline_topology]: https://ignite.apache.org/docs/latest/clustering/baseline-topology
+
+[apache_ignite_partition_partition_loss_policy]: https://ignite.apache.org/docs/latest/configuring-caches/partition-loss-policy
+
 [api_calls]: {{ kbCategoryURLPrefix }}868
 
 [api_web]: {{ kbArticleURLPrefix }}4861

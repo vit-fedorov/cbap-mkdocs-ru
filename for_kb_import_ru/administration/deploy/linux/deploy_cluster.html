@@ -158,14 +158,14 @@
 <p><strong>Comindware Platform</strong> использует в качестве распределённого хранилища данных ПО Apache Ignite.</p>
 <p>В кластерной конфигурации Apache Ignite поддерживает автоматическое обнаружение узлов, распределение данных и вычислений, а также репликацию и резервирование данных. Это обеспечивает равномерное распределение нагрузки и доступность при отказе отдельных узлов.</p>
 <p>Важными аспектами кластеризации Apache Ignite являются настройка топологии кластера, выбор подходящего алгоритма консенсуса для управления состоянием кластера и использование механизмов автоматического восстановления для минимизации времени простоя.</p>
-<p>См. <em>[рекомендации по кластеризации в документации Apache Ignite (на английском языке)][apache_ignite_clustering]</em>.</p>
+<p>См. <em><a class="mkdocs_imported_link" href="https://ignite.apache.org/docs/latest/clustering/clustering">рекомендации по кластеризации в документации Apache Ignite (на английском языке)</a></em>.</p>
 <h3 id="топология-и-консистентность">Топология и консистентность</h3>
-<p>Настройте базовую топологию кластера, чтобы минимизировать риски при добавлении новых узлов и восстановлении после сбоев. См. <em>«[Настройка базовой топологии. Документация Apache Ignite][apache_ignite_partition_baseline_topology]»</em>.</p>
-<p>Чтобы повысить надёжности в кластере с большим количеством узлов, можно использовать Zookeeper Discovery SPI для управления обнаружением узлов и уменьшения рисков, связанных с сетевой фрагментацией. См. <em>«[Настройка ZooKeeper Discovery. Документация Apache Ignite][apache_ignite_partition_zookeeper_discovery]»</em>.</p>
+<p>Настройте базовую топологию кластера, чтобы минимизировать риски при добавлении новых узлов и восстановлении после сбоев. См. <em>«<a class="mkdocs_imported_link" href="https://ignite.apache.org/docs/latest/clustering/baseline-topology">Настройка базовой топологии. Документация Apache Ignite</a>»</em>.</p>
+<p>Чтобы повысить надёжности в кластере с большим количеством узлов, можно использовать Zookeeper Discovery SPI для управления обнаружением узлов и уменьшения рисков, связанных с сетевой фрагментацией. См. <em>«<a class="mkdocs_imported_link" href="https://ignite.apache.org/docs/latest/clustering/zookeeper-discovery">Настройка ZooKeeper Discovery. Документация Apache Ignite</a>»</em>.</p>
 <h3 id="методы-повышения-отказоустойчивости">Методы повышения отказоустойчивости</h3>
 <ul>
-<li><strong>Репликация данных</strong> — задайте количество резервных копий данных на нескольких узлах. См. <em>«[Настройка резервного копирования. Документация Apache Ignite»][apache_ignite_partition_loss_policy]</em>».</li>
-<li><strong>Стратегии восстановления данных</strong> — настройте политику поведения при выпадении разделов. См. <em>«[Настройка восстановления разделов. Документация Apache Ignite»][apache_ignite_partition_partition_loss_policy]</em>».</li>
+<li><strong>Репликация данных</strong> — задайте количество резервных копий данных на нескольких узлах. См. <em>«<a class="mkdocs_imported_link" href="https://ignite.apache.org/docs/latest/configuring-caches/partition-loss-policy">Настройка резервного копирования. Документация Apache Ignite»</a></em>».</li>
+<li><strong>Стратегии восстановления данных</strong> — настройте политику поведения при выпадении разделов. См. <em>«<a class="mkdocs_imported_link" href="https://ignite.apache.org/docs/latest/configuring-caches/partition-loss-policy">Настройка восстановления разделов. Документация Apache Ignite»</a></em>».</li>
 </ul>
 <h3 id="мониторинг-и-оповещения">Мониторинг и оповещения</h3>
 <p>Для поддержания высокой доступности и своевременного реагирования на инциденты:</p>
@@ -403,7 +403,7 @@
 </li>
 <li>
 <p>При наличии файла <code>Workers.config</code> удалите его:</p>
-<div class="highlight"><code><pre><span></span><code>rm<span class="w"> </span>-f<span class="w"> </span>/var/www/npportalid/Workers.config</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>rm<span class="w"> </span>-f<span class="w"> </span>/var/www/&lt;instanceName&gt;/Workers.config</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Запустите службу экземпляра ПО:</p>
@@ -558,11 +558,11 @@
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4659">Системные требования Comindware Platform</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4642">Резервное копирование. Настройка и запуск, просмотр журнала сеансов</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5079">Обеспечение высокой доступности и отказоустойчивости Comindware Platform</a></em></li>
-<li><em>[Рекомендации по кластеризации. Документация Apache Ignite (на английском языке)][apache_ignite_clustering]</em></li>
-<li><em>[Настройка базовой топологии. Документация Apache Ignite][apache_ignite_partition_baseline_topology]</em></li>
-<li><em>[Настройка ZooKeeper Discovery. Документация Apache Ignite][apache_ignite_partition_zookeeper_discovery]</em></li>
-<li><em>[Настройка резервного копирования. Документация Apache Ignite»][apache_ignite_partition_loss_policy]</em></li>
-<li><em>[Настройка восстановления разделов. Документация Apache Ignite»][apache_ignite_partition_partition_loss_policy]</em></li>
+<li><em><a class="mkdocs_imported_link" href="https://ignite.apache.org/docs/latest/clustering/clustering">Рекомендации по кластеризации. Документация Apache Ignite (на английском языке)</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://ignite.apache.org/docs/latest/clustering/baseline-topology">Настройка базовой топологии. Документация Apache Ignite</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://ignite.apache.org/docs/latest/clustering/zookeeper-discovery">Настройка ZooKeeper Discovery. Документация Apache Ignite</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://ignite.apache.org/docs/latest/configuring-caches/partition-loss-policy">Настройка резервного копирования. Документация Apache Ignite»</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://ignite.apache.org/docs/latest/configuring-caches/partition-loss-policy">Настройка восстановления разделов. Документация Apache Ignite»</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4600">Apache Ignite. Установка и настройка</a></em></li>
 </ul>
 </div>

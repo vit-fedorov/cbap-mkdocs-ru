@@ -2,7 +2,7 @@ title: Практические примеры
 
 nav:
     - autonumerating_records.md
-    - download_document_archive_csharp.md
+    - example_csharp_document_download_archive.md
     - substring_search.md
     - enum_attribute_value_calculation.md
     - creating_gantt_chart.md

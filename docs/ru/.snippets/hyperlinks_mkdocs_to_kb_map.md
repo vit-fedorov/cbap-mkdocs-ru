@@ -36,6 +36,10 @@
 
 [example_n3_button_local_variable]: {{ kbArticleURLPrefix }}4909
 
+[example_csharp_document_download_archive]: {{ kbArticleURLPrefix }}4921
+
+[example_csharp_document_download_archive_related_records]: {{ kbArticleURLPrefix }}5081
+
 [example_csharp_my_profile_button]: {{ kbArticleURLPrefix }}5006
 
 [example_csharp_object_copy]: {{ kbArticleURLPrefix }}5007
@@ -445,8 +449,6 @@
 [discussion_configure_template]: {{ kbArticleURLPrefix }}4788#mcetoc_1h7hu3akn4
 
 [discussion_use]: {{ kbArticleURLPrefix }}4818
-
-[download_archive_csharp]: {{ kbArticleURLPrefix }}4921
 
 [elasticdata_description]: {{ kbArticleURLPrefix }}4584
 

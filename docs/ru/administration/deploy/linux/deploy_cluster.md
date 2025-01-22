@@ -422,7 +422,7 @@ hide: tags
 6. При наличии файла `Workers.config` удалите его:
 
     ```sh
-    rm -f /var/www/npportalid/Workers.config
+    rm -f /var/www/<instanceName>/Workers.config
     ```
 
 7. Запустите службу экземпляра ПО:

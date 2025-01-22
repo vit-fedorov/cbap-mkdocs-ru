@@ -26,6 +26,18 @@ kbId: 5081
 
 Здесь представлен пример настройки кнопки, скачивающей все файлы, которые связаны с текущей записью, и добавляющей этот архив в атрибут типа «**Документ**».
 
+!!! question "Определения"
+
+    - Атрибут типа «**Документ**»  хранит одну или несколько ссылок на записи (**документы**) в системном шаблоне документа, к которым прикрепляются файлы.
+    - В шаблоне документа имеется атрибут `currentRevision`, который хранит ссылку на запись (ревизию) в системном шаблоне ревизии.
+    - В шаблоне ревизии имеются атрибуты `title` и `content`, которые хранят имя файла и ссылку на файл, физически хранящийся в папке `Streams` на сервере **{{ productName }}**.
+    - Для того чтобы прикрепить к атрибуту типа «**Документ**» файл с помощью C#-скрипта, необходимо:
+        - инициализировать создание документа, состоящего из `Title` (имя файла) и `Extension` (расширение);
+        - создать поток (`Stream`) для прикрепления документа к атрибуту;
+        - преобразовать поток в документ для прикрепления к атрибуту с помощью функции `string Comindware.TeamNetwork.Api.Services.DocumentService.CreateDocumentWithStream(Document document, string streamId, [string fileName])`;
+        - сформировать словарь, состоящий из системного имени атрибута и документа;
+        - прикрепить полученный документ к атрибуту типа «Документ» с помощью функции `void Comindware.TeamNetwork.Api.Services.ObjectService.EditWithAlias(string id, Dictionary data)`.
+
 ## Прикладная задача
 
 Имеется шаблон _«Заявки»_. К заявке можно прикрепить документы. Они хранятся в атрибуте типа «**Документ**» шаблона _«Реестр документов»_, связанного с шаблоном _«Заявки»_.
@@ -109,30 +121,31 @@ kbId: 5081
                     }
                 }
             }
-            // Формируем архив файлов из словаря files.
+            // Формируем архив файлов из словаря files для скачивания.
             var resultingArchive = Api.TeamNetwork.DocumentService.GetZippedStreams(files);
-            // Помещаем результирующий архив в массив байтов.
-            byte[] compressedBytes = resultingArchive.ToArray();
-            // Инициализируем документ для файла архива.
-            var archive = new Document 
+            // Инициализируем документ для файла архива, чтобы прикрепить его к атрибуту.
+            var archiveDocument = new Document 
             {
                 Title = "Data.zip",
                 Extension = ".zip"
             };
+            // Помещаем архив файлов в массив байтов
+            // для преобразования в документ и прикрепления к атрибуту.
+            byte[] compressedBytes = resultingArchive.ToArray();
             // Создаём поток для прикрепления документа с архивом к атрибуту.
-            var resultingStream = new MemoryStream();
-                    resultingStream.Write(compressedBytes, 0, compressedBytes.Length);
-                    resultingStream.Seek(0, SeekOrigin.Begin);
-
-                    // Создаём в потоке файл архива, чтобы передать его в атрибут.
-                    string archiveToAttribute = Api.TeamNetwork.DocumentService.CreateDocumentWithStream(archive, resultingStream, "");
-                    var AttributeEdit = new Dictionary<string,object>
-                    {
-                        // op.1 — ID атрибута «Архив документов».
-                        { "op.1", archiveToAttribute }
-                    };
-                    // Прикрепляем архив к атрибуту «Архив документов».
-                    Api.TeamNetwork.ObjectService.Edit(id, AttributeEdit);
+            var documentStream = new MemoryStream();
+            documentStream.Write(compressedBytes, 0, compressedBytes.Length);
+            documentStream.Seek(0, SeekOrigin.Begin);
+            // Преобразуем поток в документ с архивом для прикрепления к атрибуту.
+            string documentObject = Api.TeamNetwork.DocumentService.CreateDocumentWithStream(archiveDocument, documentStream, "");
+            // Формируем словарь для прикрепления документа с архивом к атрибуту.
+            var documentDict = new Dictionary<string,object>
+            {
+                // Archive — системное имя атрибута «Архив документов».
+                { "Archive", documentObject }
+            };
+            // Прикрепляем архив к атрибуту «Архив документов».
+            Api.TeamNetwork.ObjectService.EditWithAlias(id, documentDict);
             // Возвращаем архив для скачивания в качестве результата нажатия кнопки.            
             return new UserCommandResult
             {
@@ -142,7 +155,7 @@ kbId: 5081
                 {
                     Content = resultingArchive,
                     // Укажите имя архива
-                    Name = archive.Title
+                    Name = archiveDocument.Title
                 }
             };
         }

@@ -20,8 +20,6 @@
 
 [attribute_date_time_use]: {{ kbArticleURLPrefix }}4886
 
-[attribute_document_clone_scenario]: {{ kbArticleURLPrefix }}4883
-
 [attribute_drawing_file_import]: {{ kbArticleURLPrefix }}4906
 
 [attribute_enum_calculate_current_value]: {{ kbArticleURLPrefix }}4913
@@ -45,6 +43,14 @@
 [document_digital_signature]: {{ kbArticleURLPrefix }}4910
 
 [example_n3_button_local_variable]: {{ kbArticleURLPrefix }}4909
+
+[example_document_clone_scenario_n3]: {{ kbArticleURLPrefix }}4883
+
+[example_document_download_archive_csharp]: {{ kbArticleURLPrefix }}4921
+
+[example_document_download_archive_related_records_csharp]: {{ kbArticleURLPrefix }}5081
+
+[example_document_download_to_server_csharp]: {{ kbArticleURLPrefix }}5002
 
 [example_csharp_my_profile_button]: {{ kbArticleURLPrefix }}5006
 
@@ -457,8 +463,6 @@
 [discussion_configure_template]: {{ kbArticleURLPrefix }}4788#mcetoc_1h7hu3akn4
 
 [discussion_use]: {{ kbArticleURLPrefix }}4818
-
-[download_archive_csharp]: {{ kbArticleURLPrefix }}4921
 
 [elasticdata_description]: {{ kbArticleURLPrefix }}4584
 

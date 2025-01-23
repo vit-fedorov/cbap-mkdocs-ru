@@ -12,7 +12,9 @@ kbId: 4782
 !!! question "Структура атрибута «Документ»"
 
     --8<-- "attribute_document_logic.md"
+    --8<-- "attribute_document_get_file_csharp.md"
     --8<-- "attribute_document_add_file_csharp.md"
+    --8<-- "attribute_document_get_file_n3.md"
     --8<-- "attribute_document_add_file_n3.md"
 
 Помимо **[общих свойств][attribute_common_properties]** для атрибута типа «**Документ**» предусмотрены перечисленные ниже свойства.

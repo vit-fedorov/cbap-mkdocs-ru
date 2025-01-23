@@ -29,11 +29,12 @@ kbId: 5081
 
 Здесь представлен пример настройки кнопки, скачивающей все файлы, которые связаны с текущей записью, и добавляющей этот архив в атрибут типа «**Документ**».
 
-См. также _[пример настройки скрипта для скачивания архива с файлами из таблицы и записи][example_csharp_document_download_archive]_
+См. также _[пример настройки скрипта для скачивания архива с файлами из выбранных строк таблицы или одной записи][example_csharp_document_download_archive]_
 
 !!! question "Атрибут типа «Документ»"
 
     --8<-- "attribute_document_logic.md"
+    --8<-- "attribute_document_get_file_csharp.md"
     --8<-- "attribute_document_add_file_csharp.md"
 
 ## Прикладная задача
@@ -106,9 +107,10 @@ kbId: 5081
                 var docId = DocumentRecord.ToString();
                 // Помещаем в массив fileIds идентификаторы файлов, прикреплённых к атрибуту «Файлы».
                 // Files — системное имя атрибута «Файлы» шаблона «Реестр документов».
-                var fileIds = Api.TeamNetwork.ObjectService.GetPropertyValues(new []{docId} , new [] {"Files"});
+                var fileIds = Api.TeamNetwork.ObjectService.GetPropertyValues(new []{docId}, new [] {"Files"});
                 // По идентификаторам получаем массив объектов с прикреплёнными файлами.
-                var attachedFileObjects = fileIds[docId].TryGetValue("Files", out object fileObject) && fileObject != null ? fileObject as object[] : null;
+                var attachedFileObjects = fileIds[docId].TryGetValue("Files", out object fileObject) 
+                                          && fileObject != null ? fileObject as object[] : null;
                 if(attachedFileObjects.Length > 0)
                 {
                     // Добавляем в словарь все файлы, прикреплённые к атрибуту «Файлы».
@@ -134,11 +136,11 @@ kbId: 5081
             // для преобразования в документ и прикрепления к атрибуту.
             byte[] compressedBytes = resultingArchive.ToArray();
             // Создаём поток для прикрепления документа с архивом к атрибуту.
-            var documentStream = new MemoryStream();
-            documentStream.Write(compressedBytes, 0, compressedBytes.Length);
-            documentStream.Seek(0, SeekOrigin.Begin);
-            // Преобразуем поток в документ с архивом для прикрепления к атрибуту.
-            string documentObject = Api.TeamNetwork.DocumentService.CreateDocumentWithStream(archiveDocument, documentStream, "");
+            var archiveFileStream = new MemoryStream();
+            archiveFileStream.Write(compressedBytes, 0, compressedBytes.Length);
+            archiveFileStream.Seek(0, SeekOrigin.Begin);
+            // Преобразуем поток в объект документа с архивом для прикрепления к атрибуту.
+            string documentObject = Api.TeamNetwork.DocumentService.CreateDocumentWithStream(archiveDocument, archiveFileStream, "");
             // Формируем словарь для прикрепления документа с архивом к атрибуту.
             var documentDict = new Dictionary<string,object>
             {

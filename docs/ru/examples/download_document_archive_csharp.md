@@ -30,6 +30,7 @@ kbId: 4921
 !!! question "Атрибут типа «Документ»"
 
     --8<-- "attribute_document_logic.md"
+    --8<-- "attribute_document_get_file_csharp.md"
 
 ## Прикладная задача
 

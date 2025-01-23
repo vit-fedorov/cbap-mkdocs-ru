@@ -10,8 +10,6 @@
 
 [attribute_date_time_use]: {{ kbArticleURLPrefix }}4886
 
-[attribute_document_clone_scenario]: {{ kbArticleURLPrefix }}4883
-
 [attribute_drawing_file_import]: {{ kbArticleURLPrefix }}4906
 
 [attribute_enum_calculate_current_value]: {{ kbArticleURLPrefix }}4913
@@ -36,9 +34,13 @@
 
 [example_n3_button_local_variable]: {{ kbArticleURLPrefix }}4909
 
-[example_csharp_document_download_archive]: {{ kbArticleURLPrefix }}4921
+[example_document_clone_scenario_n3]: {{ kbArticleURLPrefix }}4883
 
-[example_csharp_document_download_archive_related_records]: {{ kbArticleURLPrefix }}5081
+[example_document_download_archive_csharp]: {{ kbArticleURLPrefix }}4921
+
+[example_document_download_archive_related_records_csharp]: {{ kbArticleURLPrefix }}5081
+
+[example_document_download_to_server_csharp]: {{ kbArticleURLPrefix }}5002
 
 [example_csharp_my_profile_button]: {{ kbArticleURLPrefix }}5006
 

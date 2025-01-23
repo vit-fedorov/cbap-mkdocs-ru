@@ -53,6 +53,8 @@ kbId: 4921
     * **Результат выполнения:** **скачать документ**.
 4. На вкладке «**Скрипт**» добавьте следующий C#-скрипт:
 
+    --8<-- "csharp_script_context.md"
+
     ``` cs title="Скрипт для скачивания архива с файлами"
     using System;
     using System.Collections.Generic;
@@ -72,16 +74,16 @@ kbId: 4921
     {
         public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)
         {
-    // ObjectIds — массив выбранных записей, полученный из контекста операции кнопки.
+        // ObjectIds — массив выбранных записей, полученный из контекста операции кнопки.
             var selected_Ids = userCommandContext.ObjectIds;
-    // Создаем массив compressedBytes для хранения архива с файлами.
+        // Создаем массив compressedBytes для хранения архива с файлами.
             byte[] compressedBytes;
 
             try
             {
-    // Vlozheniya — системное имя атрибута «Вложения» шаблона записи «Реестр документов».
-    // Помещаем в массив data значения атрибутов «Вложения» из выбранных записей.
-    // Создаём поток resultStream для архива
+                // Vlozheniya — системное имя атрибута «Вложения» шаблона записи «Реестр документов».
+                // Помещаем в массив data значения атрибутов «Вложения» из выбранных записей.
+                // Создаём поток resultStream для архива
                 var data = Api.TeamNetwork.ObjectService.GetPropertyValues(selected_Ids, new[] { "Vlozheniya" });
                 using (var resultStream = new MemoryStream())
                 {
@@ -89,16 +91,16 @@ kbId: 4921
                     {
                         foreach (var id in selected_Ids)
                         {
-    // Присваиваем переменной doc_Obj значение атрибута «Вложения».
+                            // Присваиваем переменной doc_Obj значение атрибута «Вложения».
                             if (data[id].TryGetValue("Vlozheniya", out object doc_Obj) && doc_Obj != null)
                             {
-    // Файлы из атрибута «Вложения» помещаем в массив doc_Array.
-    // Проверяем, что количество файлов больше 0.
+                                // Файлы из атрибута «Вложения» помещаем в массив doc_Array.
+                                // Проверяем, что количество файлов больше 0.
                                 var doc_Array = doc_Obj as object[];
                                 if(doc_Array.Length > 0)
                                 {
-    // Каждый файл в массиве doc_Array преобразуем в строку Base64
-    // и помещаем в архив fileInArchive.
+                                    // Каждый файл в массиве doc_Array преобразуем в строку Base64
+                                    // и помещаем в архив fileInArchive.
                                     foreach(var doc in doc_Array)
                                     {
                                         var documentData = Api.TeamNetwork.DocumentService.GetContent(doc.ToString());
@@ -116,7 +118,7 @@ kbId: 4921
                             }
                         }
                     }
-    // Помещаем поток с результирующим архивом в массив content.
+                    // Помещаем поток с результирующим архивом в массив content.
                     compressedBytes = resultStream.ToArray();
                 }
                 var memStream = new MemoryStream(compressedBytes);
@@ -125,19 +127,19 @@ kbId: 4921
     ```
     ``` cs title="Скрипт для скачивания архива с файлами — продолжение"
     {% endif %}
-    // Заполняем объект resulterr, который возвращает операция кнопки.
+                // Заполняем объект resulterr, который возвращает операция кнопки.
                 var resulterr = new UserCommandResult
                 {
                     Success = true,
                     Commited = true,
-    // Собираем файл архива с именем ZipedFiles.zip и содержимым из массива content.
-    // Этот файл скачает браузер после нажатия кнопки.
+                    // Собираем файл архива с именем ZipedFiles.zip и содержимым из массива content.
+                    // Этот файл скачает браузер после нажатия кнопки.
                     File = new UserCommandFileResult()
                     {
                         Content = content,
                         Name = "ZipedFiles.zip"
                         },
-    // Формируем сообщение об успешном выполнении операции кнопки.
+                    // Формируем сообщение об успешном выполнении операции кнопки.
                     Messages = new[]
                     {
                         new UserCommandMessage
@@ -149,7 +151,7 @@ kbId: 4921
                 };
                 return resulterr;
             }
-    // Обрабатываем любые ошибки
+            // Обрабатываем любые ошибки
             catch
             {
                 var resulterr = new UserCommandResult

@@ -1,0 +1,6 @@
+- Для того чтобы прикрепить к атрибуту типа «**Документ**» файл с помощью C#-скрипта, необходимо:
+    - сформировать словарь для документа, содержащий имя файла (`Title`) и расширение (`Extension`);
+    - создать поток (`Stream`) для прикрепления документа к атрибуту;
+    - преобразовать поток в документ для прикрепления к атрибуту с помощью метода `Comindware.TeamNetwork.Api.Services.DocumentService.CreateDocumentWithStream(Document document, string streamId, [string fileName])`;
+    - сформировать словарь, состоящий из системного имени атрибута и потока данных документа;
+    - прикрепить полученный документ к атрибуту с помощью метода `Comindware.TeamNetwork.Api.Services.ObjectService.EditWithAlias(string AttributeSystemName, Dictionary documentObject)`.

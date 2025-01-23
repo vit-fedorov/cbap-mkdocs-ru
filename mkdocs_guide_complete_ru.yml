@@ -354,6 +354,7 @@ nav:
   - Практические примеры:
     - examples/autonumerating_records.md
     - examples/download_document_archive_csharp.md
+    - examples/download_document_archive_related_record.md
     - examples/substring_search.md
     - examples/enum_attribute_value_calculation.md
     - examples/creating_gantt_chart.md

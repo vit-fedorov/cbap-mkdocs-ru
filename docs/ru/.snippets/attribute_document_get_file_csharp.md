@@ -12,5 +12,11 @@
         ```
         var attachedFile = Api.TeamNetwork.DocumentService.GetContent(attachedFileObject[0].ToString());
         ```
-    - получить имя файла `attachedFile.Name`;
-    - получить содержимое файла (`attachedFile.Data`).
+    - получить имя файла с расширением `attachedFile.Name`;
+    - получить содержимое файла (`attachedFile.Data`);
+    - при необходимости получить объект с метаданными документа:
+        ```
+        var attachedFile = Api.TeamNetwork.DocumentService.GetDocument(attachedFileObject[0].ToString());
+        ```
+        - `attachedFile.Title` — имя файла с расширением;
+        - `attachedFile.Extension` — расширение файла.

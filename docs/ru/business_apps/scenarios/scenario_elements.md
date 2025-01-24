@@ -347,50 +347,6 @@ _![Настройка действия «Проверить результат �
 
 _![Пример сообщения действия «Проверить результат скрипта» в цепочке событий](img/scenario_verify_expression_csharp_event_chain_message.png)_
 
-##### Пример использования действия «Проверить результат скрипта»
-
-Имеется шаблон _«Заявки»_. В нём есть текстовый атрибут _«Комментарий»_ (_Comment_) и логический атрибут _«Заявка заполнена»_ (_RequireFilled_). Требуется настроить проверку данных и заполнение значения атрибута с помощью действия сценария «Проверить результат скрипта».
-
-1. Создайте новый сценарий «Заполнение заявок».
-2. Настройте его начальное событие.
-3. Добавьте действие «**Проверить результат скрипта**» со следующими свойствами:
-
-    - 
-
-    ``` cs
-    using System; 
-    using System.Collections.Generic;
-    using System.Linq;
-    using Comindware.Data.Entity;
-    using Comindware.TeamNetwork.Api.Data.UserCommands;
-    using Comindware.TeamNetwork.Api.Data;
-
-    class Script
-    {
-        public static bool Main(Object FullObjectId)
-        { 
-            var ObjectId = FullObjectId.ToString().Replace("user.", "");
-            var data = Api.TeamNetwork.ObjectService.GetPropertyValues(new []{ObjectId}, new []{"Comment"});
-            var dataLog = data[ObjectId].TryGetValue("Comment", out object OutputRecordArray) && OutputRecordArray != null ? OutputRecordArray as string : null; 
-                                                                    
-            if(dataLog != null)
-            {        
-             	var Dict = new Dictionary<string,object>
-                {
-                    { "Проверкапройдена", true }
-                }; 
-                Api.TeamNetwork.ObjectService.EditWithAlias(ObjectId, Dict);
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-    }
-    ```
-
 #### Выполнить по условиям {: .pageBreakBefore }
 
 Это действие выполняет вложенные в него блоки действий по заданным условиям.

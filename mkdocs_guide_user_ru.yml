@@ -291,7 +291,10 @@ nav:
       - architect/organizational_structure_modeling/deleting_organizational_unit.md
   - Практические примеры:
     - examples/autonumerating_records.md
-    - examples/download_document_archive_csharp.md
+    - examples/document_clone_scenario_n3.md
+    - examples/document_download_archive_csharp.md
+    - examples/document_download_archive_related_record_csharp.md
+    - examples/document_download_to_server_csharp.md
     - examples/substring_search.md
     - examples/enum_attribute_value_calculation.md
     - examples/script_using_local_variable.md

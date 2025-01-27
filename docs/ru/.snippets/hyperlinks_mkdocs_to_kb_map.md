@@ -128,6 +128,8 @@
 
 [backup]: {{ kbArticleURLPrefix }}4642
 
+[backup_configure]: {{ kbArticleURLPrefix }}5082
+
 [changelog]: {{ kbArticleURLPrefix }}4589
 
 [collabora_connection]: {{ kbArticleURLPrefix }}4688

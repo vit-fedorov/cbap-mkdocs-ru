@@ -109,6 +109,7 @@ nav:
         - administration/connections_communication_routes/message_queue_connections/kafka_connection.md
     - Резервное копирование и восстановление:
       - administration/backup/index.md
+    - administration/backup/configure.md
       - Инструкции для Linux: backup/linux/linux/*
       - Инструкции для Windows: backup/linux/windows/*
 - Моделирование корпоративной-архитектуры:

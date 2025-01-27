@@ -51,6 +51,7 @@ nav:
       - administration/deploy/linux/auxiliary_software_deploy/zabbix_server_deploy.md
   - Резервное копирование и восстановление:
     - administration/backup/index.md
+    - administration/backup/configure.md
     - administration/backup/linux/complete_running_instance_backup.md
     - administration/backup/linux/db_move_manually.md
     - administration/backup/linux/restore_cdbbz.md

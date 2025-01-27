@@ -42,6 +42,7 @@ nav:
       - administration/deploy/windows/auxiliary_software_deploy/kafka_install_windows.md
   - Резервное копирование и восстановление:
     - administration/backup/index.md
+    - administration/backup/configure.md
     - administration/backup/windows/restore_windows.md
     - administration/backup/windows/backup_restore_windows.md
     - administration/backup/windows/db_move_manual_windows.md

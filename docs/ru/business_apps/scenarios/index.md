@@ -75,7 +75,7 @@ kbId: 4717
     - _[Проверка результата выражения в сценарии][scenario_actions_validate_expression]_
     - _[Проверка результата скрипта в сценарии][scenario_actions_validate_csharp]_
 - Создание, дублирование и изменение записей
-    - _[Копирование записи вместе с прикреплённым документом][attribute_document_clone_scenario]_
+    - _[Копирование записи вместе с прикреплённым документом][example_document_clone_scenario_n3]_
 
 ## Использование списка сценариев и создание сценария {: .pageBreakBefore }
 

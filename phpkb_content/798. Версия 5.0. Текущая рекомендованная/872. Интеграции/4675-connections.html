@@ -1,24 +1,108 @@
-<h1>Подключения. Определения, типы, создание, настройка, удаление</h1><div class="md-container" data-md-component="container">
-<div class="md-main__inner md-grid"><nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<h1>Подключения. Определения, типы, создание, настройка, удаление</h1><div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4675">
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
 <div class="mce-toc">
-<h2 class="toc-heading">Содержание</h2>
+<h2 class="toc-heading">
+      Содержание
+      </h2>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#definitions"> <span class="md-ellipsis"> Определения </span> </a></li>
-<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#типы-подключений"> <span class="md-ellipsis"> Типы подключений </span> </a><nav aria-label="Типы подключений" class="md-nav">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#definitions">
+<span class="md-ellipsis">
+      Определения
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#типы-подключений">
+<span class="md-ellipsis">
+      Типы подключений
+    </span>
+</a>
+<nav aria-label="Типы подключений" class="md-nav">
 <ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#системные-подключения"> <span class="md-ellipsis"> Системные подключения </span> </a></li>
-<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#аутентификация"> <span class="md-ellipsis"> Аутентификация </span> </a></li>
-<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#подключения-к-офисным-приложениям"> <span class="md-ellipsis"> Подключения к офисным приложениям </span> </a></li>
-<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#подключения-к-электронной-почте"> <span class="md-ellipsis"> Подключения к электронной почте </span> </a></li>
-<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#подключения-rest-и-odata"> <span class="md-ellipsis"> Подключения REST и OData </span> </a></li>
-<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#подключения-к-шине-сообщений"> <span class="md-ellipsis"> Подключения к шине сообщений </span> </a></li>
-<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#sql-подключения"> <span class="md-ellipsis"> SQL-подключения </span> </a></li>
-<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#пользовательские-подключения"> <span class="md-ellipsis"> Пользовательские подключения </span> </a></li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#системные-подключения">
+<span class="md-ellipsis">
+      Системные подключения
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#аутентификация">
+<span class="md-ellipsis">
+      Аутентификация
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#подключения-к-офисным-приложениям">
+<span class="md-ellipsis">
+      Подключения к офисным приложениям
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#подключения-к-электронной-почте">
+<span class="md-ellipsis">
+      Подключения к электронной почте
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#подключения-rest-и-odata">
+<span class="md-ellipsis">
+      Подключения REST и OData
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#подключения-к-шине-сообщений">
+<span class="md-ellipsis">
+      Подключения к шине сообщений
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#sql-подключения">
+<span class="md-ellipsis">
+      SQL-подключения
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#пользовательские-подключения">
+<span class="md-ellipsis">
+      Пользовательские подключения
+    </span>
+</a>
+</li>
 </ul>
-</nav></li>
-<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#просмотр-списка-подключений-и-настройка-подключения"> <span class="md-ellipsis"> Просмотр списка подключений и настройка подключения </span> </a></li>
-<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#connections_delete"> <span class="md-ellipsis"> Удаление подключения </span> </a></li>
-<li class="md-nav__item"><a class="md-nav__link mkdocs_imported_link" href="#связанные-статьи"> <span class="md-ellipsis"> Связанные статьи </span> </a></li>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#просмотр-списка-подключений-и-настройка-подключения">
+<span class="md-ellipsis">
+      Просмотр списка подключений и настройка подключения
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#connections_delete">
+<span class="md-ellipsis">
+      Удаление подключения
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#связанные-статьи">
+<span class="md-ellipsis">
+      Связанные статьи
+    </span>
+</a>
+</li>
 </ul>
 </div>
 </nav>
@@ -87,8 +171,8 @@
 </ul>
 <h3 id="пользовательские-подключения">Пользовательские подключения</h3>
 <ul>
-<li>Отправка сообщений в систему «СФЕРА Курьер»</li>
-<li>Получение сообщений из системы «СФЕРА Курьер»</li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5062">Отправка сообщений в «СФЕРА Курьер»</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5061">Получение сообщений из «СФЕРА Курьер»</a></li>
 </ul>
 <div class="notice notice-info">
 <p class="admonition-title">Примечание</p>
@@ -96,7 +180,7 @@
 </div>
 <h2 id="просмотр-списка-подключений-и-настройка-подключения">Просмотр списка подключений и настройка подключения</h2>
 <ol class="colored_numbers_list">
-<li>На странице <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4661">«<strong>Администрирование</strong>» – «<strong>Инфраструктура</strong>»</a> выберите пункт «<strong>Подключения</strong>» <em class="fal fa-exchange-alt">‌<!--icon--></em>.</li>
+<li>На странице <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4661">«<strong>Администрирование</strong>» – «<strong>Инфраструктура</strong>»</a> выберите пункт «<strong>Подключения</strong>» <i class="fal fa-exchange-alt">‌<!--icon--></i>.</li>
 <li>
 <p>Отобразится <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4675">список подключений</a> со следующими сведениями:</p>
 <ul>
@@ -114,8 +198,7 @@
 <li>Сохраните подключение.</li>
 </ol>
 <figure class="screenshot_with_caption">
-<p><img alt="Список подключений" src="https://kb.comindware.ru/assets/connection_list.png"/></p>
-<figcaption class="caption">Список подключений</figcaption>
+<p><img alt="Список подключений" src="/platform/v5.0/administration/connections_communication_routes/img/connection_list.png"/><figcaption class="caption">Список подключений</figcaption></p>
 </figure>
 <h2 id="connections_delete">Удаление подключения</h2>
 <ol class="colored_numbers_list">
@@ -123,10 +206,22 @@
 <li>Нажмите кнопку «<strong>Удалить</strong>».</li>
 <li>Подтвердите удаление.</li>
 </ol>
+<div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4676">Пути передачи данных. Определения, типы, создание, настройка, удаление</a></strong></p>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/category.php?id=875">Примеры интеграций</a></strong></p>
+<ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4676">Пути передачи данных. Определения, типы, создание, настройка, удаление</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/category.php?id=875">Примеры интеграций</a></em></li>
+</ul>
+</div>
 </article>
 </div>
 </div>
-<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#"> <em class="fa-light fa-arrow-up">‌<!--icon--></em> К началу </a></div>
+<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#">
+<i class="fa-light fa-arrow-up">‌<!--icon--></i>
+            К началу
+          </a>
+</main>
+</div>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></div>

@@ -12,6 +12,7 @@ extra:
   adminGuideLinux: True
   adminGuideWindows: False
   userGuide: False
+  tutorial: False
   completeGuide: False
 
 nav:
@@ -21,6 +22,7 @@ nav:
   - Развёртывание ПО:
     - administration/deploy/system_requirements.md
     - administration/deploy/architecture_landscape.md
+    - administration/deploy/availability_fault_tolerance.md
     - administration/deploy/security.md
     - administration/deploy/logging_engine.md
     - administration/deploy/log_files_event_examples.md
@@ -28,6 +30,7 @@ nav:
     - Установка и запуск Comindware Business Application Platform: administration/deploy/linux/deploy_guide.md
     - administration/deploy/linux/configuration_files.md
     - administration/deploy/linux/db_migrate_4.2_to_4.7.md
+    # - administration/deploy/linux/deploy_cluster.md
     - administration/deploy/linux/uninstall_auxiliary_software.md
     - administration/deploy/linux/upgrade_version.md
     - administration/deploy/linux/upload_size_limit_configure.md
@@ -39,6 +42,7 @@ nav:
       - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_deploy_linux.md
       - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_cluster_deploy_no_certificates.md
       - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_ssl_certificate_configure.md
+      - administration/deploy/linux/auxiliary_software_deploy/kafka_deploy_linux.md
       - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_deploy.md
       - administration/deploy/linux/auxiliary_software_deploy/nginx_deploy.md
       - administration/deploy/linux/auxiliary_software_deploy/nginx_geoip_deploy.md
@@ -47,6 +51,7 @@ nav:
       - administration/deploy/linux/auxiliary_software_deploy/zabbix_server_deploy.md
   - Резервное копирование и восстановление:
     - administration/backup/index.md
+    - administration/backup/configure.md
     - administration/backup/linux/complete_running_instance_backup.md
     - administration/backup/linux/db_move_manually.md
     - administration/backup/linux/restore_cdbbz.md
@@ -109,6 +114,7 @@ nav:
         - administration/connections_communication_routes/rest_odata_connections/odata_connection.md
         - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
+        - administration/connections_communication_routes/rest_odata_connections/http_send_post.md
         - administration/connections_communication_routes/rest_odata_connections/http_send_file.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
         - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
@@ -148,13 +154,10 @@ nav:
       - business_apps/version_control/index.md
       - business_apps/version_control/manual_version_control.md
       - business_apps/version_control/git_version_control.md
+      - business_apps/version_control/excel_version_control.md
   - Обзор версий:
     - general/changelog/changelog.md
-    - general/changelog/release_notes_4.7.3084.md
-    - general/changelog/release_notes_4.7.3023.md
-    - general/changelog/release_notes_4.7.2902.md
-    - general/changelog/release_notes_4.7.2721.md
-    - general/changelog/release_notes_4.7.2285.md
+    - general/changelog/release_notes_5.0.md
 
 
 exclude_docs: |
@@ -184,12 +187,7 @@ exclude_docs: |
   business_apps/templates/buttons/**
   business_apps/templates/cards/**
   business_apps/templates/export_templates/**
-  business_apps/templates/forms/index.md
-  business_apps/templates/forms/discussion_configure.md
-  business_apps/templates/forms/form_access_control.md
-  business_apps/templates/forms/form_dynamic_elements.md
-  business_apps/templates/forms/form_rules.md
-  business_apps/templates/forms/form_static_elements.md
+  business_apps/templates/forms/**
   business_apps/templates/tables/table_configure.md
   devops_wiki/**
   examples/**

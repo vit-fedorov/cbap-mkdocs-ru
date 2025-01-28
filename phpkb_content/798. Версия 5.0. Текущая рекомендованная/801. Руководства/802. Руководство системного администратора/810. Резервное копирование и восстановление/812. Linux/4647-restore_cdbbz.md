@@ -7,124 +7,217 @@ kbId: 4647
 
 ## Введение
 
-Здесь представлены инструкции по восстановлению на чистом экземпляре ПО **{{ productName }}** под управлением ОС Linux базы данных из файла резервной копии с расширением `.CDBBZ`, созданного с помощью встроенной в ПО функции «**Резервное копирование** ». См. *«[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]»*.
+Здесь представлены инструкции по восстановлению базы данных **{{ productName }}** для следующего сценария:
 
-См. также инструкции по полному резервному копированию и восстановлению базы данных внешними средствами:
+- используется ранее настроенный экземпляр ПО **{{ productName }}** под управлением ОС Linux;
+- имеется файл резервной копии базы данных с расширением `.CDBBZ`;
+- резервная копия создана с помощью встроенной в ПО функции «**Резервное копирование**» (см. *«[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]»*);
+- индексы Elasticsearch (OpenSearch) восстанавливаются отдельно от восстановления базы данных экземпляра ПО.
 
-- *[Создание полной резервной копии (базы данных, вложенных файлов и журналов) без остановки экземпляра ПО][complete_running_instance_backup]*
-- *[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии][restore_complete_backup]*
+Прежде чем приступать к восстановлению экземпляра ПО **{{ productName }}** из резервной копии, ознакомьтесь с видеороликом и инструкциями, представленными ниже.
+
+### Видеоинструкция
 
 ## Восстановление базы данных и скриптов
 
 1. Перейдите в режим суперпользователя:
 
-```
-su -
-```
+````
+sudo -s
 
+````
 или
 
-```
-sudo -i
-```
-2. Разверните чистый экземпляр ПО {{ productName }} *без демонстрационной базы данных* (с параметром `-d=clear`). См. «[**Развертывание {{ productName }}**](https://kb.comindware.ru/category.php?id=807)». Например:
+````
+su -
 
-```
-sh install.sh -k -p [-i=<instanceName>] [-e] -d=clear [-u=www-data] [-g=www-data]
-```
+````
+2. Остановите службы экземпляра ПО (где `<instanceName>` — имя экземпляра ПО):
 
-Скрипт `install.sh` поддерживает следующие ключи:
+````
+systemctl stop comindware<instanceName>
+systemctl stop apigateway<instanceName>
 
-    - `k` — установить ПО Kafka;
-    - `e` — установить ПО {{ productName }}
-    - `p` — установить ПО Comindware Bus{{ productName }}
-    - `d=clear` *— создать экземпляр П{{ productName }}rm без демонстрационной базы данных;*
-    - `d=demo` — создать экземпляр ПО {{ productName }} c демонстрационной базой данных (не обязательный ключ по умолчанию);
-    - `u` — пользователь (необязательный ключ);
-    - `g` — группа (необязательный ключ);
-    - `h` — вызов краткой справки по использованию скрипта (этот ключ следует указывать без остальных ключей);
-    - `kh=hostname` — использовать указанный хост для подключения к ПО Kafka (необязательный ключ);
-    - `kp=portnumber` — использовать указанный порт для подключения к ПО Kafka (необязательный ключ);
-    - `i=<instanceName>` — создать экземпляр ПО с указанным именем (необязательный ключ). Имя экземпляра п{{ productName }}
-3. Инициализируйте экземпляр ПО. См. *«[Развертывание](https://kb.comindware.ru/category.php?id=807)*[*{{ productName }}*](https://kb.comindware.ru/category.php?id=807)*»*.
-4. Остановите сервисы NGINX и comindware`<instanceName>` (где `<instanceName>` — имя экземпляра ПО) и удостоверьтесь, что они остановлены:
+````
+````
+ps -fax | grep <instanceName> | grep Agent
+kill -9 $(ps -eo pid,args | grep <instanceName> | grep Agent | awk {'print $1'})
+#или
+systemctl stop adapterhost<instanceName>
 
-```
-systemctl stop nginx comindware<instanceName>
-systemctl status nginx comindware<instanceName>
-```
-5. Распакуйте архив резервной копии в каталог `/var/lib/comindware/<instanceName>/`:
+````
+3. С помощью команды `systemctl status <serviceName>` удостоверьтесь, что службы остановлены.
+4. Перейдите в директорию с резервной копией, например `/home/<user>`
 
-```
-unzip /tmp/BackupFileName.202302161625.cdbbz -d /var/lib/comindware/<instanceName>/
-```
-6. Если в папке резервной копии (`/var/lib/comindware/<instanceName>/`) имеется каталог `Ignite`, переименуйте его в `Database`:
+````
+cd /home/<user>
 
-```
-cd /var/lib/comindware/<instanceName>/
+````
+5. Создайте временную директорию для распакованной резервной копии (например, `tmp`):
+
+````
+mkdir tmp
+
+````
+6. Распакуйте архив резервной копии в директорию `tmp`:
+
+````
+unzip -q <backupName>.cdbbz -d tmp/
+
+````
+7. Перейдите в директорию `tmp` и просмотрите её содержимое:
+
+````
+cd tmp
+ls
+
+````
+8. После распаковки архива в директории быть 3 директории: `Database`, `Scripts`, `Streams`.
+
+Примечание
+
+Если в распакованной резервной копии имеется директория `Ignite` вместо `Database`, переименуйте её в `Database`:
+
+````
 mv Ignite Database
-```
-7. Перенесите каталог `Scripts` резервной копии в каталог `Database`:
 
-```
-mv Scripts /var/lib/comindware/<instanceName>/Database/
-```
-8. Назначьте перенесённым каталогам права `rwxrw-rw-`:
+````
+9. Для восстановления резервной копии используйте следующие параметры из YML-файла конфигурации экземпляра ПО `/usr/share/comindware/configs/instance/<instanceName>.yml`:
 
-```
-chmod -R 766 /var/lib/comindware/<instanceName>
-```
-9. Назначьте перенесенным каталогам владельца:
+`databasePath: <path/to/Database>` — путь к директории базы данных;
+`userStorage.localDisk.path: <path/to/Streams>` — путь к директории пользовательских файлов;
 
-**Astra Linux, Ubuntu, Rocky**
+Просмотрите откройте файл конфигурации с помощью следующей команды:
 
-```
-chown -R www-data:www-data /var/lib/comindware/<instanceName>
-```
+````
+cat /usr/share/comindware/configs/instance/<instanceName>.yml
 
-**Альт Сервер**
+````
+10. Убедитесь в наличии директорий `<path/to/Database>` и `<path/to/Streams>`:
 
-```
-chown -R _nginx:_nginx /var/lib/comindware/<instanceName>
-```
+````
+ls -lh `<path/to/Database>`
+ls -lh `<path/to/Streams>`
+
+````
+    - Если папки отсутствуют, создайте их:
+    
+    
+    ````
+    mkdir -p `<path/to/Database>`
+    mkdir -p `<path/to/Streams>`
+    
+    ````
+11. Перейдите в директорию распакованной резервной копии (например, `/home/<user>/temp/`).
+12. Переместите директорию `Scripts` в `Database`:
+
+````
+mv Scripts Database
+
+````
+13. Переместите содержимое резервной копии в директории экземпляра ПО:
+
+````
+mv Database/* <path/to/Database>
+mv Streams/* <path/to/Streams>
+
+````
+14. Назначьте перенесённым директориям права `rwxrw-rw-`:
+
+````
+chmod -R 766 <path/to/Database/folder> <path/to/Streams> /var/lib/comindware/<instanceName>
+
+````
+15. Назначьте перенесенным директориям владельца:
+
+````
+chown -R <User>:<Group> <path/to/database/folder> <path/to/streams/folder> /var/lib/comindware/<instanceName>
+
+````
+Здесь `<User>`, `<Group>` — значения соответствующих параметров из файла `/usr/lib/systemd/system/comindware<instanceName>.service`
+16. Если в файле конфигурации экземпляра ПО отсутствует параметр `nodeName` (имя узла экземпляра ПО), добавьте его:
+
+    - Откройте файл конфигурации для редактирования:
+     ````
+    nano /usr/share/comindware/configs/instance/<instanceName>.yml
+    
+    ````
+    - Добавьте директиву:
+    
+    
+    ````
+    nodeName: <instanceName>
+    
+    ````
+17. При необходимости [восстановите индексы Elasticsearch](#восстановление-индексов-elasticsearch-из-файла-резервной-копии-репозитория) из резервной копии.
+18. Запустите службы экземпляра ПО и проверьте их статус:
+
+````
+systemctl start comindware<instanceName>
+systemctl start apigateway<instanceName>
+systemctl start adapterhost<instanceName>
+
+````
+````
+systemctl status comindware<instanceName>
+systemctl status apigateway<instanceName>
+systemctl status adapterhost<instanceName>
+
+````
+19. Откройте веб-сайт экземпляра ПО.
+20. Дождитесь инициализации экземпляра ПО. Этот процесс может занять некоторое время. Может потребоваться обновить страницу браузера. См. *«[Инициализация {{ productName }}][deploy_guide_linux_initialize]»*.
+21. Удостоверьтесь, что все данные из резервной копии восстановлены.
+22. Проверьте и исправьте конфигурацию экземпляра ПО. См. *«[Проверка и настройка конфигурации экземпляра ПО {{ productName }} после восстановления из резервной копии][restore_test_configure]»*.
+23. Удалите временную директорию с распакованной резервной копией:
+
+````
+rm -r /home/<user>/tmp
+
+````
 
 ## Восстановление индексов Elasticsearch из файла резервной копии репозитория
 
 1. Остановите службу Elasticsearch и удостоверьтесь, что она остановлена:
 
-```
+````
 systemctl stop elasticsearch
 systemctl status elasticsearch
-```
-2. Создайте папку репозитория Elasticsearch (например, `/var/www/backups/elasticsearch/`) и перенесите в неё файлы из каталога `History` ранее [распакованной резервной копии](#unpack_backup):
 
-```
+````
+2. Создайте папку репозитория Elasticsearch (например, `/var/www/backups/elasticsearch/`) и перенесите в неё файлы из каталога `History` ранее [распакованной резервной копии](#unpack_backup):
+
+````
 mkdir /var/www/backups/elasticsearch/
 mv /var/lib/comindware/<instanceName>/History/* /var/www/backups/elasticsearch/
-```
+
+````
 3. Назначьте папке репозитория и её содержимому права `rwxr-xr-x`:
 
-```
+````
 chmod -R 755 /var/www/backups/
-```
+
+````
 4. Назначьте владельца `elasticsearch` папке репозитория и её содержимому:
 
-```
+````
 chown -R elasticsearch:elasticsearch /var/www/backups/
-```
+
+````
 5. В файле конфигурации `/etc/elasticsearch/elasticsearch.yml` укажите путь к созданному репозиторию:
 
-```
+````
 path.repo: /var/www/backups/elasticsearch
-```
+
+````
 6. Запустите службу Elasticsearch:
 
-```
+````
 systemctl start elasticsearch.service
-```
+
+````
 7. Зарегистрируйте репозиторий (например, `repostory_backup`) с резервной копией снимка Elasticsearch:
 
-```
+````
 curl -X PUT "localhost:9200/_snapshot/repostory_backup?pretty" -H ’Content-Type: application/json’ -d’
 {
 "type": "fs",
@@ -132,9 +225,8 @@ curl -X PUT "localhost:9200/_snapshot/repostory_backup?pretty" -H ’Content-Typ
             "location": "/var/www/backups/elasticsearch"
             }
 }
-```
 
- 
+````
 
 Примечание
 
@@ -147,50 +239,38 @@ curl -X PUT "localhost:9200/_snapshot/repostory_backup?pretty" -H ’Content-Typ
 Префикс индекса задаётся в [свойствах подключения к Elasticsearch][elasticsearch_connection], используемого по умолчанию.
 8. Проверьте содержимое зарегистрированного репозитория:
 
-```
+````
 curl -X GET "localhost:9200/_cat/snapshots/repostory_backup?pretty"
-```
+
+````
 9. Восстановите снимок Elasticsearch:
 
-```
+````
 curl -X POST "localhost:9200/_snapshot/repostory_backup/backupSession123/_restore?pretty"
-```
 
+````
     - В качестве репозитория укажите имя репозитория, созданного на шаге 7, или префикс индекса Elasticsearch (см. [примечание](#s3_repository) выше).
-    - В качестве имени снимка укажите идентификатор резервной копии **без точки перед номером** (например, `backupSession.123` указывайте как `backupSession123`) со страницы [«Администрирование» – «Инфраструктура» – «Резервное копирование» – «Журнал»][backup].
+    - В качестве имени снимка укажите идентификатор резервной копии **без точки перед номером** (например, `backupSession.123` указывайте как `backupSession123`) со страницы [«Администрирование» – «Инфраструктура» – «Резервное копирование» – «Журнал»][backup].
 10. Проверьте наличие индексов в восстановленном каталоге:
 
-```
+````
 curl -X GET "localhost:9200/_cat/indices?pretty"
-```
 
-## Запуск и проверка конфигурации экземпляра ПО
-
-1. Запустите необходимые службы и проверьте их статус:
-
-```
-systemctl start nginx comindware<instanceName>
-systemctl status nginx comindware<instanceName>
-```
-2. Откройте веб-сайт экземпляра ПО.
-3. Дождитесь инициализации экземпляра ПО. Этот процесс может занять некоторое время. Может потребоваться обновить страницу браузера.
-4. Удостоверьтесь, что все данные из резервной копии восстановлены.
-5. Проверьте и исправьте конфигурацию экземпляра. См. *«[Проверка и настройка конфигурации экземпляра ПО {{ productName }} после восстановления из резервной копии][restore_test_configure]».*
+````
 
 --8<-- "related_topics_heading.md"
 
-**[Создание полной резервной копии (базы данных, вложенных файлов и журналов) без остановки экземпляра ПО][complete_running_instance_backup]**
+- *[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]*
+- *[Установка, запуск, инициализация и остановка ПО][deploy_guide_linux]*
+- *[Пути и содержимое директорий экземпляра ПО][paths]*
+- *[Проверка и настройка конфигурации экземпляра ПО {{ productName }} после восстановления из резервной копии][restore_test_configure]*
+- *[Регистрация репозитория Elasticsearch (официальное руководство, английский язык)](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-filesystem-repository.html)*
+- *[Восстановление снимка Elasticsearch (официальное руководство, английский язык)](https://www.elastic.co/guide/en/elasticsearch/reference/current/restore-snapshot-api.html)*
+- *[Elasticsearch. Настройка подключения][elasticsearch_connection]*
+- *[Создание полной резервной копии (базы данных, вложенных файлов и журналов) без остановки экземпляра ПО][complete_running_instance_backup]*
+- *[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии][restore_complete_backup]*
 
-**[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии][restore_complete_backup]**
-
-**[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]**
-
-**[Установка и запуск {{ productName }}][deploy_guide_linux]**
-
-**[Регистрация репозитория Elasticsearch (официальное руководство, английский язык)](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-filesystem-repository.html)**
-
-**[Восстановление снимка Elasticsearch (официальное руководство, английский язык)](https://www.elastic.co/guide/en/elasticsearch/reference/current/restore-snapshot-api.html)**
-
-**[Elasticsearch. Настройка подключения][elasticsearch_connection]**
+[*‌*
+ К началу](#)
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -12,6 +12,7 @@ extra:
   adminGuideWindows: True
   adminGuideLinux: False
   userGuide: False
+  tutorial: False
   completeGuide: False
 
 nav:
@@ -21,6 +22,7 @@ nav:
   - Развёртывание ПО:
     - administration/deploy/system_requirements.md
     - administration/deploy/architecture_landscape.md
+    - administration/deploy/availability_fault_tolerance.md
     - administration/deploy/security.md
     - administration/deploy/windows/deploy_guide.md
     - administration/deploy/paths.md
@@ -40,6 +42,7 @@ nav:
       - administration/deploy/windows/auxiliary_software_deploy/kafka_install_windows.md
   - Резервное копирование и восстановление:
     - administration/backup/index.md
+    - administration/backup/configure.md
     - administration/backup/windows/restore_windows.md
     - administration/backup/windows/backup_restore_windows.md
     - administration/backup/windows/db_move_manual_windows.md
@@ -101,6 +104,7 @@ nav:
           - administration/connections_communication_routes/rest_odata_connections/odata_connection.md
           - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
           - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
+          - administration/connections_communication_routes/rest_odata_connections/http_send_post.md
           - administration/connections_communication_routes/rest_odata_connections/http_send_file.md
           - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
           - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
@@ -140,11 +144,10 @@ nav:
       - business_apps/version_control/index.md
       - business_apps/version_control/manual_version_control.md
       - business_apps/version_control/git_version_control.md
+      - business_apps/version_control/excel_version_control.md
   - Обзор версий:
     - general/changelog/changelog.md
-    - general/changelog/release_notes_4.7.2902.md
-    - general/changelog/release_notes_4.7.2721.md
-    - general/changelog/release_notes_4.7.2285.md
+    - general/changelog/release_notes_5.0.md
 
 
 exclude_docs: |
@@ -178,12 +181,7 @@ exclude_docs: |
   business_apps/templates/buttons/**
   business_apps/templates/cards/**
   business_apps/templates/export_templates/**
-  business_apps/templates/forms/index.md
-  business_apps/templates/forms/discussion_configure.md
-  business_apps/templates/forms/form_access_control.md
-  business_apps/templates/forms/form_dynamic_elements.md
-  business_apps/templates/forms/form_rules.md
-  business_apps/templates/forms/form_static_elements.md
+  business_apps/templates/forms/**
   business_apps/templates/tables/table_configure.md
   business_apps/templates/template_types/article-2110-Шаблон аккаунта. Использование.md
   devops_wiki/**

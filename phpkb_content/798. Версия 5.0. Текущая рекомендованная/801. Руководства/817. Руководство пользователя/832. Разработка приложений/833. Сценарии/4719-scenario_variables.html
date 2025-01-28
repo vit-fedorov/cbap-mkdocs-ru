@@ -1,4 +1,5 @@
-<h1>Переменные в сценарии. Определения, настройка и использование</h1><div class="md-container" data-md-component="container">
+<h1>Переменные в сценарии. Определения, настройка и использование</h1><div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr">
+<div class="md-container" data-md-component="container">
 <div class="md-main__inner md-grid"><nav aria-label="Содержание" class="md-nav md-nav--secondary">
 <div class="mce-toc">
 <h2 class="toc-heading">Содержание</h2>
@@ -25,7 +26,7 @@
 <p>Переменные в сценарии аналогичны атрибутам, но не привязаны к какому-либо шаблону.</p>
 <p>В сценариях можно обращаться к <a class="mkdocs_imported_link" href="#системные-переменные">системным переменным</a>, <a class="mkdocs_imported_link" href="#локальные-переменные-сценария">локальным переменным сценария</a> и <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4804">переменным приложения</a>.</p>
 </div>
-<h2 id="системные-переменные">Системные переменные</h2>
+<h2 class="pageBreakBefore" id="системные-переменные">Системные переменные</h2>
 <p>Системные переменные в сценарии инициализируются при его срабатывании.</p>
 <p>Вне сценария системные переменные могут иметь другие значения и могут быть недоступны.</p>
 <p>Предусмотрены следующие системные переменные:</p>
@@ -49,7 +50,7 @@
 <li><code>timeZoneOffset</code> — смещение часового пояса сервера в минутах, тип данных — «<strong>Длительность</strong>».</li>
 <li><code>requestTime</code> — текущее время, тип данных «<strong>Дата и время</strong>».</li>
 </ul>
-<h2 id="локальные-переменные-сценария">Локальные переменные сценария</h2>
+<h2 class="pageBreakBefore" id="локальные-переменные-сценария">Локальные переменные сценария</h2>
 <p>Локальные переменные сценария инициализируются с помощью действий сценария.</p>
 <p>Локальные переменные сценария доступны только во время его работы, обратиться к ним вне сценария нельзя.</p>
 <p>В сценариях предусмотрены следующие локальные переменные:</p>
@@ -70,7 +71,7 @@
 <li>В таблице отобразится дочерняя переменная.</li>
 </ul>
 </div>
-<h2 id="использование-переменных-в-формулах-и-выражениях-n3">Использование переменных в формулах и выражениях N3</h2>
+<h2 class="pageBreakBefore" id="использование-переменных-в-формулах-и-выражениях-n3">Использование переменных в формулах и выражениях N3</h2>
 <p>Чтобы обратиться к переменной в формуле, укажите её системное имя с префиксом <code>$$</code>.</p>
 <p>Например, чтобы присвоить атрибуту значение ID процесса, связанного с шаблоном записи, используйте формулу:</p>
 <div class="highlight"><code><code></code></code>
@@ -81,7 +82,7 @@
 <div class="highlight"><code><code></code></code>
 <pre><code><span class="c"># Импортируем функции для работы с переменными</span></code><br/><code><span class="k">@prefix</span> <span class="nn">variable:</span> <span class="nv">&lt;http://comindware.com/ontology/session/variable#&gt;</span><span class="p">.</span></code><br/><code><span class="k">@prefix</span> <span class="nn">session:</span> <span class="nv">&lt;http://comindware.com/ontology/session#&gt;</span><span class="p">.</span></code><br/><code><span class="k">@prefix</span> <span class="nn">string:</span> <span class="nv">&lt;http://www.w3.org/2000/10/swap/string#&gt;</span><span class="p">.</span></code><br/><code><span class="k">@prefix</span> <span class="nn">cmwstring:</span> <span class="nv">&lt;http://comindware.com/logics/string#&gt;</span><span class="p">.</span></code><br/><code></code><br/><code><span class="p">{</span></code><br/><code>    <span class="c"># Находим значение системной переменной ProcessObject</span></code><br/><code>    <span class="c"># и помещаем его в ?ProcessObject.</span></code><br/><code>    <span class="nn">session</span><span class="p">:</span><span class="nt">context</span> <span class="nn">variable</span><span class="p">:</span><span class="nt">ProcessObject</span> <span class="err">?ProcessObject</span><span class="p">.</span></code><br/><code>    <span class="c"># Форматируем ?ProcessObject в строку и помещаем в ?FullId.</span></code><br/><code>    <span class="p">(</span><span class="s">"{0}"</span> <span class="err">?ProcessObject</span><span class="p">)</span> <span class="nn">string</span><span class="p">:</span><span class="nt">format</span> <span class="err">?FullId</span><span class="p">.</span></code><br/><code>    <span class="c"># Обрезаем префикс "user." и помещаем ID процесса в атрибут.</span></code><br/><code>    <span class="p">(</span><span class="err">?FullId</span> <span class="mi">5</span><span class="p">)</span> <span class="nn">cmwstring</span><span class="p">:</span><span class="nt">substring</span> <span class="err">?value</span><span class="p">.</span></code><br/><code><span class="p">}</span></code></pre>
 </div>
-<h2 id="практический-пример">Практический пример</h2>
+<h2 class="pageBreakBefore" id="практический-пример">Практический пример</h2>
 <p>Настроим сценарий для массовой корректировки записей в табеле трудозатрат с использованием локальных переменных кнопки.</p>
 <ol class="colored_numbers_list">
 <li>Создайте шаблон записи <em>«Трудозатраты»</em> с атрибутом <em>«Затраченное время»</em> типа <strong>«Длительность»</strong>.</li>
@@ -147,9 +148,12 @@
 </ul>
 </li>
 <li>
-<p>Добавьте действие «<strong>Изменить значения атрибутов</strong>» внутрь действия «<strong>Сменить контекст</strong>» со следующими свойствами:</p>
+<p>Добавьте действие «<strong>Изменить значения атрибутов</strong>» внутрь действия «<strong>Сменить контекст</strong>».</p>
+</li>
+<li>В действии «<strong>Изменить значения атрибутов</strong>» на вкладке «<strong>Дополнительно</strong>» установите флажок «<strong>Сбрасывать кэш значений</strong>».</li>
+<li>
+<p>На вкладке «<strong>Основные</strong>» добавьте в таблицу атрибут <em>«Затраченное время»</em>:</p>
 <ul>
-<li><strong>Атрибут</strong> <em>«Затраченное время»</em></li>
 <li><strong>Операция со значениями</strong>: <strong>Заменить</strong>.</li>
 <li>
 <p><strong>Значение:</strong></p>
@@ -168,7 +172,7 @@
 </li>
 </ol>
 <figure class="screenshot_with_caption">
-<p><img alt="Пример сценария с использованием переменных" src="https://kb.comindware.ru/assets/scenario_with_variables.png"/></p>
+<p><img alt="Пример сценария с использованием переменных" src="/platform/v5.0/business_apps/scenarios/img/scenario_with_variables.png"/></p>
 <figcaption class="caption">Пример сценария с использованием переменных</figcaption>
 </figure>
 <h3 id="тестирование">Тестирование</h3>
@@ -181,10 +185,15 @@
 <li>В поле <em>«Новое время»</em> введите желаемое значение.</li>
 <li>Во всех записях в таблице <em>«Записи трудозатрат»</em> будет установлено затраченное время, которое вы ввели в диалоговом окне.</li>
 </ol>
+<div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4717">Сценарии. Определение, создание, настройка, использование</a></strong></p>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4718">Настройка действий сценария</a></strong></p>
+<ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4717">Сценарии. Определение, создание, настройка, использование</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4718">Настройка действий сценария</a></em></li>
+</ul>
+</div>
 </article>
 </div>
 </div>
 <a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#"> <em class="fa-light fa-arrow-up">‌<!--icon--></em> К началу </a></div>
+</div>

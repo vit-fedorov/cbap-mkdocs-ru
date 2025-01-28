@@ -64,17 +64,17 @@ kbId: 4659
 <td>NGINX 1.24 и выше</td>
 </tr>
 <tr markdown="block">
-<td>Дополнительное ПО(поставляется и устанавливается вместе с основным пакетом)</td>
+<td>Дополнительное ПО (поставляется и устанавливается вместе с основным пакетом)</td>
 <td markdown="block">
 - NET 6.0
 - .NET Framework 4.8.1
 - Kafka 3.6.0 и выше
-- Opensearch 2.18.0 и выше</td>
+- OpenSearch 2.18.0 или Elasticsearch 8.10 и выше</td>
 <td markdown="block">
 - NET 6.0
 - Mono 6.12
 - Kafka 3.6.0 и выше
-- Opensearch 2.18.0 и выше</td>
+- OpenSearch 2.18.0 или Elasticsearch 8.10 и выше</td>
 </tr>
 </tbody>
 </table>

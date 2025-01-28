@@ -39,6 +39,19 @@ kbId: 4804
 }
 ```
 
+или
+
+```
+# Импортируем функции для работы с переменными
+@prefix sln: <http://comindware.com/ontology/solution#>.
+{
+    # Находим переменную VariableSystemName в приложении SolutionSystemName
+    # по их системным именам
+    # и возвращаем значение переменной.
+    ("SolutionSystemName" "VariableSystemName") sln:getVariableValue ?value.
+}
+```
+
 **По ID переменной**
 
 ```
@@ -97,17 +110,18 @@ kbId: 4804
         - **Логический** — `true` или `false`.
     - **Описание** — комментарий относительно назначения переменной.
 
-_![Список переменных приложения](https://kb.comindware.ru/assets/variable_list.png)_
+_![Список переменных приложения](/platform/v5.0/business_apps/img/variable_list.png)_
 
 3. Нажмите кнопку «**Создать**» или дважды нажмите строку переменной в списке.
 4. Настройте свойства переменной приложения.
 5. Сохраните переменную.
 
-_![Настройка переменной приложения](https://kb.comindware.ru/assets/variable_properties.png)_
+_![Настройка переменной приложения](/platform/v5.0/business_apps/img/variable_properties.png)_
 
 --8<-- "related_topics_heading.md"
 
 - *[Использование переменных в сценарии][scenario_variables]*
 - *[Автонумерация записей с помощью формулы, C#-скрипта или выражения N3][auto_numerating_records]*
+
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

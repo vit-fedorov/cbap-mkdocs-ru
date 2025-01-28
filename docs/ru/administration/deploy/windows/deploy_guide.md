@@ -49,12 +49,12 @@ rewrite-relative-urls=false
     - _ASP.NET 4.8_ (или выше);
     - _.NET Extensibility 4.8_ (или выше);
     - _Расширения ISAPI_;
-    - _Фильтры ISAP_;
+    - _Фильтры ISAPI_;
   
 9. Установите флажок для компонента _HTTP Logging_.
 10. Нажмите кнопку «**Установить**» и дождитесь завершения процесса.
 
-_![Настройка сервера для установки ПО](img/deploy_guide_windows_server_setting.png)_
+_![Настройка сервера для установки ПО](img/deploy_guide_windows_server_setting.jpg)_
 
 ## Установка {{ productName }} {: #deploy_guide_windows_install_sw}
 

@@ -54,7 +54,7 @@ nav:
       - administration/infrastructure/logs.md
       - administration/infrastructure/licensing.md
       - administration/backup/index.md
-    - administration/backup/configure.md
+      - administration/backup/configure.md
       - administration/infrastructure/system_service_management.md
       - administration/infrastructure/performance.md
       - administration/infrastructure/logging_configuration.md

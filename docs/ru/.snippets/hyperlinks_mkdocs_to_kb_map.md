@@ -230,8 +230,6 @@
 
 [process_templates]: {{ kbArticleURLPrefix }}4758
 
-[receive_http_example]: {{ kbArticleURLPrefix }}4700
-
 [record_templates]: {{ kbArticleURLPrefix }}4759
 
 [record_template_properties]: {{ kbArticleURLPrefix }}4759#record_template_properties
@@ -264,11 +262,7 @@
 
 [scenario_send_email]: {{ kbArticleURLPrefix }}4692
 
-[send_http_connection]: {{ kbArticleURLPrefix }}4703
-
 [security]: {{ kbArticleURLPrefix }}4660
-
-[send_http_request_connection]: {{ kbArticleURLPrefix }}4696
 
 [sql_receive_connection]: {{ kbArticleURLPrefix }}4705
 
@@ -558,6 +552,18 @@
 
 [functions_web_service_call]: {{ kbArticleURLPrefix }}4711#functions_web_service_call
 
+[http_receive_example]: {{ kbArticleURLPrefix }}4700
+
+[http_receive_file]: {{ kbArticleURLPrefix }}5083
+
+[http_receive_jpath]: {{ kbArticleURLPrefix }}5084
+
+[http_send_connection]: {{ kbArticleURLPrefix }}4703
+
+[http_send_example]: {{ kbArticleURLPrefix }}4699
+
+[http_send_request_connection]: {{ kbArticleURLPrefix }}4696
+
 [import_data]: {{ kbArticleURLPrefix }}4802
 
 [map_use]: {{ kbArticleURLPrefix }}4814
@@ -667,8 +673,6 @@
 [scenario_verify_data]: {{ kbArticleURLPrefix }}4919
 
 [search_forms]: {{ kbArticleURLPrefix }}5069
-
-[send_http_example]: {{ kbArticleURLPrefix }}4699
 
 [service_call_task]: {{ kbArticleURLPrefix }}4729
 

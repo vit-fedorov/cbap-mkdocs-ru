@@ -11,7 +11,7 @@ hide:
     - tags
 ---
 
-# HTTP-запросы. Получение JSON-данных в сценарии {: #receive_http_example}
+# HTTP-запросы. Получение JSON-данных в сценарии {: #http_receive_example}
 
 ## Введение
 

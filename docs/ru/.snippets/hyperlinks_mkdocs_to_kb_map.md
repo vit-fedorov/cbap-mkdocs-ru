@@ -130,6 +130,8 @@
 
 [backup_configure]: {{ kbArticleURLPrefix }}5082
 
+[backup_configure_elasticsearch]: {{ kbArticleURLPrefix }}5082#backup_configure_elasticsearch
+
 [changelog]: {{ kbArticleURLPrefix }}4589
 
 [collabora_connection]: {{ kbArticleURLPrefix }}4688

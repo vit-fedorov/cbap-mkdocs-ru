@@ -1,4 +1,6 @@
 ---
+title: Задача-выполнение сценария
+kbId: 4728
 tags:
   - диаграммы
   - диаграмма процесса
@@ -14,7 +16,7 @@ hide:
   - tags
 ---
 
-# Задача-выполнение сценария
+# Задача-выполнение сценария {: #process_diagram_elements_script_task}
 
 **Задачу-выполнение сценария** выполняет система. При переходе токена на этот элемент автоматически выполняется скрипт C#.
 
@@ -32,7 +34,7 @@ hide:
 - **Изменить тип** — смена типа задачи.
 --8<-- "process_diagram_quick_create.md"
 
-## Свойства задачи-выполнения сценария
+## Свойства задачи-выполнения сценария {: .pageBreakBefore }
 
 В  окне свойств **задачи-выполнения сценария** предусмотрены перечисленные ниже вкладки.
 
@@ -45,7 +47,7 @@ hide:
 
 *![Основные свойства задачи-выполнения сценария](script_task_general_properties.png)*
 
-### Дополнительные
+### Дополнительные {: .pageBreakBefore }
 
 На этой вкладке следует ввести скрипт C#, который будет выполняться при переходе токена на задачу-выполнение сценария.
 
@@ -53,12 +55,15 @@ hide:
 
 *![Скрипт С# задачи-выполнения сценария](script_task_advanced_properties.png)*
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Пользовательская задача][user_task]**
+- _[Пользовательская задача][process_diagram_elements_user_task]_
+- _[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]_
+- _[Элементы диаграммы процесса][process_diagram_elements]_
+- _[Редактирование диаграммы процесса][process_diagram_designer]_
 
-**[Общие свойства элементов диаграммы процесса][process_diagram_element_common_properties]**
+</div>
 
-**[Элементы диаграммы процесса][process_diagram_elements]**
-
-**[Редактирование диаграммы процесса][process_diagram_designer]**
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

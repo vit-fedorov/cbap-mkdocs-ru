@@ -25,9 +25,22 @@ body  {
     background-image: '';
 }
 
-th {
+.md-typeset th {
     background-color: var(--md-code-bg-color);
+    min-width: 0rem !important;
 }
+
+.md-typeset__table {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+.md-typeset table {
+    display: inline-table !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
 
 .md-typeset ul ul {
     list-style-type: circle;

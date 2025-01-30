@@ -3,7 +3,6 @@ pdf/
 !pdf/*.pdf
 !install/requirements.txt
 for_kb_import_en/
-for_kb_import_ru/
 ru_help_local_files/
 eh_help_local_files
 .vscode/settings.json
@@ -12,3 +11,9 @@ install/python_latest.exe
 venv/
 __pycache__/
 for_pdf_print.html
+.serverCredentials.json
+pdf.html
+!for_kb_import_ru/
+for_kb_import_ru/search/search_index.json
+for_kb_import_ru/sitemap.xml.gz
+for_kb_import_ru/sitemap.xml

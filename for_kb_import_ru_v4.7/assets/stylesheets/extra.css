@@ -1,0 +1,73 @@
+/* 
+    The duplicate "fontawesome" folder is needed for local Help viewing and PDF generation. 
+    Can't import fontawesome resources from "Web/resources" for these tasks.
+*/
+
+@import url("fontawesome/css/fontawesome.min.css");
+@import url("fontawesome/css/light.min.css");
+@import url("fontawesome/css/brands.min.css");
+
+[data-md-color-scheme="comindware"] {
+    --md-primary-fg-color: #0575bd;
+    --md-primary-fg-color--light: #2FAAF9;
+    --md-primary-fg-color--dark: #04568B;
+    --md-footer-bg-color: var(--md-primary-fg-color--dark);
+    --md-footer-bg-color--dark: #023f67;
+}
+
+:root {
+    --md-text-font-family: OpenSans, Roboto;
+  }
+
+
+body  {
+    background: white;
+    background-image: none;
+}
+
+.md-typeset ul ul {
+    list-style-type: circle;
+}
+
+.md-typeset ul ul ul {
+    list-style-type: square;
+}
+
+.md-typeset ul ul ul ul {
+    list-style-type: "− ";
+}
+
+.md-typeset figure img {
+    display: inline;
+    border: 1px solid hsl(0, 0%, 90%);
+}
+
+.md-typeset figure p {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.md-typeset figcaption {
+    margin: 0em auto 0em;
+    max-width: 100%;
+}
+
+.md-typeset figure {
+    max-width: 100%;
+    text-align: center;
+}
+
+.md-typeset h5 {
+    text-transform: none;
+    color: var(--md-typeset-color);
+}
+
+.md-typeset :is(.admonition,details) {
+    font-size: inherit;
+ 
+}
+
+.md-typeset .headerlink {
+    font-family: "Font Awesome 6 Pro";
+}

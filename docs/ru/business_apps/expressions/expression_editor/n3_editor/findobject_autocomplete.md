@@ -1,4 +1,5 @@
 ---
+kbId: 5038
 tags:
   - выражения
   - n3
@@ -49,7 +50,7 @@ hide:
 14. В позиции четвёртого аргумента (через пробела после третьего) введите в искомое значение выбранного атрибута, например `"Лада"`.
 
 ```turtle title="Пример: выражение, возвращающее список записей шаблона с заданным значением атрибута"
-@prefix object: <http://comindware.com/ontology/object#>. 
+@prefix object: <http://comindware.com/ontology/object#>.
 {
   # Получаем список записей шаблона Avtomobil из приложения Upravlenieavtoparkom,
   # в которых атрибут Marka имеет значение «Лада»
@@ -57,8 +58,13 @@ hide:
 }
 ```
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Редактор выражений][expression_editor]**
+- _[Редактор выражений][expression_editor]_
+- _[Примеры использования языка N3. База знаний Comindware][n3_use_examples]_
 
-**[Примеры использования языка N3. База знаний Comindware]({{ kbCategoryURLPrefix }}408){:target="_blank"}**
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

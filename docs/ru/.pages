@@ -1,7 +1,8 @@
 nav:
-- using_the_system
-- administration
-- business_apps
-- Использование Architect: architect
-- examples
-- Общие сведения: general
+
+    - Общие сведения:
+        - index.md
+        - Описание ПО: product_description.md
+        - general
+    - Администрирование: administration
+    - business_apps

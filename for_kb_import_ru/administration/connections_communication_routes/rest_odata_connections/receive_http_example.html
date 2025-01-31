@@ -134,7 +134,7 @@
 </li>
 </ul>
 </div>
-<p>См. также <em>«<a class="autorefs autorefs-internal mkdocs_imported_link" href="http_receive_file.html#http_receive_file">HTTP-запросы с составным содержимым. Получение файлов в сценарии</a>»</em></p>
+<p>См. также <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5083">HTTP-запросы с составным содержимым. Получение файлов в сценарии</a>»</em></p>
 <h2 id="прикладная-задача">Прикладная задача</h2>
 <ul>
 <li>Имеется шаблон записи <em>«Заказы»</em>, с атрибутами:<ul>
@@ -289,7 +289,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>При необходимости укажите дополнительный суффикс в поле «<strong>Путь URI</strong>». Этот суффикс будет добавлен к URL-адресу в поле «<strong>Базовый путь получения HTTP-запросов</strong>» (совпадает с путём, настроенным в <a class="mkdocs_imported_link" href="#настройка-подключения">подключении</a>). Укажите результирующий адрес на внешнем сервере в качестве получателя запросов, например:</p>
-<div class="highlight"><code><pre><span></span><code>```</code> <br/><code>https://example.com/api/public/adapter/uploadData</code> <br/><code>```</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>https://example.com/api/public/adapter/uploadData</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Укажите <strong>атрибуты для десериализации данных</strong>. По умолчанию следует указать <code>$</code> в обоих столбцах, чтобы получить всю структуру JSON из запроса. Для поиска определенного атрибута используйте JSONPath.</p>
@@ -318,7 +318,9 @@
 </ol>
 <ul>
 <li><strong>Имя переменной:</strong> <em>local</em></li>
-<li><strong>Атрибут или выражение для поиска объектов: N3</strong><div class="highlight"><code><pre><span></span><code>``` turtle</code> <br/><code># Импортируем функции для работы</code> <br/><code># с данными текущего сеанса и переменными</code> <br/><code>@prefix session: &lt;http://comindware.com/ontology/session#&gt;.</code> <br/><code>@prefix var: &lt;http://comindware.com/ontology/session/variable#&gt;.</code> <br/><code>{</code> <br/><code>    # Request — переменная из первого блока, </code> <br/><code>    # в которой находится разобранный JSON</code> <br/><code>    session:context var:Request ?req.</code> <br/><code>    # ListZakazov - переменная, </code> <br/><code>    # в которой находится массив объектов</code> <br/><code>    ?req var:ListZakazov ?value.</code> <br/><code>}</code> <br/><code>```</code> <br/></pre></code></div>
+<li>
+<p><strong>Атрибут или выражение для поиска объектов: N3</strong></p>
+<div class="highlight"><code><pre><span></span><code><span class="c"># Импортируем функции для работы</span></code> <br/><code><span class="c"># с данными текущего сеанса и переменными</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">session:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">var:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/variable#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="c"># Request — переменная из первого блока, </span></code> <br/><code>    <span class="c"># в которой находится разобранный JSON</span></code> <br/><code>    <span class="nn">session</span><span class="p">:</span><span class="nt">context</span> <span class="nn">var</span><span class="p">:</span><span class="nt">Request</span> <span class="err">?req</span><span class="p">.</span></code> <br/><code>    <span class="c"># ListZakazov - переменная, </span></code> <br/><code>    <span class="c"># в которой находится массив объектов</span></code> <br/><code>    <span class="err">?req</span> <span class="nn">var</span><span class="p">:</span><span class="nt">ListZakazov</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 </li>
 </ul>
 <ol class="colored_numbers_list" start="4">
@@ -397,7 +399,7 @@
 <div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <ul>
-<li><em><a class="autorefs autorefs-internal mkdocs_imported_link" href="http_receive_file.html#http_receive_file">HTTP-запросы с составным содержимым. Получение файлов в сценарии</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5083">HTTP-запросы с составным содержимым. Получение файлов в сценарии</a></em></li>
 <li><em><a class="autorefs autorefs-internal mkdocs_imported_link" href="http_send_file.html#http_send_file">HTTP-запросы типа POST. Отправка составного содержимого и файлов</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4717">Сценарии</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4653">Аккаунты</a></em></li>

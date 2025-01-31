@@ -295,7 +295,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>При необходимости укажите дополнительный суффикс в поле «<strong>Путь URI</strong>». Этот суффикс будет добавлен к URL-адресу в поле «<strong>Базовый путь получения HTTP-запросов</strong>» (совпадает с путём, настроенным в <a class="mkdocs_imported_link" href="#настройка-подключения">подключении</a>). Укажите результирующий адрес на внешнем сервере в качестве получателя запросов, например:</p>
-<div class="highlight"><code><pre><span></span><code>```</code> <br/><code>https://example.com/api/public/adapter/uploadFiles</code> <br/><code>```</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>https://example.com/api/public/adapter/uploadFiles</code> <br/></pre></code></div>
 </li>
 <li>
 <p>В таблицу «<strong>Укажите атрибуты для преобразования составного содержимого запроса</strong>» сопоставьте атрибуты сообщения (<strong>Имя атрибута</strong>) с полями HTTP-запросов (<strong>Имя части составного содержимого</strong>):</p>
@@ -341,10 +341,15 @@
 </li>
 <li>
 <p>Добавьте действие «<strong>Изменить значение атрибутов</strong>» внутри действия «<strong>Создать запись</strong>» со следующими свойствами:</p>
-<p><strong>Атрибут:</strong> <em>Описание</em>
-- <strong>Операция со значениями: заменить</strong>
-- <strong>Значение: формула</strong></p>
-<div class="highlight"><code><pre><span></span><code>``` cs</code> <br/><code>$$HttpRequest-&gt;Description</code> <br/><code>```</code> <br/><code></code> <br/><code>Здесь `Description` — имя атрибута для хранения описания файлов, настроенного на [вкладке «**Атрибуты сообщений**» пути передачи данных](#атрибуты-сообщений).</code> <br/></pre></code></div>
+<ul>
+<li><strong>Атрибут:</strong> <em>Описание</em></li>
+<li><strong>Операция со значениями: заменить</strong></li>
+<li>
+<p><strong>Значение: формула</strong></p>
+<div class="highlight"><code><pre><span></span><code><span class="err">$$</span><span class="n">HttpRequest</span><span class="o">-&gt;</span><span class="n">Description</span></code> <br/></pre></code></div>
+<p>Здесь <code>Description</code> — имя атрибута для хранения описания файлов, настроенного на <a class="mkdocs_imported_link" href="#атрибуты-сообщений">вкладке «<strong>Атрибуты сообщений</strong>» пути передачи данных</a>.</p>
+</li>
+</ul>
 </li>
 <li>
 <p>Добавьте действие «<strong>Повторять по количеству объектов</strong>» внутри действия «<strong>Создать запись</strong>» со следующими свойствами:</p>

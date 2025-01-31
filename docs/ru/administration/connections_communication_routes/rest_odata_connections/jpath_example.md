@@ -11,7 +11,7 @@ tags:
 hide: tags
 ---
 
-# HTTP-запросы. Получение и обработка данных с помощью JSONPath {# http_receive_jpath }
+# HTTP-запросы. Получение и обработка данных с помощью JSONPath {: #http_receive_jpath }
 
 ## Введение
 

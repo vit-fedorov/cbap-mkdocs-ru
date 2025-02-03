@@ -19,10 +19,10 @@ kbTitle: 'HTTP-запросы типа POST. Отправка и получен�
 ``` json
 [ 
     {
-        "Contact":{
-            "ID":"STRING",
-            "FullName":"STRING",
-            "PhoneNumber":"STRING"
+        "Contact": {
+            "ID": "STRING",
+            "FullName": "STRING",
+            "PhoneNumber": "STRING"
         }
     }
 ]
@@ -32,7 +32,7 @@ kbTitle: 'HTTP-запросы типа POST. Отправка и получен�
 
 ``` json
 {
-    "Success":"BOOL"
+    "Success": "BOOL"
 }
 ```
 
@@ -116,10 +116,10 @@ kbTitle: 'HTTP-запросы типа POST. Отправка и получен�
         ``` json
         {
             "Message":{
-                "Contact":{
-                    "ID":"STRING",
-                    "FullName":"STRING",
-                    "PhoneNumber":"STRING"
+                "Contact": {
+                    "ID": "STRING",
+                    "FullName": "STRING",
+                    "PhoneNumber": "STRING"
                 }
             }
         }
@@ -133,10 +133,10 @@ kbTitle: 'HTTP-запросы типа POST. Отправка и получен�
         
         ``` json
         {
-            "Contact":{
-                "ID":"STRING",
-                "FullName":"STRING",
-                "PhoneNumber":"STRING"
+            "Contact": {
+                "ID": "STRING",
+                "FullName": "STRING",
+                "PhoneNumber": "STRING"
             }
         }
         ```

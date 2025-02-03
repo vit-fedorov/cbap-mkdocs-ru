@@ -32,7 +32,7 @@ hide:
 
 ## Настройка пути передачи данных
 
---8<-- "http_send_connection_communication_route_configure.md"
+--8<-- "http_send_communication_route_configure.md"
 
 ### Основные свойства
 

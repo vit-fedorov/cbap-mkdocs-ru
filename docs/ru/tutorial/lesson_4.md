@@ -41,15 +41,15 @@ kbId: 4865
 
     - **Кнопки управления экземпляром процесса**
 
-        --8<-- "proces_instance_view_buttons_stop_archive.md"
+        --8<-- "process_instance_view_buttons_stop_archive.md"
         - **Создать токен** — создание токена на выбранном элементе для запуска выполнения процесса с этого элемента. Эта кнопка отображается, если выбран элемент диаграммы.
-        --8<-- "proces_instance_view_buttons_info.md"
+        --8<-- "process_instance_view_buttons_info.md"
 
     - **Сведения об экземпляре процесса**
 
-        --8<-- "proces_instance_view_properties.md"
-        --8<-- "proces_instance_view_tokens.md"
-        --8<-- "proces_instance_view_changelog.md"
+        --8<-- "process_instance_view_properties.md"
+        --8<-- "process_instance_view_tokens.md"
+        --8<-- "process_instance_view_changelog.md"
 
     - **Кнопки масштабирования диаграммы**
 

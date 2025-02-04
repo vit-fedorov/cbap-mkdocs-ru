@@ -46,7 +46,7 @@ kbId: 4717
     - *[Получение сообщений через Kafka][kafka_connection]*
 - Получение и отправка HTTP-запросов
     - *[Отправка уведомлений с помощью Telegram-бота][telegram_send_notification]*
-    - *[Отправка HTTP-запросов типа GET и обработка запросов в формате JSON][send_http_example]*
+    - *[Отправка HTTP-запросов типа GET и обработка запросов в формате JSON][http_send_example]*
 - Получение и отправка электронной почты
     - *[Отправка эл. почты из сценариев через SMTP и Exchange][scenario_send_email]*
     - *[Получение эл. почты из сценариев через SMTP и Exchange][scenario_receive_email]*
@@ -55,7 +55,7 @@ kbId: 4717
     - *[Проверка результата выражения в сценарии][scenario_actions_validate_expression]*
     - *[Проверка результата скрипта в сценарии][scenario_actions_validate_csharp]*
 - Создание, дублирование и изменение записей
-    - *[Копирование записи вместе с прикреплённым документом][attribute_document_clone_scenario]*
+    - *[Копирование записи вместе с прикреплённым документом][example_document_clone_scenario_n3]*
 
 ## Использование списка сценариев и создание сценария
 

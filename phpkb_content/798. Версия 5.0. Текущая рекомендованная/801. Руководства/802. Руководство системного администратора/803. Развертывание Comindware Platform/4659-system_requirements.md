@@ -52,7 +52,5 @@ kbId: 4659
 | Веб-браузер | Последние публичные версии Google Chrome, Mozilla Firefox и Microsoft Edge |
 | Дополнительное ПО | Для открытия соответствующих файлов, скачиваемых из системы |
 
-[*‌*
- К началу](#)
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -100,12 +100,12 @@ hide:
             {
                 "Message":{
                     "File":{
-                        "Name":"STRING",
-                        "Content":"STRING"
+                        "Name": "STRING",
+                        "Content": "STRING"
                     }
                 }
             }
-             ```
+            ```
         
         - `$$Message->File->Name` присваивается значение переменной `$$Name`.
         - `$$Message->File->Content` присваивается значение переменной `$$Content`.
@@ -114,8 +114,8 @@ hide:
             ``` json
             {
                 "File":{
-                    "Name":"STRING",
-                    "Content":"STRING"
+                    "Name": "STRING",
+                    "Content": "STRING"
                 }
             }
             ```
@@ -155,12 +155,10 @@ hide:
                 ?AttachmentItem document:content ?Content.
                 # Помещаем имя файла из ?AttachmentItem в ?Name.
                 ?AttachmentItem document:title ?Name.
-            
                 # Создаём в сценарии переменную Content и помещаем в неё ?Content
                 variable:Content operator:replace ?Content.
                 # Создаём в сценарии переменную Name и помещаем в неё ?Name
                 variable:Name operator:replace ?Name.
-                
                 true -> ?value.
             }
             ```
@@ -221,7 +219,6 @@ hide:
             {
                 # Очищаем переменную Message
                 variable:Message operator:clear ?item.
-
                 # Возвращаем значение true
                 true -> ?value.
             }

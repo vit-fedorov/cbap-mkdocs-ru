@@ -54,6 +54,7 @@ nav:
       - administration/infrastructure/logs.md
       - administration/infrastructure/licensing.md
       - administration/backup/index.md
+      - administration/backup/configure.md
       - administration/infrastructure/system_service_management.md
       - administration/infrastructure/performance.md
       - administration/infrastructure/logging_configuration.md
@@ -96,6 +97,8 @@ nav:
         - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_example.md
         - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
+        - administration/connections_communication_routes/rest_odata_connections/http_receive_file.md
+        - administration/connections_communication_routes/rest_odata_connections/jpath_example.md
       - SQL-подключения:
         - administration/connections_communication_routes/sql_connections/sql_send_connection.md
         - administration/connections_communication_routes/sql_connections/sql_receive_connection.md
@@ -291,7 +294,10 @@ nav:
       - architect/organizational_structure_modeling/deleting_organizational_unit.md
   - Практические примеры:
     - examples/autonumerating_records.md
-    - examples/download_document_archive_csharp.md
+    - examples/document_clone_scenario_n3.md
+    - examples/document_download_archive_csharp.md
+    - examples/document_download_archive_related_record_csharp.md
+    - examples/document_download_to_server_csharp.md
     - examples/substring_search.md
     - examples/enum_attribute_value_calculation.md
     - examples/script_using_local_variable.md

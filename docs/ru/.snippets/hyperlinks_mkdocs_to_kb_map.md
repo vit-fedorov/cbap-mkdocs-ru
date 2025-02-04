@@ -40,6 +40,8 @@
 
 [csharp_examples]: {{ kbCategoryURLPrefix }}883
 
+[csharp_guide]: {{ kbArticleURLPrefix }}4864
+
 [document_digital_signature]: {{ kbArticleURLPrefix }}4910
 
 [example_n3_button_local_variable]: {{ kbArticleURLPrefix }}4909
@@ -83,8 +85,6 @@
 [html_supported_tags]: {{ kbArticleURLPrefix }}4912
 
 [integration_examples]: {{ kbCategoryURLPrefix }}875
-
-[manual_csharp]: {{ kbArticleURLPrefix }}4864
 
 [manual_n3]: {{ kbArticleURLPrefix }}4852
 

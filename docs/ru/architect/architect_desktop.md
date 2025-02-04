@@ -33,7 +33,7 @@ _![Рабочий стол модуля «{{ productNameArchitect }}»](architec
         - **[Дизайн страниц входа и регистрации][login_and_registration_page_design]**
         - **[Рабочее пространство][navigation_sections_setup]**
     - **Расширенная настройка**
-        - **[Резервное копирование][backup]**
+        - **[Резервное копирование][backup_configure]**
         - **[Общесистемные настройки][global_configuration]**
     - **Совместная работа**
         - **[Регистрация и вход][registration_and_login]**

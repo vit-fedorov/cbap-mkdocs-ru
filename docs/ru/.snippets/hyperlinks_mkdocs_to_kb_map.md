@@ -126,9 +126,9 @@
 
 [authentication_keys]: {{ kbArticleURLPrefix }}4674
 
-[backup]: {{ kbArticleURLPrefix }}4642
+[backup_configure]: {{ kbArticleURLPrefix }}4642
 
-[backup_configure]: {{ kbArticleURLPrefix }}5082
+[backup_recommendations]: {{ kbArticleURLPrefix }}5082
 
 [backup_configure_elasticsearch]: {{ kbArticleURLPrefix }}5082#backup_configure_elasticsearch
 

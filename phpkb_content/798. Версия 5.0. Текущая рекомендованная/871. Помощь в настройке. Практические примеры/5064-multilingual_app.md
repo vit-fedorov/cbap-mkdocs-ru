@@ -262,7 +262,7 @@ EQUALS(USER()->language,"en")
 --8<-- "related_topics_heading.md"
 
 - *[Список функций языка формул Comindware][formula_function_list]*
-- *[Написание скриптов на языке C#][manual_csharp]*
+- *[Написание скриптов на языке C#][csharp_guide]*
 
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

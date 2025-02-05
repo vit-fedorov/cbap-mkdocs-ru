@@ -217,6 +217,6 @@ C#-скрипт также можно применять для автонуме
 
 - *[Список функций языка формул Comindware][formula_function_list]*
 - *[Переменные приложения. Просмотр списка, настройка и использование][variables]*
-- *[Написание скриптов на языке C#][manual_csharp]*
+- *[Написание скриптов на языке C#][csharp_guide]*
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

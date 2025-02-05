@@ -108,6 +108,8 @@ nav:
           - administration/connections_communication_routes/rest_odata_connections/http_send_file.md
           - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
           - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
+          - administration/connections_communication_routes/rest_odata_connections/http_receive_file.md
+          - administration/connections_communication_routes/rest_odata_connections/jpath_example.md
         - SQL-подключения:
           - administration/connections_communication_routes/sql_connections/sql_send_connection.md
           - administration/connections_communication_routes/sql_connections/sql_receive_connection.md

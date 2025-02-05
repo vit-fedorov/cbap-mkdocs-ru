@@ -31,8 +31,8 @@ kbId: 4676
 
 ### Подключения REST и OData
 
-- [Отправка HTTP-запросов][send_http_example]
-- [Получение HTTP-запросов][receive_http_example]
+- [Отправка HTTP-запросов][http_send_example]
+- [Получение HTTP-запросов][http_receive_example]
 
 ### Подключения к шине сообщений
 

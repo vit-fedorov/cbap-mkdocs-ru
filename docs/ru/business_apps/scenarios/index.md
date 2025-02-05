@@ -66,7 +66,7 @@ kbId: 4717
     - _[Получение сообщений через Kafka][kafka_connection]_
 - Получение и отправка HTTP-запросов
     - _[Отправка уведомлений с помощью Telegram-бота][telegram_send_notification]_
-    - _[Отправка HTTP-запросов типа GET и обработка запросов в формате JSON][send_http_example]_
+    - _[Отправка HTTP-запросов типа GET и обработка запросов в формате JSON][http_send_example]_
 - Получение и отправка электронной почты
     - _[Отправка эл. почты из сценариев через SMTP и Exchange][scenario_send_email]_
     - _[Получение эл. почты из сценариев через SMTP и Exchange][scenario_receive_email]_

@@ -86,9 +86,9 @@ kbId: 4921
     {
         public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)
         {
-        // ObjectIds — массив выбранных записей, полученный из контекста операции кнопки.
+            // ObjectIds — массив выбранных записей, полученный из контекста операции кнопки.
             var selected_Ids = userCommandContext.ObjectIds;
-        // Создаем массив compressedBytes для хранения архива с файлами.
+            // Создаем массив compressedBytes для хранения архива с файлами.
             byte[] compressedBytes;
 
             try
@@ -222,7 +222,7 @@ kbId: 4921
 
 - _[Атрибут типа «Документ»][attribute_document]_
 - _[Кнопки. Определение, настройка, удаление][buttons]_
-- _[Написание скриптов на языке C#][manual_csharp]_
+- _[Написание скриптов на языке C#][csharp_guide]_
 - _[Атрибут типа «Документ». Скачивание архива с файлами из всех строк таблицы с прикреплением архива к атрибуту][example_document_download_archive_related_records_csharp]_
 - _[Атрибут типа «Документ». Скачивание файлов в папку на сервере][example_document_download_to_server_csharp]_
 - _[Атрибут типа «Документ». Клонирование записи вместе с прикреплёнными файлами][example_document_clone_scenario_n3]_

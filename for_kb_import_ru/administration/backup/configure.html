@@ -1,4 +1,4 @@
-<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="5082">
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4642">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -30,7 +30,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#настройка-резервного-копирования-данных-elasticsearch">
+<a class="md-nav__link mkdocs_imported_link" href="#backup_configure_elasticsearch">
 <span class="md-ellipsis">
       Настройка резервного копирования данных Elasticsearch
     </span>
@@ -79,7 +79,7 @@
 <h2 id="введение">Введение</h2>
 <p>Для обеспечения бесперебойной работы <strong>Comindware Platform</strong> необходимо настроить регулярное резервное копирование данных экземпляра ПО.</p>
 <p>Здесь представлены рекомендации по настройке и запуску резервного копирования, а также по просмотру журнала сеансов.</p>
-<p>Прежде чем приступать к настройке резервного копирования ознакомьтесь с <em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4642">рекомендациями по организации и оптимизации резервного копирования и восстановления</a></em>.</p>
+<p>Прежде чем приступать к настройке резервного копирования ознакомьтесь с <em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5082">рекомендациями по организации и оптимизации резервного копирования и восстановления</a></em>.</p>
 <p>Дополнительные инструкции по резервному копированию и восстановлению данных встроенными и внешними средствами см. в разделе <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4643">Резервное копирование и восстановление</a>»</em> базы знаний <strong>Comindware</strong>.</p>
 <h2 id="инструменты-резервного-копирования-и-восстановления-comindware-platform">Инструменты резервного копирования и восстановления Comindware Platform</h2>
 <ul>
@@ -138,7 +138,7 @@
 </li>
 <li><strong>С файлами</strong> — установите этот флажок, чтобы включить в состав резервной копии загруженные файлы.</li>
 <li><strong>Со скриптами</strong> — установите этот флажок, чтобы включить в состав резервной копии скрипты.</li>
-<li><strong>С историей</strong> — установите этот флажок, чтобы включить в состав резервной копии данные Elasticsearch. См. <em>«<a class="mkdocs_imported_link" href="#настройка-резервного-копирования-данных-elasticsearch">Настройка резервного копирования данных Elasticsearch</a>»</em>.</li>
+<li><strong>С историей</strong> — установите этот флажок, чтобы включить в состав резервной копии данные Elasticsearch. См. <em>«<a class="mkdocs_imported_link" href="#backup_configure_elasticsearch">Настройка резервного копирования данных Elasticsearch</a>»</em>.</li>
 <li><strong>Режим запуска</strong><ul>
 <li><strong>Вручную</strong> — для запуска резервного копирования потребуется нажимать кнопку «<strong>Запустить копирование</strong>» в <a class="mkdocs_imported_link" href="#запуск-резервного-копирования">списке конфигураций резервного копирования</a>.</li>
 <li>
@@ -163,7 +163,7 @@
 <figure class="screenshot_with_caption">
 <p><img alt="Настройка свойств резервного копирования" src="/platform/v5.0/administration/backup/../infrastructure/img/backup_create_config.png"/><figcaption class="caption">Настройка свойств резервного копирования</figcaption></p>
 </figure>
-<h2 class="pageBreakBefore" id="настройка-резервного-копирования-данных-elasticsearch">Настройка резервного копирования данных Elasticsearch</h2>
+<h2 class="pageBreakBefore" id="backup_configure_elasticsearch">Настройка резервного копирования данных Elasticsearch</h2>
 <p>Для корректного резервного копирования данных истории необходимо настроить конфигурацию службы Elasticsearch и экземпляра ПО <strong>Comindware Platform</strong>:</p>
 <ul>
 <li>
@@ -234,7 +234,7 @@
 <div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <ul>
-<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4642">Резервное копирование и восстановление. Рекомендации по организации и оптимизации</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5082">Резервное копирование и восстановление. Рекомендации по организации и оптимизации</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4677">Хранилище S3. Настройка экземпляра ПО и подключения</a></em></li>
 <li>
 <p><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4647">Восстановление базы данных из файла резервной копии в формате .CDBBZ</a></em></p>

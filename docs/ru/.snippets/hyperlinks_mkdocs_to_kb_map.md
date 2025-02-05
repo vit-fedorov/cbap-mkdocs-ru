@@ -40,6 +40,8 @@
 
 [csharp_examples]: {{ kbCategoryURLPrefix }}883
 
+[csharp_guide]: {{ kbArticleURLPrefix }}4864
+
 [document_digital_signature]: {{ kbArticleURLPrefix }}4910
 
 [example_n3_button_local_variable]: {{ kbArticleURLPrefix }}4909
@@ -84,8 +86,6 @@
 
 [integration_examples]: {{ kbCategoryURLPrefix }}875
 
-[manual_csharp]: {{ kbArticleURLPrefix }}4864
-
 [manual_n3]: {{ kbArticleURLPrefix }}4852
 
 [n3_guide]: {{ kbCategoryURLPrefix }}877
@@ -126,7 +126,11 @@
 
 [authentication_keys]: {{ kbArticleURLPrefix }}4674
 
-[backup]: {{ kbArticleURLPrefix }}4642
+[backup_configure]: {{ kbArticleURLPrefix }}4642
+
+[backup_recommendations]: {{ kbArticleURLPrefix }}5082
+
+[backup_configure_elasticsearch]: {{ kbArticleURLPrefix }}5082#backup_configure_elasticsearch
 
 [changelog]: {{ kbArticleURLPrefix }}4589
 
@@ -226,8 +230,6 @@
 
 [process_templates]: {{ kbArticleURLPrefix }}4758
 
-[receive_http_example]: {{ kbArticleURLPrefix }}4700
-
 [record_templates]: {{ kbArticleURLPrefix }}4759
 
 [record_template_properties]: {{ kbArticleURLPrefix }}4759#record_template_properties
@@ -260,11 +262,7 @@
 
 [scenario_send_email]: {{ kbArticleURLPrefix }}4692
 
-[send_http_connection]: {{ kbArticleURLPrefix }}4703
-
 [security]: {{ kbArticleURLPrefix }}4660
-
-[send_http_request_connection]: {{ kbArticleURLPrefix }}4696
 
 [sql_receive_connection]: {{ kbArticleURLPrefix }}4705
 
@@ -554,6 +552,20 @@
 
 [functions_web_service_call]: {{ kbArticleURLPrefix }}4711#functions_web_service_call
 
+[http_receive_example]: {{ kbArticleURLPrefix }}4700
+
+[http_receive_file]: {{ kbArticleURLPrefix }}5083
+
+[http_receive_jpath]: {{ kbArticleURLPrefix }}5084
+
+[http_send_connection]: {{ kbArticleURLPrefix }}4703
+
+[http_send_example]: {{ kbArticleURLPrefix }}4699
+
+[http_send_file]: {{ kbArticleURLPrefix }}5066
+
+[http_send_request_connection]: {{ kbArticleURLPrefix }}4696
+
 [import_data]: {{ kbArticleURLPrefix }}4802
 
 [map_use]: {{ kbArticleURLPrefix }}4814
@@ -663,8 +675,6 @@
 [scenario_verify_data]: {{ kbArticleURLPrefix }}4919
 
 [search_forms]: {{ kbArticleURLPrefix }}5069
-
-[send_http_example]: {{ kbArticleURLPrefix }}4699
 
 [service_call_task]: {{ kbArticleURLPrefix }}4729
 

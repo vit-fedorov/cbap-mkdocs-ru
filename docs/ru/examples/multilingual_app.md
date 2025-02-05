@@ -280,7 +280,7 @@ hide:
 --8<-- "related_topics_heading.md"
 
 - _[Список функций языка формул Comindware][formula_function_list]_
-- _[Написание скриптов на языке C#][manual_csharp]_
+- _[Написание скриптов на языке C#][csharp_guide]_
 
 </div>
 

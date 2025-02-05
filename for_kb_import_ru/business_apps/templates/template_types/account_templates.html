@@ -61,14 +61,88 @@
 <p><img alt="Свойства шаблона аккаунта" src="/platform/v5.0/business_apps/templates/template_types/img/account_templates_properties.png"/><figcaption class="caption">Свойства шаблона аккаунта</figcaption></p>
 </figure>
 <h2 class="pageBreakBefore" id="использование-шаблона-аккаунта">Использование шаблона аккаунта</h2>
-<p>Информация о всех пользователях системы содержится в системном разделе «<strong>Аккаунты</strong>». В карточке аккаунта отображается базовая информация:</p>
-<ul>
-<li><strong>Ф. И. О</strong></li>
-<li><strong>Имя пользователя</strong></li>
-<li><strong>Адрес эл. почты</strong></li>
-<li><strong>Руководитель</strong></li>
-<li>и т. д.</li>
-</ul>
+<p>Информация о всех пользователях системы содержится в системном разделе «<strong>Аккаунты</strong>». В карточке аккаунта отображается базовая информация из системного шаблона аккаунта, в котором предусмотрены следующие стандартные атрибуты:</p>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th>Системное имя</th>
+<th>Значение</th>
+<th>Тип атрибута</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cmw.account.fullName</code></td>
+<td>Ф. И. О.</td>
+<td>Текст</td>
+</tr>
+<tr>
+<td><code>cmw.account.manager</code></td>
+<td>Руководитель</td>
+<td>Пользователь</td>
+</tr>
+<tr>
+<td><code>cmw.account.mbox</code></td>
+<td>Адрес эл. почты</td>
+<td>Текст</td>
+</tr>
+<tr>
+<td><code>cmw.account.phone</code></td>
+<td>Телефон</td>
+<td>Текст</td>
+</tr>
+<tr>
+<td><code>cmw.account.username</code></td>
+<td>Имя пользователя</td>
+<td>Текст</td>
+</tr>
+<tr>
+<td><code>cmw.account.active</code></td>
+<td>Включён</td>
+<td>Логический</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>ID</td>
+<td>Ссылка</td>
+</tr>
+<tr>
+<td><code>cmw.account.title</code></td>
+<td>Должность</td>
+<td>Текст</td>
+</tr>
+<tr>
+<td><code>cmw.account.department</code></td>
+<td>Отдел</td>
+<td>Текст</td>
+</tr>
+<tr>
+<td><code>cmw.account.language</code></td>
+<td>Язык</td>
+<td>Текст</td>
+</tr>
+<tr>
+<td><code>cmw.account.office</code></td>
+<td>Офис</td>
+<td>Текст</td>
+</tr>
+<tr>
+<td><code>cmw.account.skype</code></td>
+<td>Skype</td>
+<td>Текст</td>
+</tr>
+<tr>
+<td><code>cmw.account.birthday</code></td>
+<td>Дата рождения</td>
+<td>Дата и время</td>
+</tr>
+<tr>
+<td><code>cmw.account.userGroupMembership</code></td>
+<td>Системная группа</td>
+<td>Не определен</td>
+</tr>
+</tbody>
+</table>
 <p>При разработке приложения может потребоваться расширение информации о пользователях дополнительными атрибутами, например:</p>
 <ul>
 <li>для службы персонала: табельный номер, дата выхода на работу, текущее количество дней отпуска, личные документы и т. д.;</li>

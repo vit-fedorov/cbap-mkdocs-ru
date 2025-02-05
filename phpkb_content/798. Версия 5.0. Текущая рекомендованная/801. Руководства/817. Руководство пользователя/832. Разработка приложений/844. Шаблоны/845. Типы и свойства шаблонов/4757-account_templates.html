@@ -1,4 +1,5 @@
-<h1>Шаблон аккаунта</h1><div class="md-container" data-md-component="container">
+<h1>Шаблон аккаунта</h1><div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr">
+<div class="md-container" data-md-component="container">
 <div class="md-main__inner md-grid"><nav aria-label="Содержание" class="md-nav md-nav--secondary">
 <div class="mce-toc">
 <h2 class="toc-heading">Содержание</h2>
@@ -14,10 +15,10 @@
 <article class="md-content__inner md-typeset">
 <div class="notice notice-success">
 <h2 class="admonition-title" id="definitions">Определения</h2>
-<p><strong>Шаблон аккаунта</strong> — это специальный <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4759">шаблон записи</a>, в котором хранятся особые атрибуты аккаунтов.</p>
-<p>Стандартные атрибуты аккаунтов хранятся в <em>системном шаблоне аккаунта</em>, который не отображается в списках шаблонов и не подлежит изменению.</p>
-<p>Для настройки и хранения произвольных атрибутов аккаунтов используются дополнительные <strong>шаблоны аккаунтов</strong>.</p>
-<p>Например, шаблон аккаунта <em>«Техник АЗС»</em> позволяет определить дополнительные атрибуты аккаунтов техников АЗС.</p>
+<p><strong>Шаблон аккаунта</strong> — это специальный <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4759">шаблон записи</a>, в котором хранятся особые атрибуты аккаунтов.</p>
+<p>Стандартные атрибуты аккаунтов хранятся в <em>системном шаблоне аккаунта</em>, который не отображается в списках шаблонов и не подлежит изменению.</p>
+<p>Для настройки и хранения произвольных атрибутов аккаунтов используются дополнительные <strong>шаблоны аккаунтов</strong>.</p>
+<p>Например, шаблон аккаунта <em>«Техник АЗС»</em> позволяет определить дополнительные атрибуты аккаунтов техников АЗС.</p>
 </div>
 <div class="notice notice-info">
 <p class="admonition-title">Примечание</p>
@@ -26,21 +27,95 @@
 <li>Шаблон аккаунта можно связать с атрибутом типа «<strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4774">Аккаунт</a></strong>».</li>
 </ul>
 </div>
-<h2 id="свойства-шаблона-аккаунта">Свойства шаблона аккаунта</h2>
-<p>У шаблона аккаунта предусмотрены только <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4756">общие свойства</a>.</p>
+<h2 class="pageBreakBefore" id="свойства-шаблона-аккаунта">Свойства шаблона аккаунта</h2>
+<p>У шаблона аккаунта предусмотрены только <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4756">общие свойства</a>.</p>
 <figure class="screenshot_with_caption">
-<p><img alt="Свойства шаблона аккаунта" src="https://kb.comindware.ru/assets/account_templates_properties.png"/></p>
+<p><img alt="Свойства шаблона аккаунта" src="/platform/v5.0/business_apps/templates/template_types/img/account_templates_properties.png"/></p>
 <figcaption class="caption">Свойства шаблона аккаунта</figcaption>
 </figure>
-<h2 id="использование-шаблона-аккаунта">Использование шаблона аккаунта</h2>
-<p>Информация о всех пользователях системы содержится в системном разделе «<strong>Аккаунты</strong>». В карточке аккаунта отображается базовая информация:</p>
-<ul>
-<li><strong>Ф. И. О</strong></li>
-<li><strong>Имя пользователя</strong></li>
-<li><strong>Адрес эл. почты</strong></li>
-<li><strong>Руководитель</strong></li>
-<li>и т. д.</li>
-</ul>
+<h2 class="pageBreakBefore" id="использование-шаблона-аккаунта">Использование шаблона аккаунта</h2>
+<p>Информация о всех пользователях системы содержится в системном разделе «<strong>Аккаунты</strong>». В карточке аккаунта отображается базовая информация из системного шаблона аккаунта, в котором предусмотрены следующие стандартные атрибуты:</p>
+<table style="width: 100%; height: 614px;">
+<thead>
+<tr style="height: 40px;">
+<th style="height: 40px;">Системное имя</th>
+<th style="height: 40px;">Значение</th>
+<th style="height: 40px;">Тип атрибута</th>
+</tr>
+</thead>
+<tbody>
+<tr style="height: 41px;">
+<td style="height: 41px;"><code>cmw.account.fullName</code></td>
+<td style="height: 41px;">Ф. И. О.</td>
+<td style="height: 41px;">Текст</td>
+</tr>
+<tr style="height: 41px;">
+<td style="height: 41px;"><code>cmw.account.manager</code></td>
+<td style="height: 41px;">Руководитель</td>
+<td style="height: 41px;">Пользователь</td>
+</tr>
+<tr style="height: 41px;">
+<td style="height: 41px;"><code>cmw.account.mbox</code></td>
+<td style="height: 41px;">Адрес эл. почты</td>
+<td style="height: 41px;">Текст</td>
+</tr>
+<tr style="height: 41px;">
+<td style="height: 41px;"><code>cmw.account.phone</code></td>
+<td style="height: 41px;">Телефон</td>
+<td style="height: 41px;">Текст</td>
+</tr>
+<tr style="height: 41px;">
+<td style="height: 41px;"><code>cmw.account.username</code></td>
+<td style="height: 41px;">Имя пользователя</td>
+<td style="height: 41px;">Текст</td>
+</tr>
+<tr style="height: 41px;">
+<td style="height: 41px;"><code>cmw.account.active</code></td>
+<td style="height: 41px;">Включён</td>
+<td style="height: 41px;">Логический</td>
+</tr>
+<tr style="height: 41px;">
+<td style="height: 41px;"><code>id</code></td>
+<td style="height: 41px;">ID</td>
+<td style="height: 41px;">Ссылка</td>
+</tr>
+<tr style="height: 41px;">
+<td style="height: 41px;"><code>cmw.account.title</code></td>
+<td style="height: 41px;">Должность</td>
+<td style="height: 41px;">Текст</td>
+</tr>
+<tr style="height: 41px;">
+<td style="height: 41px;"><code>cmw.account.department</code></td>
+<td style="height: 41px;">Отдел</td>
+<td style="height: 41px;">Текст</td>
+</tr>
+<tr style="height: 41px;">
+<td style="height: 41px;"><code>cmw.account.language</code></td>
+<td style="height: 41px;">Язык</td>
+<td style="height: 41px;">Текст</td>
+</tr>
+<tr style="height: 41px;">
+<td style="height: 41px;"><code>cmw.account.office</code></td>
+<td style="height: 41px;">Офис</td>
+<td style="height: 41px;">Текст</td>
+</tr>
+<tr style="height: 41px;">
+<td style="height: 41px;"><code>cmw.account.skype</code></td>
+<td style="height: 41px;">Skype</td>
+<td style="height: 41px;">Текст</td>
+</tr>
+<tr style="height: 41px;">
+<td style="height: 41px;"><code>cmw.account.birthday</code></td>
+<td style="height: 41px;">Дата рождения</td>
+<td style="height: 41px;">Дата и время</td>
+</tr>
+<tr style="height: 41px;">
+<td style="height: 41px;"><code>cmw.account.userGroupMembership</code></td>
+<td style="height: 41px;">Системная группа</td>
+<td style="height: 41px;">Не определен</td>
+</tr>
+</tbody>
+</table>
 <p>При разработке приложения может потребоваться расширение информации о пользователях дополнительными атрибутами, например:</p>
 <ul>
 <li>для службы персонала: табельный номер, дата выхода на работу, текущее количество дней отпуска, личные документы и т. д.;</li>
@@ -63,10 +138,15 @@
 <li>в списке записей в <strong>шаблоне аккаунта</strong> нажмите кнопку «<strong>Привязать к шаблону</strong>» и выберите один или несколько аккаунтов для добавления;</li>
 <li>на странице «<strong>Аккаунты</strong>» выберите один или несколько аккаунтов и нажмите кнопку «<strong>Привязать к шаблону</strong>».</li>
 </ul>
+<div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4756">Общие свойства шаблонов</a></strong></p>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4709">Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление</a></strong></p>
+<ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4756">Общие свойства шаблонов</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4709">Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление</a></em></li>
+</ul>
+</div>
 </article>
 </div>
 </div>
 <a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#"> <em class="fa-light fa-arrow-up">‌<!--icon--></em> К началу </a></div>
+</div>

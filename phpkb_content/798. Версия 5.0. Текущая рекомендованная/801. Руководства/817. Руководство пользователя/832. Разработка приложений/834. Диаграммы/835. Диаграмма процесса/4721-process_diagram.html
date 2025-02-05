@@ -1,35 +1,151 @@
-<h1>Диаграмма процесса. Определения, просмотр, редактирование, публикация</h1><div class="md-container" data-md-component="container">
-<div class="md-main__inner md-grid"><nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<h1>Диаграмма процесса. Определения, просмотр, редактирование, публикация</h1><div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4721">
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
 <div class="mce-toc">
-<h2 class="toc-heading">Содержание</h2>
-<ul>
-<li><a href="#definitions">Определения</a></li>
-<li><a href="#process_diagram_view">Просмотр диаграммы процесса</a></li>
-<li><a href="#process_diagram_designer">Редактирование диаграммы процесса</a>
-<ul>
-<li><a href="#использование-конструктора-диаграммы-процесса">Использование конструктора диаграммы процесса</a></li>
-</ul>
+<h2 class="toc-heading">
+      Содержание
+      </h2>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#definitions">
+<span class="md-ellipsis">
+      Определения
+    </span>
+</a>
 </li>
-<li><a href="#process_diagram_publish">Публикация диаграммы процесса</a></li>
-<li><a href="#process_diagram_verify">Проверка диаграммы процесса и типичные ошибки</a>
-<ul>
-<li><a href="#process_diagram_error_messages">Типичные ошибки диаграммы процесса</a>
-<ul>
-<li><a href="#диаграмма">Диаграмма</a></li>
-<li><a href="#начальное-событие">Начальное событие</a></li>
-<li><a href="#простое-начальное-событие">Простое начальное событие</a></li>
-<li><a href="#конечное-событие">Конечное событие</a></li>
-<li><a href="#пользовательская-задача">Пользовательская задача</a></li>
-<li><a href="#развилка-илиили">Развилка «или/или»</a></li>
-<li><a href="#промежуточное-событие-таймер">Промежуточное событие-таймер</a></li>
-<li><a href="#промежуточное-событие">Промежуточное событие</a></li>
-<li><a href="#начальное-событие-таймер">Начальное событие-таймер</a></li>
-<li><a href="#поток-управления">Поток управления</a></li>
-</ul>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#process_diagram_view">
+<span class="md-ellipsis">
+      Просмотр диаграммы процесса
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#process_diagram_designer">
+<span class="md-ellipsis">
+      Редактирование диаграммы процесса
+    </span>
+</a>
+<nav aria-label="Редактирование диаграммы процесса" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#использование-конструктора-диаграммы-процесса">
+<span class="md-ellipsis">
+      Использование конструктора диаграммы процесса
+    </span>
+</a>
 </li>
 </ul>
+</nav>
 </li>
-<li><a href="#mcetoc_1ibf3nhl50">Связанные статьи</a></li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#process_diagram_publish">
+<span class="md-ellipsis">
+      Публикация диаграммы процесса
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#process_diagram_verify">
+<span class="md-ellipsis">
+      Проверка диаграммы процесса и типичные ошибки
+    </span>
+</a>
+<nav aria-label="Проверка диаграммы процесса и типичные ошибки" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#process_diagram_error_messages">
+<span class="md-ellipsis">
+      Типичные ошибки диаграммы процесса
+    </span>
+</a>
+<nav aria-label="Типичные ошибки диаграммы процесса" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#диаграмма">
+<span class="md-ellipsis">
+      Диаграмма
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#начальное-событие">
+<span class="md-ellipsis">
+      Начальное событие
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#простое-начальное-событие">
+<span class="md-ellipsis">
+      Простое начальное событие
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#конечное-событие">
+<span class="md-ellipsis">
+      Конечное событие
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#пользовательская-задача">
+<span class="md-ellipsis">
+      Пользовательская задача
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#развилка-илиили">
+<span class="md-ellipsis">
+      Развилка «или/или»
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#промежуточное-событие-таймер">
+<span class="md-ellipsis">
+      Промежуточное событие-таймер
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#промежуточное-событие">
+<span class="md-ellipsis">
+      Промежуточное событие
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#начальное-событие-таймер">
+<span class="md-ellipsis">
+      Начальное событие-таймер
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#поток-управления">
+<span class="md-ellipsis">
+      Поток управления
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#связанные-статьи">
+<span class="md-ellipsis">
+      Связанные статьи
+    </span>
+</a>
+</li>
 </ul>
 </div>
 </nav>
@@ -37,23 +153,25 @@
 <article class="md-content__inner md-typeset">
 <div class="notice notice-success">
 <h2 class="admonition-title" id="definitions">Определения</h2>
-<p><strong>Диаграмма процесса</strong> служит для моделирования и исполнения бизнес-процесса. Она обладает следующими характеристиками:</p>
 <ul>
+<li><strong>Диаграмма процесса</strong> служит для моделирования и исполнения бизнес-процесса. Она обладает следующими характеристиками:<ul>
 <li>привязана к <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4758">шаблону процесса</a>;</li>
 <li>создаётся при создании шаблона процесса;</li>
 <li>строится в нотации BPMN 2.0;</li>
 <li>задаёт последовательность выполнения задач и действий в рамках бизнес-процесса;</li>
 <li>позволяет моделировать и исполнять бизнес-процесс с назначением задач исполнителям, выполнением сценариев, отправкой внутренних и внешних сообщений, просмотром журнала действий.</li>
 </ul>
-<p><strong>Токен</strong> — это маркер текущей позиции выполнения процесса. Он обладает следующими характеристиками:</p>
-<ul>
+</li>
+<li><strong>Токен</strong> — это маркер текущей позиции выполнения процесса в нотации BPMN. Он обладает следующими характеристиками:<ul>
 <li>на диаграмме процесса может быть один или несколько токенов, каждый из которых будет двигаться по своему пути;</li>
-<li>токены создаются в начальных событиях, некоторых промежуточных событиях и на расходящихся развилках;</li>
-<li>токены удаляются в конечных событиях и на сходящихся развилках;</li>
+<li>токены создаются на начальных событиях, некоторых промежуточных событиях и расходящихся развилках;</li>
+<li>токены удаляются на конечных событиях и сходящихся развилках;</li>
 <li>в качестве аналогии, токен можно представить себе как фишку, которая двигается по процессу.</li>
 </ul>
+</li>
+</ul>
 </div>
-<h2 id="process_diagram_view">Просмотр диаграммы процесса</h2>
+<h2 class="pageBreakBefore" id="process_diagram_view">Просмотр диаграммы процесса</h2>
 <ol class="colored_numbers_list">
 <li>Откройте <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4758">шаблон процесса</a>.</li>
 <li>Перейдите на вкладку «<strong>Диаграмма</strong>».</li>
@@ -67,19 +185,18 @@
 </ul>
 <p><strong>(2)</strong> Масштабирование диаграммы</p>
 <ul>
-<li><strong>Показать всю диаграмму</strong> <em class="fa-light fa-arrows-left-right-to-line">‌</em></li>
-<li><strong>Увеличить</strong> <em class="fa-light fa-circle-plus">‌</em></li>
-<li><strong>Уменьшить</strong> <em class="fa-light fa-circle-minus">‌</em></li>
+<li><strong>Показать всю диаграмму</strong> <i class="fa-light fa-arrows-left-right-to-line">‌<!--icon--></i></li>
+<li><strong>Увеличить</strong> <i class="fa-light fa-circle-plus">‌<!--icon--></i></li>
+<li><strong>Уменьшить</strong> <i class="fa-light fa-circle-minus">‌<!--icon--></i></li>
 <li>Масштабировать диаграмму также можно с помощью колёсика прокрутки мыши.</li>
 <li>Чтобы переместить диаграмму на экране, нажмите и перетащите её пустую область.</li>
 </ul>
 </li>
 </ol>
 <figure class="screenshot_with_caption">
-<p><img alt="Диаграмма шаблона процесса в режиме просмотра" src="https://kb.comindware.ru/assets/process_diagram_view.png"/></p>
-<figcaption class="caption">Диаграмма шаблона процесса в режиме просмотра</figcaption>
+<p><img alt="Диаграмма шаблона процесса в режиме просмотра" src="/platform/v5.0/business_apps/diagrams/process_diagram/img/process_diagram_view.png"/><figcaption class="caption">Диаграмма шаблона процесса в режиме просмотра</figcaption></p>
 </figure>
-<h2 id="process_diagram_designer">Редактирование диаграммы процесса</h2>
+<h2 class="pageBreakBefore" id="process_diagram_designer">Редактирование диаграммы процесса</h2>
 <ol class="colored_numbers_list">
 <li>Откройте вкладку «<strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4721#process_diagram_view">Диаграммы</a></strong>» шаблона процесса.</li>
 <li>При необходимости <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4722">выберите версию диаграммы</a>.</li>
@@ -90,9 +207,7 @@
 <ul>
 <li>
 <p>Перетащите элементы из панели элементов на диаграмму.</p>
-<figure class="screenshot_with_caption"><img alt="Добавление элемента на диаграмму" src="https://kb.comindware.ru/assets/process_diagram_designer_add_element.png"/>
-<figcaption class="caption">Добавление элемента на диаграмму</figcaption>
-</figure>
+<p><figure class="screenshot_with_caption" markdown=""><img alt="Добавление элемента на диаграмму" src="/platform/v5.0/business_apps/diagrams/process_diagram/img/process_diagram_designer_add_element.png"/><figcaption class="caption">Добавление элемента на диаграмму</figcaption></figure></p>
 </li>
 <li>
 <p>Настройте элементы:</p>
@@ -102,30 +217,30 @@
 <li>настройте и сохраните элемент.</li>
 </ul>
 </li>
-<li>Присвойте элементам наглядные названия:
-<ul>
-<li>дважды нажмите название элемента на диаграмме или нажмите кнопку «<strong>Свойства</strong>» <em class="fa-light fa-gear">‌</em> в меню элемента;</li>
+<li>Присвойте элементам наглядные названия:<ul>
+<li>дважды нажмите название элемента на диаграмме или нажмите кнопку «<strong>Свойства</strong>» <i class="fa-light fa-gear">‌<!--icon--></i> в меню элемента;</li>
 <li>введите новое название элемента.</li>
 </ul>
 </li>
-<li>Расположите элементы согласно бизнес-логике:
-<ul>
+<li>Расположите элементы согласно бизнес-логике:<ul>
 <li>чтобы выбрать несколько элементов, обведите их, удерживая нажатой клавишу <span class="keys"><kbd class="key-shift">Shift</kbd></span>;</li>
-<li>чтобы выбрать все элементы диаграммы, нажмите клавиши <span class="keys"><kbd class="key-control">Ctrl</kbd>+<kbd class="key-a">A</kbd></span>;</li>
+<li>чтобы выбрать все элементы диаграммы, нажмите клавиши <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-a">A</kbd></span>;</li>
 <li>перетащите выбранные элементы в требуемую позицию на диаграмме.</li>
 </ul>
 </li>
-<li>Задайте размеры элементов:
+<li>
+<p>Задайте размеры элементов:</p>
 <ul>
 <li>наведите указатель мыши на границу элемента;</li>
-<li>если размер элемента можно изменить, отобразится курсор перетаскивания <em class="fa-light fa-up-down">‌</em>;</li>
+<li>если размер элемента можно изменить, отобразится курсор перетаскивания <i class="fa-light fa-up-down">‌<!--icon--></i>;</li>
 <li>перетащите границу элемента, чтобы изменить его размер.</li>
 </ul>
 </li>
-<li>Удалите ненужные элементы:
+<li>
+<p>Удалите ненужные элементы:</p>
 <ul>
 <li>выберите один или несколько элементов;</li>
-<li>в меню элемента нажмите кнопку «<strong>Удалить</strong>» <em class="fa-light fa-trash-can">‌</em> или нажмите клавишу <span class="keys"><kbd class="key-delete">Del</kbd></span>;</li>
+<li>в меню элемента нажмите кнопку «<strong>Удалить</strong>» <i class="fa-light fa-trash-can">‌<!--icon--></i> или нажмите клавишу <span class="keys"><kbd class="key-delete">Del</kbd></span>;</li>
 <li>подтвердите удаление элементов.</li>
 </ul>
 </li>
@@ -135,8 +250,8 @@
 <p><a class="mkdocs_imported_link" href="#process_diagram_publish">Опубликуйте</a> диаграмму процесса.</p>
 </li>
 </ol>
-<h3 id="использование-конструктора-диаграммы-процесса">Использование конструктора диаграммы процесса</h3>
-<p>Конструктор диаграммы процесса позволяет редактировать диаграмму путем перетаскивания необходимых элементов и настроить логику исполнения процесса.</p>
+<h3 class="pageBreakBefore" id="использование-конструктора-диаграммы-процесса">Использование конструктора диаграммы процесса</h3>
+<p>Конструктор диаграммы процесса позволяет редактировать диаграмму  путем перетаскивания необходимых элементов и настроить логику исполнения процесса.</p>
 <p>В конструкторе диаграммы процесса предусмотрены следующие области.</p>
 <p><strong>(1) Кнопки операций с диаграммой</strong></p>
 <ul>
@@ -157,18 +272,18 @@
 <p><strong>(4) Диаграмма-процесса</strong> — область построения диаграммы.</p>
 <p><strong>(5) Кнопки масштабирования</strong></p>
 <ul>
-<li><strong>Показать всю диаграмму</strong> <em class="fa-light fa-arrows-left-right-to-line">‌</em></li>
-<li><strong>Увеличить</strong> <em class="fa-light fa-circle-plus">‌</em></li>
-<li><strong>Уменьшить</strong> <em class="fa-light fa-circle-minus">‌</em></li>
+<li><strong>Показать всю диаграмму</strong> <i class="fa-light fa-arrows-left-right-to-line">‌<!--icon--></i></li>
+<li><strong>Увеличить</strong> <i class="fa-light fa-circle-plus">‌<!--icon--></i></li>
+<li><strong>Уменьшить</strong> <i class="fa-light fa-circle-minus">‌<!--icon--></i></li>
 <li>Масштабировать диаграмму также можно с помощью колёсика прокрутки мыши.</li>
 <li>Чтобы переместить диаграмму на экране, нажмите и перетащите её пустую область.</li>
 </ul>
-<p><strong>(6) Меню элемента</strong> — содержит команды для работы с выбранным элементом. Отображается при нажатии элемента диаграммы. Набор команд в этом меню зависит от <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4724">типа элемента</a>.</p>
+<p><a class="mkdocs_imported_link" href="" id="process_diagram_call_element_menu"></a>
+<strong>(6) Меню элемента</strong> — содержит команды для работы с выбранным элементом. Отображается при нажатии элемента диаграммы. Набор команд в этом меню зависит от <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4724">типа элемента</a>.</p>
 <figure class="screenshot_with_caption">
-<p><img alt="Конструктор диаграммы процесса" src="https://kb.comindware.ru/assets/process_diagram_designer.png"/></p>
-<figcaption class="caption">Конструктор диаграммы процесса</figcaption>
+<p><img alt="Конструктор диаграммы процесса" src="/platform/v5.0/business_apps/diagrams/process_diagram/img/process_diagram_designer.png"/><figcaption class="caption">Конструктор диаграммы процесса</figcaption></p>
 </figure>
-<h2 id="process_diagram_publish">Публикация диаграммы процесса</h2>
+<h2 class="pageBreakBefore" id="process_diagram_publish">Публикация диаграммы процесса</h2>
 <ol class="colored_numbers_list">
 <li>Откройте <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4721#process_diagram_designer">конструктор диаграммы</a>.</li>
 <li>Нажмите кнопку «<strong>Опубликовать</strong>».</li>
@@ -179,19 +294,18 @@
 <p>Перед публикацией диаграммы автоматически выполняется её проверка.</p>
 <p>Для проверки диаграммы вручную, нажмите кнопку «<strong>Проверить</strong>».</p>
 <ul>
-<li>После проверки элементы с ошибками выделяются красной рамкой с восклицательным знаком <em class="fa-light fa-triangle-exclamation">‌</em> и на верхней информационной панели отображается флаг <em class="fa-light fa-flag">‌</em> с количеством ошибок.</li>
-<li>Для просмотра списка <a class="autorefs autorefs-internal mkdocs_imported_link" href="#process_diagram_error_messages">сообщений об ошибках</a> нажмите флаг <em class="fa-light fa-flag">‌</em> в верхней информационной панели.</li>
-<li>Для просмотра сообщения об ошибке для элемента нажмите восклицательный знак <em class="fa-light fa-triangle-exclamation">‌</em> рядом с ним.</li>
+<li>После проверки элементы с ошибками выделяются красной рамкой с восклицательным знаком <i class="fa-light fa-triangle-exclamation">‌<!--icon--></i> и на верхней информационной панели отображается флаг <i class="fa-light fa-flag">‌<!--icon--></i> с количеством ошибок.</li>
+<li>Для просмотра списка <a class="autorefs autorefs-internal mkdocs_imported_link" href="#process_diagram_error_messages">сообщений об ошибках</a> нажмите флаг <i class="fa-light fa-flag">‌<!--icon--></i> в верхней информационной панели.</li>
+<li>Для просмотра сообщения об ошибке для элемента нажмите восклицательный знак <i class="fa-light fa-triangle-exclamation">‌<!--icon--></i> рядом с ним.</li>
 </ul>
 <div class="notice notice-info">
 <p class="admonition-title">Примечание</p>
 <p>Опубликовать диаграмму с ошибками невозможно, поэтому после проверки все ошибки необходимо устранить.</p>
 </div>
 <figure class="screenshot_with_caption">
-<p><img alt="Просмотр ошибок диаграммы процесса" src="https://kb.comindware.ru/assets/process_diagram_validation_errors.png"/></p>
-<figcaption class="caption">Просмотр ошибок диаграммы процесса</figcaption>
+<p><img alt="Просмотр ошибок диаграммы процесса" src="/platform/v5.0/business_apps/diagrams/process_diagram/img/process_diagram_validation_errors.png"/><figcaption class="caption">Просмотр ошибок диаграммы процесса</figcaption></p>
 </figure>
-<h3 id="process_diagram_error_messages">Типичные ошибки диаграммы процесса</h3>
+<h3 class="pageBreakBefore" id="process_diagram_error_messages">Типичные ошибки диаграммы процесса</h3>
 <p>Проверка диаграммы процесса может выявить ошибки, которые не позволяют опубликовать диаграмму. Ниже представлены некоторые типичные ошибки с описанием причин их возникновения и способами устранения.</p>
 <h4 id="диаграмма">Диаграмма</h4>
 <ul>
@@ -212,8 +326,7 @@
 </ul>
 <h4 id="начальное-событие">Начальное событие</h4>
 <ul>
-<li><strong><em>У этого элемента должен быть один исходящий поток управления</em></strong>
-<ul>
+<li><strong><em>У этого элемента должен быть один исходящий поток управления</em></strong><ul>
 <li><strong>Причина</strong>: у начального события отсутствует исходящий поток или несколько исходящих потоков.</li>
 <li><strong>Способ устранения</strong>: подсоедините только один исходящий поток к начальному событию.</li>
 </ul>
@@ -221,8 +334,7 @@
 </ul>
 <h4 id="простое-начальное-событие">Простое начальное событие</h4>
 <ul>
-<li><strong><em>На диаграмме не может быть более одного простого (нетипизированного) начального события</em></strong>
-<ul>
+<li><strong><em>На диаграмме не может быть более одного простого (нетипизированного) начального события</em></strong><ul>
 <li><strong>Причина</strong>: на диаграмме имеется несколько простых начальных событий.</li>
 <li><strong>Способ устранения</strong>: удалите все простые начальные события кроме одного либо измените типы начальных событий.</li>
 </ul>
@@ -230,8 +342,7 @@
 </ul>
 <h4 id="конечное-событие">Конечное событие</h4>
 <ul>
-<li><strong><em>Необходим хотя бы один входящий поток управления</em></strong>
-<ul>
+<li><strong><em>Необходим хотя бы один входящий поток управления</em></strong><ul>
 <li><strong>Причина</strong>: у конечного события отсутствует входящий поток.</li>
 <li><strong>Способ устранения</strong>: подсоедините входящий поток к конечному событию.</li>
 </ul>
@@ -301,8 +412,7 @@
 </ul>
 <h4 id="промежуточное-событие-таймер">Промежуточное событие-таймер</h4>
 <ul>
-<li><strong><em>В событии-таймере не настроен таймер</em></strong>
-<ul>
+<li><strong><em>В событии-таймере не настроен таймер</em></strong><ul>
 <li><strong>Причина</strong>: в свойствах промежуточного события-таймера не задан интервал.</li>
 <li><strong>Способ устранения</strong>: в свойствах промежуточного события-таймера настройте интервал таймера на вкладке «Дополнительные».</li>
 </ul>
@@ -327,32 +437,40 @@
 </ul>
 <h4 id="начальное-событие-таймер">Начальное событие-таймер</h4>
 <ul>
-<li><strong><em>В начальном событии не настроен таймер</em></strong>
-<ul>
+<li><strong><em>В начальном событии не настроен таймер</em></strong><ul>
 <li><strong>Причина</strong>: в свойствах начального события-таймера не настроен таймер.</li>
 <li><strong>Способ устранения</strong>: в свойствах начального события-таймера настройте таймер на вкладке «Дополнительные».</li>
 </ul>
 </li>
 </ul>
-<h4 id="поток-управления">Поток управления</h4>
+<h4 class="pageBreakBefore" id="поток-управления">Поток управления</h4>
 <ul>
-<li><strong><em>Поток управления не соединен с конечной точкой</em></strong>
-<ul>
+<li><strong><em>Поток управления не соединен с конечной точкой</em></strong><ul>
 <li><strong>Причина</strong>: поток управления не соединен с целевым элементом.</li>
 <li><strong>Способ устранения</strong>: соедините поток управления с целевым элементом диаграммы.</li>
 </ul>
 </li>
 </ul>
-</article>
-<h2 id="mcetoc_1ibf3nhl50">Связанные статьи</h2>
-<article class="md-content__inner md-typeset">
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4724">Элементы диаграммы процесса</a></strong></p>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4726">Стартовая форма и форма пользовательской задачи</a></strong></p>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4723">Использование диаграммы экземпляра процесса</a></strong></p>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4722">Управление версиями диаграммы процесса</a></strong></p>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4710">Диаграммы в приложении</a></strong></p>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4758">Шаблон процесса</a></strong></p>
+<div class="relatedTopics">
+<h2 id="связанные-статьи">Связанные статьи</h2>
+<ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4724">Элементы диаграммы процесса</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4726">Стартовая форма и форма пользовательской задачи</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4723">Использование диаграммы экземпляра процесса</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4722">Управление версиями диаграммы процесса</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4710">Диаграммы в приложении</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4758">Шаблон процесса</a></em></li>
+</ul>
+</div>
 </article>
 </div>
 </div>
-<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#"> <em class="fa-light fa-arrow-up">‌<!--icon--></em> К началу </a></div>
+<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#">
+<i class="fa-light fa-arrow-up">‌<!--icon--></i>
+            К началу
+          </a>
+</main>
+</div>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></div>

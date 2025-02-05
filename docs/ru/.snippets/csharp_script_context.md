@@ -14,4 +14,4 @@
     - `var reсordId = userCommandContext.ObjectIds[0];` — для кнопки;
     - `var reсordId = ObjectId.ToString().Replace("user.", "");` — для действия сценария «**Проверить результат скрипта**».
 
-    См. _«[Написание скриптов на языке C#][manual_csharp]»_.
+    См. _«[Написание скриптов на языке C#][csharp_guide]»_.

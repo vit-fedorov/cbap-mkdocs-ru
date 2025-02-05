@@ -26,6 +26,61 @@ rewrite-relative-urls=false
 4. Запустите экземпляр ПО.
 5. Инициализируйте экземпляр ПО.
 
+## Установка вспомогательного ПО {: #deploy_guide_windows_install_prerequisites}
+
+1. Скачайте и распакуйте архив с дистрибутивом вспомогательного ПО для **{{ productName }}**.
+2. Запустите _PowerShell_ от имени администратора.
+3. Установите неограниченную политику выполнения _PowerShell_:
+
+    ``` powershell
+    Set-ExecutionPolicy Unrestricted
+    ```
+
+4. В запросе на изменение политики выберите вариант «**Да для всех**», введя букву ++a++.
+5. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
+
+    ``` powershell
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows\CMW_Windows\scripts"
+    ```
+
+    Здесь: `X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows` — путь к распакованному дистрибутиву вспомогательного ПО, а `<versionNumber>` — номер версии ПО.
+
+6. Разблокируйте доступ к скачанным из Интернета установочным файлам:
+
+    ``` powershell
+    .\files_unblock.ps1
+    ```
+
+    !!! tip "Вызов справки для скриптов"
+
+        Для ознакомления с ключами и назначением любого скрипта используйте ключ `-h` без каких-либо других ключей, например:
+
+        ``` powershell
+        .\files_unblock.ps1 -h
+        ```
+
+7. Установите необходимое вспомогательное ПО:
+
+    ``` powershell
+    .\prerequisites_install.ps1
+    ```
+
+8. Перезагрузите машину.
+9.  Запустите _PowerShell_ от имени администратора.
+10. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
+
+    ``` powershell
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows\CMW_Windows\scripts"
+    ```
+
+11. Проверьте, что дополнительные компоненты установлены:
+
+    ``` powershell
+    .\prerequisites_list.ps1
+    ```
+
+    Если какие-либо дополнительные компоненты не были установлены, повторите шаги 8–12.
+
 ## Установка {{ productName }} {: #deploy_guide_windows_install_sw}
 
 1. Скачайте и распакуйте архив с дистрибутивом **{{ productName }}**.
@@ -37,10 +92,10 @@ rewrite-relative-urls=false
     ```
 
 4. В запросе на изменение политики выберите вариант «**Да для всех**», введя букву ++a++.
-5. Перейдите в папку со скриптами для развёртывания ПО:
+5. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
     ```
 
     Здесь: `X:\<distPath>\X.X-release-ru-<versionNumber>.windows` — путь к распакованному дистрибутиву продукта, а `<versionNumber>` — номер версии ПО.
@@ -59,41 +114,7 @@ rewrite-relative-urls=false
         .\files_unblock.ps1 -h
         ```
 
-7. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
-
-    ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\prerequisites"
-    ```
-
-8. Установите необходимое вспомогательное ПО:
-
-    ``` powershell
-    .\prerequisites_install.ps1
-    ```
-
-9. Перезагрузите машину.
-10. Запустите _PowerShell_ от имени администратора.
-11. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
-
-    ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\prerequisites"
-    ```
-
-12. Проверьте, что дополнительные компоненты установлены:
-
-    ``` powershell
-    .\prerequisites_list.ps1
-    ```
-
-    Если какие-либо дополнительные компоненты не были установлены, повторите шаги 8–12.
-
-13. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
-
-    ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\platform"
-    ```
-
-14. Установите ПО:
+7. Установите версию ПО:
 
     ``` powershell
     .\version_install.ps1
@@ -110,7 +131,7 @@ rewrite-relative-urls=false
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
     ```
 
 2. Разверните экземпляр ПО:
@@ -138,7 +159,7 @@ rewrite-relative-urls=false
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
     ```
 
 2. Запустите экземпляр ПО:
@@ -154,7 +175,7 @@ rewrite-relative-urls=false
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
     ```
 
 2. Остановите экземпляр ПО:
@@ -179,7 +200,7 @@ end="<!--initialize-end-->"
 2. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
     ```
 
 3. Запустите обновление экземпляра ПО:
@@ -208,7 +229,7 @@ end="<!--initialize-end-->"
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
     ```
 
 2. Удалите экземпляр ПО:
@@ -228,7 +249,7 @@ end="<!--initialize-end-->"
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
     ```
 
 2. Просмотрите список установленных экземпляров ПО:

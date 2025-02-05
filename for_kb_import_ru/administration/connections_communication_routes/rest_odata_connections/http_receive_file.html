@@ -221,8 +221,8 @@
 </ul>
 </li>
 <li>
-<p><strong>Базовый путь получения HTTP-запросов</strong> — добавьте <strong>путь URI</strong>, например <code>uploadFiles</code>. При необходимости введите дополнительный <strong>путь URI</strong> на <a class="mkdocs_imported_link" href="#интеграция">вкладке «<strong>Интеграция</strong>» в свойствах пути передачи данных</a>. Укажите результирующий путь на внешнем сервере в качестве получателя запроса, например:</p>
-<div class="highlight"><code><pre><span></span><code>https://example.com/api/public/adapter/uploadFiles</code> <br/></pre></code></div>
+<p><strong>Базовый путь получения HTTP-запросов</strong> — добавьте <strong>путь URI</strong>, например <code>httpListener</code>. При необходимости введите дополнительный <strong>путь URI</strong> на <a class="mkdocs_imported_link" href="#интеграция">вкладке «<strong>Интеграция</strong>» в свойствах пути передачи данных</a>. Укажите результирующий путь на внешнем сервере в качестве получателя запроса, например:</p>
+<div class="highlight"><code><pre><span></span><code>https://example.com/api/public/adapter/httpListener</code> <br/></pre></code></div>
 </li>
 <li>
 <p><strong>Формат данных</strong> — выберите представление данных:</p>
@@ -288,14 +288,27 @@
 <ol class="colored_numbers_list">
 <li>Выберите <strong>тип сообщения</strong> «<strong>Обработка HTTP-запросов с составным содержимым</strong>». Данный тип сообщения позволяет обрабатывать полученные файлы без дополнительного преобразования в раздельные атрибуты с именем и содержимым файла.</li>
 <li>В таблицу «<strong>Запрос</strong>» добавьте атрибут <em>FileObject</em> типа «<strong>Объект</strong>». Установите флажок «<strong>Массив</strong>». <strong>Системное имя</strong> может быть произвольным.</li>
-<li>В атрибут атрибут <em>FileObject</em> добавьте дочерние атрибуты <em>name</em> и <em>content</em> типа «<strong>Строка</strong>». Системные имена этих атрибутов фиксированные, их нельзя изменять и они должны совпадать с именами соответствующих полей файловой структуры в HTTP-запросе.</li>
-<li>На верхнем уровне таблицы «<strong>Запрос</strong>» добавьте атрибут <em>Description</em> типа «<strong>Строка</strong>».</li>
+<li>
+<p>В атрибут атрибут <em>FileObject</em> добавьте дочерние атрибуты <em>name</em> и <em>content</em> типа «<strong>Строка</strong>». </p>
+<div class="notice notice-warning">
+<p class="admonition-title">Внимание!</p>
+<p>Системные имена этих атрибутов фиксированные, их нельзя изменять и они должны совпадать с именами соответствующих полей файловой структуры в HTTP-запросе.</p>
+</div>
+</li>
+<li>
+<p>На верхнем уровне таблицы «<strong>Запрос</strong>» добавьте атрибут <em>Description</em> типа «<strong>Строка</strong>».</p>
+</li>
 </ol>
 <h3 id="интеграция">Интеграция</h3>
 <ol class="colored_numbers_list">
 <li>
-<p>При необходимости укажите дополнительный суффикс в поле «<strong>Путь URI</strong>». Этот суффикс будет добавлен к URL-адресу в поле «<strong>Базовый путь получения HTTP-запросов</strong>» (совпадает с путём, настроенным в <a class="mkdocs_imported_link" href="#настройка-подключения">подключении</a>). Укажите результирующий адрес на внешнем сервере в качестве получателя запросов, например:</p>
-<div class="highlight"><code><pre><span></span><code>https://example.com/api/public/adapter/uploadFiles</code> <br/></pre></code></div>
+<p>Укажите дополнительный <strong>путь URI</strong>, например <code>uploadFiles</code>.</p>
+<div class="notice notice-warning">
+<p class="admonition-title">Формирование адреса для входящих HTTP-запросов</p>
+<p><strong>Путь URI</strong> с вкладки «<strong>Интеграция</strong>» будет добавлен к <strong>базовому пути получения HTTP-запросов</strong> (например, <code>https://example.com/api/public/adapter/httpListener</code>). Базовый путь настраивается в свойствах <a class="mkdocs_imported_link" href="#настройка-подключения">подключения</a>.</p>
+<p>Укажите результирующий адрес на внешнем сервере в качестве получателя запросов, например:</p>
+<div class="highlight"><code><pre><span></span><code>https://example.com/api/public/adapter/httpListener/uploadFiles</code> <br/></pre></code></div>
+</div>
 </li>
 <li>
 <p>В таблицу «<strong>Укажите атрибуты для преобразования составного содержимого запроса</strong>» сопоставьте атрибуты сообщения (<strong>Имя атрибута</strong>) с полями HTTP-запросов (<strong>Имя части составного содержимого</strong>):</p>
@@ -403,7 +416,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>С внешнего сервера отправьте в <strong>Comindware Platform</strong> HTTP-запрос с несколькими файлами, например:</p>
-<div class="highlight"><code><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\ </span></code> <br/><code><span class="w">    </span>-u<span class="w"> </span>username:password<span class="w"> </span><span class="se">\</span></code> <br/><code><span class="w">    </span>-H<span class="w"> </span><span class="s2">"Content-Type: multipart/form-data"</span><span class="w"> </span><span class="se">\</span></code> <br/><code><span class="w">    </span>-F<span class="w"> </span><span class="s2">"description=Фото и документ"</span><span class="w"> </span><span class="se">\</span></code> <br/><code><span class="w">    </span>-F<span class="w"> </span><span class="s2">"files=@image.jpg"</span><span class="w"> </span><span class="se">\</span></code> <br/><code><span class="w">    </span>-F<span class="w"> </span><span class="s2">"files=@document.docx"</span><span class="w"> </span><span class="se">\</span></code> <br/><code><span class="w">    </span>https://example.com/api/public/adapter/uploadFiles<span class="w"> </span><span class="se">\</span></code> <br/><code><span class="w">    </span>-v</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\ </span></code> <br/><code><span class="w">    </span>-u<span class="w"> </span>username:password<span class="w"> </span><span class="se">\</span></code> <br/><code><span class="w">    </span>-H<span class="w"> </span><span class="s2">"Content-Type: multipart/form-data"</span><span class="w"> </span><span class="se">\</span></code> <br/><code><span class="w">    </span>-F<span class="w"> </span><span class="s2">"description=Фото и документ"</span><span class="w"> </span><span class="se">\</span></code> <br/><code><span class="w">    </span>-F<span class="w"> </span><span class="s2">"files=@image.jpg"</span><span class="w"> </span><span class="se">\</span></code> <br/><code><span class="w">    </span>-F<span class="w"> </span><span class="s2">"files=@document.docx"</span><span class="w"> </span><span class="se">\</span></code> <br/><code><span class="w">    </span>https://example.com/api/public/adapter/httpListener/uploadFiles<span class="w"> </span><span class="se">\</span></code> <br/><code><span class="w">    </span>-v</code> <br/></pre></code></div>
 <p>Здесь:</p>
 <ul>
 <li><code>-X POST</code> — метод запроса (необязательный ключ);</li>
@@ -411,7 +424,7 @@
 <li><code>-H "Content-Type: multipart/form-data"</code> — передача данных в формате составного содержимого;</li>
 <li><code>-F "description=Фото и документ"</code> — описание файлов;</li>
 <li><code>-F "files=@image.jpg" -F "files=@document.docx"</code> — массив из двух файлов;</li>
-<li><code>https://example.com/api/public/adapter/uploadFiles</code> — <strong>базовый путь получения HTTP-запросов</strong> и <strong>путь URI</strong>, настроенные в <a class="mkdocs_imported_link" href="#настройка-пути-передачи-данных">пути передачи данных</a>;</li>
+<li><code>https://example.com/api/public/adapter/httpListener/uploadFiles</code> — <strong>базовый путь получения HTTP-запросов</strong> и <strong>путь URI</strong>, настроенные в <a class="mkdocs_imported_link" href="#настройка-пути-передачи-данных">пути передачи данных</a>;</li>
 <li><code>-v</code> — вывод отладочных данных (необязательный ключ).</li>
 </ul>
 </li>
@@ -425,7 +438,7 @@
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <ul>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4700">HTTP-запросы. Получение JSON-данных в сценарии</a></em></li>
-<li><em><a class="autorefs autorefs-internal mkdocs_imported_link" href="http_send_file.html#http_send_file">HTTP-запросы типа POST. Отправка составного содержимого и файлов</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5066">HTTP-запросы типа POST. Отправка составного содержимого и файлов</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4717">Сценарии</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4653">Аккаунты</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4662">Системные роли</a></em></li>

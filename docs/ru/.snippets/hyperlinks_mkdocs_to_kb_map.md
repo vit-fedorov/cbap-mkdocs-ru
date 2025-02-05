@@ -12,10 +12,6 @@
 
 [api_calls]: {{ kbCategoryURLPrefix }}868
 
-[api_web]: {{ kbArticleURLPrefix }}4861
-
-[api_intro]: {{ kbArticleURLPrefix }}4860
-
 [account_attributes_system_names]: {{ kbArticleURLPrefix }}4994
 
 [attribute_date_time_use]: {{ kbArticleURLPrefix }}4886
@@ -785,6 +781,14 @@
 [accounts_dc_sync]: {{ kbArticleURLPrefix }}4655
 
 [admin_utility_instance_configure]: {{ kbArticleURLPrefix }}4634
+
+[api_intro]: {{ kbArticleURLPrefix }}4860
+
+[api_solution]: {{ kbArticleURLPrefix }}4863
+
+[api_system_core]: {{ kbArticleURLPrefix }}4862
+
+[api_web]: {{ kbArticleURLPrefix }}4861
 
 [logging_engine]: {{ kbArticleURLPrefix }}4623
 

@@ -17,10 +17,10 @@
 
 :root {
     --md-text-font-family: OpenSans, Roboto;
-  }
+}
 
 
-body  {
+body {
     background: white;
     background-image: '';
 }
@@ -75,15 +75,16 @@ body  {
     text-align: center;
 }
 
-.md-typeset h5, .md-typeset h6 {
+.md-typeset h5,
+.md-typeset h6 {
     font-size: 1em;
     text-transform: none;
     color: var(--md-typeset-color);
 }
 
-.md-typeset :is(.admonition,details) {
+.md-typeset :is(.admonition, details) {
     font-size: inherit;
- 
+
 }
 
 .glightbox-container .gslider {
@@ -91,7 +92,7 @@ body  {
 }
 
 .glightbox-container.glightbox-clean .gslide-title {
-    
+
     font-family: var(--md-text-font-family);
     color: var(--md-typeset-color);
     font-feature-settings: "kern", "liga";
@@ -104,28 +105,74 @@ body  {
 .gslide-image img {
 
     min-width: 50px !important;
-    
+
 }
 
 .glightbox-clean .gslide-description {
-    
+
     min-width: fit-content;
     z-index: -1;
 }
-    
+
 .admonition {
-    h1.admonition-title, 
-    h2.admonition-title, 
-    h3.admonition-title, 
-    h4.admonition-title, 
-    h5.admonition-title, 
-    h6.admonition-title
-     
-    {
-    font-weight: 300;
+
+    h1.admonition-title,
+    h2.admonition-title,
+    h3.admonition-title,
+    h4.admonition-title,
+    h5.admonition-title,
+    h6.admonition-title {
+        font-weight: 300;
     }
 }
 
 .md-typeset .headerlink {
     font-family: "Font Awesome 6 Pro";
+}
+
+.api-cell-method {
+    overflow-wrap: break-word;
+    width: 6.0%;
+    max-width: 85px;
+    vertical-align: middle!important;
+    color: white;
+    text-align: center!important;
+}
+
+.get {
+    background: #0f6ab4;
+}
+
+.post {
+    background: #10a54a;
+}
+
+.put {
+    background: #c5862b;
+}
+
+.delete {
+    background: #a41e22;
+}
+
+.api-cell-endpoint {
+    overflow-wrap: break-word;
+    width: 14.00%;
+    max-width: 190px;
+    min-width: 190px;
+}
+
+.api-cell-description {
+    overflow-wrap: break-word;
+    width: 27.0%;
+}
+
+.api-cell-input {
+    overflow-wrap: break-word;
+    width: 29.0%;
+}
+
+.api-cell-output {
+    overflow-wrap: break-word;
+    width: 20.0%;
 }

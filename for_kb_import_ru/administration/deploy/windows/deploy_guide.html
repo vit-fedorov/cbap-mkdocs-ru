@@ -16,9 +16,23 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#требования-к-серверу">
+<span class="md-ellipsis">
+      Требования к серверу
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link mkdocs_imported_link" href="#порядок-установки-по">
 <span class="md-ellipsis">
       Порядок установки ПО
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#подготовка-сервера-к-установке-по">
+<span class="md-ellipsis">
+      Подготовка сервера к установке ПО
     </span>
 </a>
 </li>
@@ -110,13 +124,42 @@
 </div>
 <p>Для быстрого развёртывания <strong>Comindware Platform</strong> в Windows компания <strong>Comindware</strong> предоставляет дистрибутив с установщиком, настраивающим необходимое программное обеспечение.</p>
 <p>Здесь представлены инструкции по развёртыванию и инициализации <strong>Comindware Platform</strong> из дистрибутива в ОС Windows.</p>
+<h2 id="требования-к-серверу">Требования к серверу</h2>
+<p>Перед установкой ПО убедитесь, что сервер соответствует следующим требованиям:</p>
+<ul>
+<li>сервер работает под управлением <em>Windows Server</em>;</li>
+<li>сервер настраивается от имени пользователя с правами администратора;</li>
+<li>установлена служба <em>IIS (Internet Information Services)</em>.</li>
+</ul>
 <h2 id="порядок-установки-по">Порядок установки ПО</h2>
 <ol class="colored_numbers_list">
+<li>Подготовьте сервер к установке ПО.</li>
 <li>Установите и настройте необходимое вспомогательное ПО.</li>
 <li>Установите ПО <strong>Comindware Platform</strong>.</li>
 <li>Создайте экземпляр ПО.</li>
 <li>Запустите экземпляр ПО.</li>
 <li>Инициализируйте экземпляр ПО.</li>
+</ol>
+<h2 id="подготовка-сервера-к-установке-по">Подготовка сервера к установке ПО</h2>
+<ol class="colored_numbers_list">
+<li>Откройте <strong>Диспетчер сервера</strong>.</li>
+<li>Добавьте в список серверов компьютер, на котором будет установлено ПО <strong>Comindware Platform</strong>.</li>
+<li>Запустите <strong>Мастер добавления ролей и компонентов</strong>, выбрав пункт «<strong>Добавить роли и компоненты</strong>» для данного сервера.</li>
+<li>На шаге «<strong>Тип установки</strong>» выберите пункт «<strong>Установка ролей или компонентов</strong>».</li>
+<li>На шаге «<strong>Выбор сервера</strong>» укажите сервер, на котором будет установлено ПО.</li>
+<li>На шаге «<strong>Роли сервера</strong>» установите флажок «<strong>Веб-сервер (IIS)</strong>».</li>
+<li>
+<p>На шаге «<strong>Компоненты</strong>» для компонента «<strong>Веб-сервер (IIS)</strong> — <strong>Веб-сервер</strong> — <strong>Разработка приложений</strong>» установите следующие флажки:</p>
+<ul>
+<li><strong>ASP.NET 4.8</strong> (или выше);</li>
+<li><strong>Расширяемость .NET 4.8</strong> (или выше);</li>
+<li><strong>Расширения ISAPI</strong>;</li>
+<li><strong>Фильтры ISAPI</strong>.</li>
+</ul>
+</li>
+<li>
+<p>На шаге «<strong>Подтверждение</strong>» нажмите кнопку «<strong>Установить</strong>» и дождитесь завершения процесса.</p>
+</li>
 </ol>
 <h2 id="deploy_guide_windows_install_prerequisites">Установка вспомогательного ПО</h2>
 <ol class="colored_numbers_list">

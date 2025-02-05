@@ -64,7 +64,7 @@ _![](https://kb.comindware.ru/assets/img_64d3708401e22.png)_Интерфейс S
 <tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7cte61o0">Аккаунт — отдельные аккаунты</h3>
+### Аккаунт — отдельные аккаунты
 </th>
 </tr>
 <tr markdown="block">
@@ -72,16 +72,16 @@ _![](https://kb.comindware.ru/assets/img_64d3708401e22.png)_Интерфейс S
 <p><strong>Метод</strong></p>
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px; ">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; min-width: 140px; max-width: 150px; width: 27.0%; ">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; min-width: 190px; max-width: 190px; width: 29.0%; ">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; min-width: 140px; max-width: 150px; width: 20.0%; ">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -166,29 +166,34 @@ GET
 Идентификатор аккаунта.
 </td>
 <td markdown="block" class="api-cell-output">
-<p><span style="font-size: 10.0pt; font-family: 'Arial',sans-serif;">Объект свойств аккаунта.</span></p>
+<p><span >Объект свойств аккаунта.</span></p>
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7ctepcd2">AccountTemplate — шаблоны аккаунтов и связанные с ними аккаунты</h3>
+### AccountTemplate — шаблоны аккаунтов и связанные с ними аккаунты
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -361,26 +366,31 @@ GET
 Массив объектов со свойствами шаблонов аккаунта.
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7ctfbpf3">Attribute — атрибуты шаблона.</h3>
+### Attribute — атрибуты шаблона.
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -502,26 +512,31 @@ GET
 Массив объектов с атрибутивными свойствами.
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7cth49q4">Backup — резервное копирование конфигураций и сессий</h3>
+### Backup — резервное копирование конфигураций и сессий
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -711,26 +726,31 @@ POST
 Объект статуса.
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7cth8q45">BehaviourState — сценарии и элементы процессов</h3>
+### BehaviourState — сценарии и элементы процессов
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -767,26 +787,31 @@ PUT
 Объект статуса.
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7cthcp16">CaseTemplate — шаблоны кейсов (не используются)</h3>
+### CaseTemplate — шаблоны кейсов (не используются)
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -908,26 +933,31 @@ GET
 Массив объектов со свойствами шаблонов кейсов.
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7cthglo7">Dataset — таблицы</h3>
+### Dataset — таблицы
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -1015,26 +1045,31 @@ GET
 Массив объектов с конфигурациями таблиц.
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7cthk318">Document — файлы, прикрепленные к атрибутам типа «документ»</h3>
+### Document — файлы, прикрепленные к атрибутам типа «документ»
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -1190,26 +1225,31 @@ GET
 Содержимое версии (<code>application/octet-stream</code>).
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7cthnpp9">DocumentExportTemplate — шаблоны экспорта</h3>
+### DocumentExportTemplate — шаблоны экспорта
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -1297,26 +1337,31 @@ GET
 Массив объектов со свойствами шаблонов экспорта.
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7cthrjaa">Form — формы и правила для форм (кроме стартовых форм процессов и форм пользовательских задач)</h3>
+### Form — формы и правила для форм (кроме стартовых форм процессов и форм пользовательских задач)
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -1438,26 +1483,31 @@ GET
 Массив объектов с конфигурациями форм.
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7cthvsrb">SolutionGitIntegration — контроль версий приложений через Git </h3>
+### SolutionGitIntegration — контроль версий приложений через Git 
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -1559,7 +1609,7 @@ POST
 Объект конфигурации репозитория.
 </td>
 <td markdown="block" class="api-cell-output">
-<p><span style="font-size: 10.0pt; font-family: 'Arial',sans-serif;">Массив объектов со свойствами ветвей.</span></p>
+<p><span >Массив объектов со свойствами ветвей.</span></p>
 </td>
 </tr>
 <tr markdown="block">
@@ -1598,24 +1648,24 @@ POST
 </tr>
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; background: white; width: 99.00%;">
-<h3 id="mcetoc_1h7cti49ic">Heartbeat — мониторинг состояния сервера, процессов, скриптов и служб.</h3>
+### Heartbeat — мониторинг состояния сервера, процессов, скриптов и служб.
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -1671,7 +1721,7 @@ GET
 </tr>
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; background: white; width: 99.00%;">
-<h3 id="mcetoc_1h7ctiaqjd">ProcessObjects — миграция версии диаграммы процесса</h3>
+### ProcessObjects — миграция версии диаграммы процесса
 </th>
 </tr>
 <tr markdown="block">
@@ -1708,26 +1758,31 @@ POST
 Объект статуса.
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7ctieu3e">ProcessTemplate — шаблоны процессов</h3>
+### ProcessTemplate — шаблоны процессов
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -1849,26 +1904,31 @@ GET
 Массив объектов со свойствами шаблона процесса.
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7ctjfagf">Record — одна запись (кроме шаблонов процессов)</h3>
+### Record — одна запись (кроме шаблонов процессов)
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -1990,26 +2050,31 @@ POST
 Идентификатор записи.
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7d30eor0">Record — несколько записей и экспорт/импорт записей (кроме шаблонов процессов)</h3>
+### Record — несколько записей и экспорт/импорт записей (кроме шаблонов процессов)
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -2077,7 +2142,7 @@ GET
 Системное имя приложения, глобальный псевдоним шаблона: <code>Template@ <wbr/> applicationSystemName. <wbr/> templateSystemName</code>
 </td>
 <td markdown="block" class="api-cell-output">
-<p><span style="font-size: 10.0pt; font-family: 'Arial',sans-serif;">Массив объектов со значениями атрибутов записей</span><span style="font-size: 10.0pt; font-family: 'Arial',sans-serif;">: </span><code>[{"attribute<wbr/>SystemName"<wbr/>: "value"}]</code></p>
+<p><span >Массив объектов со значениями атрибутов записей</span><span >: </span><code>[{"attribute<wbr/>SystemName"<wbr/>: "value"}]</code></p>
 </td>
 </tr>
 <tr markdown="block">
@@ -2091,7 +2156,7 @@ POST
 Создает записи.
 </td>
 <td markdown="block" class="api-cell-input">
-<p><span style="font-size: 10.0pt; font-family: 'Arial',sans-serif;">Глобальный псевдоним шаблона (</span><code>Template@ <wbr/> applicationSystemName. <wbr/> templateSystemName</code>), массив объектов со значениями атрибутов записи: <code>[{"attribute<wbr/>SystemName"<wbr/> : "value"}]</code></p>
+<p><span >Глобальный псевдоним шаблона (</span><code>Template@ <wbr/> applicationSystemName. <wbr/> templateSystemName</code>), массив объектов со значениями атрибутов записи: <code>[{"attribute<wbr/>SystemName"<wbr/> : "value"}]</code></p>
 </td>
 <td markdown="block" class="api-cell-output">
 Массив идентификаторов записей.
@@ -2199,26 +2264,31 @@ POST
 Количество импортированных записей.
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7ctl9rhh">RecordTemplate — шаблоны записей</h3>
+### RecordTemplate — шаблоны записей
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -2340,26 +2410,31 @@ GET
 Массив объектов со свойствами шаблона записи.
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7ctleo2i">ReferenceData — записи с указанными значениями атрибутов</h3>
+### ReferenceData — записи с указанными значениями атрибутов
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -2413,26 +2488,31 @@ PUT
 Идентификатор отредактированной записи. Если несколько записей совпадают, возвращает null и никакие записи не редактируются.
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7ctli71j">Solution — приложения</h3>
+### Solution — приложения
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -2520,26 +2600,31 @@ GET
 Объект со свойствами приложения.
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7ctlmo9k">Toolbar — области кнопок и кнопки на них</h3>
+### Toolbar — области кнопок и кнопки на них
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -2627,26 +2712,31 @@ GET
 Массив объектов конфигурации области кнопок.
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7ctlqqql">Transfer — экспорт/импорт модели приложения</h3>
+### Transfer — экспорт/импорт модели приложения
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -2717,26 +2807,31 @@ ZIP-файл модели приложения в формате Base64.
 Объект с идентификатором загруженного файла.
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7ctlulam">UserCommand — кнопки</h3>
+### UserCommand — кнопки
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">
@@ -2753,7 +2848,7 @@ POST
 Системное имя приложения, объект конфигурации кнопки.
 </td>
 <td markdown="block" class="api-cell-output">
-<p><span style="font-size: 10.0pt; font-family: 'Arial',sans-serif;">Системное имя кнопки.</span></p>
+<p><span >Системное имя кнопки.</span></p>
 </td>
 </tr>
 <tr markdown="block">
@@ -2858,26 +2953,31 @@ GET
 Массив объектов конфигурации кнопок.
 </td>
 </tr>
+</tbody>
+</table>
+
+<table markdown="block" style="width: 98%;">
+<tbody markdown="block">
 <tr markdown="block">
 <th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-<h3 id="mcetoc_1h7ctm2ppn" style="margin-bottom: 7.2pt;">WorkerEngine — системные службы</h3>
+### WorkerEngine — системные службы
 </th>
 </tr>
 <tr markdown="block">
 <th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center;"><strong>Метод</strong></p>
+**Метод**
 </th>
 <th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-<p><strong>Запрос</strong></p>
+**Запрос**
 </th>
 <th markdown="block" class="api-cell-description">
-<p><strong>Описание</strong></p>
+**Описание**
 </th>
 <th markdown="block" class="api-cell-input">
-<p><strong>Входные данные</strong></p>
+**Входные данные**
 </th>
 <th markdown="block" class="api-cell-output">
-<p><strong>Выходные данные</strong></p>
+**Выходные данные**
 </th>
 </tr>
 <tr markdown="block">

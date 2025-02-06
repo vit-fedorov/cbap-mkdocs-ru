@@ -34,2987 +34,904 @@ _![](https://kb.comindware.ru/assets/img_64d3708401e22.png)_Интерфейс S
 
 ### Определения
 
-Методы Web API и документация Swagger используют следующие ***специфические имена*** для сущностей **{{ productName }}**:
+Методы Web API и документация Swagger используют следующие **специфические имена** для сущностей **{{ productName }}**:
 
-- ***activity*** — элемент диаграммы процесса
-- ***alias*** — системное имя
-- ***behaviour*** — сценарий, элемент диаграммы процесса
-- ***container*** — шаблон, приложение
-- ***dataset*** — таблица в шаблоне
-- ***global*** ***alias*** *(глобальный псевдоним)* — путь к объекту, состоящий из его типа, имени родительской системы и имени системы объекта
-- ***id*** — идентификатор объекта
-- ***inline*** — особый тип документа, который отображается на форме как текстовый блок и который можно редактировать в форме
-- ***list*** — массив
+- **activity** — элемент диаграммы процесса
+- **alias** — системное имя
+- **behaviour** — сценарий, элемент диаграммы процесса
+- **container** — шаблон, приложение
+- **dataset** — таблица в шаблоне
+- **global** **alias** *(глобальный псевдоним)* — путь к объекту, состоящий из его типа, имени родительской системы и имени системы объекта
+- **id** — идентификатор объекта
+- **inline** — особый тип документа, который отображается на форме как текстовый блок и который можно редактировать в форме
+- **list** — массив
 - **object** (*объект*) — набор пар свойство/значение
-- ***property***— атрибут
-- ***record***— запись
-- ***revision*** — версия файла, прикреплённого к атрибуту
-- ***solution*** — приложение
-- ***scheme*** — диаграмма процесса
-- ***stream*** — файл, хранящийся в системе
-- ***template*** — шаблон
-- ***transfer*** — управление версиями приложения
-- ***trigger*** — сценарий
-- ***user*** ***command*** — кнопка
-- ***worker*** — системный сервис
+- **property**— атрибут
+- **record**— запись
+- **revision** — версия файла, прикреплённого к атрибуту
+- **solution** — приложение
+- **scheme** — диаграмма процесса
+- **stream** — файл, хранящийся в системе
+- **template** — шаблон
+- **transfer** — управление версиями приложения
+- **trigger** — сценарий
+- **user** **command** — кнопка
+- **worker** — системный сервис
 
 ## Описание методов Web API
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
 ### Аккаунт — отдельные аккаунты
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%; max-width: 80px; text-align: center; ">
-<p><strong>Метод</strong></p>
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px; ">
-**Запрос**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; min-width: 140px; max-width: 150px; width: 27.0%; ">
-**Описание**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; min-width: 190px; max-width: 190px; width: 29.0%; ">
-**Входные данные**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; min-width: 140px; max-width: 150px; width: 20.0%; ">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-/webapi/<wbr/>Account</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает все аккаунты.
-</td>
-<td markdown="block" class="api-cell-input">
- 
-</td>
-<td markdown="block" class="api-cell-output">
-Массив объектов со свойствами аккаунтов.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-/webapi/<wbr/>Account</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Создает аккаунт.
-</td>
-<td markdown="block" class="api-cell-input">
-Объект свойств аккаунта.
-</td>
-<td markdown="block" class="api-cell-output">
-Идентификатор аккаунта.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span style="color: #c7254e;">/webapi/<wbr/>Accoun</span>t </span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Изменяет свойства аккаунта.
-</td>
-<td markdown="block" class="api-cell-input">
-Объект свойств аккаунта.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method delete">
-DELETE
-</td>
-<td markdown="block" class="api-cell-endpoint">
-/webapi/<wbr/>Account/<wbr/>{accountId}
-</td>
-<td markdown="block" class="api-cell-description">
-Удаляет аккаунт.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор аккаунта.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>Account/<wbr/>{accountId}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает свойства аккаунта.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор аккаунта.
-</td>
-<td markdown="block" class="api-cell-output">
-<p><span >Объект свойств аккаунта.</span></p>
-</td>
-</tr>
-</tbody>
-</table>
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
+| GET   {: .api-method .get } | /webapi/Account                          |
+| --------------------------- | ---------------------------------------- |
+| **Описание**                | Получает все аккаунты.                   |
+| **Параметры**               | Не требуются.                            |
+| **Ответ**                   | Массив объектов со свойствами аккаунтов. |
+
+| POST   {: .api-method .post } | /webapi/Account        |
+| ----------------------------- | ------------------------ |
+| **Описание**                  | Создает аккаунт.         |
+| **Параметры**                 | Объект свойств аккаунта. |
+| **Ответ**                     | Идентификатор аккаунта.  |
+
+| PUT    {: .api-method .put } | /webapi/Account           |
+| ---------------------------- | --------------------------- |
+| **Описание**                 | Изменяет свойства аккаунта. |
+| **Параметры**                | Объект свойств аккаунта.    |
+| **Ответ**                    | Объект статуса.             |
+
+| DELETE {: .api-method .delete } | /webapi/Account/{accountId} |
+| ------------------------------- | ----------------------------- |
+| **Описание**                    | Удаляет аккаунт.              |
+| **Параметры**                   | Идентификатор аккаунта.       |
+| **Ответ**                       | Объект статуса.               |
+
+| GET    {: .api-method .get } | /webapi/Account/{accountId} |
+| ---------------------------- | ----------------------------- |
+| **Описание**                 | Получает свойства аккаунта.   |
+| **Параметры**                | Идентификатор аккаунта.       |
+| **Ответ**                    | Объект свойств аккаунта.      |
+
 ### AccountTemplate — шаблоны аккаунтов и связанные с ними аккаунты
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>AccountTemplate/<wbr/>{solutionAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Создает шаблон аккаунта.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект свойств шаблона аккаунта.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект с системным именем шаблона аккаунта.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>AccountTemplate/<wbr/>{solutionAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Изменяет свойства шаблона аккаунта.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект свойств шаблона аккаунта.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method delete">
-DELETE
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>AccountTemplate/<wbr/>{solutionAlias}/<wbr/>{accountTemplateAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Удаляет шаблон аккаунта.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, системное имя шаблона аккаунта.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>AccountTemplate/<wbr/>{solutionAlias}/<wbr/>{accountTemplateAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает свойства шаблона аккаунта.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, системное имя шаблона аккаунта.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект свойств шаблона аккаунта.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>AccountTemplate/<wbr/>{solutionAlias}/<wbr/>{accountTemplateAlias}/<wbr/>Disable</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Архивирует шаблон аккаунта.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, системное имя шаблона аккаунта.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>AccountTemplate/<wbr/>{solutionAlias}/<wbr/>{accountTemplateAlias}/<wbr/>Enable</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Разархивирует шаблон аккаунта.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, системное имя шаблона аккаунта.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>AccountTemplate/<wbr/>{solutionAlias}/<wbr/>{accountTemplateAlias}/<wbr/>Exclude</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Отвязывает аккаунты от указанного шаблона аккаунта.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, системное имя шаблона аккаунта, массив идентификаторов аккаунта.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>AccountTemplate/<wbr/>{solutionAlias}/<wbr/>{accountTemplateAlias}/<wbr/>Include</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Привязывает указанные аккаунты к указанному шаблону аккаунта.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, системное имя шаблона аккаунта, массив идентификаторов аккаунта.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>AccountTemplate/<wbr/>{solutionAlias}/<wbr/>{accountTemplateAlias}/<wbr/>ListIncluded</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает аккаунты, привязанные к указанному шаблону аккаунта.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, системное имя шаблона аккаунта.
-</td>
-<td markdown="block" class="api-cell-output">
-Массив объектов со свойствами аккаунтов.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>AccountTemplate/<wbr/>List/<wbr/>{solutionAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает все шаблоны аккаунтов в указанном приложении.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения.
-</td>
-<td markdown="block" class="api-cell-output">
-Массив объектов со свойствами шаблонов аккаунта.
-</td>
-</tr>
-</tbody>
-</table>
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-### Attribute — атрибуты шаблона.
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>Attribute/<wbr/>{solutionAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Создает атрибут.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект свойств атрибута.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект с системным именем атрибута.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>Attribute/<wbr/>{solutionAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Изменяет свойства атрибута.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект свойств атрибута.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method delete">
-DELETE
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>Attribute/<wbr/>{solutionAlias}/<wbr/>{attributeGlobalAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Удаляет атрибут.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним атрибута: <code>Attribute@<wbr/>templateSystemName.<wbr/>attributeSystemName</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>Attribute/<wbr/>{solutionAlias}/<wbr/>{attributeGlobalAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает свойства атрибута.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним атрибута: Attribute@ <wbr/> templateSystemName. <wbr/> attributeSystemName
-</td>
-<td markdown="block" class="api-cell-output">
-Объект свойств атрибута.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>Attribute/<wbr/>{solutionAlias}/<wbr/>{attributeGlobalAlias}/<wbr/>Disable</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Атрибут архива.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним атрибута: <code>Attribute@<wbr/>templateSystemName.<wbr/>attributeSystemName</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>Attribute/<wbr/>{solutionAlias}/<wbr/>{attributeGlobalAlias}/<wbr/>Enable</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Разархивирует атрибут.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним атрибута: <code>Attribute@<wbr/>templateSystemName.<wbr/>attributeSystemName</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>Attribute/<wbr/>List/<wbr/>{templateGlobalAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает все атрибуты указанного шаблона.
-</td>
-<td markdown="block" class="api-cell-input">
-Глобальный псевдоним шаблона: <code>Template@<wbr/>applicationSystemName.<wbr/>templateSystemName</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Массив объектов с атрибутивными свойствами.
-</td>
-</tr>
-</tbody>
-</table>
+| POST {: .api-method .post } | /webapi/AccountTemplate/{solutionAlias} |
+| --------------------------- | ---------------------------------------- |
+| **Описание**                | Создает шаблон аккаунта.                 |
+| **Параметры**               | Системное имя приложения, объект свойств шаблона аккаунта. |
+| **Ответ**                   | Объект с системным именем шаблона аккаунта. |
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
+| PUT {: .api-method .put } | /webapi/AccountTemplate/{solutionAlias} |
+| --------------------------- | ---------------------------------------- |
+| **Описание**                | Изменяет свойства шаблона аккаунта.      |
+| **Параметры**               | Системное имя приложения, объект свойств шаблона аккаунта. |
+| **Ответ**                   | Объект статуса.                          |
+
+| DELETE {: .api-method .delete } | /webapi/AccountTemplate/{solutionAlias}/{accountTemplateAlias} |
+| ---------------------------- | ---------------------------------------- |
+| **Описание**                 | Удаляет шаблон аккаунта.                  |
+| **Параметры**                | Системное имя приложения, системное имя шаблона аккаунта. |
+| **Ответ**                    | Объект статуса.                          |
+
+| GET {: .api-method .get } | /webapi/AccountTemplate/{solutionAlias}/{accountTemplateAlias} |
+| --------------------------- | ---------------------------------------- |
+| **Описание**                | Получает свойства шаблона аккаунта.       |
+| **Параметры**               | Системное имя приложения, системное имя шаблона аккаунта. |
+| **Ответ**                   | Объект свойств шаблона аккаунта.         |
+
+| PUT {: .api-method .put } | /webapi/AccountTemplate/{solutionAlias}/{accountTemplateAlias}/Disable |
+| --------------------------- | ---------------------------------------- |
+| **Описание**                | Архивирует шаблон аккаунта.               |
+| **Параметры**               | Системное имя приложения, системное имя шаблона аккаунта. |
+| **Ответ**                   | Объект статуса.                          |
+
+| PUT {: .api-method .put } | /webapi/AccountTemplate/{solutionAlias}/{accountTemplateAlias}/Enable |
+| --------------------------- | ---------------------------------------- |
+| **Описание**                | Разархивирует шаблон аккаунта.            |
+| **Параметры**               | Системное имя приложения, системное имя шаблона аккаунта. |
+| **Ответ**                   | Объект статуса.                          |
+
+| PUT {: .api-method .put } | /webapi/AccountTemplate/{solutionAlias}/{accountTemplateAlias}/Exclude |
+| --------------------------- | ---------------------------------------- |
+| **Описание**                | Отвязывает аккаунты от указанного шаблона аккаунта. |
+| **Параметры**               | Системное имя приложения, системное имя шаблона аккаунта, массив идентификаторов аккаунта. |
+| **Ответ**                   | Объект статуса.                          |
+
+| PUT {: .api-method .put } | /webapi/AccountTemplate/{solutionAlias}/{accountTemplateAlias}/Include |
+| --------------------------- | ---------------------------------------- |
+| **Описание**                | Привязывает указанные аккаунты к указанному шаблону аккаунта. |
+| **Параметры**               | Системное имя приложения, системное имя шаблона аккаунта, массив идентификаторов аккаунта. |
+| **Ответ**                   | Объект статуса.                          |
+
+| GET {: .api-method .get } | /webapi/AccountTemplate/{solutionAlias}/{accountTemplateAlias}/ListIncluded |
+| --------------------------- | ---------------------------------------- |
+| **Описание**                | Получает аккаунты, привязанные к указанному шаблону аккаунта. |
+| **Параметры**               | Системное имя приложения, системное имя шаблона аккаунта. |
+| **Ответ**                   | Массив объектов со свойствами аккаунтов.  |
+
+| GET {: .api-method .get } | /webapi/AccountTemplate/List/{solutionAlias} |
+| --------------------------- | ---------------------------------------- |
+| **Описание**                | Получает все шаблоны аккаунтов в указанном приложении. |
+| **Параметры**               | Системное имя приложения.                |
+| **Ответ**                   | Массив объектов со свойствами шаблонов аккаунта. |
+
+### Attribute — атрибуты шаблона
+
+| POST {: .api-method .post } | /webapi/Attribute/{solutionAlias} |
+| --------------------------- | ---------------------------------- |
+| **Описание**                | Создает атрибут.                    |
+| **Параметры**               | Системное имя приложения, объект свойств атрибута. |
+| **Ответ**                   | Объект с системным именем атрибута.  |
+
+| PUT {: .api-method .put } | /webapi/Attribute/{solutionAlias} |
+| --------------------------- | ---------------------------------- |
+| **Описание**                | Изменяет свойства атрибута.         |
+| **Параметры**               | Системное имя приложения, объект свойств атрибута. |
+| **Ответ**                   | Объект статуса.                     |
+
+| DELETE {: .api-method .delete } | /webapi/Attribute/{solutionAlias}/{attributeGlobalAlias} |
+| ---------------------------- | ---------------------------------- |
+| **Описание**                 | Удаляет атрибут.                    |
+| **Параметры**                | Системное имя приложения, глобальный псевдоним атрибута: `Attribute@templateSystemName.attributeSystemName`. |
+| **Ответ**                    | Объект статуса.                     |
+
+| GET {: .api-method .get } | /webapi/Attribute/{solutionAlias}/{attributeGlobalAlias} |
+| --------------------------- | ---------------------------------- |
+| **Описание**                | Получает свойства атрибута.         |
+| **Параметры**               | Системное имя приложения, глобальный псевдоним атрибута: `Attribute@templateSystemName.attributeSystemName`. |
+| **Ответ**                   | Объект свойств атрибута.            |
+
+| PUT {: .api-method .put } | /webapi/Attribute/{solutionAlias}/{attributeGlobalAlias}/Disable |
+| --------------------------- | ---------------------------------- |
+| **Описание**                | Архивирует атрибут.                 |
+| **Параметры**               | Системное имя приложения, глобальный псевдоним атрибута: `Attribute@templateSystemName.attributeSystemName`. |
+| **Ответ**                   | Объект статуса.                     |
+
+| PUT {: .api-method .put } | /webapi/Attribute/{solutionAlias}/{attributeGlobalAlias}/Enable |
+| --------------------------- | ---------------------------------- |
+| **Описание**                | Разархивирует атрибут.              |
+| **Параметры**               | Системное имя приложения, глобальный псевдоним атрибута: `Attribute@templateSystemName.attributeSystemName`. |
+| **Ответ**                   | Объект статуса.                     |
+
+| GET {: .api-method .get } | /webapi/Attribute/List/{templateGlobalAlias} |
+| --------------------------- | ---------------------------------- |
+| **Описание**                | Получает все атрибуты указанного шаблона. |
+| **Параметры**               | Глобальный псевдоним шаблона: `Template@applicationSystemName.templateSystemName`. |
+| **Ответ**                   | Массив объектов с атрибутивными свойствами. |
+
 ### Backup — резервное копирование конфигураций и сессий
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method delete">
-DELETE
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Backup/<wbr/>Configuration</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Удаляет указанные конфигурации резервного копирования.
-</td>
-<td markdown="block" class="api-cell-input">
-Массив идентификаторов конфигурации резервного копирования.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Backup/<wbr/>Configuration</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает все конфигурации резервного копирования.
-</td>
-<td markdown="block" class="api-cell-input">
- 
-</td>
-<td markdown="block" class="api-cell-output">
-Массив резервных объектов конфигурации.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Backup/<wbr/>Configuration</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Создает конфигурацию резервного копирования.
-</td>
-<td markdown="block" class="api-cell-input">
-Резервный объект конфигурации.
-</td>
-<td markdown="block" class="api-cell-output">
-Идентификатор конфигурации резервного копирования.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Backup/<wbr/>Configuration</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Изменяет конфигурацию резервного копирования.
-</td>
-<td markdown="block" class="api-cell-input">
-Резервный объект конфигурации.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Backup/<wbr/>Configuration/<wbr/>{configurationId}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает конфигурацию резервного копирования.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор конфигурации резервного копирования.
-</td>
-<td markdown="block" class="api-cell-output">
-Резервный объект конфигурации.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method delete">
-DELETE
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Backup/<wbr/>Session</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Удаляет указанные сеансы резервного копирования.
-</td>
-<td markdown="block" class="api-cell-input">
-Массив идентификаторов сеансов резервного копирования.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Backup/<wbr/>Session</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Возвращает сеансы резервного копирования, соответствующие указанному фильтру.
-</td>
-<td markdown="block" class="api-cell-input">
-Объект с фильтром сеанса резервного копирования.
-</td>
-<td markdown="block" class="api-cell-output">
-Массив объектов со сведениями о сеансах резервного копирования.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Backup/<wbr/>Session/<wbr/>{configurationId} </span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Инициирует сеанс резервного копирования с использованием указанной конфигурации.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор конфигурации резервного копирования.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект со сведениями о сеансе резервного копирования.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Backup/<wbr/>Session/<wbr/>{sessionId}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает сеанс резервного копирования.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор сеанса резервного копирования.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект со сведениями о сеансе резервного копирования.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Backup/<wbr/>Session/<wbr/>{sessionId}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Прерывает сеанс резервного копирования.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор сеанса резервного копирования.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект со сведениями о сеансе резервного копирования.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Backup/<wbr/>SetElasticsearchRepository/<wbr/>{name}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Задает репозиторий моментальных снимков Elasticsearch.
-</td>
-<td markdown="block" class="api-cell-input">
-Имя существующего репозитория моментальных снимков Elasticsearch.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-</tbody>
-</table>
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
+| DELETE {: .api-method .delete } | /webapi/Backup/Configuration |
+| ------------------------------- | ----------------------------- |
+| **Описание**                    | Удаляет указанные конфигурации резервного копирования. |
+| **Параметры**                   | Массив идентификаторов конфигурации резервного копирования. |
+| **Ответ**                       | Объект статуса.               |
+
+| GET {: .api-method .get } | /webapi/Backup/Configuration |
+| --------------------------- | ----------------------------- |
+| **Описание**                 | Получает все конфигурации резервного копирования. |
+| **Параметры**                | Не требуются.                |
+| **Ответ**                    | Массив резервных объектов конфигурации. |
+
+| POST {: .api-method .post } | /webapi/Backup/Configuration |
+| --------------------------- | ----------------------------- |
+| **Описание**                 | Создает конфигурацию резервного копирования. |
+| **Параметры**                | Резервный объект конфигурации. |
+| **Ответ**                    | Идентификатор конфигурации резервного копирования. |
+
+| PUT {: .api-method .put } | /webapi/Backup/Configuration |
+| --------------------------- | ----------------------------- |
+| **Описание**                 | Изменяет конфигурацию резервного копирования. |
+| **Параметры**                | Резервный объект конфигурации. |
+| **Ответ**                    | Объект статуса.               |
+
+| GET {: .api-method .get } | /webapi/Backup/Configuration/{configurationId} |
+| --------------------------- | ----------------------------- |
+| **Описание**                 | Получает конфигурацию резервного копирования. |
+| **Параметры**                | Идентификатор конфигурации резервного копирования. |
+| **Ответ**                    | Резервный объект конфигурации. |
+
+| DELETE {: .api-method .delete } | /webapi/Backup/Session |
+| ------------------------------- | ----------------------- |
+| **Описание**                    | Удаляет указанные сеансы резервного копирования. |
+| **Параметры**                   | Массив идентификаторов сеансов резервного копирования. |
+| **Ответ**                       | Объект статуса.         |
+
+| POST {: .api-method .post } | /webapi/Backup/Session |
+| --------------------------- | ----------------------- |
+| **Описание**                 | Возвращает сеансы резервного копирования, соответствующие указанному фильтру. |
+| **Параметры**                | Объект с фильтром сеанса резервного копирования. |
+| **Ответ**                    | Массив объектов со сведениями о сеансах резервного копирования. |
+
+| POST {: .api-method .post } | /webapi/Backup/Session/{configurationId} |
+| --------------------------- | ----------------------- |
+| **Описание**                 | Инициирует сеанс резервного копирования с использованием указанной конфигурации. |
+| **Параметры**                | Идентификатор конфигурации резервного копирования. |
+| **Ответ**                    | Объект со сведениями о сеансе резервного копирования. |
+
+| GET {: .api-method .get } | /webapi/Backup/Session/{sessionId} |
+| --------------------------- | ----------------------- |
+| **Описание**                 | Получает сеанс резервного копирования. |
+| **Параметры**                | Идентификатор сеанса резервного копирования. |
+| **Ответ**                    | Объект со сведениями о сеансе резервного копирования. |
+
+| PUT {: .api-method .put } | /webapi/Backup/Session/{sessionId} |
+| --------------------------- | ----------------------- |
+| **Описание**                 | Прерывает сеанс резервного копирования. |
+| **Параметры**                | Идентификатор сеанса резервного копирования. |
+| **Ответ**                    | Объект со сведениями о сеансе резервного копирования. |
+
+| POST {: .api-method .post } | /webapi/Backup/SetElasticsearchRepository/{name} |
+| --------------------------- | ----------------------- |
+| **Описание**                 | Задает репозиторий моментальных снимков Elasticsearch. |
+| **Параметры**                | Имя существующего репозитория моментальных снимков Elasticsearch. |
+| **Ответ**                    | Объект статуса.         |
+
 ### BehaviourState — сценарии и элементы процессов
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>BehaviourState/<wbr/>{solutionAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает состояния сценариев и элементов процессов в указанном приложении.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект с состояниями сценариев и элементов процессов.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>BehaviourState/<wbr/>{solutionAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Обновляет состояния сценариев и элементов процессов в указанном приложении.
-</td>
-<td markdown="block" class="api-cell-input">
-Объект с состояниями сценариев и элементов процессов.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-</tbody>
-</table>
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
+| GET {: .api-method .get } | /webapi/BehaviourState/{solutionAlias} |
+| --------------------------- | ---------------------------------------- |
+| **Описание**                | Получает состояния сценариев и элементов процессов в указанном приложении. |
+| **Параметры**               | Системное имя приложения.               |
+| **Ответ**                   | Объект с состояниями сценариев и элементов процессов. |
+
+| PUT {: .api-method .put } | /webapi/BehaviourState/{solutionAlias} |
+| --------------------------- | ---------------------------------------- |
+| **Описание**                | Обновляет состояния сценариев и элементов процессов в указанном приложении. |
+| **Параметры**               | Объект с состояниями сценариев и элементов процессов. |
+| **Ответ**                   | Объект статуса.                          |
+
 ### CaseTemplate — шаблоны кейсов (не используются)
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p><span style="font-family: SFMono-Regular, sans-serif, serif; color: #c7254e; font-size: 10pt;"><span >/webapi/<wbr/>CaseTemplate/<wbr/>{solutionAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Создает шаблон кейса  с/без связанного шаблона записи.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект свойств шаблона кейса.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект с системным именем шаблона кейса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p><span style="font-family: SFMono-Regular, sans-serif, serif; color: #c7254e; font-size: 10pt;"><span >/webapi/<wbr/>CaseTemplate/<wbr/>{solutionAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Изменяет шаблон кейса.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект свойств шаблона кейса.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method delete">
-DELETE
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p><span style="font-family: SFMono-Regular, sans-serif, serif; color: #c7254e; font-size: 10pt;"><span >/webapi/<wbr/>CaseTemplate/<wbr/>{solutionAlias}/<wbr/>{caseTemplateAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Удаляет шаблон кейса.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, системное имя шаблона кейса.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p><span style="font-family: SFMono-Regular, sans-serif, serif; color: #c7254e; font-size: 10pt;"><span >/webapi/<wbr/>CaseTemplate/<wbr/>{solutionAlias}/<wbr/>{caseTemplateAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает свойства шаблона кейса.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, системное имя шаблона кейса.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект свойств шаблона кейса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p><span style="font-family: SFMono-Regular, sans-serif, serif; color: #c7254e; font-size: 10pt;"><span >/webapi/<wbr/>CaseTemplate/<wbr/>{solutionAlias}/<wbr/>{caseTemplateAlias}/<wbr/>Disable</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Образец архивного кейса.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, системное имя шаблона кейса.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p><span style="font-family: SFMono-Regular, sans-serif, serif; color: #c7254e; font-size: 10pt;"><span >/webapi/<wbr/>CaseTemplate/<wbr/>{solutionAlias}/<wbr/>{caseTemplateAlias}/<wbr/>Enable</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Разархивирует шаблон кейса.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, системное имя шаблона кейса.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p><span style="font-family: SFMono-Regular, sans-serif, serif; color: #c7254e; font-size: 10pt;"><span >/webapi/<wbr/>CaseTemplate/<wbr/>List/<wbr/>{solutionAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает все шаблоны кейсов в указанном приложении.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения.
-</td>
-<td markdown="block" class="api-cell-output">
-Массив объектов со свойствами шаблонов кейсов.
-</td>
-</tr>
-</tbody>
-</table>
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
+| POST {: .api-method .post } | /webapi/CaseTemplate/{solutionAlias} |
+| --------------------------- | ------------------------------------- |
+| **Описание**                | Создает шаблон кейса с/без связанного шаблона записи. |
+| **Параметры**               | Системное имя приложения, объект свойств шаблона кейса. |
+| **Ответ**                   | Объект с системным именем шаблона кейса. |
+
+| PUT {: .api-method .put } | /webapi/CaseTemplate/{solutionAlias} |
+| --------------------------- | ------------------------------------- |
+| **Описание**                | Изменяет шаблон кейса.                 |
+| **Параметры**               | Системное имя приложения, объект свойств шаблона кейса. |
+| **Ответ**                   | Объект статуса.                       |
+
+| DELETE {: .api-method .delete } | /webapi/CaseTemplate/{solutionAlias}/{caseTemplateAlias} |
+| ---------------------------- | ------------------------------------- |
+| **Описание**                 | Удаляет шаблон кейса.                  |
+| **Параметры**                | Системное имя приложения, системное имя шаблона кейса. |
+| **Ответ**                    | Объект статуса.                       |
+
+| GET {: .api-method .get } | /webapi/CaseTemplate/{solutionAlias}/{caseTemplateAlias} |
+| --------------------------- | ------------------------------------- |
+| **Описание**                | Получает свойства шаблона кейса.      |
+| **Параметры**               | Системное имя приложения, системное имя шаблона кейса. |
+| **Ответ**                   | Объект свойств шаблона кейса.         |
+
+| PUT {: .api-method .put } | /webapi/CaseTemplate/{solutionAlias}/{caseTemplateAlias}/Disable |
+| --------------------------- | ------------------------------------- |
+| **Описание**                | Архивирует шаблон кейса.               |
+| **Параметры**               | Системное имя приложения, системное имя шаблона кейса. |
+| **Ответ**                   | Объект статуса.                       |
+
+| PUT {: .api-method .put } | /webapi/CaseTemplate/{solutionAlias}/{caseTemplateAlias}/Enable |
+| --------------------------- | ------------------------------------- |
+| **Описание**                | Разархивирует шаблон кейса.           |
+| **Параметры**               | Системное имя приложения, системное имя шаблона кейса. |
+| **Ответ**                   | Объект статуса.                       |
+
+| GET {: .api-method .get } | /webapi/CaseTemplate/List/{solutionAlias} |
+| --------------------------- | ------------------------------------- |
+| **Описание**                | Получает все шаблоны кейсов в указанном приложении. |
+| **Параметры**               | Системное имя приложения.            |
+| **Ответ**                   | Массив объектов со свойствами шаблонов кейсов. |
+
 ### Dataset — таблицы
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>Dataset/<wbr/>{solutionAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Создает таблицу.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект конфигурации таблицы.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект конфигурации таблицы.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>Dataset/<wbr/>{solutionAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Изменяет конфигурацию таблицы.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект конфигурации таблицы.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method delete">
-DELETE
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>Dataset/<wbr/>{solutionAlias}/<wbr/>{datasetGlobalAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Удаляет таблицу.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним таблицы: <code>Dataset@<wbr/>templateSystemName.<wbr/>tablesystemName</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>Dataset/<wbr/>{solutionAlias}/<wbr/>{datasetGlobalAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает конфигурацию таблицы.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним таблицы: <code>Dataset@<wbr/>templateSystemName.<wbr/>tablesystemName</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Объект конфигурации таблицы.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>Dataset/<wbr/>List/<wbr/>{templateGlobalAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает все таблицы указанного шаблона.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним шаблона: <code>Template@<wbr/>applicationSystemName.<wbr/>templateSystemName</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Массив объектов с конфигурациями таблиц.
-</td>
-</tr>
-</tbody>
-</table>
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
+| POST {: .api-method .post } | /webapi/Dataset/{solutionAlias} |
+| --------------------------- | -------------------------------- |
+| **Описание**                | Создает таблицу.                   |
+| **Параметры**               | Системное имя приложения, объект конфигурации таблицы. |
+| **Ответ**                   | Объект конфигурации таблицы.        |
+
+| PUT {: .api-method .put } | /webapi/Dataset/{solutionAlias} |
+| --------------------------- | -------------------------------- |
+| **Описание**                | Изменяет конфигурацию таблицы.     |
+| **Параметры**               | Системное имя приложения, объект конфигурации таблицы. |
+| **Ответ**                   | Объект статуса.                    |
+
+| DELETE {: .api-method .delete } | /webapi/Dataset/{solutionAlias}/{datasetGlobalAlias} |
+| ---------------------------- | -------------------------------- |
+| **Описание**                 | Удаляет таблицу.                   |
+| **Параметры**                | Системное имя приложения, глобальный псевдоним таблицы: `Dataset@templateSystemName.tableSystemName`. |
+| **Ответ**                    | Объект статуса.                    |
+
+| GET {: .api-method .get } | /webapi/Dataset/{solutionAlias}/{datasetGlobalAlias} |
+| --------------------------- | -------------------------------- |
+| **Описание**                | Получает конфигурацию таблицы.     |
+| **Параметры**               | Системное имя приложения, глобальный псевдоним таблицы: `Dataset@templateSystemName.tableSystemName`. |
+| **Ответ**                   | Объект конфигурации таблицы.       |
+
+| GET {: .api-method .get } | /webapi/Dataset/List/{templateGlobalAlias} |
+| --------------------------- | -------------------------------- |
+| **Описание**                | Получает все таблицы указанного шаблона. |
+| **Параметры**               | Системное имя приложения, глобальный псевдоним шаблона: `Template@applicationSystemName.templateSystemName`. |
+| **Ответ**                   | Массив объектов с конфигурациями таблиц. |
+
 ### Document — файлы, прикрепленные к атрибутам типа «документ»
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Document</span>
-</td>
-<td markdown="block" class="api-cell-description">
-Создает документ.
-</td>
-<td markdown="block" class="api-cell-input">
-Объект свойств документа.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект с идентификатором документа.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Document</span>
-</td>
-<td markdown="block" class="api-cell-description">
-Изменяет свойства документа.
-</td>
-<td markdown="block" class="api-cell-input">
-Объект свойств документа.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method delete">
-DELETE
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Document/<wbr/>{documentId}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Удаляет документ.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор документа.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Document/<wbr/>{documentId}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает свойства документа.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор документа.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект свойств документа.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Document/<wbr/>{documentId}/<wbr/>Content</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает содержимое документа.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор документа.
-</td>
-<td markdown="block" class="api-cell-output">
-Содержимое документа (<code>application/octet-stream</code>).
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Document/Content</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Создает документ путем загрузки файла.
-</td>
-<td markdown="block" class="api-cell-input">
-Объект с именем файла и его содержимым <code>(byte array</code>).
-</td>
-<td markdown="block" class="api-cell-output">
-Объект с идентификатором документа.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Document/<wbr/>Revision/<wbr/>{documentId}/<wbr/>Content</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Создает версию путем загрузки файла.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор документа, объект с именем файла и его содержимым (<code>byte array</code>).
-</td>
-<td markdown="block" class="api-cell-output">
-Объект с идентификатором версии.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Document/<wbr/>Revision/<wbr/>{revisionId}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает свойства версии.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор версии.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект свойств версии.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Document/<wbr/>Revision/<wbr/>{revisionId}/<wbr/>Content</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает содержимое версии.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор версии.
-</td>
-<td markdown="block" class="api-cell-output">
-Содержимое версии (<code>application/octet-stream</code>).
-</td>
-</tr>
-</tbody>
-</table>
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
+| POST {: .api-method .post } | /webapi/Document |
+| --------------------------- | ---------------- |
+| **Описание**                | Создает документ.                  |
+| **Параметры**               | Объект свойств документа.           |
+| **Ответ**                   | Объект с идентификатором документа. |
+
+| PUT {: .api-method .put } | /webapi/Document |
+| --------------------------- | ---------------- |
+| **Описание**                | Изменяет свойства документа.        |
+| **Параметры**               | Объект свойств документа.           |
+| **Ответ**                   | Объект статуса.                     |
+
+| DELETE {: .api-method .delete } | /webapi/Document/{documentId} |
+| ---------------------------- | ---------------- |
+| **Описание**                 | Удаляет документ.                   |
+| **Параметры**                | Идентификатор документа.            |
+| **Ответ**                    | Объект статуса.                     |
+
+| GET {: .api-method .get } | /webapi/Document/{documentId} |
+| --------------------------- | ---------------- |
+| **Описание**                | Получает свойства документа.        |
+| **Параметры**               | Идентификатор документа.            |
+| **Ответ**                   | Объект свойств документа.           |
+
+| GET {: .api-method .get } | /webapi/Document/{documentId}/Content |
+| --------------------------- | ---------------- |
+| **Описание**                | Получает содержимое документа.       |
+| **Параметры**               | Идентификатор документа.            |
+| **Ответ**                   | Содержимое документа (`application/octet-stream`). |
+
+| POST {: .api-method .post } | /webapi/Document/Content |
+| --------------------------- | ---------------- |
+| **Описание**                | Создает документ путем загрузки файла. |
+| **Параметры**               | Объект с именем файла и его содержимым (`byte array`). |
+| **Ответ**                   | Объект с идентификатором документа. |
+
+| POST {: .api-method .post } | /webapi/Document/Revision/{documentId}/Content |
+| --------------------------- | ---------------- |
+| **Описание**                | Создает версию путем загрузки файла. |
+| **Параметры**               | Идентификатор документа, объект с именем файла и его содержимым (`byte array`). |
+| **Ответ**                   | Объект с идентификатором версии.    |
+
+| GET {: .api-method .get } | /webapi/Document/Revision/{revisionId} |
+| --------------------------- | ---------------- |
+| **Описание**                | Получает свойства версии.            |
+| **Параметры**               | Идентификатор версии.                |
+| **Ответ**                   | Объект свойств версии.               |
+
+| GET {: .api-method .get } | /webapi/Document/Revision/{revisionId}/Content |
+| --------------------------- | ---------------- |
+| **Описание**                | Получает содержимое версии.          |
+| **Параметры**               | Идентификатор версии.                |
+| **Ответ**                   | Содержимое версии (`application/octet-stream`). |
+
 ### DocumentExportTemplate — шаблоны экспорта
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>DocumentExportTemplate/<wbr/>{solutionAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Создает шаблон экспорта.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект свойств шаблона экспорта.
-</td>
-<td markdown="block" class="api-cell-output">
-Системное имя шаблона экспорта.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>DocumentExportTemplate/<wbr/>{solutionAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Изменяет шаблон экспорта.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект свойств шаблона экспорта.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method delete">
-DELETE
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>DocumentExportTemplate/<wbr/>{solutionAlias}/<wbr/>{exportTemplateGlobalAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Удаляет шаблон экспорта.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним шаблона экспорта: <code>ExportTemplate@<wbr/>templateSystemName.<wbr/>exportTemplate<wbr/>SystemName</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>DocumentExportTemplate/<wbr/>{solutionAlias}/<wbr/>{exportTemplateGlobalAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает свойства шаблона экспорта.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним шаблона экспорта: <code>ExportTemplate@<wbr/>templateSystemName.<wbr/>exportTemplate<wbr/>SystemName</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Объект свойств шаблона экспорта.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>DocumentExportTemplate/<wbr/>List/<wbr/>{templateGlobalAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает все шаблоны экспорта для указанного шаблона.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним шаблона: <code>Template@<wbr/>applicationSystemName.<wbr/>templateSystemName</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Массив объектов со свойствами шаблонов экспорта.
-</td>
-</tr>
-</tbody>
-</table>
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
+| POST {: .api-method .post } | /webapi/DocumentExportTemplate/{solutionAlias} |
+| --------------------------- | ---------------------------------------------- |
+| **Описание**                | Создает шаблон экспорта.                       |
+| **Параметры**               | Системное имя приложения, объект свойств шаблона экспорта. |
+| **Ответ**                   | Системное имя шаблона экспорта.                |
+
+| PUT {: .api-method .put } | /webapi/DocumentExportTemplate/{solutionAlias} |
+| --------------------------- | ---------------------------------------------- |
+| **Описание**                | Изменяет шаблон экспорта.                      |
+| **Параметры**               | Системное имя приложения, объект свойств шаблона экспорта. |
+| **Ответ**                   | Объект статуса.                                |
+
+| DELETE {: .api-method .delete } | /webapi/DocumentExportTemplate/{solutionAlias}/{exportTemplateGlobalAlias} |
+| ---------------------------- | ---------------------------------------------- |
+| **Описание**                 | Удаляет шаблон экспорта.                       |
+| **Параметры**                | Системное имя приложения, глобальный псевдоним шаблона экспорта: `ExportTemplate@templateSystemName.exportTemplateSystemName`. |
+| **Ответ**                    | Объект статуса.                                |
+
+| GET {: .api-method .get } | /webapi/DocumentExportTemplate/{solutionAlias}/{exportTemplateGlobalAlias} |
+| --------------------------- | ---------------------------------------------- |
+| **Описание**                | Получает свойства шаблона экспорта.            |
+| **Параметры**               | Системное имя приложения, глобальный псевдоним шаблона экспорта: `ExportTemplate@templateSystemName.exportTemplateSystemName`. |
+| **Ответ**                   | Объект свойств шаблона экспорта.               |
+
+| GET {: .api-method .get } | /webapi/DocumentExportTemplate/List/{templateGlobalAlias} |
+| --------------------------- | ---------------------------------------------- |
+| **Описание**                | Получает все шаблоны экспорта для указанного шаблона. |
+| **Параметры**               | Системное имя приложения, глобальный псевдоним шаблона: `Template@applicationSystemName.templateSystemName`. |
+| **Ответ**                   | Массив объектов со свойствами шаблонов экспорта. |
+
 ### Form — формы и правила для форм (кроме стартовых форм процессов и форм пользовательских задач)
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Form/<wbr/>{solutionAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Создает форму.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект конфигурации формы.
-</td>
-<td markdown="block" class="api-cell-output">
-Системное имя форм.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Form/<wbr/>{solutionAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Изменяет форму.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект конфигурации формы.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method delete">
-DELETE
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Form/<wbr/>{solutionAlias}/<wbr/>{formGlobalAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Удаляет форму.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним формы: <code>Form@<wbr/>templateSystemName.<wbr/>formSystemName</code>. <wbr/>
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Form/<wbr/>{solutionAlias}/<wbr/>{formGlobalAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает конфигурацию формы.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним формы: <code>Form@<wbr/>templateSystemName.<wbr/>formSystemName</code> <wbr/>
-</td>
-<td markdown="block" class="api-cell-output">
-Объект конфигурации формы.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Form/<wbr/>FormRules/<wbr/>{solutionAlias}/<wbr/>{formGlobalAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает правила для формы.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним формы: <code>Form@<wbr/>templateSystemName.<wbr/>formSystemName</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Объект правил для формы.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Form/<wbr/>FormRules/<wbr/>{solutionAlias}/<wbr/>{formGlobalAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Устанавливает правила для формы.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним формы (<code>Form@<wbr/>templateSystemName.<wbr/>formSystemName</code>) <wbr/> , объект правил для формы.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Form/<wbr/>List/<wbr/>{templateGlobalAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает все формы указанного шаблона.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним шаблона: <code>Template@<wbr/>solutionSystemName.<wbr/>templateSystemName</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Массив объектов с конфигурациями форм.
-</td>
-</tr>
-</tbody>
-</table>
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
-### SolutionGitIntegration — контроль версий приложений через Git 
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Git/<wbr/>AddRemoteBranch</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Создает ветвь в удаленном репозитории.
-</td>
-<td markdown="block" class="api-cell-input">
-Объект конфигурации репозитория и ветви.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Git/<wbr/>Connect</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Инициализирует соединение с указанным репозиторием.
-</td>
-<td markdown="block" class="api-cell-input">
-Объект конфигурации репозитория.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Git/<wbr/>GetRepositoryDetails</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает коммиты репозитория.
-</td>
-<td markdown="block" class="api-cell-input">
-Объект конфигурации репозитория.
-</td>
-<td markdown="block" class="api-cell-output">
-Массив объектов со свойствами коммитов.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Git/<wbr/>GetUserConfiguration</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает учетные данные пользователя репозитория.
-</td>
-<td markdown="block" class="api-cell-input">
- 
-</td>
-<td markdown="block" class="api-cell-output">
-Объект с учетными данными пользователя репозитория.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Git/<wbr/>GetUserSolutionConfig</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает конфигурацию репозитория и сведения о пользователе.
-</td>
-<td markdown="block" class="api-cell-input">
- 
-</td>
-<td markdown="block" class="api-cell-output">
-Объект с конфигурацией репозитория и учетными данными пользователя.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Git/<wbr/>ListBranches</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает все ветви репозитория.
-</td>
-<td markdown="block" class="api-cell-input">
-Объект конфигурации репозитория.
-</td>
-<td markdown="block" class="api-cell-output">
-<p><span >Массив объектов со свойствами ветвей.</span></p>
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Git/<wbr/>ListRepositories</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает все репозитории подключений к Git.
-</td>
-<td markdown="block" class="api-cell-input">
- 
-</td>
-<td markdown="block" class="api-cell-output">
-Массив объектов с конфигурациями репозиториев.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Git/<wbr/>SaveUserCredentials</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Сохраняет учетные данные пользователя.
-</td>
-<td markdown="block" class="api-cell-input">
-Объект с конфигурацией репозитория и учетными данными пользователя.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; background: white; width: 99.00%;">
-### Heartbeat — мониторинг состояния сервера, процессов, скриптов и служб.
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>Heartbeat/<wbr/>Details</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает статистику использования служб.
-</td>
-<td markdown="block" class="api-cell-input">
- 
-</td>
-<td markdown="block" class="api-cell-output">
-Объект сведений об использовании служб.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>Heartbeat/<wbr/>IsAlive</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает статус доступности служб.
-</td>
-<td markdown="block" class="api-cell-input">
- 
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>Heartbeat/<wbr/>ServerDetails</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает информацию о сервере.
-</td>
-<td markdown="block" class="api-cell-input">
- 
-</td>
-<td markdown="block" class="api-cell-output">
-Объект сведений о сервере.
-</td>
-</tr>
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; background: white; width: 99.00%;">
+| POST {: .api-method .post } | /webapi/Form/{solutionAlias} |
+| --------------------------- | ----------------------------- |
+| **Описание**                | Создает форму.                 |
+| **Параметры**               | Системное имя приложения, объект конфигурации формы. |
+| **Ответ**                   | Системное имя формы.            |
+
+| PUT {: .api-method .put } | /webapi/Form/{solutionAlias} |
+| --------------------------- | ----------------------------- |
+| **Описание**                | Изменяет форму.                 |
+| **Параметры**               | Системное имя приложения, объект конфигурации формы. |
+| **Ответ**                   | Объект статуса.                 |
+
+| DELETE {: .api-method .delete } | /webapi/Form/{solutionAlias}/{formGlobalAlias} |
+| ---------------------------- | ----------------------------- |
+| **Описание**                 | Удаляет форму.                  |
+| **Параметры**                | Системное имя приложения, глобальный псевдоним формы: `Form@templateSystemName.formSystemName`. |
+| **Ответ**                    | Объект статуса.                 |
+
+| GET {: .api-method .get } | /webapi/Form/{solutionAlias}/{formGlobalAlias} |
+| --------------------------- | ----------------------------- |
+| **Описание**                | Получает конфигурацию формы.   |
+| **Параметры**               | Системное имя приложения, глобальный псевдоним формы: `Form@templateSystemName.formSystemName`. |
+| **Ответ**                   | Объект конфигурации формы.      |
+
+| GET {: .api-method .get } | /webapi/Form/FormRules/{solutionAlias}/{formGlobalAlias} |
+| --------------------------- | ----------------------------- |
+| **Описание**                | Получает правила для формы.     |
+| **Параметры**               | Системное имя приложения, глобальный псевдоним формы: `Form@templateSystemName.formSystemName`. |
+| **Ответ**                   | Объект правил для формы.        |
+
+| PUT {: .api-method .put } | /webapi/Form/FormRules/{solutionAlias}/{formGlobalAlias} |
+| --------------------------- | ----------------------------- |
+| **Описание**                | Устанавливает правила для формы. |
+| **Параметры**               | Системное имя приложения, глобальный псевдоним формы: `Form@templateSystemName.formSystemName`, объект правил для формы. |
+| **Ответ**                   | Объект статуса.                 |
+
+| GET {: .api-method .get } | /webapi/Form/List/{templateGlobalAlias} |
+| --------------------------- | ----------------------------- |
+| **Описание**                | Получает все формы указанного шаблона. |
+| **Параметры**               | Системное имя приложения, глобальный псевдоним шаблона: `Template@applicationSystemName.templateSystemName`. |
+| **Ответ**                   | Массив объектов с конфигурациями форм. |
+
+### SolutionGitIntegration — контроль версий приложений через Git
+
+| POST {: .api-method .post } | /webapi/Git/AddRemoteBranch |
+| --------------------------- | --------------------------- |
+| **Описание**                | Создает ветвь в удаленном репозитории. |
+| **Параметры**               | Объект конфигурации репозитория и ветви. |
+| **Ответ**                   | Объект статуса.                        |
+
+| POST {: .api-method .post } | /webapi/Git/Connect |
+| --------------------------- | ------------------- |
+| **Описание**                | Инициализирует соединение с указанным репозиторием. |
+| **Параметры**               | Объект конфигурации репозитория.       |
+| **Ответ**                   | Объект статуса.                        |
+
+| POST {: .api-method .post } | /webapi/Git/GetRepositoryDetails |
+| --------------------------- | -------------------------------- |
+| **Описание**                | Получает коммиты репозитория.          |
+| **Параметры**               | Объект конфигурации репозитория.       |
+| **Ответ**                   | Массив объектов со свойствами коммитов. |
+
+| GET {: .api-method .get } | /webapi/Git/GetUserConfiguration |
+| --------------------------- | -------------------------------- |
+| **Описание**                | Получает учетные данные пользователя репозитория. |
+| **Параметры**               | Не требуются.                         |
+| **Ответ**                   | Объект с учетными данными пользователя репозитория. |
+
+| GET {: .api-method .get } | /webapi/Git/GetUserSolutionConfig |
+| --------------------------- | -------------------------------- |
+| **Описание**                | Получает конфигурацию репозитория и сведения о пользователе. |
+| **Параметры**               | Не требуются.                         |
+| **Ответ**                   | Объект с конфигурацией репозитория и учетными данными пользователя. |
+
+| POST {: .api-method .post } | /webapi/Git/ListBranches |
+| --------------------------- | ------------------------ |
+| **Описание**                | Получает все ветви репозитория.       |
+| **Параметры**               | Объект конфигурации репозитория.       |
+| **Ответ**                   | Массив объектов со свойствами ветвей.  |
+
+| POST {: .api-method .post } | /webapi/Git/SaveUserCredentials |
+| --------------------------- | -------------------------------- |
+| **Описание**                | Сохраняет учетные данные пользователя. |
+| **Параметры**               | Объект с конфигурацией репозитория и учетными данными пользователя. |
+| **Ответ**                   | Объект статуса.                        |
+
+| GET {: .api-method .get } | /webapi/Git/ListRepositories |
+| --------------------------- | ---------------------------- |
+| **Описание**                | Получает все репозитории подключений к Git. |
+| **Параметры**               | Не требуются.                         |
+| **Ответ**                   | Массив объектов с конфигурациями репозиториев. |
+
+### Heartbeat — мониторинг состояния сервера, процессов, скриптов и служб
+
+| GET {: .api-method .get } | /webapi/Heartbeat/Details |
+| --------------------------- | -------------------------- |
+| **Описание**                | Получает статистику использования служб. |
+| **Параметры**               | Не требуются.              |
+| **Ответ**                   | Объект сведений об использовании служб. |
+
+| GET {: .api-method .get } | /webapi/Heartbeat/IsAlive |
+| --------------------------- | ------------------------- |
+| **Описание**                | Получает статус доступности служб. |
+| **Параметры**               | Не требуются.            |
+| **Ответ**                   | Объект статуса.           |
+
+| GET {: .api-method .get } | /webapi/Heartbeat/ServerDetails |
+| --------------------------- | -------------------------------- |
+| **Описание**                | Получает информацию о сервере.   |
+| **Параметры**               | Не требуются.                   |
+| **Ответ**                   | Объект сведений о сервере.       |
+
 ### ProcessObjects — миграция версии диаграммы процесса
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-<p style="text-align: center; page-break-after: avoid;"><strong>Метод</strong></p>
-</th>
-<th markdown="block" class="api-cell-endpoint">
-<p style="text-align: center; page-break-after: avoid;"><strong><span style="font-size: 10.0pt;">Запрос</span></strong></p>
-</th>
-<th markdown="block" class="api-cell-description">
-<p style="text-align: center; page-break-after: avoid;"><strong>Описание</strong></p>
-</th>
-<th markdown="block" class="api-cell-input">
-<p style="text-align: center; page-break-after: avoid;"><strong>Входные данные</strong></p>
-</th>
-<th markdown="block" class="api-cell-output">
-<p style="text-align: center; page-break-after: avoid;"><strong>Выходные данные</strong></p>
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>ProcessObjects/<wbr/>Migrate</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Изменяет версию диаграммы экземпляров процесса и перемещает токены.
-</td>
-<td markdown="block" class="api-cell-input">
-Глобальный псевдоним шаблона процесса (<code>ProcessTemplate@<wbr/>applicationSystemName.<wbr/>templateSystemName</code>), идентификатор целевой диаграммы, идентификаторы экземпляров процесса.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-</tbody>
-</table>
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
+| POST {: .api-method .post } | /webapi/ProcessObjects/Migrate |
+| --------------------------- | -------------------------------- |
+| **Описание**                | Изменяет версию диаграммы экземпляров процесса и перемещает токены. |
+| **Параметры**               | Глобальный псевдоним шаблона процесса (`ProcessTemplate@applicationSystemName.templateSystemName`), идентификатор целевой диаграммы, идентификаторы экземпляров процесса. |
+| **Ответ**                   | Объект статуса.                  |
+
 ### ProcessTemplate — шаблоны процессов
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>ProcessTemplate/<wbr/>{solutionAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Создает шаблон процесса.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект свойств шаблона процесса.
-</td>
-<td markdown="block" class="api-cell-output">
-Системное имя шаблона процесса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>ProcessTemplate/<wbr/>{solutionAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Изменяет свойства шаблона процесса.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект свойств шаблона процесса.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method delete">
-DELETE
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>ProcessTemplate/<wbr/>{solutionAlias}/<wbr/>{processTemplateAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Удаляет шаблон процесса.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, системное имя шаблона процесса.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>ProcessTemplate/<wbr/>{solutionAlias}/<wbr/>{processTemplateAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает свойства шаблона процесса.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, системное имя шаблона процесса.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект свойств шаблона процесса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>ProcessTemplate/<wbr/>{solutionAlias}/<wbr/>{processTemplateAlias}/<wbr/>Disable</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Шаблон процесса архивирования.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, системное имя шаблона процесса.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>ProcessTemplate/<wbr/>{solutionAlias}/<wbr/>{processTemplateAlias}/<wbr/>Enable</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Разархивирует шаблон процесса.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, системное имя шаблона процесса.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>ProcessTemplate/<wbr/>List/<wbr/>{solutionAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает все шаблоны процессов в указанном приложении.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения.
-</td>
-<td markdown="block" class="api-cell-output">
-Массив объектов со свойствами шаблона процесса.
-</td>
-</tr>
-</tbody>
-</table>
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
+| POST {: .api-method .post } | /webapi/ProcessTemplate/{solutionAlias} |
+| --------------------------- | ----------------------------------------- |
+| **Описание**                | Создает шаблон процесса.                  |
+| **Параметры**               | Системное имя приложения, объект свойств шаблона процесса. |
+| **Ответ**                   | Системное имя шаблона процесса.           |
+
+| PUT {: .api-method .put } | /webapi/ProcessTemplate/{solutionAlias} |
+| --------------------------- | ----------------------------------------- |
+| **Описание**                | Изменяет свойства шаблона процесса.      |
+| **Параметры**               | Системное имя приложения, объект свойств шаблона процесса. |
+| **Ответ**                   | Объект статуса.                          |
+
+| DELETE {: .api-method .delete } | /webapi/ProcessTemplate/{solutionAlias}/{processTemplateAlias} |
+| ---------------------------- | ----------------------------------------- |
+| **Описание**                 | Удаляет шаблон процесса.                  |
+| **Параметры**                | Системное имя приложения, системное имя шаблона процесса. |
+| **Ответ**                    | Объект статуса.                          |
+
+| GET {: .api-method .get } | /webapi/ProcessTemplate/{solutionAlias}/{processTemplateAlias} |
+| --------------------------- | ----------------------------------------- |
+| **Описание**                | Получает свойства шаблона процесса.      |
+| **Параметры**               | Системное имя приложения, системное имя шаблона процесса. |
+| **Ответ**                   | Объект свойств шаблона процесса.         |
+
+| PUT {: .api-method .put } | /webapi/ProcessTemplate/{solutionAlias}/{processTemplateAlias}/Disable |
+| --------------------------- | ----------------------------------------- |
+| **Описание**                | Архивирует шаблон процесса.               |
+| **Параметры**               | Системное имя приложения, системное имя шаблона процесса. |
+| **Ответ**                   | Объект статуса.                          |
+
+| PUT {: .api-method .put } | /webapi/ProcessTemplate/{solutionAlias}/{processTemplateAlias}/Enable |
+| --------------------------- | ----------------------------------------- |
+| **Описание**                | Разархивирует шаблон процесса.           |
+| **Параметры**               | Системное имя приложения, системное имя шаблона процесса. |
+| **Ответ**                   | Объект статуса.                          |
+
+| GET {: .api-method .get } | /webapi/ProcessTemplate/List/{solutionAlias} |
+| --------------------------- | ----------------------------------------- |
+| **Описание**                | Получает все шаблоны процессов в указанном приложении. |
+| **Параметры**               | Системное имя приложения.                |
+| **Ответ**                   | Массив объектов со свойствами шаблона процесса. |
+
 ### Record — одна запись (кроме шаблонов процессов)
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method delete">
-DELETE
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Record/<wbr/>{recordId}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Удаляет запись.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор записи.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Record/<wbr/>{recordId}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает запись.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор записи.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект со значениями атрибутов записи:  <br/><code>{"attribute<wbr/>SystemName": "value"}</code>
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Record/<wbr/>{recordId}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Изменяет запись.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор записи, объект со значениями атрибутов записи: <code>[{"attribute<wbr/>SystemName": "value"}]</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Record/<wbr/>{recordId}/<wbr/>{deepClone}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Запись клонов.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор записи, флаг глубокого клонирования (true — клонировать связанные записи).
-</td>
-<td markdown="block" class="api-cell-output">
-Клонированный идентификатор записи.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Record/<wbr/>{recordId}/<wbr/>Disable</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Запись архива.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор записи.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Record/<wbr/>{recordId}/<wbr/>Enable</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Разархивирует запись.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор записи.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Record/<wbr/>{templateGlobalAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Создает запись.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним шаблона (<code>Template@<wbr/>applicationSystemName.<wbr/>templateSystemName</code>) <wbr/> , объект со значениями атрибутов записи: <code>[{"attribute<wbr/>SystemName": "value"}]</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Идентификатор записи.
-</td>
-</tr>
-</tbody>
-</table>
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
+| DELETE {: .api-method .delete } | /webapi/Record/{recordId} |
+| ------------------------------- | -------------------------- |
+| **Описание**                    | Удаляет запись.             |
+| **Параметры**                   | Идентификатор записи.       |
+| **Ответ**                       | Объект статуса.             |
+
+| GET {: .api-method .get } | /webapi/Record/{recordId} |
+| --------------------------- | -------------------------- |
+| **Описание**                 | Получает запись.             |
+| **Параметры**                 | Идентификатор записи.       |
+| **Ответ**                     | Объект со значениями атрибутов записи: `{"attributeSystemName": "value"}`. |
+
+| PUT {: .api-method .put } | /webapi/Record/{recordId} |
+| --------------------------- | -------------------------- |
+| **Описание**                 | Изменяет запись.             |
+| **Параметры**                 | Идентификатор записи, объект со значениями атрибутов записи: `[{"attributeSystemName": "value"}]`. |
+| **Ответ**                     | Объект статуса.             |
+
+| POST {: .api-method .post } | /webapi/Record/{recordId}/{deepClone} |
+| --------------------------- | -------------------------- |
+| **Описание**                 | Клонирует запись.            |
+| **Параметры**                 | Идентификатор записи, флаг глубокого клонирования (`true` — клонировать связанные записи). |
+| **Ответ**                     | Клонированный идентификатор записи. |
+
+| PUT {: .api-method .put } | /webapi/Record/{recordId}/Disable |
+| --------------------------- | -------------------------- |
+| **Описание**                 | Архивирует запись.           |
+| **Параметры**                 | Идентификатор записи.       |
+| **Ответ**                     | Объект статуса.             |
+
+| PUT {: .api-method .put } | /webapi/Record/{recordId}/Enable |
+| --------------------------- | -------------------------- |
+| **Описание**                 | Разархивирует запись.        |
+| **Параметры**                 | Идентификатор записи.       |
+| **Ответ**                     | Объект статуса.             |
+
+| POST {: .api-method .post } | /webapi/Record/{templateGlobalAlias} |
+| --------------------------- | -------------------------- |
+| **Описание**                 | Создает запись.              |
+| **Параметры**                 | Системное имя приложения, глобальный псевдоним шаблона (`Template@applicationSystemName.templateSystemName`), объект со значениями атрибутов записи: `[{"attributeSystemName": "value"}]`. |
+| **Ответ**                     | Идентификатор записи.       |
+
 ### Record — несколько записей и экспорт/импорт записей (кроме шаблонов процессов)
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method delete">
-DELETE
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Records</span>
-</td>
-<td markdown="block" class="api-cell-description">
-Удаляет указанные записи.
-</td>
-<td markdown="block" class="api-cell-input">
-Массив идентификаторов записей.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Records</span>
-</td>
-<td markdown="block" class="api-cell-description">
-Изменяет указанные записи.
-</td>
-<td markdown="block" class="api-cell-input">
-Массив идентификаторов записей и объектов со значениями атрибутов записей: <code>[{"attribute<wbr/>SystemName": "value"}]</code>.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method delete">
-DELETE
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Records/<wbr/>{templateGlobalAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Удаляет все записи из указанного шаблона.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним шаблона: Template@ <wbr/> applicationSystemName. <wbr/> templateSystemName
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Records/<wbr/>{templateGlobalAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает все записи указанного шаблона.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним шаблона: <code>Template@ <wbr/> applicationSystemName. <wbr/> templateSystemName</code>
-</td>
-<td markdown="block" class="api-cell-output">
-<p><span >Массив объектов со значениями атрибутов записей</span><span >: </span><code>[{"attribute<wbr/>SystemName"<wbr/>: "value"}]</code></p>
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Records/<wbr/>{templateGlobalAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Создает записи.
-</td>
-<td markdown="block" class="api-cell-input">
-<p><span >Глобальный псевдоним шаблона (</span><code>Template@ <wbr/> applicationSystemName. <wbr/> templateSystemName</code>), массив объектов со значениями атрибутов записи: <code>[{"attribute<wbr/>SystemName"<wbr/> : "value"}]</code></p>
-</td>
-<td markdown="block" class="api-cell-output">
-Массив идентификаторов записей.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Records/<wbr/>{templateGlobalAlias}/<wbr/>Export</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Экспортирует все записи указанного шаблона.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним шаблона: <code>Template@ <wbr/> applicationSystemName. <wbr/> templateSystemName</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Серийные записи данных.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Records/<wbr/>BulkEdit</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Обновляет указанные записи с теми же данными.
-</td>
-<td markdown="block" class="api-cell-input">
-Запишите свойства и значения для обновления.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Records/<wbr/>Disable</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Архивирует указанные записи.
-</td>
-<td markdown="block" class="api-cell-input">
-Массив идентификаторов записей.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Records/<wbr/>Enable</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Разархивирует указанные записи.
-</td>
-<td markdown="block" class="api-cell-input">
-Массив идентификаторов записей.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Records/<wbr/>Export</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Экспортирует указанные записи.
-</td>
-<td markdown="block" class="api-cell-input">
-Объект глобального псевдонима шаблона записи, массив идентификаторов записей.
-</td>
-<td markdown="block" class="api-cell-output">
-Серийные записи данных.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Records/<wbr/>Import</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Импортирует записи из файла.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор загруженного файла с сериализованными данными записей.
-</td>
-<td markdown="block" class="api-cell-output">
-Количество импортированных записей.
-</td>
-</tr>
-</tbody>
-</table>
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
+| DELETE {: .api-method .delete } | /webapi/Records |
+| ------------------------------- | ---------------- |
+| **Описание**                    | Удаляет указанные записи. |
+| **Параметры**                   | Массив идентификаторов записей. |
+| **Ответ**                       | Объект статуса.             |
+
+| PUT {: .api-method .put } | /webapi/Records |
+| --------------------------- | ---------------- |
+| **Описание**                 | Изменяет указанные записи. |
+| **Параметры**                 | Массив идентификаторов записей и объектов со значениями атрибутов записей: `[{"attributeSystemName": "value"}]`. |
+| **Ответ**                     | Объект статуса.             |
+
+| DELETE {: .api-method .delete } | /webapi/Records/{templateGlobalAlias} |
+| ------------------------------- | ------------------------------------- |
+| **Описание**                    | Удаляет все записи из указанного шаблона. |
+| **Параметры**                   | Системное имя приложения, глобальный псевдоним шаблона: `Template@applicationSystemName.templateSystemName`. |
+| **Ответ**                       | Объект статуса.                       |
+
+| GET {: .api-method .get } | /webapi/Records/{templateGlobalAlias} |
+| --------------------------- | ------------------------------------- |
+| **Описание**                 | Получает все записи указанного шаблона. |
+| **Параметры**                | Системное имя приложения, глобальный псевдоним шаблона: `Template@applicationSystemName.templateSystemName`. |
+| **Ответ**                    | Массив объектов со значениями атрибутов записей: `[{"attributeSystemName": "value"}]`. |
+
+| POST {: .api-method .post } | /webapi/Records/{templateGlobalAlias} |
+| --------------------------- | ------------------------------------- |
+| **Описание**                 | Создает записи.                       |
+| **Параметры**                | Глобальный псевдоним шаблона (`Template@applicationSystemName.templateSystemName`), массив объектов со значениями атрибутов записи: `[{"attributeSystemName": "value"}]`. |
+| **Ответ**                    | Массив идентификаторов записей.       |
+
+| GET {: .api-method .get } | /webapi/Records/{templateGlobalAlias}/Export |
+| --------------------------- | ------------------------------------- |
+| **Описание**                 | Экспортирует все записи указанного шаблона. |
+| **Параметры**                | Системное имя приложения, глобальный псевдоним шаблона: `Template@applicationSystemName.templateSystemName`. |
+| **Ответ**                    | Серийные записи данных.               |
+
+| PUT {: .api-method .put } | /webapi/Records/BulkEdit |
+| --------------------------- | ------------------------- |
+| **Описание**                 | Обновляет указанные записи с теми же данными. |
+| **Параметры**                | Запишите свойства и значения для обновления. |
+| **Ответ**                    | Объект статуса.                       |
+
+| PUT {: .api-method .put } | /webapi/Records/Disable |
+| --------------------------- | ------------------------ |
+| **Описание**                 | Архивирует указанные записи.          |
+| **Параметры**                | Массив идентификаторов записей.       |
+| **Ответ**                    | Объект статуса.                       |
+
+| PUT {: .api-method .put } | /webapi/Records/Enable |
+| --------------------------- | ----------------------- |
+| **Описание**                 | Разархивирует указанные записи.       |
+| **Параметры**                | Массив идентификаторов записей.       |
+| **Ответ**                    | Объект статуса.                       |
+
+| POST {: .api-method .post } | /webapi/Records/Export |
+| --------------------------- | ---------------------- |
+| **Описание**                 | Экспортирует указанные записи.        |
+| **Параметры**                | Объект глобального псевдонима шаблона записи, массив идентификаторов записей. |
+| **Ответ**                    | Серийные записи данных.               |
+
+| POST {: .api-method .post } | /webapi/Records/Import |
+| --------------------------- | ----------------------- |
+| **Описание**                 | Импортирует записи из файла.          |
+| **Параметры**                | Идентификатор загруженного файла с сериализованными данными записей. |
+| **Ответ**                    | Количество импортированных записей.    |
+
 ### RecordTemplate — шаблоны записей
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>RecordTemplate/<wbr/>{solutionAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Создает шаблон записи.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект свойств шаблона записи.
-</td>
-<td markdown="block" class="api-cell-output">
-Системное имя шаблона записи.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>RecordTemplate/<wbr/>{solutionAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Изменяет шаблон записи.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект свойств шаблона записи.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method delete">
-DELETE
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>RecordTemplate/<wbr/>{solutionAlias}/<wbr/>{recordTemplateAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Удаляет шаблон записи.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, системное имя шаблона записи.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>RecordTemplate/<wbr/>{solutionAlias}/<wbr/>{recordTemplateAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает шаблон по имени системы.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, системное имя шаблона записи.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект свойств шаблона записи.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>RecordTemplate/<wbr/>{solutionAlias}/<wbr/>{recordTemplateAlias}/<wbr/>Disable</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Образец записи в архив.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, системное имя шаблона записи.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>RecordTemplate/<wbr/>{solutionAlias}/<wbr/>{recordTemplateAlias}/<wbr/>Enable</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Разархивирует шаблон записи.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, системное имя шаблона записи.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>RecordTemplate/<wbr/>List/<wbr/>{solutionAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает все шаблоны записей в указанном приложении.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения.
-</td>
-<td markdown="block" class="api-cell-output">
-Массив объектов со свойствами шаблона записи.
-</td>
-</tr>
-</tbody>
-</table>
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
+| POST {: .api-method .post } | /webapi/RecordTemplate/{solutionAlias} |
+| --------------------------- | --------------------------------------- |
+| **Описание**                | Создает шаблон записи.                  |
+| **Параметры**               | Системное имя приложения, объект свойств шаблона записи. |
+| **Ответ**                   | Системное имя шаблона записи.            |
+
+| PUT {: .api-method .put } | /webapi/RecordTemplate/{solutionAlias} |
+| --------------------------- | --------------------------------------- |
+| **Описание**                | Изменяет шаблон записи.                 |
+| **Параметры**               | Системное имя приложения, объект свойств шаблона записи. |
+| **Ответ**                   | Объект статуса.                         |
+
+| DELETE {: .api-method .delete } | /webapi/RecordTemplate/{solutionAlias}/{recordTemplateAlias} |
+| ---------------------------- | --------------------------------------- |
+| **Описание**                 | Удаляет шаблон записи.                  |
+| **Параметры**                | Системное имя приложения, системное имя шаблона записи. |
+| **Ответ**                    | Объект статуса.                         |
+
+| GET {: .api-method .get } | /webapi/RecordTemplate/{solutionAlias}/{recordTemplateAlias} |
+| --------------------------- | --------------------------------------- |
+| **Описание**                | Получает шаблон по имени системы.       |
+| **Параметры**               | Системное имя приложения, системное имя шаблона записи. |
+| **Ответ**                   | Объект свойств шаблона записи.          |
+
+| PUT {: .api-method .put } | /webapi/RecordTemplate/{solutionAlias}/{recordTemplateAlias}/Disable |
+| --------------------------- | --------------------------------------- |
+| **Описание**                | Архивирует шаблон записи.                |
+| **Параметры**               | Системное имя приложения, системное имя шаблона записи. |
+| **Ответ**                   | Объект статуса.                         |
+
+| PUT {: .api-method .put } | /webapi/RecordTemplate/{solutionAlias}/{recordTemplateAlias}/Enable |
+| --------------------------- | --------------------------------------- |
+| **Описание**                | Разархивирует шаблон записи.            |
+| **Параметры**               | Системное имя приложения, системное имя шаблона записи. |
+| **Ответ**                   | Объект статуса.                         |
+
+| GET {: .api-method .get } | /webapi/RecordTemplate/List/{solutionAlias} |
+| --------------------------- | --------------------------------------- |
+| **Описание**                | Получает все шаблоны записей в указанном приложении. |
+| **Параметры**               | Системное имя приложения.               |
+| **Ответ**                   | Массив объектов со свойствами шаблона записи. |
+
 ### ReferenceData — записи с указанными значениями атрибутов
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method delete">
-DELETE
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>ReferenceData/<wbr/>Delete</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Удаляет запись с указанными значениями ключевых атрибутов. 
-</td>
-<td markdown="block" class="api-cell-input">
-Объект глобального псевдонима шаблона, объект с системными именами и значениями ключевых атрибутов.
-</td>
-<td markdown="block" class="api-cell-output">
-Идентификатор удалённой записи. Если несколько записей совпадают, возвращает null, и никакие записи не удаляются.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>ReferenceData/<wbr/>Get</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает значения атрибутов записи с указанными значениями ключевых атрибутов.
-</td>
-<td markdown="block" class="api-cell-input">
-Объект глобального псевдонима шаблона, объект с ключевыми системными именами атрибутов и значениями, массив системных имён атрибутов, которые необходимо получить.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект со значениями атрибутов записи. Если несколько записей совпадают, возвращает null.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>ReferenceData/<wbr/>Put</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Изменяет запись с указанными значениями ключевых атрибутов. 
-</td>
-<td markdown="block" class="api-cell-input">
-Объект глобального псевдонима шаблона, массив системных имён ключевых атрибутов, объект с системными именами и значениями ключевых атрибутов, объект с системными именами атрибутов и их новыми значениями.
-</td>
-<td markdown="block" class="api-cell-output">
-Идентификатор отредактированной записи. Если несколько записей совпадают, возвращает null и никакие записи не редактируются.
-</td>
-</tr>
-</tbody>
-</table>
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
+| DELETE {: .api-method .delete } | /webapi/ReferenceData/Delete |
+| ------------------------------- | ----------------------------- |
+| **Описание**                    | Удаляет запись с указанными значениями ключевых атрибутов. |
+| **Параметры**                   | Объект глобального псевдонима шаблона, объект с системными именами и значениями ключевых атрибутов. |
+| **Ответ**                       | Идентификатор удалённой записи. Если несколько записей совпадают, возвращает `null`, и никакие записи не удаляются. |
+
+| POST {: .api-method .post } | /webapi/ReferenceData/Get |
+| --------------------------- | -------------------------- |
+| **Описание**                 | Получает значения атрибутов записи с указанными значениями ключевых атрибутов. |
+| **Параметры**                | Объект глобального псевдонима шаблона, объект с ключевыми системными именами атрибутов и значениями, массив системных имён атрибутов, которые необходимо получить. |
+| **Ответ**                    | Объект со значениями атрибутов записи. Если несколько записей совпадают, возвращает `null`. |
+
+| PUT {: .api-method .put } | /webapi/ReferenceData/Put |
+| --------------------------- | -------------------------- |
+| **Описание**                 | Изменяет запись с указанными значениями ключевых атрибутов. |
+| **Параметры**                | Объект глобального псевдонима шаблона, массив системных имён ключевых атрибутов, объект с системными именами и значениями ключевых атрибутов, объект с системными именами атрибутов и их новыми значениями. |
+| **Ответ**                    | Идентификатор отредактированной записи. Если несколько записей совпадают, возвращает `null` и никакие записи не редактируются. |
+
 ### Solution — приложения
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Solution</span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает все приложения.
-</td>
-<td markdown="block" class="api-cell-input">
- 
-</td>
-<td markdown="block" class="api-cell-output">
-Массив объектов со свойствами приложения.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Solution</span>
-</td>
-<td markdown="block" class="api-cell-description">
-Создает приложение.
-</td>
-<td markdown="block" class="api-cell-input">
-Объект со свойствами приложения.
-</td>
-<td markdown="block" class="api-cell-output">
-Системное имя приложения.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Solution </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Изменяет свойства приложения.
-</td>
-<td markdown="block" class="api-cell-input">
-Объект со свойствами приложения.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method delete">
-DELETE
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Solution/<wbr/>{solutionAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Удаляет приложение.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Solution/<wbr/>{solutionAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает свойства приложения.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект со свойствами приложения.
-</td>
-</tr>
-</tbody>
-</table>
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
+| GET {: .api-method .get } | /webapi/Solution |
+| --------------------------- | ---------------- |
+| **Описание**                | Получает все приложения. |
+| **Параметры**               | Не требуются.    |
+| **Ответ**                   | Массив объектов со свойствами приложения. |
+
+| POST {: .api-method .post } | /webapi/Solution |
+| --------------------------- | ---------------- |
+| **Описание**                | Создает приложение. |
+| **Параметры**               | Объект со свойствами приложения. |
+| **Ответ**                   | Системное имя приложения. |
+
+| PUT {: .api-method .put } | /webapi/Solution |
+| --------------------------- | ---------------- |
+| **Описание**                | Изменяет свойства приложения. |
+| **Параметры**               | Объект со свойствами приложения. |
+| **Ответ**                   | Объект статуса.           |
+
+| DELETE {: .api-method .delete } | /webapi/Solution/{solutionAlias} |
+| ---------------------------- | ---------------- |
+| **Описание**                 | Удаляет приложение. |
+| **Параметры**                | Системное имя приложения. |
+| **Ответ**                    | Объект статуса.           |
+
+| GET {: .api-method .get } | /webapi/Solution/{solutionAlias} |
+| --------------------------- | ---------------- |
+| **Описание**                | Получает свойства приложения. |
+| **Параметры**               | Системное имя приложения. |
+| **Ответ**                   | Объект со свойствами приложения. |
+
 ### Toolbar — области кнопок и кнопки на них
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p><span style="font-size: 10pt; color: #c7254e; font-family: SFMono-Regular, sans-serif, serif;"><span >/webapi/<wbr/>Toolbar/<wbr/>{solutionAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Создает область кнопок.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект конфигурации области кнопок.
-</td>
-<td markdown="block" class="api-cell-output">
-Системное имя области кнопок.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p><span style="font-size: 10pt; color: #c7254e; font-family: SFMono-Regular, sans-serif, serif;"><span >/webapi/<wbr/>Toolbar/<wbr/>{solutionAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Панель инструментов редактирования.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект конфигурации области кнопок.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method delete">
-DELETE
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p><span style="font-size: 10pt; color: #c7254e; font-family: SFMono-Regular, sans-serif, serif;"><span >/webapi/<wbr/>Toolbar/<wbr/>{solutionAlias}/<wbr/>{toolbarGlobalAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Удаляет область кнопок.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним области кнопок: <code>Toolbar@<wbr/>templateSystemName.<wbr/>toolbarAlias</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p><span style="font-size: 10pt; color: #c7254e; font-family: SFMono-Regular, sans-serif, serif;"><span >/webapi/<wbr/>Toolbar/<wbr/>{solutionAlias}/<wbr/>{toolbarGlobalAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает область кнопок по имени системы.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним области кнопок: <code>Toolbar@<wbr/>templateSystemName.<wbr/>toolbarAlias</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Объект конфигурации области кнопок.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p><span style="font-size: 10pt; color: #c7254e; font-family: SFMono-Regular, sans-serif, serif;"><span >/webapi/<wbr/>Toolbar/<wbr/>List/<wbr/>{templateGlobalAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает все области кнопок для указанного шаблона.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним шаблона: <code>Template@<wbr/>applicationSystemName.<wbr/>templateSystemName</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Массив объектов конфигурации области кнопок.
-</td>
-</tr>
-</tbody>
-</table>
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
+| POST {: .api-method .post } | /webapi/Toolbar/{solutionAlias} |
+| --------------------------- | -------------------------------- |
+| **Описание**                | Создает область кнопок.          |
+| **Параметры**               | Системное имя приложения, объект конфигурации области кнопок. |
+| **Ответ**                   | Системное имя области кнопок.     |
+
+| PUT {: .api-method .put } | /webapi/Toolbar/{solutionAlias} |
+| --------------------------- | -------------------------------- |
+| **Описание**                | Изменяет область кнопок.          |
+| **Параметры**               | Системное имя приложения, объект конфигурации области кнопок. |
+| **Ответ**                   | Объект статуса.                   |
+
+| DELETE {: .api-method .delete } | /webapi/Toolbar/{solutionAlias}/{toolbarGlobalAlias} |
+| ---------------------------- | -------------------------------- |
+| **Описание**                 | Удаляет область кнопок.           |
+| **Параметры**                | Системное имя приложения, глобальный псевдоним области кнопок: `Toolbar@templateSystemName.toolbarAlias`. |
+| **Ответ**                    | Объект статуса.                   |
+
+| GET {: .api-method .get } | /webapi/Toolbar/{solutionAlias}/{toolbarGlobalAlias} |
+| --------------------------- | -------------------------------- |
+| **Описание**                | Получает область кнопок по имени системы. |
+| **Параметры**               | Системное имя приложения, глобальный псевдоним области кнопок: `Toolbar@templateSystemName.toolbarAlias`. |
+| **Ответ**                   | Объект конфигурации области кнопок. |
+
+| GET {: .api-method .get } | /webapi/Toolbar/List/{templateGlobalAlias} |
+| --------------------------- | -------------------------------- |
+| **Описание**                | Получает все области кнопок для указанного шаблона. |
+| **Параметры**               | Системное имя приложения, глобальный псевдоним шаблона: `Template@applicationSystemName.templateSystemName`. |
+| **Ответ**                   | Массив объектов конфигурации области кнопок. |
+
 ### Transfer — экспорт/импорт модели приложения
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Transfer/<wbr/>{fileId}/<wbr/>Validate</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Проверяет модель приложения.
-</td>
-<td markdown="block" class="api-cell-input">
-Идентификатор файла модели приложения.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект с итогом проверки.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Transfer/<wbr/>{solutionAlias}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Экспорт модели приложения.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект с ZIP-файлом модели приложения в формате Base64 и сводкой экспорта.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Transfer/<wbr/>{solutionAlias}/<wbr/>{fileId}/<wbr/>{publishAfterImport}/<wbr/>{policy}</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Импортирует модель приложения.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, идентификатор файла ZIP/CTF модели приложения, флаг публикации импортированных диаграмм процессов (<code>true</code> — публикация), политика состояния поведения (<code>ApplyNew</code>, <code>ApplyOld</code>, <code>DisableAll</code> или <code>EnableAll</code>).
-</td>
-<td markdown="block" class="api-cell-output">
-Объект со сводкой по импорту приложений.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<span >/webapi/<wbr/>Transfer/<wbr/>Upload</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Загружает файл модели приложения.
-</td>
-<td markdown="block" class="api-cell-input">
-ZIP-файл модели приложения в формате Base64.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект с идентификатором загруженного файла.
-</td>
-</tr>
-</tbody>
-</table>
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
+| GET {: .api-method .get } | /webapi/Transfer/{fileId}/Validate |
+| --------------------------- | ---------------------------------- |
+| **Описание**                | Проверяет модель приложения.       |
+| **Параметры**               | Идентификатор файла модели приложения. |
+| **Ответ**                   | Объект с итогом проверки.          |
+
+| GET {: .api-method .get } | /webapi/Transfer/{solutionAlias} |
+| --------------------------- | ---------------------------------- |
+| **Описание**                | Экспорт модели приложения.         |
+| **Параметры**               | Системное имя приложения.          |
+| **Ответ**                   | Объект с ZIP-файлом модели приложения в формате Base64 и сводкой экспорта. |
+
+| POST {: .api-method .post } | /webapi/Transfer/{solutionAlias}/{fileId}/{publishAfterImport}/{policy} |
+| --------------------------- | ---------------------------------- |
+| **Описание**                | Импортирует модель приложения.     |
+| **Параметры**               | Системное имя приложения, идентификатор файла ZIP/CTF модели приложения, флаг публикации импортированных диаграмм процессов (`true` — публикация), политика состояния поведения (`ApplyNew`, `ApplyOld`, `DisableAll` или `EnableAll`). |
+| **Ответ**                   | Объект со сводкой по импорту приложений. |
+
+| POST {: .api-method .post } | /webapi/Transfer/Upload |
+| --------------------------- | ------------------------ |
+| **Описание**                | Загружает файл модели приложения. |
+| **Параметры**               | ZIP-файл модели приложения в формате Base64. |
+| **Ответ**                   | Объект с идентификатором загруженного файла. |
+
 ### UserCommand — кнопки
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method post">
-POST
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>UserCommand/<wbr/>{solutionAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Создает кнопку.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект конфигурации кнопки.
-</td>
-<td markdown="block" class="api-cell-output">
-<p><span >Системное имя кнопки.</span></p>
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>UserCommand/<wbr/>{solutionAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Изменяет кнопку.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, объект конфигурации кнопки.
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method delete">
-DELETE
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>UserCommand/<wbr/>{solutionAlias}/<wbr/>{userCommandGlobalAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Удаляет кнопку.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним кнопки: <code>UserCommand@<wbr/>templateSystemName.<wbr/>userCommandAlias</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>UserCommand/<wbr/>{solutionAlias}/<wbr/>{userCommandGlobalAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает конфигурацию кнопки.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним кнопки: <code>UserCommand@<wbr/>templateSystemName.<wbr/>userCommandAlias</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Объект конфигурации кнопки.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>UserCommand/<wbr/>{solutionAlias}/<wbr/>{userCommandGlobalAlias}/<wbr/>Disable</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Архивирует кнопку.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним кнопки: <code>UserCommand@<wbr/>templateSystemName.<wbr/>userCommandAlias</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>UserCommand/<wbr/>{solutionAlias}/<wbr/>{userCommandGlobalAlias}/<wbr/>Enable</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Разархивирует кнопку.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним кнопки: <code>UserCommand@<wbr/>templateSystemName.<wbr/>userCommandAlias</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method get">
-GET
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p>/webapi/<wbr/>UserCommand/<wbr/>List/<wbr/>{templateGlobalAlias}</span> </span></p>
-</td>
-<td markdown="block" class="api-cell-description">
-Получает все кнопки указанного шаблона.
-</td>
-<td markdown="block" class="api-cell-input">
-Системное имя приложения, глобальный псевдоним шаблона: <code>Template@<wbr/>applicationSystemName.<wbr/>templateSystemName</code>
-</td>
-<td markdown="block" class="api-cell-output">
-Массив объектов конфигурации кнопок.
-</td>
-</tr>
-</tbody>
-</table>
 
-<table markdown="block" style="width: 98%;">
-<tbody markdown="block">
-<tr markdown="block">
-<th markdown="block" colspan="5" style="overflow-wrap: break-word; width: 99.00%;">
+| POST {: .api-method .post } | /webapi/UserCommand/{solutionAlias} |
+| --------------------------- | ------------------------------------ |
+| **Описание**                | Создает кнопку.                      |
+| **Параметры**               | Системное имя приложения, объект конфигурации кнопки. |
+| **Ответ**                   | Системное имя кнопки.                 |
+
+| PUT {: .api-method .put } | /webapi/UserCommand/{solutionAlias} |
+| --------------------------- | ------------------------------------ |
+| **Описание**                | Изменяет кнопку.                     |
+| **Параметры**               | Системное имя приложения, объект конфигурации кнопки. |
+| **Ответ**                   | Объект статуса.                      |
+
+| DELETE {: .api-method .delete } | /webapi/UserCommand/{solutionAlias}/{userCommandGlobalAlias} |
+| ---------------------------- | ------------------------------------ |
+| **Описание**                 | Удаляет кнопку.                     |
+| **Параметры**                | Системное имя приложения, глобальный псевдоним кнопки: `UserCommand@templateSystemName.userCommandAlias`. |
+| **Ответ**                    | Объект статуса.                      |
+
+| GET {: .api-method .get } | /webapi/UserCommand/{solutionAlias}/{userCommandGlobalAlias} |
+| --------------------------- | ------------------------------------ |
+| **Описание**                | Получает конфигурацию кнопки.        |
+| **Параметры**               | Системное имя приложения, глобальный псевдоним кнопки: `UserCommand@templateSystemName.userCommandAlias`. |
+| **Ответ**                   | Объект конфигурации кнопки.          |
+
+| PUT {: .api-method .put } | /webapi/UserCommand/{solutionAlias}/{userCommandGlobalAlias}/Disable |
+| --------------------------- | ------------------------------------ |
+| **Описание**                | Архивирует кнопку.                   |
+| **Параметры**               | Системное имя приложения, глобальный псевдоним кнопки: `UserCommand@templateSystemName.userCommandAlias`. |
+| **Ответ**                   | Объект статуса.                      |
+
+| PUT {: .api-method .put } | /webapi/UserCommand/{solutionAlias}/{userCommandGlobalAlias}/Enable |
+| --------------------------- | ------------------------------------ |
+| **Описание**                | Разархивирует кнопку.                |
+| **Параметры**               | Системное имя приложения, глобальный псевдоним кнопки: `UserCommand@templateSystemName.userCommandAlias`. |
+| **Ответ**                   | Объект статуса.                      |
+
+| GET {: .api-method .get } | /webapi/UserCommand/List/{templateGlobalAlias} |
+| --------------------------- | ------------------------------------ |
+| **Описание**                | Получает все кнопки указанного шаблона. |
+| **Параметры**               | Системное имя приложения, глобальный псевдоним шаблона: `Template@applicationSystemName.templateSystemName`. |
+| **Ответ**                   | Массив объектов конфигурации кнопок.  |
+
 ### WorkerEngine — системные службы
-</th>
-</tr>
-<tr markdown="block">
-<th markdown="block" style="overflow-wrap: break-word; width: 6.0%;">
-**Метод**
-</th>
-<th markdown="block" style="overflow-wrap: break-word; width: 14.00%; max-width: 190px; min-width: 190px;">
-**Запрос**
-</th>
-<th markdown="block" class="api-cell-description">
-**Описание**
-</th>
-<th markdown="block" class="api-cell-input">
-**Входные данные**
-</th>
-<th markdown="block" class="api-cell-output">
-**Выходные данные**
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" style="overflow-wrap: break-word; background: #0f6ab4; width: 6.0%; vertical-align: middle;">
-<p style="text-align: center; page-break-after: avoid;"><span style="color: white;">GET</span></p>
-</td>
-<td markdown="block" class="api-cell-endpoint">
-<p style="page-break-after: avoid;"><span >/webapi/<wbr/>WorkerEngine/<wbr/>GetConfiguration</span> </p>
-</td>
-<td markdown="block" class="api-cell-description">
-<p style="text-indent: 0cm; page-break-after: avoid;">Получает статусы системных служб (<code>true</code> — включена).</p>
-</td>
-<td markdown="block" class="api-cell-input">
-<p style="text-indent: 0cm; page-break-after: avoid;"> </p>
-</td>
-<td markdown="block" class="api-cell-output">
-<p style="text-indent: 0cm; page-break-after: avoid;">Объект со статусами системных служб.</p>
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="api-cell-method put">
-PUT
-</td>
-<td markdown="block" style="overflow-wrap: break-word; background: white; width: 14.00%;">
-<span >/webapi/<wbr/>WorkerEngine/<wbr/>SetConfiguration</span> </span>
-</td>
-<td markdown="block" class="api-cell-description">
-Устанавливает статусы системных служб.
-</td>
-<td markdown="block" class="api-cell-input">
-Объект со статусами системных служб (<code>true</code> — включена).
-</td>
-<td markdown="block" class="api-cell-output">
-Объект статуса.
-</td>
-</tr>
-</tbody>
-</table>
+
+| GET {: .api-method .get } | /webapi/WorkerEngine/GetConfiguration |
+| --------------------------- | -------------------------------------- |
+| **Описание**                | Получает статусы системных служб (`true` — включена). |
+| **Параметры**               | Не требуются.                         |
+| **Ответ**                   | Объект со статусами системных служб.   |
+
+| PUT {: .api-method .put } | /webapi/WorkerEngine/SetConfiguration |
+| --------------------------- | -------------------------------------- |
+| **Описание**                | Устанавливает статусы системных служб. |
+| **Параметры**               | Объект со статусами системных служб (`true` — включена). |
+| **Ответ**                   | Объект статуса.                       |
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

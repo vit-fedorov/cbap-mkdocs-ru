@@ -130,49 +130,25 @@ body {
     font-family: "Font Awesome 6 Pro";
 }
 
-.api-cell-method {
-    overflow-wrap: break-word;
-    width: 6.0%;
-    max-width: 85px;
+.md-typeset .api-method {
+    width: 120px;
     vertical-align: middle!important;
     color: white;
     text-align: center!important;
 }
 
-.get {
-    background: #0f6ab4;
+.md-typeset .api-method.get {
+    background: #0f6ab4!important;
 }
 
-.post {
-    background: #10a54a;
+.md-typeset .api-method.post {
+    background: #10a54a!important;
 }
 
-.put {
-    background: #c5862b;
+.md-typeset .api-method.put {
+    background: #c5862b!important;
 }
 
-.delete {
-    background: #a41e22;
-}
-
-.api-cell-endpoint {
-    overflow-wrap: break-word;
-    width: 14.00%;
-    max-width: 190px;
-    min-width: 190px;
-}
-
-.api-cell-description {
-    overflow-wrap: break-word;
-    width: 27.0%;
-}
-
-.api-cell-input {
-    overflow-wrap: break-word;
-    width: 29.0%;
-}
-
-.api-cell-output {
-    overflow-wrap: break-word;
-    width: 20.0%;
+.md-typeset .api-method.delete {
+    background: #a41e22!important;
 }

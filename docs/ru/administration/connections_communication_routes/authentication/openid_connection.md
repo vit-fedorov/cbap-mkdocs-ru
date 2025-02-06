@@ -60,7 +60,7 @@ kbId: 4685
 
     _![Настройка страницы согласия OAuth — название приложения и адрес службы поддержки](openid_connection_oath_new_app.png)_
 
-2. В разделе «**App domain**» в поле «**Application home page**» введите [адрес сервера](#проверка-адреса-сервера-comindware-business-application-platform), указанный в глобальной конфигурации {{ productName }}, например [https://mycompany.ru](https://mycompany.ru/)
+2. В разделе «**App domain**» в поле «**Application home page**» введите [адрес сервера](#проверка-адреса-сервера-comindware-platform), указанный в глобальной конфигурации {{ productName }}, например [https://mycompany.ru](https://mycompany.ru/)
 3. В разделе «**Authorized domains**» нажмите кнопку «**Add domain**» и введите в поле «**Authorized domain 1**» доменное имя сервера без префикса `https://`, например _mycompany.ru_
 4. В разделе «**Developer contact information**» в поле «**Email addresses**» введите, например, свой адрес эл. почты.
 {: .pageBreakAfter}
@@ -110,7 +110,7 @@ kbId: 4685
 4. В поле «**Application type**» выберите пункт «**Web application**».
 5. В поле «Name» введите имя клиента, например «_OAuth client 1_».
 6. В разделе «**Authorized JavaScript origins**» нажмите кнопку «**Add URI**».
-7. Введите [адрес сервера](#проверка-адреса-сервера-comindware-business-application-platform), указанный в глобальной конфигурации {{ productName }}, например [https://mycompany.ru](https://mycompany.ru/)
+7. Введите [адрес сервера](#проверка-адреса-сервера-comindware-platform), указанный в глобальной конфигурации {{ productName }}, например [https://mycompany.ru](https://mycompany.ru/)
 8. Нажмите кнопку «**Create**».
 
     _![Настройка и сохранение учётных данных клиента OAuth](openid_connection_oath_client_settings.png)_
@@ -124,7 +124,7 @@ kbId: 4685
 
     _![Таблица учётных данных клиентов OAuth](openid_connection_oath_client_table.png)_
 
-## Настройка подключения в **{{ productName }}** {: .pageBreakBefore }
+## Настройка подключения в {{ productName }} {: .pageBreakBefore }
 
 1. Перейдите в раздел «**Администрирование**» — «**Подключения**».
 2. Нажмите кнопку «**Cоздать**».
@@ -201,20 +201,10 @@ kbId: 4685
     "xxx.xxx.xxx.xxx" "mycompany.ru"
     ```
 
-    Здесь `xxx.xxx.xxx.xxx` — IP-адрес, `mycompany.ru` адрес сервера **{{ productName }}**, указанный в [_глобальной конфигурации {{ productName }}_](#проверка-адреса-сервера-comindware-business-application-platform) (без указания протокола `HTTP` или `HTTPS`).
+    Здесь `xxx.xxx.xxx.xxx` — IP-адрес, `mycompany.ru` адрес сервера **{{ productName }}**, указанный в [_глобальной конфигурации {{ productName }}_](#проверка-адреса-сервера-comindware-platform) (без указания протокола `HTTP` или `HTTPS`).
 
-3. В файле `/usr/share/comindware/configs/instance/<instanceName>.yml` для параметра `isFederationAuthEnabled` установите значение `1`:
-
-    ```
-    isFederationAuthEnabled: 1
-    ```
-
-    !!! note "Примечание"
-
-        Здесь и далее `<instanceName>` — имя экземпляра ПО.
-
-4. Сформируйте SSL-сертификат на сервере NGINX. Например, согласно инструкциям в статье «[_Генерация SSL сертификата для NGINX (openssl)_](https://webguard.pro/web-services/nginx/generacziya-ssl-sertifikata-dlya-nginx-openssl.html)».
-5. Откройте для редактирования файл конфигурации NGINX:
+3. Сформируйте SSL-сертификат на сервере NGINX. Например, согласно инструкциям в статье «[_Генерация SSL сертификата для NGINX (openssl)_](https://webguard.pro/web-services/nginx/generacziya-ssl-sertifikata-dlya-nginx-openssl.html)».
+4. Откройте для редактирования файл конфигурации NGINX:
 
     ```
     vim /etc/nginx/sites-available/comindware<instanceName>
@@ -222,7 +212,7 @@ kbId: 4685
 
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-6. Настройте конфигурацию SSL-сертификата аналогично следующему примеру:
+5. Настройте конфигурацию SSL-сертификата аналогично следующему примеру:
 
     ``` cs
     server {

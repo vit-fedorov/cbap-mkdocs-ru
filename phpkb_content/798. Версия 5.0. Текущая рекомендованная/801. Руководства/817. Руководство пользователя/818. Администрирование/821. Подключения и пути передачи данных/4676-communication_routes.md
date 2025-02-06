@@ -31,8 +31,8 @@ kbId: 4676
 
 ### Подключения REST и OData
 
-- [Отправка HTTP-запросов][send_http_example]
-- [Получение HTTP-запросов][receive_http_example]
+- [Отправка HTTP-запросов][http_send_example]
+- [Получение HTTP-запросов][http_receive_example]
 
 ### Подключения к шине сообщений
 
@@ -50,8 +50,8 @@ kbId: 4676
 
 ### Пользовательские подключения
 
-- Отправка сообщений в систему «СФЕРА Курьер»
-- Получение сообщений из системы «СФЕРА Курьер»
+- [Отправка сообщений в «СФЕРА Курьер»][esphere_send_configure]
+- [Получение сообщений из «СФЕРА Курьер»][esphere_receive_configure]
 
 Примечание
 
@@ -71,7 +71,7 @@ kbId: 4676
 4. Настройте свойства пути.
 5. Сохраните путь.
 
-_![Список путей передачи данных](https://kb.comindware.ru/assets/communication_routes_page.png)_
+_![Список путей передачи данных](/platform/v5.0/administration/connections_communication_routes/../architecture/img/communication_routes_page.png)_
 
 ## Удаление пути передачи данных
 
@@ -81,8 +81,10 @@ _![Список путей передачи данных](https://kb.comindware.
 
 --8<-- "related_topics_heading.md"
 
-**[Подключения. Определения, типы, создание, настройка, удаление][connections]**
+- *[Подключения. Определения, типы, создание, настройка, удаление][connections]*
+- *[Примеры интеграций](https://kb.comindware.ru/category.php?id=875)*
 
-**[Примеры интеграций](https://kb.comindware.ru/category.php?id=875)**
+[*‌*
+ К началу](#)
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

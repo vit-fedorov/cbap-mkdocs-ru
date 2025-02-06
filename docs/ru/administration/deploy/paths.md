@@ -34,8 +34,6 @@ kbId: 4620
     - `/var/lib/comindware/<instanceName>/Database/diagnostic`
     - `/var/lib/comindware/<instanceName>/Database/FullTextSearch`
 
-    _![Пример файла конфигурации <instanceName>.yml](https://kb.comindware.ru/assets/img_66546f9baeb01.png)_
-
 {% endif %}
 
 {% if adminGuideWindows or kbExport %}
@@ -70,6 +68,9 @@ kbId: 4620
 
 {% if adminGuideWindows or kbExport %}
 - _[Настройка конфигурации и просмотр фактических путей к папкам экземпляра продукта][admin_utility_instance_configure]_
+{% endif %}
+{% if adminGuideLinux or kbExport %}
+- _[Конфигурация экземпляра, компонентов ПО и служб. Настройка в Linux][configuration_files_linux]_
 {% endif %}
 - _[Антивирусное ПО. Настройка исключений: пути и файлы {{ productName }}][antivirus_exceptions_configure]_
 - _[Подсистема журналирования][logging_engine]_

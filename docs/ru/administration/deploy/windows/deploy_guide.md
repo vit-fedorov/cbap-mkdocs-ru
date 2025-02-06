@@ -7,15 +7,54 @@ kbId: 5063
 
 ## Введение
 
-Для работы **{{ productName }}** требуются операционная система, сервер базы данных, веб-сервер, обратный прокси-сервер и сервер журналирования.
-
 Для быстрого развёртывания **{{ productName }}** в Windows компания **{{ companyName }}** предоставляет дистрибутив с установщиком, настраивающим необходимое программное обеспечение.
 
 Здесь представлены инструкции по развёртыванию и инициализации **{{ productName }}** из дистрибутива в ОС Windows.
 
-## Установка {{ productName }} {: #deploy_guide_windows_install_sw}
+## Требования к серверу
 
-1. Скачайте и распакуйте архив с дистрибутивом **{{ productName }}**.
+Для работы **{{ productName }}** требуются операционная система, сервер базы данных, веб-сервер, обратный прокси-сервер и сервер журналирования.
+
+Перед установкой ПО убедитесь, что сервер соответствует следующим требованиям:
+
+- сервер работает под управлением _Windows Server_;
+- сервер настраивается от имени пользователя с правами администратора;
+- установлена служба _IIS (Internet Information Services)_.
+
+{%
+include-markdown ".snippets/elasticsearch_opensearch_configure.md"
+rewrite-relative-urls=false
+%}
+
+## Порядок установки ПО
+
+1. Подготовьте сервер к установке ПО.
+2. Установите и настройте необходимое вспомогательное ПО.
+3. Установите ПО **{{ productName }}**.
+4. Создайте экземпляр ПО.
+5. Запустите экземпляр ПО.
+6. Инициализируйте экземпляр ПО.
+
+## Подготовка сервера к установке ПО
+
+1. Откройте **Диспетчер сервера**.
+2. Добавьте в список серверов компьютер, на котором будет установлено ПО **{{ productName }}**.
+3. Запустите **Мастер добавления ролей и компонентов**, выбрав пункт «**Добавить роли и компоненты**» для данного сервера.
+4. На шаге «**Тип установки**» выберите пункт «**Установка ролей или компонентов**».
+5. На шаге «**Выбор сервера**» укажите сервер, на котором будет установлено ПО.
+6. На шаге «**Роли сервера**» установите флажок «**Веб-сервер (IIS)**».
+7. На шаге «**Компоненты**» для компонента «**Веб-сервер (IIS)** — **Веб-сервер** — **Разработка приложений**» установите следующие флажки:
+
+    - **ASP.NET 4.8** (или выше);
+    - **Расширяемость .NET 4.8** (или выше);
+    - **Расширения ISAPI**;
+    - **Фильтры ISAPI**.
+
+8. На шаге «**Подтверждение**» нажмите кнопку «**Установить**» и дождитесь завершения процесса.
+
+## Установка вспомогательного ПО {: #deploy_guide_windows_install_prerequisites}
+
+1. Скачайте и распакуйте архив с дистрибутивом вспомогательного ПО для **{{ productName }}**.
 2. Запустите _PowerShell_ от имени администратора.
 3. Установите неограниченную политику выполнения _PowerShell_:
 
@@ -24,13 +63,13 @@ kbId: 5063
     ```
 
 4. В запросе на изменение политики выберите вариант «**Да для всех**», введя букву ++a++.
-5. Перейдите в папку со скриптами для развёртывания ПО:
+5. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows\CMW_Windows\scripts"
     ```
 
-    Здесь: `X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows` — путь к распакованному дистрибутиву продукта, а `X.X.XXXX.X` — номер версии ПО.
+    Здесь: `X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows` — путь к распакованному дистрибутиву вспомогательного ПО, а `<versionNumber>` — номер версии ПО.
 
 6. Разблокируйте доступ к скачанным из Интернета установочным файлам:
 
@@ -46,27 +85,21 @@ kbId: 5063
         .\files_unblock.ps1 -h
         ```
 
-7. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
-
-    ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\prerequisites"
-    ```
-
-8. Установите необходимое вспомогательное ПО:
+7. Установите необходимое вспомогательное ПО:
 
     ``` powershell
     .\prerequisites_install.ps1
     ```
 
-9. Перезагрузите машину.
-10. Запустите _PowerShell_ от имени администратора.
-11. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
+8. Перезагрузите машину.
+9.  Запустите _PowerShell_ от имени администратора.
+10. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\prerequisites"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows\CMW_Windows\scripts"
     ```
 
-12. Проверьте, что дополнительные компоненты установлены:
+11. Проверьте, что дополнительные компоненты установлены:
 
     ``` powershell
     .\prerequisites_list.ps1
@@ -74,13 +107,40 @@ kbId: 5063
 
     Если какие-либо дополнительные компоненты не были установлены, повторите шаги 8–12.
 
-13. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
+## Установка {{ productName }} {: #deploy_guide_windows_install_sw}
+
+1. Скачайте и распакуйте архив с дистрибутивом **{{ productName }}**.
+2. Запустите _PowerShell_ от имени администратора.
+3. Установите неограниченную политику выполнения _PowerShell_:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
+    Set-ExecutionPolicy Unrestricted
     ```
 
-14. Установите ПО:
+4. В запросе на изменение политики выберите вариант «**Да для всех**», введя букву ++a++.
+5. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
+
+    ``` powershell
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
+    ```
+
+    Здесь: `X:\<distPath>\X.X-release-ru-<versionNumber>.windows` — путь к распакованному дистрибутиву продукта, а `<versionNumber>` — номер версии ПО.
+
+6. Разблокируйте доступ к скачанным из Интернета установочным файлам:
+
+    ``` powershell
+    .\files_unblock.ps1
+    ```
+
+    !!! tip "Вызов справки для скриптов"
+
+        Для ознакомления с ключами и назначением любого скрипта используйте ключ `-h` без каких-либо других ключей, например:
+
+        ``` powershell
+        .\files_unblock.ps1 -h
+        ```
+
+7. Установите версию ПО:
 
     ``` powershell
     .\version_install.ps1
@@ -97,7 +157,7 @@ kbId: 5063
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
     ```
 
 2. Разверните экземпляр ПО:
@@ -125,7 +185,7 @@ kbId: 5063
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
     ```
 
 2. Запустите экземпляр ПО:
@@ -141,7 +201,7 @@ kbId: 5063
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
     ```
 
 2. Остановите экземпляр ПО:
@@ -152,7 +212,7 @@ kbId: 5063
 
     Здесь: `-name <instanceName>` — **обязательный** ключ с именем экземпляра ПО.
 
-## Инициализация {{ productName }}
+## Инициализация {{ productName }} {: #initialize_instance}
 
 {%
 include-markdown "../linux/deploy_guide.md"
@@ -166,7 +226,7 @@ end="<!--initialize-end-->"
 2. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
     ```
 
 3. Запустите обновление экземпляра ПО:
@@ -195,7 +255,7 @@ end="<!--initialize-end-->"
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
     ```
 
 2. Удалите экземпляр ПО:
@@ -215,7 +275,7 @@ end="<!--initialize-end-->"
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-X.X.XXXX.X.windows\CMW_Windows\scripts\platform"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
     ```
 
 2. Просмотрите список установленных экземпляров ПО:

@@ -7,7 +7,7 @@ kbId: 4624
 
 ## Введение
 
-Здесь представлены краткие инструкции по обновлению до 5.0.XXXX версии экземпляра ПО **{{ productName }}** под управлением ОС Linux.
+Здесь представлены краткие инструкции по обновлению версии экземпляра ПО **{{ productName }}** c 4.7 до 5.X для ОС Linux.
 
 ## Порядок обновления версии экземпляра ПО
 
@@ -26,16 +26,59 @@ kbId: 4624
     - Обновите конфигурацию экземпляра ПО и вспомогательных служб.
     - Перезапустите экземпляр ПО и вспомогательные службы.
 
+Прежде чем приступать к установке вспомогательного ПО, необходимого для работы **{{ productName }}**, ознакомьтесь с демонстрационным роликом и инструкциями, представленными ниже.
+
+### Видеоинструкция
+
+<video controls="controls" width="100%" height="100%">
+<source src="https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/upgrade_version_linux.mp4" type="video/mp4" />
+</video>
+
 ## Подготовка экземпляра ПО к обновлению
 
-Выполните подготовительные действия для каждого экземпляра ПО, версию которого требуется обновить.
+!!! warning "Внимание!"
 
-1. Создайте и перенесите во внешнее хранилище резервную копию базы данных экземпляра ПО. См. статью _«[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]»_.
+    Выполните подготовительные действия отдельно для каждого экземпляра ПО, версию которого требуется обновить.
+
+1. Создайте и перенесите во внешнее хранилище резервную копию базы данных экземпляра ПО. См. _«[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup_configure]»_.
 2. Перейдите в режим суперпользователя:
 
     --8<-- "linux_sudo.md"
 
-3. Сохраните резервную копию конфигурационных файлов, например в директорию `/var/backups/config_tmp`:
+3. Удостоверьтесь, что файлы конфигурации соответствуют приведённым ниже образцам, и при необходимости создайте и отредактируйте их.
+{: #config_samples }
+
+    - Отредактируйте файл `/usr/share/comindware/configs/instance/<instanceName>.yml` по следующему образцу:
+
+    {%
+    include-markdown "./configuration_files.md"
+    start="<!--instanceYML-start-->"
+    end="<!--instanceYML-end-->"
+    %}
+
+    --8<-- "instance_config_warning.md"
+
+    - Отредактируйте файл `/var/www/<instanceName>/adapterhost.yml` по следующему образцу:
+
+    {%
+    include-markdown "./configuration_files.md"
+    start="<!--adapterhostYML-start-->"
+    end="<!--adapterhostYML-end-->"
+    %}
+
+    !!! warning "Внимание!"
+
+        Файл `adapterhost.yml` не должен содержать пустых строк.
+
+    - Отредактируйте файл `/var/www/<instanceName>/apigateway.yml` по следующему образцу:
+
+    {%
+    include-markdown "./configuration_files.md"
+    start="<!--apigatewayYML-start-->"
+    end="<!--apigatewayYML-end-->"
+    %}
+
+1. Сохраните резервную копию конфигурационных файлов, например в директорию `/var/backups/config_tmp`:
 {: #NginxBackup}
 
     - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
@@ -43,7 +86,7 @@ kbId: 4624
     ``` sh
     mkdir -p /var/backups/config_tmp/
     cd /var/www/<instanceName>/
-    cp *.config apigateway.json /var/backups/config_tmp/
+    cp *.config *.yml /var/backups/config_tmp/
     cp /etc/nginx/sites-available/comindware<instanceName> /var/backups/config_tmp/
     ```
 
@@ -52,7 +95,7 @@ kbId: 4624
     ``` sh
     mkdir -p /var/backups/config_tmp/
     cd /var/www/<instanceName>/
-    cp *.config apigateway.json /var/backups/config_tmp/
+    cp *.config *.yml /var/backups/config_tmp/
     cp /etc/nginx/conf.d/comindware<instanceName> /var/backups/config_tmp/
     ```
 
@@ -61,20 +104,20 @@ kbId: 4624
     ``` sh
     mkdir -p /var/backups/config_tmp/
     cd /var/www/<instanceName>/
-    cp *.config apigateway.json /var/backups/config_tmp/
+    cp *.config *.yml /var/backups/config_tmp/
     cp /etc/nginx/sites-available.d/comindware<instanceName> /var/backups/config_tmp/
     ```
 
     Здесь `<instanceName>` — имя экземпляра ПО.
 
-4. Остановите экземпляр ПО и его вспомогательные службы и удостоверьтесь, что они остановлены:
+1. Остановите экземпляр ПО и вспомогательные службы и удостоверьтесь, что они остановлены:
 
     ``` sh
     systemctl stop apigateway<instanceName> comindware<instanceName>
     systemctl status apigateway<instanceName> comindware<instanceName>
     ```
 
-5. Проверьте, выполняется ли сервис `Comindware.Adapter.Agent.exe`:
+2. Проверьте, выполняется ли сервис `Comindware.Adapter.Agent.exe`:
 
     ``` sh
     ps fax | grep Agent
@@ -86,13 +129,13 @@ kbId: 4624
         kill -9 <PID>
         ```
 
-6. Проверьте имя и статус экземпляра:
+3. Проверьте имя и статус экземпляра:
 
     ``` sh
     systemctl status comindware*
     ```
 
-7. Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО (`<distPath>` — путь к директории с дистрибутивом, `<osname>` — название операционной системы):
+4. Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО (`<distPath>` — путь к директории с дистрибутивом, `<osname>` — название операционной системы):
 
     ``` sh
     rm -rf <distPath>/CMW_<osname>
@@ -112,27 +155,26 @@ kbId: 4624
 2. Перейдите в распакованную папку:
 
     ``` sh
-    cd CMW_<osname>/scripts/cbap
+    cd CMW_<osname>_<versionNumber>/scripts/
     ```
 
 3. Запустите установку распакованного дистрибутива ПО:
 
     ``` sh
-    bash install.sh
+    bash version_install.sh
     ```
 
 4. Проверьте наличие и имя директории установленной версии ПО:
 
     ``` sh
-    bash list.sh
+    bash version_list.sh
     ```
 
 5. Отобразится список установленных версий ПО на сервере.
 6. Перейдите в директорию скриптов для работы с экземпляром ПО и запустите его обновление до требуемой версии:
 
     ``` sh
-    cd ../instance/
-    bash upgrade.sh -n=<instanceName> -vp=/var/www/.cmw_version/<versionNumber>
+    bash instance_upgrade.sh -n=<instanceName> -vp=/var/www/.cmw_version/<versionNumber>
     ```
 
     Здесь:
@@ -163,16 +205,20 @@ kbId: 4624
     OK     API Gateway configured.
     OK     Link to binaries is valid.
     OK     Instance service started.
-    FAILED Instance API gateway service started.
+    OK     Instance API gateway service started.
     OK     NGINX started.
-    FAILED Final status.
+    OK     Final status.
     [Done] Upgrade CBAP instance.
     ```
 
     Если какая-либо из служб имеет статус `FAILED`, перезапустите её (`<serviceName>` — имя службы):
 
     ``` sh
-    systemctl restart <serviceName>.service
+    systemctl restart comindware<instanceName>.service
+    systemctl restart apigateway<instanceName>.service
+    systemctl restart adaperhost<instanceName>.service
+    systemctl restart kafka.service
+    systemctl restart elasticsearch.service 
     ```
 
 8. Проверьте корректность конфигурации NGINX для экземпляра ПО:
@@ -218,119 +264,27 @@ kbId: 4624
         nginx -t && nginx -s reload
         ```
 
-9. Откройте для редактирования файл конфигурации `/var/www/<instanceName>/apigateway.json`.
-
-    - Проверьте и при необходимости отредактируйте адрес сервера Kafka:
-
-        ``` sh
-        "Kafka": {
-            # Укажите адрес сервера Kafka
-            # Должен совпадать с mq.server
-            # в /usr/share/comindware/configs/instance/<instanceName>.yml
-            "BootstrapServer": "<KAFKAIP>:9092",
-            # Укажите имя экземпляра ПО
-            # Должно совпадать с mq.group
-            # в /usr/share/comindware/configs/instance/<instanceName>.yml
-            "GroupId": "<instanceName>"
-        }
-        ```
-
-10. Если выполняется обновление с версии ниже 4.6.1140.0, откройте для редактирования файл конфигурации экземпляра ПО `/usr/share/comindware/configs/instance/<instanceName>.yml`.
-
-    - Замените в конфигурации следующие директивы:
-
-        ``` sh
-        # исходная директива
-        # backupPath: /var/backups/<instanceName>
-        # заменить на:
-        backup.config.default.repository.type: LocalDisk
-        backup.config.default.repository.localDisk.path: /var/backups/<instanceName> ## backupPath
-
-        # исходная директива
-        # tempPath: /var/lib/comindware/<instanceName>/Temp
-        # заменить на:
-        tempStorage.type: LocalDisk
-        tempStorage.localDisk.path: /var/lib/comindware/<instanceName>/Temp ## tempPath
-
-        # исходная директива
-        # streamsPath: /var/streams/<instanceName>
-        # заменить на:
-        userStorage.type: LocalDisk
-        userStorage.localDisk.path: /var/streams/<instanceName>
-        ```
-
-    - Добавьте в конфигурацию следующие директивы:
-
-        ``` sh
-        # Имя конфигурации
-        configName: <instanceName>
-
-        # Имя базы данных Apache Ignite
-        instanceName: <instanceName>
-
-        manageAdapterHost: true
-        useDataBusNumbers:
-            - 0
-            - 1
-            - 2
-            - 3
-        ```
-
-    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
-
-11. Удостоверьтесь, что итоговый файл конфигурации `/usr/share/comindware/configs/instance/<instanceName>.yml` выглядит аналогично следующему примеру:
-
-    ``` sh
-    databasePath: /var/lib/comindware/<instanceName>/Database/
-    configPath: /var/www/<instanceName>
-    backup.config.default.repository.type: LocalDisk
-    backup.config.default.repository.localDisk.path: /var/lib/comindware/<instanceName>/Backup
-    userStorage.type: LocalDisk
-    userStorage.localDisk.path: /var/lib/comindware/<instanceName>/Streams
-    tempStorage.type: LocalDisk
-    tempStorage.localDisk.path: /var/lib/comindware/<instanceName>/Temp
-    elasticsearchUri: XXX.XXX.XXX.XXX:9200 #адрес сервера ElasticSearch
-    instanceName: <instanceName>
-    configName: <instanceName>
-    databaseName: <instanceName>
-    nodeName: prod_0
-    linuxAuthenticationType: 1
-    ldapAuthenticationType: 1
-    isFederationAuthEnabled: 0
-    manageAdapterHost: true
-    isTestEnvironment: false
-    mq.enabled: true
-    mq.server: XXX.XXX.XXX.XXX:9092 #адрес сервера Kafka
-    mq.group: <instanceName> #имя группы в Kafka
-    mq.node: prod_0
-    mq.name: <instanceName> #имя очереди в Kafka
-    mq.adapter.0.enabled: true
-    mq.adapter.1.enabled: true
-    mq.adapter.2.enabled: true
-    mq.adapter.3.enabled: true
-    version: <versionNumber>
-    ```
-
-12. Перезапустите сервисы, настройки которых были изменены:
+9. Удостоверьтесь, что файлы конфигурации соответствуют [приведённым выше образцам](#config_samples).
+10. Перезапустите сервисы, настройки которых были изменены:
 
     ``` sh
     systemctl restart apigateway<instanceName> comindware<instanceName>
     ```
 
-13. Откройте сайт экземпляра ПО в браузере, дождитесь окончания загрузки, одновременно открыв выдачу журналов экземпляра в терминале:
+11. Откройте сайт экземпляра ПО в браузере, дождитесь окончания загрузки, одновременно открыв выдачу журналов экземпляра в терминале:
 
     ``` sh
     tail -f /var/log/comindware/<instanceName>/Log/sys*
     ```
 
-14. После обновления всех экземпляров ПО, старую версию ПО можно удалить согласно инструкции _«[Удаление версии ПО][deploy_guide_linux_delete_version]»_.
+12. После обновления всех экземпляров ПО, старую версию ПО можно удалить согласно инструкции _«[Удаление версии ПО][deploy_guide_linux_delete_version]»_.
 
 <div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
 - _[Установка, запуск, инициализация и остановка ПО][deploy_guide_linux]_
-- _[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup]_
+- _[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup_configure]_
 
 </div>
 

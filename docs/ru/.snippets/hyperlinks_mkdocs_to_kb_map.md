@@ -1,5 +1,15 @@
 <!-- Любые руководства -->
 
+[apache_ignite_clustering]: https://ignite.apache.org/docs/latest/clustering/clustering
+
+[apache_ignite_partition_loss_policy]: https://ignite.apache.org/docs/latest/configuring-caches/partition-loss-policy
+
+[apache_ignite_partition_zookeeper_discovery]: https://ignite.apache.org/docs/latest/clustering/zookeeper-discovery
+
+[apache_ignite_partition_baseline_topology]: https://ignite.apache.org/docs/latest/clustering/baseline-topology
+
+[apache_ignite_partition_partition_loss_policy]: https://ignite.apache.org/docs/latest/configuring-caches/partition-loss-policy
+
 [api_calls]: {{ kbCategoryURLPrefix }}868
 
 [api_web]: {{ kbArticleURLPrefix }}4861
@@ -9,8 +19,6 @@
 [account_attributes_system_names]: {{ kbArticleURLPrefix }}4994
 
 [attribute_date_time_use]: {{ kbArticleURLPrefix }}4886
-
-[attribute_document_clone_scenario]: {{ kbArticleURLPrefix }}4883
 
 [attribute_drawing_file_import]: {{ kbArticleURLPrefix }}4906
 
@@ -32,9 +40,19 @@
 
 [csharp_examples]: {{ kbCategoryURLPrefix }}883
 
+[csharp_guide]: {{ kbArticleURLPrefix }}4864
+
 [document_digital_signature]: {{ kbArticleURLPrefix }}4910
 
 [example_n3_button_local_variable]: {{ kbArticleURLPrefix }}4909
+
+[example_document_clone_scenario_n3]: {{ kbArticleURLPrefix }}4883
+
+[example_document_download_archive_csharp]: {{ kbArticleURLPrefix }}4921
+
+[example_document_download_archive_related_records_csharp]: {{ kbArticleURLPrefix }}5081
+
+[example_document_download_to_server_csharp]: {{ kbArticleURLPrefix }}5002
 
 [example_csharp_my_profile_button]: {{ kbArticleURLPrefix }}5006
 
@@ -56,11 +74,9 @@
 
 [formula_context]: {{ kbArticleURLPrefix }}4892
 
-[formula_examples]: {{ kbCategoryURLPrefix }}881
+[formula_guide]: {{ kbCategoryURLPrefix }}880
 
-[formula_guide]: {{ kbCategoryURLPrefix }}882
-
-[formula_use_examples]: {{ kbCategoryURLPrefix }}880
+[formula_use_examples]: {{ kbCategoryURLPrefix }}881
 
 [formula_function_list]: {{ kbArticleURLPrefix }}4993
 
@@ -70,19 +86,19 @@
 
 [integration_examples]: {{ kbCategoryURLPrefix }}875
 
-[manual_csharp]: {{ kbArticleURLPrefix }}4864
-
 [manual_n3]: {{ kbArticleURLPrefix }}4852
 
-[n3_examples]: {{ kbCategoryURLPrefix }}879
+[n3_guide]: {{ kbCategoryURLPrefix }}877
 
-[n3_guide]: {{ kbCategoryURLPrefix }}878
-
-[n3_use_examples]: {{ kbCategoryURLPrefix }}877
+[n3_use_examples]: {{ kbCategoryURLPrefix }}879
 
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}4905
 
+[process_end_button_example]: {{ kbArticleURLPrefix }}4911
+
 [tutorial]: {{ kbCategoryURLPrefix }}870
+
+[apps_kb]: {{ kbCategoryURLPrefix }}832
 
 [telegram_send_notification]: {{ kbArticleURLPrefix }}4926
 
@@ -110,7 +126,11 @@
 
 [authentication_keys]: {{ kbArticleURLPrefix }}4674
 
-[backup]: {{ kbArticleURLPrefix }}4642
+[backup_configure]: {{ kbArticleURLPrefix }}4642
+
+[backup_recommendations]: {{ kbArticleURLPrefix }}5082
+
+[backup_configure_elasticsearch]: {{ kbArticleURLPrefix }}5082#backup_configure_elasticsearch
 
 [changelog]: {{ kbArticleURLPrefix }}4589
 
@@ -210,23 +230,23 @@
 
 [process_templates]: {{ kbArticleURLPrefix }}4758
 
-[receive_http_example]: {{ kbArticleURLPrefix }}4700
-
 [record_templates]: {{ kbArticleURLPrefix }}4759
 
 [record_template_properties]: {{ kbArticleURLPrefix }}4759#record_template_properties
 
 [registration_and_login]: {{ kbArticleURLPrefix }}4663
 
-[release_notes_4.7.4822]: {{ kbArticleURLPrefix }}4590
+[release_notes_4.7.4822]: {{ kbArticleURLPrefix }}2611
 
-[release_notes_4.7.2721]: {{ kbArticleURLPrefix }}4591
+[release_notes_4.7.2721]: {{ kbArticleURLPrefix }}2633
 
-[release_notes_4.7.2902]: {{ kbArticleURLPrefix }}4588
+[release_notes_4.7.2902]: {{ kbArticleURLPrefix }}2639
 
-[release_notes_4.7.3023]: {{ kbArticleURLPrefix }}4592
+[release_notes_4.7.3023]: {{ kbArticleURLPrefix }}2642
 
-[release_notes_4.7.3084]: {{ kbArticleURLPrefix }}4587
+[release_notes_4.7.3084]: {{ kbArticleURLPrefix }}2649
+
+[release_notes_5.0]: {{ kbArticleURLPrefix }}5073
 
 [restore_complete_backup]: {{ kbArticleURLPrefix }}4648
 
@@ -242,11 +262,7 @@
 
 [scenario_send_email]: {{ kbArticleURLPrefix }}4692
 
-[send_http_connection]: {{ kbArticleURLPrefix }}4703
-
 [security]: {{ kbArticleURLPrefix }}4660
-
-[send_http_request_connection]: {{ kbArticleURLPrefix }}4696
 
 [sql_receive_connection]: {{ kbArticleURLPrefix }}4705
 
@@ -263,6 +279,10 @@
 [table_configure_template]: {{ kbArticleURLPrefix }}2550
 
 [table_personal_use]: {{ kbArticleURLPrefix }}4815
+
+[table_personal_use_filter]: {{ kbArticleURLPrefix }}4815#table_personal_use_filter
+
+[table_personal_use_filter_extended]: {{ kbArticleURLPrefix }}4815#table_personal_use_filter_extended
 
 [task_notifications]: {{ kbArticleURLPrefix }}4684
 
@@ -290,6 +310,8 @@
 
 [version_control]: {{ kbArticleURLPrefix }}4808
 
+[version_control_excel]: {{ kbArticleURLPrefix }}5071
+
 [version_control_git]: {{ kbArticleURLPrefix }}4806
 
 [version_control_manual]: {{ kbArticleURLPrefix }}4807
@@ -302,9 +324,9 @@
 
 {% endif %}
 
-{% if (not userGuide and (adminGuideLinux or adminGuideWindows)) or kbExport %}
+{% if (not userGuide and (adminGuideLinux or adminGuideWindows)) or (tutorial and not userGuide) or kbExport %}
 
-<!-- Руководство администратора для Linux/Windows или экспорт в БЗ -->
+<!-- Руководство администратора для Linux/Windows, отдельный учебник или экспорт в БЗ -->
 
 [1c_integrations]: {{ kbArticleURLPrefix }}4698
 
@@ -440,8 +462,6 @@
 
 [discussion_use]: {{ kbArticleURLPrefix }}4818
 
-[download_archive_csharp]: {{ kbArticleURLPrefix }}4921
-
 [elasticdata_description]: {{ kbArticleURLPrefix }}4584
 
 [process_diagram_elements_events_end]: {{ kbArticleURLPrefix }}4744
@@ -492,6 +512,8 @@
 
 [form_dynamic_elements_drawing]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_drawing
 
+[form_dynamic_elements_dropdown]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_dropdown
+
 [form_dynamic_elements_embedded_form]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_embedded_form
 
 [form_dynamic_elements_hyperlink]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_hyperlink
@@ -529,6 +551,20 @@
 [functions]: {{ kbArticleURLPrefix }}4711
 
 [functions_web_service_call]: {{ kbArticleURLPrefix }}4711#functions_web_service_call
+
+[http_receive_example]: {{ kbArticleURLPrefix }}4700
+
+[http_receive_file]: {{ kbArticleURLPrefix }}5083
+
+[http_receive_jpath]: {{ kbArticleURLPrefix }}5084
+
+[http_send_connection]: {{ kbArticleURLPrefix }}4703
+
+[http_send_example]: {{ kbArticleURLPrefix }}4699
+
+[http_send_file]: {{ kbArticleURLPrefix }}5066
+
+[http_send_request_connection]: {{ kbArticleURLPrefix }}4696
 
 [import_data]: {{ kbArticleURLPrefix }}4802
 
@@ -638,7 +674,7 @@
 
 [scenario_verify_data]: {{ kbArticleURLPrefix }}4919
 
-[send_http_example]: {{ kbArticleURLPrefix }}4699
+[search_forms]: {{ kbArticleURLPrefix }}5069
 
 [service_call_task]: {{ kbArticleURLPrefix }}4729
 
@@ -716,13 +752,21 @@
 
 [auxiliary_software_optimize]: {{ kbArticleURLPrefix }}4604
 
+[availability_fault_tolerance]: {{ kbArticleURLPrefix }}5079
+
 [backup_restore_cdbbz]: {{ kbArticleURLPrefix }}4647
+
+[configuration_files_linux]: {{ kbArticleURLPrefix }}5067
 
 [deploy_guide_linux]: {{ kbArticleURLPrefix }}4622
 
 [deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_initialize
 
+[deploy_cluster_linux]: {{ kbArticleURLPrefix }}5080
+
 [elasticsearch_cluster_deploy_no_certificates]: {{ kbArticleURLPrefix }}4612
+
+[kafka_deploy_linux]: {{ kbArticleURLPrefix }}5074
 
 [sso_authenticatation_configure]: {{ kbArticleURLPrefix }}4613
 
@@ -742,10 +786,6 @@
 
 [admin_utility_instance_configure]: {{ kbArticleURLPrefix }}4634
 
-[deploy_guide_linux]: {{ kbArticleURLPrefix }}4622
-
-[deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_initialize
-
 [logging_engine]: {{ kbArticleURLPrefix }}4623
 
 [logging_engine_audit_log]: {{ kbArticleURLPrefix }}4623#logging_engine_audit_log
@@ -757,5 +797,22 @@
 [system_requirements]: {{ kbArticleURLPrefix }}4659
 
 [upload_size_limit_configure]: {{ kbArticleURLPrefix }}4619
+
+{% endif %}
+
+{% if (not tutorial) or kbExport %}
+
+<!-- Руководства без учебника или экспорт в БЗ  -->
+
+[lesson_1]: {{ kbArticleURLPrefix }}4871
+[lesson_2]: {{ kbArticleURLPrefix }}4873
+[lesson_3]: {{ kbArticleURLPrefix }}4874
+[lesson_4]: {{ kbArticleURLPrefix }}4865
+[lesson_5]: {{ kbArticleURLPrefix }}4869
+[lesson_6]: {{ kbArticleURLPrefix }}4870
+[lesson_7]: {{ kbArticleURLPrefix }}4872
+[lesson_8]: {{ kbArticleURLPrefix }}4867
+[lesson_9]: {{ kbArticleURLPrefix }}4868
+[lesson_10]: {{ kbArticleURLPrefix }}4866
 
 {% endif %}

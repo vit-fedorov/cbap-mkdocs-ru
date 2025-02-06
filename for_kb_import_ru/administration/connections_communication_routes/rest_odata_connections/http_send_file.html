@@ -96,29 +96,34 @@
 <article class="md-content__inner md-typeset">
 <h2 id="введение">Введение</h2>
 <p><strong>Comindware Platform</strong> позволяет отправлять HTTP-запросы типа <code>POST</code> для взаимодействия с внешними системами.</p>
-<p>Здесь представлены инструкции по настройке подключения, пути передачи данных, шаблона записи и сценария для отправки запросов типа <code>POST</code> в формате <code>JSON</code> с составным содержимым и прикреплёнными файлами.</p>
+<p>Здесь представлены инструкции по настройке подключения, пути передачи данных, шаблона записи и сценария для отправки запросов типа <code>POST</code> в формате JSON с составным содержимым и прикреплёнными файлами.</p>
 <h2 id="прикладная-задача">Прикладная задача</h2>
 <p>Имеется шаблон <em>«Реестр документов»</em>, содержащий записи с прикреплёнными файлами.</p>
 <p>Требуется настроить кнопку для отправки прикреплённых файлов во внешнюю систему с помощью HTTP-запроса типа <code>POST</code>.</p>
 <h2 id="настройка-подключения">Настройка подключения</h2>
 <ol class="colored_numbers_list">
-<li>На странице <strong>Администрирование</strong>» выберите пункт «<strong>Инфраструктура</strong>» — «<strong>Подключения</strong>».</li>
-<li>Откройте двойным нажатием или создайте подключение типа «<strong>Подключения REST и OData</strong>» — «<strong>Отправка HTTP-запросов</strong>».</li>
+<li>На странице <strong>Администрирование</strong>» выберите пункт «<strong>Инфраструктура</strong>» — «<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4675"><strong>Подключения</strong></a>» <i class="fal fa-exchange-alt">&zwnj;<!--icon--></i>.</li>
+<li>Откройте или создайте подключение типа «<strong>Подключения REST и OData</strong>» — «<strong>Отправка HTTP-запросов</strong>».</li>
 <li>
 <p>Настройте подключение к серверу:</p>
 <ul>
 <li><strong>Системное имя</strong> — введите уникальное имя подключения.
-Не должно начинаться с цифры. Рекомендуется использовать буквы латинского алфавита, цифры и символ «_».</li>
+Не должно начинаться с цифры. Разрешены английские и русские буквы, цифры и символ «_». Рекомендуется использовать английские буквы.</li>
 <li><strong>Отключить</strong> — установите этот флажок, если требуется временно деактивировать данное подключение.</li>
-<li><strong>Описание</strong> — введите наглядное описание подключения, например <em>«Подключение для отправки файлов по HTTP»</em>.</li>
+<li><strong>Описание</strong> — введите наглядное описание подключения, например <em>«Подключение для отправки HTTP-запросов»</em>.</li>
 <li><strong>Запись в файловые журналы</strong> — выберите, какие события следует записывать в журналы:<ul>
 <li><strong>Полные сведения об обработке сообщения</strong>;</li>
 <li><strong>Только ошибки</strong>;</li>
-<li><strong>Отключить</strong> — не регистрировать в журнале события получения писем.</li>
+<li><strong>Отключить</strong> — не регистрировать в журнале события отправки запросов.</li>
 </ul>
 </li>
-<li><strong>URI</strong> — укажите адрес сервера, на который будут отправляться запросы.</li>
-<li><strong>Формат данных</strong> — выберите <strong>JSON</strong>.</li>
+<li><strong>URI</strong> — введите URL-адрес сервера, принимающего HTTP-запросы, например <code>http://example.com/api</code>. Символ <code>/</code> в конце URL не требуется.</li>
+<li><strong>Формат данных</strong> — выберите представление данных:<ul>
+<li><strong>JSON</strong> — используется в данном примере;</li>
+<li><strong>XML</strong>;</li>
+<li><strong>Простой текст</strong>.</li>
+</ul>
+</li>
 <li><strong>Кодировка данных</strong> — укажите формат кодировки данных, используемый сервером, по умолчанию: <strong>UTF-8</strong>.</li>
 <li><strong>Тип аутентификации</strong> — выберите способ проверки подлинности, используемый сервером:<ul>
 <li><strong>Отсутствует</strong>;</li>
@@ -134,12 +139,13 @@
 <li>
 <p>Проверьте соединение с сервером, нажав соответствующую кнопку.</p>
 </li>
-<li>При необходимости нажмите кнопку «<strong>Скачать журнал</strong>», чтобы просмотреть журнал событий получения запросов.</li>
+<li>При необходимости нажмите кнопку «<strong>Скачать журнал</strong>», чтобы просмотреть журнал событий отправки запросов.</li>
 <li>Сохраните подключение.</li>
 </ol>
 <h2 id="настройка-пути-передачи-данных">Настройка пути передачи данных</h2>
 <ol class="colored_numbers_list">
-<li>На странице «<strong>Администрирование</strong>» в разделе «<strong>Архитектура</strong>» выберите пункт «<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4676"><strong>Пути передачи данных</strong></a>» <i aria-hidden="true" class="fa-light fa-route">&zwnj;<!--icon--></i>.</li>
+<li>Откройте страницу «<strong>Администрирование</strong>» — «<strong>Архитектура</strong>» или страницу «<strong>Администрирование</strong>» приложения.</li>
+<li>Выберите пункт «<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4676"><strong>Пути передачи данных</strong></a>» <i aria-hidden="true" class="fa-light fa-route">&zwnj;<!--icon--></i>.</li>
 <li>Откройте двойным нажатием в списке или создайте путь передачи данных типа «<strong>Подключения REST и OData</strong>» — «<strong>Отправка HTTP-запросов</strong>».</li>
 <li>
 <p>Настройте свойства пути передачи данных на следующих вкладках:</p>
@@ -158,7 +164,7 @@
 <ul>
 <li><strong>Подключение</strong> — выберите <a class="mkdocs_imported_link" href="#настройка-подключения">подключение для отправки HTTP-запросов</a>.</li>
 <li><strong>Системное имя</strong> — введите уникальное имя пути передачи данных.
-Не должно начинаться с цифры. Рекомендуется использовать буквы латинского алфавита, цифры и символ «_».</li>
+Не должно начинаться с цифры. Разрешены английские и русские буквы, цифры и символ «_». Рекомендуется использовать английские буквы.</li>
 <li><strong>Отключить</strong> — установите этот флажок, если требуется временно деактивировать путь передачи данных.</li>
 <li><strong>Описание</strong> — введите наглядное описание пути передачи данных, например <em>«Путь передачи данных для отправки файлов по HTTP»</em>.</li>
 <li><strong>Номер шины данных</strong> — выберите номер от 0 до 3, если требуется распределить потоки данных нескольких путей для повышения производительности.</li>
@@ -169,7 +175,7 @@
 <p>Чтобы составить <strong>атрибут сообщения</strong> типа «<strong>Объект</strong>» для хранения имени и содержимого файла, необходимо создать структуру из родительского и дочерних атрибутов:</p>
 <ul>
 <li>Создайте атрибут типа «<strong>Объект</strong>», задайте его имя, но оставьте значение пустым.</li>
-<li>Установите флажок у имени родительского атрибута в таблице и нажмите кнопку «<strong>Создать</strong>».</li>
+<li>Установите флажок у имени родительского атрибута в таблице и нажмите кнопку «<strong>Добавить</strong>».</li>
 <li>Дважды нажмите значок <i class="fa-light fa-angle-down anchor">&zwnj;<!--icon--></i> рядом с родительским атрибутом.</li>
 <li>В таблице отобразится строка дочернего атрибута.</li>
 <li>Задайте системное имя и тип дочернего атрибута.</li>
@@ -217,7 +223,7 @@
 </ul>
 </li>
 <li>
-<p>Поместите атрибут <em>«Вложения»</em> и кнопку <em>«Отправить вложения»</em> на форму.</p>
+<p>Поместите атрибут <em>«Вложения»</em> и кнопку <em>«Отправить вложения»</em> на форму. </p>
 </li>
 </ol>
 <h2 id="настройка-сценария">Настройка сценария</h2>
@@ -226,17 +232,32 @@
 <ul>
 <li>Сценарий срабатывает при нажатии кнопки <em>«Отправить вложения»</em> на форме записи с прикреплёнными файлами.</li>
 <li>Запускается цикл, перебирающий все прикреплённые файлы.</li>
-<li>На каждой итерации цикла формируется и отправляется отдельный HTTP-запрос, содержащий данные файла в формате JSON:<ul>
+<li>
+<ul>
 <li>Формируются переменные с именем и содержимым файла: <code>$$Name</code> и <code>$$Content</code>.</li>
-<li>Формируется переменная-объект для отправки в теле HTTP-запроса:
-<div class="highlight"><code><pre><span></span><code><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="nt">"Message"</span><span class="p">:{</span></code> <br/><code><span class="w">        </span><span class="nt">"File"</span><span class="p">:{</span></code> <br/><code><span class="w">            </span><span class="nt">"Name"</span><span class="p">:</span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code><span class="w">            </span><span class="nt">"Content"</span><span class="p">:</span><span class="s2">"STRING"</span></code> <br/><code><span class="w">        </span><span class="p">}</span></code> <br/><code><span class="w">    </span><span class="p">}</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div></li>
+<li>
+<p>Формируется переменная-объект для отправки в теле HTTP-запроса:</p>
+<div class="highlight"><code><pre><span></span><code><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="nt">"Message"</span><span class="p">:{</span></code> <br/><code><span class="w">        </span><span class="nt">"File"</span><span class="p">:{</span></code> <br/><code><span class="w">            </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code><span class="w">            </span><span class="nt">"Content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STRING"</span></code> <br/><code><span class="w">        </span><span class="p">}</span></code> <br/><code><span class="w">    </span><span class="p">}</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+</li>
+</ul>
+<p>На каждой итерации цикла формируется и отправляется отдельный HTTP-запрос, содержащий данные файла в формате JSON:</p>
+<ul>
 <li><code>$$Message-&gt;File-&gt;Name</code> присваивается значение переменной <code>$$Name</code>.</li>
 <li><code>$$Message-&gt;File-&gt;Content</code> присваивается значение переменной <code>$$Content</code>.</li>
-<li>Содержимое переменной <code>$$Message</code> в формате JSON отправляется в качестве HTTP-запроса.</li>
-<li>Содержимое переменной <code>$$Message</code> очищается для использования в следующей итерации цикла.</li>
+<li>
+<p>Содержимое переменной <code>$$Message</code> в формате JSON отправляется в качестве HTTP-запроса:</p>
+<div class="highlight"><code><pre><span></span><code><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="nt">"File"</span><span class="p">:{</span></code> <br/><code><span class="w">        </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code><span class="w">        </span><span class="nt">"Content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STRING"</span></code> <br/><code><span class="w">    </span><span class="p">}</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+</li>
+<li>
+<p>Содержимое переменной <code>$$Message</code> очищается для использования в следующей итерации цикла.</p>
+</li>
 </ul>
 </li>
 </ul>
+</div>
+<div class="notice notice-tip">
+<p class="admonition-title">Создание архива</p>
+<p>Чтобы не отправлять каждый файл отдельно, можно сформировать архив вложений и прикрепить его к атрибуту типа «<strong>Документ</strong>». Прикреплённый к этому атрибуту архив будет отправлен по HTTP, а цикл уже не понадобится. Для этого необходимо убрать действие «<strong>Повторять по количеству объектов</strong>» из приведённого ниже сценария, а также можно использовать C#-скрипт для создания архива файлов и прикрепления его к атрибуту, см. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5081">Атрибуты типа «Запись» и «Документ». Скачивание архива с файлами из связанных записей и его прикрепление к атрибуту</a>»</em>.</p>
 </div>
 <ol class="colored_numbers_list">
 <li>Создайте сценарий <em>«Отправка документов через HTTP»</em>.</li>
@@ -256,7 +277,7 @@
 <li><strong>Сообщение об ошибке:</strong> <em>Ошибка отправки вложения</em></li>
 <li>
 <p><strong>Выражение: N3</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="c"># Импортируем функции для работы с данными текущего сеанса и переменными</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">document:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/document#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">operator:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/operator#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">variable:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/variable#&gt;</span><span class="p">.</span></code> <br/><code></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="c"># Находим атрибут Attachment (Вложение) </span></code> <br/><code>    <span class="c"># в шаблоне DocumentRegistry (Реестр документов).</span></code> <br/><code>    <span class="p">(</span><span class="s">"DocumentRegistry"</span> <span class="s">"Attachment"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?Attachment</span><span class="p">.</span></code> <br/><code>    <span class="c"># Помещаем объект с файлом из ?Attachment в ?AttachmentItem.</span></code> <br/><code>    <span class="err">?item</span> <span class="err">?Attachment</span> <span class="err">?AttachmentItem</span><span class="p">.</span></code> <br/><code>    <span class="c"># Помещаем содержимое файла из ?AttachmentItem в ?Content.</span></code> <br/><code>    <span class="err">?AttachmentItem</span> <span class="nn">document</span><span class="p">:</span><span class="nt">content</span> <span class="err">?Content</span><span class="p">.</span></code> <br/><code>    <span class="c"># Помещаем имя файла из ?AttachmentItem в ?Name.</span></code> <br/><code>    <span class="err">?AttachmentItem</span> <span class="nn">document</span><span class="p">:</span><span class="nt">title</span> <span class="err">?Name</span><span class="p">.</span></code> <br/><code></code> <br/><code>    <span class="c"># Создаём в сценарии переменную Content и помещаем в неё ?Content</span></code> <br/><code>    <span class="nn">variable</span><span class="p">:</span><span class="nt">Content</span> <span class="nn">operator</span><span class="p">:</span><span class="nt">replace</span> <span class="err">?Content</span><span class="p">.</span></code> <br/><code>    <span class="c"># Создаём в сценарии переменную Name и помещаем в неё ?Name</span></code> <br/><code>    <span class="nn">variable</span><span class="p">:</span><span class="nt">Name</span> <span class="nn">operator</span><span class="p">:</span><span class="nt">replace</span> <span class="err">?Name</span><span class="p">.</span></code> <br/><code></code> <br/><code>    <span class="l">true</span> <span class="err">-&gt;</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="c"># Импортируем функции для работы с данными текущего сеанса и переменными</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">document:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/document#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">operator:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/operator#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">variable:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/variable#&gt;</span><span class="p">.</span></code> <br/><code></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="c"># Находим атрибут Attachment (Вложение) </span></code> <br/><code>    <span class="c"># в шаблоне DocumentRegistry (Реестр документов).</span></code> <br/><code>    <span class="p">(</span><span class="s">"DocumentRegistry"</span> <span class="s">"Attachment"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?Attachment</span><span class="p">.</span></code> <br/><code>    <span class="c"># Помещаем объект с файлом из ?Attachment в ?AttachmentItem.</span></code> <br/><code>    <span class="err">?item</span> <span class="err">?Attachment</span> <span class="err">?AttachmentItem</span><span class="p">.</span></code> <br/><code>    <span class="c"># Помещаем содержимое файла из ?AttachmentItem в ?Content.</span></code> <br/><code>    <span class="err">?AttachmentItem</span> <span class="nn">document</span><span class="p">:</span><span class="nt">content</span> <span class="err">?Content</span><span class="p">.</span></code> <br/><code>    <span class="c"># Помещаем имя файла из ?AttachmentItem в ?Name.</span></code> <br/><code>    <span class="err">?AttachmentItem</span> <span class="nn">document</span><span class="p">:</span><span class="nt">title</span> <span class="err">?Name</span><span class="p">.</span></code> <br/><code>    <span class="c"># Создаём в сценарии переменную Content и помещаем в неё ?Content</span></code> <br/><code>    <span class="nn">variable</span><span class="p">:</span><span class="nt">Content</span> <span class="nn">operator</span><span class="p">:</span><span class="nt">replace</span> <span class="err">?Content</span><span class="p">.</span></code> <br/><code>    <span class="c"># Создаём в сценарии переменную Name и помещаем в неё ?Name</span></code> <br/><code>    <span class="nn">variable</span><span class="p">:</span><span class="nt">Name</span> <span class="nn">operator</span><span class="p">:</span><span class="nt">replace</span> <span class="err">?Name</span><span class="p">.</span></code> <br/><code>    <span class="l">true</span> <span class="err">-&gt;</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 </li>
 </ul>
 </li>
@@ -285,15 +306,16 @@
 <li>
 <p>В действии «<strong>Изменить значение переменных</strong>» на вкладке «<strong>Основные</strong>» добавьте переменные:</p>
 <div class="notice notice-warning">
-<p class="admonition-title">Создание переменной типа «Объект»</p>
-<p>Чтобы составить переменную типа «<strong>Объект</strong>» для хранения имени и содержимого файла, необходимо создать структуру из родительской и дочерних переменных:</p>
+<p class="admonition-title">Сопоставление переменных и объектов с атрибутами сообщения</p>
+<p>Для передачи значения переменной с именем и содержимым файла в атрибут сообщения типа «<strong>Объект</strong>», необходимо создать родительскую и дочерние переменные с такой же структурой, как у атрибута сообщения:</p>
 <ul>
-<li>Создайте переменную, присвойте ей <strong>имя</strong>, но оставьте <strong>значение</strong> переменной пустым. Эта переменная будет родительской.</li>
+<li>Создайте родительскую переменную, присвойте ей <strong>имя</strong>, но оставьте <strong>значение</strong> пустым.</li>
 <li>Установите флажок у имени родительской переменной в таблице и нажмите кнопку «<strong>Создать</strong>».</li>
 <li>Дважды нажмите значок <i class="fa-light fa-angle-down anchor">&zwnj;<!--icon--></i> рядом с родительской переменной.</li>
 <li>В таблице отобразится строка дочерней переменной.</li>
 <li>Присвойте дочерней переменной <strong>имя</strong> и <strong>значение</strong>.</li>
 </ul>
+<p>Имена переменных, значения которых передаются в <a class="mkdocs_imported_link" href="#атрибуты-сообщений"><strong>атрибуты сообщений</strong></a> с помощью действия сценария «<strong>Отправить сообщение</strong>», должны совпадать с системными именами атрибутов сообщения.</p>
 </div>
 <ul>
 <li>
@@ -306,7 +328,7 @@
 <li><em>Name</em> — <strong>значение: формула</strong></li>
 </ul>
 <div class="highlight"><code><pre><span></span><code><span class="err">$$</span><span class="n">Name</span></code> <br/></pre></code></div>
-<p>Здесь используются переменные <code>Content</code> и <code>Name</code>, которые были созданы на шаге 4.</p>
+<p>Здесь <code>$$Content</code> и <code>$$Name</code> — переменные, которые были созданы на шаге 4.</p>
 </li>
 </ul>
 </li>
@@ -334,7 +356,7 @@
 <li><strong>Сообщение об ошибке:</strong> <em>Ошибка очистки переменных</em></li>
 <li>
 <p><strong>Выражение: N3</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="c"># Импортируем функции для работы с переменными</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">variable:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/variable#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">operator:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/operator#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="c"># Очищаем переменную Message</span></code> <br/><code>    <span class="nn">variable</span><span class="p">:</span><span class="nt">Message</span> <span class="nn">operator</span><span class="p">:</span><span class="nt">clear</span> <span class="err">?item</span><span class="p">.</span></code> <br/><code></code> <br/><code>    <span class="c"># Возвращаем значение true</span></code> <br/><code>    <span class="l">true</span> <span class="err">-&gt;</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="c"># Импортируем функции для работы с переменными</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">variable:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/variable#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">operator:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/operator#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="c"># Очищаем переменную Message</span></code> <br/><code>    <span class="nn">variable</span><span class="p">:</span><span class="nt">Message</span> <span class="nn">operator</span><span class="p">:</span><span class="nt">clear</span> <span class="err">?item</span><span class="p">.</span></code> <br/><code>    <span class="c"># Возвращаем значение true</span></code> <br/><code>    <span class="l">true</span> <span class="err">-&gt;</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 </li>
 </ul>
 </li>
@@ -364,6 +386,7 @@
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4703">Отправка HTTP-запросов. Настройка подключения</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4699">Отправка HTTP-запросов типа GET. Пример: настройка подключения, пути передачи данных и сценария для обработки запросов в формате JSON</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4718#scenario_actions_send_message">Действие «Отправить сообщение» в сценарии</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5081">Атрибуты типа «Запись» и «Документ». Скачивание архива с файлами из связанных записей и его прикрепление к атрибуту</a></em></li>
 </ul>
 </div>
 </article>

@@ -34,7 +34,7 @@ kbId: 4624
 <source src="https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/upgrade_version_linux.mp4" type="video/mp4" />
 </video>
 
-## Подготовка экземпляра ПО к обновлению
+## Подготовка экземпляра ПО к обновлению {: .pageBreakBefore }
 
 !!! warning "Внимание!"
 
@@ -44,6 +44,8 @@ kbId: 4624
 2. Перейдите в режим суперпользователя:
 
     --8<-- "linux_sudo.md"
+
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 3. Удостоверьтесь, что файлы конфигурации соответствуют приведённым ниже образцам, и при необходимости создайте и отредактируйте их.
 {: #config_samples }
@@ -58,6 +60,8 @@ kbId: 4624
 
     --8<-- "instance_config_warning.md"
 
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+
     - Отредактируйте файл `/var/www/<instanceName>/adapterhost.yml` по следующему образцу:
 
     {%
@@ -70,6 +74,8 @@ kbId: 4624
 
         Файл `adapterhost.yml` не должен содержать пустых строк.
 
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+
     - Отредактируйте файл `/var/www/<instanceName>/apigateway.yml` по следующему образцу:
 
     {%
@@ -78,7 +84,9 @@ kbId: 4624
     end="<!--apigatewayYML-end-->"
     %}
 
-1. Сохраните резервную копию конфигурационных файлов, например в директорию `/var/backups/config_tmp`:
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+
+4. Сохраните резервную копию конфигурационных файлов, например в директорию `/var/backups/config_tmp`:
 {: #NginxBackup}
 
     - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
@@ -140,6 +148,7 @@ kbId: 4624
     ``` sh
     rm -rf <distPath>/CMW_<osname>
     ```
+    {% include-markdown ".snippets/pdfEndOfBlockHack.md" %}
 
 ## Обновление версии ПО для экземпляра {: .pageBreakBefore }
 
@@ -181,6 +190,8 @@ kbId: 4624
 
     - `-n=<instanceName>` — имя обновляемого экземпляра ПО;
     - `-vp=/var/www/.cmw_version/<versionNumber>` — укажите путь к папке с установленной версией ПО, где `<versionNumber>` — номер версии ПО.
+
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 7. По окончании обновления скрипт выведет информацию о компонентах экземпляра ПО. Удостоверьтесь, что компоненты успешно обновлены.
 

@@ -15,6 +15,10 @@ hide:
 
 Это полное руководство ПО **{{ productNameEnterprise }}**.
 
+{% elif apiGuide %}
+
+Это полное руководство по использованию API ПО **{{ productNameEnterprise }}**.
+
 {% elif userGuide %}
 
 Это руководство пользователя ПО **{{ productNameEnterprise }}** с модулем «**{{ productNameArchitect }}**».

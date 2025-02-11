@@ -28,10 +28,15 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h2 id="настройка-подключения-к-odata-сервису">Настройка подключения к OData-сервису</h2>
+<div class="notice notice-info">
+<p class="admonition-title">Примечание</p>
+<p>После настройки подключения к OData-сервису настройте синхронизацию данных между ним и <strong>Comindware Platform</strong>.</p>
+<p>См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4697">Синхронизация с веб-сервисом. Интеграция по OData</a>»</em>.</p>
+</div>
 <ol class="colored_numbers_list">
-<li>Откройте раздел «<strong>Администрирование</strong>» — «<strong>Подключения</strong>».</li>
+<li>На странице «<strong>Администрирование</strong>» выберите пункт «<strong>Инфраструктура</strong>» — «<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4675"><strong>Подключения</strong></a>» <i fa-exchange-alt="" fal=""></i>.</li>
 <li>
-<p>Создайте подключение типа «<strong>Синхронизация с веб-сервисом</strong>».</p>
+<p>Откройте или создайте подключение типа «<strong>Подключения REST и OData</strong>» —  «<strong>Синхронизация с веб-сервисом</strong>».</p>
 <p><figure class="screenshot_with_caption" markdown=""><img alt="Создание подключения для синхронизации с веб-сервисом" src="/platform/v5.0/administration/connections_communication_routes/rest_odata_connections/../img/odata_integration_connection_create.png"/><figcaption class="caption">Создание подключения для синхронизации с веб-сервисом</figcaption></figure></p>
 </li>
 <li>
@@ -42,8 +47,8 @@
 <p><strong>Адрес веб-сервиса</strong> — URL для подключения к серверу OData.</p>
 <div class="notice notice-tip">
 <p class="admonition-title">Совет</p>
-<p>Для экспериментов с синхронизацией по OData можно использовать общедоступные серверы, предоставляемые OData.org.</p>
-<p>Например, для тестирования импорта данных в качестве <strong>адреса веб-сервиса</strong> можно указать: </p>
+<p>Для экспериментов с синхронизацией по OData при настройке подключения в поле «<strong>Адрес веб-сервиса</strong>» можно указать подходящий общедоступный сервер.</p>
+<p>Например, для тестирования импорта данных можно использовать следующий сервер, предоставляемый OData.org:</p>
 <p><a class="mkdocs_imported_link" href="https://services.odata.org/V3/OData/OData.svc/">https://services.odata.org/V3/OData/OData.svc/</a></p>
 <p>Адреса остальных тестовых серверов OData.org представлены на следующих сайтах:</p>
 <p><a class="mkdocs_imported_link" href="https://services.odata.org/">https://services.odata.org/</a> </p>
@@ -51,7 +56,7 @@
 </div>
 </li>
 <li>
-<p class="pageBreakBefore"><strong>Тип аутентификации</strong>:</p>
+<p><strong>Тип аутентификации</strong>:</p>
 <ul>
 <li><strong>Без аутентификации</strong></li>
 <li><strong>Обычная</strong></li>

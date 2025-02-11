@@ -35,6 +35,9 @@ kbId: 4921
 !!! question "Структура атрибута типа «Документ»"
 
     --8<-- "attribute_document_logic.md"
+
+!!! tip "Извлечение файлов из атрибута типа «Документ» с помощью C#"
+
     --8<-- "attribute_document_get_file_csharp.md"
 
 ## Прикладная задача
@@ -64,7 +67,7 @@ kbId: 4921
     * **Контекст операции:** **запись**
     * **Операция:** **С# скрипт**
     * **Результат выполнения:** **скачать документ**
-    
+
 4. На вкладке «**Скрипт**» добавьте следующий C#-скрипт:
 
     ``` cs title="Скрипт для скачивания архива с файлами"
@@ -79,7 +82,9 @@ kbId: 4921
 
     {% if pdfOutput %}
     ```
+
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+
     ``` cs title="Скрипт для скачивания архива с файлами — продолжение"
     {% endif %}
     class Script
@@ -130,15 +135,18 @@ kbId: 4921
                             }
                         }
                     }
-                    // Помещаем поток с результирующим архивом в массив content.
+                    // Помещаем поток с результирующим архивом в массив compressedBytes.
                     compressedBytes = resultStream.ToArray();
                 }
-                var memStream = new MemoryStream(compressedBytes);
-                var content = memStream.ToArray();
     {% if pdfOutput %}
     ```
+
     ``` cs title="Скрипт для скачивания архива с файлами — продолжение"
     {% endif %}
+                // Создаём поток с результирующим архивом
+                var memStream = new MemoryStream(compressedBytes);
+                // Помещаем поток с архивом в массив content.
+                var content = memStream.ToArray();
                 // Заполняем объект resulterr, который возвращает операция кнопки.
                 var resulterr = new UserCommandResult
                 {

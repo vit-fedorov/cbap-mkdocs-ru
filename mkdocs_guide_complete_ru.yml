@@ -394,3 +394,4 @@ nav:
 exclude_docs: |
   administration/deploy/windows/admin_utility/**
   administration/deploy/windows/architect_install.md
+  developer_guide/n3/n3_tutorial.md

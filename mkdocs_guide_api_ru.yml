@@ -1,0 +1,39 @@
+# This file configures the Russian help to be build as Web/help/ru
+# But it does not copy the dependencies
+# Run `py buildhelp.py` to actually build the help with all the dependencies
+
+INHERIT: mkdocs_ru.yml
+
+site_name: Comindware Platform. Руководство пользователя
+
+extra:
+  apiGuide: true
+  adminGuideWindows: False
+  adminGuideLinux: False
+  userGuide: False
+  tutorial: False
+  completeGuide: False
+
+nav:
+  - Общие сведения:
+    - index.md
+  - Использование API Comindware Platform: 
+    - developer_guide/api/index.md
+    - developer_guide/api/api_solution.md
+    - developer_guide/api/api_system_core.md
+    - developer_guide/api/api_web.md
+
+
+exclude_docs: |
+  
+  administration/**
+  devops_wiki/**
+  developer_guide/csharp/**
+  developer_guide/n3/**
+  business_apps/**
+  architect/**
+  tutorial/**
+  general/**
+  examples/**
+  using_the_system/**
+  product_description.md

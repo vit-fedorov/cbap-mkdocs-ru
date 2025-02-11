@@ -804,11 +804,19 @@
 
 [authentication_keys]: {{ kbArticleURLPrefix }}4674
 
-[buttons]: {{ kbArticleURLPrefix }}4790
-
 [communication_routes]: {{ kbArticleURLPrefix }}4676
 
 [connections]: {{ kbArticleURLPrefix }}4675
+
+[system_roles]: {{ kbArticleURLPrefix }}4662
+
+{% endif %}
+
+{% if apiGuide or adminGuideLinux or adminGuideWindows or kbExport %}
+
+<!-- Руководство по API, руководство администратора для Linux/Windows или экспорт в БЗ  -->
+
+[buttons]: {{ kbArticleURLPrefix }}4790
 
 [process_diagram_elements_script_task]: {{ kbArticleURLPrefix }}4728
 
@@ -817,8 +825,6 @@
 [process_diagram_elements_send_message_intermediate_event]: {{ kbArticleURLPrefix }}4740
 
 [scenarios]: {{ kbArticleURLPrefix }}4717
-
-[system_roles]: {{ kbArticleURLPrefix }}4662
 
 {% endif %}
 

@@ -16,6 +16,45 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#стратегия-выбора-api">
+<span class="md-ellipsis">
+      Стратегия выбора API
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#обратная-совместимость-api">
+<span class="md-ellipsis">
+      Обратная совместимость API
+    </span>
+</a>
+<nav aria-label="Обратная совместимость API" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#solution-api">
+<span class="md-ellipsis">
+      Solution API
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#system-core-api">
+<span class="md-ellipsis">
+      System Core API
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#web-api">
+<span class="md-ellipsis">
+      Web API
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link mkdocs_imported_link" href="#definitions">
 <span class="md-ellipsis">
       Определения
@@ -95,11 +134,38 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h2 id="введение">Введение</h2>
-<p><strong>Comindware Platform</strong> может обращаться к API внешних систем через <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4675">подключения</a> и <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4676">пути передачи данных</a>, а также может обрабатывать запросы из внешних систем через интерфейсы <strong>REST API</strong> трех типов:</p>
+<p><strong>Comindware Platform</strong> может обращаться к API внешних систем через <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4675">подключения</a> и <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4676">пути передачи данных</a>, а также может обрабатывать запросы из внешних систем через интерфейсы <strong>REST API</strong> трёх типов:</p>
 <ul>
-<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4863"><strong>Solution API</strong></a></li>
-<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4862"><strong>System Core API</strong></a></li>
-<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4861"><strong>Web API</strong></a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4863"><strong>Solution API</strong></a> — обеспечивает доступ к актуальной модели и бизнес-логике конкретного приложения.</li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4862"><strong>System Core API</strong></a> — предоставляет доступ к системным функциям (управление аккаунтами, системными службами и т.д.).</li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4861"><strong>Web API</strong></a> — универсальные методы прикладного уровня для работы с данными (излечение записей, базовые CRUD-операции).</li>
+</ul>
+<h2 id="стратегия-выбора-api">Стратегия выбора API</h2>
+<p>Перед выбором API ознакомьтесь с параграфом <em>«<a class="mkdocs_imported_link" href="#обратная-совместимость-api"><strong>Обратная совместимость API</strong></a>»</em>.</p>
+<p>Помимо обратной совместимости, при выборе API следует учесть все технические и бизнес-факторы, включая потенциальные затраты на обновление интеграций в случае устаревания используемых API.</p>
+<p>Чтобы выбрать оптимальные API в соответствии с целями и потребностям вашего предприятия, обязательно привлеките системных аналитиков, бизнес-аналитиков и представителей коммерческих отделов вашей организации.</p>
+<p>В общем случае можно рекомендовать следующий подход к выбору API:</p>
+<ul>
+<li>Для интеграций с бизнес-логикой приложений используйте <strong>Solution API</strong>. При этом предусмотрите механизм обработки изменений логики работы приложений.</li>
+<li>Для системных задач (аутентификация, настройки) используйте <strong>System Core API</strong>. Учитывайте, что при обновлении мажорной версии ПО (например, с 4.2 на 5.0) может потребоваться обновить код интеграций.</li>
+<li>Для стабильных и долгосрочных интеграций отдавайте предпочтение <strong>Web API</strong>. Эти интерфейсы обладают наибольшей обратной совместимостью.</li>
+</ul>
+<h2 id="обратная-совместимость-api">Обратная совместимость API</h2>
+<p>Для API <strong>Comindware Platform</strong> различных типов применяются разные политики обратной совместимости.</p>
+<h3 id="solution-api">Solution API</h3>
+<ul>
+<li><strong>Обратная совместимость</strong>: не гарантируется и может меняться в при внесении изменений в приложения, за исключением метаданных (например, базовой структуры сущностей <strong>Comindware Platform</strong>).</li>
+<li><strong>Рекомендации</strong>: используйте для интеграций, где требуется доступ к текущей модели приложения. Учитывайте, что модель данных и логика работы приложения методы могут меняться по мере его развития.</li>
+</ul>
+<h3 id="system-core-api">System Core API</h3>
+<ul>
+<li><strong>Обратная совместимость</strong>: поддерживается в рамках мажорной версии (например, 5.x.x). Методы сохраняют стабильность, но в новых минорных версиях могут быть реализованы новые параметры или возможности с сохранением совместимости.</li>
+<li><strong>Рекомендации</strong>: при обновлении мажорной версии (например, с 4.x.x на 5.0.0) проверяйте документацию на наличие изменений. Для минорных версий (например, 5.1 и 5.2) совместимость сохраняется.</li>
+</ul>
+<h3 id="web-api">Web API</h3>
+<ul>
+<li><strong>Обратная совместимость</strong>: полностью гарантирована. Методы остаются стабильными между всеми версиями <strong>Comindware Platform</strong> (например, 4.x.x и 5.x.x).</li>
+<li><strong>Рекомендации</strong>: оптимально подходит для долгосрочных интеграций. Изменения вносятся только в исключительных случаях, с сохранением обратной совместимости.</li>
 </ul>
 <div class="notice notice-success">
 <h2 class="admonition-title" id="definitions">Определения</h2>

@@ -1,0 +1,3485 @@
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4852">
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<div class="mce-toc">
+<h2 class="toc-heading">
+      Содержание
+      </h2>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#введение">
+<span class="md-ellipsis">
+      Введение
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#синтаксис-n3">
+<span class="md-ellipsis">
+      Синтаксис N3
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#запросы-n3">
+<span class="md-ellipsis">
+      Запросы N3
+    </span>
+</a>
+<nav aria-label="Запросы N3" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#пять-видов-запросов">
+<span class="md-ellipsis">
+      Пять видов запросов
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#порядок-обработки-запросов">
+<span class="md-ellipsis">
+      Порядок обработки запросов
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#возможности-использования-выражений-n3">
+<span class="md-ellipsis">
+      Возможности использования выражений N3
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#входные-и-выходные-данные-выражений-в-зависимости-от-контекста">
+<span class="md-ellipsis">
+      Входные и выходные данные выражений в зависимости от контекста
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#примеры-использования-встроенных-функций-и-операторов-n3">
+<span class="md-ellipsis">
+      Примеры использования встроенных функций и операторов N3
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#примеры-использования-расширений-comindware-для-языка-n3">
+<span class="md-ellipsis">
+      Примеры использования расширений Comindware для языка N3
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#упрощения">
+<span class="md-ellipsis">
+      Упрощения
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#справочник-встроенных-функций-n3">
+<span class="md-ellipsis">
+      Справочник встроенных функций N3
+    </span>
+</a>
+<nav aria-label="Справочник встроенных функций N3" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#математические-функции-w3math">
+<span class="md-ellipsis">
+      Математические функции w3math
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#математические-функции-cmwmath">
+<span class="md-ellipsis">
+      Математические функции cmwmath
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#функции-для-работы-с-датами-и-временем-w3time">
+<span class="md-ellipsis">
+      Функции для работы с датами и временем w3time
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#функции-для-работы-с-датами-и-временем-cmwtime">
+<span class="md-ellipsis">
+      Функции для работы с датами и временем cmwtime
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#функции-для-работы-с-интервалами-времени-cmwduration">
+<span class="md-ellipsis">
+      Функции для работы с интервалами времени cmwduration
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#функции-для-работы-со-строками-w3string">
+<span class="md-ellipsis">
+      Функции для работы со строками w3string
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#функции-для-работы-со-строками-cmwstring">
+<span class="md-ellipsis">
+      Функции для работы со строками cmwstring
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#функции-для-работы-со-строками-cmwlogics">
+<span class="md-ellipsis">
+      Функции для работы со строками cmwlogics
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#функции-для-работы-со-строками-cmwentity">
+<span class="md-ellipsis">
+      Функции для работы со строками cmwentity
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#функции-для-работы-со-строками-cmwbuiltin">
+<span class="md-ellipsis">
+      Функции для работы со строками cmwbuiltin
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#функции-для-работы-со-списками-w3list">
+<span class="md-ellipsis">
+      Функции для работы со списками w3list
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#функции-для-работы-со-списками-cmwlist">
+<span class="md-ellipsis">
+      Функции для работы со списками cmwlist
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#функции-группировки-и-сортировки-списков-cmwentity">
+<span class="md-ellipsis">
+      Функции группировки и сортировки списков cmwentity
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#функции-для-работы-с-идентификаторами-ресурсов-cmwurl">
+<span class="md-ellipsis">
+      Функции для работы с идентификаторами ресурсов cmwurl
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#функции-для-работы-с-идентификаторами-ресурсов-cmwui">
+<span class="md-ellipsis">
+      Функции для работы с идентификаторами ресурсов cmwui
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#функции-поддерживающие-и-корректно-обрабатывающие-нулевые-значения-cmwnullable">
+<span class="md-ellipsis">
+      Функции поддерживающие и корректно обрабатывающие нулевые значения cmwnullable
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#функции-для-работы-с-изображениями-cmwbuiltin">
+<span class="md-ellipsis">
+      Функции для работы с изображениями cmwbuiltin
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#специальные-функции-для-работы-с-аккаунтами-и-группами-cmwlogics">
+<span class="md-ellipsis">
+      Специальные функции для работы с аккаунтами и группами cmwlogics
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#специальные-функции-для-работы-с-аккаунтами-и-группами-cmwaccount">
+<span class="md-ellipsis">
+      Специальные функции для работы с аккаунтами и группами cmwaccount
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#специальные-функции-cmwobject">
+<span class="md-ellipsis">
+      Специальные функции cmwobject
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#специальные-функции-cmwcontext">
+<span class="md-ellipsis">
+      Специальные функции cmwcontext
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</div>
+</nav>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h2 id="введение">Введение</h2>
+<p><strong>Comindware Platform</strong> позволяет составлять выражения на языке N3 (Notation3) для выполнения запросов данных и вычисления значений.</p>
+<p>Преимущество языка N3 заключается в скорости вычислений, что позволяет эффективно использовать все возможности графовой базы данных. Язык выражений N3 позволяет осуществлять доступ к искомым данным и их связям поатрибутивно без необходимости загрузки данных потаблично, что присуще реляционным базам данных и языку запросов SQL.</p>
+<p>Нотация N3 представляет собой набор записей типа: «субъект» «предикат» «объект». Данная конструкция может применяться в различных вариантах, от получения данных по заданным атрибутам, до математических операций.</p>
+<h2 id="синтаксис-n3">Синтаксис N3</h2>
+<p>Выражения N3 состоят из триплетов вида субъект-предикат-объект.</p>
+<p>Например, <code>?group rdf:type account:Group</code> — триплет, позволяющий по любому из заданных аргументов обнаружить неизвестные. Если в триплете заданы объект и предикат, ПО будет осуществлять поиск субъекта, если заданы субъект и предикат — поиск объекта и т. д. Если в выражении задан один аргумент, ПО вернёт все значения для остальных двух.</p>
+<p>Основы построения языка выражений N3 приведены в открытой документации, размещенной по адресу <a class="mkdocs_imported_link" href="https://www.w3.org/TR/rdf11-concepts/">https://www.w3.org/TR/rdf11-concepts/</a>.</p>
+<p>Синтаксические элементы</p>
+<ul>
+<li><code>@prefix property: &lt;http://comindware.com/ontology/user/op#&gt;.</code> — объявление префикса встроенного пакета, т.е. синонима, используемого в выражении..</li>
+<li><code>rdf:type</code> — использование префикса для удобочитаемости и сокращения размеров кода.</li>
+<li><code>{}</code> — объявление тела выражения.</li>
+<li><code>?</code> — объявление переменных.</li>
+<li><code>?item</code>  — входной параметр.</li>
+<li><code>?item</code> — значения ссылки (экземпляры шаблона записи, с которым связан текущий шаблон записи).</li>
+<li><code>?value</code> — выходной параметр.</li>
+<li><code>a</code> — принадлежность субъекта к объекту.</li>
+<li><code>.</code> — терминатор триплета.</li>
+<li><code>#</code> — комментарий.</li>
+<li><code>-&gt;</code> — присваивание значения.</li>
+<li><code>()</code> — объявление списка.</li>
+<li><code>[]</code> — неявное использование субъекта.</li>
+</ul>
+<p>Полезные конструкции и встроенные функции</p>
+<ul>
+<li><code>("templateSystemName" "attributeSystemName") object:findProperty ?p.</code> — возвращает в переменную <code>?p</code> атрибут по заданным системным именам шаблона и атрибута.</li>
+<li><code>once {}.</code> — выходит после первой успешной итерации.</li>
+<li><code>or {} or {} … or {}.</code> — логический оператор <code>ИЛИ</code>.</li>
+<li><code>if {} then {} else {}.</code> — условный оператор.</li>
+<li><code>from {} select ?v -&gt; ?vList.</code> — возвращает список в переменную <code>?vList</code>.</li>
+<li><code>?list math:sum ?sum.</code> — вычисляет сумму.</li>
+<li><code>{} assert:count ?c.</code> — вычисляет количество записей.</li>
+<li><code>({} … {}) assert:union true.</code> — объединяет итераторы в один.</li>
+</ul>
+<h2 id="запросы-n3">Запросы N3</h2>
+<ul>
+<li>Запросы пишутся в виде набора триплетов.</li>
+<li>У запроса есть входные (в некоторых случаях) и выходные данные.</li>
+<li>Запрос выполняется последовательно сверху вниз по каждому триплету.</li>
+<li>Если запрос ничего не вернул, то это считается пустым результатом.</li>
+<li>Ризонёр (Reasoner) — специальный механизм, выполняющий запросы.</li>
+</ul>
+<div class="highlight"><code><pre><span></span><code><span class="err">in</span> <span class="err">?item</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code><span class="c">#наш код</span></code> <br/><code><span class="p">}</span> <span class="err">=&gt;</span> <span class="p">{</span> <span class="err">?item</span> <span class="nn">attribute</span><span class="p">:</span><span class="nt">value</span> <span class="err">?value</span><span class="p">.</span> <span class="p">}.</span></code> <br/></pre></code></div>
+<h3 id="пять-видов-запросов">Пять видов запросов</h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th><code>субъект</code></th>
+<th><code>предикат</code></th>
+<th>объект не указан</th>
+<th>Поиск объекта по заданному предикату и субъекту.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>субъект не указан</td>
+<td><code>предикат</code></td>
+<td><code>объект</code></td>
+<td>Поиск субъекта по заданному предикату и объекту.</td>
+</tr>
+<tr>
+<td><code>субъект</code></td>
+<td><code>предикат</code></td>
+<td><code>объект</code></td>
+<td>Проверка субъекта и объекта на полное совпадение.</td>
+</tr>
+<tr>
+<td>субъект не указан</td>
+<td><code>предикат</code></td>
+<td>объект не указан</td>
+<td>Поиск субъекта и объекта по заданному предикату.</td>
+</tr>
+<tr>
+<td><em><code>субъект</code></em></td>
+<td><em><code>предикат</code></em></td>
+<td><em><code>?.</code></em></td>
+<td>Проверка наличия значения. Здесь <em><code>?.</code></em>— обозначение функции проверки наличия непустого значения (факта) по субъекту и предикату.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="порядок-обработки-запросов">Порядок обработки запросов</h3>
+<figure class="screenshot_with_caption">
+<p><img alt="Рисунок 1. Порядок обработки запроса для поиска ID аккаунта по имени пользователя" src="https://kb.comindware.ru/assets/img_64d245cbdcd08.png"/><figcaption class="caption">Рисунок 1. Порядок обработки запроса для поиска ID аккаунта по имени пользователя</figcaption></p>
+</figure>
+<figure class="screenshot_with_caption">
+<p><img alt="Рисунок 2. Порядок обработки запроса для поиска ID задач по имени пользователя" src="https://kb.comindware.ru/assets/img_64d245f3c243e.png"/><figcaption class="caption">Рисунок 2. Порядок обработки запроса для поиска ID задач по имени пользователя</figcaption></p>
+</figure>
+<h2 id="возможности-использования-выражений-n3">Возможности использования выражений N3</h2>
+<p>ПО позволяет использовать выражения N3 при настройке следующих сущностей и функций:</p>
+<ul>
+<li>Атрибут → Вычисление значения</li>
+<li>Форма → Фильтр на поле</li>
+<li>Правила для формы → Условие применения правила</li>
+<li>Правила для формы → Условие выполнения действия</li>
+<li>Правила для формы → Вычисление значения для действия</li>
+<li>Кнопка → Условие отображения</li>
+<li>Таблица → Системный фильтр</li>
+<li>Роль → Разрешения → Шаблон записи, аккаунта, процесса → Фильтр аккаунтов (Переназначение)</li>
+<li>Роль → Разрешения → Шаблон записи, аккаунта, процесса → Условие применения</li>
+<li>Сценарий → Изменение значений переменных → Вычисление значения</li>
+<li>Сценарий → Изменение значений атрибутов → Вычисление значения</li>
+<li>Сценарий → Смена контекста → Вычисление набора объектов</li>
+<li>Сценарий → Дублирование записи → Вычисление набора объектов</li>
+<li>Сценарий → Проверка результата выражения → Выражение для проверки</li>
+<li>Сценарий → Выполнение по условиям → Условие выполнения действий</li>
+<li>Сценарий → Повтор по числовому счётчику → Количество итераций</li>
+<li>Сценарий → Повтор по количеству объектов → Вычисление набора объектов</li>
+</ul>
+<h2 id="входные-и-выходные-данные-выражений-в-зависимости-от-контекста">Входные и выходные данные выражений в зависимости от контекста</h2>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th><strong>Сущность</strong></th>
+<th><strong>Входные данные (контекст)</strong></th>
+<th><strong>Выходные данные</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Атрибут → Вычисляемое значение</td>
+<td><code>?item</code> — текущая запись или экземпляр процесса</td>
+<td><code>?value</code> — вычисленное значение атрибута</td>
+</tr>
+<tr>
+<td>Форма → Фильтр на поле</td>
+<td><code>?item</code> — текущая запись или экземпляр процесса</td>
+<td><code>?value</code> — список искомых записей</td>
+</tr>
+<tr>
+<td>Правила для формы → Правило → Условие выполнения</td>
+<td><code>?item</code> — текущая запись или экземпляр процесса</td>
+<td><code>?value</code> — <code>true</code> (правило сработает) или <code>false</code> или пусто (не сработает)</td>
+</tr>
+<tr>
+<td>Правила для формы → Действие  → Условие выполнения</td>
+<td><code>?item</code> — текущая запись или экземпляр процесса</td>
+<td><code>?value</code> — <code>true</code> (действие сработает) или <code>false</code> или пусто (не сработает)</td>
+</tr>
+<tr>
+<td>Правила для формы → Вычисляемое значение для действия</td>
+<td><code>?item</code> — текущая запись или экземпляр процесса</td>
+<td><code>?value</code> — целевое значение атрибута</td>
+</tr>
+<tr>
+<td>Кнопка → Условия отображения</td>
+<td><code>?item</code> — текущая запись или экземпляр процесса</td>
+<td><code>?value</code> — <code>true</code> или false</td>
+</tr>
+<tr>
+<td>Таблица → Системный фильтр</td>
+<td></td>
+<td><code>?value</code> — список записей для вывода в таблице</td>
+</tr>
+<tr>
+<td>Роль → Разрешения → Шаблон записи, аккаунта, процесса → Фильтр аккаунтов</td>
+<td><code>?item</code> — текущая запись или экземпляр процесса</td>
+<td><code>?value</code> — список групп или аккаунтов, которые имеют соответствующие разрешения на запись или экземпляр процесса</td>
+</tr>
+<tr>
+<td>Роль → Разрешения → Шаблон записи, аккаунта, процесса → Условие применения</td>
+<td><code>?item</code> — текущая запись или экземпляр процесса</td>
+<td><code>?value</code> — <code>true</code> или <code>false</code></td>
+</tr>
+<tr>
+<td>Сценарий → Изменение значений переменных → Вычисление значения</td>
+<td><code>?item</code> — текущая запись или экземпляр процесса</td>
+<td><code>?value</code> — вычисленное значение переменной</td>
+</tr>
+<tr>
+<td>Сценарий → Изменение значений атрибутов → Вычисление значения</td>
+<td><code>?item</code> — текущая запись или экземпляр процесса</td>
+<td><code>?value</code> — вычисленное значение атрибута</td>
+</tr>
+<tr>
+<td>Сценарий → Смена контекста → Вычисление набора объектов</td>
+<td><code>?item</code> — текущая запись или экземпляр процесса</td>
+<td><code>?value</code> — список объектов для перехода</td>
+</tr>
+<tr>
+<td>Сценарий → Дублирование записи → Вычисление набора объектов</td>
+<td><code>?item</code> — текущая запись или экземпляр процесса</td>
+<td><code>?value</code> — список объектов для дублирования</td>
+</tr>
+<tr>
+<td>Сценарий → Проверка результата выражения → Выражение для проверки</td>
+<td><code>?item</code> — текущая запись или экземпляр процесса</td>
+<td><code>?value</code> — <code>true</code> (проверка пройдена) или <code>false</code></td>
+</tr>
+<tr>
+<td>Сценарий → Выполнение по условиям → Условие выполнения действий</td>
+<td><code>?item</code> — текущая запись или экземпляр процесса</td>
+<td><code>?value</code> — <code>true</code> (выполнять действия) или <code>false</code></td>
+</tr>
+<tr>
+<td>Сценарий → Повтор по числовому счётчику → Количество итераций</td>
+<td><code>?item</code> — текущая запись или экземпляр процесса</td>
+<td><code>?value</code> — количество итераций</td>
+</tr>
+<tr>
+<td>Сценарий → Повтор по количеству объектов → Вычисление набора объектов</td>
+<td><code>?item</code> — текущая запись или экземпляр процесса</td>
+<td><code>?value</code> — список объектов</td>
+</tr>
+</tbody>
+</table>
+<h2 id="примеры-использования-встроенных-функций-и-операторов-n3">Примеры использования встроенных функций и операторов N3</h2>
+<p><strong>Функция .?</strong></p>
+<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code><span class="p">(</span><span class="s">"currentTemplate"</span> <span class="s">"Region"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?Region</span><span class="p">.</span></code> <br/><code><span class="c"># Проверяем, что в текущей записи, атрибут Region содержит непустое значение</span></code> <br/><code><span class="err">?item</span> <span class="err">?Region</span> <span class="err">?</span><span class="p">.</span></code> <br/><code><span class="err">?item</span> <span class="err">-&gt;</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<p><strong>Функция once</strong></p>
+<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code><span class="p">(</span><span class="s">"currentTemplate"</span> <span class="s">"Region"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?Region</span><span class="p">.</span></code> <br/><code><span class="p">(</span><span class="s">"Biznesstruktura"</span> <span class="s">"Region"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?Region</span><span class="mi">2</span><span class="p">.</span></code> <br/><code></code> <br/><code><span class="err">once</span> <span class="p">{</span></code> <br/><code><span class="err">?item</span> <span class="err">?Region</span> <span class="err">?RegionVal</span><span class="p">.</span></code> <br/><code><span class="err">?check</span> <span class="err">?Region</span><span class="mi">2</span> <span class="err">?RegionVal</span><span class="p">.</span></code> <br/><code><span class="p">}.</span></code> <br/><code><span class="l">true</span> <span class="err">-&gt;</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<p><strong>Оператор if</strong></p>
+<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">cmw:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/logics#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">session:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">math:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/10/swap/math#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code><span class="nn">session</span><span class="p">:</span><span class="nt">context</span> <span class="nn">session</span><span class="p">:</span><span class="nt">requestTime</span> <span class="err">?now</span><span class="p">.</span> <span class="c">#получим текущую дату</span></code> <br/><code><span class="err">?tasks</span> <span class="kt">a</span> <span class="nn">cmw</span><span class="p">:</span><span class="nt">UserTask</span><span class="p">.</span></code> <br/><code><span class="err">if</span> <span class="p">{</span><span class="err">?tasks</span> <span class="nn">cmw</span><span class="p">:</span><span class="nt">dueDate</span> <span class="err">?</span><span class="p">.}</span></code> <br/><code><span class="err">then</span> <span class="p">{</span></code> <br/><code><span class="err">?tasks</span> <span class="nn">cmw</span><span class="p">:</span><span class="nt">dueDate</span> <span class="err">?dueDateVal</span><span class="p">.</span></code> <br/><code><span class="err">?dueDateVal</span> <span class="nn">math</span><span class="p">:</span><span class="nt">greaterThan</span> <span class="err">?now</span><span class="p">.</span></code> <br/><code><span class="err">?tasks</span> <span class="err">-&gt;</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/><code><span class="err">else</span> <span class="p">{</span><span class="err">?tasks</span> <span class="err">-&gt;</span> <span class="err">?value</span><span class="p">.}.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<p><strong>Оператор from и функция sum</strong></p>
+<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">math:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/10/swap/math#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code><span class="p">(</span><span class="s">"Nakladnaya"</span> <span class="s">"PoziciiNakladnoy"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?Positions</span><span class="p">.</span></code> <br/><code><span class="p">(</span><span class="s">"PoziciiNakladnoy"</span> <span class="s">"Summa"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?Summa</span><span class="p">.</span></code> <br/><code></code> <br/><code><span class="err">from</span>  <span class="p">{</span></code> <br/><code>  <span class="err">?item</span> <span class="err">?Positions</span> <span class="err">?PositionsVal</span><span class="p">.</span></code> <br/><code>  <span class="err">?PositionsVal</span> <span class="err">?Summa</span> <span class="err">?SummaVal</span><span class="p">.</span></code> <br/><code><span class="p">}</span> <span class="err">select</span> <span class="err">?SummaVal</span> <span class="err">-&gt;</span> <span class="err">?SummaList</span><span class="p">.</span></code> <br/><code></code> <br/><code><span class="err">?SummaList</span> <span class="nn">math</span><span class="p">:</span><span class="nt">sum</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<p><strong>Функция count</strong></p>
+<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">assert:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/logics/assert#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code><span class="p">(</span><span class="s">"Nakladnaya"</span> <span class="s">"PoziciiNakladnoy"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?Positions</span><span class="p">.</span></code> <br/><code></code> <br/><code><span class="p">{</span></code> <br/><code><span class="err">?item</span> <span class="err">?Positions</span> <span class="err">?PositionsVal</span><span class="p">.</span></code> <br/><code><span class="p">}</span> <span class="nn">assert</span><span class="p">:</span><span class="nt">count</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<p><strong>Функция distinct</strong></p>
+<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">assert:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/logics/assert#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code><span class="p">(</span><span class="s">"Nakladnaya"</span> <span class="s">"PoziciiNakladnoy"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?Positions</span><span class="p">.</span></code> <br/><code><span class="p">(</span><span class="s">"PoziciiNakladnoy"</span> <span class="s">"Nomenklatura"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?Items</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code><span class="p">{</span></code> <br/><code><span class="err">?item</span> <span class="err">?Positions</span> <span class="err">?PositionsVal</span><span class="p">.</span></code> <br/><code><span class="err">?PositionsVal</span> <span class="err">?Items</span> <span class="err">?ItemsVal</span><span class="p">.</span></code> <br/><code><span class="p">}</span> <span class="nn">assert</span><span class="p">:</span><span class="nt">distinct</span> <span class="err">?ItemsVal</span><span class="p">.</span></code> <br/><code><span class="p">}</span> <span class="nn">assert</span><span class="p">:</span><span class="nt">count</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<p><strong>Оператор union</strong></p>
+<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">assert:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/logics/assert#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code><span class="p">(</span><span class="s">"Nakladnaya"</span> <span class="s">"Gruzootpravitel"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?ShippedBy</span><span class="p">.</span></code> <br/><code><span class="p">(</span><span class="s">"Nakladnaya"</span> <span class="s">"Poluchatel"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?Receiver</span><span class="p">.</span></code> <br/><code></code> <br/><code><span class="p">(</span></code> <br/><code><span class="p">{</span><span class="err">?item</span> <span class="err">?ShippedBy</span> <span class="err">?Contractor</span><span class="p">.}</span></code> <br/><code><span class="p">{</span><span class="err">?item</span> <span class="err">?Receiver</span> <span class="err">?Contractor</span><span class="p">.}</span></code> <br/><code><span class="p">)</span> <span class="nn">assert</span><span class="p">:</span><span class="nt">union</span> <span class="l">true</span><span class="p">.</span></code> <br/><code><span class="err">?Contractor</span> <span class="err">-&gt;</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<h2 id="примеры-использования-расширений-comindware-для-языка-n3">Примеры использования расширений Comindware для языка N3</h2>
+<p><strong>Задача</strong>: вывести заявки, у которых значение атрибута Status не равно «Завершен» и дата начала уже прошла относительно текущей даты.</p>
+<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">session:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">math:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/10/swap/math#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code><span class="p">(</span><span class="s">"Proekt"</span> <span class="s">"Status"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?StatusProp</span><span class="p">.</span></code> <br/><code><span class="err">?Proekty</span> <span class="err">?StatusProp</span> <span class="err">?Status</span><span class="p">.</span></code> <br/><code><span class="p">(</span><span class="s">"Proekt"</span> <span class="s">"Datanachala"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?DatanachalaProp</span><span class="p">.</span></code> <br/><code><span class="err">?Proekty</span> <span class="err">?DatanachalaProp</span> <span class="err">?Datanachala</span><span class="p">.</span></code> <br/><code><span class="nn">session</span><span class="p">:</span><span class="nt">context</span> <span class="nn">session</span><span class="p">:</span><span class="nt">requestTime</span> <span class="err">?now</span><span class="p">.</span></code> <br/><code><span class="err">?now</span> <span class="nn">math</span><span class="p">:</span><span class="nt">greaterThan</span> <span class="err">?Datanachala</span><span class="p">.</span></code> <br/><code><span class="err">?Status</span> <span class="err">!=</span> <span class="s">"Завершен"</span><span class="p">.</span></code> <br/><code><span class="err">?value</span> <span class="err">==</span> <span class="err">?Proekty</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<p><strong>Задача</strong>: при добавлении существующих записей в коллекцию отображать в списке только те проекты, у которых прошла проверка (атрибут Proverka имеет значение <code>true</code>) или у которых атрибут Status имеет значение «Создан».</p>
+<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code><span class="p">(</span><span class="s">"Proekt"</span> <span class="s">"Status"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?StatusProp</span><span class="p">.</span></code> <br/><code><span class="err">?Proekty</span> <span class="err">?StatusProp</span> <span class="err">?Status</span><span class="p">.</span></code> <br/><code><span class="p">(</span><span class="s">"Proekt"</span> <span class="s">"Proverka"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?ProverkaProp</span><span class="p">.</span></code> <br/><code><span class="err">?Proekty</span> <span class="err">?ProverkaProp</span> <span class="err">?Proverka</span><span class="p">.</span></code> <br/><code><span class="err">or</span> <span class="p">{</span></code> <br/><code><span class="err">?Proverka</span> <span class="err">==</span> <span class="l">true</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/><code><span class="err">or</span> <span class="p">{</span></code> <br/><code><span class="err">?Status</span> <span class="err">==</span> <span class="s">"Создан"</span><span class="p">.</span></code> <br/><code><span class="p">}.</span></code> <br/><code><span class="err">?value</span> <span class="err">==</span> <span class="err">?Proekty</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<p><strong>Задача</strong>: выводить в списке на добавление только руководителей текущего пользователя (атрибут manager типа «Аккаунт») или пользователей с должностью «Менеджер» (атрибут title типа «Текст»)</p>
+<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">cmw:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/logics#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">account:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/account#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">string:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/10/swap/string#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code><span class="nn">cmw</span><span class="p">:</span><span class="nt">securityContext</span> <span class="nn">cmw</span><span class="p">:</span><span class="nt">currentUser</span> <span class="err">?currUser</span><span class="p">.</span></code> <br/><code><span class="err">?users</span> <span class="kt">a</span> <span class="nn">account</span><span class="p">:</span><span class="nt">Account</span><span class="p">.</span></code> <br/><code><span class="err">or</span> <span class="p">{</span></code> <br/><code><span class="err">?currUser</span> <span class="nn">account</span><span class="p">:</span><span class="nt">manager</span> <span class="err">?users</span><span class="p">.</span> <span class="c">#users - руководители</span></code> <br/><code><span class="p">}</span></code> <br/><code><span class="err">or</span> <span class="p">{</span></code> <br/><code><span class="err">?users</span> <span class="nn">account</span><span class="p">:</span><span class="nt">title</span> <span class="err">?title</span><span class="p">.</span></code> <br/><code><span class="err">?title</span> <span class="nn">string</span><span class="p">:</span><span class="nt">matches</span> <span class="s">"Менеджер"</span><span class="p">.</span></code> <br/><code><span class="p">}.</span></code> <br/><code><span class="err">?value</span> <span class="err">==</span> <span class="err">?users</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<p><strong>Задача:</strong> выводить только тех заявителей, которые прикреплены к заявкам.</p>
+<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code><span class="p">(</span><span class="s">"Zayavitel"</span> <span class="s">"Application"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?ApplicationProp</span><span class="p">.</span></code> <br/><code><span class="err">?Zayavitel</span> <span class="err">?ApplicationProp</span> <span class="err">?</span> <span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<p><strong>Задача:</strong> выполнять действия с полем на форме при условии, что процент выполнения заявки больше 70, при этом действие не должно выполняться, если этап (атрибут Etap) выполнения равен 1.</p>
+<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">math:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/10/swap/math#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code>  <span class="p">(</span><span class="s">"Application"</span> <span class="s">"Etap"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?EtapProp</span><span class="p">.</span></code> <br/><code>  <span class="err">?item</span> <span class="err">?EtapProp</span> <span class="err">?Etap</span><span class="p">.</span></code> <br/><code>  <span class="p">(</span><span class="s">"Application"</span> <span class="s">"percent"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?percentProp</span><span class="p">.</span></code> <br/><code>  <span class="err">?item</span> <span class="err">?percentProp</span> <span class="err">?percent</span><span class="p">.</span></code> <br/><code>  <span class="err">or</span> <span class="p">{</span></code> <br/><code>    <span class="err">?Etap</span> <span class="err">==</span> <span class="mi">1</span><span class="p">.</span></code> <br/><code>    <span class="err">?value</span> <span class="err">==</span> <span class="l">false</span><span class="p">.</span></code> <br/><code>  <span class="p">}</span></code> <br/><code>  <span class="err">or</span> <span class="p">{</span></code> <br/><code>    <span class="err">?percent</span> <span class="nn">math</span><span class="p">:</span><span class="nt">greaterThan</span> <span class="mi">70</span><span class="p">.</span></code> <br/><code>    <span class="err">?value</span> <span class="err">==</span> <span class="l">true</span><span class="p">.</span></code> <br/><code>  <span class="p">}.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<p><strong>Задача:</strong> при выполнении вышеописанного условия, выполнять для поля «Статус» заявки следующие действия: сменить тип доступа на «Только для чтения», установить значение «Завершена» и показать предупреждение с текстом «Заявка &lt;Название заявки (атрибут Name)&gt; завершена».</p>
+<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">math:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/10/swap/math#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">string:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/10/swap/string#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">output:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/tableOutput#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code><span class="nn">output</span><span class="p">:</span><span class="nt">result</span> <span class="kt">a</span> <span class="nn">output</span><span class="p">:</span><span class="nt">Result</span><span class="p">.</span></code> <br/><code><span class="p">(</span><span class="s">"Application"</span> <span class="s">"Etap"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?EtapProp</span><span class="p">.</span></code> <br/><code><span class="err">?item</span> <span class="err">?EtapProp</span> <span class="err">?Etap</span><span class="p">.</span></code> <br/><code><span class="p">(</span><span class="s">"Application"</span> <span class="s">"percent"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?percentProp</span><span class="p">.</span></code> <br/><code><span class="err">?item</span> <span class="err">?percentProp</span> <span class="err">?percent</span><span class="p">.</span></code> <br/><code><span class="err">?Etap</span> <span class="err">!=</span> <span class="mi">1</span><span class="p">.</span></code> <br/><code><span class="err">?percent</span> <span class="nn">math</span><span class="p">:</span><span class="nt">greaterThan</span> <span class="mi">70</span><span class="p">.</span></code> <br/><code><span class="nn">output</span><span class="p">:</span><span class="nt">result</span> <span class="nn">output</span><span class="p">:</span><span class="nt">typeOfAccess</span> <span class="s">"Только чтения"</span><span class="p">.</span></code> <br/><code><span class="nn">output</span><span class="p">:</span><span class="nt">result</span> <span class="nn">output</span><span class="p">:</span><span class="nt">value</span> <span class="s">"Завершена"</span><span class="p">.</span></code> <br/><code><span class="p">(</span><span class="s">"Application"</span> <span class="s">"Name"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?NameProp</span><span class="p">.</span></code> <br/><code><span class="err">?item</span> <span class="err">?NameProp</span> <span class="err">?Name</span><span class="p">.</span></code> <br/><code><span class="p">(</span><span class="s">"Заявка"</span> <span class="err">?Name</span> <span class="s">"завершена"</span><span class="p">)</span> <span class="nn">string</span><span class="p">:</span><span class="nt">format</span> <span class="err">?warning</span><span class="p">.</span></code> <br/><code><span class="nn">output</span><span class="p">:</span><span class="nt">result</span> <span class="nn">output</span><span class="p">:</span><span class="nt">warning</span> <span class="s">"Завершена"</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<h2 id="упрощения">Упрощения</h2>
+<p>Ниже представлены некоторые упрощения N3, упрощающие и ускоряющие работу.</p>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th><code>@prefix: &lt;#&gt;.</code></th>
+<th><code>:John</code> — субъект определён в текущем документе</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a/ @a</code></td>
+<td><code>Rdf:type</code></td>
+</tr>
+<tr>
+<td><code>[]</code></td>
+<td>указываем, что существует объект с заданными свойствам без возможности ссылаться на него</td>
+</tr>
+<tr>
+<td><code>=</code></td>
+<td>эквивалентность (<code>owl:equivalentTo</code>)</td>
+</tr>
+<tr>
+<td><code>=&gt;</code></td>
+<td><code>Log:implies</code></td>
+</tr>
+<tr>
+<td><code>объект.свойство</code></td>
+<td>переход к свойству</td>
+</tr>
+<tr>
+<td><code>(элемент1 элемент2)</code></td>
+<td>список</td>
+</tr>
+<tr>
+<td><code>_:variable</code></td>
+<td><code>log:forSome</code></td>
+</tr>
+<tr>
+<td><code>?variable</code></td>
+<td><code>log:forAll</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="справочник-встроенных-функций-n3">Справочник встроенных функций N3</h2>
+<p>В следующей таблице приведен перечень функций, которые можно использовать в выражениях N3.</p>
+<div class="notice notice-success">
+<p class="admonition-title">Определения</p>
+<ul>
+<li><strong><em>QName</em></strong> — qualified name (квалифицированное имя) идентификатор для элементов и атрибутов. QName используется для создания соответствия между URI и пространством имен.</li>
+<li><strong><em>Escape-последовательности</em></strong> — сочетание символов, состоящих из косой черты (<code>\</code>), за которой следует буква или набор цифр. Escape-последовательность рассматривается как один символ и, следовательно, является допустимой символьной константой.</li>
+<li><strong><em>StreamID</em></strong> — идентификатор файла изображения, расположенного в базе данных ПО.</li>
+</ul>
+</div>
+<h3 id="математические-функции-w3math">Математические функции <code>w3math</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix w3math: &lt;http://www.w3.org/2000/10/swap/math#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>w3math:quotient</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт 2 аргумента в скобках, указанные в субъекте и результат деления первого на второе помещает в переменную объекта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?WorkInSeconds ?WorkDaysInSeconds) w3math:quotient ?WorkSeconds.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>w3math:integerQuotient</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт 2 аргумента в скобках, указанные в субъекте и результат целочисленного деления первого на второе помещает в переменную объекта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?WorkInSeconds ?WorkDaysInSeconds) w3math:integerQuotient ?WorkSeconds.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>w3math:remainder</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт 2 аргумента в скобках, указанные в субъекте и остаток от деления первого на второе помещает в переменную объекта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?remainingWorkInSeconds ?remainingWorkDaysInSeconds) math:remainder ?remainingWorkSeconds.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>w3math:product</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт 2 аргумента в скобках, указанные в субъекте и результат их умножения помещает в переменную объекта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?productingWorkInSeconds ?productingWorkDaysInSeconds) w3math:product ?productingWorkSeconds.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>w3math:lessThan</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Меньше чем</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?recordDate w3math:lessThan ?maxDate.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>w3math:notLessThan</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Не меньше чем</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?documentRecordsCount w3math:notLessThan 2.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>w3math:equalTo</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Равно (<code>dateTime</code> , <code>date</code> , <code>duration</code> , <code>string</code> , <code>number</code> ).</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?countWorkingDaysMounth w3math:equalTo ?countWorkingDays.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>w3math:notEqualTo</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Не равно (<code>dateTime</code> , <code>date</code> , <code>duration</code> , <code>string</code> , <code>number</code> ).</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?countWorkingDaysMounth w3math:notEqualTo ?countWorkingDays.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>w3math:greaterThan</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Больше чем (<code>dateTime</code> , <code>date</code> , <code>duration</code> , <code>string</code> , <code>number</code> ).</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?recordDate w3math:greaterThan ?minDate.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>w3math:notGreaterThan</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Не больше чем (<code>dateTime</code> , <code>date</code> , <code>duration</code> , <code>string</code> , <code>number</code> ).</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?documentRecordsCount w3math:notGreaterThan 2.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>w3math:negation</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Отрицание</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?firstNumber w3math:negation ?negationNumber.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="математические-функции-cmwmath">Математические функции <code>cmwmath</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix cmwmath: &lt;http://comindware.com/logics/math#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>cmwmath:sum</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт сумму из субъекта типа List и записывает значение в объект.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?durationsSeconds cmwmath:sum ?durationSumSeconds.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwmath:difference</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт разность из субъекта типа List и записывает значение в объект.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?list cmwmath:difference ?differenceTotal.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwmath:min</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт минимальное значение из субъекта типа List и записывает значение в объект.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?listQueue cmwmath:min ?queueMin.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code> <code>dateTime</code> <code>duration</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwmath:max</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт максимальное значение из субъекта типа List и записывает значение в объект.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?listQueue cmwmath:max ?queueMax.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code> <code>dateTime</code> <code>duration</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwmath:average</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт 2 аргумента в скобках, указанные в субъекте и помещает их среднее арифметическое в переменную объекта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?priceFirst ?priceSecond) cmwmath:average ?priceAverage.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwmath:round</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Округление к ближайшему целому.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?quotientPrice cmwmath:round ?numberRound.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwmath:floor</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Округление в меньшую сторону.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?quotientPrice cmwmath:floor ?numberFloor.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwmath:ceil</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Округление в большую сторону.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?quotientPrice cmwmath:ceil ?numberCeil.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="функции-для-работы-с-датами-и-временем-w3time">Функции для работы с датами и временем <code>w3time</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix w3time: &lt;http://www.w3.org/2000/10/swap/time#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>w3time:inSeconds</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Конвертирует значение типа <code>dateTime</code> или <code>duration</code> в количество секунд. Конвертирует количество секунд в значение типа <code>dateTime</code> от начала времен.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?durationWorkingDay w3time:inSeconds ?secondsWorkingDay.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="функции-для-работы-с-датами-и-временем-cmwtime">Функции для работы с датами и временем <code>cmwtime</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix cmwtime: &lt;http://comindware.com/logics/time#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>cmwtime:toDuration</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Конвертирует количество секунд в значение типа <code>duration</code>.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?secondsWorkingDay cmwtime:toDuration ?durationWorkingDay.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>duration</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:getSpan</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Вычитает из первого значения субъекта типа <code>dateTime</code> второе значение субъекта типа <code>dateTime</code>.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?dateTime1 ?dateTime2) cmwtime:getSpan ?resultTimeSpan.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>duration</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:addDuration</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Добавляет к значению субъекта типа <code>dateTime</code> значение типа <code>duration</code>.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?dateTime ?duration) cmwtime:addDuration ?value.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:subDuration</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Вычитает из значения субъекта типа <code>dateTime</code> значение типа <code>duration</code>.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?dateTime ?duration) cmwtime:subDuration ?value.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:endOfDay</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает дату и время окончания дня, в пределах которого находится значение субъекта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDateTime cmwtime:endOfDay ?endDateTime.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:startOfDay</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает дату и время начала дня, в пределах которого находится значение субъекта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDateTime cmwtime:startOfDay ?startDateTime.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:startOfWeek</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает дату и время начала недели, в пределах которой находится значение субъекта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDateTime cmwtime:startOfWeek ?startDateTime.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:startOfMonth</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает дату и время начала месяца, в пределах которого находится значение субъекта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDateTime cmwtime:startOfMonth ?startDateTime.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:fromTzToTz</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Перевод значения типа <code>dateTime</code> в заданный часовой пояс.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?someDateTime "Etc/GMT" "Europe/Moscow") cmwtime:fromTzToTz ?tzDateTime.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:timeZoneHours</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Возвращает разницу во времени UTC и местным часовым поясом.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>? cmwtime:timeZoneHours ?timeZoneDifferenceInHours.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>integer</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:isToday</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и проверяет на текущую дату.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDate cmwtime:isToday ?today.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:century</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает числовое значение, соответствующее веку указанной даты в местном часовом поясе.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDate cmwtime:century ?numberCentury.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:isoFormat</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Конвертирует значение типа <code>dateTime</code> в формат ISO.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDate cmwtime:isoFormat ?isoFormatDate.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:year</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает числовое значение, соответствующее году указанной даты в местном часовом поясе.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDate cmwtime:year ?numberYear.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:month</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает числовое значение, соответствующее месяцу указанной даты в местном часовом поясе.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDate cmwtime:month ?numberMonth.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:day</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает числовое значение, соответствующее дню месяца указанной даты в местном часовом поясе.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDate cmwtime:day ?numberDay.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:hour</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает числовое значение, соответствующее часу указанной даты в местном часовом поясе.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDate cmwtime:hour ?numberHour.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:minute</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает числовое значение, соответствующее минуте указанной даты в местном часовом поясе.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDate cmwtime:minute ?numberMinute.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:second</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает числовое значение, соответствующее секундам указанной даты в местном часовом поясе.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDate cmwtime:second ?numberSecond.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:makeDate</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значения субъекта типа число и возвращает объект типа <code>dateTime</code>.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?intervalBeginYear ?intervalBeginMonth ?intervalBeginDay 23 59 59) cmwtime:makeDate ?brokenIntervalEnd.</code> <code>(?intervalEndYear ?intervalEndMonth ?intervalEndDay 0 0 0) cmwtime:makeDate ?brokenIntervalBegin.</code> <code>(?startDateYear ?startDateMonth ?startDateDay) cmwtime:makeDate ?startDayDate.</code> <code>(?startDateYear ?startDateMonth ?startDateDay ?startDateHour ?startDateMinute ?startDateSecond) cmwtime:makeDate ?intervalBegin.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:workhours</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Возвращает дату и время на основании количества рабочих часов с определенного момента времени, с поправкой на праздники и фактические выходные дни.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?startWorkDateTime ?qountWorkingHours ?startWorkingDay ?durationWorkingDay (?dateNotHoliday)) cmwtime:workhours ?newDateTime.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:workdays</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Возвращает дату на основании количества рабочих дней с определенной даты, с поправкой на праздники и фактические выходные дни.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?startWorkDateTime ?qountWorkingHours (?firstDateNotHoliday ?secondDateNotWorking)) cmwtime:workdays ?newDateTime.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:workhoursDuration</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Возвращает продолжительность работы между двумя датами при условии, что рабочий день начинается в заданное время и имеет определенную длительность.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?startWorkDateTime ?endWorkDateTime ?timeStartWorkingDay ?durationWorkingDay) cmwtime:workhoursDuration ?newDuration.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>duration</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwtime:workdaysDuration</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Возвращает продолжительность работы между двумя датами, на основании предположения, что рабочий день начинается в 00:00 и длится 24 часа.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?startWorkDateTime ?endWorkDateTime) cmwtime:workdaysDuration ?newDuration.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>duration</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="функции-для-работы-с-интервалами-времени-cmwduration">Функции для работы с интервалами времени <code>cmwduration</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix cmwduration: &lt;http://comindware.com/logics/duration#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>cmwduration:days</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт промежуток времени и возвращает количество дней.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?durationHoliday cmwduration:days ?countDaysOfHoliday.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwduration:hours</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт промежуток времени и возвращает количество часов.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?durationHoliday cmwduration:hours ?countHoursOfHoliday.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwduration:minutes</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт промежуток времени и возвращает количество минут.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?durationHoliday cmwduration:minutes ?countMinutesOfHoliday.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="функции-для-работы-со-строками-w3string">Функции для работы со строками <code>w3string</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix w3string: &lt;http://www.w3.org/2000/10/swap/string#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>w3string:format</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Подставляет аргументы в нумерованные заместители вида <code>{0}</code>…<code>{n}</code> в исходной строке и возвращает результирующую строку.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>("{0}/{1} - {2}" ?value0 ?value1 ?value2) w3string:format ?outString.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>w3string:matches</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Использует в качестве аргументов строку и регулярное выражение. Возвращает логическое значение Истина, если какая-либо часть строки или строка полностью соответствует условию, заданному регулярным выражением. В противном случае возвращает результат Ложь.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?stringExample w3string:matches ?expression.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>w3string:notMatches</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Использует в качестве аргументов строку и регулярное выражение. Возвращает логическое значение Истина, если часть строки или строка полностью не соответствуют условию, заданному регулярным выражением. В противном случае возвращает результат Ложь.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?stringExample w3string:notMatches ?expression.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>w3string:greaterThan</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Возвращает логическое значение Истина, если аргумент2 больше аргумента1, в противном случае возвращает результат Ложь.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDate w3string:greaterThan ?chooseDate.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>w3string:lessThan</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Возвращает логическое значение Истина, если аргумент2 меньше аргумента1, в противном случае возвращает результат Ложь.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDate w3string:lessThan ?chooseDate.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>w3string:notGreaterThan</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Возвращает логическое значение Истина, если аргумент2 НЕ больше аргумента1, в противном случае возвращает результат Ложь.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDate w3string:notGreaterThan ?chooseDate.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>w3string:notLessThan</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Возвращает логическое значение Истина, если аргумент2 НЕ меньше аргумента1, в противном случае возвращает результат Ложь.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDate w3string:notLessThan ?chooseDate.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="функции-для-работы-со-строками-cmwstring">Функции для работы со строками <code>cmwstring</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix cmwstring: &lt;http://comindware.com/logics/string#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>cmwstring:join</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Объединяет строки с использованием заданного разделителя.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>("," ?newDependencyLinks) cmwstring:join ?newDependencyLinksStr.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwstring:replace</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Заменяет все экземпляры заданной строки в исходной строке на новое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?text "\n" "&lt;br&gt;") cmwstring:replace ?html.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwstring:cutString</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Обрезает строку на заданную длину и добавляет в конец заданные символы.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?taskTitleLong 50 "...") cmwstring:cutString ?taskTitle.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwstring:firstCapital</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Преобразует первый символ строки в прописной.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?youStr cmwstring:firstCapital ?youStrCapital.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwstring:concatenation</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Конкатенация строк.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?firstString ?secondString) cmwstring:concatenation ?newString.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwstring:length</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Возвращает количество символов в строке.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?stringName cmwstring:length ?countSymbols.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwstring:substring</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Обрезает строку от заданной позиции на заданное количество символов (опционально).</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?sourceString 2 4) cmwstring:substring ?resultString.</code> <code>(?sourceString 2) cmwstring:substring ?resultString.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwstring:indexOf</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Возвращает номер (отсчитываемый от нуля) позиции, на которой располагается искомая строка в исходной строке. Номер позиции может отсчитываться от произвольного положения (опционально).</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?sourceString ?subString) cmwstring:indexOf ?resultString.</code> <code>(?sourceString ?subString 4) cmwstring:indexOf ?resultString.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwstring:toUri</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Преобразует escape-последовательности в URI.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?sequence cmwstring:toUri ?reference.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwstring:fromUri</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Преобразует URI в escape-последовательности.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?reference cmwstring:fromUri ?sequence.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwstring:toBase64</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Преобразует строку по стандарту кодирования Base64.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?string cmwstring:toBase64 ?newStringBase.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwstring:fromBase64</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Декодирует строку по стандарту Base64.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?stringBase cmwstring:fromBase64 ?newString.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwstring:split</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Находит заданный разделитель в строке и создает список.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>("_" ?string) cmwstring:split ?newString.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwstring:format</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Форматирует аргументы в соответствии с заданным шаблоном. Возвращает отформатированную строку.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>("{0}/{1} - {2}" ?v0 ?v1 ?v2) cmwstring:format ?outString.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="функции-для-работы-со-строками-cmwlogics">Функции для работы со строками <code>cmwlogics</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix cmwlogics: &lt;http://comindware.com/logics#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>cmwlogics:value</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Присваивает значение субъекта объекту.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?left cmwlogics:value ?right.</code> <code>{time:now =&gt; ?left.</code> <code>?left cmwlogics:value ?right</code> <code>Result: ?right = dateTime.UtcNow.}</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code> <code>dateTime</code> <code>string</code> <code>duration</code> <code>reference</code> <code>account</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="функции-для-работы-со-строками-cmwentity">Функции для работы со строками <code>cmwentity</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix cmwentity: &lt;http://comindware.com/ontology/entity#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>cmwentity:like</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Сравнивает шаблон и строку.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?pattern cmwentity:like ?sourceString.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwentity:startsWith</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Проверяет, что заданная строка начинается в соответствии с шаблоном и (опционально) в соответствии с заданной опцией сравнения (StringComparison).</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?sourceString entity:startsWith ?pattern.</code> <code>(?sourceString “OrdinalIgnoreCase”) entity:startsWith ?pattern.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwentity:endsWith</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Проверяет, что заданная строка заканчивается в соответствии с шаблоном и (опционально) в соответствии с заданной опцией сравнения (StringComparison).</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?sourceString entity:endsWith ?pattern.</code> <code>(?sourceString “OrdinalIgnoreCase”) entity:endsWith ?pattern.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwentity:indexOf</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Возвращает индекс первого вхождения подстроки в строку. Отсчет начинается с 1.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?sourceString ?substring) entity:indexOf ?index.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwentity:toLower</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Преобразует все символы строки в строчные.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?string entity:toLower ?stringLow.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwentity:toUpper</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Преобразует все символы строки в прописные.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?string entity:toUpper ?stringUpper.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwentity:contains</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Проверяет вхождение значения объекта типа <code>string</code> в значение субъекта типа <code>string</code>.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?string entity:contains ?subString.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="функции-для-работы-со-строками-cmwbuiltin">Функции для работы со строками <code>cmwbuiltin</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix cmwbuiltin: &lt;http://comindware.com/ontology/image/builtin#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>cmwbuiltin:toPlainText</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Конвертирует HTML-текст в обычный.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?htmlText builtin:toPlainText ?plainText.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="функции-для-работы-со-списками-w3list">Функции для работы со списками <code>w3list</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix w3list: &lt;http://www.w3.org/2000/10/swap/list#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>w3list:append</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Добавляет элементы к списку</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>((1 2) (3 4)) w3list:append (1 2 3 4)</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td>Список</td>
+</tr>
+<tr>
+<th colspan="2"><code>w3list:in</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Если объект — список, и в нём есть субъект, возвращает <code>true</code></td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?subjectToFind w3list:append ?list</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>w3list:last</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Из представленной последовательности получает последний элемент.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?listFlowers w3list:last ?lastFlower.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>w3list:member</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Если субъект — список, и в нём есть объект, возвращает <code>true</code></td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?list w3list:append ?objectToFind</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr></tr>
+</tbody>
+</table>
+<h3 id="функции-для-работы-со-списками-cmwlist">Функции для работы со списками <code>cmwlist</code></h3>
+<table style="width: 100%;">
+<thead>
+<th colspan="2"><code>@prefix cmwlist: &lt;http://comindware.com/logics/list#&gt;.</code></th>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>cmwlist:length</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Возвращает количество элементов последовательности.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?listFlowers cmwlist:length ?countFlowers.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwlist:at</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт список элементов и задает индекс. Возвращает значение элемента, соответствующее индексу. <code>([23, 25, 12] 2)</code> возвращает <code>12</code>.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?list ?index) cmwlist:at ?valueOfIndex.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="функции-группировки-и-сортировки-списков-cmwentity">Функции группировки и сортировки списков <code>cmwentity</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix cmwentity: &lt;http://comindware.com/ontology/entity#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>cmwentity:groupby</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Группировка</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?recordTemplate ?dataSet) entity:groupby ?attributeGroup</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwentity:sortby</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Сортировка</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?recordTemplate ?dataSet) entity:sortby ?attributeGroup</code> <code>(("key1_1" "key2_1" "value1_1") ("key1_2" "key2_2" "value1_2") ("key1_3" "key2_3" "value1_3"))</code> <code>//</code> <code>// right:</code> <code>// (("value1_2") ("value1_1") ("value1_3")) - sorted field-to-select data</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="функции-для-работы-с-идентификаторами-ресурсов-cmwurl">Функции для работы с идентификаторами ресурсов <code>cmwurl</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix cmwurl: &lt;http://comindware.com/logics/url#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>cmwurl:encode</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Кодирует строку URL-адреса. Аналог <code>System.Web.HttpUtility.UrlEncode(url)</code></td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?url cmwurl:encode ?encodedUrl.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwurl:combine</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Объединяет части предоставления списка строк пути в путь одной строкой. Аналог <code>System.IO.Path.Combine</code></td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?path1 ?path2 ?path3 ...) cmwurl:combine ?combinedPath.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwurl:siteDir</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Получает текущую директорию нахождения проекта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?unused cmwurl:siteDir ?siteDir.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="функции-для-работы-с-идентификаторами-ресурсов-cmwui">Функции для работы с идентификаторами ресурсов <code>cmwui</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix cmwui: &lt;http://comindware.com/ontology/ui#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>cmwui:toClientString</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Получает строковое представление ресурса (элемента или атрибута).</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?object cmwui:toClientString ?string.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwui:toQName</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Преобразует строковое представление ресурса в QName.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?object cmwui:toQName ?qName.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="функции-поддерживающие-и-корректно-обрабатывающие-нулевые-значения-cmwnullable">Функции поддерживающие и корректно обрабатывающие нулевые значения <code>cmwnullable</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix cmwnullable &lt;http://comindware.com/ontology/entity/nullable#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>cmwnullable:lessThan</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Меньше чем. (<code>dateTime</code> , <code>date</code> , <code>duration</code> , <code>string</code> , <code>number</code> ) Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?recordDate cmwnullable:lessThan ?maxDate.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:greaterThan</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Больше чем (<code>dateTime</code> , <code>date</code> , <code>duration</code> , <code>string</code> , <code>number</code> ) Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?recordDate cmwnullable:greaterThan ?minDate.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:notLessThan</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Не меньше (<code>dateTime</code> , <code>date</code> , <code>duration</code> , <code>string</code> , <code>number</code> ) Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?documentRecordsCount cmwnullable:notLessThan 2.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:notGreaterThan</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Не больше (<code>dateTime</code> , <code>date</code> , <code>duration</code> , <code>string</code> , <code>number</code> ) Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?documentRecordsCount cmwnullable:notGreaterThan 2.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:quotient</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт 2 аргумента в скобках, указанные в субъекте и результат деления первого на второе помещает в переменную объекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?WorkInSeconds ?WorkDaysInSeconds) cmwnullable:quotient ?WorkSeconds.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:product</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт 2 аргумента в скобках, указанные в субъекте и результат их умножения помещает в переменную объекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?productingWorkInSeconds ?productingWorkDaysInSeconds) cmwnullable:product ?productingWorkSeconds.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:integerQuotient</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт 2 аргумента в скобках, указанные в субъекте и результат целочисленного деления первого на второе помещает в переменную объекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?WorkInSeconds ?WorkDaysInSeconds) cmwnullable:integerQuotient ?WorkSeconds.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:remainder</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт 2 аргумента в скобках, указанные в субъекте и остаток от деления первого на второе помещает в переменную объекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?remainingWorkInSeconds ?remainingWorkDaysInSeconds) cmwnullable:remainder ?remainingWorkSeconds.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:sum</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт сумму из субъекта типа <code>List</code> и записывает значение в объект. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?durationsSeconds cmwnullable:sum ?durationSumSeconds.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:difference</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт разность из субъекта типа <code>List</code> и записывает значение в объект. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?list cmwnullable:difference ?differenceTotal.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:startOfDay</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает дату и время начала дня, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDateTime cmwnullable:startOfDay ?startDateTime.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:startOfWeek</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает дату и время начала недели, в пределах которой находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDateTime cmwnullable:startOfWeek ?startDateTime.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:startOfMonth</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает дату и время начала месяца, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDateTime cmwnullable:startOfMonth ?startDateTime.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:startOfQuarter</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает дату и время начала квартала, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDateTime cmwnullable:startOfQuarter ?startDateTime.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:startOfYear</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает дату и время начала месяца, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDateTime cmwnullable:startOfYear ?startDateTime.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:endOfDay</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает дату и время окончания дня, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDateTime cmwnullable:endOfDay ?endDateTime.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:endOfWeek</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает дату и время окончания недели, в пределах которой находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDateTime cmwnullable:endOfWeek ?endDateTime.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:endOfMonth</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает дату и время окончания месяца, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDateTime cmwnullable:endOfMonth ?endDateTime.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:endOfQuarter</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает дату и время окончания квартала, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDateTime cmwnullable:endOfQuarter ?endDateTime.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:endOfYear</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт значение из субъекта типа <code>dateTime</code> и возвращает дату и время окончания года, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?creationDateTime cmwnullable:endOfYear ?endDateTime.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:inSeconds</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Конвертирует значение длительности в количество секунд. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?durationWorkingDay cmwnullable:inSeconds ?secondsWorkingDay.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:min</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт минимальное значение из субъекта типа <code>List</code> и записывает значение в объект. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?listQueue cmwnullable:min ?queueMin.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code> <code>dateTime</code> <code>date</code> <code>duration</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:max</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт максимальное значение из субъекта типа <code>List</code> и записывает значение в объект. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?listQueue cmwnullable:max ?queueMax.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code> <code>dateTime</code> <code>date</code> <code>duration</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:average</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Берёт 2 аргумента в скобках, указанные в субъекте и помещает их среднее арифметическое в переменную объекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>(?priceFirst ?priceSecond) cmwnullable:average ?priceAverage.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:toDuration</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Конвертирует количество секунд в значение типа <code>duration</code>. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?secondsWorkingDay cmwnullable:toDuration ?durationWorkingDay.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>duration</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:round</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Округление к ближайшему целому. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?quotientPrice cmwnullable:round ?numberRound.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:floor</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Округление в меньшую сторону. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?quotientPrice cmwnullable:floor ?numberFloor.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:ceiling</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Округление в большую сторону. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?quotientPrice cmwnullable:ceiling ?numberCeil.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwnullable:format</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Форматирует аргументы в соответствии с заданным шаблоном. Возвращает отформатированную строку. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>("{0}/{1} - {2}" ?v0 ?v1 ?v2) cmwnullable:format ?outString.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="функции-для-работы-с-изображениями-cmwbuiltin">Функции для работы с изображениями <code>cmwbuiltin</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix cmwbuiltin: &lt;http://comindware.com/ontology/image/builtin#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>cmwbuiltin:isSupportedImage</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Проверяет формат файла на соответствие одному из допустимых форматов: <code>.bmp, .gif, .exif, .jpg, .jpeg, .png, .tif</code></td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>“bllalblablab.jpg” =&gt; ?fileName.</code> <code>?fileName builtin:isSupportedImage ?right.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwbuiltin:dimensions</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>По <code>streamId</code> изображения получает разрешение в формате ширина × высота.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?streamId builtin:dimensions ?dimensions.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="специальные-функции-для-работы-с-аккаунтами-и-группами-cmwlogics">Специальные функции для работы с аккаунтами и группами <code>cmwlogics</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix cmwlogics: &lt;http://comindware.com/logics#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>cmwlogics:currentUser</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат, получающий аккаунт текущего пользователя.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>cmwlogics:securityContext cmwlogics:currentUser ?userVal.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwlogics:securityContext</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Субъект, определяющий контекст персонального пространства.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>cmwlogics:securityContext cmwlogics:currentUser ?userVal.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="специальные-функции-для-работы-с-аккаунтами-и-группами-cmwaccount">Специальные функции для работы с аккаунтами и группами <code>cmwaccount</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix cmwaccount: &lt;http://comindware.com/ontology/account#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>cmwaccount:Group</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Определяет тип переменной Группа.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?group rdf:type cmwaccount:Group.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:groupName</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения наименования группы.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?group cmwaccount:groupName ?groupName.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:isSystemAdministrator</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для определения принадлежности аккаунта к системной роли «Системные администраторы»</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:isSystemAdministrator ?access.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:displayName</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат, для получения полного имени аккаунта</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:displayName ?userDisplayName.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:fullName</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения Ф. И. О. аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:fullName ?userNameSurname.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:manager</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения аккаунта руководителя, указанного для аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:manager ?userManager.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>accountProperty</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:mbox</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения адреса эл. почты аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:mbox ?userEmail.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:phone</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения номера телефона аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:phone ?userMobile.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:instantMessagingId</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения идентификатора аккаунта в мессенджере.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>account:instantMessagingId</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:status</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения статуса аккаунта: <code>true</code> — включён.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:status ? enabled</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:skype</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения идентификатора аккаунта в Skype.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:skype ?loginSkype.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:username</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения имени пользователя (логина) аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:username ?login.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:active</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения состояния аккаунта: <code>true</code> — включён.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:active ? enabled</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:lastLoginDate</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения даты последней авторизации аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:lastLoginDate ?lastLoginDate.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:language</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения кода языка отображения веб-сайта для аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:language ?userLanguage.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:sid</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения Active Directory Security ID аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user account:sid ?sid.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:notificationSettings</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения параметров уведомлений аккаунта</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user account:notificationSettings ?notificationConfig .</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>multiValue</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:password</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения пароля к аккаунту.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:password ?userPassword</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:userpic</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения изображения профиля аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:userpic ?picture ..</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:userpicLarge</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения увеличенного изображения профиля аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:userpicLarge ?picture.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:title</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения наименования должности аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:title  ?jobTitle.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:department</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения наименования отдела аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:department  ?departmentName.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:office</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения наименования офиса аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:office  ?officeName.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:userGroupMembership</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения списка групп, в которых состоит аккаунт.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:userGroupMembership  ?goupList.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>multiValue   groupProperty</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:authenticationMethod</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения способа аутентификации аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:authenticationMethod ?authMethod.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:substitute</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения аккаунта заместителя, назначенного аккаунту.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:substitute ?substituteAccount.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>accountProperty</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:substituteDateFrom</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения даты начала замещения аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:substituteDateFrom  ?subsitutionStart</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:substituteDateTo</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения даты окончания замещения аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:substituteDateTo  ?subsitutionEnd</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:birthday</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения дня рождения аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:birthday  ?birthday.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:personalCalendarId</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения ID персонального календаря аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:personalCalendarId  ?calendarID.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:personalCalendarUri</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения URI персонального календаря аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:personalCalendarUri  ?calendarURI.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:presentedOnOrgchart</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения статуса включения аккаунта в организационную структуру: <code>true</code> — включён.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:presentedOnOrgchart ?onOrgChart.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwaccount:timeZone</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Предикат для получения серверного часового пояса аккаунта.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>?user cmwaccount:timeZone ?userTimeZone.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="специальные-функции-cmwobject">Специальные функции <code>cmwobject</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix cmwobject: &lt;http://comindware.com/ontology/object#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>cmwobject:findProperty</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Возвращает в объект ID атрибута по заданной в субъекте паре системных имён шаблона записи и атрибута.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>
+<p><code>("templateClients" "attibuteClientCode") cmwobject:findProperty ?attibute.</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="специальные-функции-cmwcontext">Специальные функции <code>cmwcontext</code></h3>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th colspan="2"><code>@prefix cmwcontext: &lt;http://comindware.com/logics/session/context#&gt;.</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="2"><code>cmwcontext:time</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Возвращает текущее время сеанса.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwcontext:timeZoneOffset</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Возвращает смещение часового пояса сеанса.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwcontext:origin</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Возвращает объект, по которому был запущен сценарий.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td></td>
+</tr>
+<tr>
+<th colspan="2"><code>cmwcontext:variable</code></th>
+</tr>
+<tr>
+<td><strong>Описание</strong></td>
+<td>Возвращает переменную в контексте.</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Возвращает</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</article>
+</div>
+</div>
+<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#">
+<i class="fa-light fa-arrow-up">&zwnj;<!--icon--></i>
+            К началу
+          </a>
+</main>
+</div>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></div>

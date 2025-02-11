@@ -154,7 +154,7 @@
 </li>
 <li>При получении HTTP-запроса требуется создать запись в <em>Картотеке</em>, прикрепить к ней полученные файлы и заполнить <em>Описание</em>.</li>
 </ul>
-<h2 id="порядок-настройки-получения-http-запросов">Порядок настройки получения HTTP-запросов</h2>
+<h2 class="pageBreakBefore" id="порядок-настройки-получения-http-запросов">Порядок настройки получения HTTP-запросов</h2>
 <ol class="colored_numbers_list">
 <li>Настройте <a class="mkdocs_imported_link" href="#настройка-шаблона-записи">шаблон записи</a> для хранения полученных данных.</li>
 <li>Настройте <a class="mkdocs_imported_link" href="#настройка-подключения">подключение</a> для получения HTTP-запросов.</li>
@@ -195,6 +195,11 @@
 <li>Атрибут типа «<strong>Документ</strong>» хранит одну или несколько ссылок на записи (<strong>документы</strong>) в системном шаблоне документа, к которым прикрепляются файлы.</li>
 <li>В шаблоне документа имеется атрибут <code>currentRevision</code> (текущая <strong>ревизия</strong>), который хранит ссылку на запись в системном шаблоне ревизии.</li>
 <li>В шаблоне ревизии имеются атрибуты <code>title</code> (имя) и <code>content</code> (содержимое), которые хранят имя файла и ссылку на файл, физически хранящийся в папке <code>Streams</code> на сервере.</li>
+</ul>
+</div>
+<div class="notice notice-tip">
+<p class="admonition-title">Извлечение файлов из атрибута типа «Документ» с помощью N3</p>
+<ul>
 <li>Чтобы считать файл из атрибута типа «<strong>Документ</strong>» с помощью выражения N3, необходимо:<ul>
 <li>получить текущую ревизию документа: <code>?documentAttributeValue document:revision ?revision</code>;</li>
 <li>получить из ревизии содержимое файла в формате <code>base64</code>: <code>?revision document:content ?content</code>;</li>
@@ -299,7 +304,7 @@
 <p>На верхнем уровне таблицы «<strong>Запрос</strong>» добавьте атрибут <em>Description</em> типа «<strong>Строка</strong>».</p>
 </li>
 </ol>
-<h3 id="интеграция">Интеграция</h3>
+<h3 class="pageBreakBefore" id="интеграция">Интеграция</h3>
 <ol class="colored_numbers_list">
 <li>
 <p>Укажите дополнительный <strong>путь URI</strong>, например <code>uploadFiles</code>.</p>
@@ -412,7 +417,7 @@
 <figure class="screenshot_with_caption">
 <p><img alt="Сценарий получения вложений с помощью HTTP-запросов" src="/platform/v5.0/administration/connections_communication_routes/rest_odata_connections/img/http_receive_file_scenario.png"/><figcaption class="caption">Сценарий получения вложений с помощью HTTP-запросов</figcaption></p>
 </figure>
-<h2 id="тестирование">Тестирование</h2>
+<h2 class="pageBreakBefore" id="тестирование">Тестирование</h2>
 <ol class="colored_numbers_list">
 <li>
 <p>С внешнего сервера отправьте в <strong>Comindware Platform</strong> HTTP-запрос с несколькими файлами, например:</p>

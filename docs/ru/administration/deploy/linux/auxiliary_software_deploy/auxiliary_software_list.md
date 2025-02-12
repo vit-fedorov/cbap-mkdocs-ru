@@ -1,9 +1,10 @@
 ---
-title: Comindware Platform 5.0. Перечень стороннего программного обеспечения для Linux
+title: Перечень стороннего программного обеспечения для Linux
+kbTitle: Comindware Platform 5.0. Перечень стороннего программного обеспечения для Linux
 kbId: 4582
 ---
 
-# {{ productName }} 5.0. Перечень стороннего программного обеспечения для Linux {: #auxiliary_software_list_linux }
+# Перечень стороннего программного обеспечения для Linux {: #auxiliary_software_list_linux }
 
 ## Введение
 

@@ -1,6 +1,6 @@
 ---
 title: Перечень стороннего программного обеспечения для Linux
-kbTitle: Comindware Platform 5.0. Перечень стороннего программного обеспечения для Linux
+kbTitle: **{{ companyName }}** Platform 5.0. Перечень стороннего программного обеспечения для Linux
 kbId: 4582
 ---
 
@@ -141,7 +141,7 @@ kbId: 4582
 
 | **Наименование ПО и ссылка** | **Описание** | **Версия** | **Лицензия** |
 | --- | --- | --- | --- |
-| [bellsoft- jre17](https://bell-sw.com/pages/libericajdk/) | BellSoft Liberica — это сборка JRE 17, соответствие спецификациям Java SE которой подтверждено тестами OpenJDK Technology Compatibility Kit. **Примечание:** компания Comindware может заменить данное ПО на аналог по запросу и согласно ТЗ заказчика. | 17.0.7+7 | GPLv2 |
+| [bellsoft- jre17](https://bell-sw.com/pages/libericajdk/) | BellSoft Liberica — это сборка JRE 17, соответствие спецификациям Java SE которой подтверждено тестами OpenJDK Technology Compatibility Kit. **Примечание:** компания **{{ companyName }}** может заменить данное ПО на аналог по запросу и согласно ТЗ заказчика. | 17.0.7+7 | GPLv2 |
 | [Elasticsearch](https://www.elastic.co/) | Распределенная облачная поисковая система RESTful. | 8.10.2 | SSPL |
 | [geoip-bin](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — инструменты командной строки для поиска IP-адресов, использующие библиотеку GeoIP. | 1.6.12-1 | Другая |
 | [geoip-database](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX —бесплатная база данных GeoLiteCountry. | 20181108-1 | LGPLv2 |
@@ -157,7 +157,7 @@ kbId: 4582
 | [libxpm4](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — библиотека X11 для работы с пиксельными картами (pixmap). Обеспечивает поддержку формата XPM в среде выполнения. | 1:3.5.12-1 | Другая |
 | [libxslt1.1](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — библиотека libxslt, используемая приложениями для преобразований XSLT. | 1.1.32-2.2~ deb10u2 | libxslt |
 | [mono](http://www.mono-project.com/) | Mono — это платформа для запуска и разработки приложений. Предоставляемый пакет содержит:- интерфейс командной строки - LLVM - Roslyn - MCS - MSBuild - GAC - GC SGen, GC Boehm - XSP4 Server - FastCGI Mono Server 4 | 6.12.0.182- 0xamarin1+ debian9b1 | MIT License |
-| [.NET SDK 6.0](https://packages.microsoft.com/config/debian/) | Платформа разработки с открытым исходным кодом. Предоставляемый пакет содержит:- .NET SDK 6.0.405 - .NETCore.App.Runtime 6.0.13 - dotnet-runtime-deps-debian 6.0.13 - .NETCore.App.Ref 6.0.13 - .NET Host — 7.0.2 - .NET Host FX Resolver — 6.0.13 - .NETCore.App.Host 6.0.13 - NETStandard.Library.Ref 2.1.0 - aspnetcore-runtime-6.0 - aspnetcore-targeting-pack-6.0  **Примечание:** компания Comindware может заменить данное ПО на аналог по запросу и согласно ТЗ заказчика. | 6.0.405-1 | MIT License |
+| [.NET SDK 6.0](https://packages.microsoft.com/config/debian/) | Платформа разработки с открытым исходным кодом. Предоставляемый пакет содержит:- .NET SDK 6.0.405 - .NETCore.App.Runtime 6.0.13 - dotnet-runtime-deps-debian 6.0.13 - .NETCore.App.Ref 6.0.13 - .NET Host — 7.0.2 - .NET Host FX Resolver — 6.0.13 - .NETCore.App.Host 6.0.13 - NETStandard.Library.Ref 2.1.0 - aspnetcore-runtime-6.0 - aspnetcore-targeting-pack-6.0  **Примечание:** компания **{{ companyName }}** может заменить данное ПО на аналог по запросу и согласно ТЗ заказчика. | 6.0.405-1 | MIT License |
 | [nginx](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Пакет зависимостей NGINX для установки nginx-core. | 1.18.0-6.1+ deb11u2 | BSD 2-Clause License |
 | [nginx-common](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — базовые файлы конфигурации, используемые всеми версиями NGINX. | 1.18.0-6.1+ deb11u2 | BSD 2-Clause License |
 | [nginx-core](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Веб/прокси-сервер NGINX. | 1.18.0-6.1+ deb11u2 | BSD 2-Clause License |

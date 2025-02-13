@@ -4,7 +4,7 @@ kbTitle: Comindware Platform 5.0. Перечень стороннего прог
 kbId: 4582
 ---
 
-# Перечень стороннего программного обеспечения {: #auxiliary_software_list_linux }
+# Перечень стороннего программного обеспечения {: #auxiliary_software_list }
 
 ## Введение
 
@@ -33,7 +33,10 @@ kbId: 4582
 | [bwip-js](https://github.com/metafloor/bwip-js) | Генератор штрихкодов на JavaScript. | 3.1.0 | MIT License |
 | [ckeditor](https://ckeditor.com/ckeditor-4/) | WYSIWYG-редактор HTML. | 4.12.1 | GPLv2 |
 | [ckeditor-wordcount-plugin](https://ckeditor.com/cke4/addon/wordcount) | Плагин для CKEditor. Подсчитывает и показывает количество слов в нижнем колонтитуле редактора. | 1.17.10 | MIT License |
-| [codemirror](https://codemirror.net/5/) | Текстовый редактор для браузера, реализованный на JavaScript. | 5.65.6 | MIT License |
+| [codemirror](https://codemirror.net/5/) | Текстовый редактор для браузера, реализованный на JavaScript. | 5.65.6 | MIT License |{% if pdfOutput %}
+
+| **Наименование ПО и ссылка** | **Описание** | **Версия** | **Лицензия** |
+| --- | --- | --- | --- |{% endif %}
 | [cropperjs](https://github.com/fengyuanchen/cropperjs) | Обрезчик изображений, реализованный на JavaScript. | 1.5.12 | MIT License |
 | [crypto-pro](https://github.com/vgoma/crypto-pro) | Асинхронный API для взаимодействия с «КриптоПро ЭЦП». | 2.3.0 | MIT License |
 | [css-vars-ponyfill](https://github.com/jhildenbiddle/css-vars-ponyfill) | Библиотека, обеспечивающая клиентскую поддержку переменных CSS в устаревших и современных браузерах. | 2.4.7 | MIT License |
@@ -76,7 +79,10 @@ kbId: 4582
 | [Apache.Lucene.NET](https://github.com/apache/lucenenet) | Порт библиотеки Lucene для полнотекстового поиска. | 3.0.3.0 | Apache 2.0 License |
 | [Apache.Lucene.Net.Contrib.Highlighter](https://github.com/apache/lucenenet) | Компонент библиотеки Apache.Lucene.Net. | 2.3.2.1 | Apache 2.0 License |
 | [Apache.Lucene.Net.Contrib.Memory](https://github.com/apache/lucenenet) | Компонент библиотеки Apache.Lucene.Net. | 1.0.0.0 | Apache 2.0 License |
-| [Aspose](https://products.aspose.com/pdf/net/) | Компонент для создания и обработки PDF-документов, который позволяет приложениям .NET считывать, записывать и обрабатывать PDF-документы. | 9.6.0.0 | Aspose Licence |
+| [Aspose](https://products.aspose.com/pdf/net/) | Компонент для создания и обработки PDF-документов, который позволяет приложениям .NET считывать, записывать и обрабатывать PDF-документы. | 9.6.0.0 | Aspose Licence |{% if pdfOutput %}
+
+| **Наименование ПО и ссылка** | **Описание** | **Версия** | **Лицензия** |
+| --- | --- | --- | --- |{% endif %}
 | [Autofac](https://github.com/autofac/Autofac) | IoC-контейнер для .NET. | 4.9.4 | MIT License |
 | [BouncyCastle](https://github.com/chrishaly/bc-csharp) | Пакет, реализующий криптографические алгоритмы. | 1.8.10.0 | MIT License |
 | [Castle.Core](https://github.com/castleproject/Core) | Castle Core API для создания прокси-объектов. | 4.0.0.0 | Apache 2.0 License |
@@ -130,7 +136,10 @@ kbId: 4582
 | [Elasticsearch](https://www.elastic.co/elasticsearch/) | Распределенная облачная поисковая система RESTful. | 8.10.2 | Elastic License |
 | [glib2](https://packages.altlinux.org/ru/sisyphus/srpms/glib2/) | GLib — это базовая низкоуровневая библиотека, которая обеспечивает обработку структур данных для C, предоставляет классы-оболочки переносимости и интерфейсы для таких функций времени выполнения, как цикл обработки событий, потоки, динамическая загрузка и объектная система. | 2.68.4 | LGPLv2+ |
 | [librdkafka](https://packages.altlinux.org/ru/sisyphus/srpms/librdkafka/) | Реализация протокола Apache Kafka в C-библиотеке, содержащая поддержку как Producer, так и Consumer. | 1.5.3 | BSD-2-CLAUSE |
-| [mono-core](https://packages.altlinux.org/ru/sisyphus/binary/mono-core/) | Этот пакет содержит ядро среды выполнения Mono, включая виртуальную машину, компилятор Just-in-time, компилятор C#, инструменты безопасности и библиотеки (corlib, XML, System.Security, ZipLib, I18N, Cairo и Mono). | 6.12.0.147 | MIT License |
+| [mono-core](https://packages.altlinux.org/ru/sisyphus/binary/mono-core/) | Этот пакет содержит ядро среды выполнения Mono, включая виртуальную машину, компилятор Just-in-time, компилятор C#, инструменты безопасности и библиотеки (corlib, XML, System.Security, ZipLib, I18N, Cairo и Mono). | 6.12.0.147 | MIT License |{% if pdfOutput %}
+
+| **Наименование ПО и ссылка** | **Описание** | **Версия** | **Лицензия** |
+| --- | --- | --- | --- |{% endif %}
 | [mono-data](https://packages.altlinux.org/ru/sisyphus/binary/mono-data/) | Этот пакет содержит сборку Mono для облегчения доступа к данным и работы с базами данных, совместимыми с LDAP серверами каталогов, а также обменом данными XML. Помимо сборок ADO.NET, Novell.LDAP и System.DirectoryServices, он также содержит приложение SQL командной строки и поставщики данных Microsoft SQL Server и ODBC. | 6.12.0.147 | MIT License |
 | [nginx](https://packages.altlinux.org/ru/sisyphus/srpms/nginx/) | HTTP-сервер, обратный прокси-сервер. | 1.22.1 | BSD |
 | [xsp](https://packages.altlinux.org/ru/sisyphus/srpms/xsp/) | XSP-сервер — это компактный веб-сервер, на котором размещаются классы System.Webclasses Mono для запуска ASP.NET. | 4.7.1 | X11/MIT License |
@@ -147,7 +156,10 @@ kbId: 4582
 | [geoip-database](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX —бесплатная база данных GeoLiteCountry. | 20181108-1 | LGPLv2 |
 | [libgd3](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGIX — графическая библиотека GD. Пакет библиотеки для среды выполнения. | 2.2.5-5.2+ ci202206301705+ astra1 | GPLv2+ |
 | [libgd-tools](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX - инструменты командной строки и примеры кода, использующие графическую библиотеку GD. | 2.2.5-5.2+ ci202206301705+ astra1 | Другая |
-| [libgeoip1](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — библиотека для определения страны по IP-адресу. | 1.6.12-1 | LGPLv2 |
+| [libgeoip1](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — библиотека для определения страны по IP-адресу. | 1.6.12-1 | LGPLv2 |{% if pdfOutput %}
+
+| **Наименование ПО и ссылка** | **Описание** | **Версия** | **Лицензия** |
+| --- | --- | --- | --- |{% endif %}
 | [libnginx-mod-http-geoip](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — HTTP-модуль GeoIP для NGINX. Создает переменные со значениями в зависимости от IP-адреса клиента, используя предварительно скомпилированные базы данных MaxMind. | 1.18.0-6.1 +deb11u2 | BSD 2-Clause License |
 | [libnginx-mod-http-image-filter](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — HTTP-модуль фильтрации изображений для NGINX. | 1.18.0-6.1 +deb11u2 | BSD 2-Clause License |
 | [libnginx-mod-http-xslt-filter](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — модуль преобразований XSLT для NGINX. | 1.18.0-6.1 +deb11u2 | BSD 2-Clause License |

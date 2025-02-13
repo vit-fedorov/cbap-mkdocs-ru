@@ -24,8 +24,6 @@
 
 [account_attribute_system_names]: {{ kbArticleURLPrefix }}4994
 
-[auxiliary_software_list]: {{ kbArticleURLPrefix }}4582
-
 [backup_and_restore]: {{ kbArticleURLPrefix }}4643
 
 [business_approval_process]: {{ kbArticleURLPrefix }}4904
@@ -765,6 +763,8 @@
 [accounts_dc_sync]: {{ kbArticleURLPrefix }}4655
 
 [admin_utility_instance_configure]: {{ kbArticleURLPrefix }}4634
+
+[auxiliary_software_list]: {{ kbArticleURLPrefix }}4582
 
 [logging_engine]: {{ kbArticleURLPrefix }}4623
 

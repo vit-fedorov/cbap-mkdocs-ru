@@ -9,6 +9,7 @@ eh_help_local_files
 compiled_help
 install/python_latest.exe
 venv/
+venv-ubuntu/
 __pycache__/
 for_pdf_print.html
 .serverCredentials.json

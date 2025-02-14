@@ -37,8 +37,8 @@ kbId: 4582
 
 | **Наименование ПО и ссылка** | **Описание** | **Версия** | **Лицензия** |
 | --- | --- | --- | --- |{% endif %}
-| [cropperjs](https://github.com/fengyuanchen/cropperjs) | Обрезчик изображений, реализованный на JavaScript. | 1.5.12 | MIT License |
-| [crypto-pro](https://github.com/vgoma/crypto-pro) | Асинхронный API для взаимодействия с «КриптоПро ЭЦП». | 2.3.0 | MIT License |
+| [cropperjs](https://github.com/fengyuanchen/cropperjs) | Обрезчик изображений, реализованный на JavaScript. | 1.5.12 | MIT License |{% if not gostech %}
+| [crypto-pro](https://github.com/vgoma/crypto-pro) | Асинхронный API для взаимодействия с «КриптоПро ЭЦП». | 2.3.0 | MIT License |{% endif %}
 | [css-vars-ponyfill](https://github.com/jhildenbiddle/css-vars-ponyfill) | Библиотека, обеспечивающая клиентскую поддержку переменных CSS в устаревших и современных браузерах. | 2.4.7 | MIT License |
 | [d3](https://d3js.org/) | JavaScript-библиотека для управления документами на основе данных. | 5.11.0 | ISC License |
 | [handlebars](https://handlebarsjs.com/) | Библиотека, предоставляющая платформу для создания шаблонов. | 4.7.7 | MIT License |
@@ -75,17 +75,17 @@ kbId: 4582
 | [Antlr4.Runtime.Standard](https://github.com/antlr/antlr4) | Среда проектирования графического интерфейса пользователя для построения грамматик ANTLR v4. | 4.11.1.0 | BSD 3-Clause License |
 | [Apache.Ignite.Core](https://ignite.apache.org/) | Распределенная база данных для высокопроизводительных вычислений со скоростью операций в памяти. | 2.16.0 | Apache 2.0 License |
 | [Apache.Ignite.Linq](https://ignite.apache.org/) | Компонент библиотеки Apache.Ignite.Core. | 16.10.0.0 | Apache 2.0 License |
-| [Apache.Ignite.NLog](https://ignite.apache.org/) | Компонент библиотеки Apache.Ignite.Core. | 9.0.0.0 | Apache 2.0 License |
+| [Apache.Ignite.NLog](https://ignite.apache.org/) | Компонент библиотеки Apache.Ignite.Core. | 9.0.0.0 | Apache 2.0 License |{% if not gostech %}
 | [Apache.Lucene.NET](https://github.com/apache/lucenenet) | Порт библиотеки Lucene для полнотекстового поиска. | 3.0.3.0 | Apache 2.0 License |
 | [Apache.Lucene.Net.Contrib.Highlighter](https://github.com/apache/lucenenet) | Компонент библиотеки Apache.Lucene.Net. | 2.3.2.1 | Apache 2.0 License |
-| [Apache.Lucene.Net.Contrib.Memory](https://github.com/apache/lucenenet) | Компонент библиотеки Apache.Lucene.Net. | 1.0.0.0 | Apache 2.0 License |
-| [Aspose](https://products.aspose.com/pdf/net/) | Компонент для создания и обработки PDF-документов, который позволяет приложениям .NET считывать, записывать и обрабатывать PDF-документы. | 9.6.0.0 | Aspose Licence |{% if pdfOutput %}
+| [Apache.Lucene.Net.Contrib.Memory](https://github.com/apache/lucenenet) | Компонент библиотеки Apache.Lucene.Net. | 1.0.0.0 | Apache 2.0 License |{% endif %}
+| [Aspose](https://products.aspose.com/pdf/net/) | Компонент для создания и обработки PDF-документов, который позволяет приложениям .NET считывать, записывать и обрабатывать PDF-документы. | 9.6.0.0 | Aspose Licence |
+| [Autofac](https://github.com/autofac/Autofac) | IoC-контейнер для .NET. | 4.9.4 | MIT License |
+| [BouncyCastle](https://github.com/chrishaly/bc-csharp) | Пакет, реализующий криптографические алгоритмы. | 1.8.10.0 | MIT License |
+| [Castle.Core](https://github.com/castleproject/Core) | Castle Core API для создания прокси-объектов. | 4.0.0.0 | Apache 2.0 License |{% if pdfOutput %}
 
 | **Наименование ПО и ссылка** | **Описание** | **Версия** | **Лицензия** |
 | --- | --- | --- | --- |{% endif %}
-| [Autofac](https://github.com/autofac/Autofac) | IoC-контейнер для .NET. | 4.9.4 | MIT License |
-| [BouncyCastle](https://github.com/chrishaly/bc-csharp) | Пакет, реализующий криптографические алгоритмы. | 1.8.10.0 | MIT License |
-| [Castle.Core](https://github.com/castleproject/Core) | Castle Core API для создания прокси-объектов. | 4.0.0.0 | Apache 2.0 License |
 | [CsvHelper](https://www.nuget.org/packages/CsvHelper/) | Библиотека .NET для чтения и записи файлов CSV. | 28.0.0.0 | Microsoft Public License |
 | [DDay.Collections](https://github.com/rianjs/ical.net) | Компонент iCal.NET — библиотеки классов для .NET, обеспечивает соответствие RFC 5545 и полную совместимость с популярными приложениями и библиотеками календарей. | 1.0.0.0 | MIT License |
 | [DDay.iCal](https://github.com/rianjs/ical.net) | Компонент iCal.NET — библиотеки классов для .NET, которая обеспечивает соответствие RFC 5545 и полную совместимость с популярными приложениями и библиотеками календарей. | 1.0.2.0 | MIT License |
@@ -107,8 +107,8 @@ kbId: 4582
 | [Microsoft.IdentityModel](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) | Библиотека для работы с OpenIdConnect и WsFederation. **Примечание:** это необязательный компонент для входа в **{{ productName }}** через Google, Azure AD/ и другие службы OpenID. Этот компонент не устанавливается по умолчанию. При необходимости его можно установить при развертывании ПО. | 5.3.0.0 | Microsoft Software License |
 | [Microsoft.OData](https://www.nuget.org/packages/Microsoft.Data.OData/) | Библиотека для работы с OData. | 7.10.0.0 | MIT License |
 | [Microsoft.Owin](https://www.nuget.org/packages/Microsoft.Owin) | Библиотека для работы с OWIN. | 4.1.1.0 | Apache 2.0 License |
-| [Microsoft.Spatial](https://www.nuget.org/packages/Microsoft.Spatial/) | Библиотека для работы с геометрическими фигурами. | 7.10.0.0 | MIT License |
-| [Microsoft.Win32.Registry](https://www.nuget.org/packages/Microsoft.Win32.Registry/) | Библиотека для работы с реестром Windows. | 4.1.3.0 | MIT License |
+| [Microsoft.Spatial](https://www.nuget.org/packages/Microsoft.Spatial/) | Библиотека для работы с геометрическими фигурами. | 7.10.0.0 | MIT License |{% if not gostech %}
+| [Microsoft.Win32.Registry](https://www.nuget.org/packages/Microsoft.Win32.Registry/) | Библиотека для работы с реестром Windows. | 4.1.3.0 | MIT License |{% endif %}
 | [MimeKit](https://github.com/jstedfast/MimeKit) | Библиотека для создания и обработки сообщений с использованием MIME. | 2.15.0.0 | MIT License |
 | [Nest](https://www.nuget.org/packages/NEST) | Библиотека .NET-клиента для работы с Elasticsearch. | 7.0.0.0 | Apache 2.0 License |
 | [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) | Json.NET — это высокопроизводительная платформа JSON для .NET. | 13.0.0.0 | MIT License |

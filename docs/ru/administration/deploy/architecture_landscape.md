@@ -28,11 +28,11 @@ kbId: 4596
 
 - _Веб-приложение_: одностраничное приложение (SPA) на основе Marionette, Backbone, React, Redux.
 - _Мобильное приложение_: React Native on Expo.
-- _Бэкенд_: компоненты-сервисы на основе .NET 6.0, .NET Framework 4.8 (Windows), Mono 6.12 (Linux), JDK 17.
+- _Бэкенд_: компоненты-сервисы на основе .NET 6.0, {% if not gostech %}.NET Framework 4.8 (Windows), {% endif %}Mono 6.12 (Linux), JDK 17.
 - _СУБД_: фирменная патентованная СУБД Comindware ElasticData
-- _Хранилище данных_: распределённая высокопроизводительная СУБД Platform V DataGrid или Apache Ignite.
-- _Сервис журналирования транзакций_: Platform V Search, OpenSearch или Elasticsearch.
-- _Сервис сбора и анализа журналов и данных мониторинга Системы_: Platform V Monitor, Platform V Audit, Platform V Search, OpenSearch, OpenSearch Dashboards или Elasticsearch, Kibana.
+- _Хранилище данных_: распределённая высокопроизводительная СУБД {{ apacheIgniteVariants }}.
+- _Сервис журналирования транзакций_: {{ openSearchVariants }}.
+- _Сервис сбора и анализа журналов и данных мониторинга Системы_: {{ zabbixVariants }}{{ openSearchVariants }}, Kibana (OpenSearch Dashboards){% if gostech %}, Platform V Audit{% endif %}.
 - _Сервис файловых журналов_: NLog.
 - _Модули для интеграции_: см. _«[Интеграция с внешними системами](#интеграция-с-внешними-системами)»_.
 
@@ -87,7 +87,7 @@ _![Диаграмма архитектуры {{ productName }}](https://kb.comin
 
 - _**{{ productName }}**_: установленный экземпляр ПО.
 - _СУБД_ _Comindware ElasticData_.
-- _Сервер журналирования транзакций (Platform V Search, OpenSearch или Elasticsearch)_ — в конфигурации с одним узлом.
+- _Сервер журналирования транзакций {{ openSearchVariants }}_ — в конфигурации с одним узлом.
 
 {% if not gostech %}
 _![Минимальная конфигурация Системы](https://kb.comindware.ru/assets/Picture2_2.png)_
@@ -99,10 +99,10 @@ _![Минимальная конфигурация Системы](https://kb.co
 
 - _**{{ productName }}**_: установленный экземпляр ПО.
 - _СУБД Comindware ElasticData_.
-- _Сервер журналирования транзакций (Platform V Search, OpenSearch или Elasticsearch)_.
-- _Обратный прокси-сервер (Platform V SynGX или NGINX)_ для фильтрации нежелательных запросов и ретрансляции допустимых запросов во внутреннюю сеть.
-- _Сервер мониторинга (Platform V Monitor или Zabbix)_ для мониторинга доступности служб и свободного пространства на дисках.
-- _Сервер уведомлений (Platform V Notification Center или SMTP/IMAP)_ (необязательно) для передачи уведомлений.
+- _Сервер журналирования транзакций {{ openSearchVariants }}_.
+- _Обратный прокси-сервер {{ nginxVariants }}_ для фильтрации нежелательных запросов и ретрансляции допустимых запросов во внутреннюю сеть.
+- _Сервер мониторинга {{ zabbixVariants }}_ для мониторинга доступности служб и свободного пространства на дисках.
+- _Сервер уведомлений {{ notificationServerVariants }}_ (необязательно) для передачи уведомлений.
 - _Сервер LDAP_ (необязательно) для централизованного управления инфраструктурой сети.
 - _Сервер Git_ (необязательно) для контроля версий приложений, создаваемых с помощью **{{ productName }}**.
 
@@ -387,16 +387,18 @@ _![Типовой ландшафт сервисов в составе Систе
 
 ### Конфигурация сервера распределённой СУБД
 
-Сервер распределённой СУБД (Platform V DataGrid или Apache Ignite) в минимально необходимой конфигурации можно установить автоматически при развертывании **{{ productName }}** либо самостоятельно в требуемой конфигурации.
+Сервер распределённой СУБД {{ apacheIgniteVariants }} в минимально необходимой конфигурации можно установить автоматически при развертывании **{{ productName }}** либо самостоятельно в требуемой конфигурации.
 
 **Требования к конфигурации**
 
-- _[Platform V DataGrid. Руководство по установке](https://client.sbertech.ru/docs/public/IGN/17.0.0/IGNT/17.0.0/documents/installation-guide/index.html)_
+{% if gostech %}
+- _[Platform V DataGrid. Руководство по установке](https://client.sbertech.ru/docs/public/IGN/17.0.0/IGNT/17.0.0/documents/installation-guide/index.html)_{% endif %}
 - _[Apache Ignite. Установка и настройка. Краткое руководство][apache_ignite_deploy]_.
 
 **Примеры конфигураций**
 
-- _[Platform V DataGrid. Руководство по установке](https://client.sbertech.ru/docs/public/IGN/17.0.0/IGNT/17.0.0/documents/installation-guide/index.html)_
+{% if gostech %}
+- _[Platform V DataGrid. Руководство по установке](https://client.sbertech.ru/docs/public/IGN/17.0.0/IGNT/17.0.0/documents/installation-guide/index.html)_{% endif %}
 - _[Apache Ignite. Установка и настройка. Краткое руководство][apache_ignite_deploy]_.
 
 ### Конфигурация сервера журналирования транзакций
@@ -412,25 +414,26 @@ _![Типовой ландшафт сервисов в составе Систе
 
 **Примеры конфигураций**
 
-- _[Platform V Search (SRH). Руководство по установке](https://client.sbertech.ru/docs/public/SRH/1.5.0/SRHX/1.5.0/documents/installation-guide/index.html)_
+{% if gostech %}
+- _[Platform V Search (SRH). Руководство по установке](https://client.sbertech.ru/docs/public/SRH/1.5.0/SRHX/1.5.0/documents/installation-guide/index.html)_{% endif %}
 - _[Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности][elasticsearch_cluster_deploy_no_certificates]_
 {% if adminGuideWindows %}
-- _[Установка Elasticsearch. Краткое руководство для Windows][elasticsearch_deploy_windows]_
-- {% endif %}
+- _[Установка Elasticsearch. Краткое руководство для Windows][elasticsearch_deploy_windows]_{% endif %}
 
 ### Конфигурация обратного прокси-сервера {: .pageBreakBefore }
 
-Обратный прокси-сервер (Platform V SynGX или NGINX) в минимально необходимой конфигурации можно установить автоматически при развертывании **{{ productName }}** либо самостоятельно в требуемой конфигурации.
+Обратный прокси-сервер {{ nginxVariants }} в минимально необходимой конфигурации можно установить автоматически при развертывании **{{ productName }}** либо самостоятельно в требуемой конфигурации.
 
 **Требования к конфигурации**
 
-- Сервер Platform V SynGX или NGINX;
+- {{ nginxVariants }};
 - Модуль ModSecurity;
 - Модуль GeoIP.
 
 **Примеры конфигураций**
 
-- _[Руководство по установке Platform V SynGX (SNX)](https://client.sbertech.ru/docs/public/SNX/3.0.0/SNGX/3.0.0/documents/installation-guide/index.html)_
+{% if gostech %}
+- _[Руководство по установке Platform V SynGX (SNX)](https://client.sbertech.ru/docs/public/SNX/3.0.0/SNGX/3.0.0/documents/installation-guide/index.html)_{% endif %}
 - _[NGINX. Установка и настройка][nginx_deploy]»_
 - _[Модуль GeoIP для NGINX. Установка и настройка][nginx_geoid_deploy]_.
 
@@ -438,9 +441,9 @@ _![Типовой ландшафт сервисов в составе Систе
 
 **Требования к конфигурации**
 
-Конфигурация сервера Platform V Monitor или Zabbix должна обеспечивать мониторинг работоспособности Системы, как указано ниже.
+Конфигурация сервера {{ zabbixVariants }} должна обеспечивать мониторинг работоспособности Системы, как указано ниже.
 
-- Мониторинг доступности сервера распределённой СУБД (Platform V DataGrid или Apache Ignite)
+- Мониторинг доступности сервера распределённой СУБД {{ apacheIgniteVariants }}.
     - Сервер может быть недоступен из-за проблем с сетью.
     - На сервере может закончиться свободное место на диске.
     - Конфигурация сервера может не позволять обработать запросы, например, ввиду невозможности создания нового индекса или соответствующего ему шарду.

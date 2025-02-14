@@ -100,8 +100,6 @@
 
 [ad_connection]: {{ kbArticleURLPrefix }}4687
 
-[adapters]: {{ kbArticleURLPrefix }}4672
-
 [administration]: {{ kbArticleURLPrefix }}4661
 
 [antivirus_exceptions_configure]: {{ kbArticleURLPrefix }}4602
@@ -839,5 +837,13 @@
 [api_system_core]: {{ kbArticleURLPrefix }}4862
 
 [api_web]: {{ kbArticleURLPrefix }}4861
+
+{% endif %}
+
+{% if gostech or kbExport %}
+
+<!-- Руководства для ГосТех или экспорт в БЗ  -->
+
+[adapters]: {{ kbArticleURLPrefix }}4672
 
 {% endif %}

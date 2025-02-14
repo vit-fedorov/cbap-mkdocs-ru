@@ -15,7 +15,6 @@ extra:
   userGuide: False
   tutorial: False
   completeGuide: False
-  gostech: true
 
 nav:
 

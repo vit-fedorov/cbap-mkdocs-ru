@@ -19,8 +19,8 @@ kbId: 5067
 
 2. При необходимости измените параметры, например:
 
-    - `journal.server` — адрес сервера Elasticsearch (OpenSearch).
-    - `journal.name` — индекс сервера Elasticsearch (OpenSearch).
+    - `journal.server` — адрес сервера {{ openSearchVariants }}.
+    - `journal.name` — индекс сервера {{ openSearchVariants }}.
     - `db.workDir` — директория для хранения базы данных экземпляра ПО.
     - `db.name` — префикс кэшей в базе данных экземпляра ПО.
     - `userStorage.localDisk.path` — директория для хранения пользовательских файлов.

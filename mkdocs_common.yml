@@ -26,6 +26,9 @@ extra:
   productName: 'Comindware Platform'
   productNameEnterprise: 'Comindware Platform Enterprise'
   productNameArchitect: 'Корпоративная архитектура'
+  openSearchVariants: OpenSearch (Elasticsearch, Platform V Search)
+  apacheKafkaVariants: Apache Kafka (Platform V Corax)
+  apacheIgniteVariants: Apache Ignite (Platform V DataGrid)
   productVersion: 5.0
   pdfOutput: False
   kbExport: False

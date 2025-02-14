@@ -1076,7 +1076,7 @@ IIS authentication: Anonymous
     - `Streams path: F:\xxx\Streams` — путь к загруженным файлам
     - `IIS authentication: Anonimous | Ldap | Builtin` — способ Windows-аутентификации экземпляра ПО
     - `Application authentication: Anonimous | Ldap | Builtin` — способ аутентификации экземпляра ПО
-- `PerformanceHelper.Perform: FullTextSearchService.RebuildThreadWorker() succeed` —запущена системная служба полнотекстового поиска
+- `PerformanceHelper.Perform: FullTextSearchService.RebuildThreadWorker() succeed` — запущена системная служба полнотекстового поиска
 - `Time:59184ms` — длительность запуска службы
 - `TotalGCMemory:XXXMB` — память, выделенная сборщику мусора
 - `DeltaGCMemory:-XXXMB` — изменение памяти, выделенной сборщику мусора

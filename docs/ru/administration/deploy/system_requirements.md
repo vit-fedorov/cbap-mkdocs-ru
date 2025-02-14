@@ -56,25 +56,25 @@ kbId: 4659
 </tr>
 <tr>
 <td>СУБД</td>
-<td colspan=2 style="text-align: center;">Apache Ignite</td>
+<td colspan=2 style="text-align: center;">Platform V DataGrid, Apache Ignite</td>
 </tr>
 <tr>
 <td>Веб-сервер</td>
 <td>Internet Information Services (IIS) 10 и выше</td>
-<td>NGINX 1.24 и выше</td>
+<td>Platform V SynGX, NGINX 1.24 и выше</td>
 </tr>
 <tr markdown="block">
 <td>Дополнительное ПО (поставляется и устанавливается вместе с основным пакетом)</td>
 <td markdown="block">
 - NET 6.0
 - .NET Framework 4.8.1
-- Kafka 3.6.0 и выше
-- OpenSearch 2.18.0 или Elasticsearch 8.10 и выше</td>
+- Platform V Corax, Kafka 3.6.0 и выше
+- Platform V Search, OpenSearch 2.18.0 или Elasticsearch 8.10 и выше</td>
 <td markdown="block">
 - NET 6.0
 - Mono 6.12
-- Kafka 3.6.0 и выше
-- OpenSearch 2.18.0 или Elasticsearch 8.10 и выше</td>
+- Platform V Corax, Kafka 3.6.0 и выше
+- Platform V Search, OpenSearch 2.18.0 или Elasticsearch 8.10 и выше</td>
 </tr>
 </tbody>
 </table>

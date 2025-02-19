@@ -47,10 +47,10 @@ kbId: 4675
 ### Подключения REST и OData
 
 - [Получение веб-запросов][get_connection]
-- [Отправка веб-запросов][send_http_request_connection]
+- [Отправка веб-запросов][http_send_request_connection]
 - [Синхронизация с веб-сервисом][odata_connection]
-- [Отправка HTTP-запросов][send_http_connection]
-- [Получение HTTP-запросов][receive_http_example]
+- [Отправка HTTP-запросов][http_send_connection]
+- [Получение HTTP-запросов][http_receive_example]
 
 ### Подключения к шине сообщений
 

@@ -11,12 +11,10 @@ from pathvalidate import sanitize_filename
 from pathlib import Path
 import shutil
 from cryptography.fernet import Fernet
-
 import os
-
 import os.path
-
 import json
+import datetime 
 
 TOTAL_PAGES_UPDATED = 0
 CONNECTION = None
@@ -91,9 +89,7 @@ def updateArticle(article_id):
         print(f'Article {article_id} not found')
         return
     
-    
     article_title = result[1]
-        
     article_content = getArticleContentById(article_id)
     if article_content:
         # Escape the HTML and backslashes for MySQL
@@ -107,13 +103,15 @@ def updateArticle(article_id):
         try:
             update = input(f"Update article {article_id}: {article_title}? Y/N\n").lower() == 'y'
             if update:
+                article_last_updation = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 c.execute("""
                         UPDATE phpkb_articles 
                         SET 
                         article_title=%s,
-                        article_content=%s 
+                        article_content=%s,
+                        article_last_updation=%s
                         WHERE article_id=%s;
-                        """, (article_title, article_content, article_id))
+                        """, (article_title, article_content, article_last_updation, article_id))
         except:
             print("Couldn't update the article")
             exit()

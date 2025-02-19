@@ -1,4 +1,4 @@
-<h1>Резервное копирование. Настройка и запуск, просмотр журнала сеансов</h1><div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4642">
+<h1>Резервное копирование. Настройка, запуск и просмотр журнала сеансов</h1><div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4642">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -16,9 +16,9 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#рекомендации-по-резервному-копированию">
+<a class="md-nav__link mkdocs_imported_link" href="#инструменты-резервного-копирования-и-восстановления-comindware-platform">
 <span class="md-ellipsis">
-      Рекомендации по резервному копированию
+      Инструменты резервного копирования и восстановления Comindware Platform
     </span>
 </a>
 </li>
@@ -77,20 +77,23 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h2 id="введение">Введение</h2>
-<p>В <strong>Comindware Platform</strong> предусмотрена функция резервного копирования полного образа экземпляра ПО в формате файла с расширением <code>.CDBBZ</code>.</p>
-<p>При резервном копировании сохраняются все данные всех приложений и все системные настройки экземпляра ПО <strong>Comindware Platform</strong>.</p>
-<p>Резервные копии могут храниться как в файловой системе сервера <strong>Comindware Platform</strong>, так и в <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4677">хранилище S3</a>.</p>
-<p>Резервное копирование можно настраивать и запускать с помощью веб-интерфейса <strong>Comindware Platform</strong>.</p>
-<p>Восстановление данных осуществляется на стороне сервера <strong>Comindware Platform</strong>. См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4647">Восстановление базы данных из файла резервной копии в формате .CDBBZ</a>»</em>.</p>
-<h2 id="рекомендации-по-резервному-копированию">Рекомендации по резервному копированию</h2>
-<p>Для обеспечения оперативного восстановления данных рекомендуется применять следующие способы резервного копирования:</p>
+<p>Для обеспечения бесперебойной работы <strong>Comindware Platform</strong> необходимо настроить регулярное резервное копирование данных экземпляра ПО.</p>
+<p>Здесь представлены рекомендации по настройке и запуску резервного копирования, а также по просмотру журнала сеансов.</p>
+<p>Прежде чем приступать к настройке резервного копирования ознакомьтесь с <em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5082">рекомендациями по организации и оптимизации резервного копирования и восстановления</a></em>.</p>
+<p>Дополнительные инструкции по резервному копированию и восстановлению данных встроенными и внешними средствами см. в разделе <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4643">Резервное копирование и восстановление</a>»</em> базы знаний <strong>Comindware</strong>.</p>
+<h2 id="инструменты-резервного-копирования-и-восстановления-comindware-platform">Инструменты резервного копирования и восстановления Comindware Platform</h2>
 <ul>
-<li>Непрерывно — репликация средствами ПО Ignite, Elasticsearch, Kafka и файловой системы NFS, развёрнутых в конфигурации отказоустойчивого кластера master/slave (с зеркалированием).</li>
-<li>Раз в час — быстрое резервное копирование только базы данных встроенными средствами ПО, срок хранения резервных копий: не менее трех суток</li>
-<li>Раз в сутки — полное резервное копирование базы данных, скриптов, файлов и истории операций встроенными средствами ПО, срок хранения резервных копий: не менее двух недель.</li>
-<li>Раз в неделю — резервное копирование всего образа развёрнутого ПО средствами виртуализации, срок хранения резервных копий: не менее трех месяцев.</li>
+<li>В <strong>Comindware Platform</strong> предусмотрена функция резервного копирования полного образа экземпляра ПО в формате файла с расширением <code>.CDBBZ</code>.<ul>
+<li>В такой резервной копии сохраняются все данные всех приложений и все системные настройки экземпляра ПО <strong>Comindware Platform</strong>.</li>
+<li>Резервные копии могут храниться как в файловой системе сервера <strong>Comindware Platform</strong>, так и в <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4677">хранилище S3</a>.</li>
+<li>Резервное копирование может запускаться вручную или по расписанию.</li>
+<li>Резервное копирование можно настраивать и запускать с помощью веб-интерфейса <strong>Comindware Platform</strong>.</li>
+<li>В веб-интерфейсе <strong>Comindware Platform</strong> предусмотрен <a class="mkdocs_imported_link" href="#просмотр-списка-сеансов-резервного-копирования">журнал сеансов резервного копирования</a>.</li>
 </ul>
-<p>Инструкции по резервному копированию и восстановлению данных встроенными и внешними средствами см. в разделе <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4643">Резервное копирование и восстановление</a>»</em> базы знаний Comindware.</p>
+</li>
+<li>В зависимости от требуемого уровня надежности, доступности и отказоустойчивости системы, резервное копирование также можно выполнять средствами виртуализации, файловой системы, Apache Ignite, Elasticsearch и Apache Kafka.</li>
+<li>Восстановление данных осуществляется на стороне сервера <strong>Comindware Platform</strong>. См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4647">Восстановление базы данных из файла резервной копии в формате .CDBBZ</a>»</em>.</li>
+</ul>
 <h2 id="просмотр-списка-и-настройка-конфигураций-резервного-копирования">Просмотр списка и настройка конфигураций резервного копирования</h2>
 <ol class="colored_numbers_list">
 <li>В разделе <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4661">«<strong>Администрирование</strong>» — «<strong>Инфраструктура</strong>»</a> выберите пункт «<strong>Резервное копирование</strong>» <i class="fa-light fa-coins">‌<!--icon--></i>.</li>
@@ -231,12 +234,13 @@
 <div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5082">Резервное копирование и восстановление. Рекомендации по организации и оптимизации</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4677">Хранилище S3. Настройка экземпляра ПО и подключения</a></em></li>
 <li>
 <p><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4647">Восстановление базы данных из файла резервной копии в формате .CDBBZ</a></em></p>
 </li>
 <li>
-<p><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4643">Резервное копирование и восстановление</a></em>*</p>
+<p><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4643">Резервное копирование и восстановление</a></em></p>
 </li>
 </ul>
 </div>

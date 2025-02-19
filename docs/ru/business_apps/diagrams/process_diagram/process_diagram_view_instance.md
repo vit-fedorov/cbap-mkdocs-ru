@@ -58,16 +58,16 @@ hide:
 
 1. **Кнопки управления экземпляром процесса**
 
-    --8<-- "proces_instance_view_buttons_stop_archive.md"
+    --8<-- "process_instance_view_buttons_stop_archive.md"
     - **Создать токен** — [создание токена](#token_create) на выбранном элементе для запуска выполнения процесса с этого элемента. Эта кнопка отображается, если выбран элемент диаграммы.
-    --8<-- "proces_instance_view_buttons_info.md"
+    --8<-- "process_instance_view_buttons_info.md"
 
 2. **Сведения об экземпляре процесса**
 
-    --8<-- "proces_instance_view_properties.md"
+    --8<-- "process_instance_view_properties.md"
         См. _«[Управление версиями диаграммы процесса][process_diagram_version_control]»_.
-    --8<-- "proces_instance_view_tokens.md"
-    --8<-- "proces_instance_view_changelog.md"
+    --8<-- "process_instance_view_tokens.md"
+    --8<-- "process_instance_view_changelog.md"
         См. _«[Просмотр цепочки событий](#events_chain_view)»_.
 
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
@@ -76,7 +76,8 @@ hide:
 
       --8<-- "process_diagram_scale_buttons.md"
 
-4. **Позиции токенов** — элементы, на которых находятся токены, выделяются жёлтой или зелёной рамкой. {% include-markdown ".snippets/pdfEndOfBlockHack.md" %}
+4. **Позиции токенов** — элементы, на которых находятся токены, выделяются жёлтой или зелёной рамкой.
+{% include-markdown ".snippets/pdfEndOfBlockHack.md" %}
 
 _![Диаграмма экземпляра процесса](img/process_diagram_view_instance.png)_
 

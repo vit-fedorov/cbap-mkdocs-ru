@@ -12,10 +12,6 @@
 
 [api_calls]: {{ kbCategoryURLPrefix }}868
 
-[api_web]: {{ kbArticleURLPrefix }}4861
-
-[api_intro]: {{ kbArticleURLPrefix }}4860
-
 [account_attributes_system_names]: {{ kbArticleURLPrefix }}4994
 
 [attribute_date_time_use]: {{ kbArticleURLPrefix }}4886
@@ -126,9 +122,9 @@
 
 [authentication_keys]: {{ kbArticleURLPrefix }}4674
 
-[backup]: {{ kbArticleURLPrefix }}4642
+[backup_configure]: {{ kbArticleURLPrefix }}4642
 
-[backup_configure]: {{ kbArticleURLPrefix }}5082
+[backup_recommendations]: {{ kbArticleURLPrefix }}5082
 
 [backup_configure_elasticsearch]: {{ kbArticleURLPrefix }}5082#backup_configure_elasticsearch
 
@@ -562,6 +558,8 @@
 
 [http_send_example]: {{ kbArticleURLPrefix }}4699
 
+[http_send_file]: {{ kbArticleURLPrefix }}5066
+
 [http_send_request_connection]: {{ kbArticleURLPrefix }}4696
 
 [import_data]: {{ kbArticleURLPrefix }}4802
@@ -783,6 +781,14 @@
 [accounts_dc_sync]: {{ kbArticleURLPrefix }}4655
 
 [admin_utility_instance_configure]: {{ kbArticleURLPrefix }}4634
+
+[api_intro]: {{ kbArticleURLPrefix }}4860
+
+[api_solution]: {{ kbArticleURLPrefix }}4863
+
+[api_system_core]: {{ kbArticleURLPrefix }}4862
+
+[api_web]: {{ kbArticleURLPrefix }}4861
 
 [logging_engine]: {{ kbArticleURLPrefix }}4623
 

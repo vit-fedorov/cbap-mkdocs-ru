@@ -19,8 +19,8 @@ kbId: 5067
 
 2. При необходимости измените параметры, например:
 
-    - `journal.server` — адрес сервера Elasticsearch (OpenSearch).
-    - `journal.name` — индекс сервера Elasticsearch (OpenSearch).
+    - `journal.server` — адрес сервера {{ openSearchVariants }}.
+    - `journal.name` — индекс сервера {{ openSearchVariants }}.
     - `db.workDir` — директория для хранения базы данных экземпляра ПО.
     - `db.name` — префикс кэшей в базе данных экземпляра ПО.
     - `userStorage.localDisk.path` — директория для хранения пользовательских файлов.
@@ -49,7 +49,7 @@ kbId: 5067
     systemctl restart comindware<instanceName>
     ```
 
-### Пример YML-файла конфигурации экземпляра ПО
+### Пример YML-файла конфигурации экземпляра ПО {: .pageBreakBefore }
 
 <!--instanceYML-start-->
 ``` yml
@@ -105,7 +105,7 @@ backup.defaultFileName: Backup
 ```
 <!--instanceYML-end-->
 
-## Конфигурация службы apigateway
+## Конфигурация службы apigateway {: .pageBreakBefore }
 
 1. Откройте файл конфигурации `apigateway.yml` экземпляра ПО для редактирования:
 
@@ -122,7 +122,7 @@ backup.defaultFileName: Backup
     systemctl restart apigateway<instanceName>
     ```
 
-### Пример конфигурации службы apigateway.yml
+### Пример конфигурации службы apigateway.yml {: .pageBreakBefore }
 
 <!--apigatewayYML-start-->
 ``` yml
@@ -168,7 +168,7 @@ services:
 ```
 <!--apigatewayYML-end-->
 
-## Конфигурация службы adapterhost
+## Конфигурация службы adapterhost {: .pageBreakBefore }
 
 1. Откройте файл конфигурации `adapterhost.yml` экземпляра ПО для редактирования:
 
@@ -212,7 +212,7 @@ log.archiveFolder: /var/log/comindware/<instanceName>/Logs/Archive/
 ```
 <!--adapterhostYML-end-->
 
-## Конфигурация Apache Ignite
+## Конфигурация Apache Ignite {: .pageBreakBefore }
 
 1. Откройте файл конфигурации Ignite для редактирования:
 
@@ -248,7 +248,7 @@ log.archiveFolder: /var/log/comindware/<instanceName>/Logs/Archive/
     systemctl restart comindware<instanceName>
     ```
 
-## Конфигурация кучи Java
+## Конфигурация кучи Java {: .pageBreakBefore }
 
 В зависимости от объёма оперативной памяти на сервере следует отредактировать конфигурацию области памяти для кучи Java.
 
@@ -277,7 +277,7 @@ log.archiveFolder: /var/log/comindware/<instanceName>/Logs/Archive/
     systemctl restart comindware<instanceName>
     ```
 
-## Конфигурация NGINX
+## Конфигурация NGINX {: .pageBreakBefore }
 
 1. Откройте файл конфигурации NGINX для редактирования:
 

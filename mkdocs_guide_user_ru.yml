@@ -7,6 +7,7 @@ INHERIT: mkdocs_ru.yml
 site_name: Comindware Platform. Руководство пользователя
 
 extra:
+  apiGuide: False
   adminGuideWindows: False
   adminGuideLinux: False
   userGuide: True
@@ -87,18 +88,12 @@ nav:
         - administration/connections_communication_routes/email_connections/scenario_receive_email.md
         - 'Пример: отправка, получение и обработка эл. почты в процессе': examples/process_email_configure.md
       - Подключения REST и OData:
-        - administration/connections_communication_routes/rest_odata_connections/get_connection.md
         - administration/connections_communication_routes/rest_odata_connections/odata_connection.md
         - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
-        - administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
-        - administration/connections_communication_routes/rest_odata_connections/http_send_post.md
-        - administration/connections_communication_routes/rest_odata_connections/http_send_file.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
-        - administration/connections_communication_routes/rest_odata_connections/send_http_example.md
+        - administration/connections_communication_routes/rest_odata_connections/get_connection.md
         - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
-        - administration/connections_communication_routes/rest_odata_connections/http_receive_file.md
-        - administration/connections_communication_routes/rest_odata_connections/jpath_example.md
       - SQL-подключения:
         - administration/connections_communication_routes/sql_connections/sql_send_connection.md
         - administration/connections_communication_routes/sql_connections/sql_receive_connection.md
@@ -303,6 +298,12 @@ nav:
     - examples/script_using_local_variable.md
     - examples/scenario_verify_data.md
     - examples/multilingual_app.md
+    - administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
+    - administration/connections_communication_routes/rest_odata_connections/send_http_example.md
+    - administration/connections_communication_routes/rest_odata_connections/http_send_post.md
+    - administration/connections_communication_routes/rest_odata_connections/http_send_file.md
+    - administration/connections_communication_routes/rest_odata_connections/jpath_example.md      
+    - administration/connections_communication_routes/rest_odata_connections/http_receive_file.md
   - Обзор версий:
     - general/changelog/changelog.md
     - general/changelog/release_notes_5.0.md
@@ -319,3 +320,5 @@ exclude_docs: |
   administration/account_administration/accounts_dc_sync/windows/sso_authenticatation_configure_windows.md
   administration/connections_communication_routes/email_connections/process_email_configure_include.md
   devops_wiki/**
+  developer_guide/**
+  tutorial/**

@@ -33,7 +33,9 @@ hide: tags
 
 Важными аспектами кластеризации Apache Ignite являются настройка топологии кластера, выбор подходящего алгоритма консенсуса для управления состоянием кластера и использование механизмов автоматического восстановления для минимизации времени простоя.
 
+{% if not gostech %}
 См. _[рекомендации по кластеризации в документации Apache Ignite (на английском языке)][apache_ignite_clustering]_.
+{% endif %}
 
 ## Преимущества использования Apache Ignite в Comindware Platform
 
@@ -656,13 +658,14 @@ Apache Ignite является высокопроизводительной пл
 - _[Системные требования {{ productName }}][system_requirements]_
 - _[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup_configure]_
 - _[Обеспечение высокой доступности и отказоустойчивости {{ productName }}][availability_fault_tolerance]_
+- _[Apache Ignite. Установка и настройка][apache_ignite_deploy]_
+    {% if not gostech %}
 - _[Рекомендации по кластеризации. Документация Apache Ignite (на английском языке)][apache_ignite_clustering]_
 - _[Настройка базовой топологии. Документация Apache Ignite][apache_ignite_partition_baseline_topology]_
 - _[Настройка ZooKeeper Discovery. Документация Apache Ignite][apache_ignite_partition_zookeeper_discovery]_
 - _[Настройка резервного копирования. Документация Apache Ignite»][apache_ignite_partition_loss_policy]_
 - _[Настройка восстановления разделов. Документация Apache Ignite»][apache_ignite_partition_partition_loss_policy]_
-- _[Apache Ignite. Установка и настройка][apache_ignite_deploy]_
-
+    {% endif %}
 </div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

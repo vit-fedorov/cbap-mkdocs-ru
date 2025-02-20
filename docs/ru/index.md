@@ -15,6 +15,10 @@ hide:
 
 Это полное руководство ПО **{{ productNameEnterprise }}**.
 
+{% elif apiGuide %}
+
+Это полное руководство по использованию API ПО **{{ productNameEnterprise }}**.
+
 {% elif userGuide %}
 
 Это руководство пользователя ПО **{{ productNameEnterprise }}** с модулем «**{{ productNameArchitect }}**».
@@ -87,5 +91,7 @@ hide:
 В свою очередь, настоящее руководство также периодически совершенствуется и пополняется (с целью устранения выявляемых недостатков).
 
 </div>
+
+{% include-markdown ".snippets/disclaimer_optimization.md" %}
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

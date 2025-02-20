@@ -24,8 +24,6 @@
 
 [account_attribute_system_names]: {{ kbArticleURLPrefix }}4994
 
-[auxiliary_software_list]: {{ kbArticleURLPrefix }}4582
-
 [backup_and_restore]: {{ kbArticleURLPrefix }}4643
 
 [business_approval_process]: {{ kbArticleURLPrefix }}4904
@@ -41,14 +39,6 @@
 [document_digital_signature]: {{ kbArticleURLPrefix }}4910
 
 [example_n3_button_local_variable]: {{ kbArticleURLPrefix }}4909
-
-[example_document_clone_scenario_n3]: {{ kbArticleURLPrefix }}4883
-
-[example_document_download_archive_csharp]: {{ kbArticleURLPrefix }}4921
-
-[example_document_download_archive_related_records_csharp]: {{ kbArticleURLPrefix }}5081
-
-[example_document_download_to_server_csharp]: {{ kbArticleURLPrefix }}5002
 
 [example_csharp_my_profile_button]: {{ kbArticleURLPrefix }}5006
 
@@ -92,8 +82,6 @@
 
 [process_end_button_example]: {{ kbArticleURLPrefix }}4911
 
-[tutorial]: {{ kbCategoryURLPrefix }}870
-
 [apps_kb]: {{ kbCategoryURLPrefix }}832
 
 [telegram_send_notification]: {{ kbArticleURLPrefix }}4926
@@ -112,15 +100,11 @@
 
 [ad_connection]: {{ kbArticleURLPrefix }}4687
 
-[adapters]: {{ kbArticleURLPrefix }}4672
-
 [administration]: {{ kbArticleURLPrefix }}4661
 
 [antivirus_exceptions_configure]: {{ kbArticleURLPrefix }}4602
 
 [apps]: {{ kbArticleURLPrefix }}4714
-
-[authentication_keys]: {{ kbArticleURLPrefix }}4674
 
 [backup_configure]: {{ kbArticleURLPrefix }}4642
 
@@ -136,10 +120,6 @@
 
 [complete_running_instance_backup]: {{ kbArticleURLPrefix }}4650
 
-[communication_routes]: {{ kbArticleURLPrefix }}4676
-
-[connections]: {{ kbArticleURLPrefix }}4675
-
 [connections_delete]: {{ kbArticleURLPrefix }}4675#connections_delete
 
 [db_migrate_4.2_to_5]: {{ kbArticleURLPrefix }}4621
@@ -147,8 +127,6 @@
 [db_move_manually]: {{ kbArticleURLPrefix }}4649
 
 [desktop]: {{ kbArticleURLPrefix }}4823
-
-[desktop_setup]: {{ kbArticleURLPrefix }}4813
 
 [diagrams]: {{ kbArticleURLPrefix }}4710
 
@@ -194,10 +172,6 @@
 
 [monitoring]: {{ kbArticleURLPrefix }}4666
 
-[my_tasks_page_configure]: {{ kbArticleURLPrefix }}4812
-
-[my_tasks_page_configure_add_to_navigation]: {{ kbArticleURLPrefix }}4812#my_tasks_page_configure_add_to_navigation
-
 [navigation_sections_setup]: {{ kbArticleURLPrefix }}4809
 
 [odata_connection]: {{ kbArticleURLPrefix }}4702
@@ -209,8 +183,6 @@
 [organizational_unit_templates]: {{ kbArticleURLPrefix }}4755
 
 [r7_connection]: {{ kbArticleURLPrefix }}4689
-
-[pages_setup]: {{ kbArticleURLPrefix }}4810
 
 [performance]: {{ kbArticleURLPrefix }}4669
 
@@ -265,8 +237,6 @@
 [sql_send_connection]: {{ kbArticleURLPrefix }}4706
 
 [substitution]: {{ kbArticleURLPrefix }}4665
-
-[system_roles]: {{ kbArticleURLPrefix }}4662
 
 [system_service_management]: {{ kbArticleURLPrefix }}4671
 
@@ -436,8 +406,6 @@
 
 [button_area_configure]: {{ kbArticleURLPrefix }}4791#button_area_configure
 
-[buttons]: {{ kbArticleURLPrefix }}4790
-
 [button_configure]: {{ kbArticleURLPrefix }}4790#button_configure
 
 [button_local_variables]: {{ kbArticleURLPrefix }}4790#button_local_variables
@@ -452,6 +420,8 @@
 
 [desktop]: {{ kbArticleURLPrefix }}4823
 
+[desktop_setup]: {{ kbArticleURLPrefix }}4813
+
 [discussion_configure]: {{ kbArticleURLPrefix }}4788
 
 [discussion_configure_template]: {{ kbArticleURLPrefix }}4788#mcetoc_1h7hu3akn4
@@ -459,6 +429,14 @@
 [discussion_use]: {{ kbArticleURLPrefix }}4818
 
 [elasticdata_description]: {{ kbArticleURLPrefix }}4584
+
+[example_document_clone_scenario_n3]: {{ kbArticleURLPrefix }}4883
+
+[example_document_download_archive_csharp]: {{ kbArticleURLPrefix }}4921
+
+[example_document_download_archive_related_records_csharp]: {{ kbArticleURLPrefix }}5081
+
+[example_document_download_to_server_csharp]: {{ kbArticleURLPrefix }}5002
 
 [process_diagram_elements_events_end]: {{ kbArticleURLPrefix }}4744
 
@@ -568,6 +546,10 @@
 
 [my_tasks]: {{ kbArticleURLPrefix }}4825
 
+[my_tasks_page_configure]: {{ kbArticleURLPrefix }}4812
+
+[my_tasks_page_configure_add_to_navigation]: {{ kbArticleURLPrefix }}4812#my_tasks_page_configure_add_to_navigation
+
 [n3_editor_block_autocomplete]: {{ kbArticleURLPrefix }}5041
 
 [n3_editor_predicate_autocomplete]: {{ kbArticleURLPrefix }}5046
@@ -589,6 +571,8 @@
 [online_store]: {{ kbArticleURLPrefix }}4805
 
 [pages]: {{ kbArticleURLPrefix }}4822
+
+[pages_setup]: {{ kbArticleURLPrefix }}4810
 
 [process_diagram_call_element_menu]: {{ kbArticleURLPrefix }}4721#process_diagram_call_element_menu
 
@@ -624,17 +608,11 @@
 
 [process_diagram_elements_process_call]: {{ kbArticleURLPrefix }}4727
 
-[process_diagram_elements_script_task]: {{ kbArticleURLPrefix }}4728
-
 [process_diagram_elements_user_task]: {{ kbArticleURLPrefix }}4730
 
 [process_diagram_elements_receive_message_start_event]: {{ kbArticleURLPrefix }}4736
 
 [process_diagram_elements_receive_message_intermediate_event]: {{ kbArticleURLPrefix }}4739
-
-[process_diagram_elements_send_message_end_event]: {{ kbArticleURLPrefix }}4745
-
-[process_diagram_elements_send_message_intermediate_event]: {{ kbArticleURLPrefix }}4740
 
 [process_diagram_elements_timer_intermediate_event]: {{ kbArticleURLPrefix }}4738
 
@@ -663,8 +641,6 @@
 [scenario_actions_validate_expression]: {{ kbArticleURLPrefix }}4718#scenario_actions_validate_expression
 
 [scenario_actions_validate_csharp]: {{ kbArticleURLPrefix }}4718#scenario_actions_validate_csharp
-
-[scenarios]: {{ kbArticleURLPrefix }}4717
 
 [scenario_variables]: {{ kbArticleURLPrefix }}4719
 
@@ -730,6 +706,8 @@
 
 [admin_utility_instance_backup_restore]: {{ kbArticleURLPrefix }}4639
 
+[paths_windows]: {{ kbArticleURLPrefix }}4620#paths_windows
+
 [sso_authentication_configure_windows]: {{ kbArticleURLPrefix }}4657
 
 [zabbix_agent_deploy_windows]: {{ kbArticleURLPrefix }}4615
@@ -764,6 +742,8 @@
 
 [kafka_deploy_linux]: {{ kbArticleURLPrefix }}5074
 
+[paths_linux]: {{ kbArticleURLPrefix }}4620#paths_linux
+
 [sso_authenticatation_configure]: {{ kbArticleURLPrefix }}4613
 
 [sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}4613#sso_authentication_configure_keytab_update
@@ -782,13 +762,7 @@
 
 [admin_utility_instance_configure]: {{ kbArticleURLPrefix }}4634
 
-[api_intro]: {{ kbArticleURLPrefix }}4860
-
-[api_solution]: {{ kbArticleURLPrefix }}4863
-
-[api_system_core]: {{ kbArticleURLPrefix }}4862
-
-[api_web]: {{ kbArticleURLPrefix }}4861
+[auxiliary_software_list]: {{ kbArticleURLPrefix }}4582
 
 [logging_engine]: {{ kbArticleURLPrefix }}4623
 
@@ -808,6 +782,7 @@
 
 <!-- Руководства без учебника или экспорт в БЗ  -->
 
+[tutorial]: {{ kbCategoryURLPrefix }}870
 [lesson_1]: {{ kbArticleURLPrefix }}4871
 [lesson_2]: {{ kbArticleURLPrefix }}4873
 [lesson_3]: {{ kbArticleURLPrefix }}4874
@@ -818,5 +793,57 @@
 [lesson_8]: {{ kbArticleURLPrefix }}4867
 [lesson_9]: {{ kbArticleURLPrefix }}4868
 [lesson_10]: {{ kbArticleURLPrefix }}4866
+
+{% endif %}
+
+{% if apiGuide or kbExport %}
+
+<!-- Руководство по API или экспорт в БЗ  -->
+
+[authentication_keys]: {{ kbArticleURLPrefix }}4674
+
+[communication_routes]: {{ kbArticleURLPrefix }}4676
+
+[connections]: {{ kbArticleURLPrefix }}4675
+
+[system_roles]: {{ kbArticleURLPrefix }}4662
+
+{% endif %}
+
+{% if apiGuide or adminGuideLinux or adminGuideWindows or kbExport %}
+
+<!-- Руководство по API, руководство администратора для Linux/Windows или экспорт в БЗ  -->
+
+[buttons]: {{ kbArticleURLPrefix }}4790
+
+[process_diagram_elements_script_task]: {{ kbArticleURLPrefix }}4728
+
+[process_diagram_elements_send_message_end_event]: {{ kbArticleURLPrefix }}4745
+
+[process_diagram_elements_send_message_intermediate_event]: {{ kbArticleURLPrefix }}4740
+
+[scenarios]: {{ kbArticleURLPrefix }}4717
+
+{% endif %}
+
+{% if (not apiGuide) or kbExport %}
+
+<!-- Любые руководства кроме руководства по API, либо экспорт в БЗ  -->
+
+[api_intro]: {{ kbArticleURLPrefix }}4860
+
+[api_solution]: {{ kbArticleURLPrefix }}4863
+
+[api_system_core]: {{ kbArticleURLPrefix }}4862
+
+[api_web]: {{ kbArticleURLPrefix }}4861
+
+{% endif %}
+
+{% if gostech or kbExport %}
+
+<!-- Руководства для ГосТех или экспорт в БЗ  -->
+
+[adapters]: {{ kbArticleURLPrefix }}4672
 
 {% endif %}

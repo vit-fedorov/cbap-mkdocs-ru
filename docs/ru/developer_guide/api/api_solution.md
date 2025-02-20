@@ -20,7 +20,10 @@ Solution API предоставляет RESTful-методы, которые а�
 ## Доступ к Solution API
 
 - Базовый URL-адрес для запросов Solution API:
-`https://your-host/api/public/solution/`
+    ```
+    https://your-host/api/public/solution/
+    ```
+
 - Solution API поддерживает запросы `GET`, `PUT`, `POST`, `DELETE`.
 - Методы Solution API передают данные в формате JSON.
 - Solution API поддерживает базовую проверку подлинности.
@@ -33,7 +36,9 @@ Swagger позволяет выполнять запросы и просматр
 
 Интерфейс Swagger для Solution API доступен по адресу:
 
-`http://your-host/Docs/SolutionApi`
+```
+http://your-host/Docs/SolutionApi
+```
 
 Здесь `your-host` — доменное имя вашего сервера.
 
@@ -72,5 +77,15 @@ _![Интерфейс Swagger для метода Solution API, создающе
 | **Описание**                    | Удаляет запись из шаблона `TemplateSystemName`. |
 | **Параметры**                   | ID записи.                                      |
 | **Ответ**                       | Объект статуса.                                 |
+
+<div class="relatedTopics" markdown="block">
+
+--8<-- "related_topics_heading.md"
+
+- _[Общие сведения об API {{ productName }}][api_intro]_
+- _[Методы System Core API][api_system_core]_
+- _[Методы Web API][api_web]_
+
+</div>
 
  {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

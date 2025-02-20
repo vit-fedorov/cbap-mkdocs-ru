@@ -11,14 +11,18 @@ System Core API предоставляет системные RESTful-метод
 
 Здесь представлен обзор методов System Core API. Полную информацию см. в Swagger.
 
-Внимание!
+!!! warning "Внимание!"
 
-Вызывать методы System Core API следует, только если вы точно понимаете, что и зачем делаете, иначе вы можете потерять важные данные или настройки.
+    Вызывать методы System Core API следует, только если вы точно понимаете, что и зачем делаете, иначе вы можете потерять важные данные или настройки.
 
 ## Доступ к System Core API
 
 - Базовый URL-адрес для запросов к System Core API:
-`https://your-host/api/public/system/`
+
+    ```
+    https://your-host/api/public/system/
+    ```
+
 - System Core API поддерживает запросы `POST`.
 - Методы System Core API передают данные в формате JSON.
 - System Core API поддерживает базовую проверку подлинности.
@@ -29,7 +33,11 @@ System Core API предоставляет системные RESTful-метод
 Чтобы вызвать метод System Core API, отправьте HTTP-запрос на адрес метода (указанный в Swagger), например:
 
 - Для создания шаблона записи с помощью System Core API отправьте POST-запрос на адрес:
-`http://your-host/api/public/system/TeamNetwork/ObjectAppService/Create`
+
+    ```
+    http://your-host/api/public/system/TeamNetwork/ObjectAppService/Create
+    ```
+
     - В теле запроса (`body`) укажите системное имя шаблона записи (например, `"Car"`).
     - В ответ на запрос ПО отправит ID созданного шаблона записи (например, `"oa.1"`).
 
@@ -41,13 +49,17 @@ Swagger позволяет выполнять запросы и просматр
 
 Интерфейс Swagger для System Core API доступен по адресу:
 
-`https://your-host/docs/SystemApi`
+```
+https://your-host/docs/SystemApi
+```
 
 Здесь `your-host` — доменное имя вашего сервера.
 
 _![Интерфейс Swagger для System Core API](https://kb.comindware.ru/assets/SystemCoreAPI1.jpg)_
 
-### Определения
+<div class="admonition question" markdown="block">
+
+## Определения {: .admonition-title #definitions}
 
 Методы API и документация Swagger используют следующие **специфические имена** для  сущностей **{{ productName }}**:
 
@@ -70,6 +82,8 @@ _![Интерфейс Swagger для System Core API](https://kb.comindware.ru/a
 - **user** **command** — кнопка
 - **worker** — системный сервис
 - **object** (*объект*) — набор пар свойство/значение
+
+</div>
 
 ## Описание методов System Core API
 
@@ -2792,5 +2806,15 @@ _![Интерфейс Swagger для System Core API](https://kb.comindware.ru/a
 | **Описание** | В текущей версии продукта данный метод не используется. |
 | **Параметры** | - |
 | **Ответ** | - |
+
+<div class="relatedTopics" markdown="block">
+
+--8<-- "related_topics_heading.md"
+
+- _[Общие сведения об API {{ productName }}][api_intro]_
+- _[Методы Solution API][api_solution]_
+- _[Методы Web API][api_web]_
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

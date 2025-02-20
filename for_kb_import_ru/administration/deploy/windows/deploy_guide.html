@@ -123,12 +123,12 @@
 <li>установлена служба <em>IIS (Internet Information Services)</em>.</li>
 </ul>
 <div class="notice notice-info">
-<p class="admonition-title">Конфигурация сервера журналирования (Elasticsearch, OpenSearch)</p>
+<p class="admonition-title">Конфигурация сервера журналирования транзакций OpenSearch (Elasticsearch)</p>
 <ul>
-<li>В конфигурации Elasticsearch (OpenSearch) необходимо создать одного пользователя для <strong>Comindware Platform</strong>.</li>
-<li>В конфигурации экземпляра ПО необходимо указать адрес сервера и уникальный префикс индексов Elasticsearch (OpenSearch). Индекс префикса служит для идентификации данных экземпляра ПО в Elasticsearch (OpenSearch). Поэтому во избежание конфликтов данных для каждого экземпляра ПО следует указывать собственный префикс индекса.</li>
-<li>При <a class="mkdocs_imported_link" href="#initialize_instance">инициализации экземпляра ПО</a> необходимо указать пользователя <strong>Comindware Platform</strong>, используемого в Elasticsearch (OpenSearch).</li>
-<li>Экземпляр ПО будет взаимодействовать с Elasticsearch (OpenSearch) под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.</li>
+<li>В конфигурации сервера журналирования транзакций необходимо создать одного пользователя для <strong>Comindware Platform</strong>.</li>
+<li>В конфигурации экземпляра ПО необходимо указать адрес сервера и уникальный префикс индексов OpenSearch. Индекс префикса служит для идентификации данных экземпляра ПО на сервере журналирования транзакций. Поэтому во избежание конфликтов данных для каждого экземпляра ПО следует указывать собственный префикс индекса.</li>
+<li>При <a class="mkdocs_imported_link" href="#initialize_instance">инициализации экземпляра ПО</a> необходимо указать пользователя <strong>Comindware Platform</strong>, используемого сервером журналирования транзакций.</li>
+<li>Экземпляр ПО будет взаимодействовать с сервером журналирования транзакций под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.</li>
 </ul>
 </div>
 <h2 id="порядок-установки-по">Порядок установки ПО</h2>
@@ -314,17 +314,17 @@
 <p>При необходимости откроется страница активации ПО. Выполните <strong>онлайн-</strong> или <strong>ручную активацию</strong> либо нажмите кнопку «<strong>Пропустить</strong>» для первоначального ознакомления с ПО без активации.</p>
 </li>
 <li>
-<p>При необходимости откроется страница настройки подключения к службе Elasticsearch (OpenSearch).</p>
+<p>При необходимости откроется страница настройки подключения к службе OpenSearch (Elasticsearch).</p>
 <ul>
-<li>В поле «<strong>URI</strong>» введите адрес сервера Elasticsearch (OpenSearch), например: <code>http://localhost:9200</code>.</li>
-<li>При необходимости введите <strong>имя пользователя</strong> и <strong>пароль</strong> Elasticsearch (OpenSearch).</li>
+<li>В поле «<strong>URI</strong>» введите адрес сервера OpenSearch (Elasticsearch), например: <code>http://localhost:9200</code>.</li>
+<li>При необходимости введите <strong>имя пользователя</strong> и <strong>пароль</strong> OpenSearch (Elasticsearch).</li>
 <li>Установите уникальный <strong>префикс индекса</strong>, например <code>mycompanyprefix</code>.</li>
-<li>Экземпляр ПО будет взаимодействовать с Elasticsearch (OpenSearch) под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.</li>
+<li>Экземпляр ПО будет взаимодействовать с OpenSearch (Elasticsearch) под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.</li>
 <li>Нажмите кнопку «<strong>Далее</strong>».</li>
 </ul>
 </li>
 <li>
-<p>При необходимости откроется страница инициализации данных в Elasticsearch (OpenSearch).</p>
+<p>При необходимости откроется страница инициализации данных в OpenSearch (Elasticsearch).</p>
 <p><figure class="screenshot_with_caption" markdown=""><img alt="Страница инициализации данных в Elasticsearch" src="/platform/v5.0/administration/deploy/windows/../linux/img/deploy_guide_elasticsearch_initialize.png"/><figcaption class="caption">Страница инициализации данных в Elasticsearch</figcaption></figure></p>
 </li>
 <li>

@@ -77,12 +77,22 @@
 <li>Атрибут типа «<strong>Документ</strong>» хранит одну или несколько ссылок на записи (<strong>документы</strong>) в системном шаблоне документа, к которым прикрепляются файлы.</li>
 <li>В шаблоне документа имеется атрибут <code>currentRevision</code> (текущая <strong>ревизия</strong>), который хранит ссылку на запись в системном шаблоне ревизии.</li>
 <li>В шаблоне ревизии имеются атрибуты <code>title</code> (имя) и <code>content</code> (содержимое), которые хранят имя файла и ссылку на файл, физически хранящийся в папке <code>Streams</code> на сервере.</li>
+</ul>
+</div>
+<div class="notice notice-tip">
+<p class="admonition-title">Извлечение файлов из атрибута типа «Документ» с помощью N3</p>
+<ul>
 <li>Чтобы считать файл из атрибута типа «<strong>Документ</strong>» с помощью выражения N3, необходимо:<ul>
 <li>получить текущую ревизию документа: <code>?documentAttributeValue document:revision ?revision</code>;</li>
 <li>получить из ревизии содержимое файла в формате <code>base64</code>: <code>?revision document:content ?content</code>;</li>
 <li>получить из ревизии имя файла: <code>?revision document:title ?title</code>.</li>
 </ul>
 </li>
+</ul>
+</div>
+<div class="notice notice-tip">
+<p class="admonition-title">Добавление файлов в атрибут типа «Документ» с помощью N3</p>
+<ul>
 <li>Чтобы прикрепить к атрибуту типа «<strong>Документ</strong>» файл с помощью выражения N3, необходимо:<ul>
 <li>сформировать содержимое файла в формате <code>base64</code>: <code>?documentContentSource document:content ?content</code>;</li>
 <li>сформировать имя файла: <code>?documentTitleSource document:title ?title</code>;</li>

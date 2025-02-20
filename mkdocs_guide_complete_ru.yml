@@ -44,6 +44,7 @@ nav:
         - administration/deploy/linux/uninstall_auxiliary_software.md
         - administration/deploy/linux/upgrade_version.md
         - administration/deploy/linux/upload_size_limit_configure.md
+        - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_list.md
         - Вспомогательное ПО. Развёртывание:
           - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_deploy_linux.md
           - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_cluster_deploy_no_certificates.md
@@ -395,3 +396,4 @@ exclude_docs: |
   administration/deploy/linux/deploy_cluster.md
   administration/deploy/windows/admin_utility/**
   administration/deploy/windows/architect_install.md
+  developer_guide/n3/n3_tutorial.md

@@ -21,8 +21,15 @@ kbId: 4883
 !!! question "Структура атрибута типа «Документ»"
 
     --8<-- "attribute_document_logic.md"
+
+!!! tip "Извлечение файлов из атрибута типа «Документ» с помощью N3"
+
     --8<-- "attribute_document_get_file_n3.md"
+
+!!! tip "Добавление файлов в атрибут типа «Документ» с помощью N3"
+
     --8<-- "attribute_document_add_file_n3.md"
+    {% include-markdown ".snippets/pdfEndOfBlockHack.md" %}
 
 ## Прикладная задача
 

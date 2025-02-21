@@ -304,6 +304,7 @@ nav:
     - administration/connections_communication_routes/rest_odata_connections/http_send_file.md
     - administration/connections_communication_routes/rest_odata_connections/jpath_example.md      
     - administration/connections_communication_routes/rest_odata_connections/http_receive_file.md
+    - examples/task_reassign.md
   - Обзор версий:
     - general/changelog/changelog.md
     - general/changelog/release_notes_5.0.md

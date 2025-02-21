@@ -78,6 +78,8 @@
 
 [n3_use_examples]: {{ kbCategoryURLPrefix }}879
 
+[odata-filter-syntax]: https://msdn.microsoft.com/ru-ru/library/hh169248(v=nav.90).aspx
+
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}4905
 
 [process_end_button_example]: {{ kbArticleURLPrefix }}4911

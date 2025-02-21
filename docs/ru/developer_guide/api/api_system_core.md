@@ -1315,8 +1315,6 @@ _![Интерфейс Swagger для System Core API](https://kb.comindware.ru/a
 | **Параметры** | Идентификатор атрибута, выражение, тип проверки. |
 | **Ответ** | Статус. |
 
-
-
 ### ObjectAppExport — шаблоны экспорта
 
 | POST {: .api-method .post } | /TeamNetwork/ObjectAppExportService/ListExportTemplates |
@@ -1415,10 +1413,7 @@ _![Интерфейс Swagger для System Core API](https://kb.comindware.ru/a
 | **Параметры** | Параметры выгрузки. |
 | **Ответ** | Данные. |
 
-
-
-
-### UserTask — пользовательские задачи
+### UserTask — пользовательские задачи {: #api_system_core_user_task }
 
 | POST {: .api-method .post } | /TeamNetwork/UserTaskService/ListAllTasks |
 | --- | --- |

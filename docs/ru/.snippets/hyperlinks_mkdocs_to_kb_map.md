@@ -840,6 +840,8 @@
 
 [api_system_core]: {{ kbArticleURLPrefix }}4862
 
+[api_system_core_user_task]: {{ kbArticleURLPrefix }}4862#api_system_core_user_task
+
 [api_web]: {{ kbArticleURLPrefix }}4861
 
 {% endif %}

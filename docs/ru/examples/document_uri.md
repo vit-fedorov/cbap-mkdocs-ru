@@ -62,13 +62,14 @@ title:
                 # Формируем строки с именами файлов и ссылками на них
                 # и помещаем в ?formatUri
                 # 'http://<hostName>' — имя хоста **{{ productName }}**
-                ("<a href='http://<hostName>{0}'>{1}</a><br>" ?fileUri ?fileName) string:format ?formatUri.
+                ("<a href='http://<hostName>{0}'>{1}</a>" ?fileUri ?fileName) string:format ?formatUri.
                 }
             # Формируем ?uriList из ?formatUri.
             select ?formatUri -> ?uriList.
             # Формируем из ?uriList одну большую строку
+            # с разделителем <br/> (перенос строки)
             # и возвращаем её в значение атрибута
-            ("" ?uriList) cmwstring:join ?value.
+            ("<br/>" ?uriList) cmwstring:join ?value.
         }
         ```
 

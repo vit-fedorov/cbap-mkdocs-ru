@@ -1148,7 +1148,7 @@ IIS authentication: Anonymous
 - `INFO` — тип события: информационное
 - `00000000-0000-0000-0000-000000000000` — идентификатор сеанса
 - `systemAccount` — учётная запись, остановившая систему
-- `{{ productName }} has started` — описание события: система остановлена
+- `{{ productName }} has stopped` — описание события: система остановлена
 
 ### Успешный результат выполнения процесса {: .pageBreakBefore }
 
@@ -1197,7 +1197,7 @@ IIS authentication: Anonymous
 - `systemAccount` — учётная запись, запустившая сервис
 - `Core Loaded` — запущен сервис Core
 
-### Событие в адаптере {: .pageBreakBefore }
+### Событие в адаптере {: #log_files_event_examples_adapter_event .pageBreakBefore }
 
 **Пример события**
 
@@ -1213,6 +1213,201 @@ data: {"Name":"XxxSenderAdapter","Description":"Адаптер для связи
 - `Getting meta for plugin XxxSenderAdapter` — описание события
 - `Platform key: XXX_AdapterAgent5b28ad88a4cb4d4f8078c4deef1ee08b; Service name: ServiceName; Runtime: .NET 6.0.21` — контекст события
 - `data: {}` — содержимое сообщения
+
+### Статус работы адаптера
+
+**Пример события**
+
+``` yml
+[MM-dd HH:mm:ss,SSS][INFO] machineName_instanceName 
+Kestrel. Incoming adapters:
+[WHITE] Urls: http://127.0.1.1:8080
+[GREEN] Status: Started
+[WHITE] Number of subscribed integrations 1
+[WHITE] Adapter name: incomingAdapter
+[GREEN] Integration: messageTypeName. Route: Integration/SendRoute, HttpMethod: Post, AuthorizationType: Basic, ProcedureName: communicationRouteName, DataBusNumber: 0,  ProcedureIsDisable: False, EndpointIsAvailable: True
+```
+
+**Поля события**
+
+- `yyyy-MM-dd HH:mm:ss,SSS` — дата и время события
+- `INFO` — тип события: информационное
+- `machineName` — имя машины
+- `instanceName` — имя экземпляра ПО
+- `COLOR` — цветовое обозначение статуса информации. `WHITE` — общая информация, `GREEN` — корректная работа компонента адаптера, `RED` — некорректная работа компонента адаптера.
+- `Urls: <ipAddress>:<portNumber>` — адрес и порт, по которому доступен адаптер
+- `Status: Started` — статус адаптера: запущен
+- `Number of subscribed integrations 1` — количество типов сообщения пути передачи данных адаптера
+- `Adapter name: incomingAdapter` — имя адаптера
+- `Integration: messageTypeName` — имя типа сообщения пути передачи данных адаптера
+- `Route: Integration/SendRoute` — URI-путь типа сообщения пути передачи данных адаптера
+- `HttpMethod: Post` — тип метода
+- `AuthorizationType: Basic` — тип аутентификации: базовая
+- `ProcedureName: communicationRouteName` — имя пути передачи данных адаптера
+- `DataBusNumber: 0` — номер шины данных
+- `ProcedureIsDisable: False` — статус пути передачи данных адаптера
+- `EndpointIsAvailable: True` — статус подключения адаптера
+
+### Сведения о созданных подключениях адаптера
+
+**Пример события**
+
+``` yml
+[yyyy-MM-dd HH:mm:ss,SSS][INFO] machineName_instanceName
+Проверка подключений:
+[GREEN] connectionName (endpoint.XX) - Соединение установлено (адаптер: incomingAdapter) 
+```
+
+**Поля события**
+
+- `yyyy-MM-dd HH:mm:ss,SSS` — дата и время события
+- `INFO` — тип события: информационное
+- `machineName` — имя машины
+- `instanceName` — имя экземпляра ПО
+- `COLOR` — цветовое обозначение статуса информации. `WHITE` — общая информация, `GREEN` — корректная работа компонента адаптера, `RED` — некорректная работа компонента адаптера.
+- `connectionName` — имя подключения
+- `endpoint.XX` — ID подключения
+- `incomingAdapter` — имя адаптера
+
+### Статистика по процессу
+
+**Пример события**
+
+``` yml
+[yyyy-MM-dd HH:mm:ss,SSS][INFO] machineName_instanceName
+Статистика по процессу:
+[WHITE] Количество потоков 25 
+[WHITE] Выделенный объем физической памяти 287,8 MB
+[WHITE] Максимальный выделенный объем физической памяти 746,2 MB
+[WHITE] Выделенный объем частной памяти 490,5 MB
+[WHITE] Выделенный объем выгружаемой памяти 0 B
+[WHITE] Максимальный выделенный объем выгружаемой памяти 0 B
+[WHITE] Выделенный объем виртуальной памяти 4,8 GB
+[WHITE] Максимальный выделенный объем виртуальной памяти 5,4 GB 
+```
+
+**Поля события**
+
+- `yyyy-MM-dd HH:mm:ss,SSS` — дата и время события
+- `INFO` — тип события: информационное
+- `machineName` — имя машины
+- `instanceName` — имя экземпляра ПО
+- `COLOR` — цветовое обозначение статуса информации. `WHITE` — общая информация, `GREEN` — корректная работа компонента адаптера, `RED` — некорректная работа компонента адаптера.
+
+### Сведения о созданных путях передачи данных адаптера
+
+**Пример события**
+
+``` yml
+[yyyy-MM-dd HH:mm:ss,SSS][INFO] machineName_instanceName
+Созданные экземпляры путей передачи данных:
+[WHITE] communicationRouteName (procedure.XX) - Адаптер: incomingAdapter. Подключение: connectionName (endpoint.XX). Запущен: True.
+```
+
+**Поля события**
+
+- `yyyy-MM-dd HH:mm:ss,SSS` — дата и время события
+- `INFO` — тип события: информационное
+- `machineName` — имя машины
+- `instanceName` — имя экземпляра ПО
+- `COLOR` — цветовое обозначение статуса информации. `WHITE` — общая информация, `GREEN` — корректная работа компонента адаптера, `RED` — некорректная работа компонента адаптера.
+- `communicationRouteName` — имя пути передачи данных адаптера
+- `procedure.XX` — ID пути передачи данных
+- `incomingAdapter` — имя адаптера
+- `connectionName` — имя подключения
+- `endpoint.XX` — ID подключения
+
+### Информация об адаптере
+
+**Пример события**
+
+``` yml
+[yyyy-MM-dd HH:mm:ss,SSS][INFO] machineName_instanceName
+Загруженные адаптеры:
+[WHITE] incomingAdapter Описание: AdapterDescription. 
+```
+
+**Поля события**
+
+- `yyyy-MM-dd HH:mm:ss,SSS` — дата и время события
+- `INFO` — тип события: информационное
+- `machineName` — имя машины
+- `instanceName` — имя экземпляра ПО
+- `incomingAdapter` — имя адаптера
+- `AdapterDescription` — описание адаптера
+
+### Настройки подключения адаптера к брокеру сообщений
+
+**Пример события**
+
+``` yml
+[yyyy-MM-dd HH:mm:ss,SSS][INFO]  [AgentService::AgentService] 
+platformKey: machineName_instanceName
+loaderFolder: /var/www/instanceName/data/Plugins/Agent/LoadData
+deployRequestQueue: request_queue_machineName_instanceName_deploy_external
+deployReplyQueue: reply_queue_machineName_instanceName_external
+outgoingRequestQueue: request_queue_machineName_instanceName_outgoing_external
+outgoingReplyQueue: reply_queue_machineName_instanceName_outgoing_external
+incomingRequestQueue: request_queue_machineName_instanceName_incoming_external
+incomingReplyQueue: reply_queue_machineName_instanceName_incoming_external
+bootstrapServers: 0.0.0.0:9092
+groupId: instanceName
+exclusiveGroupId: 
+serverLanguage: ru
+logFolder: /var/log/comindware/instanceName/Logs/
+archiveFolder: /var/log/comindware/instanceName/Logs/Archive/
+maxArchiveFiles: 100
+archiveAboveSize: 1048576000
+```
+
+**Поля события**
+
+- `yyyy-MM-dd HH:mm:ss,SSS` — дата и время события
+- `INFO` — тип события: информационное
+- `AgentService::AgentService` — тип подключения: агент к агенту
+- `platformKey: machineName_instanceName` — имя машины и имя экземпляра ПО
+- `loaderFolder` — имя папки загрузчика экземпляра ПО
+- `deployRequestQueue`, `deployReplyQueue`, `outgoingRequestQueue`, `outgoingReplyQueue`, `incomingRequestQueue`, `incomingReplyQueue` — идентификаторы типов сообщений в брокере сообщений для адаптера
+- `bootstrapServers: <kafkaIP>:<kafkaPortNumber>` — адрес и порт службы брокера сообщений
+- `groupId` — идентификатор группы в брокере сообщений
+- `serverLanguage` — язык сервера экземпляра ПО
+- `logFolder` — путь к файлам журналирования экземпляра ПО
+- `archiveFolder` — путь к архивам файлам журналирования экземпляра ПО
+- `maxArchiveFiles` — максимально количество файлов в одном архиве
+- `archiveAboveSize` — максимальный размер файлов журналов (байты)
+
+### Статус подключения {: #log_files_event_examples_connection_status}
+
+**Пример события**
+
+``` yml
+[yyyy-MM-dd HH:mm:ss,SSS][INFO] PlatformKey: instanceName. Endpoint: connectionName (endpoint.XX). Adapter: incomingAdapter Connection test started 
+```
+
+**Поля события**
+
+- `yyyy-MM-dd HH:mm:ss,SSS` — дата и время события
+- `INFO` — тип события: информационное
+- `PlatformKey: instanceName` — имя экземпляра ПО
+- `Endpoint: connectionName (endpoint.XX)` — имя и ID подключения
+- `Adapter: incomingAdapter` — имя адаптера
+- `Connection test started` — тестовое подключение запущено
+
+### Взаимодействие адаптера с брокером сообщения
+
+**Пример события**
+
+``` yml
+[yyyy-MM-dd HH:mm:ss,SSS][INFO]  [88c1a6eb92f140fabs652bb8d9a630e8] [Metadata][Topic] reply_queue_instanceName_deploy_external:NoError 1:1:NoError:1:1 4:1:NoError:1:1 13:1:NoError:1:1 10:1:NoError:1:1 2:1:NoError:1:1 7:1:NoError:1:1 15:1:NoError:1:1 12:1:NoError:1:1 5:1:NoError:1:1 9:1:NoError:1:1 8:1:NoError:1:1 0:1:NoError:1:1 14:1:NoError:1:1 6:1:NoError:1:1 3:1:NoError:1:1 11:1:NoError:1:1 
+```
+
+**Поля события**
+
+- `yyyy-MM-dd HH:mm:ss,SSS` — дата и время события
+- `INFO` — тип события: информационное
+- `[Metadata][Topic]` — тип события службы Kafka
+- `reply_queue_instanceName_deploy_external` — ответ службы Kafka на запрос экземпляра ПО с именем `instanceName`
+
 
 <div class="relatedTopics" markdown="block">
 

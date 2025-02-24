@@ -182,6 +182,10 @@
 
 [log_files_event_examples]: {{ kbArticleURLPrefix }}4618
 
+[log_files_event_examples_adapter_event]: {{ kbArticleURLPrefix }}4618#log_files_event_examples_adapter_even
+
+[log_files_event_examples_connection_status]: {{ kbArticleURLPrefix }}4618#log_files_event_examples_connection_status
+
 [login_and_registration_page_design]: {{ kbArticleURLPrefix }}4707
 
 [logging_configuration]: {{ kbArticleURLPrefix }}4667
@@ -787,6 +791,8 @@
 [admin_utility_instance_configure]: {{ kbArticleURLPrefix }}4634
 
 [logging_engine]: {{ kbArticleURLPrefix }}4623
+
+[logging_engine_adapter_logs]: {{ kbArticleURLPrefix }}4623#logging_engine_adapter_logs
 
 [logging_engine_audit_log]: {{ kbArticleURLPrefix }}4623#logging_engine_audit_log
 

@@ -114,11 +114,11 @@
 </li>
 <li>
 <p>Убедитесь в наличии директорий <code>&lt;path/to/Database&gt;</code> и <code>&lt;path/to/Streams&gt;</code>:</p>
-<div class="highlight"><code><pre><span></span><code>ls<span class="w"> </span>-lh<span class="w"> </span><span class="sb">`</span>&lt;path/to/Database&gt;<span class="sb">`</span></code> <br/><code>ls<span class="w"> </span>-lh<span class="w"> </span><span class="sb">`</span>&lt;path/to/Streams&gt;<span class="sb">`</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>ls<span class="w"> </span>-lh<span class="w"> </span>&lt;path/to/Database&gt;</code> <br/><code>ls<span class="w"> </span>-lh<span class="w"> </span>&lt;path/to/Streams&gt;</code> <br/></pre></code></div>
 <ul>
 <li>
 <p>Если папки отсутствуют, создайте их:</p>
-<div class="highlight"><code><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="sb">`</span>&lt;path/to/Database&gt;<span class="sb">`</span></code> <br/><code>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="sb">`</span>&lt;path/to/Streams&gt;<span class="sb">`</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>&lt;path/to/Database&gt;</code> <br/><code>mkdir<span class="w"> </span>-p<span class="w"> </span>&lt;path/to/Streams&gt;</code> <br/></pre></code></div>
 </li>
 </ul>
 </li>
@@ -201,8 +201,8 @@
 <div class="highlight"><code><pre><span></span><code>systemctl start elasticsearch.service</code> <br/></pre></code></div>
 </li>
 <li>
-<p>Зарегистрируйте репозиторий (например, <code>repostory_backup</code>) с резервной копией снимка Elasticsearch:</p>
-<div class="highlight"><code><pre><span></span><code>curl -X PUT "localhost:9200/_snapshot/repostory_backup?pretty" -H ’Content-Type: application/json’ -d’</code> <br/><code>{</code> <br/><code>"type": "fs",</code> <br/><code>"settings": {</code> <br/><code>            "location": "/var/www/backups/elasticsearch"</code> <br/><code>            }</code> <br/><code>}</code> <br/></pre></code></div>
+<p>Зарегистрируйте репозиторий (например, <code>repository_backup</code>) с резервной копией снимка Elasticsearch:</p>
+<div class="highlight"><code><pre><span></span><code>curl -X PUT "localhost:9200/_snapshot/repository_backup?pretty" \</code> <br/><code>-H 'Content-Type: application/json' -d \</code> <br/><code>'{</code> <br/><code>    "type": "fs",</code> <br/><code>    "settings": {</code> <br/><code>        "location": "/var/www/backups/elasticsearch"</code> <br/><code>    }</code> <br/><code>}'</code> <br/></pre></code></div>
 <p><a class="mkdocs_imported_link" id="s3_repository"></a></p>
 <div class="notice notice-info">
 <p class="admonition-title">Примечание</p>

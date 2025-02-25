@@ -96,15 +96,15 @@ tags:
 10. Убедитесь в наличии директорий `<path/to/Database>` и `<path/to/Streams>`:
 
     ``` sh
-    ls -lh `<path/to/Database>`
-    ls -lh `<path/to/Streams>`
+    ls -lh <path/to/Database>
+    ls -lh <path/to/Streams>
     ```
 
     - Если папки отсутствуют, создайте их:
 
         ``` sh
-        mkdir -p `<path/to/Database>`
-        mkdir -p `<path/to/Streams>`
+        mkdir -p <path/to/Database>
+        mkdir -p <path/to/Streams>
         ```
 
 11. Перейдите в директорию распакованной резервной копии (например, `/home/<user>/temp/`).
@@ -218,16 +218,17 @@ tags:
 
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-7. Зарегистрируйте репозиторий (например, `repostory_backup`) с резервной копией снимка Elasticsearch:
+7. Зарегистрируйте репозиторий (например, `repository_backup`) с резервной копией снимка Elasticsearch:
 
     ```
-    curl -X PUT "localhost:9200/_snapshot/repostory_backup?pretty" -H ’Content-Type: application/json’ -d’
-    {
-    "type": "fs",
-    "settings": {
-                "location": "/var/www/backups/elasticsearch"
-                }
-    }
+    curl -X PUT "localhost:9200/_snapshot/repository_backup?pretty" \
+    -H 'Content-Type: application/json' -d \
+    '{
+        "type": "fs",
+        "settings": {
+            "location": "/var/www/backups/elasticsearch"
+        }
+    }'
 
     ```
 

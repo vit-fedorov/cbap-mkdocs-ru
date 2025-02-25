@@ -126,6 +126,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#оптимизация-параметра-vmmax_map_count">
+<span class="md-ellipsis">
+      Оптимизация параметра vm.max_map_count
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link mkdocs_imported_link" href="#остановка-экземпляра-по">
 <span class="md-ellipsis">
       Остановка экземпляра ПО
@@ -351,6 +358,11 @@
 <li>
 <p>Установите следующие директивы:</p>
 <div class="highlight"><code><pre><span></span><code><span class="n">fs</span><span class="p">.</span><span class="n">file</span><span class="o">-</span><span class="n">max</span><span class="o">=</span><span class="mi">2097152</span></code> <br/><code><span class="n">vm</span><span class="p">.</span><span class="n">max_map_count</span><span class="o">=</span><span class="mi">262144</span></code> <br/><code><span class="n">fs</span><span class="p">.</span><span class="n">inotify</span><span class="p">.</span><span class="n">max_user_instances</span><span class="o">=</span><span class="mi">524288</span></code> <br/></pre></code></div>
+<div class="notice notice-tip">
+<p class="admonition-title">Оптимальное значение vm.max_map_count</p>
+<p>Значение <code>vm.max_map_count=262144</code> приведено для примера.</p>
+<p>Определите оптимальное значение <code>vm.max_map_count</code> согласно инструкциям в параграфе «<a class="mkdocs_imported_link" href="#оптимизация-параметра-vmmax_map_count">Настройка параметра vm.max_map_count</a>».</p>
+</div>
 </li>
 <li>
 <p>Откройте файл <code>user.conf</code> для редактирования:</p>
@@ -519,6 +531,52 @@
 </li>
 <li>Дождитесь открытия начальной страницы <strong>Comindware Platform</strong>.</li>
 <li>На этом этапе развертывание экземпляра <strong>Comindware Platform</strong> завершено и можно приступать к созданию и использованию приложений.</li>
+</ol>
+<h2 id="оптимизация-параметра-vmmax_map_count">Оптимизация параметра vm.max_map_count</h2>
+<p><code>vm.max_map_count</code> — это параметр конфигурации ядра Linx, задающий максимальное количество областей памяти, которые процессу разрешено выделять в своём виртуальном адресном пространстве.</p>
+<p>Типовое для <strong>Comindware Platform</strong> значение параметра <code>vm.max_map_count</code> равно <code>262144</code>.</p>
+<p>Чтобы определить оптимальное для вашей конфигурации значение <code>vm.max_map_count</code>, выполните указанные ниже инструкции.</p>
+<p>Например, оптимизировать <code>vm.max_map_count</code> может потребоваться, если после запуска экземпляра ПО команда <code>journalctl</code> выдаёт ошибку следующего вида:</p>
+<div class="highlight"><code><pre><span></span><code><span class="n">mmap</span><span class="p">(</span><span class="n">PROT_NONE</span><span class="p">)</span><span class="w"> </span><span class="n">failed</span></code> <br/></pre></code></div>
+<ol class="colored_numbers_list">
+<li>
+<p>Определите текущее значение <code>vm.max_map_count</code>:</p>
+<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>sysctl<span class="w"> </span>vm.max_map_count</code> <br/></pre></code></div>
+</li>
+<li>
+<p>Определите выделенный объём оперативной памяти:</p>
+<div class="highlight"><code><pre><span></span><code>free</code> <br/></pre></code></div>
+<p>Обратите внимание на общий объём оперативной памяти.</p>
+</li>
+<li>
+<p>Определите размер страницы в оперативной памяти:</p>
+<div class="highlight"><code><pre><span></span><code><span class="nb">declare</span><span class="w"> </span>-i<span class="w"> </span><span class="nv">NEW_max_map_count</span><span class="o">=</span><span class="k">$(</span>vmstat<span class="w"> </span>-s<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s1">'total memory'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">' {print $1}'</span><span class="k">)</span>*1024/<span class="k">$(</span>getconf<span class="w"> </span>PAGE_SIZE<span class="k">)</span></code> <br/><code><span class="nb">echo</span><span class="w"> </span><span class="nv">$NEW_max_map_count</span></code> <br/></pre></code></div>
+</li>
+<li>
+<p>Полученное значение <code>NEW_max_map_count</code> временно присвойте параметру <code>vm.max_map_count</code> и проверьте работу экземпляра ПО:</p>
+<ul>
+<li>Временное изменение значения (например, для тестирования):</li>
+</ul>
+<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </span>vm.max_map_count<span class="o">=</span><span class="nv">$NEW_max_map_count</span></code> <br/></pre></code></div>
+</li>
+<li>
+<p>Удостоверившись в работоспособности экземпляра ПО, задайте постоянное значение <code>vm.max_map_count</code>:</p>
+<ul>
+<li>
+<p>Откройте для редактирования файл <code>/etc/sysctl.conf</code>:</p>
+<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/sysctl.conf</code> <br/></pre></code></div>
+</li>
+<li>
+<p>Установите значение <code>vm.max_map_count</code>:</p>
+<div class="highlight"><code><pre><span></span><code><span class="n">vm</span><span class="p">.</span><span class="n">max_map_count</span><span class="o">=&lt;</span><span class="n">NEW_max_map_count</span><span class="o">&gt;</span></code> <br/></pre></code></div>
+<p><code>&lt;NEW_max_map_count&gt;</code> замените на полученное на шаге 3 цифровое значение.</p>
+</li>
+<li>
+<p>Примените изменения:</p>
+<div class="highlight"><code><pre><span></span><code>sysctl<span class="w"> </span>-p</code> <br/></pre></code></div>
+</li>
+</ul>
+</li>
 </ol>
 <h2 class="pageBreakBefore" id="остановка-экземпляра-по">Остановка экземпляра ПО</h2>
 <ol class="colored_numbers_list">

@@ -145,7 +145,7 @@ tags:
         nano /usr/share/comindware/configs/instance/<instanceName>.yml
         ```
 
-    - Добавьте директивы:
+    - Добавьте директиву:
 
         ``` yml
         nodeName: <instanceName>

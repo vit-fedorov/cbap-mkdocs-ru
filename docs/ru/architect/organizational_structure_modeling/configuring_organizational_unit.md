@@ -18,15 +18,16 @@ hide:
 # Изменение свойств оргединицы {: #architect_configuring_organizational_unit}
 
 1. Выберите организационную единицу в [панели навигации][navigation_panel], либо в [реестре оргединиц][architect_organizational_structure_modelling].
-2. Отобразится диаграмма оргединицы.
-3. Нажмите кнопку «**Редактировать**» <i class=" fal  fa-pen-nib " aria-hidden="true"></i>.
-4. Откройте панель свойств, нажав кнопку <i class="fa-light  fa-sidebar-flip"></i>.
-5. Настройте свойства оргединицы, заполнив поля.
-6. Нажмите любое место вне элемента, чтобы применить изменения.
+2. Отобразится диаграмма оргструктуры.
+3. Нажмите кнопку «**Редактировать**» <i class="fa-light fa-pen-nib" aria-hidden="true"></i>.
+4. Откройте панель свойств, нажав кнопку <i class="fa-light fa-sidebar-flip"></i>.
+5. Настройте свойства оргединицы в панели свойств.
+6. Нажмите пустое место диаграммы, чтобы применить изменения.
 7. При необходимости [отредактируйте форму и атрибуты оргединицы][architect_configuring_organizational_unit_form_and_attributes].
-8. Нажмите кнопку «**Сохранить**».
+8. При необходимости выберите на диаграмме дочерние оргединицы и настройте их свойства аналогичным образом.
+9. Нажмите кнопку «**Сохранить**».
 
-*![Диаграмма оргединицы](configuring_organizational_unit_properties.png)*
+_![Диаграмма оргединицы](img/configuring_organizational_unit_properties.png)_
 
 <div class="relatedTopics" markdown="block">
 

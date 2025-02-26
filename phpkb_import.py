@@ -46,18 +46,18 @@ def find_url_in_snippet(article_id, anchor):
             #print(f"Found link and URL for articleId {article_id}: {url}")
     return url
 
-def importCategoryChildren(parent, categoryDirectory):
+def importCategoryChildren(parent, categoryDirectory, show='yes', status='public'):
         id = parent[0]
         title = parent[1]
         c4 = CONNECTION.cursor()    
-        c4.execute("""
+        c4.execute(f"""
             SELECT DISTINCT (category_id), category_name, parent_id
             FROM phpkb_categories 
-            WHERE category_show='yes' 
-            AND category_status = 'private'
+            WHERE category_show='{show}' 
+            AND category_status = '{status}'
             AND phpkb_categories.language_id = 2
-            AND parent_id = {}
-            """.format(id))
+            AND parent_id = {id}
+            """)
         children = c4.fetchall()
         print("\n-----\n\nCategory {}. {}. Children: {}\n".format(id, title, children))
         dirName = sanitize_filename('{}. {}'.format(id, str(title)))
@@ -79,6 +79,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
             SELECT DISTINCT (phpkb_articles.article_id), phpkb_articles.article_content, phpkb_articles.article_title 
             FROM phpkb_articles, phpkb_relations, phpkb_categories 
             WHERE article_show='yes' 
+            AND article_status='approved'
             AND phpkb_relations.category_id = {categoryId} 
             AND phpkb_relations.article_id = phpkb_articles.article_id
             """)
@@ -122,8 +123,11 @@ def importArtciclesInCategory (categoryId, categoryDir):
             markdown = markdown.replace('\t', '    ')
             # Replace Related Articles heading with placeholder
             markdown = markdown.replace('## Связанные статьи', '--8<-- "related_topics_heading.md"')
-            # Replace product name with placeholder
+            # Replace product names with placeholders
             markdown = markdown.replace('Comindware Platform', '{{ productName }}')
+            markdown = markdown.replace('Comindware Business Application Platform', '{{ productName }}')
+            markdown = markdown.replace('Comindware Platform Enterprize', '{{ productNameEnterprize }}')
+            markdown = markdown.replace('Корпоративная архитектура', '{{ productNameArchitect }}')
             # Reformat images with captions
             pattern = re.compile(r'(!\[(.*)\]\(.*\))\n\n\2', flags=re.MULTILINE)
             markdown = re.sub(pattern, r'_\1_', markdown)
@@ -178,7 +182,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
     return pages
 
 
-def fetchCategories(show='yes', status='private', language_id=2, parent_id=''):
+def fetchCategories(show='yes', status='public', language_id=2, parent_id=''):
 
     c = CONNECTION.cursor()    
 

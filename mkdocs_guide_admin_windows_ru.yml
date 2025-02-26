@@ -9,6 +9,7 @@ INHERIT: mkdocs_ru.yml
 site_name: Comindware Platform. Руководство администратора для Windows
 
 extra:
+  apiGuide: False
   adminGuideWindows: True
   adminGuideLinux: False
   userGuide: False
@@ -22,6 +23,7 @@ nav:
   - Развёртывание ПО:
     - administration/deploy/system_requirements.md
     - administration/deploy/architecture_landscape.md
+    - administration/deploy/availability_fault_tolerance.md
     - administration/deploy/security.md
     - administration/deploy/windows/deploy_guide.md
     - administration/deploy/paths.md
@@ -41,6 +43,7 @@ nav:
       - administration/deploy/windows/auxiliary_software_deploy/kafka_install_windows.md
   - Резервное копирование и восстановление:
     - administration/backup/index.md
+    - administration/backup/configure.md
     - administration/backup/windows/restore_windows.md
     - administration/backup/windows/backup_restore_windows.md
     - administration/backup/windows/db_move_manual_windows.md
@@ -98,13 +101,12 @@ nav:
           - administration/connections_communication_routes/email_connections/process_receiving_connection.md
           - administration/connections_communication_routes/email_connections/scenario_receive_email.md
         - Подключения REST и OData:
-          - administration/connections_communication_routes/rest_odata_connections/get_connection.md
-          - administration/connections_communication_routes/rest_odata_connections/odata_connection.md
-          - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
-          - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
-          - administration/connections_communication_routes/rest_odata_connections/http_send_file.md
-          - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
-          - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
+        - administration/connections_communication_routes/rest_odata_connections/odata_connection.md
+        - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
+        - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
+        - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
+        - administration/connections_communication_routes/rest_odata_connections/get_connection.md
+        - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
         - SQL-подключения:
           - administration/connections_communication_routes/sql_connections/sql_send_connection.md
           - administration/connections_communication_routes/sql_connections/sql_receive_connection.md
@@ -157,6 +159,10 @@ exclude_docs: |
   administration/connections_communication_routes/email_connections/process_email_configure_include.md
   administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
   administration/connections_communication_routes/rest_odata_connections/send_http_example.md
+  administration/connections_communication_routes/rest_odata_connections/http_send_post.md
+  administration/connections_communication_routes/rest_odata_connections/http_send_file.md
+  administration/connections_communication_routes/rest_odata_connections/jpath_example.md      
+  administration/connections_communication_routes/rest_odata_connections/http_receive_file.md
   administration/backup/linux/**
   administration/deploy/windows/admin_utility/**
   administration/deploy/windows/architect_install.md

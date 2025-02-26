@@ -47,10 +47,10 @@ kbId: 4675
 ### Подключения REST и OData
 
 - [Получение веб-запросов][get_connection]
-- [Отправка веб-запросов][send_http_request_connection]
+- [Отправка веб-запросов][http_send_request_connection]
 - [Синхронизация с веб-сервисом][odata_connection]
-- [Отправка HTTP-запросов][send_http_connection]
-- [Получение HTTP-запросов][receive_http_example]
+- [Отправка HTTP-запросов][http_send_connection]
+- [Получение HTTP-запросов][http_receive_example]
 
 ### Подключения к шине сообщений
 
@@ -68,8 +68,8 @@ kbId: 4675
 
 ### Пользовательские подключения
 
-- Отправка сообщений в систему «СФЕРА Курьер»
-- Получение сообщений из системы «СФЕРА Курьер»
+- [Отправка сообщений в «СФЕРА Курьер»][esphere_send_configure]
+- [Получение сообщений из «СФЕРА Курьер»][esphere_receive_configure]
 
 Примечание
 
@@ -89,7 +89,7 @@ kbId: 4675
 5. Нажмите кнопку «**Проверить соединение**». В случае успешного соединения с сервером отобразится сообщение «**Соединение установлено**». Если соединение установить не удастся, отобразится сообщение об ошибке.
 6. Сохраните подключение.
 
-_![Список подключений](https://kb.comindware.ru/assets/connection_list.png)_
+_![Список подключений](/platform/v5.0/administration/connections_communication_routes/img/connection_list.png)_
 
 ## Удаление подключения
 
@@ -99,8 +99,10 @@ _![Список подключений](https://kb.comindware.ru/assets/connecti
 
 --8<-- "related_topics_heading.md"
 
-**[Пути передачи данных. Определения, типы, создание, настройка, удаление][communication_routes]**
+- *[Пути передачи данных. Определения, типы, создание, настройка, удаление][communication_routes]*
+- *[Примеры интеграций](https://kb.comindware.ru/category.php?id=875)*
 
-**[Примеры интеграций](https://kb.comindware.ru/category.php?id=875)**
+[*‌*
+ К началу](#)
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -20,16 +20,16 @@ kbId: 4766
 - **Формат отображения** — предусмотрен только формат «**Гиперссылка**».
 - **Допустимые схемы URI** — выберите в этом раскрывающемся списке типы гиперссылок, которые можно будет вводить и хранить в атрибуте:
 
-    |Схема URI|Допустимый формат значения|
-    |---|---|
-    |- **HTTP**|`http://site.ru`|
-    |- **HTTPS**|`https://site.ru`|
-    |- **FTP**|`ftp://company.ru`|
-    |- **FTPS**|`ftps://company.ru`|
-    |- **mailto**|`address@site.ru`|
-    |- **SSH**|`ssh://user@server.ru`|
-    |- **Telegram**|`https://t.me/username`|
-    |- **Git**|`git://server.ru/repository`|
+    | Схема URI      | Допустимый формат значения   |
+    | -------------- | ---------------------------- |
+    | - **HTTP**     | `http://site.ru`             |
+    | - **HTTPS**    | `https://site.ru`            |
+    | - **FTP**      | `ftp://company.ru`           |
+    | - **FTPS**     | `ftps://company.ru`          |
+    | - **mailto**   | `address@site.ru`            |
+    | - **SSH**      | `ssh://user@server.ru`       |
+    | - **Telegram** | `https://t.me/username`      |
+    | - **Git**      | `git://server.ru/repository` |
 
 --8<-- "attribute_property_calculated.md"
 

@@ -734,6 +734,8 @@
 
 [backup_restore_cdbbz]: {{ kbArticleURLPrefix }}4647
 
+[backup_restore_cdbbz_license_keys]: {{ kbArticleURLPrefix }}4647#backup_restore_cdbbz_license_keys
+
 [configuration_files_linux]: {{ kbArticleURLPrefix }}5067
 
 [deploy_guide_linux]: {{ kbArticleURLPrefix }}4622

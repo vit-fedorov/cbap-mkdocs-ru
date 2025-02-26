@@ -1,4 +1,5 @@
-<h1>Использование диаграммы экземпляра процесса</h1><div class="md-container" data-md-component="container">
+<h1>Использование диаграммы экземпляра процесса</h1><div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr">
+<div class="md-container" data-md-component="container">
 <div class="md-main__inner md-grid"><nav aria-label="Содержание" class="md-nav md-nav--secondary">
 <div class="mce-toc">
 <h2 class="toc-heading">Содержание</h2>
@@ -39,55 +40,55 @@
 <li>В столбце «<strong>Запущенные экземпляры</strong>» нажмите гиперссылку с ID экземпляра процесса.</li>
 <li>Отобразится диаграмма экземпляра.</li>
 </ol>
-<figure class="screenshot_with_caption">
-<p><img alt="Диаграмма экземпляра процесса" src="https://kb.comindware.ru/assets/process_diagram_view_instance.png"/></p>
-<figcaption class="caption">Диаграмма экземпляра процесса</figcaption>
-</figure>
 <h2 id="области-на-странице-диаграммы-экземпляра-процесса">Области на странице диаграммы экземпляра процесса</h2>
 <ol class="colored_numbers_list">
 <li>
-<p><strong>Кнопки операций с экземпляром и элементами процесса</strong></p>
+<p><strong>Кнопки управления экземпляром процесса</strong></p>
 <ul>
-<li><strong>Остановить процесс</strong> — удаление всех токенов с диаграммы экземпляра процесса. <strong><a class="mkdocs_imported_link" href="#process_status">Статус</a></strong> процесса сменится на «<strong>Отменён</strong>». Эта кнопка отображается, если на элементах диаграммы имеются токены и не выбран ни один элемент.</li>
-<li><strong>Архивировать</strong> — архивирование экземпляра процесса. Архивные экземпляры не отображаются в списке экземпляров, если в конфигурации соответствующей таблицы не установлен флажок «<strong>Показывать архивные записи</strong>».</li>
-<li><strong>Создать токен</strong> — <a class="autorefs autorefs-internal mkdocs_imported_link" href="#token_create">создание токена</a> на выбранном элементе, чтобы запустить выполнение процесса с этого элемента. Эта кнопка отображается, если выбран элемент диаграммы.</li>
+<li><strong>Остановить процесс</strong> — удаление всех токенов с диаграммы экземпляра процесса. <strong><a class="mkdocs_imported_link" href="#process_status">Статус</a></strong> процесса сменится на «<strong>Отменён</strong>». Эта кнопка отображается,если на диаграмме имеется хотя бы один токен и не выбран ни один элемент.</li>
+<li><strong>Архивировать</strong> — архивирование экземпляра процесса. Архивные экземпляры не отображаются в списке экземпляров (если в конфигурации соответствующей таблицы не установлен флажок «<strong>Показывать архивные записи</strong>»).</li>
+<li><strong>Создать токен</strong> — <a class="mkdocs_imported_link" href="#token_create">создание токена</a> на выбранном элементе для запуска выполнения процесса с этого элемента. Эта кнопка отображается, если выбран элемент диаграммы.</li>
+<li><strong>Журнал изменений</strong> <em class="fa-light fa-sidebar-flip">‌<!--icon--></em> — вызов панели со сведениями об экземпляре процесса.</li>
 </ul>
 </li>
 <li>
-<p><strong>Панель информации</strong></p>
+<p><strong>Сведения об экземпляре процесса</strong></p>
 <ul>
-<li>
-<p><strong>Свойства</strong> — сведения об экземпляре процесса.</p>
+<li><strong>Свойства</strong> — контекст экземпляра процесса:
 <ul>
-<li>
-<p id="process_status"><strong>Статус</strong></p>
+<li id="process_status"><strong>Статус</strong>
 <ul>
-<li><strong>Активен</strong> — на элементах процесса есть токены.</li>
-<li><strong>Неактивен</strong> — на элементах процесса нет токенов.</li>
-<li><strong>Завершён</strong> — процесс был завершён ожидаемым образом, на элементах нет токенов.</li>
+<li><strong>Активен</strong> — на элементах диаграммы процесса есть токены.</li>
+<li><strong>Неактивен</strong> — на элементах диаграммы процесса нет токенов.</li>
+<li><strong>Завершён</strong> — процесс завершился ожидаемым образом, на элементах нет токенов.</li>
 <li><strong>Отменён</strong> — процесс был остановлен с удалением всех токенов.</li>
 </ul>
 </li>
-<li>
-<p><strong>Дата создания</strong> — дата и время создания экземпляра.</p>
-</li>
-<li><strong>Создатель</strong> — ссылка на аккаунт создателя экземпляра.</li>
-<li><strong>Шаблон процесса</strong> — ссылка на страницу настройки шаблона процесса.</li>
+<li><strong>Дата создания</strong> — дата и время создания экземпляра процесса.</li>
+<li><strong>Создатель</strong> — ссылка на аккаунт создателя экземпляра процесса.</li>
+<li><strong>Шаблон процесса</strong> — ссылка на страницу конструктора диаграммы процесса.</li>
 <li><strong>Запись</strong> — ссылка на запись, связанную с экземпляром процесса.</li>
 <li><strong>Шаблон записи</strong> — ссылка на список записей шаблона, связанного с шаблоном данного процесса.</li>
-<li><strong>Версия</strong> — ссылка на <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4722">версию диаграммы</a>, по которой был запущен экземпляр процесса.</li>
+<li><strong>Версия</strong> — ссылка на версию диаграммы, по которой был запущен экземпляр процесса. См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4722">Управление версиями диаграммы процесса</a>»</em>.</li>
 </ul>
 </li>
-<li>
-<p id="tokens-tab"><strong>Токены</strong> — список элементов процесса, на которых находятся токены. При выборе элемента отображается панель «<strong>Действия</strong>» со следующими кнопками:</p>
+<li id="tokens-tab"><strong>Токены</strong> — список токенов с указанием элементов диаграммы процесса, на которых они находятся. Для процессов со статусом «<strong>Завершён</strong>» эта вкладка содержит надпись «<strong>Нет данных для отображения</strong>». При выборе элемента отображается панель «<strong>Действия</strong>» со следующими кнопками:
 <ul>
 <li><strong>Перейти</strong> <em class="fa-light fa-external-link-square">‌<!--icon--></em> к форме пользовательской задачи или к диаграмме подпроцесса. Для этого также можно дважды нажать пользовательскую задачу или подпроцесс на диаграмме.</li>
-<li><strong>Перезапустить токен</strong> <em class="fa-light fa-redo">‌<!--icon--></em> на данном элементе.</li>
-<li><strong>Удалить токен</strong> <em class="fa-light fa-trash">‌<!--icon--></em> с данного элемента.</li>
+<li><strong>Перезапустить токен</strong> <em class="fa-light fa-redo">‌<!--icon--></em> на выбранном элементе.</li>
+<li><strong>Удалить токен</strong> <em class="fa-light fa-trash">‌<!--icon--></em> с выбранного элемента.</li>
 </ul>
 </li>
-<li>
-<p><strong>Журнал изменений</strong> — <a class="mkdocs_imported_link" href="#events_chain_view">список событий</a>, произошедших в ходе выполнения процесса.</p>
+<li><strong>Журнал изменений</strong> — список событий, произошедших в ходе выполнения процесса. В журнале изменений отображается подробная информация обо всех токенах и шагах процесса:
+<ul>
+<li>дата и время создания токена;</li>
+<li>наименование события;</li>
+<li>инициатор — аккаунт, создавший токен на элементе;</li>
+<li>фактический исполнитель задачи;</li>
+<li>исполнители, указанные в свойствах задачи;</li>
+<li>дата и время выхода токена из элемента;</li>
+<li>цепочка событий — нажмите значок рядом с элементом в журнале изменений, чтобы просмотреть цепочку событий для этого элемента. См. <em>«<a class="mkdocs_imported_link" href="#events_chain_view">Просмотр цепочки событий</a>»</em>.</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -105,7 +106,11 @@
 <p><strong>Позиции токенов</strong> — элементы, на которых находятся токены, выделяются жёлтой или зелёной рамкой.</p>
 </li>
 </ol>
-<h2 id="token_create">Создание токена</h2>
+<figure class="screenshot_with_caption">
+<p><img alt="Диаграмма экземпляра процесса" src="/platform/v5.0/business_apps/diagrams/process_diagram/img/process_diagram_view_instance.png"/></p>
+<figcaption class="caption">Диаграмма экземпляра процесса</figcaption>
+</figure>
+<h2 class="pageBreakBefore" id="token_create">Создание токена</h2>
 <p>На диаграмме процесса может быть одновременно несколько токенов на разных элементах.</p>
 <p>Создайте токен, чтобы запустить выполнение процесса начиная с произвольного элемента диаграммы.</p>
 <ol class="colored_numbers_list">
@@ -119,7 +124,7 @@
 <li>Перейдите на вкладку «<strong>Журнал изменений</strong>».</li>
 <li>
 <p>Нажмите значок слева от события.</p>
-<figure class="screenshot_with_caption"><img alt="Значок события в журнале изменений" src="https://kb.comindware.ru/assets/process_diagram_view_instance_event_icon.png"/>
+<figure class="screenshot_with_caption"><img alt="Значок события в журнале изменений" src="/platform/v5.0/business_apps/diagrams/process_diagram/img/process_diagram_view_instance_event_icon.png"/>
 <figcaption class="caption">Значок события в журнале изменений</figcaption>
 </figure>
 </li>
@@ -140,14 +145,19 @@
 </li>
 </ol>
 <figure class="screenshot_with_caption">
-<p><img alt="Просмотр цепочки событий экземпляра процесса" src="https://kb.comindware.ru/assets/process_diagram_view_events_chain.png"/></p>
+<p><img alt="Просмотр цепочки событий экземпляра процесса" src="/platform/v5.0/business_apps/diagrams/process_diagram/img/process_diagram_view_events_chain.png"/></p>
 <figcaption class="caption">Просмотр цепочки событий экземпляра процесса</figcaption>
 </figure>
+<div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4722">Управление версиями диаграммы процесса</a></strong></p>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4721#process_diagram_publish">Публикация диаграммы процесса</a></strong></p>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4721#process_diagram_view">Просмотр диаграммы процесса</a></strong></p>
+<ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4722">Управление версиями диаграммы процесса</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4721#process_diagram_publish">Публикация диаграммы процесса</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4721#process_diagram_view">Просмотр диаграммы процесса</a></em></li>
+</ul>
+</div>
 </article>
 </div>
 </div>
 <a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#"> <em class="fa-light fa-arrow-up">‌<!--icon--></em> К началу </a></div>
+</div>

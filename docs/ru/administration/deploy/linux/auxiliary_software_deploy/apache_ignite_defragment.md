@@ -40,13 +40,13 @@ kbId: 4603
     cp /var/www/<instanceName>/Ignite.config /usr/share/ignite/
     ```
 
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+
 7. Перейдите в папку `bin` Apache Ignite:
 
     ``` sh
     cd /usr/share/ignite/bin
     ```
-
-    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 8. В файле `control.sh` измените директиву `DEFAULT_CONFIG`:
 
@@ -190,7 +190,7 @@ kbId: 4603
 
 --8<-- "related_topics_heading.md"
 
-- _[Резервное копирование и восстановление][backup]_
+- _[Резервное копирование и восстановление][backup_configure]_
 - _[Дефрагментация персистентного хранилища](https://ignite.apache.org/docs/2.11.1/persistence/native-persistence-defragmentation)_ (руководство Apache Ignite, английский язык)
 - _[Активация, деактивация и управление топологией](https://ignite.apache.org/docs/2.11.1/tools/control-script#activation-deactivation-and-topology-management)_ (руководство Apache Ignite, английский язык)
 

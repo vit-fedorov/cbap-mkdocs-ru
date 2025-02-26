@@ -96,6 +96,13 @@ article>.md-typeset>h1,
 
 }
 
+
+.md-typeset .fa-light,
+.md-typeset .fl,
+.md-typeset kbd {
+        display: inline;
+    }
+
 .md-typeset ul li > p:first-child {
     display: inline;
     margin-left: -0.2rem;
@@ -346,6 +353,9 @@ article#doc-cover {
         padding: 0;
     }
 
+    .wrapper.middle {
+        margin-top: 8cm;
+    }
 
     .header {
         margin-top: -0.85cm;

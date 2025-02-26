@@ -49,6 +49,19 @@ kbId: 4804
     }
     ```
 
+    или
+
+    ``` turtle
+    # Импортируем функции для работы с переменными
+    @prefix sln: <http://comindware.com/ontology/solution#>.
+    {
+        # Находим переменную VariableSystemName в приложении SolutionSystemName
+        # по их системным именам
+        # и возвращаем значение переменной.
+        ("SolutionSystemName" "VariableSystemName") sln:getVariableValue ?value.
+    }
+    ```
+
     **По ID переменной**
 
     ``` turtle
@@ -61,6 +74,8 @@ kbId: 4804
         "svar.1" globalvariable:getValueById ?value.
     }
     ```
+
+{% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 - Чтобы присвоить атрибуту значение переменной приложения с помощью C#-скрипта в сценарии, используйте действие «**Изменить значения скриптом**» со следующими свойствами:
 

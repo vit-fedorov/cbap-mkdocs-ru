@@ -7,11 +7,11 @@ kbId: 4678
 
 ## Введение
 
-**{{ productName }}** использует службу Elasticsearch для записи истории всех транзакций, таких как журнал изменений записей и [экземпляров процессов][process_diagram_view_instance], [цепочка событий][logs_event_chain_view] и т. п.
+**{{ productName }}** использует службу Elasticsearch (OpenSearch) для записи истории всех транзакций, таких как журнал изменений записей и [экземпляров процессов][process_diagram_view_instance], [цепочка событий][logs_event_chain_view] и т. п.
 
 Подключение к Elasticsearch автоматически создаётся при [развёртывании][deploy_guide_linux_initialize] **{{ productName }}**.
 
-В данной статье представлены инструкции по настройке подключения к серверу Elasticsearch.
+Здесь представлены инструкции по настройке подключения к серверу Elasticsearch.
 
 ## Настройка подключения
 
@@ -35,10 +35,13 @@ kbId: 4678
 4. Нажмите кнопку «**Проверить соединение**». Должно отобразиться сообщение «**Соединение установлено**».
 5. Сохраните подключение.
 
-_![Настройка подключения к Elasticsearch](https://kb.comindware.ru/assets/elasticsearch_connection_settings.png)_
+_![Настройка подключения к Elasticsearch](/platform/v5.0/administration/connections_communication_routes/system_connections/img/elasticsearch_connection_settings.png)_
 
 --8<-- "related_topics_heading.md"
 
-**[Инициализация {{ productName }}][deploy_guide_linux_initialize]**
+- *[Инициализация {{ productName }}][deploy_guide_linux_initialize]*
+
+[*‌*
+ К началу](#)
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

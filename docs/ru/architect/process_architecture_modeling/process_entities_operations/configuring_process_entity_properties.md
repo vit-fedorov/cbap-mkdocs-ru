@@ -34,8 +34,8 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-- _[Редактирование формы и атрибутов оргединицы][architect_configuring_organizational_unit_form_and_attributes]_
-- _[Изменение свойств оргединицы][architect_configuring_organizational_unit]_
+- _[Редактирование формы и атрибутов оргединицы][architect_organizational_unit_configure_form_and_attributes]_
+- _[Изменение свойств оргединицы][architect_organizational_unit_configure]_
 - _[Просмотр реестра процессов][architect_process_architecture_modelling]_
 - _[Создание элемента процессной архитектуры][architect_creating_process_entity]_
 - _[Переименование элемента процессной архитектуры][architect_renaming_process_entity]_

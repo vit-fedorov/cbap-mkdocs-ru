@@ -15,16 +15,21 @@ hide:
 
 # Построение организационной структуры {: #architect_organizational_structure_modelling}
 
-Для построения организационно-штатной структуры (ОШС) в **{{ productNameEnterprise }}** используется иерархический [реестр организационных единиц](#просмотр-реестра-оргединиц).
+## Введение
 
-Предусмотрены следующие оргединицы:
+Для построения организационно-штатной структуры (ОШС) в **{{ productNameEnterprise }}** предусмотрены следующие инструменты:
 
-* подразделение;
-* должность.
+* иерархический иерархический [реестр организационных единиц](#просмотр-реестра-оргединиц);
+* [конструктор диаграммы ОШС][architect_organiztional_structure_designer] бизнес-способностей и процессов.
+
+Предусмотрены оргединицы следующих типов:
+
+* **Подразделение**
+* **Должность**
 
 Оргединицы можно использовать в качестве ресурсов и исполнителей в [процессной архитектуре][architect_process_architecture_modelling] организации.
 
-Атрибуты и визуальное представление оргединицы можно [изменить][architect_configuring_organizational_unit_form_and_attributes].
+Атрибуты и форму свойств оргединицы можно [изменить][architect_organizational_unit_configure_form_and_attributes].
 
 ## Просмотр реестра оргединиц
 
@@ -36,12 +41,14 @@ hide:
 
     _![Иерархический реестр оргединиц](img/organizational_structure_modeling_registry.png)_
 
-3. Чтобы открыть диаграмму оргструктуры, дважды нажмите требуемую оргединицу в реестре.
+3. Чтобы [открыть диаграмму ОШС][architect_edit_organizational_structure], дважды нажмите требуемую оргединицу в реестре.
 
 <div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
+- _[Редактирование диаграммы ОШС][architect_edit_organizational_structure]_
+- _[Конструктор диаграммы ОШС][architect_organiztional_structure_designer]_
 - _[Построение процессной архитектуры][architect_process_architecture_modelling]_
 - _[Использование системы — Панель навигации][navigation_panel]_
 

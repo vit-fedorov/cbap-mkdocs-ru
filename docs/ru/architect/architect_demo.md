@@ -99,7 +99,7 @@ hide: tags
         - _[Редактирование диаграммы][architect_edit_diagram]_
     - _[Построение организационной структуры][architect_organizational_structure_modelling]_
         - _[Создание оргединицы][architect_creating_organizational_unit]_
-        - _[Редактирование формы и атрибутов оргединицы][architect_configuring_organizational_unit_form_and_attributes]_
+        - _[Редактирование формы и атрибутов оргединицы][architect_organizational_unit_configure_form_and_attributes]_
         - _[Изменение иерархии оргединиц][architect_changing_hierarchy]_
 - **Использование {{ productName }}**
     - _[Рабочий стол. Использование][desktop]_
@@ -617,7 +617,7 @@ _Сотруднику_ доступны следующие разделы нав
 - _[Редактирование диаграммы][architect_edit_diagram]_
 - _[Построение организационной структуры][architect_organizational_structure_modelling]_
 - _[Создание оргединицы][architect_creating_organizational_unit]_
-- _[Редактирование формы и атрибутов оргединицы][architect_configuring_organizational_unit_form_and_attributes]_
+- _[Редактирование формы и атрибутов оргединицы][architect_organizational_unit_configure_form_and_attributes]_
 - _[Изменение иерархии оргединиц][architect_changing_hierarchy]_
 - _[Рабочий стол. Использование][desktop]_
 - _[Панель навигации. Использование][navigation_panel]_

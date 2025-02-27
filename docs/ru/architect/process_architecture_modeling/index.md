@@ -22,6 +22,8 @@ hide:
 
 # Построение процессной архитектуры {: #architect_process_architecture_modelling}
 
+## Введение
+
 Для построения процессной архитектуры в «**{{ productNameArchitect }}**» предусмотрены следующие инструменты:
 
 * иерархический [реестр процессов](#architect_process_architecture_modelling);

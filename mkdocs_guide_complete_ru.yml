@@ -351,9 +351,8 @@ nav:
       - architect/organizational_structure_modeling/renaming_organizational_unit.md
       - architect/organizational_structure_modeling/changing_hierarchy.md
       - architect/organizational_structure_modeling/deleting_organizational_unit.md
-      - Конструктор организационной структуры:
-        - architect/organizational_structure_modeling/organizational_structure_designer/index.md
-        - architect/organizational_structure_modeling/organizational_structure_designer/organizational_structure_edit.md
+      - architect/organizational_structure_modeling/index.md
+      - architect/organizational_structure_modeling/organizational_structure_edit.md
   - Практические примеры:
     - examples/autonumerating_records.md
     - examples/document_clone_scenario_n3.md

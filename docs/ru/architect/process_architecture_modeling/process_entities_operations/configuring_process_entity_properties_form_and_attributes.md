@@ -50,7 +50,7 @@ hide:
 --8<-- "related_topics_heading.md"
 
 - _[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]_
-- _[Редактирование формы и атрибутов оргединицы][architect_configuring_organizational_unit_form_and_attributes]_
+- _[Редактирование формы и атрибутов оргединицы][architect_organizational_unit_configure_form_and_attributes]_
 - _[Конструктор формы][form_designer]_
 - _[Создание атрибута][создание-атрибута]_
 - _[Редактирование атрибута, кнопки или формы][редактирование-атрибута-кнопки-или-формы]_

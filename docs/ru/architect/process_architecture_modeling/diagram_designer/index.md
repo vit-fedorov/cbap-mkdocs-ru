@@ -61,10 +61,7 @@ _![Конструктор диаграмм бизнес-способностей
 
 --8<-- "enterprise_architecture_keyboard_shortcuts.md"
 
-{%
-include-markdown ".snippets/enterprise_architecture_chrome_clipboard_admonition.md"
-rewrite-relative-urls=false
-%}
+{% include-markdown ".snippets/enterprise_architecture_chrome_clipboard_admonition.md" %}
 
 ### Меню элемента
 

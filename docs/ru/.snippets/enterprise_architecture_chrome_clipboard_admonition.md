@@ -19,4 +19,4 @@
 
     4. Нажмите кнопку «**Перезапустить**».
 
-    _![Включение буфера обмена в браузере Chrome](img/diagram_designer_chrome_clipboard_enable.png)_
+    _![Включение буфера обмена в браузере Chrome](../architect/img/diagram_designer_chrome_clipboard_enable.png)_

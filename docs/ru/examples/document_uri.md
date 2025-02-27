@@ -34,44 +34,59 @@ title:
     - **Название:** _Ссылки для скачивания_
     - **Формат отображения: HTML-текст**
     - **Вычислять автоматически: флажок установлен**
-    - **Вычисляемое значение: N3**
+    - **Вычисляемое значение:**
+        - **N3**
 
-        ``` turtle
-        # Импортируем функции для работы
-        # с документами и строками
-        @prefix object: <http://comindware.com/ontology/object#>.
-        @prefix document: <http://comindware.com/ontology/document#>.
-        @prefix cmwstring: <http://comindware.com/logics/string#>.
-        @prefix string: <http://www.w3.org/2000/10/swap/string#>.
-        {
-            # Находим атрибут «Вложения» и помещаем в ?filesAttribute
-            ("Requires" "Files") object:findProperty ?filesAttribute.
-            # Запускаем цикл
-            from {
-                # Находим содержимое ?filesAttribute в текущей
-                # записи и помещаем в ?file
-                ?item ?filesAttribute ?file.
-                # Получаем текущую ревизию документа и
-                # помещаем в ?fileRevision
-                ?file document:currentRevision ?fileRevision.
-                # Получаем ссылку на файл без имени хоста
-                # и помещаем в ?fileUri
-                ?fileRevision document:httpUri ?fileUri.
-                # Помещаем имя файла в ?fileName
-                ?fileRevision document:name ?fileName.
-                # Формируем строки с именами файлов и ссылками на них
-                # и помещаем в ?formatUri
-                # 'http://host-name' — имя хоста **{{ productName }}**
-                ("<a href='http://host-name{0}'>{1}</a>" ?fileUri ?fileName) string:format ?formatUri.
-                }
-            # Формируем ?uriList из ?formatUri.
-            select ?formatUri -> ?uriList.
-            # Формируем из ?uriList одну большую строку
-            # с разделителем <br/> (перенос строки)
-            # и возвращаем её в значение атрибута
-            ("<br/>" ?uriList) cmwstring:join ?value.
-        }
-        ```
+            ``` turtle
+            # Импортируем функции для работы
+            # с документами и строками
+            @prefix object: <http://comindware.com/ontology/object#>.
+            @prefix document: <http://comindware.com/ontology/document#>.
+            @prefix cmwstring: <http://comindware.com/logics/string#>.
+            @prefix string: <http://www.w3.org/2000/10/swap/string#>.
+            {
+                # Находим атрибут «Вложения» (Files) и помещаем в ?filesAttribute
+                ("Requires" "Files") object:findProperty ?filesAttribute.
+                # Запускаем цикл
+                from {
+                    # Находим содержимое ?filesAttribute в текущей
+                    # записи и помещаем в ?file
+                    ?item ?filesAttribute ?file.
+                    # Получаем текущую ревизию документа и
+                    # помещаем в ?fileRevision
+                    ?file document:currentRevision ?fileRevision.
+                    # Получаем ссылку на файл без имени хоста
+                    # и помещаем в ?fileUri
+                    ?fileRevision document:httpUri ?fileUri.
+                    # Помещаем имя файла в ?fileName
+                    ?fileRevision document:name ?fileName.
+                    # Формируем строки с именами файлов и ссылками на них
+                    # и помещаем в ?formatUri
+                    # 'http://host-name' — имя хоста **{{ productName }}**
+                    ("<a href='http://host-name{0}'>{1}</a>" ?fileUri ?fileName) string:format ?formatUri.
+                    }
+                # Формируем ?uriList из ?formatUri.
+                select ?formatUri -> ?uriList.
+                # Формируем из ?uriList одну большую строку
+                # с разделителем <br/> (перенос строки)
+                # и возвращаем её в значение атрибута
+                ("<br/>" ?uriList) cmwstring:join ?value.
+            }
+            ```
+
+        **или**
+
+        - Формула:
+
+            ``` cs
+            # Из атрибута «Вложения» (Files) собираем URI и имена всех прикреплённых файлов
+            # и соединяем в HTML с разделителем <br/>
+            JOIN("<br/>", from a in $Files select
+                FORMAT("<a href='http://host-name{0}'>{1}</a>", 
+                LIST(a->currentRevision->httpUri, a->currentRevision->revisionFilename)
+                )
+            )
+            ```
 
 2. Создайте **форму** _«Скачать вложения»_.
 3. Поместите атрибут _«Ссылки для скачивания»_ на форму _«Скачать вложения»_.

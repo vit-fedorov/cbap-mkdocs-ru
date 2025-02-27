@@ -362,6 +362,7 @@ nav:
     - examples/document_download_archive_csharp.md
     - examples/document_download_archive_related_record_csharp.md
     - examples/document_download_to_server_csharp.md
+    - examples/document_uri.md
     - examples/substring_search.md
     - examples/enum_attribute_value_calculation.md
     - examples/creating_gantt_chart.md

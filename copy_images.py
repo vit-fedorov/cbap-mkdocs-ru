@@ -2,7 +2,7 @@ import os
 import shutil
 
 def copy_image_files(source_dir, dest_dir, overwrite=False):
-    image_extensions = {'.png', '.svg', '.jpg', '.jpeg'}
+    image_extensions = {'.png', '.svg', '.jpg', '.jpeg', '.gif'}
     
     for root, _, files in os.walk(source_dir):
         for file in files:

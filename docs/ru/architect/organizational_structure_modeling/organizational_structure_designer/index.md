@@ -53,10 +53,7 @@ _![Конструктор оргструктуры](img/organizational_structure
 
 --8<-- "enterprise_architecture_keyboard_shortcuts.md"
 
-{%
-include-markdown ".snippets/enterprise_architecture_chrome_clipboard_admonition.md"
-rewrite-relative-urls=false
-%}
+{% include-markdown ".snippets/enterprise_architecture_chrome_clipboard_admonition.md" %}
 
 ### Меню элемента {: #organizational_structure_designer_element_menu}
 

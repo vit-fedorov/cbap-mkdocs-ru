@@ -61,8 +61,8 @@ title:
                 ?fileRevision document:name ?fileName.
                 # Формируем строки с именами файлов и ссылками на них
                 # и помещаем в ?formatUri
-                # 'http://<hostName>' — имя хоста **{{ productName }}**
-                ("<a href='http://<hostName>{0}'>{1}</a>" ?fileUri ?fileName) string:format ?formatUri.
+                # 'http://host-name' — имя хоста **{{ productName }}**
+                ("<a href='http://host-name{0}'>{1}</a>" ?fileUri ?fileName) string:format ?formatUri.
                 }
             # Формируем ?uriList из ?formatUri.
             select ?formatUri -> ?uriList.

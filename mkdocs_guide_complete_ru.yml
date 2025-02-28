@@ -345,14 +345,7 @@ nav:
       - architect/process_architecture_modeling/exporting_process_entity.md
     - Построение организационной структуры:
       - architect/organizational_structure_modeling/index.md
-      - architect/organizational_structure_modeling/creating_organizational_unit.md
-      - architect/organizational_structure_modeling/configuring_organizational_unit.md
-      - architect/organizational_structure_modeling/configuring_organizational_unit_form_and_attributes.md
-      - architect/organizational_structure_modeling/renaming_organizational_unit.md
-      - architect/organizational_structure_modeling/changing_hierarchy.md
-      - architect/organizational_structure_modeling/deleting_organizational_unit.md
-      - architect/organizational_structure_modeling/index.md
-      - architect/organizational_structure_modeling/organizational_structure_edit.md
+      - architect/organizational_structure_modeling/organizational_structure_designer.md
   - Практические примеры:
     - examples/autonumerating_records.md
     - examples/document_clone_scenario_n3.md

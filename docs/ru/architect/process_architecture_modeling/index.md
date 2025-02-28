@@ -20,13 +20,13 @@ hide:
     - tags
 ---
 
-# Построение процессной архитектуры {: #architect_process_architecture_modelling}
+# Построение процессной архитектуры {: #architect_process_architecture_design}
 
 ## Введение
 
 Для построения процессной архитектуры в «**{{ productNameArchitect }}**» предусмотрены следующие инструменты:
 
-* иерархический [реестр процессов](#architect_process_architecture_modelling);
+* иерархический [реестр процессов](#architect_process_architecture_design);
 * [конструктор диаграмм][architect_process_diagram_designer] бизнес-способностей и процессов;
 * функции импорта и экспорта диаграмм и регламентов процессов.
 
@@ -56,7 +56,7 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-- _[Построение организационной структуры][architect_organizational_structure_modelling]_
+- _[Построение организационной структуры][architect_organizational_structure_design]_
 - _[Использование системы — Панель навигации][navigation_panel]_
 
 </div>

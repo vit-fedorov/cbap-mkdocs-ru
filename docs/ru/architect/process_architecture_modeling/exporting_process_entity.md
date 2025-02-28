@@ -32,7 +32,7 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-- _[Просмотр реестра процессов][architect_process_architecture_modelling]_
+- _[Просмотр реестра процессов][architect_process_architecture_design]_
 - _[Использование системы — Панель навигации][navigation_panel]_
 
 </div>

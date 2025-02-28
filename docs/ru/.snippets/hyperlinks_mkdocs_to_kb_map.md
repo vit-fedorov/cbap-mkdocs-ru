@@ -302,15 +302,9 @@
 
 [architect_desktop]: {{ kbArticleURLPrefix }}4828
 
-[architect_changing_hierarchy]: {{ kbArticleURLPrefix }}4844
-
 [architect_cloning_process_entity]: {{ kbArticleURLPrefix }}4841
 
 [architect_changing_process_hierarchy]: {{ kbArticleURLPrefix }}4842
-
-[architect_organizational_unit_configure]: {{ kbArticleURLPrefix }}4848
-
-[architect_organizational_unit_configure_form_and_attributes]: {{ kbArticleURLPrefix }}4847
 
 [architect_configuring_process_entity_properties]: {{ kbArticleURLPrefix }}4843
 
@@ -318,11 +312,7 @@
 
 [architect_conversations]: {{ kbArticleURLPrefix }}4827
 
-[architect_creating_organizational_unit]: {{ kbArticleURLPrefix }}4849
-
 [architect_creating_process_entity]: {{ kbArticleURLPrefix }}4840
-
-[architect_organizational_unit_delete]: {{ kbArticleURLPrefix }}4845
 
 [architect_deleting_process_entity]: {{ kbArticleURLPrefix }}4837
 
@@ -332,13 +322,25 @@
 
 [architect_importing_process_entity]: {{ kbArticleURLPrefix }}4832
 
-[architect_organizational_structure_modelling]: {{ kbArticleURLPrefix }}4850
+[architect_organizational_structure_design]: {{ kbArticleURLPrefix }}4850
 
-[architect_process_architecture_modelling]: {{ kbArticleURLPrefix }}4833
+[architect_organizational_structure_change_hierarchy]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_change_hierarchy
+
+[architect_organizational_unit_configure]: {{ kbArticleURLPrefix }}4850#architect_organizational_unit_configure
+
+[architect_organizational_unit_configure_form_and_attributes]: {{ kbArticleURLPrefix }}4850#architect_organizational_unit_configure_form_and_attributes
+
+[architect_organizational_unit_create]: {{ kbArticleURLPrefix }}4850#architect_organizational_unit_create
+
+[architect_organizational_unit_delete]: {{ kbArticleURLPrefix }}4850#architect_organizational_unit_delete
+
+[architect_organizational_unit_rename]: {{ kbArticleURLPrefix }}4850#architect_organizational_unit_rename
+
+[architect_organizational_structure_design_view_registry]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_design_view_registry
+
+[architect_process_architecture_design]: {{ kbArticleURLPrefix }}4833
 
 [architect_process_diagram_designer]: {{ kbArticleURLPrefix }}4836
-
-[architect_renaming_organizational_unit]: {{ kbArticleURLPrefix }}4846
 
 [architect_renaming_process_entity]: {{ kbArticleURLPrefix }}4838
 

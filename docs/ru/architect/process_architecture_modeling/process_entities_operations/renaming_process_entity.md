@@ -34,7 +34,7 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-- _[Просмотр реестра процессов][architect_process_architecture_modelling]_
+- _[Просмотр реестра процессов][architect_process_architecture_design]_
 - _[Создание элемента процессной архитектуры][architect_creating_process_entity]_
 - _[Изменение свойств элемента процессной архитектуры][architect_configuring_process_entity_properties]_
 

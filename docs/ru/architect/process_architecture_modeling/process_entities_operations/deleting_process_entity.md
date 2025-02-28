@@ -17,7 +17,7 @@ hide:
 
 ## Удаление с помощью реестра
 
-1. Установите для подлежащих удалению элементов флажки выбора в первом столбце [реестра процессов][architect_process_architecture_modelling].
+1. Установите для подлежащих удалению элементов флажки выбора в первом столбце [реестра процессов][architect_process_architecture_design].
 3. Нажмите кнопку «**Удалить**».
 4. Подтвердите удаление элементов.
 
@@ -42,7 +42,7 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-- _[Просмотр реестра процессов][architect_process_architecture_modelling]_
+- _[Просмотр реестра процессов][architect_process_architecture_design]_
 - _[Использование системы — Панель навигации][navigation_panel]_
 
 </div>

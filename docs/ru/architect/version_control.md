@@ -54,8 +54,8 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-- _[Просмотр реестра процессов][architect_process_architecture_modelling]_
-- _[Просмотр реестра оргединиц][architect_organizational_structure_modelling]_
+- _[Просмотр реестра процессов][architect_process_architecture_design]_
+- _[Просмотр реестра оргединиц][architect_organizational_structure_design]_
 - _[Использование системы — Панель навигации][navigation_panel]_
 
 </div>

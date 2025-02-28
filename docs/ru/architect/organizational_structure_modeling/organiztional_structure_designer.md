@@ -12,7 +12,7 @@ hide:
     - tags
 ---
 
-# Редактирование диаграммы ОШС {: #architect_organiztional_structure_designer}
+# Редактирование диаграммы ОШС {: #architect_organiztional_structure_designer }
 
 В **{{ productNameEnterprise }}** для моделирования организационно-штатной структуры (ОШС) предприятия предусмотрен визуальный конструктор диаграммы ОШС.
 
@@ -20,22 +20,24 @@ hide:
 
     Изменения, внесённые в диаграмму ОШС, сохраняются автоматически.
 
-## Переход к конструктору оргструктуры
+## Переход к конструктору диаграммы ОШС
 
-1. Выберите оргединицу в [панели навигации][navigation_panel] или дважды нажмите её строку в [реестре оргединиц][architect_organizational_structure_modelling].
-2. Откроется диаграмма ОШС выбранной оргединицы в режиме просмотра.
-3. Нажмите кнопку «**Редактировать**» <i class="fa-light fa-pen-nib" aria-hidden="true"></i>.
-4. Отобразится конструктор диаграммы ОШС для выбранной оргединицы.
+1. Откройте реестр [реестр оргединиц][architect_organizational_structure_design_view_registry].
+2. Выберите оргединицу в панели навигации или дважды нажмите её в реестре.
+3. Откроется диаграмма ОШС выбранной оргединицы в режиме просмотра.
+4. Нажмите кнопку «**Редактировать**» <i class="fa-light fa-pen-nib" aria-hidden="true"></i>.
+6. Отобразится конструктор диаграммы ОШС для выбранной оргединицы.
+7. [Отредактируйте оргструктуру][architect_organizational_structure_edit].
 
 _![Переход к конструктору организационной структуры](img/organizationa_structure_modeling_edit_diagram.png)_
 
-## Элементы конструктора оргструктуры {: #architect_organiztional_structure_designer}
+## Элементы конструктора оргструктуры {: #architect_organiztional_structure_designer }
 
 _![Конструктор оргструктуры](img/organizational_structure_modeling_designer.png)_
 
 1. **Кнопки типовых операций**:
 
-    - **Просмотр** <i class="fa-light fa-eye"></i> — переход в режим просмотра организационной единицы.
+    - **Просмотр** <i class="fa-light fa-eye"></i> — переход в режим просмотра диаграммы.
     - **Очистить** <i class="fa-light fa-trash"></i> — безвозвратное удаление всех элементов организационной единицы. При нажатии этой кнопки отобразится запрос подтверждения.
     - **Обсуждение** <i class="fa-light fa-comment-dots"></i> — отображение чата для обсуждения организационной единицы.
     - **Свойства** <i class="fa-light fa-sidebar-flip"></i> — [настройка свойств][architect_organizational_unit_configure] выбранного элемента или всей организационной единицы.
@@ -49,11 +51,11 @@ _![Конструктор оргструктуры](img/organizational_structure
     - **Отменить** <i class="fa-light fa-arrow-rotate-left"></i>  — отмена последнего действия.
     - **Повторить** <i class="fa-light fa-arrow-rotate-right"></i>  — повтор последнего отменённого действия.
 
-3. **Палитра элементов** — содержит элементы в нотации организационно-штатной структуры.
+3. **Палитра элементов** — перетаскивайте из палитры на диаграмму элементы в нотации организационно-штатной структуры.
 --8<-- "process_architecture_diagram_zoom_controls.md"
 6. **Панель свойств** — здесь отображаются свойства выбранного элемента, а также панель обсуждения.
 
-### Управление с помощью клавиатуры
+## Управление с помощью клавиатуры { .pageBreakBefore }
 
 В конструкторе оргструктуры можно использовать следующие сочетания клавиш:
 
@@ -61,7 +63,7 @@ _![Конструктор оргструктуры](img/organizational_structure
 
 {% include-markdown ".snippets/enterprise_architecture_chrome_clipboard_admonition.md" %}
 
-### Меню элемента {: #organizational_structure_designer_element_menu}
+## Меню элемента {: #organizational_structure_designer_element_menu}
 
 При выборе оргединицы на диаграмме отображается контекстное меню с перечисленными ниже пунктами.
 
@@ -71,7 +73,7 @@ _![Меню элемента для оргединицы](img/organizational_str
 - **Изменить цвет** — выбор цвета рамки и фона оргединицы.
 - **Удалить** — удаление выбранной оргединицы.
 
-### Настройка кнопок типовых операций
+## Настройка кнопок типовых операций { .pageBreakBefore }
 
 Область кнопок типовых операций можно настроить следующим образом:
 
@@ -84,14 +86,14 @@ _![Меню элемента для оргединицы](img/organizational_str
 7. Удалите ненужные кнопки.
 8. Сохраните область кнопок.
 
-_![Настройка кнопок типовых операций для диаграммы оргструктуры](img/architect_process_organizational_structure_designer_button_area.png)_
+_![Настройка кнопок типовых операций для диаграммы ОШС](img/architect_process_organizational_structure_designer_button_area.png)_
 
 <div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-- _[Просмотр реестра оргединиц][architect_organizational_structure_modelling]_
-- _[Редактирование диаграммы оргструктуры][architect_edit_organizational_structure]_
+- _[Прсмотр реестра оргединиц][architect_organizational_structure_design_view_registry]_
+- _[Редактирование оргструктуры][architect_organizational_structure_edit]_
 
 </div>
 

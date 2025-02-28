@@ -94,13 +94,13 @@ hide: tags
 При работе с модулем «**{{ productNameArchitect }}**» руководствуйтесь инструкциями в следующих статьях:
 
 - **Моделирование корпоративной архитектуры**
-    - _[Построение процессной архитектуры][architect_process_architecture_modelling]_
+    - _[Построение процессной архитектуры][architect_process_architecture_design]_
         - _[Конструктор диаграмм][architect_process_diagram_designer]_
         - _[Редактирование диаграммы][architect_edit_diagram]_
-    - _[Построение организационной структуры][architect_organizational_structure_modelling]_
-        - _[Создание оргединицы][architect_creating_organizational_unit]_
+    - _[Построение организационной структуры][architect_organizational_structure_design]_
+        - _[Создание оргединицы][architect_organizational_unit_create]_
         - _[Редактирование формы и атрибутов оргединицы][architect_organizational_unit_configure_form_and_attributes]_
-        - _[Изменение иерархии оргединиц][architect_changing_hierarchy]_
+        - _[Изменение иерархии оргединиц][architect_organizational_structure_change_hierarchy]_
 - **Использование {{ productName }}**
     - _[Рабочий стол. Использование][desktop]_
     - _[Панель навигации. Использование][navigation_panel]_
@@ -612,13 +612,13 @@ _Сотруднику_ доступны следующие разделы нав
 
 --8<-- "related_topics_heading.md"
 
-- _[Построение процессной архитектуры][architect_process_architecture_modelling]_
+- _[Построение процессной архитектуры][architect_process_architecture_design]_
 - _[Конструктор диаграмм][architect_process_diagram_designer]_
 - _[Редактирование диаграммы][architect_edit_diagram]_
-- _[Построение организационной структуры][architect_organizational_structure_modelling]_
-- _[Создание оргединицы][architect_creating_organizational_unit]_
+- _[Построение организационной структуры][architect_organizational_structure_design]_
+- _[Создание оргединицы][architect_organizational_unit_create]_
 - _[Редактирование формы и атрибутов оргединицы][architect_organizational_unit_configure_form_and_attributes]_
-- _[Изменение иерархии оргединиц][architect_changing_hierarchy]_
+- _[Изменение иерархии оргединиц][architect_organizational_structure_change_hierarchy]_
 - _[Рабочий стол. Использование][desktop]_
 - _[Панель навигации. Использование][navigation_panel]_
 - _[Панель и разделы навигации. Определения, настройка, удаление][navigation_sections_setup]_

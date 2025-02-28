@@ -37,7 +37,7 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-- _[Просмотр реестра процессов][architect_process_architecture_modelling]_
+- _[Просмотр реестра процессов][architect_process_architecture_design]_
 - _[Переименование элемента процессной архитектуры][architect_renaming_process_entity]_
 - _[Использование системы — Панель навигации][navigation_panel]_
 

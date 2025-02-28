@@ -57,7 +57,7 @@ hide:
 --8<-- "related_topics_heading.md"
 
 - _[Просмотр диаграммы][architect_viewing_diagram]_
-- _[Просмотр реестра оргединиц][architect_organizational_structure_modelling]_
+- _[Просмотр реестра оргединиц][architect_organizational_structure_design]_
 
 </div>
 

@@ -24,8 +24,8 @@ _![Рабочий стол модуля «{{ productNameArchitect }}»](architec
 ## Операции на Рабочем столе «{{ productNameArchitect }}» {: #architect_desktop_operations .pageBreakBefore }
 
 * **Создание архитектуры**
-    - **Процессы** — [построение процессной архитектуры][architect_process_architecture_modelling] организации.
-    - **Оргструктура** — [построение организационной структуры][architect_organizational_structure_modelling].
+    - **Процессы** — [построение процессной архитектуры][architect_process_architecture_design] организации.
+    - **Оргструктура** — [построение организационной структуры][architect_organizational_structure_design].
     - **Версии** — [управление версиями][architect_version_control] процессной архитектуры и организационной структуры.
 * **Настройка продукта**
     - **Внешний вид**
@@ -45,8 +45,8 @@ _![Рабочий стол модуля «{{ productNameArchitect }}»](architec
 
 --8<-- "related_topics_heading.md"
 
-- _[Построение процессной архитектуры][architect_process_architecture_modelling]_
-- _[Построение организационной структуры][architect_organizational_structure_modelling]_
+- _[Построение процессной архитектуры][architect_process_architecture_design]_
+- _[Построение организационной структуры][architect_organizational_structure_design]_
 - _[Рабочий стол. Использование][desktop]_
 - _[Рабочий стол. Определения и настройка][desktop_setup]_
 

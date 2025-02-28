@@ -66,7 +66,7 @@ rewrite-relative-urls=false
 5. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows\CMW_Windows\scripts"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows\CMW_Windows<versionNumber>\scripts"
     ```
 
     Здесь: `X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows` — путь к распакованному дистрибутиву вспомогательного ПО, а `<versionNumber>` — номер версии ПО.
@@ -96,7 +96,7 @@ rewrite-relative-urls=false
 10. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows\CMW_Windows\scripts"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows\CMW_Windows<versionNumber>\scripts"
     ```
 
 11. Проверьте, что дополнительные компоненты установлены:
@@ -121,7 +121,7 @@ rewrite-relative-urls=false
 5. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows<versionNumber>\scripts"
     ```
 
     Здесь: `X:\<distPath>\X.X-release-ru-<versionNumber>.windows` — путь к распакованному дистрибутиву продукта, а `<versionNumber>` — номер версии ПО.
@@ -157,7 +157,7 @@ rewrite-relative-urls=false
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows<versionNumber>\scripts"
     ```
 
 2. Разверните экземпляр ПО:
@@ -185,7 +185,7 @@ rewrite-relative-urls=false
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows<versionNumber>\scripts"
     ```
 
 2. Запустите экземпляр ПО:
@@ -201,7 +201,7 @@ rewrite-relative-urls=false
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows<versionNumber>\scripts"
     ```
 
 2. Остановите экземпляр ПО:
@@ -226,7 +226,7 @@ end="<!--initialize-end-->"
 2. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows<versionNumber>\scripts"
     ```
 
 3. Запустите обновление экземпляра ПО:
@@ -255,7 +255,7 @@ end="<!--initialize-end-->"
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows<versionNumber>\scripts"
     ```
 
 2. Удалите экземпляр ПО:
@@ -275,7 +275,7 @@ end="<!--initialize-end-->"
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows\scripts"
+    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows<versionNumber>\scripts"
     ```
 
 2. Просмотрите список установленных экземпляров ПО:

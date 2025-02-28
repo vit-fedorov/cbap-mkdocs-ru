@@ -9,6 +9,7 @@ INHERIT: mkdocs_ru.yml
 site_name: Comindware Platform. Руководство администратора для Linux
 
 extra:
+  apiGuide: False
   adminGuideLinux: True
   adminGuideWindows: False
   userGuide: False
@@ -34,6 +35,7 @@ nav:
     - administration/deploy/linux/uninstall_auxiliary_software.md
     - administration/deploy/linux/upgrade_version.md
     - administration/deploy/linux/upload_size_limit_configure.md
+    - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_list.md
     - Вспомогательное ПО. Оптимизация:
       - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_optimize.md
       - administration/deploy/linux/auxiliary_software_deploy/antivirus_exceptions_configure.md
@@ -110,16 +112,12 @@ nav:
         - administration/connections_communication_routes/email_connections/process_receiving_connection.md
         - administration/connections_communication_routes/email_connections/scenario_receive_email.md
       - Подключения REST и OData:
-        - administration/connections_communication_routes/rest_odata_connections/get_connection.md
         - administration/connections_communication_routes/rest_odata_connections/odata_connection.md
         - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
-        - administration/connections_communication_routes/rest_odata_connections/http_send_post.md
-        - administration/connections_communication_routes/rest_odata_connections/http_send_file.md
         - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
+        - administration/connections_communication_routes/rest_odata_connections/get_connection.md
         - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
-        - administration/connections_communication_routes/rest_odata_connections/http_receive_file.md
-        - administration/connections_communication_routes/rest_odata_connections/jpath_example.md
       - SQL-подключения:
         - administration/connections_communication_routes/sql_connections/sql_send_connection.md
         - administration/connections_communication_routes/sql_connections/sql_receive_connection.md
@@ -163,6 +161,7 @@ nav:
 
 
 exclude_docs: |
+  administration/deploy/linux/deploy_cluster.md
   administration/deploy/windows/**
   administration/deploy/windows/auxiliary_software_deploy/**
   administration/backup/windows/**
@@ -171,6 +170,10 @@ exclude_docs: |
   administration/connections_communication_routes/email_connections/process_email_configure_include.md
   administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
   administration/connections_communication_routes/rest_odata_connections/send_http_example.md
+  administration/connections_communication_routes/rest_odata_connections/http_send_post.md
+  administration/connections_communication_routes/rest_odata_connections/http_send_file.md
+  administration/connections_communication_routes/rest_odata_connections/jpath_example.md      
+  administration/connections_communication_routes/rest_odata_connections/http_receive_file.md
   product_description.md
   architect/**
   business_apps/application_configure_recommendations.md
@@ -181,6 +184,7 @@ exclude_docs: |
   business_apps/variables.md
   business_apps/diagrams/process_diagram/process_diagram_build_advice.md
   business_apps/diagrams/process_diagram/process_diagram_elements/**
+  business_apps/diagrams/process_diagram/process_error_monitor.md
   business_apps/expressions/**
   business_apps/scenarios/**
   business_apps/templates/button_area.md
@@ -191,7 +195,12 @@ exclude_docs: |
   business_apps/templates/export_templates/**
   business_apps/templates/forms/**
   business_apps/templates/tables/table_configure.md
+  business_apps/navigation_sections/desktop_setup.md
+  business_apps/navigation_sections/pages_setup.md
+  business_apps/navigation_sections/my_tasks_page_configure.md
+  developer_guide/**
   devops_wiki/**
   examples/**
+  tutorial/**
   using_the_system/**
   !examples/img/*

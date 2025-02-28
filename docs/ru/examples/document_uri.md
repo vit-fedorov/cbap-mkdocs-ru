@@ -1,9 +1,9 @@
 ---
-kbId:
-title:
+kbId: 
+title: 'Атрибут «Документ». Формирование ссылки на файл'
 ---
 
-# Атрибут «Документ». Формирование ссылки на файл
+# Атрибут «Документ». Формирование ссылки на файл {: #document_uri}
 
 ## Введение
 
@@ -14,6 +14,8 @@ title:
 !!! question "Структура атрибута типа «Документ»"
 
     --8<-- "attribute_document_logic.md"
+    --8<-- "attribute_document_get_file_n3.md"
+    --8<-- "attribute_document_get_file_formula.md"
 
 ## Прикладная задача
 
@@ -62,8 +64,8 @@ title:
                     ?fileRevision document:name ?fileName.
                     # Формируем строки с именами файлов и ссылками на них
                     # и помещаем в ?formatUri
-                    # 'http://host-name' — имя хоста **{{ productName }}**
-                    ("<a href='http://host-name{0}'>{1}</a>" ?fileUri ?fileName) string:format ?formatUri.
+                    # 'https://host-name' — имя хоста **{{ productName }}**
+                    ("<a href='https://host-name{0}'>{1}</a>" ?fileUri ?fileName) string:format ?formatUri.
                     }
                 # Формируем ?uriList из ?formatUri.
                 select ?formatUri -> ?uriList.
@@ -81,8 +83,9 @@ title:
             ``` cs
             # Из атрибута «Вложения» (Files) собираем URI и имена всех прикреплённых файлов
             # и соединяем в HTML с разделителем <br/>
+            # 'https://host-name' — имя хоста **{{ productName }}**
             JOIN("<br/>", from a in $Files select
-                FORMAT("<a href='http://host-name{0}'>{1}</a>", 
+                FORMAT("<a href='https://host-name{0}'>{1}</a>", 
                 LIST(a->currentRevision->httpUri, a->currentRevision->revisionFilename)
                 )
             )

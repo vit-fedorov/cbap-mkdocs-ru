@@ -10,13 +10,14 @@
         ```
     - получить объект файла (`attachedFile`):
         ``` cs
-        var attachedFile = Api.TeamNetwork.DocumentService.GetContent(attachedFileObject[0].ToString());
+        var attachedFile = Api.TeamNetwork.DocumentService.GetContent(attachedFileObjects[0].ToString());
         ```
     - получить имя файла с расширением (`attachedFile.Name`);
     - получить содержимое файла (`attachedFile.Data`);
     - при необходимости получить объект с метаданными документа:
         ``` cs
-        var attachedFile = Api.TeamNetwork.DocumentService.GetDocument(attachedFileObject[0].ToString());
+        var attachedFileMeta = Api.TeamNetwork.DocumentService.GetDocument(attachedFileObjects[0].ToString());
         ```
-        - `attachedFile.Title` — имя файла с расширением;
-        - `attachedFile.Extension` — расширение файла.
+        - `attachedFileMeta.Title` — имя файла с расширением;
+        - `attachedFileMeta.Extension` — расширение файла;
+        - `attachedFileMeta.PreviewUri` относительная ссылка на файл.

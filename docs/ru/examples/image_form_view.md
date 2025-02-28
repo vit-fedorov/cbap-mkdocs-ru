@@ -17,7 +17,7 @@ kbId: 4975
 
 ## Исходные данные
 
-В шаблоне _«Карточки товаров»_ имеются две формы — **основная**, на которой данные заполняют сотрудники, и _«Для клиентов»_, которая отображается для клиентов.
+В шаблоне _«Карточки товаров»_ (системное имя `ProductCards`) имеются две формы — **основная**, на которой данные заполняют сотрудники, и _«Для клиентов»_, которая отображается для клиентов.
 
 ## Порядок настройки для атрибута тип «Изображение»
 
@@ -33,15 +33,55 @@ kbId: 4975
     - **Тип данных: текст**
     - **Формат отображения: HTML-текст**
     - **Вычислять автоматически:** флажок установлен
-    - **Выражение для вычислений: формула**
+    - **Выражение для вычислений:**
+        - **формула**
 
-        ``` cs
-        JOIN("<br/>", from a in $Images select
-            FORMAT("<img src='https://your-host/ImageContent/GetContent?imageId={0}'/>", 
-            LIST(a->id)
+            ``` cs
+            # Из атрибута «Изображения» (Images) собираем изображения
+            # и соединяем в HTML с разделителем <br/>
+            # 'https://host-name' — имя хоста {{ productName }}
+            JOIN("<br/>", from a in $Images select
+                FORMAT("<img src='https://your-host{0}'>", 
+                LIST(a->uri)
+                )
             )
-        )
-        ```
+            ```
+
+        **или**
+
+        - **N3**
+
+            ``` turtle
+            # Импортируем функции для работы
+            # с изображениями и строками
+            @prefix object: <http://comindware.com/ontology/object#>.
+            @prefix image: <http://comindware.com/ontology/image#>.
+            @prefix cmwstring: <http://comindware.com/logics/string#>.
+            @prefix string: <http://www.w3.org/2000/10/swap/string#>.
+            {
+                # Находим атрибут «Изображения» (Images) и помещаем в ?imagesAttribute
+                ("ProductCards" "Images") object:findProperty ?imagesAttribute.
+                # Запускаем цикл
+                from {
+                    # Находим содержимое ?imagesAttribute в текущей
+                    # записи и помещаем в ?image
+                    ?item ?imagesAttribute ?image.
+                    # Получаем ссылку на файл без имени хоста
+                    # и помещаем в ?imageUri
+                    ?image image:uri ?imageUri.
+                    # Формируем c изображениями и помещаем в ?formatUri
+                    # 'https://host-name' — имя хоста {{ productName }}
+                    ("<img src='https://host-name{0}'>" ?fileUri) string:format ?formatUri.
+                    }
+                # Формируем ?uriList из ?formatUri.
+                select ?formatUri -> ?uriList.
+                # Формируем из ?uriList одну большую строку
+                # с разделителем <br/> (перенос строки)
+                # и возвращаем её в значение атрибута
+                ("<br/>" ?uriList) cmwstring:join ?value.
+            }
+            ```
+
 
 3. Поместите атрибут _«Изображения»_ на **основную форму**.
 4. Поместите атрибут _«Отображение изображений на форме»_ на форму _«Для клиентов»_.
@@ -70,6 +110,9 @@ kbId: 4975
     - **Выражение для вычислений: формула**
 
         ``` cs
+        # Из атрибута «Фотографии» (Photos) собираем изображения
+        # и соединяем в HTML с разделителем <br/>
+        # 'https://host-name' — имя хоста {{ productName }}
         JOIN("<br/>", from a in $Photos select
             FORMAT("<img src='https://your-host{0}'/>", 
             LIST(a->currentRevision->httpUri)

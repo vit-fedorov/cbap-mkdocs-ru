@@ -64,12 +64,12 @@ title: 'Атрибут «Документ». Формирование ссылк
                     ?fileRevision document:name ?fileName.
                     # Формируем строки с именами файлов и ссылками на них
                     # и помещаем в ?formatUri
-                    # 'https://host-name' — имя хоста **{{ productName }}**
+                    # 'https://host-name' — имя хоста {{ productName }}
                     ("<a href='https://host-name{0}'>{1}</a>" ?fileUri ?fileName) string:format ?formatUri.
                     }
                 # Формируем ?uriList из ?formatUri.
                 select ?formatUri -> ?uriList.
-                # Формируем из ?uriList одну большую строку
+                # Формируем из ?uriList HTML из ссылок
                 # с разделителем <br/> (перенос строки)
                 # и возвращаем её в значение атрибута
                 ("<br/>" ?uriList) cmwstring:join ?value.
@@ -78,12 +78,12 @@ title: 'Атрибут «Документ». Формирование ссылк
 
         **или**
 
-        - Формула:
+        - **Формула:**
 
             ``` cs
             # Из атрибута «Вложения» (Files) собираем URI и имена всех прикреплённых файлов
             # и соединяем в HTML с разделителем <br/>
-            # 'https://host-name' — имя хоста **{{ productName }}**
+            # 'https://host-name' — имя хоста {{ productName }}
             JOIN("<br/>", from a in $Files select
                 FORMAT("<a href='https://host-name{0}'>{1}</a>", 
                 LIST(a->currentRevision->httpUri, a->currentRevision->revisionFilename)

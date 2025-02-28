@@ -1,5 +1,5 @@
 ---
-title: Просмотр диаграммы
+title: 'Просмотр диаграмм процессов и бизнес-способностей'
 kbId: 4830
 tags:
     - процессная архитектура
@@ -12,7 +12,9 @@ hide:
     - tags
 ---
 
-# Просмотр диаграммы {: #architect_viewing_diagram}
+# Просмотр диаграмм процессов и бизнес-способностей {: #architect_process_architecture_diagram_view }
+
+## Открытие диаграммы для просмотра
 
 1. Выберите элемент процессной архитектуры в [панели навигации][navigation_panel] или дважды нажмите его строку в [реестре процессов][architect_process_architecture_design].
 2. Откроется диаграмма процесса или бизнес-способностей в режиме просмотра.
@@ -38,11 +40,11 @@ hide:
 
 Для перехода к диаграмме подпроцесса или дочерней группы процессов нажмите значок перехода к дочернему элементу:
 
-* <i class="fa-light fa-diagram-subtask"></i> <i class="fa-light fa-square-plus"></i> — переход к диаграмме бизнес-способностей по ссылке;
-* <i class="fa-light fa-list-tree"></i> <i class="fa-light fa-square-plus"></i> — переход к диаграмме бизнес-способностей.
-* <i class="fa-light fa-diagram-nested"></i> — переход к диаграмме процесса;
-* <i class="fa-light fa-code-compare"></i> — переход к диаграмме процесса по ссылке;
-* <i class="fa-light fa-square-plus"></i> — переход к подпроцессу с диаграммы процесса.
+- <i class="fa-light fa-diagram-subtask"></i> <i class="fa-light fa-square-plus"></i> — переход к диаграмме бизнес-способностей по ссылке;
+- <i class="fa-light fa-list-tree"></i> <i class="fa-light fa-square-plus"></i> — переход к диаграмме бизнес-способностей.
+- <i class="fa-light fa-diagram-nested"></i> — переход к диаграмме процесса;
+- <i class="fa-light fa-code-compare"></i> — переход к диаграмме процесса по ссылке;
+- <i class="fa-light fa-square-plus"></i> — переход к подпроцессу с диаграммы процесса.
 
 *![Переход к дочернему элементу с диаграммы бизнес-способностей](img/diagram_navigating_to_child_element.png)*
 

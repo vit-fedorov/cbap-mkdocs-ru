@@ -38,8 +38,8 @@ hide:
 
 ## Импорт с помощью конструктора диаграммы
 
-1. Перейдите к [конструктору диаграммы][переход-к-конструктору-диаграмм].
-2. В конструкторе диаграммы нажмите кнопку «**Импорт**» <i class="fa-light fa-arrow-down-to-bracket"></i>.
+1. Перейдите к [конструктору диаграммы][architect_process_diagram_designer].
+2. Нажмите кнопку «**Импорт**» <i class="fa-light fa-arrow-down-to-bracket"></i>.
 --8<-- "process_architecture_import_source_select.md"
 
 *![Импорт диаграмм процессов с помощью конструктора диаграммы](importing_process_entity_import_diagram_from_designer.png)*

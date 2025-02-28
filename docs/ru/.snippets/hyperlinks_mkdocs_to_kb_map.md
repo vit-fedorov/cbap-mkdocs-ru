@@ -302,19 +302,11 @@
 
 [architect_desktop]: {{ kbArticleURLPrefix }}4828
 
-[architect_cloning_process_entity]: {{ kbArticleURLPrefix }}4841
-
-[architect_changing_process_hierarchy]: {{ kbArticleURLPrefix }}4842
-
-[architect_configuring_process_entity_properties]: {{ kbArticleURLPrefix }}4843
-
-[architect_configuring_process_entity_properties_form_and_attributes]: {{ kbArticleURLPrefix }}4839
-
 [architect_conversations]: {{ kbArticleURLPrefix }}4827
 
-[architect_creating_process_entity]: {{ kbArticleURLPrefix }}4840
+[architect_process_architecture_design_entity_create]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_entity_create
 
-[architect_deleting_process_entity]: {{ kbArticleURLPrefix }}4837
+[architect_process_architecture_design_entity_delete]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_entity_delete
 
 [architect_edit_diagram]: {{ kbArticleURLPrefix }}4835
 
@@ -336,19 +328,29 @@
 
 [architect_organizational_unit_rename]: {{ kbArticleURLPrefix }}4850#architect_organizational_unit_rename
 
-[architect_organizational_structure_design_view_registry]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_design_view_registry
+[architect_organizational_structure_design_registry_view]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_design_registry_view
 
 [architect_process_architecture_design]: {{ kbArticleURLPrefix }}4833
 
-[architect_process_diagram_designer]: {{ kbArticleURLPrefix }}4836
+[architect_process_architecture_design_entity_clone]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_entity_clone
 
-[architect_renaming_process_entity]: {{ kbArticleURLPrefix }}4838
+[architect_process_architecture_design_hierarchy_change]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_hierarchy_change
+
+[architect_process_architecture_design_entity_properties_configure]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_entity_properties_configure
+
+[architect_process_architecture_design_entity_rename]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_entity_rename
+
+[architect_process_architecture_design_entity_form_attributes_configure]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_entity_form_attributes_configure
+
+[architect_process_architecture_design_registry_view]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_registry_view
+
+[architect_process_diagram_designer]: {{ kbArticleURLPrefix }}4836
 
 [architect_verify_diagram]: {{ kbArticleURLPrefix }}4834
 
 [architect_version_control]: {{ kbArticleURLPrefix }}4827
 
-[architect_viewing_diagram]: {{ kbArticleURLPrefix }}4830
+[architect_process_architecture_diagram_view]: {{ kbArticleURLPrefix }}4830
 
 [attribute_account]: {{ kbArticleURLPrefix }}4774
 

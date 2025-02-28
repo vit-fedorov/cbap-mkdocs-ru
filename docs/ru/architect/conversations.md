@@ -17,6 +17,8 @@ hide:
 
 # Обсуждение элементов корпоративной архитектуры {: #architect_conversations}
 
+## Введение
+
 При моделировании корпоративной архитектуры можно вести обсуждения диаграмм, элементов диаграмм и организационных единиц.
 
 ## Просмотр обсуждения
@@ -56,7 +58,7 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-- _[Просмотр диаграммы][architect_viewing_diagram]_
+- _[Просмотр диаграммы][architect_process_architecture_diagram_view]_
 - _[Просмотр реестра оргединиц][architect_organizational_structure_design]_
 
 </div>

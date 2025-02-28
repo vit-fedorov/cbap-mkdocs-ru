@@ -29,7 +29,7 @@ hide:
 
 --8<-- "related_topics_heading.md"
 
-- _[Просмотр реестра процессов][architect_process_architecture_design]_
+- _[Редактирование диаграмм процессов и бизнес-способностей][architect_process_diagram_designer]_
 - _[Использование панели навигации][navigation_panel]_
 
 </div>

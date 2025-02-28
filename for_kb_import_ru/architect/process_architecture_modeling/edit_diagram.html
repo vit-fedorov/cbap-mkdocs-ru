@@ -1,4 +1,4 @@
-<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4836">
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4835">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -9,7 +9,14 @@
       </h2>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#переход-к-конструктору-диаграмм">
+<a class="md-nav__link mkdocs_imported_link" href="#введение">
+<span class="md-ellipsis">
+      Введение
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#architect_process_diagram_designer">
 <span class="md-ellipsis">
       Переход к конструктору диаграмм
     </span>
@@ -21,8 +28,7 @@
       Элементы конструктора диаграмм
     </span>
 </a>
-<nav aria-label="Элементы конструктора диаграмм" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link mkdocs_imported_link" href="#управление-с-помощью-клавиатуры">
 <span class="md-ellipsis">
@@ -44,9 +50,6 @@
     </span>
 </a>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link mkdocs_imported_link" href="#переход-к-дочерним-элементам-диаграммы">
 <span class="md-ellipsis">
@@ -66,38 +69,43 @@
 </nav>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
+<h2 id="введение">Введение</h2>
 <p>В <strong>Comindware Platform Enterprise</strong> для моделирования корпоративной архитектуры предусмотрен визуальный конструктор диаграмм процессов в нотации BMPN 2.0 и диаграмм бизнес-способностей.</p>
-<h2 id="переход-к-конструктору-диаграмм">Переход к конструктору диаграмм</h2>
+<div class="notice notice-warning">
+<p class="admonition-title">Внимание!</p>
+<p>Изменения, внесённые в конструкторе диаграмм, сохраняются автоматически. Отмена изменений не предусмотрена.</p>
+</div>
+<h2 id="architect_process_diagram_designer">Переход к конструктору диаграмм</h2>
 <ol class="colored_numbers_list">
 <li>Выберите элемент процессной архитектуры в <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4824">панели навигации</a> или дважды нажмите его строку в <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4833">реестре процессов</a>.</li>
 <li>Откроется диаграмма процесса или бизнес-способностей в режиме просмотра.</li>
-<li>Нажмите кнопку «<strong>Редактировать</strong>».</li>
+<li>Нажмите кнопку «<strong>Редактировать</strong>» <i aria-hidden="true" class="fa-light fa-pen-nib">&zwnj;<!--icon--></i>.</li>
 <li>Отобразится конструктор диаграмм.</li>
 </ol>
 <figure class="screenshot_with_caption">
-<p><img alt="Переход к конструктору диаграмм" src="/platform/v5.0/architect/process_architecture_modeling/diagram_designer/img/process_architecture_modeling_edit_diagram.png"/><figcaption class="caption">Переход к конструктору диаграмм</figcaption></p>
+<p><img alt="Переход к конструктору диаграмм" src="/platform/v5.0/architect/process_architecture_modeling/img/process_architecture_modeling_edit_diagram.png"/><figcaption class="caption">Переход к конструктору диаграмм</figcaption></p>
 </figure>
 <h2 id="элементы-конструктора-диаграмм">Элементы конструктора диаграмм</h2>
 <figure class="screenshot_with_caption">
-<p><img alt="Конструктор диаграмм процессов" src="/platform/v5.0/architect/process_architecture_modeling/diagram_designer/img/process_architecture_modeling_process_diagram_designer.png"/><figcaption class="caption">Конструктор диаграмм процессов</figcaption></p>
+<p><img alt="Конструктор диаграмм процессов" src="/platform/v5.0/architect/process_architecture_modeling/img/process_architecture_modeling_process_diagram_designer.png"/><figcaption class="caption">Конструктор диаграмм процессов</figcaption></p>
 </figure>
 <figure class="screenshot_with_caption">
-<p><img alt="Конструктор диаграмм бизнес-способностей" src="/platform/v5.0/architect/process_architecture_modeling/diagram_designer/img/process_architecture_modeling_business_capabilities_diagram_designer.png"/><figcaption class="caption">Конструктор диаграмм бизнес-способностей</figcaption></p>
+<p><img alt="Конструктор диаграмм бизнес-способностей" src="/platform/v5.0/architect/process_architecture_modeling/img/process_architecture_modeling_business_capabilities_diagram_designer.png"/><figcaption class="caption">Конструктор диаграмм бизнес-способностей</figcaption></p>
 </figure>
 <ol class="colored_numbers_list">
 <li>
-<p><strong>Кнопки типовых операций</strong>:</p>
+<p><strong>Кнопки типовых операций</strong></p>
 <ul>
 <li><strong>Просмотр</strong> <i class="fa-light fa-eye">&zwnj;<!--icon--></i> — переход в режим просмотра диаграммы.</li>
 <li><strong>Очистить</strong> <i class="fa-light fa-trash">&zwnj;<!--icon--></i> — безвозвратное удаление всех элементов с диаграммы. При нажатии этой кнопки отобразится запрос подтверждения.</li>
 <li><strong>Обсуждение</strong> <i class="fa-light fa-comment-dots">&zwnj;<!--icon--></i> — отображение чата для обсуждения диаграммы.</li>
 <li><strong>Версии</strong> <i class="fa-light fa-code-branch">&zwnj;<!--icon--></i> — управление версиями диаграммы.</li>
-<li><strong>Свойства</strong> <i class="fa-light fa-sidebar-flip">&zwnj;<!--icon--></i> — <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4843">настройка свойств</a> выбранного элемента или всей диаграммы.</li>
+<li><strong>Свойства</strong> <i class="fa-light fa-sidebar-flip">&zwnj;<!--icon--></i> — <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4833#architect_process_architecture_design_entity_properties_configure">настройка свойств</a> выбранного элемента или всей диаграммы.</li>
 </ul>
 <p>Cм. также <em>«<a class="mkdocs_imported_link" href="#настройка-кнопок-типовых-операций">Настройка кнопок типовых операций</a>»</em>.</p>
 </li>
 <li>
-<p><strong>Кнопки для работы с диаграммой</strong>:</p>
+<p><strong>Кнопки для работы с диаграммой</strong></p>
 <ul>
 <li><strong>Указатель</strong> <i class="fa-light fa-arrow-pointer">&zwnj;<!--icon--></i> — выбор одного элемента.</li>
 <li><strong>Лассо</strong> <i class="fa-light fa-square-dashed">&zwnj;<!--icon--></i> — выбор нескольких элементов путём обводки требуемой области.</li>
@@ -109,7 +117,7 @@
 </ul>
 </li>
 <li>
-<p><strong>Палитра элементов</strong> — содержит элементы либо нотации BPMN 2.0, либо нотации бизнес-способностей.</p>
+<p><strong>Палитра элементов</strong> — содержит элементы либо нотации BPMN 2.0, либо нотации бизнес-способностей, которые можно перетащить на диаграмму.</p>
 </li>
 <li><strong>Мини-карта</strong> — показывает всю диаграмму. Нажимайте мини-карту или перетаскивайте по ней рамку фрагмента, чтобы быстро просмотреть соответствующую область диаграммы в текущем масштабе.</li>
 <li>
@@ -128,8 +136,8 @@
 </li>
 <li><strong>Панель проверки диаграммы</strong> — содержит ошибки и предупреждения, возникшие при <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4834">проверке диаграммы</a>. Отображается только для диаграмм процессов.</li>
 </ol>
-<h3 id="управление-с-помощью-клавиатуры">Управление с помощью клавиатуры</h3>
-<p>В конструкторе диаграммы можно использовать следующие сочетания клавиш:</p>
+<h2 id="управление-с-помощью-клавиатуры">Управление с помощью клавиатуры</h2>
+<p>В конструкторе диаграмм можно использовать следующие сочетания клавиш:</p>
 <ul>
 <li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> — копировать выбранные элементы в буфер обмена.</li>
 <li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-x">X</kbd></span> — вырезать выбранные элементы в буфер обмена.</li>
@@ -158,12 +166,12 @@
 <p>Нажмите кнопку «<strong>Перезапустить</strong>».</p>
 </li>
 </ol>
-<p><figure class="screenshot_with_caption" markdown=""><img alt="Включение буфера обмена в браузере Chrome" src="/platform/v5.0/architect/process_architecture_modeling/diagram_designer/../../img/diagram_designer_chrome_clipboard_enable.png"/><figcaption class="caption">Включение буфера обмена в браузере Chrome</figcaption></figure></p>
+<p><figure class="screenshot_with_caption" markdown=""><img alt="Включение буфера обмена в браузере Chrome" src="/platform/v5.0/architect/process_architecture_modeling/../img/diagram_designer_chrome_clipboard_enable.png"/><figcaption class="caption">Включение буфера обмена в браузере Chrome</figcaption></figure></p>
 </div>
-<h3 id="меню-элемента">Меню элемента</h3>
+<h2 id="меню-элемента">Меню элемента</h2>
 <p>При выборе любого элемента на диаграмме отображается его контекстное меню с перечисленными ниже пунктами.</p>
 <figure class="screenshot_with_caption">
-<p><img alt="Меню элемента в конструкторе диаграмм" src="/platform/v5.0/architect/process_architecture_modeling/diagram_designer/img/process_architecture_modeling_diagram_designer_element_menu.png"/><figcaption class="caption">Меню элемента в конструкторе диаграмм</figcaption></p>
+<p><img alt="Меню элемента в конструкторе диаграмм" src="/platform/v5.0/architect/process_architecture_modeling/img/process_architecture_modeling_diagram_designer_element_menu.png"/><figcaption class="caption">Меню элемента в конструкторе диаграмм</figcaption></p>
 </figure>
 <ul>
 <li><strong>Быстрое создание</strong> — создание элемента, связанного посредством потока управления с текущим элементом. Набор доступных элементов зависит от типа текущего элемента.</li>
@@ -173,7 +181,7 @@
 <li><strong>Свойства</strong> — данный пункт в текущей версии «<strong>Comindware Platform Enterprise</strong> действует только для элементов «<strong>Вызов процесса</strong>» и «<strong>Скрытый пул</strong>» на диаграммах процессов и элементов «<strong>Процесс</strong>», «<strong>Ссылка на процесс</strong>», «<strong>Ссылка на группу процессов</strong>».</li>
 <li><strong>Удалить</strong> — удаление текущего элемента.</li>
 </ul>
-<h3 id="настройка-кнопок-типовых-операций">Настройка кнопок типовых операций</h3>
+<h2 id="настройка-кнопок-типовых-операций">Настройка кнопок типовых операций</h2>
 <p>Кнопки типовых операция отображаются при открытии следующих элементов в конструкторе диаграмм:</p>
 <ul>
 <li><strong>Встроенный подпроцесс</strong></li>
@@ -183,7 +191,8 @@
 <li><strong>Ссылка на группу процессов</strong></li>
 <li><strong>Ссылка на процесс</strong></li>
 </ul>
-<p>Эти кнопки можно настроить в соответствующих <strong>шаблонах моделей</strong> следующим образом:</p>
+<p>Подробные инструкции по настройке кнопок см. в статьях «<em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4791">Области кнопок. Определение, настройка, клонирование, удаление</a>»</em>, и «<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4790">Кнопки. Определение, настройка, удаление</a>»_.</p>
+<p>Кнопки типовых операций для конструктора диаграмм можно настроить в соответствующих <strong>шаблонах моделей</strong> следующим образом:</p>
 <ol class="colored_numbers_list">
 <li>Откройте список <strong>шаблонов моделей</strong>.</li>
 <li>Откройте требуемый <strong>шаблон модели</strong>.</li>
@@ -195,7 +204,7 @@
 <li>Сохраните область кнопок.</li>
 </ol>
 <figure class="screenshot_with_caption">
-<p><img alt="Настройка кнопок типовых операций для диаграмм процессов" src="/platform/v5.0/architect/process_architecture_modeling/diagram_designer/img/architect_process_diagram_designer_button_area.png"/><figcaption class="caption">Настройка кнопок типовых операций для диаграмм процессов</figcaption></p>
+<p><img alt="Настройка кнопок типовых операций для диаграмм процессов" src="/platform/v5.0/architect/process_architecture_modeling/img/architect_process_diagram_designer_button_area.png"/><figcaption class="caption">Настройка кнопок типовых операций для диаграмм процессов</figcaption></p>
 </figure>
 <h2 class="pageBreakBefore" id="переход-к-дочерним-элементам-диаграммы">Переход к дочерним элементам диаграммы</h2>
 <p>Для перехода к диаграмме подпроцесса или дочерней группы процессов нажмите значок перехода к дочернему элементу:</p>
@@ -207,19 +216,22 @@
 <li><i class="fa-light fa-square-plus">&zwnj;<!--icon--></i> — переход к подпроцессу с диаграммы процесса.</li>
 </ul>
 <figure class="screenshot_with_caption">
-<p><img alt="Переход к дочернему элементу с диаграммы бизнес-способностей" src="/platform/v5.0/architect/process_architecture_modeling/diagram_designer/../img/diagram_navigating_to_child_element.png"/><figcaption class="caption">Переход к дочернему элементу с диаграммы бизнес-способностей</figcaption></p>
+<p><img alt="Переход к дочернему элементу с диаграммы бизнес-способностей" src="/platform/v5.0/architect/process_architecture_modeling/img/diagram_navigating_to_child_element.png"/><figcaption class="caption">Переход к дочернему элементу с диаграммы бизнес-способностей</figcaption></p>
 </figure>
 <figure class="screenshot_with_caption">
-<p><img alt="Переход к диаграмме подпроцесса с диаграммы процесса" src="/platform/v5.0/architect/process_architecture_modeling/diagram_designer/../img/diagram_navigating_to_subprocess.png"/><figcaption class="caption">Переход к диаграмме подпроцесса с диаграммы процесса</figcaption></p>
+<p><img alt="Переход к диаграмме подпроцесса с диаграммы процесса" src="/platform/v5.0/architect/process_architecture_modeling/img/diagram_navigating_to_subprocess.png"/><figcaption class="caption">Переход к диаграмме подпроцесса с диаграммы процесса</figcaption></p>
 </figure>
 <div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <ul>
-<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4833">Просмотр реестра процессов</a></em></li>
-<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4835">Редактирование диаграммы</a></em></li>
-<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4830">Просмотр диаграммы</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4833">Построение процессной архитектуры</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4830">Просмотр диаграмм процессов и бизнес-способностей</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4833#architect_process_architecture_design_entity_properties_configure">Изменение свойств элемента процессной архитектуры</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4833#architect_process_architecture_design_entity_form_attributes_configure">Редактирование формы свойств и атрибутов элемента</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4831">Экспорт диаграмм и регламентов процессов</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4832">Импорт диаграмм процессов</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4791">Области кнопок. Определение, настройка, клонирование, удаление</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4790">Кнопки. Определение, настройка, удаление</a></em></li>
 </ul>
 </div>
 </article>

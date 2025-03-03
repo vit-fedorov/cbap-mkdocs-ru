@@ -344,11 +344,11 @@
 
 [architect_process_architecture_design_registry_view]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_registry_view
 
-[architect_process_diagram_designer]: {{ kbArticleURLPrefix }}4836
+[architect_process_diagram_designer]: {{ kbArticleURLPrefix }}4835#architect_process_diagram_designer
 
 [architect_verify_diagram]: {{ kbArticleURLPrefix }}4834
 
-[architect_version_control]: {{ kbArticleURLPrefix }}4827
+[architect_version_control]: {{ kbArticleURLPrefix }}4829
 
 [architect_process_architecture_diagram_view]: {{ kbArticleURLPrefix }}4830
 

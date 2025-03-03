@@ -12,7 +12,7 @@ hide:
     - tags
 ---
 
-# Редактирование диаграммы ОШС {: #architect_organiztional_structure_designer }
+# Редактирование диаграммы ОШС {: #architect_organizational_structure_designer }
 
 ## Введение
 
@@ -33,7 +33,7 @@ hide:
 
 _![Переход к конструктору организационной структуры](img/organizationa_structure_modeling_edit_diagram.png)_
 
-## Элементы конструктора диаграммы ОШС {: #architect_organiztional_structure_designer }
+## Элементы конструктора диаграммы ОШС {: #architect_organizational_structure_designer }
 
 _![Конструктор диаграммы ОШС](img/organizational_structure_modeling_designer.png)_
 

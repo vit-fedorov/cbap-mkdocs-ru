@@ -344,7 +344,7 @@
 
 [architect_process_architecture_design_registry_view]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_registry_view
 
-[architect_process_diagram_designer]: {{ kbArticleURLPrefix }}4835#architect_process_diagram_designer
+[architect_process_diagram_designer]: {{ kbArticleURLPrefix }}4835
 
 [architect_verify_diagram]: {{ kbArticleURLPrefix }}4834
 

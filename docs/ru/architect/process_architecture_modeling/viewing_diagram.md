@@ -16,7 +16,7 @@ hide:
 
 ## Открытие диаграммы для просмотра
 
-1. Выберите элемент процессной архитектуры в [панели навигации][navigation_panel] или дважды нажмите его строку в [реестре процессов][architect_process_architecture_design].
+1. Выберите элемент процессной архитектуры в [панели навигации][navigation_panel] или дважды нажмите его строку в [реестре процессов][architect_process_architecture_design_registry_view].
 2. Откроется диаграмма процесса или бизнес-способностей в режиме просмотра.
 3. При необходимости [отредактируйте диаграмму][architect_edit_diagram].
 
@@ -57,7 +57,7 @@ hide:
 --8<-- "related_topics_heading.md"
 
 - _[Просмотр реестра процессов][architect_process_architecture_design]_
-- _[Редактирование диаграммы][architect_edit_diagram]_
+- _[Редактирование диаграмм процессов и бизнес-способностей][architect_edit_diagram]_
 
 </div>
 

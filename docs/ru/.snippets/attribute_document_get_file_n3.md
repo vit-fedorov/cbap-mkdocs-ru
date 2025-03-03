@@ -1,4 +1,5 @@
 - Чтобы считать файл из атрибута типа «**Документ**» с помощью выражения N3, необходимо:
     - получить текущую ревизию документа: `?documentAttributeValue document:revision ?revision`;
     - получить из ревизии содержимое файла в формате `base64`: `?revision document:content ?content`;
-    - получить из ревизии имя файла: `?revision document:title ?title`.
+    - получить из ревизии имя файла: `?revision document:title ?title`;
+    - получить относительную ссылку на файл: `?revision document:httpUri ?uri`.

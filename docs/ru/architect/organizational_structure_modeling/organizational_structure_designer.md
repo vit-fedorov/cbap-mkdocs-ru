@@ -12,7 +12,7 @@ hide:
     - tags
 ---
 
-# Редактирование диаграммы ОШС {: #architect_organizational_structure_designer }
+# Редактирование диаграммы ОШС {: #architect_organizational_structure_diagram_edit }
 
 ## Введение
 
@@ -33,7 +33,7 @@ hide:
 
 _![Переход к конструктору организационной структуры](img/organizationa_structure_modeling_edit_diagram.png)_
 
-## Элементы конструктора диаграммы ОШС {: #architect_organizational_structure_designer }
+## Элементы конструктора диаграммы ОШС {: #architect_organizational_structure_diagram_designer }
 
 _![Конструктор диаграммы ОШС](img/organizational_structure_modeling_designer.png)_
 
@@ -42,7 +42,7 @@ _![Конструктор диаграммы ОШС](img/organizational_structur
     - **Просмотр** <i class="fa-light fa-eye"></i> — переход в режим просмотра диаграммы.
     - **Очистить** <i class="fa-light fa-trash"></i> — безвозвратное удаление всех элементов организационной единицы. При нажатии этой кнопки отобразится запрос подтверждения.
     - **Обсуждение** <i class="fa-light fa-comment-dots"></i> — отображение чата для обсуждения организационной единицы.
-    - **Свойства** <i class="fa-light fa-sidebar-flip"></i> — [настройка свойств][architect_organizational_unit_configure] выбранного элемента или всей организационной единицы.
+    - **Свойства** <i class="fa-light fa-sidebar-flip"></i> — [настройка свойств][architect_organizational_structure_design_unit_configure] выбранного элемента или всей организационной единицы.
 
     Cм. также _«[Настройка кнопок типовых операций](#настройка-кнопок-типовых-операций)»_.
 

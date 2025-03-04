@@ -48,7 +48,7 @@ hide:
     *![Просмотр версий диаграммы](version_control_viewing_diagram_versions.png)*
 
 !!! Note "Примечание"
-    [Редактировать][architect_edit_diagram] можно только текущую версию диаграммы.
+    [Редактировать][architect_process_architecture_diagram_edit] можно только текущую версию диаграммы.
 
 <div class="relatedTopics" markdown="block">
 

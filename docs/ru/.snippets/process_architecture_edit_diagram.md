@@ -1,1 +1,1 @@
-1. Перейдите к [конструктору диаграммы][architect_process_diagram_designer] элемента процессной архитектуры.
+1. Перейдите к [конструктору диаграммы][architect_process_architecture_diagram_designer] элемента процессной архитектуры.

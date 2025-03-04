@@ -322,20 +322,15 @@ nav:
           - business_apps/expressions/expression_editor/n3_editor/literal_autocomplete.md
   - Моделирование корпоративной архитектуры:
     - architect/architect_desktop.md
-    - architect/version_control.md
+    - architect/process_architecture_modeling/index.md
+    - architect/process_architecture_modeling/edit_diagram.md
+    - architect/process_architecture_modeling/import_export.md
+    - architect/organizational_structure_modeling/index.md
+    - architect/organizational_structure_modeling/organizational_structure_designer.md
     - architect/conversations.md
+    - architect/version_control.md
     - architect/architect_demo.md
     - architect/architect_example.md
-    - Построение процессной архитектуры:
-      - architect/process_architecture_modeling/index.md
-      - architect/process_architecture_modeling/viewing_diagram.md
-      - architect/process_architecture_modeling/edit_diagram.md
-      - architect/process_architecture_modeling/verify_diagram.md
-      - architect/process_architecture_modeling/importing_process_entity.md
-      - architect/process_architecture_modeling/exporting_process_entity.md
-    - Построение организационной структуры:
-      - architect/organizational_structure_modeling/index.md
-      - architect/organizational_structure_modeling/organizational_structure_designer.md
   - Практические примеры:
     - examples/creating_gantt_chart.md
     - examples/using_gantt_chart.md

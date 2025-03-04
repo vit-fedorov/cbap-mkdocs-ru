@@ -184,7 +184,13 @@
 <ol class="colored_numbers_list">
 <li>Выберите тип сообщения «<strong>Отправка HTTP-запросов с составным содержимым</strong>» или «<strong>Отправка HTTP-запросов</strong>».</li>
 <li>В таблицу «<strong>Запрос</strong>» добавьте атрибут типа «<strong>Объект</strong>», например <em>File</em>.</li>
-<li>Добавьте дочерние атрибуты типа «<strong>Строка</strong>», например <em>Name</em> и <em>Content</em>.</li>
+<li>
+<p>Добавьте дочерние атрибуты <em>name</em> и <em>content</em> типа «<strong>Строка</strong>».</p>
+<div class="notice notice-warning">
+<p class="admonition-title">Внимание!</p>
+<p>Системные имена атрибутов сообщения для передачи имени и содержимого файла должны быть обязательно <code>name</code> и <code>content</code> строчными буквами.</p>
+</div>
+</li>
 </ol>
 <h3 id="интеграция">Интеграция</h3>
 <ul>
@@ -223,7 +229,7 @@
 </ul>
 </li>
 <li>
-<p>Поместите атрибут <em>«Вложения»</em> и кнопку <em>«Отправить вложения»</em> на форму. </p>
+<p>Поместите атрибут <em>«Вложения»</em> и кнопку <em>«Отправить вложения»</em> на форму.</p>
 </li>
 </ol>
 <h2 id="настройка-сценария">Настройка сценария</h2>
@@ -234,19 +240,19 @@
 <li>Запускается цикл, перебирающий все прикреплённые файлы.</li>
 <li>
 <ul>
-<li>Формируются переменные с именем и содержимым файла: <code>$$Name</code> и <code>$$Content</code>.</li>
+<li>Формируются переменные с именем и содержимым файла: <code>$$name</code> и <code>$$content</code>.</li>
 <li>
 <p>Формируется переменная-объект для отправки в теле HTTP-запроса:</p>
-<div class="highlight"><code><pre><span></span><code><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="nt">"Message"</span><span class="p">:{</span></code> <br/><code><span class="w">        </span><span class="nt">"File"</span><span class="p">:{</span></code> <br/><code><span class="w">            </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code><span class="w">            </span><span class="nt">"Content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STRING"</span></code> <br/><code><span class="w">        </span><span class="p">}</span></code> <br/><code><span class="w">    </span><span class="p">}</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="nt">"Message"</span><span class="p">:{</span></code> <br/><code><span class="w">        </span><span class="nt">"File"</span><span class="p">:{</span></code> <br/><code><span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code><span class="w">            </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STRING"</span></code> <br/><code><span class="w">        </span><span class="p">}</span></code> <br/><code><span class="w">    </span><span class="p">}</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 </li>
 </ul>
 <p>На каждой итерации цикла формируется и отправляется отдельный HTTP-запрос, содержащий данные файла в формате JSON:</p>
 <ul>
-<li><code>$$Message-&gt;File-&gt;Name</code> присваивается значение переменной <code>$$Name</code>.</li>
-<li><code>$$Message-&gt;File-&gt;Content</code> присваивается значение переменной <code>$$Content</code>.</li>
+<li><code>$$Message-&gt;File-&gt;name</code> присваивается значение переменной <code>$$name</code>.</li>
+<li><code>$$Message-&gt;File-&gt;content</code> присваивается значение переменной <code>$$content</code>.</li>
 <li>
 <p>Содержимое переменной <code>$$Message</code> в формате JSON отправляется в качестве HTTP-запроса:</p>
-<div class="highlight"><code><pre><span></span><code><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="nt">"File"</span><span class="p">:{</span></code> <br/><code><span class="w">        </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code><span class="w">        </span><span class="nt">"Content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STRING"</span></code> <br/><code><span class="w">    </span><span class="p">}</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="p">{</span></code> <br/><code><span class="w">    </span><span class="nt">"File"</span><span class="p">:{</span></code> <br/><code><span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STRING"</span><span class="p">,</span></code> <br/><code><span class="w">        </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STRING"</span></code> <br/><code><span class="w">    </span><span class="p">}</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Содержимое переменной <code>$$Message</code> очищается для использования в следующей итерации цикла.</p>
@@ -277,7 +283,7 @@
 <li><strong>Сообщение об ошибке:</strong> <em>Ошибка отправки вложения</em></li>
 <li>
 <p><strong>Выражение: N3</strong></p>
-<div class="highlight"><code><pre><span></span><code><span class="c"># Импортируем функции для работы с данными текущего сеанса и переменными</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">document:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/document#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">operator:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/operator#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">variable:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/variable#&gt;</span><span class="p">.</span></code> <br/><code></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="c"># Находим атрибут Attachment (Вложение) </span></code> <br/><code>    <span class="c"># в шаблоне DocumentRegistry (Реестр документов).</span></code> <br/><code>    <span class="p">(</span><span class="s">"DocumentRegistry"</span> <span class="s">"Attachment"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?Attachment</span><span class="p">.</span></code> <br/><code>    <span class="c"># Помещаем объект с файлом из ?Attachment в ?AttachmentItem.</span></code> <br/><code>    <span class="err">?item</span> <span class="err">?Attachment</span> <span class="err">?AttachmentItem</span><span class="p">.</span></code> <br/><code>    <span class="c"># Помещаем содержимое файла из ?AttachmentItem в ?Content.</span></code> <br/><code>    <span class="err">?AttachmentItem</span> <span class="nn">document</span><span class="p">:</span><span class="nt">content</span> <span class="err">?Content</span><span class="p">.</span></code> <br/><code>    <span class="c"># Помещаем имя файла из ?AttachmentItem в ?Name.</span></code> <br/><code>    <span class="err">?AttachmentItem</span> <span class="nn">document</span><span class="p">:</span><span class="nt">title</span> <span class="err">?Name</span><span class="p">.</span></code> <br/><code>    <span class="c"># Создаём в сценарии переменную Content и помещаем в неё ?Content</span></code> <br/><code>    <span class="nn">variable</span><span class="p">:</span><span class="nt">Content</span> <span class="nn">operator</span><span class="p">:</span><span class="nt">replace</span> <span class="err">?Content</span><span class="p">.</span></code> <br/><code>    <span class="c"># Создаём в сценарии переменную Name и помещаем в неё ?Name</span></code> <br/><code>    <span class="nn">variable</span><span class="p">:</span><span class="nt">Name</span> <span class="nn">operator</span><span class="p">:</span><span class="nt">replace</span> <span class="err">?Name</span><span class="p">.</span></code> <br/><code>    <span class="l">true</span> <span class="err">-&gt;</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="c"># Импортируем функции для работы с данными текущего сеанса и переменными</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">document:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/document#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">operator:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/operator#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">variable:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/variable#&gt;</span><span class="p">.</span></code> <br/><code></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="c"># Находим атрибут Attachment (Вложение) </span></code> <br/><code>    <span class="c"># в шаблоне DocumentRegistry (Реестр документов).</span></code> <br/><code>    <span class="p">(</span><span class="s">"DocumentRegistry"</span> <span class="s">"Attachment"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?Attachment</span><span class="p">.</span></code> <br/><code>    <span class="c"># Помещаем объект с файлом из ?Attachment в ?AttachmentItem.</span></code> <br/><code>    <span class="err">?item</span> <span class="err">?Attachment</span> <span class="err">?AttachmentItem</span><span class="p">.</span></code> <br/><code>    <span class="c"># Помещаем содержимое файла из ?AttachmentItem в ?content.</span></code> <br/><code>    <span class="err">?AttachmentItem</span> <span class="nn">document</span><span class="p">:</span><span class="nt">content</span> <span class="err">?content</span><span class="p">.</span></code> <br/><code>    <span class="c"># Помещаем имя файла из ?AttachmentItem в ?name.</span></code> <br/><code>    <span class="err">?AttachmentItem</span> <span class="nn">document</span><span class="p">:</span><span class="nt">title</span> <span class="err">?name</span><span class="p">.</span></code> <br/><code>    <span class="c"># Создаём в сценарии переменную content и помещаем в неё ?content</span></code> <br/><code>    <span class="nn">variable</span><span class="p">:</span><span class="nt">content</span> <span class="nn">operator</span><span class="p">:</span><span class="nt">replace</span> <span class="err">?content</span><span class="p">.</span></code> <br/><code>    <span class="c"># Создаём в сценарии переменную name и помещаем в неё ?name</span></code> <br/><code>    <span class="nn">variable</span><span class="p">:</span><span class="nt">name</span> <span class="nn">operator</span><span class="p">:</span><span class="nt">replace</span> <span class="err">?name</span><span class="p">.</span></code> <br/><code>    <span class="l">true</span> <span class="err">-&gt;</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 </li>
 </ul>
 </li>
@@ -321,14 +327,14 @@
 <li>
 <p><em>File</em> — с дочерними переменными:</p>
 <ul>
-<li><em>Content</em> — <strong>значение: формула</strong></li>
+<li><em>content</em> — <strong>значение: формула</strong></li>
 </ul>
-<div class="highlight"><code><pre><span></span><code><span class="err">$$</span><span class="n">Content</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="err">$$</span><span class="n">content</span></code> <br/></pre></code></div>
 <ul>
-<li><em>Name</em> — <strong>значение: формула</strong></li>
+<li><em>name</em> — <strong>значение: формула</strong></li>
 </ul>
-<div class="highlight"><code><pre><span></span><code><span class="err">$$</span><span class="n">Name</span></code> <br/></pre></code></div>
-<p>Здесь <code>$$Content</code> и <code>$$Name</code> — переменные, которые были созданы на шаге 4.</p>
+<div class="highlight"><code><pre><span></span><code><span class="err">$$</span><span class="n">name</span></code> <br/></pre></code></div>
+<p>Здесь <code>$$content</code> и <code>$$name</code> — переменные, которые были созданы на шаге 4.</p>
 </li>
 </ul>
 </li>

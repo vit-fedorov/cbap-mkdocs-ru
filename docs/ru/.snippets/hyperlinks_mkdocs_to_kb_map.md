@@ -343,6 +343,10 @@
 
 [architect_organizational_structure_diagram_edit]: {{ kbArticleURLPrefix }}4848
 
+[architect_organizational_structure_diagram_edit_element_menu]: {{ kbArticleURLPrefix }}4848#architect_organizational_structure_diagram_edit_element_menu
+
+[architect_organizational_structure_edit]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_edit
+
 [architect_process_architecture_design]: {{ kbArticleURLPrefix }}4833
 
 [architect_process_architecture_design_entity_create]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_entity_create
@@ -363,7 +367,7 @@
 
 [architect_process_architecture_diagram_designer]: {{ kbArticleURLPrefix }}4835
 
-[architect_process_architecture_diagram_designer_element_menu]: {{ kbArticleURLPrefix }}architect_process_architecture_diagram_designer_element_menu
+[architect_process_architecture_diagram_designer_element_menu]: {{ kbArticleURLPrefix }}4835#architect_process_architecture_diagram_designer_element_menu
 
 [architect_process_architecture_diagram_edit]: {{ kbArticleURLPrefix }}4835
 

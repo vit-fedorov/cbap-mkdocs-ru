@@ -65,7 +65,7 @@ _![Конструктор диаграммы ОШС](img/organizational_structur
 
 {% include-markdown ".snippets/enterprise_architecture_chrome_clipboard_admonition.md" %}
 
-## Меню элемента {: #organizational_structure_designer_element_menu}
+## Меню элемента {: #architect_organizational_structure_diagram_edit_element_menu}
 
 При выборе оргединицы на диаграмме отображается контекстное меню с перечисленными ниже пунктами.
 

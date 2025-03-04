@@ -53,7 +53,7 @@ hide:
 * Встроенные легкие в освоении, но эффективные языки выражений: формулы, N3 и DMN.
 * Поддержка C#-скриптов.
 
-## Возможности {{ productNameEnterprize }} {: #architect_features .pageBreakBefore }
+## Возможности {{ productNameEnterprise }} {: #architect_features .pageBreakBefore }
 
 В состав **{{ productNameEnterprise }}** входит модуль «**{{ productNameArchitect }}**» — no-code-конструктор процессной архитектуры и организационной структуры предприятия.
 

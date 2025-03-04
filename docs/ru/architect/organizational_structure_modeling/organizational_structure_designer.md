@@ -12,7 +12,7 @@ hide:
     - tags
 ---
 
-# Редактирование диаграммы ОШС {: #architect_organizational_structure_diagram_edit }
+# Просмотр и редактирование диаграммы ОШС {: #architect_organizational_structure_diagram_edit }
 
 ## Введение
 
@@ -22,18 +22,19 @@ hide:
 
     Изменения, внесённые в диаграмму ОШС, сохраняются автоматически.
 
-## Переход к конструктору диаграммы ОШС
+## Переход к диаграмме ОШС {: #architect_organizational_structure_diagram_designer }
 
-1. Откройте реестр [реестр оргединиц][architect_organizational_structure_design_registry_view].
+1. Откройте реестр оргединиц, выбрав пункт «**Оргструктура**» — «**Реестр**» в панели навигации выберите.
 2. Выберите оргединицу в панели навигации или дважды нажмите её в реестре.
 3. Откроется диаграмма ОШС выбранной оргединицы в режиме просмотра.
-4. Нажмите кнопку «**Редактировать**» <i class="fa-light fa-pen-nib" aria-hidden="true"></i>.
-5. Отобразится конструктор диаграммы ОШС для выбранной оргединицы.
-6. [Отредактируйте оргструктуру][architect_organizational_structure_edit].
+4. При необходимости перейдите к любой из оргединиц на диаграмме, нажав значок <i class="fa-solid fa-user"></i> или <i class="fa-solid fa-sitemap"></i>.
+5. Нажмите кнопку «**Редактировать**» <i class="fa-light fa-pen-nib" aria-hidden="true"></i>.
+6. Отобразится конструктор диаграммы ОШС для выбранной оргединицы.
+7. [Отредактируйте оргструктуру][architect_organizational_structure_design].
 
-_![Переход к конструктору организационной структуры](img/organizationa_structure_modeling_edit_diagram.png)_
+_![Переход к конструктору диаграммы ОШС](img/organizationa_structure_modeling_edit_diagram.png)_
 
-## Элементы конструктора диаграммы ОШС {: #architect_organizational_structure_diagram_designer }
+## Элементы конструктора диаграммы ОШС
 
 _![Конструктор диаграммы ОШС](img/organizational_structure_modeling_designer.png)_
 
@@ -65,7 +66,7 @@ _![Конструктор диаграммы ОШС](img/organizational_structur
 
 {% include-markdown ".snippets/enterprise_architecture_chrome_clipboard_admonition.md" %}
 
-## Меню элемента {: #architect_organizational_structure_diagram_edit_element_menu}
+## Меню элемента {: #architect_organizational_structure_diagram_edit_element_menu }
 
 При выборе оргединицы на диаграмме отображается контекстное меню с перечисленными ниже пунктами.
 
@@ -94,8 +95,7 @@ _![Настройка кнопок типовых операций для диа
 
 --8<-- "related_topics_heading.md"
 
-- _[Прсмотр реестра оргединиц][architect_organizational_structure_design_registry_view]_
-- _[Редактирование оргструктуры][architect_organizational_structure_edit]_
+- _[Редактирование оргструктуры][architect_organizational_structure_design]_
 - _[Области кнопок. Определение, настройка, клонирование, удаление][button_area]_
 - _[Кнопки. Определение, настройка, удаление][buttons]_
 

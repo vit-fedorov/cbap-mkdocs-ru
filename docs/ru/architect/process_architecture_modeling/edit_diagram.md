@@ -24,20 +24,20 @@ hide:
 
 ## Просмотр диаграммы {: #architect_process_architecture_diagram_view }
 
-1. Выберите элемент процессной архитектуры в [панели навигации][navigation_panel] или дважды нажмите его строку в [реестре процессов][architect_process_architecture_design_registry_view].
+1. Выберите элемент процессной архитектуры в панели навигации или дважды нажмите его строку в [реестре процессов][architect_process_architecture_design_registry_view].
 2. Откроется диаграмма процесса или бизнес-способностей в режиме просмотра.
 3. При необходимости [отредактируйте диаграмму](#architect_process_architecture_diagram_designer).
 
 ### Функции при просмотре диаграммы
 
-*![Диаграмма в режиме просмотра](process_architecture_modeling_view_diagram.png)*
+_![Диаграмма в режиме просмотра](img/process_architecture_modeling_view_diagram.png)_
 
 1. **Кнопки типовых операций**
 
-    - **Редактировать** <i class="fa-light fa-pen-nib"></i> — переход в режим просмотра диаграммы.
+    - **Редактировать** <i class="fa-light fa-pen-nib"></i> — переход в режим [редактирования диаграммы](#architect_process_architecture_diagram_designer).
     - **Обсуждение** <i class="fa-light fa-comment-dots"></i> — отображение чата для обсуждения диаграммы.
     - **Версии** <i class="fa-light fa-code-branch"></i> — просмотр версий диаграммы.
-    - **Свойства** <i class="fa-light fa-sidebar-flip"></i> — просмотр свойств диаграммы.
+    - **Свойства** <i class="fa-light fa-sidebar-flip"></i> — просмотр свойств диаграммы или выбранного элемента.
 
     Cм. также _«[Настройка кнопок типовых операций](#настройка-кнопок-типовых-операций)»_.
 
@@ -54,20 +54,20 @@ hide:
 - <i class="fa-light fa-code-compare"></i> — переход к диаграмме процесса по ссылке;
 - <i class="fa-light fa-square-plus"></i> — переход к подпроцессу с диаграммы процесса.
 
-*![Переход к дочернему элементу с диаграммы бизнес-способностей](img/diagram_navigating_to_child_element.png)*
+_![Переход к дочернему элементу с диаграммы бизнес-способностей](img/diagram_navigating_to_child_element.png)_
 
-*![Переход к диаграмме подпроцесса с диаграммы процесса](img/diagram_navigating_to_subprocess.png)*
+_![Переход к диаграмме подпроцесса с диаграммы процесса](img/diagram_navigating_to_subprocess.png)_
 
 ## Редактирование диаграммы {: #architect_process_architecture_diagram_designer }
 
-### Переход к конструктору диаграмм 
+### Переход к конструктору диаграмм
 
-1. Выберите элемент процессной архитектуры в [панели навигации][navigation_panel] или дважды нажмите его строку в [реестре процессов][architect_process_architecture_design_registry_view].
+1. Выберите элемент процессной архитектуры в панели навигации или дважды нажмите его строку в [реестре процессов][architect_process_architecture_design_registry_view].
 2. Откроется диаграмма процесса или бизнес-способностей в режиме просмотра.
 3. Нажмите кнопку «**Редактировать**» <i class="fa-light fa-pen-nib" aria-hidden="true"></i>.
-4. Отобразится конструктор диаграмм.
+4. Отобразится конструктор диаграмм процессов и бизнес-способностей.
 
-_![Переход к конструктору диаграмм](img/process_architecture_modeling_edit_diagram.png)_
+_![Переход к конструктору диаграмм процессов и бизнес-способностей](img/process_architecture_modeling_edit_diagram.png)_
 
 ### Элементы конструктора диаграмм
 
@@ -81,7 +81,7 @@ _![Конструктор диаграмм бизнес-способностей
     - **Очистить** <i class="fa-light fa-trash"></i> — безвозвратное удаление всех элементов с диаграммы. При нажатии этой кнопки отобразится запрос подтверждения.
     - **Обсуждение** <i class="fa-light fa-comment-dots"></i> — отображение чата для обсуждения диаграммы.
     - **Версии** <i class="fa-light fa-code-branch"></i> — управление версиями диаграммы.
-    - **Свойства** <i class="fa-light fa-sidebar-flip"></i> — [настройка свойств][architect_process_architecture_design_entity_properties_configure] выбранного элемента или всей диаграммы.
+    - **Свойства** <i class="fa-light fa-sidebar-flip"></i> — [настройка свойств][architect_process_architecture_design_entity_properties_configure] диаграммы или выбранного элемента.
 
     Cм. также _«[Настройка кнопок типовых операций](#настройка-кнопок-типовых-операций)»_.
 
@@ -159,7 +159,7 @@ _![Настройка кнопок типовых операций для диа
 4. Нажимайте на ошибки и предупреждения в списке, чтобы перейти к соответствующим элементам на диаграмме.
 5. При необходимости исправьте диаграмму.
 
-*![Проверка диаграммы](verify_diagram.png)*
+_![Проверка диаграммы](verify_diagram.png)_
 
 <div class="relatedTopics" markdown="block">
 

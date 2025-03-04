@@ -333,7 +333,7 @@ _![Удаление элемента процессной архитектуры
 - _[Проверка диаграммы процесса][architect_process_architecture_diagram_verify]_
 - _[Редактирование формы][form_designer]_
 - _[Операции на панели элементов конструктора форм][form_designer_elements_operations]_
-- _[Использование панели навигации][navigation_panel]_
+- _[Панель навигации. Использование][navigation_panel]_
 
 </div>
 

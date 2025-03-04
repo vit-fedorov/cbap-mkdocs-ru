@@ -39,7 +39,7 @@ hide:
 
 ## Редактирование оргструктуры {: #architect_organizational_structure_edit }
 
-Чтобы отредактировать оргструктуру предприятия, отройте [реестр организационных единиц](#architect_organizational_structure_design_registry_view).
+Чтобы отредактировать оргструктуру предприятия, откройте [реестр организационных единиц](#architect_organizational_structure_design_registry_view).
 
 - Редактировать оргструктуру можно следующими способами:
     - с помощью конструктора диаграммы ОШС;
@@ -272,7 +272,7 @@ _![Удаление оргединицы с помощью панели нави
 - _[Редактирование диаграммы ОШС][architect_organizational_structure_diagram_edit]_
 - _[Построение процессной архитектуры][architect_process_architecture_design]_
 - _[Шаблон организационной единицы][organizational_unit_templates]_
-- _[Использование панели навигации][navigation_panel]_
+- _[Панель навигации. Использование][navigation_panel]_
 
 </div>
 

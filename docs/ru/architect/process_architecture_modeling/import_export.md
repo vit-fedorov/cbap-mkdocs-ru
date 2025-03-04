@@ -27,7 +27,7 @@ hide:
 2. Чтобы импортировать диаграмму в процесс или группу процессов, установите флажок выбора в реестре процессов и нажмите кнопку «**Импорт**».
 --8<-- "process_architecture_import_source_select.md"
 
-*![Импорт диаграмм процессов с помощью реестра процессов](process_architecture_modelling_import_diagram_from_registry.png)*
+_![Импорт диаграмм процессов с помощью реестра процессов](process_architecture_modelling_import_diagram_from_registry.png)_
 
 ### Импорт с помощью панели навигации
 
@@ -35,7 +35,7 @@ hide:
 2. В раскрывающемся меню выберите пункт «**Импорт**».
 --8<-- "process_architecture_import_source_select.md"
 
-*![Импорт диаграмм процессов с помощью панели навигации](process_architecture_modeling_import_diagram_from_navigation.png)*
+_![Импорт диаграмм процессов с помощью панели навигации](process_architecture_modeling_import_diagram_from_navigation.png)_
 
 ### Импорт с помощью конструктора диаграммы
 
@@ -43,7 +43,7 @@ hide:
 2. Нажмите кнопку «**Импорт**» <i class="fa-light fa-arrow-down-to-bracket"></i>.
 --8<-- "process_architecture_import_source_select.md"
 
-*![Импорт диаграмм процессов с помощью конструктора диаграммы](importing_process_entity_import_diagram_from_designer.png)*
+_![Импорт диаграмм процессов с помощью конструктора диаграммы](importing_process_entity_import_diagram_from_designer.png)_
 
 ### Выбор источника импорта и импорт диаграмм {: .pageBreakBefore }
 
@@ -52,16 +52,16 @@ hide:
 
     * **Загрузить файлы BPMN** — выберите файлы на компьютере и нажмите кнопку «**Продолжить**».
 
-    *![Загрузка файлов BPMN](importing_process_entity_from_files.png)*
+    _![Загрузка файлов BPMN](importing_process_entity_from_files.png)_
 
     * **Импортировать из другой BPM-системы** — выберите внешнюю BPM-систему, введите учётные данные для доступа к ней, и нажмите кнопку «**Продолжить**».
 
-    *![Импорт диаграмм из другой BPM-системы](importing_process_entity_from_BPMS.png)*
+    _![Импорт диаграмм из другой BPM-системы](importing_process_entity_from_BPMS.png)_
 
 3. На шаге «**Выбор процессов для импорта**» установите флажки для требуемых процессов.
 4. Нажмите кнопку «**Импортировать**».
 
-*![Выбор процессов для импорта](importing_process_entity_select_processes.png)*
+_![Выбор процессов для импорта](importing_process_entity_select_processes.png)_
 
 ## Экспорт диаграмм и регламентов процессов {: #architect_exporting_process_entity .pageBreakBefore }
 
@@ -74,7 +74,7 @@ hide:
 --8<-- "process_architecture_call_actions_context_menu.md"
 2. В раскрывающемся меню выберите пункт «**Экспорт в BPMN**» (этот пункт доступен только для процессов и ссылок на процессы), «**Экспорт в PNG**», «**Экспорт в SVG**» или «**Экспорт регламента (DOCX)**».
 
-    *![Экспорт элемента процессной архитектуры с помощью панели навигации](process_architecture_modeling_export_entity_from_navigation.png)*
+    _![Экспорт элемента процессной архитектуры с помощью панели навигации](process_architecture_modeling_export_entity_from_navigation.png)_
 
 3. Браузер скачает файл в соответствующем формате.
 
@@ -89,7 +89,7 @@ hide:
 
 - _[Просмотр реестра процессов][architect_process_architecture_design]_
 - _[Экспорт регламента процессов][architect_demo_organizational_structure_processes_export]_
-- _[Использование панели навигации][navigation_panel]_
+- _[Панель навигации. Использование][navigation_panel]_
 
 </div>
 

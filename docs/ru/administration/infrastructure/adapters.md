@@ -119,10 +119,11 @@ _![Пример содержимого архива с исходным кодо
 
 - Папка `Behaviour`
     - Класс `Comindware.Adapter.IncomingPerformer`
-    
+
         | Метод | Описание |
         |---|---|
-        | `RecognizeRawRequest` | Маппинг входящего сообщения на внутренние данные |
+        | `{communicationRouteName}Performer` | Формирование входящего сообщения и ответа на него |
+        | `RecognizeRawRequest` | Определение соответствий во входящем сообщении к внутренним данным (маппинг) |
         | `SendRawResponse` | Вызов интерфейса `IIncomingConnectionService.OnReplyReceive(object message)` для успешного ответа или `IIncomingConnectionService.OnErrorReceive(object message)` для отправки сообщения с ошибкой |
 
     - Класс `Service`
@@ -147,6 +148,7 @@ _![Пример содержимого архива с исходным кодо
         | Метод | Описание |
         |---|---|
         | `Procedure` | Конфигурация путей передачи данных |
+        | `SignatureForm` | Форма для настройки пути передачи данных |
 
 - Папка `Signature`
     - Класс `{communicationRouteName}ExternalMessage`
@@ -177,9 +179,9 @@ _![Пример содержимого архива с исходным кодо
 
         | Метод | Описание |
         |---|---|
-        | `GetIncomingMessageType` | Входящее сообщение |
-        | `GetOutgoingMessageType` | Сообщение об ответе без ошибок |
-        | `GetErrorMessageType` | Сообщение об ошибке |
+        | `GetIncomingMessageType` | Тип входящего сообщения |
+        | `GetOutgoingMessageType` | Тип сообщения об ответе без ошибок |
+        | `GetErrorMessageType` | Тип сообщения об ошибке |
 
 ### Классы и методы адаптера для отправки сообщений
 
@@ -199,7 +201,7 @@ _![Пример содержимого архива с исходным кодо
 
         | Метод | Описание |
         |---|---|
-        | `TranslateIncomingMessage` | Маппинг внутреннего сообщения на внешнее |
+        | `TranslateIncomingMessage` | Определение соответствий во внутреннем сообщении к внешним данным (маппинг) |
         | `SendRawRequest` | Отправка сообщения внешнему сервису |
         | `RecognizeRawResponse` | Обработка ответа внешнего сервиса |
 

@@ -101,6 +101,13 @@
 <li>Нажмите кнопку «<strong>Создать</strong>» или дважды нажмите строку конфигурации в списке.</li>
 <li>
 <p>Настройте и сохраните конфигурацию резервного копирования:</p>
+<div class="notice notice-warning">
+<p class="admonition-title">Путь и имя файла резервной копии по умолчанию</p>
+<p>Исходная конфигурация резервного копирования задана в файле конфигурации экземпляра ПО (<code>&lt;instanceName&gt;.yml</code>).</p>
+<p>Эти параметры используются по умолчанию при создании конфигураций резервного копирования:</p>
+<div class="highlight"><code><pre><span></span><code>#################### Конфигурация резервного копирования ####################</code> <br/><code># Папка для резервного копирования по умолчанию</code> <br/><code>backup.defaultFolder: /var/lib/comindware/cmwdata/Backup</code> <br/><code></code> <br/><code># Имя файла для резервного копирования по умолчанию</code> <br/><code>backup.defaultFileName: Backup</code> <br/></pre></code></div>
+<p>См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4620">Пути и содержимое директорий экземпляра ПО</a>»</em> и <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5067">Конфигурация экземпляра, компонентов ПО и служб. Настройка в Linux</a>»</em>.</p>
+</div>
 <ul>
 <li><strong>Отключить резервное копирование</strong> — установите этот флажок, чтобы прекратить резервное копирование с использованием данной конфигурации.</li>
 <li><strong>Название</strong> — введите наглядное наименование конфигурации резервного копирования.</li>
@@ -169,11 +176,6 @@
 </ul>
 </li>
 </ol>
-<div class="notice notice-warning">
-<p class="admonition-title">Путь и имя файла резервной копии по умолчанию</p>
-<p>Исходные параметры резервного копирования заданы в файле конфигурации экземпляра ПО (<code>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code>). Эти параметры используются по умолчанию при создании конфигураций резервного копирования.</p>
-<div class="highlight"><code><pre><span></span><code>#################### Конфигурация резервного копирования ####################</code> <br/><code># Папка для резервного копирования по умолчанию</code> <br/><code>backup.defaultFolder: /var/lib/comindware/cmwdata/Backup</code> <br/><code></code> <br/><code># Имя файла для резервного копирования по умолчанию</code> <br/><code>backup.defaultFileName: Backup</code> <br/></pre></code></div>
-</div>
 <figure class="screenshot_with_caption">
 <p><img alt="Настройка свойств резервного копирования" src="/platform/v5.0/administration/backup/../infrastructure/img/backup_create_config.png"/><figcaption class="caption">Настройка свойств резервного копирования</figcaption></p>
 </figure>
@@ -259,12 +261,14 @@
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <ul>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5082">Резервное копирование и восстановление. Рекомендации по организации и оптимизации</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4647">Восстановление базы данных из файла резервной копии в формате .CDBBZ</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4677">Хранилище S3. Настройка экземпляра ПО и подключения</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4620">Пути и содержимое директорий экземпляра ПО</a></em></li>
 <li>
-<p><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4647">Восстановление базы данных из файла резервной копии в формате .CDBBZ</a></em></p>
+<p><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5067">Конфигурация экземпляра, компонентов ПО и служб. Настройка в Linux</a></em></p>
 </li>
 <li>
-<p><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4643">Резервное копирование и восстановление</a></em></p>
+<p><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4643">Резервное копирование и восстановление. Содержание раздела</a></em></p>
 </li>
 </ul>
 </div>

@@ -1,0 +1,383 @@
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="">
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<div class="mce-toc">
+<h2 class="toc-heading">
+      Содержание
+      </h2>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#definitions">
+<span class="md-ellipsis">
+      Определения
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#роли-comindware-platform-в-интеграциях">
+<span class="md-ellipsis">
+      Роли Comindware Platform в интеграциях
+    </span>
+</a>
+<nav aria-label="Роли Comindware Platform в интеграциях" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#получение-запросов-от-внешних-систем">
+<span class="md-ellipsis">
+      Получение запросов от внешних систем
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#отправка-запросов-во-внешние-системы">
+<span class="md-ellipsis">
+      Отправка запросов во внешние системы
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#возможности-интеграций">
+<span class="md-ellipsis">
+      Возможности интеграций
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#механизмы-и-выбор-интеграций">
+<span class="md-ellipsis">
+      Механизмы и выбор интеграций
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#преимущества-разных-типов-интеграций">
+<span class="md-ellipsis">
+      Преимущества разных типов интеграций
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#общий-порядок-настройки">
+<span class="md-ellipsis">
+      Общий порядок настройки
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#тестирование-интеграций">
+<span class="md-ellipsis">
+      Тестирование интеграций
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#примеры-настроек-интеграций">
+<span class="md-ellipsis">
+      Примеры настроек интеграций
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#типичные-проблемы">
+<span class="md-ellipsis">
+      Типичные проблемы
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#связанные-статьи">
+<span class="md-ellipsis">
+      Связанные статьи
+    </span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<div class="notice notice-success">
+<h2 class="admonition-title" id="definitions">Определения</h2>
+<p><strong>Интеграция</strong> — это автоматизированный процесс взаимодействия <strong>Comindware Platform</strong> с внешними системами, направленный на двусторонний обмен данными и синхронизацию процессов. Реализуется через REST API, OData, адаптеры или пользовательские решения, что позволяет:</p>
+<ul>
+<li>Настраивать подключения и маршруты передачи данных.</li>
+<li>Использовать стандартные методы (GET, POST, PUT, DELETE) для управления данными.</li>
+<li>Применять готовые решения или разрабатывать специализированные сценарии.</li>
+<li>Подключать стороннее оборудование и внедрять его использование в бизнес-процессы.</li>
+<li>Определять роли систем и направление интеграции.</li>
+</ul>
+<p>Интеграция обеспечивает гибкость за счёт поддержки разных форматов, преобразования данных и транзакционной обработки, что упрощает совместное использование функционала между системами.</p>
+</div>
+<h2 id="роли-comindware-platform-в-интеграциях">Роли Comindware Platform в интеграциях</h2>
+<p><strong>Comindware Platform</strong> может как получать, так и передавать любые данные в формате JSON или XML. В зависимости от роли, в которой выступает экземпляр ПО, отличается процесс его настройки. <strong>Comindware Platform</strong> может выступать в роли получателя и отправителя одновременно.</p>
+<p><strong>Comindware Platform</strong> поддерживает методы <strong>REST API</strong>. Чтобы посмотреть доступные методы для взаимодействия с продуктом, введите URL в своём браузере:</p>
+<div class="highlight"><code><pre><span></span><code>http://your-host/docs</code> <br/></pre></code></div>
+<p>Здесь <code>your-host</code> — адрес сервера <strong>Comindware Platform</strong>.</p>
+<p>См. также <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4860">Введение в API</a>»</em>.</p>
+<h3 id="получение-запросов-от-внешних-систем">Получение запросов от внешних систем</h3>
+<p><strong>Comindware Platform</strong> может получать запросы от внешних систем. ПО позволяет настроить интервал времени, с которым оно будет проверять наличие новых запросов.</p>
+<p>В ряде случаев чтобы вносить изменения в данные <strong>Comindware Platform</strong>, внешняя система должна быть авторизована через аккаунт, которому предоставлены соответствующие права. См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4662">Системные роли. Определения, настройка, объединение, удаление</a>»</em>.</p>
+<h3 id="отправка-запросов-во-внешние-системы">Отправка запросов во внешние системы</h3>
+<p><strong>Comindware Platform</strong> может отправлять запросы во внешние системы. Причём могут быть использованы методы <code>PUT</code> и <code>POST</code> для внесения изменений в данные внешних систем, так и метод <code>GET</code> для получения данных из них.</p>
+<p>Для передачи данных во внешние системы их следует преобразовать в необходимый формат.</p>
+<h2 id="возможности-интеграций">Возможности интеграций</h2>
+<p><strong>Comindware Platform</strong> предоставляет гибкие инструменты для автоматизации обмена данными с внешними системами. Интеграции имеют следующие преимущества:</p>
+<ul>
+<li>Поддержка стандартных протоколов и форматов.</li>
+<li>Готовые решения для популярных систем.</li>
+<li>Гибкая настройка пользовательских сценариев.</li>
+<li>Поддержка различных направлений интеграций (импорт, экспорт, двусторонняя синхронизация).</li>
+<li>Минимизация ручного ввода данных.</li>
+<li>Снижение ошибок за счёт автоматизации.</li>
+<li>Возможность масштабирования бизнес-процессов.</li>
+</ul>
+<p>При помощи интеграций можно передавать и получать различные данные:</p>
+<ul>
+<li>текстовые данные;</li>
+<li>числовые показатели;</li>
+<li>данные типа даты и времени;</li>
+<li>файлы различных форматов.</li>
+</ul>
+<p>С помощью интеграций можно решить ряд бизнес-задач:</p>
+<ul>
+<li>Синхронизация данных.</li>
+<li>Загрузка исторических данных.</li>
+<li>Подключение оборудования и внедрение его в процессы.</li>
+<li>Обмен данными с внешними системами, в том числе:<ul>
+<li>Сервисы электронной почты</li>
+<li>СФЕРА Курьер</li>
+<li>СУБД</li>
+<li>1С</li>
+<li>СберКорус</li>
+<li>Bitrix24</li>
+<li>Телфин</li>
+<li>Novofon</li>
+<li>OnlinePBX</li>
+<li>Megaplan</li>
+<li>Telegram</li>
+<li>SAP</li>
+<li>DocuSign</li>
+<li>Private Branch Exchange</li>
+<li>MS Dynamics</li>
+<li>MailChimp</li>
+<li>Unisender</li>
+<li>UiPath</li>
+<li>Viber</li>
+</ul>
+</li>
+</ul>
+<h2 id="механизмы-и-выбор-интеграций">Механизмы и выбор интеграций</h2>
+<p>Прежде чем приступать к настройке интеграции, ознакомьтесь с доступными типами и их особенностями:</p>
+<table style="width: 100%;">
+<thead>
+<tr>
+<th>Критерий</th>
+<th>Стандартные интеграции</th>
+<th>OData</th>
+<th>Кастомные адаптеры</th>
+<th>API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Гибкость</td>
+<td>Средняя</td>
+<td>Высокая</td>
+<td>Высокая</td>
+<td>Высокая</td>
+</tr>
+<tr>
+<td>Назначение</td>
+<td>Готовые решения для популярных систем</td>
+<td>Синхронизация данных с ERP/CRM</td>
+<td>Работа с нестандартными протоколами и оборудованием</td>
+<td>Универсальная интеграция через API</td>
+</tr>
+<tr>
+<td>Требуемые навыки</td>
+<td>Low-code-разработка</td>
+<td><p>Low-code-разработка</p><p>Знание стандарта OData</p></td>
+<td>Программирование</td>
+<td>Программирование</td>
+</tr>
+<tr>
+<td>Время настройки</td>
+<td>1–2 часа</td>
+<td>2–4 часа</td>
+<td>1+ неделя</td>
+<td>4-6   часов</td>
+</tr>
+</tbody>
+</table>
+<h2 id="преимущества-разных-типов-интеграций">Преимущества разных типов интеграций</h2>
+<p><strong>Comindware Platform</strong> поддерживает несколько подходов к интеграции, каждый из которых решает специфические задачи. Вот ключевые особенности и преимущества:</p>
+<ul>
+<li>Стандартные интеграции — готовые решения для популярных систем с использованием HTTP-запросов, SMTP/IMAP.<ul>
+<li>Преимущества:<ul>
+<li>Быстрое подключение: минимум настроек — достаточно указать параметры аутентификации.</li>
+<li>Поддержка специализированных процессов: помимо сценариев можно настроить обработку данных прямо в процессе, что делает настройку приложения гибче.</li>
+<li>Низкий порог входа: не требует навыков программирования.</li>
+</ul>
+</li>
+<li>Пример: отправка электронной почты.</li>
+</ul>
+</li>
+<li>Интеграции по OData — автоматическая синхронизация данных между <strong>Comindware Platform</strong> и внешними системами через стандарт OData.<ul>
+<li>Преимущества:<ul>
+<li>Автоматизация по расписанию: данные обновляются без ручного вмешательства.</li>
+<li>Отсутствие сценариев: настройка ограничивается подключением и интеграцией.</li>
+<li>Полная синхронизация: поддерживает массовую выгрузку и загрузку записей шаблонов.</li>
+</ul>
+</li>
+<li>Пример: интеграция с 1С.</li>
+</ul>
+</li>
+<li>Кастомные адаптеры — решение для интеграции с системами, использующими проприетарные протоколы или оборудование.<ul>
+<li>Преимущества:<ul>
+<li>Работа с нестандартными протоколами:  позволяют работать с проприетарными протоколами и аппаратными комплексами.</li>
+<li>Нестандартная обработка данных: при настройке адаптера можно создать уникальную структуру обрабатываемых данных.</li>
+</ul>
+</li>
+<li>Пример: интеграция принтера.</li>
+</ul>
+</li>
+<li>Интеграция по REST API<ul>
+<li>Преимущества:<ul>
+<li>Стабильность: методы API в большинстве случаев не меняются при обновлении системы и продолжают свою работу.</li>
+<li>Безопасность: API предоставляет возможности для настройки аутентификации и авторизации, что обеспечивает безопасность данных при обмене между системами.</li>
+<li>Автоматизация: API позволяет автоматизировать процессы обмена данными, что снижает необходимость ручного ввода и минимизирует ошибки.</li>
+</ul>
+</li>
+<li>Пример: добавление записей по API.</li>
+</ul>
+</li>
+</ul>
+<h2 id="общий-порядок-настройки">Общий порядок настройки</h2>
+<p>Чтобы настроить интеграцию, выполните следующие шаги:</p>
+<ol class="colored_numbers_list">
+<li>Определите, какая система является отправителем данных, а какая получателем.</li>
+<li>Определите структуру передаваемых данных для интеграции и отформатируйте для передачи в нужном формате.</li>
+<li>Сопоставьте полученные данные со структурой данных в системе-получателе (маппинг данных).</li>
+<li>Создайте шаблон записи и атрибуты в нём в соответствии со структурой запроса.</li>
+<li>Настройте интеграцию в приложении.<ul>
+<li>для OData:<ul>
+<li>настройте подключение тип «<strong>Подключения REST и OData</strong>» — «<strong>Синхронизация с веб-сервисом</strong>».</li>
+<li>настройте подключение к OData на странице «<strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4697">Интеграции</a></strong>» <i class="fal fa-sync-alt">&zwnj;<!--icon--></i> приложения.</li>
+</ul>
+</li>
+<li>для встроенных подключений:<ul>
+<li>настройте <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4675">подключение</a> необходимого типа.</li>
+<li>настройте <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4676">путь передачи данных</a> необходимого типа.</li>
+<li>настройте сценарий или процесс для обработки и преобразования данных в требуемый формат.</li>
+</ul>
+</li>
+<li>для пользовательских адаптеров:<ul>
+<li>создайте решение Visual Studio для адаптера.</li>
+<li>добавьте адаптер в разделе «<strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4672">Адаптеры</a></strong>» <i class="fa-light fa-puzzle-piece-simple">&zwnj;<!--icon--></i>.</li>
+<li>настройте пользовательское подключение для адаптера.</li>
+<li>настройте пользовательский путь передачи данных для адаптера.</li>
+<li>настройте сценарий для обработки и преобразования данных в требуемый формат.</li>
+</ul>
+</li>
+<li>для REST API:<ul>
+<li>настройте доступ к API для аккаунта с помощью <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4662">роли</a>.</li>
+<li>настройте вызов методов API с использованием заголовков аутентификации.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<div class="notice notice-tip">
+<p class="admonition-title">Подключение и пути передачи данных</p>
+<p>К одному подключению могут относиться несколько путей передачи данных:</p>
+<ul>
+<li>При создании подключения формируется базовый путь для интеграции.</li>
+<li>При создании пути передачи данных можно настроить префикс, который будет отличать его от других путей, базирующихся на том же подключении.</li>
+</ul>
+</div>
+<h2 id="тестирование-интеграций">Тестирование интеграций</h2>
+<p>Чтобы проверить корректность настроенной интеграции, воспользуйтесь одним из следующих инструментов:</p>
+<ul>
+<li>В командной строке отправьте запрос при помощи Curl.</li>
+<li>Используйте сторонние сервисы для проверки отправки и получения запросов, например:<ul>
+<li>Postman</li>
+<li>Apidog</li>
+<li>Insomnia</li>
+<li>Hoppscotch</li>
+<li>SoapUI</li>
+</ul>
+</li>
+</ul>
+<h2 id="примеры-настроек-интеграций">Примеры настроек интеграций</h2>
+<ul>
+<li>Для работы с электронной почтой:<ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4692">Отправка эл. почты из сценариев по SMTP/Exchange</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4693">Получение эл. почты с помощью сценариев через IMAP и Exchange</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4690">Отправка почты из процесса</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4695">Получение эл. почты и веб-запросов в процессе</a></em></li>
+</ul>
+</li>
+<li>Для работы с HTTP-запросами:<ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4699">HTTP-запросы типа GET. Отправка запроса и обработка ответа в формате JSON</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4700">HTTP-запросы. Получение JSON-данных в сценарии</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5084">HTTP-запросы. Получение и обработка данных с помощью JSONPath</a></em></li>
+<li><em><a class="autorefs autorefs-internal mkdocs_imported_link" href="rest_odata_connections/http_send_post.html#http_send_post">HTTP-запросы типа POST. Отправка и получение ответа</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5066">HTTP-запросы типа POST. Отправка составного содержимого и файлов</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5083">HTTP-запросы с составным содержимым. Получение файлов в сценарии</a></em></li>
+</ul>
+</li>
+<li>Для работы с СУБД:<ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4706">Внешняя СУБД (MySQL, MSSQL, Oracle, PostgreSQL). Отправка SQL-запроса. Настройка подключения, пути передачи данных и сценария</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4705">Внешняя СУБД (MySQL, MSSQL, Oracle, PostgreSQL). Получение данных по таймеру. Настройка подключения, пути передачи данных и сценария</a></em></li>
+</ul>
+</li>
+<li>Для работы с различными сервисами:<ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4697">Синхронизация с веб-сервисом. Интеграция по OData</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4698">Интеграция с 1С по OData. Настройка для импорта данных</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4688">Collabora Online. Настройка подключения</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4689">Р7 Офис. Настройка сервера и подключения</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5062">Отправка запросов данных в «СФЕРА Курьер»</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5061">Получение документов из «СФЕРА Курьер»</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4926">Отправка уведомлений с помощью Telegram-бота</a></em></li>
+</ul>
+</li>
+</ul>
+<h2 id="типичные-проблемы">Типичные проблемы</h2>
+<p>В процессе настройки интеграции могут возникнуть различные ошибки. Здесь приведён список часто возникающих проблем:</p>
+<ul>
+<li>Отключено подключение или путь передачи данных.</li>
+<li>Неправильно настроены атрибуты сообщений или параметры интеграции в пути передачи данных.</li>
+<li>Неправильно обозначено поле в адаптере.</li>
+<li>Неверно определён формат данных.</li>
+<li>Неправильно сопоставлены поля данных у отправителя и получателя.</li>
+<li>Пользователю не предоставлены права доступа к API.</li>
+<li>Отсутствуют данные в запросе.</li>
+<li>В сценарии содержатся ошибки в структуре и содержании.</li>
+</ul>
+<div class="relatedTopics">
+<h2 id="связанные-статьи">Связанные статьи</h2>
+<ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4860">Введение в API</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4672">Адаптеры. Определения, настройка, удаление</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4675">Подключения. Определения, типы, создание, настройка, удаление</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4676">Пути передачи данных</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4697">Синхронизация с веб-сервисом. Интеграция по OData</a></em></li>
+</ul>
+</div>
+</article>
+</div>
+</div>
+<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#">
+<i class="fa-light fa-arrow-up">&zwnj;<!--icon--></i>
+            К началу
+          </a>
+</main>
+</div>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></div>

@@ -259,9 +259,65 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#событие-в-адаптере">
+<a class="md-nav__link mkdocs_imported_link" href="#log_files_event_examples_adapter_event">
 <span class="md-ellipsis">
       Событие в адаптере
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#статус-работы-адаптера">
+<span class="md-ellipsis">
+      Статус работы адаптера
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#сведения-о-созданных-подключениях-адаптера">
+<span class="md-ellipsis">
+      Сведения о созданных подключениях адаптера
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#статистика-по-процессу">
+<span class="md-ellipsis">
+      Статистика по процессу
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#сведения-о-созданных-путях-передачи-данных-адаптера">
+<span class="md-ellipsis">
+      Сведения о созданных путях передачи данных адаптера
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#информация-об-адаптере">
+<span class="md-ellipsis">
+      Информация об адаптере
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#настройки-подключения-адаптера-к-брокеру-сообщений">
+<span class="md-ellipsis">
+      Настройки подключения адаптера к брокеру сообщений
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#log_files_event_examples_connection_status">
+<span class="md-ellipsis">
+      Статус подключения
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#взаимодействие-адаптера-с-брокером-сообщения">
+<span class="md-ellipsis">
+      Взаимодействие адаптера с брокером сообщения
     </span>
 </a>
 </li>
@@ -1156,7 +1212,7 @@
 <li><code>INFO</code> — тип события: информационное</li>
 <li><code>00000000-0000-0000-0000-000000000000</code> — идентификатор сеанса</li>
 <li><code>systemAccount</code> — учётная запись, остановившая систему</li>
-<li><code>Comindware Platform has started</code> — описание события: система остановлена</li>
+<li><code>Comindware Platform has stopped</code> — описание события: система остановлена</li>
 </ul>
 <h3 class="pageBreakBefore" id="успешный-результат-выполнения-процесса">Успешный результат выполнения процесса</h3>
 <p><strong>Пример события</strong></p>
@@ -1193,7 +1249,7 @@
 <li><code>systemAccount</code> — учётная запись, запустившая сервис</li>
 <li><code>Core Loaded</code> — запущен сервис Core</li>
 </ul>
-<h3 class="pageBreakBefore" id="событие-в-адаптере">Событие в адаптере</h3>
+<h3 class="pageBreakBefore" id="log_files_event_examples_adapter_event">Событие в адаптере</h3>
 <p><strong>Пример события</strong></p>
 <div class="highlight"><code><pre><span></span><code><span class="p">[</span><span class="n">yyy</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">dd</span><span class="w"> </span><span class="n">HH</span><span class="p">:</span><span class="n">mm</span><span class="p">:</span><span class="n">ss</span><span class="p">,</span><span class="n">SSS</span><span class="p">][</span><span class="n">INFO</span><span class="p">][</span><span class="n">Getting</span><span class="w"> </span><span class="n">meta</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">plugin</span><span class="w"> </span><span class="n">XxxSenderAdapter</span><span class="p">.]</span><span class="w"> </span><span class="n">Platform</span><span class="w"> </span><span class="k">key</span><span class="p">:</span><span class="w"> </span><span class="n">XXX</span><span class="err">\</span><span class="n">_AdapterAgent5b28ad88a4cb4d4f8078c4deef1ee08b</span><span class="p">;</span><span class="w"> </span><span class="n">Service</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">ServiceName</span><span class="p">;</span><span class="w"> </span><span class="n">Runtime</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">NET</span><span class="w"> </span><span class="mi">6</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">21</span></code> <br/><code></code> <br/><code><span class="p">[</span><span class="mi">2023</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">08</span><span class="w"> </span><span class="mi">00</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="mi">667</span><span class="p">][</span><span class="n">INFO</span><span class="p">][</span><span class="n">Meta</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">ready</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">XxxSenderAdapter</span><span class="p">.]</span><span class="w"> </span><span class="n">Platform</span><span class="w"> </span><span class="k">key</span><span class="p">:</span><span class="w"> </span><span class="n">XXX</span><span class="err">\</span><span class="n">_AdapterAgent5b28ad88a4cb4d4f8078c4deef1ee08b</span><span class="p">;</span><span class="w"> </span><span class="n">Service</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">ServiceName</span><span class="p">;</span><span class="w"> </span><span class="n">Runtime</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">NET</span><span class="w"> </span><span class="mi">6</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">21</span></code> <br/><code><span class="k">data</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="ss">"Name"</span><span class="p">:</span><span class="ss">"XxxSenderAdapter"</span><span class="p">,</span><span class="ss">"Description"</span><span class="p">:</span><span class="ss">"Адаптер для связи с системой «XXX»"</span><span class="p">,</span><span class="ss">"Direction"</span><span class="p">:</span><span class="ss">"Outgoing"</span><span class="p">,</span><span class="ss">"EndpointDefinitionJson"</span><span class="p">:</span><span class="err">"{}}</span></code> <br/></pre></code></div>
 <ul>
@@ -1202,6 +1258,123 @@
 <li><code>Getting meta for plugin XxxSenderAdapter</code> — описание события</li>
 <li><code>Platform key: XXX_AdapterAgent5b28ad88a4cb4d4f8078c4deef1ee08b; Service name: ServiceName; Runtime: .NET 6.0.21</code> — контекст события</li>
 <li><code>data: {}</code> — содержимое сообщения</li>
+</ul>
+<h3 id="статус-работы-адаптера">Статус работы адаптера</h3>
+<p><strong>Пример события</strong></p>
+<div class="highlight"><code><pre><span></span><code>[MM-dd HH:mm:ss,SSS][INFO] machineName_instanceName </code> <br/><code>Kestrel. Incoming adapters:</code> <br/><code>[WHITE] Urls: http://127.0.1.1:8080</code> <br/><code>[GREEN] Status: Started</code> <br/><code>[WHITE] Number of subscribed integrations 1</code> <br/><code>[WHITE] Adapter name: incomingAdapter</code> <br/><code>[GREEN] Integration: messageTypeName. Route: Integration/SendRoute, HttpMethod: Post, AuthorizationType: Basic, ProcedureName: communicationRouteName, DataBusNumber: 0,  ProcedureIsDisable: False, EndpointIsAvailable: True</code> <br/></pre></code></div>
+<p><strong>Поля события</strong></p>
+<ul>
+<li><code>yyyy-MM-dd HH:mm:ss,SSS</code> — дата и время события</li>
+<li><code>INFO</code> — тип события: информационное</li>
+<li><code>machineName</code> — имя машины</li>
+<li><code>instanceName</code> — имя экземпляра ПО</li>
+<li><code>COLOR</code> — цветовое обозначение статуса информации. <code>WHITE</code> — общая информация, <code>GREEN</code> — корректная работа компонента адаптера, <code>RED</code> — некорректная работа компонента адаптера.</li>
+<li><code>Urls: &lt;ipAddress&gt;:&lt;portNumber&gt;</code> — адрес и порт, по которому доступен адаптер</li>
+<li><code>Status: Started</code> — статус адаптера: запущен</li>
+<li><code>Number of subscribed integrations 1</code> — количество типов сообщения пути передачи данных адаптера</li>
+<li><code>Adapter name: incomingAdapter</code> — имя адаптера</li>
+<li><code>Integration: messageTypeName</code> — имя типа сообщения пути передачи данных адаптера</li>
+<li><code>Route: Integration/SendRoute</code> — URI-путь типа сообщения пути передачи данных адаптера</li>
+<li><code>HttpMethod: Post</code> — тип метода</li>
+<li><code>AuthorizationType: Basic</code> — тип аутентификации: базовая</li>
+<li><code>ProcedureName: communicationRouteName</code> — имя пути передачи данных адаптера</li>
+<li><code>DataBusNumber: 0</code> — номер шины данных</li>
+<li><code>ProcedureIsDisable: False</code> — статус пути передачи данных адаптера</li>
+<li><code>EndpointIsAvailable: True</code> — статус подключения адаптера</li>
+</ul>
+<h3 id="сведения-о-созданных-подключениях-адаптера">Сведения о созданных подключениях адаптера</h3>
+<p><strong>Пример события</strong></p>
+<div class="highlight"><code><pre><span></span><code>[yyyy-MM-dd HH:mm:ss,SSS][INFO] machineName_instanceName</code> <br/><code>Проверка подключений:</code> <br/><code>[GREEN] connectionName (endpoint.XX) - Соединение установлено (адаптер: incomingAdapter) </code> <br/></pre></code></div>
+<p><strong>Поля события</strong></p>
+<ul>
+<li><code>yyyy-MM-dd HH:mm:ss,SSS</code> — дата и время события</li>
+<li><code>INFO</code> — тип события: информационное</li>
+<li><code>machineName</code> — имя машины</li>
+<li><code>instanceName</code> — имя экземпляра ПО</li>
+<li><code>COLOR</code> — цветовое обозначение статуса информации. <code>WHITE</code> — общая информация, <code>GREEN</code> — корректная работа компонента адаптера, <code>RED</code> — некорректная работа компонента адаптера.</li>
+<li><code>connectionName</code> — имя подключения</li>
+<li><code>endpoint.XX</code> — ID подключения</li>
+<li><code>incomingAdapter</code> — имя адаптера</li>
+</ul>
+<h3 id="статистика-по-процессу">Статистика по процессу</h3>
+<p><strong>Пример события</strong></p>
+<div class="highlight"><code><pre><span></span><code>[yyyy-MM-dd HH:mm:ss,SSS][INFO] machineName_instanceName</code> <br/><code>Статистика по процессу:</code> <br/><code>[WHITE] Количество потоков 25 </code> <br/><code>[WHITE] Выделенный объем физической памяти 287,8 MB</code> <br/><code>[WHITE] Максимальный выделенный объем физической памяти 746,2 MB</code> <br/><code>[WHITE] Выделенный объем частной памяти 490,5 MB</code> <br/><code>[WHITE] Выделенный объем выгружаемой памяти 0 B</code> <br/><code>[WHITE] Максимальный выделенный объем выгружаемой памяти 0 B</code> <br/><code>[WHITE] Выделенный объем виртуальной памяти 4,8 GB</code> <br/><code>[WHITE] Максимальный выделенный объем виртуальной памяти 5,4 GB </code> <br/></pre></code></div>
+<p><strong>Поля события</strong></p>
+<ul>
+<li><code>yyyy-MM-dd HH:mm:ss,SSS</code> — дата и время события</li>
+<li><code>INFO</code> — тип события: информационное</li>
+<li><code>machineName</code> — имя машины</li>
+<li><code>instanceName</code> — имя экземпляра ПО</li>
+<li><code>COLOR</code> — цветовое обозначение статуса информации. <code>WHITE</code> — общая информация, <code>GREEN</code> — корректная работа компонента адаптера, <code>RED</code> — некорректная работа компонента адаптера.</li>
+</ul>
+<h3 id="сведения-о-созданных-путях-передачи-данных-адаптера">Сведения о созданных путях передачи данных адаптера</h3>
+<p><strong>Пример события</strong></p>
+<div class="highlight"><code><pre><span></span><code>[yyyy-MM-dd HH:mm:ss,SSS][INFO] machineName_instanceName</code> <br/><code>Созданные экземпляры путей передачи данных:</code> <br/><code>[WHITE] communicationRouteName (procedure.XX) - Адаптер: incomingAdapter. Подключение: connectionName (endpoint.XX). Запущен: True.</code> <br/></pre></code></div>
+<p><strong>Поля события</strong></p>
+<ul>
+<li><code>yyyy-MM-dd HH:mm:ss,SSS</code> — дата и время события</li>
+<li><code>INFO</code> — тип события: информационное</li>
+<li><code>machineName</code> — имя машины</li>
+<li><code>instanceName</code> — имя экземпляра ПО</li>
+<li><code>COLOR</code> — цветовое обозначение статуса информации. <code>WHITE</code> — общая информация, <code>GREEN</code> — корректная работа компонента адаптера, <code>RED</code> — некорректная работа компонента адаптера.</li>
+<li><code>communicationRouteName</code> — имя пути передачи данных адаптера</li>
+<li><code>procedure.XX</code> — ID пути передачи данных</li>
+<li><code>incomingAdapter</code> — имя адаптера</li>
+<li><code>connectionName</code> — имя подключения</li>
+<li><code>endpoint.XX</code> — ID подключения</li>
+</ul>
+<h3 id="информация-об-адаптере">Информация об адаптере</h3>
+<p><strong>Пример события</strong></p>
+<div class="highlight"><code><pre><span></span><code>[yyyy-MM-dd HH:mm:ss,SSS][INFO] machineName_instanceName</code> <br/><code>Загруженные адаптеры:</code> <br/><code>[WHITE] incomingAdapter Описание: AdapterDescription. </code> <br/></pre></code></div>
+<p><strong>Поля события</strong></p>
+<ul>
+<li><code>yyyy-MM-dd HH:mm:ss,SSS</code> — дата и время события</li>
+<li><code>INFO</code> — тип события: информационное</li>
+<li><code>machineName</code> — имя машины</li>
+<li><code>instanceName</code> — имя экземпляра ПО</li>
+<li><code>incomingAdapter</code> — имя адаптера</li>
+<li><code>AdapterDescription</code> — описание адаптера</li>
+</ul>
+<h3 id="настройки-подключения-адаптера-к-брокеру-сообщений">Настройки подключения адаптера к брокеру сообщений</h3>
+<p><strong>Пример события</strong></p>
+<div class="highlight"><code><pre><span></span><code>[yyyy-MM-dd HH:mm:ss,SSS][INFO]  [AgentService::AgentService] </code> <br/><code>platformKey: machineName_instanceName</code> <br/><code>loaderFolder: /var/www/instanceName/data/Plugins/Agent/LoadData</code> <br/><code>deployRequestQueue: request_queue_machineName_instanceName_deploy_external</code> <br/><code>deployReplyQueue: reply_queue_machineName_instanceName_external</code> <br/><code>outgoingRequestQueue: request_queue_machineName_instanceName_outgoing_external</code> <br/><code>outgoingReplyQueue: reply_queue_machineName_instanceName_outgoing_external</code> <br/><code>incomingRequestQueue: request_queue_machineName_instanceName_incoming_external</code> <br/><code>incomingReplyQueue: reply_queue_machineName_instanceName_incoming_external</code> <br/><code>bootstrapServers: 0.0.0.0:9092</code> <br/><code>groupId: instanceName</code> <br/><code>exclusiveGroupId: </code> <br/><code>serverLanguage: ru</code> <br/><code>logFolder: /var/log/comindware/instanceName/Logs/</code> <br/><code>archiveFolder: /var/log/comindware/instanceName/Logs/Archive/</code> <br/><code>maxArchiveFiles: 100</code> <br/><code>archiveAboveSize: 1048576000</code> <br/></pre></code></div>
+<p><strong>Поля события</strong></p>
+<ul>
+<li><code>yyyy-MM-dd HH:mm:ss,SSS</code> — дата и время события</li>
+<li><code>INFO</code> — тип события: информационное</li>
+<li><code>AgentService::AgentService</code> — тип подключения: агент к агенту</li>
+<li><code>platformKey: machineName_instanceName</code> — имя машины и имя экземпляра ПО</li>
+<li><code>loaderFolder</code> — имя папки загрузчика экземпляра ПО</li>
+<li><code>deployRequestQueue</code>, <code>deployReplyQueue</code>, <code>outgoingRequestQueue</code>, <code>outgoingReplyQueue</code>, <code>incomingRequestQueue</code>, <code>incomingReplyQueue</code> — идентификаторы типов сообщений в брокере сообщений для адаптера</li>
+<li><code>bootstrapServers: &lt;kafkaIP&gt;:&lt;kafkaPortNumber&gt;</code> — адрес и порт службы брокера сообщений</li>
+<li><code>groupId</code> — идентификатор группы в брокере сообщений</li>
+<li><code>serverLanguage</code> — язык сервера экземпляра ПО</li>
+<li><code>logFolder</code> — путь к файлам журналирования экземпляра ПО</li>
+<li><code>archiveFolder</code> — путь к архивам файлам журналирования экземпляра ПО</li>
+<li><code>maxArchiveFiles</code> — максимально количество файлов в одном архиве</li>
+<li><code>archiveAboveSize</code> — максимальный размер файлов журналов (байты)</li>
+</ul>
+<h3 id="log_files_event_examples_connection_status">Статус подключения</h3>
+<p><strong>Пример события</strong></p>
+<div class="highlight"><code><pre><span></span><code>[yyyy-MM-dd HH:mm:ss,SSS][INFO] PlatformKey: instanceName. Endpoint: connectionName (endpoint.XX). Adapter: incomingAdapter Connection test started </code> <br/></pre></code></div>
+<p><strong>Поля события</strong></p>
+<ul>
+<li><code>yyyy-MM-dd HH:mm:ss,SSS</code> — дата и время события</li>
+<li><code>INFO</code> — тип события: информационное</li>
+<li><code>PlatformKey: instanceName</code> — имя экземпляра ПО</li>
+<li><code>Endpoint: connectionName (endpoint.XX)</code> — имя и ID подключения</li>
+<li><code>Adapter: incomingAdapter</code> — имя адаптера</li>
+<li><code>Connection test started</code> — тестовое подключение запущено</li>
+</ul>
+<h3 id="взаимодействие-адаптера-с-брокером-сообщения">Взаимодействие адаптера с брокером сообщения</h3>
+<p><strong>Пример события</strong></p>
+<div class="highlight"><code><pre><span></span><code>[yyyy-MM-dd HH:mm:ss,SSS][INFO]  [88c1a6eb92f140fabs652bb8d9a630e8] [Metadata][Topic] reply_queue_instanceName_deploy_external:NoError 1:1:NoError:1:1 4:1:NoError:1:1 13:1:NoError:1:1 10:1:NoError:1:1 2:1:NoError:1:1 7:1:NoError:1:1 15:1:NoError:1:1 12:1:NoError:1:1 5:1:NoError:1:1 9:1:NoError:1:1 8:1:NoError:1:1 0:1:NoError:1:1 14:1:NoError:1:1 6:1:NoError:1:1 3:1:NoError:1:1 11:1:NoError:1:1 </code> <br/></pre></code></div>
+<p><strong>Поля события</strong></p>
+<ul>
+<li><code>yyyy-MM-dd HH:mm:ss,SSS</code> — дата и время события</li>
+<li><code>INFO</code> — тип события: информационное</li>
+<li><code>[Metadata][Topic]</code> — тип события службы Kafka</li>
+<li><code>reply_queue_instanceName_deploy_external</code> — ответ службы Kafka на запрос экземпляра ПО с именем <code>instanceName</code></li>
 </ul>
 <div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>

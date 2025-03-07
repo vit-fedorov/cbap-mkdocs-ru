@@ -238,12 +238,12 @@
 <div class="highlight"><code><pre><span></span><code>sh<span class="w"> </span>prerequisites_install.sh<span class="w"> </span>-h</code> <br/></pre></code></div>
 </div>
 <div class="notice notice-info">
-<p class="admonition-title">Конфигурация сервера журналирования (Elasticsearch, OpenSearch)</p>
+<p class="admonition-title">Конфигурация сервера журналирования транзакций OpenSearch (Elasticsearch)</p>
 <ul>
-<li>В конфигурации Elasticsearch (OpenSearch) необходимо создать одного пользователя для <strong>Comindware Platform</strong>.</li>
-<li>В конфигурации экземпляра ПО необходимо указать адрес сервера и уникальный префикс индексов Elasticsearch (OpenSearch). Индекс префикса служит для идентификации данных экземпляра ПО в Elasticsearch (OpenSearch). Поэтому во избежание конфликтов данных для каждого экземпляра ПО следует указывать собственный префикс индекса.</li>
-<li>При <a class="mkdocs_imported_link" href="#initialize_instance">инициализации экземпляра ПО</a> необходимо указать пользователя <strong>Comindware Platform</strong>, используемого в Elasticsearch (OpenSearch).</li>
-<li>Экземпляр ПО будет взаимодействовать с Elasticsearch (OpenSearch) под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.</li>
+<li>В конфигурации сервера журналирования транзакций необходимо создать одного пользователя для <strong>Comindware Platform</strong>.</li>
+<li>В конфигурации экземпляра ПО необходимо указать адрес сервера и уникальный префикс индексов OpenSearch. Индекс префикса служит для идентификации данных экземпляра ПО на сервере журналирования транзакций. Поэтому во избежание конфликтов данных для каждого экземпляра ПО следует указывать собственный префикс индекса.</li>
+<li>При <a class="mkdocs_imported_link" href="#initialize_instance">инициализации экземпляра ПО</a> необходимо указать пользователя <strong>Comindware Platform</strong>, используемого сервером журналирования транзакций.</li>
+<li>Экземпляр ПО будет взаимодействовать с сервером журналирования транзакций под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.</li>
 </ul>
 </div>
 </li>
@@ -395,8 +395,8 @@
 <li><code>-v=&lt;versionNumber&gt;</code> — номер версии ПО вида <code>X.X.XXXXX.X</code> (например: 5.0.00000.0, <strong>обязательный</strong> ключ). Версия должна быть установлена, см. <em>«<a class="mkdocs_imported_link" href="#deploy_guide_linux_install_sw">Установка Comindware Platform</a>»</em>.</li>
 <li><code>-p=&lt;portNumber&gt;</code> — порт для экземпляра ПО, по умолчанию: 80 (необязательный ключ).</li>
 <li><code>-fqdn=&lt;hostName&gt;</code> или <code>--instance-fqdn=&lt;hostName&gt;</code> — имя хоста для экземпляра ПО (необязательный ключ). По умолчанию: localhost.</li>
-<li><code>-el=&lt;hostName&gt;</code> или <code>--elasticsearch-url=&lt;hostName&gt;</code> — использовать указанный URL или IP-адрес для подключения к ПО Elasticsearch (OpenSearch).</li>
-<li><code>-kf=&lt;hostName&gt;</code> или <code>--kafka-url=&lt;hostName&gt;</code> — использовать указанный URL или IP-адрес для подключения к ПО Kafka.</li>
+<li><code>-el=&lt;hostName&gt;</code> или <code>--elasticsearch-url=&lt;hostName&gt;</code> — использовать указанный URL или IP-адрес для подключения к серверу OpenSearch (Elasticsearch).</li>
+<li><code>-kf=&lt;hostName&gt;</code> или <code>--kafka-url=&lt;hostName&gt;</code> — использовать указанный URL или IP-адрес для подключения к серверу Apache Ignite.</li>
 <li><code>-h</code> — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).</li>
 </ul>
 </li>
@@ -445,7 +445,7 @@
 <div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/usr/lib/systemd/system/comindware&lt;instanceName&gt;.service</code> <br/><code>nano<span class="w"> </span>/usr/lib/systemd/system/apigateway&lt;instanceName&gt;.service</code> <br/><code>nano<span class="w"> </span>/usr/lib/systemd/system/adapterhost&lt;instanceName&gt;.service</code> <br/></pre></code></div>
 </li>
 <li>
-<p>Если используются локальные службы Kafka и Elasticsearch (OpenSearch), откройте их для редактирования:</p>
+<p>Если используются локальные службы Kafka и Elasticsearch, откройте их для редактирования:</p>
 <div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/usr/lib/systemd/system/kafka.service</code> <br/><code>nano<span class="w"> </span>/usr/lib/systemd/system/elasticsearch.service</code> <br/></pre></code></div>
 </li>
 <li>
@@ -498,24 +498,20 @@
 </div>
 </li>
 <li>
-<p>При необходимости откроется страница инициализации служб. Выберите службы, которые должны быть запущены, и нажмите кнопку «<strong>Далее</strong>».</p>
-<p><figure class="screenshot_with_caption" markdown=""><img alt="Страница инициализации служб" src="/platform/v5.0/administration/deploy/linux/img/deploy_guide_system_initialize.png"/><figcaption class="caption">Страница инициализации служб</figcaption></figure></p>
-</li>
-<li>
 <p>При необходимости откроется страница активации ПО. Выполните <strong>онлайн-</strong> или <strong>ручную активацию</strong> либо нажмите кнопку «<strong>Пропустить</strong>» для первоначального ознакомления с ПО без активации.</p>
 </li>
 <li>
-<p>При необходимости откроется страница настройки подключения к службе Elasticsearch (OpenSearch).</p>
+<p>При необходимости откроется страница настройки подключения к службе OpenSearch (Elasticsearch).</p>
 <ul>
-<li>В поле «<strong>URI</strong>» введите адрес сервера Elasticsearch (OpenSearch), например: <code>http://localhost:9200</code>.</li>
-<li>При необходимости введите <strong>имя пользователя</strong> и <strong>пароль</strong> Elasticsearch (OpenSearch).</li>
+<li>В поле «<strong>URI</strong>» введите адрес сервера OpenSearch (Elasticsearch), например: <code>http://localhost:9200</code>.</li>
+<li>При необходимости введите <strong>имя пользователя</strong> и <strong>пароль</strong> OpenSearch (Elasticsearch).</li>
 <li>Установите уникальный <strong>префикс индекса</strong>, например <code>mycompanyprefix</code>.</li>
-<li>Экземпляр ПО будет взаимодействовать с Elasticsearch (OpenSearch) под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.</li>
+<li>Экземпляр ПО будет взаимодействовать с OpenSearch (Elasticsearch) под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.</li>
 <li>Нажмите кнопку «<strong>Далее</strong>».</li>
 </ul>
 </li>
 <li>
-<p>При необходимости откроется страница инициализации данных в Elasticsearch (OpenSearch).</p>
+<p>При необходимости откроется страница инициализации данных в OpenSearch (Elasticsearch).</p>
 <p><figure class="screenshot_with_caption" markdown=""><img alt="Страница инициализации данных в Elasticsearch" src="/platform/v5.0/administration/deploy/linux/img/deploy_guide_elasticsearch_initialize.png"/><figcaption class="caption">Страница инициализации данных в Elasticsearch</figcaption></figure></p>
 </li>
 <li>

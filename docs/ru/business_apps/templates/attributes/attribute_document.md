@@ -12,10 +12,23 @@ kbId: 4782
 !!! question "Структура атрибута типа «Документ»"
 
     --8<-- "attribute_document_logic.md"
+
+!!! tip "Извлечение файлов из атрибута типа «Документ» с помощью C#"
+
     --8<-- "attribute_document_get_file_csharp.md"
+
+!!! tip "Добавление файлов в атрибут типа «Документ» с помощью C#"
+
     --8<-- "attribute_document_add_file_csharp.md"
+
+!!! tip "Извлечение файлов из атрибута типа «Документ» с помощью N3"
+
     --8<-- "attribute_document_get_file_n3.md"
+
+!!! tip "Добавление файлов в атрибут типа «Документ» с помощью N2"
+
     --8<-- "attribute_document_add_file_n3.md"
+    {% include-markdown ".snippets/pdfEndOfBlockHack.md" %}
 
 См. примеры работы с атрибутом типа «**Документ**»:
 

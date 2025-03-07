@@ -42,6 +42,11 @@
 <li>Атрибут типа «<strong>Документ</strong>» хранит одну или несколько ссылок на записи (<strong>документы</strong>) в системном шаблоне документа, к которым прикрепляются файлы.</li>
 <li>В шаблоне документа имеется атрибут <code>currentRevision</code> (текущая <strong>ревизия</strong>), который хранит ссылку на запись в системном шаблоне ревизии.</li>
 <li>В шаблоне ревизии имеются атрибуты <code>title</code> (имя) и <code>content</code> (содержимое), которые хранят имя файла и ссылку на файл, физически хранящийся в папке <code>Streams</code> на сервере.</li>
+</ul>
+</div>
+<div class="notice notice-tip">
+<p class="admonition-title">Извлечение файлов из атрибута типа «Документ» с помощью C#</p>
+<ul>
 <li>Чтобы считать файл из атрибута типа «<strong>Документ</strong>» с помощью C#-скрипта, необходимо:<ul>
 <li>из текущей записи получить массив идентификаторов файлов, прикреплённых к атрибуту:
     <div class="highlight"><code><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">fileIds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Api</span><span class="p">.</span><span class="n">TeamNetwork</span><span class="p">.</span><span class="n">ObjectService</span><span class="p">.</span><span class="n">GetPropertyValues</span><span class="p">(</span><span class="n">recordId</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="s">"documentAttributeSystemName"</span><span class="p">})</span><span class="err">`</span><span class="p">;</span></code> <br/></pre></code></div></li>
@@ -59,6 +64,11 @@
 </li>
 </ul>
 </li>
+</ul>
+</div>
+<div class="notice notice-tip">
+<p class="admonition-title">Добавление файлов в атрибут типа «Документ» с помощью C#</p>
+<ul>
 <li>Чтобы прикрепить к атрибуту типа «<strong>Документ</strong>» файл с помощью C#-скрипта, необходимо:<ul>
 <li>сформировать объект типа <code>Document</code>:
     <div class="highlight"><code><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">document</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Document</span><span class="w"> </span></code> <br/><code><span class="w">    </span><span class="p">{</span></code> <br/><code><span class="w">        </span><span class="n">Title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"имя файла.расширение"</span><span class="p">,</span></code> <br/><code><span class="w">        </span><span class="n">Extension</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">".расширение"</span></code> <br/><code><span class="w">    </span><span class="p">};</span></code> <br/></pre></code></div></li>
@@ -73,12 +83,22 @@
     <div class="highlight"><code><pre><span></span><code><span class="w"> </span><span class="n">Api</span><span class="p">.</span><span class="n">TeamNetwork</span><span class="p">.</span><span class="n">ObjectService</span><span class="p">.</span><span class="n">EditWithAlias</span><span class="p">(</span><span class="n">reсordId</span><span class="p">,</span><span class="w"> </span><span class="n">documentDict</span><span class="p">)</span></code> <br/></pre></code></div></li>
 </ul>
 </li>
+</ul>
+</div>
+<div class="notice notice-tip">
+<p class="admonition-title">Извлечение файлов из атрибута типа «Документ» с помощью N3</p>
+<ul>
 <li>Чтобы считать файл из атрибута типа «<strong>Документ</strong>» с помощью выражения N3, необходимо:<ul>
 <li>получить текущую ревизию документа: <code>?documentAttributeValue document:revision ?revision</code>;</li>
 <li>получить из ревизии содержимое файла в формате <code>base64</code>: <code>?revision document:content ?content</code>;</li>
 <li>получить из ревизии имя файла: <code>?revision document:title ?title</code>.</li>
 </ul>
 </li>
+</ul>
+</div>
+<div class="notice notice-tip">
+<p class="admonition-title">Добавление файлов в атрибут типа «Документ» с помощью N2</p>
+<ul>
 <li>Чтобы прикрепить к атрибуту типа «<strong>Документ</strong>» файл с помощью выражения N3, необходимо:<ul>
 <li>сформировать содержимое файла в формате <code>base64</code>: <code>?documentContentSource document:content ?content</code>;</li>
 <li>сформировать имя файла: <code>?documentTitleSource document:title ?title</code>;</li>

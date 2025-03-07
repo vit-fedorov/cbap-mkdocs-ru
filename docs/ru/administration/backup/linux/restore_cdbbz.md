@@ -16,7 +16,7 @@ tags:
 - используется ранее настроенный экземпляр ПО **{{ productName }}** под управлением ОС Linux;
 - имеется файл резервной копии базы данных с расширением `.CDBBZ`;
 - резервная копия создана с помощью встроенной в ПО функции «**Резервное копирование**» (см. *«[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup_configure]»*);
-- индексы Elasticsearch (OpenSearch) восстанавливаются отдельно от восстановления базы данных экземпляра ПО.
+- индексы {{ openSearchVariants }} восстанавливаются отдельно от восстановления базы данных экземпляра ПО.
 
 Прежде чем приступать к восстановлению экземпляра ПО **{{ productName }}** из резервной копии, ознакомьтесь с видеороликом и инструкциями, представленными ниже.
 
@@ -96,15 +96,15 @@ tags:
 10. Убедитесь в наличии директорий `<path/to/Database>` и `<path/to/Streams>`:
 
     ``` sh
-    ls -lh `<path/to/Database>`
-    ls -lh `<path/to/Streams>`
+    ls -lh <path/to/Database>
+    ls -lh <path/to/Streams>
     ```
 
     - Если папки отсутствуют, создайте их:
 
         ``` sh
-        mkdir -p `<path/to/Database>`
-        mkdir -p `<path/to/Streams>`
+        mkdir -p <path/to/Database>
+        mkdir -p <path/to/Streams>
         ```
 
 11. Перейдите в директорию распакованной резервной копии (например, `/home/<user>/temp/`).
@@ -151,6 +151,12 @@ tags:
         nodeName: <instanceName>
         ```
 
+    !!! warning "Имя узла и лицензионные ключи"
+
+        Чтобы использовать на восстановленном экземпляре ПО прежние лицензионные ключи, скопируйте имя узла из конфигурации исходного экземпляра ПО.
+
+        См. _«[Восстановление лицензионных ключей](#backup_restore_cdbbz_license_keys)»_.
+
 17. При необходимости [восстановите индексы Elasticsearch](#восстановление-индексов-elasticsearch-из-файла-резервной-копии-репозитория) из резервной копии.
 18. Запустите службы экземпляра ПО и проверьте их статус:
 
@@ -175,6 +181,37 @@ tags:
     ``` sh
     rm -r /home/<user>/tmp
     ```
+
+## Восстановление лицензионных ключей {: #backup_restore_cdbbz_license_keys }
+
+Чтобы использовать на восстановленном экземпляре ПО прежние лицензионные ключи, выполните указанные ниже действия.
+
+1. Откройте файл конфигурации для редактирования:
+
+    ``` sh
+    nano /usr/share/comindware/configs/instance/<instanceName>.yml
+    ```
+
+2. Укажите такое же значение `nodeName` (имя узла экземпляра ПО), как в конфигурации исходного экземпляра ПО:
+
+    ``` yml
+    nodeName: <instanceName>
+    ```
+
+3. Включите директиву `isContainerEnvironment`:
+
+    ``` yml
+    isContainerEnvironment: true
+    ```
+
+4. Перезапустите экземпляр ПО:
+
+    ``` sh
+    systemctl restart comindware<instanceName>
+    ```
+
+5. Удостоверьтесь, что лицензионные ключи присутствуют на странице «**Администрирование**» — «**[Лицензирование][licensing]**».
+6. Назначьте лицензионные ключи аккаунтам и группам.
 
 ## Восстановление индексов Elasticsearch из файла резервной копии репозитория
 
@@ -218,16 +255,17 @@ tags:
 
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-7. Зарегистрируйте репозиторий (например, `repostory_backup`) с резервной копией снимка Elasticsearch:
+7. Зарегистрируйте репозиторий (например, `repository_backup`) с резервной копией снимка Elasticsearch:
 
     ```
-    curl -X PUT "localhost:9200/_snapshot/repostory_backup?pretty" -H ’Content-Type: application/json’ -d’
-    {
-    "type": "fs",
-    "settings": {
-                "location": "/var/www/backups/elasticsearch"
-                }
-    }
+    curl -X PUT "localhost:9200/_snapshot/repository_backup?pretty" \
+    -H 'Content-Type: application/json' -d \
+    '{
+        "type": "fs",
+        "settings": {
+            "location": "/var/www/backups/elasticsearch"
+        }
+    }'
 
     ```
 
@@ -276,6 +314,7 @@ tags:
 - _[Elasticsearch. Настройка подключения][elasticsearch_connection]_
 - _[Создание полной резервной копии (базы данных, вложенных файлов и журналов) без остановки экземпляра ПО][complete_running_instance_backup]_
 - _[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии][restore_complete_backup]_
+- _[Лицензирование. Активация, назначение, отзыв и продление лицензий][licensing]_
 
 </div>
 

@@ -173,7 +173,7 @@ kbId: 4685
 ## Настройка реестра Windows для включения аутентификации через OpenID Connect в {{ productName }} {: .pageBreakBefore }
 
 1. Запустите редактор реестра Windows: `regedit.exe`.
-2. Откройте раздел реестра `Computer -> HKEY_LOCAL_MACHINE -> SOWTWARE->Сomindware -> Instances -> имя_экземпляра_Comindware_Business_Application_Platform`.
+2. Откройте раздел реестра `Computer -> HKEY_LOCAL_MACHINE -> SOWTWARE->Сomindware -> Instances -> имя_экземпляра_Comindware_Platform`.
 3. Дважды щёлкните параметр `IsFederationAuthEnabled`.
 4. Если значение этого параметра **0**, измените его на **1**.
 5. Нажмите кнопку «**OK**».

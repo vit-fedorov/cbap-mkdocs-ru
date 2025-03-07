@@ -79,7 +79,7 @@ hide: tags
     ```
     #################### Конфигурация резервного копирования ####################
     # Папка для резервного копирования по умолчанию
-    backup.defaultFolder: /var/lib/comindware/cmwdata/Backup
+    backup.defaultFolder: /var/lib/comindware/<instanceName>/Backup
 
     # Имя файла для резервного копирования по умолчанию
     backup.defaultFileName: Backup

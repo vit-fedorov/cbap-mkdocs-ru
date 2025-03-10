@@ -1324,7 +1324,7 @@ Kestrel. Incoming adapters:
 ``` yml
 [yyyy-MM-dd HH:mm:ss,SSS][INFO] machineName_instanceName
 Загруженные адаптеры:
-[WHITE] incomingAdapter Описание: AdapterDescription. 
+[WHITE] incomingAdapter Описание: adapterDescription. 
 ```
 
 **Поля события**
@@ -1334,7 +1334,7 @@ Kestrel. Incoming adapters:
 - `machineName` — имя машины
 - `instanceName` — имя экземпляра ПО
 - `incomingAdapter` — имя адаптера
-- `AdapterDescription` — описание адаптера
+- `adapterDescription` — описание адаптера
 
 ### Настройки подключения адаптера к брокеру сообщений
 
@@ -1407,7 +1407,6 @@ archiveAboveSize: 1048576000
 - `INFO` — тип события: информационное
 - `[Metadata][Topic]` — тип события службы Kafka
 - `reply_queue_instanceName_deploy_external` — ответ службы Kafka на запрос экземпляра ПО с именем `instanceName`
-
 
 <div class="relatedTopics" markdown="block">
 

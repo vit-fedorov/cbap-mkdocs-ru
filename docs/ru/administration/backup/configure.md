@@ -141,11 +141,11 @@ hide: tags
 
     ``` shell
     # Конфигурация подключения к хранилищу S3, используемого по умолчанию
-    s3Connection.default.endpointURL: http://localhost:9000
-    s3Connection.default.accessKey: xxxxx
-    s3Connection.default.secretKey: xxxxx
-    s3Connection.default.pathStyleAccess: true
-    s3Connection.default.description: Подключение к S3 по умолчанию
+    s3.default.endpointURL: http://localhost:9000
+    s3.default.accessKey: xxxxx
+    s3.default.secretKey: xxxxx
+    s3.default.pathStyleAccess: true
+    s3.default.description: Подключение к S3 по умолчанию
 
     # Конфигурация репозитория резервных копий {{ openSearchVariants }} в хранилище S3
     backup.journalRepository.type: S3
@@ -177,7 +177,7 @@ hide: tags
 
             !!! warning "Внимание!"
 
-                Для резервного копирования в основной и дополнительный репозитории будет использоваться только подключение к S3, заданное в файле конфигурации экземпляра ПО (`/usr/share/comindware/configs/instance/<instanceName>.yml`) с помощью директивы `s3Connection.default`
+                Для резервного копирования в основной и дополнительный репозитории будет использоваться только подключение к S3, заданное в файле конфигурации экземпляра ПО (`/usr/share/comindware/configs/instance/<instanceName>.yml`) с помощью директивы `s3.default`.
 
     - **Дополнительный репозиторий для резервных копий** — выберите хранилище, в которое будут сохраняться дубликаты резервных копий.
     - **С файлами** — установите этот флажок, чтобы включить в состав резервной копии загруженные файлы (папка `Streams`).

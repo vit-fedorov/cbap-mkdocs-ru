@@ -21,17 +21,6 @@
       Порядок обновления версии экземпляра ПО
     </span>
 </a>
-<nav aria-label="Порядок обновления версии экземпляра ПО" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#видеоинструкция">
-<span class="md-ellipsis">
-      Видеоинструкция
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link mkdocs_imported_link" href="#подготовка-экземпляра-по-к-обновлению">
@@ -60,7 +49,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h2 id="введение">Введение</h2>
-<p>Здесь представлены краткие инструкции по обновлению версии экземпляра ПО <strong>Comindware Platform</strong> c 4.7 до 5.X для ОС Linux.</p>
+<p>Здесь представлены инструкции по обновлению версии экземпляра ПО <strong>Comindware Platform</strong> с 4.7.2 до версий 4.7.3–5.0 для ОС Linux.</p>
 <h2 id="порядок-обновления-версии-экземпляра-по">Порядок обновления версии экземпляра ПО</h2>
 <ol class="colored_numbers_list">
 <li>
@@ -69,7 +58,6 @@
 <li>Сохраните резервную копию экземпляра ПО.</li>
 <li>Остановите экземпляр ПО.</li>
 <li>Сохраните конфигурацию экземпляра ПО и вспомогательных служб.</li>
-<li>Удалите компоненты старой версии ПО.</li>
 </ul>
 </li>
 <li>
@@ -83,11 +71,6 @@
 </ul>
 </li>
 </ol>
-<p>Прежде чем приступать к установке вспомогательного ПО, необходимого для работы <strong>Comindware Platform</strong>, ознакомьтесь с демонстрационным роликом и инструкциями, представленными ниже.</p>
-<h3 id="видеоинструкция">Видеоинструкция</h3>
-<video controls="controls" height="100%" width="100%">
-<source src="https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/upgrade_version_linux.mp4" type="video/mp4"/>
-</video>
 <h2 class="pageBreakBefore" id="подготовка-экземпляра-по-к-обновлению">Подготовка экземпляра ПО к обновлению</h2>
 <div class="notice notice-warning">
 <p class="admonition-title">Внимание!</p>
@@ -171,14 +154,18 @@
 </li>
 </ol>
 <h2 class="pageBreakBefore" id="обновление-версии-по-для-экземпляра">Обновление версии ПО для экземпляра</h2>
-<p>Выполните шаги 6–13 для каждого экземпляра ПО, версию которого требуется обновить, так как скрипт обновления выполняется отдельно для указанного экземпляра ПО.</p>
+<div class="notice notice-info">
+<p class="admonition-title">Обновление нескольких экземпляров ПО</p>
+<p>Выполните приведённые ниже шаги 6–18 для каждого экземпляра ПО, версию которого требуется обновить, так как скрипт обновления выполняется отдельно для указанного экземпляра ПО.</p>
+<p>После обновления всех экземпляров ПО, для экономии места старую версию ПО можно удалить согласно инструкции <em>«<a class="autorefs autorefs-internal mkdocs_imported_link" href="deploy_guide.html#deploy_guide_linux_delete_version">Удаление версии ПО</a>»</em>.</p>
+</div>
 <ol class="colored_numbers_list">
 <li>
 <p>Скачайте и распакуйте дистрибутив с новой версией ПО (<code>X.X</code>, <code>&lt;versionNumber&gt;</code> — номер версии ПО):</p>
 <div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;distPath&gt;</code> <br/><code>tar<span class="w"> </span>-xf<span class="w"> </span>X.X-release-ru-&lt;versionNumber&gt;.&lt;osname&gt;.tar.gz</code> <br/></pre></code></div>
 </li>
 <li>
-<p>Перейдите в распакованную папку:</p>
+<p>Перейдите в распакованную директорию:</p>
 <div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>CMW_&lt;osname&gt;_&lt;versionNumber&gt;/scripts/</code> <br/></pre></code></div>
 </li>
 <li>
@@ -198,7 +185,7 @@
 <p>Здесь:</p>
 <ul>
 <li><code>-n=&lt;instanceName&gt;</code> — имя обновляемого экземпляра ПО;</li>
-<li><code>-vp=/var/www/.cmw_version/&lt;versionNumber&gt;</code> — укажите путь к папке с установленной версией ПО, где <code>&lt;versionNumber&gt;</code> — номер версии ПО.</li>
+<li><code>-vp=/var/www/.cmw_version/&lt;versionNumber&gt;</code> — укажите путь к директории с установленной версией ПО, где <code>&lt;versionNumber&gt;</code> — номер версии ПО.</li>
 </ul>
 </li>
 <li>
@@ -252,14 +239,63 @@
 <div class="highlight"><code><pre><span></span><code>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/comindware/&lt;instanceName&gt;/Log/sys*</code> <br/></pre></code></div>
 </li>
 <li>
-<p>После обновления всех экземпляров ПО, старую версию ПО можно удалить согласно инструкции <em>«<a class="autorefs autorefs-internal mkdocs_imported_link" href="deploy_guide.html#deploy_guide_linux_delete_version">Удаление версии ПО</a>»</em>.</p>
+<p>Подтвердите успешное обновление структуры данных.</p>
+<div class="notice notice-warning">
+<p class="admonition-title">Внимание!</p>
+<p>При обновлении с версии 4.7.2 на версии 4.7.3-5.0 обновляется структура базы данных.</p>
+<p>После этого необходимо вручную удалить некоторые данные кэша в старом формате.</p>
+<p>Поэтому продолжать обновление версии экземпляра ПО можно только после успешного обновления структуры данных. </p>
+</div>
+<ul>
+<li>Удостоверьтесь, что появился журнал обновления <code>/var/log/comindware/&lt;instanceName&gt;/Log/UpgradeOntology.log</code>.</li>
+<li>Удостоверьтесь, что в журнале обновления последняя запись имеет статус <code>successfully</code>.</li>
+<li>Удостоверьтесь, что в журнале отсутствуют ошибки обновления. Найдите их по ключевому слову <code>error</code>.</li>
+<li>Если обновление выполнено успешно, переходите к шагу 13.</li>
+<li>
+<p>Если в журнале обновления имеются ошибки:</p>
+<ol class="colored_numbers_list">
+<li><strong>Не переходите к шагу 13.</strong></li>
+<li>Снова установите для экземпляра старую версию ПО.</li>
+<li>Восстановите базу данных из резервной копии.</li>
+<li>Передайте журналы обновления и ошибок в службу поддержки для анализа.</li>
+</ol>
 </li>
+</ul>
+</li>
+<li>
+<p>Создайте резервную копию экземпляра ПО:</p>
+<ul>
+<li>
+<p>в формате <code>.CDBBZ</code> средствами <strong>Comindware Platform</strong>;</p>
+<p>или</p>
+</li>
+<li>
+<p>c помощью скрипта для создания снимка базы.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Остановите экземпляр ПО.</p>
+</li>
+<li>
+<p>Распакуйте резервную копию и удалите из неё следующие директории кэшей:</p>
+<div class="highlight"><code><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>cacheGroup-*-TableIdentity</code> <br/><code>rm<span class="w"> </span>-rf<span class="w"> </span>cacheGroup-*-TableIdentityReplicated</code> <br/><code>rm<span class="w"> </span>-rf<span class="w"> </span>cacheGroup-*Value</code> <br/><code>rm<span class="w"> </span>-rf<span class="w"> </span>cacheGroup-*ValueReplicated</code> <br/><code>rm<span class="w"> </span>-rf<span class="w"> </span>cache-ignite-sys-cache</code> <br/><code>rm<span class="w"> </span>-rf<span class="w"> </span>cp</code> <br/><code>rm<span class="w"> </span>-rf<span class="w"> </span>metastorage</code> <br/><code>rm<span class="w"> </span>-rf<span class="w"> </span>cacheGroup-Keys</code> <br/></pre></code></div>
+</li>
+<li>
+<p>Очистите директории с базой данных экземпляра ПО:</p>
+<div class="highlight"><code><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;/Database/db</code> <br/><code>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;/Database/wal*</code> <br/></pre></code></div>
+</li>
+<li>
+<p>Скопируйте очищенную резервную копию в директорию с базой данных <code>/var/lib/comindware/&lt;instanceName&gt;/Database/</code>.</p>
+</li>
+<li>Запустите экземпляр ПО и войдите в систему.</li>
 </ol>
 <div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <ul>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4622">Установка, запуск, инициализация и остановка ПО</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4642">Резервное копирование. Настройка и запуск, просмотр журнала сеансов</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4623">Подсистема журналирования</a></em></li>
 </ul>
 </div>
 </article>

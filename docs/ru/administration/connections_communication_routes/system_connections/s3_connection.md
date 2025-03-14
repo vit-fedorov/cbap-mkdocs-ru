@@ -52,13 +52,13 @@ kbId: 4677
 
     ``` ini
     # Адрес сервера S3 с указанием порта, идентификатор ключа доступа и секретный ключ
-    s3Connection.default.endpointURL: http://s3.example.com:9000
-    s3Connection.default.accessKey: xxxxx
-    s3Connection.default.secretKey: xxxxx
+    s3.default.endpointURL: http://s3.example.com:9000
+    s3.default.accessKey: xxxxx
+    s3.default.secretKey: xxxxx
     # Установите значение true, если сервер принимает только запросы path-style вида:
     # https://s3.region-code.amazonaws.com/bucket-name/key-name
-    s3Connection.default.pathStyle: true
-    s3Connection.default.description: Подключение к S3
+    s3.default.pathStyle: true
+    s3.default.description: Подключение к S3
 
     # Параметры контейнера загруженных файлов
     userStorage.type: S3
@@ -87,7 +87,7 @@ kbId: 4677
 ## Проверка подключения к хранилищу S3 {: .pageBreakBefore }
 
 1. Перейдите в [список подключений][connections].
-2. Дважды нажмите в списке подключение типа «**S3**» (название подключения задаётся директивой `s3Connection.default.description` в [файле конфигурации](#настройка-конфигурации-экземпляра-по)).
+2. Дважды нажмите в списке подключение типа «**S3**» (название подключения задаётся директивой `s3.default.description` в [файле конфигурации](#настройка-конфигурации-экземпляра-по)).
 3. Просмотрите свойства подключения:
     - **Отключить** — этот флажок установлен, если подключение неактивно;
     - **Название** — наглядное наименование подключения;
@@ -105,7 +105,7 @@ kbId: 4677
 
 !!! warning "Внимание!"
 
-    Не вносите изменения в окне свойств подключения к хранилищу S3, заданному в [файле конфигурации](#настройка-конфигурации-экземпляра-по) экземпляра ПО (`/usr/share/comindware/configs/instance/instanceName.yml`) с помощью директивы `s3Connection.default`. Они не будут применены к конфигурации экземпляра ПО и при перезапуске сервера будут заменены на значения из файла конфигурации `instanceName.yml`
+    Не вносите изменения в окне свойств подключения к хранилищу S3, заданному в [файле конфигурации](#настройка-конфигурации-экземпляра-по) экземпляра ПО (`/usr/share/comindware/configs/instance/instanceName.yml`) с помощью директивы `s3.default`. Они не будут применены к конфигурации экземпляра ПО и при перезапуске сервера будут заменены на значения из файла конфигурации `instanceName.yml`.
 
     Настраивать подключение к хранилищу S3 следует только в файле `/usr/share/comindware/configs/instance/instanceName.yml`
 

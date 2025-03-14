@@ -32,37 +32,15 @@ nav:
     - administration/deploy/logging_engine.md
     - administration/deploy/log_files_event_examples.md
     - administration/deploy/paths.md
-    - Установка и запуск Comindware Business Application Platform: administration/deploy/linux/deploy_guide.md
+    - Установка и запуск Comindware Platform: administration/deploy/linux/deploy_guide_gostech.md
     - administration/deploy/linux/configuration_files.md
-    - administration/deploy/linux/db_migrate_4.2_to_4.7.md
-    # - administration/deploy/linux/deploy_cluster.md
-    - administration/deploy/linux/uninstall_auxiliary_software.md
     - administration/deploy/linux/upgrade_version.md
     - administration/deploy/linux/upload_size_limit_configure.md
     - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_list.md
-    - Вспомогательное ПО. Оптимизация:
-      - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_optimize.md
-      - administration/deploy/linux/auxiliary_software_deploy/antivirus_exceptions_configure.md
-      - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_defragment.md
-    - Вспомогательное ПО. Развёртывание:
-      - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_deploy_linux.md
-      - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_cluster_deploy_no_certificates.md
-      - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_ssl_certificate_configure.md
-      - administration/deploy/linux/auxiliary_software_deploy/kafka_deploy_linux.md
-      - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_deploy.md
-      - administration/deploy/linux/auxiliary_software_deploy/nginx_deploy.md
-      - administration/deploy/linux/auxiliary_software_deploy/nginx_geoip_deploy.md
-      - administration/deploy/linux/auxiliary_software_deploy/zabbix_agent_deploy.md
-      - administration/deploy/linux/auxiliary_software_deploy/zabbix_deploy.md
-      - administration/deploy/linux/auxiliary_software_deploy/zabbix_server_deploy.md
   - Резервное копирование и восстановление:
     - administration/backup/index.md
     - administration/backup/configure.md
-    - administration/backup/linux/complete_running_instance_backup.md
-    - administration/backup/linux/db_move_manually.md
-    - administration/backup/linux/restore_cdbbz.md
-    - administration/backup/linux/restore_complete_backup.md
-    - administration/backup/linux/restore_test_configure.md
+    - administration/backup/linux/restore_cdbbz_gostech.md
   - Администрирование системы:
     - administration/administration_page.md
     - Внешний вид:
@@ -164,9 +142,30 @@ nav:
 
 
 exclude_docs: |
+  administration/deploy/linux/deploy_guide.md
   administration/deploy/linux/deploy_cluster.md
+  administration/deploy/linux/uninstall_auxiliary_software.md
+  administration/deploy/linux/db_migrate_4.2_to_4.7.md
   administration/deploy/windows/**
   administration/deploy/windows/auxiliary_software_deploy/**
+  administration/deploy/linux/auxiliary_software_deploy/elasticsearch_deploy_linux.md
+  administration/deploy/linux/auxiliary_software_deploy/elasticsearch_cluster_deploy_no_certificates.md
+  administration/deploy/linux/auxiliary_software_deploy/elasticsearch_ssl_certificate_configure.md
+  administration/deploy/linux/auxiliary_software_deploy/kafka_deploy_linux.md
+  administration/deploy/linux/auxiliary_software_deploy/apache_ignite_deploy.md
+  administration/deploy/linux/auxiliary_software_deploy/nginx_deploy.md
+  administration/deploy/linux/auxiliary_software_deploy/nginx_geoip_deploy.md
+  administration/deploy/linux/auxiliary_software_deploy/zabbix_agent_deploy.md
+  administration/deploy/linux/auxiliary_software_deploy/zabbix_deploy.md
+  administration/deploy/linux/auxiliary_software_deploy/zabbix_server_deploy.md
+  administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_optimize.md
+  administration/deploy/linux/auxiliary_software_deploy/antivirus_exceptions_configure.md
+  administration/deploy/linux/auxiliary_software_deploy/apache_ignite_defragment.md
+  administration/backup/linux/complete_running_instance_backup.md
+  administration/backup/linux/db_move_manually.md
+  administration/backup/linux/restore_cdbbz.md
+  administration/backup/linux/restore_complete_backup.md
+  administration/backup/linux/restore_test_configure.md
   administration/backup/windows/**
   administration/architecture/functions.md
   administration/account_administration/accounts_dc_sync/windows/sso_authenticatation_configure_windows.md

@@ -104,8 +104,6 @@
 
 [administration]: {{ kbArticleURLPrefix }}4661
 
-[antivirus_exceptions_configure]: {{ kbArticleURLPrefix }}4602
-
 [apps]: {{ kbArticleURLPrefix }}4714
 
 [backup_configure]: {{ kbArticleURLPrefix }}4642
@@ -119,8 +117,6 @@
 [collabora_connection]: {{ kbArticleURLPrefix }}4688
 
 [common_notifications]: {{ kbArticleURLPrefix }}4681
-
-[complete_running_instance_backup]: {{ kbArticleURLPrefix }}4650
 
 [connections_delete]: {{ kbArticleURLPrefix }}4675#connections_delete
 
@@ -221,10 +217,6 @@
 [release_notes_4.7.3084]: {{ kbArticleURLPrefix }}2649
 
 [release_notes_5.0]: {{ kbArticleURLPrefix }}5073
-
-[restore_complete_backup]: {{ kbArticleURLPrefix }}4648
-
-[restore_test_configure]: {{ kbArticleURLPrefix }}4651
 
 [roles]: {{ kbArticleURLPrefix }}4803
 
@@ -753,17 +745,35 @@
 
 {% endif %}
 
-{% if (userGuide and not adminGuideLinux) or (not adminGuideLinux and adminGuideWindows) or kbExport %}
+{% if (userGuide and not adminGuideLinux) or (not adminGuideLinux and adminGuideWindows) or gostech or kbExport %}
 
-<!-- Руководство пользователя, администратора для Windows или экспорт в БЗ  -->
-
-[ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}4605
+<!-- Руководства для ГосТеха, пользователя, администратора для Windows или экспорт в БЗ  -->
 
 [apache_ignite_deploy]: {{ kbArticleURLPrefix }}4600
 
 [apache_ignite_defragment]: {{ kbArticleURLPrefix }}4603
 
 [auxiliary_software_optimize]: {{ kbArticleURLPrefix }}4604
+
+[complete_running_instance_backup]: {{ kbArticleURLPrefix }}4650
+
+[elasticsearch_cluster_deploy_no_certificates]: {{ kbArticleURLPrefix }}4612
+
+[nginx_deploy]: {{ kbArticleURLPrefix }}4611
+
+[nginx_geoid_deploy]: {{ kbArticleURLPrefix }}4610
+
+[restore_complete_backup]: {{ kbArticleURLPrefix }}4648
+
+[restore_test_configure]: {{ kbArticleURLPrefix }}4651
+
+{% endif %}
+
+{% if (userGuide and not adminGuideLinux) or (not adminGuideLinux and adminGuideWindows) or kbExport %}
+
+<!-- Руководство пользователя, администратора для Windows или экспорт в БЗ  -->
+
+[ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}4605
 
 [availability_fault_tolerance]: {{ kbArticleURLPrefix }}5079
 
@@ -779,8 +789,6 @@
 
 [deploy_cluster_linux]: {{ kbArticleURLPrefix }}5080
 
-[elasticsearch_cluster_deploy_no_certificates]: {{ kbArticleURLPrefix }}4612
-
 [kafka_deploy_linux]: {{ kbArticleURLPrefix }}5074
 
 [paths_linux]: {{ kbArticleURLPrefix }}4620#paths_linux
@@ -788,10 +796,6 @@
 [sso_authenticatation_configure]: {{ kbArticleURLPrefix }}4613
 
 [sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}4613#sso_authentication_configure_keytab_update
-
-[nginx_deploy]: {{ kbArticleURLPrefix }}4611
-
-[nginx_geoid_deploy]: {{ kbArticleURLPrefix }}4610
 
 {% endif %}
 
@@ -853,7 +857,7 @@
 
 {% endif %}
 
-{% if apiGuide or adminGuideLinux or adminGuideWindows or kbExport %}
+{% if (not completeGuide and (apiGuide or adminGuideLinux or adminGuideWindows)) or kbExport %}
 
 <!-- Руководство по API, руководство администратора для Linux/Windows или экспорт в БЗ  -->
 
@@ -890,5 +894,7 @@
 <!-- Руководства для ГосТех или экспорт в БЗ  -->
 
 [adapters]: {{ kbArticleURLPrefix }}4672
+
+[antivirus_exceptions_configure]: {{ kbArticleURLPrefix }}4602
 
 {% endif %}

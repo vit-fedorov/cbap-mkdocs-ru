@@ -69,6 +69,7 @@ nav:
       - administration/infrastructure/global_configuration.md
       - administration/infrastructure/authentication_keys.md
     - Интеграции с внешними системами:
+      - administration/connections_communication_routes/integration.md
       - administration/connections_communication_routes/connections.md
       - administration/connections_communication_routes/communication_routes.md
       - Системные подключения:

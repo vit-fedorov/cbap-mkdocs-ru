@@ -191,9 +191,11 @@ kbId: 4685
 
 ## Настройка ОС Linux для включения аутентификации через OpenID Connect в {{ productName }} {: .pageBreakBefore }
 
+{% if not gostech %}
 1. Перейдите в режим суперпользователя `root`:
 
     --8<-- "linux_sudo.md"
+{% endif %}
 
 2. Добавьте в файл `/etc/hosts` строку:
 

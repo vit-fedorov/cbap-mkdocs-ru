@@ -53,15 +53,17 @@ kbId: 4619
 
 Для изменения лимита на размер загружаемых файлов в ОС Linux необходимо отредактировать конфигурацию экземпляра ПО, а также конфигурацию NGINX.
 
+{% if not gostech %}
 1. Перейдите в режим суперпользователя `root`:
 
     --8<-- "linux_sudo.md"
+{% endif %}
 
 2. Откройте для редактирования файл `/var/www/comindware<instanceName>/Web.config`:
 {: .pageBreakBefore }
 
     ```
-    sudo nano /var/www/comindware<instanceName>/Web.config
+    nano /var/www/comindware<instanceName>/Web.config
     ```
 
 3. Установите лимит (например, 1 ГБ) с помощью директив `httpRuntime maxRequestLength` (в килобайтах) и `requestLimits maxAllowedContentLength` (в байтах):
@@ -77,13 +79,13 @@ kbId: 4619
 4. Откройте для редактирования файл `/etc/nginx/sites-available/comindware<instanceName>`:
 
     ```
-    sudo nano /etc/nginx/sites-available/comindware<instanceName>
+    nano /etc/nginx/sites-available/comindware<instanceName>
     ```
 
 5. Откройте для редактирования файл `/etc/nginx/sites-available/comindware<instanceName>`:
 
     ```
-    sudo nano /etc/nginx/sites-available/comindware<instanceName>
+    nano /etc/nginx/sites-available/comindware<instanceName>
     ```
 
 6. Установите лимит в мегабайтах с помощью директивы `client_max_body_size`:

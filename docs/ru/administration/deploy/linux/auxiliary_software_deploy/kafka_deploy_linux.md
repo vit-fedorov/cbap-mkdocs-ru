@@ -26,9 +26,11 @@ kbId: 5074
 
 ## Установка Kafka
 
+{% if not gostech %}
 1. Перейдите в режим суперпользователя:
 
     --8<-- "linux_sudo.md"
+{% endif %}
 
 2. Скачайте и распакуйте дистрибутив с вспомогательным ПО **{{ productName }}**, полученный по ссылке от компании **{{ companyName }}** (`X.X`, `<versionNumber>` — номер версии ПО, `<osname>` — название операционной системы):
 
@@ -79,9 +81,11 @@ kbId: 5074
 
 ## Подключение экземпляра {{ productName }} к Kafka
 
+{% if not gostech %}
 1. Перейдите в режим суперпользователя:
 
     --8<-- "linux_sudo.md"
+{% endif %}
 
 2. Задайте параметры подключения к Kafka в файле `/usr/share/comindware/configs/instance/<instanceName>.yml` (`<instanceName>` — имя экземпляра ПО {{ productName }}):
 

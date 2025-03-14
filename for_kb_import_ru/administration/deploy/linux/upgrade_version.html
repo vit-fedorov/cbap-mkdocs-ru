@@ -259,9 +259,14 @@
 <p>Поэтому продолжать обновление версии экземпляра ПО можно только после успешного обновления структуры данных. </p>
 </div>
 <ul>
-<li>Удостоверьтесь, что появился журнал обновления <code>/var/log/comindware/&lt;instanceName&gt;/Log/UpgradeOntology.log</code>.</li>
-<li>Удостоверьтесь, что в журнале обновления последняя запись имеет статус <code>successfully</code>.</li>
-<li>Удостоверьтесь, что в журнале отсутствуют ошибки обновления. Найдите их по ключевому слову <code>error</code>.</li>
+<li>Удостоверьтесь, что появились журналы обновления:<ul>
+<li><code>/var/log/comindware/&lt;instanceName&gt;/Log/UpgradeOntology.log</code></li>
+<li><code>/var/log/comindware/&lt;instanceName&gt;/Log/upgrade&lt;ГГГГ-ММ-ДД&gt;.log</code></li>
+</ul>
+</li>
+<li>Удостоверьтесь, что в журнале <code>UpgradeOntology.log</code> последняя запись содержит строку <code>Upgrade of ontology completed successfully</code>.</li>
+<li>Удостоверьтесь, что в журнале <code>upgrade&lt;ГГГГ-ММ-ДД&gt;.log</code> последняя запись содержит строку <code>Upgrade completed</code>.</li>
+<li>Удостоверьтесь, что в журналах отсутствуют ошибки обновления. Найдите их по ключевому слову <code>error</code>.</li>
 <li>Если обновление выполнено успешно, переходите к шагу 13.</li>
 <li>
 <p>Если в журнале обновления имеются ошибки:</p>

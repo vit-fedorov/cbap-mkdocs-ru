@@ -339,11 +339,10 @@ kbId: 4624
     rm -rf cacheGroup-Keys
     ```
 
-16. Очистите директории с базой данных экземпляра ПО:
+16. Очистите директорию с базой данных экземпляра ПО:
 
     ``` sh
-    rm -rf /var/lib/comindware/<instanceName>/Database/db
-    rm -rf /var/lib/comindware/<instanceName>/Database/wal*
+    rm -rf /var/lib/comindware/<instanceName>/Database/*
     ```
 
 17. Скопируйте очищенную резервную копию в директорию с базой данных `/var/lib/comindware/<instanceName>/Database/`.

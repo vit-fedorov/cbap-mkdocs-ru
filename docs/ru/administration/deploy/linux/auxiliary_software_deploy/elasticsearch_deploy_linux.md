@@ -105,7 +105,7 @@ path.logs: /var/log/elasticsearch
 bootstrap.memory_lock: false
 # ---------------------------------- Network -----------------------------------
 # Укажите IP сервера Elasticsearch или 127.0.0.1, если Elasticsearch и
-# Comindware Business Application Platform развёрнуты на одной машине
+# {{ productName }} развёрнуты на одной машине
 network.host: 127.0.0.1
 http.port: 9200 # порт по умолчанию
 # --------------------------------- Discovery ----------------------------------

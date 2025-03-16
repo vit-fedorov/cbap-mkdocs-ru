@@ -63,6 +63,7 @@ nav:
       - administration/infrastructure/adapters.md
       - administration/infrastructure/authentication_keys.md
     - Подключения и пути передачи данных:
+      - administration/connections_communication_routes/integration.md
       - administration/connections_communication_routes/connections.md
       - administration/connections_communication_routes/communication_routes.md
       - Системные подключения:
@@ -258,35 +259,18 @@ nav:
           - business_apps/expressions/expression_editor/n3_editor/literal_autocomplete.md
   - Моделирование корпоративной архитектуры:
     - architect/architect_desktop.md
-    - architect/architect_example.md
-    - architect/version_control.md
+    - architect/process_architecture_modeling/index.md
+    - architect/process_architecture_modeling/edit_diagram.md
+    - architect/process_architecture_modeling/import_export.md
+    - architect/organizational_structure_modeling/index.md
+    - architect/organizational_structure_modeling/organizational_structure_designer.md
     - architect/conversations.md
+    - architect/version_control.md
     - architect/architect_demo.md
-    - Построение процессной архитектуры:
-      - architect/process_architecture_modeling/index.md
-      - architect/process_architecture_modeling/viewing_diagram.md
-      - Конструктор диаграмм: 
-        - architect/process_architecture_modeling/diagram_designer/index.md
-        - architect/process_architecture_modeling/diagram_designer/edit_diagram.md
-        - architect/process_architecture_modeling/diagram_designer/verify_diagram.md
-      - Операции с элементами процессной архитектуры:
-        - Создание элемента: architect/process_architecture_modeling/process_entities_operations/creating_process_entity.md
-        - Изменение свойств элемента: architect/process_architecture_modeling/process_entities_operations/configuring_process_entity_properties.md
-        - Редактирование формы свойств и атрибутов элемента: architect/process_architecture_modeling/process_entities_operations/configuring_process_entity_properties_form_and_attributes.md
-        - Переименование элемента: architect/process_architecture_modeling/process_entities_operations/renaming_process_entity.md
-        - Изменение иерархии процессов: architect/process_architecture_modeling/process_entities_operations/changing_process_hierarchy.md
-        - Дублирование элемента: architect/process_architecture_modeling/process_entities_operations/cloning_process_entity.md
-        - Удаление элементов: architect/process_architecture_modeling/process_entities_operations/deleting_process_entity.md
-      - architect/process_architecture_modeling/importing_process_entity.md
-      - architect/process_architecture_modeling/exporting_process_entity.md
+    - architect/architect_example.md
     - Построение организационной структуры:
       - architect/organizational_structure_modeling/index.md
-      - architect/organizational_structure_modeling/creating_organizational_unit.md
-      - architect/organizational_structure_modeling/configuring_organizational_unit.md
-      - architect/organizational_structure_modeling/configuring_organizational_unit_form_and_attributes.md
-      - architect/organizational_structure_modeling/renaming_organizational_unit.md
-      - architect/organizational_structure_modeling/changing_hierarchy.md
-      - architect/organizational_structure_modeling/deleting_organizational_unit.md
+      - architect/organizational_structure_modeling/organizational_structure_designer.md
   - Практические примеры:
     - examples/autonumerating_records.md
     - examples/document_clone_scenario_n3.md
@@ -305,6 +289,7 @@ nav:
     - administration/connections_communication_routes/rest_odata_connections/jpath_example.md      
     - administration/connections_communication_routes/rest_odata_connections/http_receive_file.md
     - examples/task_reassign.md
+    - examples/template_reference_data_api.md
   - Обзор версий:
     - general/changelog/changelog.md
     - general/changelog/release_notes_5.0.md

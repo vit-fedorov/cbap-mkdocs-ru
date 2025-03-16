@@ -158,6 +158,10 @@
 
 [log_files_event_examples]: {{ kbArticleURLPrefix }}4618
 
+[log_files_event_examples_adapter_event]: {{ kbArticleURLPrefix }}4618#log_files_event_examples_adapter_even
+
+[log_files_event_examples_connection_status]: {{ kbArticleURLPrefix }}4618#log_files_event_examples_connection_status
+
 [login_and_registration_page_design]: {{ kbArticleURLPrefix }}4707
 
 [logging_configuration]: {{ kbArticleURLPrefix }}4667
@@ -300,53 +304,82 @@
 
 [application_configure_recommendations]: {{ kbArticleURLPrefix }}4716
 
+[architect_demo_instance]: {{ kbArticleURLPrefix }}5070
+
+[architect_demo_organizational_structure_processes]: {{ kbArticleURLPrefix }}4826
+
+[architect_demo_organizational_structure_processes_export]: {{ kbArticleURLPrefix }}4826#architect_demo_organizational_structure_processes_export
+
+
 [architect_desktop]: {{ kbArticleURLPrefix }}4828
 
-[architect_changing_hierarchy]: {{ kbArticleURLPrefix }}4844
+[architect_description]: {{ kbArticleURLPrefix }}4828#architect_description
 
-[architect_cloning_process_entity]: {{ kbArticleURLPrefix }}4841
+[architect_intro]: {{ kbArticleURLPrefix }}4828#architect_intro
 
-[architect_changing_process_hierarchy]: {{ kbArticleURLPrefix }}4842
-
-[architect_configuring_organizational_unit]: {{ kbArticleURLPrefix }}4848
-
-[architect_configuring_organizational_unit_form_and_attributes]: {{ kbArticleURLPrefix }}4847
-
-[architect_configuring_process_entity_properties]: {{ kbArticleURLPrefix }}4843
-
-[architect_configuring_process_entity_properties_form_and_attributes]: {{ kbArticleURLPrefix }}4839
+[architect_desktop_operations]: {{ kbArticleURLPrefix }}4828#architect_desktop_operations
 
 [architect_conversations]: {{ kbArticleURLPrefix }}4827
 
-[architect_creating_organizational_unit]: {{ kbArticleURLPrefix }}4849
+[architect_exporting_process_entity]: {{ kbArticleURLPrefix }}4832#architect_exporting_process_entity
 
-[architect_creating_process_entity]: {{ kbArticleURLPrefix }}4840
+[architect_import_export]: {{ kbArticleURLPrefix }}4832
 
-[architect_deleting_organizational_unit]: {{ kbArticleURLPrefix }}4845
+[architect_importing_process_entity]: {{ kbArticleURLPrefix }}4832#architect_importing_process_entity
 
-[architect_deleting_process_entity]: {{ kbArticleURLPrefix }}4837
+[architect_organizational_structure_design]: {{ kbArticleURLPrefix }}4850
 
-[architect_edit_diagram]: {{ kbArticleURLPrefix }}4835
+[architect_organizational_structure_design_hierarchy_change]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_design_hierarchy_change
 
-[architect_exporting_process_entity]: {{ kbArticleURLPrefix }}4831
+[architect_organizational_structure_design_registry_view]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_design_registry_view
 
-[architect_importing_process_entity]: {{ kbArticleURLPrefix }}4832
+[architect_organizational_structure_design_unit_configure]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_design_unit_configure
 
-[architect_organizational_structure_modelling]: {{ kbArticleURLPrefix }}4850
+[architect_organizational_structure_design_unit_configure_form_and_attributes]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_design_unit_configure_form_and_attributes
 
-[architect_process_architecture_modelling]: {{ kbArticleURLPrefix }}4833
+[architect_organizational_structure_design_unit_create]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_design_unit_create
 
-[architect_process_diagram_designer]: {{ kbArticleURLPrefix }}4836
+[architect_organizational_structure_design_unit_delete]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_design_unit_delete
 
-[architect_renaming_organizational_unit]: {{ kbArticleURLPrefix }}4846
+[architect_organizational_structure_design_unit_rename]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_design_unit_rename
 
-[architect_renaming_process_entity]: {{ kbArticleURLPrefix }}4838
+[architect_organizational_structure_diagram_designer]: {{ kbArticleURLPrefix }}4848#architect_organizational_structure_diagram_designer
 
-[architect_verify_diagram]: {{ kbArticleURLPrefix }}4834
+[architect_organizational_structure_diagram_edit]: {{ kbArticleURLPrefix }}4848
 
-[architect_version_control]: {{ kbArticleURLPrefix }}4827
+[architect_organizational_structure_diagram_edit_element_menu]: {{ kbArticleURLPrefix }}4848#architect_organizational_structure_diagram_edit_element_menu
 
-[architect_viewing_diagram]: {{ kbArticleURLPrefix }}4830
+[architect_organizational_structure_edit]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_edit
+
+[architect_process_architecture_design]: {{ kbArticleURLPrefix }}4833
+
+[architect_process_architecture_design_entity_create]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_entity_create
+
+[architect_process_architecture_design_entity_clone]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_entity_clone
+
+[architect_process_architecture_design_entity_delete]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_entity_delete
+
+[architect_process_architecture_design_hierarchy_change]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_hierarchy_change
+
+[architect_process_architecture_design_entity_properties_configure]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_entity_properties_configure
+
+[architect_process_architecture_design_entity_rename]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_entity_rename
+
+[architect_process_architecture_design_entity_form_attributes_configure]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_entity_form_attributes_configure
+
+[architect_process_architecture_design_registry_view]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_registry_view
+
+[architect_process_architecture_diagram_designer]: {{ kbArticleURLPrefix }}4835
+
+[architect_process_architecture_diagram_designer_element_menu]: {{ kbArticleURLPrefix }}4835#architect_process_architecture_diagram_designer_element_menu
+
+[architect_process_architecture_diagram_edit]: {{ kbArticleURLPrefix }}4835
+
+[architect_process_architecture_diagram_verify]: {{ kbArticleURLPrefix }}4835#architect_process_architecture_diagram_verify
+
+[architect_version_control]: {{ kbArticleURLPrefix }}4829
+
+[architect_process_architecture_diagram_view]: {{ kbArticleURLPrefix }}4835#architect_process_architecture_diagram_view
 
 [attribute_account]: {{ kbArticleURLPrefix }}4774
 
@@ -475,6 +508,8 @@
 [forms_list]: {{ kbArticleURLPrefix }}4786#forms_list
 
 [form_designer]: {{ kbArticleURLPrefix }}4786#form_designer
+
+[form_designer_elements_operations]: {{ kbArticleURLPrefix }}4786#form_designer_elements_operations
 
 [form_elements]: {{ kbArticleURLPrefix }}4786#form_elements
 
@@ -734,6 +769,8 @@
 
 [backup_restore_cdbbz]: {{ kbArticleURLPrefix }}4647
 
+[backup_restore_cdbbz_license_keys]: {{ kbArticleURLPrefix }}4647#backup_restore_cdbbz_license_keys
+
 [configuration_files_linux]: {{ kbArticleURLPrefix }}5067
 
 [deploy_guide_linux]: {{ kbArticleURLPrefix }}4622
@@ -769,6 +806,8 @@
 [auxiliary_software_list]: {{ kbArticleURLPrefix }}4582
 
 [logging_engine]: {{ kbArticleURLPrefix }}4623
+
+[logging_engine_adapter_logs]: {{ kbArticleURLPrefix }}4623#logging_engine_adapter_logs
 
 [logging_engine_audit_log]: {{ kbArticleURLPrefix }}4623#logging_engine_audit_log
 

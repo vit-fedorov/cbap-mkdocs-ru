@@ -59,27 +59,33 @@ kbId: 4659
 {% if adminGuideWindows %}
 <td>Apache Ignite</td>
 {% endif %}
-<td>{% if gostech %}Platform V DataGrid, {% endif %}Apache Ignite</td>
+<td>nginxVariants</td>
 </tr>
 <tr>
 <td>Веб-сервер</td>
 {% if adminGuideWindows %}<td>Internet Information Services (IIS) 10 и выше</td>{% endif %}
-<td>{% if gostech %}Platform V SynGX, {% endif %}NGINX 1.24 и выше</td>
+<td>
+{% if gostech %}
+{{ nginxVariants }}
+{% else %}
+NGINX 1.24 и выше
+{% endif %}
+</td>
 </tr>
 <tr markdown="block">
-<td>Дополнительное ПО (поставляется и устанавливается вместе с основным пакетом)</td>
+<td>Дополнительное ПО{% if not gostech %} (поставляется и устанавливается вместе с основным пакетом){% endif %}</td>
 {% if adminGuideWindows %}
 <td markdown="block">
 - NET 6.0
 - .NET Framework 4.8.1
-- {% if gostech %}Platform V Corax, {% endif %}Apache Kafka 3.6.0 и выше
-- {% if gostech %}Platform V Search, {% endif %}OpenSearch 2.18.0 или Elasticsearch 8.10 и выше</td>
+- {% if gostech %}Platform V Corax{% else %}Apache Kafka 3.6.0 и выше{% endif %}
+- {% if gostech %}Platform V Search{% else %}OpenSearch 2.18.0 или Elasticsearch 8.10 и выше{% endif %}</td>
 {% endif %}
 <td markdown="block">
 - NET 6.0
 - Mono 6.12
-- {% if gostech %}Platform V Corax, {% endif %}Apache Kafka 3.6.0 и выше
-- {% if gostech %}Platform V Search, {% endif %}OpenSearch 2.18.0 или Elasticsearch 8.10 и выше</td>
+- {% if gostech %}Platform V Corax{% else %}Apache Kafka 3.6.0 и выше{% endif %}
+- {% if gostech %}Platform V Search{% else %}OpenSearch 2.18.0 или Elasticsearch 8.10 и выше{% endif %}</td>
 </tr>
 </tbody>
 </table>

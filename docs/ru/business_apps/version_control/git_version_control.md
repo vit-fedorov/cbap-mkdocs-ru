@@ -16,7 +16,7 @@ hide:
 
 # Экспорт и импорт версий приложения через Git {: #version_control_git}
 
---8<-- "experimental_feature.md"
+{% include-markdown ".snippets/experimental_feature.md" %}
 
 ## Введение
 

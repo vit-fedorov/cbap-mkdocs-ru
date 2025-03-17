@@ -46,7 +46,7 @@ hide: tags
 
     См. _«[Настройка экземпляра ПО {{ productName }}][backup_configure_instance]»_ и _«[Хранилище S3. Настройка экземпляра ПО и подключения][s3_connection]»_.
 
-2. Настройте [резервное копирование данных {{ openSearchVariants }}](#backup_configure_elasticsearch).
+2. Настройте резервное копирование данных {{ openSearchVariants }}. См. {% if gostech %}_[документацию Platform V Search](https://client.sbertech.ru/docs/public/SRH/1.6.0/index.html)_{% else %}_«[Настройка резервного копирования данных {{ openSearchVariants }}](#backup_configure_elasticsearch)»_{% endif %}.
 3. Настройте одну или несколько [конфигураций резервного копирования](#backup_configure_list_view).
 4. [Запустите резервное копирование](#backup_configure_start) с использованием настроенных конфигураций вручную или по расписанию.
 5. Просмотрите статус [сеансов в журнале резервного копирования](#backup_configure_sessions_list).
@@ -89,6 +89,7 @@ hide: tags
 
 3. Перезапустите экземпляр ПО.
 
+{% if not gostech %}
 ## Настройка резервного копирования данных {{ openSearchVariants }} {: #backup_configure_elasticsearch .pageBreakBefore }
 
 Для корректного резервного копирования данных истории необходимо настроить конфигурацию службы {{ openSearchVariants }} и экземпляра ПО **{{ productName }}**.
@@ -158,6 +159,8 @@ hide: tags
     backup.journalRepository.s3.elasticConnection: default
     ```
 
+{% endif %}
+
 ## Просмотр списка и настройка конфигураций резервного копирования {: #backup_configure_list_view .pageBreakBefore }
 
 1. В разделе [«**Администрирование**» — «**Инфраструктура**»][administration] выберите пункт «**Резервное копирование**» <i class="fa-light  fa-coins">‌</i>.
@@ -188,7 +191,11 @@ hide: tags
 
             Для резервного копирования журнала транзакций (истории) необходимо настроить экземпляр ПО и службу {{ openSearchVariants }}.
             
+            {% if gostech %}
+            См. _[документацию Platform V Search](https://client.sbertech.ru/docs/public/SRH/1.6.0/index.html)_.
+            {% else %}
             См. _«[Настройка резервного копирования данных {{ openSearchVariants }}](#backup_configure_elasticsearch)»_.
+            {% endif %}
 
     - **Режим запуска**
         - **Вручную** — для запуска резервного копирования потребуется нажимать кнопку «**Запустить копирование**» в [списке конфигураций резервного копирования](#backup_configure_start).
@@ -260,7 +267,9 @@ _![Список сеансов резервного копирования](back
 {% if kbExport %}
 - _[Резервное копирование и восстановление. Содержание раздела][backup_and_restore]_
 {% endif %}
-
+{% if gostech %}
+_[Документация {{ openSearchVariants }}](https://client.sbertech.ru/docs/public/SRH/1.6.0/index.html)_.
+{% endif %}
 
 </div>
 

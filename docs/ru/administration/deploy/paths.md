@@ -20,11 +20,11 @@ kbId: 4620
 - `/usr/share/comindware/configs/instance/<instanceName>.yml` — файл конфигурации. В этом файле задаются все остальные пути, перечисленные ниже.
 - `/var/www/<instanceName>` — исполняемые и конфигурационные файлы экземпляра ПО.
 - `/var/lib/comindware/<instanceName>/Database/db` — файлы базы данных.
-- `/var/lib/comindware/<instanceName>/Database/log` — файлы журналов Apache Ignite.
+- `/var/lib/comindware/<instanceName>/Database/log` — файлы журналов {{ apacheIgniteVariants }}.
 - `/var/log/comindware/<instanceName>/Logs/` — файлы журналов.
 - `/var/log/comindware/<instanceName>/Logs/Archive` — архивы журналов.
 - `/var/lib/comindware/<instanceName>/Database/Scripts` — скомпилированные библиотеки для скриптов на языке С#.
-- `/var/lib/comindware/<instanceName>/Database/snapshots` — снимки данных Apache Ignite.
+- `/var/lib/comindware/<instanceName>/Database/snapshots` — снимки данных {{ apacheIgniteVariants }}.
 - `/var/lib/comindware/<instanceName>/Database/wal` — файлы журнала предварительной записи.
 - `/var/lib/comindware/<instanceName>/Streams` — загруженные пользователями и сформированные системой файлы, которые прикреплены к соответствующим атрибутам.
 {: .pageBreakAfter }
@@ -72,7 +72,9 @@ kbId: 4620
 {% if adminGuideLinux or kbExport %}
 - _[Конфигурация экземпляра, компонентов ПО и служб. Настройка в Linux][configuration_files_linux]_
 {% endif %}
+{% if not gostech %}
 - _[Антивирусное ПО. Настройка исключений: пути и файлы {{ productName }}][antivirus_exceptions_configure]_
+{% endif %}
 - _[Подсистема журналирования][logging_engine]_
 
 </div>

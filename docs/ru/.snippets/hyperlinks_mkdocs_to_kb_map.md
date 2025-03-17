@@ -110,8 +110,6 @@
 
 [backup_recommendations]: {{ kbArticleURLPrefix }}5082
 
-[backup_configure_elasticsearch]: {{ kbArticleURLPrefix }}5082#backup_configure_elasticsearch
-
 [changelog]: {{ kbArticleURLPrefix }}4589
 
 [collabora_connection]: {{ kbArticleURLPrefix }}4688
@@ -137,8 +135,6 @@
 [esphere_receive_configure]: {{ kbArticleURLPrefix }}5061
 
 [esphere_send_configure]: {{ kbArticleURLPrefix }}5062
-
-[experimental_feature_support]: {{ kbArticleURLPrefix }}4579#experimental_feature_support
 
 [get_connection]: {{ kbArticleURLPrefix }}4701
 
@@ -473,6 +469,8 @@
 
 [process_diagram_elements_events_start]: {{ kbArticleURLPrefix }}4735
 
+[experimental_feature_support]: {{ kbArticleURLPrefix }}4579#experimental_feature_support
+
 [export_templates]: {{ kbArticleURLPrefix }}4797
 
 [export_template_button_configure]: {{ kbArticleURLPrefix }}4798
@@ -755,9 +753,13 @@
 
 [auxiliary_software_optimize]: {{ kbArticleURLPrefix }}4604
 
+[backup_configure_elasticsearch]: {{ kbArticleURLPrefix }}5082#backup_configure_elasticsearch
+
 [complete_running_instance_backup]: {{ kbArticleURLPrefix }}4650
 
 [elasticsearch_cluster_deploy_no_certificates]: {{ kbArticleURLPrefix }}4612
+
+[http_send_post]: {{ kbArticleURLPrefix }}5075
 
 [nginx_deploy]: {{ kbArticleURLPrefix }}4611
 
@@ -784,6 +786,8 @@
 [configuration_files_linux]: {{ kbArticleURLPrefix }}5067
 
 [deploy_guide_linux]: {{ kbArticleURLPrefix }}4622
+
+[deploy_guide_linux_delete_version]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_delete_version
 
 [deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_initialize
 

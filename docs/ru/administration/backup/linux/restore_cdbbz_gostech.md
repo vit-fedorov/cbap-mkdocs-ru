@@ -47,13 +47,16 @@ tags:
     ```
 6. Настройте внешний доступ к сервису comindware-platform-proxy для Ingress.
 7. Откройте URI, созданный на шаге 6.
-8. Дождитесь запуска Comindware Platform.
+20. Дождитесь запуска **{{ productName }}**. Этот процесс может занять некоторое время. Может потребоваться обновить страницу браузера.
+21. Выполните [инициализацию {{ productName }}][deploy_guide_linux_initialize].
+22. Удостоверьтесь, что все данные из резервной копии восстановлены.
 
 <div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
 - _[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup_configure]_
+- _[Инициализация {{ productName }}][deploy_guide_linux_initialize]_
 
 </div>
 

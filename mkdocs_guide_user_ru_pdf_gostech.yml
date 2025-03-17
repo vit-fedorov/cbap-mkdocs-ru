@@ -8,12 +8,12 @@ INHERIT: mkdocs_guide_user_ru_pdf.yml
 
 extra:
   gostech: true
-  apacheIgniteVariants: Platform V DataGrid (Apache Ignite)
-  apacheKafkaVariants: Platform V Corax (Apache Kafka)
-  nginxVariants: Platform V SynGX (NGINX)
-  notificationServerVariants: Platform V Notification Center (SMTP/IMAP)
-  openSearchVariants:  Platform V Search (OpenSearch, Elasticsearch)
-  zabbixVariants: Platform V Monitor (Zabbix)
+  apacheIgniteVariants: Platform V DataGrid
+  apacheKafkaVariants: Platform V Corax
+  nginxVariants: Platform V SynGX
+  notificationServerVariants: Platform V Notification Center
+  openSearchVariants:  Platform V Search
+  zabbixVariants: Platform V Monitor
 
 plugins:
   with-pdf:

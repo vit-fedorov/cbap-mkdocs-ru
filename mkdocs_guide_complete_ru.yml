@@ -378,6 +378,8 @@ nav:
     - tutorial/lesson_10.md
 
 exclude_docs: |
+  administration/backup/linux/restore_cdbbz_gostech.md
+  administration/deploy/linux/deploy_guide_gostech.md
   administration/deploy/linux/deploy_cluster.md
   administration/deploy/windows/admin_utility/**
   administration/deploy/windows/architect_install.md

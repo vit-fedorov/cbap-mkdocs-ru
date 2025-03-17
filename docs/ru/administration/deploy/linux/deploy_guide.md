@@ -72,14 +72,14 @@ kbId: 4622
 
     - `-p` — установить обязательное вспомогательное ПО.
     - `-k` — установить ПО Kafka (необязательный ключ).
-    - `-e` — установить ПО Elasticsearch или OpenSearch (необязательный ключ).
+    - `-e` — установить ПО {{ openSearchVariants }} или OpenSearch (необязательный ключ).
     - `-kh=<hostname>` или `--kafkaHost=<hostname>` — использовать указанный хост для подключения к ПО Kafka (необязательный ключ).
     - `-kp=<portNumber>` или `--kafkaPort=<portNumber>` — использовать указанный порт для подключения к ПО Kafka (необязательный ключ).
     - `-h` — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).
 
     !!! note "Примечание"
 
-        Скрипт `prerequisites_install.sh` устанавливает необходимые для **{{ productName }}** компоненты, включая Java, .NET, Mono, NGINX.
+        Скрипт `prerequisites_install.sh` устанавливает необходимые для **{{ productName }}** компоненты, включая Java, .NET, Mono, {{ nginxVariants }}.
 
     !!! tip "Вызов справки для скриптов"
 
@@ -96,7 +96,7 @@ kbId: 4622
 
 5. По окончании установки скрипт выведет информацию об установленных компонентах. Удостоверьтесь, что компоненты успешно установлены (имеют статус `OK`).
 
-    Пример результата выполнения скрипта с ключом `-p` без установки Elasticsearch и Kafka:
+    Пример результата выполнения скрипта с ключом `-p` без установки {{ openSearchVariants }} и Kafka:
 
     ``` sh
     [Done] Creating CBAP Data Dir.
@@ -427,7 +427,7 @@ kbId: 4622
     nano /usr/lib/systemd/system/adapterhost<instanceName>.service
     ```
 
-7. Если используются локальные службы Kafka и Elasticsearch, откройте их для редактирования:
+7. Если используются локальные службы Kafka и {{ openSearchVariants }}, откройте их для редактирования:
 
     ``` sh
     nano /usr/lib/systemd/system/kafka.service
@@ -506,7 +506,7 @@ kbId: 4622
 
 7. При необходимости откроется страница инициализации данных в {{ openSearchVariants }}.
 
-    _![Страница инициализации данных в Elasticsearch](img/deploy_guide_elasticsearch_initialize.png)_
+    _![Страница инициализации данных в {{ openSearchVariants }}](img/deploy_guide_elasticsearch_initialize.png)_
 
 8. Нажмите кнопку «**Обновить**».
 9.  Дождитесь открытия начальной страницы **{{ productName }}**.

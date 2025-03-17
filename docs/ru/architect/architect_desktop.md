@@ -13,7 +13,7 @@ hide:
 
 # {{ productNameArchitect }}. Описание модуля {: #architect_description }
 
---8<-- "experimental_feature.md"
+{% include-markdown ".snippets/experimental_feature.md" %}
 
 ## Введение
 

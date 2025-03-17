@@ -15,13 +15,13 @@ kbId: 4622
 
 ## Порядок развёртывания ПО {{ productName }}
 
-1. Убедитесь, что установлен модуль Ansible kubernetes.core:
+1. Убедитесь, что установлен модуль Ansible `kubernetes.core`:
 
     ``` sh
     ansible-galaxy collection install kubernetes.core
     ```
 
-2. Настройте конфигурацию развёртывания в Ansible-playbook, отредактировав файл deploy_cmw_chart.yml, по следующему образцу:
+2. Настройте конфигурацию развёртывания в Ansible Playbook, отредактировав файл `deploy_cmw_chart.yml`, по следующему образцу:
 
     ``` yml
     - hosts: localhost
@@ -65,7 +65,7 @@ kbId: 4622
                 - "platform.volumes.cmw_backup.storageClassName=<new-storage-class>"
     ```
 
-3. В случае необходимости создать values.yml который содержащий требуемые переопределения значений Helm-чарта comindware-chart:
+3. В случае необходимости создать values.yml который содержащий требуемые переопределения значений Helm-чарта `comindware-chart`:
 
     ``` yml
     platform:
@@ -85,7 +85,8 @@ kbId: 4622
             storage: 30Gi
             storageClassName: <storageClassName>
     ```
-4. Запустите Ansible-playbook:
+
+4. Запустите Ansible Playbook:
 
     - Без переопределения значений:
 
@@ -99,8 +100,17 @@ kbId: 4622
     ansible-playbook deploy_cmw_chart.yml -e “@values.yml
     ```
 
-5. Настройте внешний доступ (эндпоинт) к сервису comindware-platform-proxy для Ingress.
+5. Настройте внешний доступ (эндпоинт) к сервису `comindware-platform-proxy` для Ingress.
 6. Откройте эндпоинт, созданный на шаге 5.
-7. Дождитесь запуска Comindware Platform.
+7. Дождитесь запуска **{{ productName }}**.
+8. Выполните инициализацию ПО.
+
+## Инициализация {{ productName }} {: #deploy_guide_linux_initialize .pageBreakBefore }
+
+{%
+include-markdown "./deploy_guide.md"
+start="<!--initialize-start-->"
+end="<!--initialize-end-->"
+%}
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

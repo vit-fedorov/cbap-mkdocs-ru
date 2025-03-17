@@ -197,7 +197,7 @@ _![Типовой ландшафт сервисов в составе Систе
 <thead markdown>
 <tr markdown>
 <td colspan="7" markdown>
-**Система мониторинга и отслеживания (VPS): `Zabbix1`, `Zabbix2`**
+**Система мониторинга и отслеживания (VPS): `Monitor1`, `Monitor2`**
 </td>
 </tr>
 </thead>
@@ -392,14 +392,18 @@ _![Типовой ландшафт сервисов в составе Систе
 **Требования к конфигурации**
 
 {% if gostech %}
-- _[Platform V DataGrid. Руководство по установке](https://client.sbertech.ru/docs/public/IGN/17.0.0/IGNT/17.0.0/documents/installation-guide/index.html)_{% endif %}
+- _[Platform V DataGrid. Руководство по установке](https://client.sbertech.ru/docs/public/IGN/17.0.0/IGNT/17.0.0/documents/installation-guide/index.html)_
+{% else %}
 - _[Apache Ignite. Установка и настройка. Краткое руководство][apache_ignite_deploy]_.
+{% endif %}
 
 **Примеры конфигураций**
 
 {% if gostech %}
-- _[Platform V DataGrid. Руководство по установке](https://client.sbertech.ru/docs/public/IGN/17.0.0/IGNT/17.0.0/documents/installation-guide/index.html)_{% endif %}
+- _[Platform V DataGrid. Руководство по установке](https://client.sbertech.ru/docs/public/IGN/17.0.0/IGNT/17.0.0/documents/installation-guide/index.html)_
+{% else %}
 - _[Apache Ignite. Установка и настройка. Краткое руководство][apache_ignite_deploy]_.
+{% endif %}
 
 ### Конфигурация сервера журналирования транзакций
 
@@ -415,8 +419,10 @@ _![Типовой ландшафт сервисов в составе Систе
 **Примеры конфигураций**
 
 {% if gostech %}
-- _[Platform V Search (SRH). Руководство по установке](https://client.sbertech.ru/docs/public/SRH/1.5.0/SRHX/1.5.0/documents/installation-guide/index.html)_{% endif %}
+- _[Platform V Search (SRH). Руководство по установке](https://client.sbertech.ru/docs/public/SRH/1.5.0/SRHX/1.5.0/documents/installation-guide/index.html)_
+{% else %}
 - _[Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности][elasticsearch_cluster_deploy_no_certificates]_
+{% endif %}
 {% if adminGuideWindows %}
 - _[Установка Elasticsearch. Краткое руководство для Windows][elasticsearch_deploy_windows]_{% endif %}
 
@@ -433,11 +439,13 @@ _![Типовой ландшафт сервисов в составе Систе
 **Примеры конфигураций**
 
 {% if gostech %}
-- _[Руководство по установке Platform V SynGX (SNX)](https://client.sbertech.ru/docs/public/SNX/3.0.0/SNGX/3.0.0/documents/installation-guide/index.html)_{% endif %}
+- _[Руководство по установке Platform V SynGX (SNX)](https://client.sbertech.ru/docs/public/SNX/3.0.0/SNGX/3.0.0/documents/installation-guide/index.html)_
+{% else %}
 - _[NGINX. Установка и настройка][nginx_deploy]»_
 - _[Модуль GeoIP для NGINX. Установка и настройка][nginx_geoid_deploy]_.
+{% endif %}
 
-### Конфигурация сервера Zabbix {: .pageBreakBefore }
+### Конфигурация сервера {{ zabbixVariants }} {: .pageBreakBefore }
 
 **Требования к конфигурации**
 
@@ -459,7 +467,10 @@ _![Типовой ландшафт сервисов в составе Систе
 
 **Примеры конфигураций**
 
+{% if gostech %}
 - _[Platform V Monitor. Руководство по установке](https://client.sbertech.ru/docs/public/OPM/6.0.10/common/documents/installation-guide/index.html)_.
+{% else %}
 - _[Zabbix. Установка и настройка. Краткое руководство][zabbix_deploy]_.
+{% endif %}
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

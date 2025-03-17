@@ -12,7 +12,7 @@ hide: tags
 
 # Экспорт и импорт версий приложения с помощью Excel {: #version_control_excel }
 
---8<-- "experimental_feature.md"
+{% include-markdown ".snippets/experimental_feature.md" %}
 
 ## Введение
 

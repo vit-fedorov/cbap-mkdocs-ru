@@ -98,8 +98,6 @@
 
 [account_permission_audit]: {{ kbArticleURLPrefix }}4664
 
-[ad_authentication_configure]: {{ kbArticleURLPrefix }}4605
-
 [ad_connection]: {{ kbArticleURLPrefix }}4687
 
 [administration]: {{ kbArticleURLPrefix }}4661
@@ -143,8 +141,6 @@
 [global_configuration]: {{ kbArticleURLPrefix }}4668
 
 [groups]: {{ kbArticleURLPrefix }}4654
-
-[kafka_connection]: {{ kbArticleURLPrefix }}4704
 
 [licensing]: {{ kbArticleURLPrefix }}4670
 
@@ -279,8 +275,6 @@
 [version_control_app_prepare]: {{ kbArticleURLPrefix }}4808#version_control_app_prepare
 
 [version_control_git]: {{ kbArticleURLPrefix }}4806
-
-[wsfederation_connection]: {{ kbArticleURLPrefix }}4686
 
 {% endif %}
 
@@ -747,6 +741,8 @@
 
 <!-- Руководства для ГосТеха, пользователя, администратора для Windows или экспорт в БЗ  -->
 
+[ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}4605
+
 [apache_ignite_deploy]: {{ kbArticleURLPrefix }}4600
 
 [apache_ignite_defragment]: {{ kbArticleURLPrefix }}4603
@@ -769,13 +765,15 @@
 
 [restore_test_configure]: {{ kbArticleURLPrefix }}4651
 
+[sso_authenticatation_configure]: {{ kbArticleURLPrefix }}4613
+
+[sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}4613#sso_authentication_configure_keytab_update
+
 {% endif %}
 
 {% if (userGuide and not adminGuideLinux) or (not adminGuideLinux and adminGuideWindows) or kbExport %}
 
 <!-- Руководство пользователя, администратора для Windows или экспорт в БЗ  -->
-
-[ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}4605
 
 [availability_fault_tolerance]: {{ kbArticleURLPrefix }}5079
 
@@ -797,9 +795,7 @@
 
 [paths_linux]: {{ kbArticleURLPrefix }}4620#paths_linux
 
-[sso_authenticatation_configure]: {{ kbArticleURLPrefix }}4613
-
-[sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}4613#sso_authentication_configure_keytab_update
+[upgrade_version_linux]: {{ kbArticleURLPrefix }}4624
 
 {% endif %}
 
@@ -899,6 +895,12 @@
 
 [adapters]: {{ kbArticleURLPrefix }}4672
 
+[ad_authentication_configure]: {{ kbArticleURLPrefix }}4605
+
 [antivirus_exceptions_configure]: {{ kbArticleURLPrefix }}4602
+
+[kafka_connection]: {{ kbArticleURLPrefix }}4704
+
+[wsfederation_connection]: {{ kbArticleURLPrefix }}4686
 
 {% endif %}

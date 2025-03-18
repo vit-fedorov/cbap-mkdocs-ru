@@ -13,16 +13,22 @@ kbId: 4620
 
 ## Содержимое директорий {% if userGuide or kbExport %}— Linux{% endif %} {: #paths_linux}
 
-По умолчанию файлы экземпляра ПО находятся в директории `/var/lib/comindware/<instanceName>`
+По умолчанию файлы экземпляра ПО находятся {% if gostech %}в файловой системе контейнера{% endif %} в директории `/var/lib/comindware/<instanceName>`
 
 Здесь и далее `<instanceName>` — имя экземпляра ПО.
 
 - `/usr/share/comindware/configs/instance/<instanceName>.yml` — файл конфигурации. В этом файле задаются все остальные пути, перечисленные ниже.
+{% if gostech %}
+- `/usr/share/comindware/<instanceName>` — исполняемые и конфигурационные файлы экземпляра ПО.
+{% else %}
 - `/var/www/<instanceName>` — исполняемые и конфигурационные файлы экземпляра ПО.
+{% endif %}
 - `/var/lib/comindware/<instanceName>/Database/db` — файлы базы данных.
+{% if not gostech %}
 - `/var/lib/comindware/<instanceName>/Database/log` — файлы журналов {{ apacheIgniteVariants }}.
 - `/var/log/comindware/<instanceName>/Logs/` — файлы журналов.
 - `/var/log/comindware/<instanceName>/Logs/Archive` — архивы журналов.
+{% endif %}
 - `/var/lib/comindware/<instanceName>/Database/Scripts` — скомпилированные библиотеки для скриптов на языке С#.
 - `/var/lib/comindware/<instanceName>/Database/snapshots` — снимки данных {{ apacheIgniteVariants }}.
 - `/var/lib/comindware/<instanceName>/Database/wal` — файлы журнала предварительной записи.

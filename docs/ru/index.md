@@ -17,7 +17,7 @@ hide:
 
 {% elif apiGuide %}
 
-Это полное руководство по использованию API ПО **{{ productNameEnterprise }}**.
+Это руководство по использованию API ПО **{{ productNameEnterprise }}**.
 
 {% elif userGuide %}
 

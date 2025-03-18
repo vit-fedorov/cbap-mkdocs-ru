@@ -336,6 +336,7 @@ nav:
     - examples/using_gantt_chart.md
     - examples/process_email_configure.md
     - examples/autonumerating_records.md
+    - examples/autonumerating_related_records.md
     - examples/document_clone_scenario_n3.md
     - examples/document_download_archive_csharp.md
     - examples/document_download_archive_related_record_csharp.md

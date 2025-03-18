@@ -272,6 +272,7 @@ nav:
       - architect/organizational_structure_modeling/organizational_structure_designer.md
   - Практические примеры:
     - examples/autonumerating_records.md
+    - examples/autonumerating_related_records.md
     - examples/document_clone_scenario_n3.md
     - examples/document_download_archive_csharp.md
     - examples/document_download_archive_related_record_csharp.md

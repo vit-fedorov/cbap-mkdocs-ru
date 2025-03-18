@@ -433,6 +433,8 @@
 
 [auto_numerating_records]: {{ kbArticleURLPrefix }}4895
 
+[auto_numerating_related_records]: {{ kbArticleURLPrefix }}5092
+
 [button_area]: {{ kbArticleURLPrefix }}4791
 
 [button_area_configure]: {{ kbArticleURLPrefix }}4791#button_area_configure

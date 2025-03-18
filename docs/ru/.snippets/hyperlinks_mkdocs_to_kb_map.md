@@ -459,6 +459,8 @@
 
 [discussion_configure]: {{ kbArticleURLPrefix }}4788
 
+[discussion_configure_quick_answers]: {{ kbArticleURLPrefix }}4788#discussion_configure_quick_answers
+
 [discussion_configure_template]: {{ kbArticleURLPrefix }}4788#mcetoc_1h7hu3akn4
 
 [discussion_use]: {{ kbArticleURLPrefix }}4818

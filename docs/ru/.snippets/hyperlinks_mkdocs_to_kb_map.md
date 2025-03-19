@@ -144,12 +144,6 @@
 
 [licensing]: {{ kbArticleURLPrefix }}4670
 
-[log_files_event_examples]: {{ kbArticleURLPrefix }}4618
-
-[log_files_event_examples_adapter_event]: {{ kbArticleURLPrefix }}4618#log_files_event_examples_adapter_even
-
-[log_files_event_examples_connection_status]: {{ kbArticleURLPrefix }}4618#log_files_event_examples_connection_status
-
 [login_and_registration_page_design]: {{ kbArticleURLPrefix }}4707
 
 [logging_configuration]: {{ kbArticleURLPrefix }}4667
@@ -278,6 +272,14 @@
 
 {% endif %}
 
+{% if gostech or (not userGuide and (adminGuideLinux or adminGuideWindows)) or (tutorial and not userGuide) or kbExport %}
+
+<!-- Руководство для ГосТех, администратора для Linux/Windows, отдельный учебник или экспорт в БЗ -->
+
+[http_send_post]: {{ kbArticleURLPrefix }}5075
+
+{% endif %}
+
 {% if (not userGuide and (adminGuideLinux or adminGuideWindows)) or (tutorial and not userGuide) or kbExport %}
 
 <!-- Руководство администратора для Linux/Windows, отдельный учебник или экспорт в БЗ -->
@@ -291,7 +293,6 @@
 [architect_demo_organizational_structure_processes]: {{ kbArticleURLPrefix }}4826
 
 [architect_demo_organizational_structure_processes_export]: {{ kbArticleURLPrefix }}4826#architect_demo_organizational_structure_processes_export
-
 
 [architect_desktop]: {{ kbArticleURLPrefix }}4828
 
@@ -737,7 +738,7 @@
 
 {% endif %}
 
-{% if (userGuide and not adminGuideLinux) or (not adminGuideLinux and adminGuideWindows) or gostech or kbExport %}
+{% if gostech or (userGuide and not adminGuideLinux) or (not adminGuideLinux and adminGuideWindows) or kbExport %}
 
 <!-- Руководства для ГосТеха, пользователя, администратора для Windows или экспорт в БЗ  -->
 
@@ -749,13 +750,11 @@
 
 [auxiliary_software_optimize]: {{ kbArticleURLPrefix }}4604
 
-[backup_configure_elasticsearch]: {{ kbArticleURLPrefix }}5082#backup_configure_elasticsearch
+[backup_configure_elasticsearch]: {{ kbArticleURLPrefix }}4642#backup_configure_elasticsearch
 
 [complete_running_instance_backup]: {{ kbArticleURLPrefix }}4650
 
 [elasticsearch_cluster_deploy_no_certificates]: {{ kbArticleURLPrefix }}4612
-
-[http_send_post]: {{ kbArticleURLPrefix }}5075
 
 [nginx_deploy]: {{ kbArticleURLPrefix }}4611
 
@@ -816,6 +815,12 @@
 [logging_engine_audit_log]: {{ kbArticleURLPrefix }}4623#logging_engine_audit_log
 
 [logging_engine_rules]: {{ kbArticleURLPrefix }}4623#logging_engine_rules
+
+[log_files_event_examples]: {{ kbArticleURLPrefix }}4618
+
+[log_files_event_examples_adapter_event]: {{ kbArticleURLPrefix }}4618#log_files_event_examples_adapter_even
+
+[log_files_event_examples_connection_status]: {{ kbArticleURLPrefix }}4618#log_files_event_examples_connection_status
 
 [paths]: {{ kbArticleURLPrefix }}4620
 

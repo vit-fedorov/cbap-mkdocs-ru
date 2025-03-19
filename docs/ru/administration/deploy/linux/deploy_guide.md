@@ -104,7 +104,7 @@ kbId: 4622
     Environment details
     Status     | Software   | Version   
     -----------------------------------------
-    OK         | mono       | 6.12.0.182     
+    OK         | mono       | 6.12.0.200     
     OK         | dotnet     | 6.0.417        
     OK         | java       | 17.0.7            
     OK     NGINX installed.

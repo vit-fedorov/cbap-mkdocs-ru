@@ -15,9 +15,11 @@ extra:
   apacheIgniteVariants: Platform V DataGrid
   apacheKafkaVariants: Platform V Corax
   nginxVariants: Platform V SynGX
-  notificationServerVariants: Platform V Notification Center
+  notificationServiceVariants: Platform V Notification Center
   openSearchVariants:  Platform V Search
   zabbixVariants: Platform V Monitor
+  auditVariants: Platform V Audit
+  authServiceVariants: Platform V IAM
 
 plugins:
   with-pdf:

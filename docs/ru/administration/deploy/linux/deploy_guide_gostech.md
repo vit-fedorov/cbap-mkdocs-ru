@@ -43,7 +43,7 @@ kbId: 4622
                     service_bootstrap: "<kafkaIP>:9092"
                 platform:
                     config:
-                    # Укажите данные данные интеграции с Platform V IAM
+                    # Укажите данные данные интеграции с {{ authServiceVariants }}
                     auth_openId_enabled: "true"
                     auth_openId_server: <plarformViAMServerAddress>
                     auth_openId_realm: <plarformViAMServerRealm>

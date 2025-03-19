@@ -44,7 +44,7 @@ hide: tags
     - Настройте папку или репозиторий S3 для хранения резервных копий.
     - Настройте используемые по умолчанию параметры резервного копирования в файле конфигурации экземпляра ПО.
 
-    См. _«[Настройка экземпляра ПО {{ productName }}][backup_configure_instance]»_ и _«[Хранилище S3. Настройка экземпляра ПО и подключения][s3_connection]»_.
+    См. {% if not gostech %}_«[Настройка экземпляра ПО {{ productName }}][backup_configure_instance]»_{% endif %} и _«[Хранилище S3. Настройка экземпляра ПО и подключения][s3_connection]»_.
 
 2. Настройте резервное копирование данных {{ openSearchVariants }}. См. {% if gostech %}_[документацию Platform V Search](https://client.sbertech.ru/docs/public/SRH/1.6.0/index.html)_{% else %}_«[Настройка резервного копирования данных {{ openSearchVariants }}](#backup_configure_elasticsearch)»_{% endif %}.
 3. Настройте одну или несколько [конфигураций резервного копирования](#backup_configure_list_view).

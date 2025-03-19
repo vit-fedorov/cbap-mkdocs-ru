@@ -83,7 +83,7 @@ kbId: 4582
 | [Autofac](https://github.com/autofac/Autofac) | IoC-контейнер для .NET. | 4.9.4 | MIT License |
 | [BouncyCastle](https://github.com/chrishaly/bc-csharp) | Пакет, реализующий криптографические алгоритмы. | 1.8.10.0 | MIT License |
 | [Castle.Core](https://github.com/castleproject/Core) | Castle Core API для создания прокси-объектов. | 4.0.0.0 | Apache 2.0 License |
-| [CsvHelper](https://www.nuget.org/packages/CsvHelper/) | Библиотека .NET для чтения и записи файлов CSV. | 28.0.0.0 | Microsoft Public License |
+| [CsvHelper](https://www.nuget.org/packages/CsvHelper/) | Библиотека .NET для чтения и записи файлов CSV. | 28.0.0.0 | Apache 2.0 License |
 | [DDay.Collections](https://github.com/rianjs/ical.net) | Компонент iCal.NET — библиотеки классов для .NET, обеспечивает соответствие RFC 5545 и полную совместимость с популярными приложениями и библиотеками календарей. | 1.0.0.0 | MIT License |{% if pdfOutput %}
 
 | **Наименование ПО и ссылка** | **Описание** | **Версия** | **Лицензия** |
@@ -104,7 +104,7 @@ kbId: 4582
 | [Microsoft.Data.OData](https://www.nuget.org/packages/Microsoft.Data.OData/) | Компонент OData. | 5.8.5.0 | MIT License |
 | [Microsoft.DiaSymReader](https://github.com/dotnet/symreader) | Управляемые определения интерфейсов COM, предоставляемые API-интерфейсами DiaSymReader. | 1.3.0.0 | MIT License |
 | [Microsoft.Exchange.WebServices](https://github.com/OfficeDev/ews-managed-api) | Управляемый API веб-служб Exchange (EWS). | 15.0.0.0 | MIT License |
-| [Microsoft.IdentityModel](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) | Библиотека для работы с OpenIdConnect и WsFederation.{% if not gostech %} **Примечание:** это необязательный компонент для входа в **{{ productName }}** через Google, Azure AD/ и другие службы OpenID. Этот компонент не устанавливается по умолчанию. При необходимости его можно установить при развертывании ПО.  {% endif %}| 5.3.0.0 | Microsoft Software License |
+| [Microsoft.IdentityModel](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) | Библиотека для работы с OpenIdConnect и WsFederation.{% if not gostech %} **Примечание:** это необязательный компонент для входа в **{{ productName }}** через Google, Azure AD/ и другие службы OpenID. Этот компонент не устанавливается по умолчанию. При необходимости его можно установить при развертывании ПО.  {% endif %}| 5.3.0.0 | MIT License |
 | [Microsoft.OData](https://www.nuget.org/packages/Microsoft.Data.OData/) | Библиотека для работы с OData. | 7.10.0.0 | MIT License |
 | [Microsoft.Owin](https://www.nuget.org/packages/Microsoft.Owin) | Библиотека для работы с OWIN. | 4.1.1.0 | Apache 2.0 License |
 | [Microsoft.Spatial](https://www.nuget.org/packages/Microsoft.Spatial/) | Библиотека для работы с геометрическими фигурами. | 7.10.0.0 | MIT License |{% if not gostech %}
@@ -142,7 +142,7 @@ kbId: 4582
 | --- | --- | --- | --- |{% endif %}
 | [mono-data](https://packages.altlinux.org/ru/sisyphus/binary/mono-data/) | Этот пакет содержит сборку Mono для облегчения доступа к данным и работы с базами данных, совместимыми с LDAP серверами каталогов, а также обменом данными XML. Помимо сборок ADO.NET, Novell.LDAP и System.DirectoryServices, он также содержит приложение SQL командной строки и поставщики данных Microsoft SQL Server и ODBC. | 6.12 | MIT License |{% if not gostech %}
 | [nginx](https://packages.altlinux.org/ru/sisyphus/srpms/nginx/) | HTTP-сервер, обратный прокси-сервер. | 1.22.1 | BSD |{% endif %}
-| [xsp](https://packages.altlinux.org/ru/sisyphus/srpms/xsp/) | XSP-сервер — это компактный веб-сервер, на котором размещаются классы System.Webclasses Mono для запуска ASP.NET. | 4.7.1 | X11/MIT License |
+| [xsp](https://packages.altlinux.org/ru/sisyphus/srpms/xsp/) | XSP-сервер — это компактный веб-сервер, на котором размещаются классы System.Webclasses Mono для запуска ASP.NET. | 4.7.1 | MIT License |
 
 ## Вспомогательное ПО для Astra Linux
 

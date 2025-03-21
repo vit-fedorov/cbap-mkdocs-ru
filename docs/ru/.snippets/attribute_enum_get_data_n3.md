@@ -1,0 +1,9 @@
+- Из атрибута типа «**Список значений**» при помощи выражений N3 можно получить слующие данные:
+    - ID значения атрибута: `?item ?enumAttributeValue ?enumVariantId`;
+    - данные значения атрибута: `?enumVariantId cmw:variantName ?selectedVariant`;
+    - системное имя значения атрибута: `?enumVariantId cmw:variantAlias ?selectedVariantSystemName`;
+    - название иконки значения атрибута: `?enumVariantId cmw:variantIcon ?selectedVariantIcon`
+    - цвет значения атрибута в формате Decimal: `?enumVariantId cmw:color ?selectedVariantColor`;
+    - массив объектов значений атрибута: `?selectedVariant l10n:text ?selectedVariantLanguageVersions`;
+    - код языков заполненных вариантов значения атрибута: `?selectedVariantLanguageVersions l10n:lang ?langCodes`;
+    - название на одном из языков значения атрибута: `?selectedVariantLanguageVersions l10n:data ?selectedVariantName`.

@@ -38,7 +38,6 @@ kbId: 4624
     Выполните подготовительные действия отдельно для каждого экземпляра ПО, версию которого требуется обновить.
 
 1. Создайте и перенесите во внешнее хранилище резервную копию базы данных экземпляра ПО. См. _«[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup_configure]»_.
-
 2. Перейдите в режим суперпользователя:
 
     --8<-- "linux_sudo.md"
@@ -54,7 +53,7 @@ kbId: 4624
     mkdir -p /var/backups/config_tmp/
     cd /var/www/<instanceName>/
     cp *.config *.yml *.json /var/backups/config_tmp/
-    cp /var/www/<instanceName>/data/Plugins/Agent/Agent.config
+    cp /var/www/<instanceName>/data/Plugins/Agent/Agent.config /var/backups/config_tmp/
     cp /etc/nginx/sites-available/comindware<instanceName> /var/backups/config_tmp/
     cp /etc/sysconfig/comindware<instanceName>-env /var/backups/config_tmp/
     ```
@@ -65,7 +64,7 @@ kbId: 4624
     mkdir -p /var/backups/config_tmp/
     cd /var/www/<instanceName>/
     cp *.config *.yml *.json /var/backups/config_tmp/
-    cp /var/www/<instanceName>/data/Plugins/Agent/Agent.config
+    cp /var/www/<instanceName>/data/Plugins/Agent/Agent.config /var/backups/config_tmp/
     cp /etc/nginx/conf.d/comindware<instanceName> /var/backups/config_tmp/
     cp /etc/sysconfig/comindware<instanceName>-env /var/backups/config_tmp/
     ```
@@ -76,7 +75,7 @@ kbId: 4624
     mkdir -p /var/backups/config_tmp/
     cd /var/www/<instanceName>/
     cp *.config *.yml *.json /var/backups/config_tmp/
-    cp /var/www/<instanceName>/data/Plugins/Agent/Agent.config
+    cp /var/www/<instanceName>/data/Plugins/Agent/Agent.config /var/backups/config_tmp/
     cp /etc/nginx/sites-available.d/comindware<instanceName> /var/backups/config_tmp/
     cp /etc/sysconfig/comindware<instanceName>-env /var/backups/config_tmp/
     ```
@@ -114,9 +113,11 @@ kbId: 4624
     ``` sh
     rm -rf <distPath>/CMW_<osname>
     ```
-9. Переместите директорию с базой данных экземпляра Приложения:
+9. Переместите директорию с базой данных экземпляра ПО (`<username>` — имя пользователя Linux):
+{: #ConfigBackup }
 
     ```sh
+    mkdir -p /home/<username>/<instanceName>
     mv /var/lib/comindware/<instanceName> /home/<username>/<instanceName>
     ```
 
@@ -139,6 +140,7 @@ kbId: 4624
 1. Скачайте и распакуйте дистрибутив с новой версией вспомогательного ПО (`X.X`, `<prerequisitesNumber>` — номер версии вспомогательного ПО)
 
     ``` sh
+    cd <distPath>
     tar -xf X.X-release-ru-<prerequisitesNumber>.prerequisites.<osname>.tar.gz
     ```
 
@@ -279,7 +281,7 @@ kbId: 4624
     nginx -s reload
     ```
 
-14. Отредактируйте файлы конфигурации в соответствии с сохранёнными образцами.
+14. Отредактируйте файлы конфигурации в соответствии с [сохранёнными ранее](#ConfigBackup):
 
     ```sh
     nano /etc/sysconfig/comindware<instanceName>-env
@@ -288,9 +290,11 @@ kbId: 4624
     nano /var/www/<instanceName>/Ignite.config
     nano /usr/share/comindware/configs/instance/<instanceName>.yml
     ```
-    
-    - Обратите внимание на то, что в новой версии отсутсвует файл `Workers.config`, и настройка служб выполняется в соответсвующих разделах файла конфигурации экземпляра ПО (`<instanceName>.yml`)
 
+    !!! warning "Внимание!"
+
+        - В новых версиях отсутствует файл `Workers.config`.
+        - Настройка соответствующих служб выполняется в файле конфигурации экземпляра ПО `<instanceName>.yml`.
 
 15. Перезапустите сервисы, настройки которых были изменены:
 

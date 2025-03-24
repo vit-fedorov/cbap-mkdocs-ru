@@ -18,10 +18,6 @@
 
 [attribute_drawing_file_import]: {{ kbArticleURLPrefix }}4906
 
-[attribute_enum_calculate_current_value]: {{ kbArticleURLPrefix }}4913
-
-[attribute_enum_calculate_registry]: {{ kbArticleURLPrefix }}4916
-
 [account_attribute_system_names]: {{ kbArticleURLPrefix }}4994
 
 [backup_and_restore]: {{ kbArticleURLPrefix }}4643
@@ -390,6 +386,14 @@
 
 [attribute_enum]: {{ kbArticleURLPrefix }}4779
 
+[attribute_enum_value_calculation]: {{ kbArticleURLPrefix }}4920
+
+[attribute_enum_value_filter]: {{ kbArticleURLPrefix }}5077
+
+[attribute_enum_calculate_current_value]: {{ kbArticleURLPrefix }}4913
+
+[attribute_enum_calculate_registry]: {{ kbArticleURLPrefix }}4916
+
 [attribute_hyperlink]: {{ kbArticleURLPrefix }}4766
 
 [attribute_image]: {{ kbArticleURLPrefix }}4771
@@ -457,10 +461,6 @@
 [example_document_download_to_server_csharp]: {{ kbArticleURLPrefix }}5002
 
 [example_task_reassign]: {{ kbArticleURLPrefix }}5087
-
-[enum_attribute_value_calculation]: {{ kbArticleURLPrefix }}4920
-
-[enum_attribute_value_filter]: {{ kbArticleURLPrefix }}5077
 
 [process_diagram_elements_events_end]: {{ kbArticleURLPrefix }}4744
 

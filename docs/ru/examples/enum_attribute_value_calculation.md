@@ -29,9 +29,9 @@ kbId: 4920
 
     --8<-- "attribute_enum_get_data_n3.md"
 
-!!! tip "Сравнение значения атрибута типа «Список значений» с помощью формулы"
+!!! tip "Сравнение значения атрибута с помощью формулы"
 
-    --8<-- "attribute_enum_compare_value_formula.md"    
+    --8<-- "attribute_enum_compare_value_formula.md"
 
 ## Прикладная задача
 

@@ -18,10 +18,6 @@
 
 [attribute_drawing_file_import]: {{ kbArticleURLPrefix }}4906
 
-[attribute_enum_calculate_current_value]: {{ kbArticleURLPrefix }}4913
-
-[attribute_enum_calculate_registry]: {{ kbArticleURLPrefix }}4916
-
 [account_attribute_system_names]: {{ kbArticleURLPrefix }}4994
 
 [backup_and_restore]: {{ kbArticleURLPrefix }}4643
@@ -390,6 +386,14 @@
 
 [attribute_enum]: {{ kbArticleURLPrefix }}4779
 
+[attribute_enum_value_calculation]: {{ kbArticleURLPrefix }}4920
+
+[attribute_enum_value_filter]: {{ kbArticleURLPrefix }}5077
+
+[attribute_enum_calculate_current_value]: {{ kbArticleURLPrefix }}4913
+
+[attribute_enum_calculate_registry]: {{ kbArticleURLPrefix }}4916
+
 [attribute_hyperlink]: {{ kbArticleURLPrefix }}4766
 
 [attribute_image]: {{ kbArticleURLPrefix }}4771
@@ -569,6 +573,8 @@
 [import_data]: {{ kbArticleURLPrefix }}4802
 
 [map_use]: {{ kbArticleURLPrefix }}4814
+
+[multilingual_app]: {{ kbArticleURLPrefix }}5064
 
 [my_tasks]: {{ kbArticleURLPrefix }}4825
 

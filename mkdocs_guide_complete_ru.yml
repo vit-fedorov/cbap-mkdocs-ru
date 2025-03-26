@@ -342,8 +342,8 @@ nav:
     - examples/document_download_archive_related_record_csharp.md
     - examples/document_download_to_server_csharp.md
     - examples/substring_search.md
-    - examples/enum_attribute_value_calculation.md
-    - examples/enum_attribute_value_filter.md
+    - examples/attribute_enum_value_calculation.md
+    - examples/attribute_enum_value_filter.md
     - examples/attribute_enum_calculate_current_value.md
     - examples/attribute_enum_calculate_registry.md
     - examples/script_using_local_variable.md

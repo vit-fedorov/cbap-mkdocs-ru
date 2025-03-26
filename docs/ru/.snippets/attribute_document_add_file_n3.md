@@ -9,7 +9,7 @@
 - сформировать имя файла:
 
     ``` turtle
-    ?documentTitleSource document:title ?title
+    ?documentTitleSource document:title ?title.
     ```
 
 - прикрепить полученный файл к атрибуту типа «**Документ**», т. е. поместить на него ссылку в ревизию:

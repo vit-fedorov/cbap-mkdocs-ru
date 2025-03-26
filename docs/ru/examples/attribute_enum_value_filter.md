@@ -19,13 +19,25 @@ hide:
 
 Здесь представлен пример настройки фильтрации записей связанного шаблона по значению атрибута типа «**Список значений**».
 
+См. также _[подробное описание и другие примеры использования атрибута типа «Список значений»][attribute_enum]_.
+
 !!! question "Структура атрибута типа «Список значений»"
 
     --8<-- "attribute_enum_logic.md"
 
+!!! tip "Получение данных из атрибута типа «Список значений» с помощью N3"
+
+    --8<-- "attribute_enum_get_data_n3.md"
+
+!!! tip "Сравнение и фильтрация значения атрибута с помощью с помощью N3"
+
+    --8<-- "attribute_enum_compare_value_n3.md"
+
 ## Прикладная задача
 
-Имеется шаблон _«Клиенты»_, с которым связан шаблон _«Заявки на перевозку»_. В шаблоне _«Заявки на перевозку»_ имеется атрибут _«Статус»_ типа «**Список значений**».
+Имеется шаблон _«Клиенты»_, с которым связан шаблон _«Заявки на перевозку»_.
+
+В шаблоне _«Заявки на перевозку»_ имеется атрибут _«Статус»_ типа «**Список значений**».
 
 Требуется выводить на форме заявки таблицу со списком просроченных заявок.
 
@@ -61,31 +73,29 @@ hide:
     - **Представление: таблица**
     - **Фильтр — Отображаемые записи: N3**
 
-        ``` turtle
-        # Импортируем функции для работы
-        # с записями, строками и базой данных.
-        @prefix object: <http://comindware.com/ontology/object#>.
-        @prefix convert: <http://comindware.com/logics/convertions#>.
-        {
-            # Находим атрибут «Заявки на перевозку» в шаблоне «Клиенты».
-            ("Клиенты" "Заявкинаперевозку") object:findProperty ?TransportRequestsAttribute.
-            # Находим атрибут «Статус» в шаблоне «Заявки на перевозку».
-            ("Заявкинаперевозку" "Статус") object:findProperty ?StatusAttribute.
-
-            # Берём значения ?TransportRequestsAttribute
-            # и помещаем в ?TransportRequiresValue.
-            ?item ?TransportRequestsAttribute ?TransportRequiresValue.
-            # Находим ID значения Overdue «Просрочена»
-            # атрибута «Статус».
-            ("Статус" "Overdue") convert:enumValue ?enumIdOverdue.
-            # Фильтруем ?TransportRequiresValue
-            # по значению ?StatusAttribute равному ?enumIdOverdue.
-            ?TransportRequiresValue ?StatusAttribute ?enumIdOverdue.
-              
-            # Возвращаем отфильтрованные значения из ?TransportRequiresValue.
-            ?TransportRequiresValue -> ?value.
-        }
-        ```
+    ``` turtle
+    # Импортируем функции для работы
+    # с записями, строками и базой данных.
+    @prefix object: <http://comindware.com/ontology/object#>.
+    @prefix convert: <http://comindware.com/logics/convertions#>.
+    {
+        # Находим атрибут «Заявки на перевозку» в шаблоне «Клиенты».
+        ("Клиенты" "Заявкинаперевозку") object:findProperty ?TransportRequestsAttribute.
+        # Находим атрибут «Статус» в шаблоне «Заявки на перевозку».
+        ("Заявкинаперевозку" "Статус") object:findProperty ?StatusAttribute.
+        # Берём значения ?TransportRequestsAttribute
+        # и помещаем в ?TransportRequestsValue.
+        ?item ?TransportRequestsAttribute ?TransportRequestsValue.
+        # Находим ID значения Overdue «Просрочена»
+        # атрибута «Статус».
+        ("Статус" "Overdue") convert:enumValue ?enumIdOverdue.
+        # Фильтруем ?TransportRequestsValue
+        # по значению ?StatusAttribute равному ?enumIdOverdue.
+        ?TransportRequestsValue ?StatusAttribute ?enumIdOverdue.
+        # Возвращаем отфильтрованные значения из ?TransportRequestsValue.
+        ?TransportRequestsValue -> ?value.
+    }
+    ```
 
 8. Сохраните форму.
 

@@ -9,6 +9,12 @@
     или
 
     ``` cs
+    EQUALS($EnumAttributeSystemName->cmw.variantAlias, "EnumValueSystemName")
+    ```
+
+    или
+
+    ``` cs
     EQUALS($EnumAttributeSystemName, ENUMVALUE("EnumAttributeSystemName", "EnumValueSystemName"))
     ```
 
@@ -16,6 +22,12 @@
 
     ``` cs
     $EnumAttributeSystemName !== EnumValueSystemName
+    ```
+
+    или
+
+    ``` cs
+    NOT(EQUALS($EnumAttributeSystemName->cmw.variantAlias, "EnumValueSystemName"))
     ```
 
     или

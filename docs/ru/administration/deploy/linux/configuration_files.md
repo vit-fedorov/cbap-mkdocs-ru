@@ -24,7 +24,7 @@ kbId: 5067
     - `db.workDir` — директория для хранения базы данных экземпляра ПО.
     - `db.name` — префикс кэшей в базе данных экземпляра ПО.
     - `userStorage.localDisk.path` — директория для хранения пользовательских файлов.
-    - `mq.server` — адрес сервера Kafka.
+    - `mq.server` — адрес сервера {{ apacheKafkaVariants }}.
     - `backup.defaultFolder` — директория для хранения резервных копий экземпляра ПО.
     - `backup.defaultFileName` — имя файла резервной копии экземпляра ПО.
 
@@ -61,10 +61,10 @@ clusterName: <instanceName>
 #nodeName: <instanceName>
 # Путь к экземпляру, по которому ПО находит свою конфигурацию
 configPath: <configPath>
-# Адрес службы журналирования (Elasticsearch, OpenSearch)
+# Адрес службы журналирования ({{ openSearchVariants }}, OpenSearch)
 # Устаревшая директива: elasticsearchUri
 journal.server: http://<searchHostIP>:<searchHostPort>
-# Индекс службы журналирования (Elasticsearch, OpenSearch)
+# Индекс службы журналирования ({{ openSearchVariants }}, OpenSearch)
 # journal.name: <instanceName>
 # URI-адрес экземпляра ПО
 fqdn: <hostName>
@@ -92,7 +92,7 @@ tempStorage.localDisk.path: /var/lib/comindware/<instanceName>/Temp
 # Временная папка
 tempWorkingDir: /var/lib/comindware/fooo/LocalTemp
 #################### Настройки очереди сообщений ####################
-# Адрес и порт сервера очереди сообщений (Kafka)
+# Адрес и порт сервера очереди сообщений {{ apacheKafkaVariants }}
 mq.server: <kafkaBrokerIP>:<kafkaBrokerPort>
 # Идентификатор группы очереди сообщений
 mq.group: <instanceName>
@@ -135,7 +135,7 @@ log.enabled: true
 # Путь к файлу конфигурации журналирования экземпляра
 log.configurationFile: /var/www/<instanceName>/logs.config
 kata.enabled: false
-# Адрес сервера очереди сообщений (Kafka) с портом.
+# Адрес сервера очереди сообщений {{ apacheKafkaVariants }} с портом.
 mq.server: <kafkaBrokerIp>:<kafkaBrokerPort>
 # Идентификатор группы очереди сообщений
 mq.group: <instanceName>
@@ -195,7 +195,7 @@ clusterName: <instanceName>
 loaderFolder: <instanceName>
 # Язык сервера (en-US | ru-RU )
 serverLanguage: ru-RU
-# Адрес и порт сервера очереди сообщений (Kafka)
+# Адрес и порт сервера очереди сообщений {{ apacheKafkaVariants }}
 mq.server: <kafkaBrokerIp>:<kafkaBrokerPort>
 # Протокол безопасности очереди сообщений. (Plaintext | Ssl | SaslPlaintext | SaslSsl)
 mq.securityProtocol: Plaintext
@@ -212,9 +212,9 @@ log.archiveFolder: /var/log/comindware/<instanceName>/Logs/Archive/
 ```
 <!--adapterhostYML-end-->
 
-## Конфигурация Apache Ignite {: .pageBreakBefore }
+## Конфигурация {{ apacheIgniteVariants }} {: .pageBreakBefore }
 
-1. Откройте файл конфигурации Ignite для редактирования:
+1. Откройте файл конфигурации {{ apacheIgniteVariants }} для редактирования:
 
     ``` sh
     nano /var/www/<instanceName>/Ignite.config
@@ -277,9 +277,9 @@ log.archiveFolder: /var/log/comindware/<instanceName>/Logs/Archive/
     systemctl restart comindware<instanceName>
     ```
 
-## Конфигурация NGINX {: .pageBreakBefore }
+## Конфигурация {{ nginxVariants }} {: .pageBreakBefore }
 
-1. Откройте файл конфигурации NGINX для редактирования:
+1. Откройте файл конфигурации {{ nginxVariants }} для редактирования:
 
     - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
 
@@ -324,7 +324,7 @@ log.archiveFolder: /var/log/comindware/<instanceName>/Logs/Archive/
     nginx -t
     ```
 
-6. При успешном вступлении изменений в силу перезагрузите NGINX:
+6. При успешном вступлении изменений в силу перезагрузите {{ nginxVariants }}:
 
     ``` sh
     nginx -s reload

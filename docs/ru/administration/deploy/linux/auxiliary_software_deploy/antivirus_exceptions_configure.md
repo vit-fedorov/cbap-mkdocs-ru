@@ -39,14 +39,14 @@ kbId: 4602
 - `/var/log/comindware/<instanceName>/Logs` — журналы экземпляра ПО.
 - `/var/lib/comindware/<instanceName>/Streams` — файлы, загруженные пользователями и сформированные ПО.
 
-#### Apache Ignite
+#### {{ apacheIgniteVariants }}
 
 Добавьте в исключения антивирусного ПО перечисленные ниже объекты.
 
-- `/var/lib/comindware/<instanceName>/Database/db` — база данных Apache Ignite.
-- `/var/lib/comindware/<instanceName>/Database/wal` — журнал предварительной записи Apache Ignite.
-- `/var/Lib/comindware/<instanceName>/Database/log` — журналы Apache Ignite.
-- `/var/lib/comindware/<instanceName>/Database/snapshots` — снимки БД Apache Ignite.
+- `/var/lib/comindware/<instanceName>/Database/db` — база данных {{ apacheIgniteVariants }}.
+- `/var/lib/comindware/<instanceName>/Database/wal` — журнал предварительной записи {{ apacheIgniteVariants }}.
+- `/var/Lib/comindware/<instanceName>/Database/log` — журналы {{ apacheIgniteVariants }}.
+- `/var/lib/comindware/<instanceName>/Database/snapshots` — снимки БД {{ apacheIgniteVariants }}.
 
 #### Apache Kafka
 
@@ -91,13 +91,13 @@ kbId: 4602
 - `C:\ProgramData\Comindware\Instances\<instanceName>\Logs` — журналы экземпляра ПО.
 - `C:\ProgramData\Comindware\Instances\<instanceName>\Streams` — файлы, загруженные пользователями и сформированные ПО.
 
-#### Apache Ignite
+#### {{ apacheIgniteVariants }}
 
-- `C:\Program Files\Comindware\CBAP\X.X.X.X\bin\Apache.Ignite*` — исполняемые файлы Apache Ignite для ПО версии `X.X.X.X`;
-- `C:\ProgramData\Comindware\Instances\<instanceName>\Data\db` — БД Apache Ignite.
-- `C:\ProgramData\Comindware\Instances\<instanceName>\Data\wal` — журнал предварительной записи Apache Ignite.
-- `C:\ProgramData\Comindware\Instances\<instanceName>\Data\snapshots` — снимки БД Apache Ignite.
-- `C:\ProgramData\Comindware\Instances\<instanceName>\Logs` — журналы Apache Ignite.
+- `C:\Program Files\Comindware\CBAP\X.X.X.X\bin\Apache.Ignite*` — исполняемые файлы {{ apacheIgniteVariants }} для ПО версии `X.X.X.X`;
+- `C:\ProgramData\Comindware\Instances\<instanceName>\Data\db` — БД {{ apacheIgniteVariants }}.
+- `C:\ProgramData\Comindware\Instances\<instanceName>\Data\wal` — журнал предварительной записи {{ apacheIgniteVariants }}.
+- `C:\ProgramData\Comindware\Instances\<instanceName>\Data\snapshots` — снимки БД {{ apacheIgniteVariants }}.
+- `C:\ProgramData\Comindware\Instances\<instanceName>\Logs` — журналы {{ apacheIgniteVariants }}.
 
 #### Apache Kafka
 

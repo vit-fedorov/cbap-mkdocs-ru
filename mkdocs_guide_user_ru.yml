@@ -63,6 +63,7 @@ nav:
       - administration/infrastructure/adapters.md
       - administration/infrastructure/authentication_keys.md
     - Подключения и пути передачи данных:
+      - administration/connections_communication_routes/integration.md
       - administration/connections_communication_routes/connections.md
       - administration/connections_communication_routes/communication_routes.md
       - Системные подключения:
@@ -295,7 +296,14 @@ nav:
     - general/changelog/release_notes_5.0.md
 
 exclude_docs: |
-  
+  administration/backup/linux/restore_cdbbz_gostech.md
+  administration/connections_communication_routes/authentication/openid_connection_gostech.md
+  administration/connections_communication_routes/system_connections/s3_connection_gostech.md
+  administration/deploy/logging_engine_gostech.md
+  administration/deploy/linux/configuration_files_gostech.md
+  administration/deploy/linux/deploy_guide_gostech.md
+  administration/deploy/linux/upgrade_version_gostech.md
+  administration/deploy/linux/upload_size_limit_configure_gostech.md
   administration/account_administration/authentication_authorization_sessions.md
   administration/account_administration/accounts_dc_sync/index.md
   administration/backup/linux/**

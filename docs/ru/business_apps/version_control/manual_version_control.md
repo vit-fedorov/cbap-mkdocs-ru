@@ -15,7 +15,7 @@ hide:
 
 # Экспорт и импорт версий приложения вручную {: #version_control_manual }
 
---8<-- "experimental_feature.md"
+{% include-markdown ".snippets/experimental_feature.md" %}
 
 ## Введение
 

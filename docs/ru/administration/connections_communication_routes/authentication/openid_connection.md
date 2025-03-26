@@ -168,7 +168,7 @@ kbId: 4685
 
     _![Добавление авторизованного адреса перенаправления после входа в клиент OAuth в Google Cloud](openid_connection_google_cloud.png)_
 
-{% if adminGuideWindows or completeGuide or userGuide or kbExport %}
+{% if (not gostech) or adminGuideWindows or completeGuide or userGuide or kbExport %}
 
 ## Настройка реестра Windows для включения аутентификации через OpenID Connect в {{ productName }} {: .pageBreakBefore }
 
@@ -187,7 +187,7 @@ kbId: 4685
 
 {% endif %}
 
-{% if adminGuideLinux or completeGuide or userGuide or kbExport %}
+{% if (not gostech) or adminGuideLinux or completeGuide or userGuide or kbExport %}
 
 ## Настройка ОС Linux для включения аутентификации через OpenID Connect в {{ productName }} {: .pageBreakBefore }
 

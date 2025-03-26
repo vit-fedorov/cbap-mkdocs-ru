@@ -28,7 +28,7 @@ nav:
     - administration/deploy/logging_engine.md
     - administration/deploy/log_files_event_examples.md
     - administration/deploy/paths.md
-    - Установка и запуск Comindware Business Application Platform: administration/deploy/linux/deploy_guide.md
+    - Установка и запуск Comindware Platform: administration/deploy/linux/deploy_guide.md
     - administration/deploy/linux/configuration_files.md
     - administration/deploy/linux/db_migrate_4.2_to_4.7.md
     # - administration/deploy/linux/deploy_cluster.md
@@ -88,6 +88,7 @@ nav:
       - administration/infrastructure/adapters.md
       - administration/infrastructure/authentication_keys.md
     - Интеграции с внешними системами:
+      - administration/connections_communication_routes/integration.md
       - administration/connections_communication_routes/connections.md
       - administration/connections_communication_routes/communication_routes.md
       - Системные подключения:
@@ -161,6 +162,14 @@ nav:
 
 
 exclude_docs: |
+  administration/backup/linux/restore_cdbbz_gostech.md
+  administration/connections_communication_routes/authentication/openid_connection_gostech.md
+  administration/connections_communication_routes/system_connections/s3_connection_gostech.md
+  administration/deploy/logging_engine_gostech.md
+  administration/deploy/linux/configuration_files_gostech.md
+  administration/deploy/linux/deploy_guide_gostech.md
+  administration/deploy/linux/upgrade_version_gostech.md
+  administration/deploy/linux/upload_size_limit_configure_gostech.md
   administration/deploy/linux/deploy_cluster.md
   administration/deploy/windows/**
   administration/deploy/windows/auxiliary_software_deploy/**

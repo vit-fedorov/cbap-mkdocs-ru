@@ -98,13 +98,9 @@
 
 [account_permission_audit]: {{ kbArticleURLPrefix }}4664
 
-[ad_authentication_configure]: {{ kbArticleURLPrefix }}4605
-
 [ad_connection]: {{ kbArticleURLPrefix }}4687
 
 [administration]: {{ kbArticleURLPrefix }}4661
-
-[antivirus_exceptions_configure]: {{ kbArticleURLPrefix }}4602
 
 [apps]: {{ kbArticleURLPrefix }}4714
 
@@ -112,15 +108,11 @@
 
 [backup_recommendations]: {{ kbArticleURLPrefix }}5082
 
-[backup_configure_elasticsearch]: {{ kbArticleURLPrefix }}5082#backup_configure_elasticsearch
-
 [changelog]: {{ kbArticleURLPrefix }}4589
 
 [collabora_connection]: {{ kbArticleURLPrefix }}4688
 
 [common_notifications]: {{ kbArticleURLPrefix }}4681
-
-[complete_running_instance_backup]: {{ kbArticleURLPrefix }}4650
 
 [connections_delete]: {{ kbArticleURLPrefix }}4675#connections_delete
 
@@ -142,8 +134,6 @@
 
 [esphere_send_configure]: {{ kbArticleURLPrefix }}5062
 
-[experimental_feature_support]: {{ kbArticleURLPrefix }}4579#experimental_feature_support
-
 [get_connection]: {{ kbArticleURLPrefix }}4701
 
 [git_connection]: {{ kbArticleURLPrefix }}4680
@@ -152,11 +142,7 @@
 
 [groups]: {{ kbArticleURLPrefix }}4654
 
-[kafka_connection]: {{ kbArticleURLPrefix }}4704
-
 [licensing]: {{ kbArticleURLPrefix }}4670
-
-[log_files_event_examples]: {{ kbArticleURLPrefix }}4618
 
 [login_and_registration_page_design]: {{ kbArticleURLPrefix }}4707
 
@@ -217,10 +203,6 @@
 [release_notes_4.7.3084]: {{ kbArticleURLPrefix }}2649
 
 [release_notes_5.0]: {{ kbArticleURLPrefix }}5073
-
-[restore_complete_backup]: {{ kbArticleURLPrefix }}4648
-
-[restore_test_configure]: {{ kbArticleURLPrefix }}4651
 
 [roles]: {{ kbArticleURLPrefix }}4803
 
@@ -288,7 +270,13 @@
 
 [version_control_git]: {{ kbArticleURLPrefix }}4806
 
-[wsfederation_connection]: {{ kbArticleURLPrefix }}4686
+{% endif %}
+
+{% if gostech or (not userGuide and (adminGuideLinux or adminGuideWindows)) or (tutorial and not userGuide) or kbExport %}
+
+<!-- Руководство для ГосТех, администратора для Linux/Windows, отдельный учебник или экспорт в БЗ -->
+
+[http_send_post]: {{ kbArticleURLPrefix }}5075
 
 {% endif %}
 
@@ -305,7 +293,6 @@
 [architect_demo_organizational_structure_processes]: {{ kbArticleURLPrefix }}4826
 
 [architect_demo_organizational_structure_processes_export]: {{ kbArticleURLPrefix }}4826#architect_demo_organizational_structure_processes_export
-
 
 [architect_desktop]: {{ kbArticleURLPrefix }}4828
 
@@ -478,6 +465,8 @@
 [process_diagram_elements_events_intermediate]: {{ kbArticleURLPrefix }}4742
 
 [process_diagram_elements_events_start]: {{ kbArticleURLPrefix }}4735
+
+[experimental_feature_support]: {{ kbArticleURLPrefix }}4579#experimental_feature_support
 
 [export_templates]: {{ kbArticleURLPrefix }}4797
 
@@ -751,9 +740,9 @@
 
 {% endif %}
 
-{% if (userGuide and not adminGuideLinux) or (not adminGuideLinux and adminGuideWindows) or kbExport %}
+{% if gostech or (userGuide and not adminGuideLinux) or (not adminGuideLinux and adminGuideWindows) or kbExport %}
 
-<!-- Руководство пользователя, администратора для Windows или экспорт в БЗ  -->
+<!-- Руководства для ГосТеха, пользователя, администратора для Windows или экспорт в БЗ  -->
 
 [ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}4605
 
@@ -762,6 +751,30 @@
 [apache_ignite_defragment]: {{ kbArticleURLPrefix }}4603
 
 [auxiliary_software_optimize]: {{ kbArticleURLPrefix }}4604
+
+[backup_configure_elasticsearch]: {{ kbArticleURLPrefix }}4642#backup_configure_elasticsearch
+
+[complete_running_instance_backup]: {{ kbArticleURLPrefix }}4650
+
+[elasticsearch_cluster_deploy_no_certificates]: {{ kbArticleURLPrefix }}4612
+
+[nginx_deploy]: {{ kbArticleURLPrefix }}4611
+
+[nginx_geoid_deploy]: {{ kbArticleURLPrefix }}4610
+
+[restore_complete_backup]: {{ kbArticleURLPrefix }}4648
+
+[restore_test_configure]: {{ kbArticleURLPrefix }}4651
+
+[sso_authenticatation_configure]: {{ kbArticleURLPrefix }}4613
+
+[sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}4613#sso_authentication_configure_keytab_update
+
+{% endif %}
+
+{% if (userGuide and not adminGuideLinux) or (not adminGuideLinux and adminGuideWindows) or kbExport %}
+
+<!-- Руководство пользователя, администратора для Windows или экспорт в БЗ  -->
 
 [availability_fault_tolerance]: {{ kbArticleURLPrefix }}5079
 
@@ -773,23 +786,17 @@
 
 [deploy_guide_linux]: {{ kbArticleURLPrefix }}4622
 
+[deploy_guide_linux_delete_version]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_delete_version
+
 [deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_initialize
 
 [deploy_cluster_linux]: {{ kbArticleURLPrefix }}5080
-
-[elasticsearch_cluster_deploy_no_certificates]: {{ kbArticleURLPrefix }}4612
 
 [kafka_deploy_linux]: {{ kbArticleURLPrefix }}5074
 
 [paths_linux]: {{ kbArticleURLPrefix }}4620#paths_linux
 
-[sso_authenticatation_configure]: {{ kbArticleURLPrefix }}4613
-
-[sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}4613#sso_authentication_configure_keytab_update
-
-[nginx_deploy]: {{ kbArticleURLPrefix }}4611
-
-[nginx_geoid_deploy]: {{ kbArticleURLPrefix }}4610
+[upgrade_version_linux]: {{ kbArticleURLPrefix }}4624
 
 {% endif %}
 
@@ -805,9 +812,17 @@
 
 [logging_engine]: {{ kbArticleURLPrefix }}4623
 
+[logging_engine_adapter_logs]: {{ kbArticleURLPrefix }}4623#logging_engine_adapter_logs
+
 [logging_engine_audit_log]: {{ kbArticleURLPrefix }}4623#logging_engine_audit_log
 
 [logging_engine_rules]: {{ kbArticleURLPrefix }}4623#logging_engine_rules
+
+[log_files_event_examples]: {{ kbArticleURLPrefix }}4618
+
+[log_files_event_examples_adapter_event]: {{ kbArticleURLPrefix }}4618#log_files_event_examples_adapter_even
+
+[log_files_event_examples_connection_status]: {{ kbArticleURLPrefix }}4618#log_files_event_examples_connection_status
 
 [paths]: {{ kbArticleURLPrefix }}4620
 
@@ -849,7 +864,7 @@
 
 {% endif %}
 
-{% if apiGuide or adminGuideLinux or adminGuideWindows or kbExport %}
+{% if (not completeGuide and (apiGuide or adminGuideLinux or adminGuideWindows)) or kbExport %}
 
 <!-- Руководство по API, руководство администратора для Linux/Windows или экспорт в БЗ  -->
 
@@ -886,5 +901,13 @@
 <!-- Руководства для ГосТех или экспорт в БЗ  -->
 
 [adapters]: {{ kbArticleURLPrefix }}4672
+
+[ad_authentication_configure]: {{ kbArticleURLPrefix }}4605
+
+[antivirus_exceptions_configure]: {{ kbArticleURLPrefix }}4602
+
+[kafka_connection]: {{ kbArticleURLPrefix }}4704
+
+[wsfederation_connection]: {{ kbArticleURLPrefix }}4686
 
 {% endif %}

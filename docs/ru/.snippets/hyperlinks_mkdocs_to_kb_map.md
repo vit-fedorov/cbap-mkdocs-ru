@@ -572,6 +572,8 @@
 
 [map_use]: {{ kbArticleURLPrefix }}4814
 
+[multilingual_app]: {{ kbArticleURLPrefix }}5064
+
 [my_tasks]: {{ kbArticleURLPrefix }}4825
 
 [my_tasks_page_configure]: {{ kbArticleURLPrefix }}4812

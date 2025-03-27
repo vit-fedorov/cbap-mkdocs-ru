@@ -2,9 +2,9 @@
 
 - ID определённого значения:
 
-        ``` turtle
-        ("EnumAttributeSystemName" "enumValueSystemName") convert:enumValue ?enumValueId.
-        ```
+    ``` turtle
+    ("EnumAttributeSystemName" "enumValueSystemName") convert:enumValue ?enumValueId.
+    ```
 
 - объект с атрибутом:
 

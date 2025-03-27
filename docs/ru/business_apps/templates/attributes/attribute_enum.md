@@ -29,8 +29,9 @@ kbId: 4779
 
     ``` turtle
     @prefix object: <http://comindware.com/ontology/object#>.
-    @prefix variable: <http://comindware.com/ontology/session/variable#>.
-    @prefix session: <http://comindware.com/ontology/session#>.
+    @prefix cmw: <http://comindware.com/logics#>.
+    @prefix l10n: <http://comindware.com/ontology/l10n#>.
+    @prefix cmwentity: <http://comindware.com/ontology/entity#>.
     ```
 
 !!! tip "Получение данных из атрибута с помощью N3"

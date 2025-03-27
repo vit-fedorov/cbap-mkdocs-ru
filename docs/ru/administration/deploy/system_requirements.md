@@ -74,6 +74,7 @@ kbId: 4659
 - Альт Сервер 11, Альт СП 11
 {% if not gostech %}
 - РЕД ОС 8
+- Debian 12
 {% endif %}
 </td>
 </tr>

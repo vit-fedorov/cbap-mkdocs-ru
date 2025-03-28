@@ -73,22 +73,52 @@ port: <portNumber>
 # Версия экземпляра ПО
 version: <versionNumber>
 #################### Настройка базы данных ####################
+# Использование тонкого клиента
+#db.asThinClient: true
+# Конечные точки для подключения тонкого клиента
+#db.asThinClientEndpoints: 127.0.0.1:10800
 # Путь к базе данных
 # Устаревшая директива: databasePath
 db.workDir: /var/lib/comindware/<instanceName>/Database
+# Папка установки Ignite.
+#db.homeDir:
+# Путь к файлу конфигурации
+#db.configPath:
+# Настройки JVM
+#db.jvmOpts:
+# Настройки Java
+#db.javaOpts:
+# Включение автоматической настройки узлов Ignite
+#db.baselineAutoAdjustEnabledFlag: false
+# Значение времени ожидания фактического изменения настройки узлов Ignite с момента последнего изменения
+#db.baselineAutoAdjustTimeout: 3000
+# Cогласованный глобальный уникальный идентификатор узла
+#db.consistentId: 
 # Используемый префикс кэшей в базе данных
 # Устаревшая директива: databaseName
 db.name: <instanceName>
+# Используемый префикс кэшей в базе данных при обновлении
+#db.upgradeName:
+# Путь к онтологии {{ companyName }}
+#db.n3Dir:
 #################### Настройка хранения пользовательских файлов ####################
 # Тип хранилища (LocalDisk | S3)
 userStorage.type: LocalDisk
 # Путь к пользовательским файлам экземпляра
 userStorage.localDisk.path: /var/lib/comindware/<instanceName>/Streams
+# Имя корзины для хранения пользовательских файлов
+#userStorage.s3.bucket:
+# Имя конфигурации S3
+#userStorage.s3.connection: <s3ConnectionName>
 #################### Настройка хранения временных файлов ####################
 # Тип хранилища (LocalDisk | S3)
 tempStorage.type: LocalDisk
 # Путь к временным файлам экземпляра
 tempStorage.localDisk.path: /var/lib/comindware/<instanceName>/Temp
+# Имя корзины для хранения временных файлов
+#tempStorage.s3.bucket:
+# Имя конфигурации S3
+#tempStorage.s3.connection: <s3ConnectionName>
 # Временная папка
 tempWorkingDir: /var/lib/comindware/fooo/LocalTemp
 #################### Настройки очереди сообщений ####################
@@ -96,12 +126,201 @@ tempWorkingDir: /var/lib/comindware/fooo/LocalTemp
 mq.server: <kafkaBrokerIP>:<kafkaBrokerPort>
 # Идентификатор группы очереди сообщений
 mq.group: <instanceName>
+# Префикс имени очередей сообщений
+mq.name: <instanceName>
+# Идентификатор узла очереди сообщений
+mq.node: <instanceName>
+# Выключение функции очереди сообщений
+#mq.enabled: false
+# Протокол безопасности очереди сообщений. (Plaintext | Ssl | SaslPlaintext | SaslSsl)
+#mq.securityProtocol: Plaintext
+#################### Настройки SSL-подключения очереди сообщений ####################
+# Путь к файлу корневого сертификата сервера очереди сообщений
+#mq.ssl.caLocation:
+# Выключение идентификации адреса сервера очереди сообщений
+#mq.ssl.endpointIdentificationEnabled: false 
+#################### Настройки SASL-подключения очереди сообщений ####################
+# Имя пользователя, используемое для подключения при помощи SASL
+#mq.sasl.username:
+#Пароль для аутентификации, используемый для подключения при помощи SASL
+#mq.sasl.password:
+# Тип механизма SASL (None | Plain | ScramSha256 | ScramSha512)
+#mq.sasl.mechanism:
+#################### Настройки очереди сообщений для коммуникации с адаптерами ####################
+# Выключение функции коммуникации брокера сообщений с адаптером 0
+#mq.adapter.0.enabled: false
+# Настройки отправителя сообщений
+#mq.adapter.0.producer.enabled: false
+# Настройки получателя сообщений
+#mq.adapter.0.consumer.enabled: false
+# Выключение функции коммуникации брокера сообщений с адаптером 1
+#mq.adapter.1.enabled: false
+# Настройки отправителя сообщений
+#mq.adapter.1.producer.enabled: false
+# Настройки получателя сообщений
+#mq.adapter.1.consumer.enabled: false
+# Выключение функции коммуникации брокера сообщений с адаптером 2
+#mq.adapter.2.enabled: false
+# Настройки отправителя сообщений
+#mq.adapter.2.producer.enabled: false
+# Настройки получателя сообщений
+#mq.adapter.2.consumer.enabled: false
+# Выключение функции коммуникации брокера сообщений с адаптером 3
+#mq.adapter.3.enabled: false
+# Настройки отправителя сообщений
+#mq.adapter.3.producer.enabled: false
+# Настройки получателя сообщений
+#mq.adapter.3.consumer.enabled: false
+#################### Настройки OpenID-аутентификации ####################
+# Имя OpenID-сервиса использующегося для входа
+#auth.openId.displayName:
+# Включение функции OpenID
+#auth.openId.enabled: true
+# Адрес сервера OpenID Connect
+#auth.openId.server:
+# Пространство имен или контекст, в котором происходит аутентификация пользователей. Используется для управления идентификацией и доступом в системе OpenID Connect
+#auth.openId.realm:
+# Уникальный идентификатор клиентского приложения, используемый для аутентификации и авторизации запросов в рамках протокола OpenID Connect
+#auth.openId.clientId:
+# Секретный ключ OpenId Connect
+#auth.openId.clientSecret:
+# Список идентификаторов целевой аудитории, для которой предназначены токены, используемые в процессе аутентификации и авторизации в OpenID Connect.
+#auth.openId.audience:
 #################### Конфигурация резервного копирования ####################
 # Папка для резервного копирования по умолчанию
 # Устаревшая директива: backup.config.default.repository.localDisk.path
-backup.defaultFolder: /var/lib/comindware/<instanceName>/Backup
+backup.defaultFolder: /var/backups/<instanceName>
 # Имя файла для резервного копирования по умолчанию
-backup.defaultFileName: Backup
+backup.defaultFileName: <instanceName>
+# Выключение функции резервного копирования
+#backup.enabled: false
+# Выключение сеансов резервного копирования. Выключает выполнение резервного копирования, но не создание сеансов резервного копирования.
+#backup.sessionsEnabled: false
+# Выключение создания сеансов резервного копирования по расписанию
+#backup.schedulesEnabled: false
+# Максимальное количество сеансов резервного копирования
+#backup.maxSessions: 5
+#################### Конфигурация резервного копирования по умолчанию ####################
+# Имя файла для резервного копирования по умолчанию
+#backup.default.<backupName>.name: Backup
+# Тип хранилища: LocalDisk или S3
+#backup.default.<backupName>.repository.type: LocalDisk
+# Путь к файлам резервных копий
+#backup.default.<backupName>.repository.localDisk.path: /var/backups/<iname>
+# Имя корзины для хранения файлов резервных копий
+#backup.default.<backupName>.repository.s3.bucket:
+# Имя конфигурации S3
+#backup.default.<backupName>.repository.s3.connection: <s3ConnectionName>
+# Описание конфигурации
+#backup.default.<backupName>.description:
+# Период создания сессий резервного копирования
+#backup.default.<backupName>.period: 23:00
+# Дни создания сессий резервного копирования
+#backup.default.<backupName>.days: [Sunday,  Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+# Время начала создания сессий резервного копирования
+#backup.default.<backupName>.timeFrom: 00:01
+# Время окончания создания сессий резервного копирования
+#backup.default.<backupName>.timeUpTo: 23:59
+# Количество резервных копий одновременно хранящихся в системе. Старые будут удалены автоматически.
+#backup.default.<backupName>.keepRecent: 10
+# Управление составом резервной копии - загруженные файлы
+#backup.default.<backupName>.withStreams: true
+# Управление составом резервной копии -  файлы скриптов
+#backup.default.<backupName>.withScripts: true
+# Управление составом резервной копии - файлы истории
+#backup.default.<backupName>.withJournal: true
+#################### Настройки дополнительного хранилища резервного копирования по умолчанию ####################
+# Тип хранилища: LocalDisk или S3
+#backup.default.<backupName>.extraRepository.type: LocalDisk
+# Путь к файлам резервных копий
+#backup.default.<backupName>.extraRepository.localDisk.path: /var/backups/<instanceName>ExtraRepository
+# Имя корзины для хранения файлов резервных копий
+#backup.default.<backupName>.extraRepository.s3.bucket:
+# Имя конфигурации S3
+#backup.default.<backupName>.extraRepository.s3.connection: <s3ConnectionName>
+#################### Настройки резервного копирования журналирования ####################
+# Тип хранилища: LocalDisk или S3
+#backup.journalRepository.type: LocalDisk
+# Путь к файлам резервных копий
+#backup.journalRepository.localDisk.path: /var/backups/<instanceName>
+# Имя корзины для хранения файлов резервных копий
+#backup.journalRepository.s3.bucket:
+# Имя соединения, описанного в конфигурации сервиса журналирования
+#backup.journalRepository.s3.journalConnection: <s3ConnectionName>
+# Имя конфигурации S3
+#backup.journalRepository.s3.platformConnection: <s3ConnectionName>
+#################### Настройки подключения к хранилищу S3 ####################
+# Описание конфигурации
+#s3.<s3ConnectionName>.description:
+# Адрес подключения к S3
+#s3.<s3ConnectionName>.endpointURL:
+# Информация учетной записи. Ключ подключения к хранилищу S3
+#s3.<s3ConnectionName>.accessKey:
+# Информация учетной записи. Секретный ключ подключения к хранилищу S3
+#s3.<s3ConnectionName>.secretKey:
+# Идентификатор указывающий что запросы будут использовать адресацию в стиле системных путей
+#s3.<s3ConnectionName>.pathStyleAccess: true
+#################### Настройка полнотекстового поиска ####################
+# Выключение функции полнотекстового поиска
+#search.enabled: false
+# Выключение обновления индексов полнотекстового поиска
+#search.rebuildingEnabled: false
+# Выключение индексирования для полнотекстового поиска
+#search.indexingEnabled: false
+#################### Настройки сенсоров мониторинга ####################
+# Выключение функции сенсоров мониторинга
+#sensors.enabled: false
+#################### Настройки LDAP-синхронизации ####################
+# Выключение функции LDAP-синхронизации
+#sync.ldap.enabled: true
+# Выключение сеансов LDAP-синхронизации. Выключает выполнение сеансов, но не их создание.
+#sync.ldap.sessionsEnabled: true
+# Выключение создания сеансов LDAP-синхронизации по расписанию
+#sync.ldap.schedulesEnabled: true
+# Выключение интеграции OData
+#sync.oData.enabled: false
+# Выключение сеансов интеграции OData. Выключает выполнение сеансов, но не их создание.
+#sync.oData.sessionsEnabled: false
+# Выключение создания сеансов OData интеграции по расписанию
+#sync.oData.schedulesEnabled: false
+# Интервал экспорта OData интеграции 
+#sync.oData.exportTimeInterval: 60
+#################### Настройки трассировки производительности ####################
+# Выключение функции трассировки производительности
+#tracing.enabled: false
+#################### Настройки электронной почты ####################
+# Выключение функции проверки получения электронной почты
+#email.listenerEnabled: false
+# Выключение отправки электронной почты
+#email.senderEnabled: false
+#################### Настройки уведомлений ####################
+# Выключение функции отправки уведомлений
+#notifications.enabled: false
+# Выключение отправки уведомлений по пользовательским задачам
+#notifications.onUserTaskEnabled: false
+# Выключение отправки уведомлений из обсуждений
+#notifications.pushEnabled: false
+# Выключение отправки уведомлений на страницах обслуживания
+#notifications.onMaintenanceEnabled: false
+#################### Настройка бизнес-процессов ####################
+# Выключение функции бизнес-процессов
+#bpms.enabled: false
+# Количество потоков выполнения бизнес-процессов
+#bpms.threadsCount: 4
+# Выключение процессных таймеров
+#bpms.timersEnabled: false
+#################### Использование контейнера Docker ####################
+# Включение контейнера Docker
+#isContainerEnvironment: true
+#################### Настройка обработчика сервис-запросов ####################
+# Включение функции обработчика сервис-запросов
+#requestProcessor.enabled: true
+# Список обработчиков сервис-запросов. Если не указан, включает все доступные на узле (conversation, useractivity, notification, architect)
+#requestProcessor.services:
+#  - apiPrefix: conversation
+#    enabled: true
+# Конфигурация отображения количества строк таблицы на одной странице
+#queryPageResultRange: [ 50, 500, 5000, 1000000000 ]
 ```
 <!--instanceYML-end-->
 

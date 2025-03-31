@@ -14,6 +14,8 @@ kbId: 4677
 
 ## Введение
 
+{% include-markdown ".snippets/s3_warning.md" %}
+
 ПО **{{ productName }}** может хранить загруженные пользователями и сформированные системой файлы в хранилище S3:
 
 - файлы, прикреплённые к атрибутам типа «Документ» и «Изображение»;
@@ -52,11 +54,11 @@ kbId: 4677
 
     ``` ini
     # Адрес сервера S3 с указанием порта, идентификатор ключа доступа и секретный ключ
-    s3.default.endpointURL: http://s3.example.com:9000
+    s3.default.endpointURL: http://<s3hostname>:<s3port>
     s3.default.accessKey: xxxxx
     s3.default.secretKey: xxxxx
     # Установите значение true, если сервер принимает только запросы path-style вида:
-    # https://s3.region-code.amazonaws.com/bucket-name/key-name
+    # https://<s3hostname>/bucket-name/key-name
     s3.default.pathStyle: true
     s3.default.description: Подключение к S3
 
@@ -108,8 +110,6 @@ kbId: 4677
     Не вносите изменения в окне свойств подключения к хранилищу S3, заданному в [файле конфигурации](#настройка-конфигурации-экземпляра-по) экземпляра ПО (`/usr/share/comindware/configs/instance/instanceName.yml`) с помощью директивы `s3.default`. Они не будут применены к конфигурации экземпляра ПО и при перезапуске сервера будут заменены на значения из файла конфигурации `instanceName.yml`.
 
     Настраивать подключение к хранилищу S3 следует только в файле `/usr/share/comindware/configs/instance/instanceName.yml`
-
-**![Настройка подключения к хранилищу S3](https://kb.comindware.ru/assets/img_65e9b87a6e895.png)**
 
 <div class="relatedTopics" markdown="block">
 

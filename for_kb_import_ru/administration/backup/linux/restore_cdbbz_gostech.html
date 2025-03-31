@@ -1,0 +1,81 @@
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4647">
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<div class="mce-toc">
+<h2 class="toc-heading">
+      Содержание
+      </h2>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#введение">
+<span class="md-ellipsis">
+      Введение
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#порядок-восстановления">
+<span class="md-ellipsis">
+      Порядок восстановления
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#связанные-статьи">
+<span class="md-ellipsis">
+      Связанные статьи
+    </span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h2 id="введение">Введение</h2>
+<p>Здесь представлены инструкции по восстановлению базы данных <strong>Comindware Platform</strong> для следующего сценария:</p>
+<ul>
+<li>используется ранее настроенный экземпляр ПО <strong>Comindware Platform</strong> под управлением ОС Linux;</li>
+<li>имеется файл резервной копии базы данных с расширением <code>.CDBBZ</code>;</li>
+<li>резервная копия создана с помощью встроенной в ПО функции «<strong>Резервное копирование</strong>» (см. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4642">Резервное копирование. Настройка и запуск, просмотр журнала сеансов</a>»</em>);</li>
+</ul>
+<h2 id="порядок-восстановления">Порядок восстановления</h2>
+<ol class="colored_numbers_list">
+<li>Подготовьте экземпляр Цифрового продукта к восстановлению из резервной копии, расположив файл резервного копирования на доверенном и доступном URI, например <code>https://&lt;my-storage-resource&gt;/backup.tgz</code> (<my-storage-resource> — адрес хранилища резервных копий).</my-storage-resource></li>
+<li>
+<p>Добавьте конфигурацию для восстановления из резервной копии к файлу values.yml:</p>
+<div class="highlight"><code><pre><span></span><code>initContainers:</code> <br/><code>    backupfilename: backup.tgz</code> <br/><code>    repository: busybox</code> <br/><code>    tag: latest</code> <br/><code>    # Укажите URI резервной копии</code> <br/><code>    url: https://&lt;my-storage-resource&gt;/backup.tgz</code> <br/><code></code> <br/><code>platform:</code> <br/><code>    config:</code> <br/><code>        clusterName: &lt;backupsClusterName&gt;</code> <br/></pre></code></div>
+</li>
+<li>
+<p>Запустите Ansible-playbook с конфигурацией <code>values.yml</code> для создания экземпляра ПО с восстановлением из резервной копии:</p>
+<p><div class="highlight"><code><pre><span></span><code>ansible-playbook<span class="w"> </span>deploy_cmw_chart.yml<span class="w"> </span>-e<span class="w"> </span>“@values.yml</code> <br/></pre></code></div>
+5. Удостоверьтесь, что ресурсы экземпляра ПО были развёрнуты:</p>
+<p><div class="highlight"><code><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>my-namespace</code> <br/></pre></code></div>
+6. Настройте внешний доступ к сервису comindware-platform-proxy для Ingress.
+7. Откройте URI, созданный на шаге 6.
+20. Дождитесь запуска <strong>Comindware Platform</strong>. Этот процесс может занять некоторое время. Может потребоваться обновить страницу браузера.
+21. Выполните <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4622#deploy_guide_linux_initialize">инициализацию Comindware Platform</a>.
+22. Удостоверьтесь, что все данные из резервной копии восстановлены.</p>
+</li>
+</ol>
+<div class="relatedTopics">
+<h2 id="связанные-статьи">Связанные статьи</h2>
+<ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4642">Резервное копирование. Настройка и запуск, просмотр журнала сеансов</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4622#deploy_guide_linux_initialize">Инициализация Comindware Platform</a></em></li>
+</ul>
+</div>
+</article>
+</div>
+</div>
+<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#">
+<i class="fa-light fa-arrow-up">&zwnj;<!--icon--></i>
+            К началу
+          </a>
+</main>
+</div>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></div>

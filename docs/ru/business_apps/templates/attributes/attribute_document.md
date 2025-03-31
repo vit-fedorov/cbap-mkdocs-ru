@@ -21,15 +21,11 @@ kbId: 4782
 
 !!! tip "Префиксы N3 для работы с атрибутом"
 
-    Для работы с атрибутом типа «**Список значений**» в выражениях на N3 могут потребоваться следующие префиксы:
+    Для работы с атрибутом типа «**Документ**» в выражениях на N3 могут потребоваться следующие префиксы:
 
     ``` turtle
     @prefix object: <http://comindware.com/ontology/object#>.
-    @prefix cmw: <http://comindware.com/logics#>.
-    @prefix l10n: <http://comindware.com/ontology/l10n#>.
-    @prefix string: <http://www.w3.org/2000/10/swap/string#>.
-    @prefix cmwentity: <http://comindware.com/ontology/entity#>.
-    @prefix convert: <http://comindware.com/logics/convertions#>.
+    @prefix document: <http://comindware.com/ontology/document#>.
     ```
 
 !!! tip "Извлечение файлов из атрибута с помощью N3"

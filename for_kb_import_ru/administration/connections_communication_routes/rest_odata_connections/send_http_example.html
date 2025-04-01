@@ -85,11 +85,11 @@
 <p>Здесь представлен пример настройки подключения, пути передачи данных и <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4717">сценария</a> для отправки HTTP-запросов типа <code>GET</code> и записи данных из ответа сервера в формате JSON в атрибуты шаблона записи.</p>
 <p>Настройка для обработки данных в формате XML и простого текста будет аналогичной.</p>
 <h2 class="pageBreakBefore" id="прикладная-задача">Прикладная задача</h2>
-<p>Здесь мы рассмотрим настройку отправки GET-запросов на сервер <em>http://example.com</em>.</p>
-<p>Во всех примерах подставьте реальный адрес своего сервера вместо <code>http://example.com/api</code></p>
+<p>Здесь мы рассмотрим настройку отправки GET-запросов на сервер <em>http://<hostname></hostname></em>.</p>
+<p>Во всех примерах подставьте реальный адрес своего сервера вместо <code>http://&lt;hostname&gt;/api</code></p>
 <ul>
-<li>Базовый URL для HTTP-запросов: <code>http://example.com/api</code></li>
-<li>Путь для запроса данных заказов: <code>http://example.com/api/orders</code></li>
+<li>Базовый URL для HTTP-запросов: <code>http://&lt;hostname&gt;/api</code></li>
+<li>Путь для запроса данных заказов: <code>http://&lt;hostname&gt;/api/orders</code></li>
 <li><a class="mkdocs_imported_link" href="#настройка-сценария-отправки-http-запроса">Сценарий</a> формирует и отправляет HTTP-запрос на сервер и записывает полученные данные в атрибуты.</li>
 <li>Запрос содержит параметры <code>orderDate</code> с датой создания заказов и <code>clientName</code> с идентификатором клиента.</li>
 <li>В ответ на запрос сервер возвращает JSON-ответ с массивом данных заказов следующего вида:</li>
@@ -105,7 +105,7 @@
 <li>
 <p>Настройте подключение для отправки HTTP-запросов со следующими параметрами:</p>
 <ul>
-<li><strong>URI</strong> — http://example.com/api. Символ <code>/</code> в конце URI не требуется.</li>
+<li><strong>URI</strong> — http://<hostname>/api. Символ <code>/</code> в конце URI не требуется.</hostname></li>
 <li><strong>Формат данных</strong> — <strong>JSON</strong>. Также поддерживаются <strong>XML</strong> и <strong>простой текст</strong>, но здесь рассматривается обработка данных в формате JSON.</li>
 </ul>
 </li>
@@ -175,7 +175,7 @@
 <h3 class="pageBreakBefore" id="интеграция">Интеграция</h3>
 <ul>
 <li><strong>Метод запроса</strong> — выберите пункт «<strong>GET</strong>».</li>
-<li><strong>Шаблон пути запроса</strong> — введите <code>orders</code> (фактический путь к HTTP-запросу на сервере), этот суффикс будет добавлен к <strong>URI</strong>, указанному в <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4703">свойствах подключения для отправки HTTP-запросов</a>. Например, для <strong>URI</strong> <code>http://example.com/api</code> результирующий путь запроса будет <code>http://example.com/api/orders</code>.</li>
+<li><strong>Шаблон пути запроса</strong> — введите <code>orders</code> (фактический путь к HTTP-запросу на сервере), этот суффикс будет добавлен к <strong>URI</strong>, указанному в <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4703">свойствах подключения для отправки HTTP-запросов</a>. Например, для <strong>URI</strong> <code>http://&lt;hostname&gt;/api</code> результирующий путь запроса будет <code>http://&lt;hostname&gt;/api/orders</code>.</li>
 <li><strong>Атрибут для сериализации в тело запроса</strong> — этот атрибут используется для методов <code>POST</code> и <code>PUT</code>, в него следует вводить через запятую системные имена атрибутов из таблицы «<strong>Запрос</strong>» на вкладке «<strong>Атрибуты сообщений</strong>». Здесь это поле не используется.</li>
 <li>
 <p><strong>Атрибут для параметров запроса</strong> — введите системное имя атрибута из таблицы «<strong>Запрос</strong>» на вкладке «<strong>Атрибуты сообщений</strong>».</p>

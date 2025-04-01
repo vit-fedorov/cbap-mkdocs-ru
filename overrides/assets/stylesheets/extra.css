@@ -153,3 +153,11 @@ body {
 .md-typeset .api-method.delete {
     background: #a41e22!important;
 }
+
+@media screen {
+
+    .md-typeset pre code, pre {
+        max-height: 360px;
+    }
+
+}

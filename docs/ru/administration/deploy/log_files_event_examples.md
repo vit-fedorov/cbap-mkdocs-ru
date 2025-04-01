@@ -3,11 +3,15 @@ title: Примеры событий в файловых журналах
 kbId: 4618
 ---
 
+{% if gostech %}
+# Примеры событий в журналах {: #log_files_event_examples}
+{% else %}
 # Примеры событий в файловых журналах {: #log_files_event_examples}
+{% endif %}
 
 ## Введение
 
-Здесь представлены примеры событий и данных, которые регистрируются в файловых журналах экземпляра ПО **{{ productName }}**. Названия событий даны согласно тре­бованиям по информацион­ной безопасно­сти, предъяв­ляемых к Авто­матизирован­ным системам.
+Здесь представлены примеры событий и данных, которые регистрируются в журналах экземпляра ПО **{{ productName }}**. Названия событий даны согласно тре­бованиям по информацион­ной безопасно­сти, предъяв­ляемых к Авто­матизирован­ным системам.
 
 ## Перечень событий
 
@@ -15,8 +19,8 @@ kbId: 4618
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000  username XXX.XXX.XXX.XXX http://SERVER\_URL/Home/Login/?returnUrl=/ OK HH:mm:ss.SSS 'Builtin: user logged in'
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000  username XXX.XXX.XXX.XXX http://SERVER_URL/Home/Login/?returnUrl=/ OK HH:mm:ss.SSS 'Builtin: user logged in'
 ```
 
 **Поля события**
@@ -35,8 +39,8 @@ kbId: 4618
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000  username XXX.XXX.XXX.XXX  http://SERVER\_URL/Home/Logout/ OK HH:mm:ss.SSS 'User logout success' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000  username XXX.XXX.XXX.XXX  http://SERVER_URL/Home/Logout/ OK HH:mm:ss.SSS 'User logout success' ''
 ```
 
 **Поля события**
@@ -59,10 +63,10 @@ kbId: 4618
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/Home/Login/?returnUrl=/Resolve OK HH:mm:ss.SSS '"Builtin": user login failed for "username"' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/Home/Login/?returnUrl=/Resolve OK HH:mm:ss.SSS '"Builtin": user login failed for "username"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000  XXX.XXX.XXX.XXX http://SERVER\_URL/Home/Login/?failedLogin=InvalidLoginAndPassword&inputID=&returnUrl==%2fResolve   'GET' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000  XXX.XXX.XXX.XXX http://SERVER_URL/Home/Login/?failedLogin=InvalidLoginAndPassword&inputID=&returnUrl==%2fResolve   'GET' ''
 ```
 
 **Поля события**
@@ -83,8 +87,8 @@ kbId: 4618
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/UserApi/SetSystemInfo   'POST: "{"accountFormChanges":{"PasswordHash":"XXXXXX","OldPasswordHash":null,"DataformChanges":{"WidgetChanges":[{"ObjId":null,"TempId":"cmw.temp.21","TypeId":"cmw.account.Account","Changes": {"cmw.account.form.group0text1":{"Origin":4,"Literal":"FULL\_NAME","Clean":null,"Time":1698153500360,"Add":null,"Rem":null,"StreamName":null,"StreamId":null,"Parent":null, "ClearParent":null,"Number":null,"Order":null,"ComplexValues":null}, "cmw.account.form.group0text2":{"Origin":4,"Literal":"USER\_NAME","Clean":null,"Time":1698153505344,"Add":null,"Rem":null,"StreamName":null,","StreamId":null,"Parent":null, "ClearParent":null,"Number":null,"Order":null,"ComplexValues":null}, "cmw.account.form.group0text3":{"Origin":4,"Literal":"EMAIL","Clean":null,"Time":1698153518245,"Add":null,"Rem":null,"StreamName":null,"StreamId":null,"Parent":null, "ClearParent":null,"Number":null,"Order":null,"ComplexValues":null}},"CommandId":null,"CommandKind":2,"CommandContextChanges":null}],"ComplexObjectChanges":[]},"Id":"cmw.temp.21","IsActive":null,"IsAnonymous":null,"IsDisabled":null,"Language:"ru","AuthenticationMethod":0,"PasswordValidationParameters":null,"ProfilePhoto":null}}"' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/UserApi/SetSystemInfo   'POST: "{"accountFormChanges":{"PasswordHash":"XXXXXX","OldPasswordHash":null,"DataformChanges":{"WidgetChanges":[{"ObjId":null,"TempId":"cmw.temp.21","TypeId":"cmw.account.Account","Changes": {"cmw.account.form.group0text1":{"Origin":4,"Literal":"FULL_NAME","Clean":null,"Time":1698153500360,"Add":null,"Rem":null,"StreamName":null,"StreamId":null,"Parent":null, "ClearParent":null,"Number":null,"Order":null,"ComplexValues":null}, "cmw.account.form.group0text2":{"Origin":4,"Literal":"USER_NAME","Clean":null,"Time":1698153505344,"Add":null,"Rem":null,"StreamName":null,","StreamId":null,"Parent":null, "ClearParent":null,"Number":null,"Order":null,"ComplexValues":null}, "cmw.account.form.group0text3":{"Origin":4,"Literal":"EMAIL","Clean":null,"Time":1698153518245,"Add":null,"Rem":null,"StreamName":null,"StreamId":null,"Parent":null, "ClearParent":null,"Number":null,"Order":null,"ComplexValues":null}},"CommandId":null,"CommandKind":2,"CommandContextChanges":null}],"ComplexObjectChanges":[]},"Id":"cmw.temp.21","IsActive":null,"IsAnonymous":null,"IsDisabled":null,"Language:"ru","AuthenticationMethod":0,"PasswordValidationParameters":null,"ProfilePhoto":null}}"' ''
 ```
 
 **Поля события**
@@ -111,8 +115,8 @@ kbId: 4618
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/UserApi/SetSystemInfo   'DELETE: "{"accountIds":["account.1", "account.2"]}"' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/UserApi/SetSystemInfo   'DELETE: "{"accountIds":["account.1", "account.2"]}"' ''
 ```
 
 **Поля события**
@@ -132,8 +136,8 @@ kbId: 4618
 
 **Пример события**
 
-``` {: .sql .pageBreakAfter .pageBreakInsideAvoid title="Неуспешное создание учётной записи. Пример события" }
--MM-dd HH:mm:ss,SSS ERROR 00000000-0000-0000-0000-000000000000 username SERVER\_URL PORT XXX.XXX.XXX.XXX  Core HH:mm:ss.SSS X.X.XXX.X  '   Транзакция нарушает уникальность триплета:  cmw.account.mbox – email@example.com
+``` {: .log .pageBreakAfter .pageBreakInsideAvoid title="Неуспешное создание учётной записи. Пример события" }
+-MM-dd HH:mm:ss,SSS ERROR 00000000-0000-0000-0000-000000000000 username SERVER_URL PORT XXX.XXX.XXX.XXX  Core HH:mm:ss.SSS X.X.XXX.X  '   Транзакция нарушает уникальность триплета:  cmw.account.mbox – email@<hostname>
 
 Service name:
 
@@ -145,7 +149,7 @@ Method name:
 
 Parameters list:
 
-   [0]: {"Changes":{"WidgetChanges":[{"ObjId":"cmw.temp.150","TempId":"cmw.temp.150","TypeId":"cmw.account.Account","Changes":{"cmw.account.form.group0text1":{"Origin":4,"Literal":"FULL\_NAME","Time":1700833720019},"cmw.account.form.group0text2":{"Origin":4,"Literal":"USER\_NAME","Time":1700833724427},"cmw.account.form.group0text3":{"Origin":4,"Literal":"EMAIL","Time":1700833711581}},"CommandKind":2}],"ComplexObjectChanges":[]},"Queries":[{"WiId":"cmw.account.form.root","QueryChildWidgets":true,"Widgets":[],"QueryObjectTitle":true,"QueryObjectToolbar":true,"TempId":"cmw.temp.150","RootTempId":"cmw.temp.150"}]}
+   [0]: {"Changes":{"WidgetChanges":[{"ObjId":"cmw.temp.150","TempId":"cmw.temp.150","TypeId":"cmw.account.Account","Changes":{"cmw.account.form.group0text1":{"Origin":4,"Literal":"FULL_NAME","Time":1700833720019},"cmw.account.form.group0text2":{"Origin":4,"Literal":"USER_NAME","Time":1700833724427},"cmw.account.form.group0text3":{"Origin":4,"Literal":"EMAIL","Time":1700833711581}},"CommandKind":2}],"ComplexObjectChanges":[]},"Queries":[{"WiId":"cmw.account.form.root","QueryChildWidgets":true,"Widgets":[],"QueryObjectTitle":true,"QueryObjectToolbar":true,"TempId":"cmw.temp.150","RootTempId":"cmw.temp.150"}]}
 
 Stack:
 
@@ -163,7 +167,7 @@ Stack:
 {% if pdfOutput %}
 ```
 
-``` {: .sql title="Неуспешное создание учётной записи. Пример события — продолжение" .pageBreakBefore}
+``` {: .log title="Неуспешное создание учётной записи. Пример события — продолжение" .pageBreakBefore}
 {% endif %}
   at Comindware.TeamNetwork.Core.Services.WidgetsDataWriter.WriteLiteral (Comindware.LogicsStorage.Api.Identity qObject, Comindware.TeamNetwork.Core.Services.PropertyPathWriter writer, Comindware.TeamNetwork.Api.Data.DataSourceInfo ds, System.Object value, System.String widget) [0x000c8] in <8025f5369894426089cefdaa59a4c743>:0
 
@@ -175,7 +179,7 @@ Stack:
 
   at Comindware.TeamNetwork.Core.Services.DataformService.ApplyChangesAndQueryData (Comindware.TeamNetwork.Api.Data.Forms.DataformWidgetsQuery fQuery) [0x0002c] in <8025f5369894426089cefdaa59a4c743>:0
 
-  at Castle.Proxies.Invocations.IDataformService\_ApplyChangesAndQueryData.InvokeMethodOnTarget () [0x00018] in <9d46134a505745cbb2aa4c1a7704bca1>:0
+  at Castle.Proxies.Invocations.IDataformService_ApplyChangesAndQueryData.InvokeMethodOnTarget () [0x00018] in <9d46134a505745cbb2aa4c1a7704bca1>:0
 
   at Castle.DynamicProxy.AbstractInvocation.Proceed () [0x0002d] in <99e1b17afc2a44c5b97e5af224da0ae2>:0
 
@@ -197,7 +201,7 @@ Stack:
 - `Core` — наименование модуля, в котором произошло событие.
 - `hh:mm:ss.SSS` — длительность обработки запроса.
 - `X.X.XXX.X` — версия ПО {{ productName }}.
-- `Транзакция нарушает уникальность триплета:  cmw.account.mbox - email@example.com` — описание события: неуникальный адрес эл. почты.
+- `Транзакция нарушает уникальность триплета:  cmw.account.mbox - email@<hostname>` — описание события: неуникальный адрес эл. почты.
 - `Service name: "DataformService"` — наименование службы, обрабатывавшей веб-запрос.
 - `Method name: "ApplyChangesAndQueryData"` — наименование метода запроса.
 - `Parameters list` — массив параметров запроса.
@@ -215,8 +219,8 @@ Stack:
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS ERROR 00000000-0000-0000-0000-000000000000 username SERVER\_URL PORT XXX.XXX.XXX.XXX  Core HH:mm:ss.SSS X.X.XXX.X  '   Вы не можете удалить свой аккаунт
+``` log
+-MM-dd HH:mm:ss,SSS ERROR 00000000-0000-0000-0000-000000000000 username SERVER_URL PORT XXX.XXX.XXX.XXX  Core HH:mm:ss.SSS X.X.XXX.X  '   Вы не можете удалить свой аккаунт
 
 Service name:
 
@@ -234,7 +238,7 @@ Stack:
 
   at Comindware.Platform.Core.Services.AccountService.Delete (System.String[] accountsIds) [0x00104] in <13c6df997e3e467ca2451c9fd9f35e67>:0
 
-  at Castle.Proxies.Invocations.IAccountService\_Delete.InvokeMethodOnTarget () [0x00018] in <9d46134a505745cbb2aa4c1a7704bca1>:0
+  at Castle.Proxies.Invocations.IAccountService_Delete.InvokeMethodOnTarget () [0x00018] in <9d46134a505745cbb2aa4c1a7704bca1>:0
 
   at Castle.DynamicProxy.AbstractInvocation.Proceed () [0x0002d] in <99e1b17afc2a44c5b97e5af224da0ae2>:0
 
@@ -267,10 +271,10 @@ Stack:
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/Dataform/QueryData   'POST: "{"query":{"Changes":{"WidgetChanges":[{"ObjId":"account.ID","TypeId":"cmw.account.Account","Changes":{"cmw.account.form.group2flag1":{"Origin":4,"Literal":false,"Time":1698244978684}},"CommandKind":3}],"ComplexObjectChanges":[]},"Queries":[{"WiId":"cmw.account.form.root","QueryChildWidgets":true,"Widgets":[],"QueryObjectTitle":true,"QueryObjectToolbar":true,"ObjId":"account.ID","RootObjId":"account.ID"}]}}"' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/Dataform/QueryData   'POST: "{"query":{"Changes":{"WidgetChanges":[{"ObjId":"account.ID","TypeId":"cmw.account.Account","Changes":{"cmw.account.form.group2flag1":{"Origin":4,"Literal":false,"Time":1698244978684}},"CommandKind":3}],"ComplexObjectChanges":[]},"Queries":[{"WiId":"cmw.account.form.root","QueryChildWidgets":true,"Widgets":[],"QueryObjectTitle":true,"QueryObjectToolbar":true,"ObjId":"account.ID","RootObjId":"account.ID"}]}}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/Dataform/QueryData OK HH:mm:ss.SSS 'POST completed'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/Dataform/QueryData OK HH:mm:ss.SSS 'POST completed'
 ```
 
 **Поля события**
@@ -296,10 +300,10 @@ Stack:
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/Dataform/QueryData   'POST: "{"query":{"Changes":{"WidgetChanges":[{"ObjId":"account.ID","TypeId":"cmw.account.Account","Changes":{"cmw.account.form.group2flag1":{"Origin":4,"Literal":true,"Time":1698245267640}},"CommandKind":3}],"ComplexObjectChanges":[]},"Queries":[{"WiId":"cmw.account.form.root","QueryChildWidgets":true,"Widgets":[],"QueryObjectTitle":true,"QueryObjectToolbar":true,"ObjId":"account.ID","RootObjId":"account.ID"}]}}"' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/Dataform/QueryData   'POST: "{"query":{"Changes":{"WidgetChanges":[{"ObjId":"account.ID","TypeId":"cmw.account.Account","Changes":{"cmw.account.form.group2flag1":{"Origin":4,"Literal":true,"Time":1698245267640}},"CommandKind":3}],"ComplexObjectChanges":[]},"Queries":[{"WiId":"cmw.account.form.root","QueryChildWidgets":true,"Widgets":[],"QueryObjectTitle":true,"QueryObjectToolbar":true,"ObjId":"account.ID","RootObjId":"account.ID"}]}}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/Dataform/QueryData OK HH:mm:ss.SSS 'POST completed'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/Dataform/QueryData OK HH:mm:ss.SSS 'POST completed'
 ```
 
 **Поля события**
@@ -325,8 +329,8 @@ Stack:
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/UserApi/SetSystemInfo   'POST: "{"accountFormChanges":{"PasswordHash":"XXXXXXX","OldPasswordHash":null,"DataformChanges":{"WidgetChanges":[{"ObjId":"account.ID","TempId":null,"TypeId":"cmw.account.Account","Changes":{"cmw.account.form.group2flag1":{"Origin":4,"Literal":true,"Clean":null,"Time":1698245267640,"Add":null,"Rem":null,"StreamName":null,"StreamId":null,"Parent":null, "ClearParent":null,"Number":null,"Order":null,"ComplexValues":null}},"CommandId":null,"CommandKind":3,"CommandContextChanges":null}], "ComplexObjectChanges":[]},"Id":"account.ID","IsActive":null,"IsAnonymous":null,"IsDisabled":null,"Language":null,"AuthenticationMethod":0,"PasswordValidationParameters":null,"ProfilePhoto":null}}"' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/UserApi/SetSystemInfo   'POST: "{"accountFormChanges":{"PasswordHash":"XXXXXXX","OldPasswordHash":null,"DataformChanges":{"WidgetChanges":[{"ObjId":"account.ID","TempId":null,"TypeId":"cmw.account.Account","Changes":{"cmw.account.form.group2flag1":{"Origin":4,"Literal":true,"Clean":null,"Time":1698245267640,"Add":null,"Rem":null,"StreamName":null,"StreamId":null,"Parent":null, "ClearParent":null,"Number":null,"Order":null,"ComplexValues":null}},"CommandId":null,"CommandKind":3,"CommandContextChanges":null}], "ComplexObjectChanges":[]},"Id":"account.ID","IsActive":null,"IsAnonymous":null,"IsDisabled":null,"Language":null,"AuthenticationMethod":0,"PasswordValidationParameters":null,"ProfilePhoto":null}}"' ''
 ```
 
 **Поля события**
@@ -350,12 +354,12 @@ Stack:
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/Members/GetMembersData 200 03:00:00 'POST completed' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/Members/GetMembersData 200 03:00:00 'POST completed' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Post   'POST: "{"role":{"Name":"Role Name","Alias":"RoleSystemName","Solution":"sln.1", "Members":[],"IsActive":true,"RoleType":0}}"' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Post   'POST: "{"role":{"Name":"Role Name","Alias":"RoleSystemName","Solution":"sln.1", "Members":[],"IsActive":true,"RoleType":0}}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Post OK HH:mm:ss.SSS 'POST completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Post OK HH:mm:ss.SSS 'POST completed' ''
 ```
 
 **Поля события**
@@ -379,10 +383,10 @@ Stack:
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/GroupApi/Post   'POST: "{"group":{"HoldMembersActive":false,"HoldMembersEnabled":false,"Users":[], "MemberOf":[],"Name":"Group Name","Origin":1}}"' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/GroupApi/Post   'POST: "{"group":{"HoldMembersActive":false,"HoldMembersEnabled":false,"Users":[], "MemberOf":[],"Name":"Group Name","Origin":1}}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/GroupApi/Post OK HH:mm:ss.SSS 'POST completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/GroupApi/Post OK HH:mm:ss.SSS 'POST completed' ''
 ```
 
 **Поля события**
@@ -406,10 +410,10 @@ Stack:
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Delete   'DELETE: "{"rolesIds":["role.1","role.2"]}"' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Delete   'DELETE: "{"rolesIds":["role.1","role.2"]}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Delete NoContent HH:mm:ss.SSS 'DELETE completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Delete NoContent HH:mm:ss.SSS 'DELETE completed' ''
 ```
 
 **Поля события**
@@ -432,10 +436,10 @@ Stack:
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/GroupApi/Delete   'DELETE: "{"ids":["group.1","group.2"]}"' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/GroupApi/Delete   'DELETE: "{"ids":["group.1","group.2"]}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/GroupApi/Delete NoContent HH:mm:ss.SSS 'DELETE completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/GroupApi/Delete NoContent HH:mm:ss.SSS 'DELETE completed' ''
 ```
 
 **Поля события**
@@ -458,22 +462,22 @@ Stack:
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'PUT: "{"role":{"Id":"role.ID","Name":"Role Name","Alias":"RoleSystemName","Workspace":{"Id":"workspace.1","Name":"Workspace Name"},"Solution":"sln.1","Creator":"account.6","CreationDate":"2023-10-25T17:58:03+00:00","LastWriteDate":"2023-10-25T17:58:03+00:00", "Members":["account.ID","account.ID"],"IsActive":true,"IsPredefined":false,"RoleType":1,"RootResource":{"Name":"Системное приложение","Description":"","Children":[{"Name":"Organizational unit template","Children":[{"Name":"All records","Children":[],"Target":"lst.13","TargetType":14,"Privileges":4,"AvailablePrivileges":4}],"Target":"os.1","TargetType":22,"Privileges":132,"AvailablePrivileges":204}],"Target":"sln.1","TargetType":4,"Privileges":204,"AvailablePrivileges":716},"CreatorName":"Full Name"}}"' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put   'PUT: "{"role":{"Id":"role.ID","Name":"Role Name","Alias":"RoleSystemName","Workspace":{"Id":"workspace.1","Name":"Workspace Name"},"Solution":"sln.1","Creator":"account.6","CreationDate":"2023-10-25T17:58:03+00:00","LastWriteDate":"2023-10-25T17:58:03+00:00", "Members":["account.ID","account.ID"],"IsActive":true,"IsPredefined":false,"RoleType":1,"RootResource":{"Name":"Системное приложение","Description":"","Children":[{"Name":"Organizational unit template","Children":[{"Name":"All records","Children":[],"Target":"lst.13","TargetType":14,"Privileges":4,"AvailablePrivileges":4}],"Target":"os.1","TargetType":22,"Privileges":132,"AvailablePrivileges":204}],"Target":"sln.1","TargetType":4,"Privileges":204,"AvailablePrivileges":716},"CreatorName":"Full Name"}}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Read","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"systemSolution", "ResourceType":"BusinessApp"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Read","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"systemSolution", "ResourceType":"BusinessApp"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Create","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"systemSolution", "ResourceType":"BusinessApp"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Create","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"systemSolution", "ResourceType":"BusinessApp"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Update","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[systemSolution] RecordTemplateName", "ResourceType":"RecordTemplate"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Update","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[systemSolution] RecordTemplateName", "ResourceType":"RecordTemplate"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Delete","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"systemSolution", "ResourceType":"BusinessApp"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Delete","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"systemSolution", "ResourceType":"BusinessApp"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Delete","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[systemSolution] systemSolution\_OrganizationalStructure", "ResourceType":"OrgStructureTemplate"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Delete","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[systemSolution] systemSolution_OrganizationalStructure", "ResourceType":"OrgStructureTemplate"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Read","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[systemSolution\_OrganizationalStructure] defaultList", "ResourceType":"List"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Read","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[systemSolution_OrganizationalStructure] defaultList", "ResourceType":"List"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put OK HH:mm:ss.SSS 'PUT completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put OK HH:mm:ss.SSS 'PUT completed' ''
 ```
 
 **Поля события**
@@ -538,12 +542,12 @@ Stack:
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'PUT: "{"role":{"Id":"role.26","Name":"ТЕст","Alias":"TEst","Workspace":{"Id":"workspace.1","Name":"Workspace Name"},"Solution":"sln.1","Creator":"account.6","CreationDate":"2023-10-25T17:58:03+00:00","LastWriteDate":"2023-10-25T20:15:39+00:00", "Members":["account.194"],"IsActive":true,"IsPredefined":false,"RoleType":1,"RootResource":{"Id":"rrpd.2329","Name":"Application name","Role":"role.26","Children":[{"Name":"Resource name","Children":[],"Target":"oa.89","TargetType":20,"Privileges":76,"AvailablePrivileges":719},{"Id":"rrpd.2330","Name":"Organizational unit template","Role":"role.26","Children":[{"Id":"rrpd.2331","Name":"All records","Role":"role.26","Children":[],"Target":"lst.13","TargetType":14,"Privileges":4,"AvailablePrivileges":4}],"Target":"os.1","TargetType":22,"Privileges":132,"AvailablePrivileges":204}],"Target":"sln.1","TargetType":4,"Privileges":204,"AvailablePrivileges":716},"CreatorName":"Full Name"}}' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put   'PUT: "{"role":{"Id":"role.26","Name":"ТЕст","Alias":"TEst","Workspace":{"Id":"workspace.1","Name":"Workspace Name"},"Solution":"sln.1","Creator":"account.6","CreationDate":"2023-10-25T17:58:03+00:00","LastWriteDate":"2023-10-25T20:15:39+00:00", "Members":["account.194"],"IsActive":true,"IsPredefined":false,"RoleType":1,"RootResource":{"Id":"rrpd.2329","Name":"Application name","Role":"role.26","Children":[{"Name":"Resource name","Children":[],"Target":"oa.89","TargetType":20,"Privileges":76,"AvailablePrivileges":719},{"Id":"rrpd.2330","Name":"Organizational unit template","Role":"role.26","Children":[{"Id":"rrpd.2331","Name":"All records","Role":"role.26","Children":[],"Target":"lst.13","TargetType":14,"Privileges":4,"AvailablePrivileges":4}],"Target":"os.1","TargetType":22,"Privileges":132,"AvailablePrivileges":204}],"Target":"sln.1","TargetType":4,"Privileges":204,"AvailablePrivileges":716},"CreatorName":"Full Name"}}' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение удалено из роли' '{"Privilege":"Delete","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put   'Разрешение удалено из роли' '{"Privilege":"Delete","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put OK HH:mm:ss.SSS 'PUT completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put OK HH:mm:ss.SSS 'PUT completed' ''
 ```
 
 **Поля события**
@@ -607,16 +611,16 @@ Stack:
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/Members/GetMembersData   'POST: "{"model":{"FilterType":3,"Selected":["account.ID"]}}"' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/Members/GetMembersData   'POST: "{"model":{"FilterType":3,"Selected":["account.ID"]}}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/Members/GetMembersData 200 03:00:00 'POST completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/Members/GetMembersData 200 03:00:00 'POST completed' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'PUT: "{"role":{"Id":"role.ID","Name":"Role Name","Alias":"RoleSystemName","Workspace":{"Id":"workspace.1","Name":"Workspace Name"},"Solution":"sln.1","Creator":"account.6","CreationDate":"2023-10-25T17:58:03+00:00","LastWriteDate":"2023-10-25T17:58:03+00:00", "Members":["account.ID","account.ID"],"IsActive":true,"IsPredefined":false,"RoleType":1,"RootResource":{"Name":"Системное приложение","Description":"","Children":[{"Name":"Organizational unit template","Children":[{"Name":"All records","Children":[],"Target":"lst.13","TargetType":14,"Privileges":4,"AvailablePrivileges":4}],"Target":"os.1","TargetType":22,"Privileges":132,"AvailablePrivileges":204}],"Target":"sln.1","TargetType":4,"Privileges":204,"AvailablePrivileges":716},"CreatorName":"Full Name"}}"' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put   'PUT: "{"role":{"Id":"role.ID","Name":"Role Name","Alias":"RoleSystemName","Workspace":{"Id":"workspace.1","Name":"Workspace Name"},"Solution":"sln.1","Creator":"account.6","CreationDate":"2023-10-25T17:58:03+00:00","LastWriteDate":"2023-10-25T17:58:03+00:00", "Members":["account.ID","account.ID"],"IsActive":true,"IsPredefined":false,"RoleType":1,"RootResource":{"Name":"Системное приложение","Description":"","Children":[{"Name":"Organizational unit template","Children":[{"Name":"All records","Children":[],"Target":"lst.13","TargetType":14,"Privileges":4,"AvailablePrivileges":4}],"Target":"os.1","TargetType":22,"Privileges":132,"AvailablePrivileges":204}],"Target":"sln.1","TargetType":4,"Privileges":204,"AvailablePrivileges":716},"CreatorName":"Full Name"}}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Аккаунт удален из роли' '{"User":"username","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put   'Аккаунт удален из роли' '{"User":"username","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put OK HH:mm:ss.SSS 'PUT completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put OK HH:mm:ss.SSS 'PUT completed' ''
 ```
 
 **Поля события**
@@ -670,10 +674,10 @@ Stack:
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/TemplatesApi/Create   'POST: "{"template":{"Alias":"TemplateSystemName","Name":"Template Name","IsDisabled":false,"Type":4,"Solution":"sln.ID","CreationDate":"0001-01-01T00:00:00","IsReferenceData":false, "IsTransferable":false,"ConversationDisplayConfig":{"DisableSidePanelConversations":true,"DisableWidgetConversations":true,"ProhibitedReferenceTypes":[],"HideArchivedMessages":false}}}"' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/TemplatesApi/Create   'POST: "{"template":{"Alias":"TemplateSystemName","Name":"Template Name","IsDisabled":false,"Type":4,"Solution":"sln.ID","CreationDate":"0001-01-01T00:00:00","IsReferenceData":false, "IsTransferable":false,"ConversationDisplayConfig":{"DisableSidePanelConversations":true,"DisableWidgetConversations":true,"ProhibitedReferenceTypes":[],"HideArchivedMessages":false}}}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/TemplatesApi/Create OK 03:00:00.296 'POST completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/TemplatesApi/Create OK 03:00:00.296 'POST completed' ''
 ```
 
 **Поля события**
@@ -703,26 +707,26 @@ Stack:
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/TemplatesApi/Get/oa.91   'GET: "{"id":"oa.91"}"' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/TemplatesApi/Get/oa.91   'GET: "{"id":"oa.91"}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/TemplatesApi/Get/oa.91 OK 03:00:00 'GET completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/TemplatesApi/Get/oa.91 OK 03:00:00 'GET completed' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/SolutionConfigurationApi/List   'GET' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/SolutionConfigurationApi/List   'GET' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/SolutionConfigurationApi/List OK HH:mm:ss.SSS 'GET completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/SolutionConfigurationApi/List OK HH:mm:ss.SSS 'GET completed' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RecordTypeContextApi?recordTypeId=oa.91   'GET: "{"recordTypeId":"oa.91"}"' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RecordTypeContextApi?recordTypeId=oa.91   'GET: "{"recordTypeId":"oa.91"}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/TemplatesApi/GetUsages/oa.91   'GET: "{"id":"oa.91"}"' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/TemplatesApi/GetUsages/oa.91   'GET: "{"id":"oa.91"}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/TemplatesApi/List   'POST: "{"filter":{"Type":0,"OnlyEnabled":true,"OnlyAdmin":false,"IncludeDocumentTemplates":false}}"' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/TemplatesApi/List   'POST: "{"filter":{"Type":0,"OnlyEnabled":true,"OnlyAdmin":false,"IncludeDocumentTemplates":false}}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/TemplatesApi/GetUsages/oa.91 OK HH:mm:ss.SSS 'GET completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/TemplatesApi/GetUsages/oa.91 OK HH:mm:ss.SSS 'GET completed' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RecordTypeContextApi?recordTypeId=oa.91 OK HH:mm:ss.SSS 'GET completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RecordTypeContextApi?recordTypeId=oa.91 OK HH:mm:ss.SSS 'GET completed' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/TemplatesApi/List OK 03:00:00.046 'POST completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/TemplatesApi/List OK 03:00:00.046 'POST completed' ''
 ```
 
 **Поля события**
@@ -776,10 +780,10 @@ Stack:
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/FormDesigner/CloneRecordForm   'POST: "{"recordTypeId":"oa.91","cloningFormId":"form.3355","newName":"New Form Name","newAlias":"NewFormSystemName"}"' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/FormDesigner/CloneRecordForm   'POST: "{"recordTypeId":"oa.91","cloningFormId":"form.3355","newName":"New Form Name","newAlias":"NewFormSystemName"}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/FormDesigner/CloneRecordForm 200 HH:mm:ss.SSS 'POST completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/FormDesigner/CloneRecordForm 200 HH:mm:ss.SSS 'POST completed' ''
 ```
 
 **Поля события**
@@ -804,10 +808,10 @@ Stack:
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RecordTypeContextApi   'POST: "{"property":{"Unique":false,"Obsolete":false,"Indexed":true,"Tracked":true,"DigitGrouping":true,"Calculated":false,"CalculateExpression":"","RecordTypeId":"oa.91","DisplayAttribute":false,"IgnoreUniqueErrors":false,"Type":0,"Format":29,"Name":"Attribute Name","Alias":"AttributeSystemName","IsSystem":false,"IsMultiValue":false,"IsMandatory":false, "IsOwnership":false,"PossibleValueExpression":""}}"' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RecordTypeContextApi   'POST: "{"property":{"Unique":false,"Obsolete":false,"Indexed":true,"Tracked":true,"DigitGrouping":true,"Calculated":false,"CalculateExpression":"","RecordTypeId":"oa.91","DisplayAttribute":false,"IgnoreUniqueErrors":false,"Type":0,"Format":29,"Name":"Attribute Name","Alias":"AttributeSystemName","IsSystem":false,"IsMultiValue":false,"IsMandatory":false, "IsOwnership":false,"PossibleValueExpression":""}}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RecordTypeContextApi OK HH:mm:ss.SSS 'POST completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RecordTypeContextApi OK HH:mm:ss.SSS 'POST completed' ''
 ```
 
 **Поля события**
@@ -832,10 +836,10 @@ Stack:
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/RecordTypeContextApi/Delete/op.941   'DELETE: "{"id":"op.941"}"' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/RecordTypeContextApi/Delete/op.941   'DELETE: "{"id":"op.941"}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/RecordTypeContextApi/Delete/op.941 OK HH:mm:ss.SSS 'DELETE completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/RecordTypeContextApi/Delete/op.941 OK HH:mm:ss.SSS 'DELETE completed' ''
 ```
 
 **Поля события**
@@ -856,18 +860,18 @@ Stack:
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'PUT: "{"role":{"Id":"role.26","Name":"Role Name","Alias":"RoleSystemName","Workspace":{"Id":"workspace.1","Name":"Workspace Name"},"Solution":"sln.1","Creator":"account.6","CreationDate":"2023-10-25T17:58:03+00:00","LastWriteDate":"2023-10-25T20:15:39+00:00", "Members":["account.194"],"IsActive":true,"IsPredefined":false,"RoleType":1,"RootResource":{"Id":"rrpd.2329","Name":"Application Name","Role":"role.26","Children":[{"Name":"Resource name","Children":[],"Target":"oa.89","TargetType":20,"Privileges":204,"AvailablePrivileges":719},{"Id":"rrpd.2330","Name":"Organizational unit template","Role":"role.26","Children":[{"Id":"rrpd.2331","Name":"All records","Role":"role.26","Children":[],"Target":"lst.13","TargetType":14,"Privileges":4,"AvailablePrivileges":4}],"Target":"os.1","TargetType":22,"Privileges":132,"AvailablePrivileges":204}],"Target":"sln.1","TargetType":4,"Privileges":204,"AvailablePrivileges":716},"CreatorName":"Full Name"}}"' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put   'PUT: "{"role":{"Id":"role.26","Name":"Role Name","Alias":"RoleSystemName","Workspace":{"Id":"workspace.1","Name":"Workspace Name"},"Solution":"sln.1","Creator":"account.6","CreationDate":"2023-10-25T17:58:03+00:00","LastWriteDate":"2023-10-25T20:15:39+00:00", "Members":["account.194"],"IsActive":true,"IsPredefined":false,"RoleType":1,"RootResource":{"Id":"rrpd.2329","Name":"Application Name","Role":"role.26","Children":[{"Name":"Resource name","Children":[],"Target":"oa.89","TargetType":20,"Privileges":204,"AvailablePrivileges":719},{"Id":"rrpd.2330","Name":"Organizational unit template","Role":"role.26","Children":[{"Id":"rrpd.2331","Name":"All records","Role":"role.26","Children":[],"Target":"lst.13","TargetType":14,"Privileges":4,"AvailablePrivileges":4}],"Target":"os.1","TargetType":22,"Privileges":132,"AvailablePrivileges":204}],"Target":"sln.1","TargetType":4,"Privileges":204,"AvailablePrivileges":716},"CreatorName":"Full Name"}}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Read","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Read","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Create","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Create","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Update","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Update","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Delete","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put   'Разрешение добавлено в роль' '{"Privilege":"Delete","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put OK HH:mm:ss.SSS 'PUT completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put OK HH:mm:ss.SSS 'PUT completed' ''
 ```
 
 **Поля события**
@@ -933,12 +937,12 @@ Stack:
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'PUT: "{"role":{"Id":"role.26","Name":"ТЕст","Alias":"TEst","Workspace":{"Id":"workspace.1","Name":"Workspace Name"},"Solution":"sln.1","Creator":"account.6","CreationDate":"2023-10-25T17:58:03+00:00","LastWriteDate":"2023-10-25T20:15:39+00:00", "Members":["account.194"],"IsActive":true,"IsPredefined":false,"RoleType":1,"RootResource":{"Id":"rrpd.2329","Name":"Application name","Role":"role.26","Children":[{"Name":"Resource name","Children":[],"Target":"oa.89","TargetType":20,"Privileges":76,"AvailablePrivileges":719},{"Id":"rrpd.2330","Name":"Organizational unit template","Role":"role.26","Children":[{"Id":"rrpd.2331","Name":"All records","Role":"role.26","Children":[],"Target":"lst.13","TargetType":14,"Privileges":4,"AvailablePrivileges":4}],"Target":"os.1","TargetType":22,"Privileges":132,"AvailablePrivileges":204}],"Target":"sln.1","TargetType":4,"Privileges":204,"AvailablePrivileges":716},"CreatorName":"Full Name"}}"' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put   'PUT: "{"role":{"Id":"role.26","Name":"ТЕст","Alias":"TEst","Workspace":{"Id":"workspace.1","Name":"Workspace Name"},"Solution":"sln.1","Creator":"account.6","CreationDate":"2023-10-25T17:58:03+00:00","LastWriteDate":"2023-10-25T20:15:39+00:00", "Members":["account.194"],"IsActive":true,"IsPredefined":false,"RoleType":1,"RootResource":{"Id":"rrpd.2329","Name":"Application name","Role":"role.26","Children":[{"Name":"Resource name","Children":[],"Target":"oa.89","TargetType":20,"Privileges":76,"AvailablePrivileges":719},{"Id":"rrpd.2330","Name":"Organizational unit template","Role":"role.26","Children":[{"Id":"rrpd.2331","Name":"All records","Role":"role.26","Children":[],"Target":"lst.13","TargetType":14,"Privileges":4,"AvailablePrivileges":4}],"Target":"os.1","TargetType":22,"Privileges":132,"AvailablePrivileges":204}],"Target":"sln.1","TargetType":4,"Privileges":204,"AvailablePrivileges":716},"CreatorName":"Full Name"}}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put   'Разрешение удалено из роли' '{"Privilege":"Delete","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put   'Разрешение удалено из роли' '{"Privilege":"Delete","Role":"[ApplicationSystemName] RoleSystemName","RoleType":"BusinessApp","Resource":"[ParentSystemName] ResourceSystemName", "ResourceType":"RecordTemplate"}'
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/api/RolesCollectionApi/Put OK HH:mm:ss.SSS 'PUT completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/api/RolesCollectionApi/Put OK HH:mm:ss.SSS 'PUT completed' ''
 ```
 
 **Поля события**
@@ -1004,7 +1008,7 @@ Stack:
 
 **Пример события**
 
-``` sql
+``` log
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 systemAccount ::1   Экземпляр {{ productName }} запущен.
 
 Системная информация:
@@ -1040,7 +1044,7 @@ Stack:
 
 **Пример события**
 
-``` sql
+``` log
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 systemAccount    {{ productName }} has started.
 
 System information:
@@ -1057,11 +1061,11 @@ System information:
 
  Language: ru
 
- Config path: E:\\instancename\\Config
+ Config path: E:\instancename\Config
 
- Database path: E:\\instancename\\Data
+ Database path: E:\instancename\Data
 
- Streams path: F:\\instancename\\Streams
+ Streams path: F:\instancename\Streams
 
 IIS authentication: Anonymous
 
@@ -1102,7 +1106,7 @@ IIS authentication: Anonymous
 
 **Пример события**
 
-``` sql
+``` log
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 systemAccount    {{ productName }} has stopped.
 ```
 
@@ -1118,7 +1122,7 @@ IIS authentication: Anonymous
 
 **Пример события**
 
-``` sql
+``` log
 2023-11-30 14:34:23,448 INFO 00000000-0000-0000-0000-000000000000 systemAccount    Core is loading
 
 2023-11-30 14:34:25,586 INFO 00000000-0000-0000-0000-000000000000 systemAccount    Initialize account cache: 425ms
@@ -1151,7 +1155,7 @@ IIS authentication: Anonymous
 
 **Пример события**
 
-``` sql
+``` log
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 systemAccount    {{ productName }} has stopped.
 ```
 
@@ -1167,10 +1171,10 @@ IIS authentication: Anonymous
 
 **Пример события**
 
-``` sql
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/UserCommandExecution/Prepare   'POST: "{"contextChanges":{"CommandId":"event.ID","ContextObjects":[]}}"' ''
+``` log
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/UserCommandExecution/Prepare   'POST: "{"contextChanges":{"CommandId":"event.ID","ContextObjects":[]}}"' ''
 
--MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER\_URL/UserCommandExecution/Prepare 200 HH:mm:ss.SSS 'POST completed' ''
+-MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 username XXX.XXX.XXX.XXX http://SERVER_URL/UserCommandExecution/Prepare 200 HH:mm:ss.SSS 'POST completed' ''
 
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 systemAccount    Process runned count=11 (completed=3) lastRunTime="DD.MM.YYYY HH:mm:ss"; scripts started=1 (failed=0); worker threads started=7 (failed=0); messages total=0 (failed=0).
 ```
@@ -1198,7 +1202,7 @@ IIS authentication: Anonymous
 
 **Пример события**
 
-``` sql
+``` log
 -MM-dd HH:mm:ss,SSS INFO 00000000-0000-0000-0000-000000000000 systemAccount    Core Loaded
 ```
 
@@ -1233,10 +1237,10 @@ IIS authentication: Anonymous
 
 **Пример события**
 
-``` sql
-[yyy-MM-dd HH:mm:ss,SSS][INFO][Getting meta for plugin XxxSenderAdapter.] Platform key: XXX\_AdapterAgent5b28ad88a4cb4d4f8078c4deef1ee08b; Service name: ServiceName; Runtime: .NET 6.0.21
+``` log
+[yyy-MM-dd HH:mm:ss,SSS][INFO][Getting meta for plugin XxxSenderAdapter.] Platform key: XXX_AdapterAgent5b28ad88a4cb4d4f8078c4deef1ee08b; Service name: ServiceName; Runtime: .NET 6.0.21
 
-[2023-12-08 00:10:20,667][INFO][Meta is ready for XxxSenderAdapter.] Platform key: XXX\_AdapterAgent5b28ad88a4cb4d4f8078c4deef1ee08b; Service name: ServiceName; Runtime: .NET 6.0.21
+[2023-12-08 00:10:20,667][INFO][Meta is ready for XxxSenderAdapter.] Platform key: XXX_AdapterAgent5b28ad88a4cb4d4f8078c4deef1ee08b; Service name: ServiceName; Runtime: .NET 6.0.21
 data: {"Name":"XxxSenderAdapter","Description":"Адаптер для связи с системой «XXX»","Direction":"Outgoing","EndpointDefinitionJson":{}}
 ```
 
@@ -1403,10 +1407,12 @@ archiveAboveSize: 1048576000
 - `bootstrapServers: <kafkaIP>:<kafkaPortNumber>` — адрес и порт брокера сообщений.
 - `groupId` — идентификатор группы в брокере сообщений.
 - `serverLanguage` — язык сервера экземпляра ПО.
+{% if not gostech %}
 - `logFolder` — путь к файлам журналирования экземпляра ПО.
 - `archiveFolder` — путь к архивам файлам журналирования экземпляра ПО.
 - `maxArchiveFiles` — максимально количество файлов в одном архиве.
 - `archiveAboveSize` — максимальный размер файлов журналов (в байтах).
+{% endif %}
 
 #### Взаимодействие адаптера с брокером сообщения
 

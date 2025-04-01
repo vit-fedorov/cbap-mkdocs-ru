@@ -130,11 +130,13 @@ kbId: 4706
     sudo systemctl restart postgresql
     ```
 
+    {% if not gostech %}
     **Windows**
 
     ``` powershell
     net stop postgresql-x64-<номер_версии>
     ```
+    {% endif %}
 
 ## Создание подключения к СУБД {: .pageBreakBefore }
 

@@ -25,11 +25,13 @@ kbId: 4622
 
 Прежде чем приступать к установке вспомогательного ПО, необходимого для работы **{{ productName }}**, ознакомьтесь с демонстрационным роликом и инструкциями, представленными ниже.
 
+{% if not pdfOutput %}
 ### Видеоинструкция
 
 <video controls="controls" width="100%" height="100%">
 <source src="https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/deploy_guide_linux_auxiliary_software.mp4" type="video/mp4" />
 </video>
+{% endif %}
 
 ### Порядок установки вспомогательного ПО
 
@@ -70,14 +72,14 @@ kbId: 4622
 
     - `-p` — установить обязательное вспомогательное ПО.
     - `-k` — установить ПО Kafka (необязательный ключ).
-    - `-e` — установить ПО Elasticsearch или OpenSearch (необязательный ключ).
+    - `-e` — установить ПО {{ openSearchVariants }} или OpenSearch (необязательный ключ).
     - `-kh=<hostname>` или `--kafkaHost=<hostname>` — использовать указанный хост для подключения к ПО Kafka (необязательный ключ).
     - `-kp=<portNumber>` или `--kafkaPort=<portNumber>` — использовать указанный порт для подключения к ПО Kafka (необязательный ключ).
     - `-h` — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).
 
     !!! note "Примечание"
 
-        Скрипт `prerequisites_install.sh` устанавливает необходимые для **{{ productName }}** компоненты, включая Java, .NET, Mono, NGINX.
+        Скрипт `prerequisites_install.sh` устанавливает необходимые для **{{ productName }}** компоненты, включая Java, .NET, Mono, {{ nginxVariants }}.
 
     !!! tip "Вызов справки для скриптов"
 
@@ -94,7 +96,7 @@ kbId: 4622
 
 5. По окончании установки скрипт выведет информацию об установленных компонентах. Удостоверьтесь, что компоненты успешно установлены (имеют статус `OK`).
 
-    Пример результата выполнения скрипта с ключом `-p` без установки Elasticsearch и Kafka:
+    Пример результата выполнения скрипта с ключом `-p` без установки {{ openSearchVariants }} и Kafka:
 
     ``` sh
     [Done] Creating CBAP Data Dir.
@@ -102,7 +104,7 @@ kbId: 4622
     Environment details
     Status     | Software   | Version   
     -----------------------------------------
-    OK         | mono       | 6.12.0.182     
+    OK         | mono       | 6.12.0.200     
     OK         | dotnet     | 6.0.417        
     OK         | java       | 17.0.7            
     OK     NGINX installed.
@@ -129,11 +131,13 @@ kbId: 4622
 
 Прежде чем приступать к установке ПО **{{ productName }}**, ознакомьтесь с видеороликом и инструкциями, представленными ниже.
 
+{% if not pdfOutput %}
 ### Видеоинструкция
 
 <video controls="controls" width="100%" height="100%">
 <source src="https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/deploy_guide_linux_software.mp4" type="video/mp4" />
 </video>
+{% endif %}
 
 ### Порядок установки ПО {{ productName }}
 
@@ -189,11 +193,13 @@ kbId: 4622
 
 Прежде чем приступать к установке экземпляра ПО **{{ productName }}**, ознакомьтесь с видеороликом и инструкциями, представленными ниже.
 
+{% if not pdfOutput %}
 ### Видеоинструкция
 
 <video controls="controls" width="100%" height="100%">
 <source src="https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/deploy_guide_linux_instance.mp4" type="video/mp4" />
 </video>
+{% endif %}
 
 ### Подготовка к созданию экземпляра ПО
 
@@ -421,7 +427,7 @@ kbId: 4622
     nano /usr/lib/systemd/system/adapterhost<instanceName>.service
     ```
 
-7. Если используются локальные службы Kafka и Elasticsearch, откройте их для редактирования:
+7. Если используются локальные службы Kafka и {{ openSearchVariants }}, откройте их для редактирования:
 
     ``` sh
     nano /usr/lib/systemd/system/kafka.service
@@ -500,7 +506,7 @@ kbId: 4622
 
 7. При необходимости откроется страница инициализации данных в {{ openSearchVariants }}.
 
-    _![Страница инициализации данных в Elasticsearch](img/deploy_guide_elasticsearch_initialize.png)_
+    _![Страница инициализации данных в {{ openSearchVariants }}](img/deploy_guide_elasticsearch_initialize.png)_
 
 8. Нажмите кнопку «**Обновить**».
 9.  Дождитесь открытия начальной страницы **{{ productName }}**.
@@ -604,11 +610,13 @@ mmap(PROT_NONE) failed
 
 Прежде чем приступать к удалению версии и экземпляра ПО **{{ productName }}**, ознакомьтесь с видеороликом и инструкциями, представленными ниже.
 
+{% if not pdfOutput %}
 ### Видеоинструкция
 
 <video controls="controls" width="100%" height="100%">
 <source src="https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/deploy_guide_linux_delete_version_instance.mp4" type="video/mp4" />
 </video>
+{% endif %}
 
 ### Удаление экземпляра ПО {: .pageBreakBefore }
 

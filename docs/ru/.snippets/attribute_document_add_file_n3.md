@@ -12,7 +12,7 @@
     ?documentTitleSource document:title ?title.
     ```
 
-- прикрепить полученный файл к атрибуту типа «**Документ**», т. е. поместить на него ссылку в ревизию:
+- прикрепить полученный файл к атрибуту типа «**Документ**», т. е. поместить на него ссылку в версию:
 
     ``` turtle
     (?content ?title) document:attach ?documentAttributeValue.

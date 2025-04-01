@@ -12,19 +12,19 @@
     ?item documentAttribute ?documentAttributeValue.
     ```
 
-- из значения атрибута получить текущую ревизию документа:
+- из значения атрибута получить текущую версию документа:
 
     ``` turtle
     ?documentAttributeValue document:revision ?revision.
     ```
 
-- из ревизии получить содержимое файла в формате `base64`:
+- из версии получить содержимое файла в формате `base64`:
 
     ``` turtle
     ?revision document:content ?content.
     ```
 
-- из ревизии получить имя файла:
+- из версии получить имя файла:
 
     ``` turtle
     ?revision document:title ?title.

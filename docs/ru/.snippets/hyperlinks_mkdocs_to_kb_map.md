@@ -204,7 +204,7 @@
 
 [release_notes_5.0]: {{ kbArticleURLPrefix }}5073
 
-[release_notes_5.0.13318]: {{ kbArticleURLPrefix }}5094
+[release_notes_5.0.13334]: {{ kbArticleURLPrefix }}5094
 
 [roles]: {{ kbArticleURLPrefix }}4803
 

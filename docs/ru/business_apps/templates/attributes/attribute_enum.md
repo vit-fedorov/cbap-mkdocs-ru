@@ -32,6 +32,9 @@ kbId: 4779
     @prefix cmw: <http://comindware.com/logics#>.
     @prefix l10n: <http://comindware.com/ontology/l10n#>.
     @prefix cmwentity: <http://comindware.com/ontology/entity#>.
+    @prefix string: <http://www.w3.org/2000/10/swap/string#>.
+    @prefix convert: <http://comindware.com/logics/convertions#>.
+
     ```
 
 !!! tip "Получение данных из атрибута с помощью N3"

@@ -42,11 +42,17 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h2 id="введение">Введение</h2>
-<div class="notice notice-warning">
+<div class="notice notice-error">
 <p class="admonition-title">Внимание!</p>
 <ul>
-<li>Работоспособность подключения <strong>Comindware Platform</strong> к S3 протестирована с со службой Amazon S3.</li>
-<li>Совместимость с другими S3-подобными хранилищами не гарантируется и осуществляется потребителем на свой страх и риск.</li>
+<li>Работоспособность подключения <strong>Comindware Platform</strong> к S3 протестирована с со следующими службами:<ul>
+<li>Amazon S3</li>
+<li>Yandex Object Storage</li>
+<li>S3 MinIO</li>
+</ul>
+</li>
+<li>Совместимость с другими S3-подобными хранилищами не тестировалась.</li>
+<li>При подключении к другим S3-подобным хранилищам необходимо учитывать их возможно неполное соответствие спецификации API S3, что может привести к ограниченной или неработоспособной интеграции.</li>
 </ul>
 </div>
 <p>ПО <strong>Comindware Platform</strong> может хранить загруженные пользователями и сформированные системой файлы в хранилище S3:</p>

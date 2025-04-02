@@ -109,7 +109,8 @@ def updateArticle(article_id):
                         SET 
                         article_title=%s,
                         article_content=%s,
-                        article_last_updation=%s
+                        article_last_updation=%s,
+                        article_status='approved'
                         WHERE article_id=%s;
                         """, (article_title, article_content, article_last_updation, article_id))
         except:

@@ -129,9 +129,16 @@
   </head>
 
   <!-- Set kbId, if defined -->
-  {% set global = namespace(kbId="") %}
-  {% if page and page.meta and page.meta.kbId %}
-    {% set global.kbId = page.meta.kbId %}
+  {% set global = namespace(kbId="", title="") %}
+  {% if page and page.meta%}
+    {% if page.meta.kbId %}
+      {% set global.kbId = page.meta.kbId %}
+    {% endif %}
+    {% if page.meta.kbTitle %}
+      {% set global.title = page.meta.kbTitle %}
+    {% elif page.meta.title %}
+      {% set global.title = page.meta.title %}
+    {% endif %}
   {% endif %}
   <!-- Set text direction and color palette, if defined -->
   {% set direction = config.theme.direction or lang.t("direction") %}
@@ -149,9 +156,10 @@
       data-md-color-primary="{{ primary | replace(' ', '-') }}"
       data-md-color-accent="{{ accent | replace(' ', '-') }}"
       kb-id="{{ global.kbId }}"
+      title="{{ global.title }}"
     >
   {% else %}
-    <body dir="{{ direction }}" kb-id="{{ global.kbId }}">
+    <body dir="{{ direction }}" kb-id="{{ global.kbId }}" title="{{ global.title }}">
   {% endif %}
     {% set features = config.theme.features or [] %}
 

@@ -436,6 +436,8 @@
 
 [gantt_chart_create]: {{ kbArticleURLPrefix }}4891
 
+[date_time_attribute_element_calculate]: {{ kbArticleURLPrefix }}4977
+
 [desktop]: {{ kbArticleURLPrefix }}4823
 
 [desktop_setup]: {{ kbArticleURLPrefix }}4813

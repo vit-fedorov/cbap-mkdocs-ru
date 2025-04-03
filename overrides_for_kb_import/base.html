@@ -129,7 +129,7 @@
   </head>
 
   <!-- Set kbId, if defined -->
-  {% set global = namespace(kbId="", title="") %}
+  {% set global = namespace(kbId="", kbTitle="") %}
   {% if page and page.meta%}
     {% if page.meta.kbId %}
       {% set global.kbId = page.meta.kbId %}
@@ -156,10 +156,10 @@
       data-md-color-primary="{{ primary | replace(' ', '-') }}"
       data-md-color-accent="{{ accent | replace(' ', '-') }}"
       kb-id="{{ global.kbId }}"
-      title="{{ global.title }}"
+      kbTitle="{{ global.title }}"
     >
   {% else %}
-    <body dir="{{ direction }}" kb-id="{{ global.kbId }}" title="{{ global.title }}">
+    <body dir="{{ direction }}" kb-id="{{ global.kbId }}" kbTitle="{{ global.title }}">
   {% endif %}
     {% set features = config.theme.features or [] %}
 

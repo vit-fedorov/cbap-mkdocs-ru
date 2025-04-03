@@ -1,4 +1,4 @@
-<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4642">
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4642" kb-title="Резервное копирование. Настройка, запуск и просмотр журнала сеансов">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -159,6 +159,19 @@
 </div>
 <p><strong>Для репозитория в хранилище S3</strong></p>
 <div class="highlight"><code><pre><span></span><code>s3.client.default.endpoint:<span class="w"> </span>localhost:9000</code> <br/><code>s3.client.default.protocol:<span class="w"> </span>http</code> <br/><code>s3.client.default.path_style_access:<span class="w"> </span><span class="nb">true</span></code> <br/></pre></code></div>
+<div class="notice notice-error">
+<p class="admonition-title">Внимание!</p>
+<ul>
+<li>Работоспособность подключения <strong>Comindware Platform</strong> к S3 протестирована с со следующими службами:<ul>
+<li>Amazon S3</li>
+<li>Yandex Object Storage</li>
+<li>S3 MinIO</li>
+</ul>
+</li>
+<li>Совместимость с другими S3-подобными хранилищами не тестировалась.</li>
+<li>При подключении к другим S3-подобным хранилищам необходимо учитывать их возможно неполное соответствие спецификации API Amazon S3, что может привести к ограниченной или неработоспособной интеграции.</li>
+</ul>
+</div>
 </li>
 <li>
 <p>В файле конфигурации экземпляра ПО (<code>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code>) необходимо указать тип репозитория резервных копий OpenSearch (Elasticsearch) (<code>LocalDisk</code> или <code>S3</code>) и путь к репозиторию, например:</p>
@@ -199,7 +212,7 @@
 </ul>
 <div class="notice notice-warning">
 <p class="admonition-title">Внимание!</p>
-<p>Для резервного копирования в основной и дополнительный репозитории будет использоваться только подключение к S3, заданное в файле конфигурации экземпляра ПО (<code>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code>) с помощью директивы <code>s3.default</code>.</p>
+<p>Для резервного копирования в основной и дополнительный репозитории будет использоваться только подключение к S3, заданное в файле конфигурации экземпляра ПО (<code>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code>) с помощью директив <code>backup.default.&lt;backupName&gt;.repository.s3</code> и <code>backup.default.&lt;backupName&gt;.extraRepository.s3</code> соответственно.</p>
 </div>
 </li>
 </ul>

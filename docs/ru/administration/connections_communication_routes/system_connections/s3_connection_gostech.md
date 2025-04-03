@@ -7,7 +7,7 @@ tags:
   - Active Directory
 hide:
   - tags
-kbId: 4677
+kbId: 
 ---
 
 # Хранилище S3. Настройка экземпляра ПО и подключения {: #s3_connection }
@@ -37,11 +37,11 @@ kbId: 4677
     ``` yaml
     ...
     # Адрес сервера S3 с указанием порта, идентификатор ключа доступа и секретный ключ
-    s3.default.endpointURL: http://s3.example.com:9000
+    s3.default.endpointURL: http://<s3hostname>:<s3port>
     s3.default.accessKey: xxxxx
     s3.default.secretKey: xxxxx
     # Установите значение true, если сервер принимает только запросы path-style вида:
-    # https://s3.region-code.amazonaws.com/bucket-name/key-name
+    # https://<s3hostname>/bucket-name/key-name
     s3.default.pathStyle: true
     s3.default.description: Подключение к S3
 

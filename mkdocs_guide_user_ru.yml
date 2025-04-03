@@ -273,12 +273,16 @@ nav:
       - architect/organizational_structure_modeling/organizational_structure_designer.md
   - Практические примеры:
     - examples/autonumerating_records.md
+    - examples/autonumerating_related_records.md
     - examples/document_clone_scenario_n3.md
     - examples/document_download_archive_csharp.md
     - examples/document_download_archive_related_record_csharp.md
     - examples/document_download_to_server_csharp.md
     - examples/substring_search.md
-    - examples/enum_attribute_value_calculation.md
+    - examples/attribute_enum_value_calculation.md
+    - examples/attribute_enum_value_filter.md
+    - examples/attribute_enum_calculate_current_value.md
+    - examples/attribute_enum_calculate_registry.md
     - examples/script_using_local_variable.md
     - examples/scenario_verify_data.md
     - examples/multilingual_app.md
@@ -292,6 +296,7 @@ nav:
     - examples/template_reference_data_api.md
   - Обзор версий:
     - general/changelog/changelog.md
+    - general/changelog/release_notes_5.0.13286.md
     - general/changelog/release_notes_5.0.md
 
 exclude_docs: |

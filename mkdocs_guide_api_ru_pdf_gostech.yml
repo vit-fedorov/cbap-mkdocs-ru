@@ -1,0 +1,27 @@
+# This file is used for to output PDF version of the Russian help system as PDF/CBAP_User_Guide_RU.pdf
+# It requires GTK3. Installer: install\installgtk3.ps1
+# This configuration and PDF build pipeline are a work in progress. Do not build production PDFs yet.
+# Command: 
+# py -m mkdocs build -f mkdocs_ru_pdf.yml
+
+INHERIT: mkdocs_guide_api_ru_pdf.yml
+
+site_dir: pdf/
+
+site_url: ''
+
+extra:
+  gostech: true
+  apacheIgniteVariants: Platform V DataGrid
+  apacheKafkaVariants: Platform V Corax
+  nginxVariants: Platform V SynGX
+  notificationServiceVariants: Platform V Notification Center
+  openSearchVariants:  Platform V Search
+  zabbixVariants: Platform V Monitor
+  auditVariants: Platform V Audit
+  authServiceVariants: Platform V IAM
+
+plugins:
+  with-pdf:
+    output_path: ../Comindware Platform 5.0. Руководство по использованию API. ГосТех.pdf
+    enabled_if_env: ''

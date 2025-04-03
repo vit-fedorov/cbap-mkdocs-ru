@@ -361,7 +361,7 @@ include-markdown ".snippets/email_receive_logics.md"
 
         !!! note "Примечание"
 
-            Для обработки писем с решениями _Руководителя_ рекомендуется использовать отдельный ящик эл. почты, например: _leavedecisions@example.com_.
+            Для обработки писем с решениями _Руководителя_ рекомендуется использовать отдельный ящик эл. почты, например: `leavedecisions@<hostname>`.
 
     - **Интервал опроса:** укажите интервал, с которым **{{ productName }}** будет проверять наличие новых писем.
 
@@ -441,11 +441,11 @@ include-markdown ".snippets/email_receive_logics.md"
                 <tbody markdown="block">
                 <tr markdown="block">
                     <td markdown="block">
-                <a href="mailto:leavedecisions@example.com?subject=Отпуск согласован. Заявление № [{ApplicationNumber}]">
+                <a href="mailto:leavedecisions@<hostname>?subject=Отпуск согласован. Заявление № [{ApplicationNumber}]">
                 Согласовать отпуск</a>
                     </td>
                     <td markdown="block">
-                        <a href="mailto:leavedecisions@example.com?subject=В отпуске отказано. Заявление № [{ApplicationNumber}]&body=Причина отказа:">
+                        <a href="mailto:leavedecisions@<hostname>?subject=В отпуске отказано. Заявление № [{ApplicationNumber}]&body=Причина отказа:">
                         Отказать в отпуске</a>
                     </td>
                 </tr>

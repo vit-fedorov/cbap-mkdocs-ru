@@ -3095,7 +3095,7 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:userGroupMembership  ?goupList.`
+`?user cmwaccount:userGroupMembership  ?groupList.`
 </td>
 </tr>
 <tr markdown="block">

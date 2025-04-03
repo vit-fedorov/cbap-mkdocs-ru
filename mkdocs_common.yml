@@ -29,7 +29,7 @@ extra:
   apacheIgniteVariants: Apache Ignite
   apacheKafkaVariants: Apache Kafka
   nginxVariants: NGINX
-  notificationServerVariants: SMTP/IMAP
+  notificationServiceVariants: SMTP/IMAP
   openSearchVariants: OpenSearch (Elasticsearch)
   zabbixVariants: Zabbix
   productVersion: 5.0

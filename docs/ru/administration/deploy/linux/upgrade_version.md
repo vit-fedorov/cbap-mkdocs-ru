@@ -1,13 +1,19 @@
 ---
-title: Обновление версии экземпляра ПО
+title: 'Обновление версии экземпляра ПО с его остановкой'
 kbId: 4624
 ---
 
-# Обновление версии экземпляра ПО
+# Обновление версии экземпляра ПО с его остановкой {: #upgrade_version_linux }
 
 ## Введение
 
-Здесь представлены инструкции по обновлению версии экземпляра ПО **{{ productName }}** с 4.7.2 до версий 4.7.3–5.0 для ОС Linux.
+Здесь представлены инструкции по обновлению версии экземпляра ПО **{{ productName }}** на одном и том же сервере с остановкой экземпляра.
+
+Инструкции даны для обновления с версий 4.7.2 до версий 4.7.3–5.0 в ОС Linux.
+
+!!! tip "Совет"
+
+    Этот способ можно использовать, если ПО **{{ productName }}** развёрнуто на одной машине и нет возможности развернуть новую машину для экземпляра ПО новой версии. Если вы можете развернуть новую машину, то рекомендуется следовать инструкции _«[Обновление версии экземпляра ПО без его остановки][upgrade_version_linux_no_stop]»_.
 
 ## Порядок обновления версии экземпляра ПО
 
@@ -17,18 +23,23 @@ kbId: 4624
     - Остановите экземпляр ПО.
     - Сохраните конфигурацию экземпляра ПО и вспомогательных служб.
     - Удалите компоненты старой версии ПО.
+    - Переместите директорию с базой данных экземпляра ПО в резервную директорию.
 
 2. Обновите версию экземпляра ПО:
 
-    - Скачайте и распакуйте дистрибутив новой версии ПО.
+    - Скачайте и распакуйте два дистрибутива: вспомогательного ПО и новой версии ПО.
+    - Обновите версию библиотек `librdkafka`.
     - Установите новую версию ПО.
-    - Обновите экземпляр ПО до новой версии.
+    - Удалите экземпляр ПО старой версии
+    - Создайте экземпляр ПО новой версии.
     - Обновите конфигурацию экземпляра ПО и вспомогательных служб.
     - Перезапустите экземпляр ПО и вспомогательные службы.
-
     - Инициализируйте экземпляр ПО.
+    - Остановите экземпляр ПО.
+    - Скопируйте в экземпляр ПО ранее перемещённую директорию с базой данных.
+    - Запустите экземпляр ПО.
     - Обновите структуру данных до новой версии.
-    - Снова перезапустите запустите экземпляр ПО.
+    - Снова перезапустите экземпляр ПО.
 
 ## Подготовка экземпляра ПО к обновлению {: .pageBreakBefore }
 
@@ -43,46 +54,7 @@ kbId: 4624
 
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-3. Удостоверьтесь, что файлы конфигурации соответствуют приведённым ниже образцам, и при необходимости создайте и отредактируйте их.
-{: #config_samples }
-
-    - Отредактируйте файл `/usr/share/comindware/configs/instance/<instanceName>.yml` по следующему образцу:
-
-    {%
-    include-markdown "./configuration_files.md"
-    start="<!--instanceYML-start-->"
-    end="<!--instanceYML-end-->"
-    %}
-
-    --8<-- "instance_config_warning.md"
-
-    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
-
-    - Отредактируйте файл `/var/www/<instanceName>/adapterhost.yml` по следующему образцу:
-
-    {%
-    include-markdown "./configuration_files.md"
-    start="<!--adapterhostYML-start-->"
-    end="<!--adapterhostYML-end-->"
-    %}
-
-    !!! warning "Внимание!"
-
-        Файл `adapterhost.yml` не должен содержать пустых строк.
-
-    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
-
-    - Отредактируйте файл `/var/www/<instanceName>/apigateway.yml` по следующему образцу:
-
-    {%
-    include-markdown "./configuration_files.md"
-    start="<!--apigatewayYML-start-->"
-    end="<!--apigatewayYML-end-->"
-    %}
-
-    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
-
-4. Сохраните резервную копию конфигурационных файлов, например в директорию `/var/backups/config_tmp`:
+3. Сохраните резервную копию файлов конфигурации, например в директорию `/var/backups/config_tmp`:
 {: #NginxBackup}
 
     - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
@@ -90,8 +62,10 @@ kbId: 4624
     ``` sh
     mkdir -p /var/backups/config_tmp/
     cd /var/www/<instanceName>/
-    cp *.config *.yml /var/backups/config_tmp/
+    cp *.config *.yml *.json /var/backups/config_tmp/
+    cp /var/www/<instanceName>/data/Plugins/Agent/Agent.config /var/backups/config_tmp/
     cp /etc/nginx/sites-available/comindware<instanceName> /var/backups/config_tmp/
+    cp /etc/sysconfig/comindware<instanceName>-env /var/backups/config_tmp/
     ```
 
     - **РЕД ОС**, **Rocky** (RPM-based)
@@ -99,8 +73,10 @@ kbId: 4624
     ``` sh
     mkdir -p /var/backups/config_tmp/
     cd /var/www/<instanceName>/
-    cp *.config *.yml /var/backups/config_tmp/
+    cp *.config *.yml *.json /var/backups/config_tmp/
+    cp /var/www/<instanceName>/data/Plugins/Agent/Agent.config /var/backups/config_tmp/
     cp /etc/nginx/conf.d/comindware<instanceName> /var/backups/config_tmp/
+    cp /etc/sysconfig/comindware<instanceName>-env /var/backups/config_tmp/
     ```
 
     - **Альт Сервер**
@@ -108,8 +84,10 @@ kbId: 4624
     ``` sh
     mkdir -p /var/backups/config_tmp/
     cd /var/www/<instanceName>/
-    cp *.config *.yml /var/backups/config_tmp/
+    cp *.config *.yml *.json /var/backups/config_tmp/
+    cp /var/www/<instanceName>/data/Plugins/Agent/Agent.config /var/backups/config_tmp/
     cp /etc/nginx/sites-available.d/comindware<instanceName> /var/backups/config_tmp/
+    cp /etc/sysconfig/comindware<instanceName>-env /var/backups/config_tmp/
     ```
 
     Здесь `<instanceName>` — имя экземпляра ПО.
@@ -144,13 +122,22 @@ kbId: 4624
     ``` sh
     rm -rf <distPath>/CMW_<osname>
     ```
+
+9. Переместите директорию с базой данных экземпляра ПО (`<username>` — имя пользователя Linux):
+{: #ConfigBackup }
+
+    ```sh
+    mkdir -p /home/<username>/<instanceName>
+    mv /var/lib/comindware/<instanceName> /home/<username>/<instanceName>
+    ```
+
     {% include-markdown ".snippets/pdfEndOfBlockHack.md" %}
 
 ## Обновление версии ПО для экземпляра {: .pageBreakBefore }
 
 !!! warning "Внимание!"
 
-    Если при обновлении [на шаге 12](#dataUpgrade) будут обнаружены ошибки, не продолжайте обновление, установите старую версию, восстановите экземпляр ПО из резервной копии и обратитесь в службу поддержки **{{ companyName }}**.
+    Если при обновлении [на шаге 22](#dataUpgrade) будут обнаружены ошибки, не продолжайте обновление, установите старую версию, восстановите экземпляр ПО из резервной копии и обратитесь в службу поддержки **{{ companyName }}**.
 
 !!! note "Обновление нескольких экземпляров ПО"
 
@@ -158,46 +145,86 @@ kbId: 4624
 
     После обновления всех экземпляров ПО для экономии места старую версию ПО можно удалить согласно инструкции _«[Удаление версии ПО][deploy_guide_linux_delete_version]»_.
 
-1. Скачайте и распакуйте дистрибутив с новой версией ПО (`X.X`, `<versionNumber>` — номер версии ПО):
+1. Скачайте и распакуйте дистрибутив с новой версией вспомогательного ПО (`X.X`, `<prerequisitesVersion>` — номер версии):
 
     ``` sh
     cd <distPath>
-    tar -xf X.X-release-ru-<versionNumber>.<osname>.tar.gz
+    tar -xf X.X-release-ru-<prerequisitesVersion>.prerequisites.<osname>.tar.gz
     ```
 
-2. Перейдите в распакованную директорию:
+2. Перейдите в распакованную директорию библиотек `librdkafka`:
 
     ``` sh
-    cd CMW_<osname>_<versionNumber>/scripts/
+    cd CMW_<osname>/repo/kafka/librd/
     ```
 
-3. Запустите установку распакованного дистрибутива ПО:
+3. Обновите библиотеки `librdkafka`:
+
+    - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
+
+    ``` sh
+    dpkg -i *.deb
+    ```
+
+    - **РЕД ОС**, **Rocky** (RPM-based)
+
+    ``` sh
+    rpm -i *.rpm
+    ```
+
+    - **Альт Сервер**
+
+    ``` sh
+    apt-get install -y *.rpm
+    ```
+
+4. Скачайте и распакуйте дистрибутив с новой версией ПО (`X.X`, `<version>` — номер версии):
+
+    ``` sh
+    cd <distPath>
+    tar -xf X.X-release-ru-<version>.<osname>.tar.gz
+    ```
+
+5. Перейдите в распакованную директорию:
+
+    ``` sh
+    cd CMW_<osname>_<version>/scripts/
+    ```
+
+6. Установите новую версию ПО:
 
     ``` sh
     bash version_install.sh
     ```
 
-4. Проверьте наличие и имя директории установленной версии ПО:
+7. Проверьте наличие и имя директории установленной версии ПО:
 
     ``` sh
     bash version_list.sh
     ```
 
-5. Отобразится список установленных версий ПО на сервере.
-6. Перейдите в директорию скриптов для работы с экземпляром ПО и запустите его обновление до требуемой версии:
+8. Отобразится список установленных версий ПО на сервере.
+9. Удалите экземпляр ПО старой версии:
+
+    ```sh
+    bash instance_delete.sh -n=<instanceName>
+    ```
+
+10. Создайте экземпляр ПО новой версии:
 
     ``` sh
-    bash instance_upgrade.sh -n=<instanceName> -vp=/var/www/.cmw_version/<versionNumber>
+    bash instance_create.sh -n=<instanceName> -p=<portNumber> -v=<version>
     ```
 
     Здесь:
 
-    - `-n=<instanceName>` — имя обновляемого экземпляра ПО;
-    - `-vp=/var/www/.cmw_version/<versionNumber>` — укажите путь к директории с установленной версией ПО, где `<versionNumber>` — номер версии ПО.
+    - `-n=<instanceName>` — имя экземпляра ПО;
+    - `-p=<portNumber>` - порт для экземпляра ПО, по умолчанию: 80 (необязательный ключ);
+    - `-v=<version>` — установленная версия ПО.
 
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-7. По окончании обновления скрипт выведет информацию о компонентах экземпляра ПО. Удостоверьтесь, что компоненты успешно обновлены.
+11. По окончании создания скрипт выведет информацию о компонентах экземпляра ПО. Удостоверьтесь, что компоненты успешно установлены.
 
     Пример результата выполнения скрипта:
 
@@ -213,7 +240,7 @@ kbId: 4624
     OK     Database folder created: Yes
     OK     Streams folder created: No 
     OK     Logs folder created: Yes
-    OK     Used version: <versionNumber>
+    OK     Used version: <version>
     OK     Logs configured.
     OK     Sites created.
     OK     Sites enabled.
@@ -226,7 +253,7 @@ kbId: 4624
     [Done] Upgrade CBAP instance.
     ```
 
-    Если какая-либо из служб имеет статус `FAILED`, перезапустите её (`<serviceName>` — имя службы):
+    Если какая-либо из служб имеет статус `FAILED`, перезапустите её, например:
 
     ``` sh
     systemctl restart comindware<instanceName>.service
@@ -236,12 +263,12 @@ kbId: 4624
     systemctl restart elasticsearch.service 
     ```
 
-8. Проверьте корректность конфигурации NGINX для экземпляра ПО:
+12. Отредактируйте конфигурацию NGINX для экземпляра ПО в соответствии с резервной копией, [сохранённой ранее](#NginxBackup):
 
     - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
 
         ``` sh
-        cat /etc/nginx/sites-available/comindware<instanceName>
+        nano /etc/nginx/sites-available/comindware<instanceName>
         ```
 
     - **РЕД ОС**, **Rocky** (RPM-based)
@@ -256,43 +283,65 @@ kbId: 4624
         nano /etc/nginx/sites-available.d/comindware<instanceName>
         ```
 
-    - При необходимости восстановите конфигурацию NGINX, [сохранённую ранее](#NginxBackup).
+13. Перезапустите службу NGINX для применения изменений:
 
-        - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
+    ```sh
+    nginx -s reload
+    ```
 
-        ``` sh
-        cp /var/backups/config_tmp/comindware<instanceName> /etc/nginx/sites-available/
-        nginx -t && nginx -s reload
-        ```
+14. Отредактируйте файлы конфигурации в соответствии с резервными копиями, [сохранёнными ранее](#ConfigBackup):
 
-        - **РЕД ОС**, **Rocky** (RPM-based)
+    ```sh
+    nano /etc/sysconfig/comindware<instanceName>-env
+    nano /var/www/<instanceName>/adapterhost.yml
+    nano /var/www/<instanceName>/apigateway.yml
+    nano /var/www/<instanceName>/Ignite.config
+    nano /usr/share/comindware/configs/instance/<instanceName>.yml
+    ```
 
-        ``` sh
-        cp /var/backups/config_tmp/comindware<instanceName> /etc/nginx/conf.d/
-        nginx -t && nginx -s reload
-        ```
+    !!! warning "Внимание!"
 
-        - **Альт Сервер**
+        - В новейших версиях **{{ productName }}** отсутствует файл `Workers.config`.
+        - Настройка соответствующих служб выполняется в файле конфигурации экземпляра ПО `<instanceName>.yml`.
 
-        ``` sh
-        cp /var/backups/config_tmp/comindware<instanceName> /etc/nginx/sites-available.d/
-        nginx -t && nginx -s reload
-        ```
-
-9. Удостоверьтесь, что файлы конфигурации соответствуют [приведённым выше образцам](#config_samples).
-10. Перезапустите сервисы, настройки которых были изменены:
+15. Перезапустите сервисы, настройки которых были изменены, например:
 
     ``` sh
     systemctl restart apigateway<instanceName> comindware<instanceName>
     ```
 
-11. Откройте сайт экземпляра ПО в браузере, дождитесь окончания загрузки, одновременно открыв выдачу журналов экземпляра в терминале:
+16. Откройте сайт экземпляра ПО в браузере, одновременно открыв выдачу журналов экземпляра в терминале:
 
     ``` sh
     tail -f /var/log/comindware/<instanceName>/Log/sys*
     ```
 
-12. Подтвердите успешное обновление структуры данных.
+17. В браузере выполните инициализацию экземпляра ПО, выполните вход и проверьте работоспособность ПО.
+18. Остановите экземпляр ПО:
+
+    ``` sh
+    systemctl stop comindware<instanceName>
+    ```
+
+19. Скопируйте в экземпляр ПО директорию с базой данных экземпляра ПО, сохранённую ранее (`<username>` — имя пользователя Linux):
+
+    ```sh
+    cp  /home/<username>/<instanceName>/Database /var/lib/comindware/<instanceName>/Database
+    ```
+
+20. Запустите экземпляр ПО:
+
+    ``` sh
+    systemctl restart comindware<instanceName>
+    ```
+
+21. Откройте сайт экземпляра ПО в браузере, дождитесь окончания загрузки, одновременно открыв выдачу журналов экземпляра в терминале:
+
+    ``` sh
+    tail -f /var/log/comindware/<instanceName>/Log/sys*
+    ```
+
+22. Дождитесь завершения обновления структуры данных и проверьте его успешное выполнение.
 {: #dataUpgrade }
 
     !!! warning "Внимание!"
@@ -309,15 +358,15 @@ kbId: 4624
     - Удостоверьтесь, что в журнале `UpgradeOntology.log` последняя запись содержит строку `Upgrade of ontology completed successfully`.
     - Удостоверьтесь, что в журнале `upgrade<ГГГГ-ММ-ДД>.log` последняя запись содержит строку `Upgrade completed`.
     - Удостоверьтесь, что в журналах отсутствуют ошибки обновления. Найдите их по ключевому слову `error`.
-    - Если обновление выполнено успешно, переходите к шагу 13.
+    - Если обновление выполнено успешно, переходите к шагу 23.
     - Если в журнале обновления имеются ошибки:
 
-        1. Не переходите к шагу 13.
+        1. Не переходите к шагу 23.
         2. Снова установите для экземпляра старую версию ПО.
         3. Восстановите базу данных из резервной копии.
         4. Обратитесь в службу поддержки **{{ companyName }}**, предоставив журналы обновления и ошибок для анализа.
 
-13. Создайте резервную копию экземпляра ПО:
+23. Создайте резервную копию экземпляра ПО:
 
     - в формате `.CDBBZ` средствами **{{ productName }}**;
 
@@ -325,8 +374,8 @@ kbId: 4624
 
     - c помощью скрипта для создания снимка базы.
 
-14. Остановите экземпляр ПО.
-15. Распакуйте резервную копию и удалите из неё следующие директории кэшей:
+24. Остановите экземпляр ПО.
+25. Распакуйте резервную копию и удалите из неё следующие директории кэшей:
 
     ``` sh
     rm -rf cacheGroup-*-TableIdentity
@@ -339,19 +388,20 @@ kbId: 4624
     rm -rf cacheGroup-Keys
     ```
 
-16. Очистите директорию с базой данных экземпляра ПО:
+26. Очистите директорию с базой данных экземпляра ПО:
 
     ``` sh
     rm -rf /var/lib/comindware/<instanceName>/Database/*
     ```
 
-17. Скопируйте очищенную резервную копию в директорию с базой данных `/var/lib/comindware/<instanceName>/Database/`.
-18. Запустите экземпляр ПО и войдите в систему.
+27. Скопируйте очищенную резервную копию в директорию с базой данных `/var/lib/comindware/<instanceName>/Database/`.
+28. Откройте сайт экземпляра ПО в браузере, дождитесь его инициализации и выполните вход.
 
 <div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
+- _[Обновление версии экземпляра ПО без его остановки][upgrade_version_linux_no_stop]_
 - _[Установка, запуск, инициализация и остановка ПО][deploy_guide_linux]_
 - _[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup_configure]_
 - _[Подсистема журналирования][logging_engine]_

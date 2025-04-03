@@ -90,7 +90,7 @@ def updateArticle(article_id):
         return
     
     article_title = result[1]
-    article_content = getArticleContentById(article_id)
+    article_content, mkdocs_title = getArticleContentById(article_id)
     if article_content:
         # Escape the HTML and backslashes for MySQL
         article_content = html.escape(article_content).replace('\\','\\\\')
@@ -101,7 +101,7 @@ def updateArticle(article_id):
       
     if contentFound:
         try:
-            update = input(f"Update article {article_id}: {article_title}? Y/N\n").lower() == 'y'
+            update = input(f"KB title:     {article_title}\nUpdate article {article_id} content and title? Y/N\n").lower() == 'y'
             if update:
                 article_last_updation = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 c.execute("""
@@ -109,9 +109,10 @@ def updateArticle(article_id):
                         SET 
                         article_title=%s,
                         article_content=%s,
-                        article_last_updation=%s
+                        article_last_updation=%s,
+                        article_status='approved'
                         WHERE article_id=%s;
-                        """, (article_title, article_content, article_last_updation, article_id))
+                        """, (mkdocs_title, article_content, article_last_updation, article_id))
         except:
             print("Couldn't update the article")
             exit()
@@ -265,7 +266,10 @@ def getArticleContentById(article_id):
                     foundMatch = kbIdPattern.search(content)
                     if foundMatch:
                         print(f'Found content for article {foundMatch.group(1)}')
-                        return content
+                        titlePattern = re.compile(fr'<div.*kb-title="(.+?)".*?>', flags=re.MULTILINE)
+                        title = titlePattern.search(content).group(1)
+                        print(f'MkDocs title: {title}')
+                        return content, title
                     else: content = None
 
     return None

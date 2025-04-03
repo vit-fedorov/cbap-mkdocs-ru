@@ -1,4 +1,4 @@
-<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4677">
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4677" kb-title="Хранилище S3">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -42,6 +42,19 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h2 id="введение">Введение</h2>
+<div class="notice notice-error">
+<p class="admonition-title">Внимание!</p>
+<ul>
+<li>Работоспособность подключения <strong>Comindware Platform</strong> к S3 протестирована с со следующими службами:<ul>
+<li>Amazon S3</li>
+<li>Yandex Object Storage</li>
+<li>S3 MinIO</li>
+</ul>
+</li>
+<li>Совместимость с другими S3-подобными хранилищами не тестировалась.</li>
+<li>При подключении к другим S3-подобным хранилищам необходимо учитывать их возможно неполное соответствие спецификации API Amazon S3, что может привести к ограниченной или неработоспособной интеграции.</li>
+</ul>
+</div>
 <p>ПО <strong>Comindware Platform</strong> может хранить загруженные пользователями и сформированные системой файлы в хранилище S3:</p>
 <ul>
 <li>файлы, прикреплённые к атрибутам типа «Документ» и «Изображение»;</li>
@@ -70,7 +83,7 @@
 </li>
 <li>
 <p>Добавьте в файл <code>instanceName.yml</code> следующие директивы:</p>
-<div class="highlight"><code><pre><span></span><code><span class="c1"># Адрес сервера S3 с указанием порта, идентификатор ключа доступа и секретный ключ</span></code> <br/><code><span class="na">s3.default.endpointURL</span><span class="o">:</span><span class="w"> </span><span class="s">http://s3.example.com:9000</span></code> <br/><code><span class="na">s3.default.accessKey</span><span class="o">:</span><span class="w"> </span><span class="s">xxxxx</span></code> <br/><code><span class="na">s3.default.secretKey</span><span class="o">:</span><span class="w"> </span><span class="s">xxxxx</span></code> <br/><code><span class="c1"># Установите значение true, если сервер принимает только запросы path-style вида:</span></code> <br/><code><span class="c1"># https://s3.region-code.amazonaws.com/bucket-name/key-name</span></code> <br/><code><span class="na">s3.default.pathStyle</span><span class="o">:</span><span class="w"> </span><span class="s">true</span></code> <br/><code><span class="na">s3.default.description</span><span class="o">:</span><span class="w"> </span><span class="s">Подключение к S3</span></code> <br/><code></code> <br/><code><span class="c1"># Параметры контейнера загруженных файлов</span></code> <br/><code><span class="na">userStorage.type</span><span class="o">:</span><span class="w"> </span><span class="s">S3</span></code> <br/><code><span class="na">userStorage.s3.bucket</span><span class="o">:</span><span class="w"> </span><span class="s">user-files-bucket</span></code> <br/><code><span class="na">userStorage.s3.connection</span><span class="o">:</span><span class="w"> </span><span class="s">default</span></code> <br/><code></code> <br/><code><span class="c1"># Параметры контейнера временных файлов</span></code> <br/><code><span class="na">tempStorage.type</span><span class="o">:</span><span class="w"> </span><span class="s">S3</span></code> <br/><code><span class="na">tempStorage.s3.bucket</span><span class="o">:</span><span class="w"> </span><span class="s">temp-files-bucket</span></code> <br/><code><span class="na">tempStorage.s3.connection</span><span class="o">:</span><span class="w"> </span><span class="s">default</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="c1"># Адрес сервера S3 с указанием порта, идентификатор ключа доступа и секретный ключ</span></code> <br/><code><span class="na">s3.default.endpointURL</span><span class="o">:</span><span class="w"> </span><span class="s">http://&lt;s3hostname&gt;:&lt;s3port&gt;</span></code> <br/><code><span class="na">s3.default.accessKey</span><span class="o">:</span><span class="w"> </span><span class="s">xxxxx</span></code> <br/><code><span class="na">s3.default.secretKey</span><span class="o">:</span><span class="w"> </span><span class="s">xxxxx</span></code> <br/><code><span class="c1"># Установите значение true, если сервер принимает только запросы path-style вида:</span></code> <br/><code><span class="c1"># https://&lt;s3hostname&gt;/bucket-name/key-name</span></code> <br/><code><span class="na">s3.default.pathStyle</span><span class="o">:</span><span class="w"> </span><span class="s">true</span></code> <br/><code><span class="na">s3.default.description</span><span class="o">:</span><span class="w"> </span><span class="s">Подключение к S3</span></code> <br/><code></code> <br/><code><span class="c1"># Параметры контейнера загруженных файлов</span></code> <br/><code><span class="na">userStorage.type</span><span class="o">:</span><span class="w"> </span><span class="s">S3</span></code> <br/><code><span class="na">userStorage.s3.bucket</span><span class="o">:</span><span class="w"> </span><span class="s">user-files-bucket</span></code> <br/><code><span class="na">userStorage.s3.connection</span><span class="o">:</span><span class="w"> </span><span class="s">default</span></code> <br/><code></code> <br/><code><span class="c1"># Параметры контейнера временных файлов</span></code> <br/><code><span class="na">tempStorage.type</span><span class="o">:</span><span class="w"> </span><span class="s">S3</span></code> <br/><code><span class="na">tempStorage.s3.bucket</span><span class="o">:</span><span class="w"> </span><span class="s">temp-files-bucket</span></code> <br/><code><span class="na">tempStorage.s3.connection</span><span class="o">:</span><span class="w"> </span><span class="s">default</span></code> <br/></pre></code></div>
 <div class="notice notice-warning">
 <p class="admonition-title">Внимание!</p>
 <ul>
@@ -117,7 +130,6 @@
 <p>Не вносите изменения в окне свойств подключения к хранилищу S3, заданному в <a class="mkdocs_imported_link" href="#настройка-конфигурации-экземпляра-по">файле конфигурации</a> экземпляра ПО (<code>/usr/share/comindware/configs/instance/instanceName.yml</code>) с помощью директивы <code>s3.default</code>. Они не будут применены к конфигурации экземпляра ПО и при перезапуске сервера будут заменены на значения из файла конфигурации <code>instanceName.yml</code>.</p>
 <p>Настраивать подключение к хранилищу S3 следует только в файле <code>/usr/share/comindware/configs/instance/instanceName.yml</code></p>
 </div>
-<p><em><figure class="screenshot_with_caption" markdown=""><img alt="Настройка подключения к хранилищу S3" src="https://kb.comindware.ru/assets/img_65e9b87a6e895.png"/><figcaption class="caption">Настройка подключения к хранилищу S3</figcaption></figure></em></p>
 <div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <ul>

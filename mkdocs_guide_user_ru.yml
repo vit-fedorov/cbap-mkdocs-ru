@@ -273,12 +273,16 @@ nav:
       - architect/organizational_structure_modeling/organizational_structure_designer.md
   - Практические примеры:
     - examples/autonumerating_records.md
+    - examples/autonumerating_related_records.md
     - examples/document_clone_scenario_n3.md
     - examples/document_download_archive_csharp.md
     - examples/document_download_archive_related_record_csharp.md
     - examples/document_download_to_server_csharp.md
     - examples/substring_search.md
-    - examples/enum_attribute_value_calculation.md
+    - examples/attribute_enum_value_calculation.md
+    - examples/attribute_enum_value_filter.md
+    - examples/attribute_enum_calculate_current_value.md
+    - examples/attribute_enum_calculate_registry.md
     - examples/script_using_local_variable.md
     - examples/scenario_verify_data.md
     - examples/multilingual_app.md
@@ -292,10 +296,18 @@ nav:
     - examples/template_reference_data_api.md
   - Обзор версий:
     - general/changelog/changelog.md
+    - general/changelog/release_notes_5.0.13286.md
     - general/changelog/release_notes_5.0.md
 
 exclude_docs: |
-  
+  administration/backup/linux/restore_cdbbz_gostech.md
+  administration/connections_communication_routes/authentication/openid_connection_gostech.md
+  administration/connections_communication_routes/system_connections/s3_connection_gostech.md
+  administration/deploy/logging_engine_gostech.md
+  administration/deploy/linux/configuration_files_gostech.md
+  administration/deploy/linux/deploy_guide_gostech.md
+  administration/deploy/linux/upgrade_version_gostech.md
+  administration/deploy/linux/upload_size_limit_configure_gostech.md
   administration/account_administration/authentication_authorization_sessions.md
   administration/account_administration/accounts_dc_sync/index.md
   administration/backup/linux/**

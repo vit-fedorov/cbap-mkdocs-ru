@@ -13,18 +13,24 @@ kbId: 4620
 
 ## Содержимое директорий {% if userGuide or kbExport %}— Linux{% endif %} {: #paths_linux}
 
-По умолчанию файлы экземпляра ПО находятся в директории `/var/lib/comindware/<instanceName>`
+По умолчанию файлы экземпляра ПО находятся {% if gostech %}в файловой системе контейнера{% endif %} в директории `/var/lib/comindware/<instanceName>`
 
 Здесь и далее `<instanceName>` — имя экземпляра ПО.
 
 - `/usr/share/comindware/configs/instance/<instanceName>.yml` — файл конфигурации. В этом файле задаются все остальные пути, перечисленные ниже.
+{% if gostech %}
+- `/usr/share/comindware/<instanceName>` — исполняемые и конфигурационные файлы экземпляра ПО.
+{% else %}
 - `/var/www/<instanceName>` — исполняемые и конфигурационные файлы экземпляра ПО.
+{% endif %}
 - `/var/lib/comindware/<instanceName>/Database/db` — файлы базы данных.
-- `/var/lib/comindware/<instanceName>/Database/log` — файлы журналов Apache Ignite.
+{% if not gostech %}
+- `/var/lib/comindware/<instanceName>/Database/log` — файлы журналов {{ apacheIgniteVariants }}.
 - `/var/log/comindware/<instanceName>/Logs/` — файлы журналов.
 - `/var/log/comindware/<instanceName>/Logs/Archive` — архивы журналов.
+{% endif %}
 - `/var/lib/comindware/<instanceName>/Database/Scripts` — скомпилированные библиотеки для скриптов на языке С#.
-- `/var/lib/comindware/<instanceName>/Database/snapshots` — снимки данных Apache Ignite.
+- `/var/lib/comindware/<instanceName>/Database/snapshots` — снимки данных {{ apacheIgniteVariants }}.
 - `/var/lib/comindware/<instanceName>/Database/wal` — файлы журнала предварительной записи.
 - `/var/lib/comindware/<instanceName>/Streams` — загруженные пользователями и сформированные системой файлы, которые прикреплены к соответствующим атрибутам.
 {: .pageBreakAfter }
@@ -72,7 +78,9 @@ kbId: 4620
 {% if adminGuideLinux or kbExport %}
 - _[Конфигурация экземпляра, компонентов ПО и служб. Настройка в Linux][configuration_files_linux]_
 {% endif %}
+{% if not gostech %}
 - _[Антивирусное ПО. Настройка исключений: пути и файлы {{ productName }}][antivirus_exceptions_configure]_
+{% endif %}
 - _[Подсистема журналирования][logging_engine]_
 
 </div>

@@ -266,7 +266,7 @@ def getArticleContentById(article_id):
                     foundMatch = kbIdPattern.search(content)
                     if foundMatch:
                         print(f'Found content for article {foundMatch.group(1)}')
-                        titlePattern = re.compile(fr'<div.*kbTitle="(.+?)".*?>', flags=re.MULTILINE)
+                        titlePattern = re.compile(fr'<div.*kb-title="(.+?)".*?>', flags=re.MULTILINE)
                         title = titlePattern.search(content).group(1)
                         print(f'MkDocs title: {title}')
                         return content, title

@@ -135,9 +135,9 @@
       {% set global.kbId = page.meta.kbId %}
     {% endif %}
     {% if page.meta.kbTitle %}
-      {% set global.title = page.meta.kbTitle %}
+      {% set global.kbTitle = page.meta.kbTitle %}
     {% elif page.meta.title %}
-      {% set global.title = page.meta.title %}
+      {% set global.kbTitle = page.meta.title %}
     {% endif %}
   {% endif %}
   <!-- Set text direction and color palette, if defined -->
@@ -156,10 +156,10 @@
       data-md-color-primary="{{ primary | replace(' ', '-') }}"
       data-md-color-accent="{{ accent | replace(' ', '-') }}"
       kb-id="{{ global.kbId }}"
-      kbTitle="{{ global.title }}"
+      kb-title="{{ global.kbTitle }}"
     >
   {% else %}
-    <body dir="{{ direction }}" kb-id="{{ global.kbId }}" kbTitle="{{ global.title }}">
+    <body dir="{{ direction }}" kb-id="{{ global.kbId }}" kb-title="{{ global.kbTitle }}">
   {% endif %}
     {% set features = config.theme.features or [] %}
 

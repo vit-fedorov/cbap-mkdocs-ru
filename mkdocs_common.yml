@@ -26,6 +26,7 @@ extra:
   productName: 'Comindware Platform'
   productNameEnterprise: 'Comindware Platform Enterprise'
   productNameArchitect: 'Корпоративная архитектура'
+  productNameMobile: 'Comindware Mobile'
   apacheIgniteVariants: Apache Ignite
   apacheKafkaVariants: Apache Kafka
   nginxVariants: NGINX

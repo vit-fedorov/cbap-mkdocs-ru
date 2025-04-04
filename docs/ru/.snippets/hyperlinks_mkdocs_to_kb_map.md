@@ -152,6 +152,8 @@
 
 [map_configure]: {{ kbArticleURLPrefix }}4679
 
+[mobile_app_use]: {{ kbArticleURLPrefix }}5090
+
 [notification_types]: {{ kbArticleURLPrefix }}4682
 
 [monitoring]: {{ kbArticleURLPrefix }}4666

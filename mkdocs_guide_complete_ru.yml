@@ -28,6 +28,7 @@ nav:
     - Обсуждение: using_the_system/discussion_use.md
     - Карты: using_the_system/map_use.md
     - Офисные приложения: using_the_system/office_connectiopn_use.md
+    - using_the_system/mobile_app_use.md
   - Администрирование:
     - Развёртывание ПО:
       - administration/deploy/system_requirements.md
@@ -44,6 +45,7 @@ nav:
         # - administration/deploy/linux/deploy_cluster.md
         - administration/deploy/linux/uninstall_auxiliary_software.md
         - administration/deploy/linux/upgrade_version.md
+        - administration/deploy/linux/upgrade_version_no_stop.md
         - administration/deploy/linux/upload_size_limit_configure.md
         - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_list.md
         - Вспомогательное ПО. Развёртывание:

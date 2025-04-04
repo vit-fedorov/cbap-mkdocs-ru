@@ -152,6 +152,8 @@
 
 [map_configure]: {{ kbArticleURLPrefix }}4679
 
+[mobile_app_use]: {{ kbArticleURLPrefix }}5090
+
 [notification_types]: {{ kbArticleURLPrefix }}4682
 
 [monitoring]: {{ kbArticleURLPrefix }}4666
@@ -805,6 +807,8 @@
 [paths_linux]: {{ kbArticleURLPrefix }}4620#paths_linux
 
 [upgrade_version_linux]: {{ kbArticleURLPrefix }}4624
+
+[upgrade_version_linux_no_stop]: {{ kbArticleURLPrefix }}5097
 
 {% endif %}
 

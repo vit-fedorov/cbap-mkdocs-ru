@@ -806,6 +806,8 @@
 
 [upgrade_version_linux]: {{ kbArticleURLPrefix }}4624
 
+[upgrade_version_linux_no_stop]: {{ kbArticleURLPrefix }}5097
+
 {% endif %}
 
 {% if (userGuide and not (adminGuideLinux or adminGuideWindows)) or kbExport %}

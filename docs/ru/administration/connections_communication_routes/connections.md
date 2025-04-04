@@ -7,7 +7,7 @@ tags:
   - проверка соединения
 hide:
   - tags
-kbId: 2205
+kbId: 4675
 ---
 
 # Подключения. Определения, типы, создание, настройка, удаление {: #connections}
@@ -29,7 +29,7 @@ kbId: 2205
 ### Системные подключения
 
 - [Управление версиями через Git][git_connection]
-- [Elasticsearch][elasticsearch_connection]
+- [{{ openSearchVariants }}][elasticsearch_connection]
 - Абстрактное подключение
 - [Карты][map_configure]
 - [Хранилище S3][s3_connection]
@@ -57,10 +57,10 @@ kbId: 2205
 ### Подключения REST и OData
 
 - [Получение веб-запросов][get_connection]
-- [Отправка веб-запросов][send_http_request_connection]
+- [Отправка веб-запросов][http_send_request_connection]
 - [Синхронизация с веб-сервисом][odata_connection]
-- [Отправка HTTP-запросов][send_http_connection]
-- [Получение HTTP-запросов][receive_http_example]
+- [Отправка HTTP-запросов][http_send_connection]
+- [Получение HTTP-запросов][http_receive_example]
 
 ### Подключения к шине сообщений
 
@@ -78,8 +78,8 @@ kbId: 2205
 
 ### Пользовательские подключения
 
-- Отправка сообщений в систему «СФЕРА Курьер»
-- Получение сообщений из системы «СФЕРА Курьер»
+- [Отправка сообщений в «СФЕРА Курьер»][esphere_send_configure]
+- [Получение сообщений из «СФЕРА Курьер»][esphere_receive_configure]
 
 !!! note "Примечание"
 
@@ -107,11 +107,14 @@ _![Список подключений](connection_list.png)_
 2. Нажмите кнопку «**Удалить**».
 3. Подтвердите удаление.
 
-## Связанные статьи
+<div class="relatedTopics" markdown="block">
 
-**[Пути передачи данных. Определения, типы, создание, настройка, удаление][communication_routes]**
+--8<-- "related_topics_heading.md"
 
-**[Примеры интеграций][integration_examples]**
+- _[Пути передачи данных. Определения, типы, создание, настройка, удаление][communication_routes]_
+- _[Примеры интеграций][integration_examples]_
+
+</div>
 
 {%
 include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"

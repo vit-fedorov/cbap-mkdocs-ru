@@ -1,9 +1,5 @@
 title: Таблицы
 
 nav:
-    - table_definition.md
-    - table_settings.md
-    - table_task_settings.md
-    - table_my_tasks_addition.md
-    - table_clone.md
+    - Таблицы: table_configure.md
     - ...

@@ -4,11 +4,18 @@
 
 INHERIT: mkdocs_common.yml
 
-site_name: Comindware Business Application Platform. База знаний
+site_name: Comindware Platform. База знаний
 
 docs_dir: docs/ru
 
 site_dir: compiled_help
+
+plugins:
+  with-pdf:
+    cover_logo: assets/images/comindware_logo.svg
+    copyright: © Comindware, 2009–2025
+    author: comindware.ru
+    toc_title: Оглавление
 
 markdown_extensions:
   toc:
@@ -21,12 +28,10 @@ markdown_extensions:
         "space": "Пробел"
         }
 
-
-copyright: '<a href="https://www.comindware.ru/" target="_blank">© 2009–2024 Comindware<sup>®</sup></a>. Тема: '
+copyright: '<a href="https://www.comindware.ru/" target="_blank">© 2009–2025 Comindware<sup>®</sup></a>. Тема: '
 
 extra:
     kbSite: https://kb.comindware.ru/index.php?ln=ru
-
     kbArticleURLPrefix: https://kb.comindware.ru/article.php?id=
-
     kbCategoryURLPrefix: https://kb.comindware.ru/category.php?id=
+    publicationDate: Опубликовано 19.03.2025

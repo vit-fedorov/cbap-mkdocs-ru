@@ -1,0 +1,301 @@
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="5067" kb-title="Конфигурация экземпляра, компонентов ПО и служб. Настройка">
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<div class="mce-toc">
+<h2 class="toc-heading">
+      Содержание
+      </h2>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#введение">
+<span class="md-ellipsis">
+      Введение
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#конфигурация-экземпляра-по">
+<span class="md-ellipsis">
+      Конфигурация экземпляра ПО
+    </span>
+</a>
+<nav aria-label="Конфигурация экземпляра ПО" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#пример-yml-файла-конфигурации-экземпляра-по">
+<span class="md-ellipsis">
+      Пример YML-файла конфигурации экземпляра ПО
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#конфигурация-службы-apigateway">
+<span class="md-ellipsis">
+      Конфигурация службы apigateway
+    </span>
+</a>
+<nav aria-label="Конфигурация службы apigateway" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#пример-конфигурации-службы-apigatewayyml">
+<span class="md-ellipsis">
+      Пример конфигурации службы apigateway.yml
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#конфигурация-службы-adapterhost">
+<span class="md-ellipsis">
+      Конфигурация службы adapterhost
+    </span>
+</a>
+<nav aria-label="Конфигурация службы adapterhost" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#пример-файла-конфигурации-adapterhostyml">
+<span class="md-ellipsis">
+      Пример файла конфигурации adapterhost.yml
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#конфигурация-apache-ignite">
+<span class="md-ellipsis">
+      Конфигурация Apache Ignite
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#конфигурация-кучи-java">
+<span class="md-ellipsis">
+      Конфигурация кучи Java
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#конфигурация-nginx">
+<span class="md-ellipsis">
+      Конфигурация NGINX
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#связанные-статьи">
+<span class="md-ellipsis">
+      Связанные статьи
+    </span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h2 id="введение">Введение</h2>
+<p>Здесь представлены инструкции по настройке файлов конфигурации после развёртывания и обновления ПО <strong>Comindware Platform</strong>, его компонентов и служб.</p>
+<h2 id="конфигурация-экземпляра-по">Конфигурация экземпляра ПО</h2>
+<ol class="colored_numbers_list">
+<li>
+<p>Откройте файл конфигурации экземпляра ПО (<code>&lt;instanceName&gt;</code> — имя экземпляра ПО) для редактирования:</p>
+<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code> <br/></pre></code></div>
+</li>
+<li>
+<p>При необходимости измените параметры, например:</p>
+<ul>
+<li><code>journal.server</code> — адрес сервера OpenSearch (Elasticsearch).</li>
+<li><code>journal.name</code> — индекс сервера OpenSearch (Elasticsearch).</li>
+<li><code>db.workDir</code> — директория для хранения базы данных экземпляра ПО.</li>
+<li><code>db.name</code> — префикс кэшей в базе данных экземпляра ПО.</li>
+<li><code>userStorage.localDisk.path</code> — директория для хранения пользовательских файлов.</li>
+<li><code>mq.server</code> — адрес сервера Apache Kafka.</li>
+<li><code>backup.defaultFolder</code> — директория для хранения резервных копий экземпляра ПО.</li>
+<li><code>backup.defaultFileName</code> — имя файла резервной копии экземпляра ПО.</li>
+</ul>
+<div class="notice notice-warning">
+<p class="admonition-title">Внимание!</p>
+<p>Директивы <code>isFederationAuthEnabled</code> и <code>manageAdapterHost</code> требуется удалить, если они присутствуют.</p>
+<p>Директивы <code>mq.server</code> (адрес и порт сервера очереди сообщений), <code>mq.group</code> (идентификатор группы очереди сообщений), <code>mq.node</code> (идентификатор узла очереди сообщений) и <code>cluster.name</code> / <code>clusterName</code> (имя экземпляра ПО) должны совпадать в трёх файлах конфигурации:</p>
+<ul>
+<li><code>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code></li>
+<li><code>/var/www/&lt;instanceName&gt;/adapterhost.yml</code></li>
+<li><code>/var/www/&lt;instanceName&gt;/apigateway.yml</code></li>
+</ul>
+</div>
+</li>
+<li>
+<p>Сохраните файл конфигурации.</p>
+</li>
+<li>
+<p>Убедитесь, что директории, указанные в файле конфигурации, существуют. При необходимости создайте их и задайте права доступа:</p>
+<div class="highlight"><code><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>&lt;path/to/Database&gt;</code> <br/><code>mkdir<span class="w"> </span>-p<span class="w"> </span>&lt;path/to/Streams&gt;</code> <br/><code>mkdir<span class="w"> </span>-p<span class="w"> </span>&lt;path/to/Backup&gt;</code> <br/><code>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">766</span><span class="w"> </span>&lt;path/to/Database&gt;<span class="w"> </span>&lt;path/to/Streams&gt;<span class="w"> </span>&lt;path/to/Backup&gt;</code> <br/><code>chown<span class="w"> </span>-R<span class="w"> </span>&lt;User&gt;:&lt;Group&gt;<span class="w"> </span>&lt;path/to/Database&gt;<span class="w"> </span>&lt;path/to/Streams&gt;<span class="w"> </span>&lt;path/to/Backup&gt;</code> <br/></pre></code></div>
+<p>Здесь значения <code>&lt;User&gt;</code> и <code>&lt;Group&gt;</code> должны совпадать с такими же параметрами в файле <code>/usr/lib/systemd/system/comindware&lt;instanceName&gt;.service</code></p>
+</li>
+<li>
+<p>Перезапустите службу экземпляра ПО:</p>
+<div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
+</li>
+</ol>
+<h3 class="pageBreakBefore" id="пример-yml-файла-конфигурации-экземпляра-по">Пример YML-файла конфигурации экземпляра ПО</h3>
+<div class="highlight"><code><pre><span></span><code>##### Настройка базовых параметров ПО #####</code> <br/><code># Имя экземпляра ПО.</code> <br/><code># Устаревшая директива: instanceName</code> <br/><code>clusterName: &lt;instanceName&gt;</code> <br/><code># Имя узла экземпляра ПО.</code> <br/><code>#nodeName: &lt;instanceName&gt;</code> <br/><code># Путь к экземпляру, по которому ПО находит свою конфигурацию.</code> <br/><code>configPath: &lt;configPath&gt;</code> <br/><code># Адрес службы журналирования (OpenSearch (Elasticsearch)).</code> <br/><code># Устаревшая директива: elasticsearchUri</code> <br/><code>journal.server: http://&lt;searchHostIP&gt;:&lt;searchHostPort&gt;</code> <br/><code># Индекс службы журналирования.</code> <br/><code># journal.name: &lt;prefix&gt;-&lt;instanceName&gt;</code> <br/><code># Выключение службы журналирования.</code> <br/><code>#journal.enabled: false</code> <br/><code># URI-адрес экземпляра ПО</code> <br/><code>fqdn: &lt;hostName&gt;</code> <br/><code># Порт экземпляра ПО</code> <br/><code>port: &lt;portNumber&gt;</code> <br/><code># Версия экземпляра ПО</code> <br/><code>version: &lt;versionNumber&gt;</code> <br/><code></code> <br/><code>##### Настройка базы данных #####</code> <br/><code># Использование тонкого клиента.</code> <br/><code>#db.asThinClient: true</code> <br/><code># Конечные точки для подключения тонкого клиента.</code> <br/><code>#db.asThinClientEndpoints: 127.0.0.1:10800</code> <br/><code># Путь к базе данных.</code> <br/><code># Устаревшая директива: databasePath</code> <br/><code>db.workDir: /var/lib/comindware/&lt;instanceName&gt;/Database</code> <br/><code># Папка установки Apache Ignite.</code> <br/><code>#db.homeDir:</code> <br/><code># Путь к файлу конфигурации Apache Ignite.</code> <br/><code>#db.configPath:</code> <br/><code># Настройки JVM.</code> <br/><code>#db.jvmOpts:</code> <br/><code># Настройки Java.</code> <br/><code>#db.javaOpts:</code> <br/><code># Включение автоматической настройки узлов Apache Ignite.</code> <br/><code>#db.baselineAutoAdjustEnabledFlag: false</code> <br/><code># Время ожидания фактического изменения настройки узлов Apache Ignite</code> <br/><code># с момента последнего изменения.</code> <br/><code>#db.baselineAutoAdjustTimeout: 3000</code> <br/><code># Согласованный глобальный уникальный идентификатор узла Apache Ignite.</code> <br/><code>#db.consistentId: </code> <br/><code># Используемый префикс кэшей в базе данных</code> <br/><code># Устаревшая директива: databaseName</code> <br/><code>db.name: &lt;instanceName&gt;</code> <br/><code># Префикс кэшей в базе данных, используемый при обновлении.</code> <br/><code>#db.upgradeName:</code> <br/><code># Путь к онтологии Comindware</code> <br/><code>#db.n3Dir:</code> <br/><code></code> <br/><code>##### Настройка хранения пользовательских файлов #####</code> <br/><code># Тип хранилища (LocalDisk | S3)</code> <br/><code>userStorage.type: LocalDisk</code> <br/><code># Путь к пользовательским файлам экземпляра.</code> <br/><code>userStorage.localDisk.path: /var/lib/comindware/&lt;instanceName&gt;/Streams</code> <br/><code># Имя корзины S3 для хранения пользовательских файлов.</code> <br/><code>#userStorage.s3.bucket:</code> <br/><code># Имя подключения к S3.</code> <br/><code>#userStorage.s3.connection: &lt;s3ConnectionName&gt;</code> <br/><code></code> <br/><code>##### Настройка хранения временных файлов #####</code> <br/><code># Тип хранилища (LocalDisk | S3).</code> <br/><code>tempStorage.type: LocalDisk</code> <br/><code># Путь к временным файлам экземпляра.</code> <br/><code>tempStorage.localDisk.path: /var/lib/comindware/&lt;instanceName&gt;/Temp</code> <br/><code># Имя корзины S3 для хранения временных файлов.</code> <br/><code>#tempStorage.s3.bucket:</code> <br/><code># Имя подключения к S3.</code> <br/><code>#tempStorage.s3.connection: &lt;s3ConnectionName&gt;</code> <br/><code># Временная папка</code> <br/><code>tempWorkingDir: /var/lib/comindware/&lt;instanceName&gt;/LocalTemp</code> <br/><code></code> <br/><code>##### Настройка очереди сообщений #####</code> <br/><code># Адрес и порт сервера очереди сообщений Apache Kafka.</code> <br/><code>mq.server: &lt;kafkaBrokerIP&gt;:&lt;kafkaBrokerPort&gt;</code> <br/><code># Идентификатор группы очереди сообщений.</code> <br/><code>mq.group: &lt;prefix&gt;-&lt;instanceName&gt;</code> <br/><code># Префикс имени очередей сообщений.</code> <br/><code>mq.name: &lt;instanceName&gt;</code> <br/><code># Идентификатор узла очереди сообщений.</code> <br/><code>mq.node: &lt;instanceName&gt;</code> <br/><code># Выключение функции очереди сообщений.</code> <br/><code>#mq.enabled: false</code> <br/><code># Протокол безопасности очереди сообщений.</code> <br/><code># (Plaintext | Ssl | SaslPlaintext | SaslSsl)</code> <br/><code>#mq.securityProtocol: Plaintext</code> <br/><code></code> <br/><code>##### Настройка SSL-подключения очереди сообщений #####</code> <br/><code># Путь к файлу корневого сертификата сервера очереди сообщений.</code> <br/><code>#mq.ssl.caLocation:</code> <br/><code># Выключение идентификации адреса сервера очереди сообщений.</code> <br/><code>#mq.ssl.endpointIdentificationEnabled: false </code> <br/><code></code> <br/><code>##### Настройка SASL-подключения очереди сообщений #####</code> <br/><code># Имя пользователя, используемое для подключения посредством SASL.</code> <br/><code>#mq.sasl.username:</code> <br/><code>#Пароль для аутентификации, используемый для подключения посредством SASL.</code> <br/><code>#mq.sasl.password:</code> <br/><code># Тип механизма SASL (None | Plain | ScramSha256 | ScramSha512).</code> <br/><code>#mq.sasl.mechanism:</code> <br/><code></code> <br/><code>##### Настройка очереди сообщений для коммуникации с адаптерами #####</code> <br/><code># Выключение функции коммуникации брокера сообщений с адаптером 0.</code> <br/><code>#mq.adapter.0.enabled: false</code> <br/><code># Выключение отправителя сообщений.</code> <br/><code>#mq.adapter.0.producer.enabled: false</code> <br/><code># Выключение получателя сообщений.</code> <br/><code>#mq.adapter.0.consumer.enabled: false</code> <br/><code># Выключение функции коммуникации брокера сообщений с адаптером 1.</code> <br/><code>#mq.adapter.1.enabled: false</code> <br/><code># Выключение отправителя сообщений.</code> <br/><code>#mq.adapter.1.producer.enabled: false</code> <br/><code># Выключение получателя сообщений.</code> <br/><code>#mq.adapter.1.consumer.enabled: false</code> <br/><code># Выключение функции коммуникации брокера сообщений с адаптером 2.</code> <br/><code>#mq.adapter.2.enabled: false</code> <br/><code># Выключение отправителя сообщений.</code> <br/><code>#mq.adapter.2.producer.enabled: false</code> <br/><code># Выключение получателя сообщений.</code> <br/><code>#mq.adapter.2.consumer.enabled: false</code> <br/><code># Выключение функции коммуникации брокера сообщений с адаптером 3.</code> <br/><code>#mq.adapter.3.enabled: false</code> <br/><code># Выключение отправителя сообщений.</code> <br/><code>#mq.adapter.3.producer.enabled: false</code> <br/><code># Выключение получателя сообщений.</code> <br/><code>#mq.adapter.3.consumer.enabled: false</code> <br/><code></code> <br/><code>##### Настройка OpenID-аутентификации #####</code> <br/><code># Имя OpenID-сервиса, использующегося для входа.</code> <br/><code>#auth.openId.displayName:</code> <br/><code># Включение функции OpenID.</code> <br/><code>#auth.openId.enabled: true</code> <br/><code># Адрес сервера OpenID Connect.</code> <br/><code>#auth.openId.server:</code> <br/><code># Пространство имен или контекст, в котором происходит аутентификация пользователей.</code> <br/><code># Используется для управления идентификацией и доступом в системе OpenID Connect.</code> <br/><code>#auth.openId.realm:</code> <br/><code># Уникальный идентификатор клиентского приложения, используемый</code> <br/><code># для аутентификации и авторизации запросов по протоколу OpenID Connect.</code> <br/><code>#auth.openId.clientId:</code> <br/><code># Секретный ключ OpenId Connect</code> <br/><code>#auth.openId.clientSecret:</code> <br/><code># Список идентификаторов целевой аудитории, для которой предназначены токены, </code> <br/><code># используемые в процессе аутентификации и авторизации в OpenID Connect.</code> <br/><code>#auth.openId.audience:</code> <br/><code></code> <br/><code>##### Настройка резервного копирования #####</code> <br/><code># Папка для резервного копирования по умолчанию.</code> <br/><code># Будет использоваться во вновь создаваемых конфигурациях резервного копирования.</code> <br/><code># Устаревшая директива: backup.config.default.repository.localDisk.path</code> <br/><code>backup.defaultFolder: /var/backups/&lt;instanceName&gt;</code> <br/><code># Имя файла резервных копий по умолчанию.</code> <br/><code># Будет использоваться во вновь создаваемых конфигурациях резервного копирования.</code> <br/><code>backup.defaultFileName: &lt;instanceName&gt;</code> <br/><code># Выключение функции резервного копирования.</code> <br/><code>#backup.enabled: false</code> <br/><code># Выключение сеансов резервного копирования.</code> <br/><code># Выключает выполнение резервного копирования, но не его настройку.</code> <br/><code>#backup.sessionsEnabled: false</code> <br/><code># Выключение запуска сеансов резервного копирования по расписанию.</code> <br/><code>#backup.schedulesEnabled: false</code> <br/><code># Максимальное количество сеансов резервного копирования.</code> <br/><code>#backup.maxSessions: 5</code> <br/><code></code> <br/><code>##### Конфигурация резервного копирования по умолчанию #####</code> <br/><code># Имя файлов резервных копий.</code> <br/><code># К нему будут добавляться метка времени и расширение cdbbz, например:</code> <br/><code># Backup.202202161625.cdbbz</code> <br/><code>#backup.default.&lt;backupName&gt;.name: Backup</code> <br/><code># Тип хранилища (LocalDisk | S3).</code> <br/><code>#backup.default.&lt;backupName&gt;.repository.type: LocalDisk</code> <br/><code># Путь к файлам резервных копий.</code> <br/><code>#backup.default.&lt;backupName&gt;.repository.localDisk.path: /var/backups/&lt;iname&gt;</code> <br/><code># Имя корзины S3 для хранения файлов резервных копий.</code> <br/><code>#backup.default.&lt;backupName&gt;.repository.s3.bucket:</code> <br/><code># Имя подключения к S3.</code> <br/><code>#backup.default.&lt;backupName&gt;.repository.s3.connection: &lt;s3ConnectionName&gt;</code> <br/><code># Описание конфигурации</code> <br/><code>#backup.default.&lt;backupName&gt;.description:</code> <br/><code># Периодичность запуска резервного копирования.</code> <br/><code>#backup.default.&lt;backupName&gt;.period: 23:00</code> <br/><code># Дни запуска резервного копирования.</code> <br/><code>#backup.default.&lt;backupName&gt;.days: [Sunday,  Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]</code> <br/><code># Время начала запуска резервного копирования.</code> <br/><code>#backup.default.&lt;backupName&gt;.timeFrom: 00:01</code> <br/><code># Время окончания запуска резервного копирования.</code> <br/><code>#backup.default.&lt;backupName&gt;.timeUpTo: 23:59</code> <br/><code># Количество резервных копий одновременно хранящихся в системе.</code> <br/><code># Старые будут удалены автоматически.</code> <br/><code>#backup.default.&lt;backupName&gt;.keepRecent: 10</code> <br/><code># Управление составом резервной копии — загруженные файлы</code> <br/><code>#backup.default.&lt;backupName&gt;.withStreams: true</code> <br/><code># Управление составом резервной копии —  файлы скриптов.</code> <br/><code>#backup.default.&lt;backupName&gt;.withScripts: true</code> <br/><code># Управление составом резервной копии — файлы истории (OpenSearch (Elasticsearch)).</code> <br/><code>#backup.default.&lt;backupName&gt;.withJournal: true</code> <br/><code></code> <br/><code>##### Настройка дополнительного хранилища для конфигурации резервного копирования по умолчанию #####</code> <br/><code># Тип хранилища (LocalDisk | S3)</code> <br/><code>#backup.default.&lt;backupName&gt;.extraRepository.type: LocalDisk</code> <br/><code># Путь к файлам резервных копий.</code> <br/><code>#backup.default.&lt;backupName&gt;.extraRepository.localDisk.path: /var/backups/&lt;instanceName&gt;ExtraRepository</code> <br/><code># Имя корзины S3 для хранения файлов резервных копий.</code> <br/><code>#backup.default.&lt;backupName&gt;.extraRepository.s3.bucket:</code> <br/><code># Имя подключения к S3.</code> <br/><code>#backup.default.&lt;backupName&gt;.extraRepository.s3.connection: &lt;s3ConnectionName&gt;</code> <br/><code></code> <br/><code>##### Настройка резервного копирования данных службы журналирования (OpenSearch (Elasticsearch)) #####</code> <br/><code># Тип хранилища (LocalDisk | S3)</code> <br/><code>#backup.journalRepository.type: LocalDisk</code> <br/><code># Путь к файлам резервных копий</code> <br/><code>#backup.journalRepository.localDisk.path: /var/backups/&lt;instanceName&gt;</code> <br/><code># Имя корзины S3 для хранения файлов резервных копий.</code> <br/><code>#backup.journalRepository.s3.bucket:</code> <br/><code># Имя подключения, настроенного в конфигурации службы журналирования.</code> <br/><code>#backup.journalRepository.s3.journalConnection: &lt;s3ConnectionName&gt;</code> <br/><code># Имя подключения к S3, настроенного в этом файле конфигурации экземпляра ПО.</code> <br/><code>#backup.journalRepository.s3.platformConnection: &lt;s3ConnectionName&gt;</code> <br/><code></code> <br/><code>##### Конфигурация подключения к хранилищу S3 #####</code> <br/><code># Описание конфигурации.</code> <br/><code>#s3.&lt;s3ConnectionName&gt;.description:</code> <br/><code># Адрес подключения к S3.</code> <br/><code>#s3.&lt;s3ConnectionName&gt;.endpointURL:</code> <br/><code># Информация учетной записи. Ключ подключения к хранилищу S3</code> <br/><code>#s3.&lt;s3ConnectionName&gt;.accessKey:</code> <br/><code># Информация учетной записи. Секретный ключ подключения к хранилищу S3.</code> <br/><code>#s3.&lt;s3ConnectionName&gt;.secretKey:</code> <br/><code># Установите значение true, если сервер принимает только запросы path-style вида:</code> <br/><code># https://&lt;s3hostname&gt;/bucket-name/key-name</code> <br/><code>#s3.&lt;s3ConnectionName&gt;.pathStyleAccess: true</code> <br/><code></code> <br/><code>##### Настройка полнотекстового поиска #####</code> <br/><code># Выключение функции полнотекстового поиска.</code> <br/><code>#search.enabled: false</code> <br/><code># Выключение обновления индексов полнотекстового поиска.</code> <br/><code>#search.rebuildingEnabled: false</code> <br/><code># Выключение индексирования для полнотекстового поиска.</code> <br/><code>#search.indexingEnabled: false</code> <br/><code></code> <br/><code>##### Настройка сенсоров мониторинга #####</code> <br/><code># Выключение функции сенсоров мониторинга.</code> <br/><code>#sensors.enabled: false</code> <br/><code></code> <br/><code>##### Настройка синхронизации аккаунтов с LDAP-сервисом #####</code> <br/><code># Выключение функции синхронизации.</code> <br/><code>#sync.ldap.enabled: true</code> <br/><code># Выключение запуска сеансов синхронизации.</code> <br/><code># Выключает выполнение сеансов, но не их настройку.</code> <br/><code>#sync.ldap.sessionsEnabled: true</code> <br/><code># Выключение запуска сеансов синхронизации по расписанию.</code> <br/><code>#sync.ldap.schedulesEnabled: true</code> <br/><code></code> <br/><code>##### Настройка синхронизации данных с OData-сервисом #####</code> <br/><code># Выключение интеграции по OData.</code> <br/><code>#sync.oData.enabled: false</code> <br/><code># Выключение запуска сеансов синхронизации данных по OData.</code> <br/><code># Выключает выполнение сеансов, но не их настройку.</code> <br/><code>#sync.oData.sessionsEnabled: false</code> <br/><code># Выключение запуска сеансов синхронизации данных по OData по расписанию.</code> <br/><code>#sync.oData.schedulesEnabled: false</code> <br/><code># Интервал экспорта данных по OData (минуты).</code> <br/><code>#sync.oData.exportTimeInterval: 60</code> <br/><code></code> <br/><code>##### Настройки трассировки производительности #####</code> <br/><code># Выключение функции трассировки производительности.</code> <br/><code>#tracing.enabled: false</code> <br/><code></code> <br/><code>##### Настройки электронной почты #####</code> <br/><code># Выключение функции проверки наличия и получения новых писем.</code> <br/><code>#email.listenerEnabled: false</code> <br/><code># Выключение функции отправки эл. почты</code> <br/><code>#email.senderEnabled: false</code> <br/><code></code> <br/><code>##### Настройки уведомлений #####</code> <br/><code># Выключение функции отправки уведомлений.</code> <br/><code>#notifications.enabled: false</code> <br/><code># Выключение отправки уведомлений по пользовательским задачам.</code> <br/><code>#notifications.onUserTaskEnabled: false</code> <br/><code># Выключение отправки уведомлений об обсуждениях.</code> <br/><code>#notifications.pushEnabled: false</code> <br/><code># Выключение отправки уведомлений на страницах обслуживания.</code> <br/><code>#notifications.onMaintenanceEnabled: false</code> <br/><code></code> <br/><code>##### Настройка бизнес-процессов #####</code> <br/><code># Выключение функции бизнес-процессов</code> <br/><code>#bpms.enabled: false</code> <br/><code># Количество потоков выполнения бизнес-процессов</code> <br/><code>#bpms.threadsCount: 4</code> <br/><code># Выключение процессных таймеров</code> <br/><code>#bpms.timersEnabled: false</code> <br/><code></code> <br/><code>##### Настройка использования Docker #####</code> <br/><code># Включение использования в среде Docker</code> <br/><code>#isContainerEnvironment: true</code> <br/><code></code> <br/><code>##### Настройка обработчика сервис-запросов #####</code> <br/><code># Включение функции обработчика сервис-запросов</code> <br/><code>#requestProcessor.enabled: true</code> <br/><code># Список обработчиков сервис-запросов. </code> <br/><code># Если не указан, включает все доступные на узле  запросы</code> <br/><code># (conversation, useractivity, notification, architect)</code> <br/><code>#requestProcessor.services:</code> <br/><code>#  - apiPrefix: conversation</code> <br/><code>#    enabled: true</code> <br/><code></code> <br/><code>##### Настройка отображения количества строк таблицы на одной странице #####</code> <br/><code># Задайте варианты, которые будут отображаться</code> <br/><code># в меню выбора количества строк таблицы.</code> <br/><code>#queryPageResultRange: [ 50, 500, 5000, 1000000000 ]</code> <br/></pre></code></div>
+<h2 class="pageBreakBefore" id="конфигурация-службы-apigateway">Конфигурация службы apigateway</h2>
+<ol class="colored_numbers_list">
+<li>
+<p>Откройте файл конфигурации <code>apigateway.yml</code> экземпляра ПО для редактирования:</p>
+<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/var/www/&lt;instanceName&gt;/apigateway.yml</code> <br/></pre></code></div>
+</li>
+<li>
+<p>Измените необходимые параметры.</p>
+</li>
+<li>Удостоверьтесь, что значение параметра <code>cluster.name</code> (имя экземпляра ПО) совпадает с <code>clusterName</code> и значение параметров <code>mq.server</code> (адрес и порт сервера очереди сообщений), <code>mq.group</code> (идентификатор группы очереди сообщений), <code>mq.node</code> (идентификатор узла очереди сообщений) — с аналогичными параметрами в <a class="mkdocs_imported_link" href="#конфигурация-экземпляра-по">файле конфигурации экземпляра</a>.</li>
+<li>Сохраните файл конфигурации.</li>
+<li>
+<p>Перезапустите службу <code>apigateway</code>:</p>
+<div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>apigateway&lt;instanceName&gt;</code> <br/></pre></code></div>
+</li>
+</ol>
+<h3 class="pageBreakBefore" id="пример-конфигурации-службы-apigatewayyml">Пример конфигурации службы apigateway.yml</h3>
+<div class="highlight"><code><pre><span></span><code># Имя экземпляра ПО</code> <br/><code>cluster.name: &lt;instanceName&gt;</code> <br/><code># Имя узла экземпляра</code> <br/><code># nodeName:</code> <br/><code># Включение/выключение конфигурации журналирования экземпляра (true | false)</code> <br/><code>log.enabled: true</code> <br/><code># Путь к файлу конфигурации журналирования экземпляра</code> <br/><code>log.configurationFile: /var/www/&lt;instanceName&gt;/logs.config</code> <br/><code>kata.enabled: false</code> <br/><code># Адрес сервера очереди сообщений Apache Kafka с портом.</code> <br/><code>mq.server: &lt;kafkaBrokerIp&gt;:&lt;kafkaBrokerPort&gt;</code> <br/><code># Идентификатор группы очереди сообщений</code> <br/><code>mq.group: &lt;instanceName&gt;</code> <br/><code># Идентификатор узла очереди сообщений</code> <br/><code>mq.node: &lt;instanceName&gt;</code> <br/><code># Тип механизма SASL. (None | Plain | ScramSha256 | ScramSha512)</code> <br/><code>mq.sasl.mechanism: None</code> <br/><code># Протокол безопасности очереди сообщений. (Plaintext | Ssl | SaslPlaintext | SaslSsl)</code> <br/><code>mq.securityProtocol: Plaintext</code> <br/><code># Путь к сокету apigateway</code> <br/><code>listen.socketPath: /var/www/&lt;instanceName&gt;/App_Data/apigateway.socket</code> <br/><code># Включение/выключение файлового хранилища  (true | false)</code> <br/><code>fileStorage.enabled: true</code> <br/><code># Тип файлового хранилища (Platform — встроенное | Custom — особая DLL-библиотека )</code> <br/><code>fileStorage.type: Platform</code> <br/><code># IP-адрес сервера для загрузки файлов</code> <br/><code>fileStorage.attachmentServerUri: http://local.host.ip.address/</code> <br/><code># Путь к загружаемым файлам</code> <br/><code>fileStorage.uploadAttachment.path: /api/Attachment/Upload</code> <br/><code># Путь к скачанным файлам</code> <br/><code>fileStorage.downloadAttachment.path: /api/Attachment/GetReferenceContent/{0}</code> <br/><code># Путь к удалённым файлам</code> <br/><code>fileStorage.removeAttachment.path: /api/Attachment/Remove/{0}</code> <br/><code># Префиксы служб API</code> <br/><code>services:</code> <br/><code>- apiPrefix: conversation</code> <br/><code>- apiPrefix: useractivity</code> <br/><code>- apiPrefix: notification</code> <br/><code>- apiPrefix: architect</code> <br/></pre></code></div>
+<h2 class="pageBreakBefore" id="конфигурация-службы-adapterhost">Конфигурация службы adapterhost</h2>
+<ol class="colored_numbers_list">
+<li>
+<p>Откройте файл конфигурации <code>adapterhost.yml</code> экземпляра ПО для редактирования:</p>
+<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/var/www/&lt;instanceName&gt;/adapterhost.yml</code> <br/></pre></code></div>
+</li>
+<li>
+<p>Измените необходимые параметры.</p>
+</li>
+<li>Удостоверьтесь, что значения параметров <code>mq.server</code> (адрес и порт сервера очереди сообщений), <code>mq.group</code> (идентификатор группы очереди сообщений), <code>mq.node</code> (идентификатор узла очереди сообщений) и <code>clusterName</code> (имя экземпляра ПО) совпадают с аналогичными параметрами в <a class="mkdocs_imported_link" href="#пример-yml-файла-конфигурации-экземпляра-по">файле конфигурации экземпляра ПО</a>.</li>
+<li>Сохраните файл конфигурации.</li>
+<li>
+<p>После внесения изменений перезапустите службу <code>adapterhost</code>:</p>
+<div class="highlight"><code><pre><span></span><code><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="k">$(</span>ps<span class="w"> </span>-eo<span class="w"> </span>pid,args<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>$&lt;instanceName&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Agent<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="o">{</span><span class="s1">'print $1'</span><span class="o">}</span><span class="k">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
+</li>
+</ol>
+<h3 id="пример-файла-конфигурации-adapterhostyml">Пример файла конфигурации adapterhost.yml</h3>
+<div class="highlight"><code><pre><span></span><code># Имя экземпляра ПО</code> <br/><code>clusterName: &lt;instanceName&gt;</code> <br/><code># Имя папки загрузчика экземпляра ПО</code> <br/><code>loaderFolder: &lt;instanceName&gt;</code> <br/><code># Язык сервера (en-US | ru-RU )</code> <br/><code>serverLanguage: ru-RU</code> <br/><code># Адрес и порт сервера очереди сообщений Apache Kafka</code> <br/><code>mq.server: &lt;kafkaBrokerIp&gt;:&lt;kafkaBrokerPort&gt;</code> <br/><code># Протокол безопасности очереди сообщений. (Plaintext | Ssl | SaslPlaintext | SaslSsl)</code> <br/><code>mq.securityProtocol: Plaintext</code> <br/><code># Тип механизма SASL (None | Plain | ScramSha256 | ScramSha512)</code> <br/><code>mq.sasl.mechanism: None</code> <br/><code># Путь к файлам журналирования экземпляра ПО</code> <br/><code>log.folder: /var/log/comindware/&lt;instanceName&gt;/Logs/</code> <br/><code># Максимальное кол-во файлов журналов</code> <br/><code>log.maxArchiveFiles: 100</code> <br/><code># Максимальный размер файлов журналов (байты)</code> <br/><code>log.archiveAboveSize: 1048576000</code> <br/><code># Путь к архивам журналов</code> <br/><code>log.archiveFolder: /var/log/comindware/&lt;instanceName&gt;/Logs/Archive/</code> <br/></pre></code></div>
+<h2 class="pageBreakBefore" id="конфигурация-apache-ignite">Конфигурация Apache Ignite</h2>
+<ol class="colored_numbers_list">
+<li>
+<p>Откройте файл конфигурации Apache Ignite для редактирования:</p>
+<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/var/www/&lt;instanceName&gt;/Ignite.config</code> <br/></pre></code></div>
+</li>
+<li>
+<p>В блоке <code>&lt;bean class="org.apache.ignite.configuration.DataRegionConfiguration"&gt;</code> задайте максимальный объём выделяемой памяти:</p>
+<ul>
+<li>
+<p>3 ГБ:</p>
+<div class="highlight"><code><pre><span></span><code><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">"maxSize"</span><span class="w"> </span><span class="na">value=</span><span class="s">"#{3L * 1024 * 1024 * 1024}"</span><span class="w"> </span><span class="nt">/&gt;</span></code> <br/></pre></code></div>
+</li>
+<li>
+<p>8 ГБ:</p>
+<div class="highlight"><code><pre><span></span><code><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">"maxSize"</span><span class="w"> </span><span class="na">value=</span><span class="s">"#{8L * 1024 * 1024 * 1024}"</span><span class="w"> </span><span class="nt">/&gt;</span></code> <br/></pre></code></div>
+</li>
+</ul>
+</li>
+<li>
+<p>В случае изменения максимального объёма выделяемой памяти отредактируйте параметр <code>checkpointPageBufferSize</code>. Чтобы рассчитать размер значения, разделите размер <code>maxSize</code> на четыре, при этом значение должно быть в диапазоне 256 МБ — 2 ГБ.</p>
+<ul>
+<li>
+<p>8 ГБ:</p>
+<div class="highlight"><code><pre><span></span><code><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">"checkpointPageBufferSize"</span><span class="w"> </span><span class="na">value=</span><span class="s">"#{2L * 1024 * 1024 * 1024}"</span><span class="w"> </span><span class="nt">/&gt;</span></code> <br/></pre></code></div>
+</li>
+</ul>
+</li>
+<li>
+<p>Перезапустите службу экземпляра ПО:</p>
+<div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
+</li>
+</ol>
+<h2 class="pageBreakBefore" id="конфигурация-кучи-java">Конфигурация кучи Java</h2>
+<p>В зависимости от объёма оперативной памяти на сервере следует отредактировать конфигурацию области памяти для кучи Java.</p>
+<ol class="colored_numbers_list">
+<li>
+<p>Откройте файл конфигурации среды экземпляра ПО для редактирования:</p>
+<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/etc/sysconfig/comindware&lt;instanceName&gt;-env</code> <br/></pre></code></div>
+</li>
+<li>
+<p>Задайте объём памяти, который выделяется для кучи Java:</p>
+<div class="highlight"><code><pre><span></span><code><span class="na">JVM_OPTS</span><span class="o">=</span><span class="s">-Xms512m -Xmx16g -XX:MaxDirectMemorySize=1g ...</span></code> <br/></pre></code></div>
+<p>Здесь:</p>
+<ul>
+<li><code>-Xms</code> — начальный размер кучи;</li>
+<li><code>-Xmx</code> — максимальный размер кучи.</li>
+</ul>
+</li>
+<li>
+<p>Сохраните файл конфигурации.</p>
+</li>
+<li>
+<p>Перезапустите службу экземпляра ПО:</p>
+<div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>daemon-reload</code> <br/><code>systemctl<span class="w"> </span>restart<span class="w"> </span>comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
+</li>
+</ol>
+<h2 class="pageBreakBefore" id="конфигурация-nginx">Конфигурация NGINX</h2>
+<ol class="colored_numbers_list">
+<li>
+<p>Откройте файл конфигурации NGINX для редактирования:</p>
+<ul>
+<li>
+<p><strong>Astra Linux</strong>, <strong>Ubuntu</strong>, <strong>Debian</strong> (DEB-based)</p>
+<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/etc/nginx/sites-available/comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
+</li>
+<li>
+<p><strong>РЕД ОС</strong>, <strong>Rocky</strong> (RPM-based)</p>
+<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/etc/nginx/conf.d/comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
+</li>
+<li>
+<p><strong>Альт Сервер</strong></p>
+<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/etc/nginx/sites-available.d/comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
+</li>
+</ul>
+</li>
+<li>
+<p>В директиве <code>server</code> задайте номер порта и адрес сервера, по которым будет доступен экземпляр ПО:</p>
+<div class="highlight"><code><pre><span></span><code>server<span class="w"> </span><span class="o">{</span></code> <br/><code><span class="w">    </span><span class="c1"># Адрес сервера для доступа к экземпляру ПО.</span></code> <br/><code><span class="w">    </span>server_name<span class="w"> </span>&lt;hostName&gt;</code> <br/><code><span class="w">    </span><span class="c1"># Номер порта для доступа к экземпляру ПО.</span></code> <br/><code><span class="w">    </span>listen<span class="w"> </span>&lt;portNumber&gt;</code> <br/><code><span class="o">}</span></code> <br/></pre></code></div>
+</li>
+<li>
+<p>Для записи событий в отдельные журналы укажите их:</p>
+<div class="highlight"><code><pre><span></span><code><span class="w">    </span>error_log<span class="w"> </span>/var/log/nginx/&lt;instanceName&gt;-error.log<span class="p">;</span></code> <br/><code><span class="w">    </span>access_log<span class="w"> </span>/var/log/nginx/&lt;instanceName&gt;-access.log<span class="p">;</span></code> <br/></pre></code></div>
+</li>
+<li>
+<p>Сохраните файл конфигурации.</p>
+</li>
+<li>
+<p>Проверьте, что изменения работают корректно:</p>
+<div class="highlight"><code><pre><span></span><code>nginx<span class="w"> </span>-t</code> <br/></pre></code></div>
+</li>
+<li>
+<p>При успешном вступлении изменений в силу перезагрузите NGINX:</p>
+<div class="highlight"><code><pre><span></span><code>nginx<span class="w"> </span>-s<span class="w"> </span>reload</code> <br/></pre></code></div>
+</li>
+</ol>
+<div class="relatedTopics">
+<h2 id="связанные-статьи">Связанные статьи</h2>
+<ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4620">Пути и содержимое директорий экземпляра ПО</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4604">Настройка конфигурации вспомогательного ПО для оптимизации работы Comindware Platform</a></em></li>
+</ul>
+</div>
+</article>
+</div>
+</div>
+<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#">
+<i class="fa-light fa-arrow-up">&zwnj;<!--icon--></i>
+            К началу
+          </a>
+</main>
+</div>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></div>

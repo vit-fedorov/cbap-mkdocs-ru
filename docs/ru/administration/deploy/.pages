@@ -1,0 +1,12 @@
+title: Развёртывание ПО
+categoryId: 803
+
+nav:
+  - architecture_landscape.md
+  - system_requirements.md
+  - security.md
+  - logging_engine.md
+  - log_files_event_examples.md
+  - linux
+  - windows
+  - ...

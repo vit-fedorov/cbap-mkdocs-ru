@@ -1,21 +1,19 @@
 ---
 title: Collabora Online
-kbId: 2588
+kbId: 4688
 ---
 
 # Collabora Online. Настройка подключения {: #collabora_connection}
 
 ## Введение
 
-!!! danger "Экспериментальная функция"
-
-    Представленная здесь функция находится на стадии разработки. См. _«[Поддержка экспериментальных функций]({{ kbArticleURLPrefix }}1339#mcetoc_1hsfq7ksu2)»_.
+{% include-markdown ".snippets/experimental_feature.md" %}
 
 **{{ productName }}** позволяет просматривать и редактировать прикреплённые к формам документы, электронные таблицы и презентации с помощью ПО **Collabora Online**.
 
-В данной статье представлены инструкции по настройке подключения к серверу **Collabora Online**.
+Здесь представлены инструкции по настройке подключения к серверу **Collabora Online**.
 
-См. также статью _«[Р7 Офис и Collabora Online. Использование для работы с документами]({{ kbArticleURLPrefix }}2343)»._
+См. также статью _«[Р7 Офис и Collabora Online. Использование для работы с документами][office_connection_use]»._
 
 ## Настройка подключения к Collabora Online
 
@@ -33,10 +31,12 @@ kbId: 2588
 
 _![Настройка подключения к Collabora Online](collabora_connection_settings.png)_
 
+<div class="relatedTopics" markdown="block">
+
 --8<-- "related_topics_heading.md"
 
-**[Р7 Офис и Collabora Online. Использование для работы с документами]({{ kbArticleURLPrefix }}2343)**
+- _[Р7 Офис и Collabora Online. Использование для работы с документами][office_connection_use]_
 
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

@@ -4,11 +4,10 @@ nav:
     - monitoring.md
     - logs.md
     - licensing.md
-    - backup.md
     - system_service_management.md
     - performance.md
     - logging_configuration.md
     - global_configuration.md
     - adapters.md
-    - authentication_key.md
+    - authentication_keys.md
     - ...

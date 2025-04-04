@@ -9,4 +9,5 @@ nav:
     - email_connections
     - rest_odata_connections
     - sql_connections
+    - custom_connections
     - ...

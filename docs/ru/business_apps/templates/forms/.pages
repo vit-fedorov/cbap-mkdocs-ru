@@ -2,6 +2,9 @@ title: Формы
 
 nav:
     - index.md
-    - discussion_configure.md
     - form_access_control.md
+    - form_rules.md
+    - form_static_elements.md
+    - form_dynamic_elements.md
+    - discussion_configure.md
     - ...

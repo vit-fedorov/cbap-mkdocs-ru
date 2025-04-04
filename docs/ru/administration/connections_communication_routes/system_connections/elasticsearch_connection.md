@@ -1,45 +1,49 @@
 ---
-title: Elasticsearch. Настройка подключения
-kbId: 2593
+title: OpenSearch. Настройка подключения
+kbId: 4678
 ---
 
-# Elasticsearch. Настройка подключения {: #elasticsearch_connection}
+# {{ openSearchVariants }}. Настройка подключения {: #elasticsearch_connection}
 
 ## Введение
 
-**{{ productName }}** использует службу Elasticsearch для записи истории всех транзакций, таких как журнал изменений записей и [экземпляров процессов]({{ kbArticleURLPrefix }}2355#mcetoc_1h2d9mpbf5), [цепочка событий](logs.md#просмотр-цепочки-событий) и т. п.
+**{{ productName }}** использует службу {{ openSearchVariants }} для записи истории всех транзакций, таких как журнал изменений записей и [экземпляров процессов][process_diagram_view_instance], [цепочка событий][logs_event_chain_view] и т. п.
 
-Подключение к Elasticsearch автоматически создаётся при [развёртывании]({{ kbArticleURLPrefix }}2344#mcetoc_1ga11542i2) **{{ productName }}**.
+Подключение к {{ openSearchVariants }} автоматически создаётся при [развёртывании][deploy_guide_linux_initialize] **{{ productName }}**.
 
-В данной статье представлены инструкции по настройке подключения к серверу Elasticsearch.
+Здесь представлены инструкции по настройке подключения к серверу {{ openSearchVariants }}.
 
 ## Настройка подключения
 
-1. Перейдите в [список подключений]({{ kbArticleURLPrefix }}2205#mcetoc_1gjrlqi4l1).
+1. Перейдите в [список подключений][connections].
 2. Дважды нажмите в списке подключение _«ElasticsearchChannel»_ или создайте подключение типа «**Системные подключения**» — «**Elasticsearch**».
-3. Настройте свойства подключения:  
+3. Настройте свойства подключения:
 
     - **Отключить** — установите этот флажок, чтобы временно деактивировать подключение;
-    - **Префикс индекса** — введите _уникальный_ префикс записей в БД Elasticsearch для данного экземпляра **{{ productName }}**;
+    - **Префикс индекса** — введите _уникальный_ префикс записей в БД {{ openSearchVariants }} для данного экземпляра **{{ productName }}**;
 
         !!! note "Примечание"
 
-            Префикс индекса служит для идентификации записей в БД Elasticsearch. Если к одному серверу Elasticsearch подключается несколько экземпляров **{{ productName }}**, их префиксы индексов должны отличаться. В противном случае будет нарушена целостность данных в БД Elasticsearch.
+            Префикс индекса служит для идентификации записей в БД {{ openSearchVariants }}. Если к одному {{ openSearchVariants }} подключается несколько экземпляров **{{ productName }}**, их префиксы индексов должны отличаться. В противном случае будет нарушена целостность данных в БД {{ openSearchVariants }}.
 
     - **Название** — введите наглядное наименование подключения;
-    - **URL подключения для журналирования** — введите адрес сервера Elasticsearch;
-    - **Имя пользователя** — введите логин для входа на сервер Elasticsearch;
-    - **Пароль** — введите пароль для входа на сервер Elasticsearch.
+    - **URL подключения для журналирования** — введите адрес сервера {{ openSearchVariants }};
+    - **Имя пользователя** — введите логин для входа на сервер {{ openSearchVariants }};
+    - **Пароль** — введите пароль для входа на сервер {{ openSearchVariants }}.
 
 4. Нажмите кнопку «**Проверить соединение**». Должно отобразиться сообщение «**Соединение установлено**».
 5. Сохраните подключение.
 
-_![Настройка подключения к Elasticsearch](elasticsearch_connection_settings.png)_
+{% if not gostech %}
+_![Настройка подключения к {{ openSearchVariants }}](elasticsearch_connection_settings.png)_
+{% endif %}
+
+<div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
-**[Инициализация {{ productName }}]({{ kbArticleURLPrefix }}2344#mcetoc_1ga11542i2)**
+- _[Инициализация {{ productName }}][deploy_guide_linux_initialize]_
 
-{%
-include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md"
-%}
+</div>
+
+{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

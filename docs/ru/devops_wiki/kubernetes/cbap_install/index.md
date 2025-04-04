@@ -1,4 +1,4 @@
-# Развертывание Comindware Business Application Platform в кластере K8s
+# Развертывание {{ productName }} в кластере K8s
 
 ## Необходимые условия
 
@@ -10,7 +10,7 @@
 - архив образов компонент Платформы cbap-4.6.1864_images.tgz
 - архив файлов манифестов для K8s cbap-k8s-manifests.tgz
 
-## Развертывание Comindware Business Application Platform с помощью K8s
+## Развертывание {{ productName }} с помощью K8s
 
 ### Добавление образов компонент Платформы в репозиторий образов
 
@@ -31,7 +31,7 @@ docker images
 
 ```bash
 docker tag IMAGE-NAME[:TAG] \
-	REGISTRY-NAME/REPO-NAME[:TAG]
+    REGISTRY-NAME/REPO-NAME[:TAG]
 docker push REGISTRY-NAME/REPO-NAME[:TAG]
 ```
 
@@ -76,7 +76,7 @@ cbap-k8s
 kubectl create namespace cbap
 ```
 
-!!! Warning "Внимание"
+!!! Warning "Внимание!"
     Если Платформа будет развернута в пространстве имен отличном от `cbap`, необходимо во всех манифестах заменить значение `cbap` на имя пространства имен.
 
     Например, если Платформа будет развернута в пространстве имен `MY-NS`, тогда необходимо:

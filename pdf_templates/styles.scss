@@ -89,12 +89,21 @@ article>.md-typeset>h1,
     }
 
     .fa-light,
+    .fa-solid,
+    .fa-brands,
     .fl,
     kbd {
         display: inline;
     }
 
 }
+
+
+.md-typeset .fa-light,
+.md-typeset .fl,
+.md-typeset kbd {
+        display: inline;
+    }
 
 .md-typeset ul li > p:first-child {
     display: inline;
@@ -346,6 +355,9 @@ article#doc-cover {
         padding: 0;
     }
 
+    .wrapper.middle {
+        margin-top: 8cm;
+    }
 
     .header {
         margin-top: -0.85cm;

@@ -7,6 +7,7 @@
 INHERIT: mkdocs_ru.yml
 
 extra:
+  apiGuide: False
   adminGuideLinux: True
   adminGuideWindows: True
   userGuide: False
@@ -119,6 +120,7 @@ nav:
       - administration/infrastructure/adapters.md
       - administration/infrastructure/authentication_keys.md
     - Интеграции с внешними системами:
+      - administration/connections_communication_routes/integration.md
       - administration/connections_communication_routes/connections.md
       - administration/connections_communication_routes/communication_routes.md
       - Системные подключения:
@@ -192,6 +194,7 @@ nav:
       - business_apps/version_control/excel_version_control.md
   - Обзор версий:
     - general/changelog/changelog.md
+    - general/changelog/release_notes_5.0.13286.md
     - general/changelog/release_notes_5.0.md
 
 

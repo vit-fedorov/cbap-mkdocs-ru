@@ -40,13 +40,13 @@ kbId: 4603
     cp /var/www/<instanceName>/Ignite.config /usr/share/ignite/
     ```
 
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+
 7. Перейдите в папку `bin` Apache Ignite:
 
     ``` sh
     cd /usr/share/ignite/bin
     ```
-
-    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 8. В файле `control.sh` измените директиву `DEFAULT_CONFIG`:
 

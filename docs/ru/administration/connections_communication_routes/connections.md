@@ -29,7 +29,7 @@ kbId: 4675
 ### Системные подключения
 
 - [Управление версиями через Git][git_connection]
-- [Elasticsearch][elasticsearch_connection]
+- [{{ openSearchVariants }}][elasticsearch_connection]
 - Абстрактное подключение
 - [Карты][map_configure]
 - [Хранилище S3][s3_connection]

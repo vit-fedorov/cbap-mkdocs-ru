@@ -5,6 +5,7 @@
 
 @import url("fontawesome/css/fontawesome.min.css");
 @import url("fontawesome/css/light.min.css");
+@import url("fontawesome/css/solid.min.css");
 @import url("fontawesome/css/brands.min.css");
 
 [data-md-color-scheme="comindware"] {
@@ -151,4 +152,12 @@ body {
 
 .md-typeset .api-method.delete {
     background: #a41e22!important;
+}
+
+@media screen {
+
+    .md-typeset pre code, pre {
+        max-height: 360px;
+    }
+
 }

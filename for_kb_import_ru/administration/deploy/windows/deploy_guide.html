@@ -1,4 +1,4 @@
-<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="5063">
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="5063" kb-title="Установка, запуск, инициализация и остановка Comindware Platform">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -123,12 +123,12 @@
 <li>установлена служба <em>IIS (Internet Information Services)</em>.</li>
 </ul>
 <div class="notice notice-info">
-<p class="admonition-title">Конфигурация сервера журналирования (Elasticsearch, OpenSearch)</p>
+<p class="admonition-title">Конфигурация сервера журналирования транзакций OpenSearch (Elasticsearch)</p>
 <ul>
-<li>В конфигурации Elasticsearch (OpenSearch) необходимо создать одного пользователя для <strong>Comindware Platform</strong>.</li>
-<li>В конфигурации экземпляра ПО необходимо указать адрес сервера и уникальный префикс индексов Elasticsearch (OpenSearch). Индекс префикса служит для идентификации данных экземпляра ПО в Elasticsearch (OpenSearch). Поэтому во избежание конфликтов данных для каждого экземпляра ПО следует указывать собственный префикс индекса.</li>
-<li>При <a class="mkdocs_imported_link" href="#initialize_instance">инициализации экземпляра ПО</a> необходимо указать пользователя <strong>Comindware Platform</strong>, используемого в Elasticsearch (OpenSearch).</li>
-<li>Экземпляр ПО будет взаимодействовать с Elasticsearch (OpenSearch) под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.</li>
+<li>В конфигурации сервера журналирования транзакций необходимо создать одного пользователя для <strong>Comindware Platform</strong>.</li>
+<li>В конфигурации экземпляра ПО необходимо указать адрес сервера и уникальный префикс индексов OpenSearch (Elasticsearch). Индекс префикса служит для идентификации данных экземпляра ПО на сервере журналирования транзакций. Поэтому во избежание конфликтов данных для каждого экземпляра ПО следует указывать собственный префикс индекса.</li>
+<li>При <a class="mkdocs_imported_link" href="#initialize_instance">инициализации экземпляра ПО</a> необходимо указать пользователя <strong>Comindware Platform</strong>, используемого сервером журналирования транзакций.</li>
+<li>Экземпляр ПО будет взаимодействовать с сервером журналирования транзакций под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.</li>
 </ul>
 </div>
 <h2 id="порядок-установки-по">Порядок установки ПО</h2>
@@ -174,7 +174,7 @@
 </li>
 <li>
 <p>Перейдите в папку со скриптами для развёртывания вспомогательного ПО:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.prerequisites.windows\CMW_Windows\scripts"</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.prerequisites.windows\CMW_Windows&lt;versionNumber&gt;\scripts"</span></code> <br/></pre></code></div>
 <p>Здесь: <code>X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.prerequisites.windows</code> — путь к распакованному дистрибутиву вспомогательного ПО, а <code>&lt;versionNumber&gt;</code> — номер версии ПО.</p>
 </li>
 <li>
@@ -196,7 +196,7 @@
 <li>Запустите <em>PowerShell</em> от имени администратора.</li>
 <li>
 <p>Перейдите в папку со скриптами для развёртывания вспомогательного ПО:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.prerequisites.windows\CMW_Windows\scripts"</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.prerequisites.windows\CMW_Windows&lt;versionNumber&gt;\scripts"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Проверьте, что дополнительные компоненты установлены:</p>
@@ -217,7 +217,7 @@
 </li>
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.windows\CMW_Windows\scripts"</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.windows\CMW_Windows&lt;versionNumber&gt;\scripts"</span></code> <br/></pre></code></div>
 <p>Здесь: <code>X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.windows</code> — путь к распакованному дистрибутиву продукта, а <code>&lt;versionNumber&gt;</code> — номер версии ПО.</p>
 </li>
 <li>
@@ -242,7 +242,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.windows\CMW_Windows\scripts"</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.windows\CMW_Windows&lt;versionNumber&gt;\scripts"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Разверните экземпляр ПО:</p>
@@ -267,7 +267,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.windows\CMW_Windows\scripts"</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.windows\CMW_Windows&lt;versionNumber&gt;\scripts"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Запустите экземпляр ПО:</p>
@@ -279,7 +279,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.windows\CMW_Windows\scripts"</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.windows\CMW_Windows&lt;versionNumber&gt;\scripts"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Остановите экземпляр ПО:</p>
@@ -311,25 +311,21 @@
 </div>
 </li>
 <li>
-<p>При необходимости откроется страница инициализации служб. Выберите службы, которые должны быть запущены, и нажмите кнопку «<strong>Далее</strong>».</p>
-<p><figure class="screenshot_with_caption" markdown=""><img alt="Страница инициализации служб" src="/platform/v5.0/administration/deploy/windows/../linux/img/deploy_guide_system_initialize.png"/><figcaption class="caption">Страница инициализации служб</figcaption></figure></p>
-</li>
-<li>
 <p>При необходимости откроется страница активации ПО. Выполните <strong>онлайн-</strong> или <strong>ручную активацию</strong> либо нажмите кнопку «<strong>Пропустить</strong>» для первоначального ознакомления с ПО без активации.</p>
 </li>
 <li>
-<p>При необходимости откроется страница настройки подключения к службе Elasticsearch (OpenSearch).</p>
+<p>При необходимости откроется страница настройки подключения к службе OpenSearch (Elasticsearch).</p>
 <ul>
-<li>В поле «<strong>URI</strong>» введите адрес сервера Elasticsearch (OpenSearch), например: <code>http://localhost:9200</code>.</li>
-<li>При необходимости введите <strong>имя пользователя</strong> и <strong>пароль</strong> Elasticsearch (OpenSearch).</li>
+<li>В поле «<strong>URI</strong>» введите адрес сервера OpenSearch (Elasticsearch), например: <code>http://localhost:9200</code>.</li>
+<li>При необходимости введите <strong>имя пользователя</strong> и <strong>пароль</strong> OpenSearch (Elasticsearch).</li>
 <li>Установите уникальный <strong>префикс индекса</strong>, например <code>mycompanyprefix</code>.</li>
-<li>Экземпляр ПО будет взаимодействовать с Elasticsearch (OpenSearch) под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.</li>
+<li>Экземпляр ПО будет взаимодействовать с OpenSearch (Elasticsearch) под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.</li>
 <li>Нажмите кнопку «<strong>Далее</strong>».</li>
 </ul>
 </li>
 <li>
-<p>При необходимости откроется страница инициализации данных в Elasticsearch (OpenSearch).</p>
-<p><figure class="screenshot_with_caption" markdown=""><img alt="Страница инициализации данных в Elasticsearch" src="/platform/v5.0/administration/deploy/windows/../linux/img/deploy_guide_elasticsearch_initialize.png"/><figcaption class="caption">Страница инициализации данных в Elasticsearch</figcaption></figure></p>
+<p>При необходимости откроется страница инициализации данных в OpenSearch (Elasticsearch).</p>
+<p><figure class="screenshot_with_caption" markdown=""><img alt="Страница инициализации данных в OpenSearch (Elasticsearch)" src="/platform/v5.0/administration/deploy/windows/../linux/img/deploy_guide_elasticsearch_initialize.png"/><figcaption class="caption">Страница инициализации данных в OpenSearch (Elasticsearch)</figcaption></figure></p>
 </li>
 <li>
 <p>Нажмите кнопку «<strong>Обновить</strong>».</p>
@@ -342,7 +338,7 @@
 <li>Скачайте и установите ПО новой версии согласно инструкциям в параграфе <em>«<a class="mkdocs_imported_link" href="#deploy_guide_windows_install_sw">Установка Comindware Platform</a>»</em>.</li>
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.windows\CMW_Windows\scripts"</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.windows\CMW_Windows&lt;versionNumber&gt;\scripts"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Запустите обновление экземпляра ПО:</p>
@@ -367,7 +363,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.windows\CMW_Windows\scripts"</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.windows\CMW_Windows&lt;versionNumber&gt;\scripts"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Удалите экземпляр ПО:</p>
@@ -384,7 +380,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.windows\CMW_Windows\scripts"</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.windows\CMW_Windows&lt;versionNumber&gt;\scripts"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Просмотрите список установленных экземпляров ПО:</p>

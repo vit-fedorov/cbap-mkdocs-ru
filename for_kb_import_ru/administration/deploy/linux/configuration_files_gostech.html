@@ -1,0 +1,92 @@
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="5067" kb-title="Конфигурация экземпляра, компонентов ПО и служб. Настройка">
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<div class="mce-toc">
+<h2 class="toc-heading">
+      Содержание
+      </h2>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#введение">
+<span class="md-ellipsis">
+      Введение
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#конфигурация-экземпляра-по">
+<span class="md-ellipsis">
+      Конфигурация экземпляра ПО
+    </span>
+</a>
+<nav aria-label="Конфигурация экземпляра ПО" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#пример-yml-конфигурации-экземпляра-по">
+<span class="md-ellipsis">
+      Пример YML-конфигурации экземпляра ПО
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#связанные-статьи">
+<span class="md-ellipsis">
+      Связанные статьи
+    </span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h2 id="введение">Введение</h2>
+<p>Здесь представлены инструкции по настройке файлов конфигурации перед развёртыванием <strong>Comindware Platform</strong>.</p>
+<h2 id="конфигурация-экземпляра-по">Конфигурация экземпляра ПО</h2>
+<p>При необходимости тонкой настройки экземпляра ПО, можно изменить файл конфигурации <code>configmap.yaml</code> внутри Helm-чарта.</p>
+<ol class="colored_numbers_list">
+<li>Распакуйте файл Helm-чарта.</li>
+<li>
+<p>Откройте файл конфигурации экземпляра ПО для редактирования:</p>
+<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>templates/configmap.yaml</code> <br/></pre></code></div>
+</li>
+<li>
+<p>При необходимости измените параметры, например:</p>
+<ul>
+<li><code>userStorage.type: LocalDisk</code> — тип хранилища пользовательских файлов (<code>LocalDisk</code> или <code>S3</code>).</li>
+<li><code>backup.defaultFolder</code> — директория для хранения резервных копий экземпляра ПО.</li>
+<li><code>backup.defaultFileName</code> — имя файла резервной копии экземпляра ПО.</li>
+</ul>
+</li>
+<li>
+<p>Сохраните файл конфигурации.</p>
+</li>
+<li>Разверните экземпляр ПО. См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4622">Установка и инициализация ПО</a>»</em>.</li>
+</ol>
+<h3 class="pageBreakBefore" id="пример-yml-конфигурации-экземпляра-по">Пример YML-конфигурации экземпляра ПО</h3>
+<div class="highlight"><code><pre><span></span><code>#################### Настройка базовых параметров ПО ####################</code> <br/><code># Имя экземпляра ПО</code> <br/><code># Устаревшая директива: instanceName</code> <br/><code>clusterName: &lt;instanceName&gt;</code> <br/><code># Имя узла экземпляра ПО</code> <br/><code>#nodeName: &lt;instanceName&gt;</code> <br/><code># Путь к экземпляру, по которому ПО находит свою конфигурацию</code> <br/><code>configPath: &lt;configPath&gt;</code> <br/><code># Адрес службы журналирования (OpenSearch (Elasticsearch), OpenSearch)</code> <br/><code># Устаревшая директива: elasticsearchUri</code> <br/><code>journal.server: http://&lt;searchHostIP&gt;:&lt;searchHostPort&gt;</code> <br/><code># Индекс службы журналирования (OpenSearch (Elasticsearch), OpenSearch)</code> <br/><code># journal.name: &lt;instanceName&gt;</code> <br/><code># URI-адрес экземпляра ПО</code> <br/><code>fqdn: &lt;hostName&gt;</code> <br/><code># Порт экземпляра ПО</code> <br/><code>port: &lt;portNumber&gt;</code> <br/><code># Версия экземпляра ПО</code> <br/><code>version: &lt;versionNumber&gt;</code> <br/><code>#################### Настройка базы данных ####################</code> <br/><code># Путь к базе данных</code> <br/><code># Устаревшая директива: databasePath</code> <br/><code>db.workDir: /var/lib/comindware/&lt;instanceName&gt;/Database</code> <br/><code># Используемый префикс кэшей в базе данных</code> <br/><code># Устаревшая директива: databaseName</code> <br/><code>db.name: &lt;instanceName&gt;</code> <br/><code>#################### Настройка хранения пользовательских файлов ####################</code> <br/><code># Тип хранилища (LocalDisk | S3)</code> <br/><code>userStorage.type: LocalDisk</code> <br/><code># Путь к пользовательским файлам экземпляра</code> <br/><code>userStorage.localDisk.path: /var/lib/comindware/&lt;instanceName&gt;/Streams</code> <br/><code>#################### Настройка хранения временных файлов ####################</code> <br/><code># Тип хранилища (LocalDisk | S3)</code> <br/><code>tempStorage.type: LocalDisk</code> <br/><code># Путь к временным файлам экземпляра</code> <br/><code>tempStorage.localDisk.path: /var/lib/comindware/&lt;instanceName&gt;/Temp</code> <br/><code># Временная папка</code> <br/><code>tempWorkingDir: /var/lib/comindware/fooo/LocalTemp</code> <br/><code>#################### Настройки очереди сообщений ####################</code> <br/><code># Адрес и порт сервера очереди сообщений Apache Kafka</code> <br/><code>mq.server: &lt;kafkaBrokerIP&gt;:&lt;kafkaBrokerPort&gt;</code> <br/><code># Идентификатор группы очереди сообщений</code> <br/><code>mq.group: &lt;instanceName&gt;</code> <br/><code>#################### Конфигурация резервного копирования ####################</code> <br/><code># Папка для резервного копирования по умолчанию</code> <br/><code># Устаревшая директива: backup.config.default.repository.localDisk.path</code> <br/><code>backup.defaultFolder: /var/lib/comindware/&lt;instanceName&gt;/Backup</code> <br/><code># Имя файла для резервного копирования по умолчанию</code> <br/><code>backup.defaultFileName: Backup</code> <br/></pre></code></div>
+<div class="relatedTopics">
+<h2 id="связанные-статьи">Связанные статьи</h2>
+<ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4620">Пути и содержимое директорий экземпляра ПО</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4604">Настройка конфигурации вспомогательного ПО для оптимизации работы Comindware Platform</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4622">Установка и инициализация ПО</a></em></li>
+</ul>
+</div>
+</article>
+</div>
+</div>
+<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#">
+<i class="fa-light fa-arrow-up">&zwnj;<!--icon--></i>
+            К началу
+          </a>
+</main>
+</div>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></div>

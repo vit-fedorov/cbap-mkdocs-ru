@@ -16,11 +16,13 @@ tags:
 - используется ранее настроенный экземпляр ПО **{{ productName }}** под управлением ОС Linux;
 - имеется файл резервной копии базы данных с расширением `.CDBBZ`;
 - резервная копия создана с помощью встроенной в ПО функции «**Резервное копирование**» (см. *«[Резервное копирование. Настройка и запуск, просмотр журнала сеансов][backup_configure]»*);
-- индексы Elasticsearch (OpenSearch) восстанавливаются отдельно от восстановления базы данных экземпляра ПО.
+- индексы {{ openSearchVariants }} восстанавливаются отдельно от восстановления базы данных экземпляра ПО.
 
 Прежде чем приступать к восстановлению экземпляра ПО **{{ productName }}** из резервной копии, ознакомьтесь с видеороликом и инструкциями, представленными ниже.
 
 ### Видеоинструкция
+
+Ссылка на видеоролик: <https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/restore_complete_backup_linux.mp4>
 
 <video controls="controls" width="100%" height="100%">
 <source src="https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/restore_complete_backup_linux.mp4" type="video/mp4" />
@@ -96,15 +98,15 @@ tags:
 10. Убедитесь в наличии директорий `<path/to/Database>` и `<path/to/Streams>`:
 
     ``` sh
-    ls -lh `<path/to/Database>`
-    ls -lh `<path/to/Streams>`
+    ls -lh <path/to/Database>
+    ls -lh <path/to/Streams>
     ```
 
     - Если папки отсутствуют, создайте их:
 
         ``` sh
-        mkdir -p `<path/to/Database>`
-        mkdir -p `<path/to/Streams>`
+        mkdir -p <path/to/Database>
+        mkdir -p <path/to/Streams>
         ```
 
 11. Перейдите в директорию распакованной резервной копии (например, `/home/<user>/temp/`).
@@ -151,7 +153,13 @@ tags:
         nodeName: <instanceName>
         ```
 
-17. При необходимости [восстановите индексы Elasticsearch](#восстановление-индексов-elasticsearch-из-файла-резервной-копии-репозитория) из резервной копии.
+    !!! warning "Имя узла и лицензионные ключи"
+
+        Чтобы использовать на восстановленном экземпляре ПО прежние лицензионные ключи, скопируйте имя узла из конфигурации исходного экземпляра ПО.
+
+        См. _«[Восстановление лицензионных ключей](#backup_restore_cdbbz_license_keys)»_.
+
+17. При необходимости [восстановите индексы {{ openSearchVariants }}](#backup_restore_cdbbz_indexes) из резервной копии.
 18. Запустите службы экземпляра ПО и проверьте их статус:
 
     ``` sh
@@ -176,16 +184,47 @@ tags:
     rm -r /home/<user>/tmp
     ```
 
-## Восстановление индексов Elasticsearch из файла резервной копии репозитория
+## Восстановление лицензионных ключей {: #backup_restore_cdbbz_license_keys }
 
-1. Остановите службу Elasticsearch и удостоверьтесь, что она остановлена:
+Чтобы использовать на восстановленном экземпляре ПО прежние лицензионные ключи, выполните указанные ниже действия.
+
+1. Откройте файл конфигурации для редактирования:
+
+    ``` sh
+    nano /usr/share/comindware/configs/instance/<instanceName>.yml
+    ```
+
+2. Укажите такое же значение `nodeName` (имя узла экземпляра ПО), как в конфигурации исходного экземпляра ПО:
+
+    ``` yml
+    nodeName: <instanceName>
+    ```
+
+3. Включите директиву `isContainerEnvironment`:
+
+    ``` yml
+    isContainerEnvironment: true
+    ```
+
+4. Перезапустите экземпляр ПО:
+
+    ``` sh
+    systemctl restart comindware<instanceName>
+    ```
+
+5. Удостоверьтесь, что лицензионные ключи присутствуют на странице «**Администрирование**» — «**[Лицензирование][licensing]**».
+6. Назначьте лицензионные ключи аккаунтам и группам.
+
+## Восстановление индексов {{ openSearchVariants }} из файла резервной копии репозитория {: #backup_restore_cdbbz_indexes }
+
+1. Остановите службу {{ openSearchVariants }} и удостоверьтесь, что она остановлена:
 
     ```
     systemctl stop elasticsearch
     systemctl status elasticsearch
     ```
 
-2. Создайте папку репозитория Elasticsearch (например, `/var/www/backups/elasticsearch/`) и перенесите в неё файлы из каталога `History` ранее [распакованной резервной копии](#unpack_backup):
+2. Создайте папку репозитория {{ openSearchVariants }} (например, `/var/www/backups/elasticsearch/`) и перенесите в неё файлы из каталога `History` ранее [распакованной резервной копии](#unpack_backup):
 
     ```
     mkdir /var/www/backups/elasticsearch/
@@ -210,7 +249,7 @@ tags:
     path.repo: /var/www/backups/elasticsearch
     ```
 
-6. Запустите службу Elasticsearch:
+6. Запустите службу {{ openSearchVariants }}:
 
     ```
     systemctl start elasticsearch.service
@@ -218,16 +257,17 @@ tags:
 
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-7. Зарегистрируйте репозиторий (например, `repostory_backup`) с резервной копией снимка Elasticsearch:
+7. Зарегистрируйте репозиторий (например, `repository_backup`) с резервной копией снимка {{ openSearchVariants }}:
 
     ```
-    curl -X PUT "localhost:9200/_snapshot/repostory_backup?pretty" -H ’Content-Type: application/json’ -d’
-    {
-    "type": "fs",
-    "settings": {
-                "location": "/var/www/backups/elasticsearch"
-                }
-    }
+    curl -X PUT "localhost:9200/_snapshot/repository_backup?pretty" \
+    -H 'Content-Type: application/json' -d \
+    '{
+        "type": "fs",
+        "settings": {
+            "location": "/var/www/backups/elasticsearch"
+        }
+    }'
 
     ```
 
@@ -236,11 +276,11 @@ tags:
 
         Шаги 7 и 8 не требуются при восстановлении снимка из хранилища S3.
 
-        Для восстановления снимка из хранилища S3 используйте репозиторий с именем, совпадающим с префиксом индекса Elasticsearch.
+        Для восстановления снимка из хранилища S3 используйте репозиторий с именем, совпадающим с префиксом индекса {{ openSearchVariants }}.
 
         Этот репозиторий создаётся автоматически при запуске резервного копирования
 
-        Префикс индекса задаётся в [свойствах подключения к Elasticsearch][elasticsearch_connection], используемого по умолчанию.
+        Префикс индекса задаётся в [свойствах подключения к {{ openSearchVariants }}][elasticsearch_connection], используемого по умолчанию.
 
 8. Проверьте содержимое зарегистрированного репозитория:
 
@@ -248,13 +288,13 @@ tags:
     curl -X GET "localhost:9200/_cat/snapshots/repostory_backup?pretty"
     ```
 
-9. Восстановите снимок Elasticsearch:
+9. Восстановите снимок {{ openSearchVariants }}:
 
     ```
     curl -X POST "localhost:9200/_snapshot/repostory_backup/backupSession123/_restore?pretty"
     ```
 
-    - В качестве репозитория укажите имя репозитория, созданного на шаге 7, или префикс индекса Elasticsearch (см. [примечание](#s3_repository) выше).
+    - В качестве репозитория укажите имя репозитория, созданного на шаге 7, или префикс индекса {{ openSearchVariants }} (см. [примечание](#s3_repository) выше).
     - В качестве имени снимка укажите идентификатор резервной копии **без точки перед номером** (например, `backupSession.123` указывайте как `backupSession123`) со страницы [«Администрирование» – «Инфраструктура» – «Резервное копирование» – «Журнал»][backup_configure].
 
 10. Проверьте наличие индексов в восстановленном каталоге:
@@ -271,11 +311,12 @@ tags:
 - _[Установка, запуск, инициализация и остановка ПО][deploy_guide_linux]_
 - _[Пути и содержимое директорий экземпляра ПО][paths]_
 - _[Проверка и настройка конфигурации экземпляра ПО {{ productName }} после восстановления из резервной копии][restore_test_configure]_
-- _[Регистрация репозитория Elasticsearch (официальное руководство, английский язык)](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-filesystem-repository.html)_
-- _[Восстановление снимка Elasticsearch (официальное руководство, английский язык)](https://www.elastic.co/guide/en/elasticsearch/reference/current/restore-snapshot-api.html)_
-- _[Elasticsearch. Настройка подключения][elasticsearch_connection]_
+- _[Регистрация репозитория {{ openSearchVariants }} (официальное руководство, английский язык)](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-filesystem-repository.html)_
+- _[Восстановление снимка {{ openSearchVariants }} (официальное руководство, английский язык)](https://www.elastic.co/guide/en/elasticsearch/reference/current/restore-snapshot-api.html)_
+- _[{{ openSearchVariants }}. Настройка подключения][elasticsearch_connection]_
 - _[Создание полной резервной копии (базы данных, вложенных файлов и журналов) без остановки экземпляра ПО][complete_running_instance_backup]_
 - _[Восстановление базы данных, вложенных файлов и журналов из полной резервной копии][restore_complete_backup]_
+- _[Лицензирование. Активация, назначение, отзыв и продление лицензий][licensing]_
 
 </div>
 

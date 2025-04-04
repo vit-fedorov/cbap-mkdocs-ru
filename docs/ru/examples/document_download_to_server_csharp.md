@@ -12,12 +12,18 @@ kbId: 5002
 !!! question "Структура атрибута типа «Документ»"
 
     --8<-- "attribute_document_logic.md"
+
+!!! tip "Извлечение файлов из атрибута типа «Документ» с помощью C#"
+
     --8<-- "attribute_document_get_file_csharp.md"
+
+!!! tip "Добавление файлов в атрибут типа «Документ» с помощью C#"
+
     --8<-- "attribute_document_add_file_csharp.md"
 
-## Образец скрипта
+## Образец скрипта {: .pageBreakBefore }
 
-``` cs
+``` cs title="Скрипт для скачивания файлов на сервер"
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -73,6 +79,11 @@ class Script {
             };
             return badresult;
         }
+{% if pdfOutput %}
+```
+
+``` cs title="Скрипт для скачивания файлов на сервер — продолжение"
+{% endif %}
         var result = new UserCommandResult {
             Success = true,
                 Commited = true,

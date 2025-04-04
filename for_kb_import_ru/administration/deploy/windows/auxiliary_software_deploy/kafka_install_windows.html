@@ -1,4 +1,4 @@
-<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4614">
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4614" kb-title="Установка Apache Kafka в Windows">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -110,7 +110,7 @@
 <p>Откройте файл конфигурации Kafka <code>C:\kafka\config\kraft\server.properties</code>.</p>
 </li>
 <li>
-<p>Отредактируйте файл конфигурации, указав IP-адрес сервера Kafka, папку для журналов и размеры сообщений.</p>
+<p>Отредактируйте файл конфигурации, указав IP-адрес сервера Apache Kafka, папку для журналов и размеры сообщений.</p>
 <div class="notice notice-warning">
 <p class="admonition-title">Внимание!</p>
 <p>При указании пути к папке журналов используйте косую черту <code>/</code> вместо <code>\</code>:</p>
@@ -192,7 +192,7 @@
 <p class="admonition-title">Внимание!</p>
 <p>Для корректной работы экземпляра ПО необходимо соблюсти следующие условия:</p>
 <ul>
-<li>IP-адрес и порт Kafka должны быть обязательно прописаны цифрами в формате <code>XX.XX.XX.XX:XXXX</code>. То есть недопустимо указывать имя хоста вместо IP-адреса и опускать номер порта.</li>
+<li>IP-адрес и порт {{ apacheKafkaVariants }} должны быть обязательно прописаны цифрами в формате <code>XX.XX.XX.XX:XXXX</code>. То есть недопустимо указывать имя хоста вместо IP-адреса и опускать номер порта.</li>
 <li>
 <p>Значения параметров <code>mq.server</code> (адрес и порт сервера очереди сообщений), <code>mq.group</code> (идентификатор группы очереди сообщений), <code>mq.node</code> (идентификатор узла очереди сообщений) должны совпадать во всех файлах конфигурации:</p>
 <ul>
@@ -229,7 +229,7 @@
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <ul>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4604">Настройка конфигурации вспомогательного ПО для оптимизации работы Comindware Platform</a></em></li>
-<li><em><a class="autorefs autorefs-internal mkdocs_imported_link" href="../../paths.html#paths_windows">Пути и содержимое директорий экземпляра ПО</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4620#paths_windows">Пути и содержимое директорий экземпляра ПО</a></em></li>
 </ul>
 </div>
 </article>

@@ -292,11 +292,35 @@
 <li>
 <p>Откройте сайт экземпляра ПО в браузере.</p>
 </li>
-<li id="dataUpgrade">Дождитесь завершения обновления структуры данных и проверьте его успешное выполнение.</li>
+<li>
+<p>Дождитесь завершения обновления структуры данных и проверьте его успешное выполнение.</p>
+<div class="notice notice-warning">
+<p class="admonition-title">Внимание!</p>
+<p>При обновлении с версии 4.7.2 на версии 4.7.3-5.0 обновляется структура базы данных.</p>
+<p>После этого необходимо вручную удалить некоторые данные кэша в старом формате.</p>
+<p>Поэтому продолжать обновление версии экземпляра ПО можно только после успешного обновления структуры данных. </p>
+<ul>
+<li>Удостоверьтесь, что появились журналы обновления:<ul>
+<li><code>/var/log/comindware/&lt;instanceName&gt;/Log/UpgradeOntology.log</code></li>
+<li><code>/var/log/comindware/&lt;instanceName&gt;/Log/upgrade&lt;ГГГГ-ММ-ДД&gt;.log</code></li>
+</ul>
+</li>
+<li>Удостоверьтесь, что в журнале <code>UpgradeOntology.log</code> последняя запись содержит строку <code>Upgrade of ontology completed successfully</code>.</li>
+<li>Удостоверьтесь, что в журнале <code>upgrade&lt;ГГГГ-ММ-ДД&gt;.log</code> последняя запись содержит строку <code>Upgrade completed</code>.</li>
+<li>Удостоверьтесь, что в журналах отсутствуют ошибки обновления. Найдите их по ключевому слову <code>error</code>.</li>
+<li>Если обновление выполнено успешно, переходите к шагу 6.</li>
+<li>
+<p>Если в журнале обновления имеются ошибки:</p>
+<ol class="colored_numbers_list">
+<li>Не переходите к шагу 6.</li>
+<li>Снова установите для экземпляра старую версию ПО.</li>
+<li>Восстановите базу данных из резервной копии.</li>
+<li>Обратитесь в службу поддержки <strong>Comindware</strong>, предоставив журналы обновления и ошибок для анализа.</li>
 </ol>
-<p>!!! warning "Внимание!"</p>
-<div class="highlight"><code><pre><span></span><code>    При обновлении с версии 4.7.2 на версии 4.7.3-5.0 обновляется структура базы данных.</code> <br/><code></code> <br/><code>    После этого необходимо вручную удалить некоторые данные кэша в старом формате.</code> <br/><code></code> <br/><code>    Поэтому продолжать обновление версии экземпляра ПО можно только после успешного обновления структуры данных.</code> <br/><code></code> <br/><code>- Удостоверьтесь, что появились журналы обновления:</code> <br/><code>    - `/var/log/comindware/&lt;instanceName&gt;/Log/UpgradeOntology.log`</code> <br/><code>    - `/var/log/comindware/&lt;instanceName&gt;/Log/upgrade&lt;ГГГГ-ММ-ДД&gt;.log`</code> <br/><code>- Удостоверьтесь, что в журнале `UpgradeOntology.log` последняя запись содержит строку `Upgrade of ontology completed successfully`.</code> <br/><code>- Удостоверьтесь, что в журнале `upgrade&lt;ГГГГ-ММ-ДД&gt;.log` последняя запись содержит строку `Upgrade completed`.</code> <br/><code>- Удостоверьтесь, что в журналах отсутствуют ошибки обновления. Найдите их по ключевому слову `error`.</code> <br/><code>- Если обновление выполнено успешно, переходите к шагу 6.</code> <br/><code>- Если в журнале обновления имеются ошибки:</code> <br/><code></code> <br/><code>    1. Не переходите к шагу 6.</code> <br/><code>    2. Снова установите для экземпляра старую версию ПО.</code> <br/><code>    3. Восстановите базу данных из резервной копии.</code> <br/><code>    4. Обратитесь в службу поддержки **Comindware**, предоставив журналы обновления и ошибок для анализа.</code> <br/></pre></code></div>
-<ol class="colored_numbers_list" start="6">
+</li>
+</ul>
+</div>
+</li>
 <li>
 <p>Создайте резервную копию экземпляра ПО:</p>
 <ul>
@@ -305,11 +329,15 @@
 <p>или</p>
 </li>
 <li>
-<p>c помощью скрипта для создания снимка базы.
-7. Остановите экземпляр ПО.
-8. Распакуйте резервную копию и удалите из неё следующие директории кэшей:</p>
+<p>c помощью скрипта для создания снимка базы.</p>
 </li>
 </ul>
+</li>
+<li>
+<p>Остановите экземпляр ПО.</p>
+</li>
+<li>
+<p>Распакуйте резервную копию и удалите из неё следующие директории кэшей:</p>
 <div class="highlight"><code><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>cacheGroup-*-TableIdentity</code> <br/><code>rm<span class="w"> </span>-rf<span class="w"> </span>cacheGroup-*-TableIdentityReplicated</code> <br/><code>rm<span class="w"> </span>-rf<span class="w"> </span>cacheGroup-*Value</code> <br/><code>rm<span class="w"> </span>-rf<span class="w"> </span>cacheGroup-*ValueReplicated</code> <br/><code>rm<span class="w"> </span>-rf<span class="w"> </span>cache-ignite-sys-cache</code> <br/><code>rm<span class="w"> </span>-rf<span class="w"> </span>cp</code> <br/><code>rm<span class="w"> </span>-rf<span class="w"> </span>metastorage</code> <br/><code>rm<span class="w"> </span>-rf<span class="w"> </span>cacheGroup-Keys</code> <br/></pre></code></div>
 </li>
 <li>

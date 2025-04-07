@@ -19,7 +19,7 @@ kbId: 4916
 
     --8<-- "attribute_enum_get_data_formula.md"
 
-!!! tip "Сравнение и фильтрация значения атрибута с помощью с помощью формулы"
+!!! tip "Сравнение и фильтрация значения атрибута с помощью формулы"
 
     --8<-- "attribute_enum_compare_value_formula.md"
 

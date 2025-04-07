@@ -49,11 +49,11 @@ kbId: 4779
 
     --8<-- "attribute_enum_set_value_n3.md"
 
-!!! tip "Сравнение значения атрибута с помощью с помощью N3"
+!!! tip "Сравнение значения атрибута с помощью N3"
 
     --8<-- "attribute_enum_compare_value_n3.md"
 
-!!! tip "Фильтрация значения атрибута с помощью с помощью N3"
+!!! tip "Фильтрация значения атрибута с помощью N3"
 
     {% include-markdown ".snippets/attribute_enum_filter_value_n3.md" %}
 

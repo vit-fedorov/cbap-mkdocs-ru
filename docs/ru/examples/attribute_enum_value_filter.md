@@ -26,7 +26,7 @@ hide:
 
     --8<-- "attribute_enum_logic.md"
 
-!!! tip "Фильтрация значения атрибута с помощью с помощью N3"
+!!! tip "Фильтрация значения атрибута с помощью N3"
 
     {% include-markdown ".snippets/attribute_enum_filter_value_n3.md" %}
 

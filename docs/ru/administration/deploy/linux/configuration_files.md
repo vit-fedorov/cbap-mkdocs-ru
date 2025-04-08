@@ -23,7 +23,7 @@ kbId: 5067
     - `journal.name` — индекс сервера {{ openSearchVariants }}.
     - `db.workDir` — директория для хранения базы данных экземпляра ПО.
     - `db.name` — префикс кэшей в базе данных экземпляра ПО.
-    - `userStorage.localDisk.path` — директория для хранения пользовательских файлов.
+    - `userStorage.localDisk.path` — директория для хранения загруженных файлов.
     - `mq.server` — адрес сервера {{ apacheKafkaVariants }}.
     - `backup.defaultFolder` — директория для хранения резервных копий экземпляра ПО.
     - `backup.defaultFileName` — имя файла резервной копии экземпляра ПО.
@@ -51,7 +51,7 @@ kbId: 5067
 ### Пример YML-файла конфигурации экземпляра ПО {: .pageBreakBefore }
 
 <!--instanceYML-start-->
-``` yml
+``` yaml
 
 ##### Настройка базовых параметров ПО #####
 # Имя экземпляра ПО.
@@ -110,14 +110,14 @@ db.name: <instanceName>
 ```
 {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-``` yml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
+``` yaml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
 {% endif %}
-##### Настройка хранения пользовательских файлов #####
-# Тип хранилища (LocalDisk | S3)
+##### Настройка хранения загруженных файлов #####
+# Тип хранилища (LocalDisk | S3).
 userStorage.type: LocalDisk
 # Путь к пользовательским файлам экземпляра.
 userStorage.localDisk.path: /var/lib/comindware/<instanceName>/Streams
-# Имя корзины S3 для хранения пользовательских файлов.
+# Имя корзины S3 для хранения загруженных файлов.
 #userStorage.s3.bucket:
 # Имя подключения к S3.
 #userStorage.s3.connection: <s3ConnectionName>
@@ -167,7 +167,7 @@ mq.node: <instanceName>
 ```
 {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-``` yml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
+``` yaml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
 {% endif %}
 ##### Настройка очереди сообщений для коммуникации с адаптерами #####
 # Выключение функции коммуникации брокера сообщений с адаптером 0.
@@ -218,7 +218,7 @@ mq.node: <instanceName>
 ```
 {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-``` yml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
+``` yaml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
 {% endif %}
 ##### Настройка резервного копирования #####
 # Папка для резервного копирования по умолчанию.
@@ -239,6 +239,7 @@ backup.defaultFileName: <instanceName>
 #backup.maxSessions: 5
 
 ##### Конфигурация резервного копирования по умолчанию #####
+# <backupName> — имя конфигурации резервного копирования, без пробелов
 # Имя файлов резервных копий.
 # К нему будут добавляться метка времени и расширение cdbbz, например:
 # Backup.202202161625.cdbbz
@@ -275,10 +276,10 @@ backup.defaultFileName: <instanceName>
 ```
 {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-``` yml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
+``` yaml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
 {% endif %}
 ##### Настройка дополнительного хранилища для конфигурации резервного копирования по умолчанию #####
-# Тип хранилища (LocalDisk | S3)
+# Тип хранилища (LocalDisk | S3).
 #backup.default.<backupName>.extraRepository.type: LocalDisk
 # Путь к файлам резервных копий.
 #backup.default.<backupName>.extraRepository.localDisk.path: /var/backups/<instanceName>ExtraRepository
@@ -288,7 +289,7 @@ backup.defaultFileName: <instanceName>
 #backup.default.<backupName>.extraRepository.s3.connection: <s3ConnectionName>
 
 ##### Настройка резервного копирования данных службы журналирования ({{ openSearchVariants }}) #####
-# Тип хранилища (LocalDisk | S3)
+# Тип хранилища (LocalDisk | S3).
 #backup.journalRepository.type: LocalDisk
 # Путь к файлам резервных копий
 #backup.journalRepository.localDisk.path: /var/backups/<instanceName>
@@ -304,9 +305,9 @@ backup.defaultFileName: <instanceName>
 #s3.<s3ConnectionName>.description:
 # Адрес подключения к S3.
 #s3.<s3ConnectionName>.endpointURL:
-# Информация учетной записи. Ключ подключения к хранилищу S3
+# Информация учётной записи. Ключ подключения к хранилищу S3
 #s3.<s3ConnectionName>.accessKey:
-# Информация учетной записи. Секретный ключ подключения к хранилищу S3.
+# Информация учётной записи. Секретный ключ подключения к хранилищу S3.
 #s3.<s3ConnectionName>.secretKey:
 # Установите значение true, если сервер принимает только запросы path-style вида:
 # https://<s3hostname>/bucket-name/key-name
@@ -337,7 +338,7 @@ backup.defaultFileName: <instanceName>
 ```
 {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-``` yml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
+``` yaml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
 {% endif %}
 ##### Настройка синхронизации данных с OData-сервисом #####
 # Выключение интеграции по OData.
@@ -390,7 +391,7 @@ backup.defaultFileName: <instanceName>
 # (conversation, useractivity, notification, architect)
 #requestProcessor.services:
 #  - apiPrefix: conversation
-#    enabled: true
+#  - enabled: true
 
 ##### Настройка отображения количества строк таблицы на одной странице #####
 # Задайте варианты, которые будут отображаться
@@ -419,7 +420,7 @@ backup.defaultFileName: <instanceName>
 ### Пример конфигурации службы apigateway.yml {: .pageBreakBefore }
 
 <!--apigatewayYML-start-->
-``` yml
+``` yaml
 # Имя экземпляра ПО
 cluster.name: <instanceName>
 # Имя узла экземпляра
@@ -482,7 +483,7 @@ services:
 ### Пример файла конфигурации adapterhost.yml
 
 <!--adapterhostYML-start-->
-``` yml
+``` yaml
 # Имя экземпляра ПО
 clusterName: <instanceName>
 # Имя папки загрузчика экземпляра ПО

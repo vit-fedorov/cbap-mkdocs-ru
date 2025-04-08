@@ -137,6 +137,7 @@ nav:
           - administration/connections_communication_routes/system_connections/map_configure.md
           - administration/connections_communication_routes/system_connections/git_connection.md
           - administration/connections_communication_routes/system_connections/s3_connection.md
+          #- administration/connections_communication_routes/system_connections/aws_pinpoint_connection.md
         - Аутентификация:
           - administration/connections_communication_routes/authentication/openid_connection.md
           - administration/connections_communication_routes/authentication/wsfederation_connection.md

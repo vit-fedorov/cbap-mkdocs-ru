@@ -37,7 +37,6 @@ kbId: 5067
     mkdir -p <path/to/Database>
     mkdir -p <path/to/Streams>
     mkdir -p <path/to/Backup>
-    chmod -R 766 <path/to/Database> <path/to/Streams> <path/to/Backup>
     chown -R <User>:<Group> <path/to/Database> <path/to/Streams> <path/to/Backup>
     ```
 
@@ -107,6 +106,12 @@ db.name: <instanceName>
 # Путь к онтологии {{ companyName }}
 #db.n3Dir:
 
+{% if pdfOutput %}
+```
+{% include-markdown ".snippets/pdfPageBreakHard.md" %}
+
+``` yml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
+{% endif %}
 ##### Настройка хранения пользовательских файлов #####
 # Тип хранилища (LocalDisk | S3)
 userStorage.type: LocalDisk
@@ -158,6 +163,12 @@ mq.node: <instanceName>
 # Тип механизма SASL (None | Plain | ScramSha256 | ScramSha512).
 #mq.sasl.mechanism:
 
+{% if pdfOutput %}
+```
+{% include-markdown ".snippets/pdfPageBreakHard.md" %}
+
+``` yml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
+{% endif %}
 ##### Настройка очереди сообщений для коммуникации с адаптерами #####
 # Выключение функции коммуникации брокера сообщений с адаптером 0.
 #mq.adapter.0.enabled: false
@@ -203,6 +214,12 @@ mq.node: <instanceName>
 # используемые в процессе аутентификации и авторизации в OpenID Connect.
 #auth.openId.audience:
 
+{% if pdfOutput %}
+```
+{% include-markdown ".snippets/pdfPageBreakHard.md" %}
+
+``` yml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
+{% endif %}
 ##### Настройка резервного копирования #####
 # Папка для резервного копирования по умолчанию.
 # Будет использоваться во вновь создаваемых конфигурациях резервного копирования.
@@ -254,6 +271,12 @@ backup.defaultFileName: <instanceName>
 # Управление составом резервной копии — файлы истории ({{ openSearchVariants }}).
 #backup.default.<backupName>.withJournal: true
 
+{% if pdfOutput %}
+```
+{% include-markdown ".snippets/pdfPageBreakHard.md" %}
+
+``` yml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
+{% endif %}
 ##### Настройка дополнительного хранилища для конфигурации резервного копирования по умолчанию #####
 # Тип хранилища (LocalDisk | S3)
 #backup.default.<backupName>.extraRepository.type: LocalDisk
@@ -310,6 +333,12 @@ backup.defaultFileName: <instanceName>
 # Выключение запуска сеансов синхронизации по расписанию.
 #sync.ldap.schedulesEnabled: true
 
+{% if pdfOutput %}
+```
+{% include-markdown ".snippets/pdfPageBreakHard.md" %}
+
+``` yml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
+{% endif %}
 ##### Настройка синхронизации данных с OData-сервисом #####
 # Выключение интеграции по OData.
 #sync.oData.enabled: false
@@ -447,7 +476,7 @@ services:
 5. После внесения изменений перезапустите службу `adapterhost`:
 
     ``` sh
-    kill -9 $(ps -eo pid,args | grep $<instanceName> | grep Agent | awk {'print $1'}) && systemctl restart comindware<instanceName>
+    systemctl restart adapterhost<instanceName>
     ```
 
 ### Пример файла конфигурации adapterhost.yml

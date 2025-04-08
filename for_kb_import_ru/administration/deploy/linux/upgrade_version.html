@@ -1,4 +1,4 @@
-<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4624">
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4624" kb-title="Обновление версии экземпляра ПО с его остановкой">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -49,7 +49,12 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h2 id="введение">Введение</h2>
-<p>Здесь представлены инструкции по обновлению версии экземпляра ПО <strong>Comindware Platform</strong> с 4.7.2 до версий 4.7.3–5.0 для ОС Linux.</p>
+<p>Здесь представлены инструкции по обновлению версии экземпляра ПО <strong>Comindware Platform</strong> на одном и том же сервере с остановкой экземпляра.</p>
+<p>Инструкции даны для обновления с версий 4.7.2 до версий 4.7.3–5.0 в ОС Linux.</p>
+<div class="notice notice-tip">
+<p class="admonition-title">Совет</p>
+<p>Этот способ можно использовать, если ПО <strong>Comindware Platform</strong> развёрнуто на одной машине и нет возможности развернуть новую машину для экземпляра ПО новой версии. Если вы можете развернуть новую машину, то рекомендуется следовать инструкции <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5097">Обновление версии экземпляра ПО без его остановки</a>»</em>.</p>
+</div>
 <h2 id="порядок-обновления-версии-экземпляра-по">Порядок обновления версии экземпляра ПО</h2>
 <ol class="colored_numbers_list">
 <li>
@@ -59,19 +64,25 @@
 <li>Остановите экземпляр ПО.</li>
 <li>Сохраните конфигурацию экземпляра ПО и вспомогательных служб.</li>
 <li>Удалите компоненты старой версии ПО.</li>
+<li>Переместите директорию с базой данных экземпляра ПО в резервную директорию.</li>
 </ul>
 </li>
 <li>
 <p>Обновите версию экземпляра ПО:</p>
 <ul>
-<li>Скачайте и распакуйте дистрибутив новой версии ПО.</li>
+<li>Скачайте и распакуйте два дистрибутива: вспомогательного ПО и новой версии ПО.</li>
+<li>Обновите версию библиотек <code>librdkafka</code>.</li>
 <li>Установите новую версию ПО.</li>
-<li>Обновите экземпляр ПО до новой версии.</li>
+<li>Удалите экземпляр ПО старой версии</li>
+<li>Создайте экземпляр ПО новой версии.</li>
 <li>Обновите конфигурацию экземпляра ПО и вспомогательных служб.</li>
 <li>Перезапустите экземпляр ПО и вспомогательные службы.</li>
 <li>Инициализируйте экземпляр ПО.</li>
+<li>Остановите экземпляр ПО.</li>
+<li>Скопируйте в экземпляр ПО ранее перемещённую директорию с базой данных.</li>
+<li>Запустите экземпляр ПО.</li>
 <li>Обновите структуру данных до новой версии.</li>
-<li>Снова перезапустите запустите экземпляр ПО.</li>
+<li>Снова перезапустите экземпляр ПО.</li>
 </ul>
 </li>
 </ol>
@@ -89,48 +100,19 @@
 <div class="highlight"><code><pre><span></span><code>su<span class="w"> </span>-</code> <br/></pre></code></div>
 </li>
 <li>
-<p id="config_samples">Удостоверьтесь, что файлы конфигурации соответствуют приведённым ниже образцам, и при необходимости создайте и отредактируйте их.</p>
-<ul>
-<li>Отредактируйте файл <code>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code> по следующему образцу:</li>
-</ul>
-<div class="highlight"><code><pre><span></span><code>##### Настройка базовых параметров ПО #####</code> <br/><code># Имя экземпляра ПО.</code> <br/><code># Устаревшая директива: instanceName</code> <br/><code>clusterName: &lt;instanceName&gt;</code> <br/><code># Имя узла экземпляра ПО.</code> <br/><code>#nodeName: &lt;instanceName&gt;</code> <br/><code># Путь к экземпляру, по которому ПО находит свою конфигурацию.</code> <br/><code>configPath: &lt;configPath&gt;</code> <br/><code># Адрес службы журналирования (OpenSearch (Elasticsearch)).</code> <br/><code># Устаревшая директива: elasticsearchUri</code> <br/><code>journal.server: http://&lt;searchHostIP&gt;:&lt;searchHostPort&gt;</code> <br/><code># Индекс службы журналирования.</code> <br/><code># journal.name: &lt;prefix&gt;-&lt;instanceName&gt;</code> <br/><code># Выключение службы журналирования.</code> <br/><code>#journal.enabled: false</code> <br/><code># URI-адрес экземпляра ПО</code> <br/><code>fqdn: &lt;hostName&gt;</code> <br/><code># Порт экземпляра ПО</code> <br/><code>port: &lt;portNumber&gt;</code> <br/><code># Версия экземпляра ПО</code> <br/><code>version: &lt;versionNumber&gt;</code> <br/><code></code> <br/><code>##### Настройка базы данных #####</code> <br/><code># Использование тонкого клиента.</code> <br/><code>#db.asThinClient: true</code> <br/><code># Конечные точки для подключения тонкого клиента.</code> <br/><code>#db.asThinClientEndpoints: 127.0.0.1:10800</code> <br/><code># Путь к базе данных.</code> <br/><code># Устаревшая директива: databasePath</code> <br/><code>db.workDir: /var/lib/comindware/&lt;instanceName&gt;/Database</code> <br/><code># Папка установки Apache Ignite.</code> <br/><code>#db.homeDir:</code> <br/><code># Путь к файлу конфигурации Apache Ignite.</code> <br/><code>#db.configPath:</code> <br/><code># Настройки JVM.</code> <br/><code>#db.jvmOpts:</code> <br/><code># Настройки Java.</code> <br/><code>#db.javaOpts:</code> <br/><code># Включение автоматической настройки узлов Apache Ignite.</code> <br/><code>#db.baselineAutoAdjustEnabledFlag: false</code> <br/><code># Время ожидания фактического изменения настройки узлов Apache Ignite</code> <br/><code># с момента последнего изменения.</code> <br/><code>#db.baselineAutoAdjustTimeout: 3000</code> <br/><code># Согласованный глобальный уникальный идентификатор узла Apache Ignite.</code> <br/><code>#db.consistentId: </code> <br/><code># Используемый префикс кэшей в базе данных</code> <br/><code># Устаревшая директива: databaseName</code> <br/><code>db.name: &lt;instanceName&gt;</code> <br/><code># Префикс кэшей в базе данных, используемый при обновлении.</code> <br/><code>#db.upgradeName:</code> <br/><code># Путь к онтологии Comindware</code> <br/><code>#db.n3Dir:</code> <br/><code></code> <br/><code>##### Настройка хранения пользовательских файлов #####</code> <br/><code># Тип хранилища (LocalDisk | S3)</code> <br/><code>userStorage.type: LocalDisk</code> <br/><code># Путь к пользовательским файлам экземпляра.</code> <br/><code>userStorage.localDisk.path: /var/lib/comindware/&lt;instanceName&gt;/Streams</code> <br/><code># Имя корзины S3 для хранения пользовательских файлов.</code> <br/><code>#userStorage.s3.bucket:</code> <br/><code># Имя подключения к S3.</code> <br/><code>#userStorage.s3.connection: &lt;s3ConnectionName&gt;</code> <br/><code></code> <br/><code>##### Настройка хранения временных файлов #####</code> <br/><code># Тип хранилища (LocalDisk | S3).</code> <br/><code>tempStorage.type: LocalDisk</code> <br/><code># Путь к временным файлам экземпляра.</code> <br/><code>tempStorage.localDisk.path: /var/lib/comindware/&lt;instanceName&gt;/Temp</code> <br/><code># Имя корзины S3 для хранения временных файлов.</code> <br/><code>#tempStorage.s3.bucket:</code> <br/><code># Имя подключения к S3.</code> <br/><code>#tempStorage.s3.connection: &lt;s3ConnectionName&gt;</code> <br/><code># Временная папка</code> <br/><code>tempWorkingDir: /var/lib/comindware/&lt;instanceName&gt;/LocalTemp</code> <br/><code></code> <br/><code>##### Настройка очереди сообщений #####</code> <br/><code># Адрес и порт сервера очереди сообщений Apache Kafka.</code> <br/><code>mq.server: &lt;kafkaBrokerIP&gt;:&lt;kafkaBrokerPort&gt;</code> <br/><code># Идентификатор группы очереди сообщений.</code> <br/><code>mq.group: &lt;prefix&gt;-&lt;instanceName&gt;</code> <br/><code># Префикс имени очередей сообщений.</code> <br/><code>mq.name: &lt;instanceName&gt;</code> <br/><code># Идентификатор узла очереди сообщений.</code> <br/><code>mq.node: &lt;instanceName&gt;</code> <br/><code># Выключение функции очереди сообщений.</code> <br/><code>#mq.enabled: false</code> <br/><code># Протокол безопасности очереди сообщений.</code> <br/><code># (Plaintext | Ssl | SaslPlaintext | SaslSsl)</code> <br/><code>#mq.securityProtocol: Plaintext</code> <br/><code></code> <br/><code>##### Настройка SSL-подключения очереди сообщений #####</code> <br/><code># Путь к файлу корневого сертификата сервера очереди сообщений.</code> <br/><code>#mq.ssl.caLocation:</code> <br/><code># Выключение идентификации адреса сервера очереди сообщений.</code> <br/><code>#mq.ssl.endpointIdentificationEnabled: false </code> <br/><code></code> <br/><code>##### Настройка SASL-подключения очереди сообщений #####</code> <br/><code># Имя пользователя, используемое для подключения посредством SASL.</code> <br/><code>#mq.sasl.username:</code> <br/><code>#Пароль для аутентификации, используемый для подключения посредством SASL.</code> <br/><code>#mq.sasl.password:</code> <br/><code># Тип механизма SASL (None | Plain | ScramSha256 | ScramSha512).</code> <br/><code>#mq.sasl.mechanism:</code> <br/><code></code> <br/><code>##### Настройка очереди сообщений для коммуникации с адаптерами #####</code> <br/><code># Выключение функции коммуникации брокера сообщений с адаптером 0.</code> <br/><code>#mq.adapter.0.enabled: false</code> <br/><code># Выключение отправителя сообщений.</code> <br/><code>#mq.adapter.0.producer.enabled: false</code> <br/><code># Выключение получателя сообщений.</code> <br/><code>#mq.adapter.0.consumer.enabled: false</code> <br/><code># Выключение функции коммуникации брокера сообщений с адаптером 1.</code> <br/><code>#mq.adapter.1.enabled: false</code> <br/><code># Выключение отправителя сообщений.</code> <br/><code>#mq.adapter.1.producer.enabled: false</code> <br/><code># Выключение получателя сообщений.</code> <br/><code>#mq.adapter.1.consumer.enabled: false</code> <br/><code># Выключение функции коммуникации брокера сообщений с адаптером 2.</code> <br/><code>#mq.adapter.2.enabled: false</code> <br/><code># Выключение отправителя сообщений.</code> <br/><code>#mq.adapter.2.producer.enabled: false</code> <br/><code># Выключение получателя сообщений.</code> <br/><code>#mq.adapter.2.consumer.enabled: false</code> <br/><code># Выключение функции коммуникации брокера сообщений с адаптером 3.</code> <br/><code>#mq.adapter.3.enabled: false</code> <br/><code># Выключение отправителя сообщений.</code> <br/><code>#mq.adapter.3.producer.enabled: false</code> <br/><code># Выключение получателя сообщений.</code> <br/><code>#mq.adapter.3.consumer.enabled: false</code> <br/><code></code> <br/><code>##### Настройка OpenID-аутентификации #####</code> <br/><code># Имя OpenID-сервиса, использующегося для входа.</code> <br/><code>#auth.openId.displayName:</code> <br/><code># Включение функции OpenID.</code> <br/><code>#auth.openId.enabled: true</code> <br/><code># Адрес сервера OpenID Connect.</code> <br/><code>#auth.openId.server:</code> <br/><code># Пространство имен или контекст, в котором происходит аутентификация пользователей.</code> <br/><code># Используется для управления идентификацией и доступом в системе OpenID Connect.</code> <br/><code>#auth.openId.realm:</code> <br/><code># Уникальный идентификатор клиентского приложения, используемый</code> <br/><code># для аутентификации и авторизации запросов по протоколу OpenID Connect.</code> <br/><code>#auth.openId.clientId:</code> <br/><code># Секретный ключ OpenId Connect</code> <br/><code>#auth.openId.clientSecret:</code> <br/><code># Список идентификаторов целевой аудитории, для которой предназначены токены, </code> <br/><code># используемые в процессе аутентификации и авторизации в OpenID Connect.</code> <br/><code>#auth.openId.audience:</code> <br/><code></code> <br/><code>##### Настройка резервного копирования #####</code> <br/><code># Папка для резервного копирования по умолчанию.</code> <br/><code># Будет использоваться во вновь создаваемых конфигурациях резервного копирования.</code> <br/><code># Устаревшая директива: backup.config.default.repository.localDisk.path</code> <br/><code>backup.defaultFolder: /var/backups/&lt;instanceName&gt;</code> <br/><code># Имя файла резервных копий по умолчанию.</code> <br/><code># Будет использоваться во вновь создаваемых конфигурациях резервного копирования.</code> <br/><code>backup.defaultFileName: &lt;instanceName&gt;</code> <br/><code># Выключение функции резервного копирования.</code> <br/><code>#backup.enabled: false</code> <br/><code># Выключение сеансов резервного копирования.</code> <br/><code># Выключает выполнение резервного копирования, но не его настройку.</code> <br/><code>#backup.sessionsEnabled: false</code> <br/><code># Выключение запуска сеансов резервного копирования по расписанию.</code> <br/><code>#backup.schedulesEnabled: false</code> <br/><code># Максимальное количество сеансов резервного копирования.</code> <br/><code>#backup.maxSessions: 5</code> <br/><code></code> <br/><code>##### Конфигурация резервного копирования по умолчанию #####</code> <br/><code># Имя файлов резервных копий.</code> <br/><code># К нему будут добавляться метка времени и расширение cdbbz, например:</code> <br/><code># Backup.202202161625.cdbbz</code> <br/><code>#backup.default.&lt;backupName&gt;.name: Backup</code> <br/><code># Тип хранилища (LocalDisk | S3).</code> <br/><code>#backup.default.&lt;backupName&gt;.repository.type: LocalDisk</code> <br/><code># Путь к файлам резервных копий.</code> <br/><code>#backup.default.&lt;backupName&gt;.repository.localDisk.path: /var/backups/&lt;iname&gt;</code> <br/><code># Имя корзины S3 для хранения файлов резервных копий.</code> <br/><code>#backup.default.&lt;backupName&gt;.repository.s3.bucket:</code> <br/><code># Имя подключения к S3.</code> <br/><code>#backup.default.&lt;backupName&gt;.repository.s3.connection: &lt;s3ConnectionName&gt;</code> <br/><code># Описание конфигурации</code> <br/><code>#backup.default.&lt;backupName&gt;.description:</code> <br/><code># Периодичность запуска резервного копирования.</code> <br/><code>#backup.default.&lt;backupName&gt;.period: 23:00</code> <br/><code># Дни запуска резервного копирования.</code> <br/><code>#backup.default.&lt;backupName&gt;.days: [Sunday,  Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]</code> <br/><code># Время начала запуска резервного копирования.</code> <br/><code>#backup.default.&lt;backupName&gt;.timeFrom: 00:01</code> <br/><code># Время окончания запуска резервного копирования.</code> <br/><code>#backup.default.&lt;backupName&gt;.timeUpTo: 23:59</code> <br/><code># Количество резервных копий одновременно хранящихся в системе.</code> <br/><code># Старые будут удалены автоматически.</code> <br/><code>#backup.default.&lt;backupName&gt;.keepRecent: 10</code> <br/><code># Управление составом резервной копии — загруженные файлы</code> <br/><code>#backup.default.&lt;backupName&gt;.withStreams: true</code> <br/><code># Управление составом резервной копии —  файлы скриптов.</code> <br/><code>#backup.default.&lt;backupName&gt;.withScripts: true</code> <br/><code># Управление составом резервной копии — файлы истории (OpenSearch (Elasticsearch)).</code> <br/><code>#backup.default.&lt;backupName&gt;.withJournal: true</code> <br/><code></code> <br/><code>##### Настройка дополнительного хранилища для конфигурации резервного копирования по умолчанию #####</code> <br/><code># Тип хранилища (LocalDisk | S3)</code> <br/><code>#backup.default.&lt;backupName&gt;.extraRepository.type: LocalDisk</code> <br/><code># Путь к файлам резервных копий.</code> <br/><code>#backup.default.&lt;backupName&gt;.extraRepository.localDisk.path: /var/backups/&lt;instanceName&gt;ExtraRepository</code> <br/><code># Имя корзины S3 для хранения файлов резервных копий.</code> <br/><code>#backup.default.&lt;backupName&gt;.extraRepository.s3.bucket:</code> <br/><code># Имя подключения к S3.</code> <br/><code>#backup.default.&lt;backupName&gt;.extraRepository.s3.connection: &lt;s3ConnectionName&gt;</code> <br/><code></code> <br/><code>##### Настройка резервного копирования данных службы журналирования (OpenSearch (Elasticsearch)) #####</code> <br/><code># Тип хранилища (LocalDisk | S3)</code> <br/><code>#backup.journalRepository.type: LocalDisk</code> <br/><code># Путь к файлам резервных копий</code> <br/><code>#backup.journalRepository.localDisk.path: /var/backups/&lt;instanceName&gt;</code> <br/><code># Имя корзины S3 для хранения файлов резервных копий.</code> <br/><code>#backup.journalRepository.s3.bucket:</code> <br/><code># Имя подключения, настроенного в конфигурации службы журналирования.</code> <br/><code>#backup.journalRepository.s3.journalConnection: &lt;s3ConnectionName&gt;</code> <br/><code># Имя подключения к S3, настроенного в этом файле конфигурации экземпляра ПО.</code> <br/><code>#backup.journalRepository.s3.platformConnection: &lt;s3ConnectionName&gt;</code> <br/><code></code> <br/><code>##### Конфигурация подключения к хранилищу S3 #####</code> <br/><code># Описание конфигурации.</code> <br/><code>#s3.&lt;s3ConnectionName&gt;.description:</code> <br/><code># Адрес подключения к S3.</code> <br/><code>#s3.&lt;s3ConnectionName&gt;.endpointURL:</code> <br/><code># Информация учетной записи. Ключ подключения к хранилищу S3</code> <br/><code>#s3.&lt;s3ConnectionName&gt;.accessKey:</code> <br/><code># Информация учетной записи. Секретный ключ подключения к хранилищу S3.</code> <br/><code>#s3.&lt;s3ConnectionName&gt;.secretKey:</code> <br/><code># Установите значение true, если сервер принимает только запросы path-style вида:</code> <br/><code># https://&lt;s3hostname&gt;/bucket-name/key-name</code> <br/><code>#s3.&lt;s3ConnectionName&gt;.pathStyleAccess: true</code> <br/><code></code> <br/><code>##### Настройка полнотекстового поиска #####</code> <br/><code># Выключение функции полнотекстового поиска.</code> <br/><code>#search.enabled: false</code> <br/><code># Выключение обновления индексов полнотекстового поиска.</code> <br/><code>#search.rebuildingEnabled: false</code> <br/><code># Выключение индексирования для полнотекстового поиска.</code> <br/><code>#search.indexingEnabled: false</code> <br/><code></code> <br/><code>##### Настройка сенсоров мониторинга #####</code> <br/><code># Выключение функции сенсоров мониторинга.</code> <br/><code>#sensors.enabled: false</code> <br/><code></code> <br/><code>##### Настройка синхронизации аккаунтов с LDAP-сервисом #####</code> <br/><code># Выключение функции синхронизации.</code> <br/><code>#sync.ldap.enabled: true</code> <br/><code># Выключение запуска сеансов синхронизации.</code> <br/><code># Выключает выполнение сеансов, но не их настройку.</code> <br/><code>#sync.ldap.sessionsEnabled: true</code> <br/><code># Выключение запуска сеансов синхронизации по расписанию.</code> <br/><code>#sync.ldap.schedulesEnabled: true</code> <br/><code></code> <br/><code>##### Настройка синхронизации данных с OData-сервисом #####</code> <br/><code># Выключение интеграции по OData.</code> <br/><code>#sync.oData.enabled: false</code> <br/><code># Выключение запуска сеансов синхронизации данных по OData.</code> <br/><code># Выключает выполнение сеансов, но не их настройку.</code> <br/><code>#sync.oData.sessionsEnabled: false</code> <br/><code># Выключение запуска сеансов синхронизации данных по OData по расписанию.</code> <br/><code>#sync.oData.schedulesEnabled: false</code> <br/><code># Интервал экспорта данных по OData (минуты).</code> <br/><code>#sync.oData.exportTimeInterval: 60</code> <br/><code></code> <br/><code>##### Настройки трассировки производительности #####</code> <br/><code># Выключение функции трассировки производительности.</code> <br/><code>#tracing.enabled: false</code> <br/><code></code> <br/><code>##### Настройки электронной почты #####</code> <br/><code># Выключение функции проверки наличия и получения новых писем.</code> <br/><code>#email.listenerEnabled: false</code> <br/><code># Выключение функции отправки эл. почты</code> <br/><code>#email.senderEnabled: false</code> <br/><code></code> <br/><code>##### Настройки уведомлений #####</code> <br/><code># Выключение функции отправки уведомлений.</code> <br/><code>#notifications.enabled: false</code> <br/><code># Выключение отправки уведомлений по пользовательским задачам.</code> <br/><code>#notifications.onUserTaskEnabled: false</code> <br/><code># Выключение отправки уведомлений об обсуждениях.</code> <br/><code>#notifications.pushEnabled: false</code> <br/><code># Выключение отправки уведомлений на страницах обслуживания.</code> <br/><code>#notifications.onMaintenanceEnabled: false</code> <br/><code></code> <br/><code>##### Настройка бизнес-процессов #####</code> <br/><code># Выключение функции бизнес-процессов</code> <br/><code>#bpms.enabled: false</code> <br/><code># Количество потоков выполнения бизнес-процессов</code> <br/><code>#bpms.threadsCount: 4</code> <br/><code># Выключение процессных таймеров</code> <br/><code>#bpms.timersEnabled: false</code> <br/><code></code> <br/><code>##### Настройка использования Docker #####</code> <br/><code># Включение использования в среде Docker</code> <br/><code>#isContainerEnvironment: true</code> <br/><code></code> <br/><code>##### Настройка обработчика сервис-запросов #####</code> <br/><code># Включение функции обработчика сервис-запросов</code> <br/><code>#requestProcessor.enabled: true</code> <br/><code># Список обработчиков сервис-запросов. </code> <br/><code># Если не указан, включает все доступные на узле  запросы</code> <br/><code># (conversation, useractivity, notification, architect)</code> <br/><code>#requestProcessor.services:</code> <br/><code>#  - apiPrefix: conversation</code> <br/><code>#    enabled: true</code> <br/><code></code> <br/><code>##### Настройка отображения количества строк таблицы на одной странице #####</code> <br/><code># Задайте варианты, которые будут отображаться</code> <br/><code># в меню выбора количества строк таблицы.</code> <br/><code>#queryPageResultRange: [ 50, 500, 5000, 1000000000 ]</code> <br/></pre></code></div>
-<div class="notice notice-warning">
-<p class="admonition-title">Внимание!</p>
-<p>Директивы <code>isFederationAuthEnabled</code> и <code>manageAdapterHost</code> требуется удалить, если они присутствуют.</p>
-<p>Директивы <code>mq.server</code> (адрес и порт сервера очереди сообщений), <code>mq.group</code> (идентификатор группы очереди сообщений), <code>mq.node</code> (идентификатор узла очереди сообщений) и <code>cluster.name</code> / <code>clusterName</code> (имя экземпляра ПО) должны совпадать в трёх файлах конфигурации:</p>
-<ul>
-<li><code>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code></li>
-<li><code>/var/www/&lt;instanceName&gt;/adapterhost.yml</code></li>
-<li><code>/var/www/&lt;instanceName&gt;/apigateway.yml</code></li>
-</ul>
-</div>
-<ul>
-<li>Отредактируйте файл <code>/var/www/&lt;instanceName&gt;/adapterhost.yml</code> по следующему образцу:</li>
-</ul>
-<div class="highlight"><code><pre><span></span><code># Имя экземпляра ПО</code> <br/><code>clusterName: &lt;instanceName&gt;</code> <br/><code># Имя папки загрузчика экземпляра ПО</code> <br/><code>loaderFolder: &lt;instanceName&gt;</code> <br/><code># Язык сервера (en-US | ru-RU )</code> <br/><code>serverLanguage: ru-RU</code> <br/><code># Адрес и порт сервера очереди сообщений Apache Kafka</code> <br/><code>mq.server: &lt;kafkaBrokerIp&gt;:&lt;kafkaBrokerPort&gt;</code> <br/><code># Протокол безопасности очереди сообщений. (Plaintext | Ssl | SaslPlaintext | SaslSsl)</code> <br/><code>mq.securityProtocol: Plaintext</code> <br/><code># Тип механизма SASL (None | Plain | ScramSha256 | ScramSha512)</code> <br/><code>mq.sasl.mechanism: None</code> <br/><code># Путь к файлам журналирования экземпляра ПО</code> <br/><code>log.folder: /var/log/comindware/&lt;instanceName&gt;/Logs/</code> <br/><code># Максимальное кол-во файлов журналов</code> <br/><code>log.maxArchiveFiles: 100</code> <br/><code># Максимальный размер файлов журналов (байты)</code> <br/><code>log.archiveAboveSize: 1048576000</code> <br/><code># Путь к архивам журналов</code> <br/><code>log.archiveFolder: /var/log/comindware/&lt;instanceName&gt;/Logs/Archive/</code> <br/></pre></code></div>
-<div class="notice notice-warning">
-<p class="admonition-title">Внимание!</p>
-<p>Файл <code>adapterhost.yml</code> не должен содержать пустых строк.</p>
-</div>
-<ul>
-<li>Отредактируйте файл <code>/var/www/&lt;instanceName&gt;/apigateway.yml</code> по следующему образцу:</li>
-</ul>
-<div class="highlight"><code><pre><span></span><code># Имя экземпляра ПО</code> <br/><code>cluster.name: &lt;instanceName&gt;</code> <br/><code># Имя узла экземпляра</code> <br/><code># nodeName:</code> <br/><code># Включение/выключение конфигурации журналирования экземпляра (true | false)</code> <br/><code>log.enabled: true</code> <br/><code># Путь к файлу конфигурации журналирования экземпляра</code> <br/><code>log.configurationFile: /var/www/&lt;instanceName&gt;/logs.config</code> <br/><code>kata.enabled: false</code> <br/><code># Адрес сервера очереди сообщений Apache Kafka с портом.</code> <br/><code>mq.server: &lt;kafkaBrokerIp&gt;:&lt;kafkaBrokerPort&gt;</code> <br/><code># Идентификатор группы очереди сообщений</code> <br/><code>mq.group: &lt;instanceName&gt;</code> <br/><code># Идентификатор узла очереди сообщений</code> <br/><code>mq.node: &lt;instanceName&gt;</code> <br/><code># Тип механизма SASL. (None | Plain | ScramSha256 | ScramSha512)</code> <br/><code>mq.sasl.mechanism: None</code> <br/><code># Протокол безопасности очереди сообщений. (Plaintext | Ssl | SaslPlaintext | SaslSsl)</code> <br/><code>mq.securityProtocol: Plaintext</code> <br/><code># Путь к сокету apigateway</code> <br/><code>listen.socketPath: /var/www/&lt;instanceName&gt;/App_Data/apigateway.socket</code> <br/><code># Включение/выключение файлового хранилища  (true | false)</code> <br/><code>fileStorage.enabled: true</code> <br/><code># Тип файлового хранилища (Platform — встроенное | Custom — особая DLL-библиотека )</code> <br/><code>fileStorage.type: Platform</code> <br/><code># IP-адрес сервера для загрузки файлов</code> <br/><code>fileStorage.attachmentServerUri: http://local.host.ip.address/</code> <br/><code># Путь к загружаемым файлам</code> <br/><code>fileStorage.uploadAttachment.path: /api/Attachment/Upload</code> <br/><code># Путь к скачанным файлам</code> <br/><code>fileStorage.downloadAttachment.path: /api/Attachment/GetReferenceContent/{0}</code> <br/><code># Путь к удалённым файлам</code> <br/><code>fileStorage.removeAttachment.path: /api/Attachment/Remove/{0}</code> <br/><code># Префиксы служб API</code> <br/><code>services:</code> <br/><code>- apiPrefix: conversation</code> <br/><code>- apiPrefix: useractivity</code> <br/><code>- apiPrefix: notification</code> <br/><code>- apiPrefix: architect</code> <br/></pre></code></div>
-</li>
-<li>
-<p id="NginxBackup">Сохраните резервную копию конфигурационных файлов, например в директорию <code>/var/backups/config_tmp</code>:</p>
+<p id="NginxBackup">Сохраните резервную копию файлов конфигурации, например в директорию <code>/var/backups/config_tmp</code>:</p>
 <ul>
 <li><strong>Astra Linux</strong>, <strong>Ubuntu</strong>, <strong>Debian</strong> (DEB-based)</li>
 </ul>
-<div class="highlight"><code><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/backups/config_tmp/</code> <br/><code><span class="nb">cd</span><span class="w"> </span>/var/www/&lt;instanceName&gt;/</code> <br/><code>cp<span class="w"> </span>*.config<span class="w"> </span>*.yml<span class="w"> </span>/var/backups/config_tmp/</code> <br/><code>cp<span class="w"> </span>/etc/nginx/sites-available/comindware&lt;instanceName&gt;<span class="w"> </span>/var/backups/config_tmp/</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/backups/config_tmp/</code> <br/><code><span class="nb">cd</span><span class="w"> </span>/var/www/&lt;instanceName&gt;/</code> <br/><code>cp<span class="w"> </span>*.config<span class="w"> </span>*.yml<span class="w"> </span>*.json<span class="w"> </span>/var/backups/config_tmp/</code> <br/><code>cp<span class="w"> </span>/var/www/&lt;instanceName&gt;/data/Plugins/Agent/Agent.config<span class="w"> </span>/var/backups/config_tmp/</code> <br/><code>cp<span class="w"> </span>/etc/nginx/sites-available/comindware&lt;instanceName&gt;<span class="w"> </span>/var/backups/config_tmp/</code> <br/><code>cp<span class="w"> </span>/etc/sysconfig/comindware&lt;instanceName&gt;-env<span class="w"> </span>/var/backups/config_tmp/</code> <br/></pre></code></div>
 <ul>
 <li><strong>РЕД ОС</strong>, <strong>Rocky</strong> (RPM-based)</li>
 </ul>
-<div class="highlight"><code><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/backups/config_tmp/</code> <br/><code><span class="nb">cd</span><span class="w"> </span>/var/www/&lt;instanceName&gt;/</code> <br/><code>cp<span class="w"> </span>*.config<span class="w"> </span>*.yml<span class="w"> </span>/var/backups/config_tmp/</code> <br/><code>cp<span class="w"> </span>/etc/nginx/conf.d/comindware&lt;instanceName&gt;<span class="w"> </span>/var/backups/config_tmp/</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/backups/config_tmp/</code> <br/><code><span class="nb">cd</span><span class="w"> </span>/var/www/&lt;instanceName&gt;/</code> <br/><code>cp<span class="w"> </span>*.config<span class="w"> </span>*.yml<span class="w"> </span>*.json<span class="w"> </span>/var/backups/config_tmp/</code> <br/><code>cp<span class="w"> </span>/var/www/&lt;instanceName&gt;/data/Plugins/Agent/Agent.config<span class="w"> </span>/var/backups/config_tmp/</code> <br/><code>cp<span class="w"> </span>/etc/nginx/conf.d/comindware&lt;instanceName&gt;<span class="w"> </span>/var/backups/config_tmp/</code> <br/><code>cp<span class="w"> </span>/etc/sysconfig/comindware&lt;instanceName&gt;-env<span class="w"> </span>/var/backups/config_tmp/</code> <br/></pre></code></div>
 <ul>
 <li><strong>Альт Сервер</strong></li>
 </ul>
-<div class="highlight"><code><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/backups/config_tmp/</code> <br/><code><span class="nb">cd</span><span class="w"> </span>/var/www/&lt;instanceName&gt;/</code> <br/><code>cp<span class="w"> </span>*.config<span class="w"> </span>*.yml<span class="w"> </span>/var/backups/config_tmp/</code> <br/><code>cp<span class="w"> </span>/etc/nginx/sites-available.d/comindware&lt;instanceName&gt;<span class="w"> </span>/var/backups/config_tmp/</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/backups/config_tmp/</code> <br/><code><span class="nb">cd</span><span class="w"> </span>/var/www/&lt;instanceName&gt;/</code> <br/><code>cp<span class="w"> </span>*.config<span class="w"> </span>*.yml<span class="w"> </span>*.json<span class="w"> </span>/var/backups/config_tmp/</code> <br/><code>cp<span class="w"> </span>/var/www/&lt;instanceName&gt;/data/Plugins/Agent/Agent.config<span class="w"> </span>/var/backups/config_tmp/</code> <br/><code>cp<span class="w"> </span>/etc/nginx/sites-available.d/comindware&lt;instanceName&gt;<span class="w"> </span>/var/backups/config_tmp/</code> <br/><code>cp<span class="w"> </span>/etc/sysconfig/comindware&lt;instanceName&gt;-env<span class="w"> </span>/var/backups/config_tmp/</code> <br/></pre></code></div>
 <p>Здесь <code>&lt;instanceName&gt;</code> — имя экземпляра ПО.</p>
 </li>
 <li>
@@ -153,14 +135,17 @@
 </li>
 <li>
 <p>Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО (<code>&lt;distPath&gt;</code> — путь к директории с дистрибутивом, <code>&lt;osname&gt;</code> — название операционной системы):</p>
-<p><div class="highlight"><code><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>&lt;distPath&gt;/CMW_&lt;osname&gt;</code> <br/></pre></code></div>
-</p>
+<div class="highlight"><code><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>&lt;distPath&gt;/CMW_&lt;osname&gt;</code> <br/></pre></code></div>
+</li>
+<li>
+<p id="ConfigBackup">Переместите директорию с базой данных экземпляра ПО (<code>&lt;username&gt;</code> — имя пользователя Linux):</p>
+<div class="highlight"><code><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>/home/&lt;username&gt;/&lt;instanceName&gt;</code> <br/><code>mv<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;<span class="w"> </span>/home/&lt;username&gt;/&lt;instanceName&gt;</code> <br/></pre></code></div>
 </li>
 </ol>
 <h2 class="pageBreakBefore" id="обновление-версии-по-для-экземпляра">Обновление версии ПО для экземпляра</h2>
 <div class="notice notice-warning">
 <p class="admonition-title">Внимание!</p>
-<p>Если при обновлении <a class="mkdocs_imported_link" href="#dataUpgrade">на шаге 12</a> будут обнаружены ошибки, не продолжайте обновление, установите старую версию, восстановите экземпляр ПО из резервной копии и обратитесь в службу поддержки <strong>Comindware</strong>.</p>
+<p>Если при обновлении <a class="mkdocs_imported_link" href="#dataUpgrade">на шаге 22</a> будут обнаружены ошибки, не продолжайте обновление, установите старую версию, восстановите экземпляр ПО из резервной копии и обратитесь в службу поддержки <strong>Comindware</strong>.</p>
 </div>
 <div class="notice notice-info">
 <p class="admonition-title">Обновление нескольких экземпляров ПО</p>
@@ -169,15 +154,38 @@
 </div>
 <ol class="colored_numbers_list">
 <li>
-<p>Скачайте и распакуйте дистрибутив с новой версией ПО (<code>X.X</code>, <code>&lt;versionNumber&gt;</code> — номер версии ПО):</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;distPath&gt;</code> <br/><code>tar<span class="w"> </span>-xf<span class="w"> </span>X.X-release-ru-&lt;versionNumber&gt;.&lt;osname&gt;.tar.gz</code> <br/></pre></code></div>
+<p>Скачайте и распакуйте дистрибутив с новой версией вспомогательного ПО (<code>X.X</code>, <code>&lt;prerequisitesVersion&gt;</code> — номер версии):</p>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;distPath&gt;</code> <br/><code>tar<span class="w"> </span>-xf<span class="w"> </span>X.X-release-ru-&lt;prerequisitesVersion&gt;.prerequisites.&lt;osname&gt;.tar.gz</code> <br/></pre></code></div>
+</li>
+<li>
+<p>Перейдите в распакованную директорию библиотек <code>librdkafka</code>:</p>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>CMW_&lt;osname&gt;/repo/kafka/librd/</code> <br/></pre></code></div>
+</li>
+<li>
+<p>Обновите библиотеки <code>librdkafka</code>:</p>
+<ul>
+<li><strong>Astra Linux</strong>, <strong>Ubuntu</strong>, <strong>Debian</strong> (DEB-based)</li>
+</ul>
+<div class="highlight"><code><pre><span></span><code>dpkg<span class="w"> </span>-i<span class="w"> </span>*.deb</code> <br/></pre></code></div>
+<ul>
+<li><strong>РЕД ОС</strong>, <strong>Rocky</strong> (RPM-based)</li>
+</ul>
+<div class="highlight"><code><pre><span></span><code>rpm<span class="w"> </span>-i<span class="w"> </span>*.rpm</code> <br/></pre></code></div>
+<ul>
+<li><strong>Альт Сервер</strong></li>
+</ul>
+<div class="highlight"><code><pre><span></span><code>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>*.rpm</code> <br/></pre></code></div>
+</li>
+<li>
+<p>Скачайте и распакуйте дистрибутив с новой версией ПО (<code>X.X</code>, <code>&lt;version&gt;</code> — номер версии):</p>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;distPath&gt;</code> <br/><code>tar<span class="w"> </span>-xf<span class="w"> </span>X.X-release-ru-&lt;version&gt;.&lt;osname&gt;.tar.gz</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Перейдите в распакованную директорию:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>CMW_&lt;osname&gt;_&lt;versionNumber&gt;/scripts/</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>CMW_&lt;osname&gt;_&lt;version&gt;/scripts/</code> <br/></pre></code></div>
 </li>
 <li>
-<p>Запустите установку распакованного дистрибутива ПО:</p>
+<p>Установите новую версию ПО:</p>
 <div class="highlight"><code><pre><span></span><code>bash<span class="w"> </span>version_install.sh</code> <br/></pre></code></div>
 </li>
 <li>
@@ -188,27 +196,32 @@
 <p>Отобразится список установленных версий ПО на сервере.</p>
 </li>
 <li>
-<p>Перейдите в директорию скриптов для работы с экземпляром ПО и запустите его обновление до требуемой версии:</p>
-<div class="highlight"><code><pre><span></span><code>bash<span class="w"> </span>instance_upgrade.sh<span class="w"> </span>-n<span class="o">=</span>&lt;instanceName&gt;<span class="w"> </span>-vp<span class="o">=</span>/var/www/.cmw_version/&lt;versionNumber&gt;</code> <br/></pre></code></div>
+<p>Удалите экземпляр ПО старой версии:</p>
+<div class="highlight"><code><pre><span></span><code>bash<span class="w"> </span>instance_delete.sh<span class="w"> </span>-n<span class="o">=</span>&lt;instanceName&gt;</code> <br/></pre></code></div>
+</li>
+<li>
+<p>Создайте экземпляр ПО новой версии:</p>
+<div class="highlight"><code><pre><span></span><code>bash<span class="w"> </span>instance_create.sh<span class="w"> </span>-n<span class="o">=</span>&lt;instanceName&gt;<span class="w"> </span>-p<span class="o">=</span>&lt;portNumber&gt;<span class="w"> </span>-v<span class="o">=</span>&lt;version&gt;</code> <br/></pre></code></div>
 <p>Здесь:</p>
 <ul>
-<li><code>-n=&lt;instanceName&gt;</code> — имя обновляемого экземпляра ПО;</li>
-<li><code>-vp=/var/www/.cmw_version/&lt;versionNumber&gt;</code> — укажите путь к директории с установленной версией ПО, где <code>&lt;versionNumber&gt;</code> — номер версии ПО.</li>
+<li><code>-n=&lt;instanceName&gt;</code> — имя экземпляра ПО;</li>
+<li><code>-p=&lt;portNumber&gt;</code> - порт для экземпляра ПО, по умолчанию: 80 (необязательный ключ);</li>
+<li><code>-v=&lt;version&gt;</code> — установленная версия ПО.</li>
 </ul>
 </li>
 <li>
-<p>По окончании обновления скрипт выведет информацию о компонентах экземпляра ПО. Удостоверьтесь, что компоненты успешно обновлены.</p>
+<p>По окончании создания скрипт выведет информацию о компонентах экземпляра ПО. Удостоверьтесь, что компоненты успешно установлены.</p>
 <p>Пример результата выполнения скрипта:</p>
-<div class="highlight"><code><pre><span></span><code>...</code> <br/><code><span class="o">[</span>Done<span class="o">]</span><span class="w"> </span>Creating<span class="w"> </span>Log<span class="w"> </span>Directories.</code> <br/><code>OK<span class="w">     </span>Instance<span class="w"> </span>folder<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>Instance<span class="w"> </span>Web<span class="w"> </span>config<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>Instance<span class="w"> </span>Ignite<span class="w"> </span>config<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>Instance<span class="w"> </span>binaries<span class="w"> </span>linked.</code> <br/><code>OK<span class="w">     </span>Instance<span class="w"> </span>config<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>Data<span class="w"> </span>folder<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>Database<span class="w"> </span>folder<span class="w"> </span>created:<span class="w"> </span>Yes</code> <br/><code>OK<span class="w">     </span>Streams<span class="w"> </span>folder<span class="w"> </span>created:<span class="w"> </span>No<span class="w"> </span></code> <br/><code>OK<span class="w">     </span>Logs<span class="w"> </span>folder<span class="w"> </span>created:<span class="w"> </span>Yes</code> <br/><code>OK<span class="w">     </span>Used<span class="w"> </span>version:<span class="w"> </span>&lt;versionNumber&gt;</code> <br/><code>OK<span class="w">     </span>Logs<span class="w"> </span>configured.</code> <br/><code>OK<span class="w">     </span>Sites<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>Sites<span class="w"> </span>enabled.</code> <br/><code>OK<span class="w">     </span>API<span class="w"> </span>Gateway<span class="w"> </span>configured.</code> <br/><code>OK<span class="w">     </span>Link<span class="w"> </span>to<span class="w"> </span>binaries<span class="w"> </span>is<span class="w"> </span>valid.</code> <br/><code>OK<span class="w">     </span>Instance<span class="w"> </span>service<span class="w"> </span>started.</code> <br/><code>OK<span class="w">     </span>Instance<span class="w"> </span>API<span class="w"> </span>gateway<span class="w"> </span>service<span class="w"> </span>started.</code> <br/><code>OK<span class="w">     </span>NGINX<span class="w"> </span>started.</code> <br/><code>OK<span class="w">     </span>Final<span class="w"> </span>status.</code> <br/><code><span class="o">[</span>Done<span class="o">]</span><span class="w"> </span>Upgrade<span class="w"> </span>CBAP<span class="w"> </span>instance.</code> <br/></pre></code></div>
-<p>Если какая-либо из служб имеет статус <code>FAILED</code>, перезапустите её (<code>&lt;serviceName&gt;</code> — имя службы):</p>
+<div class="highlight"><code><pre><span></span><code>...</code> <br/><code><span class="o">[</span>Done<span class="o">]</span><span class="w"> </span>Creating<span class="w"> </span>Log<span class="w"> </span>Directories.</code> <br/><code>OK<span class="w">     </span>Instance<span class="w"> </span>folder<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>Instance<span class="w"> </span>Web<span class="w"> </span>config<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>Instance<span class="w"> </span>Ignite<span class="w"> </span>config<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>Instance<span class="w"> </span>binaries<span class="w"> </span>linked.</code> <br/><code>OK<span class="w">     </span>Instance<span class="w"> </span>config<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>Data<span class="w"> </span>folder<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>Database<span class="w"> </span>folder<span class="w"> </span>created:<span class="w"> </span>Yes</code> <br/><code>OK<span class="w">     </span>Streams<span class="w"> </span>folder<span class="w"> </span>created:<span class="w"> </span>No<span class="w"> </span></code> <br/><code>OK<span class="w">     </span>Logs<span class="w"> </span>folder<span class="w"> </span>created:<span class="w"> </span>Yes</code> <br/><code>OK<span class="w">     </span>Used<span class="w"> </span>version:<span class="w"> </span>&lt;version&gt;</code> <br/><code>OK<span class="w">     </span>Logs<span class="w"> </span>configured.</code> <br/><code>OK<span class="w">     </span>Sites<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>Sites<span class="w"> </span>enabled.</code> <br/><code>OK<span class="w">     </span>API<span class="w"> </span>Gateway<span class="w"> </span>configured.</code> <br/><code>OK<span class="w">     </span>Link<span class="w"> </span>to<span class="w"> </span>binaries<span class="w"> </span>is<span class="w"> </span>valid.</code> <br/><code>OK<span class="w">     </span>Instance<span class="w"> </span>service<span class="w"> </span>started.</code> <br/><code>OK<span class="w">     </span>Instance<span class="w"> </span>API<span class="w"> </span>gateway<span class="w"> </span>service<span class="w"> </span>started.</code> <br/><code>OK<span class="w">     </span>NGINX<span class="w"> </span>started.</code> <br/><code>OK<span class="w">     </span>Final<span class="w"> </span>status.</code> <br/><code><span class="o">[</span>Done<span class="o">]</span><span class="w"> </span>Upgrade<span class="w"> </span>CBAP<span class="w"> </span>instance.</code> <br/></pre></code></div>
+<p>Если какая-либо из служб имеет статус <code>FAILED</code>, перезапустите её, например:</p>
 <div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>comindware&lt;instanceName&gt;.service</code> <br/><code>systemctl<span class="w"> </span>restart<span class="w"> </span>apigateway&lt;instanceName&gt;.service</code> <br/><code>systemctl<span class="w"> </span>restart<span class="w"> </span>adaperhost&lt;instanceName&gt;.service</code> <br/><code>systemctl<span class="w"> </span>restart<span class="w"> </span>kafka.service</code> <br/><code>systemctl<span class="w"> </span>restart<span class="w"> </span>elasticsearch.service<span class="w"> </span></code> <br/></pre></code></div>
 </li>
 <li>
-<p>Проверьте корректность конфигурации NGINX для экземпляра ПО:</p>
+<p>Отредактируйте конфигурацию NGINX для экземпляра ПО в соответствии с резервной копией, <a class="mkdocs_imported_link" href="#NginxBackup">сохранённой ранее</a>:</p>
 <ul>
 <li>
 <p><strong>Astra Linux</strong>, <strong>Ubuntu</strong>, <strong>Debian</strong> (DEB-based)</p>
-<div class="highlight"><code><pre><span></span><code>cat<span class="w"> </span>/etc/nginx/sites-available/comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/etc/nginx/sites-available/comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
 </li>
 <li>
 <p><strong>РЕД ОС</strong>, <strong>Rocky</strong> (RPM-based)</p>
@@ -218,36 +231,52 @@
 <p><strong>Альт Сервер</strong></p>
 <div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/etc/nginx/sites-available.d/comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
 </li>
-<li>
-<p>При необходимости восстановите конфигурацию NGINX, <a class="mkdocs_imported_link" href="#NginxBackup">сохранённую ранее</a>.</p>
-<ul>
-<li><strong>Astra Linux</strong>, <strong>Ubuntu</strong>, <strong>Debian</strong> (DEB-based)</li>
-</ul>
-<div class="highlight"><code><pre><span></span><code>cp<span class="w"> </span>/var/backups/config_tmp/comindware&lt;instanceName&gt;<span class="w"> </span>/etc/nginx/sites-available/</code> <br/><code>nginx<span class="w"> </span>-t<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nginx<span class="w"> </span>-s<span class="w"> </span>reload</code> <br/></pre></code></div>
-<ul>
-<li><strong>РЕД ОС</strong>, <strong>Rocky</strong> (RPM-based)</li>
-</ul>
-<div class="highlight"><code><pre><span></span><code>cp<span class="w"> </span>/var/backups/config_tmp/comindware&lt;instanceName&gt;<span class="w"> </span>/etc/nginx/conf.d/</code> <br/><code>nginx<span class="w"> </span>-t<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nginx<span class="w"> </span>-s<span class="w"> </span>reload</code> <br/></pre></code></div>
-<ul>
-<li><strong>Альт Сервер</strong></li>
-</ul>
-<div class="highlight"><code><pre><span></span><code>cp<span class="w"> </span>/var/backups/config_tmp/comindware&lt;instanceName&gt;<span class="w"> </span>/etc/nginx/sites-available.d/</code> <br/><code>nginx<span class="w"> </span>-t<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nginx<span class="w"> </span>-s<span class="w"> </span>reload</code> <br/></pre></code></div>
-</li>
 </ul>
 </li>
 <li>
-<p>Удостоверьтесь, что файлы конфигурации соответствуют <a class="mkdocs_imported_link" href="#config_samples">приведённым выше образцам</a>.</p>
+<p>Перезапустите службу NGINX для применения изменений:</p>
+<div class="highlight"><code><pre><span></span><code>nginx<span class="w"> </span>-s<span class="w"> </span>reload</code> <br/></pre></code></div>
 </li>
 <li>
-<p>Перезапустите сервисы, настройки которых были изменены:</p>
+<p>Отредактируйте файлы конфигурации в соответствии с резервными копиями, <a class="mkdocs_imported_link" href="#ConfigBackup">сохранёнными ранее</a>:</p>
+<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/etc/sysconfig/comindware&lt;instanceName&gt;-env</code> <br/><code>nano<span class="w"> </span>/var/www/&lt;instanceName&gt;/adapterhost.yml</code> <br/><code>nano<span class="w"> </span>/var/www/&lt;instanceName&gt;/apigateway.yml</code> <br/><code>nano<span class="w"> </span>/var/www/&lt;instanceName&gt;/Ignite.config</code> <br/><code>nano<span class="w"> </span>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code> <br/></pre></code></div>
+<div class="notice notice-warning">
+<p class="admonition-title">Внимание!</p>
+<ul>
+<li>В новейших версиях <strong>Comindware Platform</strong> отсутствует файл <code>Workers.config</code>.</li>
+<li>Настройка соответствующих служб выполняется в файле конфигурации экземпляра ПО <code>&lt;instanceName&gt;.yml</code>.</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Перезапустите сервисы, настройки которых были изменены, например:</p>
 <div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>apigateway&lt;instanceName&gt;<span class="w"> </span>comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
 </li>
 <li>
-<p>Откройте сайт экземпляра ПО в браузере, дождитесь окончания загрузки, одновременно открыв выдачу журналов экземпляра в терминале:</p>
-<div class="highlight"><code><pre><span></span><code>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/comindware/&lt;instanceName&gt;/Log/sys*</code> <br/></pre></code></div>
+<p>Откройте сайт экземпляра ПО в браузере, одновременно открыв выдачу журналов экземпляра в терминале:</p>
+<div class="highlight"><code><pre><span></span><code>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/comindware/&lt;instanceName&gt;/Log/heartbeat*</code> <br/></pre></code></div>
 </li>
 <li>
-<p id="dataUpgrade">Подтвердите успешное обновление структуры данных.</p>
+<p>В браузере выполните инициализацию экземпляра ПО, выполните вход и проверьте работоспособность ПО.</p>
+</li>
+<li>
+<p>Остановите экземпляр ПО:</p>
+<div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>stop<span class="w"> </span>comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
+</li>
+<li>
+<p>Скопируйте в экземпляр ПО директорию с базой данных экземпляра ПО, сохранённую ранее (<code>&lt;username&gt;</code> — имя пользователя Linux):</p>
+<div class="highlight"><code><pre><span></span><code>cp<span class="w">  </span>/home/&lt;username&gt;/&lt;instanceName&gt;/Database<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;/Database</code> <br/></pre></code></div>
+</li>
+<li>
+<p>Запустите экземпляр ПО:</p>
+<div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
+</li>
+<li>
+<p>Откройте сайт экземпляра ПО в браузере, дождитесь окончания загрузки, одновременно открыв выдачу журналов экземпляра в терминале:</p>
+<div class="highlight"><code><pre><span></span><code>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/comindware/&lt;instanceName&gt;/Log/heartbeat*</code> <br/></pre></code></div>
+</li>
+<li>
+<p id="dataUpgrade">Дождитесь завершения обновления структуры данных и проверьте его успешное выполнение.</p>
 <div class="notice notice-warning">
 <p class="admonition-title">Внимание!</p>
 <p>При обновлении с версии 4.7.2 на версии 4.7.3-5.0 обновляется структура базы данных.</p>
@@ -263,11 +292,11 @@
 <li>Удостоверьтесь, что в журнале <code>UpgradeOntology.log</code> последняя запись содержит строку <code>Upgrade of ontology completed successfully</code>.</li>
 <li>Удостоверьтесь, что в журнале <code>upgrade&lt;ГГГГ-ММ-ДД&gt;.log</code> последняя запись содержит строку <code>Upgrade completed</code>.</li>
 <li>Удостоверьтесь, что в журналах отсутствуют ошибки обновления. Найдите их по ключевому слову <code>error</code>.</li>
-<li>Если обновление выполнено успешно, переходите к шагу 13.</li>
+<li>Если обновление выполнено успешно, переходите к шагу 23.</li>
 <li>
 <p>Если в журнале обновления имеются ошибки:</p>
 <ol class="colored_numbers_list">
-<li>Не переходите к шагу 13.</li>
+<li>Не переходите к шагу 23.</li>
 <li>Снова установите для экземпляра старую версию ПО.</li>
 <li>Восстановите базу данных из резервной копии.</li>
 <li>Обратитесь в службу поддержки <strong>Comindware</strong>, предоставив журналы обновления и ошибок для анализа.</li>
@@ -301,11 +330,29 @@
 <li>
 <p>Скопируйте очищенную резервную копию в директорию с базой данных <code>/var/lib/comindware/&lt;instanceName&gt;/Database/</code>.</p>
 </li>
-<li>Запустите экземпляр ПО и войдите в систему.</li>
+<li>
+<p>Назначьте владельца директории с базой данных:</p>
+<ul>
+<li><strong>Astra Linux, Ubuntu, Debian</strong> (DEB-based)</li>
+</ul>
+<div class="highlight"><code><pre><span></span><code>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;/Database</code> <br/></pre></code></div>
+<ul>
+<li><strong>РЕД ОС, Rocky</strong> (RPM-based)</li>
+</ul>
+<div class="highlight"><code><pre><span></span><code>chown<span class="w"> </span>-R<span class="w"> </span>nginx:nginx<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;/Database</code> <br/></pre></code></div>
+<ul>
+<li><strong>Альт Сервер</strong></li>
+</ul>
+<div class="highlight"><code><pre><span></span><code>chown<span class="w"> </span>-R<span class="w"> </span>_nginx:_nginx<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;/Database</code> <br/></pre></code></div>
+</li>
+<li>
+<p>Откройте сайт экземпляра ПО в браузере, дождитесь его инициализации и выполните вход.</p>
+</li>
 </ol>
 <div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5097">Обновление версии экземпляра ПО без его остановки</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4622">Установка, запуск, инициализация и остановка ПО</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4642">Резервное копирование. Настройка и запуск, просмотр журнала сеансов</a></em></li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4623">Подсистема журналирования</a></em></li>

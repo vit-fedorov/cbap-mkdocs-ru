@@ -1,4 +1,4 @@
-<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4920">
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4920" kb-title="Атрибут типа «Список значений». Вычисление текстового значения и фильтрация с помощью N3 и формул">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -93,59 +93,12 @@
 </ul>
 </div>
 <div class="notice notice-tip">
-<p class="admonition-title">Получение данных из атрибута типа «Список значений» с помощью N3</p>
-<p>С помощью <strong>N3</strong> для атрибута типа «<strong>Список значений</strong>» можно получить:</p>
-<ul>
-<li>
-<p>ID определённого значения:</p>
-<div class="highlight"><code><pre><span></span><code><span class="p">(</span><span class="s">"EnumAttributeSystemName"</span> <span class="s">"enumValueSystemName"</span><span class="p">)</span> <span class="nn">convert</span><span class="p">:</span><span class="nt">enumValue</span> <span class="err">?enumValueId</span><span class="p">.</span></code> <br/></pre></code></div>
-</li>
-<li>
-<p>объект с атрибутом:</p>
-<div class="highlight"><code><pre><span></span><code><span class="p">(</span><span class="s">"TemplateSystemName"</span> <span class="s">"EnumAttributeSystemName"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?enumAttribute</span><span class="p">.</span></code> <br/></pre></code></div>
-</li>
-<li>
-<p>из объекта с атрибутом — массив возможных значений атрибута в текущей записи:</p>
-<div class="highlight"><code><pre><span></span><code><span class="err">?item</span> <span class="err">?enumAttribute</span> <span class="err">?enumAttributeValues</span><span class="p">.</span></code> <br/></pre></code></div>
-<p><strong>Из этого массива можно получить:</strong></p>
-<ul>
-<li>
-<p>ID текущего значения атрибута:</p>
-<div class="highlight"><code><pre><span></span><code><span class="err">?enumAttributeValues</span> <span class="nn">cmw</span><span class="p">:</span><span class="nt">variantName</span> <span class="err">?enumValueId</span><span class="p">.</span></code> <br/></pre></code></div>
-</li>
-<li>
-<p>системное имя значения атрибута:</p>
-<div class="highlight"><code><pre><span></span><code><span class="err">?enumAttributeValues</span> <span class="nn">cmw</span><span class="p">:</span><span class="nt">variantAlias</span> <span class="err">?enumValueSystemName</span><span class="p">.</span></code> <br/></pre></code></div>
-</li>
-<li>
-<p>код значка значения атрибута:</p>
-<div class="highlight"><code><pre><span></span><code><span class="err">?enumAttributeValues</span> <span class="nn">cmw</span><span class="p">:</span><span class="nt">variantIcon</span> <span class="err">?enumValueIcon</span><span class="p">.</span></code> <br/></pre></code></div>
-</li>
-<li>
-<p>цвет значения атрибута в десятичном формате:</p>
-<div class="highlight"><code><pre><span></span><code><span class="err">?enumAttributeValues</span> <span class="nn">cmw</span><span class="p">:</span><span class="nt">color</span> <span class="err">?enumValueColor</span><span class="p">.</span></code> <br/></pre></code></div>
-</li>
-<li>
-<p>массив объектов с заполненными названиями значения атрибута на английском, русском и немецком языках:</p>
-<div class="highlight"><code><pre><span></span><code><span class="err">?enumValueId</span> <span class="nn">l10n</span><span class="p">:</span><span class="nt">text</span> <span class="err">?enumValueLanguageVersions</span><span class="p">.</span></code> <br/></pre></code></div>
-<p><strong>Из каждого элемента этого массива можно получить:</strong></p>
-<ul>
-<li>
-<p>код языка:</p>
-<div class="highlight"><code><pre><span></span><code><span class="err">?enumValueLanguageVersions</span> <span class="nn">l10n</span><span class="p">:</span><span class="nt">lang</span> <span class="err">?langCode</span><span class="p">.</span></code> <br/></pre></code></div>
-</li>
-<li>
-<p>название значения атрибута на соответствующем языке:</p>
-<div class="highlight"><code><pre><span></span><code><span class="err">?enumValueLanguageVersions</span> <span class="nn">l10n</span><span class="p">:</span><span class="nt">data</span> <span class="err">?enumValueLocalizedName</span><span class="p">.</span></code> <br/></pre></code></div>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<p class="admonition-title">Получение значения атрибута на определённом языке с помощью N3</p>
+<p>С помощью <strong>N3</strong> для атрибута типа «<strong>Список значений</strong>» можно получить названия значения атрибута на английском, русском и немецком языках:</p>
+<div class="highlight"><code><pre><span></span><code><span class="c"># Находим атрибут EnumAttributeSystemName в шаблоне TemplateSystemName.</span></code> <br/><code><span class="p">(</span><span class="s">"TemplateSystemName"</span> <span class="s">"EnumAttributeSystemName"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?enumAttribute</span><span class="p">.</span></code> <br/><code><span class="c"># Присваиваем переменной ?enumAttributeValues</span></code> <br/><code><span class="c"># объект со списком значений атрибута.</span></code> <br/><code><span class="err">?item</span> <span class="err">?enumAttribute</span> <span class="err">?enumAttributeValues</span><span class="p">.</span></code> <br/><code><span class="c"># Присваиваем переменной ?enumValueId</span></code> <br/><code><span class="c"># объект с выбранным значением атрибута.</span></code> <br/><code><span class="err">?enumAttributeValues</span> <span class="nn">cmw</span><span class="p">:</span><span class="nt">variantName</span> <span class="err">?enumValueId</span><span class="p">.</span></code> <br/><code><span class="c"># Присваиваем переменной ?enumAttributeValues массив объектов</span></code> <br/><code><span class="c"># с заполненными названиями значения атрибута на всех языках.</span></code> <br/><code><span class="err">?enumValueId</span> <span class="nn">l10n</span><span class="p">:</span><span class="nt">text</span> <span class="err">?enumValueLanguageVersions</span><span class="p">.</span></code> <br/><code><span class="c"># Начинаем цикл по ?enumValueLanguageVersions</span></code> <br/><code>    <span class="c"># Присваиваем переменной ?langCodeStr код языка</span></code> <br/><code>    <span class="c"># названия значения атрибута на текущей итерации цикла.</span></code> <br/><code>    <span class="err">?enumValueLanguageVersions</span> <span class="nn">l10n</span><span class="p">:</span><span class="nt">lang</span> <span class="err">?langCode</span><span class="p">.</span></code> <br/><code>    <span class="p">(</span><span class="s">"{0}"</span> <span class="err">?langCode</span><span class="p">)</span> <span class="nn">string</span><span class="p">:</span><span class="nt">format</span> <span class="err">?langCodeStr</span><span class="p">.</span></code> <br/><code>    <span class="c"># Сравниваем код языка для значения атрибута с желаемым.</span></code> <br/><code>    <span class="c"># "ru" — код русского языка, "en" — английского, "de" — немецкого.</span></code> <br/><code>    <span class="err">?langCodeStr</span> <span class="nn">cmwentity</span><span class="p">:</span><span class="nt">contains</span> <span class="s">"ru"</span><span class="p">.</span></code> <br/><code>        <span class="c"># Если предыдущее предложение возвращает true,</span></code> <br/><code>        <span class="c"># записываем значение на русском языке в вычисляемый атрибут.</span></code> <br/><code>        <span class="err">?names</span> <span class="nn">l10n</span><span class="p">:</span><span class="nt">data</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="c"># переходим к следующей итерации по ?enumValueLanguageVersions.</span></code> <br/></pre></code></div>
 </div>
 <div class="notice notice-tip">
-<p class="admonition-title">Сравнение и фильтрация значения атрибута с помощью с помощью N3</p>
+<p class="admonition-title">Сравнение и фильтрация значения атрибута с помощью формулы</p>
 <p>С помощью <strong>формулы</strong> сравнить значение атрибута типа «<strong>Список значений</strong>» с требуемым можно по системному имени значения следующими способами:</p>
 <ul>
 <li>
@@ -166,7 +119,27 @@
 </li>
 </ul>
 </div>
-<h2 id="прикладная-задача">Прикладная задача</h2>
+<div class="notice notice-tip">
+<p class="admonition-title">Фильтрация значения атрибута с помощью N3</p>
+<p>
+С помощью <strong>N3</strong> для атрибута типа «<strong>Список значений</strong>» можно выполнять фильтрацию по системному имени его значения:</p>
+<ul>
+<li>
+<p>Фильтрация (в таблице шаблона) записей с требуемым значением атрибута:</p>
+<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">convert:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/logics/convertions#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="c"># Получаем атрибут типа «Список значений» из шаблона по системному имени.</span></code> <br/><code>    <span class="p">(</span><span class="s">"TemplateSystemName"</span> <span class="s">"EnumAttributeSystemName"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?enumAttribute</span><span class="p">.</span></code> <br/><code>    <span class="c"># Получаем ID значения атрибута по системному имени.</span></code> <br/><code>    <span class="p">(</span><span class="s">"EnumAttributeSystemName"</span> <span class="s">"enumValueSystemName"</span><span class="p">)</span> <span class="nn">convert</span><span class="p">:</span><span class="nt">enumValue</span> <span class="err">?enumValueId</span><span class="p">.</span></code> <br/><code>    <span class="c"># Возвращаем записи, у которых атрибут имеет значение "enumValueSystemName".</span></code> <br/><code>    <span class="err">?item</span> <span class="err">?enumAttribute</span> <span class="err">?enumValueId</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+</li>
+<li>
+<p>Фильтрация добавляемых записей (в таблице на форме или раскрывающемся списке на форме) записей с требуемым значением атрибута:</p>
+<p><div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">convert:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/logics/convertions#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="c"># Получаем атрибут типа «Список значений» из шаблона по системному имени.</span></code> <br/><code>    <span class="p">(</span><span class="s">"TemplateSystemName"</span> <span class="s">"EnumAttributeSystemName"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?enumAttribute</span><span class="p">.</span></code> <br/><code>    <span class="c"># Получаем ID значения атрибута по системному имени.</span></code> <br/><code>    <span class="p">(</span><span class="s">"EnumAttributeSystemName"</span> <span class="s">"enumValueSystemName"</span><span class="p">)</span> <span class="nn">convert</span><span class="p">:</span><span class="nt">enumValue</span> <span class="err">?enumValueId</span><span class="p">.</span></code> <br/><code>    <span class="c"># Фильтруем и возвращаем записи, </span></code> <br/><code>    <span class="c"># у которых атрибут имеет значение "enumValueSystemName".</span></code> <br/><code>    <span class="err">?filteredRecordIds</span> <span class="err">?enumAttribute</span> <span class="err">?enumValueId</span><span class="p">.</span></code> <br/><code>    <span class="err">?filteredRecordIds</span> <span class="err">-&gt;</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+</p>
+</li>
+<li>
+<p>Фильтрация отображаемых записей (в таблице на форме, раскрывающемся списке на форме, вычисляемом атрибуте или правиле для формы) записей с требуемым значением атрибута:</p>
+<div class="highlight"><code><pre><span></span><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">convert:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/logics/convertions#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="c"># Получаем атрибут типа «Запись» из шаблона с коллекцией записей.</span></code> <br/><code>    <span class="p">(</span><span class="s">"ParentTemplateSystemName"</span> <span class="s">"RecordAttributeSystemName"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?RecordAttribute</span><span class="p">.</span></code> <br/><code>    <span class="c"># Получаем атрибут типа «Список значений» из связанного шаблона по системному имени.</span></code> <br/><code>    <span class="p">(</span><span class="s">"LinkedTemplateSystemName"</span> <span class="s">"EnumAttributeSystemName"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?enumAttribute</span><span class="p">.</span></code> <br/><code>    <span class="c"># Получаем ID значения атрибута по системному имени.</span></code> <br/><code>    <span class="p">(</span><span class="s">"EnumAttributeSystemName"</span> <span class="s">"enumValueSystemName"</span><span class="p">)</span> <span class="nn">convert</span><span class="p">:</span><span class="nt">enumValue</span> <span class="err">?enumValueId</span><span class="p">.</span></code> <br/><code>    <span class="c"># Получаем коллекцию записей из атрибута RecordAttribute.</span></code> <br/><code>    <span class="err">?item</span> <span class="err">?RecordAttribute</span> <span class="err">?filteredRecordIds</span><span class="p">.</span></code> <br/><code>    <span class="c"># Фильтруем и возвращаем записи,</span></code> <br/><code>    <span class="c"># у которых атрибут имеет значение "enumValueSystemName".</span></code> <br/><code>    <span class="err">?filteredRecordIds</span> <span class="err">?enumAttribute</span> <span class="err">?enumValueId</span><span class="p">.</span></code> <br/><code>    <span class="err">?filteredRecordIds</span> <span class="err">-&gt;</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
+</li>
+</ul>
+</div>
+<h2 class="pageBreakBefore" id="прикладная-задача">Прикладная задача</h2>
 <p>Имеется процесс оформления заявок на перевозку.</p>
 <p>Тип транспортного средства в заявке задаётся атрибутом типа «<strong>Список значений</strong>».</p>
 <p>Требуется распределять заявки в разным исполнителям в зависимости от выбранного <em>типа ТС</em>.</p>
@@ -198,7 +171,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="настройка-получения-текстового-значения-атрибута-типа-список-значений-на-определённом-языке">Настройка получения текстового значения атрибута типа «Список значений» на определённом языке</h2>
+<h2 class="pageBreakBefore" id="настройка-получения-текстового-значения-атрибута-типа-список-значений-на-определённом-языке">Настройка получения текстового значения атрибута типа «Список значений» на определённом языке</h2>
 <ol class="colored_numbers_list">
 <li>
 <p>В шаблоне <em>«Заявки на перевозку»</em> создайте атрибут со следующими свойствами:</p>
@@ -214,7 +187,7 @@
 <p>Поместите атрибуты <em>«Тип ТС»</em> и <em>«Наименование типа ТС»</em> на форму начального события диаграммы процесса <em>«Обработка заявок»</em>.</p>
 </li>
 </ol>
-<h2 id="настройка-распределения-заявок-по-значению-атрибута-типа-список-значений">Настройка распределения заявок по значению атрибута типа «Список значений»</h2>
+<h2 class="pageBreakBefore" id="настройка-распределения-заявок-по-значению-атрибута-типа-список-значений">Настройка распределения заявок по значению атрибута типа «Список значений»</h2>
 <ol class="colored_numbers_list">
 <li>На диаграмме процесса <em>«Обработка заявок»</em> после начального события добавьте <strong>развилку «или/или»</strong>.</li>
 <li>Добавьте три потока управления и присоедините к ним <strong>пользовательские задачи</strong> <em>«Обработать заявку на автобус»</em>, <em>«Обработать заявку на легковой автомобиль»</em>, <em>«Обработать заявку на грузовой автомобиль»</em>.</li>
@@ -261,7 +234,7 @@
 <figure class="screenshot_with_caption">
 <p><img alt="Диаграмма процесса «Обработка заявок»" src="/platform/v5.0/examples/img/enum_attribute_value_calculation_diagram.png"/><figcaption class="caption">Диаграмма процесса «Обработка заявок»</figcaption></p>
 </figure>
-<h2 id="фильтрация-записей-по-значению-атрибута-список-значений">Фильтрация записей по значению атрибута «Список значений»</h2>
+<h2 class="pageBreakBefore" id="фильтрация-записей-по-значению-атрибута-список-значений">Фильтрация записей по значению атрибута «Список значений»</h2>
 <ol class="colored_numbers_list">
 <li>В шаблоне <em>«Заявки на перевозку»</em> создайте таблицу <em>«Заявки на легковые автомобили»</em>.</li>
 <li>Добавьте в таблицу атрибут <em>«Тип ТС»</em>.</li>
@@ -275,7 +248,7 @@
 <p>Сохраните таблицу.</p>
 </li>
 </ol>
-<h2 id="тестирование">Тестирование</h2>
+<h2 class="pageBreakBefore" id="тестирование">Тестирование</h2>
 <ol class="colored_numbers_list">
 <li>Создайте заявку и выберите <em>тип ТС</em> <em>«автобус»</em>.</li>
 <li>На странице «<strong>Мои задачи</strong>» должна появиться задача с заголовком <em>«Обработайте заявку на перевозку: автобус»</em>.</li>

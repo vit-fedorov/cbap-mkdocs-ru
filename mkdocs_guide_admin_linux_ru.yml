@@ -34,6 +34,7 @@ nav:
     # - administration/deploy/linux/deploy_cluster.md
     - administration/deploy/linux/uninstall_auxiliary_software.md
     - administration/deploy/linux/upgrade_version.md
+    - administration/deploy/linux/upgrade_version_no_stop.md
     - administration/deploy/linux/upload_size_limit_configure.md
     - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_list.md
     - Вспомогательное ПО. Оптимизация:
@@ -158,6 +159,7 @@ nav:
       - business_apps/version_control/excel_version_control.md
   - Обзор версий:
     - general/changelog/changelog.md
+    - general/changelog/release_notes_5.0.13334.md
     - general/changelog/release_notes_5.0.md
 
 

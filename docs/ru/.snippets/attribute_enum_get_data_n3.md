@@ -43,23 +43,3 @@
         ``` turtle
         ?enumAttributeValues cmw:color ?enumValueColor.
         ```
-
-    - массив объектов с заполненными названиями значения атрибута на английском, русском и немецком языках:
-
-        ``` turtle
-        ?enumValueId l10n:text ?enumValueLanguageVersions.
-        ```
-
-        **Из каждого элемента этого массива можно получить:**
-
-        - код языка:
-
-            ``` turtle
-            ?enumValueLanguageVersions l10n:lang ?langCode.
-            ```
-
-        - название значения атрибута на соответствующем языке:
-
-            ``` turtle
-            ?enumValueLanguageVersions l10n:data ?enumValueLocalizedName.
-            ```

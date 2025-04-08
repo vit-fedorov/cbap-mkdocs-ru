@@ -1,5 +1,6 @@
 ---
 title: 'Автонумерация записей'
+kbTitle: 'Автонумерация записей с помощью формулы, C#-скрипта или выражения N3'
 tags:
     - C#
     - скрипт
@@ -171,10 +172,9 @@ C#-скрипт также можно применять для автонуме
             public static decimal Main(string ObjectID)
             {
         // Получаем значение переменной «Порядковый номер» по её ID — svar.1.
+        // Приращиваем на 1 значение переменной.
         // Присваиваем полученное значение переменной sequenceNumber.
-                var sequenceNumber = (decimal)Api.Solution.SolutionVariableService.GetValue("svar.1");
-        // Приращиваем на 1 значение переменной «Порядковый номер»
-                Api.Solution.SolutionVariableService.SetValue("svar.1", sequenceNumber+1);
+                var sequenceNumber = (decimal) Api.Solution.SolutionVariableService.IncrementValue("svar.1");
         // Возвращаем значение sequenceNumber в указанный атрибут.
                 return sequenceNumber;
             }

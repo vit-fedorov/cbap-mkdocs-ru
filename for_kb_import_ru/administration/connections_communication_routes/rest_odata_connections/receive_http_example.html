@@ -1,4 +1,4 @@
-<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4700">
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4700" kb-title="HTTP-запросы. Получение JSON-данных. Настройка подключения, пути передачи данных и сценария">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -314,8 +314,6 @@
 </li>
 <li>
 <p>Добавьте действие «<strong>Повторять по количеству объектов</strong>» со следующими свойствами:</p>
-</li>
-</ol>
 <ul>
 <li><strong>Имя переменной:</strong> <em>local</em></li>
 <li>
@@ -323,16 +321,14 @@
 <div class="highlight"><code><pre><span></span><code><span class="c"># Импортируем функции для работы</span></code> <br/><code><span class="c"># с данными текущего сеанса и переменными</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">session:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">var:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/variable#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="c"># Request — переменная из первого блока, </span></code> <br/><code>    <span class="c"># в которой находится разобранный JSON</span></code> <br/><code>    <span class="nn">session</span><span class="p">:</span><span class="nt">context</span> <span class="nn">var</span><span class="p">:</span><span class="nt">Request</span> <span class="err">?req</span><span class="p">.</span></code> <br/><code>    <span class="c"># ListZakazov - переменная, </span></code> <br/><code>    <span class="c"># в которой находится массив объектов</span></code> <br/><code>    <span class="err">?req</span> <span class="nn">var</span><span class="p">:</span><span class="nt">ListZakazov</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 </li>
 </ul>
-<ol class="colored_numbers_list" start="4">
+</li>
 <li>
 <p>Внутрь действия «<strong>Повторять по количеству объектов</strong>» добавьте действие «<strong>Создать запись</strong>» и укажите  шаблон записи <em>«Заказы»</em>.</p>
 </li>
-<li>
-<p>Внутрь действия «<strong>Создать запись</strong>» добавьте действие «<strong>Изменить значения атрибутов</strong>».</p>
-</li>
+<li>Внутрь действия «<strong>Создать запись</strong>» добавьте действие «<strong>Изменить значения атрибутов</strong>».</li>
 <li>В действии «<strong>Изменить значения атрибутов</strong>» на вкладке «<strong>Дополнительно</strong>» установите флажок «<strong>Сбрасывать кэш значений</strong>».</li>
 <li>
-<p>На вкладке «<strong>Основные</strong>» настройте следующие атрибуты::</p>
+<p>На вкладке «<strong>Основные</strong>» настройте следующие атрибуты:</p>
 <table style="width: 100%;">
 <thead>
 <tr>

@@ -152,6 +152,8 @@
 
 [map_configure]: {{ kbArticleURLPrefix }}4679
 
+[mobile_app_use]: {{ kbArticleURLPrefix }}5090
+
 [notification_types]: {{ kbArticleURLPrefix }}4682
 
 [monitoring]: {{ kbArticleURLPrefix }}4666
@@ -199,6 +201,8 @@
 [release_notes_4.7.3084]: {{ kbArticleURLPrefix }}2649
 
 [release_notes_5.0]: {{ kbArticleURLPrefix }}5073
+
+[release_notes_5.0.13334]: {{ kbArticleURLPrefix }}5094
 
 [roles]: {{ kbArticleURLPrefix }}4803
 
@@ -805,6 +809,8 @@
 [paths_linux]: {{ kbArticleURLPrefix }}4620#paths_linux
 
 [upgrade_version_linux]: {{ kbArticleURLPrefix }}4624
+
+[upgrade_version_linux_no_stop]: {{ kbArticleURLPrefix }}5097
 
 {% endif %}
 

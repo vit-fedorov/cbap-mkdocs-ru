@@ -84,7 +84,12 @@
 <li>
 <p>Остановите службы экземпляра ПО (где <code>&lt;instanceName&gt;</code> — имя экземпляра ПО):</p>
 <div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>stop<span class="w"> </span>comindware&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>stop<span class="w"> </span>apigateway&lt;instanceName&gt;</code> <br/></pre></code></div>
-<div class="highlight"><code><pre><span></span><code>ps<span class="w"> </span>-fax<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>&lt;instanceName&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Agent</code> <br/><code><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="k">$(</span>ps<span class="w"> </span>-eo<span class="w"> </span>pid,args<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>&lt;instanceName&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Agent<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="o">{</span><span class="s1">'print $1'</span><span class="o">}</span><span class="k">)</span><span class="w"> </span></code> <br/><code><span class="c1">#или </span></code> <br/><code>systemctl<span class="w"> </span>stop<span class="w"> </span>adapterhost&lt;instanceName&gt;</code> <br/></pre></code></div>
+</li>
+<li>
+<p>Остановите службу adapterhost:</p>
+<div class="highlight"><code><pre><span></span><code>ps<span class="w"> </span>-fax<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>&lt;instanceName&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Agent</code> <br/><code><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="k">$(</span>ps<span class="w"> </span>-eo<span class="w"> </span>pid,args<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>&lt;instanceName&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Agent<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="o">{</span><span class="s1">'print $1'</span><span class="o">}</span><span class="k">)</span></code> <br/></pre></code></div>
+<p>или</p>
+<div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>stop<span class="w"> </span>adapterhost&lt;instanceName&gt;</code> <br/></pre></code></div>
 </li>
 <li>
 <p>С помощью команды <code>systemctl status &lt;serviceName&gt;</code> удостоверьтесь, что службы остановлены.</p>
@@ -159,7 +164,7 @@
 </li>
 <li>
 <p>Добавьте директиву:</p>
-<div class="highlight"><code><pre><span></span><code>nodeName: &lt;instanceName&gt;</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nt">nodeName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;instanceName&gt;</span></code> <br/></pre></code></div>
 </li>
 </ul>
 <div class="notice notice-warning">
@@ -196,11 +201,11 @@
 </li>
 <li>
 <p>Укажите такое же значение <code>nodeName</code> (имя узла экземпляра ПО), как в конфигурации исходного экземпляра ПО:</p>
-<div class="highlight"><code><pre><span></span><code>nodeName: &lt;instanceName&gt;</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nt">nodeName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;instanceName&gt;</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Включите директиву <code>isContainerEnvironment</code>:</p>
-<div class="highlight"><code><pre><span></span><code>isContainerEnvironment: true</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nt">isContainerEnvironment</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Перезапустите экземпляр ПО:</p>

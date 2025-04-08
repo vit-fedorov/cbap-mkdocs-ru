@@ -10,6 +10,7 @@ tags:
     - RFID
     - чат
     - обсуждение
+hide: tags
 ---
 
 # Мобильное приложение. Использование {: #mobile_app_use }
@@ -97,14 +98,14 @@ tags:
 6. Проведите влево по строке аккаунта, авторизацию которого требуется удалить.
 7. Нажмите кнопку «**Удалить**».
 
-## Просмотр Рабочего стола <i class="fa-light fa-house"></i> {: #mobile_app_use_home }
+## Просмотр Рабочего стола <i class="fa-light fa-house"></i> {: #mobile_app_use_home .pageBreakBefore }
 
 1. Нажмите кнопку «**Главная**» <i class="fa-light fa-house"></i>.
 2. Отобразится **Рабочий стол**. См. _«[Рабочий стол. Использование][desktop]»_.
 
 Настроить **Рабочий стол** можно с помощью веб-версии **{{ productName }}**. См. _«[Рабочий стол. Настройка][desktop_setup]»_.
 
-## Навигация <i class="fa-light fa-bars"></i> {: #mobile_app_use_navigation }
+## Навигация <i class="fa-light fa-bars"></i> {: #mobile_app_use_navigation .pageBreakBefore }
 
 1. Нажмите кнопку <i class="fa-light fa-bars"></i> в верхнем левом углу.
 2. Отобразится панель навигации.
@@ -114,7 +115,7 @@ tags:
 
 Настроить панель навигации можно в веб-версии **{{ productName }}**. См. _«[Панель навигации. Настройка][navigation_sections_setup]»_.
 
-## Поиск данных <i class="fa-light fa-magnifying-glass"></i> {: #mobile_app_use_search }
+## Поиск данных <i class="fa-light fa-magnifying-glass"></i> {: #mobile_app_use_search .pageBreakBefore }
 
 **{{ productNameMobile }}** позволяет искать записи по значениям полей (атрибутов) и именам файлов, прикреплённых к записям.
 
@@ -126,7 +127,7 @@ tags:
 6. Выберите вкладку «**Файлы**».
 7. Отобразится список записей с прикреплёнными файлами, имена которых содержат искомые слова.
 
-## Сканирование QR-кодов <i class="fa-light fa-qrcode"></i> {: #mobile_app_use_qr_code }
+## Сканирование QR-кодов <i class="fa-light fa-qrcode"></i> {: #mobile_app_use_qr_code .pageBreakBefore }
 
 !!! warning "Доступ к камере"
 
@@ -152,7 +153,7 @@ tags:
 3. Поднесите устройство к NFC/RFID-метке.
 4. Откроется страница, на которую ссылается метка.
 
-## Просмотр уведомлений <i class="fa-light fa-bell"></i> {: #mobile_app_use_notifications }
+## Просмотр уведомлений <i class="fa-light fa-bell"></i> {: #mobile_app_use_notifications .pageBreakBefore }
 
 1. Нажмите кнопку «**Уведомления**» <i class="fa-light fa-bell"></i>.
 2. Откроется вкладка «**События**», и отобразится список уведомлений. Непросмотренные события будут выделены цветом.
@@ -168,7 +169,7 @@ tags:
     
     Для получения push-уведомлений необходимо разрешить их при установке **{{ productNameMobile }}** и в настройках мобильного устройства.
 
-## Использование меню <i class="fa-light fa-gear"></i>  {: #mobile_app_use_menu }
+## Использование меню <i class="fa-light fa-gear"></i>  {: #mobile_app_use_menu .pageBreakBefore }
 
 1. Нажмите кнопку «**Меню**» <i class="fa-light fa-gear"></i>.
 2. Отобразится краткая информация об аккаунте, в который выполнен вход, а также имя и версия сервера **{{ productName }}**.
@@ -177,7 +178,7 @@ tags:
 5. Чтобы перейти к базе знаний **{{ companyName }}**, выберите пункт «**Справка**».
 6. Чтобы выйти из аккаунта и перейти к странице выбор аккаунта, нажмите пункт «**Выйти**».
 
-## Просмотр карточек и таблиц {: #mobile_app_use_cards }
+## Просмотр карточек и таблиц {: #mobile_app_use_cards .pageBreakBefore }
 
 Списки записей в **{{ productNameMobile }}** могут отображаться в виде в виде карточек (по умолчанию) и таблиц. См. _«[Карточки. Использование][cards_view]»_ и _«[Таблицы. Использование][table_personal_use]»_.
 

@@ -59,7 +59,7 @@ kbId: 4624
 
     - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
 
-    ``` sh
+    ``` shell
     mkdir -p /var/backups/config_tmp/
     cd /var/www/<instanceName>/
     cp *.config *.yml *.json /var/backups/config_tmp/
@@ -70,7 +70,7 @@ kbId: 4624
 
     - **РЕД ОС**, **Rocky** (RPM-based)
 
-    ``` sh
+    ``` shell
     mkdir -p /var/backups/config_tmp/
     cd /var/www/<instanceName>/
     cp *.config *.yml *.json /var/backups/config_tmp/
@@ -81,7 +81,7 @@ kbId: 4624
 
     - **Альт Сервер**
 
-    ``` sh
+    ``` shell
     mkdir -p /var/backups/config_tmp/
     cd /var/www/<instanceName>/
     cp *.config *.yml *.json /var/backups/config_tmp/
@@ -94,32 +94,32 @@ kbId: 4624
 
 5. Остановите экземпляр ПО и вспомогательные службы и удостоверьтесь, что они остановлены:
 
-    ``` sh
+    ``` shell
     systemctl stop apigateway<instanceName> comindware<instanceName>
     systemctl status apigateway<instanceName> comindware<instanceName>
     ```
 
 6. Проверьте, выполняется ли сервис `Comindware.Adapter.Agent.exe`:
 
-    ``` sh
+    ``` shell
     ps fax | grep Agent
     ```
 
     - Если процесс `Comindware.Adapter.Agent.exe`, выполняется, завершите его по `PID`:
 
-        ``` sh
+        ``` shell
         kill -9 <PID>
         ```
 
 7. Проверьте имя и статус экземпляра:
 
-    ``` sh
+    ``` shell
     systemctl status comindware*
     ```
 
 8. Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО (`<distPath>` — путь к директории с дистрибутивом, `<osname>` — название операционной системы):
 
-    ``` sh
+    ``` shell
     rm -rf <distPath>/CMW_<osname>
     ```
 
@@ -147,14 +147,14 @@ kbId: 4624
 
 1. Скачайте и распакуйте дистрибутив с новой версией вспомогательного ПО (`X.X`, `<prerequisitesVersion>` — номер версии):
 
-    ``` sh
+    ``` shell
     cd <distPath>
     tar -xf X.X-release-ru-<prerequisitesVersion>.prerequisites.<osname>.tar.gz
     ```
 
 2. Перейдите в распакованную директорию библиотек `librdkafka`:
 
-    ``` sh
+    ``` shell
     cd CMW_<osname>/repo/kafka/librd/
     ```
 
@@ -162,44 +162,44 @@ kbId: 4624
 
     - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
 
-    ``` sh
+    ``` shell
     dpkg -i *.deb
     ```
 
     - **РЕД ОС**, **Rocky** (RPM-based)
 
-    ``` sh
+    ``` shell
     rpm -i *.rpm
     ```
 
     - **Альт Сервер**
 
-    ``` sh
+    ``` shell
     apt-get install -y *.rpm
     ```
 
 4. Скачайте и распакуйте дистрибутив с новой версией ПО (`X.X`, `<version>` — номер версии):
 
-    ``` sh
+    ``` shell
     cd <distPath>
     tar -xf X.X-release-ru-<version>.<osname>.tar.gz
     ```
 
 5. Перейдите в распакованную директорию:
 
-    ``` sh
+    ``` shell
     cd CMW_<osname>_<version>/scripts/
     ```
 
 6. Установите новую версию ПО:
 
-    ``` sh
+    ``` shell
     bash version_install.sh
     ```
 
 7. Проверьте наличие и имя директории установленной версии ПО:
 
-    ``` sh
+    ``` shell
     bash version_list.sh
     ```
 
@@ -212,7 +212,7 @@ kbId: 4624
 
 10. Создайте экземпляр ПО новой версии:
 
-    ``` sh
+    ``` shell
     bash instance_create.sh -n=<instanceName> -p=<portNumber> -v=<version>
     ```
 
@@ -228,7 +228,7 @@ kbId: 4624
 
     Пример результата выполнения скрипта:
 
-    ``` sh
+    ``` shell
     ...
     [Done] Creating Log Directories.
     OK     Instance folder created.
@@ -255,7 +255,7 @@ kbId: 4624
 
     Если какая-либо из служб имеет статус `FAILED`, перезапустите её, например:
 
-    ``` sh
+    ``` shell
     systemctl restart comindware<instanceName>.service
     systemctl restart apigateway<instanceName>.service
     systemctl restart adaperhost<instanceName>.service
@@ -267,19 +267,19 @@ kbId: 4624
 
     - **Astra Linux**, **Ubuntu**, **Debian** (DEB-based)
 
-        ``` sh
+        ``` shell
         nano /etc/nginx/sites-available/comindware<instanceName>
         ```
 
     - **РЕД ОС**, **Rocky** (RPM-based)
 
-        ``` sh
+        ``` shell
         nano /etc/nginx/conf.d/comindware<instanceName>
         ```
 
     - **Альт Сервер**
 
-        ``` sh
+        ``` shell
         nano /etc/nginx/sites-available.d/comindware<instanceName>
         ```
 
@@ -306,20 +306,20 @@ kbId: 4624
 
 15. Перезапустите сервисы, настройки которых были изменены, например:
 
-    ``` sh
+    ``` shell
     systemctl restart apigateway<instanceName> comindware<instanceName>
     ```
 
 16. Откройте сайт экземпляра ПО в браузере, одновременно открыв выдачу журналов экземпляра в терминале:
 
-    ``` sh
-    tail -f /var/log/comindware/<instanceName>/Log/sys*
+    ``` shell
+    tail -f /var/log/comindware/<instanceName>/Log/heartbeat*
     ```
 
 17. В браузере выполните инициализацию экземпляра ПО, выполните вход и проверьте работоспособность ПО.
 18. Остановите экземпляр ПО:
 
-    ``` sh
+    ``` shell
     systemctl stop comindware<instanceName>
     ```
 
@@ -331,14 +331,14 @@ kbId: 4624
 
 20. Запустите экземпляр ПО:
 
-    ``` sh
+    ``` shell
     systemctl restart comindware<instanceName>
     ```
 
 21. Откройте сайт экземпляра ПО в браузере, дождитесь окончания загрузки, одновременно открыв выдачу журналов экземпляра в терминале:
 
-    ``` sh
-    tail -f /var/log/comindware/<instanceName>/Log/sys*
+    ``` shell
+    tail -f /var/log/comindware/<instanceName>/Log/heartbeat*
     ```
 
 22. Дождитесь завершения обновления структуры данных и проверьте его успешное выполнение.
@@ -377,7 +377,7 @@ kbId: 4624
 24. Остановите экземпляр ПО.
 25. Распакуйте резервную копию и удалите из неё следующие директории кэшей:
 
-    ``` sh
+    ``` shell
     rm -rf cacheGroup-*-TableIdentity
     rm -rf cacheGroup-*-TableIdentityReplicated
     rm -rf cacheGroup-*Value
@@ -390,12 +390,32 @@ kbId: 4624
 
 26. Очистите директорию с базой данных экземпляра ПО:
 
-    ``` sh
+    ``` shell
     rm -rf /var/lib/comindware/<instanceName>/Database/*
     ```
 
 27. Скопируйте очищенную резервную копию в директорию с базой данных `/var/lib/comindware/<instanceName>/Database/`.
-28. Откройте сайт экземпляра ПО в браузере, дождитесь его инициализации и выполните вход.
+28. Назначьте владельца директории с базой данных:
+
+    - **Astra Linux, Ubuntu, Debian** (DEB-based)
+
+    ``` shell
+    chown -R www-data:www-data /var/lib/comindware/<instanceName>/Database
+    ```
+
+    - **РЕД ОС, Rocky** (RPM-based)
+
+    ``` shell
+    chown -R nginx:nginx /var/lib/comindware/<instanceName>/Database
+    ```
+
+    - **Альт Сервер**
+
+    ``` shell
+    chown -R _nginx:_nginx /var/lib/comindware/<instanceName>/Database
+    ```
+
+29. Откройте сайт экземпляра ПО в браузере, дождитесь его инициализации и выполните вход.
 
 <div class="relatedTopics" markdown="block">
 

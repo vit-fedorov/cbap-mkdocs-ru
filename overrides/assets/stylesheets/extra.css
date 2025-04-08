@@ -161,3 +161,7 @@ body {
     }
 
 }
+
+.md-typeset .relatedTopics ul li{
+    font-style: italic;
+}

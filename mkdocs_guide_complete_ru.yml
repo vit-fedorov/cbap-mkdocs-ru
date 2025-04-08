@@ -256,6 +256,7 @@ nav:
           - Список значений: business_apps/templates/attributes/attribute_enum.md
           - Текст: business_apps/templates/attributes/attribute_text.md
           - Цвет: business_apps/templates/attributes/attribute_color.md
+          - Часовой пояс: business_apps/templates/attributes/attribute_timezone.md
           - Чертёж: business_apps/templates/attributes/attribute_drawing.md
           - Число: business_apps/templates/attributes/attribute_number.md
           - Штрихкод: business_apps/templates/attributes/attribute_barcode.md

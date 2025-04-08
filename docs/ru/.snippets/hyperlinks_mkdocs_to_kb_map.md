@@ -490,6 +490,8 @@
 
 [export_template_file_formula_format_values]: {{ kbArticleURLPrefix }}4794
 
+[export_template_file_formula_format_values_date_time_formatting_symbols]: {{ kbArticleURLPrefix }}4794#export_template_file_formula_format_values_date_time_formatting_symbols
+
 [expression_editor]: {{ kbArticleURLPrefix }}5025
 
 [n3_editor_autocomplete]: {{ kbArticleURLPrefix }}5039

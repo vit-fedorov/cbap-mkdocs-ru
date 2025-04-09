@@ -46,6 +46,10 @@ hide: tags
 
     {% if not gostech %}
     См. параграфы:
+    - _[Настройка для хранения резервных копий на диске](#backup_configure_instance_disk)_
+    - _[Настройка для хранения резервных копий в S3](#backup_configure_instance_s3)_
+    - _[Настройка для резервного копирования в дополнительное хранилище S3 по расписанию](#backup_configure_instance_s3_advanced)_
+     {% endif %}
 
     - _[Настройка для хранения резервных копий на диске](#backup_configure_instance_disk)_
     - _[Настройка для хранения резервных копий в S3](#backup_configure_instance_s3)_

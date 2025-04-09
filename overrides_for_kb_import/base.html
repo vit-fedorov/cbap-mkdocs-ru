@@ -128,7 +128,7 @@
     {% block extrahead %}{% endblock %}
   </head>
 
-  <!-- Set kbId, if defined -->
+  <!-- Set kbId and kbTitle, if defined -->
   {% set global = namespace(kbId="", kbTitle="") %}
   {% if page and page.meta%}
     {% if page.meta.kbId %}
@@ -136,6 +136,8 @@
     {% endif %}
     {% if page.meta.kbTitle %}
       {% set global.kbTitle = page.meta.kbTitle %}
+    {% elif page.title and (page.title | striptags | list | length) >= (page.meta.title | list | length) %}
+      {% set global.kbTitle = (page.title | striptags) %}
     {% elif page.meta.title %}
       {% set global.kbTitle = page.meta.title %}
     {% endif %}

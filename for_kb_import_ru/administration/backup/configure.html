@@ -64,10 +64,10 @@
 <li class="md-nav__item">
 <a class="md-nav__link mkdocs_imported_link" href="#backup_configure_elasticsearch">
 <span class="md-ellipsis">
-      Настройка OpenSearch (Elasticsearch)
+      Настройка взаимодействия с OpenSearch (Elasticsearch)
     </span>
 </a>
-<nav aria-label="Настройка OpenSearch (Elasticsearch)" class="md-nav">
+<nav aria-label="Настройка взаимодействия с OpenSearch (Elasticsearch)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link mkdocs_imported_link" href="#backup_configure_elasticsearch_disk">
@@ -157,14 +157,25 @@
 <p>Настройте конфигурацию экземпляра ПО <strong>Comindware Platform</strong>:</p>
 <ul>
 <li>Настройте папку или репозиторий S3 для хранения резервных копий.</li>
-<li>Настройте используемые по умолчанию параметры резервного копирования в файле конфигурации экземпляра ПО.</li>
+<li>Настройте параметры резервного копирования в файле конфигурации экземпляра ПО.</li>
 </ul>
-<p>См. <em>«<a class="mkdocs_imported_link" href="#backup_configure_instance">Настройка экземпляра ПО Comindware Platform</a>»</em>.</p>
+<p>См. параграфы:</p>
+<ul>
+<li><em><a class="mkdocs_imported_link" href="#backup_configure_instance_disk">Настройка для хранения резервных копий на диске</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="#backup_configure_instance_s3">Настройка для хранения резервных копий в S3</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="#backup_configure_instance_s3_advanced">Настройка для резервного копирования в дополнительное хранилище S3 по расписанию</a></em></li>
+</ul>
 </li>
 <li>
-<p>Настройте резервное копирование данных OpenSearch (Elasticsearch). См. <em>«<a class="mkdocs_imported_link" href="#backup_configure_elasticsearch">Настройка OpenSearch (Elasticsearch)</a>»</em>.</p>
+<p>Настройте резервное копирование данных OpenSearch (Elasticsearch). См. параграфы:</p>
+<ul>
+<li><em><a class="mkdocs_imported_link" href="#backup_configure_elasticsearch_disk">Настройка резервного копирования данных OpenSearch (Elasticsearch) на диск</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="#backup_configure_elasticsearch_s3">Настройка резервного копирования данных OpenSearch (Elasticsearch) в хранилище S3</a></em></li>
+</ul>
 </li>
-<li>Настройте одну или несколько <a class="mkdocs_imported_link" href="#backup_configure_list_view">конфигураций резервного копирования</a>.</li>
+<li>
+<p>Настройте одну или несколько <a class="mkdocs_imported_link" href="#backup_configure_list_view">конфигураций резервного копирования</a>.</p>
+</li>
 <li><a class="mkdocs_imported_link" href="#backup_configure_start">Запустите резервное копирование</a> с использованием настроенных конфигураций вручную или по расписанию.</li>
 <li>Просмотрите статус <a class="mkdocs_imported_link" href="#backup_configure_sessions_list">сеансов в журнале резервного копирования</a>.</li>
 <li>Восстановите данные из резервной копии. См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4647">Восстановление базы данных из файла резервной копии в формате .CDBBZ</a>»</em>.</li>
@@ -239,7 +250,7 @@
 <div class="highlight"><code><pre><span></span><code><span class="w">    </span>systemctl<span class="w"> </span>restart<span class="w"> </span>comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
 </li>
 </ol>
-<h2 class="pageBreakBefore" id="backup_configure_elasticsearch">Настройка OpenSearch (Elasticsearch)</h2>
+<h2 class="pageBreakBefore" id="backup_configure_elasticsearch">Настройка взаимодействия с OpenSearch (Elasticsearch)</h2>
 <h3 id="backup_configure_elasticsearch_disk">Настройка резервного копирования данных OpenSearch (Elasticsearch) на диск</h3>
 <div class="notice notice-warning">
 <p class="admonition-title">Внимание!</p>

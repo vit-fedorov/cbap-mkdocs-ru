@@ -5,6 +5,7 @@ tags:
     - развёртывание
     - резервное копирование
     - восстановление
+hide: tags
 ---
 
 # Восстановление базы данных из файла резервной копии в формате .CDBBZ {: #backup_restore_cdbbz}
@@ -41,40 +42,47 @@ tags:
     systemctl stop apigateway<instanceName>
     ```
 
+3. Остановите службу adapterhost:
+
     ``` sh
     ps -fax | grep <instanceName> | grep Agent
-    kill -9 $(ps -eo pid,args | grep <instanceName> | grep Agent | awk {'print $1'}) 
-    #или 
+    kill -9 $(ps -eo pid,args | grep <instanceName> | grep Agent | awk {'print $1'})
+    ```
+
+    или
+
+    ``` sh
+    
     systemctl stop adapterhost<instanceName>
     ```
 
-3. С помощью команды `systemctl status <serviceName>` удостоверьтесь, что службы остановлены.
-4. Перейдите в директорию с резервной копией, например `/home/<user>`
+4. С помощью команды `systemctl status <serviceName>` удостоверьтесь, что службы остановлены.
+5. Перейдите в директорию с резервной копией, например `/home/<user>`
 
     ```sh
     cd /home/<user>
     ```
 
-5. Создайте временную директорию для распакованной резервной копии (например, `tmp`):
+6. Создайте временную директорию для распакованной резервной копии (например, `tmp`):
 
     ```sh
     mkdir tmp
     ```
 
-6. <a id="unpack_backup"></a>Распакуйте архив резервной копии в директорию `tmp`:
+7. <a id="unpack_backup"></a>Распакуйте архив резервной копии в директорию `tmp`:
 
     ``` sh
     unzip -q <backupName>.cdbbz -d tmp/
     ```
 
-7. Перейдите в директорию `tmp` и просмотрите её содержимое:
+8. Перейдите в директорию `tmp` и просмотрите её содержимое:
 
     ``` sh
     cd tmp
     ls
     ```
 
-8. После распаковки архива в директории быть 3 директории: `Database`, `Scripts`, `Streams`.
+9. После распаковки архива в директории быть 3 директории: `Database`, `Scripts`, `Streams`.
 
     !!! note "Примечание"
 
@@ -84,7 +92,7 @@ tags:
         mv Ignite Database
         ```
 
-9. Для восстановления резервной копии используйте следующие параметры из YML-файла конфигурации экземпляра ПО `/usr/share/comindware/configs/instance/<instanceName>.yml`:
+10. Для восстановления резервной копии используйте следующие параметры из YML-файла конфигурации экземпляра ПО `/usr/share/comindware/configs/instance/<instanceName>.yml`:
 
     `#!yml databasePath: <path/to/Database>` — путь к директории базы данных;
     `#!yml userStorage.localDisk.path: <path/to/Streams>` — путь к директории пользовательских файлов;
@@ -95,7 +103,7 @@ tags:
     cat /usr/share/comindware/configs/instance/<instanceName>.yml
     ```
 
-10. Убедитесь в наличии директорий `<path/to/Database>` и `<path/to/Streams>`:
+11. Убедитесь в наличии директорий `<path/to/Database>` и `<path/to/Streams>`:
 
     ``` sh
     ls -lh <path/to/Database>
@@ -109,21 +117,21 @@ tags:
         mkdir -p <path/to/Streams>
         ```
 
-11. Перейдите в директорию распакованной резервной копии (например, `/home/<user>/temp/`).
-12. Переместите директорию `Scripts` в `Database`:
+12. Перейдите в директорию распакованной резервной копии (например, `/home/<user>/temp/`).
+13. Переместите директорию `Scripts` в `Database`:
 
     ```
     mv Scripts Database
     ```
 
-13. Переместите содержимое резервной копии в директории экземпляра ПО:
+14. Переместите содержимое резервной копии в директории экземпляра ПО:
 
     ``` sh
     mv Database/* <path/to/Database>
     mv Streams/* <path/to/Streams>
     ```
 
-14. Назначьте перенесённым директориям права `rwxrw-rw-`:
+15. Назначьте перенесённым директориям права `rwxrw-rw-`:
 
     ``` sh
     chmod -R 766 <path/to/Database/folder> <path/to/Streams> /var/lib/comindware/<instanceName>
@@ -132,7 +140,7 @@ tags:
 
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-15. Назначьте перенесенным директориям владельца:
+16. Назначьте перенесенным директориям владельца:
 
     ``` sh
     chown -R <User>:<Group> <path/to/database/folder> <path/to/streams/folder> /var/lib/comindware/<instanceName>
@@ -140,7 +148,7 @@ tags:
 
     Здесь `<User>`, `<Group>` — значения соответствующих параметров из файла `/usr/lib/systemd/system/comindware<instanceName>.service`
 
-16. Если в файле конфигурации экземпляра ПО отсутствует параметр `nodeName` (имя узла экземпляра ПО), добавьте его:
+17. Если в файле конфигурации экземпляра ПО отсутствует параметр `nodeName` (имя узла экземпляра ПО), добавьте его:
 
     - Откройте файл конфигурации для редактирования:
         ``` sh
@@ -149,7 +157,7 @@ tags:
 
     - Добавьте директиву:
 
-        ``` yml
+        ``` yaml
         nodeName: <instanceName>
         ```
 
@@ -159,8 +167,8 @@ tags:
 
         См. _«[Восстановление лицензионных ключей](#backup_restore_cdbbz_license_keys)»_.
 
-17. При необходимости [восстановите индексы {{ openSearchVariants }}](#backup_restore_cdbbz_indexes) из резервной копии.
-18. Запустите службы экземпляра ПО и проверьте их статус:
+18. При необходимости [восстановите индексы {{ openSearchVariants }}](#backup_restore_cdbbz_indexes) из резервной копии.
+19. Запустите службы экземпляра ПО и проверьте их статус:
 
     ``` sh
     systemctl start comindware<instanceName> 
@@ -174,11 +182,11 @@ tags:
     systemctl status adapterhost<instanceName>
     ```
 
-19. Откройте веб-сайт экземпляра ПО.
-20. Дождитесь инициализации экземпляра ПО. Этот процесс может занять некоторое время. Может потребоваться обновить страницу браузера. См. _«[Инициализация {{ productName }}][deploy_guide_linux_initialize]»_.
-21. Удостоверьтесь, что все данные из резервной копии восстановлены.
-22. Проверьте и исправьте конфигурацию экземпляра ПО. См. *«[Проверка и настройка конфигурации экземпляра ПО {{ productName }} после восстановления из резервной копии][restore_test_configure]»*.
-23. Удалите временную директорию с распакованной резервной копией:
+20. Откройте веб-сайт экземпляра ПО.
+21. Дождитесь инициализации экземпляра ПО. Этот процесс может занять некоторое время. Может потребоваться обновить страницу браузера. См. _«[Инициализация {{ productName }}][deploy_guide_linux_initialize]»_.
+22. Удостоверьтесь, что все данные из резервной копии восстановлены.
+23. Проверьте и исправьте конфигурацию экземпляра ПО. См. *«[Проверка и настройка конфигурации экземпляра ПО {{ productName }} после восстановления из резервной копии][restore_test_configure]»*.
+24. Удалите временную директорию с распакованной резервной копией:
 
     ``` sh
     rm -r /home/<user>/tmp
@@ -196,13 +204,13 @@ tags:
 
 2. Укажите такое же значение `nodeName` (имя узла экземпляра ПО), как в конфигурации исходного экземпляра ПО:
 
-    ``` yml
+    ``` yaml
     nodeName: <instanceName>
     ```
 
 3. Включите директиву `isContainerEnvironment`:
 
-    ``` yml
+    ``` yaml
     isContainerEnvironment: true
     ```
 

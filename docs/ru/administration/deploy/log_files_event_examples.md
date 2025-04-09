@@ -1218,7 +1218,7 @@ IIS authentication: Anonymous
 
 **Пример события**
 
-``` yml
+``` yaml
 [yyyy-MM-dd HH:mm:ss,SSS][INFO] PlatformKey: instanceName. Endpoint: connectionName (endpoint.XX). Adapter: incomingAdapter Connection test started 
 ```
 
@@ -1254,7 +1254,7 @@ data: {"Name":"XxxSenderAdapter","Description":"Адаптер для связи
 
 **Пример события**
 
-``` yml
+``` yaml
 [MM-dd HH:mm:ss,SSS][INFO] machineName_instanceName 
 Kestrel. Incoming adapters:
 [WHITE] Urls: http://127.0.1.1:8080
@@ -1288,7 +1288,7 @@ Kestrel. Incoming adapters:
 
 **Пример события**
 
-``` yml
+``` yaml
 [yyyy-MM-dd HH:mm:ss,SSS][INFO] machineName_instanceName
 Проверка подключений:
 [GREEN] connectionName (endpoint.XX) - Соединение установлено (адаптер: incomingAdapter) 
@@ -1309,7 +1309,7 @@ Kestrel. Incoming adapters:
 
 **Пример события**
 
-``` yml
+``` yaml
 [yyyy-MM-dd HH:mm:ss,SSS][INFO] machineName_instanceName
 Статистика по процессу:
 [WHITE] Количество потоков 25 
@@ -1334,7 +1334,7 @@ Kestrel. Incoming adapters:
 
 **Пример события**
 
-``` yml
+``` yaml
 [yyyy-MM-dd HH:mm:ss,SSS][INFO] machineName_instanceName
 Созданные экземпляры путей передачи данных:
 [WHITE] communicationRouteName (procedure.XX) - Адаптер: incomingAdapter. Подключение: connectionName (endpoint.XX). Запущен: True.
@@ -1357,7 +1357,7 @@ Kestrel. Incoming adapters:
 
 **Пример события**
 
-``` yml
+``` yaml
 [yyyy-MM-dd HH:mm:ss,SSS][INFO] machineName_instanceName
 Загруженные адаптеры:
 [WHITE] incomingAdapter Описание: adapterDescription. 
@@ -1376,7 +1376,7 @@ Kestrel. Incoming adapters:
 
 **Пример события**
 
-``` yml
+``` yaml
 [yyyy-MM-dd HH:mm:ss,SSS][INFO]  [AgentService::AgentService] 
 platformKey: machineName_instanceName
 loaderFolder: /var/www/instanceName/data/Plugins/Agent/LoadData
@@ -1418,7 +1418,7 @@ archiveAboveSize: 1048576000
 
 **Пример события**
 
-``` yml
+``` yaml
 [yyyy-MM-dd HH:mm:ss,SSS][INFO]  [88c1a6eb92f140fabs652bb8d9a630e8] [Metadata][Topic] reply_queue_instanceName_deploy_external:NoError 1:1:NoError:1:1 4:1:NoError:1:1 13:1:NoError:1:1 10:1:NoError:1:1 2:1:NoError:1:1 7:1:NoError:1:1 15:1:NoError:1:1 12:1:NoError:1:1 5:1:NoError:1:1 9:1:NoError:1:1 8:1:NoError:1:1 0:1:NoError:1:1 14:1:NoError:1:1 6:1:NoError:1:1 3:1:NoError:1:1 11:1:NoError:1:1 
 ```
 

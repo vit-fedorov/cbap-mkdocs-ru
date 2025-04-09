@@ -23,7 +23,7 @@ kbId: 4622
 
 2. Настройте конфигурацию развёртывания в Ansible Playbook, отредактировав файл `deploy_cmw_chart.yml`, по следующему образцу:
 
-    ``` yml
+    ``` yaml
     - hosts: localhost
         tasks:
             - name: Deploy CMW Helm chart
@@ -67,7 +67,7 @@ kbId: 4622
 
 3. В случае необходимости создать values.yml который содержащий требуемые переопределения значений Helm-чарта `comindware-chart`:
 
-    ``` yml
+    ``` yaml
     platform:
         env:
             <append_your_env_if_needed>: <value>

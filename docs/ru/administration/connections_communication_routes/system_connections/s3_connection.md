@@ -1,5 +1,6 @@
 ---
-title: Хранилище S3
+title: 'Хранилище S3'
+kbTitle: 'Хранилище S3. Настройка экземпляра ПО и подключения'
 tags:
   - подключение
   - подключения
@@ -109,7 +110,7 @@ kbId: 4677
     systemctl restart comindware<instanceName>
     ```
 
-5. [Проверьте соединение](s3_connection_test) с хранилищем S3.
+5. [Проверьте соединение](#s3_connection_test) с хранилищем S3.
 6. [Проверьте общую работоспособность](#s3_connection_validation) интеграции с S3.
 
 ### Настройка дополнительного подключения к S3 {: #s3_connection_instance_config .pageBreakBefore }
@@ -139,7 +140,12 @@ kbId: 4677
     ```
 
 2. Перезагрузите экземпляр ПО:
-3. [Проверьте соединение](s3_connection_test) с хранилищем S3.
+
+    ```
+    systemctl restart comindware<instanceName>
+    ```
+
+3. [Проверьте соединение](#s3_connection_test) с хранилищем S3.
 4. [Проверьте общую работоспособность](#s3_connection_validation) интеграции с S3.
 
 ## Проверка соединения с хранилищем S3 {: #s3_connection_test .pageBreakBefore .pageBreakBefore }

@@ -209,7 +209,7 @@ hide: tags
 4. Перезапустите **{{ productName }}**:
 
     ``` sh
-        systemctl restart comindware<instanceName>
+    systemctl restart comindware<instanceName>
     ```
 
 ## Настройка взаимодействия с {{ openSearchVariants }} {: #backup_configure_elasticsearch .pageBreakBefore }
@@ -250,7 +250,7 @@ hide: tags
 5. Перезапустите службу {{ openSearchVariants }}:
 
     ``` sh
-        systemctl restart elasticsearch   
+    systemctl restart elasticsearch   
     ```
 
 6. Перейдите к настройке машины с экземпляром ПО **{{ productName }}**.
@@ -279,7 +279,7 @@ hide: tags
 9. Перезапустите экземпляр **{{ productName }}**:
 
     ``` sh
-        systemctl restart comindware<instanceName>
+    systemctl restart comindware<instanceName>
     ```
 
 10. Настройте конфигурацию резервного копирования на диск c помощью _«[списка конфигураций резервного копирования](#backup_configure_list_view)»_.
@@ -310,15 +310,15 @@ hide: tags
     s3.client.default.path_style_access: true
     ```
 
-5. Перезапустите службу {{ openSearchVariants }}:
+4. Перезапустите службу {{ openSearchVariants }}:
 
     ``` sh
-        systemctl restart elasticsearch   
+    systemctl restart elasticsearch   
     ```
 
-6. Перейдите к настройке машины с экземпляром ПО **{{ productName }}**.
-7. Откройте для редактирования файл конфигурации `/usr/share/comindware/configs/instance/<instanceName>.yml`.
-8. Настройте подключение к хранилищу S3 для репозитория резервных копий, например:
+5. Перейдите к настройке машины с экземпляром ПО **{{ productName }}**.
+6. Откройте для редактирования файл конфигурации `/usr/share/comindware/configs/instance/<instanceName>.yml`.
+7. Настройте подключение к хранилищу S3 для репозитория резервных копий, например:
 
     ``` yaml
     #### Конфигурация подключения к хранилищу S3 на стороне {{ productName }} ####
@@ -336,7 +336,7 @@ hide: tags
     #s3.default.pathStyleAccess: true
     ```
 
-9. Укажите тип репозитория резервных копий {{ openSearchVariants }}: `S3`, и корзину для репозитория, например:
+8. Укажите тип репозитория резервных копий {{ openSearchVariants }}: `S3`, и корзину для репозитория, например:
 
     ``` yaml
     #### Настройка репозитория резервных копий {{ openSearchVariants }} в хранилище S3 ####
@@ -350,13 +350,13 @@ hide: tags
     backup.journalRepository.s3.journalConnection: default
     ```
 
-10. Перезапустите экземпляр **{{ productName }}**:
+9. Перезапустите экземпляр **{{ productName }}**:
 
     ``` sh
-        systemctl restart comindware<instanceName>
+    systemctl restart comindware<instanceName>
     ```
 
-11. Настройте конфигурацию резервного копирования в S3 c помощью _«[списка конфигураций резервного копирования](#backup_configure_list_view)»_.
+10. Настройте конфигурацию резервного копирования в S3 c помощью _«[списка конфигураций резервного копирования](#backup_configure_list_view)»_.
 {% endif %}
 
 ## Просмотр списка и настройка конфигураций резервного копирования {: #backup_configure_list_view .pageBreakBefore }

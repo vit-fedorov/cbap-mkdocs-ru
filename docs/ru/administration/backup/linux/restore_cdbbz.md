@@ -151,13 +151,14 @@ hide: tags
 17. Если в файле конфигурации экземпляра ПО отсутствует параметр `nodeName` (имя узла экземпляра ПО), добавьте его:
 
     - Откройте файл конфигурации для редактирования:
+
         ``` sh
         nano /usr/share/comindware/configs/instance/<instanceName>.yml
         ```
 
     - Добавьте директиву:
 
-        ``` yaml
+        ``` yml
         nodeName: <instanceName>
         ```
 
@@ -204,13 +205,13 @@ hide: tags
 
 2. Укажите такое же значение `nodeName` (имя узла экземпляра ПО), как в конфигурации исходного экземпляра ПО:
 
-    ``` yaml
+    ``` yml
     nodeName: <instanceName>
     ```
 
 3. Включите директиву `isContainerEnvironment`:
 
-    ``` yaml
+    ``` yml
     isContainerEnvironment: true
     ```
 
@@ -227,57 +228,74 @@ hide: tags
 
 1. Остановите службу {{ openSearchVariants }} и удостоверьтесь, что она остановлена:
 
-    ```
+    ``` sh
     systemctl stop elasticsearch
     systemctl status elasticsearch
     ```
 
-2. Создайте папку репозитория {{ openSearchVariants }} (например, `/var/www/backups/elasticsearch/`) и перенесите в неё файлы из каталога `History` ранее [распакованной резервной копии](#unpack_backup):
+2. Создайте папку репозитория {{ openSearchVariants }} (например, `/var/backups/elasticsearch/`) и перенесите в неё файлы из каталога `History` ранее [распакованной резервной копии](#unpack_backup):
 
-    ```
+    ``` sh
     mkdir /var/www/backups/elasticsearch/
-    mv /var/lib/comindware/<instanceName>/History/* /var/www/backups/elasticsearch/
+    mv /var/lib/comindware/<instanceName>/History/* /var/backups/elasticsearch/
     ```
 
-3. Назначьте папке репозитория и её содержимому права `rwxr-xr-x`:
+3. Назначьте папке репозитория и её содержимому полные права:
 
-    ```
-    chmod -R 755 /var/www/backups/
+    ``` sh
+    chmod -R 777 /var/backups/elasticsearch/
     ```
 
 4. Назначьте владельца `elasticsearch` папке репозитория и её содержимому:
 
-    ```
-    chown -R elasticsearch:elasticsearch /var/www/backups/
+    ``` sh
+    chown -R elasticsearch:elasticsearch /var/backups/elasticsearch/
     ```
 
 5. В файле конфигурации `/etc/elasticsearch/elasticsearch.yml` укажите путь к созданному репозиторию:
 
-    ```
-    path.repo: /var/www/backups/elasticsearch
+    ``` yml
+    path.repo: /var/backups/elasticsearch
     ```
 
 6. Запустите службу {{ openSearchVariants }}:
 
-    ```
-    systemctl start elasticsearch.service
+    ``` sh
+    systemctl start elasticsearch
     ```
 
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-7. Зарегистрируйте репозиторий (например, `repository_backup`) с резервной копией снимка {{ openSearchVariants }}:
+7. Зарегистрируйте репозиторий (например, `repository_backup`) с резервной копией снимка {{ openSearchVariants }} (`<openSearchHost>` — адрес сервера {{ openSearchVariants }}) :
 
-    ```
-    curl -X PUT "localhost:9200/_snapshot/repository_backup?pretty" \
-    -H 'Content-Type: application/json' -d \
-    '{
-        "type": "fs",
-        "settings": {
-            "location": "/var/www/backups/elasticsearch"
-        }
-    }'
+    - **с авторизацией в {{ openSearchVariants }}:**
 
-    ```
+        ``` sh
+        curl -X PUT "https://<openSearchHost>:9200/_snapshot/repository_backup?pretty" \
+        -u <username>:<password> \
+        -H 'Content-Type: application/json' -d \
+        '{
+            "type": "fs",
+            "settings": {
+                "location": "/var/backups/elasticsearch"
+            }
+        }'
+
+        ```
+
+    - **без авторизации в {{ openSearchVariants }}:**
+
+        ``` sh
+        curl -X PUT "https://<openSearchHost>:9200/_snapshot/repository_backup?verify=false&pretty" \
+        -H 'Content-Type: application/json' -d \
+        '{
+            "type": "fs",
+            "settings": {
+                "location": "/var/backups/elasticsearch"
+            }
+        }'
+
+        ```
 
     <a id="s3_repository"></a>
     !!! note "Примечание"
@@ -292,23 +310,32 @@ hide: tags
 
 8. Проверьте содержимое зарегистрированного репозитория:
 
-    ```
-    curl -X GET "localhost:9200/_cat/snapshots/repostory_backup?pretty"
+    ``` sh
+    curl -X GET "https://<openSearchHost>:9200/_snapshot/repository_backup?pretty"
     ```
 
 9. Восстановите снимок {{ openSearchVariants }}:
 
-    ```
-    curl -X POST "localhost:9200/_snapshot/repostory_backup/backupSession123/_restore?pretty"
-    ```
+    - **с авторизацией в {{ openSearchVariants }}:**
+
+        ``` sh
+        curl -X POST "https://<openSearchHost>:9200/_snapshot/repository_backup/backupSession123/_restore?pretty" \
+        -u <username>:<password>
+        ```
+
+    - **без авторизации в {{ openSearchVariants }}:**
+
+        ``` sh
+        curl -X POST "https://<openSearchHost>:9200/_snapshot/repository_backup/backupSession123/_restore?verify=false&pretty"
+        ```
 
     - В качестве репозитория укажите имя репозитория, созданного на шаге 7, или префикс индекса {{ openSearchVariants }} (см. [примечание](#s3_repository) выше).
     - В качестве имени снимка укажите идентификатор резервной копии **без точки перед номером** (например, `backupSession.123` указывайте как `backupSession123`) со страницы [«Администрирование» – «Инфраструктура» – «Резервное копирование» – «Журнал»][backup_configure].
 
 10. Проверьте наличие индексов в восстановленном каталоге:
 
-    ```
-    curl -X GET "localhost:9200/_cat/indices?pretty"
+    ``` sh
+    curl -X GET "https://<openSearchHost>:9200/_cat/indices?pretty"
     ```
 
 <div class="relatedTopics" markdown="block">

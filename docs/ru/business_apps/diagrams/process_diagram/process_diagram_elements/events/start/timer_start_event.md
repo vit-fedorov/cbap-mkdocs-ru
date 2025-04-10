@@ -13,7 +13,7 @@ hide:
   - tags
 ---
 
-# Начальное событие-таймер {: #process_diagram_elements_timer_start_event}
+# Начальное событие-таймер {: #process_diagram_elements_timer_start_event }
 
 **Начальное событие-таймер периодически** запускает процесс при наступлении заданного времени по расписанию.
 

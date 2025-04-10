@@ -1,4 +1,4 @@
-<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4596">
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4596" kb-title="Развёртывание Comindware Platform. Архитектура, ландшафт, программное и техническое обеспечение">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -225,14 +225,18 @@
 <ul>
 <li><em>Веб-приложение</em>: одностраничное приложение (SPA) на основе Marionette, Backbone, React, Redux.</li>
 <li><em>Мобильное приложение</em>: React Native on Expo.</li>
-<li><em>Бэкенд</em>: компоненты-сервисы на основе .NET 6.0, .NET Framework 4.8 (Windows), Mono 6.12 (Linux), JDK 17.</li>
+<li><em>Бэкенд</em>: компоненты-сервисы на основе .NET 6.0, .NET Framework 4.8 (Windows), Mono 6.12 (Linux), JRE 17.</li>
 <li><em>СУБД</em>: фирменная патентованная СУБД Comindware ElasticData</li>
 <li><em>Хранилище данных</em>: распределённая высокопроизводительная СУБД Apache Ignite.</li>
 <li><em>Сервис журналирования транзакций</em>: OpenSearch (Elasticsearch).</li>
-<li><em>Сервис сбора и анализа журналов и данных мониторинга Системы</em>: ZabbixOpenSearch (Elasticsearch), Kibana (OpenSearch Dashboards).</li>
+<li><em>Сервис сбора и анализа журналов и данных мониторинга Системы</em>: Zabbix, OpenSearch (Elasticsearch), Kibana (OpenSearch Dashboards).</li>
 <li><em>Сервис файловых журналов</em>: NLog.</li>
 <li><em>Модули для интеграции</em>: см. <em>«<a class="mkdocs_imported_link" href="#интеграция-с-внешними-системами">Интеграция с внешними системами</a>»</em>.</li>
 </ul>
+<div class="notice notice-warning">
+<p class="admonition-title">Внимание!</p>
+<p>Если продуктовый контур <strong>Comindware Platform</strong> изолирован внешним межсетевым экраном, необходимо настроить правила фильтрации для разрешения входящего трафика HTTP/HTTPS и WS/WSS в контур <strong>Comindware Platform</strong>.</p>
+</div>
 <p>См <em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4582">Перечень стороннего ПО, входящего в состав и необходимого для работы Системы</a></em>.</p>
 <figure class="screenshot_with_caption">
 <p><img alt="Диаграмма архитектуры Comindware Platform" src="https://kb.comindware.ru/assets/Picture1.png"/><figcaption class="caption">Диаграмма архитектуры Comindware Platform</figcaption></p>
@@ -269,7 +273,7 @@
 <li><em>в продуктовой конфигурации</em>— на мощностях заказчика в отказоустойчивой конфигурации в соответствии с требованиями заказчика.</li>
 </ul>
 <h3 id="рекомендуемые-варианты-развертывания-системы">Рекомендуемые варианты развертывания Системы</h3>
-<h4 id="минимальная-конфигурация">Минимальная конфигурация</h4>
+<h4 class="pageBreakBefore" id="минимальная-конфигурация">Минимальная конфигурация</h4>
 <p>Компоненты типовой минимальная конфигурации Системы, предназначенной для демонстраций и реализации пилотных проектов:</p>
 <ul>
 <li><em><strong>Comindware Platform</strong></em>: установленный экземпляр ПО.</li>
@@ -279,7 +283,7 @@
 <figure class="screenshot_with_caption">
 <p><img alt="Минимальная конфигурация Системы" src="https://kb.comindware.ru/assets/Picture2_2.png"/><figcaption class="caption">Минимальная конфигурация Системы</figcaption></p>
 </figure>
-<h4 class="pageBreakBefore" id="продуктовая-конфигурация">Продуктовая конфигурация</h4>
+<h4 id="продуктовая-конфигурация">Продуктовая конфигурация</h4>
 <p>Компоненты типовой продуктовой конфигурации, обеспечивающей дублирование и резервирование ресурсов, а также отказоустойчивость Системы:</p>
 <ul>
 <li><em><strong>Comindware Platform</strong></em>: установленный экземпляр ПО.</li>
@@ -294,7 +298,7 @@
 <figure class="screenshot_with_caption">
 <p><img alt="Продуктовая конфигурация: ландшафт подсистем" src="https://kb.comindware.ru/assets/Picture3_3.png"/><figcaption class="caption">Продуктовая конфигурация: ландшафт подсистем</figcaption></p>
 </figure>
-<p class="pageBreakBefore">Продуктовое использование накладывает требования на следующие характеристики Системы:</p>
+<p>Продуктовое использование накладывает требования на следующие характеристики Системы:</p>
 <ul>
 <li><em>безопасность</em> — реализуется за счет настройки сетевого экрана и обратного прокси-сервера;</li>
 <li><em>отказоустойчивость</em> — реализуется за счет использования резервных серверов и дополнительных узлов на серверах, хранящих данные;</li>
@@ -303,7 +307,7 @@
 <figure class="screenshot_with_caption">
 <p><img alt="Типовой ландшафт сервисов в составе Системы" src="https://kb.comindware.ru/assets/Picture4_4.png"/><figcaption class="caption">Типовой ландшафт сервисов в составе Системы</figcaption></p>
 </figure>
-<h3 id="рекомендуемый-набор-серверов-приложений">Рекомендуемый набор серверов приложений</h3>
+<h3 class="pageBreakBefore" id="рекомендуемый-набор-серверов-приложений">Рекомендуемый набор серверов приложений</h3>
 <p>Для повышения эффективности разработки и тестирования приложений, а также отказоустойчивости и безопасности эксплуатации приложений рекомендуется развернуть несколько серверов приложений (необходимость использования каждого из этих серверов определяется при составлении технических требований):</p>
 <ul>
 <li><em>сервер разработки</em> (development), на котором осуществляется разработка приложений;</li>
@@ -366,7 +370,7 @@
 <thead>
 <tr>
 <td colspan="7">
-<strong>Система мониторинга и отслеживания (VPS): <code>Zabbix1</code>, <code>Zabbix2</code></strong>
+<strong>Система мониторинга и отслеживания (VPS): <code>Monitor1</code>, <code>Monitor2</code></strong>
 </td>
 </tr>
 </thead>
@@ -691,7 +695,6 @@
 </ul>
 <p><strong>Примеры конфигураций</strong></p>
 <ul>
-<li><em><a class="mkdocs_imported_link" href="https://client.sbertech.ru/docs/public/OPM/6.0.10/common/documents/installation-guide/index.html">Platform V Monitor. Руководство по установке</a></em>.</li>
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4609">Zabbix. Установка и настройка. Краткое руководство</a></em>.</li>
 </ul>
 </article>

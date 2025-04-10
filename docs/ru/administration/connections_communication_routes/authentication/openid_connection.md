@@ -168,12 +168,12 @@ kbId: 4685
 
     _![Добавление авторизованного адреса перенаправления после входа в клиент OAuth в Google Cloud](openid_connection_google_cloud.png)_
 
-{% if adminGuideWindows or completeGuide or userGuide or kbExport %}
+{% if (not gostech) or adminGuideWindows or completeGuide or userGuide or kbExport %}
 
 ## Настройка реестра Windows для включения аутентификации через OpenID Connect в {{ productName }} {: .pageBreakBefore }
 
 1. Запустите редактор реестра Windows: `regedit.exe`.
-2. Откройте раздел реестра `Computer -> HKEY_LOCAL_MACHINE -> SOWTWARE->Сomindware -> Instances -> имя_экземпляра_Comindware_Business_Application_Platform`.
+2. Откройте раздел реестра `Computer -> HKEY_LOCAL_MACHINE -> SOWTWARE->Сomindware -> Instances -> имя_экземпляра_Comindware_Platform`.
 3. Дважды щёлкните параметр `IsFederationAuthEnabled`.
 4. Если значение этого параметра **0**, измените его на **1**.
 5. Нажмите кнопку «**OK**».
@@ -187,7 +187,7 @@ kbId: 4685
 
 {% endif %}
 
-{% if adminGuideLinux or completeGuide or userGuide or kbExport %}
+{% if (not gostech) or adminGuideLinux or completeGuide or userGuide or kbExport %}
 
 ## Настройка ОС Linux для включения аутентификации через OpenID Connect в {{ productName }} {: .pageBreakBefore }
 

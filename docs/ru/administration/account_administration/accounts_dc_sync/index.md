@@ -41,7 +41,7 @@ kbId: 4655
 <table>
 <thead>
 <tr>
-<th colspan=2>Comindware Business Application Platform</th>
+<th markdown colspan=2>{{ productName }}</th>
 <th>Active Directory</th>
 </tr>
 <tr>

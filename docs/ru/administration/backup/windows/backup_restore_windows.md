@@ -24,9 +24,9 @@ kbId: 4644
     - Название экземпляра продукта — `<InstanceName>`(например, `CBAP4.2`).
     - Путь к папке с базой данных экземпляра продукта, например `DatabasePath` (по умолчанию: `C:\ProgramData\Comindware\Instances\<InstanceName>\Data`).
     - Путь к папке резервных копий базы данных — `DatabaseBackupPath` (например, `С:\DatabaseBackups`).
-    - Имя репозитория снимков Elasticsearch — *`repository_name`* (например, `elastic_backup`).
-    - Путь к репозиторию снимков Elasticsearch — `elastic_backup_path`(например, `e:\elastic_backup`).
-    - Имя снимка Elasticsearch — `snapshot_name` (например, `<InstanceName>01022022080800` — в формате `<<InstanceName>><Date><Time>`). См. инструкции Elasticsearch по формированию имён снимков с использованием текущей даты  (на английском языке): <https://www.elastic.co/guide/en/elasticsearch/reference/current/api-conventions.html#api-date-math-index-names>.
+    - Имя репозитория снимков {{ openSearchVariants }} — *`repository_name`* (например, `elastic_backup`).
+    - Путь к репозиторию снимков {{ openSearchVariants }} — `elastic_backup_path`(например, `e:\elastic_backup`).
+    - Имя снимка {{ openSearchVariants }} — `snapshot_name` (например, `<InstanceName>01022022080800` — в формате `<<InstanceName>><Date><Time>`). См. инструкции {{ openSearchVariants }} по формированию имён снимков с использованием текущей даты  (на английском языке): <https://www.elastic.co/guide/en/elasticsearch/reference/current/api-conventions.html#api-date-math-index-names>.
 
 2. Настройте конфигурацию репозитория снимков сервера Elasticseach.
 
@@ -34,38 +34,38 @@ kbId: 4644
 
     2. <a id="P1.2.2"></a>В файле `elasticsearch.yml` и добавьте директиву `path.repo` и через двоеточие укажите путь к репозиторию снимков (папке с резервными копиями), например:
 
-    ``` yml
+    ``` yaml
     path.repo: elastic_backup_path
     ```
 
 ## Порядок резервного копирования данных экземпляра продукта
 
-Данные экземпляра продукта хранятся в двух независимых друг от друга хранилищах: на сервере Elasticsearch и в папке с базой данных экземпляра продукта — `DatabasePath`. Cм. _«[Подготовка к резервному копированию и восстановлению данных](#подготовка-к-резервному-копированию-и-восстановлению-данных)»_.
+Данные экземпляра продукта хранятся в двух независимых друг от друга хранилищах: на сервере {{ openSearchVariants }} и в папке с базой данных экземпляра продукта — `DatabasePath`. Cм. _«[Подготовка к резервному копированию и восстановлению данных](#подготовка-к-резервному-копированию-и-восстановлению-данных)»_.
 
 Так как осуществить одновременное резервное копирование двух хранилищ не представляется возможным, резервное копирование данных из каждого хранилища выполняется отдельно в два этапа и в отдельные папки:
 
-1. [Создание снимка сервера Elasticsearch](#регистрация-репозитория-и-создание-снимка-elasticsearch) — данные истории и мониторинга копируются в отдельную папку.
+1. [Создание снимка сервера {{ openSearchVariants }}](#backup_restore_windows_registry_snapshot) — данные истории и мониторинга копируются в отдельную папку.
 2. [Сохранение резервной копии базы данных экземпляра продукта](#сохранение-резервной-копии-базы-данных-экземпляра-продукта) в папку `DatabaseBackupPath`.
 
 ## Выполнение резервного копирования
 
-### Регистрация репозитория и создание снимка Elasticsearch
+### Регистрация репозитория и создание снимка {{ openSearchVariants }} {: #backup_restore_windows_registry_snapshot}
 
-1. Чтобы зарегистрировать репозиторий, выполните следующую команду, указав в URL имя репозитория `repository_name` (см. _«[Подготовка к резервному копированию и восстановлению данных](#подготовка-к-резервному-копированию-и-восстановлению-данных)»_), а в параметре `location` — путь к репозиторию из директивы `path.repo` в файле конфигурации сервера Elasticsearch:
+1. Чтобы зарегистрировать репозиторий, выполните следующую команду, указав в URL имя репозитория `repository_name` (см. _«[Подготовка к резервному копированию и восстановлению данных](#подготовка-к-резервному-копированию-и-восстановлению-данных)»_), а в параметре `location` — путь к репозиторию из директивы `path.repo` в файле конфигурации сервера {{ openSearchVariants }}:
 
     ``` sh
     curl -X PUT "localhost:9200/_snapshot/repository_name?pretty" -H 'Content-Type: application/json' -d' {"type": "fs", "settings": {"location": "elastic_backup_path"}}'
     ```
 
-    Подробные сведения о регистрации репозитория Elasticsearch см. в официальной документации (на английском языке): <https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-register-repository.html>
+    Подробные сведения о регистрации репозитория {{ openSearchVariants }} см. в официальной документации (на английском языке): <https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-register-repository.html>
 
-2. Чтобы создать снимок Elasticsearch, выполните следующую команду, указав имя снимка `snapshot_name`, а в параметре `indices` — индексы, которые требуется включить в снимок (индексы {{ productName }} имеют префикс, например, `cmw_<<InstanceName>>_`):
+2. Чтобы создать снимок {{ openSearchVariants }}, выполните следующую команду, указав имя снимка `snapshot_name`, а в параметре `indices` — индексы, которые требуется включить в снимок (индексы {{ productName }} имеют префикс, например, `cmw_<<InstanceName>>_`):
 
     ``` sh
     curl -X PUT "localhost:9200/_snapshot/repository_name/snapshot_name?wait_for_completion=true&pretty" -H 'Content-Type: application/json' -d' {"indices": "cmw_<<InstanceName>>_*", "ignore_unavailable": true, "include_global_state": false}'
     ```
 
-    Подробные сведения о создании снимка Elasticsearch см. в официальной документации (на английском языке): <https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-take-snapshot.html>
+    Подробные сведения о создании снимка {{ openSearchVariants }} см. в официальной документации (на английском языке): <https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-take-snapshot.html>
 
 ### Сохранение резервной копии базы данных экземпляра продукта
 
@@ -99,19 +99,19 @@ kbId: 4644
 
 ## Порядок восстановления данных экземпляра продукта
 
-Данные экземпляра продукта хранятся в трех независимых друг от друга хранилищах:  сервере Apache Ignite, сервере Elasticsearch и папке `DatabaseBackupPath` (см. _«[Подготовка к резервному копированию и восстановлению данных](#подготовка-к-резервному-копированию-и-восстановлению-данных)»_). Поэтому восстановление осуществляется последовательно для каждого хранилища.
+Данные экземпляра продукта хранятся в трех независимых друг от друга хранилищах:  сервере {{ apacheIgniteVariants }}, сервере {{ openSearchVariants }} и папке `DatabaseBackupPath` (см. _«[Подготовка к резервному копированию и восстановлению данных](#подготовка-к-резервному-копированию-и-восстановлению-данных)»_). Поэтому восстановление осуществляется последовательно для каждого хранилища.
 
 !!! warning "Внимание!"
     Восстановление следует выполнять при остановленном экземпляре продукта.
 
 Восстановление данных из резервных копий выполняется в два этапа:
 
-1. [Восстановление снимка сервера Elasticsearch](#восстановление-снимка-elasticsearch).
+1. [Восстановление снимка сервера {{ openSearchVariants }}](#восстановление-снимка-elasticsearch).
 2. [Восстановление базы данных экземпляра продукта](#восстановление-базы-данных-экземпляра-продукта) из папки `DatabaseBackupPath`.
 
 ## Выполнение восстановления
 
-### Восстановление снимка Elasticsearch
+### Восстановление снимка {{ openSearchVariants }}
 
 1. Выполните следующую команду, указав имя репозитораия `repository_name` и имя снимка `snapshot_name` (см. _«[Подготовка к резервному копированию и восстановлению данных](#подготовка-к-резервному-копированию-и-восстановлению-данных)»_):
 
@@ -119,7 +119,7 @@ kbId: 4644
 curl -X POST "localhost:9200/_snapshot/repository_name/snapshot_name/_restore?pretty"
 ```
 
-Подробные сведения о восстановлении снимков Elasticsearch см. в официальной документации (на английском языке): <https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-restore-snapshot.html>
+Подробные сведения о восстановлении снимков {{ openSearchVariants }} см. в официальной документации (на английском языке): <https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-restore-snapshot.html>
 
 ### Восстановление базы данных экземпляра продукта
 
@@ -128,27 +128,27 @@ curl -X POST "localhost:9200/_snapshot/repository_name/snapshot_name/_restore?pr
 ## Проверка конфигурации экземпляра ПО
 
 1. Запустите экземпляр ПО.
-2. При необходимости откроется страница настройки подключения к службе Elasticsearch.
-3. В поле «URI» введите адрес автоматически своего сервера Elasticsearch.
-4. Введите **префикс индекса**, **имя пользователя** и **пароль сервера Elasticsearch**. .
+2. При необходимости откроется страница настройки подключения к службе {{ openSearchVariants }}.
+3. В поле «URI» введите адрес автоматически своего сервера {{ openSearchVariants }}.
+4. Введите **префикс индекса**, **имя пользователя** и **пароль сервера {{ openSearchVariants }}**. .
 5. Нажмите кнопку «**Далее**».
 
-    _![Настройка подключения к Elasticsearch](https://kb.comindware.ru/assets/Picture16.png)_
+    _![Настройка подключения к {{ openSearchVariants }}](https://kb.comindware.ru/assets/Picture16.png)_
 
-6. При необходимости откроется страница инициализации данных в Elasticsearch.
+6. При необходимости откроется страница инициализации данных в {{ openSearchVariants }}.
 7. Нажмите кнопку «**Обновить**».
 
-    _![Страница инициализации данных в Elasticsearch](https://kb.comindware.ru/assets/Picture17.png)_
+    _![Страница инициализации данных в {{ openSearchVariants }}](https://kb.comindware.ru/assets/Picture17.png)_
 
 8. Дождитесь открытия начальной страницы **{{ productName }}**.
 9. Откройте страницу «**Администрирование**» — «**Подключения**».
 
-    _![Переход к свойства подключения к Elasticsearch](https://kb.comindware.ru/assets/img_64d09fd6ec3ba.png)_
+    _![Переход к свойства подключения к {{ openSearchVariants }}](https://kb.comindware.ru/assets/img_64d09fd6ec3ba.png)_
 
-10. Откройте подключение к серверу Elasticsearch.
-11. Удостоверьтесь, что корректно указаны **префикс индекса** и **URL подключения** к серверу Elasticsearch.
+10. Откройте подключение к серверу {{ openSearchVariants }}.
+11. Удостоверьтесь, что корректно указаны **префикс индекса** и **URL подключения** к серверу {{ openSearchVariants }}.
 
-    _![Свойства подключения к серверу Elasticsearch](https://kb.comindware.ru/assets/img_64d0a41fc5e0b.png)_
+    _![Свойства подключения к серверу {{ openSearchVariants }}](https://kb.comindware.ru/assets/img_64d0a41fc5e0b.png)_
 
 12. Откройте страницу «**Администрирование**» — «**Глобальная конфигурация**».
 13. Удостоверьтесь, что указан корректный **URL-адрес сервера**.

@@ -1,5 +1,5 @@
 ---
-title: Установка, запуск, инициализация и остановка ПО
+title: 'Установка, запуск, инициализация и остановка ПО'
 kbId: 4622
 ---
 
@@ -13,6 +13,8 @@ kbId: 4622
 
 Здесь представлены инструкции по развёртыванию и инициализации **{{ productName }}** из дистрибутива в ОС Linux.
 
+{% include-markdown ".snippets/deploy_traffic_filter_admonition.md" %}
+
 ## Порядок развёртывания ПО {{ productName }}
 
 1. Установите и настройте необходимое вспомогательное ПО.
@@ -25,11 +27,13 @@ kbId: 4622
 
 Прежде чем приступать к установке вспомогательного ПО, необходимого для работы **{{ productName }}**, ознакомьтесь с демонстрационным роликом и инструкциями, представленными ниже.
 
+{% if not pdfOutput %}
 ### Видеоинструкция
 
 <video controls="controls" width="100%" height="100%">
 <source src="https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/deploy_guide_linux_auxiliary_software.mp4" type="video/mp4" />
 </video>
+{% endif %}
 
 ### Порядок установки вспомогательного ПО
 
@@ -70,14 +74,14 @@ kbId: 4622
 
     - `-p` — установить обязательное вспомогательное ПО.
     - `-k` — установить ПО Kafka (необязательный ключ).
-    - `-e` — установить ПО Elasticsearch или OpenSearch (необязательный ключ).
+    - `-e` — установить ПО {{ openSearchVariants }} или OpenSearch (необязательный ключ).
     - `-kh=<hostname>` или `--kafkaHost=<hostname>` — использовать указанный хост для подключения к ПО Kafka (необязательный ключ).
     - `-kp=<portNumber>` или `--kafkaPort=<portNumber>` — использовать указанный порт для подключения к ПО Kafka (необязательный ключ).
     - `-h` — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).
 
     !!! note "Примечание"
 
-        Скрипт `prerequisites_install.sh` устанавливает необходимые для **{{ productName }}** компоненты, включая Java, .NET, Mono, NGINX.
+        Скрипт `prerequisites_install.sh` устанавливает необходимые для **{{ productName }}** компоненты, включая Java, .NET, Mono, {{ nginxVariants }}.
 
     !!! tip "Вызов справки для скриптов"
 
@@ -94,7 +98,7 @@ kbId: 4622
 
 5. По окончании установки скрипт выведет информацию об установленных компонентах. Удостоверьтесь, что компоненты успешно установлены (имеют статус `OK`).
 
-    Пример результата выполнения скрипта с ключом `-p` без установки Elasticsearch и Kafka:
+    Пример результата выполнения скрипта с ключом `-p` без установки {{ openSearchVariants }} и Kafka:
 
     ``` sh
     [Done] Creating CBAP Data Dir.
@@ -102,7 +106,7 @@ kbId: 4622
     Environment details
     Status     | Software   | Version   
     -----------------------------------------
-    OK         | mono       | 6.12.0.182     
+    OK         | mono       | 6.12.0.200     
     OK         | dotnet     | 6.0.417        
     OK         | java       | 17.0.7            
     OK     NGINX installed.
@@ -129,11 +133,13 @@ kbId: 4622
 
 Прежде чем приступать к установке ПО **{{ productName }}**, ознакомьтесь с видеороликом и инструкциями, представленными ниже.
 
+{% if not pdfOutput %}
 ### Видеоинструкция
 
 <video controls="controls" width="100%" height="100%">
 <source src="https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/deploy_guide_linux_software.mp4" type="video/mp4" />
 </video>
+{% endif %}
 
 ### Порядок установки ПО {{ productName }}
 
@@ -189,11 +195,13 @@ kbId: 4622
 
 Прежде чем приступать к установке экземпляра ПО **{{ productName }}**, ознакомьтесь с видеороликом и инструкциями, представленными ниже.
 
+{% if not pdfOutput %}
 ### Видеоинструкция
 
 <video controls="controls" width="100%" height="100%">
 <source src="https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/deploy_guide_linux_instance.mp4" type="video/mp4" />
 </video>
+{% endif %}
 
 ### Подготовка к созданию экземпляра ПО
 
@@ -263,6 +271,12 @@ kbId: 4622
     vm.max_map_count=262144
     fs.inotify.max_user_instances=524288
     ```
+
+    !!! tip "Оптимальное значение vm.max_map_count"
+
+        Значение `vm.max_map_count=262144` приведено для примера.
+
+        Определите оптимальное значение `vm.max_map_count` согласно инструкциям в параграфе «[Настройка параметра vm.max_map_count](#оптимизация-параметра-vmmax_map_count)».
 
 8. Откройте файл `user.conf` для редактирования:
 
@@ -415,7 +429,7 @@ kbId: 4622
     nano /usr/lib/systemd/system/adapterhost<instanceName>.service
     ```
 
-7. Если используются локальные службы Kafka и Elasticsearch, откройте их для редактирования:
+7. Если используются локальные службы Kafka и {{ openSearchVariants }}, откройте их для редактирования:
 
     ``` sh
     nano /usr/lib/systemd/system/kafka.service
@@ -494,12 +508,77 @@ kbId: 4622
 
 7. При необходимости откроется страница инициализации данных в {{ openSearchVariants }}.
 
-    _![Страница инициализации данных в Elasticsearch](img/deploy_guide_elasticsearch_initialize.png)_
+    _![Страница инициализации данных в {{ openSearchVariants }}](img/deploy_guide_elasticsearch_initialize.png)_
 
 8. Нажмите кнопку «**Обновить**».
 9.  Дождитесь открытия начальной страницы **{{ productName }}**.
 10. На этом этапе развертывание экземпляра **{{ productName }}** завершено и можно приступать к созданию и использованию приложений.
 <!--initialize-end-->
+
+## Оптимизация параметра vm.max_map_count
+
+`vm.max_map_count` — это параметр конфигурации ядра Linx, задающий максимальное количество областей памяти, которые процессу разрешено выделять в своём виртуальном адресном пространстве.
+
+Типовое для **{{ productName }}** значение параметра `vm.max_map_count` равно `262144`.
+
+Чтобы определить оптимальное для вашей конфигурации значение `vm.max_map_count`, выполните указанные ниже инструкции.
+
+Например, оптимизировать `vm.max_map_count` может потребоваться, если после запуска экземпляра ПО команда `journalctl` выдаёт ошибку следующего вида:
+
+```d
+mmap(PROT_NONE) failed
+```
+
+1. Определите текущее значение `vm.max_map_count`:
+
+    ```sh
+    sudo sysctl vm.max_map_count
+    ```
+
+2. Определите выделенный объём оперативной памяти:
+
+    ```sh
+    free
+    ```
+
+    Обратите внимание на общий объём оперативной памяти.
+
+3. Определите размер страницы в оперативной памяти:
+
+    ``` sh
+    declare -i NEW_max_map_count=$(vmstat -s | grep -i 'total memory' | awk ' {print $1}')*1024/$(getconf PAGE_SIZE)
+    echo $NEW_max_map_count
+    ```
+
+4. Полученное значение `NEW_max_map_count` временно присвойте параметру `vm.max_map_count` и проверьте работу экземпляра ПО:
+
+    - Временное изменение значения (например, для тестирования):
+
+    ```sh
+    sudo sysctl -w vm.max_map_count=$NEW_max_map_count
+    ```
+
+5. Удостоверившись в работоспособности экземпляра ПО, задайте постоянное значение `vm.max_map_count`:
+
+    - Откройте для редактирования файл `/etc/sysctl.conf`:
+
+        ```sh
+        sudo nano /etc/sysctl.conf
+        ```
+
+    - Установите значение `vm.max_map_count`:
+
+        ``` cs
+        vm.max_map_count=<NEW_max_map_count>
+        ```
+
+        `<NEW_max_map_count>` замените на полученное на шаге 3 цифровое значение.
+
+    - Примените изменения:
+
+        ``` sh
+        sysctl -p
+        ```
 
 ## Остановка экземпляра ПО {: .pageBreakBefore }
 
@@ -533,11 +612,13 @@ kbId: 4622
 
 Прежде чем приступать к удалению версии и экземпляра ПО **{{ productName }}**, ознакомьтесь с видеороликом и инструкциями, представленными ниже.
 
+{% if not pdfOutput %}
 ### Видеоинструкция
 
 <video controls="controls" width="100%" height="100%">
 <source src="https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/deploy_guide_linux_delete_version_instance.mp4" type="video/mp4" />
 </video>
+{% endif %}
 
 ### Удаление экземпляра ПО {: .pageBreakBefore }
 

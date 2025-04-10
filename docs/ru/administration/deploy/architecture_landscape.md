@@ -1,6 +1,6 @@
 ---
-title: Архитектура и ландшафт развертывания
-kbTitle: Развёртывание {{ productName }}. Архитектура, ландшафт, программное и техническое обеспечение
+title: 'Архитектура и ландшафт развертывания'
+kbTitle: 'Развёртывание Comindware Platform. Архитектура, ландшафт, программное и техническое обеспечение'
 kbId: 4596
 ---
 
@@ -28,19 +28,19 @@ kbId: 4596
 
 - _Веб-приложение_: одностраничное приложение (SPA) на основе Marionette, Backbone, React, Redux.
 - _Мобильное приложение_: React Native on Expo.
-- _Бэкенд_: компоненты-сервисы на основе .NET 6.0, {% if not gostech %}.NET Framework 4.8 (Windows), {% endif %}Mono 6.12 (Linux), JDK 17.
+- _Бэкенд_: компоненты-сервисы на основе .NET 6.0, {% if not gostech %}.NET Framework 4.8 (Windows), {% endif %}Mono 6.12 (Linux), JRE 17.
 - _СУБД_: фирменная патентованная СУБД Comindware ElasticData
 - _Хранилище данных_: распределённая высокопроизводительная СУБД {{ apacheIgniteVariants }}.
 - _Сервис журналирования транзакций_: {{ openSearchVariants }}.
-- _Сервис сбора и анализа журналов и данных мониторинга Системы_: {{ zabbixVariants }}{{ openSearchVariants }}, Kibana (OpenSearch Dashboards){% if gostech %}, Platform V Audit{% endif %}.
+- _Сервис сбора и анализа журналов и данных мониторинга Системы_: {{ zabbixVariants }}, {{ openSearchVariants }}{% if gostech %}, {{ authServiceVariants }}{% else %}, Kibana (OpenSearch Dashboards){% endif %}.
 - _Сервис файловых журналов_: NLog.
 - _Модули для интеграции_: см. _«[Интеграция с внешними системами](#интеграция-с-внешними-системами)»_.
 
+{% include-markdown ".snippets/deploy_traffic_filter_admonition.md" %}
+
 См _[Перечень стороннего ПО, входящего в состав и необходимого для работы Системы][auxiliary_software_list]_.
 
-{% if gostech %}
-_![Диаграмма архитектуры {{ productName }} в составе ЕЦП «ГосТех»](img/architecture_gostech.png)_
-{% else %}
+{% if not gostech %}
 _![Диаграмма архитектуры {{ productName }}](https://kb.comindware.ru/assets/Picture1.png)_
 {% endif %}
 
@@ -79,9 +79,29 @@ _![Диаграмма архитектуры {{ productName }}](https://kb.comin
 - _в минимальной конфигурации_ — на одной виртуальной или физической машине заказчика.
 - _в продуктовой конфигурации_— на мощностях заказчика в отказоустойчивой конфигурации в соответствии с требованиями заказчика.
 
+{% if gostech %}
+### Конфигурация развертывания в контуре ЕЦП «ГосТех»
+
+- Сервисы ЕЦП «ГосТех»:
+    - {{ apacheIgniteVariants }} для хранения данных **{{ productName }}**.
+    - {{ apacheKafkaVariants }} для работы с обсуждениями.
+    - {{ authServiceVariants }} для аутентификации и авторизации пользователей.
+    - {{ nginxVariants }} для проксирования пользовательских запросов и балансировки нагрузки.
+    - {{ zabbixVariants }} для сбора, хранения метрик, просмотра и хранения журналов мониторинга.
+    - {{ authServiceVariants }} для регистрации и хранения данных действий пользователей.
+    - {{ openSearchVariants }} для журналирования транзакций.
+    - {{ notificationServiceVariants }}_ — (необязательно) для передачи уведомлений.
+- Контейнер cmw-platform для обработки пользовательских запросов, содержащий бэкенд и фронтенд **{{ productName }}**, а также сервер **{{ companyName }} Mobile API**.
+- Контейнер cmw-apigateway для работы с обсуждениями.
+- Контейнер cmw-apapterhost для интеграции с внешними системами.
+
+_![Схема ландшафта {{ productName }} в составе ЕЦП «ГосТех»](img/architecture_gostech.png)_
+
+{% else %}
+
 ### Рекомендуемые варианты развертывания Системы
 
-#### Минимальная конфигурация
+#### Минимальная конфигурация {: .pageBreakBefore}
 
 Компоненты типовой минимальная конфигурации Системы, предназначенной для демонстраций и реализации пилотных проектов:
 
@@ -89,11 +109,9 @@ _![Диаграмма архитектуры {{ productName }}](https://kb.comin
 - _СУБД_ _Comindware ElasticData_.
 - _Сервер журналирования транзакций {{ openSearchVariants }}_ — в конфигурации с одним узлом.
 
-{% if not gostech %}
 _![Минимальная конфигурация Системы](https://kb.comindware.ru/assets/Picture2_2.png)_
-{% endif %}
 
-#### Продуктовая конфигурация  {: .pageBreakBefore }
+#### Продуктовая конфигурация
 
 Компоненты типовой продуктовой конфигурации, обеспечивающей дублирование и резервирование ресурсов, а также отказоустойчивость Системы:
 
@@ -102,26 +120,23 @@ _![Минимальная конфигурация Системы](https://kb.co
 - _Сервер журналирования транзакций {{ openSearchVariants }}_.
 - _Обратный прокси-сервер {{ nginxVariants }}_ для фильтрации нежелательных запросов и ретрансляции допустимых запросов во внутреннюю сеть.
 - _Сервер мониторинга {{ zabbixVariants }}_ для мониторинга доступности служб и свободного пространства на дисках.
-- _Сервер уведомлений {{ notificationServerVariants }}_ (необязательно) для передачи уведомлений.
+- _Сервер уведомлений {{ notificationServiceVariants }}_ (необязательно) для передачи уведомлений.
 - _Сервер LDAP_ (необязательно) для централизованного управления инфраструктурой сети.
 - _Сервер Git_ (необязательно) для контроля версий приложений, создаваемых с помощью **{{ productName }}**.
 
-{% if not gostech %}
 _![Продуктовая конфигурация: ландшафт подсистем](https://kb.comindware.ru/assets/Picture3_3.png)_
-{% endif %}
 
 Продуктовое использование накладывает требования на следующие характеристики Системы:
-{: .pageBreakBefore }
 
 - _безопасность_ — реализуется за счет настройки сетевого экрана и обратного прокси-сервера;
 - _отказоустойчивость_ — реализуется за счет использования резервных серверов и дополнительных узлов на серверах, хранящих данные;
 - _масштабируемость_ — реализуется за счет добавления дополнительных серверов, обрабатывающих запросы.
 
-{% if not gostech %}
 _![Типовой ландшафт сервисов в составе Системы](https://kb.comindware.ru/assets/Picture4_4.png)_
+
 {% endif %}
 
-### Рекомендуемый набор серверов приложений
+### Рекомендуемый набор серверов приложений {: .pageBreakBefore }
 
 Для повышения эффективности разработки и тестирования приложений, а также отказоустойчивости и безопасности эксплуатации приложений рекомендуется развернуть несколько серверов приложений (необходимость использования каждого из этих серверов определяется при составлении технических требований):
 
@@ -197,7 +212,7 @@ _![Типовой ландшафт сервисов в составе Систе
 <thead markdown>
 <tr markdown>
 <td colspan="7" markdown>
-**Система мониторинга и отслеживания (VPS): `Zabbix1`, `Zabbix2`**
+**Система мониторинга и отслеживания (VPS): `Monitor1`, `Monitor2`**
 </td>
 </tr>
 </thead>
@@ -392,14 +407,18 @@ _![Типовой ландшафт сервисов в составе Систе
 **Требования к конфигурации**
 
 {% if gostech %}
-- _[Platform V DataGrid. Руководство по установке](https://client.sbertech.ru/docs/public/IGN/17.0.0/IGNT/17.0.0/documents/installation-guide/index.html)_{% endif %}
+- _[Platform V DataGrid. Руководство по установке](https://client.sbertech.ru/docs/public/IGN/17.0.0/IGNT/17.0.0/documents/installation-guide/index.html)_
+{% else %}
 - _[Apache Ignite. Установка и настройка. Краткое руководство][apache_ignite_deploy]_.
+{% endif %}
 
 **Примеры конфигураций**
 
 {% if gostech %}
-- _[Platform V DataGrid. Руководство по установке](https://client.sbertech.ru/docs/public/IGN/17.0.0/IGNT/17.0.0/documents/installation-guide/index.html)_{% endif %}
+- _[Platform V DataGrid. Руководство по установке](https://client.sbertech.ru/docs/public/IGN/17.0.0/IGNT/17.0.0/documents/installation-guide/index.html)_
+{% else %}
 - _[Apache Ignite. Установка и настройка. Краткое руководство][apache_ignite_deploy]_.
+{% endif %}
 
 ### Конфигурация сервера журналирования транзакций
 
@@ -415,8 +434,10 @@ _![Типовой ландшафт сервисов в составе Систе
 **Примеры конфигураций**
 
 {% if gostech %}
-- _[Platform V Search (SRH). Руководство по установке](https://client.sbertech.ru/docs/public/SRH/1.5.0/SRHX/1.5.0/documents/installation-guide/index.html)_{% endif %}
+- _[Platform V Search (SRH). Руководство по установке](https://client.sbertech.ru/docs/public/SRH/1.5.0/SRHX/1.5.0/documents/installation-guide/index.html)_
+{% else %}
 - _[Установка Elasticsearch и настройка кластера Elasticsearch без сертификатов подлинности][elasticsearch_cluster_deploy_no_certificates]_
+{% endif %}
 {% if adminGuideWindows %}
 - _[Установка Elasticsearch. Краткое руководство для Windows][elasticsearch_deploy_windows]_{% endif %}
 
@@ -433,11 +454,13 @@ _![Типовой ландшафт сервисов в составе Систе
 **Примеры конфигураций**
 
 {% if gostech %}
-- _[Руководство по установке Platform V SynGX (SNX)](https://client.sbertech.ru/docs/public/SNX/3.0.0/SNGX/3.0.0/documents/installation-guide/index.html)_{% endif %}
+- _[Руководство по установке Platform V SynGX (SNX)](https://client.sbertech.ru/docs/public/SNX/3.0.0/SNGX/3.0.0/documents/installation-guide/index.html)_
+{% else %}
 - _[NGINX. Установка и настройка][nginx_deploy]»_
 - _[Модуль GeoIP для NGINX. Установка и настройка][nginx_geoid_deploy]_.
+{% endif %}
 
-### Конфигурация сервера Zabbix {: .pageBreakBefore }
+### Конфигурация сервера {{ zabbixVariants }} {: .pageBreakBefore }
 
 **Требования к конфигурации**
 
@@ -459,7 +482,10 @@ _![Типовой ландшафт сервисов в составе Систе
 
 **Примеры конфигураций**
 
+{% if gostech %}
 - _[Platform V Monitor. Руководство по установке](https://client.sbertech.ru/docs/public/OPM/6.0.10/common/documents/installation-guide/index.html)_.
+{% else %}
 - _[Zabbix. Установка и настройка. Краткое руководство][zabbix_deploy]_.
+{% endif %}
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

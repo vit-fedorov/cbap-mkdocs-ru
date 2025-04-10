@@ -5,6 +5,7 @@
 
 @import url("fontawesome/css/fontawesome.min.css");
 @import url("fontawesome/css/light.min.css");
+@import url("fontawesome/css/solid.min.css");
 @import url("fontawesome/css/brands.min.css");
 
 [data-md-color-scheme="comindware"] {
@@ -13,6 +14,7 @@
     --md-primary-fg-color--dark: #0875bc;
     --md-footer-bg-color: var(--md-primary-fg-color--dark);
     --md-footer-bg-color--dark: #343a40;
+    --md-code-hl-comment-color: #65785c;
 }
 
 :root {
@@ -151,4 +153,16 @@ body {
 
 .md-typeset .api-method.delete {
     background: #a41e22!important;
+}
+
+@media screen {
+
+    .md-typeset pre code, pre {
+        max-height: 360px;
+    }
+
+}
+
+.md-typeset .relatedTopics ul li{
+    font-style: italic;
 }

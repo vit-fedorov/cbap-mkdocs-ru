@@ -56,13 +56,13 @@ kbId: 4677
 
 1. Перейдите в режим суперпользователя:
 
-    ``` shell
+    ``` sh
     sudo -i
     ```
 
 2. Откройте для редактирования файл конфигурации экземпляра ПО:
 
-    ``` shell
+    ``` sh
     vim /usr/share/comindware/configs/instance/<instanceName>.yml
     ```
 
@@ -160,7 +160,7 @@ kbId: 4677
     - **Секретный ключ** — ключ для доступа к серверу S3;
     - **Запросы типа path-style** — флажок установлен, если сервер принимает только запросы path-style вида:
 
-        ``` shell
+        ``` sh
         https://s3.region-code.amazonaws.com/bucket-name/key-name
         ```
 

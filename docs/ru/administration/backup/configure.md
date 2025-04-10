@@ -72,7 +72,7 @@ hide: tags
 
     **Astra Linux, Ubuntu, Rocky**
 
-    ``` shell
+    ``` sh
     mkdir /var/backups/comindware/<instanceName>
     chmod 777 /var/backups/comindware/<instanceName>
     chown -R www-data:www-data /var/backups/comindware/<instanceName>
@@ -80,7 +80,7 @@ hide: tags
 
     **Альт Сервер, РЕД ОС**
 
-    ``` shell
+    ``` sh
     mkdir /var/backups/comindware/<instanceName>
     chmod 777 /var/backups/comindware/<instanceName>
     chown -R _nginx:_nginx /var/backups/comindware/<instanceName>
@@ -228,7 +228,7 @@ hide: tags
 2. Откройте для редактирования файл конфигурации {{ openSearchVariants }} `/etc/elasticsearch/elasticsearch.yml`.
 3. Укажите путь к репозиторию резервных копий, например:
 
-    ``` shell
+    ``` sh
     # Директория репозитория должна быть доступна {{ productName }}.
     # Внутри этой директории будет создана директория,
     # имя которой будет совпадать с префиксом индекса {{ openSearchVariants }}.

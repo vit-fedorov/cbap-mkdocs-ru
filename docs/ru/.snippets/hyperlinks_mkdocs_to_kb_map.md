@@ -244,6 +244,10 @@
 
 [templates_archive_unarchive]: {{ kbArticleURLPrefix }}4709#templates_archive_unarchive
 
+[templates_view_in_app]: {{ kbArticleURLPrefix }}4709#templates_view_in_app
+
+[templates_view_records]: {{ kbArticleURLPrefix }}4709#templates_view_records
+
 [template_common_properties]: {{ kbArticleURLPrefix }}4756
 
 [themes]: {{ kbArticleURLPrefix }}4708
@@ -472,6 +476,8 @@
 
 [process_diagram_elements_events_intermediate]: {{ kbArticleURLPrefix }}4742
 
+[process_diagram_elements_events_intermediate_usage]: {{ kbArticleURLPrefix }}4742#process_diagram_elements_events_intermediate_usage
+
 [process_diagram_elements_events_start]: {{ kbArticleURLPrefix }}4735
 
 [experimental_feature_support]: {{ kbArticleURLPrefix }}4579#experimental_feature_support
@@ -489,6 +495,8 @@
 [export_template_file_formula_format_values]: {{ kbArticleURLPrefix }}4794
 
 [expression_editor]: {{ kbArticleURLPrefix }}5025
+
+[expression_editor_reference]: {{ kbArticleURLPrefix }}5025#expression_editor_reference
 
 [n3_editor_autocomplete]: {{ kbArticleURLPrefix }}5039
 

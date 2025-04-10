@@ -15,10 +15,15 @@ hide:
 
 # Простое начальное событие {: #process_diagram_elements_none_start_event}
 
+<div class="admonition question" markdown="block">
+## Определения {: .admonition-title #definitions}
+
 **Простое начальное событие** запускает процесс при создании его экземпляра.
 
 !!! Note "Примечание"
     На диаграмме процесса может быть только одно простое начальное событие.
+
+</div>
 
 *![Простое начальное событие и его меню элемента](none_start_event.png)*
 

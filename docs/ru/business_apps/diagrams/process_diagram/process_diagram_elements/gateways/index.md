@@ -15,7 +15,12 @@ hide:
 
 # Развилки {: #process_diagram_elements_gateways}
 
+<div class="admonition question" markdown="block">
+## Определения {: .admonition-title #definitions}
+
 **Развилки** позволяют формировать расходящиеся и сходящиеся [потоки][process_diagram_elements_sequence_flow].
+
+</div>
 
 ## Типы развилок
 

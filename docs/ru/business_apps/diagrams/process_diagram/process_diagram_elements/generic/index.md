@@ -20,7 +20,12 @@ hide:
 
 # Общие элементы диаграммы процесса {: #process_diagram_elements_generic}
 
+<div class="admonition question" markdown="block">
+## Определения {: .admonition-title #definitions}
+
 Общие элементы диаграммы процесса служат для соединения и упорядочивания других элементов диаграммы.
+
+</div>
 
 ## Типы общих элементов
 

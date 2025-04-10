@@ -94,6 +94,7 @@ def updateArticle(article_id):
     if article_content:
         # Escape the HTML and backslashes for MySQL
         article_content = html.escape(article_content).replace('\\','\\\\')
+        mkdocs_title = html.escape(mkdocs_title).replace('\\','\\\\')
         contentFound = True
     else:
         print(f'Content for article {article_id} not found')

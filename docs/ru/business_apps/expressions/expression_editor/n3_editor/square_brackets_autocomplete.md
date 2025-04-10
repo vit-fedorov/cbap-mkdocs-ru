@@ -25,25 +25,33 @@ hide:
 
 # Ввод запроса списка записей шаблона по его системному имени с помощью функции object:alias
 
+## Инструкции
+
 Функция `#!turtle object:alias` возвращает записи шаблона с заданным системным именем. При предиктивном вводе для неё формируется заготовка, отображается список подходящих шаблонов и формируется компактный запрос записей выбранного шаблона с использованием квадратных скобок.
 
 1. Внутри фигурных скобок нажмите клавиши ++ctrl+space++.
 2. В отобразившемся списке конструкций дважды нажмите функцию `ObjectAlias`.
-*![Список конструкций на языке N3](n3_editor_square_brackets_autocomplete.png)*
+
+    _![Список конструкций на языке N3](n3_editor_square_brackets_autocomplete.png)_
+
 3. В выражение будет вставлена заготовка функции:
 
-  ```turtle
-  a [object:alias ].
-  ```
+    ```turtle
+    a [object:alias ].
+    ```
 
 4. В позиции перед закрывающей квадратной скобкой нажмите клавиши ++ctrl+space++.
 5. Отобразится список шаблонов в приложении.
-*![Список шаблонов в приложении](n3_editor_square_brackets_templates_autocomplete.png)*
+
+    _![Список шаблонов в приложении](n3_editor_square_brackets_templates_autocomplete.png)_
+
 6. Дважды нажмите системное имя шаблона, например `Zayavkanaotpusk`.
 7. В выражение будет вставлен запрос записей выбранного шаблона:
-  ```turtle
-  ?objectZayavkanaotpusk a [object:alias "Zayavkanaotpusk"].
-  ```
+
+    ```turtle
+    ?objectZayavkanaotpusk a [object:alias "Zayavkanaotpusk"].
+    ```
+
 8. Чтобы присвоить результат выражения значению вычисляемого атрибута, замените имя переменной `objectZayavkanaotpusk` на `value`.
 
 {% include-markdown ".snippets/pdfPageBreakHard.md" %}

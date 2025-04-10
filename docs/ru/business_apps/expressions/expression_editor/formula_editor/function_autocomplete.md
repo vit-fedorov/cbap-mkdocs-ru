@@ -30,7 +30,7 @@ hide:
 5. Чтобы просмотреть подробное описание функции [в справочнике][expression_editor_reference] нажмите пункт «**Показать в справочнике**» в подсказке.
 6. Чтобы вставить выбранную функцию в формулу, дважды нажмите её имя в списке.
 
-*![Подсказка при предиктивном вводе имени функции](formula_editor_function_autocomplete.png)*
+_![Подсказка при предиктивном вводе имени функции](formula_editor_function_autocomplete.png)_
 
 <div class="relatedTopics" markdown="block">
 

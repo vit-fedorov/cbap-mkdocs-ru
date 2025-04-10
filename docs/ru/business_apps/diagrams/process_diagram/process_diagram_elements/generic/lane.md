@@ -1,5 +1,5 @@
 ---
-title: Lane
+title: Дорожка
 kbId: 4751
 tags:
   - диаграммы

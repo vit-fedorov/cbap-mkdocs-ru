@@ -26,6 +26,8 @@ hide:
 
 # Ввод запроса from where select {: #formula_editor_from_where_select_autocomplete}
 
+## Введение
+
 Запрос `#!mysql from where select` возвращает список значений из указанного источника данных, соответствующих заданному условию.
 
 ## Ввод заготовки конструкции from where select

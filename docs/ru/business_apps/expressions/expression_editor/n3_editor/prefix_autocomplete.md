@@ -17,7 +17,7 @@ hide:
   - tags
 ---
 
-# Объявление префикса {: #n3_editor_prefix_autocomplete}
+# Объявление префикса {: #n3_editor_prefix_autocomplete }
 
 ## Инструкции
 

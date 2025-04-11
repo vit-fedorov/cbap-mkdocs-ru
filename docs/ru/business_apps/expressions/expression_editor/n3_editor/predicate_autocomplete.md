@@ -60,5 +60,4 @@ hide:
 
 </div>
 
-
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

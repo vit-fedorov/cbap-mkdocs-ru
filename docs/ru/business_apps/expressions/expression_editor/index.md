@@ -14,7 +14,7 @@ hide:
   - tags
 ---
 
-# Редактор выражений {: #expression_editor }
+# Редактор выражений {: #expression_editor}
 
 ## Введение
 

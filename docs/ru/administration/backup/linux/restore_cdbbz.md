@@ -29,7 +29,7 @@ hide: tags
 <source src="https://kb.comindware.ru/platform/v5.0/administration/deploy/linux/img/restore_complete_backup_linux.mp4" type="video/mp4" />
 </video>
 
-## Восстановление базы данных и скриптов
+## Восстановление базы данных и скриптов {: .pageBreakBefore }
 
 1. Перейдите в режим суперпользователя:
 

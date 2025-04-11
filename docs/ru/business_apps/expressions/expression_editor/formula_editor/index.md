@@ -239,7 +239,7 @@ from a in $RequestedCars where a->_creator->username == "admin" select a->id
 4. Дважды нажмите в списке пункт _$RequestedCars (запрос)_, чтобы вставить в формулу заготовку конструкции `#!sql from where select` для него:
 
     _![Заготовка запроса](img/formula_editor_from_where_select_autocomplete_entered.png)_
-
+5. Выделите строку `Ваше условие` после оператора `#!sql where`, чтобы заменить её на условие выборки записей из шаблона _«Автомобили»_.
 {% if pdfOutput %}
 </div>
 <div class="admonition example" markdown="block">
@@ -248,7 +248,6 @@ from a in $RequestedCars where a->_creator->username == "admin" select a->id
 
 <div markdown="block" class="olReset" style="counter-increment: start 4;">
 {% endif %}
-5. Выделите строку `Ваше условие` после оператора `#!sql where`, чтобы заменить её на условие выборки записей из шаблона _«Автомобили»_.
 6. Введите строку `#!sql where a->`.
 7. В отобразившемся списке атрибутов шаблона _«Автомобили»_ дважды нажмите системное имя атрибута _Make_, чтобы вставить его в формулу. См. «**[Ввод системного имени атрибута после переменной-селектора](#ввод-системного-имени-атрибута-после-переменной-селектора)**»
 

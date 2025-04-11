@@ -39,7 +39,7 @@ hide:
 
 ## Создание промежуточного события на диаграмме
 
-1. Перетащите промежуточное событие с панели элементов на поток управления, границу [process_diagram_elements_actions][process_diagram_elements_actions] или пустое место диаграммы.
+1. Перетащите промежуточное событие с панели элементов на поток управления, границу [действия][process_diagram_elements_actions] или пустое место диаграммы.
 2. Будет создано **[промежуточное событие-таймер][process_diagram_elements_timer_intermediate_event]**.
 3. При необходимости смените [тип события](#process_diagram_elements_events_intermediate) с помощью [меню элемента][process_diagram_call_element_menu].
 

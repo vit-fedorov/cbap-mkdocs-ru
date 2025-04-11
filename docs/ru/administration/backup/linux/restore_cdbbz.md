@@ -322,21 +322,12 @@ hide: tags
 
 9. Восстановите снимок {{ openSearchVariants }}:
 
-    - **С авторизацией в {{ openSearchVariants }}:**
+    ``` sh
+    curl -X POST "https://<openSearchHost>:9200/_snapshot/<repository_backup>/<backupsessionXX>/_restore?pretty"
+    ```
 
-        ``` sh
-        curl -X POST "https://<openSearchHost>:9200/_snapshot/<repository_backup>/<backupSession123>/_restore?pretty" \
-        -u <username>:<password>
-        ```
-
-    - **Без авторизации в {{ openSearchVariants }}:**
-
-        ``` sh
-        curl -X POST "https://<openSearchHost>:9200/_snapshot/<repository_backup>/<backupSession123>/_restore?verify=false&pretty"
-        ```
-
-    - В качестве репозитория укажите имя репозитория, созданного на шаге 7, или префикс индекса {{ openSearchVariants }} (см. [примечание](#s3_repository) выше).
-    - В качестве имени снимка укажите идентификатор резервной копии **без точки перед номером** (например, `backupSession.123` указывайте как `<backupSession123>`) со страницы [«Администрирование» – «Инфраструктура» – «Резервное копирование» – «Журнал»][backup_configure_sessions_list].
+    - В качестве репозитория укажите имя репозитория, созданного на шаге 7, или префикс индекса {{ openSearchVariants }} при восстановлении из хранилища S3 (см. [примечание](#s3_repository) выше).
+    - В качестве имени снимка укажите идентификатор резервной копии **без точки перед номером и строчными буквами** (например, `backupSession.123` указывайте как `backupsession123`) со страницы [«Администрирование» – «Инфраструктура» – «Резервное копирование» – «Журнал»][backup_configure_sessions_list].
 
 10. Проверьте наличие индексов в восстановленном каталоге:
 

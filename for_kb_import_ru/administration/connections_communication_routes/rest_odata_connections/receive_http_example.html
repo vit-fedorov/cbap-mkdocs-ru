@@ -102,8 +102,8 @@
 <p class="admonition-title">Логика обработки входящих HTTP-запросов</p>
 <ul>
 <li>
-<p>Для получения HTTP-запросов из внешних систем <strong>Comindware Platform</strong> позволяет настроить конечные точки API вида: </p>
-<div class="highlight"><code><pre><span></span><code>https://<span class="p">&lt;</span><span class="nt">instanceUrl</span><span class="p">&gt;</span>/api/public/adapter/<span class="p">&lt;</span><span class="nt">connectionUri</span><span class="p">&gt;</span>/<span class="p">&lt;</span><span class="nt">routeUri</span><span class="p">&gt;</span></code> <br/></pre></code></div>
+<p>Для получения HTTP-запросов из внешних систем <strong>Comindware Platform</strong> позволяет настроить конечные точки API вида: 
+    <div class="highlight"><code><pre><span></span><code>https://<span class="p">&lt;</span><span class="nt">instanceUrl</span><span class="p">&gt;</span>/api/public/adapter/<span class="p">&lt;</span><span class="nt">connectionUri</span><span class="p">&gt;</span>/<span class="p">&lt;</span><span class="nt">routeUri</span><span class="p">&gt;</span></code> <br/></pre></code></div></p>
 <p>Здесь:</p>
 <ul>
 <li><code>&lt;instanceUrl&gt;</code> — адрес экземпляра <strong>Comindware Platform</strong>;</li>
@@ -308,14 +308,11 @@
 <li><strong>Контекстный шаблон:</strong> <em>Заказы</em></li>
 <li><strong>Подключение:</strong> <a class="mkdocs_imported_link" href="#настройка-подключения">подключение для получения HTTP-запросов</a></li>
 <li><strong>Путь передачи данных:</strong> <a class="mkdocs_imported_link" href="#настройка-пути-передачи-данных">путь передачи данных для получения HTTP-запросов</a></li>
-<li><strong>Имя переменной:</strong> <em>Request</em>
-</li>
+<li><strong>Имя переменной:</strong> <em>Request</em></li>
 </ul>
 </li>
 <li>
 <p>Добавьте действие «<strong>Повторять по количеству объектов</strong>» со следующими свойствами:</p>
-</li>
-</ol>
 <ul>
 <li><strong>Имя переменной:</strong> <em>local</em></li>
 <li>
@@ -323,16 +320,14 @@
 <div class="highlight"><code><pre><span></span><code><span class="c"># Импортируем функции для работы</span></code> <br/><code><span class="c"># с данными текущего сеанса и переменными</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">session:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">var:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/variable#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="c"># Request — переменная из первого блока, </span></code> <br/><code>    <span class="c"># в которой находится разобранный JSON</span></code> <br/><code>    <span class="nn">session</span><span class="p">:</span><span class="nt">context</span> <span class="nn">var</span><span class="p">:</span><span class="nt">Request</span> <span class="err">?req</span><span class="p">.</span></code> <br/><code>    <span class="c"># ListZakazov - переменная, </span></code> <br/><code>    <span class="c"># в которой находится массив объектов</span></code> <br/><code>    <span class="err">?req</span> <span class="nn">var</span><span class="p">:</span><span class="nt">ListZakazov</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
 </li>
 </ul>
-<ol class="colored_numbers_list" start="4">
+</li>
 <li>
 <p>Внутрь действия «<strong>Повторять по количеству объектов</strong>» добавьте действие «<strong>Создать запись</strong>» и укажите  шаблон записи <em>«Заказы»</em>.</p>
 </li>
-<li>
-<p>Внутрь действия «<strong>Создать запись</strong>» добавьте действие «<strong>Изменить значения атрибутов</strong>».</p>
-</li>
+<li>Внутрь действия «<strong>Создать запись</strong>» добавьте действие «<strong>Изменить значения атрибутов</strong>».</li>
 <li>В действии «<strong>Изменить значения атрибутов</strong>» на вкладке «<strong>Дополнительно</strong>» установите флажок «<strong>Сбрасывать кэш значений</strong>».</li>
 <li>
-<p>На вкладке «<strong>Основные</strong>» настройте следующие атрибуты::</p>
+<p>На вкладке «<strong>Основные</strong>» настройте следующие атрибуты:</p>
 <table style="width: 100%;">
 <thead>
 <tr>

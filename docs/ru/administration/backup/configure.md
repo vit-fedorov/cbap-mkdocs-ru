@@ -1,6 +1,5 @@
 ---
-title: 'Резервное копирование'
-kbTitle: 'Резервное копирование. Настройка, запуск и просмотр журнала сеансов'
+title: 'Резервное копирование. Настройка, запуск и просмотр журнала сеансов'
 kbId: 4642
 tags:
     - резервная копия
@@ -14,7 +13,7 @@ hide: tags
 
 # Резервное копирование. Настройка, запуск и просмотр журнала сеансов {: #backup_configure }
 
-## Введение {: #intro }
+## Введение {: #backup_configure_intro }
 
 Для обеспечения бесперебойной работы **{{ productName }}** необходимо настроить регулярное резервное копирование данных экземпляра ПО.
 
@@ -30,36 +29,50 @@ hide: tags
 
 - В **{{ productName }}** предусмотрена функция резервного копирования полного образа экземпляра ПО в формате файла с расширением `.CDBBZ`.
     - В такой резервной копии сохраняются все данные всех приложений и настройки экземпляра ПО **{{ productName }}**.
-    - Резервные копии могут храниться как в файловой системе сервера **{{ productName }}**, так и в [хранилище S3][s3_connection].
+    - Резервные копии могут храниться как в файловой системе сервера **{{ productName }}**, так и в хранилище S3. См. _«[Настройка экземпляра ПО {{ productName }} для хранения резервных копий в S3](#backup_configure_instance_s3)»_.
     - Резервное копирование может запускаться вручную или по расписанию.
-    - Резервное копирование следует настраивать и запускать с помощью страницы «**Администрирование**» — «**Инфраструктура**» — «**Резервное копирование**». См. _«[Просмотр списка и настройка конфигураций резервного копирования](#backup_configure_list_view)»_.
+    - Резервное копирование следует настраивать и запускать с помощью страницы «**Администрирование**» — «**Инфраструктура**» — «**Резервное копирование**». См. _«[Настройка конфигураций и запуск резервного копирования](#backup_configure_list_view)»_.
     - В **{{ productName }}** предусмотрен [журнал сеансов резервного копирования](#backup_configure_list_view).
 - Восстановление данных осуществляется на стороне сервера **{{ productName }}**. См. _«[Восстановление базы данных из файла резервной копии в формате .CDBBZ][backup_restore_cdbbz]»_.
 - В зависимости от требуемого уровня надежности, доступности и отказоустойчивости системы, резервное копирование также можно выполнять средствами виртуализации, файловой системы, {{ apacheIgniteVariants }}, {{ openSearchVariants }} и {{ apacheIgniteVariants }}. См. _[Рекомендации по организации и оптимизации резервного копирования и восстановления][backup_recommendations]_.
 
-## Порядок резервного копирования и восстановления {: #backup_configure_procedure }
+## Порядок резервного копирования и восстановления {: #backup_configure_procedure .pageBreakBefore }
 
-1. Настройте конфигурацию экземпляра ПО **{{ productName }}**:
+1. Подготовьте экземпляр ПО **{{ productName }}** для резервного копирования:
 
     - Настройте папку или репозиторий S3 для хранения резервных копий.
-    - Настройте используемые по умолчанию параметры резервного копирования в файле конфигурации экземпляра ПО.
+    - Настройте параметры резервного копирования в файле конфигурации экземпляра ПО.
 
-    См. {% if not gostech %}_«[Настройка экземпляра ПО {{ productName }}][backup_configure_instance]»_{% endif %} и _«[Хранилище S3. Настройка экземпляра ПО и подключения][s3_connection]»_.
+    {% if not gostech %}
+    См. параграфы:
 
-2. Настройте резервное копирование данных {{ openSearchVariants }}. См. {% if gostech %}_[документацию Platform V Search](https://client.sbertech.ru/docs/public/SRH/1.6.0/index.html)_{% else %}_«[Настройка резервного копирования данных {{ openSearchVariants }}](#backup_configure_elasticsearch)»_{% endif %}.
-3. Настройте одну или несколько [конфигураций резервного копирования](#backup_configure_list_view).
-4. [Запустите резервное копирование](#backup_configure_start) с использованием настроенных конфигураций вручную или по расписанию.
-5. Просмотрите статус [сеансов в журнале резервного копирования](#backup_configure_sessions_list).
-6. Восстановите данные из резервной копии.
+    - _[Настройка для хранения резервных копий на диске](#backup_configure_instance_disk)_
+    - _[Настройка для хранения резервных копий в S3](#backup_configure_instance_s3)_
+    - _[Настройка для резервного копирования в дополнительное хранилище S3 по расписанию](#backup_configure_instance_s3_advanced)_
+    {% endif %}
+
+2. Подготовьте {{ openSearchVariants }} для резервного копирования данных . {% if gostech %}См. _[документацию Platform V Search](https://client.sbertech.ru/docs/public/SRH/1.6.0/index.html)_.{% else %}См. параграфы:
+
+    - _[Настройка резервного копирования данных {{ openSearchVariants }} на диск](#backup_configure_elasticsearch_disk)_
+    - _[Настройка резервного копирования данных {{ openSearchVariants }} в хранилище S3](#backup_configure_elasticsearch_s3)_
+    {% endif %}
+1. Настройте одну или несколько [конфигураций резервного копирования](#backup_configure_list_view).
+2. [Запустите резервное копирование](#backup_configure_start) с использованием настроенных конфигураций вручную или по расписанию.
+3. Просмотрите статус [сеансов в журнале резервного копирования](#backup_configure_sessions_list).
+4. Восстановите данные из резервной копии. См. _«[Восстановление базы данных из файла резервной копии в формате .CDBBZ][backup_restore_cdbbz]»_.
 
 {% if not gostech %}
-## Настройка экземпляра ПО {{ productName }} {: #backup_configure_instance }
+## Подготовка экземпляра ПО {{ productName }} {: #backup_configure_instance .pageBreakBefore }
 
-1. Создайте на сервере с экземпляром ПО **{{ productName }}** директорию, в которой будут сохраняться резервные копии. Для этой директории предоставьте разрешения на полный доступ, чтобы система могла сохранять в неё резервные копии, например:
+### Настройка экземпляра ПО {{ productName }} для хранения резервных копий на диске {: #backup_configure_instance_disk }
+
+Эти инструкции следует выполнять на машине (сервере) с экземпляром ПО **{{ productName }}**.
+
+1. Создайте директорию, в которой будут сохраняться резервные копии. Для этой директории предоставьте разрешения на полный доступ, чтобы система могла сохранять в неё резервные копии, например:
 
     **Astra Linux, Ubuntu, Rocky**
 
-    ``` shell
+    ``` sh
     mkdir /var/backups/comindware/<instanceName>
     chmod 777 /var/backups/comindware/<instanceName>
     chown -R www-data:www-data /var/backups/comindware/<instanceName>
@@ -67,7 +80,7 @@ hide: tags
 
     **Альт Сервер, РЕД ОС**
 
-    ``` shell
+    ``` sh
     mkdir /var/backups/comindware/<instanceName>
     chmod 777 /var/backups/comindware/<instanceName>
     chown -R _nginx:_nginx /var/backups/comindware/<instanceName>
@@ -75,82 +88,253 @@ hide: tags
 
     **Здесь** `<instanceName>` — имя экземпляра ПО.
 
-2. Настройте используемые по умолчанию путь и имя файла резервной копии. Эти параметры используются по умолчанию при создании конфигураций резервного копирования. В файле конфигурации экземпляра ПО (`<instanceName>.yml`) настройте следующие директивы:
+2. Откройте для редактирования файл конфигурации экземпляра ПО (`/usr/share/comindware/configs/instance/<instanceName>.yml`).
+3. Настройте используемые по умолчанию путь и имя файла резервной копии. Заданные в этих директивах параметры используются по умолчанию при создании конфигураций резервного копирования:
 
-    ```
+    ``` yaml
     #################### Конфигурация резервного копирования ####################
     # Папка для резервного копирования по умолчанию
     backup.defaultFolder: /var/lib/comindware/<instanceName>/Backup
 
     # Имя файла для резервного копирования по умолчанию
+    # К нему будут добавляться метка времени и расширение cdbbz, например:
+    # Backup.202202161625.cdbbz
     backup.defaultFileName: Backup
     ```
 
-    См. _«[Пути и содержимое директорий экземпляра ПО][paths]»_ и _«[Конфигурация экземпляра, компонентов ПО и служб. Настройка в Linux][configuration_files_linux]»_.
+4. Перезапустите **{{ productName }}**
+5. При необходимости настройте [резервное копирование данных {{ openSearchVariants }} на диск](#backup_configure_elasticsearch_s3).
+6. Настройте конфигурацию резервного копирования на диск c помощью _«[списка конфигураций резервного копирования](#backup_configure_list_view)»_.
 
-3. Перезапустите экземпляр ПО.
+### Настройка экземпляра ПО {{ productName }} для хранения резервных копий в S3 {: #backup_configure_instance_s3 .pageBreakBefore }
 
-## Настройка резервного копирования данных {{ openSearchVariants }} {: #backup_configure_elasticsearch .pageBreakBefore }
+Эти инструкции следует выполнять на машине (сервере) с экземпляром ПО **{{ productName }}**.
 
-Для корректного резервного копирования данных истории необходимо настроить конфигурацию службы {{ openSearchVariants }} и экземпляра ПО **{{ productName }}**.
+1. Откройте для редактирования файл конфигурации экземпляра ПО (`/usr/share/comindware/configs/instance/<instanceName>.yml`).
+2. Настройте подключение к хранилищу S3 по умолчанию.
 
-1. В файле конфигурации {{ openSearchVariants }} (`/etc/elasticsearch/elasticsearch.yml`) должен быть указан путь к репозиторию резервных копий, например:
+    !!! warning "Внимание!"
 
-    **Для репозитория на локальном диске**
+        Это подключение будет использоваться для конфигураций, настроенных в списке конфигураций резервного копирования.
+        
+        См. _«[Настройка конфигураций и запуск резервного копирования](#backup_configure_list_view)»_.
 
-    ``` shell
-    # Директория репозитория должна быть доступна экземпляру ПО
-    # {{ productName }}
-    path.repo: /var/www/backups/elasticsearch
+    ``` yaml
+    ##### Конфигурация подключения к хранилищу S3 по умолчанию #####
+    # Описание конфигурации.
+    # `default` — обязательное имя подключения
+    # для основного хранилища резервных копий
+    s3.default.description: Подключение к S3 для основного хранилища резервных копий
+    # Адрес и порт сервера S3.
+    s3.default.endpointURL: http://<s3hostname>:<s3port>
+    # Информация учётной записи. Ключ подключения к хранилищу S3
+    s3.default.accessKey: xxxx
+    # Информация учётной записи. Секретный ключ подключения к хранилищу S3.
+    s3.default.secretKey: xxxx
+    # Установите значение true, если сервер принимает только запросы path-style вида:
+    # https://<s3hostname>/bucket-name/key-name
+    #s3.default.pathStyleAccess: true
     ```
 
-    !!! warning "Внимание"
+3. Перезапустите **{{ productName }}**
+4. При необходимости настройте [резервное копирование данных {{ openSearchVariants }} в S3](#backup_configure_elasticsearch_s3).
+5. Настройте конфигурацию резервного копирования в хранилище S3 c помощью _«[списка конфигураций резервного копирования](#backup_configure_list_view)»_.
 
-        Предоставьте доступ {{ openSearchVariants }} к репозиторию резервных копий:
+### Настройка экземпляра ПО {{ productName }} для резервного копирования в дополнительное хранилище S3 по расписанию {: #backup_configure_instance_s3_advanced .pageBreakBefore }
 
-        ``` sh
-        chmod -R 777 /var/www/backups/elasticsearch
-        chown -R elasticsearch:elasticsearch /var/www/backups/elasticsearch
-        ```
+Здесь представлены инструкции по настройке конфигурации резервного копирования по расписанию через подключение к S3, отличное от подключения `s3.default`.
 
-    **Для репозитория в хранилище S3**
+Эти инструкции следует выполнять на машине (сервере) с экземпляром ПО **{{ productName }}**.
 
-    ``` shell
-    s3.client.default.endpoint: localhost:9000
+!!! warning "Внимание!"
+
+    - Эта конфигурация резервного копирования настраивается только в файле конфигурации `<instanceName>.yml`. 
+    - Эта конфигурация не будет отображаться [списке конфигураций резервного копирования](#backup_configure_list_view).
+    - Настроенное таким способом подключение `s3.<s3connectionName>` нельзя указать в конфигурациях резервного копирования в [списке конфигураций резервного копирования](#backup_configure_list_view). В них используется только подключение `s3.default` — см. _«[Настройка экземпляра ПО {{ productName }} для хранения резервных копий в S3](#backup_configure_instance_s3)»_.
+
+1. Откройте для редактирования файл конфигурации экземпляра ПО (`/usr/share/comindware/configs/instance/<instanceName>.yml`).
+2. Настройте дополнительное подключение к хранилищу S3.
+
+    ``` yaml
+    ##### Конфигурация дополнительного подключения к хранилищу S3 #####
+    # <s3connectionName> — задайте имя подключения.
+    s3.<s3connectionName>.description: Дополнительное подключение к S3
+    s3.<s3connectionName>.endpointURL: http://<s3hostnameForFiles>:<s3port>
+    s3.<s3connectionName>.accessKey: xxxx
+    s3.<s3connectionName>.secretKey: xxxx
+    #s3.<s3connectionName>.pathStyleAccess: true
+    ```
+
+3. Настройте конфигурацию резервного копирования по умолчанию. Эта конфигурация не будет отображаться в списке конфигураций. Она будет запускаться автоматически по заданному расписанию.
+
+    ``` yaml
+    ##### Конфигурация резервного копирования по умолчанию #####
+    # <backupName> — имя конфигурации резервного копирования, без пробелов
+    # Имя файлов резервных копий.
+    # К нему будут добавляться метка времени и расширение cdbbz, например:
+    # Backup.202202161625.cdbbz
+    backup.default.<backupName>.name: Backup
+    # Тип хранилища.
+    backup.default.<backupName>.repository.type: S3
+    # Имя корзины S3 для хранения файлов резервных копий.
+    backup.default.<backupName>.repository.s3.bucket: <backup-files-bucket>
+    # Имя подключения к S3, например 'default' или .
+    backup.default.<backupName>.repository.s3.connection: <s3connectionName>
+    # Описание конфигурации
+    backup.default.<backupName>.description:
+    # Периодичность запуска резервного копирования.
+    backup.default.<backupName>.period: 23:00
+    # Дни запуска резервного копирования.
+    backup.default.<backupName>.days: [Sunday,  Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+    # Время начала запуска резервного копирования.
+    backup.default.<backupName>.timeFrom: 00:01
+    # Время окончания запуска резервного копирования.
+    backup.default.<backupName>.timeUpTo: 23:59
+    # Количество резервных копий одновременно хранящихся в системе.
+    # Старые будут удалены автоматически.
+    backup.default.<backupName>.keepRecent: 10
+    # Управление составом резервной копии — загруженные файлы
+    backup.default.<backupName>.withStreams: true
+    # Управление составом резервной копии —  файлы скриптов.
+    backup.default.<backupName>.withScripts: true
+    # Управление составом резервной копии — файлы истории ({{ openSearchVariants }}).
+    backup.default.<backupName>.withJournal: true
+    ```
+
+4. Перезапустите **{{ productName }}**:
+
+    ``` sh
+    systemctl restart comindware<instanceName>
+    ```
+
+## Подготовка {{ openSearchVariants }} {: #backup_configure_elasticsearch .pageBreakBefore }
+
+### Настройка резервного копирования данных {{ openSearchVariants }} на диск {: #backup_configure_elasticsearch_disk }
+
+!!! warning "Внимание!"
+
+    - Для корректного резервного копирования данных истории на диск настройте конфигурацию службы {{ openSearchVariants }} и **{{ productName }}** так, чтобы они использовали общую директорию репозитория резервных копий {{ openSearchVariants }}.
+
+        - Для этого в директивах `path.repo` и `backup.journalRepository.localDisk.path` укажите директорию, доступную одновременно {{ openSearchVariants }} и **{{ productName }}**:
+        
+            - либо расположенную на одной машине, где установлены {{ openSearchVariants }} и **{{ productName }}**;
+            - либо доступную через сеть для {{ openSearchVariants }} и **{{ productName }}**, если они расположены на разных машинах.
+
+    - Резервная копия истории будет сначала сохранена в директорию репозитория резервных копий {{ openSearchVariants }}.
+    - Имя директории резервной копии истории будет совпадать с префиксом индекса {{ openSearchVariants }}, указанным в **{{ productName }}**.
+    - Содержимое этой директории будет скопировано в директорию `History` внутри файла `.CDBBZ` с резервной копией **{{ productName }}**.
+
+1. Перейдите к настройке машины, на которой развёрнута служба {{ openSearchVariants }}.
+2. Откройте для редактирования файл конфигурации {{ openSearchVariants }} `/etc/elasticsearch/elasticsearch.yml`.
+3. Укажите путь к репозиторию резервных копий, например:
+
+    ``` sh
+    # Директория репозитория должна быть доступна {{ productName }}.
+    # Внутри этой директории будет создана директория,
+    # имя которой будет совпадать с префиксом индекса {{ openSearchVariants }}.
+    path.repo: /var/backups/elasticsearch
+    ```
+
+4. Предоставьте доступ {{ openSearchVariants }} к репозиторию резервных копий:
+
+    ``` sh
+    chmod -R 777 /var/backups/elasticsearch
+    chown -R elasticsearch:elasticsearch /var/backups/elasticsearch
+    ```
+
+5. Перезапустите службу {{ openSearchVariants }}:
+
+    ``` sh
+    systemctl restart elasticsearch   
+    ```
+
+6. Перейдите к настройке машины с экземпляром ПО **{{ productName }}**.
+7. Откройте для редактирования файл конфигурации `/usr/share/comindware/configs/instance/<instanceName>.yml`.
+8. Укажите тип репозитория резервных копий {{ openSearchVariants }}: `LocalDisk`, и путь к репозиторию, например:
+
+    ``` yaml
+    # Тип хранилища резервных копий {{ openSearchVariants }} (LocalDisk | S3)
+    backup.journalRepository.type: LocalDisk
+    # Путь к файлам резервных копий.
+    # Укажите директорию из директивы path.repo файла elasticsearch.yml
+    # Репозиторий резервной копии {{ openSearchVariants }} из этой директории
+    # будет скопирован в директорию History
+    # внутри файла .CDBBZ резервной копии {{ productName }}
+    backup.journalRepository.localDisk.path: /var/backups/elasticsearch
+    ```
+
+    !!! warning "Внимание!"
+
+        - Если {{ openSearchVariants }} и **{{ productName }}** работают на одной машине, в директивах `path.repo` и `backup.journalRepository.localDisk.path` следует указать один и тот же путь.
+        - Если {{ openSearchVariants }} и **{{ productName }}** работают на разных машинах, необходимо: 
+            1. Директорию, указанную в директиве `path.repo` в файле `elasticsearch.yml`, сделать доступной для **{{ productName }}** через сеть.
+            2. Примонтировать общую директорию на машине с **{{ productName }}**.
+            3. Указать примонтированную директорию в директиве `backup.journalRepository.localDisk.path` в файле `<instanceName>.yml`.
+
+9. Перезапустите экземпляр **{{ productName }}**:
+
+    ``` sh
+    systemctl restart comindware<instanceName>
+    ```
+
+10. Настройте конфигурацию резервного копирования на диск c помощью _«[списка конфигураций резервного копирования](#backup_configure_list_view)»_.
+
+### Настройка резервного копирования данных {{ openSearchVariants }} в хранилище S3 {: #backup_configure_elasticsearch_s3 .pageBreakBefore }
+
+{% include-markdown ".snippets/s3_warning.md" %}
+
+!!! warning "Внимание!"
+
+    - Для корректного резервного копирования данных истории в хранилище S3 необходимо настроить конфигурацию службы {{ openSearchVariants }} и экземпляра ПО **{{ productName }}** так, чтобы они использовали общую корзину:
+
+    - В файлах конфигурации `elasticsearch.yml` и `<instanceName>.yml` необходимо настройте подключение одному и тому же хранилищу S3.
+    - В директивах `path.repo` и `backup.journalRepository.localDisk.path` укажите одну и ту же корзину
+
+1. Перейдите к настройке машины, на которой развёрнута служба {{ openSearchVariants }}.
+2. Откройте для редактирования файл конфигурации {{ openSearchVariants }} `/etc/elasticsearch/elasticsearch.yml`.
+3. Настройте подключение к хранилищу S3 для репозитория резервных копий, например:
+
+    ``` yaml
+    #### Конфигурация подключения к хранилищу S3 на стороне {{ openSearchVariants }} ####
+    # Адрес и порт сервера S3.
+    s3.client.default.endpoint: <s3hostname>:<s3port>
+    # Протокол по умолчанию.
     s3.client.default.protocol: http
+    # Установите значение true, если сервер принимает только запросы path-style вида:
+    # https://<s3hostname>/bucket-name/key-name
     s3.client.default.path_style_access: true
     ```
 
-    {% include-markdown ".snippets/s3_warning.md" %}
+4. Перезапустите службу {{ openSearchVariants }}:
 
-2. В файле конфигурации экземпляра ПО (`/usr/share/comindware/configs/instance/<instanceName>.yml`) необходимо указать тип репозитория резервных копий {{ openSearchVariants }} (`LocalDisk` или `S3`) и путь к репозиторию, например:
-
-    **Для репозитория на локальном диске**
-
-    ``` shell
-    # Тип хранилища резервных копий {{ openSearchVariants }}: LocalDisk или S3
-    backup.journalRepository.type: LocalDisk
-    Путь к файлам резервных копий
-    backup.journalRepository.localDisk.path: /var/www/backups/elasticsearch
+    ``` sh
+    systemctl restart elasticsearch   
     ```
 
-    !!! note "Примечание"
+5. Перейдите к настройке машины с экземпляром ПО **{{ productName }}**.
+6. Откройте для редактирования файл конфигурации `/usr/share/comindware/configs/instance/<instanceName>.yml`.
+7. Настройте подключение к хранилищу S3 для репозитория резервных копий, например:
 
-        В данном примере {{ openSearchVariants }} и **{{ productName }}** работают на одной машине.
-        В противном случае следует примонтировать папку репозитория {{ openSearchVariants }} на машине с **{{ productName }}** и указать её в директиве `backup.journalRepository.localDisk.path`.
-
-    **Для репозитория в хранилище S3**
-    {: .pageBreakBefore }
-
-    ``` shell
-    # Конфигурация подключения к хранилищу S3, используемого по умолчанию
-    s3.default.endpointURL: http://localhost:9000
+    ``` yaml
+    #### Конфигурация подключения к хранилищу S3 на стороне {{ productName }} ####
+    # Описание конфигурации
+    # default — имя подключения, не изменять.
+    s3.default.description: Подключение к S3 для резервных копий истории
+    # Адрес и порт сервера S3.
+    s3.default.endpointURL: <s3hostname>:<s3port>
+    # Информация учетной записи. Ключ подключения к хранилищу S3.
     s3.default.accessKey: xxxxx
+    # Информация учетной записи. Секретный ключ подключения к хранилищу S3.
     s3.default.secretKey: xxxxx
-    s3.default.pathStyleAccess: true
-    s3.default.description: Подключение к S3 по умолчанию
+    # Установите значение true, если сервер принимает только запросы path-style вида:
+    # https://<s3hostname>/bucket-name/key-name
+    #s3.default.pathStyleAccess: true
+    ```
 
-    # Конфигурация репозитория резервных копий {{ openSearchVariants }} в хранилище S3
+8. Укажите тип репозитория резервных копий {{ openSearchVariants }}: `S3`, и корзину для репозитория, например:
+
+    ``` yaml
+    #### Настройка репозитория резервных копий {{ openSearchVariants }} в хранилище S3 ####
     backup.journalRepository.type: S3
     # Имя корзины в хранилище S3 для хранения резервных копий данных {{ openSearchVariants }}
     backup.journalRepository.s3.bucket: <instanceName>-backups
@@ -158,12 +342,19 @@ hide: tags
     # на стороне {{ productName }}
     backup.journalRepository.s3.platformConnection: default
     # Имя подключения к хранилищу S3, используемому по умолчанию на стороне {{ openSearchVariants }}
-    backup.journalRepository.s3.elasticConnection: default
+    backup.journalRepository.s3.journalConnection: default
     ```
 
+9. Перезапустите экземпляр **{{ productName }}**:
+
+    ``` sh
+    systemctl restart comindware<instanceName>
+    ```
+
+10. Настройте конфигурацию резервного копирования в S3 c помощью _«[списка конфигураций резервного копирования](#backup_configure_list_view)»_.
 {% endif %}
 
-## Просмотр списка и настройка конфигураций резервного копирования {: #backup_configure_list_view .pageBreakBefore }
+## Настройка конфигураций и запуск резервного копирования {: #backup_configure_list_view .pageBreakBefore }
 
 1. В разделе [«**Администрирование**» — «**Инфраструктура**»][administration] выберите пункт «**Резервное копирование**» <i class="fa-light  fa-coins">‌</i>.
 2. Отобразится список конфигураций резервного копирования.
@@ -176,13 +367,19 @@ hide: tags
     - **Репозиторий для резервных копий** — выберите хранилище для резервных копий:
         - **Не определено** — не использовать репозиторий для хранения резервных копий.
         - **Файловая система** — сохранять резервные копии в файловой системе сервера **{{ productName }}**.
-            - **Путь к папке** — путь к директории на сервере, в которой будут сохраняться резервные копии. Эта директория должна существовать на сервере. {% if not gostech%}См. _«[Предварительная настройка экземпляра ПО {{ productName }}][backup_configure_instance]»_.{% endif %}
-        - **Хранилище S3** — сохранять резервные копии во внешнем сервисе S3. См. _«[Хранилище S3. Настройка экземпляра ПО и подключения][s3_connection]»_.
+            - **Путь к папке** — путь к директории на сервере, в которой будут сохраняться резервные копии. Эта директория должна существовать на сервере. {% if not gostech%}См. _«[Настройка экземпляра ПО {{ productName }} для хранения резервных копий на диске](#backup_configure_instance_disk)»_.{% endif %}
+        - **Хранилище S3** — сохранять резервные копии во внешнем сервисе S3.
             - **Имя корзины** — введите имя контейнера в хранилище S3, к котором будут сохраняться резервные копии.
 
             !!! warning "Внимание!"
 
-                Для резервного копирования в основной и дополнительный репозитории будет использоваться только подключение к S3, заданное в файле конфигурации экземпляра ПО (`/usr/share/comindware/configs/instance/<instanceName>.yml`) с помощью директив `backup.default.<backupName>.repository.s3` и `backup.default.<backupName>.extraRepository.s3` соответственно.
+                Для резервного копирования в основной и дополнительный репозитории будет использоваться только подключение `s3.default`, настроенное в файле конфигурации экземпляра ПО (`<instanceName>.yml`).
+
+                См. _«[Настройка экземпляра ПО {{ productName }} для хранения резервных копий в S3](#backup_configure_instance_s3)»_.
+            
+            !!! tip "Совет"
+                
+                Настроить более сложную конфигурацию резервного копирования в S3 можно в файле `<instanceName>.yml`. См. _«[Настройка экземпляра ПО {{ productName }} для резервного копирования в дополнительное хранилище S3 по расписанию](#backup_configure_instance_s3_advanced)»_.
 
     - **Дополнительный репозиторий для резервных копий** — выберите хранилище, в которое будут сохраняться дубликаты резервных копий.
     - **С файлами** — установите этот флажок, чтобы включить в состав резервной копии загруженные файлы (папка `Streams`).

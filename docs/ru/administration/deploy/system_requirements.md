@@ -1,5 +1,6 @@
 ---
 title: Системные требования
+kbTitle: Системные требования Comindware Platform
 kbId: 4659
 ---
 
@@ -81,9 +82,9 @@ kbId: 4659
 <tr>
 <td>СУБД</td>
 {% if adminGuideWindows %}
-<td>Apache Ignite</td>
+<td>{{ apacheIgniteVariants }}</td>
 {% endif %}
-<td>nginxVariants</td>
+<td>{{ apacheIgniteVariants }}</td>
 </tr>
 <tr>
 <td>Веб-сервер</td>

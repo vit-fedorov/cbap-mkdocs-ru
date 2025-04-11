@@ -41,15 +41,23 @@ kbId: 4779
 
     --8<-- "attribute_enum_get_data_n3.md"
 
+!!! tip "Получение значения атрибута на определённом языке с помощью N3"
+
+    --8<-- "attribute_enum_get_data_localized_n3.md"
+
 !!! tip "Установка значения атрибута с помощью N3"
 
     --8<-- "attribute_enum_set_value_n3.md"
 
-!!! tip "Сравнение и фильтрация значения атрибута с помощью с помощью N3"
+!!! tip "Сравнение значения атрибута с помощью N3"
 
     --8<-- "attribute_enum_compare_value_n3.md"
 
-## Настройка свойств атрибута {: #attribute_enum_settings }
+!!! tip "Фильтрация значения атрибута с помощью N3"
+
+    {% include-markdown ".snippets/attribute_enum_filter_value_n3.md" %}
+
+## Настройка свойств атрибута {: #attribute_enum_settings .pageBreakBefore }
 
 Помимо **[общих свойств][attribute_common_properties]** для атрибута типа «**Список значений**» предусмотрены перечисленные ниже свойства.
 

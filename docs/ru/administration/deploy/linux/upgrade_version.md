@@ -313,7 +313,7 @@ kbId: 4624
 16. Откройте сайт экземпляра ПО в браузере, одновременно открыв выдачу журналов экземпляра в терминале:
 
     ``` sh
-    tail -f /var/log/comindware/<instanceName>/Log/sys*
+    tail -f /var/log/comindware/<instanceName>/Log/heartbeat*
     ```
 
 17. В браузере выполните инициализацию экземпляра ПО, выполните вход и проверьте работоспособность ПО.
@@ -338,7 +338,7 @@ kbId: 4624
 21. Откройте сайт экземпляра ПО в браузере, дождитесь окончания загрузки, одновременно открыв выдачу журналов экземпляра в терминале:
 
     ``` sh
-    tail -f /var/log/comindware/<instanceName>/Log/sys*
+    tail -f /var/log/comindware/<instanceName>/Log/heartbeat*
     ```
 
 22. Дождитесь завершения обновления структуры данных и проверьте его успешное выполнение.
@@ -395,7 +395,27 @@ kbId: 4624
     ```
 
 27. Скопируйте очищенную резервную копию в директорию с базой данных `/var/lib/comindware/<instanceName>/Database/`.
-28. Откройте сайт экземпляра ПО в браузере, дождитесь его инициализации и выполните вход.
+28. Назначьте владельца директории с базой данных:
+
+    - **Astra Linux, Ubuntu, Debian** (DEB-based)
+
+    ``` sh
+    chown -R www-data:www-data /var/lib/comindware/<instanceName>/Database
+    ```
+
+    - **РЕД ОС, Rocky** (RPM-based)
+
+    ``` sh
+    chown -R nginx:nginx /var/lib/comindware/<instanceName>/Database
+    ```
+
+    - **Альт Сервер**
+
+    ``` sh
+    chown -R _nginx:_nginx /var/lib/comindware/<instanceName>/Database
+    ```
+
+29. Откройте сайт экземпляра ПО в браузере, дождитесь его инициализации и выполните вход.
 
 <div class="relatedTopics" markdown="block">
 

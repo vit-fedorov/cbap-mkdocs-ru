@@ -239,19 +239,8 @@ nav:
       - business_apps/expressions/expression_debug.md
       - Редактор выражений:
         - business_apps/expressions/expression_editor/index.md
-        - Предиктивный ввод в формулах:
-          - business_apps/expressions/expression_editor/formula_editor/index.md
-        - Предиктивный ввод в выражениях на языке N3:
-          - business_apps/expressions/expression_editor/n3_editor/index.md
-          - business_apps/expressions/expression_editor/n3_editor/prefix_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/block_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/predicate_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/variable_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/findproperty_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/square_brackets_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/findobject_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/enum_autocomplete_n3.md
-          - business_apps/expressions/expression_editor/n3_editor/literal_autocomplete.md
+        - business_apps/expressions/expression_editor/formula_editor/index.md    
+        - business_apps/expressions/expression_editor/n3_editor/index.md
   - Моделирование корпоративной архитектуры:
     - architect/architect_desktop.md
     - architect/process_architecture_modeling/index.md

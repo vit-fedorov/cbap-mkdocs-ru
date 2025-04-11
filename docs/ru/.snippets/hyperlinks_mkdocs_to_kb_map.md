@@ -558,11 +558,11 @@
 
 [formula_editor_autocomplete]: {{ kbArticleURLPrefix }}5035
 
-[formula_editor_function_autocompete]: {{ kbArticleURLPrefix }}5027
+[formula_autocompete_editor_function]: {{ kbArticleURLPrefix }}5035
 
-[formula_editor_from_where_select_autocomplete]: {{ kbArticleURLPrefix }}5026
+[formula_editor_autocomplete_from_where_select]: {{ kbArticleURLPrefix }}5035
 
-[formula_editor_record_heading_autocomplete]: {{ kbArticleURLPrefix }}5032
+[formula_editor_autocomplete_record_heading]: {{ kbArticleURLPrefix }}5035
 
 [functions]: {{ kbArticleURLPrefix }}4711
 

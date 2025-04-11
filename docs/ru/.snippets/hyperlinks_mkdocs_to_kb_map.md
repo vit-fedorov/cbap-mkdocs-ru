@@ -12,23 +12,13 @@
 
 [api_calls]: {{ kbCategoryURLPrefix }}868
 
-[api_web]: {{ kbArticleURLPrefix }}4861
-
-[api_intro]: {{ kbArticleURLPrefix }}4860
-
 [account_attributes_system_names]: {{ kbArticleURLPrefix }}4994
 
 [attribute_date_time_use]: {{ kbArticleURLPrefix }}4886
 
 [attribute_drawing_file_import]: {{ kbArticleURLPrefix }}4906
 
-[attribute_enum_calculate_current_value]: {{ kbArticleURLPrefix }}4913
-
-[attribute_enum_calculate_registry]: {{ kbArticleURLPrefix }}4916
-
 [account_attribute_system_names]: {{ kbArticleURLPrefix }}4994
-
-[auxiliary_software_list]: {{ kbArticleURLPrefix }}4582
 
 [backup_and_restore]: {{ kbArticleURLPrefix }}4643
 
@@ -40,17 +30,11 @@
 
 [csharp_examples]: {{ kbCategoryURLPrefix }}883
 
+[csharp_guide]: {{ kbArticleURLPrefix }}4864
+
 [document_digital_signature]: {{ kbArticleURLPrefix }}4910
 
 [example_n3_button_local_variable]: {{ kbArticleURLPrefix }}4909
-
-[example_document_clone_scenario_n3]: {{ kbArticleURLPrefix }}4883
-
-[example_document_download_archive_csharp]: {{ kbArticleURLPrefix }}4921
-
-[example_document_download_archive_related_records_csharp]: {{ kbArticleURLPrefix }}5081
-
-[example_document_download_to_server_csharp]: {{ kbArticleURLPrefix }}5002
 
 [example_csharp_my_profile_button]: {{ kbArticleURLPrefix }}5006
 
@@ -84,19 +68,17 @@
 
 [integration_examples]: {{ kbCategoryURLPrefix }}875
 
-[manual_csharp]: {{ kbArticleURLPrefix }}4864
-
 [manual_n3]: {{ kbArticleURLPrefix }}4852
 
 [n3_guide]: {{ kbCategoryURLPrefix }}877
 
 [n3_use_examples]: {{ kbCategoryURLPrefix }}879
 
+[odata-filter-syntax]: https://msdn.microsoft.com/ru-ru/library/hh169248(v=nav.90).aspx
+
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}4905
 
 [process_end_button_example]: {{ kbArticleURLPrefix }}4911
-
-[tutorial]: {{ kbCategoryURLPrefix }}870
 
 [apps_kb]: {{ kbCategoryURLPrefix }}832
 
@@ -112,35 +94,21 @@
 
 [account_permission_audit]: {{ kbArticleURLPrefix }}4664
 
-[ad_authentication_configure]: {{ kbArticleURLPrefix }}4605
-
 [ad_connection]: {{ kbArticleURLPrefix }}4687
-
-[adapters]: {{ kbArticleURLPrefix }}4672
 
 [administration]: {{ kbArticleURLPrefix }}4661
 
-[antivirus_exceptions_configure]: {{ kbArticleURLPrefix }}4602
-
 [apps]: {{ kbArticleURLPrefix }}4714
 
-[authentication_keys]: {{ kbArticleURLPrefix }}4674
+[backup_configure]: {{ kbArticleURLPrefix }}4642
 
-[backup]: {{ kbArticleURLPrefix }}4642
-
-[backup_configure]: {{ kbArticleURLPrefix }}5082
+[backup_recommendations]: {{ kbArticleURLPrefix }}5082
 
 [changelog]: {{ kbArticleURLPrefix }}4589
 
 [collabora_connection]: {{ kbArticleURLPrefix }}4688
 
 [common_notifications]: {{ kbArticleURLPrefix }}4681
-
-[complete_running_instance_backup]: {{ kbArticleURLPrefix }}4650
-
-[communication_routes]: {{ kbArticleURLPrefix }}4676
-
-[connections]: {{ kbArticleURLPrefix }}4675
 
 [connections_delete]: {{ kbArticleURLPrefix }}4675#connections_delete
 
@@ -149,8 +117,6 @@
 [db_move_manually]: {{ kbArticleURLPrefix }}4649
 
 [desktop]: {{ kbArticleURLPrefix }}4823
-
-[desktop_setup]: {{ kbArticleURLPrefix }}4813
 
 [diagrams]: {{ kbArticleURLPrefix }}4710
 
@@ -164,8 +130,6 @@
 
 [esphere_send_configure]: {{ kbArticleURLPrefix }}5062
 
-[experimental_feature_support]: {{ kbArticleURLPrefix }}4579#experimental_feature_support
-
 [get_connection]: {{ kbArticleURLPrefix }}4701
 
 [git_connection]: {{ kbArticleURLPrefix }}4680
@@ -174,11 +138,7 @@
 
 [groups]: {{ kbArticleURLPrefix }}4654
 
-[kafka_connection]: {{ kbArticleURLPrefix }}4704
-
 [licensing]: {{ kbArticleURLPrefix }}4670
-
-[log_files_event_examples]: {{ kbArticleURLPrefix }}4618
 
 [login_and_registration_page_design]: {{ kbArticleURLPrefix }}4707
 
@@ -192,13 +152,11 @@
 
 [map_configure]: {{ kbArticleURLPrefix }}4679
 
+[mobile_app_use]: {{ kbArticleURLPrefix }}5090
+
 [notification_types]: {{ kbArticleURLPrefix }}4682
 
 [monitoring]: {{ kbArticleURLPrefix }}4666
-
-[my_tasks_page_configure]: {{ kbArticleURLPrefix }}4812
-
-[my_tasks_page_configure_add_to_navigation]: {{ kbArticleURLPrefix }}4812#my_tasks_page_configure_add_to_navigation
 
 [navigation_sections_setup]: {{ kbArticleURLPrefix }}4809
 
@@ -211,8 +169,6 @@
 [organizational_unit_templates]: {{ kbArticleURLPrefix }}4755
 
 [r7_connection]: {{ kbArticleURLPrefix }}4689
-
-[pages_setup]: {{ kbArticleURLPrefix }}4810
 
 [performance]: {{ kbArticleURLPrefix }}4669
 
@@ -227,8 +183,6 @@
 [process_sending_connection]: {{ kbArticleURLPrefix }}4690
 
 [process_templates]: {{ kbArticleURLPrefix }}4758
-
-[receive_http_example]: {{ kbArticleURLPrefix }}4700
 
 [record_templates]: {{ kbArticleURLPrefix }}4759
 
@@ -248,9 +202,7 @@
 
 [release_notes_5.0]: {{ kbArticleURLPrefix }}5073
 
-[restore_complete_backup]: {{ kbArticleURLPrefix }}4648
-
-[restore_test_configure]: {{ kbArticleURLPrefix }}4651
+[release_notes_5.0.13334]: {{ kbArticleURLPrefix }}5094
 
 [roles]: {{ kbArticleURLPrefix }}4803
 
@@ -262,19 +214,13 @@
 
 [scenario_send_email]: {{ kbArticleURLPrefix }}4692
 
-[send_http_connection]: {{ kbArticleURLPrefix }}4703
-
 [security]: {{ kbArticleURLPrefix }}4660
-
-[send_http_request_connection]: {{ kbArticleURLPrefix }}4696
 
 [sql_receive_connection]: {{ kbArticleURLPrefix }}4705
 
 [sql_send_connection]: {{ kbArticleURLPrefix }}4706
 
 [substitution]: {{ kbArticleURLPrefix }}4665
-
-[system_roles]: {{ kbArticleURLPrefix }}4662
 
 [system_service_management]: {{ kbArticleURLPrefix }}4671
 
@@ -297,6 +243,10 @@
 [templates_move]: {{ kbArticleURLPrefix }}4709#templates_move
 
 [templates_archive_unarchive]: {{ kbArticleURLPrefix }}4709#templates_archive_unarchive
+
+[templates_view_in_app]: {{ kbArticleURLPrefix }}4709#templates_view_in_app
+
+[templates_view_records]: {{ kbArticleURLPrefix }}4709#templates_view_records
 
 [template_common_properties]: {{ kbArticleURLPrefix }}4756
 
@@ -324,7 +274,13 @@
 
 [version_control_git]: {{ kbArticleURLPrefix }}4806
 
-[wsfederation_connection]: {{ kbArticleURLPrefix }}4686
+{% endif %}
+
+{% if gostech or (not userGuide and (adminGuideLinux or adminGuideWindows)) or (tutorial and not userGuide) or kbExport %}
+
+<!-- Руководство для ГосТех, администратора для Linux/Windows, отдельный учебник или экспорт в БЗ -->
+
+[http_send_post]: {{ kbArticleURLPrefix }}5075
 
 {% endif %}
 
@@ -336,53 +292,81 @@
 
 [application_configure_recommendations]: {{ kbArticleURLPrefix }}4716
 
+[architect_demo_instance]: {{ kbArticleURLPrefix }}5070
+
+[architect_demo_organizational_structure_processes]: {{ kbArticleURLPrefix }}4826
+
+[architect_demo_organizational_structure_processes_export]: {{ kbArticleURLPrefix }}4826#architect_demo_organizational_structure_processes_export
+
 [architect_desktop]: {{ kbArticleURLPrefix }}4828
 
-[architect_changing_hierarchy]: {{ kbArticleURLPrefix }}4844
+[architect_description]: {{ kbArticleURLPrefix }}4828#architect_description
 
-[architect_cloning_process_entity]: {{ kbArticleURLPrefix }}4841
+[architect_intro]: {{ kbArticleURLPrefix }}4828#architect_intro
 
-[architect_changing_process_hierarchy]: {{ kbArticleURLPrefix }}4842
-
-[architect_configuring_organizational_unit]: {{ kbArticleURLPrefix }}4848
-
-[architect_configuring_organizational_unit_form_and_attributes]: {{ kbArticleURLPrefix }}4847
-
-[architect_configuring_process_entity_properties]: {{ kbArticleURLPrefix }}4843
-
-[architect_configuring_process_entity_properties_form_and_attributes]: {{ kbArticleURLPrefix }}4839
+[architect_desktop_operations]: {{ kbArticleURLPrefix }}4828#architect_desktop_operations
 
 [architect_conversations]: {{ kbArticleURLPrefix }}4827
 
-[architect_creating_organizational_unit]: {{ kbArticleURLPrefix }}4849
+[architect_exporting_process_entity]: {{ kbArticleURLPrefix }}4832#architect_exporting_process_entity
 
-[architect_creating_process_entity]: {{ kbArticleURLPrefix }}4840
+[architect_import_export]: {{ kbArticleURLPrefix }}4832
 
-[architect_deleting_organizational_unit]: {{ kbArticleURLPrefix }}4845
+[architect_importing_process_entity]: {{ kbArticleURLPrefix }}4832#architect_importing_process_entity
 
-[architect_deleting_process_entity]: {{ kbArticleURLPrefix }}4837
+[architect_organizational_structure_design]: {{ kbArticleURLPrefix }}4850
 
-[architect_edit_diagram]: {{ kbArticleURLPrefix }}4835
+[architect_organizational_structure_design_hierarchy_change]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_design_hierarchy_change
 
-[architect_exporting_process_entity]: {{ kbArticleURLPrefix }}4831
+[architect_organizational_structure_design_registry_view]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_design_registry_view
 
-[architect_importing_process_entity]: {{ kbArticleURLPrefix }}4832
+[architect_organizational_structure_design_unit_configure]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_design_unit_configure
 
-[architect_organizational_structure_modelling]: {{ kbArticleURLPrefix }}4850
+[architect_organizational_structure_design_unit_configure_form_and_attributes]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_design_unit_configure_form_and_attributes
 
-[architect_process_architecture_modelling]: {{ kbArticleURLPrefix }}4833
+[architect_organizational_structure_design_unit_create]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_design_unit_create
 
-[architect_process_diagram_designer]: {{ kbArticleURLPrefix }}4836
+[architect_organizational_structure_design_unit_delete]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_design_unit_delete
 
-[architect_renaming_organizational_unit]: {{ kbArticleURLPrefix }}4846
+[architect_organizational_structure_design_unit_rename]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_design_unit_rename
 
-[architect_renaming_process_entity]: {{ kbArticleURLPrefix }}4838
+[architect_organizational_structure_diagram_designer]: {{ kbArticleURLPrefix }}4848#architect_organizational_structure_diagram_designer
 
-[architect_verify_diagram]: {{ kbArticleURLPrefix }}4834
+[architect_organizational_structure_diagram_edit]: {{ kbArticleURLPrefix }}4848
 
-[architect_version_control]: {{ kbArticleURLPrefix }}4827
+[architect_organizational_structure_diagram_edit_element_menu]: {{ kbArticleURLPrefix }}4848#architect_organizational_structure_diagram_edit_element_menu
 
-[architect_viewing_diagram]: {{ kbArticleURLPrefix }}4830
+[architect_organizational_structure_edit]: {{ kbArticleURLPrefix }}4850#architect_organizational_structure_edit
+
+[architect_process_architecture_design]: {{ kbArticleURLPrefix }}4833
+
+[architect_process_architecture_design_entity_create]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_entity_create
+
+[architect_process_architecture_design_entity_clone]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_entity_clone
+
+[architect_process_architecture_design_entity_delete]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_entity_delete
+
+[architect_process_architecture_design_hierarchy_change]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_hierarchy_change
+
+[architect_process_architecture_design_entity_properties_configure]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_entity_properties_configure
+
+[architect_process_architecture_design_entity_rename]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_entity_rename
+
+[architect_process_architecture_design_entity_form_attributes_configure]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_entity_form_attributes_configure
+
+[architect_process_architecture_design_registry_view]: {{ kbArticleURLPrefix }}4833#architect_process_architecture_design_registry_view
+
+[architect_process_architecture_diagram_designer]: {{ kbArticleURLPrefix }}4835
+
+[architect_process_architecture_diagram_designer_element_menu]: {{ kbArticleURLPrefix }}4835#architect_process_architecture_diagram_designer_element_menu
+
+[architect_process_architecture_diagram_edit]: {{ kbArticleURLPrefix }}4835
+
+[architect_process_architecture_diagram_verify]: {{ kbArticleURLPrefix }}4835#architect_process_architecture_diagram_verify
+
+[architect_version_control]: {{ kbArticleURLPrefix }}4829
+
+[architect_process_architecture_diagram_view]: {{ kbArticleURLPrefix }}4835#architect_process_architecture_diagram_view
 
 [attribute_account]: {{ kbArticleURLPrefix }}4774
 
@@ -409,6 +393,14 @@
 [attribute_duration]: {{ kbArticleURLPrefix }}4775
 
 [attribute_enum]: {{ kbArticleURLPrefix }}4779
+
+[attribute_enum_value_calculation]: {{ kbArticleURLPrefix }}4920
+
+[attribute_enum_value_filter]: {{ kbArticleURLPrefix }}5077
+
+[attribute_enum_calculate_current_value]: {{ kbArticleURLPrefix }}4913
+
+[attribute_enum_calculate_registry]: {{ kbArticleURLPrefix }}4916
 
 [attribute_hyperlink]: {{ kbArticleURLPrefix }}4766
 
@@ -440,11 +432,11 @@
 
 [auto_numerating_records]: {{ kbArticleURLPrefix }}4895
 
+[auto_numerating_related_records]: {{ kbArticleURLPrefix }}5092
+
 [button_area]: {{ kbArticleURLPrefix }}4791
 
 [button_area_configure]: {{ kbArticleURLPrefix }}4791#button_area_configure
-
-[buttons]: {{ kbArticleURLPrefix }}4790
 
 [button_configure]: {{ kbArticleURLPrefix }}4790#button_configure
 
@@ -460,6 +452,8 @@
 
 [desktop]: {{ kbArticleURLPrefix }}4823
 
+[desktop_setup]: {{ kbArticleURLPrefix }}4813
+
 [discussion_configure]: {{ kbArticleURLPrefix }}4788
 
 [discussion_configure_template]: {{ kbArticleURLPrefix }}4788#mcetoc_1h7hu3akn4
@@ -468,11 +462,25 @@
 
 [elasticdata_description]: {{ kbArticleURLPrefix }}4584
 
+[example_document_clone_scenario_n3]: {{ kbArticleURLPrefix }}4883
+
+[example_document_download_archive_csharp]: {{ kbArticleURLPrefix }}4921
+
+[example_document_download_archive_related_records_csharp]: {{ kbArticleURLPrefix }}5081
+
+[example_document_download_to_server_csharp]: {{ kbArticleURLPrefix }}5002
+
+[example_task_reassign]: {{ kbArticleURLPrefix }}5087
+
 [process_diagram_elements_events_end]: {{ kbArticleURLPrefix }}4744
 
 [process_diagram_elements_events_intermediate]: {{ kbArticleURLPrefix }}4742
 
+[process_diagram_elements_events_intermediate_usage]: {{ kbArticleURLPrefix }}4742#process_diagram_elements_events_intermediate_usage
+
 [process_diagram_elements_events_start]: {{ kbArticleURLPrefix }}4735
+
+[experimental_feature_support]: {{ kbArticleURLPrefix }}4579#experimental_feature_support
 
 [export_templates]: {{ kbArticleURLPrefix }}4797
 
@@ -488,7 +496,15 @@
 
 [expression_editor]: {{ kbArticleURLPrefix }}5025
 
+[expression_editor_reference]: {{ kbArticleURLPrefix }}5025#expression_editor_reference
+
 [n3_editor_autocomplete]: {{ kbArticleURLPrefix }}5039
+
+[n3_editor_autocomplete_block]: {{ kbArticleURLPrefix }}5039
+
+[n3_editor_autocomplete_predicate]: {{ kbArticleURLPrefix }}5039
+
+[n3_editor_autocomplete_prefix]: {{ kbArticleURLPrefix }}5039
 
 [expression_debug]: {{ kbArticleURLPrefix }}4929
 
@@ -501,6 +517,8 @@
 [forms_list]: {{ kbArticleURLPrefix }}4786#forms_list
 
 [form_designer]: {{ kbArticleURLPrefix }}4786#form_designer
+
+[form_designer_elements_operations]: {{ kbArticleURLPrefix }}4786#form_designer_elements_operations
 
 [form_elements]: {{ kbArticleURLPrefix }}4786#form_elements
 
@@ -546,27 +564,41 @@
 
 [formula_editor_autocomplete]: {{ kbArticleURLPrefix }}5035
 
-[formula_editor_function_autocompete]: {{ kbArticleURLPrefix }}5027
+[formula_autocompete_editor_function]: {{ kbArticleURLPrefix }}5035
 
-[formula_editor_from_where_select_autocomplete]: {{ kbArticleURLPrefix }}5026
+[formula_editor_autocomplete_from_where_select]: {{ kbArticleURLPrefix }}5035
 
-[formula_editor_record_heading_autocomplete]: {{ kbArticleURLPrefix }}5032
+[formula_editor_autocomplete_record_heading]: {{ kbArticleURLPrefix }}5035
 
 [functions]: {{ kbArticleURLPrefix }}4711
 
 [functions_web_service_call]: {{ kbArticleURLPrefix }}4711#functions_web_service_call
 
+[http_receive_example]: {{ kbArticleURLPrefix }}4700
+
+[http_receive_file]: {{ kbArticleURLPrefix }}5083
+
+[http_receive_jpath]: {{ kbArticleURLPrefix }}5084
+
+[http_send_connection]: {{ kbArticleURLPrefix }}4703
+
+[http_send_example]: {{ kbArticleURLPrefix }}4699
+
+[http_send_file]: {{ kbArticleURLPrefix }}5066
+
+[http_send_request_connection]: {{ kbArticleURLPrefix }}4696
+
 [import_data]: {{ kbArticleURLPrefix }}4802
 
 [map_use]: {{ kbArticleURLPrefix }}4814
 
+[multilingual_app]: {{ kbArticleURLPrefix }}5064
+
 [my_tasks]: {{ kbArticleURLPrefix }}4825
 
-[n3_editor_block_autocomplete]: {{ kbArticleURLPrefix }}5041
+[my_tasks_page_configure]: {{ kbArticleURLPrefix }}4812
 
-[n3_editor_predicate_autocomplete]: {{ kbArticleURLPrefix }}5046
-
-[n3_editor_prefix_autocomplete]: {{ kbArticleURLPrefix }}5042
+[my_tasks_page_configure_add_to_navigation]: {{ kbArticleURLPrefix }}4812#my_tasks_page_configure_add_to_navigation
 
 [navigation_panel]: {{ kbArticleURLPrefix }}4824
 
@@ -583,6 +615,8 @@
 [online_store]: {{ kbArticleURLPrefix }}4805
 
 [pages]: {{ kbArticleURLPrefix }}4822
+
+[pages_setup]: {{ kbArticleURLPrefix }}4810
 
 [process_diagram_call_element_menu]: {{ kbArticleURLPrefix }}4721#process_diagram_call_element_menu
 
@@ -618,17 +652,11 @@
 
 [process_diagram_elements_process_call]: {{ kbArticleURLPrefix }}4727
 
-[process_diagram_elements_script_task]: {{ kbArticleURLPrefix }}4728
-
 [process_diagram_elements_user_task]: {{ kbArticleURLPrefix }}4730
 
 [process_diagram_elements_receive_message_start_event]: {{ kbArticleURLPrefix }}4736
 
 [process_diagram_elements_receive_message_intermediate_event]: {{ kbArticleURLPrefix }}4739
-
-[process_diagram_elements_send_message_end_event]: {{ kbArticleURLPrefix }}4745
-
-[process_diagram_elements_send_message_intermediate_event]: {{ kbArticleURLPrefix }}4740
 
 [process_diagram_elements_timer_intermediate_event]: {{ kbArticleURLPrefix }}4738
 
@@ -658,15 +686,11 @@
 
 [scenario_actions_validate_csharp]: {{ kbArticleURLPrefix }}4718#scenario_actions_validate_csharp
 
-[scenarios]: {{ kbArticleURLPrefix }}4717
-
 [scenario_variables]: {{ kbArticleURLPrefix }}4719
 
 [scenario_verify_data]: {{ kbArticleURLPrefix }}4919
 
 [search_forms]: {{ kbArticleURLPrefix }}5069
-
-[send_http_example]: {{ kbArticleURLPrefix }}4699
 
 [service_call_task]: {{ kbArticleURLPrefix }}4729
 
@@ -726,15 +750,17 @@
 
 [admin_utility_instance_backup_restore]: {{ kbArticleURLPrefix }}4639
 
+[paths_windows]: {{ kbArticleURLPrefix }}4620#paths_windows
+
 [sso_authentication_configure_windows]: {{ kbArticleURLPrefix }}4657
 
 [zabbix_agent_deploy_windows]: {{ kbArticleURLPrefix }}4615
 
 {% endif %}
 
-{% if (userGuide and not adminGuideLinux) or (not adminGuideLinux and adminGuideWindows) or kbExport %}
+{% if gostech or (userGuide and not adminGuideLinux) or (not adminGuideLinux and adminGuideWindows) or kbExport %}
 
-<!-- Руководство пользователя, администратора для Windows или экспорт в БЗ  -->
+<!-- Руководства для ГосТеха, пользователя, администратора для Windows или экспорт в БЗ  -->
 
 [ad_authentication_configure_dc_instance]: {{ kbArticleURLPrefix }}4605
 
@@ -744,29 +770,53 @@
 
 [auxiliary_software_optimize]: {{ kbArticleURLPrefix }}4604
 
-[availability_fault_tolerance]: {{ kbArticleURLPrefix }}5079
+[backup_configure_elasticsearch]: {{ kbArticleURLPrefix }}4642#backup_configure_elasticsearch
 
-[backup_restore_cdbbz]: {{ kbArticleURLPrefix }}4647
-
-[configuration_files_linux]: {{ kbArticleURLPrefix }}5067
-
-[deploy_guide_linux]: {{ kbArticleURLPrefix }}4622
-
-[deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_initialize
-
-[deploy_cluster_linux]: {{ kbArticleURLPrefix }}5080
+[complete_running_instance_backup]: {{ kbArticleURLPrefix }}4650
 
 [elasticsearch_cluster_deploy_no_certificates]: {{ kbArticleURLPrefix }}4612
 
-[kafka_deploy_linux]: {{ kbArticleURLPrefix }}5074
+[nginx_deploy]: {{ kbArticleURLPrefix }}4611
+
+[nginx_geoid_deploy]: {{ kbArticleURLPrefix }}4610
+
+[restore_complete_backup]: {{ kbArticleURLPrefix }}4648
+
+[restore_test_configure]: {{ kbArticleURLPrefix }}4651
 
 [sso_authenticatation_configure]: {{ kbArticleURLPrefix }}4613
 
 [sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}4613#sso_authentication_configure_keytab_update
 
-[nginx_deploy]: {{ kbArticleURLPrefix }}4611
+{% endif %}
 
-[nginx_geoid_deploy]: {{ kbArticleURLPrefix }}4610
+{% if (userGuide and not adminGuideLinux) or (not adminGuideLinux and adminGuideWindows) or kbExport %}
+
+<!-- Руководство пользователя, администратора для Windows или экспорт в БЗ  -->
+
+[availability_fault_tolerance]: {{ kbArticleURLPrefix }}5079
+
+[backup_restore_cdbbz]: {{ kbArticleURLPrefix }}4647
+
+[backup_restore_cdbbz_license_keys]: {{ kbArticleURLPrefix }}4647#backup_restore_cdbbz_license_keys
+
+[configuration_files_linux]: {{ kbArticleURLPrefix }}5067
+
+[deploy_guide_linux]: {{ kbArticleURLPrefix }}4622
+
+[deploy_guide_linux_delete_version]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_delete_version
+
+[deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_initialize
+
+[deploy_cluster_linux]: {{ kbArticleURLPrefix }}5080
+
+[kafka_deploy_linux]: {{ kbArticleURLPrefix }}5074
+
+[paths_linux]: {{ kbArticleURLPrefix }}4620#paths_linux
+
+[upgrade_version_linux]: {{ kbArticleURLPrefix }}4624
+
+[upgrade_version_linux_no_stop]: {{ kbArticleURLPrefix }}5097
 
 {% endif %}
 
@@ -778,11 +828,21 @@
 
 [admin_utility_instance_configure]: {{ kbArticleURLPrefix }}4634
 
+[auxiliary_software_list]: {{ kbArticleURLPrefix }}4582
+
 [logging_engine]: {{ kbArticleURLPrefix }}4623
+
+[logging_engine_adapter_logs]: {{ kbArticleURLPrefix }}4623#logging_engine_adapter_logs
 
 [logging_engine_audit_log]: {{ kbArticleURLPrefix }}4623#logging_engine_audit_log
 
 [logging_engine_rules]: {{ kbArticleURLPrefix }}4623#logging_engine_rules
+
+[log_files_event_examples]: {{ kbArticleURLPrefix }}4618
+
+[log_files_event_examples_adapter_event]: {{ kbArticleURLPrefix }}4618#log_files_event_examples_adapter_even
+
+[log_files_event_examples_connection_status]: {{ kbArticleURLPrefix }}4618#log_files_event_examples_connection_status
 
 [paths]: {{ kbArticleURLPrefix }}4620
 
@@ -796,6 +856,7 @@
 
 <!-- Руководства без учебника или экспорт в БЗ  -->
 
+[tutorial]: {{ kbCategoryURLPrefix }}870
 [lesson_1]: {{ kbArticleURLPrefix }}4871
 [lesson_2]: {{ kbArticleURLPrefix }}4873
 [lesson_3]: {{ kbArticleURLPrefix }}4874
@@ -806,5 +867,67 @@
 [lesson_8]: {{ kbArticleURLPrefix }}4867
 [lesson_9]: {{ kbArticleURLPrefix }}4868
 [lesson_10]: {{ kbArticleURLPrefix }}4866
+
+{% endif %}
+
+{% if apiGuide or kbExport %}
+
+<!-- Руководство по API или экспорт в БЗ  -->
+
+[authentication_keys]: {{ kbArticleURLPrefix }}4674
+
+[communication_routes]: {{ kbArticleURLPrefix }}4676
+
+[connections]: {{ kbArticleURLPrefix }}4675
+
+[system_roles]: {{ kbArticleURLPrefix }}4662
+
+{% endif %}
+
+{% if (not completeGuide and (apiGuide or adminGuideLinux or adminGuideWindows)) or kbExport %}
+
+<!-- Руководство по API, руководство администратора для Linux/Windows или экспорт в БЗ  -->
+
+[buttons]: {{ kbArticleURLPrefix }}4790
+
+[process_diagram_elements_script_task]: {{ kbArticleURLPrefix }}4728
+
+[process_diagram_elements_send_message_end_event]: {{ kbArticleURLPrefix }}4745
+
+[process_diagram_elements_send_message_intermediate_event]: {{ kbArticleURLPrefix }}4740
+
+[scenarios]: {{ kbArticleURLPrefix }}4717
+
+{% endif %}
+
+{% if (not apiGuide) or kbExport %}
+
+<!-- Любые руководства кроме руководства по API, либо экспорт в БЗ  -->
+
+[api_intro]: {{ kbArticleURLPrefix }}4860
+
+[api_solution]: {{ kbArticleURLPrefix }}4863
+
+[api_system_core]: {{ kbArticleURLPrefix }}4862
+
+[api_system_core_user_task]: {{ kbArticleURLPrefix }}4862#api_system_core_user_task
+
+[api_web]: {{ kbArticleURLPrefix }}4861
+
+{% endif %}
+
+{% if gostech or kbExport %}
+
+<!-- Руководства для ГосТех или экспорт в БЗ  -->
+
+[adapters]: {{ kbArticleURLPrefix }}4672
+
+[ad_authentication_configure]: {{ kbArticleURLPrefix }}4605
+
+[antivirus_exceptions_configure]: {{ kbArticleURLPrefix }}4602
+
+[kafka_connection]: {{ kbArticleURLPrefix }}4704
+
+[wsfederation_connection]: {{ kbArticleURLPrefix }}4686
 
 {% endif %}

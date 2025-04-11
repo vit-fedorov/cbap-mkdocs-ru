@@ -16,9 +16,30 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#требования-к-серверу">
+<span class="md-ellipsis">
+      Требования к серверу
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link mkdocs_imported_link" href="#порядок-установки-по">
 <span class="md-ellipsis">
       Порядок установки ПО
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#подготовка-сервера-к-установке-по">
+<span class="md-ellipsis">
+      Подготовка сервера к установке ПО
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#deploy_guide_windows_install_prerequisites">
+<span class="md-ellipsis">
+      Установка вспомогательного ПО
     </span>
 </a>
 </li>
@@ -91,7 +112,16 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h2 id="введение">Введение</h2>
+<p>Для быстрого развёртывания <strong>Comindware Platform</strong> в Windows компания <strong>Comindware</strong> предоставляет дистрибутив с установщиком, настраивающим необходимое программное обеспечение.</p>
+<p>Здесь представлены инструкции по развёртыванию и инициализации <strong>Comindware Platform</strong> из дистрибутива в ОС Windows.</p>
+<h2 id="требования-к-серверу">Требования к серверу</h2>
 <p>Для работы <strong>Comindware Platform</strong> требуются операционная система, сервер базы данных, веб-сервер, обратный прокси-сервер и сервер журналирования.</p>
+<p>Перед установкой ПО убедитесь, что сервер соответствует следующим требованиям:</p>
+<ul>
+<li>сервер работает под управлением <em>Windows Server</em>;</li>
+<li>сервер настраивается от имени пользователя с правами администратора;</li>
+<li>установлена служба <em>IIS (Internet Information Services)</em>.</li>
+</ul>
 <div class="notice notice-info">
 <p class="admonition-title">Конфигурация сервера журналирования (Elasticsearch, OpenSearch)</p>
 <ul>
@@ -101,15 +131,78 @@
 <li>Экземпляр ПО будет взаимодействовать с Elasticsearch (OpenSearch) под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.</li>
 </ul>
 </div>
-<p>Для быстрого развёртывания <strong>Comindware Platform</strong> в Windows компания <strong>Comindware</strong> предоставляет дистрибутив с установщиком, настраивающим необходимое программное обеспечение.</p>
-<p>Здесь представлены инструкции по развёртыванию и инициализации <strong>Comindware Platform</strong> из дистрибутива в ОС Windows.</p>
 <h2 id="порядок-установки-по">Порядок установки ПО</h2>
 <ol class="colored_numbers_list">
+<li>Подготовьте сервер к установке ПО.</li>
 <li>Установите и настройте необходимое вспомогательное ПО.</li>
 <li>Установите ПО <strong>Comindware Platform</strong>.</li>
 <li>Создайте экземпляр ПО.</li>
 <li>Запустите экземпляр ПО.</li>
 <li>Инициализируйте экземпляр ПО.</li>
+</ol>
+<h2 id="подготовка-сервера-к-установке-по">Подготовка сервера к установке ПО</h2>
+<ol class="colored_numbers_list">
+<li>Откройте <strong>Диспетчер сервера</strong>.</li>
+<li>Добавьте в список серверов компьютер, на котором будет установлено ПО <strong>Comindware Platform</strong>.</li>
+<li>Запустите <strong>Мастер добавления ролей и компонентов</strong>, выбрав пункт «<strong>Добавить роли и компоненты</strong>» для данного сервера.</li>
+<li>На шаге «<strong>Тип установки</strong>» выберите пункт «<strong>Установка ролей или компонентов</strong>».</li>
+<li>На шаге «<strong>Выбор сервера</strong>» укажите сервер, на котором будет установлено ПО.</li>
+<li>На шаге «<strong>Роли сервера</strong>» установите флажок «<strong>Веб-сервер (IIS)</strong>».</li>
+<li>
+<p>На шаге «<strong>Компоненты</strong>» для компонента «<strong>Веб-сервер (IIS)</strong> — <strong>Веб-сервер</strong> — <strong>Разработка приложений</strong>» установите следующие флажки:</p>
+<ul>
+<li><strong>ASP.NET 4.8</strong> (или выше);</li>
+<li><strong>Расширяемость .NET 4.8</strong> (или выше);</li>
+<li><strong>Расширения ISAPI</strong>;</li>
+<li><strong>Фильтры ISAPI</strong>.</li>
+</ul>
+</li>
+<li>
+<p>На шаге «<strong>Подтверждение</strong>» нажмите кнопку «<strong>Установить</strong>» и дождитесь завершения процесса.</p>
+</li>
+</ol>
+<h2 id="deploy_guide_windows_install_prerequisites">Установка вспомогательного ПО</h2>
+<ol class="colored_numbers_list">
+<li>Скачайте и распакуйте архив с дистрибутивом вспомогательного ПО для <strong>Comindware Platform</strong>.</li>
+<li>Запустите <em>PowerShell</em> от имени администратора.</li>
+<li>
+<p>Установите неограниченную политику выполнения <em>PowerShell</em>:</p>
+<div class="highlight"><code><pre><span></span><code><span class="nb">Set-ExecutionPolicy</span> <span class="n">Unrestricted</span></code> <br/></pre></code></div>
+</li>
+<li>
+<p>В запросе на изменение политики выберите вариант «<strong>Да для всех</strong>», введя букву <span class="keys"><kbd class="key-a">A</kbd></span>.</p>
+</li>
+<li>
+<p>Перейдите в папку со скриптами для развёртывания вспомогательного ПО:</p>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.prerequisites.windows\\CMW_Windows\\scripts"</span></code> <br/></pre></code></div>
+<p>Здесь: <code>X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.prerequisites.windows</code> — путь к распакованному дистрибутиву вспомогательного ПО, а <code>&lt;versionNumber&gt;</code> — номер версии ПО.</p>
+</li>
+<li>
+<p>Разблокируйте доступ к скачанным из Интернета установочным файлам:</p>
+<div class="highlight"><code><pre><span></span><code><span class="p">.\\</span><span class="n">files_unblock</span><span class="p">.</span><span class="n">ps1</span></code> <br/></pre></code></div>
+<div class="notice notice-tip">
+<p class="admonition-title">Вызов справки для скриптов</p>
+<p>Для ознакомления с ключами и назначением любого скрипта используйте ключ <code>-h</code> без каких-либо других ключей, например:</p>
+<div class="highlight"><code><pre><span></span><code><span class="p">.\\</span><span class="n">files_unblock</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-h</span></code> <br/></pre></code></div>
+</div>
+</li>
+<li>
+<p>Установите необходимое вспомогательное ПО:</p>
+<div class="highlight"><code><pre><span></span><code><span class="p">.\\</span><span class="n">prerequisites_install</span><span class="p">.</span><span class="n">ps1</span></code> <br/></pre></code></div>
+</li>
+<li>
+<p>Перезагрузите машину.</p>
+</li>
+<li>Запустите <em>PowerShell</em> от имени администратора.</li>
+<li>
+<p>Перейдите в папку со скриптами для развёртывания вспомогательного ПО:</p>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.prerequisites.windows\\CMW_Windows\\scripts"</span></code> <br/></pre></code></div>
+</li>
+<li>
+<p>Проверьте, что дополнительные компоненты установлены:</p>
+<div class="highlight"><code><pre><span></span><code><span class="p">.\\</span><span class="n">prerequisites_list</span><span class="p">.</span><span class="n">ps1</span></code> <br/></pre></code></div>
+<p>Если какие-либо дополнительные компоненты не были установлены, повторите шаги 8–12.</p>
+</li>
 </ol>
 <h2 id="deploy_guide_windows_install_sw">Установка Comindware Platform</h2>
 <ol class="colored_numbers_list">
@@ -123,8 +216,8 @@
 <p>В запросе на изменение политики выберите вариант «<strong>Да для всех</strong>», введя букву <span class="keys"><kbd class="key-a">A</kbd></span>.</p>
 </li>
 <li>
-<p>Перейдите в папку со скриптами для развёртывания ПО:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.windows\\CMW_Windows\\scripts\\platform"</span></code> <br/></pre></code></div>
+<p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.windows\\CMW_Windows\\scripts"</span></code> <br/></pre></code></div>
 <p>Здесь: <code>X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.windows</code> — путь к распакованному дистрибутиву продукта, а <code>&lt;versionNumber&gt;</code> — номер версии ПО.</p>
 </li>
 <li>
@@ -137,32 +230,7 @@
 </div>
 </li>
 <li>
-<p>Перейдите в папку со скриптами для развёртывания вспомогательного ПО:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.windows\\CMW_Windows\\scripts\\prerequisites"</span></code> <br/></pre></code></div>
-</li>
-<li>
-<p>Установите необходимое вспомогательное ПО:</p>
-<div class="highlight"><code><pre><span></span><code><span class="p">.\\</span><span class="n">prerequisites_install</span><span class="p">.</span><span class="n">ps1</span></code> <br/></pre></code></div>
-</li>
-<li>
-<p>Перезагрузите машину.</p>
-</li>
-<li>Запустите <em>PowerShell</em> от имени администратора.</li>
-<li>
-<p>Перейдите в папку со скриптами для развёртывания вспомогательного ПО:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.windows\\CMW_Windows\\scripts\\prerequisites"</span></code> <br/></pre></code></div>
-</li>
-<li>
-<p>Проверьте, что дополнительные компоненты установлены:</p>
-<div class="highlight"><code><pre><span></span><code><span class="p">.\\</span><span class="n">prerequisites_list</span><span class="p">.</span><span class="n">ps1</span></code> <br/></pre></code></div>
-<p>Если какие-либо дополнительные компоненты не были установлены, повторите шаги 8–12.</p>
-</li>
-<li>
-<p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.windows\\CMW_Windows\\scripts\\platform"</span></code> <br/></pre></code></div>
-</li>
-<li>
-<p>Установите ПО:</p>
+<p>Установите версию ПО:</p>
 <div class="highlight"><code><pre><span></span><code><span class="p">.\\</span><span class="n">version_install</span><span class="p">.</span><span class="n">ps1</span></code> <br/></pre></code></div>
 </li>
 <li>
@@ -174,7 +242,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.windows\\CMW_Windows\\scripts\\platform"</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.windows\\CMW_Windows\\scripts"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Разверните экземпляр ПО:</p>
@@ -199,7 +267,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.windows\\CMW_Windows\\scripts\\platform"</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.windows\\CMW_Windows\\scripts"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Запустите экземпляр ПО:</p>
@@ -211,7 +279,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.windows\\CMW_Windows\\scripts\\platform"</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.windows\\CMW_Windows\\scripts"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Остановите экземпляр ПО:</p>
@@ -274,7 +342,7 @@
 <li>Скачайте и установите ПО новой версии согласно инструкциям в параграфе <em>«<a class="mkdocs_imported_link" href="#deploy_guide_windows_install_sw">Установка Comindware Platform</a>»</em>.</li>
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.windows\\CMW_Windows\\scripts\\platform"</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.windows\\CMW_Windows\\scripts"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Запустите обновление экземпляра ПО:</p>
@@ -299,7 +367,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.windows\\CMW_Windows\\scripts\\platform"</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.windows\\CMW_Windows\\scripts"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Удалите экземпляр ПО:</p>
@@ -316,7 +384,7 @@
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.windows\\CMW_Windows\\scripts\\platform"</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"X:\\&lt;distPath&gt;\\X.X-release-ru-&lt;versionNumber&gt;.windows\\CMW_Windows\\scripts"</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Просмотрите список установленных экземпляров ПО:</p>

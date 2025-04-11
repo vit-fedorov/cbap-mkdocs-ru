@@ -1,4 +1,4 @@
-<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4622">
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4622" kb-title="Установка, запуск, инициализация и остановка ПО">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -126,6 +126,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#оптимизация-параметра-vmmax_map_count">
+<span class="md-ellipsis">
+      Оптимизация параметра vm.max_map_count
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link mkdocs_imported_link" href="#остановка-экземпляра-по">
 <span class="md-ellipsis">
       Остановка экземпляра ПО
@@ -180,6 +187,10 @@
 <p>Для работы <strong>Comindware Platform</strong> требуются операционная система, сервер базы данных, веб-сервер, обратный прокси-сервер и сервер журналов.</p>
 <p>Для быстрого развёртывания <strong>Comindware Platform</strong> в Linux компания <strong>Comindware</strong> предоставляет дистрибутив с установщиком, настраивающим необходимое программное обеспечение. См. <em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4582">Comindware Platform 5.0. Перечень стороннего программного обеспечения для Linux</a></em>.</p>
 <p>Здесь представлены инструкции по развёртыванию и инициализации <strong>Comindware Platform</strong> из дистрибутива в ОС Linux.</p>
+<div class="notice notice-warning">
+<p class="admonition-title">Внимание!</p>
+<p>Если продуктовый контур <strong>Comindware Platform</strong> изолирован внешним межсетевым экраном, необходимо настроить правила фильтрации для разрешения входящего трафика HTTP/HTTPS и WS/WSS в контур <strong>Comindware Platform</strong>.</p>
+</div>
 <h2 id="порядок-развёртывания-по-comindware-platform">Порядок развёртывания ПО Comindware Platform</h2>
 <ol class="colored_numbers_list">
 <li>Установите и настройте необходимое вспомогательное ПО.</li>
@@ -223,7 +234,7 @@
 <ul>
 <li><code>-p</code> — установить обязательное вспомогательное ПО.</li>
 <li><code>-k</code> — установить ПО Kafka (необязательный ключ).</li>
-<li><code>-e</code> — установить ПО Elasticsearch или OpenSearch (необязательный ключ).</li>
+<li><code>-e</code> — установить ПО OpenSearch (Elasticsearch) или OpenSearch (необязательный ключ).</li>
 <li><code>-kh=&lt;hostname&gt;</code> или <code>--kafkaHost=&lt;hostname&gt;</code> — использовать указанный хост для подключения к ПО Kafka (необязательный ключ).</li>
 <li><code>-kp=&lt;portNumber&gt;</code> или <code>--kafkaPort=&lt;portNumber&gt;</code> — использовать указанный порт для подключения к ПО Kafka (необязательный ключ).</li>
 <li><code>-h</code> — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).</li>
@@ -238,19 +249,19 @@
 <div class="highlight"><code><pre><span></span><code>sh<span class="w"> </span>prerequisites_install.sh<span class="w"> </span>-h</code> <br/></pre></code></div>
 </div>
 <div class="notice notice-info">
-<p class="admonition-title">Конфигурация сервера журналирования (Elasticsearch, OpenSearch)</p>
+<p class="admonition-title">Конфигурация сервера журналирования транзакций OpenSearch (Elasticsearch)</p>
 <ul>
-<li>В конфигурации Elasticsearch (OpenSearch) необходимо создать одного пользователя для <strong>Comindware Platform</strong>.</li>
-<li>В конфигурации экземпляра ПО необходимо указать адрес сервера и уникальный префикс индексов Elasticsearch (OpenSearch). Индекс префикса служит для идентификации данных экземпляра ПО в Elasticsearch (OpenSearch). Поэтому во избежание конфликтов данных для каждого экземпляра ПО следует указывать собственный префикс индекса.</li>
-<li>При <a class="mkdocs_imported_link" href="#initialize_instance">инициализации экземпляра ПО</a> необходимо указать пользователя <strong>Comindware Platform</strong>, используемого в Elasticsearch (OpenSearch).</li>
-<li>Экземпляр ПО будет взаимодействовать с Elasticsearch (OpenSearch) под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.</li>
+<li>В конфигурации сервера журналирования транзакций необходимо создать одного пользователя для <strong>Comindware Platform</strong>.</li>
+<li>В конфигурации экземпляра ПО необходимо указать адрес сервера и уникальный префикс индексов OpenSearch (Elasticsearch). Индекс префикса служит для идентификации данных экземпляра ПО на сервере журналирования транзакций. Поэтому во избежание конфликтов данных для каждого экземпляра ПО следует указывать собственный префикс индекса.</li>
+<li>При <a class="mkdocs_imported_link" href="#initialize_instance">инициализации экземпляра ПО</a> необходимо указать пользователя <strong>Comindware Platform</strong>, используемого сервером журналирования транзакций.</li>
+<li>Экземпляр ПО будет взаимодействовать с сервером журналирования транзакций под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.</li>
 </ul>
 </div>
 </li>
 <li>
 <p>По окончании установки скрипт выведет информацию об установленных компонентах. Удостоверьтесь, что компоненты успешно установлены (имеют статус <code>OK</code>).</p>
-<p>Пример результата выполнения скрипта с ключом <code>-p</code> без установки Elasticsearch и Kafka:</p>
-<div class="highlight"><code><pre><span></span><code><span class="o">[</span>Done<span class="o">]</span><span class="w"> </span>Creating<span class="w"> </span>CBAP<span class="w"> </span>Data<span class="w"> </span>Dir.</code> <br/><code>-----------------------------------------</code> <br/><code>Environment<span class="w"> </span>details</code> <br/><code>Status<span class="w">     </span><span class="p">|</span><span class="w"> </span>Software<span class="w">   </span><span class="p">|</span><span class="w"> </span>Version<span class="w">   </span></code> <br/><code>-----------------------------------------</code> <br/><code>OK<span class="w">         </span><span class="p">|</span><span class="w"> </span>mono<span class="w">       </span><span class="p">|</span><span class="w"> </span><span class="m">6</span>.12.0.182<span class="w">     </span></code> <br/><code>OK<span class="w">         </span><span class="p">|</span><span class="w"> </span>dotnet<span class="w">     </span><span class="p">|</span><span class="w"> </span><span class="m">6</span>.0.417<span class="w">        </span></code> <br/><code>OK<span class="w">         </span><span class="p">|</span><span class="w"> </span>java<span class="w">       </span><span class="p">|</span><span class="w"> </span><span class="m">17</span>.0.7<span class="w">            </span></code> <br/><code>OK<span class="w">     </span>NGINX<span class="w"> </span>installed.</code> <br/><code>OK<span class="w">     </span>NGINX<span class="w"> </span>started.</code> <br/><code>OK<span class="w">     </span>CBAP<span class="w"> </span>version<span class="w"> </span>folder<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>CBAP<span class="w"> </span>configs<span class="w"> </span>folder<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>CBAP<span class="w"> </span>data<span class="w"> </span>folder<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>CBAP<span class="w"> </span>logs<span class="w"> </span>folder<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>CBAP<span class="w"> </span>dotnet<span class="w"> </span>folder<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>Local<span class="w"> </span>elasticsearch<span class="w"> </span>server<span class="w"> </span>installed:<span class="w"> </span>No<span class="w"> </span></code> <br/><code>OK<span class="w">     </span>Local<span class="w"> </span>elasticsearch<span class="w"> </span>server<span class="w"> </span>started:<span class="w"> </span>No<span class="w"> </span></code> <br/><code>OK<span class="w">     </span>Local<span class="w"> </span>kafka<span class="w"> </span>server<span class="w"> </span>installed:<span class="w"> </span>No<span class="w"> </span></code> <br/><code>OK<span class="w">     </span>Local<span class="w"> </span>kafka<span class="w"> </span>server<span class="w"> </span>started:<span class="w"> </span>No<span class="w"> </span></code> <br/><code>OK<span class="w">     </span>Final<span class="w"> </span>status.</code> <br/></pre></code></div>
+<p>Пример результата выполнения скрипта с ключом <code>-p</code> без установки OpenSearch (Elasticsearch) и Kafka:</p>
+<div class="highlight"><code><pre><span></span><code><span class="o">[</span>Done<span class="o">]</span><span class="w"> </span>Creating<span class="w"> </span>CBAP<span class="w"> </span>Data<span class="w"> </span>Dir.</code> <br/><code>-----------------------------------------</code> <br/><code>Environment<span class="w"> </span>details</code> <br/><code>Status<span class="w">     </span><span class="p">|</span><span class="w"> </span>Software<span class="w">   </span><span class="p">|</span><span class="w"> </span>Version<span class="w">   </span></code> <br/><code>-----------------------------------------</code> <br/><code>OK<span class="w">         </span><span class="p">|</span><span class="w"> </span>mono<span class="w">       </span><span class="p">|</span><span class="w"> </span><span class="m">6</span>.12.0.200<span class="w">     </span></code> <br/><code>OK<span class="w">         </span><span class="p">|</span><span class="w"> </span>dotnet<span class="w">     </span><span class="p">|</span><span class="w"> </span><span class="m">6</span>.0.417<span class="w">        </span></code> <br/><code>OK<span class="w">         </span><span class="p">|</span><span class="w"> </span>java<span class="w">       </span><span class="p">|</span><span class="w"> </span><span class="m">17</span>.0.7<span class="w">            </span></code> <br/><code>OK<span class="w">     </span>NGINX<span class="w"> </span>installed.</code> <br/><code>OK<span class="w">     </span>NGINX<span class="w"> </span>started.</code> <br/><code>OK<span class="w">     </span>CBAP<span class="w"> </span>version<span class="w"> </span>folder<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>CBAP<span class="w"> </span>configs<span class="w"> </span>folder<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>CBAP<span class="w"> </span>data<span class="w"> </span>folder<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>CBAP<span class="w"> </span>logs<span class="w"> </span>folder<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>CBAP<span class="w"> </span>dotnet<span class="w"> </span>folder<span class="w"> </span>created.</code> <br/><code>OK<span class="w">     </span>Local<span class="w"> </span>elasticsearch<span class="w"> </span>server<span class="w"> </span>installed:<span class="w"> </span>No<span class="w"> </span></code> <br/><code>OK<span class="w">     </span>Local<span class="w"> </span>elasticsearch<span class="w"> </span>server<span class="w"> </span>started:<span class="w"> </span>No<span class="w"> </span></code> <br/><code>OK<span class="w">     </span>Local<span class="w"> </span>kafka<span class="w"> </span>server<span class="w"> </span>installed:<span class="w"> </span>No<span class="w"> </span></code> <br/><code>OK<span class="w">     </span>Local<span class="w"> </span>kafka<span class="w"> </span>server<span class="w"> </span>started:<span class="w"> </span>No<span class="w"> </span></code> <br/><code>OK<span class="w">     </span>Final<span class="w"> </span>status.</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Удостоверьтесь, что компоненты установлены:</p>
@@ -350,7 +361,12 @@
 </li>
 <li>
 <p>Установите следующие директивы:</p>
-<div class="highlight"><code><pre><span></span><code><span class="n">fs</span><span class="p">.</span><span class="n">file</span><span class="o">-</span><span class="n">max</span><span class="o">=</span><span class="m">2097152</span></code> <br/><code><span class="n">vm</span><span class="p">.</span><span class="n">max_map_count</span><span class="o">=</span><span class="m">262144</span></code> <br/><code><span class="n">fs</span><span class="p">.</span><span class="n">inotify</span><span class="p">.</span><span class="n">max_user_instances</span><span class="o">=</span><span class="m">524288</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="n">fs</span><span class="p">.</span><span class="n">file</span><span class="o">-</span><span class="n">max</span><span class="o">=</span><span class="mi">2097152</span></code> <br/><code><span class="n">vm</span><span class="p">.</span><span class="n">max_map_count</span><span class="o">=</span><span class="mi">262144</span></code> <br/><code><span class="n">fs</span><span class="p">.</span><span class="n">inotify</span><span class="p">.</span><span class="n">max_user_instances</span><span class="o">=</span><span class="mi">524288</span></code> <br/></pre></code></div>
+<div class="notice notice-tip">
+<p class="admonition-title">Оптимальное значение vm.max_map_count</p>
+<p>Значение <code>vm.max_map_count=262144</code> приведено для примера.</p>
+<p>Определите оптимальное значение <code>vm.max_map_count</code> согласно инструкциям в параграфе «<a class="mkdocs_imported_link" href="#оптимизация-параметра-vmmax_map_count">Настройка параметра vm.max_map_count</a>».</p>
+</div>
 </li>
 <li>
 <p>Откройте файл <code>user.conf</code> для редактирования:</p>
@@ -358,7 +374,7 @@
 </li>
 <li>
 <p>Установите следующую директиву:</p>
-<div class="highlight"><code><pre><span></span><code><span class="n">DefaultLimitNOFILE</span><span class="o">=</span><span class="m">200000</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="n">DefaultLimitNOFILE</span><span class="o">=</span><span class="mi">200000</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>Откройте файл <code>system.conf</code> для редактирования:</p>
@@ -366,7 +382,7 @@
 </li>
 <li>
 <p>Установите следующую директиву:</p>
-<div class="highlight"><code><pre><span></span><code><span class="n">DefaultLimitNOFILE</span><span class="o">=</span><span class="m">200000</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="n">DefaultLimitNOFILE</span><span class="o">=</span><span class="mi">200000</span></code> <br/></pre></code></div>
 </li>
 <li>
 <p>После внесения изменений перезапустите демоны:</p>
@@ -395,8 +411,8 @@
 <li><code>-v=&lt;versionNumber&gt;</code> — номер версии ПО вида <code>X.X.XXXXX.X</code> (например: 5.0.00000.0, <strong>обязательный</strong> ключ). Версия должна быть установлена, см. <em>«<a class="mkdocs_imported_link" href="#deploy_guide_linux_install_sw">Установка Comindware Platform</a>»</em>.</li>
 <li><code>-p=&lt;portNumber&gt;</code> — порт для экземпляра ПО, по умолчанию: 80 (необязательный ключ).</li>
 <li><code>-fqdn=&lt;hostName&gt;</code> или <code>--instance-fqdn=&lt;hostName&gt;</code> — имя хоста для экземпляра ПО (необязательный ключ). По умолчанию: localhost.</li>
-<li><code>-el=&lt;hostName&gt;</code> или <code>--elasticsearch-url=&lt;hostName&gt;</code> — использовать указанный URL или IP-адрес для подключения к ПО Elasticsearch (OpenSearch).</li>
-<li><code>-kf=&lt;hostName&gt;</code> или <code>--kafka-url=&lt;hostName&gt;</code> — использовать указанный URL или IP-адрес для подключения к ПО Kafka.</li>
+<li><code>-el=&lt;hostName&gt;</code> или <code>--elasticsearch-url=&lt;hostName&gt;</code> — использовать указанный URL или IP-адрес для подключения к серверу OpenSearch (Elasticsearch).</li>
+<li><code>-kf=&lt;hostName&gt;</code> или <code>--kafka-url=&lt;hostName&gt;</code> — использовать указанный URL или IP-адрес для подключения к серверу Apache Ignite.</li>
 <li><code>-h</code> — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).</li>
 </ul>
 </li>
@@ -445,12 +461,12 @@
 <div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/usr/lib/systemd/system/comindware&lt;instanceName&gt;.service</code> <br/><code>nano<span class="w"> </span>/usr/lib/systemd/system/apigateway&lt;instanceName&gt;.service</code> <br/><code>nano<span class="w"> </span>/usr/lib/systemd/system/adapterhost&lt;instanceName&gt;.service</code> <br/></pre></code></div>
 </li>
 <li>
-<p>Если используются локальные службы Kafka и Elasticsearch (OpenSearch), откройте их для редактирования:</p>
+<p>Если используются локальные службы Kafka и OpenSearch (Elasticsearch), откройте их для редактирования:</p>
 <div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/usr/lib/systemd/system/kafka.service</code> <br/><code>nano<span class="w"> </span>/usr/lib/systemd/system/elasticsearch.service</code> <br/></pre></code></div>
 </li>
 <li>
 <p>В каждом файле службы установите следующие директивы:</p>
-<div class="highlight"><code><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">Макс</span><span class="p">.</span><span class="w"> </span><span class="n">количество</span><span class="w"> </span><span class="n">открытых</span><span class="w"> </span><span class="n">файлов</span></code> <br/><code><span class="n">LimitNOFILE</span><span class="o">=</span><span class="m">200000</span></code> <br/><code><span class="err">#</span><span class="w"> </span><span class="n">Макс</span><span class="p">.</span><span class="w"> </span><span class="n">количество</span><span class="w"> </span><span class="n">процессов</span></code> <br/><code><span class="n">LimitNPROC</span><span class="o">=</span><span class="m">8192</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">Макс</span><span class="p">.</span><span class="w"> </span><span class="n">количество</span><span class="w"> </span><span class="n">открытых</span><span class="w"> </span><span class="n">файлов</span></code> <br/><code><span class="n">LimitNOFILE</span><span class="o">=</span><span class="mi">200000</span></code> <br/><code><span class="err">#</span><span class="w"> </span><span class="n">Макс</span><span class="p">.</span><span class="w"> </span><span class="n">количество</span><span class="w"> </span><span class="n">процессов</span></code> <br/><code><span class="n">LimitNPROC</span><span class="o">=</span><span class="mi">8192</span></code> <br/></pre></code></div>
 </li>
 </ol>
 <h2 id="запуск-экземпляра-по">Запуск экземпляра ПО</h2>
@@ -498,31 +514,73 @@
 </div>
 </li>
 <li>
-<p>При необходимости откроется страница инициализации служб. Выберите службы, которые должны быть запущены, и нажмите кнопку «<strong>Далее</strong>».</p>
-<p><figure class="screenshot_with_caption" markdown=""><img alt="Страница инициализации служб" src="/platform/v5.0/administration/deploy/linux/img/deploy_guide_system_initialize.png"/><figcaption class="caption">Страница инициализации служб</figcaption></figure></p>
-</li>
-<li>
 <p>При необходимости откроется страница активации ПО. Выполните <strong>онлайн-</strong> или <strong>ручную активацию</strong> либо нажмите кнопку «<strong>Пропустить</strong>» для первоначального ознакомления с ПО без активации.</p>
 </li>
 <li>
-<p>При необходимости откроется страница настройки подключения к службе Elasticsearch (OpenSearch).</p>
+<p>При необходимости откроется страница настройки подключения к службе OpenSearch (Elasticsearch).</p>
 <ul>
-<li>В поле «<strong>URI</strong>» введите адрес сервера Elasticsearch (OpenSearch), например: <code>http://localhost:9200</code>.</li>
-<li>При необходимости введите <strong>имя пользователя</strong> и <strong>пароль</strong> Elasticsearch (OpenSearch).</li>
+<li>В поле «<strong>URI</strong>» введите адрес сервера OpenSearch (Elasticsearch), например: <code>http://localhost:9200</code>.</li>
+<li>При необходимости введите <strong>имя пользователя</strong> и <strong>пароль</strong> OpenSearch (Elasticsearch).</li>
 <li>Установите уникальный <strong>префикс индекса</strong>, например <code>mycompanyprefix</code>.</li>
-<li>Экземпляр ПО будет взаимодействовать с Elasticsearch (OpenSearch) под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.</li>
+<li>Экземпляр ПО будет взаимодействовать с OpenSearch (Elasticsearch) под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.</li>
 <li>Нажмите кнопку «<strong>Далее</strong>».</li>
 </ul>
 </li>
 <li>
-<p>При необходимости откроется страница инициализации данных в Elasticsearch (OpenSearch).</p>
-<p><figure class="screenshot_with_caption" markdown=""><img alt="Страница инициализации данных в Elasticsearch" src="/platform/v5.0/administration/deploy/linux/img/deploy_guide_elasticsearch_initialize.png"/><figcaption class="caption">Страница инициализации данных в Elasticsearch</figcaption></figure></p>
+<p>При необходимости откроется страница инициализации данных в OpenSearch (Elasticsearch).</p>
+<p><figure class="screenshot_with_caption" markdown=""><img alt="Страница инициализации данных в OpenSearch (Elasticsearch)" src="/platform/v5.0/administration/deploy/linux/img/deploy_guide_elasticsearch_initialize.png"/><figcaption class="caption">Страница инициализации данных в OpenSearch (Elasticsearch)</figcaption></figure></p>
 </li>
 <li>
 <p>Нажмите кнопку «<strong>Обновить</strong>».</p>
 </li>
 <li>Дождитесь открытия начальной страницы <strong>Comindware Platform</strong>.</li>
 <li>На этом этапе развертывание экземпляра <strong>Comindware Platform</strong> завершено и можно приступать к созданию и использованию приложений.</li>
+</ol>
+<h2 id="оптимизация-параметра-vmmax_map_count">Оптимизация параметра vm.max_map_count</h2>
+<p><code>vm.max_map_count</code> — это параметр конфигурации ядра Linx, задающий максимальное количество областей памяти, которые процессу разрешено выделять в своём виртуальном адресном пространстве.</p>
+<p>Типовое для <strong>Comindware Platform</strong> значение параметра <code>vm.max_map_count</code> равно <code>262144</code>.</p>
+<p>Чтобы определить оптимальное для вашей конфигурации значение <code>vm.max_map_count</code>, выполните указанные ниже инструкции.</p>
+<p>Например, оптимизировать <code>vm.max_map_count</code> может потребоваться, если после запуска экземпляра ПО команда <code>journalctl</code> выдаёт ошибку следующего вида:</p>
+<div class="highlight"><code><pre><span></span><code><span class="n">mmap</span><span class="p">(</span><span class="n">PROT_NONE</span><span class="p">)</span><span class="w"> </span><span class="n">failed</span></code> <br/></pre></code></div>
+<ol class="colored_numbers_list">
+<li>
+<p>Определите текущее значение <code>vm.max_map_count</code>:</p>
+<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>sysctl<span class="w"> </span>vm.max_map_count</code> <br/></pre></code></div>
+</li>
+<li>
+<p>Определите выделенный объём оперативной памяти:</p>
+<div class="highlight"><code><pre><span></span><code>free</code> <br/></pre></code></div>
+<p>Обратите внимание на общий объём оперативной памяти.</p>
+</li>
+<li>
+<p>Определите размер страницы в оперативной памяти:</p>
+<div class="highlight"><code><pre><span></span><code><span class="nb">declare</span><span class="w"> </span>-i<span class="w"> </span><span class="nv">NEW_max_map_count</span><span class="o">=</span><span class="k">$(</span>vmstat<span class="w"> </span>-s<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s1">'total memory'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">' {print $1}'</span><span class="k">)</span>*1024/<span class="k">$(</span>getconf<span class="w"> </span>PAGE_SIZE<span class="k">)</span></code> <br/><code><span class="nb">echo</span><span class="w"> </span><span class="nv">$NEW_max_map_count</span></code> <br/></pre></code></div>
+</li>
+<li>
+<p>Полученное значение <code>NEW_max_map_count</code> временно присвойте параметру <code>vm.max_map_count</code> и проверьте работу экземпляра ПО:</p>
+<ul>
+<li>Временное изменение значения (например, для тестирования):</li>
+</ul>
+<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </span>vm.max_map_count<span class="o">=</span><span class="nv">$NEW_max_map_count</span></code> <br/></pre></code></div>
+</li>
+<li>
+<p>Удостоверившись в работоспособности экземпляра ПО, задайте постоянное значение <code>vm.max_map_count</code>:</p>
+<ul>
+<li>
+<p>Откройте для редактирования файл <code>/etc/sysctl.conf</code>:</p>
+<div class="highlight"><code><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/sysctl.conf</code> <br/></pre></code></div>
+</li>
+<li>
+<p>Установите значение <code>vm.max_map_count</code>:</p>
+<div class="highlight"><code><pre><span></span><code><span class="n">vm</span><span class="p">.</span><span class="n">max_map_count</span><span class="o">=&lt;</span><span class="n">NEW_max_map_count</span><span class="o">&gt;</span></code> <br/></pre></code></div>
+<p><code>&lt;NEW_max_map_count&gt;</code> замените на полученное на шаге 3 цифровое значение.</p>
+</li>
+<li>
+<p>Примените изменения:</p>
+<div class="highlight"><code><pre><span></span><code>sysctl<span class="w"> </span>-p</code> <br/></pre></code></div>
+</li>
+</ul>
+</li>
 </ol>
 <h2 class="pageBreakBefore" id="остановка-экземпляра-по">Остановка экземпляра ПО</h2>
 <ol class="colored_numbers_list">

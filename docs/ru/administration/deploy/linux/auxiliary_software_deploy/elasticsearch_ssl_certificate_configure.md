@@ -176,7 +176,7 @@ kbId: 4606
 
     Исходный файл конфигурации Elasticsearch:
 
-    ``` yml
+    ``` yaml
     xpack.security.enabled: false
     xpack.security.http.ssl:
         enabled: false
@@ -190,7 +190,7 @@ kbId: 4606
 
     Пример изменённого файла конфигурации, где сертификат узла — `es1.crt`, ключ — `es1.key`, `pem`-пакет с сертификатом и ключом — `es1.p12`:
 
-    ``` yml
+    ``` yaml
     xpack.security.enabled: true
     xpack.security.http.ssl:
         enabled: true

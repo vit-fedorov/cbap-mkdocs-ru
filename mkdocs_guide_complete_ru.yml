@@ -13,6 +13,7 @@ nav:
     - product_description.md
     - Обзор версий:
       - general/changelog/changelog.md
+      - general/changelog/release_notes_5.0.13334.md
       - general/changelog/release_notes_5.0.md
   - Использование системы:
     - using_the_system/index.md
@@ -27,6 +28,7 @@ nav:
     - Обсуждение: using_the_system/discussion_use.md
     - Карты: using_the_system/map_use.md
     - Офисные приложения: using_the_system/office_connectiopn_use.md
+    - using_the_system/mobile_app_use.md
   - Администрирование:
     - Развёртывание ПО:
       - administration/deploy/system_requirements.md
@@ -43,7 +45,9 @@ nav:
         # - administration/deploy/linux/deploy_cluster.md
         - administration/deploy/linux/uninstall_auxiliary_software.md
         - administration/deploy/linux/upgrade_version.md
+        - administration/deploy/linux/upgrade_version_no_stop.md
         - administration/deploy/linux/upload_size_limit_configure.md
+        - administration/deploy/linux/auxiliary_software_deploy/auxiliary_software_list.md
         - Вспомогательное ПО. Развёртывание:
           - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_deploy_linux.md
           - administration/deploy/linux/auxiliary_software_deploy/elasticsearch_cluster_deploy_no_certificates.md
@@ -71,7 +75,7 @@ nav:
         - administration/deploy/linux/auxiliary_software_deploy/apache_ignite_defragment.md
     - Резервное копирование и восстановление:
       - administration/backup/index.md
-    - administration/backup/configure.md
+      - administration/backup/configure.md
       - Инструкции для Linux:
         - administration/backup/linux/complete_running_instance_backup.md
         - administration/backup/linux/db_move_manually.md
@@ -121,6 +125,7 @@ nav:
         - administration/infrastructure/adapters.md
         - administration/infrastructure/authentication_keys.md
       - Интеграции с внешними системами:
+        - administration/connections_communication_routes/integration.md
         - administration/connections_communication_routes/connections.md
         - administration/connections_communication_routes/communication_routes.md
         - Системные подключения:
@@ -149,12 +154,8 @@ nav:
           - administration/connections_communication_routes/rest_odata_connections/get_connection.md
           - administration/connections_communication_routes/rest_odata_connections/odata_connection.md
           - administration/connections_communication_routes/rest_odata_connections/odata_integration.md
-          - administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
           - administration/connections_communication_routes/rest_odata_connections/send_http_connection.md
-          - administration/connections_communication_routes/rest_odata_connections/http_send_post.md
-          - administration/connections_communication_routes/rest_odata_connections/http_send_file.md
           - administration/connections_communication_routes/rest_odata_connections/send_http_request_connection.md
-          - administration/connections_communication_routes/rest_odata_connections/send_http_example.md
           - administration/connections_communication_routes/rest_odata_connections/receive_http_example.md
         - SQL-подключения:
           - administration/connections_communication_routes/sql_connections/sql_send_connection.md
@@ -300,75 +301,57 @@ nav:
       - business_apps/expressions/expression_debug.md
       - Редактор выражений:
         - business_apps/expressions/expression_editor/index.md
-        - Предиктивный ввод в формулах:
-          - business_apps/expressions/expression_editor/formula_editor/index.md
-          - business_apps/expressions/expression_editor/formula_editor/function_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/from_where_select_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/record_heading_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/function_returned_attribute_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/object_function_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/enum_autocomplete_formula.md
-          - business_apps/expressions/expression_editor/formula_editor/template_attribute_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/linked_record_attributes_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/template_for_attribute_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/local_variables.md
-        - Предиктивный ввод в выражениях на языке N3:
-          - business_apps/expressions/expression_editor/n3_editor/index.md
-          - business_apps/expressions/expression_editor/n3_editor/prefix_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/block_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/predicate_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/variable_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/findproperty_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/square_brackets_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/findobject_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/enum_autocomplete_n3.md
-          - business_apps/expressions/expression_editor/n3_editor/literal_autocomplete.md
+        - business_apps/expressions/expression_editor/formula_editor/index.md    
+        - business_apps/expressions/expression_editor/n3_editor/index.md
   - Моделирование корпоративной архитектуры:
     - architect/architect_desktop.md
-    - architect/architect_example.md
-    - architect/version_control.md
+    - architect/process_architecture_modeling/index.md
+    - architect/process_architecture_modeling/edit_diagram.md
+    - architect/process_architecture_modeling/import_export.md
+    - architect/organizational_structure_modeling/index.md
+    - architect/organizational_structure_modeling/organizational_structure_designer.md
     - architect/conversations.md
+    - architect/version_control.md
     - architect/architect_demo.md
-    - Построение процессной архитектуры:
-      - architect/process_architecture_modeling/index.md
-      - architect/process_architecture_modeling/viewing_diagram.md
-      - Конструктор диаграмм: 
-        - architect/process_architecture_modeling/diagram_designer/index.md
-        - architect/process_architecture_modeling/diagram_designer/edit_diagram.md
-        - architect/process_architecture_modeling/diagram_designer/verify_diagram.md
-      - Операции с элементами процессной архитектуры:
-        - Создание элемента: architect/process_architecture_modeling/process_entities_operations/creating_process_entity.md
-        - Изменение свойств элемента: architect/process_architecture_modeling/process_entities_operations/configuring_process_entity_properties.md
-        - Редактирование формы свойств и атрибутов элемента: architect/process_architecture_modeling/process_entities_operations/configuring_process_entity_properties_form_and_attributes.md
-        - Переименование элемента: architect/process_architecture_modeling/process_entities_operations/renaming_process_entity.md
-        - Изменение иерархии процессов: architect/process_architecture_modeling/process_entities_operations/changing_process_hierarchy.md
-        - Дублирование элемента: architect/process_architecture_modeling/process_entities_operations/cloning_process_entity.md
-        - Удаление элементов: architect/process_architecture_modeling/process_entities_operations/deleting_process_entity.md
-      - architect/process_architecture_modeling/importing_process_entity.md
-      - architect/process_architecture_modeling/exporting_process_entity.md
-    - Построение организационной структуры:
-      - architect/organizational_structure_modeling/index.md
-      - architect/organizational_structure_modeling/creating_organizational_unit.md
-      - architect/organizational_structure_modeling/configuring_organizational_unit.md
-      - architect/organizational_structure_modeling/configuring_organizational_unit_form_and_attributes.md
-      - architect/organizational_structure_modeling/renaming_organizational_unit.md
-      - architect/organizational_structure_modeling/changing_hierarchy.md
-      - architect/organizational_structure_modeling/deleting_organizational_unit.md
+    - architect/architect_example.md
   - Практические примеры:
+    - examples/creating_gantt_chart.md
+    - examples/using_gantt_chart.md
+    - examples/process_email_configure.md
     - examples/autonumerating_records.md
+    - examples/autonumerating_related_records.md
     - examples/document_clone_scenario_n3.md
     - examples/document_download_archive_csharp.md
     - examples/document_download_archive_related_record_csharp.md
     - examples/document_download_to_server_csharp.md
     - examples/substring_search.md
-    - examples/enum_attribute_value_calculation.md
-    - examples/creating_gantt_chart.md
-    - examples/using_gantt_chart.md
-    - examples/scenario_verify_data.md
-    - examples/process_email_configure.md
+    - examples/attribute_enum_value_calculation.md
+    - examples/attribute_enum_value_filter.md
+    - examples/attribute_enum_calculate_current_value.md
+    - examples/attribute_enum_calculate_registry.md
     - examples/script_using_local_variable.md
+    - examples/scenario_verify_data.md
     - examples/multilingual_app.md
+    - administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
+    - administration/connections_communication_routes/rest_odata_connections/send_http_example.md
+    - administration/connections_communication_routes/rest_odata_connections/http_send_post.md
+    - administration/connections_communication_routes/rest_odata_connections/http_send_file.md
+    - administration/connections_communication_routes/rest_odata_connections/jpath_example.md      
+    - administration/connections_communication_routes/rest_odata_connections/http_receive_file.md
+    - examples/task_reassign.md
+    - examples/template_reference_data_api.md
+  - Руководство разработчика:
+    - Руководство по N3: 
+      - developer_guide/n3/n3_guide.md
+    - Руководство по C#: 
+      - developer_guide/csharp/csharp_guide.md
+    - Руководство по API: 
+      - developer_guide/api/index.md
+      - developer_guide/api/api_system_core.md
+      - developer_guide/api/api_solution.md
+      - developer_guide/api/api_web.md
   - Обучение:
+    - tutorial/intro.md
     - tutorial/lesson_1.md
     - tutorial/lesson_2.md
     - tutorial/lesson_3.md
@@ -381,5 +364,15 @@ nav:
     - tutorial/lesson_10.md
 
 exclude_docs: |
+  administration/deploy/linux/deploy_cluster.md
   administration/deploy/windows/admin_utility/**
   administration/deploy/windows/architect_install.md
+  developer_guide/n3/n3_tutorial.md
+  administration/backup/linux/restore_cdbbz_gostech.md
+  administration/deploy/linux/deploy_guide_gostech.md
+  administration/deploy/linux/configuration_files_gostech.md
+  administration/deploy/linux/upgrade_version_gostech.md
+  administration/deploy/logging_engine_gostech.md
+  administration/deploy/linux/upload_size_limit_configure_gostech.md
+  administration/connections_communication_routes/authentication/openid_connection_gostech.md
+  administration/connections_communication_routes/system_connections/s3_connection_gostech.md

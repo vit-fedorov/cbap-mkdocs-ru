@@ -5,6 +5,7 @@
 
 @import url("fontawesome/css/fontawesome.min.css");
 @import url("fontawesome/css/light.min.css");
+@import url("fontawesome/css/solid.min.css");
 @import url("fontawesome/css/brands.min.css");
 
 [data-md-color-scheme="comindware"] {
@@ -13,14 +14,15 @@
     --md-primary-fg-color--dark: #0875bc;
     --md-footer-bg-color: var(--md-primary-fg-color--dark);
     --md-footer-bg-color--dark: #343a40;
+    --md-code-hl-comment-color: #65785c;
 }
 
 :root {
     --md-text-font-family: OpenSans, Roboto;
-  }
+}
 
 
-body  {
+body {
     background: white;
     background-image: '';
 }
@@ -75,15 +77,16 @@ body  {
     text-align: center;
 }
 
-.md-typeset h5, .md-typeset h6 {
+.md-typeset h5,
+.md-typeset h6 {
     font-size: 1em;
     text-transform: none;
     color: var(--md-typeset-color);
 }
 
-.md-typeset :is(.admonition,details) {
+.md-typeset :is(.admonition, details) {
     font-size: inherit;
- 
+
 }
 
 .glightbox-container .gslider {
@@ -91,7 +94,7 @@ body  {
 }
 
 .glightbox-container.glightbox-clean .gslide-title {
-    
+
     font-family: var(--md-text-font-family);
     color: var(--md-typeset-color);
     font-feature-settings: "kern", "liga";
@@ -104,28 +107,62 @@ body  {
 .gslide-image img {
 
     min-width: 50px !important;
-    
+
 }
 
 .glightbox-clean .gslide-description {
-    
+
     min-width: fit-content;
     z-index: -1;
 }
-    
+
 .admonition {
-    h1.admonition-title, 
-    h2.admonition-title, 
-    h3.admonition-title, 
-    h4.admonition-title, 
-    h5.admonition-title, 
-    h6.admonition-title
-     
-    {
-    font-weight: 300;
+
+    h1.admonition-title,
+    h2.admonition-title,
+    h3.admonition-title,
+    h4.admonition-title,
+    h5.admonition-title,
+    h6.admonition-title {
+        font-weight: 300;
     }
 }
 
 .md-typeset .headerlink {
     font-family: "Font Awesome 6 Pro";
+}
+
+.md-typeset .api-method {
+    width: 120px;
+    vertical-align: middle!important;
+    color: white;
+    text-align: center!important;
+}
+
+.md-typeset .api-method.get {
+    background: #0f6ab4!important;
+}
+
+.md-typeset .api-method.post {
+    background: #10a54a!important;
+}
+
+.md-typeset .api-method.put {
+    background: #c5862b!important;
+}
+
+.md-typeset .api-method.delete {
+    background: #a41e22!important;
+}
+
+@media screen {
+
+    .md-typeset pre code, pre {
+        max-height: 360px;
+    }
+
+}
+
+.md-typeset .relatedTopics ul li{
+    font-style: italic;
 }

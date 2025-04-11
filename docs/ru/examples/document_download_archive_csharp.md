@@ -35,6 +35,9 @@ kbId: 4921
 !!! question "Структура атрибута типа «Документ»"
 
     --8<-- "attribute_document_logic.md"
+
+!!! tip "Извлечение файлов из атрибута типа «Документ» с помощью C#"
+
     --8<-- "attribute_document_get_file_csharp.md"
 
 ## Прикладная задача
@@ -64,7 +67,7 @@ kbId: 4921
     * **Контекст операции:** **запись**
     * **Операция:** **С# скрипт**
     * **Результат выполнения:** **скачать документ**
-    
+
 4. На вкладке «**Скрипт**» добавьте следующий C#-скрипт:
 
     ``` cs title="Скрипт для скачивания архива с файлами"
@@ -79,16 +82,18 @@ kbId: 4921
 
     {% if pdfOutput %}
     ```
+
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+
     ``` cs title="Скрипт для скачивания архива с файлами — продолжение"
     {% endif %}
     class Script
     {
         public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)
         {
-        // ObjectIds — массив выбранных записей, полученный из контекста операции кнопки.
+            // ObjectIds — массив выбранных записей, полученный из контекста операции кнопки.
             var selected_Ids = userCommandContext.ObjectIds;
-        // Создаем массив compressedBytes для хранения архива с файлами.
+            // Создаем массив compressedBytes для хранения архива с файлами.
             byte[] compressedBytes;
 
             try
@@ -130,15 +135,18 @@ kbId: 4921
                             }
                         }
                     }
-                    // Помещаем поток с результирующим архивом в массив content.
+                    // Помещаем поток с результирующим архивом в массив compressedBytes.
                     compressedBytes = resultStream.ToArray();
                 }
-                var memStream = new MemoryStream(compressedBytes);
-                var content = memStream.ToArray();
     {% if pdfOutput %}
     ```
+
     ``` cs title="Скрипт для скачивания архива с файлами — продолжение"
     {% endif %}
+                // Создаём поток с результирующим архивом
+                var memStream = new MemoryStream(compressedBytes);
+                // Помещаем поток с архивом в массив content.
+                var content = memStream.ToArray();
                 // Заполняем объект resulterr, который возвращает операция кнопки.
                 var resulterr = new UserCommandResult
                 {
@@ -222,7 +230,7 @@ kbId: 4921
 
 - _[Атрибут типа «Документ»][attribute_document]_
 - _[Кнопки. Определение, настройка, удаление][buttons]_
-- _[Написание скриптов на языке C#][manual_csharp]_
+- _[Написание скриптов на языке C#][csharp_guide]_
 - _[Атрибут типа «Документ». Скачивание архива с файлами из всех строк таблицы с прикреплением архива к атрибуту][example_document_download_archive_related_records_csharp]_
 - _[Атрибут типа «Документ». Скачивание файлов в папку на сервере][example_document_download_to_server_csharp]_
 - _[Атрибут типа «Документ». Клонирование записи вместе с прикреплёнными файлами][example_document_clone_scenario_n3]_

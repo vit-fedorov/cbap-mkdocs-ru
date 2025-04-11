@@ -109,7 +109,7 @@ nav:
         - administration/connections_communication_routes/message_queue_connections/kafka_connection.md
     - Резервное копирование и восстановление:
       - administration/backup/index.md
-    - administration/backup/configure.md
+      - administration/backup/configure.md
       - Инструкции для Linux: backup/linux/linux/*
       - Инструкции для Windows: backup/linux/windows/*
 - Моделирование корпоративной-архитектуры:
@@ -248,29 +248,8 @@ nav:
     - business_apps/expressions/expression_debug.md
     - Редактор выражений:
       - business_apps/expressions/expression_editor/index.md
-    - Предиктивный ввод в формулах:
       - business_apps/expressions/expression_editor/formula_editor/index.md
-      - business_apps/expressions/expression_editor/formula_editor/function_autocomplete.md
-      - business_apps/expressions/expression_editor/formula_editor/from_where_select_autocomplete.md
-      - business_apps/expressions/expression_editor/formula_editor/record_heading_autocomplete.md
-      - business_apps/expressions/expression_editor/formula_editor/function_returned_attribute_autocomplete.md
-      - business_apps/expressions/expression_editor/formula_editor/object_function_autocomplete.md
-      - business_apps/expressions/expression_editor/formula_editor/enum_autocomplete_formula.md
-      - business_apps/expressions/expression_editor/formula_editor/template_attribute_autocomplete.md
-      - business_apps/expressions/expression_editor/formula_editor/linked_record_attributes_autocomplete.md
-      - business_apps/expressions/expression_editor/formula_editor/template_for_attribute_autocomplete.md
-      - business_apps/expressions/expression_editor/formula_editor/local_variables.md
-    - Предиктивный ввод в выражениях на языке N3:
       - business_apps/expressions/expression_editor/formula_editor/business_apps/expressions/expression_editor/n3_editor/index.md
-      - business_apps/expressions/expression_editor/formula_editor/prefix_autocomplete.md
-      - business_apps/expressions/expression_editor/formula_editor/block_autocomplete.md
-      - business_apps/expressions/expression_editor/formula_editor/predicate_autocomplete.md
-      - business_apps/expressions/expression_editor/formula_editor/variable_autocomplete.md
-      - business_apps/expressions/expression_editor/formula_editor/findproperty_autocomplete.md
-      - business_apps/expressions/expression_editor/formula_editor/square_brackets_autocomplete.md
-      - business_apps/expressions/expression_editor/formula_editor/findobject_autocomplete.md
-      - business_apps/expressions/expression_editor/formula_editor/enum_autocomplete_n3.md
-      - business_apps/expressions/expression_editor/formula_editor/literal_autocomplete.md
   - business_apps/roles_in_application.md
   - Панель навигации. Настройка:
     - business_apps/navigation_sections/navigation_sections_setup.md
@@ -300,7 +279,7 @@ nav:
   - autonumerating_records.md
   - download_document_archive_csharp.md
   - substring_search.md
-  - enum_attribute_value_calculation.md
+  - attribute_enum_value_calculation.md
   - creating_gantt_chart.md
   - using_gantt_chart.md
   - process_email_configure.md

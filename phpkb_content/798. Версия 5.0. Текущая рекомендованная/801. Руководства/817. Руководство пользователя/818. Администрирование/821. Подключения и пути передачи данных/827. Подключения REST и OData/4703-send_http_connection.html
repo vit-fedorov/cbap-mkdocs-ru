@@ -1,4 +1,5 @@
-<h1>Отправка HTTP-запросов. Настройка подключения</h1><div class="md-container" data-md-component="container">
+<h1>HTTP-запросы. Отправка из сценария. Настройка подключения</h1><div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr">
+<div class="md-container" data-md-component="container">
 <div class="md-main__inner md-grid"><nav aria-label="Содержание" class="md-nav md-nav--secondary">
 <div class="mce-toc">
 <h2 class="toc-heading">Содержание</h2>
@@ -12,56 +13,46 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h2 id="введение">Введение</h2>
-<p><strong>Comindware Platform</strong> позволяет отправлять HTTP-запросы типов <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code> для взаимодействия с внешними системами. В данной статье представлены инструкции по настройке подключения для отправки HTTP-запросов из сценариев с помощью <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4718#scenario_actions_send_message">действия «<strong>Отправить сообщение</strong>»</a>.</p>
+<p><strong>Comindware Platform</strong> позволяет отправлять HTTP-запросы типов <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code> для взаимодействия с внешними системами. Здесь представлены инструкции по настройке подключения для отправки HTTP-запросов из сценариев с помощью <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4718#scenario_actions_send_message">действия «<strong>Отправить сообщение</strong>»</a>.</p>
 <h2 id="инструкции">Инструкции</h2>
 <ol class="colored_numbers_list">
 <li>Откройте раздел «<strong>Администрирование</strong>» — «<strong>Подключения</strong>».</li>
-<li>В меню «<strong>Создать</strong>» выберите пункт «<strong>Подключения REST и OData</strong>» — «<strong>Отправка HTTP-запросов</strong>».</li>
-</ol>
-<figure class="screenshot_with_caption">
-<p><img alt="Создание подключения для отправки HTTP-запросов" src="https://kb.comindware.ru/assets/send_http_connection_create.png"/></p>
+<li>
+<p>В меню «<strong>Создать</strong>» выберите пункт «<strong>Подключения REST и OData</strong>» — «<strong>Отправка HTTP-запросов</strong>».</p>
+<figure class="screenshot_with_caption"><img alt="Создание подключения для отправки HTTP-запросов" src="/platform/v5.0/administration/connections_communication_routes/rest_odata_connections/img/send_http_connection_create.png"/>
 <figcaption class="caption">Создание подключения для отправки HTTP-запросов</figcaption>
 </figure>
-<ol class="colored_numbers_list">
+</li>
 <li>
 <p>Настройте подключение для отправки HTTP-запросов.</p>
 <ul>
 <li><strong>Системное имя</strong> — введите системное имя подключения латинскими буквами.</li>
 <li><strong>Отключить</strong> — установите этот флажок, если требуется деактивировать подключение.</li>
 <li><strong>Описание</strong> — введите наглядное описание назначения подключения.</li>
-<li>
-<p><strong>Запись в файловые журналы</strong> — выберите способ ведения журнала подключения:</p>
+<li><strong>Запись в файловые журналы</strong> — выберите способ ведения журнала подключения:
 <ul>
 <li><strong>Полные сведения об обработке сообщения</strong></li>
 <li><strong>Только ошибки</strong></li>
 <li><strong>Отключить</strong></li>
 </ul>
 </li>
-<li>
-<p><strong>URI</strong> — введите URL-адрес сервера, принимающего HTTP-запросы, например http://example.com/api. Символ <code>/</code> в конце URI не требуется.</p>
-</li>
-<li>
-<p><strong>Формат данных</strong> — выберите способ представления данных в HTTP-запросе:</p>
+<li><strong>URI</strong> — введите URL-адрес сервера, принимающего HTTP-запросы, например http://example.com/api. Символ <code>/</code> в конце URI не требуется.</li>
+<li class="pageBreakBefore"><strong>Формат данных</strong> — выберите способ представления данных в HTTP-запросе:
 <ul>
 <li><strong>Простой текст</strong></li>
 <li><strong>XML</strong></li>
 <li><strong>JSON</strong></li>
 </ul>
 </li>
-<li>
-<p><strong>Кодировка данных</strong> — введите название кодировки данных в HTTP-запросе, по умолчанию: utf-8.</p>
-</li>
-<li>
-<p><strong>Тип аутентификации</strong> — выберите способ аутентификации на сервере:</p>
+<li><strong>Кодировка данных</strong> — введите название кодировки данных в HTTP-запросе, по умолчанию: utf-8.</li>
+<li><strong>Тип аутентификации</strong> — выберите способ аутентификации на сервере:
 <ul>
 <li><strong>Отсутствует</strong></li>
 <li><strong>Базовая</strong></li>
 <li><strong>Аутентификация Windows</strong></li>
 </ul>
 </li>
-<li>
-<p><strong>Имя пользователя</strong> — введите имя пользователя для подключения к серверу.</p>
-</li>
+<li><strong>Имя пользователя</strong> — введите имя пользователя для подключения к серверу.</li>
 <li><strong>Пароль</strong> — введите пароль для подключения к серверу.</li>
 <li><strong>Домен</strong> — введите домен пользователя для подключения к серверу.</li>
 <li><strong>Закрыть</strong> — нажмите эту кнопку, чтобы закрыть окно свойств подключения без сохранения изменений.</li>
@@ -72,13 +63,18 @@
 </li>
 </ol>
 <figure class="screenshot_with_caption">
-<p><img alt="Настройка подключения для отправки HTTP-запросов" src="https://kb.comindware.ru/assets/send_http_connection_settings.png"/></p>
+<p><img alt="Настройка подключения для отправки HTTP-запросов" src="/platform/v5.0/administration/connections_communication_routes/rest_odata_connections/img/send_http_connection_settings.png"/></p>
 <figcaption class="caption">Настройка подключения для отправки HTTP-запросов</figcaption>
 </figure>
+<div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4699">Отправка HTTP-запросов типа GET. Пример: настройка подключения, пути передачи данных и сценария для обработки запросов в формате JSON</a></strong></p>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4718#scenario_actions_send_message">Действие «Отправить сообщение» в сценарии</a></strong></p>
+<ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4699">Отправка HTTP-запросов типа GET. Пример: настройка подключения, пути передачи данных и сценария для обработки запросов в формате JSON</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4718#scenario_actions_send_message">Действие «Отправить сообщение» в сценарии</a></em></li>
+</ul>
+</div>
 </article>
 </div>
 </div>
 <a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#"> <em class="fa-light fa-arrow-up">‌<!--icon--></em> К началу </a></div>
+</div>

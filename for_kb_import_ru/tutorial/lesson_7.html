@@ -1,4 +1,4 @@
-<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4872">
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4872" kb-title="Урок 7. Автоматические вычисления">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -178,7 +178,7 @@
 <h2 id="введение">Введение</h2>
 <p>В ходе этого урока вы научитесь настраивать вычисляемые атрибуты и использовать язык формул, чтобы сделать данные в заявках более наглядными и повысить эффективность бизнес-процесса: показать имя <em>Заказчика</em> и дату заявки, рассчитать итоговую стоимость и статус заявки, сформировать названия задач.</p>
 <p><strong>Предусловие:</strong> пройден <em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4870">урок 6 «Усовершенствованный процесс»</a></em>.</p>
-<p><strong>Расчётная продолжительность:</strong> 20 мин.</p>
+<p><strong>Расчётная продолжительность:</strong> 100 мин.</p>
 <div class="notice notice-info">
 <p class="admonition-title">Примечание</p>
 <p>В данном уроке представлен продукт <strong>Comindware Platform</strong> версии 5.0, внешний вид страниц и меню в других версиях продукта может отличаться.</p>
@@ -202,7 +202,7 @@
 </li>
 </ul>
 </div>
-<h2 id="отображение-ф-и-о-заказчика-и-даты-создания-заявки">Отображение Ф. И. О. <em>Заказчика</em> и даты создания заявки</h2>
+<h2 id="отображение-ф-и-о-заказчика-и-даты-создания-заявки">Отображение Ф. И. О. Заказчика и даты создания заявки</h2>
 <ol class="colored_numbers_list">
 <li>Перейдите на вкладку «<strong>Формы</strong>» шаблона записи <em>«Заявки на автомобили»</em>.</li>
 <li>Откройте конструктор формы <em>«Заявки на автомобили - Основная форма»</em>.</li>
@@ -286,7 +286,7 @@
 <p class="admonition-title">Формула итоговой суммы затрат и синтаксис запроса к базе данных</p>
 <ul>
 <li>Для вычисления итоговой суммы затрат мы использовали функцию — <code>SUM()</code>:<ul>
-<li><code>SUM(from a in db-&gt;Затраты where b-&gt;Заявка == $id select a-&gt;Сумма)</code></li>
+<li><code>SUM(from a in db-&gt;Затраты where a-&gt;Заявка == $id select a-&gt;Сумма)</code></li>
 <li>Функция <code>SUM()</code> принимает в качестве аргумента список значений (массив) и возвращает сумму их значений (число).</li>
 </ul>
 </li>
@@ -526,7 +526,7 @@
 <h3 id="установка-статуса-выполняется">Установка статуса «Выполняется»</h3>
 <ol class="colored_numbers_list">
 <li>На диаграмме процесса выберите <strong>развилку «и»</strong> <em>«Машина выделена»</em> перед событиями <em>«Совершить поездку»</em> и <em>«Выполнить рейс»</em>.</li>
-<li>Откройте «<strong>Сценарий на входе</strong>» <i class="fa-light fa-arrow-right-from-bracket">&zwnj;<!--icon--></i>.</li>
+<li>Откройте «<strong>Сценарий на выходе</strong>» <i class="fa-light fa-arrow-right-from-bracket">&zwnj;<!--icon--></i>.</li>
 <li>Добавьте действие «<strong>Изменить значения атрибутов</strong>» внутри действия «<strong>Сменить контекст</strong>».</li>
 <li>
 <p>В действии «<strong>Изменить значения атрибутов</strong>» добавьте операцию «<strong>Заменить</strong>» для атрибута <em>«Статус»</em> с формулой:</p>

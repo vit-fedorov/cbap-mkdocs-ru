@@ -79,6 +79,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
             SELECT DISTINCT (phpkb_articles.article_id), phpkb_articles.article_content, phpkb_articles.article_title 
             FROM phpkb_articles, phpkb_relations, phpkb_categories 
             WHERE article_show='yes' 
+            AND article_status='approved'
             AND phpkb_relations.category_id = {categoryId} 
             AND phpkb_relations.article_id = phpkb_articles.article_id
             """)

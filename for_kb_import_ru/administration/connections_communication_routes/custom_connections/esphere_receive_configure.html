@@ -1,4 +1,4 @@
-<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="5061">
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="5061" kb-title="Получение документов из «СФЕРА Курьер». Настройка подключения, пути передачи данных и сценария">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -171,9 +171,9 @@
 <h2 id="настройка-подключения-для-получения-id-документов">Настройка подключения для получения ID документов</h2>
 <ol class="colored_numbers_list">
 <li>Откройте страницу «<strong>Администрирование</strong>» — «<strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4675">Подключения</a></strong>».</li>
-<li>В списке подключений откройте или создайте подключение типа «<strong>Пользовательские подключения</strong>» — «<strong>Получение сообщений из системы «СФЕРА Курьер</strong>».</li>
-</ol>
-<ol class="colored_numbers_list" start="3">
+<li>
+<p>В списке подключений откройте или создайте подключение типа «<strong>Пользовательские подключения</strong>» — «<strong>Получение сообщений из системы «СФЕРА Курьер</strong>».</p>
+</li>
 <li>
 <p>Настройте свойства подключения:</p>
 <ul>
@@ -402,9 +402,9 @@
 </ul>
 </li>
 <li>
-<p>Добавьте действие «<strong>Выполнить по условиям</strong>» со следующими параметрами:</p>
+<p>Добавьте действие «<strong>Выполнить по условиям</strong>» со следующими свойствами:</p>
 <ul>
-<li><strong>Название условия:</strong> <em>NotHaveDocument</em></li>
+<li><strong>Название условия:</strong> <em>Документ отсутствует</em></li>
 <li><strong>Выражение: N3</strong></li>
 </ul>
 <div class="highlight"><code><pre><span></span><code><span class="c"># Импортируем функции для работы с переменными и атрибутами</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">variable:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session/variable#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">session:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/session#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">cmwui:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/ui#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">assert:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/logics/assert#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="c"># Получаем значение локальной переменной Response и помещаем в ?response</span></code> <br/><code>    <span class="nn">session</span><span class="p">:</span><span class="nt">context</span> <span class="nn">variable</span><span class="p">:</span><span class="nt">Response</span> <span class="err">?response</span><span class="p">.</span></code> <br/><code>    <span class="c"># Получаем из ?response ID документа и помещаем его в ?docId</span></code> <br/><code>    <span class="err">?response</span> <span class="nn">variable</span><span class="p">:</span><span class="nt">Id</span> <span class="err">?docId</span><span class="p">.</span></code> <br/><code>    <span class="c"># Приводим ?docId к строковому типу и помещаем в ?docIdStr</span></code> <br/><code>    <span class="err">?docId</span> <span class="nn">cmwui</span><span class="p">:</span><span class="nt">toClientString</span> <span class="err">?docIdStr</span><span class="p">.</span></code> <br/><code>    <span class="c"># Находим атрибут idDokumentaEDO (Идентификатор документа «СФЕРА Курьер»)</span></code> <br/><code>    <span class="c"># в шаблоне Reestrdokumentov (Реестр документов из СФЕРА Курьер)</span></code> <br/><code>    <span class="p">(</span><span class="s">"Reestrdokumentov"</span> <span class="s">"idDokumentaEDO"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findProperty</span> <span class="err">?foundIds</span><span class="p">.</span></code> <br/><code></code> <br/><code>    <span class="c"># Сравниваем ?foundIds и ?docIdStr на предмет совпадений</span></code> <br/><code>    <span class="p">{</span><span class="err">?coincidence</span> <span class="err">?foundIds</span> <span class="err">?docIdStr</span><span class="p">.}</span> <span class="nn">assert</span><span class="p">:</span><span class="nt">count</span> <span class="err">?countCoincidence</span><span class="p">.</span></code> <br/><code>    <span class="c"># Если совпадений нет (т.е. ID документа из полученного сообщения</span></code> <br/><code>    <span class="c"># не встречается в шаблоне «Реестр документов из СФЕРА Курьер»)</span></code> <br/><code>    <span class="err">if</span> <span class="p">{</span><span class="err">?countCoincidence</span> <span class="err">==</span> <span class="mi">0</span><span class="p">}</span></code> <br/><code>    <span class="c"># возвращаем значение true</span></code> <br/><code>    <span class="err">then</span> <span class="p">{</span><span class="l">true</span> <span class="err">-&gt;</span> <span class="err">?value</span><span class="p">.}.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>

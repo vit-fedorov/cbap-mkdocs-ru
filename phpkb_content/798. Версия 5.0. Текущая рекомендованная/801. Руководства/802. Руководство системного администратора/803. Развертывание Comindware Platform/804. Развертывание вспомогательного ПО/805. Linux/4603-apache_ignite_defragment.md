@@ -186,7 +186,7 @@ LimitNOFILESoft=65536
 
 --8<-- "related_topics_heading.md"
 
-- *[Резервное копирование и восстановление][backup]*
+- *[Резервное копирование и восстановление][backup_configure]*
 - *[Дефрагментация персистентного хранилища](https://ignite.apache.org/docs/2.11.1/persistence/native-persistence-defragmentation)* (руководство Apache Ignite, английский язык)
 - *[Активация, деактивация и управление топологией](https://ignite.apache.org/docs/2.11.1/tools/control-script#activation-deactivation-and-topology-management)* (руководство Apache Ignite, английский язык)
 

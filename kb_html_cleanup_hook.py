@@ -21,13 +21,13 @@ def on_post_page (output, page, config, **kwargs):
         h1.decompose()
 
     # Cleanup empty Ps        
-    for i in p.findAll('p'):
+    for i in p.find_all('p'):
         if (not i.contents):
             print ('deleting empty P from ' + page.title)
             i.decompose()
             
     # Cleanup comments    
-    for i in p.findAll(string=lambda text: isinstance(text, Comment)):
+    for i in p.find_all(string=lambda text: isinstance(text, Comment)):
         # print ('deleting comment from ' + page.title)
         i.extract()
    
@@ -47,7 +47,8 @@ def on_post_page (output, page, config, **kwargs):
     # Add class="screenshot_with_caption" to figures
     for i in p.find_all('figure'):
         i['class'] = 'screenshot_with_caption'
-        i.find('figcaption')['class'] = 'caption'
+        if i.find('figcaption'):
+            i.find('figcaption')['class'] = 'caption'
         
     # Base img src on site_name or leave as is
     for i in p.find_all('img'):
@@ -76,6 +77,11 @@ def on_post_page (output, page, config, **kwargs):
     body = p.body
     body.name = 'div'
     body['class'] = 'md-body'
+    if body['kb-title'] != "":
+        attrListPattern = re.compile(r'^(.*?) +\{\:.*?\}$')
+        kbTitleStripped = attrListPattern.search(str(body['kb-title']))
+        if kbTitleStripped:
+            body['kb-title'] = kbTitleStripped.group(1)
     # Do not use prettify(), it adds redundant spaces in PHPKB
     # Fix &zwnj; after BeautifulSoup's redundant escaping
     kb_html = str(body).replace('&amp;zwnj;', '&zwnj;')

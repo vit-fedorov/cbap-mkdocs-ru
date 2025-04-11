@@ -1,4 +1,4 @@
-<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4867">
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4867" kb-title="Урок 8. Аккаунты, группы и роли">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -112,9 +112,9 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#настройка-раздела-навигации-для-для-водителей-и-диспетчеров-гаража">
+<a class="md-nav__link mkdocs_imported_link" href="#настройка-раздела-навигации-для-водителей-и-диспетчеров-гаража">
 <span class="md-ellipsis">
-      Настройка раздела навигации для для водителей и диспетчеров гаража
+      Настройка раздела навигации для водителей и диспетчеров гаража
     </span>
 </a>
 </li>
@@ -189,7 +189,7 @@
 <li>Настроите панель навигации для каждой роли.</li>
 </ul>
 <p><strong>Предусловие:</strong> пройдены <em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4865">урок 3 «Мой первый бизнес-процесс»</a></em> и <em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4865">урок 4 «Мониторинг и аналитика»</a></em>.</p>
-<p><strong>Расчётная продолжительность:</strong> 15 мин.</p>
+<p><strong>Расчётная продолжительность:</strong> 50 мин.</p>
 <div class="notice notice-info">
 <p class="admonition-title">Примечание</p>
 <p>В данном уроке представлен продукт <strong>Comindware Platform</strong> версии 5.0, внешний вид страниц и меню в других версиях продукта может отличаться.</p>
@@ -457,7 +457,7 @@
 <p>Аналогичным образом добавьте аккаунт диспетчера в группу <em>«Диспетчеры»</em>, а аккаунты секретарей — в группу <em>«Секретари»</em>.</p>
 </li>
 <li>
-<p>Выберите группу <em>«Сотрудники»</em> и добавьте в неё аккаунт, пользователь которого будет создавать заявки, например <em>«Евгений З.»</em>.</p>
+<p>Выберите группу <em>«Сотрудники»</em> и добавьте в неё аккаунт любого из <em>Заказчиков</em>.</p>
 <p><figure class="screenshot_with_caption" markdown=""><img alt="Добавление аккаунта Заказчика в группу «Сотрудники»" src="/platform/v5.0/tutorial/img/lesson_8_group_employees_customer_add.png"/><figcaption class="caption">Добавление аккаунта Заказчика в группу «Сотрудники»</figcaption></figure></p>
 </li>
 </ol>
@@ -516,7 +516,7 @@
 <figure class="screenshot_with_caption">
 <p><img alt="Настройка раздела навигации для роли «Секретарь»" src="/platform/v5.0/tutorial/img/lesson_8_navigation_section_configure_secretary.png"/><figcaption class="caption">Настройка раздела навигации для роли «Секретарь»</figcaption></p>
 </figure>
-<h3 id="настройка-раздела-навигации-для-для-водителей-и-диспетчеров-гаража">Настройка раздела навигации для для водителей и диспетчеров гаража</h3>
+<h3 id="настройка-раздела-навигации-для-водителей-и-диспетчеров-гаража">Настройка раздела навигации для водителей и диспетчеров гаража</h3>
 <div class="notice notice-warning">
 <p class="admonition-title">Бизнес-логика</p>
 <p>Настроим навигацию для сотрудников гаража, чтобы они могли обрабатывать заявки и просматривать сводку заявок по месяцам.</p>
@@ -527,9 +527,12 @@
 <li>Измените <strong>отображаемое название</strong> раздела навигации на <em>«Сотрудник гаража»</em>.</li>
 <li>Назначьте разделу навигации две роли: <em>«Диспетчер гаража»</em> и <em>«Водитель»</em>.</li>
 <li>Перетащите на макет раздела навигации элемент «<strong>Мои задачи</strong>».</li>
-<li>Разверните шаблон <em>«Заявки на автомобили»</em>.</li>
-<li>Перетащите на макет раздела навигации таблицу «<strong>Все записи</strong>» и переименуйте её в <em>«Заявки на автомобили»</em>.</li>
-<li>Перетащите на макет раздела навигации таблицу «<strong>Все записи</strong>» шаблона <em>«Затраты»</em> и переименуйте её в <em>«Затраты»</em>.</li>
+<li>Разверните пункты «<strong>Шаблоны записей</strong>» — <em>«Заявки на автомобили»</em>.</li>
+<li>Перетащите на макет раздела навигации таблицу «<strong>Все записи</strong>» из шаблона <em>«Заявки на автомобили»</em>.</li>
+<li>Переименуйте пункт «<strong>Все записи</strong>» в <em>«Заявки на автомобили»</em>.</li>
+<li>Разверните пункты «<strong>Шаблоны записей</strong>» — <em>«Затраты»</em>.</li>
+<li>Перетащите на макет раздела навигации таблицу «<strong>Все записи</strong>» из шаблона <em>«Затраты»</em>.</li>
+<li>Переименуйте пункт «<strong>Все записи</strong>» в <em>«Затраты»</em>.</li>
 <li>Сохраните раздел навигации.</li>
 </ol>
 <figure class="screenshot_with_caption">
@@ -575,7 +578,7 @@
 <h3 id="выделение-машины-заявки--диспетчер-гаража">Выделение машины заявки — Диспетчер гаража</h3>
 <ol class="colored_numbers_list">
 <li>Войдите в аккаунт <em>Диспетчера гаража</em>.</li>
-<li>На странице «<strong>Мои задачи</strong>» о ткройте задачу <em>«Принять заявку»</em>.</li>
+<li>На странице «<strong>Мои задачи</strong>» откройте задачу <em>«Принять заявку»</em>.</li>
 <li>Выберите автомобиль и установите флажок <em>«Принято»</em>.</li>
 <li>Завершите задачу.</li>
 <li>

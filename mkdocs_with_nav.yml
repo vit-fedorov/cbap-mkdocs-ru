@@ -121,7 +121,7 @@ nav:
           - administration/connections_communication_routes/message_queue_connections/kafka_connection.md
       - Резервное копирование и восстановление:
         - administration/backup/index.md
-    - administration/backup/configure.md
+        - administration/backup/configure.md
         - Инструкции для Linux: administration/backup/linux/
         - Инструкции для Windows: administration/backup/windows/
   - Моделирование корпоративной-архитектуры:
@@ -154,6 +154,9 @@ nav:
       - architect/organizational_structure_modeling/renaming_organizational_unit.md
       - architect/organizational_structure_modeling/changing_hierarchy.md
       - architect/organizational_structure_modeling/deleting_organizational_unit.md
+      - Конструктор организационной структуры:
+        - architect/organizational_structure_modeling/organizational_structure_designer/index.md
+        - architect/organizational_structure_modeling/organizational_structure_designer/organizational_structure_edit.md
 
   - Разработка приложений:
     - business_apps/application_configure_recommendations.md
@@ -278,29 +281,8 @@ nav:
       - business_apps/expressions/expression_debug.md
       - Редактор выражений:
         - business_apps/expressions/expression_editor/index.md
-        - Предиктивный ввод в формулах:
-          - business_apps/expressions/expression_editor/formula_editor/index.md
-          - business_apps/expressions/expression_editor/formula_editor/function_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/from_where_select_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/record_heading_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/function_returned_attribute_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/object_function_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/enum_autocomplete_formula.md
-          - business_apps/expressions/expression_editor/formula_editor/template_attribute_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/linked_record_attributes_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/template_for_attribute_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/local_variables.md
-        - Предиктивный ввод в выражениях на языке N3:
-          - business_apps/expressions/expression_editor/n3_editor/index.md
-          - business_apps/expressions/expression_editor/n3_editor/prefix_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/block_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/predicate_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/variable_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/findproperty_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/square_brackets_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/findobject_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/enum_autocomplete_n3.md
-          - business_apps/expressions/expression_editor/n3_editor/literal_autocomplete.md
+        - business_apps/expressions/expression_editor/formula_editor/index.md    
+        - business_apps/expressions/expression_editor/n3_editor/index.md
   - DevOps Wiki:
     - index.md
     - Практика Kubernetes:
@@ -314,7 +296,7 @@ nav:
     - examples/autonumerating_records.md
     - examples/download_document_archive_csharp.md
     - examples/substring_search.md
-    - examples/enum_attribute_value_calculation.md
+    - examples/attribute_enum_value_calculation.md
     - examples/creating_gantt_chart.md
     - examples/using_gantt_chart.md
     - examples/process_email_configure.md

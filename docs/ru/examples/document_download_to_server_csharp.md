@@ -12,12 +12,18 @@ kbId: 5002
 !!! question "Структура атрибута типа «Документ»"
 
     --8<-- "attribute_document_logic.md"
+
+!!! tip "Извлечение файлов из атрибута типа «Документ» с помощью C#"
+
     --8<-- "attribute_document_get_file_csharp.md"
+
+!!! tip "Добавление файлов в атрибут типа «Документ» с помощью C#"
+
     --8<-- "attribute_document_add_file_csharp.md"
 
-## Образец скрипта
+## Образец скрипта {: .pageBreakBefore }
 
-``` cs
+``` cs title="Скрипт для скачивания файлов на сервер"
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -73,6 +79,11 @@ class Script {
             };
             return badresult;
         }
+{% if pdfOutput %}
+```
+
+``` cs title="Скрипт для скачивания файлов на сервер — продолжение"
+{% endif %}
         var result = new UserCommandResult {
             Success = true,
                 Commited = true,
@@ -95,7 +106,7 @@ class Script {
 
 - _[Атрибут типа «Документ»][attribute_document]_
 - _[Кнопки. Определение, настройка, удаление][buttons]_
-- _[Написание скриптов на языке C#][manual_csharp]_
+- _[Написание скриптов на языке C#][csharp_guide]_
 - _[Атрибут типа «Документ». Скачивание архива с файлами из всех строк таблицы с прикреплением архива к атрибуту][example_document_download_archive_related_records_csharp]_
 - _[Атрибут типа «Документ». Скачивание архива с файлами из выбранных строк таблицы и записи][example_document_download_archive_csharp]_
 - _[Атрибут типа «Документ». Клонирование записи вместе с прикреплёнными файлами][example_document_clone_scenario_n3]_

@@ -129,7 +129,7 @@ kbId: 4612
 
 6. Скопируйте в созданный файл конфигурации следующее содержимое:
 
-    ``` yml
+    ``` yaml
     bootstrap.memory_lock: false
     cluster.name: elasticsearch.example.cbap
     cluster.max_shards_per_node: 10000
@@ -330,7 +330,7 @@ kbId: 4612
 
 ## Пример yml-файла конфигурации узла Elasticsearch {: .pageBreakBefore }
 
-``` yml
+``` yaml
 bootstrap.memory_lock: false
 cluster.name: elasticsearch.example.cbap
 cluster.max_shards_per_node: 10000

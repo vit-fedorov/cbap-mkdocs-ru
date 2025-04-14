@@ -1429,7 +1429,7 @@ AVERAGE(argument1, argument2)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -1682,7 +1682,7 @@ CEILING(Number)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 <tr markdown="block">
@@ -1746,7 +1746,7 @@ CENTURY(DateTime)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 <tr markdown="block">
@@ -1817,7 +1817,7 @@ COMPARE(argument1, argument2)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 <tr markdown="block">
@@ -2073,7 +2073,7 @@ COUNT(argument1)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -2161,7 +2161,7 @@ DATETIMEINSECONDS(argument1)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -2205,7 +2205,7 @@ DATETIMEINSECONDS(argument1)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -2250,7 +2250,7 @@ DATETIMEINSECONDS(argument1)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -2357,7 +2357,7 @@ DECIMAL("10,5")
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -2401,7 +2401,7 @@ DECIMAL("10,5")
 **Результат**
 </td>
 <td markdown="block">
-длительность
+Длительность
 </td>
 </tr>
 </tbody>
@@ -2445,7 +2445,7 @@ DECIMAL("10,5")
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -2966,7 +2966,7 @@ FLOOR(argument1)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -3005,7 +3005,7 @@ FORMAT(строка задания формата, LIST(argument0, argument1, ..
 **Аргументы**
 </td>
 <td markdown="block">
-строка задания формата: строка
+Строка задания формата: строка
 `argument0`, `argument1`, ..., `argumentN`: значения любого типа.
 </td>
 </tr>
@@ -3014,7 +3014,7 @@ FORMAT(строка задания формата, LIST(argument0, argument1, ..
 **Результат**
 </td>
 <td markdown="block">
-строка
+Строка
 </td>
 </tr>
 </tbody>
@@ -3146,7 +3146,7 @@ GREATEREQ(argument1, argument2)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -3192,7 +3192,7 @@ GREATEREQ(argument1, argument2)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -3340,7 +3340,7 @@ INDEXOF(argument1, argument2, [опциональный argument3])
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -3385,7 +3385,7 @@ INSECONDS(argument1)
 **Результат**
 </td>
 <td markdown="block">
-число, если в качестве аргумента используется значение длительности
+Число, если в качестве аргумента используется значение длительности
 длительность, если в качестве аргумента используется число
 </td>
 </tr>
@@ -3430,7 +3430,7 @@ INSECONDS(argument1)
 **Результат**
 </td>
 <td markdown="block">
-строка
+Строка
 </td>
 </tr>
 </tbody>
@@ -3519,7 +3519,7 @@ INSECONDS(argument1)
 **Результат**
 </td>
 <td markdown="block">
-строка
+Строка
 </td>
 </tr>
 </tbody>
@@ -3563,7 +3563,7 @@ INSECONDS(argument1)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -3977,7 +3977,7 @@ MINUTE(argument1)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -4022,7 +4022,7 @@ MINUTETZ(argument1, argument2)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -4066,7 +4066,7 @@ MONTH(argument1)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -4111,7 +4111,7 @@ MONTHTZ(argument1, argument2)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -4427,7 +4427,7 @@ PRODUCT(argument1, argument2)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -4577,7 +4577,7 @@ QUOTIENT(argument1, argument2)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -4623,7 +4623,7 @@ QUOTIENT(argument1, argument2)
 **Результат**
 </td>
 <td markdown="block">
-строка
+Строка
 </td>
 </tr>
 </tbody>
@@ -4667,7 +4667,7 @@ QUOTIENT(argument1, argument2)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -4711,7 +4711,7 @@ QUOTIENT(argument1, argument2)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -4756,7 +4756,7 @@ QUOTIENT(argument1, argument2)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -5066,7 +5066,7 @@ STARTOFQUARTER(argument1)
 **Результат**
 </td>
 <td markdown="block">
-строка
+Строка
 </td>
 </tr>
 </tbody>
@@ -5113,7 +5113,7 @@ STARTOFQUARTER(argument1)
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 длительность
 дата и время
 длительность
@@ -5204,7 +5204,7 @@ STARTOFQUARTER(argument1)
 **Результат**
 </td>
 <td markdown="block">
-строка
+Строка
 </td>
 </tr>
 </tbody>
@@ -5248,7 +5248,7 @@ STARTOFQUARTER(argument1)
 **Результат**
 </td>
 <td markdown="block">
-строка
+Строка
 </td>
 </tr>
 </tbody>
@@ -5509,7 +5509,7 @@ WORKDAYSDURATION(argument1, argument2,
 **Результат**
 </td>
 <td markdown="block">
-длительность
+Длительность
 </td>
 </tr>
 </tbody>
@@ -5539,7 +5539,7 @@ WORKDAYSDURATION(argument1, argument2,
 <td markdown="block">
 ``` cs
 WORKDAYSDURATIONTZ(argument1, argument2,
-    LIST(argument3, Argument4, .., argumentM),
+    LIST(holiday1, holiday2, .., holidayN),
     timeZone)
 ```
 </td>
@@ -5561,7 +5561,7 @@ WORKDAYSDURATIONTZ(argument1, argument2,
 **Результат**
 </td>
 <td markdown="block">
-длительность
+Длительность
 </td>
 </tr>
 </tbody>
@@ -5593,7 +5593,7 @@ WORKDAYSDURATIONTZ(argument1, argument2,
 <td markdown="block">
 ``` cs
 WORKHOURS(argument1, argument2, argument3, argument4,
-    [опционально LIST(argument5, argument6, .., argumentM)])
+    [опционально LIST(holiday1, holiday2, .., holidayN)])
 ```
 </td>
 </tr>
@@ -5607,7 +5607,7 @@ WORKHOURS(argument1, argument2, argument3, argument4,
 - `argument2`: количество рабочих часов,
 - `argument3`: время начала рабочего дня,
 - `argument4`: длительность рабочего дня (должна быть меньше разницы между 24 ч и временем начала рабочего дня),
-- `argument5`, `argument6`, … `argumentM` (в опциональной  функции `LIST()`): праздники и исключения из выходных дней, т. е. если в списке указан рабочий день, он считается праздником, и наоборот, если в списке выходной день, он считается рабочим.
+- `holiday1`, `holiday2`, .., `holidayN` (в опциональной  функции `LIST()`): праздники и исключения из выходных дней, т. е. если в списке указан рабочий день, он считается праздником, и наоборот, если в списке выходной день, он считается рабочим.
 </td>
 </tr>
 <tr markdown="block">
@@ -5648,7 +5648,7 @@ WORKHOURS(argument1, argument2, argument3, argument4,
 
 ``` cs
 WORKHOURSDURATION(argument1, argument2, argument3, argument4,
-    [опционально LIST(argument5, argument6, .., argumentM)])
+    [опционально LIST(holiday1, holiday2, .., holidayN)])
 ```
 </td>
 </tr>
@@ -5670,7 +5670,7 @@ WORKHOURSDURATION(argument1, argument2, argument3, argument4,
 **Результат**
 </td>
 <td markdown="block">
-длительность
+Длительность
 </td>
 </tr>
 </tbody>
@@ -5701,7 +5701,7 @@ WORKHOURSDURATION(argument1, argument2, argument3, argument4,
 
 ``` cs
 WORKHOURSDURATIONTZ(argument1, argument2, argument3, argument4,
-    LIST(argument5, argument6, .., argumentM), timeZone)
+    LIST(holiday1, holiday2, .., holidayN), timeZone)
 ```
 </td>
 </tr>
@@ -5724,7 +5724,7 @@ WORKHOURSDURATIONTZ(argument1, argument2, argument3, argument4,
 **Результат**
 </td>
 <td markdown="block">
-длительность
+Длительность
 </td>
 </tr>
 </tbody>
@@ -5754,7 +5754,7 @@ WORKHOURSDURATIONTZ(argument1, argument2, argument3, argument4,
 <td markdown="block">
 ``` cs
 WORKHOURSTZ(argument1, argument2, argument3, argument4,
-    list(argument5, argument6, .., argumentM), timeZone)
+    list(holiday1, holiday2, .., holidayN), timeZone)
 ```
 </td>
 </tr>
@@ -5821,7 +5821,7 @@ WORKHOURSTZ(argument1, argument2, argument3, argument4,
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>
@@ -5869,7 +5869,7 @@ WORKHOURSTZ(argument1, argument2, argument3, argument4,
 **Результат**
 </td>
 <td markdown="block">
-число
+Число
 </td>
 </tr>
 </tbody>

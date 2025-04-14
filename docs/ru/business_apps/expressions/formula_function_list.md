@@ -2296,7 +2296,11 @@ DATETIMEINSECONDS(argument1)
 **Синтаксис**
 </td>
 <td markdown="block">
-`DAY(argument1)`
+
+``` cs
+DAY(dayTime)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2305,7 +2309,8 @@ DATETIMEINSECONDS(argument1)
 </td>
 <td markdown="block">
 
-`argument1`: дата и время
+`dayTime`: дата и время
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2342,7 +2347,11 @@ DATETIMEINSECONDS(argument1)
 **Синтаксис**
 </td>
 <td markdown="block">
-`DAYTZ(argument1, argument2)`
+
+``` cs
+DAYTZ(dayTime, timeZone)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2351,8 +2360,8 @@ DATETIMEINSECONDS(argument1)
 </td>
 <td markdown="block">
 
-- `argument1`: дата и время
-- `argument2`: строка
+- `dayTime`: дата и время
+- `timeZone`: строка, часовой пояс
 
 </td>
 </tr>
@@ -2455,7 +2464,11 @@ DECIMAL("10,5")
 **Синтаксис**
 </td>
 <td markdown="block">
-`DIVIDE(dividend, divisor)`
+
+``` cs
+DIVIDE(dividend, divisor)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2466,6 +2479,7 @@ DECIMAL("10,5")
 
 - `dividend`: число, делимое
 - `divisor`: число, делитель
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2502,7 +2516,11 @@ DECIMAL("10,5")
 **Синтаксис**
 </td>
 <td markdown="block">
-`DURATIONFROMSECONDS(argument1)`
+
+``` cs
+DURATIONFROMSECONDS(seconds)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2511,7 +2529,8 @@ DECIMAL("10,5")
 </td>
 <td markdown="block">
 
-`argument1`: число
+`seconds`: число, секунды
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2548,7 +2567,11 @@ DECIMAL("10,5")
 **Синтаксис**
 </td>
 <td markdown="block">
-`DURATIONINSECONDS(argument1)`
+
+``` cs
+DURATIONINSECONDS(duration)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2557,7 +2580,8 @@ DECIMAL("10,5")
 </td>
 <td markdown="block">
 
-`argument1`: длительность
+`duration`: длительность
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2594,7 +2618,11 @@ DECIMAL("10,5")
 **Синтаксис**
 </td>
 <td markdown="block">
-`EMPTY(argument1)`
+
+``` cs
+EMPTY(argument1)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2641,7 +2669,11 @@ DECIMAL("10,5")
 **Синтаксис**
 </td>
 <td markdown="block">
-`ENDOFDAY(argument1)`
+
+``` cs
+ENDOFDAY(dateTime)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2650,7 +2682,8 @@ DECIMAL("10,5")
 </td>
 <td markdown="block">
 
-`argument1`: дата и время
+`dateTime`: дата и время
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2687,7 +2720,11 @@ DECIMAL("10,5")
 **Синтаксис**
 </td>
 <td markdown="block">
-`ENDOFMONTH(argument1)`
+
+``` cs
+ENDOFMONTH(dateTime)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2696,7 +2733,7 @@ DECIMAL("10,5")
 </td>
 <td markdown="block">
 
-`argument1`: дата и время
+`dateTime`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -2733,7 +2770,11 @@ DECIMAL("10,5")
 **Синтаксис**
 </td>
 <td markdown="block">
-`ENDOFQUARTER(argument1)`
+
+``` cs
+ENDOFQUARTER(dateTime)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2742,7 +2783,7 @@ DECIMAL("10,5")
 </td>
 <td markdown="block">
 
-`argument1`: дата и время
+`dateTime`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -2779,7 +2820,11 @@ DECIMAL("10,5")
 **Синтаксис**
 </td>
 <td markdown="block">
-`ENDOFWEEK(argument1)`
+
+``` cs
+ENDOFWEEK(dateTime)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2788,7 +2833,7 @@ DECIMAL("10,5")
 </td>
 <td markdown="block">
 
-`argument1`: дата и время
+`dateTime`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -2825,7 +2870,7 @@ DECIMAL("10,5")
 **Синтаксис**
 </td>
 <td markdown="block">
-ENDOFYEAR(argument1)
+ENDOFYEAR(dateTime)
 </td>
 </tr>
 <tr markdown="block">
@@ -2834,7 +2879,7 @@ ENDOFYEAR(argument1)
 </td>
 <td markdown="block">
 
-`argument1`: дата и время
+`dateTime`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -2862,7 +2907,7 @@ ENDOFYEAR(argument1)
 **Описание**
 </td>
 <td markdown="block">
-Сравнивает два аргумента и возвращает значение `true`, если значение аргумента1 оканчивается на значение аргумента2, в противном случае возвращает `false`.
+Сравнивает две строки и возвращает значение `true`, если первая строка оканчивается на вторую строку, в противном случае возвращает `false`.
 
 </td>
 </tr>
@@ -2871,7 +2916,7 @@ ENDOFYEAR(argument1)
 **Синтаксис**
 </td>
 <td markdown="block">
-ENDSWITH(argument1, argument2)
+ENDSWITH(string1, string2)
 </td>
 </tr>
 <tr markdown="block">
@@ -2880,7 +2925,7 @@ ENDSWITH(argument1, argument2)
 </td>
 <td markdown="block">
 
-`argument1`, `argument2`: строка
+`string1`, `string2`: строка
 </td>
 </tr>
 <tr markdown="block">
@@ -2918,7 +2963,11 @@ ENDSWITH(argument1, argument2)
 **Синтаксис**
 </td>
 <td markdown="block">
-`ENUMVALUE("attributeSystemName", "valueSystemName")`
+
+``` cs
+ENUMVALUE("enumAttributeSystemName", "enumValueSystemName")
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2927,8 +2976,8 @@ ENDSWITH(argument1, argument2)
 </td>
 <td markdown="block">
 
-- `attributeSystemName`: строка, системное имя атрибута типа «**Список значений**».
-- `valueSystemName`: строка, системное имя одного из значений атрибута типа «**Список значений**».
+- `enumAttributeSystemName`: строка, системное имя атрибута типа «**Список значений**».
+- `enumValueSystemName`: строка, системное имя одного из значений атрибута типа «**Список значений**».
 
 </td>
 </tr>
@@ -2974,7 +3023,8 @@ EQUALS($Status, ID(ENUMVALUE("Status", "Resolved")))
 **Описание**
 </td>
 <td markdown="block">
-Сравнивает два аргумента и возвращает значение `true`, если аргументы равны, в противном случае возвращает результат `false`.
+
+Сравнивает два аргумента и возвращает значение `true`, если они равны, в противном случае возвращает результат `false`.
 
 </td>
 </tr>
@@ -3052,7 +3102,7 @@ FIRST(list)
 **Результат**
 </td>
 <td markdown="block">
-тип возвращаемого значения совпадает с типом элементов последовательности
+Тип возвращаемого значения совпадает с типом элементов списка.
 </td>
 </tr>
 <tr markdown="block">
@@ -3065,7 +3115,7 @@ FIRST(list)
 FIRST((from i in db->music where i>album == 'Whale Meditation' select i->song))
 ```
 
-Возвращает первую песню из альбома "Whale Meditation".
+Возвращает название первой песни из альбома Whale Meditation.
 
 </td>
 </tr>
@@ -3095,7 +3145,7 @@ FIRST((from i in db->music where i>album == 'Whale Meditation' select i->song))
 **Синтаксис**
 </td>
 <td markdown="block">
-FLOOR(argument1)
+FLOOR(number)
 </td>
 </tr>
 <tr markdown="block">
@@ -3104,7 +3154,7 @@ FLOOR(argument1)
 </td>
 <td markdown="block">
 
-`argument1`: число
+`number`: число
 </td>
 </tr>
 <tr markdown="block">
@@ -3141,10 +3191,12 @@ FLOOR(argument1)
 **Синтаксис**
 </td>
 <td markdown="block">
-FORMAT(строка задания формата, LIST(argument0, argument1, ..., argumentN))
-Формат для argument0 задается частью строки, обозначенной как {0}. Формат для argument1 определяется частью строки {1} и так далее.
-Аргументы должны быть записаны в следующем виде: LIST(argument0, argument1, ..., argumentN).
-Также возможно использование функции FORMAT() для конкатенации строк. Например, FORMAT("{0}, {1}", LIST($title,$assignee)).
+
+``` cs
+FORMAT("stringToFormat {0} {1} ... {N}", LIST(value0, value1, .., valueN))
+```
+
+Эта функция принимает строку с заполнителями вида `{0}`…`{N}` и список значений. Функция подставляет значения из списка в соответствующие заполнители и возвращает результирующую строку.
 
 </td>
 </tr>
@@ -3154,7 +3206,7 @@ FORMAT(строка задания формата, LIST(argument0, argument1, ..
 </td>
 <td markdown="block">
 Строка задания формата: строка
-`argument0`, `argument1`, ..., `argumentN`: значения любого типа.
+`LIST(value0, value1, .., valueN)`: список значений любых типов.
 
 </td>
 </tr>
@@ -3166,6 +3218,26 @@ FORMAT(строка задания формата, LIST(argument0, argument1, ..
 Строка
 </td>
 </tr>
+
+<tr markdown="block">
+<td markdown="block">
+**Пример**
+</td>
+<td markdown="block">
+
+``` cs
+FORMAT("Название: {0}, исполнитель: {1}", LIST("Yesterday","Beatles"))
+```
+
+Возвращает строку:
+
+```
+Название: Yesterday, исполнитель: Beatles
+```
+
+</td>
+</tr>
+
 </tbody>
 </table>
 
@@ -3286,7 +3358,11 @@ GREATEREQ(argument1, argument2)
 **Синтаксис**
 </td>
 <td markdown="block">
-`HOUR(dateTime)`
+
+``` cs
+HOUR(dateTime)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -3332,7 +3408,11 @@ GREATEREQ(argument1, argument2)
 **Синтаксис**
 </td>
 <td markdown="block">
-`HOURTZ(dateTime, timeZone)`
+
+``` cs
+HOURTZ(dateTime, timeZone)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -3379,7 +3459,11 @@ GREATEREQ(argument1, argument2)
 **Синтаксис**
 </td>
 <td markdown="block">
-`ID("objectID")`
+
+``` cs
+ID("objectID")
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -3587,7 +3671,11 @@ INSECONDS(argument)
 **Синтаксис**
 </td>
 <td markdown="block">
-`ISOFORMAT(argument1)`
+
+``` cs
+ISOFORMAT(argument1)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -3633,7 +3721,11 @@ INSECONDS(argument)
 **Синтаксис**
 </td>
 <td markdown="block">
-`ISTODAY(argument1)`
+
+``` cs
+ISTODAY(argument1)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -3679,7 +3771,11 @@ INSECONDS(argument)
 **Синтаксис**
 </td>
 <td markdown="block">
-`JOIN(argument1, LIST(argument2, argument3,.. argumentN))`
+
+``` cs
+JOIN(argument1, LIST(argument2, argument3,.. argumentN))
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -3689,7 +3785,7 @@ INSECONDS(argument)
 <td markdown="block">
 
 `argument1`: разделитель объединяемых строк,
-`argument2`, `argument3`, ..., `argumentN` (в функции `LIST()`): объединяемые строки
+`argument2`, `argument3`, .., `argumentN` (в функции `LIST()`): объединяемые строки
 </td>
 </tr>
 <tr markdown="block">
@@ -3726,7 +3822,11 @@ INSECONDS(argument)
 **Синтаксис**
 </td>
 <td markdown="block">
-`LENGTH(argument1)`
+
+``` cs
+LENGTH(argument1)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -3823,7 +3923,11 @@ LESS(argument1, argument2)
 **Синтаксис**
 </td>
 <td markdown="block">
-`LESSEQ(argument1, argument2)`
+
+``` cs
+LESSEQ(argument1, argument2)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -4792,7 +4896,11 @@ QUOTIENT(dividend, divisor)
 **Синтаксис**
 </td>
 <td markdown="block">
-`REMAINDER(argument1, argument2)`
+
+``` cs
+REMAINDER(argument1, argument2)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -4839,7 +4947,11 @@ QUOTIENT(dividend, divisor)
 **Синтаксис**
 </td>
 <td markdown="block">
-`REPLACE(argument1, argument2, argument3)`
+
+``` cs
+REPLACE(argument1, argument2, argument3)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -4887,7 +4999,11 @@ QUOTIENT(dividend, divisor)
 **Синтаксис**
 </td>
 <td markdown="block">
-`ROUND(argument1)`
+
+``` cs
+ROUND(argument1)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -4933,7 +5049,11 @@ QUOTIENT(dividend, divisor)
 **Синтаксис**
 </td>
 <td markdown="block">
-`SECOND(argument1)`
+
+``` cs
+SECOND(argument1)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -4979,7 +5099,11 @@ QUOTIENT(dividend, divisor)
 **Синтаксис**
 </td>
 <td markdown="block">
-`SECONDTZ(argument1, argument2)`
+
+``` cs
+SECONDTZ(argument1, argument2)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -5026,7 +5150,11 @@ QUOTIENT(dividend, divisor)
 **Синтаксис**
 </td>
 <td markdown="block">
-`STARTOF`DAY(argument1)``
+
+``` cs
+STARTOF`DAY(argument1)`
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -5164,7 +5292,11 @@ STARTOFQUARTER(argument1)
 **Синтаксис**
 </td>
 <td markdown="block">
-`STARTOFWEEK(argument1)`
+
+``` cs
+STARTOFWEEK(argument1)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -5210,7 +5342,11 @@ STARTOFQUARTER(argument1)
 **Синтаксис**
 </td>
 <td markdown="block">
-`STARTOFYEAR(argument1)`
+
+``` cs
+STARTOFYEAR(argument1)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -5256,7 +5392,11 @@ STARTOFQUARTER(argument1)
 **Синтаксис**
 </td>
 <td markdown="block">
-`STARTSWITH(argument1, argument2)`
+
+``` cs
+STARTSWITH(argument1, argument2)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -5302,7 +5442,11 @@ STARTOFQUARTER(argument1)
 **Синтаксис**
 </td>
 <td markdown="block">
-`SUBSTRING(sourceString, startIndex, [numberOfChars])`
+
+``` cs
+SUBSTRING(sourceString, startIndex, [numberOfChars])
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -5351,7 +5495,11 @@ STARTOFQUARTER(argument1)
 **Синтаксис**
 </td>
 <td markdown="block">
-`SUBTRACT(value1, value2)`
+
+``` cs
+SUBTRACT(value1, value2)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -5404,7 +5552,11 @@ STARTOFQUARTER(argument1)
 **Синтаксис**
 </td>
 <td markdown="block">
-`SUM(valueList)`
+
+``` cs
+SUM(valueList)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -5449,7 +5601,11 @@ STARTOFQUARTER(argument1)
 **Синтаксис**
 </td>
 <td markdown="block">
-`TOLOWER(string)`
+
+``` cs
+TOLOWER(string)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -5494,7 +5650,11 @@ STARTOFQUARTER(argument1)
 **Синтаксис**
 </td>
 <td markdown="block">
-`TOUPPER(string)`
+
+``` cs
+TOUPPER(string)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -5539,7 +5699,11 @@ STARTOFQUARTER(argument1)
 **Синтаксис**
 </td>
 <td markdown="block">
-`USER()`
+
+``` cs
+USER()
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -6109,7 +6273,11 @@ WORKHOURSTZ(startDateTime, workingHours,
 **Синтаксис**
 </td>
 <td markdown="block">
-`YEAR(dateTime)`
+
+``` cs
+YEAR(dateTime)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -6156,7 +6324,11 @@ WORKHOURSTZ(startDateTime, workingHours,
 **Синтаксис**
 </td>
 <td markdown="block">
-`YEARTZ(dateTime, timeZone)`
+
+```cs
+YEARTZ(dateTime, timeZone)
+```
+
 </td>
 </tr>
 <tr markdown="block">

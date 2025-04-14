@@ -116,8 +116,9 @@ ADD(DATE('2024-01-01T01:01:01'), DURATION('P3Y6M4DT12H30M5S'))
 <td markdown="block">
 
 ``` cs
-ADDDAYS(DateTime, Number)
+ADDDAYS(dateTime, number)
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -184,7 +185,7 @@ ADDDAYS(DATE('2024-01-01T01:01:01'), 3)
 <td markdown="block">
 
 ``` cs
-ADDDAYSUTC(DateTime, Number)
+ADDDAYSUTC(dateTime, number)
 ```
 
 </td>
@@ -319,8 +320,9 @@ ADDDUR(DURATION('P1DT12H30M5S'), DURATION('P1DT12H30M5S'))
 <td markdown="block">
 
 ``` cs
-ADDHOURS(DateTime, Number)
+ADDHOURS(dateTime, number)
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -386,7 +388,7 @@ ADDHOURS(DATE('2024-01-01T01:01:01'), 3)
 <td markdown="block">
 
 ``` cs
-ADDHOURSUTC(DateTime, Number)
+ADDHOURSUTC(dateTime, number)
 ```
 
 </td>
@@ -523,7 +525,7 @@ ADDLOC(DATE('2024-01-01T01:01:01'), DURATION('P1DT12H30M5S'))
 <td markdown="block">
 
 ``` cs
-ADDMINUTES(DateTime, Number)
+ADDMINUTES(dateTime, number)
 ```
 
 </td>
@@ -591,7 +593,7 @@ ADDMINUTES(DATE('2024-01-01T01:01:01'), 3)
 <td markdown="block">
 
 ``` cs
-ADDMINUTESUTC(DateTime, Number)
+ADDMINUTESUTC(dateTime, number)
 ```
 
 </td>
@@ -659,7 +661,7 @@ ADDMINUTESUTC(DATE('2024-01-01T01:01:01'), 3)
 <td markdown="block">
 
 ``` cs
-ADDMONTHS(DateTime, Number)
+ADDMONTHS(dateTime, number)
 ```
 
 </td>
@@ -727,7 +729,7 @@ ADDMONTHS(DATE('2024-01-01T01:01:01'), 3)
 <td markdown="block">
 
 ``` cs
-ADDMONTHSUTC(DateTime, Number)
+ADDMONTHSUTC(dateTime, number)
 ```
 
 </td>
@@ -795,7 +797,7 @@ ADDMONTHSUTC(DATE('2024-01-01T01:01:01'), 3)
 <td markdown="block">
 
 ``` cs
-ADDSECONDS(DateTime, Number)
+ADDSECONDS(dateTime, number)
 ```
 
 </td>
@@ -863,8 +865,9 @@ ADDSECONDS(DATE('2024-01-01T01:01:01'), 3)
 <td markdown="block">
 
 ``` cs
-ADDSECONDSUTC(DateTime, Number)
+ADDSECONDSUTC(dateTime, number)
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -932,6 +935,7 @@ ADDSECONDSUTC(DATE('2024-01-01T01:01:01'), 3)
 ``` cs
 ADDUTC(DateTime, Duration)
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -998,8 +1002,9 @@ ADDUTC(DATE('2024-01-01T01:01:01'), DURATION('P1DT12H30M5S'))
 <td markdown="block">
 
 ``` cs
-ADDYEARS(DateTime, Number)
+ADDYEARS(dateTime, number)
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -1065,7 +1070,7 @@ ADDYEARS(DATE('2024-01-01T01:01:01'), 3)
 <td markdown="block">
 
 ``` cs
-ADDYEARSUTC(DateTime, Number)
+ADDYEARSUTC(dateTime, number)
 ```
 
 </td>
@@ -1181,6 +1186,7 @@ ALL(list)
 ``` cs
 AND(bool1, bool2)
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -1358,6 +1364,7 @@ ANY([(
 ```
 ASCENDING(list)
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -1935,6 +1942,7 @@ CONCAT(LIST("Сумма доходов равна: ", "100000"))
 ``` cs
 CONTAINS(String, Substring)
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -1997,6 +2005,7 @@ CONTAINS("Это срочная заявка.", "срочн")
 ``` cs
 CONVERTTIMEZONE(Date, TimeZone)
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2290,6 +2299,7 @@ DATETIMEINSECONDS(argument1)
 ``` cs
 DECIMAL(string)
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -3334,7 +3344,7 @@ IF(argument1, argumen2, argument3)
 **Описание**
 </td>
 <td markdown="block">
-Возвращает номер (отсчитываемый от нуля) позиции, на которой располагается искомая строка в исходной строке. Номер позиции может отсчитываться от произвольного положения (опционально).
+Возвращает номер (отсчитываемый от нуля) позиции, на которой располагается искомая строка в исходной строке. Номер позиции может отсчитываться от произвольного положения (необязательно).
 </td>
 </tr>
 <tr markdown="block">
@@ -3344,8 +3354,9 @@ IF(argument1, argumen2, argument3)
 <td markdown="block">
 
 ``` cs
-INDEXOF(argument1, argument2, [опциональный argument3])
+INDEXOF(sourceString, stringToFind, [startIndex])
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -3354,9 +3365,10 @@ INDEXOF(argument1, argument2, [опциональный argument3])
 </td>
 <td markdown="block">
 
-`argument1`: исходная строка,
-`argument2`: искомая строка,
-`argument3` (опционально): номер позиции, от которой производится отсчет
+- `sourceString`: исходная строка,
+- `stringToFind`: искомая строка,
+- `startIndex` (необязательно): номер позиции, от которой производится отсчет
+
 </td>
 </tr>
 <tr markdown="block">
@@ -3392,7 +3404,7 @@ INDEXOF(argument1, argument2, [опциональный argument3])
 **Синтаксис**
 </td>
 <td markdown="block">
-INSECONDS(argument1)
+INSECONDS(argument)
 </td>
 </tr>
 <tr markdown="block">
@@ -3401,8 +3413,8 @@ INSECONDS(argument1)
 </td>
 <td markdown="block">
 
-`argument1`: длительность
-`argument1`: число
+`argument`: длительность или число
+
 </td>
 </tr>
 <tr markdown="block">
@@ -3410,8 +3422,11 @@ INSECONDS(argument1)
 **Результат**
 </td>
 <td markdown="block">
-Число, если в качестве аргумента используется значение длительности
-длительность, если в качестве аргумента используется число
+
+Число, если в качестве аргумента используется значение длительности.
+
+Длительность, если в качестве аргумента используется число.
+
 </td>
 </tr>
 </tbody>
@@ -3624,6 +3639,7 @@ INSECONDS(argument1)
 ``` cs
 LESS(argument1, argument2)
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -3717,6 +3733,7 @@ LESS(argument1, argument2)
 ``` cs
 LIST(argument1, …, argumentN)
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -3761,7 +3778,11 @@ LIST(argument1, …, argumentN)
 **Синтаксис**
 </td>
 <td markdown="block">
-MAKEDATETIME(argument1, argument2, argument3, argument4, argument5, argument6)
+
+``` cs
+MAKEDATETIME(year, month, day, hour, minutes, seconds)
+```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -3770,12 +3791,13 @@ MAKEDATETIME(argument1, argument2, argument3, argument4, argument5, argument6)
 </td>
 <td markdown="block">
 
-`argument1`: числовое значение, соответствующее году.
-`argument2`: числовое значение, соответствующее месяцу.
-`argument3`: числовое значение, соответствующее дню.
-`argument4`: числовое значение, соответствующее часу.
-`argument5`: числовое значение, соответствующее минутам.
-`argument6`: числовое значение, соответствующее секундам.
+- `year`: число, соответствующее году.
+- `month`: число, соответствующее месяцу.
+- `day`: число, соответствующее дню.
+- `hour`: число, соответствующее часу.
+- `minutes`: число, соответствующее минутам.
+- `seconds`: число, соответствующее секундам.
+
 </td>
 </tr>
 <tr markdown="block">
@@ -3811,7 +3833,7 @@ MAKEDATETIME(argument1, argument2, argument3, argument4, argument5, argument6)
 **Синтаксис**
 </td>
 <td markdown="block">
-MAKEDATETIMETZ(argument1, argument2, argument3, argument4, argument5, argument6, argument7)
+MAKEDATETIMETZ(year, month, day, hour, minutes, seconds, timeZone)
 </td>
 </tr>
 <tr markdown="block">
@@ -3820,13 +3842,13 @@ MAKEDATETIMETZ(argument1, argument2, argument3, argument4, argument5, argument6,
 </td>
 <td markdown="block">
 
-`argument1`: числовое значение, соответствующее году.
-`argument2`: числовое значение, соответствующее месяцу.
-`argument3`: числовое значение, соответствующее дню.
-`argument4`: числовое значение, соответствующее часу.
-`argument5`: числовое значение, соответствующее минутам.
-`argument6`: числовое значение, соответствующее секундам.
-`argument7`: строка, соответствующая идентификатору часового пояса
+- `year`: число, соответствующее году.
+- `month`: число, соответствующее месяцу.
+- `day`: число, соответствующее дню.
+- `hour`: число, соответствующее часу.
+- `minutes`: число, соответствующее минутам.
+- `seconds`: число, соответствующее секундам.
+- `timeZone`: строковый идентификатор часового пояса.
 </td>
 </tr>
 <tr markdown="block">
@@ -5107,7 +5129,7 @@ STARTOFQUARTER(argument1)
 **Синтаксис**
 </td>
 <td markdown="block">
-`SUBSTRING(argument1, argument2, [опциональный argument3])`
+`SUBSTRING(sourceString, startIndex, [numberOfChars])`
 </td>
 </tr>
 <tr markdown="block">
@@ -5116,9 +5138,10 @@ STARTOFQUARTER(argument1)
 </td>
 <td markdown="block">
 
-`argument1`: строка
-`argument2`: номер позиции подстроки (отсчитываемый от нуля)
-`argument3`(опционально): количество символов в подстроке
+`sourceString`: строка
+`startIndex`: номер позиции подстроки (отсчитываемый от нуля)
+`numberOfChars`(необязательно): количество символов в подстроке
+
 </td>
 </tr>
 <tr markdown="block">
@@ -5154,7 +5177,7 @@ STARTOFQUARTER(argument1)
 **Синтаксис**
 </td>
 <td markdown="block">
-`SUBTRACT(argument1, argument2)`
+`SUBTRACT(value1, value2)`
 </td>
 </tr>
 <tr markdown="block">
@@ -5163,10 +5186,10 @@ STARTOFQUARTER(argument1)
 </td>
 <td markdown="block">
 
-`argument1`: число; `argument2`: число.
-`argument1`: длительность; `argument2`: длительность.
-`argument1`: дата и время; `argument2`: длительность.
-`argument1`: дата и время; `argument2`: дата и время.
+`value1`: число; `value2`: число.
+`value1`: длительность; `value2`: длительность.
+`value1`: дата и время; `value2`: длительность.
+`value1`: дата и время; `value2`: дата и время.
 </td>
 </tr>
 <tr markdown="block">
@@ -5386,6 +5409,7 @@ STARTOFQUARTER(argument1)
 ``` cs
 VALUE(argument, [defaultValue])
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -5445,11 +5469,13 @@ VALUE($Amount, "Не заполнено поле Amount")
 **Синтаксис**
 </td>
 <td markdown="block">
+
 ``` cs
 WORKDAYS(startDateTime, workingDays,
     [LIST(holiday1, holiday2, …, holidayN)]
     )
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -5497,11 +5523,13 @@ WORKDAYS(startDateTime, workingDays,
 **Синтаксис**
 </td>
 <td markdown="block">
+
 ``` cs
 WORKDAYSTZ(startDay, workingDays,
     LIST(holiday1, holiday2, …, holidayN),
     timeZone)
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -5550,10 +5578,12 @@ WORKDAYSTZ(startDay, workingDays,
 **Синтаксис**
 </td>
 <td markdown="block">
+
 ``` cs
-WORKDAYSDURATION(argument1, argument2,
+WORKDAYSDURATION(startDateTime, endDateTime,
     [LIST(holiday1, holiday2, …, holidayN)])
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -5600,11 +5630,13 @@ WORKDAYSDURATION(argument1, argument2,
 **Синтаксис**
 </td>
 <td markdown="block">
+
 ``` cs
 WORKDAYSDURATIONTZ(startDateTime, endDateTime,
     LIST(holiday1, holiday2, .., holidayN),
     timeZone)
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -5654,10 +5686,13 @@ WORKDAYSDURATIONTZ(startDateTime, endDateTime,
 **Синтаксис**
 </td>
 <td markdown="block">
+
 ``` cs
-WORKHOURS(startDateTime, workingHours, workingDayStart, workingDayDuration,
+WORKHOURS(startDateTime, workingHours, 
+    workingDayStart, workingDayDuration,
     [LIST(holiday1, holiday2, .., holidayN)])
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -5710,9 +5745,11 @@ WORKHOURS(startDateTime, workingHours, workingDayStart, workingDayDuration,
 <td markdown="block">
 
 ``` cs
-WORKHOURSDURATION(startDateTime, endDateTime, workingDayStart, workingDayDuration,
+WORKHOURSDURATION(startDateTime, endDateTime, 
+    workingDayStart, workingDayDuration,
     [LIST(holiday1, holiday2, .., holidayN)])
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -5763,10 +5800,12 @@ WORKHOURSDURATION(startDateTime, endDateTime, workingDayStart, workingDayDuratio
 <td markdown="block">
 
 ``` cs
-WORKHOURSDURATIONTZ(startDateTime, endDateTime, workingDayStart, workingDayDuration,
+WORKHOURSDURATIONTZ(startDateTime, endDateTime, 
+    workingDayStart, workingDayDuration,
     LIST(holiday1, holiday2, .., holidayN),
     timeZone)
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -5816,11 +5855,14 @@ WORKHOURSDURATIONTZ(startDateTime, endDateTime, workingDayStart, workingDayDurat
 **Синтаксис**
 </td>
 <td markdown="block">
+
 ``` cs
-WORKHOURSTZ(startDateTime, workingHours, workingDayStart, workingDayDuration,
+WORKHOURSTZ(startDateTime, workingHours, 
+    workingDayStart, workingDayDuration,
     LIST(holiday1, holiday2, .., holidayN),
     timeZone)
 ```
+
 </td>
 </tr>
 <tr markdown="block">

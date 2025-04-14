@@ -15,9 +15,7 @@ hide:
 
 # Список функций языка формул {{ companyName }} {: #formula_function_reference }
 
-В данном разделе приведен синтаксис и использование функций в языке формул **{{ companyName }}**.
-
-литералы, атрибуты, переменные, функции, возвращающие значения нужного типа.
+Здесь представлен синтаксис и примеры использования функций в формулах **{{ companyName }}**.
 
 <table markdown="block">
 <tbody markdown="block">
@@ -25,10 +23,11 @@ hide:
 <th colspan="2" markdown="block">
 
 ## `ADD()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -56,7 +55,7 @@ ADD(argument1, argument2)
 
 - `argument1`: число, `argument2`: число.
 - `argument1`: длительность, `argument2`: длительность.
-- `argument1`: **дата и время**, `argument2`: длительность.
+- `argument1`: дата и время, `argument2`: длительность.
 </td>
 </tr>
 <tr markdown="block">
@@ -98,15 +97,16 @@ ADD(DATE('2024-01-01T01:01:01'), DURATION('P3Y6M4DT12H30M5S'))
 <th colspan="2" markdown="block">
 
 ## `ADDDAYS()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 
-Добавляет к значению типа «**Дата и время**» в местном часовом поясе указанное число дней.
+Добавляет к значению типа «Дата и время» в местном часовом поясе указанное число дней.
 </td>
 </tr>
 <tr markdown="block">
@@ -126,7 +126,7 @@ ADDDAYS(DateTime, Number)
 </td>
 <td markdown="block">
 
-- `DateTime`: **дата и время**.
+- `DateTime`: дата и время.
 - `Number`: количество дней, которое требуется добавить к первому аргументу.
 </td>
 </tr>
@@ -165,15 +165,16 @@ ADDDAYS(DATE('2024-01-01T01:01:01'), 3)
 <th colspan="2" markdown="block">
 
 ## `ADDDAYSUTC()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 
-Добавляет указанное количество дней к значению типа «**Дата и время**» в формате UTC.
+Добавляет указанное количество дней к значению типа «Дата и время» в формате UTC.
 </td>
 </tr>
 <tr markdown="block">
@@ -194,7 +195,7 @@ ADDDAYSUTC(DateTime, Number)
 </td>
 <td markdown="block">
 
-- `DateTime`: **дата и время**.
+- `DateTime`: дата и время.
 - `Number`: количество дней, которое требуется добавить к первому аргументу.
 </td>
 </tr>
@@ -232,10 +233,11 @@ ADDDAYSUTC(DATE('2024-01-01T01:01:01'), 3)
 <th colspan="2" markdown="block">
 
 ## `ADDDUR()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -298,15 +300,16 @@ ADDDUR(DURATION('P1DT12H30M5S'), DURATION('P1DT12H30M5S'))
 <th colspan="2" markdown="block">
 
 ## `ADDHOURS()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 
-Добавляет указанное количество часов к значению типа «**Дата и время**».
+Добавляет указанное количество часов к значению типа «Дата и время».
 </td>
 </tr>
 <tr markdown="block">
@@ -326,7 +329,7 @@ ADDHOURS(DateTime, Number)
 </td>
 <td markdown="block">
 
-- `DateTime`: **дата и время**.
+- `DateTime`: дата и время.
 - `Number`: количество часов, которое требуется добавить к первому аргументу.
 </td>
 </tr>
@@ -364,15 +367,16 @@ ADDHOURS(DATE('2024-01-01T01:01:01'), 3)
 <th colspan="2" markdown="block">
 
 ## `ADDHOURSUTC()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 
-Добавляет указанное количество часов к значению типа «**Дата и время**» в формате UTC.
+Добавляет указанное количество часов к значению типа «Дата и время» в формате UTC.
 </td>
 </tr>
 <tr markdown="block">
@@ -393,7 +397,7 @@ ADDHOURSUTC(DateTime, Number)
 </td>
 <td markdown="block">
 
-- `DateTime`: **дата и время**.
+- `DateTime`: дата и время.
 - `Number`: количество часов, которое требуется добавить к первому аргументу.
 </td>
 </tr>
@@ -431,15 +435,16 @@ ADDHOURSUTC(DATE('2024-01-01T01:01:01'), 3)
 <th colspan="2" markdown="block">
 
 ## `ADDLOC()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 
-Добавляет значение типа «**Длительность**» к значению типа «**Дата и время**» в местном часовом поясе.
+Добавляет значение типа «**Длительность**» к значению типа «Дата и время» в местном часовом поясе.
 </td>
 </tr>
 <tr markdown="block">
@@ -460,7 +465,7 @@ ADDLOC(DateTime, Duration)
 </td>
 <td markdown="block">
 
-- `DateTime`: **дата и время**.
+- `DateTime`: дата и время.
 - `Duration`: длительность, которую требуется добавить к первому аргументу.
 </td>
 </tr>
@@ -499,15 +504,16 @@ ADDLOC(DATE('2024-01-01T01:01:01'), DURATION('P1DT12H30M5S'))
 <th colspan="2" markdown="block">
 
 ## `ADDMINUTES()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 
-Добавляет указанное количество минут к значению типа «**Дата и время**» в местном часовом поясе.
+Добавляет указанное количество минут к значению типа «Дата и время» в местном часовом поясе.
 </td>
 </tr>
 <tr markdown="block">
@@ -528,7 +534,7 @@ ADDMINUTES(DateTime, Number)
 </td>
 <td markdown="block">
 
-- `DateTime`: **дата и время**.
+- `DateTime`: дата и время.
 - `Number`: количество минут, которое требуется добавить к первому аргументу.
 </td>
 </tr>
@@ -537,7 +543,7 @@ ADDMINUTES(DateTime, Number)
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -566,15 +572,16 @@ ADDMINUTES(DATE('2024-01-01T01:01:01'), 3)
 <th colspan="2" markdown="block">
 
 ## `ADDMINUTESUTC()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 
-Добавляет указанное количество минут к значению типа «**Дата и время**» в формате UTC.
+Добавляет указанное количество минут к значению типа «Дата и время» в формате UTC.
 </td>
 </tr>
 <tr markdown="block">
@@ -595,7 +602,7 @@ ADDMINUTESUTC(DateTime, Number)
 </td>
 <td markdown="block">
 
-- `DateTime`: **дата и время**.
+- `DateTime`: дата и время.
 - `Number`: количество минут, которое требуется добавить к первому аргументу.
 </td>
 </tr>
@@ -633,15 +640,16 @@ ADDMINUTESUTC(DATE('2024-01-01T01:01:01'), 3)
 <th colspan="2" markdown="block">
 
 ## `ADDMONTHS()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 
-Добавляет указанное количество месяцев к значению типа «**Дата и время**» в местном часовом поясе.
+Добавляет указанное количество месяцев к значению типа «Дата и время» в местном часовом поясе.
 </td>
 </tr>
 <tr markdown="block">
@@ -662,7 +670,7 @@ ADDMONTHS(DateTime, Number)
 </td>
 <td markdown="block">
 
-- `DateTime`: **дата и время**.
+- `DateTime`: дата и время.
 - `Number`: количество месяцев, которое требуется добавить к первому аргументу.
 </td>
 </tr>
@@ -700,15 +708,16 @@ ADDMONTHS(DATE('2024-01-01T01:01:01'), 3)
 <th colspan="2" markdown="block">
 
 ## `ADDMONTHSUTC()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 
-Добавляет указанное количество месяцев к значению типа «**Дата и время**» в формате UTC.
+Добавляет указанное количество месяцев к значению типа «Дата и время» в формате UTC.
 </td>
 </tr>
 <tr markdown="block">
@@ -729,7 +738,7 @@ ADDMONTHSUTC(DateTime, Number)
 </td>
 <td markdown="block">
 
-- `DateTime`: **дата и время**.
+- `DateTime`: дата и время.
 - `Number`: количество месяцев, которое требуется добавить к первому аргументу.
 </td>
 </tr>
@@ -767,15 +776,16 @@ ADDMONTHSUTC(DATE('2024-01-01T01:01:01'), 3)
 <th colspan="2" markdown="block">
 
 ## `ADDSECONDS()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 
-Добавляет указанное количество секунд к значению типа «**Дата и время**» в местном часовом поясе.
+Добавляет указанное количество секунд к значению типа «Дата и время» в местном часовом поясе.
 </td>
 </tr>
 <tr markdown="block">
@@ -796,7 +806,7 @@ ADDSECONDS(DateTime, Number)
 </td>
 <td markdown="block">
 
-- `DateTime`: **дата и время**.
+- `DateTime`: дата и время.
 - `Number`: количество секунд, которое требуется добавить к первому аргументу.
 </td>
 </tr>
@@ -834,15 +844,16 @@ ADDSECONDS(DATE('2024-01-01T01:01:01'), 3)
 <th colspan="2" markdown="block">
 
 ## `ADDSECONDSUTC()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 
-Добавляет указанное количество секунд к значению типа «**Дата и время**» в формате UTC.
+Добавляет указанное количество секунд к значению типа «Дата и время» в формате UTC.
 </td>
 </tr>
 <tr markdown="block">
@@ -862,7 +873,7 @@ ADDSECONDSUTC(DateTime, Number)
 </td>
 <td markdown="block">
 
-- `DateTime`: **дата и время**.
+- `DateTime`: дата и время.
 - `Number`: количество секунд, которое требуется добавить к первому аргументу.
 </td>
 </tr>
@@ -900,15 +911,16 @@ ADDSECONDSUTC(DATE('2024-01-01T01:01:01'), 3)
 <th colspan="2" markdown="block">
 
 ## `ADDUTC()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 
-Добавляет значение типа «**Длительность**» к значению типа «**Дата и время**» в формате UTC.
+Добавляет значение типа «**Длительность**» к значению типа «Дата и время» в формате UTC.
 </td>
 </tr>
 <tr markdown="block">
@@ -928,7 +940,7 @@ ADDUTC(DateTime, Duration)
 </td>
 <td markdown="block">
 
-- `DateTime`: **дата и время**.
+- `DateTime`: дата и время.
 - `Duration`: длительность, которую требуется добавить к первому аргументу.
 </td>
 </tr>
@@ -967,15 +979,16 @@ ADDUTC(DATE('2024-01-01T01:01:01'), DURATION('P1DT12H30M5S'))
 <th colspan="2" markdown="block">
 
 ## `ADDYEARS()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 
-Добавляет указанное количество лет к значению типа «**Дата и время**» в местном часовом поясе.
+Добавляет указанное количество лет к значению типа «Дата и время» в местном часовом поясе.
 </td>
 </tr>
 <tr markdown="block">
@@ -995,7 +1008,7 @@ ADDYEARS(DateTime, Number)
 </td>
 <td markdown="block">
 
-- `DateTime`: **дата и время**.
+- `DateTime`: дата и время.
 - `Number`: количество лет, которое требуется добавить к первому аргументу.
 
 </td>
@@ -1005,7 +1018,7 @@ ADDYEARS(DateTime, Number)
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -1034,14 +1047,15 @@ ADDYEARS(DATE('2024-01-01T01:01:01'), 3)
 <th colspan="2" markdown="block">
 
 ## `ADDYEARSUTC()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Добавляет указанное количество лет к значению типа «**Дата и время**» в формате UTC.
+Добавляет указанное количество лет к значению типа «Дата и время» в формате UTC.
 </td>
 </tr>
 <tr markdown="block">
@@ -1062,7 +1076,7 @@ ADDYEARSUTC(DateTime, Number)
 </td>
 <td markdown="block">
 
-- `DateTime`: **дата и время**.
+- `DateTime`: дата и время.
 - `Number`: количество лет, которое требуется добавить к первому аргументу.
 
 </td>
@@ -1072,7 +1086,7 @@ ADDYEARSUTC(DateTime, Number)
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -1101,10 +1115,11 @@ ADDYEARSUTC(DATE('2024-01-01T01:01:01'), 3)
 <th colspan="2" markdown="block">
 
 ## `ALL()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -1146,10 +1161,11 @@ ALL(list)
 <th colspan="2" markdown="block">
 
 ## `AND()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -1161,6 +1177,7 @@ ALL(list)
 **Синтаксис**
 </td>
 <td markdown="block">
+
 ``` cs
 AND(bool1, bool2)
 ```
@@ -1171,7 +1188,7 @@ AND(bool1, bool2)
 **Аргументы**
 </td>
 <td markdown="block">
-bool1, bool2: значение логического типа или выражение, результатом которого является значение логического типа.
+`bool1`, `bool2`: значение логического типа или выражение, результатом которого является значение логического типа.
 </td>
 </tr>
 <tr markdown="block">
@@ -1190,11 +1207,12 @@ bool1, bool2: значение логического типа или выраж
 <tr markdown="block">
 <th colspan="2" markdown="block">
 
-## `ANY()`
+## `ANY()` {: #any_not_empty }
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -1208,6 +1226,7 @@ bool1, bool2: значение логического типа или выраж
 **Синтаксис**
 </td>
 <td markdown="block">
+
 ```
 ANY(list), ANY((sequence))
 ```
@@ -1219,6 +1238,7 @@ ANY(list), ANY((sequence))
 **Пример**
 </td>
 <td markdown="block">
+
 ```
 ANY( from I in db->Tickets where i->product = ‘Data Monsoon’ select i->name)
 ```
@@ -1252,11 +1272,12 @@ ANY( from I in db->Tickets where i->product = ‘Data Monsoon’ select i->name)
 <tr markdown="block">
 <th colspan="2" markdown="block">
 
-## `ANY()`
+## `ANY()` {: #any_predicate }
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -1295,6 +1316,7 @@ ANY([(
 **Аргументы**
 </td>
 <td markdown="block">
+
 - `argument1`: запрос типа from where select, который возвращает последовательность элементов.
 - `argument2`: локальная переменная, используемая в запросе.
 - `argument3`: логическое утверждение об элементе последовательности, результатом которого является значение логического типа.
@@ -1320,7 +1342,7 @@ ANY([(
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -1332,6 +1354,7 @@ ANY([(
 **Синтаксис**
 </td>
 <td markdown="block">
+
 ```
 ASCENDING(list)
 ```
@@ -1358,6 +1381,7 @@ ASCENDING(list)
 **Пример**
 </td>
 <td markdown="block">
+
 ```
 ASCENDING('л', 'а', 'и')
 ```
@@ -1373,10 +1397,11 @@ ASCENDING('л', 'а', 'и')
 <th colspan="2" markdown="block">
 
 ## `AVERAGE()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -1396,7 +1421,7 @@ AVERAGE(argument1, argument2)
 **Аргументы**
 </td>
 <td markdown="block">
-argument1, `argument2`: число
+`argument1`, `argument2`: число
 </td>
 </tr>
 <tr markdown="block">
@@ -1420,12 +1445,12 @@ argument1, `argument2`: число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 
-Проверяет факт вхождения даты или длительности в заданный диапазон. Значения типа «**Дата и время**» должны быть в местном часовом поясе.
+Проверяет факт вхождения даты или длительности в заданный диапазон. Значения типа «Дата и время» должны быть в местном часовом поясе.
 </td>
 </tr>
 <tr markdown="block">
@@ -1486,15 +1511,16 @@ BETWEEN(DURATION("PT3H15M"), DURATION("PT3H1M"), DURATION("PT3H25M"))
 <th colspan="2" markdown="block">
 
 ## `BETWEENUTC()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 
-Проверяет факт вхождения даты или длительности в заданный диапазон. Значения типа «**Дата и время**» должны быть в формате UTC.
+Проверяет факт вхождения даты или длительности в заданный диапазон. Значения типа «Дата и время» должны быть в формате UTC.
 </td>
 </tr>
 <tr markdown="block">
@@ -1555,10 +1581,11 @@ BETWEENUTC(DATE("2023-01-15"), DATE("2024-08-15"), DATE("2024-08-15"))
 <th colspan="2" markdown="block">
 
 ## `BOOL()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -1617,10 +1644,11 @@ BOOL('TrUE')
 <th colspan="2" markdown="block">
 
 ## `CEILING()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -1679,15 +1707,16 @@ CEILING(4.1)
 <th colspan="2" markdown="block">
 
 ## `CENTURY()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 
-Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее веку указанной даты в местном часовом поясе.
+Принимает аргумент типа «Дата и время» и возвращает числовое значение, соответствующее веку указанной даты в местном часовом поясе.
 </td>
 </tr>
 <tr markdown="block">
@@ -1746,10 +1775,11 @@ CENTURY(DATE("2024-08-15T13:45:15"))
 <th colspan="2" markdown="block">
 
 ## `COMPARE()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -1816,10 +1846,11 @@ COMPARE(DURATION("PT3H15M"), DURATION("PT3H16M"))
 <th colspan="2" markdown="block">
 
 ## `CONCAT()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -1882,10 +1913,11 @@ CONCAT(LIST("Сумма доходов равна: ", "100000"))
 <th colspan="2" markdown="block">
 
 ## `CONTAINS()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -1944,14 +1976,15 @@ CONTAINS("Это срочная заявка.", "срочн")
 <th colspan="2" markdown="block">
 
 ## `CONVERTTIMEZONE()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Переводит значение типа «**Дата и время**» из локального часового пояса в заданный часовой пояс в формате IANA.
+Переводит значение типа «Дата и время» из локального часового пояса в заданный часовой пояс в формате IANA.
 </td>
 </tr>
 <tr markdown="block">
@@ -2008,10 +2041,11 @@ CONTAINS("Это срочная заявка.", "срочн")
 <th colspan="2" markdown="block">
 
 ## `COUNT()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -2051,10 +2085,11 @@ COUNT(argument1)
 <th colspan="2" markdown="block">
 
 ## `DATETIMEFROMSECONDS()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -2082,7 +2117,7 @@ DATETIMEFROMSECONDS(argument1)
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 </tbody>
@@ -2094,10 +2129,11 @@ DATETIMEFROMSECONDS(argument1)
 <th colspan="2" markdown="block">
 
 ## `DATETIMEINSECONDS()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -2117,7 +2153,7 @@ DATETIMEINSECONDS(argument1)
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -2137,14 +2173,15 @@ DATETIMEINSECONDS(argument1)
 <th colspan="2" markdown="block">
 
 ## `DAY()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее дню месяца указанной даты в местном часовом поясе.
+Принимает аргумент типа «Дата и время» и возвращает числовое значение, соответствующее дню месяца указанной даты в местном часовом поясе.
 </td>
 </tr>
 <tr markdown="block">
@@ -2160,7 +2197,7 @@ DATETIMEINSECONDS(argument1)
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -2180,14 +2217,15 @@ DATETIMEINSECONDS(argument1)
 <th colspan="2" markdown="block">
 
 ## `DAYTZ()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее дню месяца указанной даты в заданном часовом поясе. Идентификатор часового пояса должен быть задан в формате базы данных часовых поясов IANA.
+Принимает аргумент типа «Дата и время» и возвращает числовое значение, соответствующее дню месяца указанной даты в заданном часовом поясе. Идентификатор часового пояса должен быть задан в формате базы данных часовых поясов IANA.
 </td>
 </tr>
 <tr markdown="block">
@@ -2203,7 +2241,7 @@ DATETIMEINSECONDS(argument1)
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 `argument2`: строка
 </td>
 </tr>
@@ -2224,10 +2262,11 @@ DATETIMEINSECONDS(argument1)
 <th colspan="2" markdown="block">
 
 ## `DECIMAL()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -2286,10 +2325,11 @@ DECIMAL("10,5")
 <th colspan="2" markdown="block">
 
 ## `DIVIDE()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -2309,8 +2349,7 @@ DECIMAL("10,5")
 **Аргументы**
 </td>
 <td markdown="block">
-argument1 (делимое): число
-argument2 (делитель): число
+`argument1`: число; `argument2`: число
 </td>
 </tr>
 <tr markdown="block">
@@ -2330,10 +2369,11 @@ argument2 (делитель): число
 <th colspan="2" markdown="block">
 
 ## `DURATIONFROMSECONDS()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -2373,10 +2413,11 @@ argument2 (делитель): число
 <th colspan="2" markdown="block">
 
 ## `DURATIONINSECONDS()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -2416,10 +2457,11 @@ argument2 (делитель): число
 <th colspan="2" markdown="block">
 
 ## `EMPTY()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -2461,14 +2503,15 @@ argument2 (делитель): число
 <th colspan="2" markdown="block">
 
 ## `ENDOFDAY()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает дату и время окончания дня, в пределах которого находится значение аргумента.
+Принимает аргумент типа «Дата и время» и возвращает дату и время окончания дня, в пределах которого находится значение аргумента.
 </td>
 </tr>
 <tr markdown="block">
@@ -2484,7 +2527,7 @@ argument2 (делитель): число
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -2492,7 +2535,7 @@ argument2 (делитель): число
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 </tbody>
@@ -2504,14 +2547,15 @@ argument2 (делитель): число
 <th colspan="2" markdown="block">
 
 ## `ENDOFMONTH()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает дату и время окончания месяца, в пределах которого находится значение аргумента.
+Принимает аргумент типа «Дата и время» и возвращает дату и время окончания месяца, в пределах которого находится значение аргумента.
 </td>
 </tr>
 <tr markdown="block">
@@ -2527,7 +2571,7 @@ argument2 (делитель): число
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -2535,7 +2579,7 @@ argument2 (делитель): число
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 </tbody>
@@ -2547,14 +2591,15 @@ argument2 (делитель): число
 <th colspan="2" markdown="block">
 
 ## `ENDOFQUARTER()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает дату и время окончания квартала, в пределах которого находится значение аргумента.
+Принимает аргумент типа «Дата и время» и возвращает дату и время окончания квартала, в пределах которого находится значение аргумента.
 </td>
 </tr>
 <tr markdown="block">
@@ -2570,7 +2615,7 @@ argument2 (делитель): число
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -2578,7 +2623,7 @@ argument2 (делитель): число
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 </tbody>
@@ -2590,14 +2635,15 @@ argument2 (делитель): число
 <th colspan="2" markdown="block">
 
 ## `ENDOFWEEK()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает дату и время окончания недели, в пределах которого находится значение аргумента.
+Принимает аргумент типа «Дата и время» и возвращает дату и время окончания недели, в пределах которого находится значение аргумента.
 </td>
 </tr>
 <tr markdown="block">
@@ -2613,7 +2659,7 @@ argument2 (делитель): число
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -2621,7 +2667,7 @@ argument2 (делитель): число
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 </tbody>
@@ -2633,14 +2679,15 @@ argument2 (делитель): число
 <th colspan="2" markdown="block">
 
 ## `ENDOFYEAR()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает дату и время окончания года, в пределах которого находится значение аргумента.
+Принимает аргумент типа «Дата и время» и возвращает дату и время окончания года, в пределах которого находится значение аргумента.
 </td>
 </tr>
 <tr markdown="block">
@@ -2656,7 +2703,7 @@ ENDOFYEAR(argument1)
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -2664,7 +2711,7 @@ ENDOFYEAR(argument1)
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 </tbody>
@@ -2676,10 +2723,11 @@ ENDOFYEAR(argument1)
 <th colspan="2" markdown="block">
 
 ## `ENDSWITH()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -2699,7 +2747,7 @@ ENDSWITH(argument1, argument2)
 **Аргументы**
 </td>
 <td markdown="block">
-argument1, `argument2`: строка
+`argument1`, `argument2`: строка
 </td>
 </tr>
 <tr markdown="block">
@@ -2719,10 +2767,11 @@ argument1, `argument2`: строка
 <th colspan="2" markdown="block">
 
 ## `ENUMVALUE()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -2778,10 +2827,11 @@ argument1, `argument2`: строка
 <th colspan="2" markdown="block">
 
 ## `EQUALS()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -2801,7 +2851,7 @@ EQUALS()
 **Аргументы**
 </td>
 <td markdown="block">
-argument1, `argument2`: значение любого типа
+`argument1`, `argument2`: значение любого типа
 </td>
 </tr>
 <tr markdown="block">
@@ -2821,14 +2871,14 @@ argument1, `argument2`: значение любого типа
 <th colspan="2" markdown="block">
 
 ## `FIRST()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-
 Возвращает первый элемент из списка. При отсутствии элементов в списке FIRST() возвращает пустое значение.
 </td>
 </tr>
@@ -2841,6 +2891,7 @@ argument1, `argument2`: значение любого типа
 ``` cs
 FIRST(List)
 ```
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2850,6 +2901,7 @@ FIRST(List)
 <td markdown="block">
 
 - `List` — список значений.
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2882,10 +2934,11 @@ FIRST((from i in db->music where i>album == ‘Whale Meditation’ select i->son
 <th colspan="2" markdown="block">
 
 ## `FLOOR()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -2925,10 +2978,11 @@ FLOOR(argument1)
 <th colspan="2" markdown="block">
 
 ## `FORMAT()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -2940,9 +2994,9 @@ FLOOR(argument1)
 **Синтаксис**
 </td>
 <td markdown="block">
-FORMAT(строка задания формата, LIST(argument0, argument1, ..., argument N))
+FORMAT(строка задания формата, LIST(argument0, argument1, ..., argumentN))
 Формат для argument0 задается частью строки, обозначенной как {0}. Формат для argument1 определяется частью строки {1} и так далее.
-Аргументы должны быть записаны в следующем виде: LIST(argument0, argument1, ..., argument N).
+Аргументы должны быть записаны в следующем виде: LIST(argument0, argument1, ..., argumentN).
 Также возможно использование функции FORMAT() для конкатенации строк. Например, FORMAT("{0}, {1}", LIST($title,$assignee)).
 </td>
 </tr>
@@ -2952,7 +3006,7 @@ FORMAT(строка задания формата, LIST(argument0, argument1, ..
 </td>
 <td markdown="block">
 строка задания формата: строка
-argument0, argument1, ..., argument N: значения любого типа.
+`argument0`, `argument1`, ..., `argumentN`: значения любого типа.
 </td>
 </tr>
 <tr markdown="block">
@@ -2972,10 +3026,11 @@ argument0, argument1, ..., argument N: значения любого типа.
 <th colspan="2" markdown="block">
 
 ## `GREATER()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -2995,7 +3050,7 @@ GREATER(argument1, argument2)
 **Аргументы**
 </td>
 <td markdown="block">
-argument1, `argument2`: значение логического типа, типа «Число», строка или **дата и время**.
+`argument1`, `argument2`: значение логического типа, типа «Число», строка или дата и время.
 </td>
 </tr>
 <tr markdown="block">
@@ -3015,10 +3070,11 @@ argument1, `argument2`: значение логического типа, тип
 <th colspan="2" markdown="block">
 
 ## `GREATEREQ()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -3038,7 +3094,7 @@ GREATEREQ(argument1, argument2)
 **Аргументы**
 </td>
 <td markdown="block">
-argument1, `argument2`: значение логического типа, типа «Число», строка или **дата и время**.
+`argument1`, `argument2`: значение логического типа, типа «Число», строка или дата и время.
 </td>
 </tr>
 <tr markdown="block">
@@ -3058,14 +3114,15 @@ argument1, `argument2`: значение логического типа, тип
 <th colspan="2" markdown="block">
 
 ## `HOUR()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее часу указанной даты в местном часовом поясе.
+Принимает аргумент типа «Дата и время» и возвращает числовое значение, соответствующее часу указанной даты в местном часовом поясе.
 </td>
 </tr>
 <tr markdown="block">
@@ -3081,7 +3138,7 @@ argument1, `argument2`: значение логического типа, тип
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -3101,14 +3158,15 @@ argument1, `argument2`: значение логического типа, тип
 <th colspan="2" markdown="block">
 
 ## `HOURTZ()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее часу указанной даты в заданном часовом поясе. Идентификатор часового пояса должен быть задан в формате базы данных часовых поясов IANA.
+Принимает аргумент типа «Дата и время» и возвращает числовое значение, соответствующее часу указанной даты в заданном часовом поясе. Идентификатор часового пояса должен быть задан в формате базы данных часовых поясов IANA.
 </td>
 </tr>
 <tr markdown="block">
@@ -3124,7 +3182,8 @@ argument1, `argument2`: значение логического типа, тип
 **Аргументы**
 </td>
 <td markdown="block">
-- `argument1`: **дата и время**
+
+- `argument1`: дата и время
 ` `argument2`: строка
 </td>
 </tr>
@@ -3145,10 +3204,11 @@ argument1, `argument2`: значение логического типа, тип
 <th colspan="2" markdown="block">
 
 ## `ID()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -3198,10 +3258,11 @@ ID объекта
 <th colspan="2" markdown="block">
 
 ## `IF()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -3222,7 +3283,7 @@ IF(argument1, argumen2, argument3)
 </td>
 <td markdown="block">
 `argument1`: значение логического типа или выражение, результатом которого является значение логического типа.
-argument2, `argument3`: значение любого типа или выражение, результатом которого является значение любого типа.
+`argument2`, `argument3`: значение любого типа или выражение, результатом которого является значение любого типа.
 </td>
 </tr>
 <tr markdown="block">
@@ -3230,7 +3291,7 @@ argument2, `argument3`: значение любого типа или выраж
 **Результат**
 </td>
 <td markdown="block">
-Тип возвращаемого значения тот же, что у аргументов argument2 и argument3
+Тип возвращаемого значения тот же, что у аргументов `argument2` и `argument3`
 </td>
 </tr>
 </tbody>
@@ -3242,10 +3303,11 @@ argument2, `argument3`: значение любого типа или выраж
 <th colspan="2" markdown="block">
 
 ## `INDEXOF()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -3257,6 +3319,7 @@ argument2, `argument3`: значение любого типа или выраж
 **Синтаксис**
 </td>
 <td markdown="block">
+
 ``` cs
 INDEXOF(argument1, argument2, [опциональный argument3])
 ```
@@ -3269,7 +3332,7 @@ INDEXOF(argument1, argument2, [опциональный argument3])
 <td markdown="block">
 `argument1`: исходная строка,
 `argument2`: искомая строка,
-argument3 (опционально): номер позиции, от которой производится отсчет
+`argument3` (опционально): номер позиции, от которой производится отсчет
 </td>
 </tr>
 <tr markdown="block">
@@ -3289,10 +3352,11 @@ argument3 (опционально): номер позиции, от которо
 <th colspan="2" markdown="block">
 
 ## `INSECONDS()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -3313,7 +3377,7 @@ INSECONDS(argument1)
 </td>
 <td markdown="block">
 `argument1`: длительность
-argument 1: число
+`argument1`: число
 </td>
 </tr>
 <tr markdown="block">
@@ -3334,14 +3398,15 @@ argument 1: число
 <th colspan="2" markdown="block">
 
 ## `ISOFORMAT()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Преобразует значение типа «**Дата и время**» в формат ISO.
+Преобразует значение типа «Дата и время» в формат ISO.
 </td>
 </tr>
 <tr markdown="block">
@@ -3357,7 +3422,7 @@ argument 1: число
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -3377,10 +3442,11 @@ argument 1: число
 <th colspan="2" markdown="block">
 
 ## `ISTODAY()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -3392,7 +3458,7 @@ argument 1: число
 **Синтаксис**
 </td>
 <td markdown="block">
-`ISTODAY(аргумент1)`
+`ISTODAY(argument1)`
 </td>
 </tr>
 <tr markdown="block">
@@ -3400,7 +3466,7 @@ argument 1: число
 **Аргументы**
 </td>
 <td markdown="block">
-аргумент1: **дата и время**
+`argument1`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -3420,10 +3486,11 @@ argument 1: число
 <th colspan="2" markdown="block">
 
 ## `JOIN()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -3435,7 +3502,7 @@ argument 1: число
 **Синтаксис**
 </td>
 <td markdown="block">
-`JOIN(argument1, list(argument2, argument3,.. argument N))`
+`JOIN(argument1, list(argument2, argument3,.. argumentN))`
 </td>
 </tr>
 <tr markdown="block">
@@ -3444,7 +3511,7 @@ argument 1: число
 </td>
 <td markdown="block">
 `argument1`: разделитель объединяемых строк,
-argument2, argument3, ..., argument N (в функции list): объединяемые строки
+`argument2`, `argument3`, ..., `argumentN` (в функции `LIST()`): объединяемые строки
 </td>
 </tr>
 <tr markdown="block">
@@ -3464,10 +3531,11 @@ argument2, argument3, ..., argument N (в функции list): объединя
 <th colspan="2" markdown="block">
 
 ## `LENGTH()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -3507,10 +3575,11 @@ argument2, argument3, ..., argument N (в функции list): объединя
 <th colspan="2" markdown="block">
 
 ## `LESS()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -3522,7 +3591,10 @@ argument2, argument3, ..., argument N (в функции list): объединя
 **Синтаксис**
 </td>
 <td markdown="block">
-`LESS(argument1, argument2)`
+
+``` cs
+LESS(argument1, argument2)
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3530,7 +3602,7 @@ argument2, argument3, ..., argument N (в функции list): объединя
 **Аргументы**
 </td>
 <td markdown="block">
-argument1, `argument2`: значение логического типа, число, строка или **дата и время**.
+`argument1`, `argument2`: значение логического типа, типа «Число», строка или дата и время.
 </td>
 </tr>
 <tr markdown="block">
@@ -3550,10 +3622,11 @@ argument1, `argument2`: значение логического типа, чис
 <th colspan="2" markdown="block">
 
 ## `LESSEQ()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -3573,7 +3646,7 @@ argument1, `argument2`: значение логического типа, чис
 **Аргументы**
 </td>
 <td markdown="block">
-argument1, `argument2`: значение логического типа, число, строка или **дата и время**..
+`argument1`, `argument2`: значение логического типа, число, строка или дата и время.
 </td>
 </tr>
 <tr markdown="block">
@@ -3593,10 +3666,11 @@ argument1, `argument2`: значение логического типа, чис
 <th colspan="2" markdown="block">
 
 ## `LIST()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -3608,8 +3682,9 @@ argument1, `argument2`: значение логического типа, чис
 **Синтаксис**
 </td>
 <td markdown="block">
+
 ``` cs
-LIST(argument1, …, argument N)
+LIST(argument1, …, argumentN)
 ```
 </td>
 </tr>
@@ -3618,7 +3693,7 @@ LIST(argument1, …, argument N)
 **Аргументы**
 </td>
 <td markdown="block">
-argument1, …, argument N: значения одного типа
+`argument1`, …, `argumentN`: значения одного типа
 </td>
 </tr>
 <tr markdown="block">
@@ -3638,10 +3713,11 @@ argument1, …, argument N: значения одного типа
 <th colspan="2" markdown="block">
 
 ## `MAKEDATETIME()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -3664,9 +3740,9 @@ MAKEDATETIME(argument1, argument2, argument3, argument4, argument5, argument6)
 `argument1`: числовое значение, соответствующее году.
 `argument2`: числовое значение, соответствующее месяцу.
 `argument3`: числовое значение, соответствующее дню.
-argument4: числовое значение, соответствующее часу.
-argument5: числовое значение, соответствующее минутам.
-argument6: числовое значение, соответствующее секундам.
+`argument4`: числовое значение, соответствующее часу.
+`argument5`: числовое значение, соответствующее минутам.
+`argument6`: числовое значение, соответствующее секундам.
 </td>
 </tr>
 <tr markdown="block">
@@ -3674,7 +3750,7 @@ argument6: числовое значение, соответствующее с�
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 </tbody>
@@ -3686,10 +3762,11 @@ argument6: числовое значение, соответствующее с�
 <th colspan="2" markdown="block">
 
 ## `MAKEDATETIMETZ()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -3709,13 +3786,13 @@ MAKEDATETIMETZ(argument1, argument2, argument3, argument4, argument5, argument6,
 **Аргументы**
 </td>
 <td markdown="block">
-аргумент1: числовое значение, соответствующее году.
-аргумент1: числовое значение, соответствующее месяцу.
-аргумент3: числовое значение, соответствующее дню.
-аргумент4: числовое значение, соответствующее часу.
-аргумент5: числовое значение, соответствующее минутам.
-аргумент6: числовое значение, соответствующее секундам.
-аргумент7: строка, соответствующая идентификатору часового пояса
+`argument1`: числовое значение, соответствующее году.
+`argument2`: числовое значение, соответствующее месяцу.
+`argument3`: числовое значение, соответствующее дню.
+`argument4`: числовое значение, соответствующее часу.
+`argument5`: числовое значение, соответствующее минутам.
+`argument6`: числовое значение, соответствующее секундам.
+`argument7`: строка, соответствующая идентификатору часового пояса
 </td>
 </tr>
 <tr markdown="block">
@@ -3723,7 +3800,7 @@ MAKEDATETIMETZ(argument1, argument2, argument3, argument4, argument5, argument6,
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 </tbody>
@@ -3735,10 +3812,11 @@ MAKEDATETIMETZ(argument1, argument2, argument3, argument4, argument5, argument6,
 <th colspan="2" markdown="block">
 
 ## `MATCHES()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -3779,10 +3857,11 @@ MATCHES(argument1, argument2)
 <th colspan="2" markdown="block">
 
 ## `MAX()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -3802,7 +3881,7 @@ MAX(argument1)
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: список, состоящий из значений типа «Число», длительность или **дата и время**.
+`argument1`: список, состоящий из значений типа «Число», длительность или дата и время.
 </td>
 </tr>
 <tr markdown="block">
@@ -3822,10 +3901,11 @@ MAX(argument1)
 <th colspan="2" markdown="block">
 
 ## `MIN()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -3845,7 +3925,7 @@ MIN(argument1)
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: список, состоящий из значений типа «Число», длительность или **дата и время**.
+`argument1`: список, состоящий из значений типа «Число», длительность или дата и время.
 </td>
 </tr>
 <tr markdown="block">
@@ -3865,14 +3945,15 @@ MIN(argument1)
 <th colspan="2" markdown="block">
 
 ## `MINUTE()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее минуте указанной даты в местном часовом поясе.
+Принимает аргумент типа «Дата и время» и возвращает числовое значение, соответствующее минуте указанной даты в местном часовом поясе.
 </td>
 </tr>
 <tr markdown="block">
@@ -3888,7 +3969,7 @@ MINUTE(argument1)
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -3908,14 +3989,15 @@ MINUTE(argument1)
 <th colspan="2" markdown="block">
 
 ## `MINUTETZ()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее минуте указанной даты в заданном часовом поясе. Идентификатор часового пояса должен быть задан в формате базы данных часовых поясов IANA.
+Принимает аргумент типа «Дата и время» и возвращает числовое значение, соответствующее минуте указанной даты в заданном часовом поясе. Идентификатор часового пояса должен быть задан в формате базы данных часовых поясов IANA.
 </td>
 </tr>
 <tr markdown="block">
@@ -3931,7 +4013,7 @@ MINUTETZ(argument1, argument2)
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 `argument2`: строка
 </td>
 </tr>
@@ -3952,14 +4034,15 @@ MINUTETZ(argument1, argument2)
 <th colspan="2" markdown="block">
 
 ## `MONTH()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее месяцу указанной даты в местном часовом поясе.
+Принимает аргумент типа «Дата и время» и возвращает числовое значение, соответствующее месяцу указанной даты в местном часовом поясе.
 </td>
 </tr>
 <tr markdown="block">
@@ -3975,7 +4058,7 @@ MONTH(argument1)
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -3995,14 +4078,15 @@ MONTH(argument1)
 <th colspan="2" markdown="block">
 
 ## `MONTHTZ()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее месяцу указанной даты в заданном часовом поясе. Идентификатор часового пояса должен быть задан в формате базы данных часовых поясов IANA.
+Принимает аргумент типа «Дата и время» и возвращает числовое значение, соответствующее месяцу указанной даты в заданном часовом поясе. Идентификатор часового пояса должен быть задан в формате базы данных часовых поясов IANA.
 </td>
 </tr>
 <tr markdown="block">
@@ -4018,7 +4102,7 @@ MONTHTZ(argument1, argument2)
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 `argument2`: строка
 </td>
 </tr>
@@ -4039,10 +4123,11 @@ MONTHTZ(argument1, argument2)
 <th colspan="2" markdown="block">
 
 ## `NOT()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -4082,10 +4167,11 @@ NOT(argument1)
 <th colspan="2" markdown="block">
 
 ## `NOTEQUALS()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -4105,7 +4191,7 @@ NOTEQUALS(argument1, argument2)
 **Аргументы**
 </td>
 <td markdown="block">
-argument1, `argument2`: значение любого типа
+`argument1`, `argument2`: значение любого типа
 </td>
 </tr>
 <tr markdown="block">
@@ -4125,10 +4211,11 @@ argument1, `argument2`: значение любого типа
 <th colspan="2" markdown="block">
 
 ## `NOTMATCHES()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -4169,10 +4256,11 @@ NOTMATCHES(argument1, argument2)
 <th colspan="2" markdown="block">
 
 ## `NOW()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -4212,10 +4300,11 @@ NOW()
 <th colspan="2" markdown="block">
 
 ## `OBJECT()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -4261,10 +4350,11 @@ ID записи
 <th colspan="2" markdown="block">
 
 ## `OR()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -4284,7 +4374,7 @@ OR(argument1, argument2)
 **Аргументы**
 </td>
 <td markdown="block">
-argument1, `argument2`: значение логического типа или выражение, результатом которого является значение логического типа.
+`argument1`, `argument2`: значение логического типа или выражение, результатом которого является значение логического типа.
 </td>
 </tr>
 <tr markdown="block">
@@ -4304,10 +4394,11 @@ argument1, `argument2`: значение логического типа или 
 <th colspan="2" markdown="block">
 
 ## `PRODUCT()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -4348,10 +4439,11 @@ PRODUCT(argument1, argument2)
 <th colspan="2" markdown="block">
 
 ## `QUOTIENT()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -4371,8 +4463,8 @@ QUOTIENT(argument1, argument2)
 **Аргументы**
 </td>
 <td markdown="block">
-argument1(делимое): число
-argument2(делитель): число
+`argument1`(делимое): число
+`argument2`(делитель): число
 </td>
 </tr>
 <tr markdown="block">
@@ -4392,6 +4484,7 @@ argument2(делитель): число
 <th colspan="2" markdown="block">
 
 ## `REGEXREPLACE()`
+
 </th>
 </tr>
 <tr markdown="block">
@@ -4451,10 +4544,11 @@ argument2(делитель): число
 <th colspan="2" markdown="block">
 
 ## `REMAINDER()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -4474,8 +4568,8 @@ argument2(делитель): число
 **Аргументы**
 </td>
 <td markdown="block">
-argument1(делимое): число
-argument2(делитель): число
+`argument1`(делимое): число
+`argument2`(делитель): число
 </td>
 </tr>
 <tr markdown="block">
@@ -4495,10 +4589,11 @@ argument2(делитель): число
 <th colspan="2" markdown="block">
 
 ## `REPLACE()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -4540,10 +4635,11 @@ argument2(делитель): число
 <th colspan="2" markdown="block">
 
 ## `ROUND()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -4583,14 +4679,15 @@ argument2(делитель): число
 <th colspan="2" markdown="block">
 
 ## `SECOND()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее секундам указанной даты в местном часовом поясе.
+Принимает аргумент типа «Дата и время» и возвращает числовое значение, соответствующее секундам указанной даты в местном часовом поясе.
 </td>
 </tr>
 <tr markdown="block">
@@ -4606,7 +4703,7 @@ argument2(делитель): число
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -4626,14 +4723,15 @@ argument2(делитель): число
 <th colspan="2" markdown="block">
 
 ## `SECONDTZ()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее секундам указанной даты в заданном часовом поясе. Идентификатор часового пояса должен быть задан в формате базы данных часовых поясов IANA.
+Принимает аргумент типа «Дата и время» и возвращает числовое значение, соответствующее секундам указанной даты в заданном часовом поясе. Идентификатор часового пояса должен быть задан в формате базы данных часовых поясов IANA.
 </td>
 </tr>
 <tr markdown="block">
@@ -4649,7 +4747,7 @@ argument2(делитель): число
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 `argument2`: строка
 </td>
 </tr>
@@ -4670,14 +4768,15 @@ argument2(делитель): число
 <th colspan="2" markdown="block">
 
 ## `STARTOFDAY()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает дату и время начала дня, в пределах которого находится значение аргумента.
+Принимает аргумент типа «Дата и время» и возвращает дату и время начала дня, в пределах которого находится значение аргумента.
 </td>
 </tr>
 <tr markdown="block">
@@ -4693,7 +4792,7 @@ argument2(делитель): число
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -4701,7 +4800,7 @@ argument2(делитель): число
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 </tbody>
@@ -4713,14 +4812,15 @@ argument2(делитель): число
 <th colspan="2" markdown="block">
 
 ## `STARTOFMONTH()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает дату и время начала месяца, в пределах которого находится значение аргумента.
+Принимает аргумент типа «Дата и время» и возвращает дату и время начала месяца, в пределах которого находится значение аргумента.
 </td>
 </tr>
 <tr markdown="block">
@@ -4736,7 +4836,7 @@ STARTOFMONTH(argument1)
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -4744,7 +4844,7 @@ STARTOFMONTH(argument1)
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 </tbody>
@@ -4756,14 +4856,15 @@ STARTOFMONTH(argument1)
 <th colspan="2" markdown="block">
 
 ## `STARTOFQUARTER()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает дату и время начала квартала, в пределах которого находится значение аргумента.
+Принимает аргумент типа «Дата и время» и возвращает дату и время начала квартала, в пределах которого находится значение аргумента.
 </td>
 </tr>
 <tr markdown="block">
@@ -4779,7 +4880,7 @@ STARTOFQUARTER(argument1)
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -4787,7 +4888,7 @@ STARTOFQUARTER(argument1)
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 </tbody>
@@ -4799,14 +4900,15 @@ STARTOFQUARTER(argument1)
 <th colspan="2" markdown="block">
 
 ## `STARTOFWEEK()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает дату и время начала недели, в пределах которой находится значение аргумента.
+Принимает аргумент типа «Дата и время» и возвращает дату и время начала недели, в пределах которой находится значение аргумента.
 </td>
 </tr>
 <tr markdown="block">
@@ -4822,7 +4924,7 @@ STARTOFQUARTER(argument1)
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -4830,7 +4932,7 @@ STARTOFQUARTER(argument1)
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 </tbody>
@@ -4842,14 +4944,15 @@ STARTOFQUARTER(argument1)
 <th colspan="2" markdown="block">
 
 ## `STARTOFYEAR()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает дату и время начала года, в пределах которой находится значение аргумента.
+Принимает аргумент типа «Дата и время» и возвращает дату и время начала года, в пределах которого находится значение аргумента.
 </td>
 </tr>
 <tr markdown="block">
@@ -4865,7 +4968,7 @@ STARTOFQUARTER(argument1)
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -4873,7 +4976,7 @@ STARTOFQUARTER(argument1)
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 </tbody>
@@ -4885,10 +4988,11 @@ STARTOFQUARTER(argument1)
 <th colspan="2" markdown="block">
 
 ## `STARTSWITH()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -4908,7 +5012,7 @@ STARTOFQUARTER(argument1)
 **Аргументы**
 </td>
 <td markdown="block">
-argument1, `argument2`: строка
+`argument1`, `argument2`: строка
 </td>
 </tr>
 <tr markdown="block">
@@ -4928,10 +5032,11 @@ argument1, `argument2`: строка
 <th colspan="2" markdown="block">
 
 ## `SUBSTRING()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -4953,7 +5058,7 @@ argument1, `argument2`: строка
 <td markdown="block">
 `argument1`: строка
 `argument2`: номер позиции подстроки (отсчитываемый от нуля)
-argument 3(опционально): количество символов в подстроке
+`argument3`(опционально): количество символов в подстроке
 </td>
 </tr>
 <tr markdown="block">
@@ -4973,10 +5078,11 @@ argument 3(опционально): количество символов в п�
 <th colspan="2" markdown="block">
 
 ## `SUBTRACT()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -4998,8 +5104,8 @@ argument 3(опционально): количество символов в п�
 <td markdown="block">
 `argument1`: число; `argument2`: число
 `argument1`: длительность; `argument2`: длительность
-`argument1`: **дата и время**; `argument2`: длительность.
-`argument1`: **дата и время**; `argument2`: **дата и время**
+`argument1`: дата и время; `argument2`: длительность.
+`argument1`: дата и время; `argument2`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -5009,7 +5115,7 @@ argument 3(опционально): количество символов в п�
 <td markdown="block">
 число
 длительность
-**дата и время**
+дата и время
 длительность
 </td>
 </tr>
@@ -5022,10 +5128,11 @@ argument 3(опционально): количество символов в п�
 <th colspan="2" markdown="block">
 
 ## `SUM()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -5065,10 +5172,11 @@ argument 3(опционально): количество символов в п�
 <th colspan="2" markdown="block">
 
 ## `TOLOWER()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -5108,10 +5216,11 @@ argument 3(опционально): количество символов в п�
 <th colspan="2" markdown="block">
 
 ## `TOUPPER()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -5151,10 +5260,11 @@ argument 3(опционально): количество символов в п�
 <th colspan="2" markdown="block">
 
 ## `USER()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -5194,15 +5304,16 @@ argument 3(опционально): количество символов в п�
 <th colspan="2" markdown="block">
 
 ## `VALUE()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 
-Принимает два аргумента: проверяемое выражение и значение по умолчанию. Возвращает значение первого аргумента, если оно не пустое и не равно NULL, в противном случае возвращает значение второго аргумента, если он есть.
+Принимает два аргумента: проверяемое выражение и значение по умолчанию. Возвращает значение первого аргумента, если оно не пустое и не равно `NULL`, в противном случае возвращает значение второго аргумента, если он есть.
 </td>
 </tr>
 <tr markdown="block">
@@ -5256,15 +5367,16 @@ VALUE($Amount, "Не заполнено поле Amount")
 <th colspan="2" markdown="block">
 
 ## `WORKDAYS()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 Возвращает дату на основании количества рабочих дней с определенной даты, с поправкой на праздники и фактические выходные дни.
-Если временная зона рабочего офиса отличается от зоны сервера {{ companyName }}, используйте функцию WORKDAYSTZ().
+Если часовой пояс рабочего офиса отличается от часового пояса сервера **{{ companyName }}**, используйте функцию WORKDAYSTZ().
 </td>
 </tr>
 <tr markdown="block">
@@ -5272,7 +5384,11 @@ VALUE($Amount, "Не заполнено поле Amount")
 **Синтаксис**
 </td>
 <td markdown="block">
-WORKDAYS(argument1, argument2, [опционально list (argument3, argument4, ..., argument M)])
+``` cs
+WORKDAYS(argument1, argument2,
+    [опционально LIST(holiday1, holiday2, …, holidayN)]
+    )
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -5280,9 +5396,9 @@ WORKDAYS(argument1, argument2, [опционально list (argument3, argument
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время** начала работы,
+`argument1`: дата и время начала работы,
 `argument2`: количество рабочих дней,
-argument3, argument4, …, argument M (в опциональной функции list): праздники и исключения из выходных дней, т. е. если в списке указан рабочий день, он считается праздником, и наоборот, если в списке выходной день, он считается рабочим.
+`holiday1`, `holiday2`, …, `holidayN` (в опциональной функции list): праздники и исключения из выходных дней, т. е. если в списке указан рабочий день, он считается праздником, и наоборот, если в списке выходной день, он считается рабочим.
 </td>
 </tr>
 <tr markdown="block">
@@ -5290,7 +5406,7 @@ argument3, argument4, …, argument M (в опциональной функци�
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 </tbody>
@@ -5302,10 +5418,11 @@ argument3, argument4, …, argument M (в опциональной функци�
 <th colspan="2" markdown="block">
 
 ## `WORKDAYSTZ()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -5317,7 +5434,11 @@ argument3, argument4, …, argument M (в опциональной функци�
 **Синтаксис**
 </td>
 <td markdown="block">
-WORKDAYSTZ(argument1, argument2, list (argument3, argument4, .., argument M), argument N)
+``` cs
+WORKDAYSTZ(argument1, argument2,
+    LIST(holiday1, holiday2, …, holidayN),
+    timeZone)
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -5325,10 +5446,11 @@ WORKDAYSTZ(argument1, argument2, list (argument3, argument4, .., argument M), ar
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время** начала работы
-`argument2`: количество рабочих дней
-argument3, argument4, …, argument M (в функции list): праздники и исключения из выходных дней, т. е. если в списке указан рабочий день, он считается праздником, и наоборот, если в списке выходной день, он считается рабочим
-argument N: временная зона рабочего офиса в формате olson db
+
+- `argument1`: дата и время начала работы
+- `argument2`: количество рабочих дней
+`holiday1`, `holiday2`, …, `holidayN` (в функции list): праздники и исключения из выходных дней, т. е. если в списке указан рабочий день, он считается праздником, и наоборот, если в списке выходной день, он считается рабочим
+- `timeZone`: часовой пояс рабочего офиса в формате `Olson DB`
 </td>
 </tr>
 <tr markdown="block">
@@ -5336,7 +5458,7 @@ argument N: временная зона рабочего офиса в форм�
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 </tbody>
@@ -5348,15 +5470,16 @@ argument N: временная зона рабочего офиса в форм�
 <th colspan="2" markdown="block">
 
 ## `WORKDAYSDURATION()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 Возвращает продолжительность работы между двумя датами, на основании предположения, что рабочий день начинается в 00:00 и длится 24 часа.
-Если временная зона рабочего офиса отличается от зоны сервера {{ companyName }}, используйте функцию WORKDAYSDURATIONTZ ().
+Если часовой пояс рабочего офиса отличается от часового пояса сервера **{{ companyName }}**, используйте функцию WORKDAYSDURATIONTZ ().
 </td>
 </tr>
 <tr markdown="block">
@@ -5364,8 +5487,10 @@ argument N: временная зона рабочего офиса в форм�
 **Синтаксис**
 </td>
 <td markdown="block">
-WORKDAYSDURATION(argument1, argument 2, [опционально list
-(argument3, argument4, …, argument M)])
+``` cs
+WORKDAYSDURATION(argument1, argument2,
+    [опционально LIST(holiday1, holiday2, …, holidayN)])
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -5373,9 +5498,10 @@ WORKDAYSDURATION(argument1, argument 2, [опционально list
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время** начала работы,
-`argument2`: **дата и время** окончания работы,
-argument3, argument4, …, argument M (в опциональной функции list): праздники и исключения из выходных дней, т. е. если в списке указан рабочий день, он считается праздником, и наоборот, если в списке выходной день, он считается рабочим.
+
+- `argument1`: дата и время начала работы,
+- `argument2`: дата и время окончания работы,
+- `holiday1`, `holiday2`, …, `holidayN` (в опциональной функции list): праздники и исключения из выходных дней, т. е. если в списке указан рабочий день, он считается праздником, и наоборот, если в списке выходной день, он считается рабочим.
 </td>
 </tr>
 <tr markdown="block">
@@ -5395,10 +5521,11 @@ argument3, argument4, …, argument M (в опциональной функци�
 <th colspan="2" markdown="block">
 
 ## `WORKDAYSDURATIONTZ()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -5410,8 +5537,11 @@ argument3, argument4, …, argument M (в опциональной функци�
 **Синтаксис**
 </td>
 <td markdown="block">
-WORKDAYSDURATIONTZ(argument1, argument2, list (argument3,
-Argument4, .., argument M), argument N)
+``` cs
+WORKDAYSDURATIONTZ(argument1, argument2,
+    LIST(argument3, Argument4, .., argumentM),
+    timeZone)
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -5419,10 +5549,11 @@ Argument4, .., argument M), argument N)
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время** начала работы,
-`argument2`: **дата и время** окончания работы,
-argument3, argument4, …, argument M (в функции list): праздники и исключения из выходных дней, т. е. если в списке указан рабочий день, он считается праздником, и наоборот, если в списке выходной день, он считается рабочим,
-argument N: временная зона рабочего офиса в формате olson db.
+
+- `argument1`: дата и время начала работы,
+- `argument2`: дата и время окончания работы,
+- `holiday1`, `holiday2`, …, `holidayN` (в функции list): праздники и исключения из выходных дней, т. е. если в списке указан рабочий день, он считается праздником, и наоборот, если в списке выходной день, он считается рабочим,
+- `timeZone`: часовой пояс рабочего офиса в формате `Olson DB`.
 </td>
 </tr>
 <tr markdown="block">
@@ -5442,15 +5573,17 @@ argument N: временная зона рабочего офиса в форм�
 <th colspan="2" markdown="block">
 
 ## `WORKHOURS()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 Возвращает дату и время на основании количества рабочих часов с определенного момента времени, с поправкой на праздники и фактические выходные дни.
-Если временная зона рабочего офиса отличается от зоны сервера {{ companyName }}, используйте функцию WORKHOURSTZ ().
+
+Если часовой пояс рабочего офиса отличается от часового пояса сервера **{{ companyName }}**, используйте функцию `WORKHOURSTZ ()`.
 </td>
 </tr>
 <tr markdown="block">
@@ -5458,7 +5591,10 @@ argument N: временная зона рабочего офиса в форм�
 **Синтаксис**
 </td>
 <td markdown="block">
-WORKHOURS(argument1, argument2, argument3, argument 4, [опционально list (argument5, argument6, .., argument M)])
+``` cs
+WORKHOURS(argument1, argument2, argument3, argument4,
+    [опционально LIST(argument5, argument6, .., argumentM)])
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -5466,11 +5602,12 @@ WORKHOURS(argument1, argument2, argument3, argument 4, [опционально l
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время** начала работы,
-`argument2`: количество рабочих часов,
-`argument3`: время начала рабочего дня,
-argument4: длительность рабочего дня (должна быть меньше разницы между 24 ч и временем начала рабочего дня),
-argument5, argument6, … argument M (в опциональной функции list): праздники и исключения из выходных дней, т. е. если в списке указан рабочий день, он считается праздником, и наоборот, если в списке выходной день, он считается рабочим.
+
+- `argument1`: дата и время начала работы,
+- `argument2`: количество рабочих часов,
+- `argument3`: время начала рабочего дня,
+- `argument4`: длительность рабочего дня (должна быть меньше разницы между 24 ч и временем начала рабочего дня),
+- `argument5`, `argument6`, … `argumentM` (в опциональной функции list): праздники и исключения из выходных дней, т. е. если в списке указан рабочий день, он считается праздником, и наоборот, если в списке выходной день, он считается рабочим.
 </td>
 </tr>
 <tr markdown="block">
@@ -5478,7 +5615,7 @@ argument5, argument6, … argument M (в опциональной функции
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 </tbody>
@@ -5490,15 +5627,17 @@ argument5, argument6, … argument M (в опциональной функции
 <th colspan="2" markdown="block">
 
 ## `WORKHOURSDURATION()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
 Возвращает продолжительность работы между двумя датами при условии, что рабочий день начинается в заданное время и имеет определенную длительность.
-Если временная зона рабочего офиса отличается от зоны сервера {{ companyName }}, используйте функцию WORKHOURSDURATIONTZ ().
+
+Если часовой пояс рабочего офиса отличается от часового пояса сервера **{{ companyName }}**, используйте функцию `WORKHOURSDURATIONTZ()`.
 </td>
 </tr>
 <tr markdown="block">
@@ -5506,7 +5645,11 @@ argument5, argument6, … argument M (в опциональной функции
 **Синтаксис**
 </td>
 <td markdown="block">
-WORKHOURSDURATION(argument1, argument2, argument3, argument 4, [опционально list (argument5, argument6, .., argument M)])
+
+``` cs
+WORKHOURSDURATION(argument1, argument2, argument3, argument4,
+    [опционально LIST(argument5, argument6, .., argumentM)])
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -5514,11 +5657,12 @@ WORKHOURSDURATION(argument1, argument2, argument3, argument 4, [опционал
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время** начала работы
-`argument2`: **дата и время** окончания работы
-`argument3`: время начала рабочего дня
-argument4: длительность рабочего дня (должна быть меньше разницы между 24 ч и временем начала рабочего дня)
-argument5, argument6, .., argument M (в опциональной функции list): праздники и исключения из выходных дней, т. е. если в списке указан рабочий день, он считается праздником, и наоборот, если в списке выходной день, он считается рабочим.
+
+- `argument1`: дата и время начала работы
+- `argument2`: дата и время окончания работы
+- `argument3`: время начала рабочего дня
+- `argument4`: длительность рабочего дня (должна быть меньше разницы между 24 ч и временем начала рабочего дня)
+- `argument5`, `argument6`, .., `argumentM` (в опциональной функции `LIST()`): праздники и исключения из выходных дней, т. е. если в списке указан рабочий день, он считается праздником, и наоборот, если в списке выходной день, он считается рабочим.
 </td>
 </tr>
 <tr markdown="block">
@@ -5538,10 +5682,11 @@ argument5, argument6, .., argument M (в опциональной функции
 <th colspan="2" markdown="block">
 
 ## `WORKHOURSDURATIONTZ()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -5553,7 +5698,11 @@ argument5, argument6, .., argument M (в опциональной функции
 **Синтаксис**
 </td>
 <td markdown="block">
-WORKHOURSDURATIONTZ(argument1, argument2, argument3, argument4, list (argument5, argument6, .., argument M), argument N)
+
+``` cs
+WORKHOURSDURATIONTZ(argument1, argument2, argument3, argument4,
+    LIST(argument5, argument6, .., argumentM), timeZone)
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -5561,12 +5710,13 @@ WORKHOURSDURATIONTZ(argument1, argument2, argument3, argument4, list (argument5,
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время** начала работы
-`argument2`: **дата и время** окончания работы
-`argument3`: время начала рабочего дня
-argument4: длительность рабочего дня (должна быть меньше разницы между 24 ч и временем начала рабочего дня)
-argument5, argument6, .., argument M(в функции list): праздники и исключения из выходных дней, т. е. если в списке указан рабочий день, он считается праздником, и наоборот, если в списке выходной день, он считается рабочим
-argument N: временная зона рабочего офиса в формате olson db.
+
+- `argument1`: дата и время начала работы
+- `argument2`: дата и время окончания работы
+- `argument3`: время начала рабочего дня
+- `argument4`: длительность рабочего дня (должна быть меньше разницы между 24 ч и временем начала рабочего дня)
+- `argument5`, `argument6`, .., `argumentM`(в функции list): праздники и исключения из выходных дней, т. е. если в списке указан рабочий день, он считается праздником, и наоборот, если в списке выходной день, он считается рабочим
+- `timeZone`: часовой пояс рабочего офиса в формате `Olson DB`.
 </td>
 </tr>
 <tr markdown="block">
@@ -5586,10 +5736,11 @@ argument N: временная зона рабочего офиса в форм�
 <th colspan="2" markdown="block">
 
 ## `WORKHOURSTZ()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
@@ -5601,7 +5752,10 @@ argument N: временная зона рабочего офиса в форм�
 **Синтаксис**
 </td>
 <td markdown="block">
-WORKHOURSTZ(argument1, argument2, argument3, argument4, list(argument5, argument6, .., argument M), argument N)
+``` cs
+WORKHOURSTZ(argument1, argument2, argument3, argument4,
+    list(argument5, argument6, .., argumentM), timeZone)
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -5609,12 +5763,13 @@ WORKHOURSTZ(argument1, argument2, argument3, argument4, list(argument5, argument
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время** начала работы,
-`argument2`: количество рабочих часов,
-`argument3`: время начала рабочего дня,
-argument4: длительность рабочего дня (должна быть меньше разницы между 24 ч и временем начала рабочего дня),
-argument5, argument6, argument M (в функции list): праздники и исключения из выходных дней, т. е. если всписке указан рабочий день, он считается праздником, и наоборот, если в списке выходной день, он считается рабочим,
-argument N: временная зона рабочего офиса в формате olson db.
+
+- `argument1`: дата и время начала работы,
+- `argument2`: количество рабочих часов,
+- `argument3`: время начала рабочего дня,
+- `argument4`: длительность рабочего дня (должна быть меньше разницы между 24 ч и временем начала рабочего дня),
+- `argument5`, `argument6`, `argumentM` (в функции list): праздники и исключения из выходных дней, т. е. если всписке указан рабочий день, он считается праздником, и наоборот, если в списке выходной день, он считается рабочим,
+- `timeZone`: часовой пояс рабочего офиса в формате `Olson DB`.
 </td>
 </tr>
 <tr markdown="block">
@@ -5622,7 +5777,7 @@ argument N: временная зона рабочего офиса в форм�
 **Результат**
 </td>
 <td markdown="block">
-**дата и время**
+Дата и время
 </td>
 </tr>
 </tbody>
@@ -5634,14 +5789,15 @@ argument N: временная зона рабочего офиса в форм�
 <th colspan="2" markdown="block">
 
 ## `YEAR()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее году указанной даты в местном часовом поясе.
+Принимает аргумент типа «Дата и время» и возвращает числовое значение, соответствующее году указанной даты в местном часовом поясе.
 </td>
 </tr>
 <tr markdown="block">
@@ -5657,7 +5813,7 @@ argument N: временная зона рабочего офиса в форм�
 **Аргументы**
 </td>
 <td markdown="block">
-`argument1`: **дата и время**
+`argument1`: дата и время
 </td>
 </tr>
 <tr markdown="block">
@@ -5677,14 +5833,16 @@ argument N: временная зона рабочего офиса в форм�
 <th colspan="2" markdown="block">
 
 ## `YEARTZ()`
+
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block" style="width:100px">
+<td markdown="block" class="functionDescriptionColumn">
 **Описание**
 </td>
 <td markdown="block">
-Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее году указанной даты в заданном часовом поясе.
+Принимает аргумент типа «Дата и время» и возвращает числовое значение, соответствующее году указанной даты в заданном часовом поясе.
+
 Идентификатор часового пояса должен быть задан в формате базы данных часовых поясов IANA.
 </td>
 </tr>
@@ -5701,8 +5859,9 @@ argument N: временная зона рабочего офиса в форм�
 **Аргументы**
 </td>
 <td markdown="block">
-argument: **дата и время**
-argument: строка
+
+- `argument1`: дата и время
+- `argument2`: строка
 </td>
 </tr>
 <tr markdown="block">

@@ -456,7 +456,7 @@ ADDHOURSUTC(DATE('2024-01-01T01:01:01'), 3)
 <td markdown="block">
 
 ``` cs
-ADDLOC(DateTime, Duration)
+ADDLOC(dateTime, duration)
 ```
 
 </td>
@@ -933,7 +933,7 @@ ADDSECONDSUTC(DATE('2024-01-01T01:01:01'), 3)
 <td markdown="block">
 
 ``` cs
-ADDUTC(DateTime, Duration)
+ADDUTC(dateTime, duration)
 ```
 
 </td>
@@ -1128,7 +1128,7 @@ ADDYEARSUTC(DATE('2024-01-01T01:01:01'), 3)
 **Описание**
 </td>
 <td markdown="block">
-Берет список логических переменных и возвращает значение **Истина**, если все логические переменные принимают значение **Истина**.
+Берет список логических переменных и возвращает значение `true`, если все логические переменные принимают значение `true`.
 </td>
 </tr>
 <tr markdown="block">
@@ -1236,19 +1236,8 @@ AND(bool1, bool2)
 ```
 ANY(list), ANY((sequence))
 ```
-Для задания последовательности используйте стандартный запрос `from where select`.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Пример**
-</td>
-<td markdown="block">
 
-```
-ANY( from I in db->Tickets where i->product = ‘Data Monsoon’ select i->name)
-```
-Данное выражение вернет значение Истина, если хотя бы один элемент имеет значение предиката product равным «Data Monsoon».
+Для задания последовательности используйте стандартный запрос `from where select`.
 </td>
 </tr>
 <tr markdown="block">
@@ -1268,6 +1257,20 @@ ANY( from I in db->Tickets where i->product = ‘Data Monsoon’ select i->name)
 </td>
 <td markdown="block">
 значение логического типа
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Пример**
+</td>
+<td markdown="block">
+
+```
+ANY( from I in db->Tickets where i->product = 'Data Monsoon' select i->name)
+```
+
+Возвращает значение `true`, если хотя бы один элемент имеет значение предиката `product` равным «`Data Monsoon`».
+
 </td>
 </tr>
 </tbody>
@@ -1299,24 +1302,7 @@ ANY( from I in db->Tickets where i->product = ‘Data Monsoon’ select i->name)
 `ANY([(argument1), argument2, argument3])`
 </td>
 </tr>
-<tr markdown="block">
-<td markdown="block">
-**Пример**
-</td>
-<td markdown="block">
 
-``` cs
-ANY([(
-        from I in db->Tickets where i->product==’Data Monsoon’ select i),
-        i,
-        i->NeedsQAHelp
-    ])
-```
-
-Данное выражение вернет значение Истина, если поступил хотя бы один запрос по продукту Data Monsoon, при обработке которого потребуется участие отдела QA.
-
-</td>
-</tr>
 <tr markdown="block">
 <td markdown="block">
 **Аргументы**
@@ -1334,6 +1320,24 @@ ANY([(
 </td>
 <td markdown="block">
 значение логического типа
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Пример**
+</td>
+<td markdown="block">
+
+``` cs
+ANY([(
+    from I in db->Tickets where i->product=='Data Monsoon' select i),
+    i,
+    i->NeedsQAHelp
+    ])
+```
+
+Возвращает значение `true`, если поступил хотя бы один запрос по продукту Data Monsoon, при обработке которого потребуется участие отдела QA.
+
 </td>
 </tr>
 </tbody>
@@ -1392,7 +1396,9 @@ ASCENDING(list)
 ```
 ASCENDING('л', 'а', 'и')
 ```
-Возвращает `(String:а String:и String:л)`
+
+Возвращает `(string:а string:и string:л)`
+
 </td>
 </tr>
 </tbody>
@@ -1420,7 +1426,7 @@ ASCENDING('л', 'а', 'и')
 **Синтаксис**
 </td>
 <td markdown="block">
-AVERAGE(argument1, argument2)
+AVERAGE(value1, value2)
 </td>
 </tr>
 <tr markdown="block">
@@ -1429,7 +1435,7 @@ AVERAGE(argument1, argument2)
 </td>
 <td markdown="block">
 
-`argument1`, `argument2`: число
+`value1`, `value2`: число
 </td>
 </tr>
 <tr markdown="block">
@@ -1468,7 +1474,7 @@ AVERAGE(argument1, argument2)
 <td markdown="block">
 
 ``` cs
-BETWEEN(Value, Min, Max)
+BETWEEN(value, min, max)
 ```
 
 </td>
@@ -1479,9 +1485,10 @@ BETWEEN(Value, Min, Max)
 </td>
 <td markdown="block">
 
-- `Value` — дата или длительность для проверки.
-- `Min` — начальное значение диапазона.
-- `Max` — конечное значение диапазона.
+- `value` — дата и время или длительность для проверки.
+- `min` — начальное значение диапазона.
+- `max` — конечное значение диапазона.
+
 </td>
 </tr>
 <tr markdown="block">
@@ -1506,7 +1513,7 @@ BETWEEN(DURATION("PT3H15M"), DURATION("PT3H1M"), DURATION("PT3H25M"))
 
 Здесь:
 
-- `DURATION()` — литерал, который объявляет длительность в формате ISO 8601.
+- `DURATION()` — преобразует в длительность строковый литерал в формате ISO 8601.
 
 </td>
 </tr>
@@ -1538,7 +1545,7 @@ BETWEEN(DURATION("PT3H15M"), DURATION("PT3H1M"), DURATION("PT3H25M"))
 <td markdown="block">
 
 ``` cs
-BETWEENUTC(Date, StartDate, EndDate)
+BETWEENUTC(вate, ыtartDate, уndDate)
 ```
 
 </td>
@@ -1549,9 +1556,10 @@ BETWEENUTC(Date, StartDate, EndDate)
 </td>
 <td markdown="block">
 
-- `Date` — дата для проверки.
-- `StartDate` — начальное значение диапазона.
-- `EndDate` — конечное значение диапазона.
+- `вate` — дата для проверки.
+- `ыtartDate` — начальное значение диапазона.
+- `уndDate` — конечное значение диапазона.
+
 </td>
 </tr>
 <tr markdown="block">
@@ -1576,7 +1584,7 @@ BETWEENUTC(DATE("2023-01-15"), DATE("2024-08-15"), DATE("2024-08-15"))
 
 Здесь:
 
-- `DATE()` — литерал, который объявляет дату в формате ISO 8601.
+- `DATE()` — преобразует в дату строковый литерал в формате ISO 8601.
 
 </td>
 </tr>
@@ -1771,7 +1779,8 @@ CENTURY(DATE("2024-08-15T13:45:15"))
 
 Здесь:
 
-`DATE()` — литерал, который объявляет дату в формате ISO 8601.
+`DATE()` — преобразует в дату строковый литерал в формате ISO 8601.
+
 </td>
 </tr>
 </tbody>
@@ -1791,11 +1800,12 @@ CENTURY(DATE("2024-08-15T13:45:15"))
 **Описание**
 </td>
 <td markdown="block">
-Сравнивает два экземпляра объекта длительность и возвращает целое число:
+Сравнивает два значения длительности и возвращает целое число:
 
 - `1`, если первая длительности больше второй;
 - `0`, если длительности равны;
 - `-1`, если первая длительность короче второй.
+
 </td>
 </tr>
 <tr markdown="block">
@@ -1805,7 +1815,7 @@ CENTURY(DATE("2024-08-15T13:45:15"))
 <td markdown="block">
 
 ``` cs
-COMPARE(argument1, argument2)
+COMPARE(duration1, duration2)
 ```
 
 </td>
@@ -1816,8 +1826,7 @@ COMPARE(argument1, argument2)
 </td>
 <td markdown="block">
 
-
-`argument1`, `argument2`: длительность.
+`duration1`, `duration2`: длительность.
 </td>
 </tr>
 <tr markdown="block">
@@ -1842,7 +1851,7 @@ COMPARE(DURATION("PT3H15M"), DURATION("PT3H16M"))
 
 Здесь:
 
-`DURATION()` — литерал, который объявляет длительность в формате ISO 8601.
+`DURATION()` — преобразует в длительность строковый литерал в формате ISO 8601.
 </td>
 </tr>
 </tbody>
@@ -1884,6 +1893,7 @@ CONCAT(list)
 <td markdown="block">
 
 `list` — список строк, которые требуется объединить.
+
 </td>
 </tr>
 <tr markdown="block">
@@ -1908,7 +1918,7 @@ CONCAT(LIST("Сумма доходов равна: ", "100000"))
 
 Здесь:
 
-`LIST()` — функция, которая использует в качестве аргумента перечень значений одного типа, разделённых запятыми, и возвращает список.
+`LIST()` — функция, которая принимает значения одного типа, разделённые запятыми, и возвращает их список.
 
 </td>
 </tr>
@@ -1930,7 +1940,7 @@ CONCAT(LIST("Сумма доходов равна: ", "100000"))
 </td>
 <td markdown="block">
 
-Сравнивает две строки между собой. Если первая строка содержит вторую, то возвращает логическое значение **Истина**.
+Сравнивает две строки между собой. Если первая строка содержит вторую, то возвращает логическое значение `true`.
 </td>
 </tr>
 <tr markdown="block">
@@ -1940,7 +1950,7 @@ CONCAT(LIST("Сумма доходов равна: ", "100000"))
 <td markdown="block">
 
 ``` cs
-CONTAINS(String, Substring)
+CONTAINS(string, substring)
 ```
 
 </td>
@@ -1951,8 +1961,9 @@ CONTAINS(String, Substring)
 </td>
 <td markdown="block">
 
-- `String` — строка, в которой происходит поиск подстроки.
-- `Substring` — подстрока, которая ищется в строке.
+- `string` — строка, в которой происходит поиск подстроки.
+- `substring` — подстрока, которая ищется в строке.
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2757,7 +2768,7 @@ ENDOFYEAR(argument1)
 **Описание**
 </td>
 <td markdown="block">
-Сравнивает два аргумента и возвращает значение Истина, если значение аргумента1 оканчивается на значение аргумента2, в противном случае возвращает Ложь.
+Сравнивает два аргумента и возвращает значение `true`, если значение аргумента1 оканчивается на значение аргумента2, в противном случае возвращает `false`.
 </td>
 </tr>
 <tr markdown="block">
@@ -2803,7 +2814,7 @@ ENDSWITH(argument1, argument2)
 </td>
 <td markdown="block">
 
-Находит ID значения атрибута типа «<a href="https://kb.{{ companyName }}.ru/article.php?id=2244"><strong>Список значений</strong></a>» по системным именам атрибута и значения.
+Находит ID значения атрибута типа «**[Список значений][attribute_enum]**» по системным именам атрибута и значения.
 
 </td>
 </tr>
@@ -2812,7 +2823,7 @@ ENDSWITH(argument1, argument2)
 **Синтаксис**
 </td>
 <td markdown="block">
-`ENUMVALUE("AttributeSystemName", "ValueSystemName")`
+`ENUMVALUE("attributeSystemName", "valueSystemName")`
 </td>
 </tr>
 <tr markdown="block">
@@ -2821,8 +2832,8 @@ ENDSWITH(argument1, argument2)
 </td>
 <td markdown="block">
 
-`AttributeSystemName`: строка, системное имя атрибута типа «<strong>Список значений</strong>».
-`ValueSystemName`: строка, системное имя одного из значенийатрибута типа «<strong>Список значений</strong>».
+- `attributeSystemName`: строка, системное имя атрибута типа «**Список значений**».
+- `valueSystemName`: строка, системное имя одного из значений атрибута типа «**Список значений**».
 
 </td>
 </tr>
@@ -2840,8 +2851,13 @@ ENDSWITH(argument1, argument2)
 </td>
 <td markdown="block">
 
-`EQUALS($Status, ID(ENUMVALUE("Status", "Resolved")))` — возвращает `true`, если атрибут`Status`имеет значение`Resolved`.
-Атрибут типа «<strong>Список значений</strong>» хранит ID своего текущего значения. Поэтому в формуле функция`ID()`приводит тип `string` к типу `id`, чтобы функция `EQUALS()` сравнивала значения одного типа.
+``` cs
+EQUALS($Status, ID(ENUMVALUE("Status", "Resolved")))
+```
+
+Возвращает `true`, если атрибут `Status` имеет значение`Resolved`.
+
+Атрибут типа «**Список значений**» хранит ID своего текущего значения. Поэтому в формуле функция`ID()`приводит тип `string` к типу `id`, чтобы функция `EQUALS()` сравнивала значения одного типа.
 
 </td>
 </tr>
@@ -2862,7 +2878,7 @@ ENDSWITH(argument1, argument2)
 **Описание**
 </td>
 <td markdown="block">
-Сравнивает два аргумента и возвращает значение Истина, если аргумент1 равен аргументу2, в противном случае возвращает результат Ложь.
+Сравнивает два аргумента и возвращает значение `true`, если аргументы равны, в противном случае возвращает результат `false`.
 </td>
 </tr>
 <tr markdown="block">
@@ -2870,7 +2886,7 @@ ENDSWITH(argument1, argument2)
 **Синтаксис**
 </td>
 <td markdown="block">
-EQUALS()
+EQUALS(value1, value2)
 </td>
 </tr>
 <tr markdown="block">
@@ -2879,7 +2895,8 @@ EQUALS()
 </td>
 <td markdown="block">
 
-`argument1`, `argument2`: значение любого типа
+`value1`, `value2`: значение любого типа
+
 </td>
 </tr>
 <tr markdown="block">
@@ -2907,7 +2924,7 @@ EQUALS()
 **Описание**
 </td>
 <td markdown="block">
-Возвращает первый элемент из списка. При отсутствии элементов в списке FIRST() возвращает пустое значение.
+Возвращает первый элемент из списка. При отсутствии элементов в списке `FIRST()` возвращает пустое значение.
 </td>
 </tr>
 <tr markdown="block">
@@ -2917,7 +2934,7 @@ EQUALS()
 <td markdown="block">
 
 ``` cs
-FIRST(List)
+FIRST(list)
 ```
 
 </td>
@@ -2928,7 +2945,7 @@ FIRST(List)
 </td>
 <td markdown="block">
 
-- `List` — список значений.
+- `list` — список значений.
 
 </td>
 </tr>
@@ -2947,10 +2964,11 @@ FIRST(List)
 <td markdown="block">
 
 ``` cs
-FIRST((from i in db->music where i>album == ‘Whale Meditation’ select i->song))
+FIRST((from i in db->music where i>album == 'Whale Meditation' select i->song))
 ```
 
 Возвращает первую песню из альбома "Whale Meditation".
+
 </td>
 </tr>
 </tbody>
@@ -3063,7 +3081,7 @@ FORMAT(строка задания формата, LIST(argument0, argument1, ..
 **Описание**
 </td>
 <td markdown="block">
-Возвращает логическое значение Истина, если аргумент1 больше аргумента2, в противном случае возвращает результат Ложь.
+Возвращает логическое значение `true`, если аргумент1 больше аргумента2, в противном случае возвращает результат `false`.
 </td>
 </tr>
 <tr markdown="block">
@@ -3108,7 +3126,7 @@ GREATER(argument1, argument2)
 **Описание**
 </td>
 <td markdown="block">
-Возвращает логическое значение Истина, если аргумент1 больше либо равен аргументу2, в противном случае возвращает результат Ложь.
+Возвращает логическое значение `true`, если аргумент1 больше либо равен аргументу2, в противном случае возвращает результат `false`.
 </td>
 </tr>
 <tr markdown="block">
@@ -3491,7 +3509,7 @@ INSECONDS(argument)
 **Описание**
 </td>
 <td markdown="block">
-Возвращает значение Истина, если задана сегодняшняя дата. В противном случае возвращает результат Ложь.
+Возвращает значение `true`, если задана сегодняшняя дата. В противном случае возвращает результат `false`.
 </td>
 </tr>
 <tr markdown="block">
@@ -3627,7 +3645,7 @@ INSECONDS(argument)
 **Описание**
 </td>
 <td markdown="block">
-Возвращает логическое значение Истина, если аргумент1 меньше аргумента2, в противном случае возвращает результат Ложь.
+Возвращает логическое значение `true`, если аргумент1 меньше аргумента2, в противном случае возвращает результат `false`.
 </td>
 </tr>
 <tr markdown="block">
@@ -3676,7 +3694,7 @@ LESS(argument1, argument2)
 **Описание**
 </td>
 <td markdown="block">
-Возвращает логическое значение Истина, если аргумент1 меньше либо равен аргументу2, в противном случае возвращает результат Ложь.
+Возвращает логическое значение `true`, если аргумент1 меньше либо равен аргументу2, в противном случае возвращает результат `false`.
 </td>
 </tr>
 <tr markdown="block">
@@ -3876,7 +3894,7 @@ MAKEDATETIMETZ(year, month, day, hour, minutes, seconds, timeZone)
 **Описание**
 </td>
 <td markdown="block">
-Использует в качестве аргументов строку и регулярное выражение. Возвращает логическое значение Истина, если какая-либо часть строки или строка полностью соответствуетусловию, заданному регулярным выражением. В противном случае возвращает результат Ложь.
+Использует в качестве аргументов строку и регулярное выражение. Возвращает логическое значение `true`, если какая-либо часть строки или строка полностью соответствуетусловию, заданному регулярным выражением. В противном случае возвращает результат `false`.
 </td>
 </tr>
 <tr markdown="block">
@@ -4239,7 +4257,7 @@ NOT(argument1)
 **Описание**
 </td>
 <td markdown="block">
-Сравнивает два аргумента и возвращает логическое значение Истина, если аргумент1 не равен аргументу2, в противном случае возвращает результат Ложь.
+Сравнивает два аргумента и возвращает логическое значение `true`, если аргумент1 не равен аргументу2, в противном случае возвращает результат `false`.
 </td>
 </tr>
 <tr markdown="block">
@@ -4284,7 +4302,7 @@ NOTEQUALS(argument1, argument2)
 **Описание**
 </td>
 <td markdown="block">
-Использует в качестве аргументов строку и регулярное выражение. Возвращает логическое значение Истина, если часть строки или строка полностью не соответствуют условию, заданному регулярным выражением. В противном случае возвращает результат Ложь.
+Использует в качестве аргументов строку и регулярное выражение. Возвращает логическое значение `true`, если часть строки или строка полностью не соответствуют условию, заданному регулярным выражением. В противном случае возвращает результат `false`.
 </td>
 </tr>
 <tr markdown="block">
@@ -5076,7 +5094,7 @@ STARTOFQUARTER(argument1)
 **Описание**
 </td>
 <td markdown="block">
-Сравнивает два аргумента и возвращает значение Истина, если значение аргумента1 начинается с значения аргумента2, в противном случае возвращает Ложь.
+Сравнивает два аргумента и возвращает значение `true`, если значение аргумента1 начинается с значения аргумента2, в противном случае возвращает `false`.
 </td>
 </tr>
 <tr markdown="block">

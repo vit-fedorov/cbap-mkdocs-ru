@@ -2802,7 +2802,7 @@ ENDSWITH(argument1, argument2)
 **Синтаксис**
 </td>
 <td markdown="block">
-<code>ENUMVALUE("AttributeSystemName", "ValueSystemName")</code>
+`ENUMVALUE("AttributeSystemName", "ValueSystemName")`
 </td>
 </tr>
 <tr markdown="block">
@@ -2811,8 +2811,8 @@ ENDSWITH(argument1, argument2)
 </td>
 <td markdown="block">
 
-<code>AttributeSystemName</code>: строка, системное имя атрибута типа «<strong>Список значений</strong>».
-<code>ValueSystemName</code>: строка, системное имя одного из значенийатрибута типа «<strong>Список значений</strong>».
+`AttributeSystemName`: строка, системное имя атрибута типа «<strong>Список значений</strong>».
+`ValueSystemName`: строка, системное имя одного из значенийатрибута типа «<strong>Список значений</strong>».
 
 </td>
 </tr>
@@ -2830,8 +2830,8 @@ ENDSWITH(argument1, argument2)
 </td>
 <td markdown="block">
 
-<code>EQUALS($Status, ID(ENUMVALUE("Status", "Resolved")))</code> — возвращает <code>true</code>, если атрибут<code>Status</code>имеет значение<code>Resolved</code>.
-Атрибут типа «<strong>Список значений</strong>» хранит ID своего текущего значения. Поэтому в формуле функция<code>ID()</code>приводит тип <code>string</code> к типу <code>id</code>, чтобы функция <code>EQUALS()</code> сравнивала значения одного типа.
+`EQUALS($Status, ID(ENUMVALUE("Status", "Resolved")))` — возвращает `true`, если атрибут`Status`имеет значение`Resolved`.
+Атрибут типа «<strong>Список значений</strong>» хранит ID своего текущего значения. Поэтому в формуле функция`ID()`приводит тип `string` к типу `id`, чтобы функция `EQUALS()` сравнивала значения одного типа.
 
 </td>
 </tr>
@@ -3242,7 +3242,7 @@ GREATEREQ(argument1, argument2)
 **Синтаксис**
 </td>
 <td markdown="block">
-<code>ID("objectID")</code>
+`ID("objectID")`
 </td>
 </tr>
 <tr markdown="block">
@@ -3250,7 +3250,7 @@ GREATEREQ(argument1, argument2)
 **Аргументы**
 </td>
 <td markdown="block">
-<code>objectID</code>: строка, системное имя объекта.
+`objectID`: строка, системное имя объекта.
 </td>
 </tr>
 <tr markdown="block">
@@ -3267,7 +3267,7 @@ ID объекта
 </td>
 <td markdown="block">
 
-<code>ID("oa.21")</code>— возвращает идентификатор шаблона <code>oa.21</code>.
+`ID("oa.21")` — возвращает идентификатор шаблона `oa.21`.
 
 </td>
 </tr>
@@ -4360,7 +4360,7 @@ NOW()
 **Синтаксис**
 </td>
 <td markdown="block">
-OBJECT(<code>argument1</code>, <code>argument2</code>, <code>argument3</code>, <code>argument4</code>)
+OBJECT(`argument1`, `argument2`, `argument3`, `argument4`)
 </td>
 </tr>
 <tr markdown="block">
@@ -4369,10 +4369,10 @@ OBJECT(<code>argument1</code>, <code>argument2</code>, <code>argument3</code>, <
 </td>
 <td markdown="block">
 
-<code>argument1</code>: системное имя бизнес-приложения
-<code>argument2</code>: системное имя шаблона записи
-<code>argument3</code>: системное имя атрибута
-<code>argument4</code>: значение атрибута
+`argument1`: системное имя бизнес-приложения
+`argument2`: системное имя шаблона записи
+`argument3`: системное имя атрибута
+`argument4`: значение атрибута
 Строковые литералы в аргументах следует заключать в кавычки.
 
 </td>
@@ -4557,9 +4557,9 @@ QUOTIENT(dividend, divisor)
 </td>
 <td markdown="block">
 
-<code>sourceString</code>: исходная строка
-<code>regEx</code>: строка с регулярным выражением
-<code>replacementString</code>: замещающая строка
+- `sourceString`: исходная строка
+- `regEx`: строка с регулярным выражением
+- `replacementString`: замещающая строка
 
 </td>
 </tr>
@@ -4577,9 +4577,9 @@ QUOTIENT(dividend, divisor)
 </td>
 <td markdown="block">
 
-<code>REGEXREPLACE($FIO,"(.+) (.+) (.+)","$2")</code>— принимает строку вида «Фамилия Имя Отчество» и возвращает Имя (второе слово из трёх).
-<code>REGEXREPLACE($Subject,".*\[#([0-9]+)\].*","$1")</code>— принимает строку вида «Рассмотрите заявку [#12345]» и возвращает заявки (12345).
-<code>REGEXREPLACE($HTML,"&lt;p class=""title"">(.+)&lt;\/p>","&lt;h1>$1&lt;h1>")</code>— принимает HTML-код, заменяет параграфы класса<code>title</code>на заголовки уровня 1 и возвращает результирующий HTML-код.
+- `REGEXREPLACE($FIO,"(.+) (.+) (.+)","$2")` — принимает строку вида «`Фамилия Имя Отчество`» и возвращает Имя (второе слово из трёх).
+- `REGEXREPLACE($Subject,".*\[#([0-9]+)\].*","$1")` — принимает строку вида «`Рассмотрите заявку [#12345]`» и возвращает код заявки (`12345`).
+- `REGEXREPLACE($HTML,"&lt;p class=""title"">(.+)&lt;\/p>","&lt;h1>$1&lt;h1>")` — принимает HTML-код, заменяет параграфы класса `title` на заголовки уровня 1 и возвращает результирующий HTML-код.
 
 </td>
 </tr>

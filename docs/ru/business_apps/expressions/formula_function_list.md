@@ -24,21 +24,33 @@ hide:
 <tr markdown="block">
 <th colspan="2" markdown="block">
 
-## `ADD(argument1, argument2)`
+## `ADD()`
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Суммирует два значения. Конкатенация строк не поддерживается.
 </td>
 </tr>
+<tr markdown="block">
+<td markdown="block">
+**Синтаксис**
+</td>
+<td markdown="block">
+
+``` cs
+ADD(argument1, argument2)
+```
+
+</td>
+</tr>
 
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -49,7 +61,7 @@ hide:
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 
@@ -61,11 +73,11 @@ hide:
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADD(DATE('2024-01-01T01:01:01'), DURATION('P3Y6M4DT12H30M5S'))
 ```
 
@@ -89,8 +101,8 @@ ADD(DATE('2024-01-01T01:01:01'), DURATION('P3Y6M4DT12H30M5S'))
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -99,18 +111,18 @@ ADD(DATE('2024-01-01T01:01:01'), DURATION('P3Y6M4DT12H30M5S'))
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDDAYS(DateTime, Number)
 ```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -120,7 +132,7 @@ ADDDAYS(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 Дата и время
@@ -128,11 +140,11 @@ ADDDAYS(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDDAYS(DATE('2024-01-01T01:01:01'), 3)
 ```
 
@@ -156,8 +168,8 @@ ADDDAYS(DATE('2024-01-01T01:01:01'), 3)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -166,11 +178,11 @@ ADDDAYS(DATE('2024-01-01T01:01:01'), 3)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDDAYSUTC(DateTime, Number)
 ```
 
@@ -178,7 +190,7 @@ ADDDAYSUTC(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -188,7 +200,7 @@ ADDDAYSUTC(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 Дата и время
@@ -196,11 +208,11 @@ ADDDAYSUTC(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDDAYSUTC(DATE('2024-01-01T01:01:01'), 3)
 ```
 
@@ -223,21 +235,21 @@ ADDDAYSUTC(DATE('2024-01-01T01:01:01'), 3)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
-Суммирвет два значения типа «**Длительность**».
+Суммирует два значения типа «**Длительность**».
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDDUR(argument1, argument2)
 ```
 
@@ -245,7 +257,7 @@ ADDDUR(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -254,7 +266,7 @@ ADDDUR(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 Длительность
@@ -262,11 +274,11 @@ ADDDUR(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDDUR(DURATION('P1DT12H30M5S'), DURATION('P1DT12H30M5S'))
 ```
 
@@ -289,8 +301,8 @@ ADDDUR(DURATION('P1DT12H30M5S'), DURATION('P1DT12H30M5S'))
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -299,18 +311,18 @@ ADDDUR(DURATION('P1DT12H30M5S'), DURATION('P1DT12H30M5S'))
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDHOURS(DateTime, Number)
 ```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -320,7 +332,7 @@ ADDHOURS(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 Дата и время
@@ -328,11 +340,11 @@ ADDHOURS(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDHOURS(DATE('2024-01-01T01:01:01'), 3)
 ```
 
@@ -355,8 +367,8 @@ ADDHOURS(DATE('2024-01-01T01:01:01'), 3)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -365,11 +377,11 @@ ADDHOURS(DATE('2024-01-01T01:01:01'), 3)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDHOURSUTC(DateTime, Number)
 ```
 
@@ -377,7 +389,7 @@ ADDHOURSUTC(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -387,7 +399,7 @@ ADDHOURSUTC(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 Дата и время
@@ -395,11 +407,11 @@ ADDHOURSUTC(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDHOURSUTC(DATE('2024-01-01T01:01:01'), 3)
 ```
 
@@ -422,8 +434,8 @@ ADDHOURSUTC(DATE('2024-01-01T01:01:01'), 3)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -432,11 +444,11 @@ ADDHOURSUTC(DATE('2024-01-01T01:01:01'), 3)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDLOC(DateTime, Duration)
 ```
 
@@ -444,7 +456,7 @@ ADDLOC(DateTime, Duration)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -454,7 +466,7 @@ ADDLOC(DateTime, Duration)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 Дата и время
@@ -462,11 +474,11 @@ ADDLOC(DateTime, Duration)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDLOC(DATE('2024-01-01T01:01:01'), DURATION('P1DT12H30M5S'))
 ```
 
@@ -490,8 +502,8 @@ ADDLOC(DATE('2024-01-01T01:01:01'), DURATION('P1DT12H30M5S'))
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -500,11 +512,11 @@ ADDLOC(DATE('2024-01-01T01:01:01'), DURATION('P1DT12H30M5S'))
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDMINUTES(DateTime, Number)
 ```
 
@@ -512,7 +524,7 @@ ADDMINUTES(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -522,7 +534,7 @@ ADDMINUTES(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -530,11 +542,11 @@ ADDMINUTES(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDMINUTES(DATE('2024-01-01T01:01:01'), 3)
 ```
 
@@ -557,8 +569,8 @@ ADDMINUTES(DATE('2024-01-01T01:01:01'), 3)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -567,11 +579,11 @@ ADDMINUTES(DATE('2024-01-01T01:01:01'), 3)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDMINUTESUTC(DateTime, Number)
 ```
 
@@ -579,7 +591,7 @@ ADDMINUTESUTC(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -589,7 +601,7 @@ ADDMINUTESUTC(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 Дата и время
@@ -597,11 +609,11 @@ ADDMINUTESUTC(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDMINUTESUTC(DATE('2024-01-01T01:01:01'), 3)
 ```
 
@@ -624,8 +636,8 @@ ADDMINUTESUTC(DATE('2024-01-01T01:01:01'), 3)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -634,11 +646,11 @@ ADDMINUTESUTC(DATE('2024-01-01T01:01:01'), 3)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDMONTHS(DateTime, Number)
 ```
 
@@ -646,7 +658,7 @@ ADDMONTHS(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -656,7 +668,7 @@ ADDMONTHS(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 Дата и время
@@ -664,11 +676,11 @@ ADDMONTHS(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDMONTHS(DATE('2024-01-01T01:01:01'), 3)
 ```
 
@@ -691,8 +703,8 @@ ADDMONTHS(DATE('2024-01-01T01:01:01'), 3)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -701,11 +713,11 @@ ADDMONTHS(DATE('2024-01-01T01:01:01'), 3)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDMONTHSUTC(DateTime, Number)
 ```
 
@@ -713,7 +725,7 @@ ADDMONTHSUTC(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -723,7 +735,7 @@ ADDMONTHSUTC(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 Дата и время
@@ -731,11 +743,11 @@ ADDMONTHSUTC(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDMONTHSUTC(DATE('2024-01-01T01:01:01'), 3)
 ```
 
@@ -758,8 +770,8 @@ ADDMONTHSUTC(DATE('2024-01-01T01:01:01'), 3)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -768,11 +780,11 @@ ADDMONTHSUTC(DATE('2024-01-01T01:01:01'), 3)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDSECONDS(DateTime, Number)
 ```
 
@@ -780,7 +792,7 @@ ADDSECONDS(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -790,7 +802,7 @@ ADDSECONDS(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 Дата и время
@@ -798,11 +810,11 @@ ADDSECONDS(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDSECONDS(DATE('2024-01-01T01:01:01'), 3)
 ```
 
@@ -825,8 +837,8 @@ ADDSECONDS(DATE('2024-01-01T01:01:01'), 3)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -835,18 +847,18 @@ ADDSECONDS(DATE('2024-01-01T01:01:01'), 3)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDSECONDSUTC(DateTime, Number)
 ```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -856,7 +868,7 @@ ADDSECONDSUTC(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 Дата и время
@@ -864,11 +876,11 @@ ADDSECONDSUTC(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDSECONDSUTC(DATE('2024-01-01T01:01:01'), 3)
 ```
 
@@ -891,8 +903,8 @@ ADDSECONDSUTC(DATE('2024-01-01T01:01:01'), 3)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -901,18 +913,18 @@ ADDSECONDSUTC(DATE('2024-01-01T01:01:01'), 3)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDUTC(DateTime, Duration)
 ```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -922,7 +934,7 @@ ADDUTC(DateTime, Duration)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 Дата и время
@@ -930,11 +942,11 @@ ADDUTC(DateTime, Duration)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDUTC(DATE('2024-01-01T01:01:01'), DURATION('P1DT12H30M5S'))
 ```
 
@@ -958,8 +970,8 @@ ADDUTC(DATE('2024-01-01T01:01:01'), DURATION('P1DT12H30M5S'))
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -968,7 +980,7 @@ ADDUTC(DATE('2024-01-01T01:01:01'), DURATION('P1DT12H30M5S'))
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
@@ -979,7 +991,7 @@ ADDYEARS(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -990,7 +1002,7 @@ ADDYEARS(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -998,11 +1010,11 @@ ADDYEARS(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDYEARS(DATE('2024-01-01T01:01:01'), 3)
 ```
 
@@ -1025,8 +1037,8 @@ ADDYEARS(DATE('2024-01-01T01:01:01'), 3)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Добавляет указанное количество лет к значению типа «**Дата и время**» в формате UTC.
@@ -1034,11 +1046,11 @@ ADDYEARS(DATE('2024-01-01T01:01:01'), 3)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDYEARSUTC(DateTime, Number)
 ```
 
@@ -1046,7 +1058,7 @@ ADDYEARSUTC(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -1057,7 +1069,7 @@ ADDYEARSUTC(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -1065,11 +1077,11 @@ ADDYEARSUTC(DateTime, Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 ADDYEARSUTC(DATE('2024-01-01T01:01:01'), 3)
 ```
 
@@ -1092,8 +1104,8 @@ ADDYEARSUTC(DATE('2024-01-01T01:01:01'), 3)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Берет список логических переменных и возвращает значение **Истина**, если все логические переменные принимают значение **Истина**.
@@ -1101,7 +1113,7 @@ ADDYEARSUTC(DATE('2024-01-01T01:01:01'), 3)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 
 <td markdown="block">
@@ -1110,15 +1122,15 @@ ALL(list)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
-list: список логических переменных, или список выражений, результатом которых являются значения логического типа.
+`list`: список логических переменных, или список выражений, результатом которых являются значения логического типа.
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 значение логического типа
@@ -1137,8 +1149,8 @@ list: список логических переменных, или списо�
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Берет два значения логического типа или два выражения, результатом которых являются значения логического типа, и возвращает результат логического умножения этих значений.
@@ -1146,15 +1158,17 @@ list: список логических переменных, или списо�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
+``` cs
 AND(bool1, bool2)
+```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 bool1, bool2: значение логического типа или выражение, результатом которого является значение логического типа.
@@ -1162,7 +1176,7 @@ bool1, bool2: значение логического типа или выраж
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 значение логического типа
@@ -1176,32 +1190,33 @@ bool1, bool2: значение логического типа или выраж
 <tr markdown="block">
 <th colspan="2" markdown="block">
 
-## `ANY()` — проверка на непустую последовательность
+## `ANY()`
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
+Проверка на непустую последовательность.
 Проверяет список на не пустоту.
 По условию выборки формирует последовательность значений любого типа и проверяет её на не пустоту.
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 ```
 ANY(list), ANY((sequence))
 ```
-Для задания последовательности используйте стандартный запрос from where select.
+Для задания последовательности используйте стандартный запрос `from where select`.
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 ```
@@ -1212,7 +1227,7 @@ ANY( from I in db->Tickets where i->product = ‘Data Monsoon’ select i->name)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -1223,7 +1238,7 @@ ANY( from I in db->Tickets where i->product = ‘Data Monsoon’ select i->name)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 значение логического типа
@@ -1237,20 +1252,20 @@ ANY( from I in db->Tickets where i->product = ‘Data Monsoon’ select i->name)
 <tr markdown="block">
 <th colspan="2" markdown="block">
 
-## `ANY()` — проверка предиката
+## `ANY()`
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
-Формирует выборку элементов и проверяет, что в ней есть хотя бы один элемент с истинным значением заданного предиката.
+Проверка предиката. Формирует выборку элементов и проверяет, что в ней есть хотя бы один элемент с истинным значением заданного предиката.
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
@@ -1259,7 +1274,7 @@ ANY( from I in db->Tickets where i->product = ‘Data Monsoon’ select i->name)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
@@ -1277,7 +1292,7 @@ ANY([(
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 - `argument1`: запрос типа from where select, который возвращает последовательность элементов.
@@ -1287,7 +1302,7 @@ ANY([(
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 значение логического типа
@@ -1305,8 +1320,8 @@ ANY([(
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Сортирует элементы последовательности в порядке возрастания.
@@ -1314,7 +1329,7 @@ ANY([(
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 ```
@@ -1324,15 +1339,15 @@ ASCENDING(list)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
-list: список значений типа число или строка
+`list`: список значений типа «Число» или строка
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 сортированный список значений
@@ -1340,7 +1355,7 @@ list: список значений типа число или строка
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 ```
@@ -1361,8 +1376,8 @@ ASCENDING('л', 'а', 'и')
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает среднее арифметическое аргументов.
@@ -1370,7 +1385,7 @@ ASCENDING('л', 'а', 'и')
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 AVERAGE(argument1, argument2)
@@ -1378,7 +1393,7 @@ AVERAGE(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 argument1, `argument2`: число
@@ -1386,7 +1401,7 @@ argument1, `argument2`: число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -1405,8 +1420,8 @@ argument1, `argument2`: число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -1415,11 +1430,11 @@ argument1, `argument2`: число
 </tr>
 <tr markdown="block">
 <td markdown="block" >
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 BETWEEN(Value, Min, Max)
 ```
 
@@ -1427,7 +1442,7 @@ BETWEEN(Value, Min, Max)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -1438,7 +1453,7 @@ BETWEEN(Value, Min, Max)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 логическое значение
@@ -1446,11 +1461,11 @@ BETWEEN(Value, Min, Max)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 BETWEEN(DURATION("PT3H15M"), DURATION("PT3H1M"), DURATION("PT3H25M"))
 ```
 
@@ -1474,8 +1489,8 @@ BETWEEN(DURATION("PT3H15M"), DURATION("PT3H1M"), DURATION("PT3H25M"))
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -1484,11 +1499,11 @@ BETWEEN(DURATION("PT3H15M"), DURATION("PT3H1M"), DURATION("PT3H25M"))
 </tr>
 <tr markdown="block">
 <td markdown="block" >
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 BETWEENUTC(Date, StartDate, EndDate)
 ```
 
@@ -1496,7 +1511,7 @@ BETWEENUTC(Date, StartDate, EndDate)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -1507,7 +1522,7 @@ BETWEENUTC(Date, StartDate, EndDate)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 логическое значение
@@ -1515,11 +1530,11 @@ BETWEENUTC(Date, StartDate, EndDate)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 BETWEENUTC(DATE("2023-01-15"), DATE("2024-08-15"), DATE("2024-08-15"))
 ```
 
@@ -1543,8 +1558,8 @@ BETWEENUTC(DATE("2023-01-15"), DATE("2024-08-15"), DATE("2024-08-15"))
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Преобразует строку в логический тип. Для правильной конвертации, значение строки должно быть равно `true` или `false` без учёта регистра.
@@ -1552,11 +1567,11 @@ BETWEENUTC(DATE("2023-01-15"), DATE("2024-08-15"), DATE("2024-08-15"))
 </tr>
 <tr markdown="block">
 <td markdown="block" >
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 BOOL(String)
 ```
 
@@ -1564,7 +1579,7 @@ BOOL(String)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -1574,7 +1589,7 @@ BOOL(String)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 логическое значение
@@ -1582,11 +1597,11 @@ BOOL(String)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 BOOL('TrUE')
 ```
 
@@ -1605,8 +1620,8 @@ BOOL('TrUE')
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Округляет до ближайшего большего целого.
@@ -1614,11 +1629,11 @@ BOOL('TrUE')
 </tr>
 <tr markdown="block">
 <td markdown="block" >
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 CEILING(Number)
 ```
 
@@ -1626,7 +1641,7 @@ CEILING(Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -1636,7 +1651,7 @@ CEILING(Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -1644,11 +1659,11 @@ CEILING(Number)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 CEILING(4.1)
 ```
 
@@ -1667,8 +1682,8 @@ CEILING(4.1)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -1677,11 +1692,11 @@ CEILING(4.1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 CENTURY(DateTime)
 ```
 
@@ -1689,7 +1704,7 @@ CENTURY(DateTime)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -1699,7 +1714,7 @@ CENTURY(DateTime)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -1707,11 +1722,11 @@ CENTURY(DateTime)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 CENTURY(DATE("2024-08-15T13:45:15"))
 ```
 
@@ -1734,8 +1749,8 @@ CENTURY(DATE("2024-08-15T13:45:15"))
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Сравнивает два экземпляра объекта длительность и возвращает целое число:
@@ -1747,11 +1762,11 @@ CENTURY(DATE("2024-08-15T13:45:15"))
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 COMPARE(argument1, argument2)
 ```
 
@@ -1759,7 +1774,7 @@ COMPARE(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -1769,7 +1784,7 @@ COMPARE(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -1777,11 +1792,11 @@ COMPARE(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 COMPARE(DURATION("PT3H15M"), DURATION("PT3H16M"))
 ```
 
@@ -1804,8 +1819,8 @@ COMPARE(DURATION("PT3H15M"), DURATION("PT3H16M"))
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Преобразует список строк в одну объединённую.
@@ -1813,11 +1828,11 @@ COMPARE(DURATION("PT3H15M"), DURATION("PT3H16M"))
 </tr>
 <tr markdown="block">
 <td markdown="block" >
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 CONCAT(list)
 ```
 
@@ -1825,7 +1840,7 @@ CONCAT(list)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -1834,7 +1849,7 @@ CONCAT(list)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 строку
@@ -1842,11 +1857,11 @@ CONCAT(list)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 CONCAT(LIST("Сумма доходов равна: ", "100000"))
 ```
 
@@ -1870,8 +1885,8 @@ CONCAT(LIST("Сумма доходов равна: ", "100000"))
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -1880,18 +1895,18 @@ CONCAT(LIST("Сумма доходов равна: ", "100000"))
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 CONTAINS(String, Substring)
 ```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -1901,7 +1916,7 @@ CONTAINS(String, Substring)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 логическое значение
@@ -1909,11 +1924,11 @@ CONTAINS(String, Substring)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 CONTAINS("Это срочная заявка.", "срочн")
 ```
 
@@ -1932,8 +1947,8 @@ CONTAINS("Это срочная заявка.", "срочн")
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Переводит значение типа «**Дата и время**» из локального часового пояса в заданный часовой пояс в формате IANA.
@@ -1941,18 +1956,18 @@ CONTAINS("Это срочная заявка.", "срочн")
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 CONVERTTIMEZONE(Date, TimeZone)
 ```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -1962,7 +1977,7 @@ CONVERTTIMEZONE(Date, TimeZone)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 логическое значение
@@ -1970,11 +1985,11 @@ CONVERTTIMEZONE(Date, TimeZone)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 CONTAINS("Это срочная заявка.", "срочн")
 ```
 Возвращает `True`
@@ -1996,8 +2011,8 @@ CONTAINS("Это срочная заявка.", "срочн")
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает количество элементов в списке.
@@ -2005,7 +2020,7 @@ CONTAINS("Это срочная заявка.", "срочн")
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 COUNT(argument1)
@@ -2013,7 +2028,7 @@ COUNT(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: список строк
@@ -2021,7 +2036,7 @@ COUNT(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -2039,8 +2054,8 @@ COUNT(argument1)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Преобразует заданное количество секунд в дату.
@@ -2048,7 +2063,7 @@ COUNT(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 DATETIMEFROMSECONDS(argument1)
@@ -2056,7 +2071,7 @@ DATETIMEFROMSECONDS(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: число
@@ -2064,7 +2079,7 @@ DATETIMEFROMSECONDS(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -2082,8 +2097,8 @@ DATETIMEFROMSECONDS(argument1)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Преобразует заданную в качестве аргумента дату в количество секунд, прошедшее с 00:00:00 1 января 1970 года (Unix-время).
@@ -2091,7 +2106,7 @@ DATETIMEFROMSECONDS(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 DATETIMEINSECONDS(argument1)
@@ -2099,7 +2114,7 @@ DATETIMEINSECONDS(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -2107,7 +2122,7 @@ DATETIMEINSECONDS(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -2125,8 +2140,8 @@ DATETIMEINSECONDS(argument1)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее дню месяца указанной даты в местном часовом поясе.
@@ -2134,7 +2149,7 @@ DATETIMEINSECONDS(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `DAY(argument1)`
@@ -2142,7 +2157,7 @@ DATETIMEINSECONDS(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -2150,7 +2165,7 @@ DATETIMEINSECONDS(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -2168,8 +2183,8 @@ DATETIMEINSECONDS(argument1)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее дню месяца указанной даты в заданном часовом поясе. Идентификатор часового пояса должен быть задан в формате базы данных часовых поясов IANA.
@@ -2177,7 +2192,7 @@ DATETIMEINSECONDS(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `DAYTZ(argument1, argument2)`
@@ -2185,7 +2200,7 @@ DATETIMEINSECONDS(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -2194,7 +2209,7 @@ DATETIMEINSECONDS(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -2212,8 +2227,8 @@ DATETIMEINSECONDS(argument1)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -2222,18 +2237,18 @@ DATETIMEINSECONDS(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 DECIMAL(String)
 ```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -2243,7 +2258,7 @@ DECIMAL(String)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 Число
@@ -2251,11 +2266,11 @@ DECIMAL(String)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 DECIMAL("10,5")
 ```
 
@@ -2274,8 +2289,8 @@ DECIMAL("10,5")
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Берет в качестве аргументов два значения числового типа и возвращает результат деления одного на другое.
@@ -2283,7 +2298,7 @@ DECIMAL("10,5")
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `DIVIDE(argument1, argument2)`
@@ -2291,7 +2306,7 @@ DECIMAL("10,5")
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 argument1 (делимое): число
@@ -2300,7 +2315,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -2318,8 +2333,8 @@ argument2 (делитель): число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Преобразует заданное количество секунд в длительность.
@@ -2327,7 +2342,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `DURATIONFROMSECONDS(argument1)`
@@ -2335,7 +2350,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: число
@@ -2343,7 +2358,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 длительность
@@ -2361,8 +2376,8 @@ argument2 (делитель): число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Преобразует заданную длительность в количество секунд.
@@ -2370,7 +2385,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `DURATIONINSECONDS(argument1)`
@@ -2378,7 +2393,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: длительность
@@ -2386,7 +2401,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -2404,8 +2419,8 @@ argument2 (делитель): число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Берет в качестве аргумента выражение, результатом которого является некоторое значение, и проверяет данное значение на пустоту.
@@ -2413,7 +2428,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `EMPTY(argument1)`
@@ -2421,7 +2436,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -2431,7 +2446,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 значение логического типа
@@ -2449,8 +2464,8 @@ argument2 (делитель): число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает дату и время окончания дня, в пределах которого находится значение аргумента.
@@ -2458,7 +2473,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `ENDOFDAY(argument1)`
@@ -2466,7 +2481,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -2474,7 +2489,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -2492,8 +2507,8 @@ argument2 (делитель): число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает дату и время окончания месяца, в пределах которого находится значение аргумента.
@@ -2501,7 +2516,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `ENDOFMONTH(argument1)`
@@ -2509,7 +2524,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -2517,7 +2532,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -2535,8 +2550,8 @@ argument2 (делитель): число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает дату и время окончания квартала, в пределах которого находится значение аргумента.
@@ -2544,7 +2559,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `ENDOFQUARTER(argument1)`
@@ -2552,7 +2567,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -2560,7 +2575,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -2578,8 +2593,8 @@ argument2 (делитель): число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает дату и время окончания недели, в пределах которого находится значение аргумента.
@@ -2587,7 +2602,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `ENDOFWEEK(argument1)`
@@ -2595,7 +2610,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -2603,7 +2618,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -2621,8 +2636,8 @@ argument2 (делитель): число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает дату и время окончания года, в пределах которого находится значение аргумента.
@@ -2630,7 +2645,7 @@ argument2 (делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 ENDOFYEAR(argument1)
@@ -2638,7 +2653,7 @@ ENDOFYEAR(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -2646,7 +2661,7 @@ ENDOFYEAR(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -2664,8 +2679,8 @@ ENDOFYEAR(argument1)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Сравнивает два аргумента и возвращает значение Истина, если значение аргумента1 оканчивается на значение аргумента2, в противном случае возвращает Ложь.
@@ -2673,7 +2688,7 @@ ENDOFYEAR(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 ENDSWITH(argument1, argument2)
@@ -2681,7 +2696,7 @@ ENDSWITH(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 argument1, `argument2`: строка
@@ -2689,7 +2704,7 @@ argument1, `argument2`: строка
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 значение логического типа
@@ -2707,8 +2722,8 @@ argument1, `argument2`: строка
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -2718,7 +2733,7 @@ argument1, `argument2`: строка
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 <code>ENUMVALUE("AttributeSystemName", "ValueSystemName")</code>
@@ -2726,7 +2741,7 @@ argument1, `argument2`: строка
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -2737,7 +2752,7 @@ argument1, `argument2`: строка
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 Строку с ID искомого значения атрибута.
@@ -2745,7 +2760,7 @@ argument1, `argument2`: строка
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
@@ -2766,8 +2781,8 @@ argument1, `argument2`: строка
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Сравнивает два аргумента и возвращает значение Истина, если аргумент1 равен аргументу2, в противном случае возвращает результат Ложь.
@@ -2775,7 +2790,7 @@ argument1, `argument2`: строка
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 EQUALS()
@@ -2783,7 +2798,7 @@ EQUALS()
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 argument1, `argument2`: значение любого типа
@@ -2791,7 +2806,7 @@ argument1, `argument2`: значение любого типа
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 значение логического типа
@@ -2809,8 +2824,8 @@ argument1, `argument2`: значение любого типа
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -2819,18 +2834,18 @@ argument1, `argument2`: значение любого типа
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 FIRST(List)
 ```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -2839,7 +2854,7 @@ FIRST(List)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 тип возвращаемого значения совпадает с типом элементов последовательности
@@ -2847,11 +2862,11 @@ FIRST(List)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 FIRST((from i in db->music where i>album == ‘Whale Meditation’ select i->song))
 ```
 
@@ -2870,8 +2885,8 @@ FIRST((from i in db->music where i>album == ‘Whale Meditation’ select i->son
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Округляет число в меньшую сторону.
@@ -2879,7 +2894,7 @@ FIRST((from i in db->music where i>album == ‘Whale Meditation’ select i->son
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 FLOOR(argument1)
@@ -2887,7 +2902,7 @@ FLOOR(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: число
@@ -2895,7 +2910,7 @@ FLOOR(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -2913,8 +2928,8 @@ FLOOR(argument1)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Выполняет форматирование аргументов в соответствии с заданным шаблоном и возвращает отформатированную строку.
@@ -2922,7 +2937,7 @@ FLOOR(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 FORMAT(строка задания формата, LIST(argument0, argument1, ..., argument N))
@@ -2933,7 +2948,7 @@ FORMAT(строка задания формата, LIST(argument0, argument1, ..
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 строка задания формата: строка
@@ -2942,7 +2957,7 @@ argument0, argument1, ..., argument N: значения любого типа.
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 строка
@@ -2960,8 +2975,8 @@ argument0, argument1, ..., argument N: значения любого типа.
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает логическое значение Истина, если аргумент1 больше аргумента2, в противном случае возвращает результат Ложь.
@@ -2969,7 +2984,7 @@ argument0, argument1, ..., argument N: значения любого типа.
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 GREATER(argument1, argument2)
@@ -2977,15 +2992,15 @@ GREATER(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
-argument1, `argument2`: значение логического типа, типа число, строка или **дата и время**.
+argument1, `argument2`: значение логического типа, типа «Число», строка или **дата и время**.
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 значение логического типа
@@ -3003,8 +3018,8 @@ argument1, `argument2`: значение логического типа, тип
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает логическое значение Истина, если аргумент1 больше либо равен аргументу2, в противном случае возвращает результат Ложь.
@@ -3012,7 +3027,7 @@ argument1, `argument2`: значение логического типа, тип
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 GREATEREQ(argument1, argument2)
@@ -3020,15 +3035,15 @@ GREATEREQ(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
-argument1, `argument2`: значение логического типа, типа число, строка или **дата и время**.
+argument1, `argument2`: значение логического типа, типа «Число», строка или **дата и время**.
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 значение логического типа
@@ -3046,8 +3061,8 @@ argument1, `argument2`: значение логического типа, тип
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее часу указанной даты в местном часовом поясе.
@@ -3055,7 +3070,7 @@ argument1, `argument2`: значение логического типа, тип
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `HOUR(argument1)`
@@ -3063,7 +3078,7 @@ argument1, `argument2`: значение логического типа, тип
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -3071,7 +3086,7 @@ argument1, `argument2`: значение логического типа, тип
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -3089,8 +3104,8 @@ argument1, `argument2`: значение логического типа, тип
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее часу указанной даты в заданном часовом поясе. Идентификатор часового пояса должен быть задан в формате базы данных часовых поясов IANA.
@@ -3098,7 +3113,7 @@ argument1, `argument2`: значение логического типа, тип
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `HOURTZ(argument1, argument2)`
@@ -3106,7 +3121,7 @@ argument1, `argument2`: значение логического типа, тип
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 - `argument1`: **дата и время**
@@ -3115,7 +3130,7 @@ argument1, `argument2`: значение логического типа, тип
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -3133,8 +3148,8 @@ argument1, `argument2`: значение логического типа, тип
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Преобразует строку с ID объекта в его идентификатор.
@@ -3142,7 +3157,7 @@ argument1, `argument2`: значение логического типа, тип
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 <code>ID("ObjectID")</code>
@@ -3150,7 +3165,7 @@ argument1, `argument2`: значение логического типа, тип
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 <code>ObjectID</code>: строка, системное имя объекта.
@@ -3158,7 +3173,7 @@ argument1, `argument2`: значение логического типа, тип
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 ID объекта
@@ -3166,7 +3181,7 @@ ID объекта
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
@@ -3186,8 +3201,8 @@ ID объекта
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Использует в качестве аргументов значения или выражения, результатом которых является некоторое значение. Возвращает аргумент2, если аргумент1 является Истиной, в противном случае возвращает аргумент3.
@@ -3195,7 +3210,7 @@ ID объекта
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 IF(argument1, argumen2, argument3)
@@ -3203,7 +3218,7 @@ IF(argument1, argumen2, argument3)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: значение логического типа или выражение, результатом которого является значение логического типа.
@@ -3212,7 +3227,7 @@ argument2, `argument3`: значение любого типа или выраж
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 Тип возвращаемого значения тот же, что у аргументов argument2 и argument3
@@ -3230,8 +3245,8 @@ argument2, `argument3`: значение любого типа или выраж
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает номер (отсчитываемый от нуля) позиции, на которой располагается искомая строка в исходной строке. Номер позиции может отсчитываться от произвольного положения (опционально).
@@ -3239,7 +3254,7 @@ argument2, `argument3`: значение любого типа или выраж
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 ``` cs
@@ -3249,7 +3264,7 @@ INDEXOF(argument1, argument2, [опциональный argument3])
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: исходная строка,
@@ -3259,7 +3274,7 @@ argument3 (опционально): номер позиции, от которо
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -3277,8 +3292,8 @@ argument3 (опционально): номер позиции, от которо
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Преобразует значение длительности в секунды и наоборот.
@@ -3286,7 +3301,7 @@ argument3 (опционально): номер позиции, от которо
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 INSECONDS(argument1)
@@ -3294,7 +3309,7 @@ INSECONDS(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: длительность
@@ -3303,7 +3318,7 @@ argument 1: число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число, если в качестве аргумента используется значение длительности
@@ -3322,8 +3337,8 @@ argument 1: число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Преобразует значение типа «**Дата и время**» в формат ISO.
@@ -3331,7 +3346,7 @@ argument 1: число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `ISOFORMAT(argument1)`
@@ -3339,7 +3354,7 @@ argument 1: число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -3347,7 +3362,7 @@ argument 1: число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 строка
@@ -3365,8 +3380,8 @@ argument 1: число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает значение Истина, если задана сегодняшняя дата. В противном случае возвращает результат Ложь.
@@ -3374,7 +3389,7 @@ argument 1: число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `ISTODAY(аргумент1)`
@@ -3382,7 +3397,7 @@ argument 1: число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 аргумент1: **дата и время**
@@ -3390,7 +3405,7 @@ argument 1: число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 значение логического типа
@@ -3408,8 +3423,8 @@ argument 1: число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Объединяет строки с использованием заданного разделителя.
@@ -3417,7 +3432,7 @@ argument 1: число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `JOIN(argument1, list(argument2, argument3,.. argument N))`
@@ -3425,7 +3440,7 @@ argument 1: число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: разделитель объединяемых строк,
@@ -3434,7 +3449,7 @@ argument2, argument3, ..., argument N (в функции list): объединя
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 строка
@@ -3452,8 +3467,8 @@ argument2, argument3, ..., argument N (в функции list): объединя
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает количество символов в строке.
@@ -3461,7 +3476,7 @@ argument2, argument3, ..., argument N (в функции list): объединя
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `LENGTH(argument1)`
@@ -3469,7 +3484,7 @@ argument2, argument3, ..., argument N (в функции list): объединя
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: строка
@@ -3477,7 +3492,7 @@ argument2, argument3, ..., argument N (в функции list): объединя
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -3495,8 +3510,8 @@ argument2, argument3, ..., argument N (в функции list): объединя
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает логическое значение Истина, если аргумент1 меньше аргумента2, в противном случае возвращает результат Ложь.
@@ -3504,7 +3519,7 @@ argument2, argument3, ..., argument N (в функции list): объединя
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `LESS(argument1, argument2)`
@@ -3512,7 +3527,7 @@ argument2, argument3, ..., argument N (в функции list): объединя
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 argument1, `argument2`: значение логического типа, число, строка или **дата и время**.
@@ -3520,7 +3535,7 @@ argument1, `argument2`: значение логического типа, чис
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 значение логического типа
@@ -3538,8 +3553,8 @@ argument1, `argument2`: значение логического типа, чис
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает логическое значение Истина, если аргумент1 меньше либо равен аргументу2, в противном случае возвращает результат Ложь.
@@ -3547,7 +3562,7 @@ argument1, `argument2`: значение логического типа, чис
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `LESSEQ(argument1, argument2)`
@@ -3555,7 +3570,7 @@ argument1, `argument2`: значение логического типа, чис
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 argument1, `argument2`: значение логического типа, число, строка или **дата и время**..
@@ -3563,7 +3578,7 @@ argument1, `argument2`: значение логического типа, чис
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 значение логического типа
@@ -3581,8 +3596,8 @@ argument1, `argument2`: значение логического типа, чис
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Определяет список. Берет перечисление значений одного типа, разделяет их запятыми и возвращает список.
@@ -3590,15 +3605,17 @@ argument1, `argument2`: значение логического типа, чис
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
+``` cs
 LIST(argument1, …, argument N)
+```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 argument1, …, argument N: значения одного типа
@@ -3606,7 +3623,7 @@ argument1, …, argument N: значения одного типа
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 список
@@ -3624,8 +3641,8 @@ argument1, …, argument N: значения одного типа
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает дату и время в местном часовом поясе, соответствующие указанным значениям года, месяца, дня, часа, минут и секунд.
@@ -3633,7 +3650,7 @@ argument1, …, argument N: значения одного типа
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 MAKEDATETIME(argument1, argument2, argument3, argument4, argument5, argument6)
@@ -3641,7 +3658,7 @@ MAKEDATETIME(argument1, argument2, argument3, argument4, argument5, argument6)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: числовое значение, соответствующее году.
@@ -3654,7 +3671,7 @@ argument6: числовое значение, соответствующее с�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -3672,8 +3689,8 @@ argument6: числовое значение, соответствующее с�
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает дату и время в заданном часовом поясе, соответствующие указанным значениям года, месяца, дня, часа, минут и секунд. Идентификатор часового пояса должен быть задан в формате базы данных часовых поясов IANA
@@ -3681,7 +3698,7 @@ argument6: числовое значение, соответствующее с�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 MAKEDATETIMETZ(argument1, argument2, argument3, argument4, argument5, argument6, argument7)
@@ -3689,7 +3706,7 @@ MAKEDATETIMETZ(argument1, argument2, argument3, argument4, argument5, argument6,
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 аргумент1: числовое значение, соответствующее году.
@@ -3703,7 +3720,7 @@ MAKEDATETIMETZ(argument1, argument2, argument3, argument4, argument5, argument6,
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -3721,8 +3738,8 @@ MAKEDATETIMETZ(argument1, argument2, argument3, argument4, argument5, argument6,
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Использует в качестве аргументов строку и регулярное выражение. Возвращает логическое значение Истина, если какая-либо часть строки или строка полностью соответствуетусловию, заданному регулярным выражением. В противном случае возвращает результат Ложь.
@@ -3730,7 +3747,7 @@ MAKEDATETIMETZ(argument1, argument2, argument3, argument4, argument5, argument6,
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 MATCHES(argument1, argument2)
@@ -3738,7 +3755,7 @@ MATCHES(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: строка
@@ -3747,7 +3764,7 @@ MATCHES(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 значение логического типа
@@ -3765,8 +3782,8 @@ MATCHES(argument1, argument2)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Определяет максимальное значение при помощи функции GREATER среди всех элементов списка, заданного в качестве аргумента. Элементы списка могут быть значениями или выражениями, результатом которых является значение. Все элементы списка должны быть одного типа.
@@ -3774,7 +3791,7 @@ MATCHES(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 MAX(argument1)
@@ -3782,15 +3799,15 @@ MAX(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
-`argument1`: список, состоящий из значений типа число, длительность или **дата и время**.
+`argument1`: список, состоящий из значений типа «Число», длительность или **дата и время**.
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 Тип возвращаемого значения тот же, что и у элементов списка. Являющегося аргументом.
@@ -3808,8 +3825,8 @@ MAX(argument1)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Определяет минимальное значение при помощи функции LESS среди всех элементов списка, заданного в качестве аргумента. Элементы списка могут быть значениями или выражениями, результатом которых является значение. Все элементы списка должны быть одного типа.
@@ -3817,7 +3834,7 @@ MAX(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 MIN(argument1)
@@ -3825,15 +3842,15 @@ MIN(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
-`argument1`: список, состоящий из значений типа число, длительность или **дата и время**.
+`argument1`: список, состоящий из значений типа «Число», длительность или **дата и время**.
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 Тип возвращаемого значения тот же, что и у элементов списка, являющегося аргументом.
@@ -3851,8 +3868,8 @@ MIN(argument1)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее минуте указанной даты в местном часовом поясе.
@@ -3860,7 +3877,7 @@ MIN(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 MINUTE(argument1)
@@ -3868,7 +3885,7 @@ MINUTE(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -3876,7 +3893,7 @@ MINUTE(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -3894,8 +3911,8 @@ MINUTE(argument1)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее минуте указанной даты в заданном часовом поясе. Идентификатор часового пояса должен быть задан в формате базы данных часовых поясов IANA.
@@ -3903,7 +3920,7 @@ MINUTE(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 MINUTETZ(argument1, argument2)
@@ -3911,7 +3928,7 @@ MINUTETZ(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -3920,7 +3937,7 @@ MINUTETZ(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -3938,8 +3955,8 @@ MINUTETZ(argument1, argument2)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее месяцу указанной даты в местном часовом поясе.
@@ -3947,7 +3964,7 @@ MINUTETZ(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 MONTH(argument1)
@@ -3955,7 +3972,7 @@ MONTH(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -3963,7 +3980,7 @@ MONTH(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -3981,8 +3998,8 @@ MONTH(argument1)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее месяцу указанной даты в заданном часовом поясе. Идентификатор часового пояса должен быть задан в формате базы данных часовых поясов IANA.
@@ -3990,7 +4007,7 @@ MONTH(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 MONTHTZ(argument1, argument2)
@@ -3998,7 +4015,7 @@ MONTHTZ(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -4007,7 +4024,7 @@ MONTHTZ(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -4025,8 +4042,8 @@ MONTHTZ(argument1, argument2)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Использует в качестве аргумента значение логического типа или выражение, результатом которого является значение логического типа. Выполняет операцию логического отрицания над аргументом.
@@ -4034,7 +4051,7 @@ MONTHTZ(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 NOT(argument1)
@@ -4042,7 +4059,7 @@ NOT(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: логический
@@ -4050,7 +4067,7 @@ NOT(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 значение логического типа
@@ -4068,8 +4085,8 @@ NOT(argument1)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Сравнивает два аргумента и возвращает логическое значение Истина, если аргумент1 не равен аргументу2, в противном случае возвращает результат Ложь.
@@ -4077,7 +4094,7 @@ NOT(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 NOTEQUALS(argument1, argument2)
@@ -4085,7 +4102,7 @@ NOTEQUALS(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 argument1, `argument2`: значение любого типа
@@ -4093,7 +4110,7 @@ argument1, `argument2`: значение любого типа
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 значение логического типа
@@ -4111,8 +4128,8 @@ argument1, `argument2`: значение любого типа
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Использует в качестве аргументов строку и регулярное выражение. Возвращает логическое значение Истина, если часть строки или строка полностью не соответствуют условию, заданному регулярным выражением. В противном случае возвращает результат Ложь.
@@ -4120,7 +4137,7 @@ argument1, `argument2`: значение любого типа
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 NOTMATCHES(argument1, argument2)
@@ -4128,7 +4145,7 @@ NOTMATCHES(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: строка
@@ -4137,7 +4154,7 @@ NOTMATCHES(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 значение логического типа
@@ -4155,8 +4172,8 @@ NOTMATCHES(argument1, argument2)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает текущую дату и время
@@ -4164,7 +4181,7 @@ NOTMATCHES(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 NOW()
@@ -4172,7 +4189,7 @@ NOW()
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 аргументы не требуются
@@ -4180,7 +4197,7 @@ NOW()
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 текущую дату и время
@@ -4198,8 +4215,8 @@ NOW()
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Поиск записи шаблона, в которой атрибут имеет указанное значение
@@ -4207,7 +4224,7 @@ NOW()
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 OBJECT(<code>argument1</code>, <code>argument2</code>, <code>argument3</code>, <code>argument4</code>)
@@ -4215,7 +4232,7 @@ OBJECT(<code>argument1</code>, <code>argument2</code>, <code>argument3</code>, <
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -4229,7 +4246,7 @@ OBJECT(<code>argument1</code>, <code>argument2</code>, <code>argument3</code>, <
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 ID записи
@@ -4247,8 +4264,8 @@ ID записи
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Берет два значения логического типа или два выражения, результатом которых являются значения логического типа, и возвращает результат логического сложения этих значений.
@@ -4256,7 +4273,7 @@ ID записи
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 OR(argument1, argument2)
@@ -4264,7 +4281,7 @@ OR(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 argument1, `argument2`: значение логического типа или выражение, результатом которого является значение логического типа.
@@ -4272,7 +4289,7 @@ argument1, `argument2`: значение логического типа или 
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 значение логического типа
@@ -4290,8 +4307,8 @@ argument1, `argument2`: значение логического типа или 
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Берет в качестве аргументов два значения числового типа и возвращает результат умножения одного на другое.
@@ -4299,7 +4316,7 @@ argument1, `argument2`: значение логического типа или 
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 PRODUCT(argument1, argument2)
@@ -4307,7 +4324,7 @@ PRODUCT(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: число
@@ -4316,7 +4333,7 @@ PRODUCT(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -4334,8 +4351,8 @@ PRODUCT(argument1, argument2)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Использует в качестве аргументов два значения числового типа и возвращает целочисленный результат деления одного на другое.
@@ -4343,7 +4360,7 @@ PRODUCT(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 QUOTIENT(argument1, argument2)
@@ -4351,7 +4368,7 @@ QUOTIENT(argument1, argument2)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 argument1(делимое): число
@@ -4360,7 +4377,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 целое число
@@ -4387,7 +4404,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 <span >REGEXREPLACE(sourceString, regEx, replacementString)</span>
@@ -4395,7 +4412,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -4407,7 +4424,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 строку
@@ -4415,7 +4432,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
@@ -4437,8 +4454,8 @@ argument2(делитель): число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Использует в качестве аргументов два значения числового типа и возвращает остаток от деления одного значения на другое.
@@ -4446,7 +4463,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `REMAINDER(argument1, argument2)`
@@ -4454,7 +4471,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 argument1(делимое): число
@@ -4463,7 +4480,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -4481,8 +4498,8 @@ argument2(делитель): число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Заменяет все экземпляры заданной строки в исходной строке на новое значение.
@@ -4490,7 +4507,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `REPLACE(argument1, argument2, argument3)`
@@ -4498,7 +4515,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: исходная строка
@@ -4508,7 +4525,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 строка
@@ -4526,8 +4543,8 @@ argument2(делитель): число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Округляет число к ближайшему целому числу.
@@ -4535,7 +4552,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `ROUND(argument1)`
@@ -4543,7 +4560,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: число
@@ -4551,7 +4568,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -4569,8 +4586,8 @@ argument2(делитель): число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее секундам указанной даты в местном часовом поясе.
@@ -4578,7 +4595,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `SECOND(argument1)`
@@ -4586,7 +4603,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -4594,7 +4611,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -4612,8 +4629,8 @@ argument2(делитель): число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее секундам указанной даты в заданном часовом поясе. Идентификатор часового пояса должен быть задан в формате базы данных часовых поясов IANA.
@@ -4621,7 +4638,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `SECONDTZ(argument1, argument2)`
@@ -4629,7 +4646,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -4638,7 +4655,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -4656,8 +4673,8 @@ argument2(делитель): число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает дату и время начала дня, в пределах которого находится значение аргумента.
@@ -4665,7 +4682,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `STARTOF`DAY(argument1)``
@@ -4673,7 +4690,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -4681,7 +4698,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -4699,8 +4716,8 @@ argument2(делитель): число
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает дату и время начала месяца, в пределах которого находится значение аргумента.
@@ -4708,7 +4725,7 @@ argument2(делитель): число
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 STARTOFMONTH(argument1)
@@ -4716,7 +4733,7 @@ STARTOFMONTH(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -4724,7 +4741,7 @@ STARTOFMONTH(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -4742,8 +4759,8 @@ STARTOFMONTH(argument1)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает дату и время начала квартала, в пределах которого находится значение аргумента.
@@ -4751,7 +4768,7 @@ STARTOFMONTH(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 STARTOFQUARTER(argument1)
@@ -4759,7 +4776,7 @@ STARTOFQUARTER(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -4767,7 +4784,7 @@ STARTOFQUARTER(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -4785,8 +4802,8 @@ STARTOFQUARTER(argument1)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает дату и время начала недели, в пределах которой находится значение аргумента.
@@ -4794,7 +4811,7 @@ STARTOFQUARTER(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `STARTOFWEEK(argument1)`
@@ -4802,7 +4819,7 @@ STARTOFQUARTER(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -4810,7 +4827,7 @@ STARTOFQUARTER(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -4828,8 +4845,8 @@ STARTOFQUARTER(argument1)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает дату и время начала года, в пределах которой находится значение аргумента.
@@ -4837,7 +4854,7 @@ STARTOFQUARTER(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `STARTOFYEAR(argument1)`
@@ -4845,7 +4862,7 @@ STARTOFQUARTER(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -4853,7 +4870,7 @@ STARTOFQUARTER(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -4871,8 +4888,8 @@ STARTOFQUARTER(argument1)
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Сравнивает два аргумента и возвращает значение Истина, если значение аргумента1 начинается с значения аргумента2, в противном случае возвращает Ложь.
@@ -4880,7 +4897,7 @@ STARTOFQUARTER(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `STARTSWITH(argument1, argument2)`
@@ -4888,7 +4905,7 @@ STARTOFQUARTER(argument1)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 argument1, `argument2`: строка
@@ -4896,7 +4913,7 @@ argument1, `argument2`: строка
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 значение логического типа
@@ -4914,8 +4931,8 @@ argument1, `argument2`: строка
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Извлекает из строки подстроку определенной длины начиная с заданной позиции (задание длины опционально).
@@ -4923,7 +4940,7 @@ argument1, `argument2`: строка
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `SUBSTRING(argument1, argument2, [опциональный argument3])`
@@ -4931,7 +4948,7 @@ argument1, `argument2`: строка
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: строка
@@ -4941,7 +4958,7 @@ argument 3(опционально): количество символов в п�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 строка
@@ -4959,8 +4976,8 @@ argument 3(опционально): количество символов в п�
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Вычитает значение аргумента2 из значения аргумента1.
@@ -4968,7 +4985,7 @@ argument 3(опционально): количество символов в п�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `SUBTRACT(argument1, argument2)`
@@ -4976,7 +4993,7 @@ argument 3(опционально): количество символов в п�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: число; `argument2`: число
@@ -4987,7 +5004,7 @@ argument 3(опционально): количество символов в п�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -5008,8 +5025,8 @@ argument 3(опционально): количество символов в п�
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Суммирует все значения списка, используемого в качестве аргумента. Конкатенация строк не поддерживается.
@@ -5017,7 +5034,7 @@ argument 3(опционально): количество символов в п�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `SUM(argument1)`
@@ -5025,15 +5042,15 @@ argument 3(опционально): количество символов в п�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
-`argument1`: список, состоящий из значений типа число или длительность
+`argument1`: список, состоящий из значений типа «Число» или длительность
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 тип возвращаемого значения тот же, что и у элементов списка, являющегося аргументом
@@ -5051,8 +5068,8 @@ argument 3(опционально): количество символов в п�
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Переводит строку в нижний регистр (к прописным буквам).
@@ -5060,7 +5077,7 @@ argument 3(опционально): количество символов в п�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `TOLOWER(argument1)`
@@ -5068,7 +5085,7 @@ argument 3(опционально): количество символов в п�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: строка
@@ -5076,7 +5093,7 @@ argument 3(опционально): количество символов в п�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 строка
@@ -5094,8 +5111,8 @@ argument 3(опционально): количество символов в п�
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Переводит строку в верхний регистр (к заглавным буквам).
@@ -5103,7 +5120,7 @@ argument 3(опционально): количество символов в п�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `TOUPPER(argument1)`
@@ -5111,7 +5128,7 @@ argument 3(опционально): количество символов в п�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: строка
@@ -5119,7 +5136,7 @@ argument 3(опционально): количество символов в п�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 строка
@@ -5137,8 +5154,8 @@ argument 3(опционально): количество символов в п�
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает текущего пользователя или идентификатор текущего пользователя, в зависимости от того, к какому типу данных относится поле. Если вычисляемый атрибут принадлежит типу данных Пользователь, функция возвращает текущего пользователя. Если вычисляемый атрибут текстового типа, функция возвращает идентификатор текущего пользователя.
@@ -5146,7 +5163,7 @@ argument 3(опционально): количество символов в п�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `USER()`
@@ -5154,7 +5171,7 @@ argument 3(опционально): количество символов в п�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 аргументы не требуются
@@ -5162,7 +5179,7 @@ argument 3(опционально): количество символов в п�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 пользователь или строка
@@ -5180,8 +5197,8 @@ argument 3(опционально): количество символов в п�
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 
@@ -5190,18 +5207,18 @@ argument 3(опционально): количество символов в п�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 VALUE(argument, [defaultValue])
 ```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 
@@ -5211,7 +5228,7 @@ VALUE(argument, [defaultValue])
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 тип возвращаемого значения совпадает с типом проверяемого выражения
@@ -5219,11 +5236,11 @@ VALUE(argument, [defaultValue])
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Пример
+**Пример**
 </td>
 <td markdown="block">
 
-```cs
+``` cs
 VALUE($Amount, "Не заполнено поле Amount")
 ```
 
@@ -5242,8 +5259,8 @@ VALUE($Amount, "Не заполнено поле Amount")
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает дату на основании количества рабочих дней с определенной даты, с поправкой на праздники и фактические выходные дни.
@@ -5252,7 +5269,7 @@ VALUE($Amount, "Не заполнено поле Amount")
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 WORKDAYS(argument1, argument2, [опционально list (argument3, argument4, ..., argument M)])
@@ -5260,7 +5277,7 @@ WORKDAYS(argument1, argument2, [опционально list (argument3, argument
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время** начала работы,
@@ -5270,7 +5287,7 @@ argument3, argument4, …, argument M (в опциональной функци�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -5288,8 +5305,8 @@ argument3, argument4, …, argument M (в опциональной функци�
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает дату на основании количества рабочих дней с определенной даты, с поправкой на праздники и фактические выходные дни, а также на временную зону рабочего офиса.
@@ -5297,7 +5314,7 @@ argument3, argument4, …, argument M (в опциональной функци�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 WORKDAYSTZ(argument1, argument2, list (argument3, argument4, .., argument M), argument N)
@@ -5305,7 +5322,7 @@ WORKDAYSTZ(argument1, argument2, list (argument3, argument4, .., argument M), ar
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время** начала работы
@@ -5316,7 +5333,7 @@ argument N: временная зона рабочего офиса в форм�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -5334,8 +5351,8 @@ argument N: временная зона рабочего офиса в форм�
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает продолжительность работы между двумя датами, на основании предположения, что рабочий день начинается в 00:00 и длится 24 часа.
@@ -5344,7 +5361,7 @@ argument N: временная зона рабочего офиса в форм�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 WORKDAYSDURATION(argument1, argument 2, [опционально list
@@ -5353,7 +5370,7 @@ WORKDAYSDURATION(argument1, argument 2, [опционально list
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время** начала работы,
@@ -5363,7 +5380,7 @@ argument3, argument4, …, argument M (в опциональной функци�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 длительность
@@ -5381,8 +5398,8 @@ argument3, argument4, …, argument M (в опциональной функци�
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает продолжительность работы между двумя датами с поправкой на временную зону рабочего офиса, на основании предположения, что рабочий день начинается в 00:00 и длится 24 часа.
@@ -5390,7 +5407,7 @@ argument3, argument4, …, argument M (в опциональной функци�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 WORKDAYSDURATIONTZ(argument1, argument2, list (argument3,
@@ -5399,7 +5416,7 @@ Argument4, .., argument M), argument N)
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время** начала работы,
@@ -5410,7 +5427,7 @@ argument N: временная зона рабочего офиса в форм�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 длительность
@@ -5428,8 +5445,8 @@ argument N: временная зона рабочего офиса в форм�
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает дату и время на основании количества рабочих часов с определенного момента времени, с поправкой на праздники и фактические выходные дни.
@@ -5438,7 +5455,7 @@ argument N: временная зона рабочего офиса в форм�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 WORKHOURS(argument1, argument2, argument3, argument 4, [опционально list (argument5, argument6, .., argument M)])
@@ -5446,7 +5463,7 @@ WORKHOURS(argument1, argument2, argument3, argument 4, [опционально l
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время** начала работы,
@@ -5458,7 +5475,7 @@ argument5, argument6, … argument M (в опциональной функции
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -5476,8 +5493,8 @@ argument5, argument6, … argument M (в опциональной функции
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает продолжительность работы между двумя датами при условии, что рабочий день начинается в заданное время и имеет определенную длительность.
@@ -5486,7 +5503,7 @@ argument5, argument6, … argument M (в опциональной функции
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 WORKHOURSDURATION(argument1, argument2, argument3, argument 4, [опционально list (argument5, argument6, .., argument M)])
@@ -5494,7 +5511,7 @@ WORKHOURSDURATION(argument1, argument2, argument3, argument 4, [опционал
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время** начала работы
@@ -5506,7 +5523,7 @@ argument5, argument6, .., argument M (в опциональной функции
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 длительность
@@ -5524,8 +5541,8 @@ argument5, argument6, .., argument M (в опциональной функции
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает продолжительность работы между двумя датами с поправкой на временную зону рабочего офиса, при условии, что рабочий день начинается в заданное время и имеет определенную длительность.
@@ -5533,7 +5550,7 @@ argument5, argument6, .., argument M (в опциональной функции
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 WORKHOURSDURATIONTZ(argument1, argument2, argument3, argument4, list (argument5, argument6, .., argument M), argument N)
@@ -5541,7 +5558,7 @@ WORKHOURSDURATIONTZ(argument1, argument2, argument3, argument4, list (argument5,
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время** начала работы
@@ -5554,7 +5571,7 @@ argument N: временная зона рабочего офиса в форм�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 длительность
@@ -5572,8 +5589,8 @@ argument N: временная зона рабочего офиса в форм�
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Возвращает дату и время на основании количества рабочих часов с определенного момента времени, с поправкой на праздники и фактические выходные дни, а также на временную зону рабочего офиса.
@@ -5581,7 +5598,7 @@ argument N: временная зона рабочего офиса в форм�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 WORKHOURSTZ(argument1, argument2, argument3, argument4, list(argument5, argument6, .., argument M), argument N)
@@ -5589,7 +5606,7 @@ WORKHOURSTZ(argument1, argument2, argument3, argument4, list(argument5, argument
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время** начала работы,
@@ -5602,7 +5619,7 @@ argument N: временная зона рабочего офиса в форм�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 **дата и время**
@@ -5620,8 +5637,8 @@ argument N: временная зона рабочего офиса в форм�
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее году указанной даты в местном часовом поясе.
@@ -5629,7 +5646,7 @@ argument N: временная зона рабочего офиса в форм�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `YEAR(argument1)`
@@ -5637,7 +5654,7 @@ argument N: временная зона рабочего офиса в форм�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 `argument1`: **дата и время**
@@ -5645,7 +5662,7 @@ argument N: временная зона рабочего офиса в форм�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число
@@ -5663,8 +5680,8 @@ argument N: временная зона рабочего офиса в форм�
 </th>
 </tr>
 <tr markdown="block">
-<td markdown="block">
-Описание
+<td markdown="block" style="width:100px">
+**Описание**
 </td>
 <td markdown="block">
 Принимает аргумент типа «**Дата и время**» и возвращает числовое значение, соответствующее году указанной даты в заданном часовом поясе.
@@ -5673,7 +5690,7 @@ argument N: временная зона рабочего офиса в форм�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Синтаксис
+**Синтаксис**
 </td>
 <td markdown="block">
 `YEARTZ(argument1, argument2)`
@@ -5681,7 +5698,7 @@ argument N: временная зона рабочего офиса в форм�
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Аргументы
+**Аргументы**
 </td>
 <td markdown="block">
 argument: **дата и время**
@@ -5690,7 +5707,7 @@ argument: строка
 </tr>
 <tr markdown="block">
 <td markdown="block">
-Возвращает
+**Результат**
 </td>
 <td markdown="block">
 число

@@ -148,7 +148,7 @@ kbId: 4649
 
     ```
 
-    _![Проверка остановки сервисов Elasticsearch, comindware<instanceName>, {{ nginxVariants }}, Kafka и Zookeeper](https://kb.comindware.ru/assets/img_63567da91a5c6.png)_
+    _![Проверка остановки сервисов {{ openSearchVariants }}, comindware<instanceName>, {{ nginxVariants }}, Kafka и Zookeeper](https://kb.comindware.ru/assets/img_63567da91a5c6.png)_
 
 6. Скопируйте архив со снимком базы данных экземпляра ПО в папку `/tmp/`.
 7. Распакуйте архив в текущую папку.

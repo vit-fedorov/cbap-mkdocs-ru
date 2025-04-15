@@ -41,10 +41,9 @@ clusterName: <instanceName>
 #nodeName: <instanceName>
 # Путь к экземпляру, по которому ПО находит свою конфигурацию
 configPath: <configPath>
-# Адрес службы журналирования ({{ openSearchVariants }}, OpenSearch)
-# Устаревшая директива: elasticsearchUri
+# Адрес службы журналирования ({{ openSearchVariants }})
 journal.server: http://<searchHostIP>:<searchHostPort>
-# Индекс службы журналирования ({{ openSearchVariants }}, OpenSearch)
+# Индекс службы журналирования ({{ openSearchVariants }})
 # journal.name: <instanceName>
 # URI-адрес экземпляра ПО
 fqdn: <hostName>

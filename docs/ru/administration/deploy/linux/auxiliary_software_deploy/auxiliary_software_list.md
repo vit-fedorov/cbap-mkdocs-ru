@@ -88,8 +88,8 @@ kbId: 4582
 
 | **Наименование ПО и ссылка** | **Описание** | **Версия** | **Лицензия** |
 | --- | --- | --- | --- |{% endif %}
-| [DDay.iCal](https://github.com/rianjs/ical.net) | Компонент iCal.NET — библиотеки классов для .NET, которая обеспечивает соответствие RFC 5545 и полную совместимость с популярными приложениями и библиотеками календарей. | 1.0.2.0 | MIT License |
-| [Elasticsearch.Net](https://github.com/elastic/elasticsearch-net) | Строго типизированная клиентская библиотека, обеспечивающая работу с {{ openSearchVariants }}. | 7.0.0.0 | Apache 2.0 License |
+| [DDay.iCal](https://github.com/rianjs/ical.net) | Компонент iCal.NET — библиотеки классов для .NET, которая обеспечивает соответствие RFC 5545 и полную совместимость с популярными приложениями и библиотеками календарей. | 1.0.2.0 | MIT License |{% if not gostech %}
+| [Elasticsearch.Net](https://github.com/elastic/elasticsearch-net) | Строго типизированная клиентская библиотека, обеспечивающая работу с {{ openSearchVariants }}. | 7.0.0.0 | Apache 2.0 License |{% endif %}
 | [Html Agility Pack (HAP)](https://github.com/zzzprojects/html-agility-pack) | Гибкое средство синтаксического анализа HTML, создающее модель чтения-записи DOM, с поддержкой простого XPATH или XSLT. | 1.11.15.0 | MIT License |
 | [Humanizer](https://github.com/Humanizr/Humanizer) | Библиотека CS для обработки и отображения строк, перечислений, дат, времени, промежутков времени, чисел и количества. | 2.2.0.0 | MIT License |
 | [JWT](https://github.com/jwt-dotnet/jwt) | Библиотека, реализующая JWT (JSON Web Token) для .NET. | 9.0.0.0 | CC0-1.0 License |

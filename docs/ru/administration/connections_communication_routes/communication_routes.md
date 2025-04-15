@@ -48,11 +48,13 @@ kbId: 4676
 ### Подключения к шине сообщений {: .pageBreakBefore }
 
 - Отправка сообщений через Kafka
-- [Получение сообщений через Kafka][kafka_connection]
+- [Получение сообщений через {{ apacheKafkaVariants }}][kafka_connection]
+{% if not gostech %}
 - Отправка сообщений через MSMQ
 - Получение сообщений через MSMQ
 - Отправка сообщений через RabbitMQ
 - Получение сообщений через RabbitMQ
+{% endif %}
 
 ### SQL-подключения
 

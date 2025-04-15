@@ -28,9 +28,9 @@ kbId: 4644
     - Путь к репозиторию снимков {{ openSearchVariants }} — `elastic_backup_path`(например, `e:\elastic_backup`).
     - Имя снимка {{ openSearchVariants }} — `snapshot_name` (например, `<InstanceName>01022022080800` — в формате `<<InstanceName>><Date><Time>`). См. инструкции {{ openSearchVariants }} по формированию имён снимков с использованием текущей даты  (на английском языке): <https://www.elastic.co/guide/en/elasticsearch/reference/current/api-conventions.html#api-date-math-index-names>.
 
-2. Настройте конфигурацию репозитория снимков сервера Elasticseach.
+2. Настройте конфигурацию репозитория снимков сервера {{ openSearchVariants }}.
 
-    1. Откройте файл `elasticsearch.yml` в папке с данными конфигурации Elasticseach (например: `C:\ElasticsearchData`)
+    1. Откройте файл `elasticsearch.yml` в папке с данными конфигурации {{ openSearchVariants }} (например: `C:\ElasticsearchData`)
 
     2. <a id="P1.2.2"></a>В файле `elasticsearch.yml` и добавьте директиву `path.repo` и через двоеточие укажите путь к репозиторию снимков (папке с резервными копиями), например:
 

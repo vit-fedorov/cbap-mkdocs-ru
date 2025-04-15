@@ -28,7 +28,7 @@ kbId: 4675
 
 ### Системные подключения
 
-- [Управление версиями через Git][git_connection]
+- [Управление версиями через {{ gitVariants }}][git_connection]
 - [{{ openSearchVariants }}][elasticsearch_connection]
 - Абстрактное подключение
 - [Карты][map_configure]
@@ -64,12 +64,14 @@ kbId: 4675
 
 ### Подключения к шине сообщений
 
-- Отправка сообщений через Kafka
-- [Получение сообщений через Kafka][kafka_connection]
+- Отправка сообщений через {{ apacheKafkaVariants }}
+- [Получение сообщений через {{ apacheKafkaVariants }}][kafka_connection]
+{% if not gostech %}
 - Отправка сообщений через MSMQ
 - Получение сообщений через MSMQ
 - Отправка сообщений через RabbitMQ
 - Получение сообщений через RabbitMQ
+{% endif %}
 
 ### SQL-подключения
 

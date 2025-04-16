@@ -14,7 +14,7 @@ hide:
   - tags
 ---
 
-# Экспорт и импорт версий приложения {{ gitVariants }} {: #version_control_git}
+# Экспорт и импорт версий приложения с помощью {{ gitVariants }} {: #version_control_git}
 
 {% include-markdown ".snippets/experimental_feature.md" %}
 
@@ -22,7 +22,7 @@ hide:
 
 В **{{ productName }}** предусмотрены импорт и экспорт версий приложения посредством системы контроля версий Git{% if gostech %} (например, {{ gitVariants }}){% endif %}.
 
-Для работы этой функции требуется настроить подключение к репозиторию. См. статью *«[Управление версиями {{ gitVariants }}. Настройка подключения][git_connection]»*.
+Для работы этой функции требуется настроить подключение к репозиторию. См. статью *«[Управление версиями с помомщью {{ gitVariants }}. Настройка подключения][git_connection]»*.
 
 !!! note "Примечание"
 
@@ -181,7 +181,7 @@ end="<!--version-control-warning-end-->"
 --8<-- "related_topics_heading.md"
 
 - _[Управление версиями приложения][version_control]_
-- _[Ручное управление версиями][version_control_manual]_
+- _[Экспорт и импорт версий приложения вручную][version_control_manual]_
 - _[Экспорт и импорт версий приложения с помощью Excel][version_control_excel]_
 
 </div>

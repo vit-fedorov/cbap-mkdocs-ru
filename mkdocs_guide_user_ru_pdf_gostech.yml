@@ -282,6 +282,7 @@ nav:
   - Обзор версий:
     - general/changelog/changelog.md
     - general/changelog/release_notes_5.0.md
+    - general/changelog/release_notes_5.0.13334.md
 
 exclude_docs: |
   

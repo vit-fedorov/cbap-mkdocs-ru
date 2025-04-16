@@ -47,7 +47,7 @@ kbId: 4676
 
 ### Подключения к шине сообщений {: .pageBreakBefore }
 
-- Отправка сообщений через Kafka
+- Отправка сообщений через {{ apacheKafkaVariants }}
 - [Получение сообщений через {{ apacheKafkaVariants }}][kafka_connection]
 {% if not gostech %}
 - Отправка сообщений через MSMQ

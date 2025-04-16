@@ -244,6 +244,10 @@
 
 [templates_archive_unarchive]: {{ kbArticleURLPrefix }}4709#templates_archive_unarchive
 
+[templates_view_in_app]: {{ kbArticleURLPrefix }}4709#templates_view_in_app
+
+[templates_view_records]: {{ kbArticleURLPrefix }}4709#templates_view_records
+
 [template_common_properties]: {{ kbArticleURLPrefix }}4756
 
 [themes]: {{ kbArticleURLPrefix }}4708
@@ -474,6 +478,8 @@
 
 [process_diagram_elements_events_intermediate]: {{ kbArticleURLPrefix }}4742
 
+[process_diagram_elements_events_intermediate_usage]: {{ kbArticleURLPrefix }}4742#process_diagram_elements_events_intermediate_usage
+
 [process_diagram_elements_events_start]: {{ kbArticleURLPrefix }}4735
 
 [experimental_feature_support]: {{ kbArticleURLPrefix }}4579#experimental_feature_support
@@ -492,7 +498,15 @@
 
 [expression_editor]: {{ kbArticleURLPrefix }}5025
 
+[expression_editor_reference]: {{ kbArticleURLPrefix }}5025#expression_editor_reference
+
 [n3_editor_autocomplete]: {{ kbArticleURLPrefix }}5039
+
+[n3_editor_autocomplete_block]: {{ kbArticleURLPrefix }}5039
+
+[n3_editor_autocomplete_predicate]: {{ kbArticleURLPrefix }}5039
+
+[n3_editor_autocomplete_prefix]: {{ kbArticleURLPrefix }}5039
 
 [expression_debug]: {{ kbArticleURLPrefix }}4929
 
@@ -552,11 +566,11 @@
 
 [formula_editor_autocomplete]: {{ kbArticleURLPrefix }}5035
 
-[formula_editor_function_autocompete]: {{ kbArticleURLPrefix }}5027
+[formula_autocompete_editor_function]: {{ kbArticleURLPrefix }}5035
 
-[formula_editor_from_where_select_autocomplete]: {{ kbArticleURLPrefix }}5026
+[formula_editor_autocomplete_from_where_select]: {{ kbArticleURLPrefix }}5035
 
-[formula_editor_record_heading_autocomplete]: {{ kbArticleURLPrefix }}5032
+[formula_editor_autocomplete_record_heading]: {{ kbArticleURLPrefix }}5035
 
 [functions]: {{ kbArticleURLPrefix }}4711
 
@@ -587,12 +601,6 @@
 [my_tasks_page_configure]: {{ kbArticleURLPrefix }}4812
 
 [my_tasks_page_configure_add_to_navigation]: {{ kbArticleURLPrefix }}4812#my_tasks_page_configure_add_to_navigation
-
-[n3_editor_block_autocomplete]: {{ kbArticleURLPrefix }}5041
-
-[n3_editor_predicate_autocomplete]: {{ kbArticleURLPrefix }}5046
-
-[n3_editor_prefix_autocomplete]: {{ kbArticleURLPrefix }}5042
 
 [navigation_panel]: {{ kbArticleURLPrefix }}4824
 

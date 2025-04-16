@@ -358,19 +358,19 @@ kbId: 5097
 
     - **Astra Linux, Ubuntu, Debian** (DEB-based)
 
-    ``` shell
+    ``` sh
     chown -R www-data:www-data /var/lib/comindware/<instanceName>/Database
     ```
 
     - **РЕД ОС, Rocky** (RPM-based)
 
-    ``` shell
+    ``` sh
     chown -R nginx:nginx /var/lib/comindware/<instanceName>/Database
     ```
 
     - **Альт Сервер**
 
-    ``` shell
+    ``` sh
     chown -R _nginx:_nginx /var/lib/comindware/<instanceName>/Database
     ```
 

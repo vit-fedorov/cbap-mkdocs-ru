@@ -517,7 +517,7 @@ kbId: 4622
 
 <!--initialize-end-->
 
-### Подготовка экземпляра ПО к разработке приложений {: #deploy_guide_linux_instance_prepare .pageBreakBefore }
+## Подготовка экземпляра ПО к разработке приложений {: #deploy_guide_linux_instance_prepare .pageBreakBefore }
 
 <!--instance-prepare-start-->
 

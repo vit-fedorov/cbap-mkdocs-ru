@@ -220,7 +220,7 @@ start="<!--initialize-start-->"
 end="<!--initialize-end-->"
 %}
 
-### Подготовка экземпляра ПО к разработке приложений {: #deploy_guide_windows_instance_prepare .pageBreakBefore }
+## Подготовка экземпляра ПО к разработке приложений {: #deploy_guide_windows_instance_prepare .pageBreakBefore }
 
 {%
 include-markdown "../linux/deploy_guide.md"

@@ -283,7 +283,8 @@ nav:
     - general/changelog/release_notes_5.0.13334.md
 
 exclude_docs: |
-  
+  using_the_system/mobile_app_use.md
+  using_the_system/password_restore.md
   administration/connections_communication_routes/system_connections/s3_connection.md
   administration/connections_communication_routes/message_queue_connections/kafka_connection.md
   administration/connections_communication_routes/authentication/openid_connection.md

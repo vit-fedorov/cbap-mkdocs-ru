@@ -51,7 +51,7 @@ hide: tags
     - _[Настройка для резервного копирования в дополнительное хранилище S3 по расписанию](#backup_configure_instance_s3_advanced)_
     {% endif %}
 
-2. Подготовьте {{ openSearchVariants }} для резервного копирования данных . {% if gostech %}См. _[документацию Platform V Search](https://client.sbertech.ru/docs/public/SRH/1.6.0/index.html)_.{% else %}См. параграфы:
+2. Подготовьте {{ openSearchVariants }} для резервного копирования данных. {% if not gostech %}См. параграфы:
 
     - _[Настройка резервного копирования данных {{ openSearchVariants }} на диск](#backup_configure_elasticsearch_disk)_
     - _[Настройка резервного копирования данных {{ openSearchVariants }} в хранилище S3](#backup_configure_elasticsearch_s3)_
@@ -379,7 +379,7 @@ hide: tags
             
             !!! tip "Совет"
                 
-                Настроить более сложную конфигурацию резервного копирования можно в файле `<instanceName>.yml`. См. _«[Настройка экземпляра ПО {{ productName }} для резервного копирования в дополнительное хранилище S3 по расписанию](#backup_configure_instance_s3_advanced)»_.
+                Настроить более сложную конфигурацию резервного копирования в S3 можно в файле `<instanceName>.yml`. См. _«[Настройка экземпляра ПО {{ productName }} для резервного копирования в дополнительное хранилище S3 по расписанию](#backup_configure_instance_s3_advanced)»_.
 
     - **Дополнительный репозиторий для резервных копий** — выберите хранилище, в которое будут сохраняться дубликаты резервных копий.
     - **С файлами** — установите этот флажок, чтобы включить в состав резервной копии загруженные файлы (папка `Streams`).
@@ -390,9 +390,7 @@ hide: tags
 
             Для резервного копирования журнала транзакций (истории) необходимо настроить экземпляр ПО и службу {{ openSearchVariants }}.
             
-            {% if gostech %}
-            См. _[документацию Platform V Search](https://client.sbertech.ru/docs/public/SRH/1.6.0/index.html)_.
-            {% else %}
+            {% if not gostech %}
             См. _«[Настройка резервного копирования данных {{ openSearchVariants }}](#backup_configure_elasticsearch)»_.
             {% endif %}
 

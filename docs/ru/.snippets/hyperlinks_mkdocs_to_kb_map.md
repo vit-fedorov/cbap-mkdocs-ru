@@ -500,6 +500,12 @@
 
 [n3_editor_autocomplete]: {{ kbArticleURLPrefix }}5039
 
+[n3_editor_autocomplete_block]: {{ kbArticleURLPrefix }}5039
+
+[n3_editor_autocomplete_predicate]: {{ kbArticleURLPrefix }}5039
+
+[n3_editor_autocomplete_prefix]: {{ kbArticleURLPrefix }}5039
+
 [expression_debug]: {{ kbArticleURLPrefix }}4929
 
 [form_access_control]: {{ kbArticleURLPrefix }}4789
@@ -558,11 +564,11 @@
 
 [formula_editor_autocomplete]: {{ kbArticleURLPrefix }}5035
 
-[formula_editor_function_autocompete]: {{ kbArticleURLPrefix }}5027
+[formula_autocompete_editor_function]: {{ kbArticleURLPrefix }}5035
 
-[formula_editor_from_where_select_autocomplete]: {{ kbArticleURLPrefix }}5026
+[formula_editor_autocomplete_from_where_select]: {{ kbArticleURLPrefix }}5035
 
-[formula_editor_record_heading_autocomplete]: {{ kbArticleURLPrefix }}5032
+[formula_editor_autocomplete_record_heading]: {{ kbArticleURLPrefix }}5035
 
 [functions]: {{ kbArticleURLPrefix }}4711
 
@@ -593,12 +599,6 @@
 [my_tasks_page_configure]: {{ kbArticleURLPrefix }}4812
 
 [my_tasks_page_configure_add_to_navigation]: {{ kbArticleURLPrefix }}4812#my_tasks_page_configure_add_to_navigation
-
-[n3_editor_block_autocomplete]: {{ kbArticleURLPrefix }}5041
-
-[n3_editor_predicate_autocomplete]: {{ kbArticleURLPrefix }}5046
-
-[n3_editor_prefix_autocomplete]: {{ kbArticleURLPrefix }}5042
 
 [navigation_panel]: {{ kbArticleURLPrefix }}4824
 

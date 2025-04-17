@@ -10,7 +10,7 @@ kbId: 4582
 
 Некоторые функции **{{ productName }}** реализованы с использованием сторонних библиотек.
 
-Для обеспечения работы **{{ productName }}** используются сторонние сервисы, такие как веб-сервер, СУБД, обратный прокси-сервер и т. п.
+Для обеспечения работы **{{ productName }}** используются сторонние сервисы, такие как веб-сервер, СУБД, обратный прокси-сервер и т.&nbsp;п.
 
 Здесь представлен перечень стороннего программного обеспечения (ПО), которое поставляется вместе с **{{ productName }}** версии 5.0 для операционных систем (ОС) семейства Linux: «Альт Сервер» и Astra Linux.
 
@@ -53,7 +53,7 @@ kbId: 4582
 | [moment-timezone](https://www.npmjs.com/package/moment-timezone) | Библиотека для Moment.js, реализующая поддержку часовых поясов IANA. | 0.5.34 | MIT License |
 | [react](https://react.dev/) | JavaScript-библиотека для создания пользовательских интерфейсов на основе компонентов. | 18.2.0 | MIT License |
 | [react-dom](https://legacy.reactjs.org/docs/react-dom.html) | Библиотека для работы с DOM. | 18.2.0 | MIT License |
-| [react-linkify](https://www.npmjs.com/package/react-linkify) | Компонент React для преобразования в гиперссылки найденных в тексте ссылок (URL-адресов, адресов эл. почты и т. п.). | 1.0.0-alpha | MIT License |
+| [react-linkify](https://www.npmjs.com/package/react-linkify) | Компонент React для преобразования в гиперссылки найденных в тексте ссылок (URL-адресов, адресов эл.&nbsp;почты и т.&nbsp;п.). | 1.0.0-alpha | MIT License |
 | [react-redux](https://github.com/reduxjs/react-redux) | Библиотека для привязки React для Redux . | 8.0.2 | MIT License |
 | [react-transition-group](https://reactcommunity.org/react-transition-group/) | Набор компонентов React для управления анимацией. | 4.4.2 | BSD 3-Clause License |
 | [redux](https://redux.js.org/) | JavaScript-библиотека для управления состоянием приложения и его централизации. | 4.2.0 | MIT License |
@@ -88,8 +88,8 @@ kbId: 4582
 
 | **Наименование ПО и ссылка** | **Описание** | **Версия** | **Лицензия** |
 | --- | --- | --- | --- |{% endif %}
-| [DDay.iCal](https://github.com/rianjs/ical.net) | Компонент iCal.NET — библиотеки классов для .NET, которая обеспечивает соответствие RFC 5545 и полную совместимость с популярными приложениями и библиотеками календарей. | 1.0.2.0 | MIT License |
-| [Elasticsearch.Net](https://github.com/elastic/elasticsearch-net) | Строго типизированная клиентская библиотека, обеспечивающая работу с {{ openSearchVariants }}. | 7.0.0.0 | Apache 2.0 License |
+| [DDay.iCal](https://github.com/rianjs/ical.net) | Компонент iCal.NET — библиотеки классов для .NET, которая обеспечивает соответствие RFC 5545 и полную совместимость с популярными приложениями и библиотеками календарей. | 1.0.2.0 | MIT License |{% if not gostech %}
+| [Elasticsearch.Net](https://github.com/elastic/elasticsearch-net) | Строго типизированная клиентская библиотека, обеспечивающая работу с {{ openSearchVariants }}. | 7.0.0.0 | Apache 2.0 License |{% endif %}
 | [Html Agility Pack (HAP)](https://github.com/zzzprojects/html-agility-pack) | Гибкое средство синтаксического анализа HTML, создающее модель чтения-записи DOM, с поддержкой простого XPATH или XSLT. | 1.11.15.0 | MIT License |
 | [Humanizer](https://github.com/Humanizr/Humanizer) | Библиотека CS для обработки и отображения строк, перечислений, дат, времени, промежутков времени, чисел и количества. | 2.2.0.0 | MIT License |
 | [JWT](https://github.com/jwt-dotnet/jwt) | Библиотека, реализующая JWT (JSON Web Token) для .NET. | 9.0.0.0 | CC0-1.0 License |

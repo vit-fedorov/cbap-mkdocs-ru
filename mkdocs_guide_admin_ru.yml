@@ -23,7 +23,7 @@ nav:
   - Развёртывание ПО:
     - administration/deploy/system_requirements.md
     - administration/deploy/architecture_landscape.md
-    - administration/deploy/availability_fault_tolerance.md
+    # - administration/deploy/availability_fault_tolerance.md
     - administration/deploy/security.md
     - administration/deploy/logging_engine.md
     - administration/deploy/log_files_event_examples.md

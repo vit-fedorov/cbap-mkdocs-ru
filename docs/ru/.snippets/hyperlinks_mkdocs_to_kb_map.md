@@ -604,6 +604,8 @@
 
 [office_connection_use]: {{ kbArticleURLPrefix }}4819
 
+[password_restore]: {{ kbArticleURLPrefix }}5099
+
 [process_diagram_elements_none_intermediate_event]: {{ kbArticleURLPrefix }}4741
 
 [process_diagram_elements_none_intermediate_event_milestone_duration]: {{ kbArticleURLPrefix }}4741#process_diagram_elements_none_intermediate_event_milestone_duration

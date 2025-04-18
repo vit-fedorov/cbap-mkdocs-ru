@@ -29,11 +29,12 @@ nav:
     - Карты: using_the_system/map_use.md
     - Офисные приложения: using_the_system/office_connectiopn_use.md
     - using_the_system/mobile_app_use.md
+    - using_the_system/password_restore.md
   - Администрирование:
     - Развёртывание ПО:
       - administration/deploy/system_requirements.md
       - administration/deploy/architecture_landscape.md
-      - administration/deploy/availability_fault_tolerance.md
+      # - administration/deploy/availability_fault_tolerance.md
       - administration/deploy/security.md
       - administration/deploy/logging_engine.md
       - administration/deploy/log_files_event_examples.md

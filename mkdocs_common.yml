@@ -29,9 +29,14 @@ extra:
   productNameMobile: 'Comindware Mobile'
   apacheIgniteVariants: Apache Ignite
   apacheKafkaVariants: Apache Kafka
+  gitVariants: Git
   nginxVariants: NGINX
-  notificationServiceVariants: SMTP/IMAP
+  notificationServiceVariants: SMTP/IMAP/Exchange
   openSearchVariants: OpenSearch (Elasticsearch)
+  openSearchVariantsUnquotedNominative: OpenSearch (Elasticsearch)
+  openSearchVariantsUnquotedDative: OpenSearch (Elasticsearch)
+  openSearchVariantsUnquotedGenitive: OpenSearch (Elasticsearch)
+  openSearchVariantsUnquotedAccusative: OpenSearch (Elasticsearch)
   zabbixVariants: Zabbix
   productVersion: 5.0
   pdfOutput: False

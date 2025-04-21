@@ -34,6 +34,8 @@
 
 [document_digital_signature]: {{ kbArticleURLPrefix }}4910
 
+[example_attribute_record_get_selected_ids]: {{ kbArticleURLPrefix }}5100
+
 [example_n3_button_local_variable]: {{ kbArticleURLPrefix }}4909
 
 [example_csharp_my_profile_button]: {{ kbArticleURLPrefix }}5006

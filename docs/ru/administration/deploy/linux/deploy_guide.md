@@ -66,15 +66,22 @@ kbId: 4622
 4. Установите ПО из дистрибутива:
 
     ``` sh
-    sh prerequisites_install.sh -p [-k] [-e]
+    sh prerequisites_install.sh -p [-k] {% if openSearchKey %}[-o]{% else %}[-e]{% endif %}
     ```
 
     Скрипт `prerequisites_install.sh` поддерживает следующие ключи:
     {: .pageBreakBefore }
 
     - `-p` — установить обязательное вспомогательное ПО.
-    - `-k` — установить ПО Kafka (необязательный ключ).
-    - `-e` — установить ПО {{ openSearchVariants }} или OpenSearch (необязательный ключ).
+    {% if openSearchKey %}
+    - `-o` — установить службу OpenSearch (необязательный ключ).
+    {% else %}
+    - `-e` — установить службу Elasticsearch (необязательный ключ).
+    {% endif %}
+    - `-k` — установить службу Kafka (необязательный ключ).
+    {% if kafkaClientKey %}
+    - `-kc` — установить клиент Kafka (необязательный ключ).
+    {% endif %}
     - `-kh=<hostname>` или `--kafkaHost=<hostname>` — использовать указанный хост для подключения к ПО Kafka (необязательный ключ).
     - `-kp=<portNumber>` или `--kafkaPort=<portNumber>` — использовать указанный порт для подключения к ПО Kafka (необязательный ключ).
     - `-h` — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).

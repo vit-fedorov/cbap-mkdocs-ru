@@ -1,9 +1,9 @@
 ---
-title: 'Установка, запуск, инициализация и остановка Comindware Platform'
+title: 'Установка, запуск, инициализация и остановка Comindware Platform в Windows'
 kbId: 5063
 ---
 
-# Установка, запуск, инициализация и остановка {{ productName }} {: #deploy_guide_windows}
+# Установка, запуск, инициализация и остановка {{ productName }} в Windows {: #deploy_guide_windows}
 
 ## Введение {: #deploy_guide_windows_intro }
 

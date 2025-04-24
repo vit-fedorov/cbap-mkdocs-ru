@@ -282,6 +282,10 @@
 
 [http_send_post]: {{ kbArticleURLPrefix }}5075
 
+[mobile_app_use]: {{ kbArticleURLPrefix }}5090
+
+[password_restore]: {{ kbArticleURLPrefix }}5099
+
 {% endif %}
 
 {% if (not userGuide and (adminGuideLinux or adminGuideWindows)) or (tutorial and not userGuide) or kbExport %}
@@ -596,8 +600,6 @@
 
 [map_use]: {{ kbArticleURLPrefix }}4814
 
-[mobile_app_use]: {{ kbArticleURLPrefix }}5090
-
 [multilingual_app]: {{ kbArticleURLPrefix }}5064
 
 [my_tasks]: {{ kbArticleURLPrefix }}4825
@@ -609,8 +611,6 @@
 [navigation_panel]: {{ kbArticleURLPrefix }}4824
 
 [office_connection_use]: {{ kbArticleURLPrefix }}4819
-
-[password_restore]: {{ kbArticleURLPrefix }}5099
 
 [process_diagram_elements_none_intermediate_event]: {{ kbArticleURLPrefix }}4741
 

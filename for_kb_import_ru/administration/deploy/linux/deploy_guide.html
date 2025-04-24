@@ -240,10 +240,18 @@
 <div class="highlight"><code><pre><span></span><code>sh<span class="w"> </span>prerequisites_install.sh<span class="w"> </span>-p<span class="w"> </span><span class="o">[</span>-k<span class="o">]</span><span class="w"> </span><span class="o">[</span>-e<span class="o">]</span></code> <br/></pre></code></div>
 <p class="pageBreakBefore">Скрипт <code>prerequisites_install.sh</code> поддерживает следующие ключи:</p>
 <ul>
-<li><code>-p</code> — установить обязательное вспомогательное ПО.</li>
-<li><code>-k</code> — установить ПО Kafka (необязательный ключ).</li>
-<li><code>-e</code> — установить ПО OpenSearch (Elasticsearch) или OpenSearch (необязательный ключ).</li>
-<li><code>-kh=&lt;hostname&gt;</code> или <code>--kafkaHost=&lt;hostname&gt;</code> — использовать указанный хост для подключения к ПО Kafka (необязательный ключ).</li>
+<li>
+<p><code>-p</code> — установить обязательное вспомогательное ПО.</p>
+</li>
+<li>
+<p><code>-e</code> — установить службу Elasticsearch (необязательный ключ).</p>
+</li>
+<li>
+<p><code>-k</code> — установить службу Kafka (необязательный ключ).</p>
+</li>
+<li>
+<p><code>-kh=&lt;hostname&gt;</code> или <code>--kafkaHost=&lt;hostname&gt;</code> — использовать указанный хост для подключения к ПО Kafka (необязательный ключ).</p>
+</li>
 <li><code>-kp=&lt;portNumber&gt;</code> или <code>--kafkaPort=&lt;portNumber&gt;</code> — использовать указанный порт для подключения к ПО Kafka (необязательный ключ).</li>
 <li><code>-h</code> — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).</li>
 </ul>

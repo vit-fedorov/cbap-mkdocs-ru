@@ -69,9 +69,9 @@ kbId: 5008
         // userCommandContext содержит данные контекста при нажатии кнопки.
         public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)
         {
-            // Получаем ID выбранных записей в таблице при нажатии кнопки.
-            var items = userCommandContext.ObjectIds as string[];
-            if(items.Count() > 0)
+            // Получаем ID выбранных записей (строк) в таблице при нажатии кнопки.
+            var selectedTableRows = userCommandContext.ObjectIds as string[];
+            if(selectedTableRows.Count() > 0)
             {
                 try
                 {
@@ -84,7 +84,7 @@ kbId: 5008
                     // Получаем параметры фильтрации данных в таблице.
                     var filter = userCommandContext.Query.Filter;
                     // Получаем ID шаблона, к которому относится таблица, по ID первой из записей.
-                    var templateId = Api.Base.OntologyService.GetAxioms(items.First())["cmw.container"].First().ToString();
+                    var templateId = Api.Base.OntologyService.GetAxioms(selectedTableRows.First())["cmw.container"].First().ToString();
                     // Получаем все таблицы шаблона для дальнейшей обработки.
                     var templateTables = Api.TeamNetwork.DatasetService.GetQueries(templateId); 
 
@@ -158,7 +158,7 @@ kbId: 5008
                                                 style.Number = 22;
                                                 // Применяем формат к столбцу.
                                                 excelSheet.Cells.Columns[i].ApplyStyle(style, flag);
-                                                // Устанавливаем ширину столбца для отображения даты.
+                                                // Устанавливаем ширину столбца для отображения даты  и времени.
                                                 excelSheet.Cells.Columns[i].Width = 15;
                                             }
                                         break;
@@ -168,7 +168,7 @@ kbId: 5008
                                                 style.Number = 22;
                                                 // Применяем формат к столбцу.
                                                 excelSheet.Cells.Columns[i].ApplyStyle(style, flag);
-                                                // Устанавливаем ширину столбца для отображения даты.
+                                                // Устанавливаем ширину столбца для отображения даты и времени.
                                                 excelSheet.Cells.Columns[i].Width = 15;
                                             }
                                         break;
@@ -211,7 +211,7 @@ kbId: 5008
                             foreach(var row in datasetToExport.Rows)
                             {
                                 // Проверяем, что строка выбрана пользователем для экспорта.
-                                if(Array.Find(items, v => v == row.Id) != null)
+                                if(Array.Find(selectedTableRows, v => v == row.Id) != null)
                                 {
                                     // Получаем данные строки.
                                     var rowData = row.Data;
@@ -333,7 +333,7 @@ kbId: 5008
         // Вспомогательный класс для хранения информации о столбцах таблицы.
         public class columnContainer
         {
-            // Идентификатор столбца в массиве видимых столбцов.
+            // Индекс выбранного пользователем столбца.
             public int columnIndex {get;set;}
             // Позиция столбца в исходных данных.
             public int Position {get;set;}
@@ -341,9 +341,9 @@ kbId: 5008
             public string dataSourceId {get;set;}
 
             // Конструктор класса columnContainer.
-            public columnContainer(string dsId , int index )
+            public columnContainer(string id , int index )
             {
-                dataSourceId = dsId; columnIndex = index;
+                dataSourceId = id; columnIndex = index;
             }
         }
     }

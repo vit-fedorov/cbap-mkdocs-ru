@@ -27,11 +27,11 @@ kbId: 5008
 
 Требуется экспортировать из таблицы в шаблоне _«Заявки»_ строки и столбцы, выбранные пользователем.
 
-Данные должны выгружаться в файл формата `XLSX` по нажатию кнопки.
+Данные должны выгружаться в файл формата `.XLSX` по нажатию кнопки.
 
-Пользователь выбирает столбцы и строки экспорта следующим образом:
+Пользователь выбирает столбцы и строки для экспорта следующим образом:
 
-- устанавливает флажки выбора в требуемых строках  выбираются
+- устанавливает флажки выбора в требуемых строках;
 - скрывает ненужные столбцы с помощью меню «**Мои настройки**» <i class="fa-light fa-edit"></i> — «**Настроить внешний вид**» <i class="fa-light fa-table"></i>.
 
 ## Настройка скрипта
@@ -75,8 +75,8 @@ kbId: 5008
             {
                 try
                 {
-                    // Получаем ID таблицы, в которой была нажата кнопка.
-                    var listId = userCommandContext.Query.DatasetId;
+                    // Получаем ID экспортируемой таблицы.
+                    var tableToExportId = userCommandContext.Query.DatasetId;
                     // Получаем параметры разбиения таблицы на страницы.
                     var paging = userCommandContext.Query.Paging;
                     // Получаем параметры сортировки данных в таблице.
@@ -84,127 +84,131 @@ kbId: 5008
                     // Получаем параметры фильтрации данных в таблице.
                     var filter = userCommandContext.Query.Filter;
                     // Получаем ID шаблона, к которому относится таблица, по ID первой из записей.
-                    var containerId = Api.Base.OntologyService.GetAxioms(items.First())["cmw.container"].First().ToString();
+                    var templateId = Api.Base.OntologyService.GetAxioms(items.First())["cmw.container"].First().ToString();
                     // Получаем все таблицы шаблона для дальнейшей обработки.
-                    var dataTables = Api.TeamNetwork.DatasetService.GetQueries(containerId); 
+                    var templateTables = Api.TeamNetwork.DatasetService.GetQueries(templateId); 
 
-                    // Создаём пустую таблицу.
-                    Dataset dataset;
+                    // Создаём пустой набор экспортируемых данных.
+                    Dataset datasetToExport;
                     // Создаём пустой файл Excel для экспорта данных.
-                    Workbook workbook = new Workbook();
-                    // Получаем первый лист рабочей книги для заполнения данными.
-                    Worksheet wh = workbook.Worksheets[0];
+                    Workbook excelWorkbook = new Workbook();
+                    // Получаем первый лист книги Excel для заполнения данными.
+                    Worksheet excelSheet = excelWorkbook.Worksheets[0];
 
                     // Создаём стили для форматирования ячеек Excel.
-                    var style = workbook.CreateStyle();
-                    // Разрешаем числовые типы для форматирования.
+                    var style = excelWorkbook.CreateStyle();
+                    // Разрешаем числовые типы для форматирования ячеек.
                     var flag = new StyleFlag();
                     flag.NumberFormat = true;
 
-                    // Перебираем все таблицы шаблона для поиска нужной таблицы.
-                    foreach(var table in dataTables)
+                    // Перебираем все таблицы шаблона для поиска экспортируемой таблицы по её ID.
+                    foreach(var table in templateTables)
                     {
-                        // Применяем параметры пагинации, сортировки и фильтрации к таблице.
+                        // Применяем  к таблице параметры разбиения на страницы, сортировки и фильтрации.
                         table.Paging = paging;
                         table.Sorting = sorting;
                         table.Filter = filter;
-                        // Проверяем, что текущая таблица - это та, на которой нажали кнопку выгрузки.
-                        if(table.DatasetId == listId)
+                        // Проверяем, требуется ли экспортировать таблицу.
+                        if(table.DatasetId == tableToExportId)
                         {
-                            // Получаем персональные настройки таблицы для определения видимых столбцов.
-                            var personalDataset = Api.TeamNetwork.DatasetConfigurationService.GetPersonalDataset(table.DatasetId);
-                            // Получаем данные таблицы, включая значения и структуру столбцов.
-                            dataset = Api.TeamNetwork.DatasetService.QueryData(table);
-                            // Создаем массив для хранения информации о видимых столбцах.
-                            var tableColumns = new Container[personalDataset.Columns.Count()];
-                            // Инициализируем счётчик видимых столбцов.
+                            // Получаем настроенную пользователем конфигурацию таблицы.
+                            var personalTable = Api.TeamNetwork.DatasetConfigurationService.GetPersonalDataset(table.DatasetId);
+                            // Получаем данные строки и столбцы таблицы, без учёта выбора пользователя.
+                            datasetToExport = Api.TeamNetwork.DatasetService.QueryData(table);
+                            // Создаем массив контейнеров для хранения выбранных пользователем столбцов таблицы.
+                            var selectedTableColumns = new columnContainer[personalTable.Columns.Count()];
+                            // Инициализируем счётчик столбцов.
                             var i=0;
-                            // Перебираем все столбцы из персональных настроек таблицы.
-                            foreach(var coll in personalDataset.Columns)
+                            // Перебираем все столбцы настроенной пользователем таблицы.
+                            foreach(var coll in personalTable.Columns)
                             {
                                 // Проверяем, что столбец не скрыт пользователем.
                                 if(!coll.IsHidden)
                                 {
-                                    // Создаем контейнер для хранения информации о столбце и его позиции.
-                                    tableColumns[i] = new Container(coll.DataSourceInfo.Id, i);
+                                    // Создаём контейнер с данными столбца.
+                                    selectedTableColumns[i] = new columnContainer(coll.DataSourceInfo.Id, i);
                                     // Записываем название столбца в заголовок Excel.
-                                    wh.Cells[0,i].PutValue(coll.Name);
+                                    excelSheet.Cells[0,i].PutValue(coll.Name);
                                     // Получаем путь к свойству столбца для определения его типа.
-                                    var prop = coll.DataSourceInfo.PropertyPath.Last().ToString();
+                                    var attribute = coll.DataSourceInfo.PropertyPath.Last().ToString();
 
-                                    // Проверяем, что свойство не является системным.
-                                    if(prop != "id" && prop != "lastWriteDate" && prop != "creationDate" && prop != "В архиве" && prop != "creator" && prop != "processes" && prop != "isDisabled")
+                                    // Проверяем, что атрибут в столбце не является системным.
+                                    if(attribute != "id" && attribute != "lastWriteDate" && attribute != "creationDate" && attribute != "В архиве" && attribute != "creator" && attribute != "processes" && attribute != "isDisabled")
                                     {
-                                        // Получаем метаданные свойства для определения его типа.
-                                        var propData = Api.Base.OntologyService.GetAxioms(prop);
-                                        // Извлекаем тип свойства из метаданных.
-                                        prop = propData["cmw.propertyType"].Last().ToString();
+                                        // Получаем свойства атрибута для определения его типа.
+                                        var attributeProperties = Api.Base.OntologyService.GetAxioms(attribute);
+                                        // Получаем тип атрибута.
+                                        attribute = attributeProperties["cmw.propertyType"].Last().ToString();
                                     }
 
-                                    // В зависимости от типа данных настраиваем разные стили для столбцов.
-                                    switch(prop)
+                                    // Форматируем ячейки в соответствии с типом данных.
+                                    switch(attribute)
                                     {
                                         case "xsd.decimal":
+                                        {
+                                            // Устанавливаем числовой формат (код 1) для десятичных чисел.
+                                            style.Number = 1;
+                                            // Применяем формат к столбцу
+                                            excelSheet.Cells.Columns[i].ApplyStyle(style, flag);
+                                        }
+                                        break;
+                                        case "lastWriteDate":
                                             {
-                                                // Устанавливаем числовой формат (код 1) для десятичных чисел.
-                                                style.Number = 1;
-                                                // Применяем стиль к столбцу.
-                                                wh.Cells.Columns[i].ApplyStyle(style, flag);
-                                            }break;
-                                            case "lastWriteDate":
-                                                {
-                                                    // Устанавливаем формат даты (код 22) для столбца даты последнего изменения.
-                                                    style.Number = 22;
-                                                    // Применяем стиль к столбцу.
-                                                    wh.Cells.Columns[i].ApplyStyle(style, flag);
-                                                    // Устанавливаем ширину столбца для удобства отображения даты.
-                                                    wh.Cells.Columns[i].Width = 15;
-                                                }break;
-                                                case "creationDate":
-                                                    {
-                                                        // Устанавливаем формат даты для столбца даты создания.
-                                                        style.Number = 22;
-                                                        // Применяем стиль к столбцу.
-                                                        wh.Cells.Columns[i].ApplyStyle(style, flag);
-                                                        // Устанавливаем ширину столбца для удобства отображения даты.
-                                                        wh.Cells.Columns[i].Width = 15;
-                                                    }break;
-                                                    case "xsd.dateTime":
-                                                        {
-                                                            // Устанавливаем формат даты для столбца даты и времени.
-                                                            style.Number = 22;
-                                                            // Применяем стиль к столбцу.
-                                                            wh.Cells.Columns[i].ApplyStyle(style, flag);
-                                                            // Устанавливаем ширину столбца для удобства отображения даты и времени.
-                                                            wh.Cells.Columns[i].Width = 15;
-                                                        }break;
+                                                // Устанавливаем формат даты (код 22) для столбца даты.
+                                                style.Number = 22;
+                                                // Применяем формат к столбцу.
+                                                excelSheet.Cells.Columns[i].ApplyStyle(style, flag);
+                                                // Устанавливаем ширину столбца для отображения даты.
+                                                excelSheet.Cells.Columns[i].Width = 15;
+                                            }
+                                        break;
+                                        case "creationDate":
+                                            {
+                                                // Устанавливаем формат даты (код 22) для столбца даты создания.
+                                                style.Number = 22;
+                                                // Применяем формат к столбцу.
+                                                excelSheet.Cells.Columns[i].ApplyStyle(style, flag);
+                                                // Устанавливаем ширину столбца для отображения даты.
+                                                excelSheet.Cells.Columns[i].Width = 15;
+                                            }
+                                        break;
+                                        case "xsd.dateTime":
+                                            {
+                                                // Устанавливаем формат даты (код 22) для столбца даты и времени.
+                                                style.Number = 22;
+                                                // Применяем формат к столбцу.
+                                                excelSheet.Cells.Columns[i].ApplyStyle(style, flag);
+                                                // Устанавливаем ширину столбца для отображения даты и времени.
+                                                excelSheet.Cells.Columns[i].Width = 15;
+                                            }
+                                        break;
                                     }
-                                    // Увеличиваем счётчик видимых столбцов.
+                                    // Увеличиваем счётчик столбцов.
                                     i++;
                                 }
                             }
-                            // Инициализируем счётчик строк, начиная с 1 (0 - заголовки).
+                            // Инициализируем счётчик строк, начиная с 1 (0 — заголовки).
                             var j=1;
-                            // Инициализируем счётчик для определения позиции столбца в исходных данных.
+                            // Инициализируем счётчик столбцов.
                             var y = 0;
-                            // Перебираем все столбцы из набора данных для определения их позиций.
-                            foreach(var coll in dataset.Columns)
+                            // Перебираем все столбцы из набора данных для экспорта.
+                            foreach(var datasetColumn in datasetToExport.Columns)
                             {
                                 try
                                 {
-                                    // Получаем идентификатор источника данных столбца.
-                                    var ds = coll.DataSourceInfo.Id;
-                                    // Находим индекс столбца в массиве видимых столбцов.
-                                    var t = Array.Find(tableColumns, x=> x.DS == ds).Id;
-                                    // Сохраняем позицию столбца в исходных данных.
-                                    tableColumns[t].Place = y;
+                                    // Получаем идентификатор столбца в данных для экспорта.
+                                    var columnId = datasetColumn.DataSourceInfo.Id;
+                                    // Находим индекс столбца в массиве выбранных пользователем столбцов.
+                                    var selectedColumnIndex = Array.Find(selectedTableColumns, x=> x.dataSourceId == columnId).columnIndex;
+                                    // Сохраняем позицию столбца в массиве выбранных пользователем столбцов.
+                                    selectedTableColumns[selectedColumnIndex].Position = y;
                                 }catch{}
                                 // Увеличиваем счётчик позиции.
                                 y++;
                             }
 
                             // Перебираем все строки из набора данных.
-                            foreach(var row in dataset.Rows)
+                            foreach(var row in datasetToExport.Rows)
                             {
                                 // Проверяем, что строка выбрана пользователем для экспорта.
                                 if(Array.Find(items, v => v == row.Id) != null)
@@ -215,7 +219,7 @@ kbId: 5008
                                     for(var jj = 0; jj < i; jj++)
                                     {
                                         // Получаем позицию столбца в исходных данных.
-                                        var ii = tableColumns[jj].Place;
+                                        var ii = selectedTableColumns[jj].Position;
                                         // Проверяем, что данные в ячейке не пустые.
                                         if(rowData[ii] != null)
                                         {
@@ -223,29 +227,29 @@ kbId: 5008
                                             if(rowData[ii].GetType() != typeof(Comindware.TeamNetwork.Api.Data.Forms.AccountReference) && rowData[ii].GetType() != typeof(System.Boolean) && rowData[ii].GetType() != typeof(Comindware.TeamNetwork.Api.Data.Forms.InstanceReference))
                                             {
                                                 // Для обычных типов данных просто записываем значение в ячейку.
-                                                wh.Cells[j,jj].PutValue(rowData[ii]);
+                                                excelSheet.Cells[j,jj].PutValue(rowData[ii]);
                                             }
                                             else if (rowData[ii].GetType() == typeof(Comindware.TeamNetwork.Api.Data.Forms.AccountReference))
                                             {
                                                 // Для ссылок на аккаунты записываем только имя аккаунта.
-                                                wh.Cells[j,jj].PutValue(((AccountReference)rowData[ii]).Name);
+                                                excelSheet.Cells[j,jj].PutValue(((AccountReference)rowData[ii]).Name);
                                             }
                                             else if(rowData[ii].GetType() == typeof(System.Boolean))
                                             {
                                                 // Для логических значений преобразуем их в текстовый формат.
                                                 if((bool)rowData[ii])
                                                 {
-                                                    wh.Cells[j,jj].PutValue("Истина");
+                                                    excelSheet.Cells[j,jj].PutValue("Истина");
                                                 }
                                                 else
                                                 {
-                                                    wh.Cells[j,jj].PutValue("Ложь");
+                                                    excelSheet.Cells[j,jj].PutValue("Ложь");
                                                 }
                                             }
                                             else if(rowData[ii].GetType() == typeof(Comindware.TeamNetwork.Api.Data.Forms.InstanceReference))
                                             {
                                                 // Для ссылок на записи записываем только имя записи.
-                                                wh.Cells[j,jj].PutValue(((Comindware.TeamNetwork.Api.Data.Forms.InstanceReference)rowData[ii]).Name);
+                                                excelSheet.Cells[j,jj].PutValue(((Comindware.TeamNetwork.Api.Data.Forms.InstanceReference)rowData[ii]).Name);
                                             }
                                         }
                                     }
@@ -254,14 +258,14 @@ kbId: 5008
                                 }
                             }
                             // Создаем таблицу в Excel для улучшения внешнего вида и функциональности.
-                            ListObject listObject = wh.ListObjects[wh.ListObjects.Add(0,0, j-1,i-1, true)];
+                            ListObject listObject = excelSheet.ListObjects[excelSheet.ListObjects.Add(0,0, j-1,i-1, true)];
                         }
                     }
 
                     // Создаем поток в памяти для сохранения файла Excel.
                     MemoryStream stream = new MemoryStream();
                     // Сохраняем рабочую книгу в поток в формате XLSX.
-                    workbook.Save(stream, SaveFormat.Xlsx);
+                    excelWorkbook.Save(stream, SaveFormat.Xlsx);
 
                     // Создаем результат команды пользователя с успешным статусом.
                     var result = new UserCommandResult
@@ -327,19 +331,19 @@ kbId: 5008
         }
 
         // Вспомогательный класс для хранения информации о столбцах таблицы.
-        public class Container
+        public class columnContainer
         {
             // Идентификатор столбца в массиве видимых столбцов.
-            public int Id {get;set;}
+            public int columnIndex {get;set;}
             // Позиция столбца в исходных данных.
-            public int Place {get;set;}
+            public int Position {get;set;}
             // Идентификатор источника данных столбца.
-            public string DS {get;set;}
+            public string dataSourceId {get;set;}
 
-            // Конструктор класса Container.
-            public Container(string ds , int id )
+            // Конструктор класса columnContainer.
+            public columnContainer(string dsId , int index )
             {
-                DS = ds; Id = id;
+                dataSourceId = dsId; columnIndex = index;
             }
         }
     }

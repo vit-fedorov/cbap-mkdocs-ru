@@ -231,12 +231,12 @@ kbId: 5008
                                             }
                                             else if (rowData[ii].GetType() == typeof(Comindware.TeamNetwork.Api.Data.Forms.AccountReference))
                                             {
-                                                // Для ссылок на аккаунты записываем только имя аккаунта.
+                                                // Для ссылок на аккаунты записываем имя аккаунта.
                                                 excelSheet.Cells[j,jj].PutValue(((AccountReference)rowData[ii]).Name);
                                             }
                                             else if(rowData[ii].GetType() == typeof(System.Boolean))
                                             {
-                                                // Для логических значений преобразуем их в текстовый формат.
+                                                // Логические значения преобразуем в строку.
                                                 if((bool)rowData[ii])
                                                 {
                                                     excelSheet.Cells[j,jj].PutValue("Истина");
@@ -248,7 +248,7 @@ kbId: 5008
                                             }
                                             else if(rowData[ii].GetType() == typeof(Comindware.TeamNetwork.Api.Data.Forms.InstanceReference))
                                             {
-                                                // Для ссылок на записи записываем только имя записи.
+                                                // Для ссылок на записи записываем имя записи.
                                                 excelSheet.Cells[j,jj].PutValue(((Comindware.TeamNetwork.Api.Data.Forms.InstanceReference)rowData[ii]).Name);
                                             }
                                         }
@@ -257,7 +257,7 @@ kbId: 5008
                                     j++;
                                 }
                             }
-                            // Создаем таблицу в Excel для улучшения внешнего вида и функциональности.
+                            // Форматируем лист Excel для улучшения внешнего вида и функциональности.
                             ListObject listObject = excelSheet.ListObjects[excelSheet.ListObjects.Add(0,0, j-1,i-1, true)];
                         }
                     }
@@ -267,7 +267,7 @@ kbId: 5008
                     // Сохраняем рабочую книгу в поток в формате XLSX.
                     excelWorkbook.Save(stream, SaveFormat.Xlsx);
 
-                    // Создаем результат команды пользователя с успешным статусом.
+                    // Формируем результат нажатия кнопки с успешным статусом.
                     var result = new UserCommandResult
                     {
                         Success = true,
@@ -293,7 +293,7 @@ kbId: 5008
                 }
                 catch
                 {
-                    // Создаем результат команды пользователя с ошибкой.
+                    // Формируем результат нажатия кнопки с ошибкой.
                     var result1 = new UserCommandResult
                     {
                         Success = false,
@@ -312,7 +312,7 @@ kbId: 5008
             }
             else
             {
-                // Создаем результат команды пользователя с ошибкой, если не выбрано ни одной записи.
+                // Формируем результат нажатия кнопки с ошибкой, если не выбрано ни одной записи.
                 var result1 = new UserCommandResult
                 {
                     Success = false,
@@ -322,7 +322,7 @@ kbId: 5008
                         new UserCommandMessage
                         {
                             Severity = SeverityLevel.Normal,
-                            Text = "Неудачно"
+                            Text = "Выберите хотя бы одну строку таблицы для экспорта"
                             }
                     }
                 };
@@ -340,7 +340,7 @@ kbId: 5008
             // Идентификатор источника данных столбца.
             public string dataSourceId {get;set;}
 
-            // Конструктор класса columnContainer.
+            // Конструктор класса.
             public columnContainer(string id , int index )
             {
                 dataSourceId = id; columnIndex = index;

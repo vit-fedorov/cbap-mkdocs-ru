@@ -1,5 +1,5 @@
 ---
-title: 'Comindware интеграция с ФНС'
+title: 'Получение данных от API ФНС с помощью C#'
 kbId: 4924
 tags: 
     - интеграция
@@ -8,159 +8,285 @@ tags:
 hide: tags
 ---
 
-# Получение данных из интеграция с ФНС {: #example_csharp_tax_service_integrate }
+# Получение данных от API ФНС с помощью C# {: #example_csharp_tax_service_integrate }
 
-ФНС предоставляет данные компаний, которые, в частности, могут быть необходимы в процессе проверки контрагента. Интеграция с сервисом ФНС осуществляется через подключение к [API-ФНС](https://api-fns.ru/index). 
+## Введение {: #example_csharp_tax_service_integrate_intro }
 
-В данной статье представлен базовый вариант интеграций по следующему сценарию: получение ряда данных компании по указанному ИНН (метод *multinfo*). Интеграция запускается по нажатию кнопки в записи контрагента. Данные забираются из сведений баз данных ФНС, но не все данные могут присутствовать. Если ИНН является действительным, то полученные из базы ФНС данные запишутся в поля, если поля остались пустыми — это означает, что в ФНС таких данных нет. При повторном нажатии на кнопку данные будут перезаписаны.
+Здесь представлен пример скрипта для автоматического получения данных о компании по её ИНН из базы ФНС.
 
-Для юридического лица будут получены следующие данные:
+Скрипт запускается по нажатию кнопки в записи контрагента и заполняет атрибуты данными, полученными из ФНС.
 
-- Наименование юридического лица;
-- Количество сотрудников;
-- Годовой доход;
-- ФИО руководителя;
-- ОГРН;
-- КПП;
-- Юридический адрес;
-- ОКВЭД;
-- Вид деятельности.
+Интеграция с сервисом ФНС осуществляется через подключение к [API-ФНС](https://api-fns.ru/index) посредством метода `multinfo`.
 
-Для ИП будут получены следующие данные:
+Приведённый пример скрипта поддерживает получение следующих данных:
 
-- Наименование;
-- ФИО руководителя;
-- ОГРН;
-- Юридический адрес;
-- ОКВЭД;
-- Вид деятельности.
+- **Наименование юридического лица/ИП**
+- **Количество сотрудников**
+- **Годовой доход**
+- **ФИО руководителя**
+- **ОГРН/ОГРНИП**
+- **КПП** (для юридических лиц)
+- **Юридический адрес**
+- **ОКВЭД**
+- **Вид деятельности**
 
-**Настройка**
+## Прикладная задача {: #example_csharp_tax_service_integrate_use_case }
 
-**1.** Зарегистрируйтесь на сайте [API-ФНС](https://api-fns.ru/index) и получите API ключ для подключения. 
+Имеется шаблон записи для хранения данных о контрагентах.
 
-**2.** В шаблоне записи, где хранятся данные по контрагентам, добавьте кнопку с операцией C# скрипт.
+Требуется автоматически получать актуальные данные о контрагенте из базы ФНС по его ИНН.
 
-**3.**Скачайте файл со скриптом из вложения к данной статье и модифицируйте его под свои данные:
+Данные необходимо получать по нажатию кнопки на форме контрагента.
 
-- строка 23, 25, 30 — "INN" (вставьте в кавычках системное имя атрибута, хранящего данные по ИНН компании);
-- строка 31 — "123" (вставьте в кавычках полученный API ключ);
-- строка 42 — "NaimenovanieYuL" (вставьте в кавычках системное имя атрибута, хранящего данные по наименованию юридического лица);
-- строка 43 — "Kolichestvosotrudnikov" (вставьте в кавычках системное имя атрибута, хранящего данные по количеству сотрудников компании);
-- строка 45 — "Godovoydokhod" (вставьте в кавычках системное имя атрибута, хранящего данные по годовому доходу компании);
-- строка 46, 57 — "FIOrukovoditelya" (вставьте в кавычках системное имя атрибута, хранящего данные по ФИО руководителя компании);
-- строка 48, 58 — "OGRN" (вставьте в кавычках системное имя атрибута, хранящего данные по ОГРН компании);
-- строка 49 — "KPP" (вставьте в кавычках системное имя атрибута, хранящего данные по КПП компании);
-- строка 50, 59 — "Yuridicheskiyadres" (вставьте в кавычках системное имя атрибута, хранящего данные по юридическому адресу компании);
-- строка 52, 61 — "OKVED" (вставьте в кавычках системное имя атрибута, хранящего данные по коду ОКВЭД компании);
-- строка 53, 62 — "Viddeyatelnosti" (вставьте в кавычках системное имя атрибута, хранящего данные по виду деятельности компании);
-- строка 56 — "Naimenovanie" (вставьте в кавычках системное имя атрибута, хранящего данные по наименованию ИП);
-- строка 54, 64 — "Clients" (вставьте в кавычках системное имя шаблона записи, где хранятся все вышеуказанные атрибуты, т.е., текущий шаблон записи).
+Скрипт должен определять тип контрагента (юридическое лицо или ИП) и заполнять соответствующие поля:
 
-**4.** Во вкладке «***Скрипт***» вставьте получившийся скрипт.
+Для юридического лица:
 
-**5.** Нажмите «***Сохранить***».
+- Наименование юридического лица
+- Количество сотрудников
+- Годовой доход
+- ФИО руководителя
+- ОГРН
+- КПП
+- Юридический адрес
+- ОКВЭД
+- Вид деятельности
 
-**6.** Расположите кнопку на формуе, или на области кнопок для формы.
+Для ИП:
 
-При выполнении скрипта могут возникнуть следующие ошибки:
+- Наименование
+- ФИО руководителя
+- ОГРНИП
+- Юридический адрес
+- ОКВЭД
+- Вид деятельности
 
-- Нет ИНН — атрибут для указания ИНН пустой.
-- Проблема с ответом — произошла проблема на сервере ФНС или проблема с API.
-- Нет компании по такому ИНН — в базе ФНС не найдена компания по такому ИНН;
-- Пустые поля — ФНС не хранит данных по указанной компании.
-- Ошибка — Возникла неизвестная ошибка.
+## Настройка скрипта {: #example_csharp_tax_service_integrate_script_configure .pageBreakBefore }
 
-``` cs
-using System; 
-using System.Collections.Generic;
-using System.Linq;
-using Comindware.Data.Entity;
-using Comindware.TeamNetwork.Api.Data.UserCommands;
-using Comindware.TeamNetwork.Api.Data;
-using RestSharp;
-using Newtonsoft.Json.Linq;
+!!! warning "Логика работы скрипта"
 
-class Script{
-    public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)    { 
-var contextObjectId = userCommandContext.ObjectIds[0];
-var sucssesFlag = true;
-string text = "Выполнено";
-IRestResponse response = new RestResponse();
-string url_Source = "https://api-fns.ru/api/multinfo";
-var client = new RestClient(url_Source);
-var request = new RestSharp.RestRequest("", Method.GET);
-request.AddHeader("RestRequest", "application/json");
-request.AddHeader("Accept", "application/json");
-long money = 0;
-Dictionary<string,object> data = new Dictionary<string,object>();
-var Properties = new[] {"INN"};//ИНН для поиска
-try{
-var data2 = Api.TeamNetwork.ObjectService.GetPropertyValues(new[]{userCommandContext.ObjectIds[0]}, new[] {"INN"});//берем ИНН для поиска
-Dictionary<string, object> data_Dictionary = new Dictionary<string, object> {{"id", data2.FirstOrDefault().Key}};
-foreach (string Property in Properties){
-object _Value = null;
-if (data2.FirstOrDefault().Value.TryGetValue(Property, out object obj) && obj != null){_Value = obj;}data_Dictionary.Add(Property, _Value);}
-request.AddParameter("req", data_Dictionary["INN"].ToString());
-request.AddParameter("key", "123");//Api key
-try{
-response = client.Execute(request);
-if((int)response.StatusCode == 200 && response.Content.Length>15){
-JObject jObject = JObject.Parse(response.Content);
-var mass = jObject["items"][0].ToString().Split('{');
-mass = mass[1].Split(':');
-mass = mass[0].Split('"');
-string gg= mass[1];
-if (gg == "ЮЛ"){
-try{money = (long)jObject["items"][0]["ЮЛ"]["Финансы"]["Выручка"] *1000;}catch{}
-try{data.Add("NaimenovanieYuL", jObject["items"][0]["ЮЛ"]["НаимСокрЮЛ"].ToString());}catch{}
-try{data.Add("Kolichestvosotrudnikov", (int)jObject["items"][0]["ЮЛ"]["ОткрСведения"]["КолРаб"] );
-}catch{}
-try{data.Add("Godovoydokhod", money);}catch{}
-try{data.Add("FIOrukovoditelya", jObject["items"][0]["ЮЛ"]["Руководитель"]["ФИОПолн"].ToString());
-}catch{}
-try{data.Add("OGRN", jObject["items"][0]["ЮЛ"]["ОГРН"].ToString());}catch{}
-try{data.Add("KPP", jObject["items"][0]["ЮЛ"]["КПП"].ToString());}catch{}
-try {data.Add("Yuridicheskiyadres", jObject["items"][0]["ЮЛ"]["Адрес"]["АдресПолн"].ToString());
-}catch{}
-try{data.Add("OKVED", jObject["items"][0]["ЮЛ"]["ОснВидДеят"]["Код"].ToString());}catch{}
-try{data.Add("Viddeyatelnosti", jObject["items"][0]["ЮЛ"]["ОснВидДеят"]["Текст"].ToString());}catch{}
-Api.TeamNetwork.ObjectService.EditWithAlias("Clients", contextObjectId, data);}
-else if(gg == "ИП"){
-try{data.Add("Naimenovanie", jObject["items"][0]["ИП"]["НаимПолнЮЛ"].ToString());}catch{}
-try{data.Add("FIOrukovoditelya", jObject["items"][0]["ИП"]["ФИОПолн"].ToString());}catch{}
-try{data.Add("OGRN", jObject["items"][0]["ИП"]["ОГРНИП"].ToString());}catch{}
-try{data.Add("Yuridicheskiyadres", jObject["items"][0]["ИП"]["Адрес"]["АдресПолн"].ToString());
-}catch{}
-try{data.Add("OKVED", jObject["items"][0]["ИП"]["ОснВидДеят"]["Код"].ToString());}catch{}
-try{data.Add("Viddeyatelnosti", jObject["items"][0]["ИП"]["ОснВидДеят"]["Текст"].ToString());
-}catch{}
-Api.TeamNetwork.ObjectService.EditWithAlias("Clients", contextObjectId, data);}
-}
-else if( response.Content.Length<15){
-text = "Нет компании по такому ИНН";
-sucssesFlag = false;}
-else{text = "Ошибка";}//ошибка
-}
-catch(Exception e){
-text = "Проблема с ответом "+ e.Message;
-sucssesFlag = false;}
-}
-catch{
-text = "Нет Инн";
-sucssesFlag = false;}
-var result = new UserCommandResult{
-Success = sucssesFlag,
-Commited = true,
-ResultType = UserCommandResultType.Notificate,
-Messages = new[]{
-new UserCommandMessage{
-Severity = SeverityLevel.Normal,
-Text = text}}
-};
-return result;
+    Представленный здесь скрипт работает следующим образом:
+
+    1. Получает значение ИНН из текущей записи контрагента.
+    2. Формирует запрос к API ФНС с полученным ИНН.
+    3. Обрабатывает ответ от API и извлекает данные.
+    4. Определяет тип контрагента (ЮЛ или ИП) и выбирает соответствующий набор данных.
+    5. Записывает полученные данные в соответствующие атрибуты.
+    6. Обрабатывает возможные ошибки и возвращает понятные сообщения пользователю.
+    7. Отображает результат выполнения операции.
+
+1. Зарегистрируйтесь на сайте [API-ФНС](https://api-fns.ru/index) и получите API ключ для подключения.
+2. В шаблоне записи контрагента создайте кнопку со следующими свойствами:
+
+    - **Отображаемое название:** _Получить данные из ФНС_
+    - **Контекст операции:** запись
+    - **Операция:** C#-скрипт
+
+3. Создайте все необходимые атрибуты в шаблоне для хранения данных:
+
+   - ИНН (для поиска)
+   - Наименование юридического лица/ИП
+   - Количество сотрудников
+   - Годовой доход
+   - ФИО руководителя
+   - ОГРН/ОГРНИП
+   - КПП
+   - Юридический адрес
+   - ОКВЭД
+   - Вид деятельности
+
+4. На вкладке «**Скрипт**» введите следующий код:
+
+    !!! warning "Системные имена атрибутов"
+
+        Замените в коде следующие имена на на фактические системные имена атрибутов в своём шаблоне контрагентов:
+
+        - `"ИНН"` — системное имя атрибута с ИНН.
+        - `"123"` — полученный ключ API ФНС.
+        - `"НаименованиеЮЛ"` — системное имя атрибута для наименования юр. лица.
+        - `"КоличествоСотрудников"` — системное имя атрибута для количества сотрудников.
+        - `"ГодовойДоход"` — системное имя атрибута для годового дохода.
+        - `"ФИОРуководителя"` — системное имя атрибута для ФИО руководителя.
+        - `"ОГРН"` — системное имя атрибута для ОГРН/ОГРНИП.
+        - `"КПП"` — системное имя атрибута для КПП.
+        - `"ЮридическийАдрес"` — системное имя атрибута для юр. адреса.
+        - `"ОКВЭД"` — системное имя атрибута для ОКВЭД.
+        - `"ВидДеятельности"` — системное имя атрибута для вида деятельности.
+        - `"Контрагенты"` — системное имя шаблона записи.
+        - `"НаименованиеИП"` — системное имя атрибута для наименования ИП.
+
+    ```cs
+    // Импорт базовых типов и функций .NET Framework.
+    using System; 
+    // Импорт коллекций и словарей для хранения данных.
+    using System.Collections.Generic;
+    // Импорт расширений LINQ для работы с коллекциями и выполнения запросов.
+    using System.Linq;
+    // Импорт классов для работы с сущностями данных.
+    using Comindware.Data.Entity;
+    // Импорт классов для обработки нажатий кнопок и возврата результатов выполнения скрипта.
+    using Comindware.TeamNetwork.Api.Data.UserCommands;
+    // Импорт основных классов для работы с данными.
+    using Comindware.TeamNetwork.Api.Data;
+    // Импорт библиотеки RestSharp для выполнения HTTP-запросов к API ФНС.
+    using RestSharp;
+    // Импорт библиотеки Newtonsoft.Json для обработки JSON-ответов от API.
+    using Newtonsoft.Json.Linq;
+
+    class Script{
+        public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)    { 
+            // Получаем ID текущей записи контрагента.
+            var contextObjectId = userCommandContext.ObjectIds[0];
+            // Флаг успешного выполнения операции.
+            var sucssesFlag = true;
+            // Текст сообщения для пользователя.
+            string text = "Выполнено";
+            // Инициализация переменных для работы с API.
+            IRestResponse response = new RestResponse();
+            // URL API ФНС для получения данных о компании.
+            string url_Source = "https://api-fns.ru/api/multinfo";
+            // Создаем клиент для отправки HTTP-запросов.
+            var client = new RestClient(url_Source);
+            // Создаем GET-запрос к API.
+            var request = new RestSharp.RestRequest("", Method.GET);
+            // Устанавливаем заголовки запроса для получения JSON-ответа.
+            request.AddHeader("RestRequest", "application/json");
+            request.AddHeader("Accept", "application/json");
+            // Переменная для хранения годового дохода компании.
+            long money = 0;
+            // Словарь для хранения данных, которые будут записаны в атрибуты.
+            Dictionary<string,object> data = new Dictionary<string,object>();
+            // Массив с именем атрибута, содержащего ИНН.
+            var Properties = new[] {"ИНН"}; // ИНН для поиска
+            try{
+                // Получаем значение ИНН из текущей записи.
+                var data2 = Api.TeamNetwork.ObjectService.GetPropertyValues(new[]{userCommandContext.ObjectIds[0]}, new[] {"ИНН"});
+                // Создаем словарь для хранения ID записи и значения ИНН.
+                Dictionary<string, object> data_Dictionary = new Dictionary<string, object> {{"id", data2.FirstOrDefault().Key}};
+                // Извлекаем значение ИНН из полученных данных.
+                foreach (string Property in Properties){
+                    object _Value = null;
+                    if (data2.FirstOrDefault().Value.TryGetValue(Property, out object obj) && obj != null){_Value = obj;}
+                    data_Dictionary.Add(Property, _Value);
+                }
+                // Добавляем параметры запроса: ИНН и API-ключ.
+                request.AddParameter("req", data_Dictionary["ИНН"].ToString());
+                request.AddParameter("key", "123"); // Замените на ваш API-ключ
+                try{
+                    // Выполняем запрос к API ФНС.
+                    response = client.Execute(request);
+                    // Проверяем успешность запроса и наличие данных в ответе.
+                    if((int)response.StatusCode == 200 && response.Content.Length>15){
+                        // Парсим JSON-ответ от API.
+                        JObject jObject = JObject.Parse(response.Content);
+                        // Определяем тип контрагента (ЮЛ или ИП).
+                        var mass = jObject["items"][0].ToString().Split('{');
+                        mass = mass[1].Split(':');
+                        mass = mass[0].Split('"');
+                        string gg= mass[1];
+                        // Обрабатываем данные для юридического лица.
+                        if (gg == "ЮЛ"){
+                            // Извлекаем годовой доход (выручку) компании.
+                            try{money = (long)jObject["items"][0]["ЮЛ"]["Финансы"]["Выручка"] *1000;}catch{}
+                            // Извлекаем и сохраняем наименование юридического лица.
+                            try{data.Add("НаименованиеЮЛ", jObject["items"][0]["ЮЛ"]["НаимСокрЮЛ"].ToString());}catch{}
+                            // Извлекаем и сохраняем количество сотрудников.
+                            try{data.Add("КоличествоСотрудников", (int)jObject["items"][0]["ЮЛ"]["ОткрСведения"]["КолРаб"] );
+                            }catch{}
+                            // Сохраняем годовой доход.
+                            try{data.Add("ГодовойДоход", money);}catch{}
+                            // Извлекаем и сохраняем ФИО руководителя.
+                            try{data.Add("ФИОРуководителя", jObject["items"][0]["ЮЛ"]["Руководитель"]["ФИОПолн"].ToString());
+                            }catch{}
+                            // Извлекаем и сохраняем ОГРН.
+                            try{data.Add("ОГРН", jObject["items"][0]["ЮЛ"]["ОГРН"].ToString());}catch{}
+                            // Извлекаем и сохраняем КПП.
+                            try{data.Add("КПП", jObject["items"][0]["ЮЛ"]["КПП"].ToString());}catch{}
+                            // Извлекаем и сохраняем юридический адрес.
+                            try {data.Add("ЮридическийАдрес", jObject["items"][0]["ЮЛ"]["Адрес"]["АдресПолн"].ToString());
+                            }catch{}
+                            // Извлекаем и сохраняем код ОКВЭД.
+                            try{data.Add("ОКВЭД", jObject["items"][0]["ЮЛ"]["ОснВидДеят"]["Код"].ToString());}catch{}
+                            // Извлекаем и сохраняем текстовое описание вида деятельности.
+                            try{data.Add("ВидДеятельности", jObject["items"][0]["ЮЛ"]["ОснВидДеят"]["Текст"].ToString());}catch{}
+                            // Обновляем запись контрагента с полученными данными.
+                            Api.TeamNetwork.ObjectService.EditWithAlias("Контрагенты", contextObjectId, data);
+                        }
+                        // Обрабатываем данные для индивидуального предпринимателя.
+                        else if(gg == "ИП"){
+                            // Извлекаем и сохраняем наименование ИП.
+                            try{data.Add("НаименованиеИП", jObject["items"][0]["ИП"]["НаимПолнЮЛ"].ToString());}catch{}
+                            // Извлекаем и сохраняем ФИО ИП.
+                            try{data.Add("ФИОРуководителя", jObject["items"][0]["ИП"]["ФИОПолн"].ToString());}catch{}
+                            // Извлекаем и сохраняем ОГРНИП.
+                            try{data.Add("ОГРН", jObject["items"][0]["ИП"]["ОГРНИП"].ToString());}catch{}
+                            // Извлекаем и сохраняем юридический адрес.
+                            try{data.Add("ЮридическийАдрес", jObject["items"][0]["ИП"]["Адрес"]["АдресПолн"].ToString());
+                            }catch{}
+                            // Извлекаем и сохраняем код ОКВЭД.
+                            try{data.Add("ОКВЭД", jObject["items"][0]["ИП"]["ОснВидДеят"]["Код"].ToString());}catch{}
+                            // Извлекаем и сохраняем текстовое описание вида деятельности.
+                            try{data.Add("ВидДеятельности", jObject["items"][0]["ИП"]["ОснВидДеят"]["Текст"].ToString());
+                            }catch{}
+                            // Обновляем запись контрагента с полученными данными.
+                            Api.TeamNetwork.ObjectService.EditWithAlias("Контрагенты", contextObjectId, data);
+                        }
+                    }
+                    // Обрабатываем случай, когда компания не найдена по ИНН.
+                    else if( response.Content.Length<15){
+                        text = "Нет компании по такому ИНН";
+                        sucssesFlag = false;
+                    }
+                    // Обрабатываем другие ошибки API.
+                    else{
+                        text = "Непредвиденная ошибка";
+                    }
+                }
+                // Обрабатываем исключения при выполнении запроса к API.
+                catch(Exception e){
+                    text = "Проблема с ответом "+ e.Message;
+                    sucssesFlag = false;
+                }
+            }
+            // Обрабатываем случай, когда ИНН не указан в записи.
+            catch{
+                text = "Нет Инн";
+                sucssesFlag = false;
+            }
+            // Формируем результат выполнения скрипта с сообщением для пользователя.
+            var result = new UserCommandResult{
+                Success = sucssesFlag,
+                Commited = true,
+                ResultType = UserCommandResultType.Notificate,
+                Messages = new[]{
+                    new UserCommandMessage{
+                        Severity = SeverityLevel.Normal,
+                        Text = text
+                    }
+                }
+            };
+            return result;
+        }
     }
-}
-```
+    ```
+
+5. Сохраните кнопку.
+6. Поместите кнопку _«Получить данные из ФНС»_ на форму контрагента.
+
+## Тестирование {: #example_csharp_tax_service_integrate_test }
+
+1. Откройте или создайте запись контрагента.
+2. Введите ИНН существующей компании или ИП.
+3. Нажмите кнопку _«Получить данные из ФНС»_.
+4. Через некоторое время поля записи должны заполниться данными из ФНС.
+5. Убедитесь, что данные соответствуют типу контрагента (юридическое лицо или ИП).
+
+!!! note "Возможные сообщения об ошибках"
+
+    - _Нет ИНН_ — не указан ИНН на форме контрагента.
+    - _Проблема с ответом_ — проблема обмена данными с API ФНС.
+    - _Нет компании по такому ИНН_ — компания не найдена в базе ФНС.
+    - _Пустые поля_ — запрашиваемые данные не получены от ФНС.
+    - _Непредвиденная ошибка_ — иные проблемы.
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

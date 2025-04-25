@@ -276,6 +276,8 @@ nav:
     - examples/task_reassign.md
     - examples/template_reference_data_api.md
     - examples/get_selected_record_ids.md
+    - examples/csharp_table_download_selection.md
+    - examples/csharp_tax_service_integrate.md
   - Обзор версий:
     - general/changelog/changelog.md
     - general/changelog/release_notes_5.0.13334.md

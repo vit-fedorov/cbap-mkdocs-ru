@@ -1,11 +1,11 @@
 ---
-title: 'Выгрузка выбранных записей из пользовательской таблицы'
+title: 'Выгрузка выбранных записей и столбцов из таблицы с помощью C#'
 kbId: 5008
 ---
 
-# Выгрузка выбранных записей из пользовательской таблицы {: #example_csharp_table_download_selected_entries }
+# Выгрузка выбранных записей и столбцов из таблицы с помощью C# {: #example_csharp_table_download_selection }
 
-## Введение {: #example_csharp_table_download_selected_entries_intro }
+## Введение {: #example_csharp_table_download_selection_intro }
 
 Здесь представлен пример скрипта для скачивания выбранных столбцов и строк из таблицы в виде файла Excel.
 
@@ -21,7 +21,7 @@ kbId: 5008
 - **Дата и время**
 - **Аккаунт**
 
-## Прикладная задача {: #example_csharp_table_download_selected_entries_use_case }
+## Прикладная задача {: #example_csharp_table_download_selection_use_case }
 
 Имеется шаблон _«Заявки»_.
 
@@ -34,7 +34,7 @@ kbId: 5008
 - устанавливает флажки выбора в требуемых строках;
 - скрывает ненужные столбцы с помощью меню «**Мои настройки**» <i class="fa-light fa-edit"></i> — «**Настроить внешний вид**» <i class="fa-light fa-table"></i>.
 
-## Настройка скрипта {: #example_csharp_table_download_selected_entries_script_configure .pageBreakBefore }
+## Настройка скрипта {: #example_csharp_table_download_selection_script_configure .pageBreakBefore }
 
 !!! warning "Логика работы скрипта"
 
@@ -372,7 +372,7 @@ kbId: 5008
 4. Сохраните кнопку.
 5. Поместите кнопку _«Экспортировать в Excel»_ на **область кнопок** таблицы «**Все записи**» шаблона _«Заявки»_.
 
-## Тестирование скрипта {: #example_csharp_table_download_selected_entries_test }
+## Тестирование скрипта {: #example_csharp_table_download_selection_test }
 
 1. Откройте таблицу «**Все записи**» шаблона _«Заявки»_.
 2. Откройте меню «**Мои настройки**» <i class="fa-light fa-edit"></i> — «**Настроить внешний вид**» <i class="fa-light fa-table"></i>.

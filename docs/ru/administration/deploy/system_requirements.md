@@ -108,7 +108,7 @@ NGINX 1.24 и выше
 {% endif %}
 <td markdown="block">
 - NET 6.0
-- Mono 6.12
+{% if not gostech %}- Mono 6.12{% endif %}
 - {% if gostech %}{{ apacheKafkaVariants }}{% else %}Apache Kafka 3.6.0 и выше{% endif %}
 - {% if gostech %}{{ openSearchVariants }}{% else %}OpenSearch 2.18.0 или Elasticsearch 8.10 и выше{% endif %}</td>
 </tr>

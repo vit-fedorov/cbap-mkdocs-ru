@@ -228,7 +228,7 @@ start="<!--instance-prepare-start-->"
 end="<!--instance-prepare-end-->"
 %}
 
-## Обновление экземпляра ПО {: #deploy_guide_windows_instance_create }
+## Обновление экземпляра ПО {: #deploy_guide_windows_instance_upgrade }
 
 1. Скачайте и установите ПО новой версии согласно инструкциям в параграфе _«[Установка {{ productName }}](#deploy_guide_windows_install_sw)»_.
 2. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:

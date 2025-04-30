@@ -8,7 +8,7 @@ tags:
 hide: tags
 ---
 
-# Получение данных от API ФНС с помощью C# {: #example_csharp_tax_service_integrate }
+# Получение данных от API ФНС с помощью C\# {: #example_csharp_tax_service_integrate }
 
 ## Введение {: #example_csharp_tax_service_integrate_intro }
 
@@ -95,6 +95,7 @@ hide: tags
     | _ОКВЭД_                  | `ОКВЭД`                 |
     | _Вид деятельности_       | `ВидДеятельности`       |
     | _Наименование ИП_        | `НаименованиеИП`        |
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 4. В шаблоне _«Контрагенты»_ создайте кнопку со следующими свойствами:
 
@@ -113,8 +114,7 @@ hide: tags
         - имя `Контрагенты` на фактическое системное имя вашего шаблона записи с данными контрагентов.
         - системные имена атрибутов на фактически используемые в вашем шаблоне контрагентов.
 
-    {% raw %}
-    ``` cs
+    ``` cs title="Скрипт для получения данных от ФНС"
     // Импортируем базовые типы и функции .NET Framework.
     using System; 
     // Импортируем классы коллекций и словарей для хранения данных.
@@ -131,7 +131,14 @@ hide: tags
     using RestSharp;
     // Импортируем библиотеку Newtonsoft.Json для обработки JSON-ответов от API.
     using Newtonsoft.Json.Linq;
+    {% if pdfOutput %}
+    ```
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+    ``` cs title="Скрипт для получения данных от ФНС — продолжение"
+    {% else %}
 
+    {% endif %}
+    {% raw %}
     class Script{
         public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities) { 
             // Получаем ID текущей записи контрагента.
@@ -170,6 +177,7 @@ hide: tags
                 request.AddParameter("req", innAttributeDictionary["ИНН"].ToString());
                 // 123 — полученный ключ API ФНС.
                 request.AddParameter("key", "123");
+
                 try{
                     // Выполняем запрос к API ФНС и сохраняем ответ.
                     response = client.Execute(request);
@@ -182,6 +190,12 @@ hide: tags
                         responseItems = responseItems[1].Split(':');
                         responseItems = responseItems[0].Split('"');
                         string companyType = responseItems[1];
+    {% endraw %}
+    {% if pdfOutput %}
+    ```
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+    ``` cs title="Скрипт для получения данных от ФНС — продолжение"
+    {% endif %}
                         // Обрабатываем данные для юридического лица.
                         if (companyType == "ЮЛ"){
                             // Извлекаем годовой доход (выручку) компании.
@@ -228,6 +242,11 @@ hide: tags
                             // Извлекаем и сохраняем ФИО ИП
                             // в атрибут с системным именем "ФИОРуководителя".
                             try{data.Add("ФИОРуководителя", jObject["items"][0]["ИП"]["ФИОПолн"].ToString());}catch{}
+    {% if pdfOutput %}
+    ```
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+    ``` cs title="Скрипт для получения данных от ФНС — продолжение"
+    {% endif %}
                             // Извлекаем и сохраняем ОГРНИП
                             // в атрибут с системным именем "ОГРН".
                             try{data.Add("ОГРН", jObject["items"][0]["ИП"]["ОГРНИП"].ToString());}catch{}
@@ -247,6 +266,7 @@ hide: tags
                             Api.TeamNetwork.ObjectService.EditWithAlias("Контрагенты", contextObjectId, data);
                         }
                     }
+
                     // Обрабатываем случай, когда компания не найдена по ИНН.
                     else if(response.Content.Length<15){
                         text = "Нет компании по такому ИНН";
@@ -268,6 +288,11 @@ hide: tags
                 text = "Укажите ИНН";
                 successFlag = false;
             }
+    {% if pdfOutput %}
+    ```
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+    ``` cs title="Скрипт для получения данных от ФНС — продолжение"
+    {% endif %}
             // Формируем результат выполнения скрипта с сообщением для пользователя.
             var result = new UserCommandResult{
                 Success = successFlag,
@@ -284,7 +309,6 @@ hide: tags
         }
     }
     ```
-    {% endraw %}
 
 6. Сохраните кнопку.
 7. Поместите кнопку _«Получить данные из ФНС»_ на форму контрагента.

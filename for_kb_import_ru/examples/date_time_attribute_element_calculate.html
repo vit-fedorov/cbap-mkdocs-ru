@@ -1,0 +1,119 @@
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4977" kb-title="Атрибут «Дата и время». Вычисление параметров атрибута">
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<div class="mce-toc">
+<h2 class="toc-heading">
+      Содержание
+      </h2>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#введение">
+<span class="md-ellipsis">
+      Введение
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#прикладная-задача">
+<span class="md-ellipsis">
+      Прикладная задача
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#исходные-данные">
+<span class="md-ellipsis">
+      Исходные данные
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#настройка-форматирования">
+<span class="md-ellipsis">
+      Настройка форматирования
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#тестирование">
+<span class="md-ellipsis">
+      Тестирование
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#связанные-статьи">
+<span class="md-ellipsis">
+      Связанные статьи
+    </span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h2 id="введение">Введение</h2>
+<p>Атрибут «<strong>Дата и время</strong>» имеет определённый формат отображения, который используется в <strong>Comindware Platform</strong>. При передаче данных из атрибута, его форматирование сохраняется.</p>
+<p>При этом может потребоваться использовать данные даты и времени в отличном формате. Атрибут «<strong>Дата и время</strong>» можно отформатировать в текстовый атрибут при помощи <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4999">формул на языке <strong>Comindware Platform</strong></a>.</p>
+<p>Здесь представлены инструкции по использованию параметров атрибута «<strong>Дата и время</strong>» и их форматирования.</p>
+<div class="notice notice-success">
+<p class="admonition-title">Структура атрибута «Дата и время»</p>
+<ul>
+<li>Значения атрибута «<strong>Дата и время</strong>» могут задаваться пользователем или формироваться из данных сервера.</li>
+<li>Атрибут «<strong>Дата и время</strong>» хранит данные в нулевом часовом поясе “UTC 0”.</li>
+<li>Отображение значений атрибута «<strong>Дата и время</strong>» зависит от настроек часового пояса, см. <em>«<a class="autorefs autorefs-internal mkdocs_imported_link" href="../business_apps/templates/attributes/attribute_timezone.html#attribute_timezone" title="Атрибут типа «Часовой пояс»">Атрибут типа «Часовой пояс</a>»</em>.</li>
+<li>Атрибут «<strong>Дата и время</strong>» хранит значения под определёнными символами. См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4794#export_template_file_formula_format_values_date_time_formatting_symbols">Символы форматирования дат и времени</a>»</em>.</li>
+</ul>
+</div>
+<h2 id="прикладная-задача">Прикладная задача</h2>
+<p>Требуется настроить форматирование данных системного атрибута «<strong>Дата создания</strong>» для отправки в HTTP-запросе.</p>
+<p>Атрибут «<strong>Дата создания</strong>» должен отправляться в JSON в следующем формате:</p>
+<div class="highlight"><code><pre><span></span><code><span class="nt">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ГГГГММДДччммсс"</span></code> <br/></pre></code></div>
+<h2 id="исходные-данные">Исходные данные</h2>
+<p>Имеется шаблон <em>«Заявки»</em>, из записей которого данные отправляются в стороннюю систему через HTTP в сценарии <em>«Отправка данных заявок»</em>. Атрибут «<strong>Дата создания</strong>» помещён на форму записи шаблона <em>«Заявки»</em>.</p>
+<p>О настройке отправки данных с помощью HTTP см. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4699">HTTP-запросы типа GET. Отправка запроса и обработка ответа в формате JSON</a>»</em> и <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5075">HTTP-запросы типа POST. Отправка и получение ответа</a>»</em>.</p>
+<h2 id="настройка-форматирования">Настройка форматирования</h2>
+<ol class="colored_numbers_list">
+<li>В сценарии <em>«Отправка данных заявок»</em> откройте действие «<strong>Изменить значения переменных</strong>».</li>
+<li>
+<p>Отредактируйте данные для переменной <code>creationDate</code>:</p>
+<ul>
+<li>
+<p><strong>Значение: формула</strong></p>
+<div class="highlight"><code><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">Задаём</span><span class="w"> </span><span class="n">требуемое</span><span class="w"> </span><span class="n">форматирование</span><span class="w"> </span><span class="n">даты</span><span class="w"> </span><span class="n">и</span><span class="w"> </span><span class="n">времени</span></code> <br/><code><span class="err">#</span><span class="w"> </span><span class="n">с</span><span class="w"> </span><span class="n">использованием</span><span class="w"> </span><span class="n">параметров</span><span class="w"> </span><span class="n">атрибута</span></code> <br/><code><span class="n">FORMAT</span><span class="p">(</span><span class="s">"{0:yyyyMMddHHmmss}"</span><span class="p">,</span><span class="w"> </span><span class="n">LIST</span><span class="p">(</span><span class="err">$</span><span class="n">_creationDate</span><span class="p">))</span></code> <br/></pre></code></div>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="тестирование">Тестирование</h2>
+<ol class="colored_numbers_list">
+<li>Создайте запись в шаблоне <em>«Заявки»</em>.</li>
+<li><strong>Дата создания</strong> отобразится в формате <code>ДД.ММ.ГГГГ  чч:мм</code>.</li>
+<li>Отправьте данные записи по HTTP.</li>
+<li><strong>Дата создания</strong> записи будет отправлена в формате <code>ГГГГММДДччммсс</code>.</li>
+</ol>
+<div class="relatedTopics">
+<h2 id="связанные-статьи">Связанные статьи</h2>
+<ul>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4777">Атрибут типа «Дата и время»</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4886">Работа с атрибутом типа «Дата и время»</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4999">Введение в язык формул Comindware</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4699">HTTP-запросы типа GET. Отправка запроса и обработка ответа в формате JSON</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5075">HTTP-запросы типа POST. Отправка и получение ответа</a></li>
+</ul>
+</div>
+</article>
+</div>
+</div>
+<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#">
+<i class="fa-light fa-arrow-up">&zwnj;<!--icon--></i>
+            К началу
+          </a>
+</main>
+</div>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></div>

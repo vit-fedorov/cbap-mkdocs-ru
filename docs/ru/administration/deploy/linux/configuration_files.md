@@ -9,7 +9,7 @@ kbId: 5067
 
 Здесь представлены инструкции по настройке файлов конфигурации после развёртывания и обновления ПО **{{ productName }}**, его компонентов и служб.
 
-## Конфигурация экземпляра ПО
+## Конфигурация экземпляра ПО {{ productName }} {: #configuration_files_linux_instance }
 
 1. Откройте файл конфигурации экземпляра ПО (`<instanceName>` — имя экземпляра ПО) для редактирования:
 
@@ -23,9 +23,9 @@ kbId: 5067
     - `journal.name` — индекс сервера {{ openSearchVariants }}.
     - `db.workDir` — директория для хранения базы данных экземпляра ПО.
     - `db.name` — префикс кэшей в базе данных экземпляра ПО.
-    - `userStorage.localDisk.path` — директория для хранения пользовательских файлов.
+    - `userStorage.localDisk.path` — директория для хранения загруженных файлов.
     - `mq.server` — адрес сервера {{ apacheKafkaVariants }}.
-    - `backup.defaultFolder` — директория для хранения резервных копий экземпляра ПО.
+    - `backup.defaultFolder` — директория для хранения резервных копий экземпляра ПО.
     - `backup.defaultFileName` — имя файла резервной копии экземпляра ПО.
 
     --8<-- "instance_config_warning.md"
@@ -51,28 +51,28 @@ kbId: 5067
 ### Пример YML-файла конфигурации экземпляра ПО {: .pageBreakBefore }
 
 <!--instanceYML-start-->
-``` yml
+``` yaml
 
-##### Настройка базовых параметров ПО #####
-# Имя экземпляра ПО.
+##### Настройка базовых параметров {{ productName }} #####
+# Имя экземпляра {{ productName }}.
 # Устаревшая директива: instanceName
 clusterName: <instanceName>
-# Имя узла экземпляра ПО.
+# Имя узла экземпляра {{ productName }}.
 #nodeName: <instanceName>
-# Путь к экземпляру, по которому ПО находит свою конфигурацию.
+# Путь к экземпляру, по которому {{ productName }} находит свою конфигурацию.
 configPath: <configPath>
-# Адрес службы журналирования ({{ openSearchVariants }}).
+# Адрес службы журналирования {{ openSearchVariants }}.
 # Устаревшая директива: elasticsearchUri
 journal.server: http://<searchHostIP>:<searchHostPort>
 # Индекс службы журналирования.
 # journal.name: <prefix>-<instanceName>
 # Выключение службы журналирования.
 #journal.enabled: false
-# URI-адрес экземпляра ПО
+# URI-адрес экземпляра {{ productName }}.
 fqdn: <hostName>
-# Порт экземпляра ПО
+# Порт экземпляра {{ productName }}.
 port: <portNumber>
-# Версия экземпляра ПО
+# Версия экземпляра {{ productName }}.
 version: <versionNumber>
 
 ##### Настройка базы данных #####
@@ -110,14 +110,14 @@ db.name: <instanceName>
 ```
 {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-``` yml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
+``` yaml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
 {% endif %}
-##### Настройка хранения пользовательских файлов #####
-# Тип хранилища (LocalDisk | S3)
+##### Настройка хранения загруженных файлов #####
+# Тип хранилища (LocalDisk | S3).
 userStorage.type: LocalDisk
 # Путь к пользовательским файлам экземпляра.
 userStorage.localDisk.path: /var/lib/comindware/<instanceName>/Streams
-# Имя корзины S3 для хранения пользовательских файлов.
+# Имя корзины S3 для хранения загруженных файлов.
 #userStorage.s3.bucket:
 # Имя подключения к S3.
 #userStorage.s3.connection: <s3ConnectionName>
@@ -167,7 +167,7 @@ mq.node: <instanceName>
 ```
 {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-``` yml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
+``` yaml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
 {% endif %}
 ##### Настройка очереди сообщений для коммуникации с адаптерами #####
 # Выключение функции коммуникации брокера сообщений с адаптером 0.
@@ -218,7 +218,7 @@ mq.node: <instanceName>
 ```
 {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-``` yml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
+``` yaml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
 {% endif %}
 ##### Настройка резервного копирования #####
 # Папка для резервного копирования по умолчанию.
@@ -239,6 +239,7 @@ backup.defaultFileName: <instanceName>
 #backup.maxSessions: 5
 
 ##### Конфигурация резервного копирования по умолчанию #####
+# <backupName> — имя конфигурации резервного копирования, без пробелов
 # Имя файлов резервных копий.
 # К нему будут добавляться метка времени и расширение cdbbz, например:
 # Backup.202202161625.cdbbz
@@ -275,10 +276,10 @@ backup.defaultFileName: <instanceName>
 ```
 {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-``` yml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
+``` yaml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
 {% endif %}
 ##### Настройка дополнительного хранилища для конфигурации резервного копирования по умолчанию #####
-# Тип хранилища (LocalDisk | S3)
+# Тип хранилища (LocalDisk | S3).
 #backup.default.<backupName>.extraRepository.type: LocalDisk
 # Путь к файлам резервных копий.
 #backup.default.<backupName>.extraRepository.localDisk.path: /var/backups/<instanceName>ExtraRepository
@@ -288,7 +289,7 @@ backup.defaultFileName: <instanceName>
 #backup.default.<backupName>.extraRepository.s3.connection: <s3ConnectionName>
 
 ##### Настройка резервного копирования данных службы журналирования ({{ openSearchVariants }}) #####
-# Тип хранилища (LocalDisk | S3)
+# Тип хранилища (LocalDisk | S3).
 #backup.journalRepository.type: LocalDisk
 # Путь к файлам резервных копий
 #backup.journalRepository.localDisk.path: /var/backups/<instanceName>
@@ -296,7 +297,7 @@ backup.defaultFileName: <instanceName>
 #backup.journalRepository.s3.bucket:
 # Имя подключения, настроенного в конфигурации службы журналирования.
 #backup.journalRepository.s3.journalConnection: <s3ConnectionName>
-# Имя подключения к S3, настроенного в этом файле конфигурации экземпляра ПО.
+# Имя подключения к S3, настроенного в этом файле конфигурации экземпляра {{ productName }}.
 #backup.journalRepository.s3.platformConnection: <s3ConnectionName>
 
 ##### Конфигурация подключения к хранилищу S3 #####
@@ -304,9 +305,9 @@ backup.defaultFileName: <instanceName>
 #s3.<s3ConnectionName>.description:
 # Адрес подключения к S3.
 #s3.<s3ConnectionName>.endpointURL:
-# Информация учетной записи. Ключ подключения к хранилищу S3
+# Информация учётной записи. Ключ подключения к хранилищу S3
 #s3.<s3ConnectionName>.accessKey:
-# Информация учетной записи. Секретный ключ подключения к хранилищу S3.
+# Информация учётной записи. Секретный ключ подключения к хранилищу S3.
 #s3.<s3ConnectionName>.secretKey:
 # Установите значение true, если сервер принимает только запросы path-style вида:
 # https://<s3hostname>/bucket-name/key-name
@@ -337,7 +338,7 @@ backup.defaultFileName: <instanceName>
 ```
 {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
-``` yml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
+``` yaml title="Пример YML-файла конфигурации экземпляра ПО — продолжение"
 {% endif %}
 ##### Настройка синхронизации данных с OData-сервисом #####
 # Выключение интеграции по OData.
@@ -355,7 +356,7 @@ backup.defaultFileName: <instanceName>
 #tracing.enabled: false
 
 ##### Настройки электронной почты #####
-# Выключение функции проверки наличия и получения новых писем.
+# Выключение функции проверки наличия и получения новых писем.
 #email.listenerEnabled: false
 # Выключение функции отправки эл. почты
 #email.senderEnabled: false
@@ -390,7 +391,7 @@ backup.defaultFileName: <instanceName>
 # (conversation, useractivity, notification, architect)
 #requestProcessor.services:
 #  - apiPrefix: conversation
-#    enabled: true
+#  - enabled: true
 
 ##### Настройка отображения количества строк таблицы на одной странице #####
 # Задайте варианты, которые будут отображаться
@@ -408,7 +409,7 @@ backup.defaultFileName: <instanceName>
     ```
 
 2. Измените необходимые параметры.
-3. Удостоверьтесь, что значение параметра `cluster.name` (имя экземпляра ПО) совпадает с `clusterName` и значение параметров `mq.server` (адрес и порт сервера очереди сообщений), `mq.group` (идентификатор группы очереди сообщений), `mq.node` (идентификатор узла очереди сообщений) — с аналогичными параметрами в [файле конфигурации экземпляра](#конфигурация-экземпляра-по).
+3. Удостоверьтесь, что значение параметра `cluster.name` (имя экземпляра ПО) совпадает с `clusterName` и значение параметров `mq.server` (адрес и порт сервера очереди сообщений), `mq.group` (идентификатор группы очереди сообщений), `mq.node` (идентификатор узла очереди сообщений) — с аналогичными параметрами в [файле конфигурации экземпляра](#configuration_files_linux_instance).
 4. Сохраните файл конфигурации.
 5. Перезапустите службу `apigateway`:
 
@@ -419,7 +420,7 @@ backup.defaultFileName: <instanceName>
 ### Пример конфигурации службы apigateway.yml {: .pageBreakBefore }
 
 <!--apigatewayYML-start-->
-``` yml
+``` yaml
 # Имя экземпляра ПО
 cluster.name: <instanceName>
 # Имя узла экземпляра
@@ -482,7 +483,7 @@ services:
 ### Пример файла конфигурации adapterhost.yml
 
 <!--adapterhostYML-start-->
-``` yml
+``` yaml
 # Имя экземпляра ПО
 clusterName: <instanceName>
 # Имя папки загрузчика экземпляра ПО

@@ -135,7 +135,7 @@ hide:
 
 2. Задайте параметры подключения к Kafka в файле `<instanceName>.yml` (`<instanceName>` — имя экземпляра ПО):
 
-    ``` yml
+    ``` yaml
     # IP-адрес сервера Kafka
     mq.server: <KafkaIP>:9092
     # Имя экземпляра ПО
@@ -160,7 +160,7 @@ hide:
 
 4. Задайте параметры подключения к Kafka в файле `apigateway.yml`:
 
-    ``` yml
+    ``` yaml
     # Укажите IP-адрес сервера Kafka
     mq.server: <KafkaIP>:9092
     # Укажите имя экземпляра ПО
@@ -171,7 +171,7 @@ hide:
 
 5. Задайте параметры подключения к Kafka в файле `adapterhost.yml`:
 
-    ``` yml
+    ``` yaml
     # Укажите IP-адрес сервера Kafka
     mq.server: <KafkaIP>:9092
     ```

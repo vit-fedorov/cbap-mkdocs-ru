@@ -34,6 +34,8 @@
 
 [document_digital_signature]: {{ kbArticleURLPrefix }}4910
 
+[example_attribute_record_get_selected_ids]: {{ kbArticleURLPrefix }}5100
+
 [example_n3_button_local_variable]: {{ kbArticleURLPrefix }}4909
 
 [example_csharp_my_profile_button]: {{ kbArticleURLPrefix }}5006
@@ -152,8 +154,6 @@
 
 [map_configure]: {{ kbArticleURLPrefix }}4679
 
-[mobile_app_use]: {{ kbArticleURLPrefix }}5090
-
 [notification_types]: {{ kbArticleURLPrefix }}4682
 
 [monitoring]: {{ kbArticleURLPrefix }}4666
@@ -244,6 +244,10 @@
 
 [templates_archive_unarchive]: {{ kbArticleURLPrefix }}4709#templates_archive_unarchive
 
+[templates_view_in_app]: {{ kbArticleURLPrefix }}4709#templates_view_in_app
+
+[templates_view_records]: {{ kbArticleURLPrefix }}4709#templates_view_records
+
 [template_common_properties]: {{ kbArticleURLPrefix }}4756
 
 [themes]: {{ kbArticleURLPrefix }}4708
@@ -277,6 +281,10 @@
 <!-- Руководство для ГосТех, администратора для Linux/Windows, отдельный учебник или экспорт в БЗ -->
 
 [http_send_post]: {{ kbArticleURLPrefix }}5075
+
+[mobile_app_use]: {{ kbArticleURLPrefix }}5090
+
+[password_restore]: {{ kbArticleURLPrefix }}5099
 
 {% endif %}
 
@@ -454,11 +462,15 @@
 
 [discussion_configure]: {{ kbArticleURLPrefix }}4788
 
+[discussion_configure_quick_answers]: {{ kbArticleURLPrefix }}4788#discussion_configure_quick_answers
+
 [discussion_configure_template]: {{ kbArticleURLPrefix }}4788#mcetoc_1h7hu3akn4
 
 [discussion_use]: {{ kbArticleURLPrefix }}4818
 
 [elasticdata_description]: {{ kbArticleURLPrefix }}4584
+
+[example_csharp_table_download_selections]: {{ kbArticleURLPrefix }}5008
 
 [example_document_clone_scenario_n3]: {{ kbArticleURLPrefix }}4883
 
@@ -473,6 +485,8 @@
 [process_diagram_elements_events_end]: {{ kbArticleURLPrefix }}4744
 
 [process_diagram_elements_events_intermediate]: {{ kbArticleURLPrefix }}4742
+
+[process_diagram_elements_events_intermediate_usage]: {{ kbArticleURLPrefix }}4742#process_diagram_elements_events_intermediate_usage
 
 [process_diagram_elements_events_start]: {{ kbArticleURLPrefix }}4735
 
@@ -494,7 +508,15 @@
 
 [expression_editor]: {{ kbArticleURLPrefix }}5025
 
+[expression_editor_reference]: {{ kbArticleURLPrefix }}5025#expression_editor_reference
+
 [n3_editor_autocomplete]: {{ kbArticleURLPrefix }}5039
+
+[n3_editor_autocomplete_block]: {{ kbArticleURLPrefix }}5039
+
+[n3_editor_autocomplete_predicate]: {{ kbArticleURLPrefix }}5039
+
+[n3_editor_autocomplete_prefix]: {{ kbArticleURLPrefix }}5039
 
 [expression_debug]: {{ kbArticleURLPrefix }}4929
 
@@ -554,11 +576,11 @@
 
 [formula_editor_autocomplete]: {{ kbArticleURLPrefix }}5035
 
-[formula_editor_function_autocompete]: {{ kbArticleURLPrefix }}5027
+[formula_autocompete_editor_function]: {{ kbArticleURLPrefix }}5035
 
-[formula_editor_from_where_select_autocomplete]: {{ kbArticleURLPrefix }}5026
+[formula_editor_autocomplete_from_where_select]: {{ kbArticleURLPrefix }}5035
 
-[formula_editor_record_heading_autocomplete]: {{ kbArticleURLPrefix }}5032
+[formula_editor_autocomplete_record_heading]: {{ kbArticleURLPrefix }}5035
 
 [functions]: {{ kbArticleURLPrefix }}4711
 
@@ -589,12 +611,6 @@
 [my_tasks_page_configure]: {{ kbArticleURLPrefix }}4812
 
 [my_tasks_page_configure_add_to_navigation]: {{ kbArticleURLPrefix }}4812#my_tasks_page_configure_add_to_navigation
-
-[n3_editor_block_autocomplete]: {{ kbArticleURLPrefix }}5041
-
-[n3_editor_predicate_autocomplete]: {{ kbArticleURLPrefix }}5046
-
-[n3_editor_prefix_autocomplete]: {{ kbArticleURLPrefix }}5042
 
 [navigation_panel]: {{ kbArticleURLPrefix }}4824
 

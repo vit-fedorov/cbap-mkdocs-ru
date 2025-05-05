@@ -13,7 +13,7 @@ nav:
     - product_description.md
     - Обзор версий:
       - general/changelog/changelog.md
-      - general/changelog/release_notes_5.0.13286.md
+      - general/changelog/release_notes_5.0.13334.md
       - general/changelog/release_notes_5.0.md
   - Использование системы:
     - using_the_system/index.md
@@ -29,11 +29,12 @@ nav:
     - Карты: using_the_system/map_use.md
     - Офисные приложения: using_the_system/office_connectiopn_use.md
     - using_the_system/mobile_app_use.md
+    - using_the_system/password_restore.md
   - Администрирование:
     - Развёртывание ПО:
       - administration/deploy/system_requirements.md
       - administration/deploy/architecture_landscape.md
-      - administration/deploy/availability_fault_tolerance.md
+      # - administration/deploy/availability_fault_tolerance.md
       - administration/deploy/security.md
       - administration/deploy/logging_engine.md
       - administration/deploy/log_files_event_examples.md
@@ -137,6 +138,7 @@ nav:
           - administration/connections_communication_routes/system_connections/map_configure.md
           - administration/connections_communication_routes/system_connections/git_connection.md
           - administration/connections_communication_routes/system_connections/s3_connection.md
+          #- administration/connections_communication_routes/system_connections/aws_pinpoint_connection.md
         - Аутентификация:
           - administration/connections_communication_routes/authentication/openid_connection.md
           - administration/connections_communication_routes/authentication/wsfederation_connection.md
@@ -302,29 +304,8 @@ nav:
       - business_apps/expressions/expression_debug.md
       - Редактор выражений:
         - business_apps/expressions/expression_editor/index.md
-        - Предиктивный ввод в формулах:
-          - business_apps/expressions/expression_editor/formula_editor/index.md
-          - business_apps/expressions/expression_editor/formula_editor/function_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/from_where_select_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/record_heading_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/function_returned_attribute_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/object_function_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/enum_autocomplete_formula.md
-          - business_apps/expressions/expression_editor/formula_editor/template_attribute_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/linked_record_attributes_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/template_for_attribute_autocomplete.md
-          - business_apps/expressions/expression_editor/formula_editor/local_variables.md
-        - Предиктивный ввод в выражениях на языке N3:
-          - business_apps/expressions/expression_editor/n3_editor/index.md
-          - business_apps/expressions/expression_editor/n3_editor/prefix_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/block_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/predicate_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/variable_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/findproperty_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/square_brackets_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/findobject_autocomplete.md
-          - business_apps/expressions/expression_editor/n3_editor/enum_autocomplete_n3.md
-          - business_apps/expressions/expression_editor/n3_editor/literal_autocomplete.md
+        - business_apps/expressions/expression_editor/formula_editor/index.md    
+        - business_apps/expressions/expression_editor/n3_editor/index.md
   - Моделирование корпоративной архитектуры:
     - architect/architect_desktop.md
     - architect/process_architecture_modeling/index.md
@@ -362,6 +343,9 @@ nav:
     - administration/connections_communication_routes/rest_odata_connections/http_receive_file.md
     - examples/task_reassign.md
     - examples/template_reference_data_api.md
+    - examples/get_selected_record_ids.md
+    - examples/csharp_table_download_selection.md
+    - examples/csharp_tax_service_integrate.md
   - Руководство разработчика:
     - Руководство по N3: 
       - developer_guide/n3/n3_guide.md

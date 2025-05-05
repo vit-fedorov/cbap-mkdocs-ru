@@ -8,7 +8,7 @@ tags:
     - кластер
 hide: tags
 ---
-
+<!-- ЭТУ СТАТЬЮ НЕ ПУБЛИКОВАТЬ БЕЗ СОГЛАСОВАНИЯ И ПОДРОБНОЙ ПРОВЕРКИ -->
 # Развёртывание {{ productName }} в кластере {: #deploy_cluster_linux }
 
 {% include-markdown ".snippets/experimental_feature.md" %}
@@ -409,7 +409,7 @@ hide: tags
 
 4. Отредактируйте файл конфигурации экземпляра ПО по следующему образцу (см. _«[Конфигурация экземпляра, компонентов ПО и служб. Настройка][configuration_files_linux]»_):
 
-    ``` yml
+    ``` yaml
     isFederationAuthEnabled: 0
     databasePath: /var/lib/comindware/<instanceName>/Database
     configPath: /var/www/<instanceName>
@@ -554,7 +554,7 @@ hide: tags
 6. Скопируйте содержимое файла `<instanceName>.yml` с первого узла.
 7. В директиве `nodeName` укажите уникальное имя узла (например общее имя и номер узла):
 
-    ``` yml
+    ``` yaml
     nodeName: <instanceName><nodeNumber>
     ```
 

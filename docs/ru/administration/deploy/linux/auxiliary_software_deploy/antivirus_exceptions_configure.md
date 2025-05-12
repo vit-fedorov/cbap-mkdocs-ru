@@ -26,8 +26,8 @@ kbId: 4602
 
 Рекомендуется добавить в область сканирования антивирусного ПО следующие директории:
 
-- `/var/lib/comindware/<instanceName>/Temp` — временные файлы.
-- `/var/lib/comindware/<instanceName>/LocalTemp` — 
+- `/var/lib/comindware/<instanceName>/Temp` — временные файлы экземпляра.
+- `/var/lib/comindware/<instanceName>/LocalTemp` — временная папка.
 - `/var/lib/comindware/<instanceName>/Streams` — файлы, загруженные пользователями и сформированные ПО.
 
 Добавьте в исключения антивирусного ПО перечисленные ниже объекты.
@@ -83,6 +83,12 @@ kbId: 4602
 
 *См. также статью «[Пути и содержимое папок экземпляра ПО][paths]».*
 
+Рекомендуется добавить в область сканирования антивирусного ПО следующие директории:
+
+- `C:\ProgramData\Comindware\Instances\<instanceName>\Temp` — временные файлы.
+- `C:\ProgramData\Comindware\Instances\<instanceName>\LocalTemp` — временная папка.
+- `C:\ProgramData\Comindware\Instances\<instanceName>\Streams` — файлы, загруженные пользователями и сформированные ПО.
+
 Добавьте в исключения антивируса перечисленные ниже объекты.
 
 - `C:\Program Files\Comindware\CBAP` — исполняемые файлы ПО разных версий.
@@ -92,9 +98,7 @@ kbId: 4602
 - `C:\ProgramData\Comindware\Instances\<instanceName>\Config` — конфигурация экземпляра ПО.
 - `C:\ProgramData\Comindware\Instances\<instanceName>\Data\Scripts` — DLL-файлы, скомпилированные из скриптов на языке C#.
 - `C:\ProgramData\Comindware\Instances\<instanceName>\Data\FullTextSearch` — индексы полнотекстового поиска.
-- `C:\ProgramData\Comindware\Instances\<instanceName>\Temp` — временные файлы.
 - `C:\ProgramData\Comindware\Instances\<instanceName>\Logs` — журналы экземпляра ПО.
-- `C:\ProgramData\Comindware\Instances\<instanceName>\Streams` — файлы, загруженные пользователями и сформированные ПО.
 
 #### {{ apacheIgniteVariants }}
 

@@ -24,13 +24,13 @@ kbId: 4602
 
 *См. также статью «[Пути и содержимое папок экземпляра ПО][paths]».*
 
-Рекомендуется добавить в область сканирования антивирусного ПО следующие директории:
+Рекомендуется обеспечить санирование с помощью антивирусного ПО содержимого следующих директорий:
 
-- `/var/lib/comindware/<instanceName>/Temp` — временные файлы экземпляра.
-- `/var/lib/comindware/<instanceName>/LocalTemp` — временная папка.
+- `/var/lib/comindware/<instanceName>/Temp` — временное хранилище загруженных файлов и скомпилированных C#-скриптов.
+- `/var/lib/comindware/<instanceName>/LocalTemp` — временные файлы резервных копий.
 - `/var/lib/comindware/<instanceName>/Streams` — файлы, загруженные пользователями и сформированные ПО.
 
-Добавьте в исключения антивирусного ПО перечисленные ниже объекты.
+Добавьте в исключения антивирусного ПО следующие объекты:
 
 - Процесс `w3wp / mono-boehm`.
 - `comindware<instanceName>.service` — служба экземпляра ПО.
@@ -42,7 +42,6 @@ kbId: 4602
 - `/var/lib/comindware/<instanceName>/Database/Scripts` — DLL-файлы, скомпилированные из скриптов на языке C#.
 - `/var/lib/comindware/<instanceName>/Database/FullTextSearch` — индексы полнотекстового поиска.
 - `/var/log/comindware/<instanceName>/Logs` — журналы экземпляра ПО.
-
 
 #### {{ apacheIgniteVariants }}
 
@@ -83,13 +82,13 @@ kbId: 4602
 
 *См. также статью «[Пути и содержимое папок экземпляра ПО][paths]».*
 
-Рекомендуется добавить в область сканирования антивирусного ПО следующие директории:
+Рекомендуется обеспечить санирование с помощью антивирусного ПО содержимого следующих директорий:
 
-- `C:\ProgramData\Comindware\Instances\<instanceName>\Temp` — временные файлы.
-- `C:\ProgramData\Comindware\Instances\<instanceName>\LocalTemp` — временная папка.
+- `C:\ProgramData\Comindware\Instances\<instanceName>\Temp` — временное хранилище загруженных файлов и скомпилированных C#-скриптов.
+- `C:\ProgramData\Comindware\Instances\<instanceName>\LocalTemp` — временные файлы резервных копий.
 - `C:\ProgramData\Comindware\Instances\<instanceName>\Streams` — файлы, загруженные пользователями и сформированные ПО.
 
-Добавьте в исключения антивируса перечисленные ниже объекты.
+Добавьте в исключения антивирусного ПО следующие объекты:
 
 - `C:\Program Files\Comindware\CBAP` — исполняемые файлы ПО разных версий.
 - `C:\ProgramData\Comindware\configs` — общие файлы конфигурации ПО.

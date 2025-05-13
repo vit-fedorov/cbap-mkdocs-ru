@@ -714,6 +714,8 @@
 
 [variables]: {{ kbArticleURLPrefix }}4804
 
+[variables_csharp]: {{ kbArticleURLPrefix }}4804#variables_csharp
+
 [zabbix_deploy]: {{ kbArticleURLPrefix }}4609
 
 [zabbix_agent_deploy]: {{ kbArticleURLPrefix }}4608

@@ -54,6 +54,21 @@ rewrite-relative-urls=false
 
 ## Установка вспомогательного ПО {: #deploy_guide_windows_install_prerequisites }
 
+!!! tip "Необходимое вспомогательное ПО"
+
+    Для работы {{ productName }} требуется следующее вспомогательное ПО:
+
+    - [.NET 8.0 SDK 8.0.408](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)+
+    -  [ASP.NET Core 8.0 Runtime - Windows Hosting Bundle Installer](https://dotnet.microsoft.com/ru-ru/download/dotnet/thank-you/runtime-aspnetcore-8.0.15-windows-hosting-bundle-installer)
+    - [Microsoft Build of OpenJDK 17](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-17)+
+
+    Вы можете скачать и установить их самостоятельно, либо используя наш дистрибутив вспомогательного ПО согласно инструкции.
+    
+    Также могут потребоваться:
+
+    - [7-Zip](https://www.7-zip.org/) 
+    - [VSCode](https://code.visualstudio.com/Download)
+
 1. Скачайте и распакуйте архив с дистрибутивом вспомогательного ПО для **{{ productName }}**.
 2. Запустите _PowerShell_ от имени администратора.
 3. Установите неограниченную политику выполнения _PowerShell_:
@@ -62,8 +77,9 @@ rewrite-relative-urls=false
     Set-ExecutionPolicy Unrestricted
     ```
 
-4. В запросе на изменение политики выберите вариант «**Да для всех**», введя букву ++a++.
-5. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
+    В запросе на изменение политики выберите вариант «**Да для всех**», введя букву ++a++.
+
+4. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
 
     ``` powershell
     cd "X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows\CMW_Windows<versionNumber>\scripts"
@@ -71,7 +87,7 @@ rewrite-relative-urls=false
 
     Здесь: `X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows` — путь к распакованному дистрибутиву вспомогательного ПО, а `<versionNumber>` — номер версии ПО.
 
-6. Разблокируйте доступ к скачанным из Интернета установочным файлам:
+5. Разблокируйте доступ к скачанным из Интернета установочным файлам:
 
     ``` powershell
     .\files_unblock.ps1
@@ -85,27 +101,26 @@ rewrite-relative-urls=false
         .\files_unblock.ps1 -h
         ```
 
-7. Установите необходимое вспомогательное ПО:
+6. Установите необходимое вспомогательное ПО:
 
     ``` powershell
     .\prerequisites_install.ps1
     ```
 
-8. Перезагрузите машину.
-9.  Запустите _PowerShell_ от имени администратора.
-10. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
+7. Перезагрузите машину.
+8. Запустите _PowerShell_ от имени администратора.
+9. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
 
     ``` powershell
     cd "X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows\CMW_Windows<versionNumber>\scripts"
     ```
 
-11. Проверьте, что дополнительные компоненты установлены:
+10. Проверьте, что дополнительные компоненты установлены:
 
     ``` powershell
     .\prerequisites_list.ps1
     ```
-
-    Если какие-либо дополнительные компоненты не были установлены, повторите шаги 8–12.
+    Если какие-либо дополнительные компоненты не были установлены, повторите шаги 6–10.
 
 ## Установка {{ productName }} {: #deploy_guide_windows_install_sw }
 

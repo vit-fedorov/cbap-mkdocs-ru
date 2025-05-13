@@ -31,9 +31,9 @@ kbId: 4620
 {% else %}
 - `/var/www/<instanceName>` — исполняемые и конфигурационные файлы экземпляра ПО:
     - `logs.config` — конфигурация журналов, см. *«[Подсистема журналирования][logging_engine]»*;
-    - `adapterhost.yml` — конфигурация экземпляра Adapterhost;
-    - `apigateway.yml` — конфигурация экземпляра Apigateway;
-    - `Ignite.config` — конфигурация экземпляра Apache Ignite.
+    - `adapterhost.yml` — конфигурация службы Adapterhost;
+    - `apigateway.yml` — конфигурация службы Apigateway;
+    - `Ignite.config` — конфигурация {{ apacheIgniteVariants }}.
 {% endif %}
 - `/var/lib/comindware/<instanceName>/Database/db` — файлы базы данных.
 {% if not gostech %}
@@ -76,9 +76,9 @@ C:\ProgramData\сomindware\configs\instance\<instanceName>.yml
 - `C:\ProgramData\сomindware\Instances\<instanceName>` — экземпляр ПО.
 - `C:\ProgramData\сomindware\Instances\<instanceName>\config` — исполняемые и конфигурационные файлы экземпляра ПО.:
     - `logs.config` — конфигурация журналов, см. *«[Подсистема журналирования][logging_engine]»*;
-    - `adapterhost.yml` — конфигурация экземпляра Adapterhost;
-    - `apigateway.yml` — конфигурация экземпляра Apigateway;
-    - `Ignite.config` — конфигурация экземпляра Apache Ignite.
+    - `adapterhost.yml` — конфигурация службы Adapterhost;
+    - `apigateway.yml` — конфигурация службы Apigateway;
+    - `Ignite.config` — конфигурация Apache Ignite.
 - `C:\ProgramData\сomindware\Instances\<instanceName>\Database` — файлы базы данных.
 - `C:\ProgramData\сomindware\Instances\<instanceName>\Database\Scripts` — DLL-файлы, скомпилированные из скриптов на языке C#.
 - `C:\ProgramData\сomindware\Instances\<instanceName>\Streams` — файлы, загруженные пользователями и сформированные ПО.

@@ -26,6 +26,40 @@ include-markdown ".snippets/elasticsearch_opensearch_configure.md"
 rewrite-relative-urls=false
 %}
 
+
+{: #deploy_guide_windows_powershell_execution_policy }
+<!--powershell-execution-policy-start-->
+!!! tip "Политика выполнения _PowerShell_" 
+
+    Для выполнения скриптов из дистрибутивов {{ productName }} требуется неограниченная политика выполнения _PowerShell_. При необходимости её нужно сменить на время работы с этой инструкцией.
+    
+    Запустите PowerShell.
+    
+    Проверьте текущую политику выполнения _PowerShell_ и убедитесь, что она `Unrestricted`:
+
+        ``` powershell
+        Get-ExecutionPolicy
+        ```
+
+    Если это не так, то установите неограниченную политику выполнения _PowerShell_:
+
+        ``` powershell
+        Set-ExecutionPolicy Unrestricted
+        ```
+
+    В запросе на изменение политики выберите вариант «**Да для всех**», введя букву ++a++.
+
+    >После выполнения неоходимых шагов этой инструкции, не забудьте вернуть настройки политики на предыдущее значение.
+<!--powershell-execution-policy-end-->
+
+!!! tip "Вызов справки для скриптов"
+
+    Для ознакомления с ключами и назначением любого скрипта используйте ключ `-h` без каких-либо других ключей, например:
+
+    ``` powershell
+    .\files_unblock.ps1 -h
+    ```
+
 ## Порядок установки ПО {: #deploy_guide_windows_order }
 
 1. Подготовьте сервер к установке ПО.
@@ -45,10 +79,7 @@ rewrite-relative-urls=false
 6. На шаге «**Роли сервера**» установите флажок «**Веб-сервер (IIS)**».
 7. На шаге «**Компоненты**» для компонента «**Веб-сервер (IIS)** — **Веб-сервер** — **Разработка приложений**» установите следующие флажки:
 
-    - **ASP.NET 4.8** (или выше);
-    - **Расширяемость .NET 4.8** (или выше);
-    - **Расширения ISAPI**;
-    - **Фильтры ISAPI**.
+    _![Необходимые компоненты Веб-сервера IIS](img/deploy_guide_windows_iis_components.png)_
 
 8. На шаге «**Подтверждение**» нажмите кнопку «**Установить**» и дождитесь завершения процесса.
 
@@ -62,7 +93,7 @@ rewrite-relative-urls=false
     -  [ASP.NET Core 8.0 Runtime - Windows Hosting Bundle Installer](https://dotnet.microsoft.com/ru-ru/download/dotnet/thank-you/runtime-aspnetcore-8.0.15-windows-hosting-bundle-installer)
     - [Microsoft Build of OpenJDK 17](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-17)+
 
-    Вы можете скачать и установить их самостоятельно, либо используя наш дистрибутив вспомогательного ПО согласно инструкции.
+    Вы можете скачать требуемое ПО по ссылкам выше и установить его самостоятельно, либо установить наш дистрибутив вспомогательного ПО следуя инструкции ниже.
     
     Также могут потребоваться:
 
@@ -71,13 +102,13 @@ rewrite-relative-urls=false
 
 1. Скачайте и распакуйте архив с дистрибутивом вспомогательного ПО для **{{ productName }}**.
 2. Запустите _PowerShell_ от имени администратора.
-3. Установите неограниченную политику выполнения _PowerShell_:
+3. Установите неограниченную политику выполнения _PowerShell_.
 
     ``` powershell
     Set-ExecutionPolicy Unrestricted
     ```
-
-    В запросе на изменение политики выберите вариант «**Да для всех**», введя букву ++a++.
+    
+    Подробности в параграфе _«[Политика выполнения PowerShell](#deploy_guide_windows_powershell_execution_policy)»_.
 
 4. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
 
@@ -92,14 +123,6 @@ rewrite-relative-urls=false
     ``` powershell
     .\files_unblock.ps1
     ```
-
-    !!! tip "Вызов справки для скриптов"
-
-        Для ознакомления с ключами и назначением любого скрипта используйте ключ `-h` без каких-либо других ключей, например:
-
-        ``` powershell
-        .\files_unblock.ps1 -h
-        ```
 
 6. Установите необходимое вспомогательное ПО:
 
@@ -126,14 +149,15 @@ rewrite-relative-urls=false
 
 1. Скачайте и распакуйте архив с дистрибутивом **{{ productName }}**.
 2. Запустите _PowerShell_ от имени администратора.
-3. Установите неограниченную политику выполнения _PowerShell_:
+3. Установите неограниченную политику выполнения _PowerShell_.
 
     ``` powershell
     Set-ExecutionPolicy Unrestricted
     ```
 
-4. В запросе на изменение политики выберите вариант «**Да для всех**», введя букву ++a++.
-5. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
+    Подробности в параграфе _«[Политика выполнения PowerShell](#deploy_guide_windows_powershell_execution_policy)»_.
+
+4. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
     cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows<versionNumber>\scripts"
@@ -141,30 +165,58 @@ rewrite-relative-urls=false
 
     Здесь: `X:\<distPath>\X.X-release-ru-<versionNumber>.windows` — путь к распакованному дистрибутиву продукта, а `<versionNumber>` — номер версии ПО.
 
-6. Разблокируйте доступ к скачанным из Интернета установочным файлам:
+5. Разблокируйте доступ к скачанным из Интернета установочным файлам:
 
     ``` powershell
     .\files_unblock.ps1
     ```
 
-    !!! tip "Вызов справки для скриптов"
-
-        Для ознакомления с ключами и назначением любого скрипта используйте ключ `-h` без каких-либо других ключей, например:
-
-        ``` powershell
-        .\files_unblock.ps1 -h
-        ```
-
-7. Установите версию ПО:
+6. Установите версию ПО:
 
     ``` powershell
     .\version_install.ps1
     ```
 
-15. Удостоверьтесь, что ПО установлено, вызывав список установленных версий ПО:
+    Пример результата выполнения скрипта:
+
+    ``` powershell
+    Operation complete.
+
+    ###############################################
+    Installer folder    : C:\install\CMW_Windows_5.0.13334.0
+    Version file path   : C:\install\CMW_Windows_5.0.13334.0\core\bin\Comindware.Platform.Core.dll
+    Version             : 5.0.13334.0
+    Source bin folder   : C:\install\CMW_Windows_5.0.13334.0\core\*
+    Target bin path     : C:\Program Files\Comindware\CBAP\5.0.13334.0
+    Command executed.
+    Complete script version_install.ps1.
+    ###############################################
+    Status: Completed
+    ```
+
+7.  Удостоверьтесь, что ПО установлено, вызывав список установленных версий ПО:
 
     ``` powershell
     .\version_list.ps1
+    ```
+
+    Пример результата выполнения скрипта:
+
+    ``` powershell
+    Running script version_list.ps1.
+    ====================================================================
+    Source folder: C:\Program Files\Comindware\CBAP
+    ====================================================================
+    Version
+    ====================================================================
+    5.0.13286.0
+    5.0.13334.0
+
+    ####################################################################
+    Command executed.
+    Complete script version_list.ps1.
+    ####################################################################
+    Status: Completed
     ```
 
 ## Создание экземпляра ПО {: #deploy_guide_windows_instance_create }
@@ -181,15 +233,13 @@ rewrite-relative-urls=false
     .\instance_create.ps1 -name <instanceName> -port <portNumber> -version <versionNumber> 
     ```
 
-    Скрипт `instance_create.ps1` поддерживает следующие ключи:
+    Здесь:
 
-    - `name <instanceName>` — **обязательный** ключ с именем экземпляра ПО.
-    - `port <portNumber>` — порт для экземпляра ПО, по умолчанию: 80 (необязательный ключ).
-    - `version <versionNumber>` — развернуть ПО указанной версии вида `X.X.XXXX.X` (например: `5.0.1234.0`) из папки вида `C:\Program Files\Comindware\CBAP\<versionNumber>`.
-    - `versionPath <versionPath>` — развернуть ПО из указанной папки `<versionPath>` с версией ПО.
-    - `demoDB` — создать экземпляр ПО **{{ productName }}** c демонстрационной базой данных.
-    - `fqdn <hostName>` — имя хоста для экземпляра ПО (необязательный ключ). По умолчанию: `localhost`.
-    - `h` — вызвать справку по использованию скрипта (этот ключ следует указывать только без остальных ключей).
+    - `-name <instanceName>` — **обязательный** ключ с именем экземпляра ПО.
+    - `-port <portNumber>` — порт для экземпляра ПО, по умолчанию: 80 (необязательный ключ).
+    - `-version <versionNumber>` — **обязательный** ключ с указанием версии разворачиваемого ПО вида `X.X.XXXX.X` (например: `5.0.1234.0`).
+  
+    `-h` — вызвать справку по использованию скрипта (этот ключ следует указывать только без остальных ключей).
 
     !!! tip "Обязательные ключи для скриптов"
 
@@ -209,7 +259,7 @@ rewrite-relative-urls=false
     .\instance_start.ps1 -name <instanceName>
     ```
 
-    Здесь: `name <instanceName>` — **обязательный** ключ с именем экземпляра ПО.
+    Здесь: `-name <instanceName>` — **обязательный** ключ с именем экземпляра ПО.
 
 ## Остановка экземпляра ПО {: #deploy_guide_windows_instance_stop }
 
@@ -258,12 +308,13 @@ end="<!--instance-prepare-end-->"
     .\instance_upgrade.ps1 -name <instanceName> -version <versionNumber> 
     ```
 
-    Скрипт `instance_upgrade.ps1` поддерживает следующие ключи:
+    Здесь:
 
-    - `name <instanceName>` — **обязательный** ключ с именем экземпляра ПО.
-    - `version <versionNumber>` — обновить экземпляр ПО до указанной версии вида `X.X.XXXX.X` (например: `5.0.1234.0`) из папки вида `C:\Program Files\Comindware\CBAP\<versionNumber>`.
-    - `versionPath <versionPath>` — обновить экземпляр ПО до версии из указанной папки `<versionPath>`.
-    - `h` — вызвать справку по использованию скрипта (этот ключ следует указывать только без остальных ключей).
+    - `-name <instanceName>` — **обязательный** ключ с именем экземпляра ПО.
+    - `-version <versionNumber>` — **обязательный** ключ с номером версии  до которой необходимо обновить экземпляр ПО (например: `5.0.1234.0`)
+    - обновить экземпляр ПО до указанной версии вида `X.X.XXXX.X` (например: `5.0.1234.0`).
+  
+    `-h` — вызвать справку по использованию скрипта (этот ключ следует указывать только без остальных ключей).
 
 4. Просмотрите список установленных экземпляров ПО:
 

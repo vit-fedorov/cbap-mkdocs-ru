@@ -1,5 +1,5 @@
 ---
-title: Пути и содержимое директорий экземпляра ПО
+title: 'Пути и содержимое директорий экземпляра ПО'
 kbId: 4620
 ---
 
@@ -8,6 +8,8 @@ kbId: 4620
 ## Введение {: #paths_intro }
 
 Здесь представлена информация о расположении файлов и директорий экземпляра ПО **{{ productName }}**.
+
+Ознакомьтесь также с [рекомендациями по настройке путей](#paths_recommendations).
 
 {% if adminGuideLinux or kbExport %}
 
@@ -55,7 +57,7 @@ kbId: 4620
 
 {% if adminGuideWindows or kbExport %}
 
-## Содержимое директорий {% if userGuide or kbExport %}— Windows{% endif %} {: #paths_windows}
+## Содержимое директорий {% if userGuide or kbExport %}— Windows{% endif %} {: #paths_windows }
 
 По умолчанию файлы экземпляра ПО находятся в директории с экземпляром ПО: `C:\ProgramData\Comindware\Instances\<instanceName>`.
 
@@ -117,22 +119,22 @@ C:\ProgramData\сomindware\configs\instance\<instanceName>.yml
 
         Для директорий в этм хранилище с настроить проверку с помощью антивирусного ПО.
 
-        См. _«[Антивирусное ПО. Настройка исключений: пути и файлы {{ productName }}][antivirus_exceptions_configure]»_.
+        См. _«[Антивирусное ПО. Настройка сканирования и исключений][antivirus_exceptions_configure]»_.
 
-Технические требования к хранилищам данных описаны в статье _[«Архитектура, ландшафт, программное и техническое обеспечение»][architecture_landscape.md]_.
+Технические требования к хранилищам данных описаны в статье _[«Архитектура, ландшафт, программное и техническое обеспечение»][architecture_landscape]_.
 
 <div class="relatedTopics" markdown="block">
 
 --8<-- "related_topics_heading.md"
 
 {% if adminGuideLinux or kbExport %}
-- _[Конфигурация экземпляра, компонентов ПО и служб. Настройка в Linux][configuration_files_linux]_
-- _[Развёртывание Comindware Platform. Архитектура, ландшафт, программное и техническое обеспечение][architecture_landscape.md]_
+- [Конфигурация экземпляра, компонентов ПО и служб. Настройка в Linux][configuration_files_linux]
+- [Развёртывание Comindware Platform. Архитектура, ландшафт, программное и техническое обеспечение][architecture_landscape]
 {% endif %}
 {% if not gostech %}
-- _[Антивирусное ПО. Настройка исключений: пути и файлы {{ productName }}][antivirus_exceptions_configure]_
+- [Антивирусное ПО. Настройка сканирования и исключений][antivirus_exceptions_configure]
 {% endif %}
-- _[Подсистема журналирования][logging_engine]_
+- [Подсистема журналирования][logging_engine]
 
 </div>
 

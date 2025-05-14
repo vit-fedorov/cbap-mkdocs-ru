@@ -836,6 +836,8 @@
 
 [admin_utility_instance_configure]: {{ kbArticleURLPrefix }}4634
 
+[architecture_landscape]: {{ kbArticleURLPrefix }}4596
+
 [auxiliary_software_list]: {{ kbArticleURLPrefix }}4582
 
 [logging_engine]: {{ kbArticleURLPrefix }}4623

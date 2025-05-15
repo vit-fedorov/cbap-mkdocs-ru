@@ -79,7 +79,6 @@ rewrite-relative-urls=false
         По окончании работы с дистрибутивом **{{ productName }}** верните исходную политику выполнения _PowerShell_.
 <!--powershell-execution-policy-end-->
 
-
 ## Порядок установки ПО {: #deploy_guide_windows_order }
 
 1. Подготовьте сервер к установке ПО.

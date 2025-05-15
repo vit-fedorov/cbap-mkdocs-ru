@@ -21,6 +21,13 @@ kbId: 5063
 - настройку сервера выполняет пользователь с правами администратора;
 - установлена служба _IIS (Internet Information Services)_.
 
+{%
+include-markdown ".snippets/elasticsearch_opensearch_configure.md"
+rewrite-relative-urls=false
+%}
+
+## Общие сведения
+
 !!! tip "Вызов справки для скриптов"
 
     Ключ `-h` позволяет просмотреть справку по ключам и назначению любого скрипта для развёртывания **{{ productName }}**.
@@ -31,19 +38,23 @@ kbId: 5063
     .\version_install.ps1 -h
     ```
 
-!!! tip "Условные обозначения и обязательные ключи для скриптов"
+!!! tip "Обязательные ключи для скриптов"
 
-    - Аргументы, которые вы должны подставить согласно своей конфигурации, заключены в угловые скобки.
-    - Необязательные ключи заключены в квадратные скобки.
-    - Если не указать обязательный ключ, скрипт запросит его после запуска.
-    - Пример:
+    Если не указать обязательный ключ, скрипт запросит его после запуска.
+
+!!! tip "Условные обозначения"
+
+    Значения, которые вы должны подставить согласно своей конфигурации, заключены в угловые скобки: 
     
-        ``` powershell
-        .\instance_create.ps1 -name <instanceName> -version <versionNumber> [-port <portNumber>]
-        ```
+    - `<instanceName>` — имя экземпляра ПО;
+    - `<portNumber>` —  номер порта;
+    - `<versionNumber>` — номер версии ПО вида `X.X.XXXX.X` (например: `5.0.1234.0`);
+    - `<prerequisitesDistPath>` — путь к распакованному дистрибутиву вспомогательного ПО;
+    - `<distPath>` — путь к распакованному дистрибутиву ПО **{{ productName }}**.
 
 <!--powershell-execution-policy-start-->
 [](){: #powershell_execution_policy }
+
 !!! tip "Политика выполнения PowerShell"
 
     В зависимости от конфигурации вашей системы для выполнения скриптов из дистрибутива **{{ productName }}** может потребоваться установить неограниченную политику выполнения _PowerShell_. Для этого может выполните указанные ниже действия.
@@ -68,10 +79,6 @@ kbId: 5063
         По окончании работы с дистрибутивом **{{ productName }}** верните исходную политику выполнения _PowerShell_.
 <!--powershell-execution-policy-end-->
 
-{%
-include-markdown ".snippets/elasticsearch_opensearch_configure.md"
-rewrite-relative-urls=false
-%}
 
 ## Порядок установки ПО {: #deploy_guide_windows_order }
 
@@ -164,13 +171,10 @@ rewrite-relative-urls=false
 4. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
 
     ``` powershell
-    cd "<distPath>\CMW_Windows<versionNumber>\scripts"
+    cd "<prerequisitesDistPath>\CMW_Windows<versionNumber>\scripts"
     ```
 
-    Ключи:
-
-    - `<distPath>` — путь к распакованному дистрибутиву вспомогательного ПО (например `X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows`)
-    - `<versionNumber>` — номер версии ПО.
+    Здесь `<prerequisitesDistPath>` — путь к распакованному дистрибутиву вспомогательного ПО (например `X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows`).
 
 5. Разблокируйте доступ к скачанным из интернета установочным файлам:
 
@@ -189,7 +193,7 @@ rewrite-relative-urls=false
 9. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows\CMW_Windows<versionNumber>\scripts"
+    cd "<prerequisitesDistPath>\CMW_Windows<versionNumber>\scripts"
     ```
 
 10. Проверьте, что вспомогательное ПО установлено:
@@ -197,6 +201,7 @@ rewrite-relative-urls=false
     ``` powershell
     .\prerequisites_list.ps1
     ```
+
     Если какое-либо вспомогательное ПО не было установлено, повторите шаги 6–10.
 
 ## Установка {{ productName }} {: #deploy_guide_windows_install_sw }
@@ -207,10 +212,10 @@ rewrite-relative-urls=false
 4. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows<versionNumber>\scripts"
+    cd "<distPath>\CMW_Windows<versionNumber>\scripts"
     ```
 
-    Здесь: `X:\<distPath>\X.X-release-ru-<versionNumber>.windows` — путь к распакованному дистрибутиву продукта, а `<versionNumber>` — номер версии ПО.
+    Здесь `<distPath>` — путь к распакованному дистрибутиву вспомогательного ПО (например `X:\<distPath>\X.X-release-ru-<versionNumber>.windows`).
 
 5. Разблокируйте доступ к скачанным из интернета установочным файлам:
 
@@ -271,27 +276,27 @@ rewrite-relative-urls=false
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows<versionNumber>\scripts"
+    cd "<distPath>\CMW_Windows<versionNumber>\scripts"
     ```
 
 2. Разверните экземпляр ПО:
 
     ``` powershell
-    .\instance_create.ps1 -name <instanceName> -version <versionNumber> [-port <portNumber>]
+    .\instance_create.ps1 -name <instanceName> -version <versionNumber>
     ```
 
     Ключи:
 
-    - `name <instanceName>` — имя экземпляра ПО.
-    - `version <versionNumber>` — номер версии ПО вида `X.X.XXXX.X` (например: `5.0.1234.0`).
-    - `port <portNumber>` — порт для экземпляра ПО, по умолчанию: 80.
+    - `name` — имя экземпляра;
+    - `version` — номер версии ПО;
+    - `port` (необязательно) — порт для экземпляра ПО (по умолчанию: 80).
 
 ## Запуск экземпляра ПО {: #deploy_guide_windows_instance_start }
 
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows<versionNumber>\scripts"
+    cd "<distPath>\CMW_Windows<versionNumber>\scripts"
     ```
 
 2. Запустите экземпляр ПО:
@@ -302,7 +307,7 @@ rewrite-relative-urls=false
 
     Ключ:
 
-    - `name <instanceName>` — имя экземпляра ПО.
+    - `name` — имя экземпляра.
 
 ## Остановка экземпляра ПО {: #deploy_guide_windows_instance_stop }
 
@@ -320,7 +325,7 @@ rewrite-relative-urls=false
 
     Ключ:
 
-    - `name <instanceName>` — имя экземпляра ПО.
+    - `name` — имя экземпляра.
 
 ## Инициализация {{ productName }} {: #instance_initialize}
 
@@ -344,7 +349,7 @@ end="<!--instance-prepare-end-->"
 2. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows<versionNumber>\scripts"
+    cd "<distPath>\CMW_Windows<versionNumber>\scripts"
     ```
 
 3. Запустите обновление экземпляра ПО:
@@ -355,8 +360,8 @@ end="<!--instance-prepare-end-->"
 
     Ключи:
 
-    - `name <instanceName>` — имя экземпляра ПО.
-    - `version <versionNumber>` — номер версии ПО вида `X.X.XXXX.X`, до которой необходимо обновить экземпляр (например: `5.0.1234.0`)
+    - `name` — имя экземпляра ПО;
+    - `version` — номер версии ПО, до которой необходимо обновить экземпляр (например: `5.0.1234.0`)
 
 4. Просмотрите список установленных экземпляров ПО:
 
@@ -371,28 +376,28 @@ end="<!--instance-prepare-end-->"
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows<versionNumber>\scripts"
+    cd "<distPath>\CMW_Windows<versionNumber>\scripts"
     ```
 
 2. Удалите экземпляр ПО:
 
     ``` powershell
-    .\instance_delete.ps1 -name <instanceName> [deleteData] [clear]
+    .\instance_delete.ps1 -name <instanceName>
     ```
 
     Ключи:
 
-    - `name <instanceName>` — имя экземпляра ПО.
+    - `name` — имя экземпляра.
 
         Если не указать другие ключи, будет удалена только служба `comindware<instanceName>`.
 
-    - `deleteData` — удалить следующие объекты:
+    - `deleteData` (необязательно) — удалить следующие объекты:
         - базу данных из папки вида `C:\ProgramData\Comindware\Instances\<instanceName>\Data`;
         - пользовательские файлы экземпляра ПО из папки вида `C:\ProgramData\Comindware\Instances\<instanceName>\Streams`.
 
         Без указания этого ключа или ключа `clear` база данных экземпляра ПО не будет удалена.
 
-    - `clear` — удалить следующие объекты:
+    - `clear` (необязательно)  — удалить следующие объекты:
         - все файлы, папки, базу данных и пользовательские файлы экземпляра ПО;
         - папку экземпляра ПО вида `C:\ProgramData\Comindware\Instances\<instanceName>`;
         - все службы экземпляра ПО;
@@ -403,7 +408,7 @@ end="<!--instance-prepare-end-->"
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows<versionNumber>\scripts"
+    cd "<distPath>\CMW_Windows<versionNumber>\scripts"
     ```
 
 2. Просмотрите список установленных экземпляров ПО:
@@ -428,7 +433,7 @@ end="<!--instance-prepare-end-->"
 
     Ключ:
 
-    - `version <versionNumber>` — номер версии ПО вида `X.X.XXXX.X` (например: `5.0.1234.0`).
+    - `version` — номер версии ПО (например: `5.0.1234.0`).
 
 <div class="relatedTopics" markdown="block">
 

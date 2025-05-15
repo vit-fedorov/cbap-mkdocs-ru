@@ -80,8 +80,6 @@
 
 [periodic_task_notifications]: {{ kbArticleURLPrefix }}4905
 
-[process_end_button_example]: {{ kbArticleURLPrefix }}4911
-
 [apps_kb]: {{ kbCategoryURLPrefix }}832
 
 [telegram_send_notification]: {{ kbArticleURLPrefix }}4926
@@ -619,6 +617,8 @@
 [process_diagram_elements_none_end_event]: {{ kbArticleURLPrefix }}4743
 
 [process_diagram_elements_none_start_event]: {{ kbArticleURLPrefix }}4734
+
+[process_end_button_example]: {{ kbArticleURLPrefix }}4911
 
 [online_store]: {{ kbArticleURLPrefix }}4805
 

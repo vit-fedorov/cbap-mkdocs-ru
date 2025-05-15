@@ -334,6 +334,7 @@ nav:
     - examples/script_using_local_variable.md
     - examples/scenario_verify_data.md
     - examples/multilingual_app.md
+    - examples/process_end_button.md
     - administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
     - administration/connections_communication_routes/rest_odata_connections/send_http_example.md
     - administration/connections_communication_routes/rest_odata_connections/http_send_post.md

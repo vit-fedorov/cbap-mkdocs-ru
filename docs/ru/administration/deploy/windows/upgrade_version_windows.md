@@ -51,13 +51,19 @@ kbId:
 
 2. Запустите _PowerShell_ от имени администратора.
 
-3. Сохраните резервную копию файлов конфигурации (например в директорию `D:\backups\config_tmp)`:
+3. Сохраните резервную копию файлов конфигурации:
 {: #ConfigBackup }
 
 - Создаём папку для сбора резервных копий файлов конфигурации:
-    `X:\backups\config_tmp`
 
-- Переходим в папку с инстансом:
+    ``` powershell
+    New-Item -Path "X:\backups\config_tmp" -ItemType "Directory"
+    ```
+
+    Здесь и далее:
+    `X:\backups\config_tmp` — путь к папке, в которую будем копировать резервные копии файлов конфигурации
+
+- Переходим в папку с экземпляром ПО:
 
     ``` powershell
     cd C:\ProgramData\сomindware\Instances\<instanceName>
@@ -70,6 +76,18 @@ kbId:
     ```
 
 - Скопируйте настройки IIS.
+
+  - Откройте командную строку в качестве администратора
+  - Cоздайте резервную копию конфигурации IIS:
+
+    ``` powershell
+    cd c:\Windows\system32\inetsrv
+    appcmd add backup srviis1-backup-2019
+    ```
+
+    SRwiis1-backup-2019 это резервная папка.
+
+    После выполнения команды в c:\Windows\system32\inetsrv\back появляется папка с вашим резервным именем.
 
 
 - Копируем настройки Java:
@@ -87,7 +105,7 @@ kbId:
     ```
 
 
-- Копируем основной конфиг инстанса:
+- Копируем основной конфиг экземпляра ПО:
     ``` powershell
     Copy-Item -Path "C:\ProgramData\comindware\configs\instance\<instanceName>.yml" -Destination "X:\backups\config_tmp"
     ```
@@ -95,7 +113,7 @@ kbId:
 >Здесь `<instanceName>` — имя экземпляра ПО.
 
 
-4. Остановите экземпляр ПО и вспомогательные службы и удостоверьтесь, что они остановлены
+1. Остановите экземпляр ПО и вспомогательные службы и удостоверьтесь, что они остановлены
 
 - Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
     ``` powershell
@@ -123,19 +141,19 @@ kbId:
 
 5. Проверьте статус экземпляра в IIS
 
-Запустите IIS Manager:
-    - В левом меню Connections, разверните меню с названием своего сервера, 
-    - Зайдите в `Application Pools` 
-    - Убедитесь, что напротив сервисов `Comindware <InstanceName>`, `Comindware <InstanceName>_adapterhost`, `Comindware <InstanceName>_apigateway` стоит статус `Stoped`. 
+Запустите **Диспетчер служб IIS** (IIS Manager):
+    - В левой древовидной панеле **«Подключения»** (Connections), разверните меню с названием своего сервера, 
+    - Зайдите в **«Пулы приложений»** (Application Pools) 
+    - Убедитесь, что напротив сервисов `Comindware <InstanceName>`, `Comindware <InstanceName>_adapterhost`, `Comindware <InstanceName>_apigateway` стоит статус «Остановлен» (Stoped). 
 
 
-6. Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО (`<distPath>` — путь к директории с дистрибутивом, `<versionNumber>` — версия ПО):
+1. Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО (`<distPath>` — путь к директории с дистрибутивом, `<versionNumber>` — версия ПО):
 
     ``` powershell
     Remove-Item X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows<versionNumber> -Recurse
     ```
 
-7. Скопируйте директорию с базой данных экземпляра ПО
+2. Скопируйте директорию с базой данных экземпляра ПО
 
     ``` powershell
     Copy-Item -Path "C:\ProgramData\сomindware\Instances\<instanceName>\Database" -Destination "X:\backups\config_tmp" -Recurse

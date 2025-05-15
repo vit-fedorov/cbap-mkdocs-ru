@@ -79,6 +79,12 @@ rewrite-relative-urls=false
 6. На шаге «**Роли сервера**» установите флажок «**Веб-сервер (IIS)**».
 7. На шаге «**Компоненты**» для компонента «**Веб-сервер (IIS)** — **Веб-сервер** — **Разработка приложений**» установите следующие флажки:
 
+    - **ASP.NET 4.8** (или выше);
+    - **Расширяемость .NET 4.8** (или выше);
+    - **Расширения ISAPI**;
+    - **Фильтры ISAPI**.
+
+
     _![Необходимые компоненты Веб-сервера IIS](img/deploy_guide_windows_iis_components.png)_
 
 8. На шаге «**Подтверждение**» нажмите кнопку «**Установить**» и дождитесь завершения процесса.
@@ -89,9 +95,9 @@ rewrite-relative-urls=false
 
     Для работы {{ productName }} требуется следующее вспомогательное ПО:
 
-    - [.NET 8.0 SDK 8.0.408](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)+
+    - [.NET 8.0 SDK 8.0.408](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) (или выше)
     -  [ASP.NET Core 8.0 Runtime - Windows Hosting Bundle Installer](https://dotnet.microsoft.com/ru-ru/download/dotnet/thank-you/runtime-aspnetcore-8.0.15-windows-hosting-bundle-installer)
-    - [Microsoft Build of OpenJDK 17](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-17)+
+    - [Microsoft Build of OpenJDK 17](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-17) (или выше)
 
     Вы можете скачать требуемое ПО по ссылкам выше и установить его самостоятельно, либо установить наш дистрибутив вспомогательного ПО следуя инструкции ниже.
     

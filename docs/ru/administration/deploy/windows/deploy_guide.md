@@ -1,9 +1,9 @@
 ---
-title: 'Установка, запуск, инициализация и остановка Comindware Platform в Windows'
+title: 'Установка, запуск, инициализация и остановка ПО в Windows'
 kbId: 5063
 ---
 
-# Установка, запуск, инициализация и остановка {{ productName }} в Windows {: #deploy_guide_windows}
+# Установка, запуск, инициализация и остановка ПО в Windows {: #deploy_guide_windows}
 
 ## Введение {: #deploy_guide_windows_intro }
 
@@ -18,47 +18,60 @@ kbId: 5063
 Перед установкой ПО убедитесь, что сервер соответствует следующим требованиям:
 
 - сервер работает под управлением _Windows Server_;
-- сервер настраивается от имени пользователя с правами администратора;
+- настройку сервера выполняет пользователь с правами администратора;
 - установлена служба _IIS (Internet Information Services)_.
+
+!!! tip "Вызов справки для скриптов"
+
+    Ключ `-h` позволяет просмотреть справку по ключам и назначению любого скрипта для развёртывания **{{ productName }}**.
+    
+    Используйте его без других ключей, например:
+
+    ``` powershell
+    .\version_install.ps1 -h
+    ```
+
+!!! tip "Условные обозначения и обязательные ключи для скриптов"
+
+    - Аргументы, которые вы должны подставить согласно своей конфигурации, заключены в угловые скобки.
+    - Необязательные ключи заключены в квадратные скобки.
+    - Если не указать обязательный ключ, скрипт запросит его после запуска.
+    - Пример:
+    
+        ``` powershell
+        .\instance_create.ps1 -name <instanceName> -version <versionNumber> [-port <portNumber>]
+        ```
+
+<!--powershell-execution-policy-start-->
+[](){: #powershell_execution_policy }
+!!! tip "Политика выполнения PowerShell"
+
+    В зависимости от конфигурации вашей системы для выполнения скриптов из дистрибутива **{{ productName }}** может потребоваться установить неограниченную политику выполнения _PowerShell_. Для этого может выполните указанные ниже действия.
+    
+    1. Запустите _PowerShell_.
+    2. Определите текущую политику выполнения _PowerShell_:
+
+        ``` powershell
+        Get-ExecutionPolicy
+        ```
+    
+    3. Если политика отличается от `Unrestricted`, установите неограниченную политику выполнения _PowerShell_:
+
+        ``` powershell
+        Set-ExecutionPolicy Unrestricted
+        ```
+    
+    4. В запросе на изменение политики выберите вариант «**Да для всех**», введя букву ++a++.
+
+    !!! warning "Внимание!"
+    
+        По окончании работы с дистрибутивом **{{ productName }}** верните исходную политику выполнения _PowerShell_.
+<!--powershell-execution-policy-end-->
 
 {%
 include-markdown ".snippets/elasticsearch_opensearch_configure.md"
 rewrite-relative-urls=false
 %}
-
-
-{: #deploy_guide_windows_powershell_execution_policy }
-<!--powershell-execution-policy-start-->
-!!! tip "Политика выполнения _PowerShell_" 
-
-    Для выполнения скриптов из дистрибутивов {{ productName }} требуется неограниченная политика выполнения _PowerShell_. При необходимости её нужно сменить на время работы с этой инструкцией.
-    
-    Запустите PowerShell.
-    
-    Проверьте текущую политику выполнения _PowerShell_ и убедитесь, что она `Unrestricted`:
-
-        ``` powershell
-        Get-ExecutionPolicy
-        ```
-
-    Если это не так, то установите неограниченную политику выполнения _PowerShell_:
-
-        ``` powershell
-        Set-ExecutionPolicy Unrestricted
-        ```
-
-    В запросе на изменение политики выберите вариант «**Да для всех**», введя букву ++a++.
-
-    >После выполнения неоходимых шагов этой инструкции, не забудьте вернуть настройки политики на предыдущее значение.
-<!--powershell-execution-policy-end-->
-
-!!! tip "Вызов справки для скриптов"
-
-    Для ознакомления с ключами и назначением любого скрипта используйте ключ `-h` без каких-либо других ключей, например:
-
-    ``` powershell
-    .\files_unblock.ps1 -h
-    ```
 
 ## Порядок установки ПО {: #deploy_guide_windows_order }
 
@@ -71,23 +84,62 @@ rewrite-relative-urls=false
 
 ## Подготовка сервера к установке ПО {: #deploy_guide_windows_server_prepare }
 
-1. Откройте **Диспетчер сервера**.
+1. Откройте **Диспетчер серверов**.
 2. Добавьте в список серверов компьютер, на котором будет установлено ПО **{{ productName }}**.
 3. Запустите **Мастер добавления ролей и компонентов**, выбрав пункт «**Добавить роли и компоненты**» для данного сервера.
 4. На шаге «**Тип установки**» выберите пункт «**Установка ролей или компонентов**».
 5. На шаге «**Выбор сервера**» укажите сервер, на котором будет установлено ПО.
-6. На шаге «**Роли сервера**» установите флажок «**Веб-сервер (IIS)**».
-7. На шаге «**Компоненты**» для компонента «**Веб-сервер (IIS)** — **Веб-сервер** — **Разработка приложений**» установите следующие флажки:
+6. На шаге «**Роли сервера**» установите следующие флажки
 
-    - **ASP.NET 4.8** (или выше);
-    - **Расширяемость .NET 4.8** (или выше);
-    - **Расширения ISAPI**;
-    - **Фильтры ISAPI**.
+    - **Web Server (IIS)**
+        - **Web Server**
+            - **Common HTTP Features**
+                - Default Document
+                - HTTP Errors
+                - Static Content
+                - HTTP Redirection
+                - WebDAV Publishing
+            - **Health and Diagnostics**
+                - HTTP Logging
+                - Custom Logging
+                - Request Monitor
+            - **Performance**
+                - Static Content Compression
+                - Dynamic Content Compression
+            - **Security**
+                - Request Filtering
+                - Basic Authentication
+                - Centralized SSL
+                - IP and Domain Restrictions
+                - Windows Authentication
+            - **Application Development**
+                - ASP.NET 4.8 (или новее)
+                - Application Initialization
+                - WebSocket Protocol
+                - .NET Extensibility 4.8 (или новее)
+                - ISAPI Extensions
+                - ISAPI Filters
+            - **Management Tools**
+                - IIS Management Console
+                - IIS Management Scripts and Tools
 
+7. На шаге «**Компоненты**» установите следующие флажки:
 
-    _![Необходимые компоненты Веб-сервера IIS](img/deploy_guide_windows_iis_components.png)_
+    - **.NET Framework 4.8 Features** (или новее)
+        - .Net Framework 4.8
+        - ASP.NET 4.8
+        - **WCF Services**
+            - HTTP Activation
+            - TCP Port Sharing
+    - **Windows Process Activation Service**
+        - Process Model
+        - Configuration API
 
-8. На шаге «**Подтверждение**» нажмите кнопку «**Установить**» и дождитесь завершения процесса.
+8. Сверьтесь со следующим примером корректной конфигурации IIS:
+
+    _![Пример корректно настроенных ролей и компонентов веб-сервера IIS](img/deploy_guide_windows_iis_components.png)_
+
+9. На шаге «**Подтверждение**» нажмите кнопку «**Установить**» и дождитесь завершения процесса.
 
 ## Установка вспомогательного ПО {: #deploy_guide_windows_install_prerequisites }
 
@@ -95,11 +147,11 @@ rewrite-relative-urls=false
 
     Для работы {{ productName }} требуется следующее вспомогательное ПО:
 
-    - [.NET 8.0 SDK 8.0.408](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) (или выше)
-    -  [ASP.NET Core 8.0 Runtime - Windows Hosting Bundle Installer](https://dotnet.microsoft.com/ru-ru/download/dotnet/thank-you/runtime-aspnetcore-8.0.15-windows-hosting-bundle-installer)
-    - [Microsoft Build of OpenJDK 17](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-17) (или выше)
+    - [.NET 8.0 SDK версии 8.0.408 или выше](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+    - [ASP.NET Core 8.0 Runtime - Windows Hosting Bundle Installer](https://dotnet.microsoft.com/ru-ru/download/dotnet/thank-you/runtime-aspnetcore-8.0.15-windows-hosting-bundle-installer)
+    - [Microsoft Build of OpenJDK версии 17 или выше](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-17)
 
-    Вы можете скачать требуемое ПО по ссылкам выше и установить его самостоятельно, либо установить наш дистрибутив вспомогательного ПО следуя инструкции ниже.
+    Вы можете скачать требуемое ПО по ссылкам выше и установить его самостоятельно, либо установить наш дистрибутив вспомогательного ПО, следуя приведённым ниже инструкциям.
     
     Также могут потребоваться:
 
@@ -108,23 +160,19 @@ rewrite-relative-urls=false
 
 1. Скачайте и распакуйте архив с дистрибутивом вспомогательного ПО для **{{ productName }}**.
 2. Запустите _PowerShell_ от имени администратора.
-3. Установите неограниченную политику выполнения _PowerShell_.
-
-    ``` powershell
-    Set-ExecutionPolicy Unrestricted
-    ```
-    
-    Подробности в параграфе _«[Политика выполнения PowerShell](#deploy_guide_windows_powershell_execution_policy)»_.
-
+3. При необходимости установите неограниченную политику выполнения _PowerShell_. См. _«[Политика выполнения PowerShell](#powershell_execution_policy)»_.
 4. Перейдите в папку со скриптами для развёртывания вспомогательного ПО:
 
     ``` powershell
-    cd "X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows\CMW_Windows<versionNumber>\scripts"
+    cd "<distPath>\CMW_Windows<versionNumber>\scripts"
     ```
 
-    Здесь: `X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows` — путь к распакованному дистрибутиву вспомогательного ПО, а `<versionNumber>` — номер версии ПО.
+    Ключи:
 
-5. Разблокируйте доступ к скачанным из Интернета установочным файлам:
+    - `<distPath>` — путь к распакованному дистрибутиву вспомогательного ПО (например `X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows`)
+    - `<versionNumber>` — номер версии ПО.
+
+5. Разблокируйте доступ к скачанным из интернета установочным файлам:
 
     ``` powershell
     .\files_unblock.ps1
@@ -144,25 +192,18 @@ rewrite-relative-urls=false
     cd "X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows\CMW_Windows<versionNumber>\scripts"
     ```
 
-10. Проверьте, что дополнительные компоненты установлены:
+10. Проверьте, что вспомогательное ПО установлено:
 
     ``` powershell
     .\prerequisites_list.ps1
     ```
-    Если какие-либо дополнительные компоненты не были установлены, повторите шаги 6–10.
+    Если какое-либо вспомогательное ПО не было установлено, повторите шаги 6–10.
 
 ## Установка {{ productName }} {: #deploy_guide_windows_install_sw }
 
 1. Скачайте и распакуйте архив с дистрибутивом **{{ productName }}**.
 2. Запустите _PowerShell_ от имени администратора.
-3. Установите неограниченную политику выполнения _PowerShell_.
-
-    ``` powershell
-    Set-ExecutionPolicy Unrestricted
-    ```
-
-    Подробности в параграфе _«[Политика выполнения PowerShell](#deploy_guide_windows_powershell_execution_policy)»_.
-
+3. При необходимости установите неограниченную политику выполнения _PowerShell_. См. _«[Политика выполнения PowerShell](#powershell_execution_policy)»_.
 4. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
@@ -171,7 +212,7 @@ rewrite-relative-urls=false
 
     Здесь: `X:\<distPath>\X.X-release-ru-<versionNumber>.windows` — путь к распакованному дистрибутиву продукта, а `<versionNumber>` — номер версии ПО.
 
-5. Разблокируйте доступ к скачанным из Интернета установочным файлам:
+5. Разблокируйте доступ к скачанным из интернета установочным файлам:
 
     ``` powershell
     .\files_unblock.ps1
@@ -236,20 +277,14 @@ rewrite-relative-urls=false
 2. Разверните экземпляр ПО:
 
     ``` powershell
-    .\instance_create.ps1 -name <instanceName> -port <portNumber> -version <versionNumber> 
+    .\instance_create.ps1 -name <instanceName> -version <versionNumber> [-port <portNumber>]
     ```
 
-    Здесь:
+    Ключи:
 
-    - `-name <instanceName>` — **обязательный** ключ с именем экземпляра ПО.
-    - `-port <portNumber>` — порт для экземпляра ПО, по умолчанию: 80 (необязательный ключ).
-    - `-version <versionNumber>` — **обязательный** ключ с указанием версии разворачиваемого ПО вида `X.X.XXXX.X` (например: `5.0.1234.0`).
-  
-    `-h` — вызвать справку по использованию скрипта (этот ключ следует указывать только без остальных ключей).
-
-    !!! tip "Обязательные ключи для скриптов"
-
-        Если не указать обязательный ключ для любого скрипта, он запросит его после запуска.
+    - `name <instanceName>` — имя экземпляра ПО.
+    - `version <versionNumber>` — номер версии ПО вида `X.X.XXXX.X` (например: `5.0.1234.0`).
+    - `port <portNumber>` — порт для экземпляра ПО, по умолчанию: 80.
 
 ## Запуск экземпляра ПО {: #deploy_guide_windows_instance_start }
 
@@ -265,7 +300,9 @@ rewrite-relative-urls=false
     .\instance_start.ps1 -name <instanceName>
     ```
 
-    Здесь: `-name <instanceName>` — **обязательный** ключ с именем экземпляра ПО.
+    Ключ:
+
+    - `name <instanceName>` — имя экземпляра ПО.
 
 ## Остановка экземпляра ПО {: #deploy_guide_windows_instance_stop }
 
@@ -281,7 +318,9 @@ rewrite-relative-urls=false
     .\instance_stop.ps1 -name <instanceName>
     ```
 
-    Здесь: `-name <instanceName>` — **обязательный** ключ с именем экземпляра ПО.
+    Ключ:
+
+    - `name <instanceName>` — имя экземпляра ПО.
 
 ## Инициализация {{ productName }} {: #instance_initialize}
 
@@ -314,13 +353,10 @@ end="<!--instance-prepare-end-->"
     .\instance_upgrade.ps1 -name <instanceName> -version <versionNumber> 
     ```
 
-    Здесь:
+    Ключи:
 
-    - `-name <instanceName>` — **обязательный** ключ с именем экземпляра ПО.
-    - `-version <versionNumber>` — **обязательный** ключ с номером версии  до которой необходимо обновить экземпляр ПО (например: `5.0.1234.0`)
-    - обновить экземпляр ПО до указанной версии вида `X.X.XXXX.X` (например: `5.0.1234.0`).
-  
-    `-h` — вызвать справку по использованию скрипта (этот ключ следует указывать только без остальных ключей).
+    - `name <instanceName>` — имя экземпляра ПО.
+    - `version <versionNumber>` — номер версии ПО вида `X.X.XXXX.X`, до которой необходимо обновить экземпляр (например: `5.0.1234.0`)
 
 4. Просмотрите список установленных экземпляров ПО:
 
@@ -341,14 +377,26 @@ end="<!--instance-prepare-end-->"
 2. Удалите экземпляр ПО:
 
     ``` powershell
-    .\instance_delete.ps1 -name <instanceName>
+    .\instance_delete.ps1 -name <instanceName> [deleteData] [clear]
     ```
 
-    Скрипт `instance_delete.ps1` поддерживает следующие ключи:
+    Ключи:
 
-    - `name <instanceName>` — **обязательный** ключ с именем экземпляра ПО. Если не указать другие ключи, будет удалена только служба `comindware<instanceName>`.
-    - `deleteData` — удалить базу данных из папки вида `C:\ProgramData\Comindware\Instances\<instanceName>\Data` и пользовательские файлы экземпляра ПО из папки вида `C:\ProgramData\Comindware\Instances\<instanceName>\Streams`. Без указания этого ключа или ключа `clear` база данных экземпляра ПО не будет удалена.
-    - `clear` — удалить все файлы, папки, базу данных и пользовательские файлы вместе с папкой вида `C:\ProgramData\Comindware\Instances\<instanceName>`, а также службы экземпляра ПО, сайт и пул приложения из IIS.
+    - `name <instanceName>` — имя экземпляра ПО.
+
+        Если не указать другие ключи, будет удалена только служба `comindware<instanceName>`.
+
+    - `deleteData` — удалить следующие объекты:
+        - базу данных из папки вида `C:\ProgramData\Comindware\Instances\<instanceName>\Data`;
+        - пользовательские файлы экземпляра ПО из папки вида `C:\ProgramData\Comindware\Instances\<instanceName>\Streams`.
+
+        Без указания этого ключа или ключа `clear` база данных экземпляра ПО не будет удалена.
+
+    - `clear` — удалить следующие объекты:
+        - все файлы, папки, базу данных и пользовательские файлы экземпляра ПО;
+        - папку экземпляра ПО вида `C:\ProgramData\Comindware\Instances\<instanceName>`;
+        - все службы экземпляра ПО;
+        - сайт и пул приложения из IIS.
 
 ## Удаление версии ПО {: #deploy_guide_windows_version_delete }
 
@@ -364,14 +412,23 @@ end="<!--instance-prepare-end-->"
     .\instance_list.ps1
     ```
 
-3. Удалите все экземпляры с версией ПО, которую требуется удалить, или обновите их до другой версии. Удалить версию ПО, которая используется в каких-либо экземплярах, не удастся. См. _«[Удаление экземпляра ПО](#deploy_guide_windows_instance_delete)»_.
+3. Удалите все экземпляры с версией ПО, которую требуется удалить, или обновите их до другой версии.
+
+    !!! note "Примечание"
+
+        Удалить версию ПО, которая используется в каких-либо экземплярах, не удастся.
+        
+        Сначала удалите экземпляр по, см. _«[Удаление экземпляра ПО](#deploy_guide_windows_instance_delete)»_.
+
 4. Удалите версию ПО:
 
     ``` powershell
     .\version_delete.ps1 -version <versionNumber>
     ```
 
-    Здесь: `-version <versionNumber>` — указать номер версии ПО вида `X.X.XXXX.X` (например: `5.0.1234.0`).
+    Ключ:
+
+    - `version <versionNumber>` — номер версии ПО вида `X.X.XXXX.X` (например: `5.0.1234.0`).
 
 <div class="relatedTopics" markdown="block">
 

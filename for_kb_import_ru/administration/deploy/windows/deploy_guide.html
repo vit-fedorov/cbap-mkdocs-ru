@@ -371,9 +371,9 @@
 <div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">instance_create</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-name</span> <span class="p">&lt;</span><span class="n">instanceName</span><span class="p">&gt;</span> <span class="n">-version</span> <span class="p">&lt;</span><span class="n">versionNumber</span><span class="p">&gt;</span></code> <br/></pre></code></div>
 <p>Ключи:</p>
 <ul>
-<li><code>name</code> — имя экземпляра;</li>
-<li><code>version</code> — номер версии ПО;</li>
-<li><code>port</code> (необязательно) — порт для экземпляра ПО (по умолчанию: 80).</li>
+<li><code>-name</code> — имя экземпляра;</li>
+<li><code>-version</code> — номер версии ПО;</li>
+<li><code>-port</code> (необязательно) — порт для экземпляра ПО (по умолчанию: 80).</li>
 </ul>
 </li>
 </ol>
@@ -388,7 +388,7 @@
 <div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">instance_start</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-name</span> <span class="p">&lt;</span><span class="n">instanceName</span><span class="p">&gt;</span></code> <br/></pre></code></div>
 <p>Ключ:</p>
 <ul>
-<li><code>name</code> — имя экземпляра.</li>
+<li><code>-name</code> — имя экземпляра.</li>
 </ul>
 </li>
 </ol>
@@ -403,7 +403,7 @@
 <div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">instance_stop</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-name</span> <span class="p">&lt;</span><span class="n">instanceName</span><span class="p">&gt;</span></code> <br/></pre></code></div>
 <p>Ключ:</p>
 <ul>
-<li><code>name</code> — имя экземпляра.</li>
+<li><code>-name</code> — имя экземпляра.</li>
 </ul>
 </li>
 </ol>
@@ -492,8 +492,8 @@
 <div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">instance_upgrade</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-name</span> <span class="p">&lt;</span><span class="n">instanceName</span><span class="p">&gt;</span> <span class="n">-version</span> <span class="p">&lt;</span><span class="n">versionNumber</span><span class="p">&gt;</span> </code> <br/></pre></code></div>
 <p>Ключи:</p>
 <ul>
-<li><code>name</code> — имя экземпляра ПО;</li>
-<li><code>version</code> — номер версии ПО, до которой необходимо обновить экземпляр (например: <code>5.0.1234.0</code>)</li>
+<li><code>-name</code> — имя экземпляра ПО;</li>
+<li><code>-version</code> — номер версии ПО, до которой необходимо обновить экземпляр (например: <code>5.0.1234.0</code>)</li>
 </ul>
 </li>
 <li>
@@ -516,19 +516,19 @@
 <p>Ключи:</p>
 <ul>
 <li>
-<p><code>name</code> — имя экземпляра.</p>
+<p><code>-name</code> — имя экземпляра.</p>
 <p>Если не указать другие ключи, будет удалена только служба <code>comindware&lt;instanceName&gt;</code>.</p>
 </li>
 <li>
-<p><code>deleteData</code> (необязательно) — удалить следующие объекты:</p>
+<p><code>-deleteData</code> (необязательно) — удалить следующие объекты:</p>
 <ul>
 <li>базу данных из папки вида <code>C:\ProgramData\Comindware\Instances\&lt;instanceName&gt;\Data</code>;</li>
 <li>пользовательские файлы экземпляра ПО из папки вида <code>C:\ProgramData\Comindware\Instances\&lt;instanceName&gt;\Streams</code>.</li>
 </ul>
-<p>Без указания этого ключа или ключа <code>clear</code> база данных экземпляра ПО не будет удалена.</p>
+<p>Без указания этого ключа или ключа <code>-clear</code> база данных экземпляра ПО не будет удалена.</p>
 </li>
 <li>
-<p><code>clear</code> (необязательно)  — удалить следующие объекты:</p>
+<p><code>-clear</code> (необязательно)  — удалить следующие объекты:</p>
 <ul>
 <li>все файлы, папки, базу данных и пользовательские файлы экземпляра ПО;</li>
 <li>папку экземпляра ПО вида <code>C:\ProgramData\Comindware\Instances\&lt;instanceName&gt;</code>;</li>
@@ -562,7 +562,7 @@
 <div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">version_delete</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-version</span> <span class="p">&lt;</span><span class="n">versionNumber</span><span class="p">&gt;</span></code> <br/></pre></code></div>
 <p>Ключ:</p>
 <ul>
-<li><code>version</code> — номер версии ПО (например: <code>5.0.1234.0</code>).</li>
+<li><code>-version</code> — номер версии ПО (например: <code>5.0.1234.0</code>).</li>
 </ul>
 </li>
 </ol>

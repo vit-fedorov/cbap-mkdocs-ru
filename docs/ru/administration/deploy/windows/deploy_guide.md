@@ -26,7 +26,7 @@ include-markdown ".snippets/elasticsearch_opensearch_configure.md"
 rewrite-relative-urls=false
 %}
 
-## Общие сведения
+## Примечания {: #deploy_guide_windows_notes }
 
 !!! tip "Вызов справки для скриптов"
 

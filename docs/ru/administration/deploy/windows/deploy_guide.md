@@ -27,7 +27,7 @@ rewrite-relative-urls=false
 %}
 
 ## Примечания {: #deploy_guide_windows_notes }
-
+<!--windows-deploy-notes-start-->
 !!! tip "Вызов справки для скриптов"
 
     Ключ `-h` позволяет просмотреть справку по ключам и назначению любого скрипта для развёртывания **{{ productName }}**.
@@ -51,6 +51,7 @@ rewrite-relative-urls=false
     - `<versionNumber>` — номер версии ПО вида `X.X.XXXX.X` (например: `5.0.1234.0`);
     - `<prerequisitesDistPath>` — путь к распакованному дистрибутиву вспомогательного ПО;
     - `<distPath>` — путь к распакованному дистрибутиву ПО **{{ productName }}**.
+<!--windows-deploy-notes-end-->
 
 <!--powershell-execution-policy-start-->
 [](){: #powershell_execution_policy }

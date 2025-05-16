@@ -15,6 +15,20 @@ kbId:
 
     Этот способ можно использовать, если ПО **{{ productName }}** развёрнуто на одной машине и нет возможности развернуть новую машину для экземпляра ПО новой версии.
 
+## Примечания {: #upgrade_version_windows_notes }
+
+{%
+include-markdown "../linux/deploy_guide.md"
+start="<!--windows-deploy-notes-start-->"
+end="<!--windows-deploy-notes-end-->"
+%}
+
+{%
+include-markdown "../linux/deploy_guide.md"
+start="<!--powershell-execution-policy-start-->"
+end="<!--powershell-execution-policy-end-->"
+%}
+
 ## Порядок обновления версии экземпляра ПО
 
 1. Подготовьте экземпляр ПО к обновлению:
@@ -141,19 +155,20 @@ kbId:
 
 5. Проверьте статус экземпляра в IIS
 
-Запустите **Диспетчер служб IIS** (IIS Manager):
-    - В левой древовидной панеле **«Подключения»** (Connections), разверните меню с названием своего сервера, 
-    - Зайдите в **«Пулы приложений»** (Application Pools) 
-    - Убедитесь, что напротив сервисов `Comindware <InstanceName>`, `Comindware <InstanceName>_adapterhost`, `Comindware <InstanceName>_apigateway` стоит статус «Остановлен» (Stopped). 
+    Запустите **Диспетчер служб IIS** (IIS Manager):
+
+     - В левой древовидной панеле **«Подключения»** (Connections), разверните меню с названием своего сервера, 
+     - Зайдите в **«Пулы приложений»** (Application Pools) 
+     - Убедитесь, что напротив сервисов `Comindware <InstanceName>`, `Comindware <InstanceName>_adapterhost`, `Comindware <InstanceName>_apigateway` стоит статус «Остановлен» (Stopped).
 
 
-1. Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО (`<distPath>` — путь к директории с дистрибутивом, `<versionNumber>` — версия ПО):
+6. Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО (`<distPath>` — путь к директории с дистрибутивом, `<versionNumber>` — версия ПО):
 
     ``` powershell
     Remove-Item X:\<distPath>\X.X-release-ru-<versionNumber>.windows\CMW_Windows<versionNumber> -Recurse
     ```
 
-2. Скопируйте директорию с базой данных экземпляра ПО
+7. Скопируйте директорию с базой данных экземпляра ПО
 
     ``` powershell
     Copy-Item -Path "C:\ProgramData\сomindware\Instances\<instanceName>\Database" -Destination "X:\backups\config_tmp" -Recurse
@@ -161,8 +176,6 @@ kbId:
 
 Путь до файлов базы данных экземпляра ПО:
     `C:\ProgramData\сomindware\Instances\<instanceName>\Database`
-
-
 
 
 ## Обновление версии ПО для экземпляра {: .pageBreakBefore }
@@ -193,25 +206,10 @@ kbId:
     Если каких-то компонентов не хватает, то установите соответствующую версию вспомогательного ПО согласно инструкции _«[Установка вспомогательного ПО](#deploy_guide_windows_install_prerequisites)»_.
 
 3. Скачайте и распакуйте архив с дистрибутивом новой версией ПО.
-
 4. Запустите _PowerShell_ от имени администратора.
 
-5. Установите неограниченную политику выполнения _PowerShell_:
-
-Проверьте текущую политику выполнения _PowerShell_ и убедитесь, что она `Unrestricted`:
-
-    ``` powershell
-    Get-ExecutionPolicy
-    ```
-
-Если это не так, то установите неограниченную политику выполнения _PowerShell_:
-
-    ``` powershell
-    Set-ExecutionPolicy Unrestricted
-    ```
-
+5. При необходимости установите неограниченную политику выполнения _PowerShell_. См. _«[Политика выполнения PowerShell](#powershell_execution_policy)»_.
 6. В запросе на изменение политики выберите вариант «**Да для всех**», введя букву A.
-
 7. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
 
     ``` powershell
@@ -229,7 +227,6 @@ kbId:
 !!! note "Вызов справки для скриптов"
     Для ознакомления с ключами и назначением любого скрипта используйте ключ `-h` без каких-либо других ключей, например:
     ```.\files_unblock.ps1 -h``` 
-
 
 9. Установите новую версию ПО:
 
@@ -253,9 +250,21 @@ kbId:
 
     Ключи:
 
-    - `name <instanceName>` — **обязательный** ключ с именем экземпляра ПО. Если не указать другие ключи, будет удалена только служба `comindware<instanceName>`.
-    - `deleteData` — удалить базу данных из папки вида `C:\ProgramData\Comindware\Instances\<instanceName>\Data` и пользовательские файлы экземпляра ПО из папки вида `C:\ProgramData\Comindware\Instances\<instanceName>\Streams`. Без указания этого ключа или ключа `clear` база данных экземпляра ПО не будет удалена.
-    - `clear` — удалить все файлы, папки, базу данных и пользовательские файлы вместе с папкой вида `C:\ProgramData\Comindware\Instances\<instanceName>`, а также службы экземпляра ПО, сайт и пул приложения из IIS.
+    - `-name` — имя экземпляра.
+
+        Если не указать другие ключи, будет удалена только служба `comindware<instanceName>`.
+
+    - `-deleteData` (необязательно) — удалить следующие объекты:
+        - базу данных из папки вида `C:\ProgramData\Comindware\Instances\<instanceName>\Data`;
+        - пользовательские файлы экземпляра ПО из папки вида `C:\ProgramData\Comindware\Instances\<instanceName>\Streams`.
+
+        Без указания этого ключа или ключа `-clear` база данных экземпляра ПО не будет удалена.
+
+    - `-clear` (необязательно)  — удалить следующие объекты:
+        - все файлы, папки, базу данных и пользовательские файлы экземпляра ПО;
+        - папку экземпляра ПО вида `C:\ProgramData\Comindware\Instances\<instanceName>`;
+        - все службы экземпляра ПО;
+        - сайт и пул приложения из IIS.
 
 12. Создайте экземпляр ПО новой версии:
 
@@ -263,25 +272,11 @@ kbId:
     .\instance_create.ps1 -name <instanceName> -port <portNumber> -version <versionNumber>
     ```  
 
-    Здесь:
+    Ключи:
 
-    - `<instanceName>` — имя экземпляра ПО;
-    - `<portNumber>` - порт для экземпляра ПО, по умолчанию: 80 (необязательный ключ);
-    - `<versionNumber>` — установленная версия ПО.
-
-
-Скрипт `instance_create.ps1` поддерживает следующие ключи:
-
-- `name <instanceName>` — **обязательный** ключ с именем экземпляра ПО.
-- `port <portNumber>` — порт для экземпляра ПО, по умолчанию: 80 (необязательный ключ).
-- `version <versionNumber>` — развернуть ПО указанной версии вида `X.X.XXXX.X` (например: `5.0.1234.0`) из папки вида `C:\Program Files\Comindware\CBAP\<versionNumber>`.
-- `versionPath <versionPath>` — развернуть ПО из указанной папки `<versionPath>` с версией ПО.
-- `demoDB` — создать экземпляр ПО ** {{ productName }}** c демонстрационной базой данных.
-- `fqdn <hostName>` — имя хоста для экземпляра ПО (необязательный ключ). По умолчанию: `localhost`.
-- `h` — вызвать справку по использованию скрипта (этот ключ следует указывать только без остальных ключей).
-
-> **Обязательные ключи для скриптов:**
-> Если не указать обязательный ключ для любого скрипта, он запросит его после запуска.
+    - `-name` — имя экземпляра;
+    - `-version` — номер версии ПО;
+    - `-port` (необязательно) — порт для экземпляра ПО (по умолчанию: 80).
 
 13. По окончании создания скрипт выведет информацию о компонентах экземпляра ПО. Удостоверьтесь, что компоненты успешно установлены.
 
@@ -331,32 +326,36 @@ kbId:
 
 18. Перезапустите сервисы, настройки которых были изменены:
 
-Перейдите в папку со скриптами для развёртывания ПО ** {{ productName }}**:
+    Перейдите в папку со скриптами для развёртывания ПО ** {{ productName }}**:
+
     ``` powershell
     cd "X:\<distPath>\CMW_Windows<versionNumber>\scripts"
-    ``` 
+    ```
 
-Здесь: `X:\<distPath>` — путь к распакованному дистрибутиву продукта, а `<versionNumber>` — номер версии ПО.
+    Здесь: `X:\<distPath>` — путь к распакованному дистрибутиву продукта, а `<versionNumber>` — номер версии ПО.
 
-Запустите необходимые для перезапуска скрипты.
+    Запустите необходимые для перезапуска скрипты.
 
-Перезапуск экземпляра ПО:
+    Перезапуск экземпляра ПО:
+
     ``` powershell
     .\instance_stop.ps1 -name <instanceName>
     .\instance_start.ps1 -name <instanceName>
     ``` 
 
-Перезапуск Apigateway:
+    Перезапуск Apigateway:
+
     ``` powershell
     .\apigateway_stop.ps1 -name <instanceName>
     .\apigateway_start.ps1 -name <instanceName>
-    ``` 
+    ```
 
-Перезапуск Adapterhost:
+    Перезапуск Adapterhost:
+
     ``` powershell
     .\adapterhost_stop.ps1 -name <instanceName>
     .\adapterhost_start.ps1 -name <instanceName>
-    ``` 
+    ```
 
 19. Откройте сайт экземпляра ПО в браузере, одновременно открыв выдачу журналов экземпляра в _PowerShell_:
 

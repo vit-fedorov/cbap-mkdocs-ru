@@ -54,7 +54,7 @@ kbId:
 3. Сохраните резервную копию файлов конфигурации:
 {: #ConfigBackup }
 
-- Создаём папку для сбора резервных копий файлов конфигурации:
+- **Создаём папку для сбора резервных копий файлов конфигурации:**
 
     ``` powershell
     New-Item -Path "X:\backups\config_tmp" -ItemType "Directory"
@@ -63,34 +63,34 @@ kbId:
     Здесь и далее:
     `X:\backups\config_tmp` — путь к папке, в которую будем копировать резервные копии файлов конфигурации
 
-- Переходим в папку с экземпляром ПО:
+- **Переходим в папку с экземпляром ПО:**
 
     ``` powershell
     cd C:\ProgramData\сomindware\Instances\<instanceName>
     ```
 
-- Копируем все файлы .yml и .config в резервную папку:
+- **Копируем все файлы .yml и .config в резервную папку:**
 
     ``` powershell
     Copy-Item -Path "C:\ProgramData\сomindware\Instances\<instanceName>\сonfig\*" -Destination "X:\backups\config_tmp" -Recurse -Include "*.yml", "*.config"
     ```
 
-- Скопируйте настройки IIS.
+- **Скопируйте настройки IIS.**
 
   - Откройте командную строку в качестве администратора
   - Cоздайте резервную копию конфигурации IIS:
 
     ``` powershell
     cd c:\Windows\system32\inetsrv
-    appcmd add backup srviis1-backup-2019
+    appcmd add backup iis-backup-conf
     ```
 
-    SRwiis1-backup-2019 это резервная папка.
+    `iis-backup-conf` — это резервная папка.
 
-    После выполнения команды в c:\Windows\system32\inetsrv\back появляется папка с вашим резервным именем.
+    После выполнения команды в `c:\Windows\system32\inetsrv\backup` появляется папка с вашими резервными файлами настроек.
 
 
-- Копируем настройки Java:
+- **Копируем настройки Java:**
     Перейдите в локальные переменные среды и сформируйте их по приведённому ниже образцу, подставив свои фактические пути и значения.
 
     В переменных среды Windows должна быть заданы следующие переменные для Open JDK (здесь `<version>` — номер версии Open JDK):
@@ -105,15 +105,15 @@ kbId:
     ```
 
 
-- Копируем основной конфиг экземпляра ПО:
+- **Копируем основной конфиг экземпляра ПО:**
     ``` powershell
     Copy-Item -Path "C:\ProgramData\comindware\configs\instance\<instanceName>.yml" -Destination "X:\backups\config_tmp"
     ```
 
->Здесь `<instanceName>` — имя экземпляра ПО.
+    Здесь `<instanceName>` — имя экземпляра ПО.
 
 
-1. Остановите экземпляр ПО и вспомогательные службы и удостоверьтесь, что они остановлены
+4. Остановите экземпляр ПО и вспомогательные службы и удостоверьтесь, что они остановлены
 
 - Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
     ``` powershell
@@ -125,7 +125,7 @@ kbId:
     ``` powershell
     .\instance_stop.ps1 -name <instanceName>
     ``` 
-- Остановите adapterhost для экземпляр ПО:
+- Остановите adapterhost для экземпляра ПО:
 
     ``` powershell
     .\adapterhost_stop.ps1 <instanceName>
@@ -144,7 +144,7 @@ kbId:
 Запустите **Диспетчер служб IIS** (IIS Manager):
     - В левой древовидной панеле **«Подключения»** (Connections), разверните меню с названием своего сервера, 
     - Зайдите в **«Пулы приложений»** (Application Pools) 
-    - Убедитесь, что напротив сервисов `Comindware <InstanceName>`, `Comindware <InstanceName>_adapterhost`, `Comindware <InstanceName>_apigateway` стоит статус «Остановлен» (Stoped). 
+    - Убедитесь, что напротив сервисов `Comindware <InstanceName>`, `Comindware <InstanceName>_adapterhost`, `Comindware <InstanceName>_apigateway` стоит статус «Остановлен» (Stopped). 
 
 
 1. Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО (`<distPath>` — путь к директории с дистрибутивом, `<versionNumber>` — версия ПО):
@@ -251,7 +251,7 @@ kbId:
     .\instance_delete.ps1 -name <instanceName> -clear
     ``` 
 
-Скрипт `instance_delete.ps1` поддерживает следующие ключи:
+    Ключи:
 
     - `name <instanceName>` — **обязательный** ключ с именем экземпляра ПО. Если не указать другие ключи, будет удалена только служба `comindware<instanceName>`.
     - `deleteData` — удалить базу данных из папки вида `C:\ProgramData\Comindware\Instances\<instanceName>\Data` и пользовательские файлы экземпляра ПО из папки вида `C:\ProgramData\Comindware\Instances\<instanceName>\Streams`. Без указания этого ключа или ключа `clear` база данных экземпляра ПО не будет удалена.
@@ -313,11 +313,12 @@ kbId:
 
 16. Отредактируйте файлы конфигурации в соответствии с резервными копиями, [сохранёнными ранее](#ConfigBackup):
 
-`C:\ProgramData\сomindware\Instances\<instanceName>\сonfig\adapterhost.yml` — Adapterhost
-`C:\ProgramData\сomindware\Instances\<instanceName>\сonfig\apigateway.yml` — Apigateway
-`C:\ProgramData\сomindware\Instances\<instanceName>\сonfig\Ignite.config` — Ignite
-
-`C:\ProgramData\сomindware\configs\instance\<instanceName>.yml` — файл конфигурации
+| **Путь** | **Служба** |
+| --- | --- |
+| `C:\ProgramData\сomindware\Instances\<instanceName>\сonfig\adapterhost.yml` | Adapterhost |
+| `C:\ProgramData\сomindware\Instances\<instanceName>\сonfig\apigateway.yml` | Apigateway |
+| `C:\ProgramData\сomindware\Instances\<instanceName>\сonfig\Ignite.config` | Ignite |
+| `C:\ProgramData\сomindware\configs\instance\<instanceName>.yml` | файл конфигурации |
 
 Здесь `<instanceName>` — имя экземпляра ПО.
 

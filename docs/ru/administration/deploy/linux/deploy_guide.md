@@ -98,11 +98,6 @@ kbId: 4622
         sh prerequisites_install.sh -h
         ```
 
-    {%
-    include-markdown ".snippets/elasticsearch_opensearch_configure.md"
-    rewrite-relative-urls=false
-    %}
-
 5. По окончании установки скрипт выведет информацию об установленных компонентах. Удостоверьтесь, что компоненты успешно установлены (имеют статус `OK`).
 
     Пример результата выполнения скрипта с ключом `-p` без установки {{ openSearchVariants }} и Kafka:

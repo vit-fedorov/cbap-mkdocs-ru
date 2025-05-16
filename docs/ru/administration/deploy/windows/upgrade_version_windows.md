@@ -15,20 +15,6 @@ kbId:
 
     Этот способ можно использовать, если ПО **{{ productName }}** развёрнуто на одной машине и нет возможности развернуть новую машину для экземпляра ПО новой версии.
 
-## Примечания {: #upgrade_version_windows_notes }
-
-{%
-include-markdown "../linux/deploy_guide.md"
-start="<!--windows-deploy-notes-start-->"
-end="<!--windows-deploy-notes-end-->"
-%}
-
-{%
-include-markdown "../linux/deploy_guide.md"
-start="<!--powershell-execution-policy-start-->"
-end="<!--powershell-execution-policy-end-->"
-%}
-
 ## Порядок обновления версии экземпляра ПО
 
 1. Подготовьте экземпляр ПО к обновлению:
@@ -54,6 +40,20 @@ end="<!--powershell-execution-policy-end-->"
     - Запустите экземпляр ПО.
     - Обновите структуру данных до новой версии.
     - Снова перезапустите экземпляр ПО.
+
+## Примечания по установке {: #upgrade_version_windows_notes }
+
+{%
+include-markdown "../linux/deploy_guide.md"
+start="<!--windows-deploy-notes-start-->"
+end="<!--windows-deploy-notes-end-->"
+%}
+
+{%
+include-markdown "../linux/deploy_guide.md"
+start="<!--powershell-execution-policy-start-->"
+end="<!--powershell-execution-policy-end-->"
+%}
 
 ## Подготовка экземпляра ПО к обновлению {: .pageBreakBefore }
 

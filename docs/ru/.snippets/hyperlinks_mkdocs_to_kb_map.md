@@ -756,6 +756,8 @@
 
 [elasticsearch_deploy_windows]: {{ kbArticleURLPrefix }}4617
 
+[kafka_deploy_windows]: {{ kbArticleURLPrefix }}4614
+
 [admin_utility_instance_configure]: {{ kbArticleURLPrefix }}4634
 
 [admin_utility_instance_backup_restore]: {{ kbArticleURLPrefix }}4639
@@ -819,6 +821,8 @@
 [deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_initialize
 
 [deploy_cluster_linux]: {{ kbArticleURLPrefix }}5080
+
+[elasticsearch_deploy_Linux]: {{ kbArticleURLPrefix }}4601
 
 [kafka_deploy_linux]: {{ kbArticleURLPrefix }}5074
 

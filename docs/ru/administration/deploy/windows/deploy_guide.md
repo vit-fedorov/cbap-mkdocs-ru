@@ -55,17 +55,24 @@ kbId: 5063
 Для работы **{{ productName }}** необходимо развернуть следующие внешние службы:
 
 - сервер журналирования транзакций {{ openSearchVariants }};
-- сервер очереди сообщений {{ apacheKafkaVariants }}.
+- сервер брокера сообщений {{ apacheKafkaVariants }}.
 
 Установите и настройте это ПО согласно следующим инструкциям:
 
 - _[Elasticsearch. Установка в Windows][elasticsearch_deploy_windows]_
-- _[Elasticsearch. Установка в Linux][elasticsearch_deploy_linux]_
+- _[Elasticsearch. Установка в Linux][elasticsearch_deploy_Linux]_
 - _[Apache Kafka. Установка в Windows][kafka_deploy_windows]_
 - _[Apache Kafka. Установка в Linux][kafka_deploy_linux]_
 
 ## Примечания по установке {: #deploy_guide_windows_notes }
+
 <!--windows-deploy-notes-start-->
+!!! note "Пути к файлам и директориям"
+
+    Используемые по умолчанию пути к файлам ПО **{{ productName }}** см. в статье _«[Пути и содержимое директорий экземпляра ПО][paths]»_.
+
+    В вашей конфигурации могут использоваться другие пути, поэтому внимательно подставляйте фактические пути в команды при выполнении инструкций.
+
 !!! tip "Вызов справки для скриптов"
 
     Ключ `-h` позволяет просмотреть справку по ключам и назначению любого скрипта для развёртывания **{{ productName }}**.
@@ -80,7 +87,7 @@ kbId: 5063
 
     Если не указать обязательный ключ, скрипт запросит его после запуска.
 
-!!! tip "Условные обозначения"
+!!! note "Условные обозначения"
 
     Значения, которые вы должны подставить согласно своей конфигурации, заключены в угловые скобки: 
     
@@ -91,9 +98,8 @@ kbId: 5063
     - `<distPath>` — путь к распакованному дистрибутиву ПО **{{ productName }}**.
 <!--windows-deploy-notes-end-->
 
-<!--powershell-execution-policy-start-->
 [](){: #powershell_execution_policy }
-
+<!--powershell-execution-policy-start-->
 !!! tip "Политика выполнения PowerShell"
 
     В зависимости от конфигурации вашей системы для выполнения скриптов из дистрибутива **{{ productName }}** может потребоваться установить неограниченную политику выполнения _PowerShell_. Для этого может выполните указанные ниже действия.
@@ -229,7 +235,7 @@ kbId: 5063
     cd "<distPath>\CMW_Windows<versionNumber>\scripts"
     ```
 
-    Здесь `<distPath>` — путь к распакованному дистрибутиву вспомогательного ПО (например, `X:\<distPath>\X.X-release-ru-<versionNumber>.windows`).
+    Здесь `<distPath>` — путь к распакованному дистрибутиву ПО **{{ productName }}** (например, `X:\<distPath>\X.X-release-ru-<versionNumber>.windows`).
 
 5. Разблокируйте доступ к скачанным из интернета установочным файлам:
 
@@ -266,7 +272,7 @@ kbId: 5063
     .\version_list.ps1
     ```
 
-    Пример результата выполнения скрипта:
+    Пример списка установленных версий ПО:
 
     ``` powershell
     Running script version_list.ps1.
@@ -411,7 +417,7 @@ end="<!--instance-prepare-end-->"
 
         Без указания этого ключа или ключа `-clear` база данных экземпляра ПО не будет удалена.
 
-    - `-clear` (необязательно)  — удалить следующие объекты:
+    - `-clear` (необязательно) — удалить следующие объекты:
         - все файлы, папки, базу данных и пользовательские файлы экземпляра ПО;
         - папку экземпляра ПО вида `C:\ProgramData\Comindware\Instances\<instanceName>`;
         - все службы экземпляра ПО;
@@ -457,7 +463,7 @@ end="<!--instance-prepare-end-->"
 - [Резервное копирование. Настройка, запуск и просмотр журнала сеансов][backup_configure]
 - [Отправка почты из процесса. Настройка подключения][process_sending_connection]
 - [Elasticsearch. Установка в Windows][elasticsearch_deploy_windows]
-- [Elasticsearch. Установка в Linux][elasticsearch_deploy_linux]
+- [Elasticsearch. Установка в Linux][elasticsearch_deploy_Linux]
 - [Apache Kafka. Установка в Windows][kafka_deploy_windows]
 - [Apache Kafka. Установка в Linux][kafka_deploy_linux]
 

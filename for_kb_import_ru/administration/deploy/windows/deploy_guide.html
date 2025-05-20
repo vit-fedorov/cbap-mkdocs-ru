@@ -16,20 +16,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#deploy_guide_windows_requirements">
-<span class="md-ellipsis">
-      Требования к серверу
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#deploy_guide_windows_notes">
-<span class="md-ellipsis">
-      Примечания
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link mkdocs_imported_link" href="#deploy_guide_windows_order">
 <span class="md-ellipsis">
       Порядок установки ПО
@@ -37,9 +23,41 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#deploy_guide_windows_requirements">
+<span class="md-ellipsis">
+      Требования к серверу и окружению
+    </span>
+</a>
+<nav aria-label="Требования к серверу и окружению" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#требования-к-windows-серверу">
+<span class="md-ellipsis">
+      Требования к Windows-серверу
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#требования-к-внешним-службам">
+<span class="md-ellipsis">
+      Требования к внешним службам
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#deploy_guide_windows_notes">
+<span class="md-ellipsis">
+      Примечания по установке
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link mkdocs_imported_link" href="#deploy_guide_windows_server_prepare">
 <span class="md-ellipsis">
-      Подготовка сервера к установке ПО
+      Подготовка IIS к установке Comindware Platform
     </span>
 </a>
 </li>
@@ -128,24 +146,59 @@
 <h2 id="deploy_guide_windows_intro">Введение</h2>
 <p>Для быстрого развёртывания <strong>Comindware Platform</strong> в Windows компания <strong>Comindware</strong> предоставляет дистрибутив с установщиком, настраивающим необходимое программное обеспечение.</p>
 <p>Здесь представлены инструкции по развёртыванию и инициализации <strong>Comindware Platform</strong> из дистрибутива в ОС Windows.</p>
-<h2 id="deploy_guide_windows_requirements">Требования к серверу</h2>
-<p>Для работы <strong>Comindware Platform</strong> требуются операционная система, сервер базы данных, веб-сервер, обратный прокси-сервер и сервер журналирования.</p>
-<p>Перед установкой ПО убедитесь, что сервер соответствует следующим требованиям:</p>
+<h2 id="deploy_guide_windows_order">Порядок установки ПО</h2>
+<ol class="colored_numbers_list">
+<li>Подготовьте сервер и окружение к установке ПО.</li>
+<li>Установите и настройте необходимое вспомогательное ПО.</li>
+<li>Установите ПО <strong>Comindware Platform</strong>.</li>
+<li>Создайте экземпляр ПО.</li>
+<li>Запустите экземпляр ПО.</li>
+<li>Инициализируйте экземпляр ПО.</li>
+</ol>
+<h2 id="deploy_guide_windows_requirements">Требования к серверу и окружению</h2>
+<p>Для работы <strong>Comindware Platform</strong> требуются:</p>
 <ul>
-<li>сервер работает под управлением <em>Windows Server</em>;</li>
+<li>операционная система;</li>
+<li>веб-сервер;</li>
+<li>сервер журналирования транзакций;</li>
+<li>сервер очереди сообщений.</li>
+</ul>
+<p>Ниже представлены инструкции по установке и настройке необходимого ПО.</p>
+<h3 id="требования-к-windows-серверу">Требования к Windows-серверу</h3>
+<p>Перед установкой <strong>Comindware Platform</strong> убедитесь, что выполняются следующие требования:</p>
+<ul>
+<li>сервер работает под управлением операционной системы <em>Windows Server</em>;</li>
 <li>настройку сервера выполняет пользователь с правами администратора;</li>
-<li>установлена служба <em>IIS (Internet Information Services)</em>.</li>
-</ul>
-<div class="notice notice-info">
-<p class="admonition-title">Конфигурация сервера журналирования транзакций OpenSearch (Elasticsearch)</p>
+<li>установлена и настроена служба <em>IIS (Internet Information Services)</em>. См. <em>«<a class="autorefs autorefs-internal mkdocs_imported_link" href="#deploy_guide_windows_server_prepare">Подготовка IIS к установке Comindware Platform</a>»</em>.</li>
+<li>
+<p>установлено следующее вспомогательное ПО:</p>
 <ul>
-<li>В конфигурации сервера журналирования транзакций необходимо создать одного пользователя для <strong>Comindware Platform</strong>.</li>
-<li>В конфигурации экземпляра ПО необходимо указать адрес сервера и уникальный префикс индексов OpenSearch (Elasticsearch). Индекс префикса служит для идентификации данных экземпляра ПО на сервере журналирования транзакций. Поэтому во избежание конфликтов данных для каждого экземпляра ПО следует указывать собственный префикс индекса.</li>
-<li>При <a class="mkdocs_imported_link" href="#instance_initialize">инициализации экземпляра ПО</a> необходимо указать пользователя <strong>Comindware Platform</strong>, используемого сервером журналирования транзакций.</li>
-<li>Экземпляр ПО будет взаимодействовать с сервером журналирования транзакций под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.</li>
+<li><a class="mkdocs_imported_link" href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">.NET 8.0 SDK версии 8.0.408 или выше</a></li>
+<li><a class="mkdocs_imported_link" href="https://dotnet.microsoft.com/ru-ru/download/dotnet/thank-you/runtime-aspnetcore-8.0.15-windows-hosting-bundle-installer">ASP.NET Core 8.0 Runtime - Windows Hosting Bundle Installer</a></li>
+<li><a class="mkdocs_imported_link" href="https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-17">Microsoft Build of OpenJDK версии 17 или выше</a></li>
 </ul>
-</div>
-<h2 id="deploy_guide_windows_notes">Примечания</h2>
+<p>Скачайте это ПО по приведённым выше ссылкам и установите его самостоятельно либо установите его из нашего дистрибутива, следуя инструкциям в параграфе <em>«<a class="mkdocs_imported_link" href="#deploy_guide_windows_install_prerequisites">Установка вспомогательного ПО</a>»</em>.</p>
+</li>
+</ul>
+<p>Также могут потребоваться:</p>
+<ul>
+<li><a class="mkdocs_imported_link" href="https://www.7-zip.org/">7-Zip</a></li>
+<li><a class="mkdocs_imported_link" href="https://code.visualstudio.com/Download">VSCode</a></li>
+</ul>
+<h3 id="требования-к-внешним-службам">Требования к внешним службам</h3>
+<p>Для работы <strong>Comindware Platform</strong> необходимо развернуть следующие внешние службы:</p>
+<ul>
+<li>сервер журналирования транзакций OpenSearch (Elasticsearch);</li>
+<li>сервер очереди сообщений Apache Kafka.</li>
+</ul>
+<p>Установите и настройте это ПО согласно следующим инструкциям:</p>
+<ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4617">Elasticsearch. Установка в Windows</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4601">Elasticsearch. Установка в Linux</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4614">Apache Kafka. Установка в Windows</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5074">Apache Kafka. Установка в Linux</a></em></li>
+</ul>
+<h2 id="deploy_guide_windows_notes">Примечания по установке</h2>
 <div class="notice notice-tip">
 <p class="admonition-title">Вызов справки для скриптов</p>
 <p>Ключ <code>-h</code> позволяет просмотреть справку по ключам и назначению любого скрипта для развёртывания <strong>Comindware Platform</strong>.</p>
@@ -190,16 +243,7 @@
 <p>По окончании работы с дистрибутивом <strong>Comindware Platform</strong> верните исходную политику выполнения <em>PowerShell</em>.</p>
 </div>
 </div>
-<h2 id="deploy_guide_windows_order">Порядок установки ПО</h2>
-<ol class="colored_numbers_list">
-<li>Подготовьте сервер к установке ПО.</li>
-<li>Установите и настройте необходимое вспомогательное ПО.</li>
-<li>Установите ПО <strong>Comindware Platform</strong>.</li>
-<li>Создайте экземпляр ПО.</li>
-<li>Запустите экземпляр ПО.</li>
-<li>Инициализируйте экземпляр ПО.</li>
-</ol>
-<h2 id="deploy_guide_windows_server_prepare">Подготовка сервера к установке ПО</h2>
+<h2 id="deploy_guide_windows_server_prepare">Подготовка IIS к установке Comindware Platform</h2>
 <ol class="colored_numbers_list">
 <li>Откройте <strong>Диспетчер серверов</strong>.</li>
 <li>Добавьте в список серверов компьютер, на котором будет установлено ПО <strong>Comindware Platform</strong>.</li>
@@ -287,21 +331,6 @@
 </li>
 </ol>
 <h2 id="deploy_guide_windows_install_prerequisites">Установка вспомогательного ПО</h2>
-<div class="notice notice-tip">
-<p class="admonition-title">Необходимое вспомогательное ПО</p>
-<p>Для работы Comindware Platform требуется следующее вспомогательное ПО:</p>
-<ul>
-<li><a class="mkdocs_imported_link" href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">.NET 8.0 SDK версии 8.0.408 или выше</a></li>
-<li><a class="mkdocs_imported_link" href="https://dotnet.microsoft.com/ru-ru/download/dotnet/thank-you/runtime-aspnetcore-8.0.15-windows-hosting-bundle-installer">ASP.NET Core 8.0 Runtime - Windows Hosting Bundle Installer</a></li>
-<li><a class="mkdocs_imported_link" href="https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-17">Microsoft Build of OpenJDK версии 17 или выше</a></li>
-</ul>
-<p>Вы можете скачать требуемое ПО по ссылкам выше и установить его самостоятельно, либо установить наш дистрибутив вспомогательного ПО, следуя приведённым ниже инструкциям.</p>
-<p>Также могут потребоваться:</p>
-<ul>
-<li><a class="mkdocs_imported_link" href="https://www.7-zip.org/">7-Zip</a> </li>
-<li><a class="mkdocs_imported_link" href="https://code.visualstudio.com/Download">VSCode</a></li>
-</ul>
-</div>
 <ol class="colored_numbers_list">
 <li>Скачайте и распакуйте архив с дистрибутивом вспомогательного ПО для <strong>Comindware Platform</strong>.</li>
 <li>Запустите <em>PowerShell</em> от имени администратора.</li>
@@ -309,7 +338,7 @@
 <li>
 <p>Перейдите в папку со скриптами для развёртывания вспомогательного ПО:</p>
 <div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"&lt;prerequisitesDistPath&gt;\CMW_Windows&lt;versionNumber&gt;\scripts"</span></code> <br/></pre></code></div>
-<p>Здесь <code>&lt;prerequisitesDistPath&gt;</code> — путь к распакованному дистрибутиву вспомогательного ПО (например <code>X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.prerequisites.windows</code>).</p>
+<p>Здесь <code>&lt;prerequisitesDistPath&gt;</code> — путь к распакованному дистрибутиву вспомогательного ПО (например, <code>X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.prerequisites.windows</code>).</p>
 </li>
 <li>
 <p>Разблокируйте доступ к скачанным из интернета установочным файлам:</p>
@@ -341,7 +370,7 @@
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
 <div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"&lt;distPath&gt;\CMW_Windows&lt;versionNumber&gt;\scripts"</span></code> <br/></pre></code></div>
-<p>Здесь <code>&lt;distPath&gt;</code> — путь к распакованному дистрибутиву вспомогательного ПО (например <code>X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.windows</code>).</p>
+<p>Здесь <code>&lt;distPath&gt;</code> — путь к распакованному дистрибутиву вспомогательного ПО (например, <code>X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.windows</code>).</p>
 </li>
 <li>
 <p>Разблокируйте доступ к скачанным из интернета установочным файлам:</p>
@@ -572,6 +601,10 @@
 <li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4620">Пути и содержимое директорий экземпляра ПО</a></li>
 <li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4642">Резервное копирование. Настройка, запуск и просмотр журнала сеансов</a></li>
 <li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4690">Отправка почты из процесса. Настройка подключения</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4617">Elasticsearch. Установка в Windows</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4601">Elasticsearch. Установка в Linux</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4614">Apache Kafka. Установка в Windows</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5074">Apache Kafka. Установка в Linux</a></li>
 </ul>
 </div>
 </article>

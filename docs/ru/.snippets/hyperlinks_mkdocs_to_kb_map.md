@@ -754,7 +754,15 @@
 
 [db_move_manual_windows]: {{ kbArticleURLPrefix }}4646
 
+[deploy_guide_windows]: {{ kbArticleURLPrefix }}5063
+
+[deploy_guide_windows_install_prerequisites]: {{ kbArticleURLPrefix }}5063#deploy_guide_windows_install_prerequisites
+
+[deploy_guide_windows_version_delete]: {{ kbArticleURLPrefix }}5063#deploy_guide_windows_version_delete
+
 [elasticsearch_deploy_windows]: {{ kbArticleURLPrefix }}4617
+
+[kafka_deploy_windows]: {{ kbArticleURLPrefix }}4614
 
 [admin_utility_instance_configure]: {{ kbArticleURLPrefix }}4634
 
@@ -819,6 +827,8 @@
 [deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_initialize
 
 [deploy_cluster_linux]: {{ kbArticleURLPrefix }}5080
+
+[elasticsearch_deploy_Linux]: {{ kbArticleURLPrefix }}4601
 
 [kafka_deploy_linux]: {{ kbArticleURLPrefix }}5074
 

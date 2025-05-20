@@ -11,22 +11,67 @@ kbId: 5063
 
 Здесь представлены инструкции по развёртыванию и инициализации **{{ productName }}** из дистрибутива в ОС Windows.
 
-## Требования к серверу {: #deploy_guide_windows_requirements }
+## Порядок установки ПО {: #deploy_guide_windows_order }
 
-Для работы **{{ productName }}** требуются операционная система, сервер базы данных, веб-сервер, обратный прокси-сервер и сервер журналирования.
+1. Подготовьте сервер и окружение к установке ПО.
+2. Установите и настройте необходимое вспомогательное ПО.
+3. Установите ПО **{{ productName }}**.
+4. Создайте экземпляр ПО.
+5. Запустите экземпляр ПО.
+6. Инициализируйте экземпляр ПО.
 
-Перед установкой ПО убедитесь, что сервер соответствует следующим требованиям:
+## Требования к серверу и окружению {: #deploy_guide_windows_requirements }
 
-- сервер работает под управлением _Windows Server_;
+Для работы **{{ productName }}** требуются:
+
+- операционная система;
+- веб-сервер;
+- сервер журналирования транзакций;
+- сервер очереди сообщений.
+
+Ниже представлены инструкции по установке и настройке необходимого ПО.
+
+### Требования к Windows-серверу
+
+Перед установкой **{{ productName }}** убедитесь, что выполняются следующие требования:
+
+- сервер работает под управлением операционной системы _Windows Server_;
 - настройку сервера выполняет пользователь с правами администратора;
-- установлена служба _IIS (Internet Information Services)_.
+- установлена и настроена служба _IIS (Internet Information Services)_. См. _«[Подготовка IIS к установке {{ productName }}][deploy_guide_windows_server_prepare]»_.
+- установлено следующее вспомогательное ПО:
+    - [.NET 8.0 SDK версии 8.0.408 или выше](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+    - [ASP.NET Core 8.0 Runtime - Windows Hosting Bundle Installer](https://dotnet.microsoft.com/ru-ru/download/dotnet/thank-you/runtime-aspnetcore-8.0.15-windows-hosting-bundle-installer)
+    - [Microsoft Build of OpenJDK версии 17 или выше](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-17)
 
-{%
-include-markdown ".snippets/elasticsearch_opensearch_configure.md"
-rewrite-relative-urls=false
-%}
+    Скачайте это ПО по приведённым выше ссылкам и установите его самостоятельно либо установите его из нашего дистрибутива, следуя инструкциям в параграфе _«[Установка вспомогательного ПО](#deploy_guide_windows_install_prerequisites)»_.
 
-## Примечания {: #deploy_guide_windows_notes }
+Также могут потребоваться:
+
+- [7-Zip](https://www.7-zip.org/)
+- [VSCode](https://code.visualstudio.com/Download)
+
+### Требования к внешним службам
+
+Для работы **{{ productName }}** необходимо развернуть следующие внешние службы:
+
+- сервер журналирования транзакций {{ openSearchVariants }};
+- сервер брокера сообщений {{ apacheKafkaVariants }}.
+
+Установите и настройте это ПО согласно следующим инструкциям:
+
+- _[Elasticsearch. Установка в Windows][elasticsearch_deploy_windows]_
+- _[Elasticsearch. Установка в Linux][elasticsearch_deploy_Linux]_
+- _[Apache Kafka. Установка в Windows][kafka_deploy_windows]_
+- _[Apache Kafka. Установка в Linux][kafka_deploy_linux]_
+
+## Примечания по установке {: #deploy_guide_windows_notes }
+
+<!--windows-deploy-notes-start-->
+!!! note "Пути к файлам и директориям"
+
+    Используемые по умолчанию пути к файлам ПО **{{ productName }}** см. в статье _«[Пути и содержимое директорий экземпляра ПО][paths]»_.
+
+    В вашей конфигурации могут использоваться другие пути, поэтому внимательно подставляйте фактические пути в команды при выполнении инструкций.
 
 !!! tip "Вызов справки для скриптов"
 
@@ -42,7 +87,7 @@ rewrite-relative-urls=false
 
     Если не указать обязательный ключ, скрипт запросит его после запуска.
 
-!!! tip "Условные обозначения"
+!!! note "Условные обозначения"
 
     Значения, которые вы должны подставить согласно своей конфигурации, заключены в угловые скобки: 
     
@@ -51,10 +96,10 @@ rewrite-relative-urls=false
     - `<versionNumber>` — номер версии ПО вида `X.X.XXXX.X` (например: `5.0.1234.0`);
     - `<prerequisitesDistPath>` — путь к распакованному дистрибутиву вспомогательного ПО;
     - `<distPath>` — путь к распакованному дистрибутиву ПО **{{ productName }}**.
+<!--windows-deploy-notes-end-->
 
-<!--powershell-execution-policy-start-->
 [](){: #powershell_execution_policy }
-
+<!--powershell-execution-policy-start-->
 !!! tip "Политика выполнения PowerShell"
 
     В зависимости от конфигурации вашей системы для выполнения скриптов из дистрибутива **{{ productName }}** может потребоваться установить неограниченную политику выполнения _PowerShell_. Для этого может выполните указанные ниже действия.
@@ -79,16 +124,7 @@ rewrite-relative-urls=false
         По окончании работы с дистрибутивом **{{ productName }}** верните исходную политику выполнения _PowerShell_.
 <!--powershell-execution-policy-end-->
 
-## Порядок установки ПО {: #deploy_guide_windows_order }
-
-1. Подготовьте сервер к установке ПО.
-2. Установите и настройте необходимое вспомогательное ПО.
-3. Установите ПО **{{ productName }}**.
-4. Создайте экземпляр ПО.
-5. Запустите экземпляр ПО.
-6. Инициализируйте экземпляр ПО.
-
-## Подготовка сервера к установке ПО {: #deploy_guide_windows_server_prepare }
+## Подготовка IIS к установке {{ productName }} {: #deploy_guide_windows_server_prepare }
 
 1. Откройте **Диспетчер серверов**.
 2. Добавьте в список серверов компьютер, на котором будет установлено ПО **{{ productName }}**.
@@ -149,21 +185,6 @@ rewrite-relative-urls=false
 
 ## Установка вспомогательного ПО {: #deploy_guide_windows_install_prerequisites }
 
-!!! tip "Необходимое вспомогательное ПО"
-
-    Для работы {{ productName }} требуется следующее вспомогательное ПО:
-
-    - [.NET 8.0 SDK версии 8.0.408 или выше](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
-    - [ASP.NET Core 8.0 Runtime - Windows Hosting Bundle Installer](https://dotnet.microsoft.com/ru-ru/download/dotnet/thank-you/runtime-aspnetcore-8.0.15-windows-hosting-bundle-installer)
-    - [Microsoft Build of OpenJDK версии 17 или выше](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-17)
-
-    Вы можете скачать требуемое ПО по ссылкам выше и установить его самостоятельно, либо установить наш дистрибутив вспомогательного ПО, следуя приведённым ниже инструкциям.
-    
-    Также могут потребоваться:
-
-    - [7-Zip](https://www.7-zip.org/) 
-    - [VSCode](https://code.visualstudio.com/Download)
-
 1. Скачайте и распакуйте архив с дистрибутивом вспомогательного ПО для **{{ productName }}**.
 2. Запустите _PowerShell_ от имени администратора.
 3. При необходимости установите неограниченную политику выполнения _PowerShell_. См. _«[Политика выполнения PowerShell](#powershell_execution_policy)»_.
@@ -173,7 +194,7 @@ rewrite-relative-urls=false
     cd "<prerequisitesDistPath>\CMW_Windows<versionNumber>\scripts"
     ```
 
-    Здесь `<prerequisitesDistPath>` — путь к распакованному дистрибутиву вспомогательного ПО (например `X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows`).
+    Здесь `<prerequisitesDistPath>` — путь к распакованному дистрибутиву вспомогательного ПО (например, `X:\<distPath>\X.X-release-ru-<versionNumber>.prerequisites.windows`).
 
 5. Разблокируйте доступ к скачанным из интернета установочным файлам:
 
@@ -214,7 +235,7 @@ rewrite-relative-urls=false
     cd "<distPath>\CMW_Windows<versionNumber>\scripts"
     ```
 
-    Здесь `<distPath>` — путь к распакованному дистрибутиву вспомогательного ПО (например `X:\<distPath>\X.X-release-ru-<versionNumber>.windows`).
+    Здесь `<distPath>` — путь к распакованному дистрибутиву ПО **{{ productName }}** (например, `X:\<distPath>\X.X-release-ru-<versionNumber>.windows`).
 
 5. Разблокируйте доступ к скачанным из интернета установочным файлам:
 
@@ -251,7 +272,7 @@ rewrite-relative-urls=false
     .\version_list.ps1
     ```
 
-    Пример результата выполнения скрипта:
+    Пример списка установленных версий ПО:
 
     ``` powershell
     Running script version_list.ps1.
@@ -396,7 +417,7 @@ end="<!--instance-prepare-end-->"
 
         Без указания этого ключа или ключа `-clear` база данных экземпляра ПО не будет удалена.
 
-    - `-clear` (необязательно)  — удалить следующие объекты:
+    - `-clear` (необязательно) — удалить следующие объекты:
         - все файлы, папки, базу данных и пользовательские файлы экземпляра ПО;
         - папку экземпляра ПО вида `C:\ProgramData\Comindware\Instances\<instanceName>`;
         - все службы экземпляра ПО;
@@ -441,6 +462,10 @@ end="<!--instance-prepare-end-->"
 - [Пути и содержимое директорий экземпляра ПО][paths]
 - [Резервное копирование. Настройка, запуск и просмотр журнала сеансов][backup_configure]
 - [Отправка почты из процесса. Настройка подключения][process_sending_connection]
+- [Elasticsearch. Установка в Windows][elasticsearch_deploy_windows]
+- [Elasticsearch. Установка в Linux][elasticsearch_deploy_Linux]
+- [Apache Kafka. Установка в Windows][kafka_deploy_windows]
+- [Apache Kafka. Установка в Linux][kafka_deploy_linux]
 
 </div>
 

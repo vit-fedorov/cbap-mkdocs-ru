@@ -3,7 +3,7 @@ title: Резервное копирование и восстановление
 kbId: 4644
 ---
 
-# Резервное копирование и восстановление {{ productName }} в ОС Windows {: #backup_restore_windows}
+# Резервное копирование и восстановление {{ productName }} в ОС Windows {: #backup_restore_windows }
 
 ## Введение
 
@@ -21,12 +21,12 @@ kbId: 4644
 
 1. <a id="P1.1"></a>Подготовьте следующие данные о конфигурации экземпляра продукта:
 
-    - Название экземпляра продукта — `<InstanceName>`(например, `CBAP4.2`).
-    - Путь к папке с базой данных экземпляра продукта, например `DatabasePath` (по умолчанию: `C:\ProgramData\Comindware\Instances\<InstanceName>\Data`).
+    - Название экземпляра продукта — `<instanceName>`(например, `CBAP4.2`).
+    - Путь к папке с базой данных экземпляра продукта, например `DatabasePath` (по умолчанию: `C:\ProgramData\Comindware\Instances\<instanceName>\Data`).
     - Путь к папке резервных копий базы данных — `DatabaseBackupPath` (например, `С:\DatabaseBackups`).
     - Имя репозитория снимков {{ openSearchVariants }} — *`repository_name`* (например, `elastic_backup`).
     - Путь к репозиторию снимков {{ openSearchVariants }} — `elastic_backup_path`(например, `e:\elastic_backup`).
-    - Имя снимка {{ openSearchVariants }} — `snapshot_name` (например, `<InstanceName>01022022080800` — в формате `<<InstanceName>><Date><Time>`). См. инструкции {{ openSearchVariants }} по формированию имён снимков с использованием текущей даты  (на английском языке): <https://www.elastic.co/guide/en/elasticsearch/reference/current/api-conventions.html#api-date-math-index-names>.
+    - Имя снимка {{ openSearchVariants }} — `snapshot_name` (например, `<instanceName>01022022080800` — в формате `<instanceName><Date><Time>`). См. инструкции {{ openSearchVariants }} по формированию имён снимков с использованием текущей даты  (на английском языке): <https://www.elastic.co/guide/en/elasticsearch/reference/current/api-conventions.html#api-date-math-index-names>.
 
 2. Настройте конфигурацию репозитория снимков сервера {{ openSearchVariants }}.
 
@@ -59,10 +59,10 @@ kbId: 4644
 
     Подробные сведения о регистрации репозитория {{ openSearchVariants }} см. в официальной документации (на английском языке): <https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-register-repository.html>
 
-2. Чтобы создать снимок {{ openSearchVariants }}, выполните следующую команду, указав имя снимка `snapshot_name`, а в параметре `indices` — индексы, которые требуется включить в снимок (индексы {{ productName }} имеют префикс, например, `cmw_<<InstanceName>>_`):
+2. Чтобы создать снимок {{ openSearchVariants }}, выполните следующую команду, указав имя снимка `snapshot_name`, а в параметре `indices` — индексы, которые требуется включить в снимок (индексы {{ productName }} имеют префикс, например, `cmw_<instanceName>_`):
 
     ``` sh
-    curl -X PUT "<openSearchHost>:<opeSearchPort>/_snapshot/repository_name/snapshot_name?wait_for_completion=true&pretty" -H 'Content-Type: application/json' -d' {"indices": "cmw_<<InstanceName>>_*", "ignore_unavailable": true, "include_global_state": false}'
+    curl -X PUT "<openSearchHost>:<opeSearchPort>/_snapshot/repository_name/snapshot_name?wait_for_completion=true&pretty" -H 'Content-Type: application/json' -d' {"indices": "cmw_<instanceName>_*", "ignore_unavailable": true, "include_global_state": false}'
     ```
 
     Подробные сведения о создании снимка {{ openSearchVariants }} см. в официальной документации (на английском языке): <https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-take-snapshot.html>
@@ -76,7 +76,7 @@ kbId: 4644
 
 3. <a id="P3.2.3"></a>В окне «**Новая конфигурация резервного копирования**»:
 
-    1. В поле «**Название**» укажите наглядное название конфигурации (например, «`Резервная копия <InstanceName>`»).
+    1. В поле «**Название**» укажите наглядное название конфигурации (например, «`Резервная копия <instanceName>`»).
     2. В поле «**Путь к файлу**» укажите путь к файлу резервной копии в папке `DatabaseBackupPath` на сервере. См. _«[Подготовка к резервному копированию и восстановлению данных](#подготовка-к-резервному-копированию-и-восстановлению-данных)»_.
     3. В поле «**Имя файла**» укажите имя файла резервной копии (например, `Backup`).
     4. Установите флажки «**С файлами**» и «**Со скриптами**».
@@ -123,45 +123,78 @@ curl -X POST "<openSearchHost>:<opeSearchPort>/_snapshot/repository_name/snapsho
 
 ### Восстановление базы данных экземпляра продукта
 
-1. Восстановите базу данных экземпляра продукта согласно инструкциям в статье «[Восстановление экземпляра продукта из резервной копии][admin_utility_instance_backup_restore]».
+1. Запустите _PowerShell_ от имени администратора.
+2. Перейдите в директорию со скриптами для развёртывания ПО **{{ productName }}**:
 
-## Проверка конфигурации экземпляра ПО
+    ``` powershell
+    cd "<distPath>\CMW_Windows<versionNumber>\scripts"
+    ```
 
-1. Запустите экземпляр ПО.
+    Здесь:  `<distPath>` — путь к распакованному дистрибутиву ПО.
+
+3. Остановите экземпляр ПО:
+
+    ``` powershell
+    .\instance_stop.ps1 -name <instanceName>
+    ```
+
+4. Удалите или переместите директорию `Database` из  директории  экземпляра ПО:
+
+    ``` powershell
+    Remove-Item -Path "C:\ProgramData\comindware\Instances\<instanceName>\Database" -Recurse
+    ```
+
+5. Распакуйте файл резервной копии экземпляра ПО с расширением `CDBBZ`.
+6. Скопируйте в экземпляр ПО распакованную резервную копию базы данных:
+
+    ``` powershell
+    Copy-Item -Path "<config_backup_path>\Database" -Destination "C:\ProgramData\сomindware\Instances\<instanceName>" -Recurse -Force
+    ```
+
+    Здесь: `<config_backup_path>` — директория с распакованной резервной копией экземпляра ПО.
+
+7. Запустите экземпляр ПО:
+
+    ``` powershell
+    .\instance_start.ps1 -name <instanceName>
+    ```
+
+8.  Откройте сайт экземпляра ПО в браузере, одновременно открыв выдачу журналов экземпляра в _PowerShell_:
+
+    ``` powershell
+    Get-Content "C:\ProgramData\comindware\Instances\<instanceName>\Logs\heartbeat_<ГГГГ-ММ-ДД>.log" -Wait
+    ```
+
+9. [Проверьте конфигурацию](#upgrade_version_windows_instance_prepare) и работоспособность восстановленного экземпляра ПО.
+
+## Проверка конфигурации экземпляра ПО {: #upgrade_version_windows_instance_prepare .pageBreakBefore }
+
+<!--backup-restore-instance-check-windows-start-->
+1. Запустите экземпляр ПО и откройте его сайт в браузере.
 2. При необходимости откроется страница настройки подключения к службе {{ openSearchVariants }}.
 3. В поле «URI» введите адрес автоматически своего сервера {{ openSearchVariants }}.
 4. Введите **префикс индекса**, **имя пользователя** и **пароль сервера {{ openSearchVariants }}**.
 5. Нажмите кнопку «**Далее**».
-
-    _![Настройка подключения к {{ openSearchVariants }}](https://kb.comindware.ru/assets/Picture16.png)_
-
 6. При необходимости откроется страница инициализации данных в {{ openSearchVariants }}.
 7. Нажмите кнопку «**Обновить**».
-
-    _![Страница инициализации данных в {{ openSearchVariants }}](https://kb.comindware.ru/assets/Picture17.png)_
-
 8. Дождитесь открытия начальной страницы **{{ productName }}**.
 9. Откройте страницу «**Администрирование**» — «**Подключения**».
+10. Удостоверьтесь, что в подключении к серверу {{ openSearchVariants }} корректно указаны **префикс индекса** и **URL подключения** к серверу {{ openSearchVariants }}.
+13. Удостоверьтесь, что настроено подключение к почтовому серверу для отправки писем для сброса пароля и двухфакторной аутентификации.
+14. Откройте страницу «**Администрирование**» — «**Глобальная конфигурация**».
+15. Удостоверьтесь, что указан корректный **URL-адрес сервера**.
+16. Откройте страницу «**Администрирование**» — «**Резервное копирование**».
+17. Проверьте конфигурации резервного копирования и при необходимости необходимости задайте корректные пути пути для сохранения резервных копий.
+18. Создайте резервную копию работоспособного экземпляра **{{ productName }}**.
+<!--backup-restore-instance-check-windows-end-->
 
-    _![Переход к свойства подключения к {{ openSearchVariants }}](https://kb.comindware.ru/assets/img_64d09fd6ec3ba.png)_
+--8<-- "related_topics_heading.md"
 
-10. Откройте подключение к серверу {{ openSearchVariants }}.
-11. Удостоверьтесь, что корректно указаны **префикс индекса** и **URL подключения** к серверу {{ openSearchVariants }}.
+- [Настройка конфигураций и запуск резервного копирования][backup_configure_list_view]
+- [Пути и содержимое директорий экземпляра ПО][paths]
+- [Установка, запуск, инициализация и остановка Comindware Platform в Windows][deploy_guide_windows]
+- [Отправка почты из процесса. Настройка подключения][process_sending_connection]
 
-    _![Свойства подключения к серверу {{ openSearchVariants }}](https://kb.comindware.ru/assets/img_64d0a41fc5e0b.png)_
-
-12. Откройте страницу «**Администрирование**» — «**Глобальная конфигурация**».
-13. Удостоверьтесь, что указан корректный **URL-адрес сервера**.
-
-    _![URL-адрес сервера в глобальной конфигурации](https://kb.comindware.ru/assets/img_64d0a4feebc80.png)_
-
-14. Откройте страницу «**Администрирование**» — «**Резервное копирование**».
-15. Удостоверьтесь, что в конфигурациях резервного копирования правильно указаны пути для сохранения резервных копий.
-
-    _![Путь к папке резервных копий в конфигурации резервного копирования](https://kb.comindware.ru/assets/img_64d0a5817d06a.png)_
-
-16. При необходимости измените конфигурации резервного копирования, указав корректные пути к файлам.
-
-    _![Настройка пути к файлам резервной копии](https://kb.comindware.ru/assets/img_64d0a5f075838.png)_
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

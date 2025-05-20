@@ -111,13 +111,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#deploy_guide_windows_instance_upgrade">
-<span class="md-ellipsis">
-      Обновление экземпляра ПО
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link mkdocs_imported_link" href="#deploy_guide_windows_instance_delete">
 <span class="md-ellipsis">
       Удаление экземпляра ПО
@@ -189,7 +182,7 @@
 <p>Для работы <strong>Comindware Platform</strong> необходимо развернуть следующие внешние службы:</p>
 <ul>
 <li>сервер журналирования транзакций OpenSearch (Elasticsearch);</li>
-<li>сервер очереди сообщений Apache Kafka.</li>
+<li>сервер брокера сообщений Apache Kafka.</li>
 </ul>
 <p>Установите и настройте это ПО согласно следующим инструкциям:</p>
 <ul>
@@ -199,6 +192,11 @@
 <li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5074">Apache Kafka. Установка в Linux</a></em></li>
 </ul>
 <h2 id="deploy_guide_windows_notes">Примечания по установке</h2>
+<div class="notice notice-info">
+<p class="admonition-title">Пути к файлам и директориям</p>
+<p>Используемые по умолчанию пути к файлам ПО <strong>Comindware Platform</strong> см. в статье <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4620">Пути и содержимое директорий экземпляра ПО</a>»</em>.</p>
+<p>В вашей конфигурации могут использоваться другие пути, поэтому внимательно подставляйте фактические пути в команды при выполнении инструкций.</p>
+</div>
 <div class="notice notice-tip">
 <p class="admonition-title">Вызов справки для скриптов</p>
 <p>Ключ <code>-h</code> позволяет просмотреть справку по ключам и назначению любого скрипта для развёртывания <strong>Comindware Platform</strong>.</p>
@@ -209,7 +207,7 @@
 <p class="admonition-title">Обязательные ключи для скриптов</p>
 <p>Если не указать обязательный ключ, скрипт запросит его после запуска.</p>
 </div>
-<div class="notice notice-tip">
+<div class="notice notice-info">
 <p class="admonition-title">Условные обозначения</p>
 <p>Значения, которые вы должны подставить согласно своей конфигурации, заключены в угловые скобки: </p>
 <ul>
@@ -370,7 +368,7 @@
 <li>
 <p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
 <div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"&lt;distPath&gt;\CMW_Windows&lt;versionNumber&gt;\scripts"</span></code> <br/></pre></code></div>
-<p>Здесь <code>&lt;distPath&gt;</code> — путь к распакованному дистрибутиву вспомогательного ПО (например, <code>X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.windows</code>).</p>
+<p>Здесь <code>&lt;distPath&gt;</code> — путь к распакованному дистрибутиву ПО <strong>Comindware Platform</strong> (например, <code>X:\&lt;distPath&gt;\X.X-release-ru-&lt;versionNumber&gt;.windows</code>).</p>
 </li>
 <li>
 <p>Разблокируйте доступ к скачанным из интернета установочным файлам:</p>
@@ -385,7 +383,7 @@
 <li>
 <p>Удостоверьтесь, что ПО установлено, вызывав список установленных версий ПО:</p>
 <div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">version_list</span><span class="p">.</span><span class="n">ps1</span></code> <br/></pre></code></div>
-<p>Пример результата выполнения скрипта:</p>
+<p>Пример списка установленных версий ПО:</p>
 <div class="highlight"><code><pre><span></span><code><span class="n">Running</span> <span class="n">script</span> <span class="n">version_list</span><span class="p">.</span><span class="n">ps1</span><span class="p">.</span></code> <br/><code><span class="p">====================================================================</span></code> <br/><code><span class="n">Source</span> <span class="n">folder</span><span class="p">:</span> <span class="n">C</span><span class="p">:\</span><span class="n">Program</span> <span class="n">Files</span><span class="p">\</span><span class="n">Comindware</span><span class="p">\</span><span class="n">CBAP</span></code> <br/><code><span class="p">====================================================================</span></code> <br/><code><span class="n">Version</span></code> <br/><code><span class="p">====================================================================</span></code> <br/><code><span class="n">5</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">13286</span><span class="p">.</span><span class="n">0</span></code> <br/><code><span class="n">5</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">13334</span><span class="p">.</span><span class="n">0</span></code> <br/><code></code> <br/><code><span class="c">####################################################################</span></code> <br/><code><span class="n">Command</span> <span class="n">executed</span><span class="p">.</span></code> <br/><code><span class="n">Complete</span> <span class="n">script</span> <span class="n">version_list</span><span class="p">.</span><span class="n">ps1</span><span class="p">.</span></code> <br/><code><span class="c">####################################################################</span></code> <br/><code><span class="n">Status</span><span class="p">:</span> <span class="n">Completed</span></code> <br/></pre></code></div>
 </li>
 </ol>
@@ -509,30 +507,6 @@
 </li>
 <li>Теперь можно приступать к созданию приложений на основе <strong>Comindware Platform</strong>.</li>
 </ol>
-<h2 id="deploy_guide_windows_instance_upgrade">Обновление экземпляра ПО</h2>
-<ol class="colored_numbers_list">
-<li>Скачайте и установите ПО новой версии согласно инструкциям в параграфе <em>«<a class="mkdocs_imported_link" href="#deploy_guide_windows_install_sw">Установка Comindware Platform</a>»</em>.</li>
-<li>
-<p>Перейдите в папку со скриптами для развёртывания ПО <strong>Comindware Platform</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="nb">cd </span><span class="s2">"&lt;distPath&gt;\CMW_Windows&lt;versionNumber&gt;\scripts"</span></code> <br/></pre></code></div>
-</li>
-<li>
-<p>Запустите обновление экземпляра ПО:</p>
-<div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">instance_upgrade</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-name</span> <span class="p">&lt;</span><span class="n">instanceName</span><span class="p">&gt;</span> <span class="n">-version</span> <span class="p">&lt;</span><span class="n">versionNumber</span><span class="p">&gt;</span> </code> <br/></pre></code></div>
-<p>Ключи:</p>
-<ul>
-<li><code>-name</code> — имя экземпляра ПО;</li>
-<li><code>-version</code> — номер версии ПО, до которой необходимо обновить экземпляр (например: <code>5.0.1234.0</code>)</li>
-</ul>
-</li>
-<li>
-<p>Просмотрите список установленных экземпляров ПО:</p>
-<div class="highlight"><code><pre><span></span><code><span class="p">.\</span><span class="n">instance_list</span><span class="p">.</span><span class="n">ps1</span></code> <br/></pre></code></div>
-</li>
-<li>
-<p>Рядом с именем экземпляра ПО отобразится номер версии.</p>
-</li>
-</ol>
 <h2 id="deploy_guide_windows_instance_delete">Удаление экземпляра ПО</h2>
 <ol class="colored_numbers_list">
 <li>
@@ -557,7 +531,7 @@
 <p>Без указания этого ключа или ключа <code>-clear</code> база данных экземпляра ПО не будет удалена.</p>
 </li>
 <li>
-<p><code>-clear</code> (необязательно)  — удалить следующие объекты:</p>
+<p><code>-clear</code> (необязательно) — удалить следующие объекты:</p>
 <ul>
 <li>все файлы, папки, базу данных и пользовательские файлы экземпляра ПО;</li>
 <li>папку экземпляра ПО вида <code>C:\ProgramData\Comindware\Instances\&lt;instanceName&gt;</code>;</li>
@@ -599,6 +573,7 @@
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <ul>
 <li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4620">Пути и содержимое директорий экземпляра ПО</a></li>
+<li><a class="autorefs autorefs-internal mkdocs_imported_link" href="upgrade_version.html#upgrade_version_windows">Обновление версии экземпляра ПО в Windows</a></li>
 <li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4642">Резервное копирование. Настройка, запуск и просмотр журнала сеансов</a></li>
 <li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4690">Отправка почты из процесса. Настройка подключения</a></li>
 <li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4617">Elasticsearch. Установка в Windows</a></li>

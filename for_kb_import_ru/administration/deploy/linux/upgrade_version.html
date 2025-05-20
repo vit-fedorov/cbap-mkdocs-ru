@@ -268,6 +268,7 @@
 <li>
 <p>Откройте сайт экземпляра ПО в браузере, дождитесь окончания загрузки, одновременно открыв выдачу журналов экземпляра в терминале:</p>
 <div class="highlight"><code><pre><span></span><code>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/comindware/&lt;instanceName&gt;/Logs/heartbeat*</code> <br/></pre></code></div>
+<p>См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4623">Подсистема журналирования</a>»</em>.</p>
 </li>
 <li>
 <p id="dataUpgrade">Дождитесь завершения обновления структуры данных и проверьте его успешное выполнение.</p>
@@ -286,11 +287,11 @@
 <li>Удостоверьтесь, что в журнале <code>UpgradeOntology.log</code> последняя запись содержит строку <code>Upgrade of ontology completed successfully</code>.</li>
 <li>Удостоверьтесь, что в журнале <code>upgrade&lt;ГГГГ-ММ-ДД&gt;.log</code> последняя запись содержит строку <code>Upgrade completed</code>.</li>
 <li>Удостоверьтесь, что в журналах отсутствуют ошибки обновления. Найдите их по ключевому слову <code>error</code>.</li>
-<li>Если обновление выполнено успешно, переходите к шагу 23.</li>
+<li>Если обновление выполнено успешно, переходите к шагу 24.</li>
 <li>
 <p>Если в журнале обновления имеются ошибки:</p>
 <ol class="colored_numbers_list">
-<li>Не переходите к шагу 23.</li>
+<li>Не переходите к шагу 24.</li>
 <li>Снова установите для экземпляра старую версию ПО.</li>
 <li>Восстановите базу данных из резервной копии.</li>
 <li>Обратитесь в службу поддержки <strong>Comindware</strong>, предоставив журналы обновления и ошибок для анализа.</li>
@@ -340,16 +341,19 @@
 <div class="highlight"><code><pre><span></span><code>chown<span class="w"> </span>-R<span class="w"> </span>_nginx:_nginx<span class="w"> </span>/var/lib/comindware/&lt;instanceName&gt;/Database</code> <br/></pre></code></div>
 </li>
 <li>
-<p>Откройте сайт экземпляра ПО в браузере, дождитесь его инициализации и выполните вход.</p>
+<p>Проверьте и при необходимости исправьте конфигурацию экземпляра ПО. См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4651">Проверка и настройка конфигурации экземпляра ПО Comindware Platform после восстановления из резервной копии</a>»</em>.</p>
 </li>
+<li>Проверьте и работоспособность экземпляра ПО.</li>
+<li>Создайте резервную копию работоспособного экземпляра <strong>Comindware Platform</strong>.</li>
 </ol>
 <div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <ul>
-<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5097">Обновление версии экземпляра ПО без его остановки</a></em></li>
-<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4622">Установка, запуск, инициализация и остановка ПО</a></em></li>
-<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4642">Резервное копирование. Настройка и запуск, просмотр журнала сеансов</a></em></li>
-<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4623">Подсистема журналирования</a></em></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5097">Обновление версии экземпляра ПО без его остановки</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4622">Установка, запуск, инициализация и остановка ПО</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4642">Резервное копирование. Настройка и запуск, просмотр журнала сеансов</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4623">Подсистема журналирования</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4651">Проверка и настройка конфигурации экземпляра ПО Comindware Platform после восстановления из резервной копии</a></li>
 </ul>
 </div>
 </article>

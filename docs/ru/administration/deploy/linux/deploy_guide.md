@@ -738,6 +738,8 @@ mmap(PROT_NONE) failed
 --8<-- "related_topics_heading.md"
 
 - [Пути и содержимое директорий экземпляра ПО][paths]
+- [Обновление версии экземпляра ПО с его остановкой][upgrade_version_linux]
+- [Обновление версии экземпляра ПО без его остановки][upgrade_version_linux_no_stop]
 - [Резервное копирование. Настройка, запуск и просмотр журнала сеансов][backup_configure]
 - [Отправка почты из процесса. Настройка подключения][process_sending_connection]
 

@@ -363,34 +363,6 @@ start="<!--instance-prepare-start-->"
 end="<!--instance-prepare-end-->"
 %}
 
-## Обновление экземпляра ПО {: #deploy_guide_windows_instance_upgrade }
-
-1. Скачайте и установите ПО новой версии согласно инструкциям в параграфе _«[Установка {{ productName }}](#deploy_guide_windows_install_sw)»_.
-2. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
-
-    ``` powershell
-    cd "<distPath>\CMW_Windows<versionNumber>\scripts"
-    ```
-
-3. Запустите обновление экземпляра ПО:
-
-    ``` powershell
-    .\instance_upgrade.ps1 -name <instanceName> -version <versionNumber> 
-    ```
-
-    Ключи:
-
-    - `-name` — имя экземпляра ПО;
-    - `-version` — номер версии ПО, до которой необходимо обновить экземпляр (например: `5.0.1234.0`)
-
-4. Просмотрите список установленных экземпляров ПО:
-
-    ``` powershell
-    .\instance_list.ps1
-    ```
-
-5. Рядом с именем экземпляра ПО отобразится номер версии.
-
 ## Удаление экземпляра ПО {: #deploy_guide_windows_instance_delete }
 
 1. Перейдите в папку со скриптами для развёртывания ПО **{{ productName }}**:
@@ -460,6 +432,7 @@ end="<!--instance-prepare-end-->"
 --8<-- "related_topics_heading.md"
 
 - [Пути и содержимое директорий экземпляра ПО][paths]
+- [Обновление версии экземпляра ПО в Windows][upgrade_version_windows]
 - [Резервное копирование. Настройка, запуск и просмотр журнала сеансов][backup_configure]
 - [Отправка почты из процесса. Настройка подключения][process_sending_connection]
 - [Elasticsearch. Установка в Windows][elasticsearch_deploy_windows]

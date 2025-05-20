@@ -213,7 +213,11 @@ hide: tags
 
 ### Настройка резервного копирования данных {{ openSearchVariants }} на диск {: #backup_configure_elasticsearch_disk }
 
-Здесь представлены инструкции по настройке {{ openSearchVariants }} для Linux. Настройка для Windows выполняется аналогичным образом с указанием соответствующих путей. Подробные инструкции для Windows см. в документации _{{ openSearchVariants }}_.
+!!! note "Примечание"
+
+    Здесь представлены инструкции по настройке {{ openSearchVariants }} для Linux.
+    
+    Настройка для Windows выполняется аналогичным образом с указанием соответствующих путей. Подробные инструкции для Windows см. в документации _{{ openSearchVariants }}_.
 
 !!! warning "Внимание!"
 
@@ -285,7 +289,11 @@ hide: tags
 
 ### Настройка резервного копирования данных {{ openSearchVariants }} в хранилище S3 {: #backup_configure_elasticsearch_s3 .pageBreakBefore }
 
-Здесь представлены инструкции по настройке {{ openSearchVariants }} для Linux. Настройка для Windows выполняется аналогичным образом с указанием соответствующих путей. Подробные инструкции для Windows см. в документации _{{ openSearchVariants }}_.
+!!! note "Примечание"
+
+    Здесь представлены инструкции по настройке {{ openSearchVariants }} для Linux.
+    
+    Настройка для Windows выполняется аналогичным образом с указанием соответствующих путей. Подробные инструкции для Windows см. в документации _{{ openSearchVariants }}_.
 
 {% include-markdown ".snippets/s3_warning.md" %}
 

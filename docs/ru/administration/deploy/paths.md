@@ -65,7 +65,7 @@ kbId: 4620
 
 Фактические пути к директориям экземпляра ПО указаны в файле конфигурации:
 
-``` sh
+``` powershell
 C:\ProgramData\сomindware\configs\instance\<instanceName>.yml
 ```
 

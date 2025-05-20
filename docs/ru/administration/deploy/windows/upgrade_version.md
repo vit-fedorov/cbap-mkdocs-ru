@@ -1,6 +1,6 @@
 ---
 title: 'Обновление версии экземпляра ПО в Windows'
-kbId: 
+kbId: 5102
 ---
 
 # Обновление версии экземпляра ПО в Windows {: #upgrade_version_windows }
@@ -322,7 +322,9 @@ end="<!--powershell-execution-policy-end-->"
     Get-Content "C:\ProgramData\comindware\Instances\<instanceName>\Logs\heartbeat_<ГГГГ-ММ-ДД>.log" -Wait
     ```
 
-    Здесь `<ГГГГ-ММ-ДД>` — текущая дата
+    Здесь `<ГГГГ-ММ-ДД>` — текущая дата.
+
+    См. _«[Подсистема журналирования][logging_engine]»_.
 
 22. В браузере выполните инициализацию экземпляра ПО, выполните вход и проверьте работоспособность ПО.
 23. Остановите экземпляр ПО:
@@ -414,15 +416,9 @@ end="<!--powershell-execution-policy-end-->"
 
 36. Запустите экземпляр ПО.
 37. Откройте сайт экземпляра ПО в браузере, дождитесь его инициализации и выполните вход.
-38. [Проверьте конфигурацию](#upgrade_version_windows_instance_prepare) и работоспособность обновлённого экземпляра ПО.
-
-## Проверка конфигурации экземпляра ПО {: #upgrade_version_windows_instance_prepare .pageBreakBefore }
-
-{%
-include-markdown "../../backup/windows/backup_restore_windows.md"
-start="<!--backup-restore-instance-check-windows-start-->"
-end="<!--backup-restore-instance-check-windows-end-->"
-%}
+38. Проверьте и при необходимости исправьте конфигурацию экземпляра ПО. См. _«[Проверка и настройка конфигурации экземпляра ПО {{ productName }} после восстановления из резервной копии][restore_test_configure]»_.
+39. Проверьте и работоспособность экземпляра ПО.
+40. Создайте резервную копию работоспособного экземпляра **{{ productName }}**.
 
 <div class="relatedTopics" markdown="block">
 
@@ -431,9 +427,10 @@ end="<!--backup-restore-instance-check-windows-end-->"
 - [Пути и содержимое директорий экземпляра ПО][paths]
 - [Установка вспомогательного ПО][deploy_guide_windows_install_prerequisites]
 - [Установка, запуск, инициализация и остановка Comindware Platform в Windows][deploy_guide_windows]
-- [Настройка конфигураций и запуск резервного копирования][backup_configure_list_view]
 - [Резервное копирование и восстановление Comindware Platform. Краткое руководство для ОС Windows][backup_restore_windows]
-- [Отправка почты из процесса. Настройка подключения][process_sending_connection]
+- [Настройка конфигураций и запуск резервного копирования][backup_configure_list_view]
+- [Подсистема журналирования][logging_engine]
+- [Проверка и настройка конфигурации экземпляра ПО {{ productName }} после восстановления из резервной копии][restore_test_configure]
 
 </div>
 

@@ -104,6 +104,8 @@
 
 [backup_configure]: {{ kbArticleURLPrefix }}4642
 
+[backup_configure_list_view]: {{ kbArticleURLPrefix }}4642#backup_configure_list_view
+
 [backup_recommendations]: {{ kbArticleURLPrefix }}5082
 
 [changelog]: {{ kbArticleURLPrefix }}4589

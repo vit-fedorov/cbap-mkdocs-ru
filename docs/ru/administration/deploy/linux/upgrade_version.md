@@ -99,12 +99,6 @@ kbId: 4624
     systemctl status apigateway<instanceName> adapterhost<instanceName> comindware<instanceName>
     ```
 
-5. Проверьте статус созданного экземпляра:
-
-    ``` sh
-    systemctl status comindware<instanceName>
-    ```
-
 6. Удалите (или переместите в резервное хранилище) неиспользуемые предыдущие дистрибутивы ПО (`<distPath>` — путь к директории с дистрибутивом, `<osname>` — название операционной системы):
 
     ``` sh
@@ -241,15 +235,7 @@ kbId: 4624
     [Done] Upgrade CBAP instance.
     ```
 
-    Если какая-либо из служб имеет статус `FAILED`, перезапустите её, например:
-
-    ``` sh
-    systemctl restart comindware<instanceName>.service
-    systemctl restart apigateway<instanceName>.service
-    systemctl restart adaperhost<instanceName>.service
-    systemctl restart kafka.service
-    systemctl restart elasticsearch.service 
-    ```
+    Если какая-либо из служб имеет статус `FAILED`, исправьте конфигурацию, как указано ниже, и перезапустите службу.
 
 12. Отредактируйте конфигурацию NGINX для экземпляра ПО в соответствии с резервной копией, [сохранённой ранее](#NginxBackup):
 
@@ -292,10 +278,12 @@ kbId: 4624
         - В новейших версиях **{{ productName }}** отсутствует файл `Workers.config`.
         - Настройка соответствующих служб выполняется в файле конфигурации экземпляра ПО `<instanceName>.yml`.
 
-15. Перезапустите сервисы, настройки которых были изменены, например:
+15. Перезапустите сервисы **{{ productName }}**:
 
     ``` sh
-    systemctl restart apigateway<instanceName> adapterhost<instanceName> comindware<instanceName>
+    systemctl restart apigateway<instanceName>.service
+    systemctl restart adaperhost<instanceName>.service
+    systemctl restart comindware<instanceName>.service
     ```
 
 16. Откройте сайт экземпляра ПО в браузере, одновременно открыв выдачу журналов экземпляра в терминале:

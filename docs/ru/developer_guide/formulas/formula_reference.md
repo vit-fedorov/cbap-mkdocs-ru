@@ -3717,6 +3717,11 @@ FORMAT(
 </tbody>
 </table>
 
+<table markdown="block">
+<tbody markdown="block">
+<tr markdown="block">
+<th colspan="2" markdown="block">
+
 ### `INDEXOF()`
 
 </th>
@@ -4114,6 +4119,483 @@ NOTMATCHES("Требуется решить проблему срочно!", "[C
 ```
 
 Результат: `False`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table markdown="block">
+<tbody markdown="block">
+<tr markdown="block">
+<th colspan="2" markdown="block">
+
+### `REGEXREPLACE()`
+
+</th>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+<span >Описание
+</td>
+<td markdown="block">
+
+Принимает три строковых аргумента: исходную строку, регулярное выражение, замещающую строку. Находит в исходной строке подстроки по регулярному выражению, заменяет найденные подстроки замещающей строкой и возвращает результирующую строку.
+
+Для изучения и отладки регулярных выражений можно воспользоваться следующим инструментом: <https://regex101.com>
+
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Синтаксис**
+</td>
+<td markdown="block">
+
+``` sql
+REGEXREPLACE(sourceString, regEx, replacementString)
+```
+
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Аргументы**
+</td>
+<td markdown="block">
+
+- `sourceString`: исходная строка.
+- `regEx`: строка с регулярным выражением.
+- `replacementString`: замещающая строка.
+
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Результат**
+</td>
+<td markdown="block">
+Строка
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Пример**
+</td>
+<td markdown="block">
+
+``` sql
+REGEXREPLACE("Фамилия Имя Отчество","(.+) (.+) (.+)","$2")
+```
+
+Результат: `Имя`
+
+``` sql
+REGEXREPLACE("Рассмотрите заявку [#12345]",".*\[#([0-9]+)\].*","$1")
+```
+
+ Результат: `12345`
+
+``` sql
+REGEXREPLACE($HTML,"&lt;p class=""title"">(.+)&lt;\/p>","&lt;h1>$1&lt;h1>")
+```
+
+Результат: заменяет в HTML-коде параграфы класса `title` на заголовки уровня 1.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table markdown="block">
+<tbody markdown="block">
+<tr markdown="block">
+<th colspan="2" markdown="block">
+
+### `REPLACE()`
+
+</th>
+</tr>
+<tr markdown="block">
+<td markdown="block" class="functionDescriptionColumn">
+**Описание**
+</td>
+<td markdown="block">
+
+Принимает три строки: исходную, искомую и замещающую. Заменяет все вхождения искомой строки в исходной строке на замещающую строку.
+
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Синтаксис**
+</td>
+<td markdown="block">
+
+``` sql
+REPLACE(string, subString, replacementString)
+```
+
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Аргументы**
+</td>
+<td markdown="block">
+
+`string`, `subString`, `replacementString`: строки
+
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Результат**
+</td>
+<td markdown="block">
+Строка
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Пример**
+</td>
+<td markdown="block">
+
+``` sql
+REPLACE("Заявка утверждена.", "утверждена", "одобрена")
+```
+
+Результат: `Заявка одобрена.`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table markdown="block">
+<tbody markdown="block">
+<tr markdown="block">
+<th colspan="2" markdown="block">
+
+### `TOLOWER()`
+
+</th>
+</tr>
+<tr markdown="block">
+<td markdown="block" class="functionDescriptionColumn">
+**Описание**
+</td>
+<td markdown="block">
+
+Приводит все буквы в строке к нижнему регистру (строчным буквам).
+
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Синтаксис**
+</td>
+<td markdown="block">
+
+``` sql
+TOLOWER(string)
+```
+
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Аргументы**
+</td>
+<td markdown="block">
+
+`string`: строка.
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Результат**
+</td>
+<td markdown="block">
+Строка
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Пример**
+</td>
+<td markdown="block">
+
+``` sql
+TOLOWER("Все Буквы В ЭТОЙ Строке Стали Строчными.")
+```
+
+Результат: `все буквы в этой строке стали строчными.`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table markdown="block">
+<tbody markdown="block">
+<tr markdown="block">
+<th colspan="2" markdown="block">
+
+### `TOUPPER()`
+
+</th>
+</tr>
+<tr markdown="block">
+<td markdown="block" class="functionDescriptionColumn">
+**Описание**
+</td>
+<td markdown="block">
+
+Приводит все буквы в строке к верхнему регистру (прописным буквам).
+
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Синтаксис**
+</td>
+<td markdown="block">
+
+``` sql
+TOUPPER(string)
+```
+
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Аргументы**
+</td>
+<td markdown="block">
+
+`string`: строка.
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Результат**
+</td>
+<td markdown="block">
+Строка
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Пример**
+</td>
+<td markdown="block">
+
+``` sql
+TOUPPER("Все Буквы В Этой Строке Стали прописными.")
+```
+
+Результат: `ВСЕ БУКВЫ В ЭТОЙ СТРОКЕ СТАЛИ ПРОПИСНЫМИ.`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table markdown="block">
+<tbody markdown="block">
+<tr markdown="block">
+<th colspan="2" markdown="block">
+
+### `TRIM()`
+
+</th>
+</tr>
+<tr markdown="block">
+<td markdown="block" class="functionDescriptionColumn">
+**Описание**
+</td>
+<td markdown="block">
+
+Удаляет пробелы в начале и конце строки.
+
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Синтаксис**
+</td>
+<td markdown="block">
+
+``` sql
+TRIM(string)
+```
+
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Аргументы**
+</td>
+<td markdown="block">
+
+`string`: строка.
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Результат**
+</td>
+<td markdown="block">
+Строка
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Пример**
+</td>
+<td markdown="block">
+
+``` sql
+TRIM("   В этой строке были лишние пробелы.   ")
+```
+
+Результат: `В этой строке были лишние пробелы.`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+<table markdown="block">
+<tbody markdown="block">
+<tr markdown="block">
+<th colspan="2" markdown="block">
+
+### `STARTSWITH()`
+
+</th>
+</tr>
+<tr markdown="block">
+<td markdown="block" class="functionDescriptionColumn">
+**Описание**
+</td>
+<td markdown="block">
+
+Сравнивает две строки и возвращает значение `True`, если первая строка начинается на вторую, в противном случае возвращает `False`.
+
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Синтаксис**
+</td>
+<td markdown="block">
+
+``` sql
+STARTSWITH(string, startString)
+```
+
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Аргументы**
+</td>
+<td markdown="block">
+
+`string`, `startString`: строка.
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Результат**
+</td>
+<td markdown="block">
+Логическое значение
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Пример**
+</td>
+<td markdown="block">
+
+``` sql
+STARTSWITH("Строка", "Стр")
+```
+
+Результат: `True`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table markdown="block">
+<tbody markdown="block">
+<tr markdown="block">
+<th colspan="2" markdown="block">
+
+### `SUBSTRING()`
+
+</th>
+</tr>
+<tr markdown="block">
+<td markdown="block" class="functionDescriptionColumn">
+**Описание**
+</td>
+<td markdown="block">
+
+Принимает три аргумента: строку и два числа. Извлекает из исходной строки подстроку начиная с заданной позиции до конца исходной строки либо до указанной длины подстроки.
+
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Синтаксис**
+</td>
+<td markdown="block">
+
+``` sql
+SUBSTRING(sourceString, startIndex, numberOfChars)
+```
+
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Аргументы**
+</td>
+<td markdown="block">
+
+- `sourceString`: строка.
+- `startIndex`: номер позиции начала подстроки, отсчитывается от `0`.
+- `numberOfChars`: количество символов в подстроке (необязательный аргумент).
+
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Результат**
+</td>
+<td markdown="block">
+Строка
+</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">
+**Пример**
+</td>
+<td markdown="block">
+
+``` sql
+SUBSTRING("Раньше эта строка начиналась с другого слова.", 7, 31)
+```
+
+Результат: `эта строка начиналась с другого`
 
 </td>
 </tr>
@@ -7838,11 +8320,6 @@ HOURUTC(DATE('2025-05-05T05:05:25+03:00'))
 <tr markdown="block">
 <th colspan="2" markdown="block">
 
-<table markdown="block">
-<tbody markdown="block">
-<tr markdown="block">
-<th colspan="2" markdown="block">
-
 ### `INSECONDS()`
 
 </th>
@@ -9648,154 +10125,6 @@ QUARTERS(DURATION('P229D'))
 <tr markdown="block">
 <th colspan="2" markdown="block">
 
-### `REGEXREPLACE()`
-
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-<span >Описание
-</td>
-<td markdown="block">
-
-Принимает три строковых аргумента: исходную строку, регулярное выражение, замещающую строку. Находит в исходной строке подстроки по регулярному выражению, заменяет найденные подстроки замещающей строкой и возвращает результирующую строку.
-
-Для изучения и отладки регулярных выражений можно воспользоваться следующим инструментом: <https://regex101.com>
-
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Синтаксис**
-</td>
-<td markdown="block">
-
-``` sql
-REGEXREPLACE(sourceString, regEx, replacementString)
-```
-
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Аргументы**
-</td>
-<td markdown="block">
-
-- `sourceString`: исходная строка.
-- `regEx`: строка с регулярным выражением.
-- `replacementString`: замещающая строка.
-
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Результат**
-</td>
-<td markdown="block">
-Строка
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Пример**
-</td>
-<td markdown="block">
-
-``` sql
-REGEXREPLACE("Фамилия Имя Отчество","(.+) (.+) (.+)","$2")
-```
-
-Результат: `Имя`
-
-``` sql
-REGEXREPLACE("Рассмотрите заявку [#12345]",".*\[#([0-9]+)\].*","$1")
-```
-
- Результат: `12345`
-
-``` sql
-REGEXREPLACE($HTML,"&lt;p class=""title"">(.+)&lt;\/p>","&lt;h1>$1&lt;h1>")
-```
-
-Результат: заменяет в HTML-коде параграфы класса `title` на заголовки уровня 1.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-<table markdown="block">
-<tbody markdown="block">
-<tr markdown="block">
-<th colspan="2" markdown="block">
-
-### `REPLACE()`
-
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="functionDescriptionColumn">
-**Описание**
-</td>
-<td markdown="block">
-
-Принимает три строки: исходную, искомую и замещающую. Заменяет все вхождения искомой строки в исходной строке на замещающую строку.
-
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Синтаксис**
-</td>
-<td markdown="block">
-
-``` sql
-REPLACE(string, subString, replacementString)
-```
-
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Аргументы**
-</td>
-<td markdown="block">
-
-`string`, `subString`, `replacementString`: строки
-
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Результат**
-</td>
-<td markdown="block">
-Строка
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Пример**
-</td>
-<td markdown="block">
-
-``` sql
-REPLACE("Заявка утверждена.", "утверждена", "одобрена")
-```
-
-Результат: `Заявка одобрена.`
-
-</td>
-</tr>
-</tbody>
-</table>
-
-<table markdown="block">
-<tbody markdown="block">
-<tr markdown="block">
-<th colspan="2" markdown="block">
-
 ### `SECOND()`
 
 </th>
@@ -10654,71 +10983,6 @@ STARTOFYEARUTC(DATE('2025-01-01T01:01:01+03:00'))
 <tr markdown="block">
 <th colspan="2" markdown="block">
 
-### `STARTSWITH()`
-
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="functionDescriptionColumn">
-**Описание**
-</td>
-<td markdown="block">
-
-Сравнивает две строки и возвращает значение `True`, если первая строка начинается на вторую, в противном случае возвращает `False`.
-
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Синтаксис**
-</td>
-<td markdown="block">
-
-``` sql
-STARTSWITH(string, startString)
-```
-
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Аргументы**
-</td>
-<td markdown="block">
-
-`string`, `startString`: строка.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Результат**
-</td>
-<td markdown="block">
-Логическое значение
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Пример**
-</td>
-<td markdown="block">
-
-``` sql
-STARTSWITH("Строка", "Стр")
-```
-
-Результат: `True`
-
-</td>
-</tr>
-</tbody>
-</table>
-
-<table markdown="block">
-<tbody markdown="block">
-<tr markdown="block">
-<th colspan="2" markdown="block">
-
 ### `SUB()`
 
 </th>
@@ -10787,73 +11051,7 @@ SUB(DATE('2025-01-01T01:01:01'), DURATION('P1DT1H30M0S'))
 </tbody>
 </table>
 
-<table markdown="block">
-<tbody markdown="block">
-<tr markdown="block">
-<th colspan="2" markdown="block">
 
-### `SUBSTRING()`
-
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="functionDescriptionColumn">
-**Описание**
-</td>
-<td markdown="block">
-
-Принимает три аргумента: строку и два числа. Извлекает из исходной строки подстроку начиная с заданной позиции до конца исходной строки либо до указанной длины подстроки.
-
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Синтаксис**
-</td>
-<td markdown="block">
-
-``` sql
-SUBSTRING(sourceString, startIndex, numberOfChars)
-```
-
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Аргументы**
-</td>
-<td markdown="block">
-
-- `sourceString`: строка.
-- `startIndex`: номер позиции начала подстроки, отсчитывается от `0`.
-- `numberOfChars`: количество символов в подстроке (необязательный аргумент).
-
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Результат**
-</td>
-<td markdown="block">
-Строка
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Пример**
-</td>
-<td markdown="block">
-
-``` sql
-SUBSTRING("Раньше эта строка начиналась с другого слова.", 7, 31)
-```
-
-Результат: `эта строка начиналась с другого`
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <table markdown="block">
 <tbody markdown="block">
@@ -10982,201 +11180,6 @@ TODURATION(12345)
 ```
 
 Результат: `03:25:45`
-
-</td>
-</tr>
-</tbody>
-</table>
-
-<table markdown="block">
-<tbody markdown="block">
-<tr markdown="block">
-<th colspan="2" markdown="block">
-
-### `TOLOWER()`
-
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="functionDescriptionColumn">
-**Описание**
-</td>
-<td markdown="block">
-
-Приводит все буквы в строке к нижнему регистру (строчным буквам).
-
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Синтаксис**
-</td>
-<td markdown="block">
-
-``` sql
-TOLOWER(string)
-```
-
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Аргументы**
-</td>
-<td markdown="block">
-
-`string`: строка.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Результат**
-</td>
-<td markdown="block">
-Строка
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Пример**
-</td>
-<td markdown="block">
-
-``` sql
-TOLOWER("Все Буквы В ЭТОЙ Строке Стали Строчными.")
-```
-
-Результат: `все буквы в этой строке стали строчными.`
-
-</td>
-</tr>
-</tbody>
-</table>
-
-<table markdown="block">
-<tbody markdown="block">
-<tr markdown="block">
-<th colspan="2" markdown="block">
-
-### `TOUPPER()`
-
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="functionDescriptionColumn">
-**Описание**
-</td>
-<td markdown="block">
-
-Приводит все буквы в строке к верхнему регистру (прописным буквам).
-
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Синтаксис**
-</td>
-<td markdown="block">
-
-``` sql
-TOUPPER(string)
-```
-
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Аргументы**
-</td>
-<td markdown="block">
-
-`string`: строка.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Результат**
-</td>
-<td markdown="block">
-Строка
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Пример**
-</td>
-<td markdown="block">
-
-``` sql
-TOUPPER("Все Буквы В Этой Строке Стали прописными.")
-```
-
-Результат: `ВСЕ БУКВЫ В ЭТОЙ СТРОКЕ СТАЛИ ПРОПИСНЫМИ.`
-
-</td>
-</tr>
-</tbody>
-</table>
-
-<table markdown="block">
-<tbody markdown="block">
-<tr markdown="block">
-<th colspan="2" markdown="block">
-
-### `TRIM()`
-
-</th>
-</tr>
-<tr markdown="block">
-<td markdown="block" class="functionDescriptionColumn">
-**Описание**
-</td>
-<td markdown="block">
-
-Удаляет пробелы в начале и конце строки.
-
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Синтаксис**
-</td>
-<td markdown="block">
-
-``` sql
-TRIM(string)
-```
-
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Аргументы**
-</td>
-<td markdown="block">
-
-`string`: строка.
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Результат**
-</td>
-<td markdown="block">
-Строка
-</td>
-</tr>
-<tr markdown="block">
-<td markdown="block">
-**Пример**
-</td>
-<td markdown="block">
-
-``` sql
-TRIM("   В этой строке были лишние пробелы.   ")
-```
-
-Результат: `В этой строке были лишние пробелы.`
 
 </td>
 </tr>

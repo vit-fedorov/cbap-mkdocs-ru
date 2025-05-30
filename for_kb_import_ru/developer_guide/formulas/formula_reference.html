@@ -509,6 +509,55 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#regexreplace">
+<span class="md-ellipsis">
+      REGEXREPLACE()
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#replace">
+<span class="md-ellipsis">
+      REPLACE()
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#tolower">
+<span class="md-ellipsis">
+      TOLOWER()
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#toupper">
+<span class="md-ellipsis">
+      TOUPPER()
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#trim">
+<span class="md-ellipsis">
+      TRIM()
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#startswith">
+<span class="md-ellipsis">
+      STARTSWITH()
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#substring">
+<span class="md-ellipsis">
+      SUBSTRING()
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -1095,20 +1144,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#regexreplace">
-<span class="md-ellipsis">
-      REGEXREPLACE()
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#replace">
-<span class="md-ellipsis">
-      REPLACE()
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link mkdocs_imported_link" href="#second">
 <span class="md-ellipsis">
       SECOND()
@@ -1200,23 +1235,9 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#startswith">
-<span class="md-ellipsis">
-      STARTSWITH()
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link mkdocs_imported_link" href="#sub">
 <span class="md-ellipsis">
       SUB()
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#substring">
-<span class="md-ellipsis">
-      SUBSTRING()
     </span>
 </a>
 </li>
@@ -1231,27 +1252,6 @@
 <a class="md-nav__link mkdocs_imported_link" href="#toduration">
 <span class="md-ellipsis">
       TODURATION()
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#tolower">
-<span class="md-ellipsis">
-      TOLOWER()
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#toupper">
-<span class="md-ellipsis">
-      TOUPPER()
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#trim">
-<span class="md-ellipsis">
-      TRIM()
     </span>
 </a>
 </li>
@@ -4198,9 +4198,13 @@
 </tr>
 </tbody>
 </table>
+<table style="width: 100%;">
+<tbody>
+<tr>
+<th colspan="2">
 <h3 id="indexof"><code>INDEXOF()</code></h3>
-<p>
-</p>
+</th>
+</tr>
 <tr>
 <td class="functionDescriptionColumn">
 <p><strong>Описание</strong></p>
@@ -4248,8 +4252,8 @@
 <p>Результат: <code>3</code></p>
 </td>
 </tr>
-<p>
-</p>
+</tbody>
+</table>
 <table style="width: 100%;">
 <tbody>
 <tr>
@@ -4503,6 +4507,369 @@
 <td>
 <div class="highlight"><code><pre><span></span><code><span class="n">NOTMATCHES</span><span class="p">(</span><span class="ss">"Требуется решить проблему срочно!"</span><span class="p">,</span><span class="w"> </span><span class="ss">"[Cс]рочн.+?"</span><span class="p">)</span></code> <br/></pre></code></div>
 <p>Результат: <code>False</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table style="width: 100%;">
+<tbody>
+<tr>
+<th colspan="2">
+<h3 id="regexreplace"><code>REGEXREPLACE()</code></h3>
+</th>
+</tr>
+<tr>
+<td>
+<p><span>Описание</span></p>
+</td>
+<td>
+<p>Принимает три строковых аргумента: исходную строку, регулярное выражение, замещающую строку. Находит в исходной строке подстроки по регулярному выражению, заменяет найденные подстроки замещающей строкой и возвращает результирующую строку.</p>
+<p>Для изучения и отладки регулярных выражений можно воспользоваться следующим инструментом: <a class="mkdocs_imported_link" href="https://regex101.com">https://regex101.com</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Синтаксис</strong></p>
+</td>
+<td>
+<div class="highlight"><code><pre><span></span><code><span class="n">REGEXREPLACE</span><span class="p">(</span><span class="n">sourceString</span><span class="p">,</span><span class="w"> </span><span class="n">regEx</span><span class="p">,</span><span class="w"> </span><span class="n">replacementString</span><span class="p">)</span></code> <br/></pre></code></div>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Аргументы</strong></p>
+</td>
+<td>
+<ul>
+<li><code>sourceString</code>: исходная строка.</li>
+<li><code>regEx</code>: строка с регулярным выражением.</li>
+<li><code>replacementString</code>: замещающая строка.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Результат</strong></p>
+</td>
+<td>
+<p>Строка</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Пример</strong></p>
+</td>
+<td>
+<div class="highlight"><code><pre><span></span><code><span class="n">REGEXREPLACE</span><span class="p">(</span><span class="ss">"Фамилия Имя Отчество"</span><span class="p">,</span><span class="ss">"(.+) (.+) (.+)"</span><span class="p">,</span><span class="ss">"$2"</span><span class="p">)</span></code> <br/></pre></code></div>
+<p>Результат: <code>Имя</code></p>
+<div class="highlight"><code><pre><span></span><code><span class="n">REGEXREPLACE</span><span class="p">(</span><span class="ss">"Рассмотрите заявку [#12345]"</span><span class="p">,</span><span class="ss">".*\[#([0-9]+)\].*"</span><span class="p">,</span><span class="ss">"$1"</span><span class="p">)</span></code> <br/></pre></code></div>
+<p>Результат: <code>12345</code></p>
+<div class="highlight"><code><pre><span></span><code><span class="n">REGEXREPLACE</span><span class="p">(</span><span class="err">$</span><span class="n">HTML</span><span class="p">,</span><span class="ss">"&amp;lt;p class=""title""&gt;(.+)&amp;lt;\/p&gt;"</span><span class="p">,</span><span class="ss">"&amp;lt;h1&gt;$1&amp;lt;h1&gt;"</span><span class="p">)</span></code> <br/></pre></code></div>
+<p>Результат: заменяет в HTML-коде параграфы класса <code>title</code> на заголовки уровня 1.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table style="width: 100%;">
+<tbody>
+<tr>
+<th colspan="2">
+<h3 id="replace"><code>REPLACE()</code></h3>
+</th>
+</tr>
+<tr>
+<td class="functionDescriptionColumn">
+<p><strong>Описание</strong></p>
+</td>
+<td>
+<p>Принимает три строки: исходную, искомую и замещающую. Заменяет все вхождения искомой строки в исходной строке на замещающую строку.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Синтаксис</strong></p>
+</td>
+<td>
+<div class="highlight"><code><pre><span></span><code><span class="k">REPLACE</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="k">subString</span><span class="p">,</span><span class="w"> </span><span class="n">replacementString</span><span class="p">)</span></code> <br/></pre></code></div>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Аргументы</strong></p>
+</td>
+<td>
+<p><code>string</code>, <code>subString</code>, <code>replacementString</code>: строки</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Результат</strong></p>
+</td>
+<td>
+<p>Строка</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Пример</strong></p>
+</td>
+<td>
+<div class="highlight"><code><pre><span></span><code><span class="k">REPLACE</span><span class="p">(</span><span class="ss">"Заявка утверждена."</span><span class="p">,</span><span class="w"> </span><span class="ss">"утверждена"</span><span class="p">,</span><span class="w"> </span><span class="ss">"одобрена"</span><span class="p">)</span></code> <br/></pre></code></div>
+<p>Результат: <code>Заявка одобрена.</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table style="width: 100%;">
+<tbody>
+<tr>
+<th colspan="2">
+<h3 id="tolower"><code>TOLOWER()</code></h3>
+</th>
+</tr>
+<tr>
+<td class="functionDescriptionColumn">
+<p><strong>Описание</strong></p>
+</td>
+<td>
+<p>Приводит все буквы в строке к нижнему регистру (строчным буквам).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Синтаксис</strong></p>
+</td>
+<td>
+<div class="highlight"><code><pre><span></span><code><span class="n">TOLOWER</span><span class="p">(</span><span class="n">string</span><span class="p">)</span></code> <br/></pre></code></div>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Аргументы</strong></p>
+</td>
+<td>
+<p><code>string</code>: строка.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Результат</strong></p>
+</td>
+<td>
+<p>Строка</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Пример</strong></p>
+</td>
+<td>
+<div class="highlight"><code><pre><span></span><code><span class="n">TOLOWER</span><span class="p">(</span><span class="ss">"Все Буквы В ЭТОЙ Строке Стали Строчными."</span><span class="p">)</span></code> <br/></pre></code></div>
+<p>Результат: <code>все буквы в этой строке стали строчными.</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table style="width: 100%;">
+<tbody>
+<tr>
+<th colspan="2">
+<h3 id="toupper"><code>TOUPPER()</code></h3>
+</th>
+</tr>
+<tr>
+<td class="functionDescriptionColumn">
+<p><strong>Описание</strong></p>
+</td>
+<td>
+<p>Приводит все буквы в строке к верхнему регистру (прописным буквам).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Синтаксис</strong></p>
+</td>
+<td>
+<div class="highlight"><code><pre><span></span><code><span class="n">TOUPPER</span><span class="p">(</span><span class="n">string</span><span class="p">)</span></code> <br/></pre></code></div>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Аргументы</strong></p>
+</td>
+<td>
+<p><code>string</code>: строка.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Результат</strong></p>
+</td>
+<td>
+<p>Строка</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Пример</strong></p>
+</td>
+<td>
+<div class="highlight"><code><pre><span></span><code><span class="n">TOUPPER</span><span class="p">(</span><span class="ss">"Все Буквы В Этой Строке Стали прописными."</span><span class="p">)</span></code> <br/></pre></code></div>
+<p>Результат: <code>ВСЕ БУКВЫ В ЭТОЙ СТРОКЕ СТАЛИ ПРОПИСНЫМИ.</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table style="width: 100%;">
+<tbody>
+<tr>
+<th colspan="2">
+<h3 id="trim"><code>TRIM()</code></h3>
+</th>
+</tr>
+<tr>
+<td class="functionDescriptionColumn">
+<p><strong>Описание</strong></p>
+</td>
+<td>
+<p>Удаляет пробелы в начале и конце строки.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Синтаксис</strong></p>
+</td>
+<td>
+<div class="highlight"><code><pre><span></span><code><span class="k">TRIM</span><span class="p">(</span><span class="n">string</span><span class="p">)</span></code> <br/></pre></code></div>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Аргументы</strong></p>
+</td>
+<td>
+<p><code>string</code>: строка.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Результат</strong></p>
+</td>
+<td>
+<p>Строка</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Пример</strong></p>
+</td>
+<td>
+<div class="highlight"><code><pre><span></span><code><span class="k">TRIM</span><span class="p">(</span><span class="ss">"   В этой строке были лишние пробелы.   "</span><span class="p">)</span></code> <br/></pre></code></div>
+<p>Результат: <code>В этой строке были лишние пробелы.</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table style="width: 100%;">
+<tbody>
+<tr>
+<th colspan="2">
+<h3 id="startswith"><code>STARTSWITH()</code></h3>
+</th>
+</tr>
+<tr>
+<td class="functionDescriptionColumn">
+<p><strong>Описание</strong></p>
+</td>
+<td>
+<p>Сравнивает две строки и возвращает значение <code>True</code>, если первая строка начинается на вторую, в противном случае возвращает <code>False</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Синтаксис</strong></p>
+</td>
+<td>
+<div class="highlight"><code><pre><span></span><code><span class="n">STARTSWITH</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">startString</span><span class="p">)</span></code> <br/></pre></code></div>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Аргументы</strong></p>
+</td>
+<td>
+<p><code>string</code>, <code>startString</code>: строка.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Результат</strong></p>
+</td>
+<td>
+<p>Логическое значение</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Пример</strong></p>
+</td>
+<td>
+<div class="highlight"><code><pre><span></span><code><span class="n">STARTSWITH</span><span class="p">(</span><span class="ss">"Строка"</span><span class="p">,</span><span class="w"> </span><span class="ss">"Стр"</span><span class="p">)</span></code> <br/></pre></code></div>
+<p>Результат: <code>True</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table style="width: 100%;">
+<tbody>
+<tr>
+<th colspan="2">
+<h3 id="substring"><code>SUBSTRING()</code></h3>
+</th>
+</tr>
+<tr>
+<td class="functionDescriptionColumn">
+<p><strong>Описание</strong></p>
+</td>
+<td>
+<p>Принимает три аргумента: строку и два числа. Извлекает из исходной строки подстроку начиная с заданной позиции до конца исходной строки либо до указанной длины подстроки.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Синтаксис</strong></p>
+</td>
+<td>
+<div class="highlight"><code><pre><span></span><code><span class="k">SUBSTRING</span><span class="p">(</span><span class="n">sourceString</span><span class="p">,</span><span class="w"> </span><span class="n">startIndex</span><span class="p">,</span><span class="w"> </span><span class="n">numberOfChars</span><span class="p">)</span></code> <br/></pre></code></div>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Аргументы</strong></p>
+</td>
+<td>
+<ul>
+<li><code>sourceString</code>: строка.</li>
+<li><code>startIndex</code>: номер позиции начала подстроки, отсчитывается от <code>0</code>.</li>
+<li><code>numberOfChars</code>: количество символов в подстроке (необязательный аргумент).</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Результат</strong></p>
+</td>
+<td>
+<p>Строка</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Пример</strong></p>
+</td>
+<td>
+<div class="highlight"><code><pre><span></span><code><span class="k">SUBSTRING</span><span class="p">(</span><span class="ss">"Раньше эта строка начиналась с другого слова."</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="p">)</span></code> <br/></pre></code></div>
+<p>Результат: <code>эта строка начиналась с другого</code></p>
 </td>
 </tr>
 </tbody>
@@ -7371,10 +7738,6 @@
 <tbody>
 <tr>
 <th colspan="2">
-<table style="width: 100%;">
-<tbody>
-<tr>
-<th colspan="2">
 <h3 id="inseconds"><code>INSECONDS()</code></h3>
 </th>
 </tr>
@@ -8765,115 +9128,6 @@
 <tbody>
 <tr>
 <th colspan="2">
-<h3 id="regexreplace"><code>REGEXREPLACE()</code></h3>
-</th>
-</tr>
-<tr>
-<td>
-<p><span>Описание</span></p>
-</td>
-<td>
-<p>Принимает три строковых аргумента: исходную строку, регулярное выражение, замещающую строку. Находит в исходной строке подстроки по регулярному выражению, заменяет найденные подстроки замещающей строкой и возвращает результирующую строку.</p>
-<p>Для изучения и отладки регулярных выражений можно воспользоваться следующим инструментом: <a class="mkdocs_imported_link" href="https://regex101.com">https://regex101.com</a></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Синтаксис</strong></p>
-</td>
-<td>
-<div class="highlight"><code><pre><span></span><code><span class="n">REGEXREPLACE</span><span class="p">(</span><span class="n">sourceString</span><span class="p">,</span><span class="w"> </span><span class="n">regEx</span><span class="p">,</span><span class="w"> </span><span class="n">replacementString</span><span class="p">)</span></code> <br/></pre></code></div>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Аргументы</strong></p>
-</td>
-<td>
-<ul>
-<li><code>sourceString</code>: исходная строка.</li>
-<li><code>regEx</code>: строка с регулярным выражением.</li>
-<li><code>replacementString</code>: замещающая строка.</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Результат</strong></p>
-</td>
-<td>
-<p>Строка</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Пример</strong></p>
-</td>
-<td>
-<div class="highlight"><code><pre><span></span><code><span class="n">REGEXREPLACE</span><span class="p">(</span><span class="ss">"Фамилия Имя Отчество"</span><span class="p">,</span><span class="ss">"(.+) (.+) (.+)"</span><span class="p">,</span><span class="ss">"$2"</span><span class="p">)</span></code> <br/></pre></code></div>
-<p>Результат: <code>Имя</code></p>
-<div class="highlight"><code><pre><span></span><code><span class="n">REGEXREPLACE</span><span class="p">(</span><span class="ss">"Рассмотрите заявку [#12345]"</span><span class="p">,</span><span class="ss">".*\[#([0-9]+)\].*"</span><span class="p">,</span><span class="ss">"$1"</span><span class="p">)</span></code> <br/></pre></code></div>
-<p>Результат: <code>12345</code></p>
-<div class="highlight"><code><pre><span></span><code><span class="n">REGEXREPLACE</span><span class="p">(</span><span class="err">$</span><span class="n">HTML</span><span class="p">,</span><span class="ss">"&amp;lt;p class=""title""&gt;(.+)&amp;lt;\/p&gt;"</span><span class="p">,</span><span class="ss">"&amp;lt;h1&gt;$1&amp;lt;h1&gt;"</span><span class="p">)</span></code> <br/></pre></code></div>
-<p>Результат: заменяет в HTML-коде параграфы класса <code>title</code> на заголовки уровня 1.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<table style="width: 100%;">
-<tbody>
-<tr>
-<th colspan="2">
-<h3 id="replace"><code>REPLACE()</code></h3>
-</th>
-</tr>
-<tr>
-<td class="functionDescriptionColumn">
-<p><strong>Описание</strong></p>
-</td>
-<td>
-<p>Принимает три строки: исходную, искомую и замещающую. Заменяет все вхождения искомой строки в исходной строке на замещающую строку.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Синтаксис</strong></p>
-</td>
-<td>
-<div class="highlight"><code><pre><span></span><code><span class="k">REPLACE</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="k">subString</span><span class="p">,</span><span class="w"> </span><span class="n">replacementString</span><span class="p">)</span></code> <br/></pre></code></div>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Аргументы</strong></p>
-</td>
-<td>
-<p><code>string</code>, <code>subString</code>, <code>replacementString</code>: строки</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Результат</strong></p>
-</td>
-<td>
-<p>Строка</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Пример</strong></p>
-</td>
-<td>
-<div class="highlight"><code><pre><span></span><code><span class="k">REPLACE</span><span class="p">(</span><span class="ss">"Заявка утверждена."</span><span class="p">,</span><span class="w"> </span><span class="ss">"утверждена"</span><span class="p">,</span><span class="w"> </span><span class="ss">"одобрена"</span><span class="p">)</span></code> <br/></pre></code></div>
-<p>Результат: <code>Заявка одобрена.</code></p>
-</td>
-</tr>
-</tbody>
-</table>
-<table style="width: 100%;">
-<tbody>
-<tr>
-<th colspan="2">
 <h3 id="second"><code>SECOND()</code></h3>
 </th>
 </tr>
@@ -9528,56 +9782,6 @@
 <tbody>
 <tr>
 <th colspan="2">
-<h3 id="startswith"><code>STARTSWITH()</code></h3>
-</th>
-</tr>
-<tr>
-<td class="functionDescriptionColumn">
-<p><strong>Описание</strong></p>
-</td>
-<td>
-<p>Сравнивает две строки и возвращает значение <code>True</code>, если первая строка начинается на вторую, в противном случае возвращает <code>False</code>.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Синтаксис</strong></p>
-</td>
-<td>
-<div class="highlight"><code><pre><span></span><code><span class="n">STARTSWITH</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">startString</span><span class="p">)</span></code> <br/></pre></code></div>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Аргументы</strong></p>
-</td>
-<td>
-<p><code>string</code>, <code>startString</code>: строка.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Результат</strong></p>
-</td>
-<td>
-<p>Логическое значение</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Пример</strong></p>
-</td>
-<td>
-<div class="highlight"><code><pre><span></span><code><span class="n">STARTSWITH</span><span class="p">(</span><span class="ss">"Строка"</span><span class="p">,</span><span class="w"> </span><span class="ss">"Стр"</span><span class="p">)</span></code> <br/></pre></code></div>
-<p>Результат: <code>True</code></p>
-</td>
-</tr>
-</tbody>
-</table>
-<table style="width: 100%;">
-<tbody>
-<tr>
-<th colspan="2">
 <h3 id="sub"><code>SUB()</code></h3>
 </th>
 </tr>
@@ -9625,60 +9829,6 @@
 <td>
 <div class="highlight"><code><pre><span></span><code><span class="n">SUB</span><span class="p">(</span><span class="nb">DATE</span><span class="p">(</span><span class="s1">'2025-01-01T01:01:01'</span><span class="p">),</span><span class="w"> </span><span class="n">DURATION</span><span class="p">(</span><span class="s1">'P1DT1H30M0S'</span><span class="p">))</span></code> <br/></pre></code></div>
 <p>Результат: <code>30.12.2024 23:31:01</code></p>
-</td>
-</tr>
-</tbody>
-</table>
-<table style="width: 100%;">
-<tbody>
-<tr>
-<th colspan="2">
-<h3 id="substring"><code>SUBSTRING()</code></h3>
-</th>
-</tr>
-<tr>
-<td class="functionDescriptionColumn">
-<p><strong>Описание</strong></p>
-</td>
-<td>
-<p>Принимает три аргумента: строку и два числа. Извлекает из исходной строки подстроку начиная с заданной позиции до конца исходной строки либо до указанной длины подстроки.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Синтаксис</strong></p>
-</td>
-<td>
-<div class="highlight"><code><pre><span></span><code><span class="k">SUBSTRING</span><span class="p">(</span><span class="n">sourceString</span><span class="p">,</span><span class="w"> </span><span class="n">startIndex</span><span class="p">,</span><span class="w"> </span><span class="n">numberOfChars</span><span class="p">)</span></code> <br/></pre></code></div>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Аргументы</strong></p>
-</td>
-<td>
-<ul>
-<li><code>sourceString</code>: строка.</li>
-<li><code>startIndex</code>: номер позиции начала подстроки, отсчитывается от <code>0</code>.</li>
-<li><code>numberOfChars</code>: количество символов в подстроке (необязательный аргумент).</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Результат</strong></p>
-</td>
-<td>
-<p>Строка</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Пример</strong></p>
-</td>
-<td>
-<div class="highlight"><code><pre><span></span><code><span class="k">SUBSTRING</span><span class="p">(</span><span class="ss">"Раньше эта строка начиналась с другого слова."</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="p">)</span></code> <br/></pre></code></div>
-<p>Результат: <code>эта строка начиналась с другого</code></p>
 </td>
 </tr>
 </tbody>
@@ -9782,156 +9932,6 @@
 <td>
 <div class="highlight"><code><pre><span></span><code><span class="n">TODURATION</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span></code> <br/></pre></code></div>
 <p>Результат: <code>03:25:45</code></p>
-</td>
-</tr>
-</tbody>
-</table>
-<table style="width: 100%;">
-<tbody>
-<tr>
-<th colspan="2">
-<h3 id="tolower"><code>TOLOWER()</code></h3>
-</th>
-</tr>
-<tr>
-<td class="functionDescriptionColumn">
-<p><strong>Описание</strong></p>
-</td>
-<td>
-<p>Приводит все буквы в строке к нижнему регистру (строчным буквам).</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Синтаксис</strong></p>
-</td>
-<td>
-<div class="highlight"><code><pre><span></span><code><span class="n">TOLOWER</span><span class="p">(</span><span class="n">string</span><span class="p">)</span></code> <br/></pre></code></div>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Аргументы</strong></p>
-</td>
-<td>
-<p><code>string</code>: строка.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Результат</strong></p>
-</td>
-<td>
-<p>Строка</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Пример</strong></p>
-</td>
-<td>
-<div class="highlight"><code><pre><span></span><code><span class="n">TOLOWER</span><span class="p">(</span><span class="ss">"Все Буквы В ЭТОЙ Строке Стали Строчными."</span><span class="p">)</span></code> <br/></pre></code></div>
-<p>Результат: <code>все буквы в этой строке стали строчными.</code></p>
-</td>
-</tr>
-</tbody>
-</table>
-<table style="width: 100%;">
-<tbody>
-<tr>
-<th colspan="2">
-<h3 id="toupper"><code>TOUPPER()</code></h3>
-</th>
-</tr>
-<tr>
-<td class="functionDescriptionColumn">
-<p><strong>Описание</strong></p>
-</td>
-<td>
-<p>Приводит все буквы в строке к верхнему регистру (прописным буквам).</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Синтаксис</strong></p>
-</td>
-<td>
-<div class="highlight"><code><pre><span></span><code><span class="n">TOUPPER</span><span class="p">(</span><span class="n">string</span><span class="p">)</span></code> <br/></pre></code></div>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Аргументы</strong></p>
-</td>
-<td>
-<p><code>string</code>: строка.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Результат</strong></p>
-</td>
-<td>
-<p>Строка</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Пример</strong></p>
-</td>
-<td>
-<div class="highlight"><code><pre><span></span><code><span class="n">TOUPPER</span><span class="p">(</span><span class="ss">"Все Буквы В Этой Строке Стали прописными."</span><span class="p">)</span></code> <br/></pre></code></div>
-<p>Результат: <code>ВСЕ БУКВЫ В ЭТОЙ СТРОКЕ СТАЛИ ПРОПИСНЫМИ.</code></p>
-</td>
-</tr>
-</tbody>
-</table>
-<table style="width: 100%;">
-<tbody>
-<tr>
-<th colspan="2">
-<h3 id="trim"><code>TRIM()</code></h3>
-</th>
-</tr>
-<tr>
-<td class="functionDescriptionColumn">
-<p><strong>Описание</strong></p>
-</td>
-<td>
-<p>Удаляет пробелы в начале и конце строки.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Синтаксис</strong></p>
-</td>
-<td>
-<div class="highlight"><code><pre><span></span><code><span class="k">TRIM</span><span class="p">(</span><span class="n">string</span><span class="p">)</span></code> <br/></pre></code></div>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Аргументы</strong></p>
-</td>
-<td>
-<p><code>string</code>: строка.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Результат</strong></p>
-</td>
-<td>
-<p>Строка</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>Пример</strong></p>
-</td>
-<td>
-<div class="highlight"><code><pre><span></span><code><span class="k">TRIM</span><span class="p">(</span><span class="ss">"   В этой строке были лишние пробелы.   "</span><span class="p">)</span></code> <br/></pre></code></div>
-<p>Результат: <code>В этой строке были лишние пробелы.</code></p>
 </td>
 </tr>
 </tbody>
@@ -10770,10 +10770,6 @@
 <li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4668">Глобальная конфигурация</a></li>
 </ul>
 </div>
-</th>
-</tr>
-</tbody>
-</table>
 </article>
 </div>
 </div>

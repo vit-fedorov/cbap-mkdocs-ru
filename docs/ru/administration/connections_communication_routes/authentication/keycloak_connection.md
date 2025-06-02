@@ -1,111 +1,122 @@
 ---
-title: Аутентификация через OpenID Connect
+title: 'Аутентификация через OpenID Connect. Настройка подключения и служб'
 kbId: 4685
 ---
 
-# Аутентификация через OpenID Connect. Настройка подключения и служб {: #openid_connection}
+# Аутентификация через OpenID Connect. Настройка подключения и служб {: #openid_connection }
 
-## Проверка адреса сервера {{ productName }}
+## Введение {: #openid_connection_intro }
 
-1. Откройте раздел [«**Администрирование**» — «**Глобальная конфигурация**»][administration].
-2. Удостоверьтесь, что **URL-адрес сервера** начинается с `https://`.
+Здесь представлены краткие инструкции по настройке аутентификации в **{{ productName }}** посредством Keycloak и клиента OpenID Connect.
 
-    _![Проверка адреса сервера](openid_connection_check.png)_
+## Подготовка к настройке {: #openid_connection_prerequisites }
 
-## Настройка API на примере Keycloak — этап 1 {: .pageBreakBefore }
+Перед настройкой аутентификации через Keycloak подготовьте следующие сведения:
 
-1. Откройте админскую консоль Keycloak
-2. В левом меню выбирете **master** область(realm) или, если нужная область(realm) существует, выбирете её
+- `<yourHost>` — адрес сервера из [глобальной конфигурации](#openid_connection_server_address) **{{ productName }}**;
+- `<instanceName>.yml` — путь к файлу конфигурации экземпляра **{{ productName }}** (cм. _«[Пути и содержимое папок экземпляра ПО][paths]»_).
 
-_![Переход к управлению областями(realms)](openid_manage_realms.png)_
+## Проверка подключения сервера {{ productName }} по протоколу HTTPS {: #openid_connection_server_address }
 
-3. Если нужная область(realm) отсутствуют, нажмите кнопку **Create realm** и введите наименование, например _myRealm_ и нажмите кнопку **Create**.
+1. Откройте страницу [«**Администрирование**» — «**Глобальная конфигурация**»][global_configuration].
+2. Удостоверьтесь, что **URL-адрес сервера** начинается с `https://`.
 
-_![создание новой области(realm)](openid_create_new_realm.png)_
+    _![Проверка адреса сервера](img/openid_connection_check.png)_
 
-4. В левом меню нажмите кнопку **Clients**
-5. Нажмите кнопку **Create client**
-6. Введите «**Client ID**», например _myClient_.
+## Настройка Keycloak {: #openid_connection_keycloak_configure .pageBreakBefore }
 
-_![создание нового клиента](openid_create_new_client.png)_
+1. Откройте консоль администратора Keycloak
+2. В левом меню выберите область (realm) **master** или другую существующую область.
 
-7. Во вкладке **Capability config** включите **Client authentication** и **Direct access grants**
+    _![Переход к управлению областями (realms) Keycloak](img/openid_manage_realms.png)_
 
-_![создание нового клиента](openid_create_new_client_2.png)_
+3. Если требуемая область (realm) отсутствует, нажмите кнопку **Create realm** (Создать область)? введите имя области, например _myRealm_, и нажмите кнопку **Create** (Создать).
 
-8. Во вкладке **Login settings** укажите **Root URL**, **Home URL**, **Valid redirect URIs**, **Web origins**
-(например: https://mycompany.ru/, https://mycompany.ru/, https://mycompany.ru/*, https://mycompany.ru/, соответственно, где mycompany.ru URL-адрес сервера из глобальной конфигурации)
+    _![Создание области (realm) Keycloak](img/openid_create_new_realm.png)_
 
-_![создание нового клиента](openid_create_new_client_3.png)_
+4. В левом меню выберите пункт **Clients** (Клиенты).
+5. Нажмите кнопку **Create client** (Создать клиент).
+6. Выберите «**Client type**» (Тип клиента): **OpenID Connect**.
+7. Введите «**Client ID**» (ID клиента), например _myClient_.
 
-9. Нажмите кнопку «**Save**».
-10. На отобразившейся странице нажмите отключите **Logout settings Front channel logout** и введите **Backchannel logout URL**.
-(например: https://mycompany.ru/OpenIdLogoutChallenge где mycompany.ru URL-адрес сервера из глобальной конфигурации)
+    _![Создание нового клиента Keycloak](img/openid_create_new_client.png)_
 
-_![создание нового клиента](openid_logout_settings.png)_
+8. На вкладке **Capability config** (Конфигурация совместимости) включите функции **Client authentication** (Аутентификация клиента) и **Direct access grants** (Прямое предоставление прав).
 
-11. Скопируйте **Client Secret** с вкладки **Credentials**_
+    _![Настройка конфигурации совместимости клиента Keycloak](img/openid_create_new_client_2.png)_
 
-_![создание нового клиента](openid_copy_client_secret.png)_
+10. На вкладке **Login settings** (Параметры входа) укажите **Root URL** (Корневой URL), **Home URL**  (URL начальной страницы), **Valid redirect URIs** (URI допустимых переадресаций), **Web origins** (Исходные URI)
+(например: `https://<yourHost>/`, `https://<yourHost>/`, `https://<yourHost>/*`, `https://<yourHost>/`, соответственно).
 
+    _![Настройка параметров входа для клиента Keycloak](img/openid_create_new_client_3.png)_
 
-## Настройка API на примере Keycloak — этап 2 {: .pageBreakBefore }
+11. Нажмите кнопку «**Save**» (Сохранить).
+12. На отобразившейся странице отключите функцию **Front channel logout** (Выход через прямой канал) и введите **Backchannel logout URL** (URL выхода через обратный канал) (например: `https://<yourHost>/OpenIdLogoutChallenge`).
 
-1. В левом меню нажмите кнопку ***Users**
-2. Для того чтобы создать нового пользователя нажмите кнопку **Create new user** или **Add user**, если пользователи уже есть
-3. Заполните поля Username, Email, First name, Last name
-4. Включите **Email verified**
-4. Нажмите кнопку **Create**
+    _![Настройка параметров выхода для клиента Keycloak](img/openid_logout_settings.png)_
 
-_![создание нового клиента](openid_create_new_user.png)_
+13. Сохраните **Client Secret** (Секрет клиента) с вкладки **Credentials** (его потребуется указать в директиве `auth.openId.clientSecret` в [файле конфигурации {{ productnName }}](#openid_connection_instance_configure)).
 
-5. Во вкладке Credentials нажимте кнопку **Set password**
-6. Установите временный пароль для пользователя
+    _![Настройка учётных данных для клиента Keycloak](img/openid_copy_client_secret.png)_
 
-_![создание нового клиента](openid_create_new_user_set_password.png)_
+14. В левом меню нажмите кнопку ***Users** (Пользователи).
+15. Создайте нового пользователя, нажав кнопку **Create new user** (Создать пользователя), или добавьте имеющегося пользователя, нажав кнопку **Add user** (Добавить пользователя).
+16. Заполните поля **Username** (Логин), **Email** (Адрес эл.&nbsp;почты), **First name** (Имя), **Last name** (Фамилия).
+17. Включите функцию **Email verified** (Адрес эл.&nbsp;почты подтверждён).
+18. Нажмите кнопку **Create** (Создать).
 
+    _![Создание нового пользователя Keycloak](img/openid_create_new_user.png)_
 
-### Настройка конфигурации пратформы {: .pageBreakBefore }
+19. На вкладке **Credentials** (Учётные данные) нажмите кнопку **Set password** (Установить пароль).
+20. Задайте временный пароль для пользователя.
 
-1. В файле конфигурации платформы заполните поля:
+    _![Создание нового пользователя Keycloak](img/openid_create_new_user_set_password.png)_
 
-#################### Настройки OpenId-аутентификации ####################
-# Имя OpenId сервиса использующегося для входа
-auth.openId.displayName: MyKeycloak
+### Настройка конфигурации {{ productName }} {: #openid_connection_instance_configure .pageBreakBefore }
 
-# Вкл./выкл. функции
-auth.openId.enabled: true
+1. В файле конфигурации экземпляра **{{ productName }}** (`<instanceName>.yml`) настройте директивы по следующему образцу:
 
-# Адрес сервера OpenId Connect
-auth.openId.server: https://my.Keycloak.ru
-
-# Пространство имен или контекст, в котором происходит аутентификация пользователей. Используется для управления идентификацией и доступом в системе OpenID Connect
-auth.openId.realm: myRealm
-
-# Уникальный идентификатор клиентского приложения, используемый для аутентификации и авторизации запросов в рамках протокола OpenID Connect
-auth.openId.clientId: myClient
-
-# Секретный ключ OpenId Connect
-auth.openId.clientSecret: _скопированный Сlient Secret_
-
-# Список идентификаторов целевой аудитории, для которой предназначены токены, используемые в процессе аутентификации и авторизации в OpenID Connect.
-auth.openId.audience: myAudience
+    ``` yaml
+    #### Настройки OpenID-аутентификации #####
+    # Имя сервиса OpenID, используемого для входа
+    auth.openId.displayName: <myKeycloak>
+    # Вкл./выкл. функции
+    auth.openId.enabled: true
+    # Адрес сервера OpenId Connect
+    auth.openId.server: https://<myKeycloakHost>
+    # Пространство имен или контекст, 
+    # в котором происходит аутентификация пользователей.
+    # Используется для управления идентификацией
+    # и доступом в системе OpenID Connect
+    auth.openId.realm: myRealm
+    # Уникальный идентификатор клиентского приложения,
+    # используемый для аутентификации и авторизации запросов
+    # в рамках протокола OpenID Connect
+    auth.openId.clientId: myClient
+    # Секретный ключ OpenId Connect
+    # Это сохранённый ранее секрет клиента
+    auth.openId.clientSecret: <keyCloakClientSecret>
+    # Список идентификаторов целевой аудитории,
+    # для которой предназначены токены, 
+    # используемые в процессе аутентификации и авторизации в OpenID Connect.
+    auth.openId.audience: myAudience
+    ```
 
 ## Настройка ОС Linux для включения аутентификации через OpenID Connect в {{ productName }} {: .pageBreakBefore }
 
-1. Перейдите в режим суперпользователя `root`:
+1. Перейдите в режим суперпользователя `root`:
 
     --8<-- "linux_sudo.md"
 
-2. Добавьте в файл `/etc/hosts` строку:
+2. Добавьте в файл `/etc/hosts` строку:
 
     ```
-    "xxx.xxx.xxx.xxx" "mycompany.ru"
+    "xxx.xxx.xxx.xxx" "<yourHost>"
     ```
 
-    Здесь `xxx.xxx.xxx.xxx` — IP-адрес, `mycompany.ru` адрес сервера **{{ productName }}**, указанный в [_глобальной конфигурации {{ productName }}_](#проверка-адреса-сервера-comindware-platform) (без указания протокола `HTTP` или `HTTPS`).
+    Здесь `xxx.xxx.xxx.xxx` — IP-адрес, `<yourHost>` адрес сервера **{{ productName }}**, указанный в [_глобальной конфигурации {{ productName }}_](#проверка-адреса-сервера-comindware-platform) (без указания протокола `HTTP` или `HTTPS`).
 
-3. Сформируйте SSL-сертификат на сервере NGINX. Например, согласно инструкциям в статье «[_Генерация SSL сертификата для NGINX (openssl)_](https://webguard.pro/web-services/nginx/generacziya-ssl-sertifikata-dlya-nginx-openssl.html)».
+3. Сформируйте SSL-сертификат на сервере NGINX. Например, согласно инструкциям в статье _«[Генерация SSL сертификата для NGINX (openssl)](https://webguard.pro/web-services/nginx/generacziya-ssl-sertifikata-dlya-nginx-openssl.html)»_.
 4. Откройте для редактирования файл конфигурации NGINX:
 
     ```
@@ -122,7 +133,7 @@ auth.openId.audience: myAudience
         listen 443 ssl;
 
         root /var/www/<instanceName>;
-        server_name mycompany.ru;
+        server_name <yourHost>;
 
         ssl_certificate /etc/nginx/ssl/nginx.crt;
         ssl_certificate_key /etc/nginx/ssl/nginx.key;
@@ -147,32 +158,36 @@ auth.openId.audience: myAudience
     nginx -t
     ```
 
-8. Перезапустите **{{ productName }}**:
+8. Перезапустите **{{ productName }}**:
 
     ```
     systemctl restart elasticsearch nginx comindware<instanceName>
     ```
 
-{% endif %}
+## Вход в {{ productName }} через Keycloak {: .pageBreakBefore }
 
-## Вход в {{ productName }} {: .pageBreakBefore }
-
-1. Откройте веб-сайт экземпляра {{ productName }}, например [https://mycompany.ru](https://mycompany.ru/)
+1. Откройте веб-сайт экземпляра **{{ productName }}**, например [https://<yourHost>](https://<yourHost>/)
 2. Нажмите кнопку «**Войти как администратор**».
 
-    _![Переход к странице входа администратора](openid_connection_administrator_entry.png)_
+    _![Переход к странице входа администратора](img/openid_connection_administrator_entry.png)_
 
 3. Введите свои учётные данные и нажмите кнопку «**Войти**».
 
-    _![Вход с аккаунтом администратора](openid_connection_administrator.png)_
+    _![Вход с аккаунтом администратора](img/openid_connection_administrator.png)_
 
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
 
 4. Выйдите из системы.
-5. Отобразится страница входа с кнопкой «**Войти с помощью MyKeycloak**».
+5. Отобразится страница входа с кнопкой «**Войти с помощью myKeycloak**».
+6. На этом настройка входа через OpenID Connect завершена. Теперь пользователи смогут входить в **{{ productName }}** с использованием своих аккаунтов через Keycloak.
 
-    _![Кнопка «Войти с помощью MyKeycloak](openid_connection_Keycloak_entry.png)_
+<div class="relatedTopics" markdown="block">
 
-6. На этом настройка входа через OpenID Connect завершена. Теперь пользователи смогут входить в **{{ productName }}** с помощью своих аккаунтов Keycloak.
+--8<-- "related_topics_heading.md"
+
+- [Глобальная конфигурация][global_configuration]
+- [Пути и содержимое папок экземпляра ПО][paths]
+
+</div>
 
 {% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}

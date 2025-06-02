@@ -23,6 +23,18 @@ kbId: 4622
 4. Запустите экземпляр ПО.
 5. Инициализируйте экземпляр ПО.
 
+### Требования к внешним службам
+
+Для работы **{{ productName }}** необходимо развернуть следующие внешние службы:
+
+- сервер журналирования транзакций {{ openSearchVariants }};
+- сервер брокера сообщений {{ apacheKafkaVariants }}.
+
+Установите и настройте это ПО согласно следующим инструкциям:
+
+- _[Elasticsearch. Установка в Linux][elasticsearch_deploy_Linux]_
+- _[Apache Kafka. Установка в Linux][kafka_deploy_linux]_
+
 ## Установка вспомогательного ПО {: #deploy_guide_linux_prerequisites_install }
 
 Прежде чем приступать к установке вспомогательного ПО, необходимого для работы **{{ productName }}**, ознакомьтесь с демонстрационным роликом и инструкциями, представленными ниже.
@@ -79,9 +91,7 @@ kbId: 4622
     - `-e` — установить службу Elasticsearch (необязательный ключ).
     {% endif %}
     - `-k` — установить службу Kafka (необязательный ключ).
-    {% if kafkaClientKey %}
-    - `-kc` — установить клиент Kafka (необязательный ключ).
-    {% endif %}
+    - `-kc` — установить клиент Apache Kafka (необязательный ключ).
     - `-kh=<hostname>` или `--kafkaHost=<hostname>` — использовать указанный хост для подключения к ПО Kafka (необязательный ключ).
     - `-kp=<portNumber>` или `--kafkaPort=<portNumber>` — использовать указанный порт для подключения к ПО Kafka (необязательный ключ).
     - `-h` — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).
@@ -97,11 +107,6 @@ kbId: 4622
         ``` sh
         sh prerequisites_install.sh -h
         ```
-
-    {%
-    include-markdown ".snippets/elasticsearch_opensearch_configure.md"
-    rewrite-relative-urls=false
-    %}
 
 5. По окончании установки скрипт выведет информацию об установленных компонентах. Удостоверьтесь, что компоненты успешно установлены (имеют статус `OK`).
 
@@ -465,23 +470,17 @@ kbId: 4622
 2. Удостоверьтесь, что основные службы установлены, запущены и имеют статус `Active (running)`:
 
     ``` sh
-    systemctl status comindware<instanceName>
     systemctl status apigateway<instanceName>
     systemctl status adapterhost<instanceName>
-    systemctl status kafka
-    systemctl status nginx
-    systemctl status elasticsearch
+    systemctl status comindware<instanceName>
     ```
 
 3. Если какая-либо служба не работает, запустите её:
 
     ``` sh
-    systemctl start comindware<instanceName>
     systemctl start apigateway<instanceName>
     systemctl start adapterhost<instanceName>
-    systemctl start kafka
-    systemctl start nginx
-    systemctl start elasticsearch
+    systemctl start comindware<instanceName>
     ```
 
 4. Выполните инициализацию ПО.
@@ -505,7 +504,7 @@ kbId: 4622
 
     !!! warning "Внимание!"
 
-        - В экземпляре ПО всегда должен оставаться хотя бы один аккаунт администратора. Он может потребоваться для восстановления системы.
+        - В **{{ productName }}** всегда должен оставаться хотя бы один аккаунт администратора. Он может потребоваться для восстановления системы.
         - Аккаунт администратора, созданный при инициализации экземпляра ПО, не следует удалять, даже если впоследствии аккаунты будут синхронизироваться с Active Directory.
 
 5. При необходимости откроется страница активации ПО. Выполните **онлайновую** или **ручную активацию** либо нажмите кнопку «**Пропустить**» для первоначального ознакомления с ПО без активации.
@@ -632,9 +631,6 @@ mmap(PROT_NONE) failed
     systemctl stop comindware<instanceName>
     systemctl stop apigateway<instanceName>
     systemctl stop adapterhost<instanceName>
-    systemctl stop kafka
-    systemctl stop nginx
-    systemctl stop elasticsearch
     ```
 
 3. Удостоверьтесь, что службы остановлены:
@@ -643,9 +639,6 @@ mmap(PROT_NONE) failed
     systemctl status comindware<instanceName>
     systemctl status apigateway<instanceName>
     systemctl status adapterhost<instanceName>
-    systemctl status kafka
-    systemctl status nginx
-    systemctl status elasticsearch
     ```
 
 ## Удаление версии и экземпляра ПО
@@ -743,6 +736,8 @@ mmap(PROT_NONE) failed
 --8<-- "related_topics_heading.md"
 
 - [Пути и содержимое директорий экземпляра ПО][paths]
+- [Обновление версии экземпляра ПО с его остановкой][upgrade_version_linux]
+- [Обновление версии экземпляра ПО без его остановки][upgrade_version_linux_no_stop]
 - [Резервное копирование. Настройка, запуск и просмотр журнала сеансов][backup_configure]
 - [Отправка почты из процесса. Настройка подключения][process_sending_connection]
 

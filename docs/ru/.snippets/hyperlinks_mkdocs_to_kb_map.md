@@ -12,13 +12,9 @@
 
 [api_calls]: {{ kbCategoryURLPrefix }}868
 
-[account_attributes_system_names]: {{ kbArticleURLPrefix }}4994
-
 [attribute_date_time_use]: {{ kbArticleURLPrefix }}4886
 
 [attribute_drawing_file_import]: {{ kbArticleURLPrefix }}4906
-
-[account_attribute_system_names]: {{ kbArticleURLPrefix }}4994
 
 [backup_and_restore]: {{ kbArticleURLPrefix }}4643
 
@@ -62,10 +58,6 @@
 
 [formula_use_examples]: {{ kbCategoryURLPrefix }}881
 
-[formula_function_list]: {{ kbArticleURLPrefix }}4993
-
-[formula_introduction]: {{ kbArticleURLPrefix }}4999
-
 [html_supported_tags]: {{ kbArticleURLPrefix }}4912
 
 [integration_examples]: {{ kbCategoryURLPrefix }}875
@@ -90,6 +82,8 @@
 
 [account_templates]: {{ kbArticleURLPrefix }}4757
 
+[account_template_attribute_system_names]: {{ kbArticleURLPrefix }}4757#account_template_attribute_system_names
+
 [accounts]: {{ kbArticleURLPrefix }}4653
 
 [account_permission_audit]: {{ kbArticleURLPrefix }}4664
@@ -101,6 +95,8 @@
 [apps]: {{ kbArticleURLPrefix }}4714
 
 [backup_configure]: {{ kbArticleURLPrefix }}4642
+
+[backup_configure_list_view]: {{ kbArticleURLPrefix }}4642#backup_configure_list_view
 
 [backup_recommendations]: {{ kbArticleURLPrefix }}5082
 
@@ -129,6 +125,24 @@
 [esphere_receive_configure]: {{ kbArticleURLPrefix }}5061
 
 [esphere_send_configure]: {{ kbArticleURLPrefix }}5062
+
+[formula_function_list]: {{ kbArticleURLPrefix }}4993
+
+[formula_reference]: {{ kbArticleURLPrefix }}4993
+
+[formula_reference_literals]: {{ kbArticleURLPrefix }}4993#formula_reference_literals
+
+[formula_introduction]: {{ kbArticleURLPrefix }}4999
+
+[formula_guide_description]: {{ kbArticleURLPrefix }}4999#formula_guide_description
+
+[formula_guide_context]: {{ kbArticleURLPrefix }}4999#formula_guide_context
+
+[formula_guide_rules]: {{ kbArticleURLPrefix }}4999#formula_guide_rules
+
+[formula_guide_relations]: {{ kbArticleURLPrefix }}4999#formula_guide_relations
+
+[formula_guide_queries]: {{ kbArticleURLPrefix }}4999#formula_guide_queries
 
 [get_connection]: {{ kbArticleURLPrefix }}4701
 
@@ -478,14 +492,6 @@
 
 [example_task_reassign]: {{ kbArticleURLPrefix }}5087
 
-[process_diagram_elements_events_end]: {{ kbArticleURLPrefix }}4744
-
-[process_diagram_elements_events_intermediate]: {{ kbArticleURLPrefix }}4742
-
-[process_diagram_elements_events_intermediate_usage]: {{ kbArticleURLPrefix }}4742#process_diagram_elements_events_intermediate_usage
-
-[process_diagram_elements_events_start]: {{ kbArticleURLPrefix }}4735
-
 [experimental_feature_support]: {{ kbArticleURLPrefix }}4579#experimental_feature_support
 
 [export_templates]: {{ kbArticleURLPrefix }}4797
@@ -610,14 +616,6 @@
 
 [office_connection_use]: {{ kbArticleURLPrefix }}4819
 
-[process_diagram_elements_none_intermediate_event]: {{ kbArticleURLPrefix }}4741
-
-[process_diagram_elements_none_intermediate_event_milestone_duration]: {{ kbArticleURLPrefix }}4741#process_diagram_elements_none_intermediate_event_milestone_duration
-
-[process_diagram_elements_none_end_event]: {{ kbArticleURLPrefix }}4743
-
-[process_diagram_elements_none_start_event]: {{ kbArticleURLPrefix }}4734
-
 [process_end_button_example]: {{ kbArticleURLPrefix }}4911
 
 [online_store]: {{ kbArticleURLPrefix }}4805
@@ -635,6 +633,22 @@
 [process_diagram_forms]: {{ kbArticleURLPrefix }}4726
 
 [process_diagram_elements]: {{ kbArticleURLPrefix }}4724
+
+[process_diagram_elements_none_intermediate_event]: {{ kbArticleURLPrefix }}4741
+
+[process_diagram_elements_none_intermediate_event_milestone_duration]: {{ kbArticleURLPrefix }}4741#process_diagram_elements_none_intermediate_event_milestone_duration
+
+[process_diagram_elements_none_end_event]: {{ kbArticleURLPrefix }}4743
+
+[process_diagram_elements_none_start_event]: {{ kbArticleURLPrefix }}4734
+
+[process_diagram_elements_events_end]: {{ kbArticleURLPrefix }}4744
+
+[process_diagram_elements_events_intermediate]: {{ kbArticleURLPrefix }}4742
+
+[process_diagram_elements_events_intermediate_usage]: {{ kbArticleURLPrefix }}4742#process_diagram_elements_events_intermediate_usage
+
+[process_diagram_elements_events_start]: {{ kbArticleURLPrefix }}4735
 
 [process_diagram_elements_actions]: {{ kbArticleURLPrefix }}4732
 
@@ -754,7 +768,15 @@
 
 [db_move_manual_windows]: {{ kbArticleURLPrefix }}4646
 
+[deploy_guide_windows]: {{ kbArticleURLPrefix }}5063
+
+[deploy_guide_windows_install_prerequisites]: {{ kbArticleURLPrefix }}5063#deploy_guide_windows_install_prerequisites
+
+[deploy_guide_windows_version_delete]: {{ kbArticleURLPrefix }}5063#deploy_guide_windows_version_delete
+
 [elasticsearch_deploy_windows]: {{ kbArticleURLPrefix }}4617
+
+[kafka_deploy_windows]: {{ kbArticleURLPrefix }}4614
 
 [admin_utility_instance_configure]: {{ kbArticleURLPrefix }}4634
 
@@ -819,6 +841,8 @@
 [deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_initialize
 
 [deploy_cluster_linux]: {{ kbArticleURLPrefix }}5080
+
+[elasticsearch_deploy_Linux]: {{ kbArticleURLPrefix }}4601
 
 [kafka_deploy_linux]: {{ kbArticleURLPrefix }}5074
 

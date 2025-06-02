@@ -136,6 +136,16 @@
 
 [formula_introduction]: {{ kbArticleURLPrefix }}4999
 
+[formula_guide_description]: {{ kbArticleURLPrefix }}4999#formula_guide_description
+
+[formula_guide_context]: {{ kbArticleURLPrefix }}4999#formula_guide_context
+
+[formula_guide_rules]: {{ kbArticleURLPrefix }}4999#formula_guide_rules
+
+[formula_guide_relations]: {{ kbArticleURLPrefix }}4999#formula_guide_relations
+
+[formula_guide_queries]: {{ kbArticleURLPrefix }}4999#formula_guide_queries
+
 [get_connection]: {{ kbArticleURLPrefix }}4701
 
 [git_connection]: {{ kbArticleURLPrefix }}4680
@@ -484,14 +494,6 @@
 
 [example_task_reassign]: {{ kbArticleURLPrefix }}5087
 
-[process_diagram_elements_events_end]: {{ kbArticleURLPrefix }}4744
-
-[process_diagram_elements_events_intermediate]: {{ kbArticleURLPrefix }}4742
-
-[process_diagram_elements_events_intermediate_usage]: {{ kbArticleURLPrefix }}4742#process_diagram_elements_events_intermediate_usage
-
-[process_diagram_elements_events_start]: {{ kbArticleURLPrefix }}4735
-
 [experimental_feature_support]: {{ kbArticleURLPrefix }}4579#experimental_feature_support
 
 [export_templates]: {{ kbArticleURLPrefix }}4797
@@ -616,14 +618,6 @@
 
 [office_connection_use]: {{ kbArticleURLPrefix }}4819
 
-[process_diagram_elements_none_intermediate_event]: {{ kbArticleURLPrefix }}4741
-
-[process_diagram_elements_none_intermediate_event_milestone_duration]: {{ kbArticleURLPrefix }}4741#process_diagram_elements_none_intermediate_event_milestone_duration
-
-[process_diagram_elements_none_end_event]: {{ kbArticleURLPrefix }}4743
-
-[process_diagram_elements_none_start_event]: {{ kbArticleURLPrefix }}4734
-
 [online_store]: {{ kbArticleURLPrefix }}4805
 
 [pages]: {{ kbArticleURLPrefix }}4822
@@ -639,6 +633,22 @@
 [process_diagram_forms]: {{ kbArticleURLPrefix }}4726
 
 [process_diagram_elements]: {{ kbArticleURLPrefix }}4724
+
+[process_diagram_elements_none_intermediate_event]: {{ kbArticleURLPrefix }}4741
+
+[process_diagram_elements_none_intermediate_event_milestone_duration]: {{ kbArticleURLPrefix }}4741#process_diagram_elements_none_intermediate_event_milestone_duration
+
+[process_diagram_elements_none_end_event]: {{ kbArticleURLPrefix }}4743
+
+[process_diagram_elements_none_start_event]: {{ kbArticleURLPrefix }}4734
+
+[process_diagram_elements_events_end]: {{ kbArticleURLPrefix }}4744
+
+[process_diagram_elements_events_intermediate]: {{ kbArticleURLPrefix }}4742
+
+[process_diagram_elements_events_intermediate_usage]: {{ kbArticleURLPrefix }}4742#process_diagram_elements_events_intermediate_usage
+
+[process_diagram_elements_events_start]: {{ kbArticleURLPrefix }}4735
 
 [process_diagram_elements_actions]: {{ kbArticleURLPrefix }}4732
 

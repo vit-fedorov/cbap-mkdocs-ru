@@ -279,6 +279,7 @@ nav:
     - examples/get_selected_record_ids.md
     - examples/csharp_table_download_selection.md
     - examples/csharp_tax_service_integrate.md
+    - examples/process_end_button.md
   - Обзор версий:
     - general/changelog/changelog.md
     - general/changelog/release_notes_5.0.13334.md

@@ -346,7 +346,8 @@ nav:
       - examples/template_reference_data_api.md
       - examples/get_selected_record_ids.md
       - examples/csharp_table_download_selection.md
-      - examples/csharp_tax_service_integrate.md  
+      - examples/csharp_tax_service_integrate.md
+      - examples/process_end_button.md  
   - Моделирование корпоративной архитектуры:
     - architect/architect_desktop.md
     - architect/process_architecture_modeling/index.md

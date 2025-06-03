@@ -1,20 +1,37 @@
 ---
-title: 'Аутентификация через OpenID Connect. Настройка подключения и служб'
+title: 'Аутентификация через Keycloak и OpenID Connect. Настройка подключения и служб'
 kbId: 4685
+tags:
+    - OpenID
+    - Keycloak
+    - аутентификация
+    - интеграции
+    - SSO
+hide: tags
 ---
 
-# Аутентификация через OpenID Connect. Настройка подключения и служб {: #openid_connection }
+# Аутентификация через Keycloak и OpenID Connect. Настройка подключения и служб {: #openid_connection }
 
 ## Введение {: #openid_connection_intro }
 
-Здесь представлены краткие инструкции по настройке аутентификации в **{{ productName }}** посредством Keycloak и клиента OpenID Connect.
+Здесь представлены краткие инструкции по настройке аутентификации в **{{ productName }}** посредством Keycloak и OpenID Connect для ОС Linux.
 
-## Подготовка к настройке {: #openid_connection_prerequisites }
+## Порядок настройки {: #openid_connection_sequence }
 
-Перед настройкой аутентификации через Keycloak подготовьте следующие сведения:
+1. Подготовьте следующие сведения, необходимые на последующих шагах настройки аутентификации через Keycloak:
 
-- `<yourHost>` — адрес сервера из [глобальной конфигурации](#openid_connection_server_address) **{{ productName }}**;
-- `<instanceName>.yml` — путь к файлу конфигурации экземпляра **{{ productName }}** (cм. _«[Пути и содержимое папок экземпляра ПО][paths]»_).
+    - `<yourHost>` — адрес сервера из [глобальной конфигурации](#openid_connection_server_address) **{{ productName }}**;
+    - `<instanceName>.yml` — путь к файлу конфигурации экземпляра **{{ productName }}** (cм. _«[Пути и содержимое папок экземпляра ПО][paths]»_);
+    - `https://<myKeycloakHost>` — адрес сервера Keycloak;
+    - `<myKeycloak>` — наглядное название службы Keycloak;
+    - `<myKeycloakRealm>` — имя области (realm) Keycloak;
+    - `<myKeycloakClientId>` — ID клиента Keycloak.
+
+2. [Проверьте использование протокола HTTPS](#openid_connection_server_address) для доступа к **{{ productName }}**.
+3. [Настройте службу Keycloak](#openid_connection_keycloak_configure).
+4. [Настройте ОС Linux](#openid_connection_linux_configure) с экземпляром **{{ productName }}**.
+5. [Инициализируйте **{{ productName }}**](#openid_connection_initialize) для входа через Keycloak.
+6. При необходимости [настройте время жизни JWT-токенов](#openid_connection_session_lifetime) в соответствии с правилами безопасности и бизнес-требованиями.
 
 ## Проверка подключения сервера {{ productName }} по протоколу HTTPS {: #openid_connection_server_address }
 
@@ -25,54 +42,71 @@ kbId: 4685
 
 ## Настройка Keycloak {: #openid_connection_keycloak_configure .pageBreakBefore }
 
-1. Откройте консоль администратора Keycloak
+1. Откройте консоль администратора Keycloak.
 2. В левом меню выберите область (realm) **master** или другую существующую область.
 
-    _![Переход к управлению областями (realms) Keycloak](img/openid_manage_realms.png)_
+    _![Переход к управлению областью master в Keycloak](img/openid_manage_realms.png)_
 
-3. Если требуемая область (realm) отсутствует, нажмите кнопку **Create realm** (Создать область)? введите имя области, например _myRealm_, и нажмите кнопку **Create** (Создать).
+3. Если требуемая область (realm) отсутствует, нажмите кнопку **Create realm** (Создать область), введите имя области, например `<myKeycloakRealm>`, и нажмите кнопку **Create** (Создать).
 
-    _![Создание области (realm) Keycloak](img/openid_create_new_realm.png)_
+    _![Создание области (realm) в Keycloak](img/openid_create_new_realm.png)_
 
 4. В левом меню выберите пункт **Clients** (Клиенты).
 5. Нажмите кнопку **Create client** (Создать клиент).
-6. Выберите «**Client type**» (Тип клиента): **OpenID Connect**.
-7. Введите «**Client ID**» (ID клиента), например _myClient_.
+6. На шаге **General settings**:
+
+    - Выберите «**Client type**» (Тип клиента) **OpenID Connect**.
+    - Введите «**Client ID**» (ID клиента), например `<myKeycloakClient>`.
 
     _![Создание нового клиента Keycloak](img/openid_create_new_client.png)_
 
-8. На вкладке **Capability config** (Конфигурация совместимости) включите функции **Client authentication** (Аутентификация клиента) и **Direct access grants** (Прямое предоставление прав).
+7. Нажмите кнопку **Next** (Далее).
+8. На шаге **Capability config** (Конфигурация функций) включите функции **Client authentication** (Аутентификация клиента) и **Direct access grants** (Прямое предоставление прав).
 
-    _![Настройка конфигурации совместимости клиента Keycloak](img/openid_create_new_client_2.png)_
+    _![Настройка конфигурации функций клиента Keycloak](img/openid_create_new_client_2.png)_
 
-10. На вкладке **Login settings** (Параметры входа) укажите **Root URL** (Корневой URL), **Home URL**  (URL начальной страницы), **Valid redirect URIs** (URI допустимых переадресаций), **Web origins** (Исходные URI)
-(например: `https://<yourHost>/`, `https://<yourHost>/`, `https://<yourHost>/*`, `https://<yourHost>/`, соответственно).
+9. Нажмите кнопку **Next** (Далее).
+10. На шаге **Login settings** (Параметры входа) укажите:
+
+    - **Root URL** (Корневой URL), например `https://<yourHost>/`;
+    - **Home URL**  (URL начальной страницы), например `https://<yourHost>/`;
+    - **Valid redirect URIs** (Допустимые URI переадресаций), например `https://<yourHost>/*`;
+    - **Web origins** (Исходные URI), например `https://<yourHost>/`.
 
     _![Настройка параметров входа для клиента Keycloak](img/openid_create_new_client_3.png)_
 
 11. Нажмите кнопку «**Save**» (Сохранить).
-12. На отобразившейся странице отключите функцию **Front channel logout** (Выход через прямой канал) и введите **Backchannel logout URL** (URL выхода через обратный канал) (например: `https://<yourHost>/OpenIdLogoutChallenge`).
+12. На отобразившейся странице:
+
+    - отключите функцию **Front channel logout** (Выход через прямой канал);
+    - введите **Backchannel logout URL** (URL выхода через обратный канал), например `https://<yourHost>/OpenIdLogoutChallenge`.
 
     _![Настройка параметров выхода для клиента Keycloak](img/openid_logout_settings.png)_
 
-13. Сохраните **Client Secret** (Секрет клиента) с вкладки **Credentials** (его потребуется указать в директиве `auth.openId.clientSecret` в [файле конфигурации {{ productnName }}](#openid_connection_instance_configure)).
+13. Откройте вкладку **Credentials** (Учётные данные).
+14. Сохраните **Client Secret** (Секрет клиента). Его потребуется указать в директиве `auth.openId.clientSecret` в [файле конфигурации {{ productnName }}](#openid_connection_instance_configure).
 
     _![Настройка учётных данных для клиента Keycloak](img/openid_copy_client_secret.png)_
 
-14. В левом меню нажмите кнопку ***Users** (Пользователи).
-15. Создайте нового пользователя, нажав кнопку **Create new user** (Создать пользователя), или добавьте имеющегося пользователя, нажав кнопку **Add user** (Добавить пользователя).
-16. Заполните поля **Username** (Логин), **Email** (Адрес эл.&nbsp;почты), **First name** (Имя), **Last name** (Фамилия).
-17. Включите функцию **Email verified** (Адрес эл.&nbsp;почты подтверждён).
-18. Нажмите кнопку **Create** (Создать).
+15. В левом меню выберите пункт ***Users** (Пользователи).
+16. Создайте нового пользователя, нажав кнопку **Create new user** (Создать пользователя), или добавьте имеющегося пользователя, нажав кнопку **Add user** (Добавить пользователя).
+17. Настройте свойства пользователя:
+
+    - Включите функцию **Email verified** (Адрес эл.&nbsp;почты подтверждён).
+    - Заполните поля **Username** (Логин), **Email** (Адрес эл.&nbsp;почты), **First name** (Имя), **Last name** (Фамилия).
+    - Нажмите кнопку **Create** (Создать) или **Save** (Сохранить).
 
     _![Создание нового пользователя Keycloak](img/openid_create_new_user.png)_
 
-19. На вкладке **Credentials** (Учётные данные) нажмите кнопку **Set password** (Установить пароль).
-20. Задайте временный пароль для пользователя.
+18. На вкладке **Credentials** (Учётные данные) нажмите кнопку **Set password** (Установить пароль).
 
-    _![Создание нового пользователя Keycloak](img/openid_create_new_user_set_password.png)_
+    - Задайте временный пароль для пользователя.
+    - Включите функцию **Temporary** (Временный пароль).
+    - Нажмите кнопку **Save** (Сохранить).
 
-### Настройка конфигурации {{ productName }} {: #openid_connection_instance_configure .pageBreakBefore }
+    _![Установка временного пароля для пользователя Keycloak](img/openid_create_new_user_set_password.png)_
+
+## Настройка конфигурации {{ productName }} {: #openid_connection_instance_configure .pageBreakBefore }
 
 1. В файле конфигурации экземпляра **{{ productName }}** (`<instanceName>.yml`) настройте директивы по следующему образцу:
 
@@ -88,11 +122,11 @@ kbId: 4685
     # в котором происходит аутентификация пользователей.
     # Используется для управления идентификацией
     # и доступом в системе OpenID Connect
-    auth.openId.realm: myRealm
+    auth.openId.realm: <myKeycloakRealm>
     # Уникальный идентификатор клиентского приложения,
     # используемый для аутентификации и авторизации запросов
     # в рамках протокола OpenID Connect
-    auth.openId.clientId: myClient
+    auth.openId.clientId: <myKeycloakClient>
     # Секретный ключ OpenId Connect
     # Это сохранённый ранее секрет клиента
     auth.openId.clientSecret: <keyCloakClientSecret>
@@ -102,7 +136,7 @@ kbId: 4685
     auth.openId.audience: myAudience
     ```
 
-## Настройка ОС Linux для включения аутентификации через OpenID Connect в {{ productName }} {: .pageBreakBefore }
+## Настройка ОС Linux с {{ productName }} {: #openid_connection_linux_configure .pageBreakBefore }
 
 1. Перейдите в режим суперпользователя `root`:
 
@@ -114,7 +148,7 @@ kbId: 4685
     "xxx.xxx.xxx.xxx" "<yourHost>"
     ```
 
-    Здесь `xxx.xxx.xxx.xxx` — IP-адрес, `<yourHost>` адрес сервера **{{ productName }}**, указанный в [_глобальной конфигурации {{ productName }}_](#проверка-адреса-сервера-comindware-platform) (без указания протокола `HTTP` или `HTTPS`).
+    Здесь `xxx.xxx.xxx.xxx` — IP-адрес, `<yourHost>` адрес сервера **{{ productName }}**, указанный в [_глобальной конфигурации {{ productName }}_](#openid_connection_server_address) (без указания протокола `HTTP` или `HTTPS`).
 
 3. Сформируйте SSL-сертификат на сервере NGINX. Например, согласно инструкциям в статье _«[Генерация SSL сертификата для NGINX (openssl)](https://webguard.pro/web-services/nginx/generacziya-ssl-sertifikata-dlya-nginx-openssl.html)»_.
 4. Откройте для редактирования файл конфигурации NGINX:
@@ -164,22 +198,69 @@ kbId: 4685
     systemctl restart elasticsearch nginx comindware<instanceName>
     ```
 
-## Вход в {{ productName }} через Keycloak {: .pageBreakBefore }
+## Инициализация {{ productName }} для входа через Keycloak {: #openid_connection_initialize .pageBreakBefore }
 
 1. Откройте веб-сайт экземпляра **{{ productName }}**, например [https://<yourHost>](https://<yourHost>/)
 2. Нажмите кнопку «**Войти как администратор**».
-
-    _![Переход к странице входа администратора](img/openid_connection_administrator_entry.png)_
-
-3. Введите свои учётные данные и нажмите кнопку «**Войти**».
-
-    _![Вход с аккаунтом администратора](img/openid_connection_administrator.png)_
-
-    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
-
+3. Введите учётные данные администратора и нажмите кнопку «**Войти**».
 4. Выйдите из системы.
 5. Отобразится страница входа с кнопкой «**Войти с помощью myKeycloak**».
 6. На этом настройка входа через OpenID Connect завершена. Теперь пользователи смогут входить в **{{ productName }}** с использованием своих аккаунтов через Keycloak.
+
+## Настройка времени жизни сеансов посредством JWT-токенов для SSO {: #openid_connection_session_lifetime .pageBreakBefore }
+
+Настройка времени жизни сеансов (сроков действия токенов) имеет важное значение для управления безопасностью аутентификации и авторизации.
+
+При использовании механизма JWT (JSON Web Tokens) можно настроить время жизни таких токенов, как токен доступа (access token) и токен обновления (refresh token).
+
+### Токен доступа {: #openid_connection_access_token }
+
+Токен доступа (access token) используется для доступа к защищённым ресурсам **{{ productName }}** и имеет перечисленные ниже особенности.
+
+- Срок действия: от 5 минут до 1 часа.
+- Обновление: автоматическое через токен обновления по окончании срока действия.
+- Отзыв: при выходе пользователя из системы или изменении учётных данных.
+- Безопасность: короткий срок действия минимизирует риски при компрометации токена.
+
+### Токен обновления {: #openid_connection_refresh_token }
+
+Токен обновления (refresh token) позволяет обновлять токен доступа без повторной аутентификации. Благодаря этому пользователь может оставаться аутентифицированным без повторного ввода учётных данных.
+
+- Срок действия: от нескольких дней до нескольких месяцев.
+- Хранение: например, в cookie типа HttpOnly. Может храниться в базе данных с указанием срока действия и статуса (активный/отозванный).
+- Отзыв: при выходе пользователя из системы или изменении учётных данных.
+- Безопасность: требует особого внимания и надёжного хранения из-за длительного срока действия.
+
+### Структура JWT-токена {: #openid_connection_jwt_structure .pageBreakBefore }
+
+JWT-токен содержит следующие поля для управления его временем жизни:
+
+``` json
+{
+  "sub": "user123",  // Идентификатор пользователя
+  "iat": 1610000000, // Время создания токена
+  "exp": 1610003600  // Время истечения срока действия (1 час)
+}
+```
+
+### Рекомендации по оптимизации времени жизни сеансов {: #openid_connection_recommendations }
+
+Чтобы сбалансировать удобство использования и безопасность системы, воспользуйтесь приведёнными ниже рекомендациями.
+
+- Для высокозащищённых приложений:
+   - Установите время жизни токена доступа 5–15 минут.
+   - Установите время жизни токена обновления не более 24 часов.
+   - Включите обязательное подтверждение при обновлении токенов.
+- Для стандартных приложений:
+   - Установите время жизни токена доступа 30—60 минут.
+   - Установите время жизни токена обновления 7—30 дней.
+- Общие рекомендации:
+    - Настройте уведомления о скором завершении сеанса с возможностью его продления.
+   - Регулярно проверяйте и обновляйте настройки безопасности и времени жизни сеансов в зависимости от изменений в политике безопасности или требований бизнеса.
+   - Используйте механизмы отзыва токенов при выходе пользователей из системы, смене учётных данных и подозрительной активности.
+   - Настройте журналирование событий аутентификации.
+   - Обеспечьте безопасное хранение токенов обновления.
+   - Реализуйте механизмы уведомления пользователей о предстоящем истечении срока действия сеанса.
 
 <div class="relatedTopics" markdown="block">
 

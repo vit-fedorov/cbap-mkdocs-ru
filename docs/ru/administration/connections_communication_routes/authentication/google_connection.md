@@ -3,7 +3,7 @@ title: Аутентификация через OpenID Connect
 kbId: 
 ---
 
-# Аутентификация через OpenID Connect. Настройка подключения и служб {: #openid_connection}
+# Аутентификация через OpenID Connect. Настройка подключения и служб {: #openid_connection_google }
 
 ## Проверка адреса сервера {{ productName }}
 

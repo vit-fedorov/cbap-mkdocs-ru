@@ -126,24 +126,6 @@
 
 [esphere_send_configure]: {{ kbArticleURLPrefix }}5062
 
-[formula_function_list]: {{ kbArticleURLPrefix }}4993
-
-[formula_reference]: {{ kbArticleURLPrefix }}4993
-
-[formula_reference_literals]: {{ kbArticleURLPrefix }}4993#formula_reference_literals
-
-[formula_introduction]: {{ kbArticleURLPrefix }}4999
-
-[formula_guide_description]: {{ kbArticleURLPrefix }}4999#formula_guide_description
-
-[formula_guide_context]: {{ kbArticleURLPrefix }}4999#formula_guide_context
-
-[formula_guide_rules]: {{ kbArticleURLPrefix }}4999#formula_guide_rules
-
-[formula_guide_relations]: {{ kbArticleURLPrefix }}4999#formula_guide_relations
-
-[formula_guide_queries]: {{ kbArticleURLPrefix }}4999#formula_guide_queries
-
 [get_connection]: {{ kbArticleURLPrefix }}4701
 
 [git_connection]: {{ kbArticleURLPrefix }}4680
@@ -509,6 +491,24 @@
 [expression_editor]: {{ kbArticleURLPrefix }}5025
 
 [expression_editor_reference]: {{ kbArticleURLPrefix }}5025#expression_editor_reference
+
+[formula_function_list]: {{ kbArticleURLPrefix }}4993
+
+[formula_reference]: {{ kbArticleURLPrefix }}4993
+
+[formula_reference_literals]: {{ kbArticleURLPrefix }}4993#formula_reference_literals
+
+[formula_introduction]: {{ kbArticleURLPrefix }}4999
+
+[formula_guide_description]: {{ kbArticleURLPrefix }}4999#formula_guide_description
+
+[formula_guide_context]: {{ kbArticleURLPrefix }}4999#formula_guide_context
+
+[formula_guide_rules]: {{ kbArticleURLPrefix }}4999#formula_guide_rules
+
+[formula_guide_relations]: {{ kbArticleURLPrefix }}4999#formula_guide_relations
+
+[formula_guide_queries]: {{ kbArticleURLPrefix }}4999#formula_guide_queries
 
 [n3_editor_autocomplete]: {{ kbArticleURLPrefix }}5039
 

@@ -295,20 +295,11 @@ def getArticleContentById(article_id):
                         if tags_match:
                             tags = tags_match.group(1)
                             # Ensure tags don't exceed varchar(250) while keeping complete tags
-                            if len(tags) > 250:
-                                # Split tags and keep only those that fit within 250 chars
-                                tag_list = tags.split(',')
-                                truncated_tags = []
-                                current_length = 0
-                                for tag in tag_list:
-                                    # Add 1 for the comma if it's not the first tag
-                                    tag_length = len(tag) + (1 if truncated_tags else 0)
-                                    if current_length + tag_length <= 250:
-                                        truncated_tags.append(tag)
-                                        current_length += tag_length
-                                    else:
-                                        break
-                                tags = ','.join(truncated_tags)
+                            tag_list = tags.split(',')
+                            while len(tags) > 250:
+                                # Split tags and keep only those that fit within 250 chars      
+                                tag_list.pop(len(tag_list)-1)
+                                tags = ','.join(tag_list)
                         print(f'MkDocs tags:  {tags}')
                         return content, title, tags
                     else: content = None

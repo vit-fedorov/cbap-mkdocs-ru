@@ -78,8 +78,8 @@ hide: tags
 11. Нажмите кнопку «**Save**» (Сохранить).
 12. На отобразившейся странице:
 
-    - отключите функцию **Front channel logout** (Выход через прямой канал);
-    - введите **Backchannel logout URL** (URL выхода через обратный канал), например `https://<yourHost>/OpenIdLogoutChallenge`.
+    - отключите функцию **Front channel logout** (Выход через фронтенд);
+    - введите **Backchannel logout URL** (URL выхода через бэкенд), например `https://<yourHost>/OpenIdLogoutChallenge`.
 
     _![Настройка параметров выхода для клиента Keycloak](img/openid_logout_settings.png)_
 

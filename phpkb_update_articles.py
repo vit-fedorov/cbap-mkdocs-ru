@@ -80,7 +80,7 @@ def updateArticle(article_id):
     
     c = CONNECTION.cursor() #(buffered=True)
     c.execute(f"""
-            SELECT article_content, article_title from phpkb_articles WHERE article_id={article_id};
+            SELECT article_content, article_title, article_keywords from phpkb_articles WHERE article_id={article_id};
             """)
     
     result = c.fetchone()
@@ -90,13 +90,15 @@ def updateArticle(article_id):
         return False
     
     article_title = result[1]
+    article_keywords = result[2]
     content_result = getArticleContentById(article_id)
     
     if content_result is None:
         print(f'Content for article {article_id} not found in files')
         return False
         
-    article_content, mkdocs_title = content_result
+    article_content, mkdocs_title, mkdocs_tags = content_result
+    
     # Escape the HTML and backslashes for MySQL
     article_content = html.escape(article_content).replace('\\','\\\\')
     mkdocs_title = html.escape(mkdocs_title).replace('\\','\\\\')
@@ -104,7 +106,7 @@ def updateArticle(article_id):
     
     if contentFound:
         try:
-            update = input(f"KB title:     {article_title}\nUpdate article {article_id} content and title? Y/N\n").lower() == 'y'
+            update = input(f"KB title:     {article_title}\nKB tags:      {article_keywords}\nUpdate article {article_id} content, title and tags? Y/N\n").lower() == 'y'
             if update:
                 article_last_updation = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 c.execute("""
@@ -114,9 +116,10 @@ def updateArticle(article_id):
                         article_content=%s,
                         article_last_updation=%s,
                         article_status='approved',
-                        article_show='yes'
+                        article_show='yes',
+                        article_keywords=%s
                         WHERE article_id=%s;
-                        """, (mkdocs_title, article_content, article_last_updation, article_id))
+                        """, (mkdocs_title, article_content, article_last_updation, mkdocs_tags, article_id))
                 CONNECTION.commit()
                 print(f"Updated article {article_id} updated")
                 return True
@@ -284,7 +287,21 @@ def getArticleContentById(article_id):
                         titlePattern = re.compile(fr'<div.*kb-title="(.+?)".*?>', flags=re.MULTILINE)
                         title = titlePattern.search(content).group(1)
                         print(f'MkDocs title: {title}')
-                        return content, title
+                        
+                        # Extract tags from the HTML content
+                        tags = ""
+                        kb_tags_pattern = re.compile(r'kb-tags="([^"]*)"')
+                        tags_match = kb_tags_pattern.search(content)
+                        if tags_match:
+                            tags = tags_match.group(1)
+                            # Ensure tags don't exceed varchar(250) while keeping complete tags
+                            tag_list = tags.split(',')
+                            while len(tags) > 250:
+                                # Split tags and keep only those that fit within 250 chars      
+                                tag_list.pop(len(tag_list)-1)
+                                tags = ','.join(tag_list)
+                        print(f'MkDocs tags:  {tags}')
+                        return content, title, tags
                     else: content = None
 
     return None

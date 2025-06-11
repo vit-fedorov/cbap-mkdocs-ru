@@ -288,7 +288,7 @@ exclude_docs: |
   using_the_system/password_restore.md
   administration/connections_communication_routes/system_connections/s3_connection.md
   administration/connections_communication_routes/message_queue_connections/kafka_connection.md
-  administration/connections_communication_routes/authentication/openid_connection.md
+  administration/connections_communication_routes/authentication/keycloak_connection.md
   administration/connections_communication_routes/authentication/wsfederation_connection.md
   administration/account_administration/authentication_authorization_sessions.md
   administration/account_administration/accounts_dc_sync/index.md

@@ -1,9 +1,9 @@
 ---
-title: Форматирование значений в файле шаблона экспорта и формулах
+title: 'Форматирование значений в шаблонах экспорта и формулах'
 kbId: 4794
 ---
 
-# Форматирование значений в файле шаблона экспорта и формулах {: #export_template_file_formula_format_values}
+# Форматирование значений в шаблонах экспорта и формулах {: #export_template_file_formula_format_values }
 
 ## Введение
 
@@ -188,7 +188,7 @@ FORMAT("{0}",LIST(IF($attributeSystemName == true,"Согласовано","Не
 - `{accountAttributeSystemName.birthday:dd MMMM yyyy 'г.'}` — дата рождения в формате: *29 мая 2024 г.*;
 - `{accountAttributeSystemName.title}` — должность.
 
-См. также [полный перечень атрибутов аккаунта][account_attributes_system_names].
+См. также [список стандартных атрибутов аккаунта][account_template_attribute_system_names].
 
 ## Форматирование атрибутов связанных записей {: #export_template_file_formula_format_values_related_record_attributes_formatting }
 
@@ -233,7 +233,7 @@ FORMAT("{0}",LIST(IF($attributeSystemName == true,"Согласовано","Не
 
 --8<-- "related_topics_heading.md"
 
-- _[Системные имена атрибутов аккаунтов][account_attribute_system_names]_
+- _[Системные атрибуты шаблона аккаунта][account_template_attribute_system_names]_
 - _[Подготовка файла шаблона экспорта][export_template_file_configure]_
 - _[Список функций языка формул Comindware][formula_function_list]_
 

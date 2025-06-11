@@ -36,7 +36,7 @@ start="<!--architect-features-start-->"
 end="<!--architect-features-end-->"
 %}
 
-## Подключение модуля «{{ productNameArchitect }}»
+## Включение модуля «{{ productNameArchitect }}»
 
 Для использования модуля «**{{ productNameArchitect }}**» необходимо активировать его с помощью **лицензионного ключа**.
 

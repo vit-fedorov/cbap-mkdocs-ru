@@ -275,6 +275,11 @@ hide: tags
                                                 // Не коллекция ссылок на записи.
                                                 && !(rowData[ii] is System.Collections.IList)
                                             )
+    {% if pdfOutput %}
+    ```
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+    ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
+    {% endif %}
                                             {
                                             // Для остальных типов данных просто записываем значение в ячейку.
                                                 excelSheet.Cells[j,jj].PutValue(rowData[ii]);
@@ -284,11 +289,6 @@ hide: tags
                                                 // Для ссылок на аккаунты записываем в ячейку Ф. И. О аккаунта.
                                                 excelSheet.Cells[j,jj].PutValue(((AccountReference)rowData[ii]).Name);
                                             }
-    {% if pdfOutput %}
-    ```
-    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
-    ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
-    {% endif %}
                                             else if(rowData[ii].GetType() == typeof(System.Boolean))
                                             {
                                                 // Логические значения преобразуем в строку.
@@ -311,6 +311,13 @@ hide: tags
                                             {
                                                 excelSheet.Cells[j,jj].PutValue(((Comindware.TeamNetwork.Api.Data.Forms.EnumReference)rowData[ii]).Name);
                                             }
+    {% if pdfOutput %}
+    ```
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+    ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
+    {% else %}
+
+    {% endif %}
                                             // Обрабатываем атрибуты с несколькими значениями.
                                             else if (rowData[ii] is System.Collections.IList list)
                                             {
@@ -354,7 +361,13 @@ hide: tags
                     MemoryStream stream = new MemoryStream();
                     // Сохраняем рабочую книгу в поток в формате XLSX.
                     excelWorkbook.Save(stream, SaveFormat.Xlsx);
+    {% if pdfOutput %}
+    ```
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+    ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
+    {% else %}
 
+    {% endif %}
                     // Формируем результат нажатия кнопки с успешным статусом.
                     var result = new UserCommandResult
                     {
@@ -366,13 +379,6 @@ hide: tags
                             // Задаём имя файла для экспорта.
                             Name = "ExportedTable.xlsx"
                             },
-    {% if pdfOutput %}
-    ```
-    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
-    ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
-    {% else %}
-
-    {% endif %}
                         Messages = new[]
                         {
                             new UserCommandMessage
@@ -404,6 +410,13 @@ hide: tags
                     return result1;
                 }
             }
+    {% if pdfOutput %}
+    ```
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+    ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
+    {% else %}
+
+    {% endif %}
             else
             {
                 // Формируем результат нажатия кнопки с ошибкой, если не выбрано ни одной записи.
@@ -423,13 +436,6 @@ hide: tags
                 return result1;
             }
         }
-    {% if pdfOutput %}
-    ```
-    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
-    ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
-    {% else %}
-
-    {% endif %}
         // Вспомогательный класс для хранения информации о столбцах таблицы.
         public class columnContainer
         {
@@ -452,7 +458,7 @@ hide: tags
 4. Сохраните кнопку.
 5. Поместите кнопку _«Экспортировать в Excel»_ на **область кнопок** таблицы «**Все записи**» шаблона _«Заявки»_.
 
-## Тестирование скрипта {: #example_csharp_table_download_selection_test }
+## Тестирование скрипта {: #example_csharp_table_download_selection_test .pageBreakBefore }
 
 1. Откройте таблицу «**Все записи**» шаблона _«Заявки»_.
 2. Откройте меню «**Мои настройки**» <i class="fa-light fa-edit"></i> — «**Настроить внешний вид**» <i class="fa-light fa-table"></i>.

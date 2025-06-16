@@ -15,14 +15,26 @@
     --md-footer-bg-color: var(--md-primary-fg-color--dark);
     --md-footer-bg-color--dark: #343a40;
     --md-code-hl-comment-color: #65785c;
+    --md-default-fg-color: #000000;
+    --md-typeset-color: var(--md-default-fg-color) !important;
 }
 
-:root {
-    --md-text-font-family: OpenSans, Roboto;
+:root > * {
+    font-weight: 300;
+    /* Uncomment to make the main font 15px matching the KB site */
+    /*font-size: 18.75px;*/ 
 }
 
+.md-header__topic:first-child {
+    font-weight: 300;
+}
+
+strong {
+    font-weight: bold;
+}
 
 body {
+    
     background: white;
     background-image: '';
 }
@@ -126,6 +138,15 @@ body {
     h6.admonition-title {
         font-weight: 300;
     }
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+    color: var(--md-default-fg-color);
 }
 
 .md-typeset .headerlink {

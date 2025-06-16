@@ -377,6 +377,9 @@ nav:
 
 exclude_docs: |
   devops_wiki/**
+  administration/connections_communication_routes/authentication/google_connection.md
+  administration/connections_communication_routes/system_connections/aws_pinpoint_connection.md
+  administration/deploy/availability_fault_tolerance.md
   administration/deploy/linux/deploy_cluster.md
   administration/deploy/linux/db_migrate_4.2_to_4.7.md
   administration/deploy/windows/admin_utility/**

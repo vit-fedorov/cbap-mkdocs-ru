@@ -1,4 +1,4 @@
-<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4657" kb-tags="" kb-title="Настройка единого входа (SSO-аутентификации) в ОС Windows">
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4657" kb-tags="sso,аутентификация,единый вход,авторизация,active directory,windows,iis,internet information services,логин" kb-title="Настройка единого входа (SSO-аутентификации) в ОС Windows">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -42,7 +42,7 @@
 <li>На сервере с экземпляром ПО создайте доменного пользователя, под которым будет запускаться пул приложений экземпляра ПО в Internet Information Services (IIS).</li>
 <li>Добавьте пользователя, созданного на шаге 2, в локальную группу <em>Backup</em> <em>operators.</em></li>
 <li>Предоставьте созданному пользователю права локального администратора на сервере с экземпляром ПО .</li>
-<li>Обновите локальные групповые политики с помощью командной строки: <code>gpupdate</code></li>
+<li>Обновите локальные групповые политики с помощью командной строки: <code>gpupdate</code></li>
 <li>Откройте созданного пользователя в оснастке «<strong>Пользователи и компьютеры Active Directory</strong>» и на вкладке «<strong>Редактор атрибутов</strong>» присвойте значение <code>HTTP/sitename</code> атрибуту <code>servicePrincipalName</code>, где <code>sitename</code> — имя хоста, по которому осуществляется доступ к экземпляру ПО.</li>
 <li>
 <p>Перейдите в Диспетчер служб IIS и настройте пул приложений экземпляра ПО, указав в поле «<strong>Удостоверение</strong>» пользователя, созданного на шаге 2. Пул приложений будет запускаться от имени указанного пользователя.</p>
@@ -51,9 +51,9 @@
 <li>
 <p>Предоставьте созданному пользователю полные права на каталоги исполняемых файлов ПО и базы данных экземпляра ПО.</p>
 </li>
-<li>Откройте для редактирования файл <code>web.config</code> в папке файлов конфигурации экземпляра ПО. См. статью «<code>![](https://kb.comindware.ru/images/marker.png){Article-ID:2301}</code>».</li>
-<li>В строке <code>&lt;authentication mode="None" /&gt;</code> измените значение <code>None</code> на значение <code>Windows</code>: <code>&lt;authentication mode="Windows"/&gt;</code></li>
-<li>В Диспетчере служб IIS выберите сайт экземпляра ПО в разделе «<strong><em>Сайты</em></strong>».</li>
+<li>Откройте для редактирования файл <code>web.config</code> в папке файлов конфигурации экземпляра ПО. См. статью «<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4620">Пути и содержимое директорий экземпляра ПО</a>».</li>
+<li>В строке <code>&lt;authentication mode="None" /&gt;</code> измените значение <code>None</code> на значение <code>Windows</code>: <code>&lt;authentication mode="Windows"/&gt;</code></li>
+<li>В Диспетчере служб IIS выберите сайт экземпляра ПО в разделе «<strong>Сайты</strong>».</li>
 <li>
 <p>Откройте пункт «<strong>Проверка подлинности</strong>».</p>
 <p><figure class="screenshot_with_caption" markdown=""><img alt="Пункт «Проверка подлинности» в диспетчере служб IIS" src="https://kb.comindware.ru/assets/img_63bcebb6e9a0b.png"/><figcaption class="caption">Пункт «Проверка подлинности» в диспетчере служб IIS</figcaption></figure></p>
@@ -71,7 +71,9 @@
 </ol>
 <h2 id="настройка-клиента">Настройка клиента</h2>
 <p>По умолчанию SSO-авторизация работает в браузерах Edge и Google Chrome, но необходимо в параметрах безопасности браузера добавить сайт в зону местной интрасети и включить режим «<strong>Автоматический вход в сеть только в зоне интрасети</strong>». Сведения о настройке других браузеров см. в соответствующей документации.</p>
-<div class="highlight"><code><pre><span></span><code>&lt;figure markdown&gt;![Окно настройки параметров безопасности браузера](https://kb.comindware.ru/assets/img_63bcecc1b498f.png)&lt;figcaption&gt;Окно настройки параметров безопасности браузера&lt;/figcaption&gt;&lt;/figure&gt;</code> <br/></pre></code></div>
+<figure class="screenshot_with_caption">
+<p><img alt="Окно настройки параметров безопасности браузера" src="https://kb.comindware.ru/assets/img_63bcecc1b498f.png"/><figcaption class="caption">Окно настройки параметров безопасности браузера</figcaption></p>
+</figure>
 </article>
 </div>
 </div>

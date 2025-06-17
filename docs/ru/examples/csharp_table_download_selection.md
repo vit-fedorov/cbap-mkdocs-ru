@@ -126,8 +126,6 @@ hide: tags
     ```
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
     ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
-    {% else %}
-
     {% endif %}
                     // Перебираем все таблицы шаблона для поиска экспортируемой таблицы по её ID.
                     foreach(var table in templateTables)
@@ -172,8 +170,6 @@ hide: tags
     ```
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
     ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
-    {% else %}
-
     {% endif %}
                                     // Форматируем ячейки в соответствии с типом данных.
                                     switch(attribute)
@@ -315,8 +311,6 @@ hide: tags
     ```
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
     ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
-    {% else %}
-
     {% endif %}
                                             // Обрабатываем атрибуты с несколькими значениями.
                                             else if (rowData[ii] is System.Collections.IList list)
@@ -365,8 +359,6 @@ hide: tags
     ```
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
     ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
-    {% else %}
-
     {% endif %}
                     // Формируем результат нажатия кнопки с успешным статусом.
                     var result = new UserCommandResult
@@ -414,8 +406,6 @@ hide: tags
     ```
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
     ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
-    {% else %}
-
     {% endif %}
             else
             {

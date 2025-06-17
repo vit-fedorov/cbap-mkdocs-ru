@@ -818,7 +818,7 @@
 
 [restore_test_configure]: {{ kbArticleURLPrefix }}4651
 
-[sso_authenticatation_configure]: {{ kbArticleURLPrefix }}4613
+[sso_authentication_configure]: {{ kbArticleURLPrefix }}4613
 
 [sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}4613#sso_authentication_configure_keytab_update
 

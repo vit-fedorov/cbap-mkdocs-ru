@@ -23,11 +23,16 @@ kbId: 4950
 
 ## Прикладная задача {: #n3_calculate_active_task_assignee_use_case }
 
-Требуется определить исполнителя активной задачи для записи, связанной с бизнес-процессом.
+Имеется бизнес-процесс с пользовательскими задачами.
 
 Задаче может быть назначен как один исполнитель, так список возможных исполнителей.
 
-Список исполнителей задачи необходимо поместить в атрибут типа «**Аккаунт**».
+С бизнес-процессом связана запись.
+
+Для этой записи требуется:
+
+- получить список исполнителей активных задач и поместить его в атрибут типа «**Аккаунт**»;
+- определить, имеются ли задачи у текущего пользователя, и записать соответственно значение `True` или `False` в **логический** атрибут.
 
 ## Исходные данные {: #n3_calculate_active_task_assignee_initial_data }
 
@@ -35,11 +40,16 @@ kbId: 4950
 
 В шаблоне _«Оформление заявок»_ имеются пользовательские задачи, которым назначены различные исполнители.
 
-## Настройка вычисления {: #n3_calculate_active_task_assignee_configure }
+## Настройка вычислений {: #n3_calculate_active_task_assignee_configure }
 
-1. В шаблоне _«Заявки»_ создайте атрибут _«Ответственные»_ типа «**Аккаунт**».
-2. В свойствах атрибута установите флажки «**Хранить несколько значений**» и «**Вычислять автоматически**».
-3. Введите следующее **вычисляемое значение** на языке **N3**:
+1. На диаграмме процесса _«Оформление заявок»_ назначьте себя исполнителем любой из задач.
+2. В шаблоне _«Заявки»_ создайте атрибут со следующими свойствами:
+
+    - **Название:** _Ответственные_
+    - **Тип данных: аккаунт**
+    - **Хранить несколько значений**: флажок установлен
+    - **Вычислять автоматически**: флажок установлен
+    - **Вычисляемое значение: N3**
 
     ``` turtle
     # Импортируем функции для работы 
@@ -47,30 +57,128 @@ kbId: 4950
     @prefix cmw: <http://comindware.com/logics#>.
     @prefix task: <http://comindware.com/ontology/task#>.
     @prefix taskStatus: <http://comindware.com/ontology/taskStatus#>.
+    @prefix account: <http://comindware.com/ontology/account#>.
+    @prefix role: <http://comindware.com/ontology/role#>.
     {
-        # Находим задачу, связанную с текущей записью
-        ?task task:objectId ?item.
-        # Проверяем, является ли задача активной
-        ?task cmw:taskStatus taskStatus:inProgress.
-        # Определяем исполнителя задачи
-        or {
-            # Возвращаем фактического исполнителя
-            ?task cmw:assignee ?value.
+        # Получаем задачи, связанные с текущей записью.
+        ?tasks task:objectId ?item.
+        # Получаем активные задачи.
+        ?tasks cmw:taskStatus taskStatus:inProgress.
+        # Получаем фактических и возможных исполнителей задач.
+        # Проверяем различные варианты назначения задач.
+        or{
+            # Возвращаем фактического исполнителя,
+            # если он назначен через группы и роли.
+            ?tasks cmw:assignee ?assigneeRoles.
+            ?assigneeRoles role:roleMembers ?groupMembers.
+            ?groupMembers account:groupUsers ?value.
         }
         or {
-            # Возвращаем список возможных исполнителей
-            ?task cmw:possibleAssignee ?value.
+
+            # Возвращаем фактического исполнителя,
+            # если он назначен через роли.
+            ?tasks cmw:assignee ?assigneeRoles.
+            ?assigneeRoles role:roleMembers ?value.
         }
+        or {
+            # Возвращаем фактического исполнителя,
+            # если он назначен через аккаунт.
+            ?tasks cmw:assignee ?value.
+        }
+        or{
+            # Возвращаем список возможных исполнителей,
+            # если они назначены через группы и роли.
+            ?tasks cmw:possibleAssignee ?possibleRoles.
+            ?assigneeRoles role:roleMembers ?groupMembers.
+            ?groupMembers account:groupUsers ?value.
+        }
+        or {
+
+            # Возвращаем список возможных исполнителей,
+            # если они назначены через роли.
+            ?tasks cmw:possibleAssignee ?possibleRoles.
+            ?assigneeRoles role:roleMembers ?value.
+        }
+        or {
+            # Возвращаем список возможных исполнителей,
+            # если они назначены через аккаунты.
+            ?tasks cmw:possibleAssignee ?value.
+        }.
+        # Оставляем только активные аккаунты.
+        ?value account:active true.
+        # Исключаем отключенные аккаунты
+        not {?value cmw:isDisabled true.}.
     }
     ```
 
-4. Поместите атрибут _«Ответственные»_ на форму шаблона _«Заявки»_.
+3. Создайте атрибут со следующими свойствами:
+
+    - **Название:** _У вас имеются задачи_
+    - **Тип данных: логический**
+    - **Вычислять автоматически**: флажок установлен
+    - **Вычисляемое значение: N3**
+
+    ``` turtle
+    # Импортируем функции для работы 
+    # с логикой, задачами и статусами задач.
+    @prefix cmw: <http://comindware.com/logics#>.
+    @prefix task: <http://comindware.com/ontology/task#>.
+    @prefix taskStatus: <http://comindware.com/ontology/taskStatus#>.
+    @prefix account: <http://comindware.com/ontology/account#>.
+    @prefix role: <http://comindware.com/ontology/role#>.
+    {
+        # Получаем аккаунт текущего пользователя из контекста безопасности.
+        cmw:securityContext cmw:currentUser ?currentUser.
+        # Получаем роли текущего пользователя.
+        ?role role:roleMembers ?currentUser.
+        # Получаем группы, в которые входит пользователь.
+        ?role role:roleMembers ?groupMembers.
+        ?groupMembers account:groupUsers ?currentUser.
+        # Получаем задачи, связанные с текущей записью.
+        ?tasks task:objectId ?item.
+        # Получаем активные задачи.
+        ?tasks cmw:taskStatus taskStatus:inProgress.
+        # Проверяем различные варианты назначения задачи.
+        once {
+            or {
+                # Проверяем, назначена ли задача на текущего пользователя.
+                ?tasks cmw:assignee ?currentUser.
+            }
+            or {
+                # Проверяем, является ли пользователь возможным исполнителем.
+                ?tasks cmw:possibleAssignee ?currentUser.
+            }
+            or {
+                # Проверяем, назначена ли задача на роль пользователя.
+                ?tasks cmw:assignee ?role.
+            }
+            or {
+                # Проверяем, является ли роль пользователя возможным исполнителем.
+                ?tasks cmw:possibleAssignee ?role.
+            }
+            or {
+                # Проверяем, назначена ли задача на группу пользователя.
+                ?tasks cmw:assignee ?groupMembers.
+            }
+            or {
+                # Проверяем, является ли группа пользователя возможным исполнителем.
+                ?tasks cmw:possibleAssignee ?groupMembers.
+            }.
+        }.
+        # Возвращаем True, если у текущего пользователя есть задачи.
+        ?true -> ?value
+    }
+    ```
+
+4. Поместите атрибуты _«Ответственные»_ и _«У вас имеются задачи»_ на форму шаблона _«Заявки»_.
+5. Установите для поля _«У вас имеются задачи»_ на форме отображение в качестве **переключателя**.
 
 ## Тестирование {: #n3_calculate_active_task_assignee_test }
 
 1. Запустите процесс _«Оформление заявок»_.
 2. Откройте _заявку_, созданную при запуске процесса.
 3. В поле _«Ответственные»_ должен отображаться список исполнителей текущей задачи по _заявке_.
+4. В поле _«У вас имеются задачи»_ должно отобразиться значение «**Да**»
 
 <div class="relatedTopics" markdown="block">
 

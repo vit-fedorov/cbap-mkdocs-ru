@@ -46,26 +46,61 @@ kbId: 4966
 3. Введите следующее **вычисляемое значение** на языке **N3**:
 
     ``` turtle
-    # Импортируем функции для работы 
-    # с логикой, контейнерами, аккаунтами и статусами задач.
+    # Импортируем основные функции для работы 
+    # с логикой, контейнерами, аккаунтами и статусами задач
     @prefix cmw: <http://comindware.com/logics#>.
     @prefix container: <http://comindware.com/ontology/container#>.
     @prefix account: <http://comindware.com/ontology/account#>.
     @prefix taskStatus: <http://comindware.com/ontology/taskStatus#>.
     {
-        # Находим класс Account.
-        ?class cmw:className "Account".
-        # Получаем все объекты этого класса.
-        ?value a ?class.
-        # Проверяем, что аккаунт активен.
-        ?value account:active true.
-        # Проверяем, что аккаунт не отключен.
-        not {?value cmw:isDisabled true.}.
-        # Проверяем, что у аккаунта есть активные задачи.
-        or {?tasks cmw:assignee ?value.}
-        or {?tasks cmw:possibleAssignee ?value.}.
-        # Проверяем, что задача активна.
+        # Получаем все задачи.
+        ?tasks a cmw:UserTask.
+        # Получаем активные задачи.
         ?tasks cmw:taskStatus taskStatus:inProgress.
+        # Получаем фактических и возможных исполнителей задач.
+        # Проверяем различные варианты назначения задач.
+        or{
+            # Возвращаем фактического исполнителя,
+            # если он назначен через группы и роли.
+            ?tasks cmw:assignee ?assigneeRoles.
+            ?assigneeRoles role:roleMembers ?groupMembers.
+            ?groupMembers account:groupUsers ?value.
+        }
+        or {
+
+            # Возвращаем фактического исполнителя,
+            # если он назначен через роли.
+            ?tasks cmw:assignee ?assigneeRoles.
+            ?assigneeRoles role:roleMembers ?value.
+        }
+        or {
+            # Возвращаем фактического исполнителя,
+            # если он назначен через аккаунт.
+            ?tasks cmw:assignee ?value.
+        }
+        or{
+            # Возвращаем список возможных исполнителей,
+            # если они назначены через группы и роли.
+            ?tasks cmw:possibleAssignee ?possibleRoles.
+            ?assigneeRoles role:roleMembers ?groupMembers.
+            ?groupMembers account:groupUsers ?value.
+        }
+        or {
+
+            # Возвращаем список возможных исполнителей,
+            # если они назначены через роли.
+            ?tasks cmw:possibleAssignee ?possibleRoles.
+            ?assigneeRoles role:roleMembers ?value.
+        }
+        or {
+            # Возвращаем список возможных исполнителей,
+            # если они назначены через аккаунты.
+            ?tasks cmw:possibleAssignee ?value.
+        }.
+        # Оставляем только активные аккаунты.
+        ?value account:active true.
+        # Исключаем отключенные аккаунты
+        not {?value cmw:isDisabled true.}.
     }
     ```
 

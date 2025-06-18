@@ -38,8 +38,8 @@ kbId: 4905
 
 Для реализации прикладной задачи настроим два бизнес-процесса:
 
-- _Поиск сотрудников для отправки напоминания_ — запускается по таймеру и находит сотрудников, у которых есть открытые задачи на момент запуска, затем для каждого сотрудника запускает процесс _«Отправка напоминания»_.
-- _Отправка напоминания_ — формирует и отправляет эл..&nbsp;письмо сотруднику.
+- _Поиск сотрудников с активными задачами_ — запускается по таймеру и находит сотрудников, у которых есть открытые задачи на момент запуска, затем для каждого сотрудника запускает процесс _«Отправка напоминания»_.
+- _Отправка напоминания_ — формирует и отправляет эл.&nbsp;письмо каждому сотруднику.
 
 ### Настройка процесса «Отправка напоминания» {: #n3_periodic_task_notifications_configure_send .pageBreakBefore }
 
@@ -63,7 +63,7 @@ kbId: 4905
         - **Вычисляемое значение: формула**
 
     ``` sql
-    $Sotrudnik->cmw.account.mbox
+    $Сотрудник->cmw.account.mbox
     ```
 
     - _Текст письма_
@@ -75,54 +75,88 @@ kbId: 4905
         - **Вычисляемое значение: N3**
 
     ``` turtle
-    # Импортируем функции для работы
-    # с логикой, строками, объектами, конфигурацией и статусами задач
+    # Импортируем функции для работы с логикой, строками, объектами, 
+    # конфигурацией, статусами задач, аккаунтами и ролями.
     @prefix cmw: <http://comindware.com/logics#>.
     @prefix string: <http://www.w3.org/2000/10/swap/string#>.
     @prefix cmwstring: <http://comindware.com/logics/string#>.
     @prefix object: <http://comindware.com/ontology/object#>.
     @prefix configuration: <http://comindware.com/ontology/configuration#>.
-    @prefix taskStatus: <http://comindware.com/ontology/taskStatus#>. 
+    @prefix taskStatus: <http://comindware.com/ontology/taskStatus#>.
+    @prefix account: <http://comindware.com/ontology/account#>.
+    @prefix role: <http://comindware.com/ontology/role#>.
     {
-            # Получаем базовый URL системы для формирования ссылок на задачи
+            # Получаем базовый URL системы для формирования ссылок на задачи.
             # Вместо <yourhost> подставьте адрес вашего сайта {{ productName }}
             # либо используйте конструкцию:
             #?confid configuration:baseUri ?baseUri.
             ?baseUri a "https://<yourhost>/".
-            # Находим атрибут "Сотрудник" в шаблоне "Напоминания" для получения данных о получателе
-            ("Напоминания" "Сотрудник") object:findProperty ?Sotrudnik.
-            ?item ?Sotrudnik ?SotrudnikVal.
+            # Находим атрибут «Сотрудник» в шаблоне «Напоминания»
+            # для получения данных об пользователе,
+            # которому будет отправлено напоминание.
+            ("Напоминания" "Сотрудник") object:findProperty ?Employee.
+            ?item ?Employee ?EmployeeVal.
             # Формируем заголовок таблицы с задачами
             # Создаем HTML-заголовок и начало таблицы со столбцами "Задача" и "Срок"
             ("<p style='font-size: 100%' >Перечень Ваших задач</p>" "<table border='1' style='width: 60%; border-collapse: collapse; border: 1px solid black' ><tBody> <tr><td style='padding: 2px; width: 200px; border: 1px solid black'>Задача</td> <td style='width: 200px; padding: 2px; border: 1px solid black'>Срок</td></tr>") string:concatenation ?firstHeaderRow.
             # Собираем задачи пользователя
             from {
-                # Находим все задачи пользователя
+                # Получаем все задачи.
                 ?tasks a cmw:UserTask.
-                # Задачи, где пользователь является исполнителем или возможным исполнителем
-                or {?tasks cmw:assignee ?SotrudnikVal.}
-                or {?tasks cmw:possibleAssignee ?SotrudnikVal.}.
-                # Только задачи в статусе «В работе»
+                # Получаем активные задачи.
                 ?tasks cmw:taskStatus taskStatus:inProgress.
-                # Получаем название и ID задачи
+                # Получаем роли пользователя.
+                ?roles role:roleMembers ?EmployeeVal.
+                # Получаем группы, в которые входит пользователь.
+                ?EmployeeVal account:userGroupMembership ?groups.
+                # Получаем роли, в которые входят группы пользователя.
+                ?roleGroups role:roleMembers ?groups.
+                # Проверяем, является ли пользователь
+                # фактическим или возможным исполнителем задачи.
+                # Проверяем различные варианты назначения задачи.
+                or {
+                    # Проверяем, назначена ли задача на пользователя.
+                    ?tasks cmw:assignee ?EmployeeVal.
+                }
+                or {
+                    # Проверяем, является ли пользователь возможным исполнителем.
+                    ?tasks cmw:possibleAssignee ?EmployeeVal.
+                }
+                or {
+                    # Проверяем, назначена ли задача на роль пользователя.
+                    ?tasks cmw:assignee ?roles.
+                }
+                or {
+                    # Проверяем, является ли роль возможным исполнителем.
+                    ?tasks cmw:possibleAssignee ?roles.
+                }
+                or {
+                    # Проверяем, назначена ли задача на группу пользователя.
+                    ?tasks cmw:assignee ?roleGroups.
+                }
+                or {
+                    # Проверяем, является ли группа возможным исполнителем.
+                    ?tasks cmw:possibleAssignee ?roleGroups.
+                }.
+                # Получаем название и ID задачи.
                 ?tasks cmw:title ?title.
                 ?tasks cmw:id ?id.
-                # Форматируем название и ID задачи для вставки в HTML
+                # Форматируем название и ID задачи для вставки в HTML.
                 ("{0}" ?title) string:format ?titleVal.
                 ("{0}" ?id) string:format ?idVal.
-                # Получаем срок выполнения задачи (если есть)
+                # Получаем срок выполнения задачи (если есть).
                 or {?tasks cmw:dueDate ?dueDate.}
                 or {"" -> ?dueDate.}.
-                # Форматируем дату для отображения
+                # Форматируем дату для отображения.
                 ("{0}" ?dueDate) string:format ?dueDateVal.
-                # Формируем строку таблицы с ссылкой на задачу и сроком
+                # Формируем строку таблицы с ссылкой на задачу и сроком.
                 ("<tr><td class='A' style='padding: 2px; border: 1px solid black; '><a href='"?baseUri"#task/" ?idVal "'>" ?titleVal "</a></td><td align='right' style='padding: 2px; border: 1px solid black; text-align: right'>" ?dueDateVal "</td></tr>") string:concatenation ?firstRow.
-            } select ?firstRow -> ?firstFactrow.
-            # Объединяем все строки таблицы
-            (" " ?firstFactrow) cmwstring:join ?firstFact.
-            # Формируем финальный HTML с заголовком, таблицей и закрывающими тегами
+            } select ?firstRow -> ?firstFactRow.
+            # Объединяем все строки таблицы.
+            (" " ?firstFactRow) cmwstring:join ?firstFact.
+            # Формируем финальный HTML с заголовком, таблицей и закрывающими тегами.
             (?firstHeaderRow ?firstFact "</tBody></table> <br/>") string:concatenation ?first.
-            # Возвращаем результат
+            # Возвращаем результат.
             ?first  -> ?value.
     }
     ```
@@ -134,11 +168,11 @@ kbId: 4905
 5. Настройте событие-отправку сообщения. См. _«[Отправка эл.&nbsp;почты из сценариев][scenario_send_email]»_.
 6. Опубликуйте процесс.
 
-### Настройка процесса «Поиск сотрудников для отправки напоминания» {: #n3_periodic_task_notifications_configure_search .pageBreakBefore }
+### Настройка процесса «Поиск сотрудников с активными задачами» {: #n3_periodic_task_notifications_configure_search .pageBreakBefore }
 
 1. Создайте шаблон записи _«Сотрудники для напоминаний»_.
-2. Создайте шаблон процесса _«Поиск сотрудников для отправки напоминания»_, связанный с шаблоном _«Сотрудники для напоминаний»_.
-3. В шаблоне _«Сотрудники для напоминаний»_ создайте атрибуты:
+2. Создайте шаблон процесса _«Поиск сотрудников с активными задачами»_, связанный с шаблоном _«Сотрудники для напоминаний»_.
+3. В шаблоне _«Сотрудники для напоминаний»_ создайте атрибут:
 
     - _Сотрудники_
         - **Системное имя:** `Сотрудники`
@@ -155,21 +189,54 @@ kbId: 4905
     @prefix account: <http://comindware.com/ontology/account#>.
     @prefix taskStatus: <http://comindware.com/ontology/taskStatus#>.
     {
-            # Находим класс Account
-            ?class cmw:className "Account".
-            # Получаем все экземпляры этого класса
-            ?value a ?class.
-            # Фильтруем только активные аккаунты
-            ?value account:active true.
-            # Исключаем отключенные аккаунты
-            not {?value cmw:isDisabled true.}.
-            # Находим задачи, у которых 
-            # текущий пользователь является исполнителем
-            or {?tasks cmw:assignee ?value.}
-            # или возможным исполнителем
-            or {?tasks cmw:possibleAssignee ?value.}.
-            # Фильтруем только задачи в статусе «Выполняется»
-            ?tasks cmw:taskStatus taskStatus:inProgress.
+        # Получаем все задачи.
+        ?tasks a cmw:UserTask.
+        # Получаем активные задачи.
+        ?tasks cmw:taskStatus taskStatus:inProgress.
+        # Получаем фактических и возможных исполнителей задач.
+        # Проверяем различные варианты назначения задач.
+        or{
+            # Возвращаем фактического исполнителя,
+            # если он назначен через группы и роли.
+            ?tasks cmw:assignee ?assigneeRoles.
+            ?assigneeRoles role:roleMembers ?groupMembers.
+            ?groupMembers account:groupUsers ?value.
+        }
+        or {
+
+            # Возвращаем фактического исполнителя,
+            # если он назначен через роли.
+            ?tasks cmw:assignee ?assigneeRoles.
+            ?assigneeRoles role:roleMembers ?value.
+        }
+        or {
+            # Возвращаем фактического исполнителя,
+            # если он назначен через аккаунт.
+            ?tasks cmw:assignee ?value.
+        }
+        or{
+            # Возвращаем список возможных исполнителей,
+            # если они назначены через группы и роли.
+            ?tasks cmw:possibleAssignee ?possibleRoles.
+            ?assigneeRoles role:roleMembers ?groupMembers.
+            ?groupMembers account:groupUsers ?value.
+        }
+        or {
+
+            # Возвращаем список возможных исполнителей,
+            # если они назначены через роли.
+            ?tasks cmw:possibleAssignee ?possibleRoles.
+            ?assigneeRoles role:roleMembers ?value.
+        }
+        or {
+            # Возвращаем список возможных исполнителей,
+            # если они назначены через аккаунты.
+            ?tasks cmw:possibleAssignee ?value.
+        }.
+        # Оставляем только активные аккаунты.
+        ?value account:active true.
+        # Исключаем отключенные аккаунты
+        not {?value cmw:isDisabled true.}.
     }
     ```
 
@@ -177,7 +244,7 @@ kbId: 4905
         - **Системное имя:** `Сотрудникамнаотправку`
         - **Тип данных: запись**
         - **Связанный шаблон:** _Напоминания_
-        - **Взаимная связь с новым атрибутом:** _Поиск_ (`Поиск`)
+        - **Взаимная связь с новым атрибутом:** _Найденные сотрудники_ (`Найденныесотрудники`)
         - **Хранить несколько значений:** флажок установлен
 
 4. Постройте диаграмму процесса по показанному на следующей иллюстрации образцу:
@@ -198,27 +265,27 @@ kbId: 4905
 
     1. Внутрь действия «**Сменить контекст**» добавьте действие «**Цикл по объектам**» и настройте его, как показано ниже.
 
-    _![Добавление действия «Цикл по объектам»](https://kb.comindware.ru/assets/trigger2.jpg)_
+        _![Добавление действия «Цикл по объектам»](https://kb.comindware.ru/assets/trigger2.jpg)_
 
-    Переменная `local` хранит поочередно по одному экземпляру из указанной выборки.
+        Переменная `local` хранит поочередно по одному экземпляру из указанной выборки.
 
-    Внизу укажите атрибут _«Сотрудники»_, в котором вычисляются сотрудники с активными задачами.
+        Внизу укажите атрибут _«Сотрудники»_, в котором вычисляются сотрудники с активными задачами.
 
     2. Добавьте действие «**Создать запись**» и настройте его.
 
-    _![Добавление действия «Создать запись»](https://kb.comindware.ru/assets/trigger3.jpg)_
+        _![Добавление действия «Создать запись»](https://kb.comindware.ru/assets/trigger3.jpg)_
 
-    - **Целевой шаблон записи** — укажите шаблон записи _«Напоминания»_.
-    - **Ссылка на новую запись** — укажите атрибут _«Сотрудникам на отправку»_, созданный на шаге 3.
-    - **Операция со значениями** — укажите «**Добавить**».
+        - **Целевой шаблон записи** — укажите шаблон записи _«Напоминания»_.
+        - **Ссылка на новую запись** — укажите атрибут _«Сотрудникам на отправку»_, созданный на шаге 3.
+        - **Операция со значениями** — укажите «**Добавить**».
 
     3. Добавьте действие «**Изменить значения атрибутов**» и настройте таблицу атрибутов следующим образом:
 
-    - **Атрибут:** _Сотрудник_
-    - **Операция со значениями: заменить**
-    - **Значение:** `$$local`
+        - **Атрибут:** _Сотрудник_
+        - **Операция со значениями: заменить**
+        - **Значение:** `$$local`
 
-    _![Настройка действия «Изменить значения атрибутов»](https://kb.comindware.ru/assets/trigger4.jpg)_
+        _![Настройка действия «Изменить значения атрибутов»](https://kb.comindware.ru/assets/trigger4.jpg)_
 
 7. Настройте вызов процесса:
 

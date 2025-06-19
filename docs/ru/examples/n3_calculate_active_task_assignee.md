@@ -130,10 +130,10 @@ kbId: 4950
         # Получаем аккаунт текущего пользователя из контекста безопасности.
         cmw:securityContext cmw:currentUser ?currentUser.
         # Получаем роли текущего пользователя.
-        ?role role:roleMembers ?currentUser.
+        ?roles role:roleMembers ?currentUser.
         # Получаем группы, в которые входит пользователь.
-        ?role role:roleMembers ?groupMembers.
-        ?groupMembers account:groupUsers ?currentUser.
+        ?userGroups account:groupUsers ?currentUser.
+        ?groupRoles role:roleMembers ?userGroups.
         # Получаем задачи, связанные с текущей записью.
         ?tasks task:objectId ?item.
         # Получаем активные задачи.
@@ -150,19 +150,19 @@ kbId: 4950
             }
             or {
                 # Проверяем, назначена ли задача на роль пользователя.
-                ?tasks cmw:assignee ?role.
+                ?tasks cmw:assignee ?roles.
             }
             or {
                 # Проверяем, является ли роль пользователя возможным исполнителем.
-                ?tasks cmw:possibleAssignee ?role.
+                ?tasks cmw:possibleAssignee ?roles.
             }
             or {
                 # Проверяем, назначена ли задача на группу пользователя.
-                ?tasks cmw:assignee ?groupMembers.
+                ?tasks cmw:assignee ?groupRoles.
             }
             or {
                 # Проверяем, является ли группа пользователя возможным исполнителем.
-                ?tasks cmw:possibleAssignee ?groupMembers.
+                ?tasks cmw:possibleAssignee ?groupRoles.
             }.
         }.
         # Возвращаем True, если у текущего пользователя есть задачи.

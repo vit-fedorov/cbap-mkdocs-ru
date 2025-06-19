@@ -2219,7 +2219,7 @@ output:result output:warning "Завершена".
 </tbody>
 </table>
 
-### Логические функции `cmwassert`
+### Функции логических выражений и логики `cmwassert`
 
 <table markdown="block">
 <thead markdown="block">

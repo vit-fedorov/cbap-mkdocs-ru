@@ -11,7 +11,7 @@ tags:
     - фильтрация
 hide:
     - tags
-kbId: 
+kbId: 5106
 ---
 
 # Выборка определённых элементов из списка с помощью N3 {: #n3_collection_select_conditional }

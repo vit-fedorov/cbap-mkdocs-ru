@@ -1,6 +1,15 @@
 ---
 title: Написание выражений на языке N3
 kbId: 4852
+tags:
+  - notation 3
+  - notation3
+  - тройки
+  - тройка
+  - триплеты
+  - N3
+  - rdf
+  - turtle
 ---
 
 # Написание выражений на языке N3 {: #n3_guide }
@@ -17,7 +26,7 @@ kbId: 4852
 
 Выражения N3 состоят из триплетов вида субъект-предикат-объект.
 
-Например, `?group rdf:type account:Group` — триплет, позволяющий по любому из заданных аргументов обнаружить неизвестные. Если в триплете заданы объект и предикат, ПО будет осуществлять поиск субъекта, если заданы субъект и предикат — поиск объекта и т. д. Если в выражении задан один аргумент, ПО вернёт все значения для остальных двух.
+Например, `?group rdf:type account:Group` — триплет, позволяющий по любому из заданных аргументов обнаружить неизвестные. Если в триплете заданы объект и предикат, ПО будет осуществлять поиск субъекта, если заданы субъект и предикат — поиск объекта и т.д. Если в выражении задан один аргумент, ПО вернёт все значения для остальных двух.
 
 Основы построения языка выражений N3 приведены в открытой документации, размещенной по адресу <https://www.w3.org/TR/rdf11-concepts/>.
 
@@ -70,9 +79,8 @@ in ?item.
 | субъект не указан | `предикат`   | `объект`         | Поиск субъекта по заданному предикату и объекту.             |
 | `субъект`         | `предикат`   | `объект`         | Проверка субъекта и объекта на полное совпадение.            |
 | субъект не указан | `предикат`   | объект не указан | Поиск субъекта и объекта по заданному предикату.             |
-| *`субъект`*       | *`предикат`* | *`?.`*           | Проверка наличия значения. Здесь *`?.`*— обозначение функции проверки наличия непустого значения (факта) по субъекту и предикату. |
+| *`субъект`*       | *`предикат`* | *`?.`*           | Проверка наличия значения. Здесь *`?.`*— обозначение функции проверки наличия непустого значения (факта) по субъекту и предикату. |
 
- 
 ### Порядок обработки запросов
 
 _![Рисунок 1. Порядок обработки запроса для поиска ID аккаунта по имени пользователя](https://kb.comindware.ru/assets/img_64d245cbdcd08.png)_
@@ -103,29 +111,29 @@ _![Рисунок 2. Порядок обработки запроса для п�
 
 ## Входные и выходные данные выражений в зависимости от контекста
 
-| **Сущность** | **Входные данные (контекст)** | **Выходные данные** |
-| --- | --- | --- |
-| Атрибут → Вычисляемое значение | `?item` — текущая запись или экземпляр процесса | `?value` — вычисленное значение атрибута |
-| Форма → Фильтр на поле | `?item` — текущая запись или экземпляр процесса | `?value` — список искомых записей |
-| Правила для формы → Правило → Условие выполнения | `?item` — текущая запись или экземпляр процесса | `?value` — `true` (правило сработает) или `false` или пусто (не сработает) |
-| Правила для формы → Действие  → Условие выполнения | `?item` — текущая запись или экземпляр процесса | `?value` — `true` (действие сработает) или `false` или пусто (не сработает) |
-| Правила для формы → Вычисляемое значение для действия | `?item` — текущая запись или экземпляр процесса | `?value` — целевое значение атрибута |
-| Кнопка → Условия отображения | `?item` — текущая запись или экземпляр процесса | `?value` — `true` или false |
-| Таблица → Системный фильтр |  | `?value` — список записей для вывода в таблице |
-| Роль → Разрешения → Шаблон записи, аккаунта, процесса → Фильтр аккаунтов | `?item` — текущая запись или экземпляр процесса | `?value` — список групп или аккаунтов, которые имеют соответствующие разрешения на запись или экземпляр процесса |
-| Роль → Разрешения → Шаблон записи, аккаунта, процесса → Условие применения | `?item` — текущая запись или экземпляр процесса | `?value` — `true` или `false` |
-| Сценарий → Изменение значений переменных → Вычисление значения | `?item` — текущая запись или экземпляр процесса | `?value` — вычисленное значение переменной |
-| Сценарий → Изменение значений атрибутов → Вычисление значения | `?item` — текущая запись или экземпляр процесса | `?value` — вычисленное значение атрибута |
-| Сценарий → Смена контекста → Вычисление набора объектов | `?item` — текущая запись или экземпляр процесса | `?value` — список объектов для перехода |
-| Сценарий → Дублирование записи → Вычисление набора объектов | `?item` — текущая запись или экземпляр процесса | `?value` — список объектов для дублирования |
-| Сценарий → Проверка результата выражения → Выражение для проверки | `?item` — текущая запись или экземпляр процесса | `?value` — `true` (проверка пройдена) или `false` |
-| Сценарий → Выполнение по условиям → Условие выполнения действий | `?item` — текущая запись или экземпляр процесса | `?value` — `true` (выполнять действия) или `false` |
-| Сценарий → Повтор по числовому счётчику → Количество итераций | `?item` — текущая запись или экземпляр процесса | `?value` — количество итераций |
-| Сценарий → Повтор по количеству объектов → Вычисление набора объектов | `?item` — текущая запись или экземпляр процесса | `?value` — список объектов |
+| Сущность                                                                   | Входные данные (контекст)                       | Выходные данные                                                                                                  |
+| -------------------------------------------------------------------------- | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Атрибут → Вычисляемое значение                                             | `?item` — текущая запись или экземпляр процесса | `?value` — вычисленное значение атрибута                                                                         |
+| Форма → Фильтр на поле                                                     | `?item` — текущая запись или экземпляр процесса | `?value` — список искомых записей                                                                                |
+| Правила для формы → Правило → Условие выполнения                           | `?item` — текущая запись или экземпляр процесса | `?value` — `true` (правило сработает) или `false` или пусто (не сработает)                                       |
+| Правила для формы → Действие  → Условие выполнения                         | `?item` — текущая запись или экземпляр процесса | `?value` — `true` (действие сработает) или `false`  или пусто (не сработает)                                     |
+| Правила для формы → Вычисляемое значение для действия                      | `?item` — текущая запись или экземпляр процесса | `?value` — целевое значение атрибута                                                                             |
+| Кнопка → Условия отображения                                               | `?item` — текущая запись или экземпляр процесса | `?value` — `true`  или false                                                                                     |
+| Таблица → Системный фильтр                                                 |                                                 | `?value` — список записей для вывода в таблице                                                                   |
+| Роль → Разрешения → Шаблон записи, аккаунта, процесса → Фильтр аккаунтов   | `?item` — текущая запись или экземпляр процесса | `?value` — список групп или аккаунтов, которые имеют соответствующие разрешения на запись или экземпляр процесса |
+| Роль → Разрешения → Шаблон записи, аккаунта, процесса → Условие применения | `?item` — текущая запись или экземпляр процесса | `?value` — `true`  или `false`                                                                                   |
+| Сценарий → Изменение значений переменных → Вычисление значения             | `?item` — текущая запись или экземпляр процесса | `?value` — вычисленное значение переменной                                                                       |
+| Сценарий → Изменение значений атрибутов → Вычисление значения              | `?item` — текущая запись или экземпляр процесса | `?value` — вычисленное значение атрибута                                                                         |
+| Сценарий → Смена контекста → Вычисление набора объектов                    | `?item` — текущая запись или экземпляр процесса | `?value` — список объектов для перехода                                                                          |
+| Сценарий → Дублирование записи → Вычисление набора объектов                | `?item` — текущая запись или экземпляр процесса | `?value` — список объектов для дублирования                                                                      |
+| Сценарий → Проверка результата выражения → Выражение для проверки          | `?item` — текущая запись или экземпляр процесса | `?value` — `true` (проверка пройдена) или `false`                                                                |
+| Сценарий → Выполнение по условиям → Условие выполнения действий            | `?item` — текущая запись или экземпляр процесса | `?value` — `true` (выполнять действия) или `false`                                                               |
+| Сценарий → Повтор по числовому счётчику → Количество итераций              | `?item` — текущая запись или экземпляр процесса | `?value` — количество итераций                                                                                   |
+| Сценарий → Повтор по количеству объектов → Вычисление набора объектов      | `?item` — текущая запись или экземпляр процесса | `?value` — список объектов                                                                                       |
 
 ## Примеры использования встроенных функций и операторов N3
 
-**Функция .?**
+### Функция `.?`
 
 ``` turtle
 @prefix object: <http://comindware.com/ontology/object#>.
@@ -137,7 +145,7 @@ _![Рисунок 2. Порядок обработки запроса для п�
 }
 ```
 
-**Функция once**
+### Функция `once`
 
 ``` turtle
 @prefix object: <http://comindware.com/ontology/object#>.
@@ -153,7 +161,7 @@ true -> ?value.
 }
 ```
 
-**Оператор if**
+### Оператор `if`
 
 ``` turtle
 @prefix cmw: <http://comindware.com/logics#>.
@@ -170,10 +178,9 @@ then {
 }
 else {?tasks -> ?value.}.
 }
-
 ```
 
-**Оператор from и функция sum**
+### Оператор `from` и функция `sum`
 
 ``` turtle
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
@@ -191,7 +198,7 @@ from  {
 }
 ```
 
-**Функция count**
+### Функция `count`
 
 ``` turtle
 @prefix object: <http://comindware.com/ontology/object#>.
@@ -205,7 +212,7 @@ from  {
 }
 ```
 
-**Функция distinct**
+### Функция `distinct`
 
 ``` turtle
 @prefix object: <http://comindware.com/ontology/object#>.
@@ -222,7 +229,7 @@ from  {
 }
 ```
 
-**Оператор union**
+### Оператор `union`
 
 ``` turtle
 @prefix assert: <http://comindware.com/logics/assert#>.
@@ -241,7 +248,9 @@ from  {
 
 ## Примеры использования расширений Comindware для языка N3
 
-**Задача**: вывести заявки, у которых значение атрибута Status не равно «Завершен» и дата начала уже прошла относительно текущей даты.
+### Пример 1
+
+Вывести заявки, у которых значение атрибута Status не равно «Завершен» и дата начала уже прошла относительно текущей даты.
 
 ``` turtle
 @prefix object: <http://comindware.com/ontology/object#>.
@@ -259,7 +268,9 @@ session:context session:requestTime ?now.
 }
 ```
 
-**Задача**: при добавлении существующих записей в коллекцию отображать в списке только те проекты, у которых прошла проверка (атрибут Proverka имеет значение `true`) или у которых атрибут Status имеет значение «Создан».
+### Пример 2
+
+При добавлении существующих записей в коллекцию отображать в списке только те проекты, у которых прошла проверка (атрибут Proverka имеет значение `true`) или у которых атрибут Status имеет значение «Создан».
 
 ``` turtle
 @prefix object: <http://comindware.com/ontology/object#>.
@@ -278,7 +289,9 @@ or {
 }
 ```
 
-**Задача**: выводить в списке на добавление только руководителей текущего пользователя (атрибут manager типа «Аккаунт») или пользователей с должностью «Менеджер» (атрибут title типа «Текст»)
+### Пример 3
+
+Выводить в списке на добавление только руководителей текущего пользователя (атрибут manager типа «Аккаунт») или пользователей с должностью «Менеджер» (атрибут title типа «Текст»)
 
 ``` turtle
 @prefix cmw: <http://comindware.com/logics#>.
@@ -298,7 +311,9 @@ or {
 }
 ```
 
-**Задача:** выводить только тех заявителей, которые прикреплены к заявкам.
+### Пример 4
+
+Выводить только тех заявителей, которые прикреплены к заявкам.
 
 ``` turtle
 @prefix object: <http://comindware.com/ontology/object#>.
@@ -308,7 +323,9 @@ or {
 }
 ```
 
-**Задача:** выполнять действия с полем на форме при условии, что процент выполнения заявки больше 70, при этом действие не должно выполняться, если этап (атрибут Etap) выполнения равен 1.
+### Пример 5
+
+Выполнять действия с полем на форме при условии, что процент выполнения заявки больше 70, при этом действие не должно выполняться, если этап (атрибут Etap) выполнения равен 1.
 
 ``` turtle
 @prefix object: <http://comindware.com/ontology/object#>.
@@ -329,7 +346,9 @@ or {
 }
 ```
 
-**Задача:** при выполнении вышеописанного условия, выполнять для поля «Статус» заявки следующие действия: сменить тип доступа на «Только для чтения», установить значение «Завершена» и показать предупреждение с текстом «Заявка <Название заявки (атрибут Name)> завершена».
+### Пример 6
+
+При выполнении вышеописанного условия, выполнять для поля «Статус» заявки следующие действия: сменить тип доступа на «Только для чтения», установить значение «Завершена» и показать предупреждение с текстом «Заявка <Название заявки (атрибут Name)> завершена».
 
 ``` turtle
 @prefix object: <http://comindware.com/ontology/object#>.
@@ -359,14 +378,14 @@ output:result output:warning "Завершена".
 
 | `@prefix: <#>.`       | `:John` — субъект определён в текущем документе                                          |
 | --------------------- | ---------------------------------------------------------------------------------------- |
-| `a/ @a`               | `Rdf:type`          |
+| `a/ @a`               | `Rdf:type`                                                                               |
 | `[]`                  | указываем, что существует объект с заданными свойствам без возможности ссылаться на него |
 | `=`                   | эквивалентность (`owl:equivalentTo`)                                                     |
-| `=>`                  | `Log:implies`       |
-| `объект.свойство`     | переход к свойству  |
-| `(элемент1 элемент2)` | список              |
-| `_:variable`          | `log:forSome`       |
-| `?variable`           | `log:forAll`        |
+| `=>`                  | `Log:implies`                                                                            |
+| `объект.свойство`     | переход к свойству                                                                       |
+| `(элемент1 элемент2)` | список                                                                                   |
+| `_:variable`          | `log:forSome`                                                                            |
+| `?variable`           | `log:forAll`                                                                             |
 
 ## Справочник встроенных функций N3
 
@@ -397,7 +416,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?WorkInSeconds ?WorkDaysInSeconds) w3math:quotient ?WorkSeconds.`
+``` turtle
+(?WorkInSeconds ?WorkDaysInSeconds) w3math:quotient ?WorkSeconds.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -414,7 +435,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?WorkInSeconds ?WorkDaysInSeconds) w3math:integerQuotient ?WorkSeconds.`
+``` turtle
+(?WorkInSeconds ?WorkDaysInSeconds) w3math:integerQuotient ?WorkSeconds.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -431,7 +454,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?remainingWorkInSeconds ?remainingWorkDaysInSeconds) math:remainder ?remainingWorkSeconds.`
+``` turtle
+(?remainingWorkInSeconds ?remainingWorkDaysInSeconds) math:remainder ?remainingWorkSeconds.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -448,7 +473,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?productingWorkInSeconds ?productingWorkDaysInSeconds) w3math:product ?productingWorkSeconds.`
+``` turtle
+(?productingWorkInSeconds ?productingWorkDaysInSeconds) w3math:product ?productingWorkSeconds.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -465,7 +492,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?recordDate w3math:lessThan ?maxDate.`
+``` turtle
+?recordDate w3math:lessThan ?maxDate.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -482,7 +511,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?documentRecordsCount w3math:notLessThan 2.`
+``` turtle
+?documentRecordsCount w3math:notLessThan 2.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -494,12 +525,14 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Равно (`dateTime` , `date` , `duration` , `string` , `number` ).</td>
+<td markdown>Равно (`dateTime` , `date` , `duration` , `string` , `number`).</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?countWorkingDaysMounth w3math:equalTo ?countWorkingDays.`
+``` turtle
+?countWorkingDaysMounth w3math:equalTo ?countWorkingDays.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -511,12 +544,14 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Не равно (`dateTime` , `date` , `duration` , `string` , `number` ).</td>
+<td markdown>Не равно (`dateTime` , `date` , `duration` , `string` , `number`).</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?countWorkingDaysMounth w3math:notEqualTo ?countWorkingDays.`
+``` turtle
+?countWorkingDaysMounth w3math:notEqualTo ?countWorkingDays.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -528,12 +563,14 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Больше чем (`dateTime` , `date` , `duration` , `string` , `number` ).</td>
+<td markdown>Больше чем (`dateTime` , `date` , `duration` , `string` , `number`).</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?recordDate w3math:greaterThan ?minDate.`
+``` turtle
+?recordDate w3math:greaterThan ?minDate.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -545,12 +582,14 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Не больше чем (`dateTime` , `date` , `duration` , `string` , `number` ).</td>
+<td markdown>Не больше чем (`dateTime` , `date` , `duration` , `string` , `number`).</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?documentRecordsCount w3math:notGreaterThan 2.`
+``` turtle
+?documentRecordsCount w3math:notGreaterThan 2.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -567,7 +606,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?firstNumber w3math:negation ?negationNumber.`
+``` turtle
+?firstNumber w3math:negation ?negationNumber.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -596,7 +637,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?durationsSeconds cmwmath:sum ?durationSumSeconds.`
+``` turtle
+?durationsSeconds cmwmath:sum ?durationSumSeconds.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -613,7 +656,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?list cmwmath:difference ?differenceTotal.`
+``` turtle
+?list cmwmath:difference ?differenceTotal.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -630,12 +675,14 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?listQueue cmwmath:min ?queueMin.`
+``` turtle
+?listQueue cmwmath:min ?queueMin.
+```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown>**Возвращает**</td>
-<td markdown>`number` `dateTime` `duration`</td>
+<td markdown>`number`  `dateTime`  `duration`</td>
 </tr>
 <tr markdown="block">
 <th markdown colspan="2">`cmwmath:max`</th>
@@ -647,12 +694,14 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?listQueue cmwmath:max ?queueMax.`
+``` turtle
+?listQueue cmwmath:max ?queueMax.
+```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown>**Возвращает**</td>
-<td markdown>`number` `dateTime` `duration`</td>
+<td markdown>`number`  `dateTime`  `duration`</td>
 </tr>
 <tr markdown="block">
 <th markdown colspan="2">`cmwmath:average`</th>
@@ -664,7 +713,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?priceFirst ?priceSecond) cmwmath:average ?priceAverage.`
+``` turtle
+(?priceFirst ?priceSecond) cmwmath:average ?priceAverage.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -681,7 +732,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?quotientPrice cmwmath:round ?numberRound.`
+``` turtle
+?quotientPrice cmwmath:round ?numberRound.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -698,7 +751,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?quotientPrice cmwmath:floor ?numberFloor.`
+``` turtle
+?quotientPrice cmwmath:floor ?numberFloor.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -715,7 +770,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?quotientPrice cmwmath:ceil ?numberCeil.`
+``` turtle
+?quotientPrice cmwmath:ceil ?numberCeil.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -744,7 +801,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?durationWorkingDay w3time:inSeconds ?secondsWorkingDay.`
+``` turtle
+?durationWorkingDay w3time:inSeconds ?secondsWorkingDay.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -773,7 +832,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?secondsWorkingDay cmwtime:toDuration ?durationWorkingDay.`
+``` turtle
+?secondsWorkingDay cmwtime:toDuration ?durationWorkingDay.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -790,7 +851,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?dateTime1 ?dateTime2) cmwtime:getSpan ?resultTimeSpan.`
+``` turtle
+(?dateTime1 ?dateTime2) cmwtime:getSpan ?resultTimeSpan.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -807,7 +870,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?dateTime ?duration) cmwtime:addDuration ?value.`
+``` turtle
+(?dateTime ?duration) cmwtime:addDuration ?value.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -824,7 +889,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?dateTime ?duration) cmwtime:subDuration ?value.`
+``` turtle
+(?dateTime ?duration) cmwtime:subDuration ?value.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -841,7 +908,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDateTime cmwtime:endOfDay ?endDateTime.`
+``` turtle
+?creationDateTime cmwtime:endOfDay ?endDateTime.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -858,7 +927,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDateTime cmwtime:startOfDay ?startDateTime.`
+``` turtle
+?creationDateTime cmwtime:startOfDay ?startDateTime.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -875,7 +946,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDateTime cmwtime:startOfWeek ?startDateTime.`
+``` turtle
+?creationDateTime cmwtime:startOfWeek ?startDateTime.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -892,7 +965,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDateTime cmwtime:startOfMonth ?startDateTime.`
+``` turtle
+?creationDateTime cmwtime:startOfMonth ?startDateTime.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -909,7 +984,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?someDateTime "Etc/GMT" "Europe/Moscow") cmwtime:fromTzToTz ?tzDateTime.`
+``` turtle
+(?someDateTime "Etc/GMT" "Europe/Moscow") cmwtime:fromTzToTz ?tzDateTime.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -926,7 +1003,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`? cmwtime:timeZoneHours ?timeZoneDifferenceInHours.`
+``` turtle
+? cmwtime:timeZoneHours ?timeZoneDifferenceInHours.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -943,7 +1022,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDate cmwtime:isToday ?today.`
+``` turtle
+?creationDate cmwtime:isToday ?today.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -960,7 +1041,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDate cmwtime:century ?numberCentury.`
+``` turtle
+?creationDate cmwtime:century ?numberCentury.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -977,7 +1060,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDate cmwtime:isoFormat ?isoFormatDate.`
+``` turtle
+?creationDate cmwtime:isoFormat ?isoFormatDate.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -994,7 +1079,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDate cmwtime:year ?numberYear.`
+``` turtle
+?creationDate cmwtime:year ?numberYear.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1011,7 +1098,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDate cmwtime:month ?numberMonth.`
+``` turtle
+?creationDate cmwtime:month ?numberMonth.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1028,7 +1117,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDate cmwtime:day ?numberDay.`
+``` turtle
+?creationDate cmwtime:day ?numberDay.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1045,7 +1136,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDate cmwtime:hour ?numberHour.`
+``` turtle
+?creationDate cmwtime:hour ?numberHour.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1062,7 +1155,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDate cmwtime:minute ?numberMinute.`
+``` turtle
+?creationDate cmwtime:minute ?numberMinute.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1079,7 +1174,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDate cmwtime:second ?numberSecond.`
+``` turtle
+?creationDate cmwtime:second ?numberSecond.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1096,7 +1193,18 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?intervalBeginYear ?intervalBeginMonth ?intervalBeginDay 23 59 59) cmwtime:makeDate ?brokenIntervalEnd.` `(?intervalEndYear ?intervalEndMonth ?intervalEndDay 0 0 0) cmwtime:makeDate ?brokenIntervalBegin.` `(?startDateYear ?startDateMonth ?startDateDay) cmwtime:makeDate ?startDayDate.` `(?startDateYear ?startDateMonth ?startDateDay ?startDateHour ?startDateMinute ?startDateSecond) cmwtime:makeDate ?intervalBegin.`
+``` turtle
+(?intervalBeginYear ?intervalBeginMonth ?intervalBeginDay 23 59 59) cmwtime:makeDate ?brokenIntervalEnd.
+```
+``` turtle
+(?intervalEndYear ?intervalEndMonth ?intervalEndDay 0 0 0) cmwtime:makeDate ?brokenIntervalBegin.
+```
+``` turtle
+(?startDateYear ?startDateMonth ?startDateDay) cmwtime:makeDate ?startDayDate.
+```
+``` turtle
+(?startDateYear ?startDateMonth ?startDateDay ?startDateHour ?startDateMinute ?startDateSecond) cmwtime:makeDate ?intervalBegin.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1113,7 +1221,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?startWorkDateTime ?qountWorkingHours ?startWorkingDay ?durationWorkingDay (?dateNotHoliday)) cmwtime:workhours ?newDateTime.`
+``` turtle
+(?startWorkDateTime ?qountWorkingHours ?startWorkingDay ?durationWorkingDay (?dateNotHoliday)) cmwtime:workhours ?newDateTime.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1130,7 +1240,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?startWorkDateTime ?qountWorkingHours (?firstDateNotHoliday ?secondDateNotWorking)) cmwtime:workdays ?newDateTime.`
+``` turtle
+(?startWorkDateTime ?qountWorkingHours (?firstDateNotHoliday ?secondDateNotWorking)) cmwtime:workdays ?newDateTime.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1147,7 +1259,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?startWorkDateTime ?endWorkDateTime ?timeStartWorkingDay ?durationWorkingDay) cmwtime:workhoursDuration ?newDuration.`
+``` turtle
+(?startWorkDateTime ?endWorkDateTime ?timeStartWorkingDay ?durationWorkingDay) cmwtime:workhoursDuration ?newDuration.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1164,7 +1278,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?startWorkDateTime ?endWorkDateTime) cmwtime:workdaysDuration ?newDuration.`
+``` turtle
+(?startWorkDateTime ?endWorkDateTime) cmwtime:workdaysDuration ?newDuration.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1193,7 +1309,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?durationHoliday cmwduration:days ?countDaysOfHoliday.`
+``` turtle
+?durationHoliday cmwduration:days ?countDaysOfHoliday.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1210,7 +1328,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?durationHoliday cmwduration:hours ?countHoursOfHoliday.`
+``` turtle
+?durationHoliday cmwduration:hours ?countHoursOfHoliday.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1227,7 +1347,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?durationHoliday cmwduration:minutes ?countMinutesOfHoliday.`
+``` turtle
+?durationHoliday cmwduration:minutes ?countMinutesOfHoliday.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1256,7 +1378,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`("{0}/{1} - {2}" ?value0 ?value1 ?value2) w3string:format ?outString.`
+``` turtle
+("{0}/{1} - {2}" ?value0 ?value1 ?value2) w3string:format ?outString.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1273,7 +1397,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?stringExample w3string:matches ?expression.`
+``` turtle
+?stringExample w3string:matches ?expression.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1290,7 +1416,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?stringExample w3string:notMatches ?expression.`
+``` turtle
+?stringExample w3string:notMatches ?expression.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1307,7 +1435,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDate w3string:greaterThan ?chooseDate.`
+``` turtle
+?creationDate w3string:greaterThan ?chooseDate.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1324,7 +1454,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDate w3string:lessThan ?chooseDate.`
+``` turtle
+?creationDate w3string:lessThan ?chooseDate.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1341,7 +1473,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDate w3string:notGreaterThan ?chooseDate.`
+``` turtle
+?creationDate w3string:notGreaterThan ?chooseDate.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1358,7 +1492,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDate w3string:notLessThan ?chooseDate.`
+``` turtle
+?creationDate w3string:notLessThan ?chooseDate.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1387,7 +1523,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`("," ?newDependencyLinks) cmwstring:join ?newDependencyLinksStr.`
+``` turtle
+("," ?newDependencyLinks) cmwstring:join ?newDependencyLinksStr.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1404,7 +1542,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?text "\n" "<br>") cmwstring:replace ?html.`
+``` turtle
+(?text "\n" "<br>") cmwstring:replace ?html.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1421,7 +1561,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?taskTitleLong 50 "...") cmwstring:cutString ?taskTitle.`
+``` turtle
+(?taskTitleLong 50 "...") cmwstring:cutString ?taskTitle.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1438,7 +1580,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?youStr cmwstring:firstCapital ?youStrCapital.`
+``` turtle
+?youStr cmwstring:firstCapital ?youStrCapital.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1455,7 +1599,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?firstString ?secondString) cmwstring:concatenation ?newString.`
+``` turtle
+(?firstString ?secondString) cmwstring:concatenation ?newString.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1472,7 +1618,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?stringName cmwstring:length ?countSymbols.`
+``` turtle
+?stringName cmwstring:length ?countSymbols.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1489,7 +1637,10 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?sourceString 2 4) cmwstring:substring ?resultString.` `(?sourceString 2) cmwstring:substring ?resultString.`
+``` turtle
+(?sourceString 2 4) cmwstring:substring ?resultString.
+(?sourceString 2) cmwstring:substring ?resultString.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1506,7 +1657,12 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?sourceString ?subString) cmwstring:indexOf ?resultString.` `(?sourceString ?subString 4) cmwstring:indexOf ?resultString.`
+``` turtle
+(?sourceString ?subString) cmwstring:indexOf ?resultString.
+```
+``` turtle
+(?sourceString ?subString 4) cmwstring:indexOf ?resultString.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1523,7 +1679,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?sequence cmwstring:toUri ?reference.`
+``` turtle
+?sequence cmwstring:toUri ?reference.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1540,7 +1698,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?reference cmwstring:fromUri ?sequence.`
+``` turtle
+?reference cmwstring:fromUri ?sequence.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1557,7 +1717,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?string cmwstring:toBase64 ?newStringBase.`
+``` turtle
+?string cmwstring:toBase64 ?newStringBase.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1574,7 +1736,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?stringBase cmwstring:fromBase64 ?newString.`
+``` turtle
+?stringBase cmwstring:fromBase64 ?newString.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1591,12 +1755,14 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`("_" ?string) cmwstring:split ?newString.`
+``` turtle
+("_" ?string) cmwstring:split ?newString.
+```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown>**Возвращает**</td>
-<td markdown></td>
+<td markdown>—</td>
 </tr>
 <tr markdown="block">
 <th markdown colspan="2">`cmwstring:format`</th>
@@ -1608,7 +1774,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`("{0}/{1} - {2}" ?v0 ?v1 ?v2) cmwstring:format ?outString.`
+``` turtle
+("{0}/{1} - {2}" ?v0 ?v1 ?v2) cmwstring:format ?outString.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1637,7 +1805,17 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?left cmwlogics:value ?right.` `{time:now => ?left.` `?left cmwlogics:value ?right` `Result: ?right = dateTime.UtcNow.}`
+``` turtle
+?left cmwlogics:value ?right.
+```
+
+``` turtle
+{
+  time:now => ?left.
+  ?left cmwlogics:value ?right.
+  Result: ?right = dateTime.UtcNow.
+}
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1666,7 +1844,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?pattern cmwentity:like ?sourceString.`
+``` turtle
+?pattern cmwentity:like ?sourceString.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1683,7 +1863,13 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?sourceString entity:startsWith ?pattern.` `(?sourceString “OrdinalIgnoreCase”) entity:startsWith ?pattern.`
+``` turtle
+?sourceString entity:startsWith ?pattern.
+```
+
+``` turtle
+(?sourceString "OrdinalIgnoreCase") entity:startsWith ?pattern.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1700,7 +1886,13 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?sourceString entity:endsWith ?pattern.` `(?sourceString “OrdinalIgnoreCase”) entity:endsWith ?pattern.`
+``` turtle
+?sourceString entity:endsWith ?pattern.
+```
+
+``` turtle
+(?sourceString "OrdinalIgnoreCase") entity:endsWith ?pattern.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1717,7 +1909,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?sourceString ?substring) entity:indexOf ?index.`
+``` turtle
+(?sourceString ?substring) entity:indexOf ?index.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1734,7 +1928,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?string entity:toLower ?stringLow.`
+``` turtle
+?string entity:toLower ?stringLow.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1751,7 +1947,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?string entity:toUpper ?stringUpper.`
+``` turtle
+?string entity:toUpper ?stringUpper.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1768,7 +1966,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?string entity:contains ?subString.`
+``` turtle
+?string entity:contains ?subString.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1797,7 +1997,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?htmlText builtin:toPlainText ?plainText.`
+``` turtle
+?htmlText builtin:toPlainText ?plainText.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1826,12 +2028,14 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`((1 2) (3 4)) w3list:append (1 2 3 4)`
+``` turtle
+((1 2) (3 4)) w3list:append ?resultingList1234.
+```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown>**Возвращает**</td>
-<td markdown>Список</td>
+<td markdown>`list`</td>
 </tr>
 <tr markdown="block">
 <th markdown colspan="2">`w3list:in`</th>
@@ -1843,7 +2047,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?subjectToFind w3list:append ?list`
+``` turtle
+?subjectToFind w3list:in ?list.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1860,7 +2066,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?listFlowers w3list:last ?lastFlower.`
+``` turtle
+?listFlowers w3list:last ?lastFlower.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1877,7 +2085,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?list w3list:append ?objectToFind`
+``` turtle
+?list w3list:member ?objectToFind.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1906,7 +2116,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?listFlowers cmwlist:length ?countFlowers.`
+``` turtle
+?listFlowers cmwlist:length ?countFlowers.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1923,7 +2135,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?list ?index) cmwlist:at ?valueOfIndex.`
+``` turtle
+(?list ?index) cmwlist:at ?valueOfIndex.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -1952,12 +2166,25 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?recordTemplate ?dataSet) entity:groupby ?attributeGroup`
+``` turtle
+(?recordTemplate ?dataSet) entity:groupby ?attributeGroup.
+```
+
+Входные данные:
+
+```
+(("key1_1" "key2_1" "value1_1") ("key1_2" "key2_2" "value1_2") ("key1_3" "key2_3" "value1_3"))
+```
+
+Результат:
+```
+ (("value1_2") ("value1_1") ("value1_3"))
+```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown>**Возвращает**</td>
-<td markdown></td>
+<td markdown>`list`</td>
 </tr>
 <tr markdown="block">
 <th markdown colspan="2">`cmwentity:sortby`</th>
@@ -1969,12 +2196,253 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?recordTemplate ?dataSet) entity:sortby ?attributeGroup` `(("key1_1" "key2_1" "value1_1") ("key1_2" "key2_2" "value1_2") ("key1_3" "key2_3" "value1_3"))` `//` `// right:` `// (("value1_2") ("value1_1") ("value1_3")) - sorted field-to-select data`
+``` turtle
+(?recordTemplate ?dataSet) entity:sortby ?attributeGroup.
+```
+
+Входные данные:
+
+```
+(("key1_1" "key2_1" "value1_1") ("key1_2" "key2_2" "value1_2") ("key1_3" "key2_3" "value1_3"))
+```
+
+Результат:
+```
+ (("value1_2") ("value1_1") ("value1_3"))
+```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown>**Возвращает**</td>
-<td markdown></td>
+<td markdown>`list`</td>
+</tr>
+</tbody>
+</table>
+
+### Логические функции `cmwassert`
+
+<table markdown="block">
+<thead markdown="block">
+<tr markdown="block">
+<th markdown colspan="2">`@prefix cmwassert: <http://comindware.com/logics/assert#>.`</th>
+</tr>
+</thead>
+<tbody markdown="block">
+<tr markdown="block">
+<th markdown colspan="2">`cmwassert:true`</th>
+</tr>
+<tr markdown="block">
+<td markdown>**Описание**</td>
+<td markdown>Объявляет логическое значение `true`</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Синтаксис**</td>
+<td markdown="block">
+``` turtle
+true
+```
+</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Возвращает**</td>
+<td markdown>`boolean`</td>
+</tr>
+<tr markdown="block">
+<th markdown colspan="2">`cmwassert:false`</th>
+</tr>
+<tr markdown="block">
+<td markdown>**Описание**</td>
+<td markdown>Объявляет логическое значение `false`</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Синтаксис**</td>
+<td markdown="block">
+``` turtle
+false
+```
+</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Возвращает**</td>
+<td markdown>`boolean`</td>
+</tr>
+<tr markdown="block">
+<th markdown colspan="2">`cmwassert:or`</th>
+</tr>
+<tr markdown="block">
+<td markdown>**Описание**</td>
+<td markdown>Оператор `ИЛИ`</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Синтаксис**</td>
+<td markdown="block">
+``` turtle
+or {} or {} … or {}.
+```
+</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Возвращает**</td>
+<td markdown>`boolean`</td>
+</tr>
+<tr markdown="block">
+<th markdown colspan="2">`cmwassert:if`</th>
+</tr>
+<tr markdown="block">
+<td markdown>**Описание**</td>
+<td markdown>Условный оператор</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Синтаксис**</td>
+<td markdown="block">
+``` turtle
+if {} then {} else {}.
+```
+</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Возвращает**</td>
+<td markdown>`boolean`</td>
+</tr>
+<tr markdown="block">
+<th markdown colspan="2">`cmwassert:count`</th>
+</tr>
+<tr markdown="block">
+<td markdown>**Описание**</td>
+<td markdown>Выводит количество записей, удовлетворяющих условиям.</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Синтаксис**</td>
+<td markdown="block">
+``` turtle
+{} assert:count ?c.
+```
+</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Возвращает**</td>
+<td markdown>`number`</td>
+</tr>
+<tr markdown="block">
+<th markdown colspan="2">`cmwassert:union`</th>
+</tr>
+<tr markdown="block">
+<td markdown>**Описание**</td>
+<td markdown>Объединяет итераторы в один.</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Синтаксис**</td>
+<td markdown="block">
+``` turtle
+({} … {}) assert:union true.
+```
+</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Возвращает**</td>
+<td markdown>`list`</td>
+</tr>
+<tr markdown="block">
+<th markdown colspan="2">`cmwassert:distinct`</th>
+</tr>
+<tr markdown="block">
+<td markdown>**Описание**</td>
+<td markdown>Выбирает уникальные записи из связанных наборов данных.</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Синтаксис**</td>
+<td markdown="block">
+``` turtle
+{
+?item ?Positions ?PositionsVal.
+?PositionsVal ?Items ?ItemsVal.
+} assert:distinct ?ItemsVal.
+```
+</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Возвращает**</td>
+<td markdown>`list`</td>
+</tr>
+<!--
+<tr markdown="block">
+<th markdown colspan="2">`cmwassert:range`</th>
+</tr>
+<tr markdown="block">
+<td markdown>**Описание**</td>
+<td markdown>
+Проверяет, что два аргумента являются разными элементами в заданном списке.
+Возвращает `True`, если аргументы различны и оба присутствуют в списке, иначе — `False`.
+</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Синтаксис**</td>
+<td markdown="block">
+``` turtle
+(?A ?B) assert:range ?result.
+```
+</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Возвращает**</td>
+<td markdown>`bool`</td>
+</tr>
+-->
+<tr markdown="block">
+<th markdown colspan="2">`cmwassert:sort`</th>
+</tr>
+<tr markdown="block">
+<td markdown>**Описание**</td>
+<td markdown>Сортирует элементы по заданному критерию.</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Синтаксис**</td>
+<td markdown="block">
+
+``` turtle
+@in ?historyRecord1, ?historyRecord2.
+@out ?result.
+{
+  ?historyRecord1 history:recordDate ?recordDate1.
+  ?historyRecord2 history:recordDate ?recordDate2.
+  (?recordDate1 ?recordDate2) sort:timeComparer ?result.
+} => { (?historyRecord1 ?historyRecord2) notification:sortHistoryRecords ?result }.
+
+{
+  from {
+    ?actualHistoryRecord history:recordOfSubjectHistory ?subject.
+    ?actualHistoryRecord history:recordDate ?actualHistoryDate.
+    ?actualHistoryDate math:notLessThan ?oldestHistoryDate.
+    ?actualHistoryDate math:notGreaterThan ?newestHistoryDate.
+  } select ?actualHistoryRecord -> ?actualHistoryRecords.
+  (?actualHistoryRecords notification:sortHistoryRecords) assert:sort ?actualHistoryRecordsSorted.
+}
+```
+
+</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Возвращает**</td>
+<td markdown>`list`</td>
+</tr>
+<tr markdown="block">
+<th markdown colspan="2">`cmwassert:once`</th>
+</tr>
+<tr markdown="block">
+<td markdown>**Описание**</td>
+<td markdown>Выходит после первой успешной итерации</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Синтаксис**</td>
+<td markdown="block">
+``` turtle
+once {}.
+```
+</td>
+</tr>
+<tr markdown="block">
+<td markdown>**Возвращает**</td>
+<td markdown>—</td>
 </tr>
 </tbody>
 </table>
@@ -1998,7 +2466,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?url cmwurl:encode ?encodedUrl.`
+``` turtle
+?url cmwurl:encode ?encodedUrl.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2015,7 +2485,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?path1 ?path2 ?path3 ...) cmwurl:combine ?combinedPath.`
+``` turtle
+(?path1 ?path2 ?path3 ...) cmwurl:combine ?combinedPath.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2032,7 +2504,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?unused cmwurl:siteDir ?siteDir.`
+``` turtle
+?unused cmwurl:siteDir ?siteDir.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2061,7 +2535,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?object cmwui:toClientString ?string.`
+``` turtle
+?object cmwui:toClientString ?string.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2078,7 +2554,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?object cmwui:toQName ?qName.`
+``` turtle
+?object cmwui:toQName ?qName.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2102,12 +2580,17 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Меньше чем. (`dateTime` , `date` , `duration` , `string` , `number` ) Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Меньше чем. (`dateTime` , `date` , `duration` , `string` , `number`).
+
+Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?recordDate cmwnullable:lessThan ?maxDate.`
+``` turtle
+?recordDate cmwnullable:lessThan ?maxDate.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2119,12 +2602,17 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Больше чем (`dateTime` , `date` , `duration` , `string` , `number` ) Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Больше чем (`dateTime` , `date` , `duration` , `string` , `number`).
+
+Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?recordDate cmwnullable:greaterThan ?minDate.`
+``` turtle
+?recordDate cmwnullable:greaterThan ?minDate.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2136,12 +2624,17 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Не меньше (`dateTime` , `date` , `duration` , `string` , `number` ) Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Не меньше (`dateTime` , `date` , `duration` , `string` , `number`).
+
+Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?documentRecordsCount cmwnullable:notLessThan 2.`
+``` turtle
+?documentRecordsCount cmwnullable:notLessThan 2.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2153,12 +2646,17 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Не больше (`dateTime` , `date` , `duration` , `string` , `number` ) Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Не больше (`dateTime` , `date` , `duration` , `string` , `number`).
+
+Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?documentRecordsCount cmwnullable:notGreaterThan 2.`
+``` turtle
+?documentRecordsCount cmwnullable:notGreaterThan 2.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2170,12 +2668,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Берёт 2 аргумента в скобках, указанные в субъекте и результат деления первого на второе помещает в переменную объекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Берёт 2 аргумента в скобках, указанные в субъекте и результат деления первого на второе помещает в переменную объекта. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?WorkInSeconds ?WorkDaysInSeconds) cmwnullable:quotient ?WorkSeconds.`
+``` turtle
+(?WorkInSeconds ?WorkDaysInSeconds) cmwnullable:quotient ?WorkSeconds.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2187,12 +2688,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Берёт 2 аргумента в скобках, указанные в субъекте и результат их умножения помещает в переменную объекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Берёт 2 аргумента в скобках, указанные в субъекте и результат их умножения помещает в переменную объекта. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?productingWorkInSeconds ?productingWorkDaysInSeconds) cmwnullable:product ?productingWorkSeconds.`
+``` turtle
+(?productingWorkInSeconds ?productingWorkDaysInSeconds) cmwnullable:product ?productingWorkSeconds.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2204,12 +2708,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Берёт 2 аргумента в скобках, указанные в субъекте и результат целочисленного деления первого на второе помещает в переменную объекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Берёт 2 аргумента в скобках, указанные в субъекте и результат целочисленного деления первого на второе помещает в переменную объекта. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?WorkInSeconds ?WorkDaysInSeconds) cmwnullable:integerQuotient ?WorkSeconds.`
+``` turtle
+(?WorkInSeconds ?WorkDaysInSeconds) cmwnullable:integerQuotient ?WorkSeconds.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2221,12 +2728,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Берёт 2 аргумента в скобках, указанные в субъекте и остаток от деления первого на второе помещает в переменную объекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Берёт 2 аргумента в скобках, указанные в субъекте и остаток от деления первого на второе помещает в переменную объекта. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?remainingWorkInSeconds ?remainingWorkDaysInSeconds) cmwnullable:remainder ?remainingWorkSeconds.`
+``` turtle
+(?remainingWorkInSeconds ?remainingWorkDaysInSeconds) cmwnullable:remainder ?remainingWorkSeconds.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2238,12 +2748,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Берёт сумму из субъекта типа `List` и записывает значение в объект. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Берёт сумму из субъекта типа `List` и записывает значение в объект. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?durationsSeconds cmwnullable:sum ?durationSumSeconds.`
+``` turtle
+?durationsSeconds cmwnullable:sum ?durationSumSeconds.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2255,12 +2768,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Берёт разность из субъекта типа `List` и записывает значение в объект. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Берёт разность из субъекта типа `List` и записывает значение в объект. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?list cmwnullable:difference ?differenceTotal.`
+``` turtle
+?list cmwnullable:difference ?differenceTotal.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2272,12 +2788,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время начала дня, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время начала дня, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDateTime cmwnullable:startOfDay ?startDateTime.`
+``` turtle
+?creationDateTime cmwnullable:startOfDay ?startDateTime.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2289,12 +2808,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время начала недели, в пределах которой находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время начала недели, в пределах которой находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDateTime cmwnullable:startOfWeek ?startDateTime.`
+``` turtle
+?creationDateTime cmwnullable:startOfWeek ?startDateTime.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2306,12 +2828,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время начала месяца, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время начала месяца, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDateTime cmwnullable:startOfMonth ?startDateTime.`
+``` turtle
+?creationDateTime cmwnullable:startOfMonth ?startDateTime.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2323,12 +2848,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время начала квартала, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время начала квартала, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDateTime cmwnullable:startOfQuarter ?startDateTime.`
+``` turtle
+?creationDateTime cmwnullable:startOfQuarter ?startDateTime.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2340,12 +2868,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время начала месяца, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время начала месяца, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDateTime cmwnullable:startOfYear ?startDateTime.`
+``` turtle
+?creationDateTime cmwnullable:startOfYear ?startDateTime.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2357,12 +2888,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время окончания дня, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время окончания дня, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDateTime cmwnullable:endOfDay ?endDateTime.`
+``` turtle
+?creationDateTime cmwnullable:endOfDay ?endDateTime.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2374,12 +2908,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время окончания недели, в пределах которой находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время окончания недели, в пределах которой находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDateTime cmwnullable:endOfWeek ?endDateTime.`
+``` turtle
+?creationDateTime cmwnullable:endOfWeek ?endDateTime.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2391,12 +2928,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время окончания месяца, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время окончания месяца, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDateTime cmwnullable:endOfMonth ?endDateTime.`
+``` turtle
+?creationDateTime cmwnullable:endOfMonth ?endDateTime.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2408,12 +2948,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время окончания квартала, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время окончания квартала, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDateTime cmwnullable:endOfQuarter ?endDateTime.`
+``` turtle
+?creationDateTime cmwnullable:endOfQuarter ?endDateTime.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2425,12 +2968,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время окончания года, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Берёт значение из субъекта типа `dateTime` и возвращает дату и время окончания года, в пределах которого находится значение субъекта. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?creationDateTime cmwnullable:endOfYear ?endDateTime.`
+``` turtle
+?creationDateTime cmwnullable:endOfYear ?endDateTime.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2442,12 +2988,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Конвертирует значение длительности в количество секунд. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Конвертирует значение длительности в количество секунд. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?durationWorkingDay cmwnullable:inSeconds ?secondsWorkingDay.`
+``` turtle
+?durationWorkingDay cmwnullable:inSeconds ?secondsWorkingDay.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2459,12 +3008,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Берёт минимальное значение из субъекта типа `List` и записывает значение в объект. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Берёт минимальное значение из субъекта типа `List` и записывает значение в объект. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?listQueue cmwnullable:min ?queueMin.`
+``` turtle
+?listQueue cmwnullable:min ?queueMin.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2476,12 +3028,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Берёт максимальное значение из субъекта типа `List` и записывает значение в объект. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Берёт максимальное значение из субъекта типа `List` и записывает значение в объект. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?listQueue cmwnullable:max ?queueMax.`
+``` turtle
+?listQueue cmwnullable:max ?queueMax.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2493,12 +3048,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Берёт 2 аргумента в скобках, указанные в субъекте и помещает их среднее арифметическое в переменную объекта. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Берёт 2 аргумента в скобках, указанные в субъекте и помещает их среднее арифметическое в переменную объекта. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`(?priceFirst ?priceSecond) cmwnullable:average ?priceAverage.`
+``` turtle
+(?priceFirst ?priceSecond) cmwnullable:average ?priceAverage.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2510,12 +3068,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Конвертирует количество секунд в значение типа `duration`. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Конвертирует количество секунд в значение типа `duration`. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?secondsWorkingDay cmwnullable:toDuration ?durationWorkingDay.`
+``` turtle
+?secondsWorkingDay cmwnullable:toDuration ?durationWorkingDay.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2527,12 +3088,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Округление к ближайшему целому. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Округление к ближайшему целому. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?quotientPrice cmwnullable:round ?numberRound.`
+``` turtle
+?quotientPrice cmwnullable:round ?numberRound.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2544,12 +3108,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Округление в меньшую сторону. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Округление в меньшую сторону. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?quotientPrice cmwnullable:floor ?numberFloor.`
+``` turtle
+?quotientPrice cmwnullable:floor ?numberFloor.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2561,12 +3128,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Округление в большую сторону. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Округление в большую сторону. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?quotientPrice cmwnullable:ceiling ?numberCeil.`
+``` turtle
+?quotientPrice cmwnullable:ceiling ?numberCeil.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2578,12 +3148,15 @@ output:result output:warning "Завершена".
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Форматирует аргументы в соответствии с заданным шаблоном. Возвращает отформатированную строку. Если в субъекте нулевое значение, возвращает нулевое значение.</td>
+<td markdown>Форматирует аргументы в соответствии с заданным шаблоном. Возвращает отформатированную строку. Если в субъекте нулевое значение, возвращает нулевое значение.
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`("{0}/{1} - {2}" ?v0 ?v1 ?v2) cmwnullable:format ?outString.`
+``` turtle
+("{0}/{1} - {2}" ?v0 ?v1 ?v2) cmwnullable:format ?outString.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2612,7 +3185,10 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`“bllalblablab.jpg” => ?fileName.` `?fileName builtin:isSupportedImage ?right.`
+``` turtle
+"bllalblablab.jpg" => ?fileName.
+?fileName builtin:isSupportedImage ?right.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2629,7 +3205,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?streamId builtin:dimensions ?dimensions.`
+``` turtle
+?streamId builtin:dimensions ?dimensions.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2658,12 +3236,14 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`cmwlogics:securityContext cmwlogics:currentUser ?userVal.`
+``` turtle
+cmwlogics:securityContext cmwlogics:currentUser ?userVal.
+```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown>**Возвращает**</td>
-<td markdown></td>
+<td markdown>—</td>
 </tr>
 <tr markdown="block">
 <th markdown colspan="2">`cmwlogics:securityContext`</th>
@@ -2675,12 +3255,14 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`cmwlogics:securityContext cmwlogics:currentUser ?userVal.`
+``` turtle
+cmwlogics:securityContext cmwlogics:currentUser ?userVal.
+```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown>**Возвращает**</td>
-<td markdown></td>
+<td markdown>—</td>
 </tr>
 </tbody>
 </table>
@@ -2704,12 +3286,14 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?group rdf:type cmwaccount:Group.`
+``` turtle
+?group rdf:type cmwaccount:Group.
+```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown>**Возвращает**</td>
-<td markdown></td>
+<td markdown>—</td>
 </tr>
 <tr markdown="block">
 <th markdown colspan="2">`cmwaccount:groupName`</th>
@@ -2721,7 +3305,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?group cmwaccount:groupName ?groupName.`
+``` turtle
+?group cmwaccount:groupName ?groupName.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2738,7 +3324,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:isSystemAdministrator ?access.`
+``` turtle
+?user cmwaccount:isSystemAdministrator ?access.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2755,7 +3343,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:displayName ?userDisplayName.`
+``` turtle
+?user cmwaccount:displayName ?userDisplayName.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2772,7 +3362,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:fullName ?userNameSurname.`
+``` turtle
+?user cmwaccount:fullName ?userNameSurname.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2789,7 +3381,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:manager ?userManager.`
+``` turtle
+?user cmwaccount:manager ?userManager.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2806,7 +3400,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:mbox ?userEmail.`
+``` turtle
+?user cmwaccount:mbox ?userEmail.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2823,7 +3419,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:phone ?userMobile.`
+``` turtle
+?user cmwaccount:phone ?userMobile.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2840,7 +3438,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`account:instantMessagingId`
+``` turtle
+account:instantMessagingId
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2857,7 +3457,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:status ? enabled`
+``` turtle
+?user cmwaccount:status ? enabled.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2874,7 +3476,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:skype ?loginSkype.`
+``` turtle
+?user cmwaccount:skype ?loginSkype.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2891,7 +3495,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:username ?login.`
+``` turtle
+?user cmwaccount:username ?login.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2908,7 +3514,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:active ? enabled`
+``` turtle
+?user cmwaccount:active ? enabled.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2925,7 +3533,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:lastLoginDate ?lastLoginDate.`
+``` turtle
+?user cmwaccount:lastLoginDate ?lastLoginDate.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2942,7 +3552,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:language ?userLanguage.`
+``` turtle
+?user cmwaccount:language ?userLanguage.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2959,7 +3571,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user account:sid ?sid.`
+``` turtle
+?user account:sid ?sid.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2976,7 +3590,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user account:notificationSettings ?notificationConfig .`
+``` turtle
+?user account:notificationSettings ?notificationConfig .
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -2993,7 +3609,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:password ?userPassword`
+``` turtle
+?user cmwaccount:password ?userPassword
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3010,7 +3628,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:userpic ?picture ..`
+``` turtle
+?user cmwaccount:userpic ?picture ..
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3027,7 +3647,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:userpicLarge ?picture.`
+``` turtle
+?user cmwaccount:userpicLarge ?picture.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3044,7 +3666,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:title  ?jobTitle.`
+``` turtle
+?user cmwaccount:title  ?jobTitle.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3061,7 +3685,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:department  ?departmentName.`
+``` turtle
+?user cmwaccount:department  ?departmentName.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3078,7 +3704,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:office  ?officeName.`
+``` turtle
+?user cmwaccount:office  ?officeName.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3095,7 +3723,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:userGroupMembership  ?groupList.`
+``` turtle
+?user cmwaccount:userGroupMembership  ?groupList.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3112,7 +3742,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:authenticationMethod ?authMethod.`
+``` turtle
+?user cmwaccount:authenticationMethod ?authMethod.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3129,7 +3761,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:substitute ?substituteAccount.`
+``` turtle
+?user cmwaccount:substitute ?substituteAccount.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3146,7 +3780,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:substituteDateFrom  ?subsitutionStart`
+``` turtle
+?user cmwaccount:substituteDateFrom  ?subsitutionStart
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3163,7 +3799,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:substituteDateTo  ?subsitutionEnd`
+``` turtle
+?user cmwaccount:substituteDateTo  ?subsitutionEnd
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3180,7 +3818,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:birthday  ?birthday.`
+``` turtle
+?user cmwaccount:birthday  ?birthday.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3197,7 +3837,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:personalCalendarId  ?calendarID.`
+``` turtle
+?user cmwaccount:personalCalendarId  ?calendarID.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3214,7 +3856,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:personalCalendarUri  ?calendarURI.`
+``` turtle
+?user cmwaccount:personalCalendarUri  ?calendarURI.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3231,7 +3875,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:presentedOnOrgchart ?onOrgChart.`
+``` turtle
+?user cmwaccount:presentedOnOrgchart ?onOrgChart.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3248,7 +3894,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`?user cmwaccount:timeZone ?userTimeZone.`
+``` turtle
+?user cmwaccount:timeZone ?userTimeZone.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3277,7 +3925,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
-`("templateClients" "attibuteClientCode") cmwobject:findProperty ?attibute.`
+``` turtle
+("templateClients" "attibuteClientCode") cmwobject:findProperty ?attibute.
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3306,6 +3956,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
+``` turtle
+cmwcontext:time
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3322,6 +3975,9 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
+``` turtle
+cmwcontext:timeZoneOffset
+```
 </td>
 </tr>
 <tr markdown="block">
@@ -3338,11 +3994,14 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
+``` turtle
+cmwcontext:origin
+```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown>**Возвращает**</td>
-<td markdown></td>
+<td markdown>—</td>
 </tr>
 <tr markdown="block">
 <th markdown colspan="2">`cmwcontext:variable`</th>
@@ -3354,11 +4013,14 @@ output:result output:warning "Завершена".
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
 <td markdown="block">
+``` turtle
+cmwcontext:variable
+```
 </td>
 </tr>
 <tr markdown="block">
 <td markdown>**Возвращает**</td>
-<td markdown></td>
+<td markdown>—</td>
 </tr>
 </tbody>
 </table>

@@ -10,6 +10,7 @@ tags:
   - N3
   - rdf
   - turtle
+hide: tags
 ---
 
 # Написание выражений на языке N3 {: #n3_guide }
@@ -30,9 +31,9 @@ tags:
 
 Основы построения языка выражений N3 приведены в открытой документации, размещенной по адресу <https://www.w3.org/TR/rdf11-concepts/>.
 
-Синтаксические элементы
+### Синтаксические элементы
 
-- `@prefix property: <http://comindware.com/ontology/user/op#>.` — объявление префикса встроенного пакета, т.е. синонима, используемого в выражении..
+- `@prefix property: <http://comindware.com/ontology/user/op#>.` — объявление префикса встроенного пакета, т.&nbsp;е. синонима, используемого в выражении.
 - `rdf:type` — использование префикса для удобочитаемости и сокращения размеров кода.
 - `{}` — объявление тела выражения.
 - `?` — объявление переменных.
@@ -46,7 +47,7 @@ tags:
 - `()` — объявление списка.
 - `[]` — неявное использование субъекта.
 
-Полезные конструкции и встроенные функции
+### Полезные конструкции и встроенные функции
 
 - `("templateSystemName" "attributeSystemName") object:findProperty ?p.` — возвращает в переменную `?p` атрибут по заданным системным именам шаблона и атрибута.
 - `once {}.` — выходит после первой успешной итерации.
@@ -57,7 +58,21 @@ tags:
 - `{} assert:count ?c.` — вычисляет количество записей.
 - `({} … {}) assert:union true.` — объединяет итераторы в один.
 
-## Запросы N3
+### Упрощения
+
+Ниже представлены некоторые упрощения N3, упрощающие и ускоряющие работу.
+
+- `@prefix: <#>.` — `:John` означает, что субъект определён в текущем документе.
+- `a/ @a` — `Rdf:type`.
+- `[]` — указываем, что существует объект с заданными свойствам без возможности ссылаться на него.
+- `=` — эквивалентность (`owl:equivalentTo`).
+- `=>` — `Log:implies`.
+- `объект.свойство` — переход к свойству.
+- `(элемент1 элемент2)` — список.
+- `_:variable` — `log:forSome`.
+- `?variable` — `log:forAll`.
+
+## Запросы в N3
 
 - Запросы пишутся в виде набора триплетов.
 - У запроса есть входные (в некоторых случаях) и выходные данные.
@@ -68,18 +83,52 @@ tags:
 ``` turtle
 in ?item.
 {
-#наш код
+  #наш код
 } => { ?item attribute:value ?value. }.
 ```
 
 ### Пять видов запросов
 
-| `субъект`         | `предикат`   | объект не указан | Поиск объекта по заданному предикату и субъекту. |
-| ----------------- | ------------ | ---------------- | ------ |
-| субъект не указан | `предикат`   | `объект`         | Поиск субъекта по заданному предикату и объекту.             |
-| `субъект`         | `предикат`   | `объект`         | Проверка субъекта и объекта на полное совпадение.            |
-| субъект не указан | `предикат`   | объект не указан | Поиск субъекта и объекта по заданному предикату.             |
-| *`субъект`*       | *`предикат`* | *`?.`*           | Проверка наличия значения. Здесь *`?.`*— обозначение функции проверки наличия непустого значения (факта) по субъекту и предикату. |
+<table markdown="block">
+<thead markdown="block">
+<tr markdown="block">
+<th colspan="3" markdown="block">Структура запроса</th>
+<th markdown="block">Описание</th>
+</tr>
+</thead>
+<tbody markdown="block">
+<tr markdown="block">
+<td markdown="block" style="width: 170px;">`субъект`</td>
+<td markdown="block" style="width: 100px;">`предикат`</td>
+<td markdown="block" style="width: 160px;">`объект не указан`</td>
+<td markdown="block">Поиск объекта по заданному предикату и субъекту.</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">`субъект не указан`</td>
+<td markdown="block">`предикат`</td>
+<td markdown="block">`объект`</td>
+<td markdown="block">Поиск субъекта по заданному предикату и объекту.</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">`субъект`</td>
+<td markdown="block">`предикат`</td>
+<td markdown="block">`объект`</td>
+<td markdown="block">Проверка субъекта и объекта на полное совпадение.</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">`субъект не указан`</td>
+<td markdown="block">`предикат`</td>
+<td markdown="block">`объект не указан`</td>
+<td markdown="block">Поиск субъекта и объекта по заданному предикату.</td>
+</tr>
+<tr markdown="block">
+<td markdown="block">`субъект`</td>
+<td markdown="block">`предикат`</td>
+<td markdown="block">`?.`</td>
+<td markdown="block">Проверка наличия значения. Здесь `?.` — обозначение функции проверки наличия непустого значения (факта) по субъекту и предикату.</td>
+</tr>
+</tbody>
+</table>
 
 ### Порядок обработки запросов
 
@@ -111,15 +160,15 @@ _![Рисунок 2. Порядок обработки запроса для п�
 
 ## Входные и выходные данные выражений в зависимости от контекста
 
-| Сущность                                                                   | Входные данные (контекст)                       | Выходные данные                                                                                                  |
-| -------------------------------------------------------------------------- | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Сущность  {: style="width:33%;" }| Входные данные (контекст)  {: style="width:33%;" }| Выходные данные {: style="width:33%;" }|
+| -------------------------------- | ------------------------------------------------- | -------------------------------- |
 | Атрибут → Вычисляемое значение                                             | `?item` — текущая запись или экземпляр процесса | `?value` — вычисленное значение атрибута                                                                         |
 | Форма → Фильтр на поле                                                     | `?item` — текущая запись или экземпляр процесса | `?value` — список искомых записей                                                                                |
 | Правила для формы → Правило → Условие выполнения                           | `?item` — текущая запись или экземпляр процесса | `?value` — `true` (правило сработает) или `false` или пусто (не сработает)                                       |
 | Правила для формы → Действие  → Условие выполнения                         | `?item` — текущая запись или экземпляр процесса | `?value` — `true` (действие сработает) или `false`  или пусто (не сработает)                                     |
 | Правила для формы → Вычисляемое значение для действия                      | `?item` — текущая запись или экземпляр процесса | `?value` — целевое значение атрибута                                                                             |
 | Кнопка → Условия отображения                                               | `?item` — текущая запись или экземпляр процесса | `?value` — `true`  или false                                                                                     |
-| Таблица → Системный фильтр                                                 |                                                 | `?value` — список записей для вывода в таблице                                                                   |
+| Таблица → Системный фильтр                                                 |                                                 | `?item` — список записей для вывода в таблице                                                                   |
 | Роль → Разрешения → Шаблон записи, аккаунта, процесса → Фильтр аккаунтов   | `?item` — текущая запись или экземпляр процесса | `?value` — список групп или аккаунтов, которые имеют соответствующие разрешения на запись или экземпляр процесса |
 | Роль → Разрешения → Шаблон записи, аккаунта, процесса → Условие применения | `?item` — текущая запись или экземпляр процесса | `?value` — `true`  или `false`                                                                                   |
 | Сценарий → Изменение значений переменных → Вычисление значения             | `?item` — текущая запись или экземпляр процесса | `?value` — вычисленное значение переменной                                                                       |
@@ -138,10 +187,10 @@ _![Рисунок 2. Порядок обработки запроса для п�
 ``` turtle
 @prefix object: <http://comindware.com/ontology/object#>.
 {
-("currentTemplate" "Region") object:findProperty ?Region.
-# Проверяем, что в текущей записи, атрибут Region содержит непустое значение
-?item ?Region ?.
-?item -> ?value.
+  ("currentTemplate" "Region") object:findProperty ?Region.
+  # Проверяем, что в текущей записи, атрибут Region содержит непустое значение
+  ?item ?Region ?.
+  ?item -> ?value.
 }
 ```
 
@@ -154,8 +203,8 @@ _![Рисунок 2. Порядок обработки запроса для п�
 ("Biznesstruktura" "Region") object:findProperty ?Region2.
 
 once {
-?item ?Region ?RegionVal.
-?check ?Region2 ?RegionVal.
+  ?item ?Region ?RegionVal.
+  ?check ?Region2 ?RegionVal.
 }.
 true -> ?value.
 }
@@ -168,15 +217,15 @@ true -> ?value.
 @prefix session: <http://comindware.com/ontology/session#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
 {
-session:context session:requestTime ?now. #получим текущую дату
-?tasks a cmw:UserTask.
-if {?tasks cmw:dueDate ?.}
-then {
-?tasks cmw:dueDate ?dueDateVal.
-?dueDateVal math:greaterThan ?now.
-?tasks -> ?value.
+  session:context session:requestTime ?now. #получим текущую дату
+  ?tasks a cmw:UserTask.
+  if {?tasks cmw:dueDate ?.}
+  then {
+  ?tasks cmw:dueDate ?dueDateVal.
+  ?dueDateVal math:greaterThan ?now.
+  ?tasks -> ?value.
 }
-else {?tasks -> ?value.}.
+  else {?tasks -> ?value.}.
 }
 ```
 
@@ -207,7 +256,7 @@ from  {
 ("Nakladnaya" "PoziciiNakladnoy") object:findProperty ?Positions.
 
 {
-?item ?Positions ?PositionsVal.
+  ?item ?Positions ?PositionsVal.
 } assert:count ?value.
 }
 ```
@@ -222,8 +271,8 @@ from  {
 ("PoziciiNakladnoy" "Nomenklatura") object:findProperty ?Items.
 {
 {
-?item ?Positions ?PositionsVal.
-?PositionsVal ?Items ?ItemsVal.
+  ?item ?Positions ?PositionsVal.
+  ?PositionsVal ?Items ?ItemsVal.
 } assert:distinct ?ItemsVal.
 } assert:count ?value.
 }
@@ -239,8 +288,8 @@ from  {
 ("Nakladnaya" "Poluchatel") object:findProperty ?Receiver.
 
 (
-{?item ?ShippedBy ?Contractor.}
-{?item ?Receiver ?Contractor.}
+  {?item ?ShippedBy ?Contractor.}
+  {?item ?Receiver ?Contractor.}
 ) assert:union true.
 ?Contractor -> ?value.
 }
@@ -257,14 +306,14 @@ from  {
 @prefix session: <http://comindware.com/ontology/session#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
 {
-("Proekt" "Status") object:findProperty ?StatusProp.
-?Proekty ?StatusProp ?Status.
-("Proekt" "Datanachala") object:findProperty ?DatanachalaProp.
-?Proekty ?DatanachalaProp ?Datanachala.
-session:context session:requestTime ?now.
-?now math:greaterThan ?Datanachala.
-?Status != "Завершен".
-?value == ?Proekty.
+  ("Proekt" "Status") object:findProperty ?StatusProp.
+  ?Proekty ?StatusProp ?Status.
+  ("Proekt" "Datanachala") object:findProperty ?DatanachalaProp.
+  ?Proekty ?DatanachalaProp ?Datanachala.
+  session:context session:requestTime ?now.
+  ?now math:greaterThan ?Datanachala.
+  ?Status != "Завершен".
+  ?value == ?Proekty.
 }
 ```
 
@@ -275,17 +324,17 @@ session:context session:requestTime ?now.
 ``` turtle
 @prefix object: <http://comindware.com/ontology/object#>.
 {
-("Proekt" "Status") object:findProperty ?StatusProp.
-?Proekty ?StatusProp ?Status.
-("Proekt" "Proverka") object:findProperty ?ProverkaProp.
-?Proekty ?ProverkaProp ?Proverka.
-or {
-?Proverka == true.
-}
-or {
-?Status == "Создан".
-}.
-?value == ?Proekty.
+  ("Proekt" "Status") object:findProperty ?StatusProp.
+  ?Proekty ?StatusProp ?Status.
+  ("Proekt" "Proverka") object:findProperty ?ProverkaProp.
+  ?Proekty ?ProverkaProp ?Proverka.
+  or {
+    ?Proverka == true.
+  }
+  or {
+    ?Status == "Создан".
+  }.
+  ?value == ?Proekty.
 }
 ```
 
@@ -298,16 +347,16 @@ or {
 @prefix account: <http://comindware.com/ontology/account#>.
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
 {
-cmw:securityContext cmw:currentUser ?currUser.
-?users a account:Account.
-or {
-?currUser account:manager ?users. #users - руководители
-}
-or {
-?users account:title ?title.
-?title string:matches "Менеджер".
-}.
-?value == ?users.
+  cmw:securityContext cmw:currentUser ?currUser.
+  ?users a account:Account.
+  or {
+    ?currUser account:manager ?users. #users - руководители
+  }
+  or {
+    ?users account:title ?title.
+    ?title string:matches "Менеджер".
+  }.
+  ?value == ?users.
 }
 ```
 
@@ -318,8 +367,8 @@ or {
 ``` turtle
 @prefix object: <http://comindware.com/ontology/object#>.
 {
-("Zayavitel" "Application") object:findProperty ?ApplicationProp.
-?Zayavitel ?ApplicationProp ? .
+  ("Zayavitel" "Application") object:findProperty ?ApplicationProp.
+  ?Zayavitel ?ApplicationProp ? .
 }
 ```
 
@@ -356,36 +405,21 @@ or {
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix output: <http://comindware.com/ontology/tableOutput#>.
 {
-output:result a output:Result.
-("Application" "Etap") object:findProperty ?EtapProp.
-?item ?EtapProp ?Etap.
-("Application" "percent") object:findProperty ?percentProp.
-?item ?percentProp ?percent.
-?Etap != 1.
-?percent math:greaterThan 70.
-output:result output:typeOfAccess "Только чтения".
-output:result output:value "Завершена".
-("Application" "Name") object:findProperty ?NameProp.
-?item ?NameProp ?Name.
-("Заявка" ?Name "завершена") string:format ?warning.
-output:result output:warning "Завершена".
+  output:result a output:Result.
+  ("Application" "Etap") object:findProperty ?EtapProp.
+  ?item ?EtapProp ?Etap.
+  ("Application" "percent") object:findProperty ?percentProp.
+  ?item ?percentProp ?percent.
+  ?Etap != 1.
+  ?percent math:greaterThan 70.
+  output:result output:typeOfAccess "Только чтения".
+  output:result output:value "Завершена".
+  ("Application" "Name") object:findProperty ?NameProp.
+  ?item ?NameProp ?Name.
+  ("Заявка" ?Name "завершена") string:format ?warning.
+  output:result output:warning "Завершена".
 }
 ```
-
-## Упрощения
-
-Ниже представлены некоторые упрощения N3, упрощающие и ускоряющие работу.
-
-| `@prefix: <#>.`       | `:John` — субъект определён в текущем документе                                          |
-| --------------------- | ---------------------------------------------------------------------------------------- |
-| `a/ @a`               | `Rdf:type`                                                                               |
-| `[]`                  | указываем, что существует объект с заданными свойствам без возможности ссылаться на него |
-| `=`                   | эквивалентность (`owl:equivalentTo`)                                                     |
-| `=>`                  | `Log:implies`                                                                            |
-| `объект.свойство`     | переход к свойству                                                                       |
-| `(элемент1 элемент2)` | список                                                                                   |
-| `_:variable`          | `log:forSome`                                                                            |
-| `?variable`           | `log:forAll`                                                                             |
 
 ## Справочник встроенных функций N3
 

@@ -282,6 +282,7 @@ nav:
     - examples/n3_calculate_active_task_assignee.md
     - examples/n3_filter_active_tasks.md
     - examples/n3_periodic_task_notifications.md
+    - examples/n3_collection_select_conditional.md
     - administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
     - administration/connections_communication_routes/rest_odata_connections/send_http_example.md
     - administration/connections_communication_routes/rest_odata_connections/http_send_post.md

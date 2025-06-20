@@ -1,6 +1,15 @@
 ---
 title: Подсистема журналирования
 kbId: 4623
+tags:
+    - linux
+    - windows
+    - журнал
+    - журналы
+    - журналирование
+    - логи
+    - логирование
+hide: tags
 ---
 
 # Подсистема журналирования {: #logging_engine }
@@ -454,7 +463,7 @@ _[https://github.com/NLog/NLog/wiki/EventLog-target](https://github.com/NLog/NLo
     writeTo="errorsFile,EventLogCBAPErrors"/>
     ```
 
-6. Перезагрузите экземпляр ПО, чтобы изменения вступили в силу. См. раздел _[«Настройка конфигурации Утилиты администрирования Comindware»][admin_utility_configure]_.
+6. Перезагрузите экземпляр ПО, чтобы изменения вступили в силу.
 
 {% endif %}
 

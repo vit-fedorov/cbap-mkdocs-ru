@@ -1,6 +1,14 @@
 ---
 title: 'Обновление версии экземпляра ПО с его остановкой'
 kbId: 4624
+tags:
+    - установка
+    - развертывание
+    - обновление
+    - апгрейд
+    - сервисы
+    - кафка
+hide: tags
 ---
 
 # Обновление версии экземпляра ПО с его остановкой {: #upgrade_version_linux }
@@ -281,9 +289,9 @@ kbId: 4624
 15. Перезапустите сервисы **{{ productName }}**:
 
     ``` sh
-    systemctl restart apigateway<instanceName>.service
-    systemctl restart adaperhost<instanceName>.service
+    systemctl restart adapterhost<instanceName>.service
     systemctl restart comindware<instanceName>.service
+    systemctl restart apigateway<instanceName>.service
     ```
 
 16. Откройте сайт экземпляра ПО в браузере, одновременно открыв выдачу журналов экземпляра в терминале:

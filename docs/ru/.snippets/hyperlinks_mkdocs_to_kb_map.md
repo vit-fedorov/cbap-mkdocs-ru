@@ -218,10 +218,6 @@
 
 [system_service_management]: {{ kbArticleURLPrefix }}4671
 
-[table_clone]: {{ kbArticleURLPrefix }}2552
-
-[table_configure_template]: {{ kbArticleURLPrefix }}2550
-
 [table_personal_use]: {{ kbArticleURLPrefix }}4815
 
 [table_personal_use_filter]: {{ kbArticleURLPrefix }}4815#table_personal_use_filter
@@ -694,8 +690,6 @@
 
 [process_email_configure]: {{ kbArticleURLPrefix }}4691
 
-[scenario_actions]: {{ kbArticleURLPrefix }}2149
-
 [scenario_elements]: {{ kbArticleURLPrefix }}4718
 
 [scenario_event]: {{ kbArticleURLPrefix }}4718#scenario_event
@@ -725,6 +719,14 @@
 [process_diagram_elements_stop_process_end_event]: {{ kbArticleURLPrefix }}4746
 
 [table_configure]: {{ kbArticleURLPrefix }}4800
+
+[table_configure_clone]: {{ kbArticleURLPrefix }}4800
+
+[table_configure_tasks_view]: {{ kbArticleURLPrefix }}4800#table_configure_tasks_view
+
+[table_configure_template]: {{ kbArticleURLPrefix }}4800#table_configure_template
+
+[table_configure_properties]: {{ kbArticleURLPrefix }}4800#table_configure_properties
 
 [gantt_chart_use]: {{ kbArticleURLPrefix }}4817
 
@@ -768,7 +770,7 @@
 
 [backup_restore_windows]: {{ kbArticleURLPrefix }}4644
 
-[backup_windows_external]: {{ kbArticleURLPrefix }}2301
+[backup_windows_external]: {{ kbArticleURLPrefix }}4645
 
 [db_move_manual_windows]: {{ kbArticleURLPrefix }}4646
 
@@ -820,7 +822,7 @@
 
 [restore_test_configure]: {{ kbArticleURLPrefix }}4651
 
-[sso_authenticatation_configure]: {{ kbArticleURLPrefix }}4613
+[sso_authentication_configure]: {{ kbArticleURLPrefix }}4613
 
 [sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}4613#sso_authentication_configure_keytab_update
 

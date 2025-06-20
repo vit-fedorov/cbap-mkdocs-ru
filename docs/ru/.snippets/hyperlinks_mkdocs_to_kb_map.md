@@ -86,6 +86,8 @@
 
 [accounts]: {{ kbArticleURLPrefix }}4653
 
+[accounts_configure_timezone]: {{ kbArticleURLPrefix }}4653#accounts_configure_timezone
+
 [account_permission_audit]: {{ kbArticleURLPrefix }}4664
 
 [ad_connection]: {{ kbArticleURLPrefix }}4687
@@ -543,6 +545,8 @@
 [form_dynamic_elements_color]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_color
 
 [form_dynamic_elements_color_diagram_example]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_color_diagram_example
+
+[form_dynamic_elements_date_time]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_date_time
 
 [form_dynamic_elements_drawing]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_drawing
 

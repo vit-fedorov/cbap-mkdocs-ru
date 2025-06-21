@@ -159,6 +159,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
                             par.replace_with(par.string)
                     pre.append(td)
                 table.replace_with(pre)
+                pre.insert_before(p.new_tag("p"))
                 
             print(f"  Starting markdown conversion for article {id}...")
             markdown = MarkdownConverter(heading_style='ATX', bullets='-', escape_misc=False).convert_soup(p)
@@ -210,7 +211,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
 
                 # Sanitize fenced code blocks to use 3 backticks instead of 4 or more, preserving indentation.
                 print(f"    Sanitizing fenced code blocks for article {id}...")
-                markdown = re.sub(r'^(\s*)`{4,}', r'\1```', markdown, flags=re.MULTILINE)
+                markdown = re.sub(r'`{4,}', r'```', markdown, flags=re.MULTILINE)
                 print(f"    Fenced code blocks sanitized for article {id}")
                 
                 # Final cleanup of excessive newlines.

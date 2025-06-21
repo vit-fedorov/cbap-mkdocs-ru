@@ -30,10 +30,10 @@ HYPERLINKS_FILE = os.path.join(DOCS_RU_FOLDER, '.snippets/hyperlinks_mkdocs_to_k
 
 # Function to search for pattern in hyperlinks file and replace
 def find_url_in_snippet(article_id, anchor):
+    url = ''
     try:
         with open(HYPERLINKS_FILE, 'r', encoding='utf-8') as file:
             lines = file.readlines()
-        url = ''
         for line in lines:
             # Search for the url with articleId
             match = None
@@ -48,8 +48,7 @@ def find_url_in_snippet(article_id, anchor):
                 break  # Found the match, no need to continue searching
         return url
     except (IOError, UnicodeDecodeError):
-        # If file can't be read, return empty string
-        return ''
+        return url
 
 def importCategoryChildren(parent, categoryDirectory, show='yes', status='public'):
         id = parent[0]
@@ -122,6 +121,31 @@ def importArtciclesInCategory (categoryId, categoryDir):
                 html_file.write(str(p))    
             print(f"  Wrote HTML file for article {id}")
             
+            # Discard PHPKB TOC within <div class="mce-toc">
+            for toc in p.find_all('div', class_='mce-toc'):
+                toc.decompose()
+            
+            # Remove redundant TOC, created manually
+            # Find headers that say "Содержание" and remove them and their subsequent list.
+            potential_headers = p.find_all(['h2', 'p'])
+            
+            for header in list(potential_headers):
+                # Check if the element's text is "Содержание" or "Содержание:", ignoring case and whitespace.
+                text = header.get_text(strip=True).lower()
+                if text in ('содержание', 'содержание:', 'содержание.'):
+                    next_sibling = header.find_next_sibling()
+                    
+                    # The next sibling could be a NavigableString (e.g., whitespace).
+                    # We need to find the next actual tag.
+                    while next_sibling and isinstance(next_sibling, bs4.NavigableString):
+                        next_sibling = next_sibling.find_next_sibling()
+                        
+                    if next_sibling and next_sibling.name in ['ol', 'ul']:
+                        # This is a TOC. Decompose both the header and the list.
+                        print(f"  Decomposing standalone TOC header '{header.name}' and subsequent list '{next_sibling.name}'.")
+                        header.decompose()
+                        next_sibling.decompose()
+            
             print(f"  Starting markdown conversion for article {id}...")
             markdown = MarkdownConverter(heading_style='ATX', bullets='-', escape_misc=False).convert_soup(p)
             print(f"  Markdown conversion completed for article {id}")
@@ -138,23 +162,11 @@ def importArtciclesInCategory (categoryId, categoryDir):
                 print(f"    Processing redundant spaces for article {id}...")
                 pattern = re.compile(r' +\n', flags=re.MULTILINE)
                 markdown = re.sub(pattern, r'\n', markdown)
-                print(f"    Redundant spaces processed for article {id}")
+                print(f"    Redundant spaces processed for article {id}")              
                 
-                # Remove redundant TOC
-                print(f"    Processing redundant TOC for article {id}...")
-                try:
-                    # Simplified TOC removal pattern to avoid catastrophic backtracking
-                    pattern = re.compile(r'(#+ +|\*\* ?)Содержание.*?\n', flags=re.MULTILINE | re.DOTALL)
-                    markdown = re.sub(pattern, r'', markdown)
-                    print(f"    Redundant TOC processed for article {id}")
-                except Exception as e:
-                    print(f"    Warning: TOC processing failed for article {id}: {e}")
-                    print(f"    Skipping TOC removal for article {id}")
-                    # Continue without TOC removal
-                
-                # Remove redundant [*‌* К началу](#) links
+                # Remove redundant [*‌* К началу](#) links.
                 print(f"    Processing redundant 'К началу' links for article {id}...")
-                pattern = re.compile(r'^.*\[.*К началу\]\(#\).*$', flags=re.MULTILINE)
+                pattern = re.compile(r'\s*\[[^\]]*К началу[^\]]*\]\(#\)\s*')
                 markdown = re.sub(pattern, r'', markdown)
                 print(f"    Redundant 'К началу' links processed for article {id}")
                 
@@ -181,6 +193,16 @@ def importArtciclesInCategory (categoryId, categoryDir):
                 pattern = re.compile(r'(!\[(.*)\]\(.*\))\n\n\2', flags=re.MULTILINE)
                 markdown = re.sub(pattern, r'_\1_', markdown)
                 print(f"    Image captions processed for article {id}")
+
+                # Sanitize fenced code blocks to use 3 backticks instead of 4 or more, preserving indentation.
+                print(f"    Sanitizing fenced code blocks for article {id}...")
+                markdown = re.sub(r'^(\s*)`{4,}', r'\1```', markdown, flags=re.MULTILINE)
+                print(f"    Fenced code blocks sanitized for article {id}")
+                
+                # Final cleanup of excessive newlines.
+                print(f"    Cleaning up excessive newlines for article {id}...")
+                markdown = re.sub(r'\n{3,}', '\n\n', markdown)
+                print(f"    Excessive newlines cleaned up for article {id}")
                 
                 print(f"  Regex processing completed for article {id}")
             except Exception as e:
@@ -199,7 +221,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
                 ])
             # Add link map to the bottom
             footer = '{% include-markdown ".snippets/hyperlinks_mkdocs_to_kb_map.md" %}\n'
-            markdown = frontmatter + markdown + footer
+            markdown = frontmatter + markdown.rstrip() + '\n\n' + footer
             print(f"  Frontmatter added for article {id}")
             
             print(f"  Processing article links for article {id}...")

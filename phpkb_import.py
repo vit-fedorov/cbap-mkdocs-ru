@@ -146,6 +146,20 @@ def importArtciclesInCategory (categoryId, categoryDir):
                         header.decompose()
                         next_sibling.decompose()
             
+            # Convert tables with class 'source_code_container' to <pre><code> blocks
+            # These tables were used as a workaround for code blocks.
+            for table in p.find_all('table', class_='source_code_container'):
+                print(f"  Converting source code table to <pre> block for article {id}...")
+                pre = p.new_tag("pre")
+                # Convert <td> with 'source_code' class to <code>.
+                for td in table.find_all('td', class_='source_code'):
+                    td.name = "code"
+                    for par in table.find_all('p'):
+                        if par.string:
+                            par.replace_with(par.string)
+                    pre.append(td)
+                table.replace_with(pre)
+                
             print(f"  Starting markdown conversion for article {id}...")
             markdown = MarkdownConverter(heading_style='ATX', bullets='-', escape_misc=False).convert_soup(p)
             print(f"  Markdown conversion completed for article {id}")

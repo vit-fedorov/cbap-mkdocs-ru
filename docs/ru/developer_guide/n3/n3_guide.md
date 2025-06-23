@@ -2114,7 +2114,12 @@ from  {
 </tr>
 <tr markdown="block">
 <td markdown>**Описание**</td>
-<td markdown>Если субъект — список, и в нём есть объект, возвращает `true`</td>
+<td markdown>
+
+- Если субъект — список, и в нём есть объект, возвращает `true`.
+- Если субъект — список, а объект не задан, возвращает итератор по элементам списка.
+
+</td>
 </tr>
 <tr markdown="block">
 <td markdown>**Синтаксис**</td>
@@ -2122,11 +2127,20 @@ from  {
 ``` turtle
 ?list w3list:member ?objectToFind.
 ```
+
+``` turtle
+?list w3list:member ?listElements.
+```
+
 </td>
 </tr>
 <tr markdown="block">
 <td markdown>**Возвращает**</td>
-<td markdown>`bool`</td>
+<td markdown>
+
+`bool`, `iterator`
+
+</td>
 </tr>
 <tr markdown="block">
 </tbody>

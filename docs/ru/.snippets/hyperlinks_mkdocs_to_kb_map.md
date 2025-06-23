@@ -10,6 +10,8 @@
 
 [apache_ignite_partition_partition_loss_policy]: https://ignite.apache.org/docs/latest/configuring-caches/partition-loss-policy
 
+[iana_timezone_db]: https://www.iana.org/time-zones
+
 [api_calls]: {{ kbCategoryURLPrefix }}868
 
 [attribute_date_time_use]: {{ kbArticleURLPrefix }}4886
@@ -86,7 +88,9 @@
 
 [accounts]: {{ kbArticleURLPrefix }}4653
 
-[accounts_configure_timezone]: {{ kbArticleURLPrefix }}4653#accounts_configure_timezone
+[accounts_timezone_configure]: {{ kbArticleURLPrefix }}4653#accounts_timezone_configure
+
+[accounts_link_to_template]: {{ kbArticleURLPrefix }}4653#accounts_link_to_template
 
 [account_permission_audit]: {{ kbArticleURLPrefix }}4664
 
@@ -380,6 +384,10 @@
 
 [attribute_date_time]: {{ kbArticleURLPrefix }}4777
 
+[attribute_date_time_import_export]: {{ kbArticleURLPrefix }}4777#attribute_date_time_import_export
+
+[attribute_date_time_properties]: {{ kbArticleURLPrefix }}4777#attribute_date_time_properties
+
 [attribute_displayed]: {{ kbArticleURLPrefix }}4769
 
 [attribute_document]: {{ kbArticleURLPrefix }}4782
@@ -418,6 +426,8 @@
 
 [attribute_text_substring_search_n3]: {{ kbArticleURLPrefix }}4917
 
+[attribute_timezone]: {{ kbArticleURLPrefix }}5098
+
 [attributes]: {{ kbArticleURLPrefix }}4772
 
 [attributes_archive]: {{ kbArticleURLPrefix }}4772#attributes_archive
@@ -446,7 +456,7 @@
 
 [gantt_chart_create]: {{ kbArticleURLPrefix }}4891
 
-[date_time_attribute_element_calculate]: {{ kbArticleURLPrefix }}4977
+[attribute_date_time_value_format]: {{ kbArticleURLPrefix }}4977
 
 [desktop]: {{ kbArticleURLPrefix }}4823
 

@@ -472,6 +472,8 @@
 
 [elasticdata_description]: {{ kbArticleURLPrefix }}4584
 
+[example_attribute_record_join_string]: {{ kbArticleURLPrefix }}5107
+
 [example_csharp_table_download_selections]: {{ kbArticleURLPrefix }}5008
 
 [example_document_clone_scenario_n3]: {{ kbArticleURLPrefix }}4883

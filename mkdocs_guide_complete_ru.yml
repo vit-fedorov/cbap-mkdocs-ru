@@ -350,6 +350,7 @@ nav:
       - examples/csharp_table_download_selection.md
       - examples/csharp_tax_service_integrate.md
       - examples/process_end_button.md  
+      - examples/attribute_record_join_string.md
   - Моделирование корпоративной архитектуры:
     - architect/architect_desktop.md
     - architect/process_architecture_modeling/index.md

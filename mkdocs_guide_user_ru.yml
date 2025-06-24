@@ -297,6 +297,7 @@ nav:
     - examples/csharp_table_download_selection.md
     - examples/csharp_tax_service_integrate.md
     - examples/process_end_button.md
+    - examples/attribute_record_join_string.md
 
 exclude_docs: |
   administration/backup/linux/restore_cdbbz_gostech.md

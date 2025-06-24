@@ -35,10 +35,8 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h2 id="attribute_timezone_description">Описание атрибута</h2>
-<p>Атрибут типа «<strong>Часовой пояс</strong>» содержит значение часового пояса в виде строки в формате IANA, например:</p>
-<div class="highlight"><code><pre><span></span><code>"Europe/Moscow"</code> <br/></pre></code></div>
-<p>Справочник идентификаторов часовых поясов представлен на <a class="mkdocs_imported_link" href="https://www.iana.org/time-zones">сайте IANA</a>.</p>
-<p>Значение атрибута типа «<strong>Часовой пояс</strong>» влияет на отображаемые значения <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4777">атрибутов типа «<strong>Дата и время</strong>»</a> на формах.</p>
+<p>Атрибут типа «<strong>Часовой пояс</strong>» содержит строку с идентификатором часового пояса в формате IANA, например <code>Europe/Moscow</code>. Справочник идентификаторов см. на <a class="mkdocs_imported_link" href="https://www.iana.org/time-zones">сайте IANA</a>.</p>
+<p>Значение атрибута типа «<strong>Часовой пояс</strong>» влияет на отображаемые значения <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4777">атрибутов типа «Дата и время»</a> на формах.</p>
 <div class="notice notice-warning">
 <p class="admonition-title">Приоритеты часовых поясов</p>
 <p>В <strong>Comindware Platform</strong> часовой пояс настраивается на трёх уровнях со следующими приоритетами:</p>
@@ -69,12 +67,12 @@
 </li>
 </ol>
 </div>
-<h2 id="attribute_timezone_properties">Свойства атрибута</h2>
+<h2 class="pageBreakBefore" id="attribute_timezone_properties">Свойства атрибута</h2>
 <p>Помимо <strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4765">общих свойств</a></strong> для атрибута типа «<strong>Часовой пояс</strong>» предусмотрено следующее свойство:</p>
 <ul>
 <li>
 <p>«<strong>Вычислять автоматически</strong>» — установите этот флажок, чтобы значение атрибута вычислялось во время работы приложения. См. «<strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4770">Вычисляемые атрибуты</a></strong>».
-    Вычисление должно возвращать строку с идентификатором часового пояса в формате IANA.</p>
+    Вычисление должно возвращать строку с идентификатором часового пояса в формате IANA, например:</p>
 <div class="highlight"><code><pre><span></span><code>"Europe/Moscow"</code> <br/></pre></code></div>
 <p>Список идентификаторов см. на <a class="mkdocs_imported_link" href="https://www.iana.org/time-zones">сайте IANA</a>.</p>
 </li>

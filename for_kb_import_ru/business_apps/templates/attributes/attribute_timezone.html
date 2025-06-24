@@ -1,4 +1,4 @@
-<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="5098" kb-title="Атрибут типа «Часовой пояс»">
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="5098" kb-tags="атрибут,часовой пояс,дата и время,свойства,приоритет" kb-title="Атрибут типа «Часовой пояс»">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -9,7 +9,14 @@
       </h2>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#свойства-атрибута">
+<a class="md-nav__link mkdocs_imported_link" href="#attribute_timezone_description">
+<span class="md-ellipsis">
+      Описание атрибута
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#attribute_timezone_properties">
 <span class="md-ellipsis">
       Свойства атрибута
     </span>
@@ -27,40 +34,50 @@
 </nav>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h2 id="свойства-атрибута">Свойства атрибута</h2>
-<p>Атрибут типа «<strong>Часовой пояс</strong>» содержит значения часового пояса.</p>
-<p>Значение, заданное в атрибуте типа «<strong>Часовой пояс</strong>», влияет на отображаемые значения <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4777">атрибутов типа «<strong>Дата и время</strong>»</a>.</p>
-<p>Значения часового пояса хранятся в формате IANA.</p>
+<h2 id="attribute_timezone_description">Описание атрибута</h2>
+<p>Атрибут типа «<strong>Часовой пояс</strong>» содержит значение часового пояса в виде строки в формате IANA, например:</p>
+<div class="highlight"><code><pre><span></span><code>"Europe/Moscow"</code> <br/></pre></code></div>
+<p>Справочник идентификаторов часовых поясов представлен на <a class="mkdocs_imported_link" href="https://www.iana.org/time-zones">сайте IANA</a>.</p>
+<p>Значение атрибута типа «<strong>Часовой пояс</strong>» влияет на отображаемые значения <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4777">атрибутов типа «<strong>Дата и время</strong>»</a> на формах.</p>
 <div class="notice notice-warning">
-<p class="admonition-title">Приоритет часового пояса</p>
-<p>В <strong>Comindware Platform</strong> часовой пояс настраивается на трёх уровнях и имеет следующий приоритет:</p>
+<p class="admonition-title">Приоритеты часовых поясов</p>
+<p>В <strong>Comindware Platform</strong> часовой пояс настраивается на трёх уровнях со следующими приоритетами:</p>
 <ol class="colored_numbers_list">
 <li>
-<p><strong>На форме</strong>:</p>
+<p><strong>Для полей форм и столбцов таблиц посредством атрибута типа «Часовой пояс»</strong>:</p>
 <ul>
-<li>Если задан атрибут типа «<strong>Часовой пояс</strong>», то он применяется ко всем связанным в настройках формы с ним атрибутам типа «<strong>Дата и время</strong>».</li>
-<li>Если данный атрибут не задан, используется следующий уровень приоритета.</li>
+<li>Если задано значение атрибута типа «<strong>Часовой пояс</strong>» и этот атрибут указан для поля формы или столбца таблицы, то заданный часовой пояс применяется при отображении даты и времени.</li>
+<li>Если значение атрибута не задано, используется следующий уровень приоритета.</li>
 </ul>
+<p>См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4785">Настройка поля атрибута типа «Дата и время» на форме</a>»</em>.</p>
 </li>
 <li>
-<p><strong>В настройках аккаунта</strong>:</p>
+<p><strong>В свойствах аккаунта</strong>:</p>
 <ul>
-<li>Если в поле «<strong>Часовой пояс</strong>» имеется значение, то оно применяется ко всем атрибутам типа «<strong>Дата и время</strong>» для данного пользователя.</li>
-<li>Если часовой пояс не задан, используется следующий уровень приоритета.</li>
+<li>Если в свойствах аккаунта задан часовой пояс, то он применяется при отображении всех значений даты и времени для пользователя данного аккаунта.</li>
+<li>Если часовой пояс для аккаунта не задан, используется следующий уровень приоритета.</li>
 </ul>
+<p>См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4653#accounts_timezone_configure">Аккаунты. Настройка часового пояса</a>»</em>.</p>
 </li>
 <li>
-<p><strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4668">В глобальной конфигурации</a></strong>:</p>
+<p><strong>В глобальной конфигурации</strong>:</p>
 <ul>
-<li>Если пользователь не указал в настройках аккаунта и на форме записи часовой пояс, то используется часовой пояс, настроенный в глобальной конфигурации.</li>
-<li>По умолчанию в настройках глобальной конфигурации устанавливается часовой пояс машины, на которой развёрнут сервер <strong>Comindware Platform</strong>.</li>
+<li>Если часовой пояс не задан в свойствах аккаунта и для поля формы или столбца таблицы, то используется часовой пояс, установленный в глобальной конфигурации.</li>
+<li>По умолчанию в глобальной конфигурации устанавливается часовой пояс машины, на которой развёрнут сервер <strong>Comindware Platform</strong>.</li>
 </ul>
+<p>См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4668">Глобальная конфигурация</a>»</em>.</p>
 </li>
 </ol>
 </div>
-<p>Помимо <strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4765">общих свойств</a></strong> для атрибута типа «<strong>Часовой пояс</strong>» предусмотрены перечисленные ниже свойства:</p>
+<h2 id="attribute_timezone_properties">Свойства атрибута</h2>
+<p>Помимо <strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4765">общих свойств</a></strong> для атрибута типа «<strong>Часовой пояс</strong>» предусмотрено следующее свойство:</p>
 <ul>
-<li>«<strong>Вычислять автоматически</strong>» — установите этот флажок, чтобы значение атрибута вычислялось во время работы приложения. См. «<strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4770">Вычисляемые атрибуты</a></strong>».</li>
+<li>
+<p>«<strong>Вычислять автоматически</strong>» — установите этот флажок, чтобы значение атрибута вычислялось во время работы приложения. См. «<strong><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4770">Вычисляемые атрибуты</a></strong>».
+    Вычисление должно возвращать строку с идентификатором часового пояса в формате IANA.</p>
+<div class="highlight"><code><pre><span></span><code>"Europe/Moscow"</code> <br/></pre></code></div>
+<p>Список идентификаторов см. на <a class="mkdocs_imported_link" href="https://www.iana.org/time-zones">сайте IANA</a>.</p>
+</li>
 </ul>
 <figure class="screenshot_with_caption">
 <p><img alt="Свойства атрибута типа «Часовой пояс»" src="/platform/v5.0/business_apps/templates/attributes/img/attribute_timezone_properties.png"/><figcaption class="caption">Свойства атрибута типа «Часовой пояс»</figcaption></p>
@@ -68,10 +85,14 @@
 <div class="relatedTopics">
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <ul>
-<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4765">Общие свойства атрибутов</a></em></li>
-<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4772">Атрибуты. Определения, типы, настройка, архивирование, удаление</a></em></li>
-<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4777">Атрибут типа «Дата и время»</a></em></li>
-<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4668">Глобальная конфигурация</a></em></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4777">Атрибут типа «Дата и время»</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4785">Настройка поля атрибута типа «Дата и время» на форме</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4653#accounts_timezone_configure">Аккаунты. Настройка часового пояса</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4668">Глобальная конфигурация</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4765">Общие свойства атрибутов</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4772">Атрибуты. Определения, типы, настройка, архивирование, удаление</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4770">Вычисляемые атрибуты</a></li>
+<li><a class="mkdocs_imported_link" href="https://www.iana.org/time-zones">Справочник идентификаторов часовых поясов IANA</a></li>
 </ul>
 </div>
 </article>

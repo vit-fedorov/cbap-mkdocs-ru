@@ -341,7 +341,7 @@ nav:
       - examples/n3_collection_select_conditional.md
       - examples/n3_collection_join_string.md
       - examples/n3_collection_join_filter.md
-      - examples/n3_collection_join_filter_multilevel.md
+      - examples/n3_collection_join_filter_hierarchy.md
       - administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
       - administration/connections_communication_routes/rest_odata_connections/send_http_example.md
       - administration/connections_communication_routes/rest_odata_connections/http_send_post.md

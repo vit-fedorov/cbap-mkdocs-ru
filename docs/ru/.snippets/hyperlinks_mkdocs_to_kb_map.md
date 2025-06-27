@@ -10,6 +10,8 @@
 
 [apache_ignite_partition_partition_loss_policy]: https://ignite.apache.org/docs/latest/configuring-caches/partition-loss-policy
 
+[iana_timezone_db]: https://www.iana.org/time-zones
+
 [api_calls]: {{ kbCategoryURLPrefix }}868
 
 [attribute_date_time_use]: {{ kbArticleURLPrefix }}4886
@@ -32,8 +34,6 @@
 
 [example_attribute_record_get_selected_ids]: {{ kbArticleURLPrefix }}5100
 
-[example_n3_button_local_variable]: {{ kbArticleURLPrefix }}4909
-
 [example_csharp_my_profile_button]: {{ kbArticleURLPrefix }}5006
 
 [example_csharp_object_copy]: {{ kbArticleURLPrefix }}5007
@@ -43,6 +43,12 @@
 [example_formula_group_account_calculate]: {{ kbArticleURLPrefix }}4991
 
 [example_n3_account_attributes_compare]: {{ kbArticleURLPrefix }}4932
+
+[example_n3_button_local_variable]: {{ kbArticleURLPrefix }}4909
+
+[example_n3_dataset_join_filter]: {{ kbArticleURLPrefix }}5109
+
+[example_n3_collection_join_filter_hierarchy]: {{ kbArticleURLPrefix }}5108
 
 [example_n3_list_by_creator_filter]: {{ kbArticleURLPrefix }}4933
 
@@ -85,6 +91,10 @@
 [account_template_attribute_system_names]: {{ kbArticleURLPrefix }}4757#account_template_attribute_system_names
 
 [accounts]: {{ kbArticleURLPrefix }}4653
+
+[accounts_timezone_configure]: {{ kbArticleURLPrefix }}4653#accounts_timezone_configure
+
+[accounts_link_to_template]: {{ kbArticleURLPrefix }}4653#accounts_link_to_template
 
 [account_permission_audit]: {{ kbArticleURLPrefix }}4664
 
@@ -378,6 +388,10 @@
 
 [attribute_date_time]: {{ kbArticleURLPrefix }}4777
 
+[attribute_date_time_import_export]: {{ kbArticleURLPrefix }}4777#attribute_date_time_import_export
+
+[attribute_date_time_properties]: {{ kbArticleURLPrefix }}4777#attribute_date_time_properties
+
 [attribute_displayed]: {{ kbArticleURLPrefix }}4769
 
 [attribute_document]: {{ kbArticleURLPrefix }}4782
@@ -416,6 +430,8 @@
 
 [attribute_text_substring_search_n3]: {{ kbArticleURLPrefix }}4917
 
+[attribute_timezone]: {{ kbArticleURLPrefix }}5098
+
 [attributes]: {{ kbArticleURLPrefix }}4772
 
 [attributes_archive]: {{ kbArticleURLPrefix }}4772#attributes_archive
@@ -444,6 +460,8 @@
 
 [gantt_chart_create]: {{ kbArticleURLPrefix }}4891
 
+[attribute_date_time_value_format]: {{ kbArticleURLPrefix }}4977
+
 [desktop]: {{ kbArticleURLPrefix }}4823
 
 [desktop_setup]: {{ kbArticleURLPrefix }}4813
@@ -457,6 +475,8 @@
 [discussion_use]: {{ kbArticleURLPrefix }}4818
 
 [elasticdata_description]: {{ kbArticleURLPrefix }}4584
+
+[example_attribute_record_join_string]: {{ kbArticleURLPrefix }}5107
 
 [example_csharp_table_download_selections]: {{ kbArticleURLPrefix }}5008
 
@@ -483,6 +503,8 @@
 [export_template_file_example]: {{ kbArticleURLPrefix }}4795
 
 [export_template_file_formula_format_values]: {{ kbArticleURLPrefix }}4794
+
+[export_template_file_formula_format_values_date_time_formatting_symbols]: {{ kbArticleURLPrefix }}4794#export_template_file_formula_format_values_date_time_formatting_symbols
 
 [expression_editor]: {{ kbArticleURLPrefix }}5025
 
@@ -539,6 +561,8 @@
 [form_dynamic_elements_color]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_color
 
 [form_dynamic_elements_color_diagram_example]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_color_diagram_example
+
+[form_dynamic_elements_date_time]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_date_time
 
 [form_dynamic_elements_drawing]: {{ kbArticleURLPrefix }}4785#form_dynamic_elements_drawing
 
@@ -818,7 +842,7 @@
 
 [restore_test_configure]: {{ kbArticleURLPrefix }}4651
 
-[sso_authenticatation_configure]: {{ kbArticleURLPrefix }}4613
+[sso_authentication_configure]: {{ kbArticleURLPrefix }}4613
 
 [sso_authentication_configure_keytab_update]: {{ kbArticleURLPrefix }}4613#sso_authentication_configure_keytab_update
 

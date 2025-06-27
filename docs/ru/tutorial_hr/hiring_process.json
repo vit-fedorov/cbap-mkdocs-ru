@@ -1,0 +1,43 @@
+{
+  "process": {
+    "id": "Process_1",
+    "name": "Отбор кандидата на открытую вакансию",
+    "lanes": [
+      {"id": "Lane_HiringSpecialist", "name": "Специалист по найму"},
+      {"id": "Lane_Manager", "name": "Нанимающий руководитель"},
+      {"id": "Lane_HRDirector", "name": "Директор по персоналу"}
+    ],
+    "elements": [
+      {"type": "none_start_event", "id": "StartEvent_1", "name": "Получены результаты тестирования", "lane": "Lane_HiringSpecialist"},
+      {"type": "user_task", "id": "Task_1", "name": "Зафиксировать результаты тестирования", "lane": "Lane_HiringSpecialist"},
+      {"type": "exclusive_gateway", "id": "Gateway_1", "name": "Кандидат успешно прошел тестирование?", "lane": "Lane_HiringSpecialist"},
+      {"type": "none_end_event", "id": "EndEvent_1", "name": "Кандидат не прошел тестирование", "lane": "Lane_HiringSpecialist"},
+      {"type": "user_task", "id": "Task_2", "name": "Провести собеседование", "lane": "Lane_Manager"},
+      {"type": "exclusive_gateway", "id": "Gateway_2", "name": "Кандидат успешно прошел собеседование?", "lane": "Lane_Manager"},
+      {"type": "none_end_event", "id": "EndEvent_2", "name": "Кандидат не прошел собеседование", "lane": "Lane_Manager"},
+      {"type": "user_task", "id": "Task_3", "name": "Сформировать предложение", "lane": "Lane_HiringSpecialist"},
+      {"type": "user_task", "id": "Task_4", "name": "Согласовать предложение", "lane": "Lane_HRDirector"},
+      {"type": "exclusive_gateway", "id": "Gateway_3", "name": "Какое решение по предложению?", "lane": "Lane_HRDirector"},
+      {"type": "none_end_event", "id": "EndEvent_3", "name": "Кандидат отклонил предложение", "lane": "Lane_HiringSpecialist"},
+      {"type": "user_task", "id": "Task_5", "name": "Обсудить предложение с кандидатом", "lane": "Lane_HiringSpecialist"},
+      {"type": "exclusive_gateway", "id": "Gateway_4", "name": "Кандидат принял предложение?", "lane": "Lane_HiringSpecialist"},
+      {"type": "none_end_event", "id": "EndEvent_4", "name": "Кандидат принял предложение", "lane": "Lane_HiringSpecialist"}
+    ],
+    "flows": [
+      {"id": "Flow_1", "source": "StartEvent_1", "target": "Task_1"},
+      {"id": "Flow_2", "source": "Task_1", "target": "Gateway_1"},
+      {"id": "Flow_3", "source": "Gateway_1", "target": "EndEvent_1", "name": "Нет"},
+      {"id": "Flow_4", "source": "Gateway_1", "target": "Task_2", "name": "Да"},
+      {"id": "Flow_5", "source": "Task_2", "target": "Gateway_2"},
+      {"id": "Flow_6", "source": "Gateway_2", "target": "EndEvent_2", "name": "Нет"},
+      {"id": "Flow_7", "source": "Gateway_2", "target": "Task_3", "name": "Да"},
+      {"id": "Flow_8", "source": "Task_3", "target": "Task_4"},
+      {"id": "Flow_9", "source": "Task_4", "target": "Gateway_3"},
+      {"id": "Flow_10", "source": "Gateway_3", "target": "EndEvent_3", "name": "Отклонить"},
+      {"id": "Flow_11", "source": "Gateway_3", "target": "Task_5", "name": "Одобрить"},
+      {"id": "Flow_12", "source": "Task_5", "target": "Gateway_4"},
+      {"id": "Flow_13", "source": "Gateway_4", "target": "EndEvent_4", "name": "Да"},
+      {"id": "Flow_14", "source": "Gateway_4", "target": "EndEvent_3", "name": "Нет"}
+    ]
+  }
+} 

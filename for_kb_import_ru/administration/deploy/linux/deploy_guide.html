@@ -1,4 +1,4 @@
-<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4622" kb-title="Установка, запуск, инициализация и остановка ПО">
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="4622" kb-tags="установка,развертывание,linux,администрирование,инициализация,конфигурация,пререквезиты,ключи,скрипты установки,установщик,развёртывание,установочные скрипты" kb-title="Установка, запуск, инициализация и остановка ПО">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -21,6 +21,17 @@
       Порядок развёртывания ПО Comindware Platform
     </span>
 </a>
+<nav aria-label="Порядок развёртывания ПО Comindware Platform" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#требования-к-внешним-службам">
+<span class="md-ellipsis">
+      Требования к внешним службам
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link mkdocs_imported_link" href="#deploy_guide_linux_prerequisites_install">
@@ -206,6 +217,17 @@
 <li>Запустите экземпляр ПО.</li>
 <li>Инициализируйте экземпляр ПО.</li>
 </ol>
+<h3 id="требования-к-внешним-службам">Требования к внешним службам</h3>
+<p>Для работы <strong>Comindware Platform</strong> необходимо развернуть следующие внешние службы:</p>
+<ul>
+<li>сервер журналирования транзакций OpenSearch (Elasticsearch);</li>
+<li>сервер брокера сообщений Apache Kafka.</li>
+</ul>
+<p>Установите и настройте это ПО согласно следующим инструкциям:</p>
+<ul>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4601">Elasticsearch. Установка в Linux</a></em></li>
+<li><em><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5074">Apache Kafka. Установка в Linux</a></em></li>
+</ul>
 <h2 id="deploy_guide_linux_prerequisites_install">Установка вспомогательного ПО</h2>
 <p>Прежде чем приступать к установке вспомогательного ПО, необходимого для работы <strong>Comindware Platform</strong>, ознакомьтесь с демонстрационным роликом и инструкциями, представленными ниже.</p>
 <h3 id="deploy_guide_linux_prerequisites_install_video">Видеоинструкция</h3>
@@ -237,21 +259,16 @@
 </li>
 <li>
 <p>Установите ПО из дистрибутива:</p>
-<div class="highlight"><code><pre><span></span><code>sh<span class="w"> </span>prerequisites_install.sh<span class="w"> </span>-p<span class="w"> </span><span class="o">[</span>-k<span class="o">]</span><span class="w"> </span><span class="o">[</span>-e<span class="o">]</span></code> <br/></pre></code></div>
-<p class="pageBreakBefore">Скрипт <code>prerequisites_install.sh</code> поддерживает следующие ключи:</p>
+<div class="highlight"><code><pre><span></span><code>sh<span class="w"> </span>prerequisites_install.sh<span class="w"> </span>-p</code> <br/></pre></code></div>
+<p class="pageBreakBefore">Ключи скрипта <code>prerequisites_install.sh</code>:</p>
 <ul>
-<li>
-<p><code>-p</code> — установить обязательное вспомогательное ПО.</p>
-</li>
-<li>
-<p><code>-e</code> — установить службу Elasticsearch (необязательный ключ).</p>
-</li>
-<li>
-<p><code>-k</code> — установить службу Kafka (необязательный ключ).</p>
-</li>
-<li>
-<p><code>-kh=&lt;hostname&gt;</code> или <code>--kafkaHost=&lt;hostname&gt;</code> — использовать указанный хост для подключения к ПО Kafka (необязательный ключ).</p>
-</li>
+<li><code>-p</code> — установить обязательное вспомогательное ПО.</li>
+<li><code>-d</code> — установить или переустановить ПО .NET (необязательный ключ).</li>
+<li><code>-e</code> или <code>-o</code> — установить службу Elasticsearch или OpenSearch (необязательный ключ).</li>
+<li><code>-i</code> — установить службу Apache Ignite (необязательный ключ).</li>
+<li><code>-kc</code> — установить клиент Apache Kafka (необязательный ключ).</li>
+<li><code>-k</code> — установить службу Apache Kafka (необязательный ключ).</li>
+<li><code>-kh=&lt;hostname&gt;</code> или <code>--kafkaHost=&lt;hostname&gt;</code> — использовать указанный хост для подключения к ПО Kafka (необязательный ключ).</li>
 <li><code>-kp=&lt;portNumber&gt;</code> или <code>--kafkaPort=&lt;portNumber&gt;</code> — использовать указанный порт для подключения к ПО Kafka (необязательный ключ).</li>
 <li><code>-h</code> — вызов краткой справки по использованию скрипта (указывать только без остальных ключей).</li>
 </ul>
@@ -263,15 +280,6 @@
 <p class="admonition-title">Вызов справки для скриптов</p>
 <p>Для ознакомления с ключами и назначением любого скрипта используйте ключ <code>-h</code> без каких-либо других ключей, например:</p>
 <div class="highlight"><code><pre><span></span><code>sh<span class="w"> </span>prerequisites_install.sh<span class="w"> </span>-h</code> <br/></pre></code></div>
-</div>
-<div class="notice notice-info">
-<p class="admonition-title">Конфигурация сервера журналирования транзакций OpenSearch (Elasticsearch)</p>
-<ul>
-<li>В конфигурации сервера журналирования транзакций необходимо создать одного пользователя для <strong>Comindware Platform</strong>.</li>
-<li>В конфигурации экземпляра ПО необходимо указать адрес сервера и уникальный префикс индексов OpenSearch (Elasticsearch). Индекс префикса служит для идентификации данных экземпляра ПО на сервере журналирования транзакций. Поэтому во избежание конфликтов данных для каждого экземпляра ПО следует указывать собственный префикс индекса.</li>
-<li>При <a class="mkdocs_imported_link" href="#instance_initialize">инициализации экземпляра ПО</a> необходимо указать пользователя <strong>Comindware Platform</strong>, используемого сервером журналирования транзакций.</li>
-<li>Экземпляр ПО будет взаимодействовать с сервером журналирования транзакций под указанным пользователем и создавать, наполнять и читать индексы с заданным префиксом.</li>
-</ul>
 </div>
 </li>
 <li>
@@ -434,7 +442,7 @@
 <li>
 <p>Разверните экземпляр ПО:</p>
 <div class="highlight"><code><pre><span></span><code>sh<span class="w"> </span>instance_create.sh<span class="w"> </span>-n<span class="o">=</span>&lt;instanceName&gt;<span class="w"> </span>-v<span class="o">=</span>&lt;versionNumber&gt;<span class="w"> </span><span class="o">[</span>-p<span class="o">=</span>&lt;portNumber&gt;<span class="o">]</span></code> <br/></pre></code></div>
-<p>Скрипт <code>instance_create.sh</code> поддерживает следующие ключи:</p>
+<p>Ключи скрипта <code>instance_create.sh</code>:</p>
 <ul>
 <li><code>-n=&lt;instanceName&gt;</code> — имя экземпляра ПО (<strong>обязательный</strong> ключ).</li>
 <li><code>-v=&lt;versionNumber&gt;</code> — номер версии ПО вида <code>X.X.XXXXX.X</code> (например: 5.0.00000.0, <strong>обязательный</strong> ключ). Версия должна быть установлена, см. <em>«<a class="mkdocs_imported_link" href="#deploy_guide_linux_install_sw">Установка Comindware Platform</a>»</em>.</li>
@@ -508,11 +516,11 @@
 </li>
 <li>
 <p>Удостоверьтесь, что основные службы установлены, запущены и имеют статус <code>Active (running)</code>:</p>
-<div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>comindware&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>status<span class="w"> </span>apigateway&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>status<span class="w"> </span>adapterhost&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>status<span class="w"> </span>kafka</code> <br/><code>systemctl<span class="w"> </span>status<span class="w"> </span>nginx</code> <br/><code>systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>apigateway&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>status<span class="w"> </span>adapterhost&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>status<span class="w"> </span>comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Если какая-либо служба не работает, запустите её:</p>
-<div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>start<span class="w"> </span>comindware&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>start<span class="w"> </span>apigateway&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>start<span class="w"> </span>adapterhost&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>start<span class="w"> </span>kafka</code> <br/><code>systemctl<span class="w"> </span>start<span class="w"> </span>nginx</code> <br/><code>systemctl<span class="w"> </span>start<span class="w"> </span>elasticsearch</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>start<span class="w"> </span>apigateway&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>start<span class="w"> </span>adapterhost&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>start<span class="w"> </span>comindware&lt;instanceName&gt;</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Выполните инициализацию ПО.</p>
@@ -648,11 +656,11 @@
 </li>
 <li>
 <p>Перед тем как выполнять любые действия с файлами ПО и базы данных, остановите службы, поддерживающие работу ПО:</p>
-<div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>stop<span class="w"> </span>comindware&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>stop<span class="w"> </span>apigateway&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>stop<span class="w"> </span>adapterhost&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>stop<span class="w"> </span>kafka</code> <br/><code>systemctl<span class="w"> </span>stop<span class="w"> </span>nginx</code> <br/><code>systemctl<span class="w"> </span>stop<span class="w"> </span>elasticsearch</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>stop<span class="w"> </span>comindware&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>stop<span class="w"> </span>apigateway&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>stop<span class="w"> </span>adapterhost&lt;instanceName&gt;</code> <br/></pre></code></div>
 </li>
 <li>
 <p>Удостоверьтесь, что службы остановлены:</p>
-<div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>comindware&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>status<span class="w"> </span>apigateway&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>status<span class="w"> </span>adapterhost&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>status<span class="w"> </span>kafka</code> <br/><code>systemctl<span class="w"> </span>status<span class="w"> </span>nginx</code> <br/><code>systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch</code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>comindware&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>status<span class="w"> </span>apigateway&lt;instanceName&gt;</code> <br/><code>systemctl<span class="w"> </span>status<span class="w"> </span>adapterhost&lt;instanceName&gt;</code> <br/></pre></code></div>
 </li>
 </ol>
 <h2 id="удаление-версии-и-экземпляра-по">Удаление версии и экземпляра ПО</h2>
@@ -733,6 +741,8 @@
 <h2 id="связанные-статьи">Связанные статьи</h2>
 <ul>
 <li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4620">Пути и содержимое директорий экземпляра ПО</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4624">Обновление версии экземпляра ПО с его остановкой</a></li>
+<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5097">Обновление версии экземпляра ПО без его остановки</a></li>
 <li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4642">Резервное копирование. Настройка, запуск и просмотр журнала сеансов</a></li>
 <li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4690">Отправка почты из процесса. Настройка подключения</a></li>
 </ul>

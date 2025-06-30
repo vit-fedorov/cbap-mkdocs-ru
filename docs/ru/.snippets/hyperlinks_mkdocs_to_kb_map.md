@@ -862,6 +862,8 @@
 
 [deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_initialize
 
+[deploy_guide_linux_prerequisites_install]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_prerequisites_install
+
 [deploy_cluster_linux]: {{ kbArticleURLPrefix }}5080
 
 [elasticsearch_deploy_Linux]: {{ kbArticleURLPrefix }}4601

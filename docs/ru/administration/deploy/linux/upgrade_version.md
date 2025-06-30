@@ -307,6 +307,8 @@ hide: tags
     systemctl restart apigateway<instanceName>.service
     ```
 
+5. Инициализируйте экземпляра ПО.
+
 ## Инициализация экземпляра ПО {: #upgrade_version_linux_initialize .pageBreakBefore }
 
 1. Откройте сайт экземпляра ПО в браузере, одновременно открыв выдачу журналов экземпляра в терминале:

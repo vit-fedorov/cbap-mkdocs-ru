@@ -80,7 +80,6 @@ hide: tags
             # Получаем значение атрибута в текущей записи.
             ?item ?creationDateAttribute ?creationDateValue.
             # Форматируем дату и время согласно стандарту ISO 8061.
-            # в формате YYYYMMDDThhmmss
             ("{0:YYYYMMDD}" ?creationDateValue) string:format ?value.
         } 
         ```
@@ -114,7 +113,6 @@ hide: tags
             # Получаем значение атрибута в текущей записи.
             ?item ?creationDateAttribute ?creationDateValue.
             # Форматируем дату и время согласно стандарту ISO 8061.
-            # в формате YYYYMMDDThhmmss
             ("{0:hhmmss}" ?creationDateValue) string:format ?value.
         } 
         ```

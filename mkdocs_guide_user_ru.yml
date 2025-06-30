@@ -285,6 +285,9 @@ nav:
     - examples/n3_filter_active_tasks.md
     - examples/n3_periodic_task_notifications.md
     - examples/n3_collection_select_conditional.md
+    - examples/n3_collection_join_string.md
+    - examples/n3_collection_join_filter.md
+    - examples/n3_collection_join_filter_hierarchy.md
     - administration/connections_communication_routes/rest_odata_connections/1c_integrations.md
     - administration/connections_communication_routes/rest_odata_connections/send_http_example.md
     - administration/connections_communication_routes/rest_odata_connections/http_send_post.md
@@ -297,7 +300,7 @@ nav:
     - examples/csharp_table_download_selection.md
     - examples/csharp_tax_service_integrate.md
     - examples/process_end_button.md
-    - examples/attribute_record_join_string.md
+    
 
 exclude_docs: |
   administration/backup/linux/restore_cdbbz_gostech.md

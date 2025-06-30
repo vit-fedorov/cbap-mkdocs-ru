@@ -34,8 +34,6 @@
 
 [example_attribute_record_get_selected_ids]: {{ kbArticleURLPrefix }}5100
 
-[example_n3_button_local_variable]: {{ kbArticleURLPrefix }}4909
-
 [example_csharp_my_profile_button]: {{ kbArticleURLPrefix }}5006
 
 [example_csharp_object_copy]: {{ kbArticleURLPrefix }}5007
@@ -45,6 +43,12 @@
 [example_formula_group_account_calculate]: {{ kbArticleURLPrefix }}4991
 
 [example_n3_account_attributes_compare]: {{ kbArticleURLPrefix }}4932
+
+[example_n3_button_local_variable]: {{ kbArticleURLPrefix }}4909
+
+[example_n3_dataset_join_filter]: {{ kbArticleURLPrefix }}5109
+
+[example_n3_collection_join_filter_hierarchy]: {{ kbArticleURLPrefix }}5108
 
 [example_n3_list_by_creator_filter]: {{ kbArticleURLPrefix }}4933
 
@@ -472,6 +476,8 @@
 
 [elasticdata_description]: {{ kbArticleURLPrefix }}4584
 
+[example_attribute_record_join_string]: {{ kbArticleURLPrefix }}5107
+
 [example_csharp_table_download_selections]: {{ kbArticleURLPrefix }}5008
 
 [example_document_clone_scenario_n3]: {{ kbArticleURLPrefix }}4883
@@ -859,6 +865,8 @@
 [deploy_guide_linux_delete_version]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_delete_version
 
 [deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_initialize
+
+[deploy_guide_linux_prerequisites_install]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_prerequisites_install
 
 [deploy_cluster_linux]: {{ kbArticleURLPrefix }}5080
 

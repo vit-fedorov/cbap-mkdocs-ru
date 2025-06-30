@@ -393,6 +393,8 @@ exclude_docs: |
   developer_guide/n3/n3_tutorial.md
   developer_guide/formulas/formula_toc.md
   administration/backup/linux/restore_cdbbz_gostech.md
+  administration/backup/windows/db_move_manual_windows.md
+  administration/backup/windows/restore_windows.md
   administration/deploy/linux/deploy_guide_gostech.md
   administration/deploy/linux/configuration_files_gostech.md
   administration/deploy/linux/upgrade_version_gostech.md

@@ -1,16 +1,36 @@
 ---
-title: Атрибут типа «Запись». Получение ID выбранных записей
+title: 'Записи и коллекции. Получение ID выбранных записей с помощью N3'
+kbTitle: 'Записи и коллекции. Получение ID выбранных записей с помощью N3'
 kbId: 5100
+tags:
+  - N3
+  - Notation 3
+  - Notation3
+  - RDF
+  - атрибут типа «Запись»
+  - выборка
+  - выбранные записи
+  - вычисление
+  - идентификатор
+  - коллекция
+  - сценарий
+  - список
+  - триплеты
+  - тройка
+  - тройки
+  - запись
+  - форма
+  - id
 hide: tags
 ---
 
-# Атрибут типа «Запись». Получение ID выбранных записей {: #example_attribute_record_get_selected_ids }
+# Записи и коллекции. Получение ID выбранных записей с помощью N3 {: #example_n3_collection_get_selected_ids }
 
-## Введение {: #example_attribute_record_get_selected_ids_intro }
+## Введение {: #example_n3_collection_get_selected_ids_intro }
 
 Здесь представлен пример получения ID записей, выбранных в таблице, и передачи полученных ID в сценарий.
 
-## Прикладная задача {: example_attribute_record_get_selected_ids_use_case .pageBreakBefore }
+## Прикладная задача {: example_n3_collection_get_selected_ids_use_case .pageBreakBefore }
 
 Имеются шаблоны записей: _«Заказы»_ и _«Товары»_.
 
@@ -28,9 +48,9 @@ hide: tags
     - получить ID выбранных товаров;
     - оформить заказ на выбранные товары.
 
-## Настройка приложения {: #example_attribute_record_get_selected_ids_app_configure .pageBreakBefore }
+## Настройка приложения {: #example_n3_collection_get_selected_ids_app_configure .pageBreakBefore }
 
-### Настройка сохранения выбранных товаров в форме заказа {: #example_attribute_record_get_selected_ids_order_configure }
+### Настройка сохранения выбранных товаров в форме заказа {: #example_n3_collection_get_selected_ids_order_configure }
 
 1. Создайте шаблоны записей _«Заказы»_ и _«Товары»_.
 2. В шаблоне _«Заказы»_ создайте атрибуты _«Избранные товары»,_ _«Отложенные товары»_ и _«Выбранные товары»_ со следующими свойствами:
@@ -68,7 +88,7 @@ hide: tags
 
 13. Сохраните правила для формы.
 
-### Настройка заказа выбранных товаров из списка всех товаров {: #example_attribute_record_get_selected_ids_scenario_configure .pageBreakBefore }
+### Настройка заказа выбранных товаров из списка всех товаров {: #example_n3_collection_get_selected_ids_scenario_configure .pageBreakBefore }
 
 1. В шаблоне _«Товары»_ создайте кнопку _«Оформить заказ»_ со следующими свойствами:
 
@@ -134,7 +154,7 @@ hide: tags
     $$dialogVariables->ВыбранныеТовары
     ```
 
-## Тестирование {: #example_attribute_record_get_selected_ids_testing .pageBreakBefore }
+## Тестирование {: #example_n3_collection_get_selected_ids_testing .pageBreakBefore }
 
 1. Создайте запись в шаблоне _«Заказы»_.
 2. На форме заказа создайте несколько записей в таблицах _«Избранные товары»_ и атрибут _«Отложенные товары»_.

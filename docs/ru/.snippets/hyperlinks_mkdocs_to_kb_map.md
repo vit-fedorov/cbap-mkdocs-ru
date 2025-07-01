@@ -12,10 +12,6 @@
 
 [iana_timezone_db]: https://www.iana.org/time-zones
 
-[api_calls]: {{ kbCategoryURLPrefix }}868
-
-[attribute_date_time_use]: {{ kbArticleURLPrefix }}4886
-
 [attribute_drawing_file_import]: {{ kbArticleURLPrefix }}4906
 
 [backup_and_restore]: {{ kbArticleURLPrefix }}4643
@@ -27,12 +23,7 @@
 [chevron_stage_render]: {{ kbArticleURLPrefix }}4915
 
 [csharp_examples]: {{ kbCategoryURLPrefix }}883
-
-[csharp_guide]: {{ kbArticleURLPrefix }}4864
-
 [document_digital_signature]: {{ kbArticleURLPrefix }}4910
-
-[example_attribute_record_get_selected_ids]: {{ kbArticleURLPrefix }}5100
 
 [example_csharp_my_profile_button]: {{ kbArticleURLPrefix }}5006
 
@@ -46,10 +37,6 @@
 
 [example_n3_button_local_variable]: {{ kbArticleURLPrefix }}4909
 
-[example_n3_dataset_join_filter]: {{ kbArticleURLPrefix }}5109
-
-[example_n3_collection_join_filter_hierarchy]: {{ kbArticleURLPrefix }}5108
-
 [example_n3_list_by_creator_filter]: {{ kbArticleURLPrefix }}4933
 
 [experessions_intro]: {{ kbArticleURLPrefix }}4930
@@ -57,8 +44,6 @@
 [export_template_csharp_configure]: {{ kbArticleURLPrefix }}4793
 
 [export_template_csharp_collection_download]: {{ kbArticleURLPrefix }}4792
-
-[formula_context]: {{ kbArticleURLPrefix }}4892
 
 [formula_guide]: {{ kbCategoryURLPrefix }}880
 
@@ -70,13 +55,9 @@
 
 [manual_n3]: {{ kbArticleURLPrefix }}4852
 
-[n3_guide]: {{ kbCategoryURLPrefix }}877
-
 [n3_use_examples]: {{ kbCategoryURLPrefix }}879
 
 [odata-filter-syntax]: https://msdn.microsoft.com/ru-ru/library/hh169248(v=nav.90).aspx
-
-[periodic_task_notifications]: {{ kbArticleURLPrefix }}4905
 
 [apps_kb]: {{ kbCategoryURLPrefix }}832
 
@@ -458,6 +439,8 @@
 
 [cards_view]: {{ kbArticleURLPrefix }}4820
 
+[csharp_guide]: {{ kbArticleURLPrefix }}4864
+
 [gantt_chart_create]: {{ kbArticleURLPrefix }}4891
 
 [attribute_date_time_value_format]: {{ kbArticleURLPrefix }}4977
@@ -488,6 +471,14 @@
 
 [example_document_download_to_server_csharp]: {{ kbArticleURLPrefix }}5002
 
+[example_n3_collection_get_selected_ids]: {{ kbArticleURLPrefix }}5100
+
+[example_n3_collection_join_filter_hierarchy]: {{ kbArticleURLPrefix }}5108
+
+[example_n3_dataset_join_filter]: {{ kbArticleURLPrefix }}5109
+
+[example_n3_periodic_task_notifications]: {{ kbArticleURLPrefix }}4905
+
 [example_task_reassign]: {{ kbArticleURLPrefix }}5087
 
 [experimental_feature_support]: {{ kbArticleURLPrefix }}4579#experimental_feature_support
@@ -510,6 +501,8 @@
 
 [expression_editor_reference]: {{ kbArticleURLPrefix }}5025#expression_editor_reference
 
+[formula_context]: {{ kbArticleURLPrefix }}4892
+
 [formula_function_list]: {{ kbArticleURLPrefix }}4993
 
 [formula_reference]: {{ kbArticleURLPrefix }}4993
@@ -527,6 +520,8 @@
 [formula_guide_relations]: {{ kbArticleURLPrefix }}4999#formula_guide_relations
 
 [formula_guide_queries]: {{ kbArticleURLPrefix }}4999#formula_guide_queries
+
+[n3_guide]: {{ kbCategoryURLPrefix }}877
 
 [n3_editor_autocomplete]: {{ kbArticleURLPrefix }}5039
 
@@ -865,6 +860,8 @@
 [deploy_guide_linux_delete_version]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_delete_version
 
 [deploy_guide_linux_initialize]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_initialize
+
+[deploy_guide_linux_prerequisites_install]: {{ kbArticleURLPrefix }}4622#deploy_guide_linux_prerequisites_install
 
 [deploy_cluster_linux]: {{ kbArticleURLPrefix }}5080
 

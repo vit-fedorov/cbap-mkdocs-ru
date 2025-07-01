@@ -277,7 +277,7 @@ nav:
     - administration/connections_communication_routes/rest_odata_connections/http_receive_file.md
     - examples/task_reassign.md
     - examples/template_reference_data_api.md
-    - examples/get_selected_record_ids.md
+    - examples/n3_collection_get_selected_ids
   - Обзор версий:
     - general/changelog/changelog.md
     - general/changelog/release_notes_5.0.md

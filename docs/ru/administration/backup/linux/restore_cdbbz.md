@@ -45,19 +45,11 @@ hide: tags
 3. Остановите службу adapterhost:
 
     ``` sh
-    ps -fax | grep <instanceName> | grep Agent
-    kill -9 $(ps -eo pid,args | grep <instanceName> | grep Agent | awk {'print $1'})
-    ```
-
-    или
-
-    ``` sh
-    
     systemctl stop adapterhost<instanceName>
     ```
 
 4. С помощью команды `systemctl status <serviceName>` удостоверьтесь, что службы остановлены.
-5. Перейдите в директорию с резервной копией, например `/home/<user>`
+5. Перейдите в директорию с файлом резервной копии, например `/home/<user>`
 
     ```sh
     cd /home/<user>
@@ -82,42 +74,41 @@ hide: tags
     ls
     ```
 
-9. После распаковки архива в директории быть 3 директории: `Database`, `Scripts`, `Streams`.
-
-    !!! note "Примечание"
-
-        Если в распакованной резервной копии имеется директория `Ignite` вместо `Database`, переименуйте её в `Database`:
-
-        ```
-        mv Ignite Database
-        ```
+9. После распаковки архива в директории должно быть 3 директории: `Database`, `Scripts`, `Streams`.
 
 10. Для восстановления резервной копии используйте следующие параметры из YML-файла конфигурации экземпляра ПО `/usr/share/comindware/configs/instance/<instanceName>.yml`:
 
-    `#!yml databasePath: <path/to/Database>` — путь к директории базы данных;
+    `#!yml db.workDir: <path/to/Database>` — путь к директории базы данных;
     `#!yml userStorage.localDisk.path: <path/to/Streams>` — путь к директории пользовательских файлов;
 
-    Просмотрите откройте файл конфигурации с помощью следующей команды:
+    Просмотрите файл конфигурации с помощью следующей команды:
 
     ``` sh
     cat /usr/share/comindware/configs/instance/<instanceName>.yml
     ```
 
-11. Убедитесь в наличии директорий `<path/to/Database>` и `<path/to/Streams>`:
+11. Убедитесь в наличии директорий `Database>` и `Streams>`, указанных в YML-файле конфигурации:
 
     ``` sh
     ls -lh <path/to/Database>
     ls -lh <path/to/Streams>
     ```
 
+    - Если папки присутствуют, удалите их содержимое:
+
+        ``` sh
+        rm -rf <path>/Database/*
+        rm -rf <path>/Streams/*
+        ```
+
     - Если папки отсутствуют, создайте их:
 
         ``` sh
-        mkdir -p <path/to/Database>
-        mkdir -p <path/to/Streams>
+        mkdir -p <path>/Database
+        mkdir -p <path>/Streams
         ```
 
-12. Перейдите в директорию распакованной резервной копии (например, `/home/<user>/temp/`).
+12. Перейдите в директорию распакованной резервной копии (например, `/home/<user>/tmp/`).
 13. Переместите директорию `Scripts` в `Database`:
 
     ```
@@ -134,7 +125,7 @@ hide: tags
 15. Назначьте перенесённым директориям права `rwxrw-rw-`:
 
     ``` sh
-    chmod -R 766 <path/to/Database/folder> <path/to/Streams> /var/lib/comindware/<instanceName>
+    chmod -R 766 <path/to/Database> <path/to/Streams> /var/lib/comindware/<instanceName>
 
     ```
 
@@ -143,7 +134,7 @@ hide: tags
 16. Назначьте перенесенным директориям владельца:
 
     ``` sh
-    chown -R <User>:<Group> <path/to/database/folder> <path/to/streams/folder> /var/lib/comindware/<instanceName>
+    chown -R <User>:<Group> <path/to/Database> <path/to/Streams> /var/lib/comindware/<instanceName>
     ```
 
     Здесь `<User>`, `<Group>` — значения соответствующих параметров из файла `/usr/lib/systemd/system/comindware<instanceName>.service`
@@ -172,9 +163,9 @@ hide: tags
 19. Запустите службы экземпляра ПО и проверьте их статус:
 
     ``` sh
+    systemctl start adapterhost<instanceName>
     systemctl start comindware<instanceName> 
     systemctl start apigateway<instanceName>
-    systemctl start adapterhost<instanceName>
     ```
 
     ``` sh
@@ -194,6 +185,12 @@ hide: tags
     ```
 
 ## Восстановление лицензионных ключей {: #backup_restore_cdbbz_license_keys }
+
+!!! warning "Внимание!"
+
+    Лицензионные ключи привязаны к названию экземпляра ПО и уникальному идентификатору оборудования сервера (Hardware ID).
+    Поэтому восстановление возможно только на том же сервере, где была сделана резервная копия.
+    При развертывании на новом оборудовании необходимо выполнить повторную активацию лицензионных ключей.
 
 Чтобы использовать на восстановленном экземпляре ПО прежние лицензионные ключи, выполните указанные ниже действия.
 

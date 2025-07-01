@@ -191,7 +191,7 @@ kbId: 4935
 - [Создание таблицы со списком задач][table_configure_tasks_view]
 - [Вычисление пользователей с активными задачами][example_n3_calculate_active_task_accounts]
 - [Вычисление исполнителя активной задачи][n3_calculate_active_task_assignee]
-- [Периодические напоминания об открытых задачах][n3_periodic_task_notifications]
+- [Периодические напоминания об открытых задачах][example_n3_periodic_task_notifications]
 
 </div>
 

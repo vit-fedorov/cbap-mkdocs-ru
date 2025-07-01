@@ -188,7 +188,7 @@ kbId: 4950
 --8<-- "related_topics_heading.md"
 
 - [Вычисление пользователей с активными задачами][example_n3_calculate_active_task_accounts]
-- [Периодические напоминания об открытых задачах][n3_periodic_task_notifications]
+- [Периодические напоминания об открытых задачах][example_n3_periodic_task_notifications]
 - [Уведомления. Типы, назначение, настройка, использование][notification_types]
 
 </div>

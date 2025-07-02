@@ -1,4 +1,4 @@
-<h1>Атрибут типа «Запись». Получение ID выбранных записей</h1><div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="5100" kb-title="Атрибут типа «Запись». Получение ID выбранных записей">
+<h1>Записи и коллекции. Получение ID выбранных записей с помощью N3</h1><div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="5100" kb-tags="N3,Notation 3,Notation3,RDF,атрибут типа «Запись»,выборка,выбранные записи,вычисление,идентификатор,коллекция,сценарий,список,триплеты,тройка,тройки,запись,форма,id" kb-title="Записи и коллекции. Получение ID выбранных записей с помощью N3">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -9,7 +9,7 @@
       </h2>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#example_attribute_record_get_selected_ids_intro">
+<a class="md-nav__link mkdocs_imported_link" href="#example_n3_collection_get_selected_ids_intro">
 <span class="md-ellipsis">
       Введение
     </span>
@@ -23,7 +23,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#example_attribute_record_get_selected_ids_app_configure">
+<a class="md-nav__link mkdocs_imported_link" href="#example_n3_collection_get_selected_ids_app_configure">
 <span class="md-ellipsis">
       Настройка приложения
     </span>
@@ -31,14 +31,14 @@
 <nav aria-label="Настройка приложения" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#example_attribute_record_get_selected_ids_order_configure">
+<a class="md-nav__link mkdocs_imported_link" href="#example_n3_collection_get_selected_ids_order_configure">
 <span class="md-ellipsis">
       Настройка сохранения выбранных товаров в форме заказа
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#example_attribute_record_get_selected_ids_scenario_configure">
+<a class="md-nav__link mkdocs_imported_link" href="#example_n3_collection_get_selected_ids_scenario_configure">
 <span class="md-ellipsis">
       Настройка заказа выбранных товаров из списка всех товаров
     </span>
@@ -48,7 +48,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#example_attribute_record_get_selected_ids_testing">
+<a class="md-nav__link mkdocs_imported_link" href="#example_n3_collection_get_selected_ids_testing">
 <span class="md-ellipsis">
       Тестирование
     </span>
@@ -66,9 +66,9 @@
 </nav>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h2 id="example_attribute_record_get_selected_ids_intro">Введение</h2>
+<h2 id="example_n3_collection_get_selected_ids_intro">Введение</h2>
 <p>Здесь представлен пример получения ID записей, выбранных в таблице, и передачи полученных ID в сценарий.</p>
-<h2 class="pageBreakBefore" example_attribute_record_get_selected_ids_use_case="example_attribute_record_get_selected_ids_use_case" id="прикладная-задача">Прикладная задача</h2>
+<h2 class="pageBreakBefore" example_n3_collection_get_selected_ids_use_case="example_n3_collection_get_selected_ids_use_case" id="прикладная-задача">Прикладная задача</h2>
 <p>Имеются шаблоны записей: <em>«Заказы»</em> и <em>«Товары»</em>.</p>
 <p>Шаблон <em>«Заказы»</em> связан с шаблоном <em>«Товары»</em>.</p>
 <p>На форме заказа имеются таблицы <em>«Избранные товары»</em> и <em>«Отложенные товары»</em>.</p>
@@ -86,8 +86,8 @@
 </ul>
 </li>
 </ul>
-<h2 class="pageBreakBefore" id="example_attribute_record_get_selected_ids_app_configure">Настройка приложения</h2>
-<h3 id="example_attribute_record_get_selected_ids_order_configure">Настройка сохранения выбранных товаров в форме заказа</h3>
+<h2 class="pageBreakBefore" id="example_n3_collection_get_selected_ids_app_configure">Настройка приложения</h2>
+<h3 id="example_n3_collection_get_selected_ids_order_configure">Настройка сохранения выбранных товаров в форме заказа</h3>
 <ol class="colored_numbers_list">
 <li>Создайте шаблоны записей <em>«Заказы»</em> и <em>«Товары»</em>.</li>
 <li>
@@ -127,7 +127,7 @@
 <p>Сохраните правила для формы.</p>
 </li>
 </ol>
-<h3 class="pageBreakBefore" id="example_attribute_record_get_selected_ids_scenario_configure">Настройка заказа выбранных товаров из списка всех товаров</h3>
+<h3 class="pageBreakBefore" id="example_n3_collection_get_selected_ids_scenario_configure">Настройка заказа выбранных товаров из списка всех товаров</h3>
 <ol class="colored_numbers_list">
 <li>
 <p>В шаблоне <em>«Товары»</em> создайте кнопку <em>«Оформить заказ»</em> со следующими свойствами:</p>
@@ -195,7 +195,7 @@
 <div class="highlight"><code><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">Получаем</span><span class="w"> </span><span class="n">значение</span><span class="w"> </span><span class="n">локальной</span><span class="w"> </span><span class="n">переменной</span><span class="w"> </span><span class="n">кнопки</span><span class="p">,</span></code> <br/><code><span class="err">#</span><span class="w"> </span><span class="n">которая</span><span class="w"> </span><span class="n">вызвала</span><span class="w"> </span><span class="n">сценарий</span></code> <br/><code><span class="err">$$</span><span class="n">dialogVariables</span><span class="o">-&gt;</span><span class="n">ВыбранныеТовары</span></code> <br/></pre></code></div>
 </li>
 </ol>
-<h2 class="pageBreakBefore" id="example_attribute_record_get_selected_ids_testing">Тестирование</h2>
+<h2 class="pageBreakBefore" id="example_n3_collection_get_selected_ids_testing">Тестирование</h2>
 <ol class="colored_numbers_list">
 <li>Создайте запись в шаблоне <em>«Заказы»</em>.</li>
 <li>На форме заказа создайте несколько записей в таблицах <em>«Избранные товары»</em> и атрибут <em>«Отложенные товары»</em>.</li>

@@ -39,7 +39,7 @@ if __name__ == "__main__":
     # repo_address, current_branch = get_git_info()
     ingestion_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     #source_line = f"Source: {repo_address.strip('.git')}/tree/{current_branch}"
-    source_line = "https://kb.comindware.ru/category.php?id=798"
+    source_line = "Source: https://kb.comindware.ru/category.php?id=798"
     # Add 'https://kb.comindware.ru' prefix to all image sources starting with '](/platform/' using simple replace
     content = re.sub(r'(\[[^\]]*\])\(/([^)]+)\)', r'\1(https://kb.comindware.ru/\2)', content)
     print(source_line)
@@ -66,7 +66,7 @@ if __name__ == "__main__":
     # Extract only the 'Files analyzed' and 'Estimated tokens' lines from the summary using regex
     matches = re.findall(r'^(Files analyzed:.*|Estimated tokens:.*)$', summary, re.MULTILINE)
     summary_short = "\n".join([m.strip() for m in matches])# if len(matches) == 2 else summary
-    with open("kb.comindware.ru.platform_v5.md", "w", encoding="utf-8") as f:
+    with open("kb.comindware.ru.platform_v5_for_llm_ingestion.md", "w", encoding="utf-8") as f:
         f.write(
             f"\n----------------------\n\n"
             f"Ingestion date: {ingestion_date}\n"

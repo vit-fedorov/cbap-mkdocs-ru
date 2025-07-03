@@ -388,6 +388,7 @@ nav:
       - tutorial_hr/lesson_6.md
       - tutorial_hr/lesson_7.md
       - tutorial_hr/lesson_8.md
+      - tutorial_hr/outro.md
 
 exclude_docs: |
   administration/deploy/windows/instance_stop_IIS.md
@@ -413,3 +414,4 @@ exclude_docs: |
   administration/deploy/linux/upload_size_limit_configure_gostech.md
   administration/connections_communication_routes/authentication/openid_connection_gostech.md
   administration/connections_communication_routes/system_connections/s3_connection_gostech.md
+  tutorial_hr/taxonomies

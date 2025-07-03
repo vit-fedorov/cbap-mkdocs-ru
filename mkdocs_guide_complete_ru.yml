@@ -366,6 +366,17 @@ nav:
     - architect/architect_demo.md
     - architect/architect_example.md
   - Обучение:
+    - Аналитик. Ознакомительный:
+      - tutorial_hr/intro.md
+      - tutorial_hr/lesson_1.md
+      - tutorial_hr/lesson_2.md
+      - tutorial_hr/lesson_3.md
+      - tutorial_hr/lesson_4.md
+      - tutorial_hr/lesson_5.md
+      - tutorial_hr/lesson_6.md
+      - tutorial_hr/lesson_7.md
+      - tutorial_hr/lesson_8.md
+      - tutorial_hr/outro.md
     - Управление автопарком:
       - tutorial/intro.md
       - tutorial/lesson_1.md
@@ -378,17 +389,7 @@ nav:
       - tutorial/lesson_8.md
       - tutorial/lesson_9.md
       - tutorial/lesson_10.md
-    - Аналитик. Ознакомительный:
-      - tutorial_hr/intro.md
-      - tutorial_hr/lesson_1.md
-      - tutorial_hr/lesson_2.md
-      - tutorial_hr/lesson_3.md
-      - tutorial_hr/lesson_4.md
-      - tutorial_hr/lesson_5.md
-      - tutorial_hr/lesson_6.md
-      - tutorial_hr/lesson_7.md
-      - tutorial_hr/lesson_8.md
-      - tutorial_hr/outro.md
+
 
 exclude_docs: |
   administration/deploy/windows/instance_stop_IIS.md

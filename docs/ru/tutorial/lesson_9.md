@@ -22,10 +22,8 @@ kbId: 4868
 !!! warning "Бизнес-логика"
 
     После выполнения рейса _Водитель_ должен скачать отчёт в формате PDF с отчётом о понесённых затратах.
-
-!!! question "Настройка шаблона экспорта"
-    
-    {% include-markdown ".snippets/tutorial_export_steps.md" %}
+   
+{% include-markdown ".snippets/tutorial_export_steps.md" %}
 
 ### Создание файла шаблона экспорта
 

@@ -1,0 +1,6 @@
+---
+description: 
+globs: /tutorial_hr/**
+alwaysApply: false
+---
+Всегда сверяйся с файлами в папке /taxonomy

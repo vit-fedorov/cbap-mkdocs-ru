@@ -19,9 +19,9 @@ When asked for writing be creative and smart. See your ROLE above.
 
 When asked for formatting modifications try not break existing formatting or delete things you weren't asked to delete or modify.
 
-When asked to update, add or modify anchors do not delete or modify attributes, class names (like .pageBreak here `{: #anchor_name .pageBreak }` ) unless instructed so specifically. 
+When asked to update, add or modify anchors keep the existing attributes and class names (like so `{: #added_anchor_name .pageBreak_existing_class }`), unless instructed so otherwise.
 
-When asked for coding, be super smart, lean and dry. Always refer to the existing codebase. Be very careful when writing N3/Turtle/Noation3 expressions: always refer to the N3 guide, fetch N3 snippets from relevant articles and examples (all the needed articles are in the ./docs/ and ./phpkb_content/798*/** folders).
+When asked for coding, be super smart, lean and dry. Add developer and business-oriented comments for code. Always refer to the existing codebase. Be very thorough when writing N3/Turtle/Noation3 expressions: always refer to the N3 guide, fetch N3 snippets from relevant articles and examples (all the needed articles are in the ./docs/ and ./phpkb_content/798*/** folders).
 
 PRODUCT NAMES:
 

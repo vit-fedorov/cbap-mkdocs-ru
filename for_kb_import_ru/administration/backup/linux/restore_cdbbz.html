@@ -16,7 +16,14 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#восстановление-базы-данных-и-скриптов">
+<a class="md-nav__link mkdocs_imported_link" href="#порядок-восстановления">
+<span class="md-ellipsis">
+      Порядок восстановления
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#backup_restore_cdbbz_db_scripts">
 <span class="md-ellipsis">
       Восстановление базы данных и скриптов
     </span>
@@ -57,22 +64,29 @@
 <li>индексы OpenSearch (Elasticsearch) восстанавливаются отдельно от восстановления базы данных экземпляра ПО.</li>
 </ul>
 <p>Прежде чем приступать к восстановлению экземпляра ПО <strong>Comindware Platform</strong> из резервной копии, ознакомьтесь с видеороликом и инструкциями, представленными ниже.</p>
+<h2 id="порядок-восстановления">Порядок восстановления</h2>
+<ol class="colored_numbers_list">
+<li>Восстановите <a class="mkdocs_imported_link" href="#backup_restore_cdbbz_db_scripts">базу данных и скрипты</a>.</li>
+<li>При необходимости восстановите <a class="mkdocs_imported_link" href="#backup_restore_cdbbz_license_keys">лицензионные ключи</a>.</li>
+<li>При необходимости восстановите <a class="mkdocs_imported_link" href="#backup_restore_cdbbz_indexes">индексы OpenSearch (Elasticsearch)</a>.</li>
+</ol>
 <div class="notice notice-warning">
 <p class="admonition-title">Фактические пути и имена файлов</p>
 <p>При выполнении инструкций будьте внимательны: указывайте фактические имена файлов и пути, которые используются в вашей системе.</p>
 <p>Такие имена указаны в угловых скобках, например:</p>
 <ul>
-<li><code>&lt;instanceName&gt;</code> — имя экземпляра ПО, для которого выполняется восстановление;</li>
-<li><code>&lt;serviceName&gt;</code> — имя службы, которую требуется проверить или остановить (например, <code>comindware&lt;instanceName&gt;</code>,<code>apigateway&lt;instanceName&gt;</code>, <code>adapterhost&lt;instanceName&gt;</code>);</li>
-<li><code>&lt;user&gt;</code> — имя пользователя, в домашней директории которого находится файл резервной копии;</li>
 <li><code>&lt;backupName&gt;.cdbbz</code> — имя файла резервной копии в формате CDBBZ;</li>
 <li><code>&lt;Database&gt;</code> — директория базы данных экземпляра ПО (например, <code>/var/lib/comindware/&lt;instanceName&gt;/Database</code>);</li>
-<li><code>&lt;Scripts&gt;</code> — директория, содержащая C#-скрипты экземпляра ПО;</li>
+<li><code>&lt;instanceName&gt;</code> — имя экземпляра ПО, для которого выполняется восстановление;</li>
+<li><code>&lt;instanceName&gt;.yml</code> — файл конфигурации экземпляра ПО;</li>
 <li><code>&lt;path/to&gt;</code> — путь к директории или файлу в вашей системе; замените на фактический путь согласно своей структуре каталогов.</li>
+<li><code>&lt;Scripts&gt;</code> — директория, содержащая C#-скрипты экземпляра ПО;</li>
+<li><code>&lt;serviceName&gt;</code> — имя службы, которую требуется проверить или остановить (например, <code>comindware&lt;instanceName&gt;</code>,<code>apigateway&lt;instanceName&gt;</code>, <code>adapterhost&lt;instanceName&gt;</code>);</li>
+<li><code>&lt;user&gt;</code> — имя пользователя, в домашней директории которого находится файл резервной копии;</li>
 </ul>
 <p>См. <em>«<a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4620">Пути и содержимое директорий экземпляра ПО</a>»</em>.</p>
 </div>
-<h2 class="pageBreakBefore" id="восстановление-базы-данных-и-скриптов">Восстановление базы данных и скриптов</h2>
+<h2 class="pageBreakBefore" id="backup_restore_cdbbz_db_scripts">Восстановление базы данных и скриптов</h2>
 <ol class="colored_numbers_list">
 <li>
 <p>Перейдите в режим суперпользователя:</p>
@@ -113,22 +127,23 @@
 <p class="admonition-title">Фактический набор директорий</p>
 <p>В дальнейших инструкциях используются директории <code>Database</code>, <code>Scripts</code> и <code>Streams</code>.</p>
 <ul>
-<li>
-<p>В архиве всегда имеется директория <code>Database</code> с резервной копией базы данных.</p>
-</li>
-<li>
-<p>Если в резервной копии нет директорий <code>Scripts</code> и <code>Streams</code>, пропускайте связанные с ними инструкции.</p>
-</li>
-<li>
-<p>Если в резервной копии имеется директория с данными OpenSearch (Elasticsearch), их следует восстанавливать средствами OpenSearch (Elasticsearch).</p>
-</li>
+<li>В архиве всегда имеется директория <code>Database</code> с резервной копией базы данных.</li>
+<li>Если в резервной копии нет директорий <code>Scripts</code> и <code>Streams</code>, пропускайте связанные с ними инструкции.</li>
+<li>Если в резервной копии имеется директория с данными OpenSearch (Elasticsearch), их следует восстанавливать средствами OpenSearch (Elasticsearch). См. <em>«<a class="mkdocs_imported_link" href="#backup_restore_cdbbz_indexes">Восстановление индексов OpenSearch (Elasticsearch) из файла резервной копии репозитория</a>»</em>.</li>
 </ul>
 </div>
 </li>
 <li>
-<p>Для восстановления резервной копии используйте следующие параметры из YML-файла конфигурации экземпляра ПО <code>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code>:</p>
-<p><code>db.workDir: &lt;path/to/Database&gt;</code> — путь к директории базы данных;
-<code>userStorage.localDisk.path: &lt;path/to/Streams&gt;</code> — путь к директории пользовательских файлов.</p>
+<p>Для восстановления резервной копии используйте пути, указанные в следующих директивах YML-файла конфигурации экземпляра ПО <code>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code>:</p>
+<ul>
+<li><code>db.workDir: &lt;path/to/Database&gt;</code> — путь к директории базы данных;</li>
+<li><code>userStorage.localDisk.path: &lt;path/to/Streams&gt;</code> — путь к директории пользовательских файлов.</li>
+</ul>
+<div class="notice notice-warning">
+<p class="admonition-title">Восстановление резервной копии на другом экземпляре ПО</p>
+<p>При создании экземпляра ПО база данных привязывается к имени, которое указано в директиве <code>db.name</code> (имя базы данных) файла конфигурации <code>&lt;instanceName&gt;.yml</code>.</p>
+<p>Если вы восстанавливаете резервную копию на новом экземпляре ПО, необходимо убедиться, что в YML-файле конфигурации задано такое же значение <code>db.name</code>, как у экземпляра ПО, на котором была создана резервная копия.</p>
+</div>
 <p>Просмотрите файл конфигурации с помощью следующей команды:</p>
 <div class="highlight"><code><pre><span></span><code>cat<span class="w"> </span>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code> <br/></pre></code></div>
 </li>

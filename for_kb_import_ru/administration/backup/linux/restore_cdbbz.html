@@ -108,7 +108,22 @@
 <div class="highlight"><code><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>tmp</code> <br/><code>ls</code> <br/></pre></code></div>
 </li>
 <li>
-<p>Архив должен распаковаться в три директории: <code>Database</code>, <code>Scripts</code>, <code>Streams</code>.</p>
+<p>Архив будет распакован в несколько директорий.</p>
+<div class="notice notice-info">
+<p class="admonition-title">Фактический набор директорий</p>
+<p>В дальнейших инструкциях используются директории <code>Database</code>, <code>Scripts</code> и <code>Streams</code>.</p>
+<ul>
+<li>
+<p>В архиве всегда имеется директория <code>Database</code> с резервной копией базы данных.</p>
+</li>
+<li>
+<p>Если в резервной копии нет директорий <code>Scripts</code> и <code>Streams</code>, пропускайте связанные с ними инструкции.</p>
+</li>
+<li>
+<p>Если в резервной копии имеется директория с данными OpenSearch (Elasticsearch), их следует восстанавливать средствами OpenSearch (Elasticsearch).</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Для восстановления резервной копии используйте следующие параметры из YML-файла конфигурации экземпляра ПО <code>/usr/share/comindware/configs/instance/&lt;instanceName&gt;.yml</code>:</p>

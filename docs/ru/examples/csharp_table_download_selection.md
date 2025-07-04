@@ -1,6 +1,13 @@
 ---
 title: 'Выгрузка выбранных записей и столбцов из таблицы с помощью C#'
 kbId: 5008
+tags: 
+    - скрипт
+    - C#
+    - кнопка
+    - экспорт таблицы
+    - сишарп
+hide: tags
 ---
 
 # Выгрузка выбранных записей и столбцов из таблицы с помощью C\# {: #example_csharp_table_download_selection }
@@ -77,6 +84,7 @@ kbId: 5008
     using Aspose.Cells;
     // Импорт дополнительных классов Aspose.Cells для работы с таблицами и их стилями в Excel.
     using Aspose.Cells.Tables;
+    using System.Collections.Generic;
 
     class Script
     {
@@ -100,7 +108,7 @@ kbId: 5008
                     // Получаем ID шаблона, к которому относится таблица, по ID первой из записей.
                     var templateId = Api.Base.OntologyService.GetAxioms(selectedTableRows.First())["cmw.container"].First().ToString();
                     // Получаем все таблицы шаблона для дальнейшей обработки.
-                    var templateTables = Api.TeamNetwork.DatasetService.GetQueries(templateId); 
+                    var templateTables = Api.TeamNetwork.DatasetService.GetQueries(templateId);
 
                     // Создаём пустой набор экспортируемых данных.
                     Dataset datasetToExport;
@@ -118,8 +126,6 @@ kbId: 5008
     ```
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
     ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
-    {% else %}
-
     {% endif %}
                     // Перебираем все таблицы шаблона для поиска экспортируемой таблицы по её ID.
                     foreach(var table in templateTables)
@@ -164,8 +170,6 @@ kbId: 5008
     ```
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
     ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
-    {% else %}
-
     {% endif %}
                                     // Форматируем ячейки в соответствии с типом данных.
                                     switch(attribute)
@@ -254,22 +258,33 @@ kbId: 5008
                                         // Проверяем, что данные в ячейке не пустые.
                                         if(rowData[ii] != null)
                                         {
-                                            // Проверяем тип данных в ячейке и обрабатываем их соответственно.
-                                            if(rowData[ii].GetType() != typeof(Comindware.TeamNetwork.Api.Data.Forms.AccountReference) && rowData[ii].GetType() != typeof(System.Boolean) && rowData[ii].GetType() != typeof(Comindware.TeamNetwork.Api.Data.Forms.InstanceReference))
-                                            {
-                                                // Для обычных типов данных просто записываем значение в ячейку.
-                                                excelSheet.Cells[j,jj].PutValue(rowData[ii]);
-                                            }
-                                            else if (rowData[ii].GetType() == typeof(Comindware.TeamNetwork.Api.Data.Forms.AccountReference))
-                                            {
-                                                // Для ссылок на аккаунты записываем имя аккаунта.
-                                                excelSheet.Cells[j,jj].PutValue(((AccountReference)rowData[ii]).Name);
-                                            }
+                                            // Определяем типы данных, для которых требуется преобразование.
+                                            if(
+                                                // Не ссылка на аккаунт.
+                                                rowData[ii].GetType() != typeof(Comindware.TeamNetwork.Api.Data.Forms.AccountReference)
+                                                // Не булево значение.
+                                                && rowData[ii].GetType() != typeof(System.Boolean)
+                                                // Не ссылка на запись.
+                                                && rowData[ii].GetType() != typeof(Comindware.TeamNetwork.Api.Data.Forms.InstanceReference)
+                                                // Не значение из списка.
+                                                && rowData[ii].GetType() != typeof(Comindware.TeamNetwork.Api.Data.Forms.EnumReference)
+                                                // Не коллекция ссылок на записи.
+                                                && !(rowData[ii] is System.Collections.IList)
+                                            )
     {% if pdfOutput %}
     ```
     {% include-markdown ".snippets/pdfPageBreakHard.md" %}
     ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
     {% endif %}
+                                            {
+                                            // Для остальных типов данных просто записываем значение в ячейку.
+                                                excelSheet.Cells[j,jj].PutValue(rowData[ii]);
+                                            }
+                                            else if (rowData[ii].GetType() == typeof(Comindware.TeamNetwork.Api.Data.Forms.AccountReference))
+                                            {
+                                                // Для ссылок на аккаунты записываем в ячейку Ф. И. О аккаунта.
+                                                excelSheet.Cells[j,jj].PutValue(((AccountReference)rowData[ii]).Name);
+                                            }
                                             else if(rowData[ii].GetType() == typeof(System.Boolean))
                                             {
                                                 // Логические значения преобразуем в строку.
@@ -282,10 +297,41 @@ kbId: 5008
                                                     excelSheet.Cells[j,jj].PutValue("Ложь");
                                                 }
                                             }
+                                            // Для ссылок на записи записываем имя записи.
                                             else if(rowData[ii].GetType() == typeof(Comindware.TeamNetwork.Api.Data.Forms.InstanceReference))
                                             {
-                                                // Для ссылок на записи записываем имя записи.
                                                 excelSheet.Cells[j,jj].PutValue(((Comindware.TeamNetwork.Api.Data.Forms.InstanceReference)rowData[ii]).Name);
+                                            }
+                                            // Для значения из списка записываем в ячейку название значения на языке текущего пользователя.
+                                            else if(rowData[ii].GetType() == typeof(Comindware.TeamNetwork.Api.Data.Forms.EnumReference))
+                                            {
+                                                excelSheet.Cells[j,jj].PutValue(((Comindware.TeamNetwork.Api.Data.Forms.EnumReference)rowData[ii]).Name);
+                                            }
+    {% if pdfOutput %}
+    ```
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+    ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
+    {% endif %}
+                                            // Обрабатываем атрибуты с несколькими значениями.
+                                            else if (rowData[ii] is System.Collections.IList list)
+                                            {
+                                                var names = new List<string>();
+                                                foreach (var item in list)
+                                                {
+                                                    if (item is Comindware.TeamNetwork.Api.Data.Forms.InstanceReference instanceRef)
+                                                    {
+                                                        names.Add(instanceRef.Name);
+                                                    }
+                                                    else if (item is Comindware.TeamNetwork.Api.Data.Forms.AccountReference accountRef)
+                                                    {
+                                                        names.Add(accountRef.Name);
+                                                    }
+                                                    else if (item is Comindware.TeamNetwork.Api.Data.Forms.EnumReference enumRef)
+                                                    {
+                                                        names.Add(enumRef.Name);
+                                                    }
+                                                }
+                                                excelSheet.Cells[j,jj].PutValue(string.Join(", ", names));
                                             }
                                         }
                                     }
@@ -297,7 +343,7 @@ kbId: 5008
                             // - Применяем фильтры к заголовкам столбцов для сортировки и фильтрации данных.
                             // - Применяем чередующуюся заливку строк для наглядности.
                             // - Применяем автоматическое форматирование заголовков.
-                            // - Параметры таблицы: 
+                            // - Параметры таблицы:
                             //   - начальные строка и столбец (0,0)
                             //   - конечные строка и столбец (j-1,i-1)
                             //   - включить заголовки (true)
@@ -309,7 +355,11 @@ kbId: 5008
                     MemoryStream stream = new MemoryStream();
                     // Сохраняем рабочую книгу в поток в формате XLSX.
                     excelWorkbook.Save(stream, SaveFormat.Xlsx);
-
+    {% if pdfOutput %}
+    ```
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+    ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
+    {% endif %}
                     // Формируем результат нажатия кнопки с успешным статусом.
                     var result = new UserCommandResult
                     {
@@ -319,15 +369,8 @@ kbId: 5008
                         File=new UserCommandFileResult(){
                             Content = stream.ToArray(),
                             // Задаём имя файла для экспорта.
-                            Name = "ЭкспортИзТаблицы.xlsx"
+                            Name = "ExportedTable.xlsx"
                             },
-    {% if pdfOutput %}
-    ```
-    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
-    ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
-    {% else %}
-
-    {% endif %}
                         Messages = new[]
                         {
                             new UserCommandMessage
@@ -359,6 +402,11 @@ kbId: 5008
                     return result1;
                 }
             }
+    {% if pdfOutput %}
+    ```
+    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
+    ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
+    {% endif %}
             else
             {
                 // Формируем результат нажатия кнопки с ошибкой, если не выбрано ни одной записи.
@@ -378,13 +426,6 @@ kbId: 5008
                 return result1;
             }
         }
-    {% if pdfOutput %}
-    ```
-    {% include-markdown ".snippets/pdfPageBreakHard.md" %}
-    ``` cs title="Скрипт для выгрузки выбранных ячеек из таблицы — продолжение"
-    {% else %}
-
-    {% endif %}
         // Вспомогательный класс для хранения информации о столбцах таблицы.
         public class columnContainer
         {
@@ -407,7 +448,7 @@ kbId: 5008
 4. Сохраните кнопку.
 5. Поместите кнопку _«Экспортировать в Excel»_ на **область кнопок** таблицы «**Все записи**» шаблона _«Заявки»_.
 
-## Тестирование скрипта {: #example_csharp_table_download_selection_test }
+## Тестирование скрипта {: #example_csharp_table_download_selection_test .pageBreakBefore }
 
 1. Откройте таблицу «**Все записи**» шаблона _«Заявки»_.
 2. Откройте меню «**Мои настройки**» <i class="fa-light fa-edit"></i> — «**Настроить внешний вид**» <i class="fa-light fa-table"></i>.

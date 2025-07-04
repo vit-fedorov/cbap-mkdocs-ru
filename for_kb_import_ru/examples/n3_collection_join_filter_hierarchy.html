@@ -1,4 +1,4 @@
-<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="5108" kb-tags="запись,коллекция,таксономия,объединение,join,список,фильтрация,иерархия,N3,Notation3,Notation 3,тройки,триплеты,права,доступ,роли" kb-title="Атрибут типа «Запись». Объединение и фильтрация иерархических коллекций с помощью N3">
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="5108" kb-tags="N3,Notation 3,Notation3,RDF,атрибут типа «Запись»,доступ,иерархия,вычисление,коллекция,объединение,права,роли,список,таксономия,триплеты,тройка,тройки,фильтрация,запись,join" kb-title="Записи и коллекции. Объединение и фильтрация иерархических коллекций с помощью N3">
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -53,20 +53,6 @@
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#example_n3_collection_join_filter_hierarchy_test">
-<span class="md-ellipsis">
-      Тестирование
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link mkdocs_imported_link" href="#связанные-статьи">
-<span class="md-ellipsis">
-      Связанные статьи
-    </span>
-</a>
 </li>
 </ul>
 </div>
@@ -172,56 +158,6 @@
 <h3 id="2-фильтрация-для-роли">2. Фильтрация для роли</h3>
 <p>Чтобы предоставить доступ к запросам только ответственным сотрудникам указанных в запросе поставщиков в роль добавить тройку в фильтр аккаунтов для шаблона Запросы.</p>
 <div class="highlight"><code><pre><span></span><code><span class="c"># Импортируем префиксы для работы со списками и объектами</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">object:</span><span class="w"> </span><span class="nv">&lt;http://comindware.com/ontology/object#&gt;</span><span class="p">.</span></code> <br/><code><span class="k">@prefix</span><span class="w"> </span><span class="nn">list:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/10/swap/list#&gt;</span><span class="p">.</span></code> <br/><code><span class="p">{</span></code> <br/><code>    <span class="c"># Убедитесь, что системные имена соответствуют именам в вашем приложении.</span></code> <br/><code>    <span class="c"># Получаем атрибут «Доступные поставщики» из предыдущего вычисления</span></code> <br/><code>    <span class="p">(</span><span class="s">"Запросы"</span> <span class="s">"Доступныепоставщики"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findAttribute</span> <span class="err">?RequestCounterpartiesList</span><span class="p">.</span></code> <br/><code></code> <br/><code>    <span class="c"># Получаем атрибуты для проверки связи поставщиков с текущим пользователем.</span></code> <br/><code>    <span class="p">(</span><span class="s">"Поставщики"</span> <span class="s">"Контакты"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findAttribute</span> <span class="err">?ContactsAttribute</span><span class="p">.</span></code> <br/><code>    <span class="p">(</span><span class="s">"Контакт"</span> <span class="s">"Ответственный"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findAttribute</span> <span class="err">?IsResponsibleAttribute</span><span class="p">.</span></code> <br/><code>    <span class="p">(</span><span class="s">"Контакт"</span> <span class="s">"Сотрудник"</span><span class="p">)</span> <span class="nn">object</span><span class="p">:</span><span class="nt">findAttribute</span> <span class="err">?EmployeeAttribute</span><span class="p">.</span></code> <br/><code></code> <br/><code>    <span class="c"># Получаем аккаунт текущего пользователя</span></code> <br/><code>    <span class="nn">cmw</span><span class="p">:</span><span class="nt">securityContext</span> <span class="nn">cmw</span><span class="p">:</span><span class="nt">currentUser</span> <span class="err">?user</span><span class="p">.</span></code> <br/><code></code> <br/><code>    <span class="c"># Отбираем поставщиков,</span></code> <br/><code>    <span class="c"># у которых текущий пользователь является ответственным</span></code> <br/><code>    <span class="c"># по текущему запросу.</span></code> <br/><code>    <span class="err">?item</span> <span class="err">?RequestCounterpartiesList</span> <span class="err">?RequestCounterparties</span><span class="p">.</span></code> <br/><code>    <span class="err">?RequestCounterparties</span> <span class="err">?ContactsAttribute</span> <span class="err">?Contacts</span><span class="p">.</span></code> <br/><code>    <span class="err">?Contacts</span> <span class="err">?IsResponsibleAttribute</span> <span class="l">true</span><span class="p">.</span></code> <br/><code>    <span class="err">?Contacts</span> <span class="err">?EmployeeAttribute</span> <span class="err">?user</span><span class="p">.</span></code> <br/><code>    <span class="c"># Возвращаем текущего пользователя, </span></code> <br/><code>    <span class="c"># если ему разрешено работать с текущим запросом.</span></code> <br/><code>    <span class="err">?user</span> <span class="err">-&gt;</span> <span class="err">?value</span><span class="p">.</span></code> <br/><code><span class="p">}</span></code> <br/></pre></code></div>
-<h2 class="pageBreakBefore" id="example_n3_collection_join_filter_hierarchy_test">Тестирование</h2>
-<ol class="colored_numbers_list">
-<li>Создайте тестовые записи в справочниках: <code>Категории</code> (с иерархией уровней), <code>Поставщики</code>, <code>Контакты</code> и несколько аккаунтов.</li>
-<li>Для нескольких поставщиков укажите общие категории и добавьте в <code>Контакты</code> аккаунты сотрудников. Для некоторых сотрудников установите флажок <code>Ответственный</code> и укажите свой аккаунт в поле <code>Сотрудник</code>.</li>
-<li>Создайте <code>Запрос</code>.</li>
-<li>В запросе укажите категории уровней 1—3.</li>
-<li>В поле <code>Доступные поставщики</code> должен появиться список поставщиков, работающих по выбранным категориям.</li>
-<li>Выберите поставщиков и сохраните запрос.</li>
-<li>Выйдите из системы и войдите с аккаунтом, который <strong>не</strong> указан в качестве ответственного лица ни у одного из поставщиков, выбранных на шаге 6.</li>
-<li>
-<p>Откройте список всех запросов. Вы не должны видеть созданный ранее запрос.</p>
-</li>
-<li>
-<p>Создайте несколько тестовых аккаунтов.</p>
-</li>
-<li>
-<p>Создайте записи в шаблоне <em>«Категории»</em></p>
-<div class="highlight"><code><pre><span></span><code>- создайте общие категории;</code> <br/><code>- создайте категории уровней 1–3, указав для них разные **общие** категории.</code> <br/></pre></code></div>
-</li>
-<li>
-<p>Создайте записи в шаблоне <em>«Контакты»</em>:</p>
-<ul>
-<li>добавьте тестовые аккаунты в поле <em>«Сотрудник»</em>.</li>
-<li>для некоторых контактов установите флажок <em>«Ответственный»</em> и укажите свой аккаунт в поле <em>«Сотрудник»</em>.</li>
-</ul>
-</li>
-<li>
-<p>Создайте записи в шаблоне <em>«Поставщики»</em>:</p>
-<ul>
-<li>укажите в поле <em>«Товарные категории»</em> разные <strong>общие</strong> категории;</li>
-<li>в <em>«Контакты»</em> добавьте записи из шаблона <em>«Контакты»</em>.</li>
-</ul>
-</li>
-<li>
-<p>Создайте запись в шаблоне <em>«Запрос»</em>.</p>
-</li>
-<li>В запросе выберите категории уровней 1, 2 и 3.</li>
-<li>Откройте раскрывающийся список <em>«Доступные поставщики»</em>. В нём должны отображается поставщики, работающие по выбранным категориям.</li>
-<li>Выберите поставщиков и сохраните запрос.</li>
-<li>Выйдите из системы и войдите под аккаунтом, который <strong>не</strong> указан как ответственное лицо ни у одного из  поставщиков, выбранных в созданном ранее запросе.</li>
-<li>Откройте список всех <em>«Запросов»</em>. Созданный ранее <em>«Запрос»</em> не должен отображаться для вас, так как ваш тестовый аккаунт не является ответственным лицом какого-либо поставщика по запросу.</li>
-</ol>
-<div class="relatedTopics">
-<h2 id="связанные-статьи">Связанные статьи</h2>
-<ul>
-<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4780">Атрибут типа «Запись»</a></li>
-<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/category.php?id=877">Язык N3</a></li>
-<li><a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=4803">Настройка ролей</a></li>
-</ul>
-</div>
 </article>
 </div>
 </div>

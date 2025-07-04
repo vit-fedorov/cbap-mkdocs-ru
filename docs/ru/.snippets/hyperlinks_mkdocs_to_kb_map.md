@@ -459,8 +459,6 @@
 
 [elasticdata_description]: {{ kbArticleURLPrefix }}4584
 
-[example_attribute_record_join_string]: {{ kbArticleURLPrefix }}5107
-
 [example_csharp_table_download_selections]: {{ kbArticleURLPrefix }}5008
 
 [example_document_clone_scenario_n3]: {{ kbArticleURLPrefix }}4883
@@ -476,6 +474,8 @@
 [example_n3_collection_join_filter_hierarchy]: {{ kbArticleURLPrefix }}5108
 
 [example_n3_dataset_join_filter]: {{ kbArticleURLPrefix }}5109
+
+[example_n3_collection_join_string]: {{ kbArticleURLPrefix }}5107
 
 [example_n3_periodic_task_notifications]: {{ kbArticleURLPrefix }}4905
 
@@ -614,6 +614,8 @@
 [http_send_file]: {{ kbArticleURLPrefix }}5066
 
 [http_send_request_connection]: {{ kbArticleURLPrefix }}4696
+
+[integration_recomendations]: {{ kbArticleURLPrefix }}5091
 
 [import_data]: {{ kbArticleURLPrefix }}4802
 

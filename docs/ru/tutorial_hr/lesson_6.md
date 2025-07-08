@@ -1,5 +1,5 @@
 ---
-title: Урок 6. Аналитика и мониторинг: диаграммы, дашборды, фильтры
+title: 'Урок 6. Аналитика и мониторинг: диаграммы, дашборды, фильтры'
 kbId: 5117
 tags:
   # Common tutorial_hr tags
@@ -121,7 +121,7 @@ hide: tags
 9. В меню элементов нажмите кнопку «**Показать связанные элементы**» <i class="fa-light fa-link">‌</i>.
 10. Проверьте, что все связи между шаблонами отображаются корректно.
 
-    {% include-markdown ".snippets/tutorial_er_diagram_designer_lines_admonition.md" %}
+    {% include-markdown ".snippets/tutorial_er_diagram_designer_line_admonition.md" %}
 
 <!-- _![Пример ER-диаграммы для процесса найма](img/lesson_6_er_diagram.png)_ -->
 

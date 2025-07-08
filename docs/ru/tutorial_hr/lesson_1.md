@@ -1,5 +1,5 @@
 ---
-title: 'Урок 1. Обзор ПО и ключевые понятия'
+title: 'Урок 1. Обзор возможностей Comindware Platform и понятий BPMS'
 kbId:
 tags:
   - BPMS
@@ -26,7 +26,7 @@ tags:
 hide: tags
 ---
 
-# Урок 1. Обзор ПО и основные понятия {: #tutorial_hr_lesson_1 }
+# Урок 1. Обзор возможностей {{ productName }} и понятий BPMS {: #tutorial_hr_lesson_1 }
 
 ## Введение {: #tutorial_hr_lesson_1_intro }
 

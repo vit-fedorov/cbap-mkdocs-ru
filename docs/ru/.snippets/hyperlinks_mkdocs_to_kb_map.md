@@ -935,8 +935,8 @@
 [tutorial_hr_lesson_3]: {{ kbArticleURLPrefix }}5114
 [tutorial_hr_lesson_4]: {{ kbArticleURLPrefix }}5116
 [tutorial_hr_lesson_5]: {{ kbArticleURLPrefix }}5117
-[tutorial_hr_lesson_6]: {{ kbArticleURLPrefix }}5118
-[tutorial_hr_lesson_7]: {{ kbArticleURLPrefix }}5119
+[tutorial_hr_lesson_7]: {{ kbArticleURLPrefix }}5118
+[tutorial_hr_lesson_6]: {{ kbArticleURLPrefix }}5119
 [tutorial_hr_lesson_8]: {{ kbArticleURLPrefix }}5120
 [tutorial_hr_outro]: {{ kbArticleURLPrefix }}5121
 

@@ -617,6 +617,8 @@
 
 [integration_recomendations]: {{ kbArticleURLPrefix }}5091
 
+[interface_use]: {{ kbArticleURLPrefix }}5105
+
 [import_data]: {{ kbArticleURLPrefix }}4802
 
 [map_use]: {{ kbArticleURLPrefix }}4814

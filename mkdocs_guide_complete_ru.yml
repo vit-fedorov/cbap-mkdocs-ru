@@ -17,6 +17,7 @@ nav:
       - general/changelog/release_notes_5.0.md
   - Использование ПО:
     - using_the_system/index.md
+    - using_the_system/interface_use.md
     - Панель навигации:
       - using_the_system/navigation_panel/index.md
       - using_the_system/navigation_panel/desktop.md

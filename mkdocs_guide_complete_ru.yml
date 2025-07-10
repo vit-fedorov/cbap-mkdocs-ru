@@ -415,4 +415,4 @@ exclude_docs: |
   administration/deploy/linux/upload_size_limit_configure_gostech.md
   administration/connections_communication_routes/authentication/openid_connection_gostech.md
   administration/connections_communication_routes/system_connections/s3_connection_gostech.md
-  tutorial_hr/taxonomies
+  tutorial_hr/taxonomies/**

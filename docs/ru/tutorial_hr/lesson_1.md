@@ -1,6 +1,6 @@
 ---
 title: 'Урок 1. Обзор возможностей Comindware Platform и понятий BPMS'
-kbId:
+kbId: 5113
 tags:
 # Common tutorial_hr tags
   - BPMS

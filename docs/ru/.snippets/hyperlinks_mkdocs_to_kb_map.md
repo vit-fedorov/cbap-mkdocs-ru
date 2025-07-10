@@ -930,9 +930,9 @@
 [lesson_10]: {{ kbArticleURLPrefix }}4866
 
 [tutorial_hr]: {{ kbArticleURLPrefix }}5112
-[tutorial_hr_lesson_1]: {{ kbArticleURLPrefix }}5115
-[tutorial_hr_lesson_2]: {{ kbArticleURLPrefix }}5113
-[tutorial_hr_lesson_3]: {{ kbArticleURLPrefix }}5114
+[tutorial_hr_lesson_1]: {{ kbArticleURLPrefix }}5113
+[tutorial_hr_lesson_2]: {{ kbArticleURLPrefix }}5114
+[tutorial_hr_lesson_3]: {{ kbArticleURLPrefix }}5115
 [tutorial_hr_lesson_4]: {{ kbArticleURLPrefix }}5116
 [tutorial_hr_lesson_5]: {{ kbArticleURLPrefix }}5117
 [tutorial_hr_lesson_7]: {{ kbArticleURLPrefix }}5118

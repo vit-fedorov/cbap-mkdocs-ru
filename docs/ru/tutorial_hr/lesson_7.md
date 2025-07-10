@@ -1,6 +1,6 @@
 ---
 title: 'Урок 7. Аналитика и мониторинг: диаграммы, дашборды, фильтры'
-kbId: 5117
+kbId: 5119
 tags:
 # Common tutorial_hr tags
   - BPMS

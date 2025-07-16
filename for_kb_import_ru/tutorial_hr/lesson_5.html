@@ -238,13 +238,13 @@
 <li>Нажмите поле в столбце «<strong>Значение</strong>». Отобразится компактный редактор выражения.</li>
 <li>
 <p>Введите <strong>формулу</strong>:</p>
-<div class="highlight"><code><pre><span></span><code><span class="n">AND</span><span class="p">(</span><span class="err">$</span><span class="n">Проверкаслужбыбезопасности</span><span class="p">,</span><span class="n">GREATEREQ</span><span class="p">(</span><span class="err">$</span><span class="n">Оценказапрохождениесобеседования</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span></code> <br/></pre></code></div>
+<div class="highlight"><code><pre><span></span><code><span class="n">AND</span><span class="p">(</span><span class="err">$</span><span class="n">Проверкаслужбыбезопасности</span><span class="p">,</span><span class="n">GREATEREQ</span><span class="p">(</span><span class="err">$</span><span class="n">Оценказасобеседование</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span></code> <br/></pre></code></div>
 <div class="notice notice-success">
 <p class="admonition-title">Синтаксис формулы для вычисления результата собеседования</p>
 <ul>
 <li><code>AND()</code> — эта функция принимает в качестве аргументов два выражения, возвращающих логическое значение, и возвращает логическое значение <code>true</code>, если оба аргумента вернули <code>true</code>.</li>
 <li><code>GREATEREQ()</code> — эта функция сравнивает значения двух аргументов и возвращает логическое значение <code>true</code>, если значение первого аргумента больше или равно значению второго.</li>
-<li><code>$Проверкаслужбыбезопасности</code>, <code>$Оценказапрохождениесобеседования</code> — обращение к атрибутам атрибуту <em>«Проверка службы безопасности»</em> и <em>«Оценка за собеседование»</em> по их системным именам.</li>
+<li><code>$Проверкаслужбыбезопасности</code>, <code>$Оценказасобеседование</code> — обращение к атрибутам атрибуту <em>«Проверка службы безопасности»</em> и <em>«Оценка за собеседование»</em> по их системным именам.</li>
 </ul>
 </div>
 </li>

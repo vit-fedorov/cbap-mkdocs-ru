@@ -5,13 +5,10 @@ import tiktoken
 from datetime import datetime
 import os
 import json
-from bs4 import BeautifulSoup
-from crawl4ai.deep_crawling import BFSDeepCrawlStrategy
-import collections
 
 OUTPUT_MD = "cmwlab_com_for_llm_ingestion_dirty.md"
 PROGRESS_FILE = "cmwlab_com_progress_dirty.json"
-START_URL = "https://kb.cmwlab.com/article/29/cmw-platform-v4-7-section-content-2162.html"
+START_URL = "https://www.cmwlab.com/sitemap/"
 BATCH_SIZE = 5
 BATCH_TIMEOUT = 120  # seconds
 ARTICLE_TIMEOUT = 15  # seconds
@@ -50,15 +47,7 @@ async def extract_urls_from_sitemap(crawler, url):
             links.extend([l['href'] for l in r.links.get('internal', []) if 'href' in l])
     else:
         links = [l['href'] for l in result.links.get('internal', []) if 'href' in l]
-    return sorted(set([l for l in links if l.startswith("https://kb.cmwlab.com")]))
-
-async def get_page_title_from_html(html):
-    try:
-        soup = BeautifulSoup(html, 'html.parser')
-        title = soup.title.string.strip() if soup.title and soup.title.string else ''
-        return title
-    except Exception as e:
-        return f'ERROR: {e}'
+    return sorted(set([l for l in links if l.startswith("https://www.cmwlab.com")]))
 
 async def crawl_article_with_timeout(url, config, crawler):
     try:
@@ -93,7 +82,7 @@ async def main():
             f.write(
                 f"\n----------------------\n\n"
                 f"Ingestion date: {ingestion_date}\n"
-                f"Title: kb.cmwlab.com knowledge base for AI ingestion\n"
+                f"Title: Cmwlab.com knowledge base for AI ingestion\n"
                 f"Description: Provide this file to your AI agent. For better results, add the prompt below\n"
                 f"{source_line}\n"
                 f"----------------------\n\n"
@@ -105,69 +94,26 @@ async def main():
             )
 
     async with AsyncWebCrawler() as crawler:
-        # Set custom User-Agent header if possible
-        if hasattr(crawler, 'session') and hasattr(crawler.session, 'headers'):
-            crawler.session.headers.update({
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-            })
-            print('[DEBUG] Set custom User-Agent header on crawler session')
-        print(f"[DEEPCRAWL] Starting deep crawl from {START_URL} (depth=5, domain-only)...")
-        config = CrawlerRunConfig(
-            scraping_strategy=LXMLWebScrapingStrategy(),
-            css_selector='#articleContent',
-            verbose=False,
-        )
-        queue = collections.deque([START_URL])
-        articles = []
-        while queue:
-            url = queue.popleft()
-            if url in processed_urls:
-                continue
-            try:
-                results = await crawler.arun_many([url], config=config)
+        print(f"[SITEMAP] Crawling sitemap to get all URLs...")
+        all_urls = await extract_urls_from_sitemap(crawler, START_URL)
+        print(f"[SITEMAP] Found {len(all_urls)} URLs in sitemap.")
+        urls_to_crawl = [u for u in all_urls if u not in processed_urls]
+        print(f"[CRAWL] {len(urls_to_crawl)} URLs to process (excluding already done).")
+
+        for i in range(0, len(urls_to_crawl), BATCH_SIZE):
+            batch = urls_to_crawl[i:i+BATCH_SIZE]
+            batch_num = i // BATCH_SIZE + 1
+            print(f"[BATCH] Crawling batch {batch_num}: {len(batch)} URLs")
+            config = CrawlerRunConfig(scraping_strategy=LXMLWebScrapingStrategy(), verbose=False)
+            articles = []
+            for url in batch:
+                results = await crawl_article_with_timeout(url, config, crawler)
                 for result in results:
-                    page_url = getattr(result, 'url', None)
-                    if not getattr(result, 'success', False):
-                        print(f"[FAIL] {page_url} - {getattr(result, 'error_message', 'Unknown error')}")
-                        continue
-                    # 1. Extract and queue all internal links before marking as processed
-                    # Custom extraction for category/non-article pages
-                    full_html = getattr(result, 'cleaned_html', None) or getattr(result, 'html', None)
-                    if full_html:
-                        # DEBUG: Save the last fetched HTML for inspection
-                        with open('debug_last_page.html', 'w', encoding='utf-8') as f:
-                            f.write(full_html)
-                        soup = BeautifulSoup(full_html, 'html.parser')
-                        bs_links_added = 0
-                        # Main content extraction
-                        for div in soup.find_all('div', class_='article-title'):
-                            h2 = div.find('h2', class_='d-table-cell')
-                            if h2:
-                                a = h2.find('a', href=True)
-                                if a and a['href'].startswith('https://kb.cmwlab.com/article/') and a['href'] not in processed_urls and a['href'] not in queue:
-                                    queue.append(a['href'])
-                                    bs_links_added += 1
-                                    print(f"[DEBUG][BS] Queued article link (main): {a['href']}")
-                        # Sidebar extraction
-                        for a in soup.find_all('a', class_='articleNode', href=True):
-                            if a['href'].startswith('https://kb.cmwlab.com/article/') and a['href'] not in processed_urls and a['href'] not in queue:
-                                queue.append(a['href'])
-                                bs_links_added += 1
-                                print(f"[DEBUG][BS] Queued article link (sidebar): {a['href']}")
-                        print(f"[DEBUG][BS] Total article links queued from BeautifulSoup: {bs_links_added}")
-                    # Also keep the original crawl4ai link extraction for completeness
-                    if hasattr(result, 'links'):
-                        crawl4ai_links_added = 0
-                        for l in result.links.get('internal', []):
-                            if 'href' in l:
-                                link_url = l['href']
-                                if link_url.startswith("https://kb.cmwlab.com") and link_url not in processed_urls and link_url not in queue:
-                                    queue.append(link_url)
-                                    crawl4ai_links_added += 1
-                                    print(f"[DEBUG][C4AI] Queued internal link: {link_url}")
-                        print(f"[DEBUG][C4AI] Total internal links queued from crawl4ai: {crawl4ai_links_added}")
-                    # 2. If it's an article, extract and save content
-                    if page_url and page_url.startswith("https://kb.cmwlab.com/article/"):
+                    url = getattr(result, 'url', None)
+                    try:
+                        if not getattr(result, 'success', False):
+                            print(f"[FAIL] {url} - {getattr(result, 'error_message', 'Unknown error')}")
+                            continue
                         md_content = getattr(result, 'markdown', None)
                         if md_content and hasattr(md_content, 'raw_markdown'):
                             md_content = md_content.raw_markdown
@@ -181,38 +127,25 @@ async def main():
                         total_words += word_count
                         files_analyzed += 1
                         total_articles += 1
-                        if full_html:
-                            title = await get_page_title_from_html(full_html)
-                        else:
-                            title = getattr(result, 'title', '') or ''
+                        title = getattr(result, 'title', '') or ''
                         article = (
                             f"================================================\n"
                             f"---\n"
                             f"title: {title}\n"
-                            f"url: {page_url}\n"
+                            f"url: {url}\n"
                             f"tokens: {tokens}\n"
                             f"words: {word_count}\n"
                             f"---\n\n"
-                            f"### [{title}]({page_url})\n\n"
+                            f"### [{title}]({url})\n\n"
                             f"{md_content}\n\n---\n"
                         )
                         articles.append(article)
-                        print(f"[ARTICLE] Saved: {page_url}")
-                        if len(articles) >= BATCH_SIZE:
-                            write_batch(articles)
-                            articles = []
-                            save_progress(processed_urls)
-                    else:
-                        print(f"[SKIP] Not an article page: {page_url}")
-                    # 3. Mark as processed after extracting links and (if applicable) saving content
-                    processed_urls.add(page_url)
-            except Exception as e:
-                print(f"[FAIL] {url} - Exception during processing: {e}")
-        # Write any remaining articles
-        if articles:
+                        processed_urls.add(url)
+                    except Exception as e:
+                        print(f"[FAIL] {url} - Exception during article processing: {e}")
             write_batch(articles)
             save_progress(processed_urls)
-        print(f"[DEEPCRAWL] Done: {files_analyzed} files, {total_tokens} tokens.")
+            print(f"[BATCH] Done batch {batch_num}: {len(articles)} articles written, {files_analyzed} total, {total_tokens} tokens.")
 
     print(f"Done. {files_analyzed} files, {total_tokens} tokens.")
     print(f"Progress saved in {PROGRESS_FILE}")
@@ -226,7 +159,7 @@ async def main():
         new_header = (
             "----------------------\n\n"
             f"Ingestion date: {ingestion_date}\n"
-            "Title: kb.cmwlab.com knowledge base for AI ingestion\n"
+            "Title: Cmwlab.com knowledge base for AI ingestion\n"
             "Description: Provide this file to your AI agent. For better results, add the prompt below\n"
             f"Source: {START_URL}\n"
             f"Total tokens: {total_tokens}\n"

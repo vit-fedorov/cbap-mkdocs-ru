@@ -15,12 +15,13 @@ import os
 import os.path
 import json
 from sshtunnel import SSHTunnelForwarder
+import paramiko
 
 KB_ID_TO_FILENAME_MAP = None
 KB_ID_TO_TITLE_MAP = None
-KB_ID_TO_TITLE_MAP_FILE = '.article_id_filename_map_v5.json'
+KB_ID_TO_TITLE_MAP_FILE = '.article_id_filename_map_v4_cmw_lab.json'
 THIS_FILE_DIR = os.path.dirname(os.path.realpath(__file__))
-IMPORT_PATH_DEFAULT = 'phpkb_content'
+IMPORT_PATH_DEFAULT = 'phpkb_content_cmw_lab'
 importPath = input(f'Path to import (default `{IMPORT_PATH_DEFAULT}`): ') 
 KB_DIR = os.path.dirname(importPath) if importPath else IMPORT_PATH_DEFAULT
 TOTAL_PAGES_IMPORTED = 0
@@ -59,7 +60,7 @@ def importCategoryChildren(parent, categoryDirectory, show='yes', status='public
             FROM phpkb_categories 
             WHERE category_show='{show}' 
             AND category_status = '{status}'
-            AND phpkb_categories.language_id = 2
+            AND phpkb_categories.language_id = 1
             AND parent_id = {id}
             """)
         children = c4.fetchall()
@@ -209,6 +210,12 @@ def importArtciclesInCategory (categoryId, categoryDir):
                 markdown = re.sub(pattern, r'_\1_', markdown)
                 print(f"    Image captions processed for article {id}")
 
+                # Reformat images in italics with trailing caption (special for kb.cmwlab.com/assets)
+                print(f"    Processing italics images with trailing captions for article {id}...")
+                pattern = re.compile(r'(_!\[]\((https://kb\.cmwlab\.com/assets/[^)]+)\)_)([^\n]+)', flags=re.MULTILINE)
+                markdown = re.sub(pattern, r'_![\3](\2)_', markdown)
+                print(f"    Italics images with trailing captions processed for article {id}")
+
                 # Sanitize fenced code blocks to use 3 backticks instead of 4 or more, preserving indentation.
                 print(f"    Sanitizing fenced code blocks for article {id}...")
                 markdown = re.sub(r'`{4,}', r'```', markdown, flags=re.MULTILINE)
@@ -288,7 +295,7 @@ def importArtciclesInCategory (categoryId, categoryDir):
     return pages
 
 
-def fetchCategories(show='yes', status='public', language_id=2, parent_id=''):
+def fetchCategories(show='yes', status='public', language_id=1, parent_id=''):
 
     c = CONNECTION.cursor()    
 
@@ -319,7 +326,7 @@ def main():
     if len(KB_ID_TO_TITLE_MAP) == 0:
         KB_ID_TO_TITLE_MAP = dict()
     
-    with open(".serverCredentials.json", "r") as serverCredentialsFile: 
+    with open(".serverCredentialsCmwlab.json", "r") as serverCredentialsFile: 
         
         serverCredentialsFileContent = serverCredentialsFile.read()
         serverCredentials = json.loads(serverCredentialsFileContent) if serverCredentialsFileContent else dict()
@@ -328,27 +335,6 @@ def main():
     ssh_host = serverCredentials['ssh_host'] or input("PHPKB host:\n")
     ssh_username = serverCredentials['ssh_username'] or input('SSH username:\n')
 
-    # --- SSH authentication method selection ---
-    print("\nSSH authentication method:")
-    print("1. Password authentication (default)")
-    print("2. Private key authentication")
-    ssh_auth_method = input("Choose authentication method [1/2]: ").strip()
-    use_key = ssh_auth_method == '2'
-
-    ssh_password = None
-    ssh_pkey = None
-    ssh_private_key_password = None
-    if use_key:
-        default_key_path = ""
-        ssh_pkey = input(f"Path to private key file (default '{default_key_path}'): ").strip() or default_key_path
-        if not os.path.isfile(ssh_pkey):
-            print(f"ERROR: Private key file '{ssh_pkey}' does not exist.")
-            exit(1)
-        ssh_private_key_password = getpass("Private key passphrase (leave empty if none): ")
-        if not ssh_private_key_password:
-            ssh_private_key_password = None
-    else:
-        ssh_password = getpass("SSH password:\n")
     sql_username = serverCredentials['sql_username'] or input("SQL username:\n")
     sql_password = getpass("SQL password:\n")
     sql_database = serverCredentials['sql_database'] or input("Database name:\n")
@@ -361,21 +347,14 @@ def main():
     #         credentialsJson = json.dumps(serverCredentials, indent = 4)
     #         serverCredentialsFile.write(credentialsJson)
 
-    # Setup SSHTunnelForwarder with either password or key authentication
-    tunnel_args = dict(
-        ssh_host=ssh_host,
+    # Setup SSHTunnelForwarder. It will automatically use your ~/.ssh/config.
+    # If the key is passphrase-protected, you might be prompted for it.
+    server = SSHTunnelForwarder(
+        ssh_host,
         ssh_username=ssh_username,
         remote_bind_address=(sql_ip, sql_port),
         local_bind_address=(sql_ip, sql_port_local)
     )
-    if use_key:
-        tunnel_args['ssh_pkey'] = ssh_pkey
-        if ssh_private_key_password:
-            tunnel_args['ssh_private_key_password'] = ssh_private_key_password
-    else:
-        tunnel_args['ssh_password'] = ssh_password
-
-    server = SSHTunnelForwarder(**tunnel_args)
 
     server.start()
     # print(server.local_bind_port)

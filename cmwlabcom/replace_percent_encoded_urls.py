@@ -3,8 +3,8 @@ from urllib.parse import urlparse, urlunparse, unquote
 import requests
 from bs4 import BeautifulSoup
 
-MD_FILE = 'comindware_ru_for_llm_ingestion_dirty.md'
-MD_FILE_SANITIZED = 'comindware_ru_for_llm_ingestion_sanitized2.md'
+MD_FILE = 'cmwlab_com_for_llm_ingestion_dirty.md'
+MD_FILE_SANITIZED = 'cmwlab_com_for_llm_ingestion_sanitized.md'
 
 # Pattern to match blocks with title and url
 BLOCK_PATTERN = re.compile(r'(title:\s*)(.*?)\n(url:\s*)(https?://[^\s]+)', re.DOTALL)

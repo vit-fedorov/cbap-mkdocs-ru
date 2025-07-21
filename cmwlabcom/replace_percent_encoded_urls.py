@@ -2,8 +2,12 @@ import re
 from urllib.parse import urlparse, urlunparse, unquote
 import requests
 from bs4 import BeautifulSoup
+from bs4 import XMLParsedAsHTMLWarning
+import warnings
 
-MD_FILE = 'cmwlab_com_for_llm_ingestion_dirty.md'
+warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
+
+MD_FILE = 'cmwlab_com_for_llm_ingestion.md'
 MD_FILE_SANITIZED = 'cmwlab_com_for_llm_ingestion_sanitized.md'
 
 # Pattern to match blocks with title and url

@@ -2,22 +2,22 @@
 title: 'Скрипты и их ключи'
 kbId: 5122
 tags:
-  - sh
-  - bash
-  - deployment
-  - deploy
-  - Windows
   - Linux
+  - Windows
+  - bash
+  - deploy
+  - deployment
   - powershell
+  - sh
   - скрипты
-  - ключи
-  - установка
-  - администрирование
-  - инсталляция
-  - удаление
-  - обновление
-  - экземпляр
   - скрипты установки
+  - установка
+  - обновление
+  - удаление
+  - инсталляция
+  - ключи
+  - экземпляр
+  - администрирование
 hide: tags
 ---
 
@@ -85,21 +85,9 @@ sh prerequisites_install.sh -h
 - **Linux:** `X.X-release-ru-<versionNumber>.prerequisites.<osname>/CMW_<osname>/scripts`
 - **Windows:** `X.X-release-ru-<versionNumber>.prerequisites.Windows\CMW_Windows<versionNumber>\scripts`
 
-### `files_unblock` {: #scripts_keys_files_unblock }
+### Скрипты для Linux и Windows {: #script_keys_linux_windows }
 
-**Назначение:** разблокировка установочных файлов, скачанных из Интернета (снятие метки безопасности `Zone.Identifier`).
-
-**Ключ:**
-
-- `-path <path/to/distribution>` — путь к распакованной папке с установочными файлами, которые требуется разблокировать. Если не указать этот ключ, скрипт разблокирует файлы в текущей папке.
-
-**Пример:**
-
-``` powershell
-.\files_unblock.ps1 -path С:\Downloads\prerequisites
-```
-
-### `prerequisites_install` {: #scripts_keys_prerequisites_install }
+#### `prerequisites_install` {: #scripts_keys_prerequisites_install }
 
 **Назначение:** установка и настройка вспомогательного ПО и зависимостей **{{ productName }}**.
 
@@ -111,30 +99,74 @@ sh prerequisites_install.sh -h
     - `-k`, `--kafka` — установить Kafka.
     - `-kc`, `--kafkaClient` — установить клиентские библиотеки Kafka.
     - `-d`, `--dotnet` — установить .NET.
-    - `-o`, `--opensearch` — установить Opensearch.
+    - `-o`, `--opensearch` — установить OpenSearch.
+    <!-- НЕ ИСПОЛЬЗОВАТЬ ПОКА НЕ РЕАЛИЗОВАН КЛАСТЕР
     - `-i`, `--ignite` — установить Apache Ignite.
+    -->
     - `-p`, `--platform` — установить компоненты **{{ productName }}**.
-    - **Пример:**
+
+    **Пример:**
 
         ``` bash
         sh prerequisites_install.sh -p -d -k
         ```
 
 - **Windows**
+    - Используйте скрипт без ключей:
+
+        ``` powershell
+        .\prerequisites_install.ps1
+        ```
+    <!-- НЕ ИСПОЛЬЗОВАТЬ ПОКА НЕ БУДЕТ РЕАЛИЗОВАН КЛАСТЕР
     - `-ignite` — установить Apache Ignite.
-    - **Пример:**
+
+    **Пример:**
 
         ``` powershell
         .\prerequisites_install.ps1 -ignite
         ```
+    -->
 
-### `prerequisites_list` {: #script_keys_prerequisites_list }
+#### `prerequisites_list` {: #script_keys_prerequisites_list }
 
 **Назначение:** вывод списка установленных компонентов вспомогательного ПО.
 
+#### `version_check` {: #script_keys_version_check }
 
+**Назначение:** проверка состояния среды и компонентов вспомогательного ПО.
 
-### `prerequisites_uninstall` {: #script_keys_prerequisites_uninstall }
+#### `version_check_environment` {: #script_keys_version_check_environment }
+
+**Назначение:** проверка состояния среды — выводит статус и версию установленных компонентов, необходимых для работы вспомогательного ПО и **{{ productName }}**.
+
+#### `version_list` {: #script_keys_version_list }
+
+**Назначение:** вывод списка установленных версий **{{ productName }}**.
+
+#### `version_upgrade_onetime` {: #script_keys_version_upgrade_onetime }
+
+**Назначение:** обновление установленной версии ПО **{{ productName }}** до новой с переносом файлов, остановкой и удалением старых сервисов, обновлением конфигураций и запуском новой версии.
+
+### Скрипты только для Windows
+
+#### `files_unblock` {: #scripts_keys_files_unblock }
+
+**Назначение:** разблокировка установочных файлов, скачанных из Интернета (снятие метки безопасности `Zone.Identifier`).
+
+**Ключ:**
+
+- `-path <path/to/distribution>` — путь к распакованной директории с установочными файлами, которые требуется разблокировать. Если не указать этот ключ, скрипт разблокирует файлы в текущей директории.
+
+**Пример:**
+
+``` powershell
+.\files_unblock.ps1 -path С:\Downloads\prerequisites
+```
+
+### Скрипты только для Linux
+
+#### `prerequisites_uninstall` {: #script_keys_prerequisites_uninstall }
+
 **Назначение:** удаление выбранных компонентов вспомогательного ПО.
 
 **Ключи:**
@@ -151,32 +183,6 @@ sh prerequisites_install.sh -h
 sh prerequisites_uninstall.sh -d -j
 ```
 
-``` powershell
-sh prerequisites_uninstall.ps1 -d -j
-```
-
-### `version_check` {: #script_keys_version_check }
-
-**Назначение:** проверка состояния среды и компонентов **{{ productName }}**.
-
-
-### `version_check_environment` {: #script_keys_version_check_environment }
-
-**Назначение:** проверка состояния среды — выводит статус и версию установленных компонентов, необходимых для работы **{{ productName }}**.
-
-
-
-
-### `version_list` {: #script_keys_version_list }
-
-**Назначение:** вывод списка установленных версий **{{ productName }}**.
-
-
-### `version_upgrade_onetime` {: #script_keys_version_upgrade_onetime }
-
-**Назначение:** обновление установленной версии ПО **{{ productName }}** до новой с переносом файлов, остановкой и удалением старых сервисов, обновлением конфигураций и запуском новой версии.
-
-
 ## Скрипты для установки {{ productName }} {: #script_keys_platform_scripts }
 
 Скрипты для установки ПО **{{ productName }}** расположены в следующей директории с распакованным дистрибутивом **{{ productName }}**:
@@ -184,22 +190,9 @@ sh prerequisites_uninstall.ps1 -d -j
 - **Linux:** `X.X-release-ru-<versionNumber>.<osname>/CMW_<osname>_<versionNumber>/scripts`
 - **Windows:** `X.X-release-ru-<versionNumber>.Windows\CMW_Windows<versionNumber>\scripts`
 
-### `files_unblock` {: #script_keys_files_unblock_platform }
+### Кросс-платформенные скрипты
 
-**Назначение:** разблокировка установочных файлов, скачанных из Интернета (снятие метки безопасности `Zone.Identifier`).
-
-**Ключи:**
-
-- `-path <path/to/distribution>` — путь к распакованной папке с установочными файлами, которые требуется разблокировать. Если не указать этот ключ, скрипт разблокирует файлы в текущей папке.
-- `-h`, `--help` — вывести справку по использованию скрипта.
-
-**Пример:**
-
-``` powershell
-.\files_unblock.ps1 -path С:\Downloads\CMW
-```
-
-### `instance_check` {: #script_keys_instance_check }
+#### `instance_check` {: #script_keys_instance_check }
 
 **Назначение:** проверка состояния экземпляра ПО.
 
@@ -213,7 +206,7 @@ sh prerequisites_uninstall.ps1 -d -j
 bash instance_check.sh my_company_instance
 ```
 
-### `instance_create` {: #script_keys_instance_create }
+#### `instance_create` {: #script_keys_instance_create }
 
 **Назначение:** создание нового экземпляра **{{ productName }}**, генерация конфигурационных файлов, а также развёртывание демонстрационной базы данных.
 
@@ -248,7 +241,7 @@ bash instance_check.sh my_company_instance
         .\instance_create.ps1 -name my_company_instance -port 8080 -version 5.0.1234.0
         ```
 
-### `instance_delete` {: #script_keys_instance_delete }
+#### `instance_delete` {: #script_keys_instance_delete }
 
 **Назначение:** удаление экземпляра **{{ productName }}**, его конфигурационных файлов, а также пользовательских данных и всех связанных файлов.
 
@@ -277,55 +270,13 @@ bash instance_check.sh my_company_instance
         .\instance_delete.ps1 -name my_company_instance -clear
         ```
 
-### `instance_list` {: #script_keys_instance_list }
+#### `instance_list` {: #script_keys_instance_list }
 
 **Назначение:** вывод списка установленных экземпляров ПО.
 
+**Ключи не требуются**
 
-**Назначение:** восстановление данных экземпляра ПО из архивной резервной копии (файл `.cdbbz`) в указанные каталоги `Database` и `Streams`.
-
-**Ключи:**
-
-- `-zipPath <path/to>` — указать путь к архиву резервной копии `.cdbbz` (обязательный).
-- `-dataPath <path/to>` — указать путь к каталогу `Database` для восстановления (обязательный).
-- `-streamsPath <path/to>` — указать путь к каталогу `Streams` для восстановления (обязательный).
-- `-tempDir <path/to>` — указать временный каталог для распаковки архива.
-- `-deleteOldData` — удалить старые данные перед восстановлением.
-- `-h`, `--help` — вывести справку по использованию скрипта.
-
-**Пример:**
-
-``` powershell
-.\instance_restore_from_backup.ps1 -zipPath C:\Documents\CMW_backup -dataPath C:\Documents\CMW\Database -streamsPath C:\Documents\CMW\Streams
-```
-
-### `instance_start` {: #script_keys_instance_start }
-
-**Назначение:** запуск экземпляра ПО.
-
-- `-name <instanceName>` — указать имя экземпляра ПО (обязательный).
-
-**Пример:**
-
-``` powershell
-.\instance_start.ps1 -name my_company_instance
-```
-
-### `instance_stop` {: #script_keys_instance_stop }
-
-**Назначение:** остановка экземпляра ПО.
-
-**Ключи:**
-
-- `-name <instanceName>` — указать имя экземпляра ПО (обязательный).
-
-**Пример:**
-
-``` powershell
-.\instance_stop.ps1 -name my_company_instance
-```
-
-### `instance_upgrade` {: #script_keys_instance_upgrade }
+#### `instance_upgrade` {: #script_keys_instance_upgrade }
 
 **Назначение:** обновление экземпляра ПО.
 
@@ -352,24 +303,21 @@ bash instance_check.sh my_company_instance
         .\instance_upgrade.ps1 -name my_company_instance -version 5.0.1234.0
         ```
 
-### version_check {: #script_keys_version_check }
+#### `version_check` {: #script_keys_version_check_platform }
 
 **Назначение:** проверка состояния среды и компонентов **{{ productName }}**.
 
+**Ключи не требуются**
 
-### `version_check_environment` {: #script_keys_version_check_environment }
+#### `version_check_environment` {: #script_keys_version_check_environment_platform }
 
-**Назначение:** проверка состояния среды — выводит статус и версию установленных компонентов, необходимых для работы **{{ productName }}**.
+**Назначение:** проверка состояния среды и компонентов **{{ productName }}** — выводит статус и версию установленных компонентов, необходимых для работы **{{ productName }}**.
 
-**Пример:**
-
-### `version_check` {: #script_keys_version_check_platform }
-
-Назначение: проверка состояния среды и компонентов **{{ productName }}**.
-
-### `version_delete` {: #script_keys_version_delete }
+#### `version_delete` {: #script_keys_version_delete }
 
 **Назначение:** удаление указанной версии ПО.
+
+**Ключи:**
 
 - **Linux**
     - `-v=<versionNumber>`, `--version=<versionNumber>` — указать номер версии ПО (**обязательный**).
@@ -389,40 +337,123 @@ bash instance_check.sh my_company_instance
         .\version_delete.ps1 -version 5.0.1234.0
         ```
 
-### `version_install` {: #script_keys_version_install }
+#### `version_install` {: #script_keys_version_install }
 
-**Назначение:** установка версии ПО из текущего дистрибутива.
-Ключи:
+**Назначение:** установка версии ПО из текущей директории с дистрибутивом.
+
+**Ключи не требуются**
+
+#### `version_list` {: #script_keys_version_list_platform }
 
 **Назначение:** вывод списка установленных версий ПО.
 
-### `version_upgrade_onetime` {: #script_keys_version_upgrade_onetime_platform }
+**Ключи не требуются**
+
+#### `version_upgrade_onetime` {: #script_keys_version_upgrade_onetime_platform }
 
 **Назначение:** обновление установленной версии **{{ productName }}** до новой с переносом файлов, остановкой и удалением старых сервисов, обновлением конфигураций и запуском новой версии.
 
+**Ключи не требуются**
+
+### Скрипты только для Windows
+
+#### `files_unblock` {: #script_keys_files_unblock_platform }
+
+**Назначение:** разблокировка установочных файлов, скачанных из Интернета (снятие метки безопасности `Zone.Identifier`).
+
+**Ключ:**
+
+- `-path <path/to/distribution>` — путь к распакованной директории с установочными файлами, которые требуется разблокировать. Если не указать этот ключ, скрипт разблокирует файлы в текущей директории.
+
 **Пример:**
 
-``` bash
-sh version_upgrade_onetime.sh
+``` powershell
+.\files_unblock.ps1 -path С:\Downloads\CMW
+```
+
+#### `instance_restore_from_backup` {: #script_keys_instance_restore_from_backup }
+
+**Назначение:** восстановление данных экземпляра ПО из архивной резервной копии (файл `.cdbbz`) в указанные каталоги `Database` и `Streams`.
+
+**Ключи:**
+
+- `-zipPath <path/to>` — указать путь к архиву резервной копии `.cdbbz` (обязательный).
+- `-dataPath <path/to>` — указать путь к каталогу `Database` для восстановления (обязательный).
+- `-streamsPath <path/to>` — указать путь к каталогу `Streams` для восстановления (обязательный).
+- `-tempDir <path/to>` — указать временный каталог для распаковки архива.
+- `-deleteOldData` — удалить старые данные перед восстановлением.
+
+**Пример:**
+
+``` powershell
+.\instance_restore_from_backup.ps1 -zipPath C:\Documents\CMW_backup -dataPath C:\Documents\CMW\Database -streamsPath C:\Documents\CMW\Streams
+```
+
+#### `instance_start` {: #script_keys_instance_start }
+
+**Назначение:** запуск экземпляра ПО.
+
+**Ключ:**
+
+- `-name <instanceName>` — указать имя экземпляра ПО (обязательный).
+
+**Пример:**
+
+``` powershell
+.\instance_start.ps1 -name my_company_instance
+```
+
+#### `instance_stop` {: #script_keys_instance_stop }
+
+**Назначение:** остановка экземпляра ПО.
+
+**Ключи:**
+
+- `-name <instanceName>` — указать имя экземпляра ПО (обязательный).
+
+**Пример:**
+
+``` powershell
+.\instance_stop.ps1 -name my_company_instance
 ```
 
 ## Служебные скрипты
 
 Служебные скрипты являются вспомогательными и служат для вызова другими скриптами. Они не предназначены для самостоятельного запуска пользователем.
 
-Список служебных скриптов:
+Список служебных скриптов (**может измениться в зависимости от версии ПО**):
 
-| Имя скрипта                | Назначение                                                                                 |
-|---------------------------|----------------------------------------------------------------------------------------------|
-| adapterhost_config    | Генерация конфигурационного файла `adapterhost.yml` для экземпляра.                             |
-| adapterhost_register  | Регистрация `Adapterhost` как службы.              |
-| adapterhost_start     | Запуск службы `Adapterhost`.                                        |
-| adapterhost_stop      | Остановка службы `Adapterhost`.                                      |
+### Для Windows {: #service_scripts_windows }
+
+| Имя скрипта            | Назначение                                                          |
+| ---------------------- | ------------------------------------------------------------------- |
+| adapterhost_config     | Генерация конфигурационного файла `adapterhost.yml` для экземпляра. |
+| adapterhost_register   | Регистрация `Adapterhost` как службы.                               |
+| adapterhost_start      | Запуск службы `Adapterhost`.                                        |
+| adapterhost_stop       | Остановка службы `Adapterhost`.                                     |
 | adapterhost_unregister | Удаление службы `Adapterhost`.                                      |
-| apigateway_register   | Регистрация `Apigateway` как службы.               |
-| apigateway_start      | Запуск службы `Apigateway`.                                         |
-| apigateway_stop       | Остановка службы `Apigateway`.                                     |
-| apigateway_unregister | Удаление службы `Apigateway`.                                       |
+| apigateway_register    | Регистрация `Apigateway` как службы.                                |
+| apigateway_start       | Запуск службы `Apigateway`.                                         |
+| apigateway_stop        | Остановка службы `Apigateway`.                                      |
+| apigateway_unregister  | Удаление службы `Apigateway`.                                       |
+| upgrade_config_file    | Обновление конфигурационных файлов при обновлении версии ПО.        |
+
+### Для Linux {: #service_scripts_linux }
+
+Служебные скрипты для Linux организованы в модульную структуру по компонентам. Каждая директория компонента содержит специализированные скрипты для установки, настройки, запуска, остановки и удаления соответствующей службы. Эти скрипты вызываются основными скриптами установки и не предназначены для самостоятельного использования.
+
+**Директории служебных скриптов:**
+
+### Для Windows {: #service_scripts_windows }
+
+| Директория                      | Назначение                                              |
+|----------------------------------|--------------------------------------------------------|
+| `components/adapterhost/`        | Скрипты для управления службой AdapterHost             |
+| `components/apigateway/`         | Скрипты для управления службой ApiGateway              |
+| `components/kafka/`              | Скрипты для установки и настройки Kafka                |
+| `components/nginx/`              | Скрипты для установки и настройки Nginx                |
+| `components/opensearch/`         | Скрипты для установки и настройки OpenSearch           |
+| `components/elasticsearch/`      | Скрипты для установки и настройки Elasticsearch        |
 
 <div class="relatedTopics" markdown="block">
 

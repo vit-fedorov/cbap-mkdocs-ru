@@ -428,14 +428,14 @@ bash instance_check.sh my_company_instance
 | Имя скрипта            | Назначение                                                          |
 | ---------------------- | ------------------------------------------------------------------- |
 | adapterhost_config     | Генерация конфигурационного файла `adapterhost.yml` для экземпляра. |
-| adapterhost_register   | Регистрация `Adapterhost` как службы.                               |
-| adapterhost_start      | Запуск службы `Adapterhost`.                                        |
-| adapterhost_stop       | Остановка службы `Adapterhost`.                                     |
-| adapterhost_unregister | Удаление службы `Adapterhost`.                                      |
-| apigateway_register    | Регистрация `Apigateway` как службы.                                |
-| apigateway_start       | Запуск службы `Apigateway`.                                         |
-| apigateway_stop        | Остановка службы `Apigateway`.                                      |
-| apigateway_unregister  | Удаление службы `Apigateway`.                                       |
+| adapterhost_register   | Регистрация Adapterhost как службы.                                 |
+| adapterhost_start      | Запуск службы Adapterhost.                                          |
+| adapterhost_stop       | Остановка службы Adapterhost.                                       |
+| adapterhost_unregister | Удаление службы Adapterhost.                                        |
+| apigateway_register    | Регистрация Apigateway как службы.                                  |
+| apigateway_start       | Запуск службы Apigateway.                                           |
+| apigateway_stop        | Остановка службы Apigateway.                                        |
+| apigateway_unregister  | Удаление службы Apigateway.                                         |
 | upgrade_config_file    | Обновление конфигурационных файлов при обновлении версии ПО.        |
 
 ### Для Linux {: #service_scripts_linux }
@@ -446,14 +446,14 @@ bash instance_check.sh my_company_instance
 
 ### Для Windows {: #service_scripts_windows }
 
-| Директория                      | Назначение                                              |
-|----------------------------------|--------------------------------------------------------|
-| `components/adapterhost/`        | Скрипты для управления службой AdapterHost             |
-| `components/apigateway/`         | Скрипты для управления службой ApiGateway              |
-| `components/kafka/`              | Скрипты для установки и настройки Kafka                |
-| `components/nginx/`              | Скрипты для установки и настройки Nginx                |
-| `components/opensearch/`         | Скрипты для установки и настройки OpenSearch           |
-| `components/elasticsearch/`      | Скрипты для установки и настройки Elasticsearch        |
+| Директория                  | Назначение                          |
+| --------------------------- | ----------------------------------- |
+| `components/adapterhost/`   | Управление службой AdapterHost      |
+| `components/apigateway/`    | Управление службой ApiGateway       |
+| `components/kafka/`         | Установка и настройки Kafka         |
+| `components/nginx/`         | Установка и настройки Nginx         |
+| `components/opensearch/`    | Установка и настройки OpenSearch    |
+| `components/elasticsearch/` | Установка и настройки Elasticsearch |
 
 <div class="relatedTopics" markdown="block">
 

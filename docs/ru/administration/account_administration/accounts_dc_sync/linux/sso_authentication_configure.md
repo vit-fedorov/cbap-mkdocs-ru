@@ -632,7 +632,7 @@ _![Пример файла <instanceName>.yml с директивой  isLinuxSS
 
         Перед включением директивы `auth_gss on;` в конфигурации экземпляра ПО убедитесь, что модуль `ngx_http_auth_spnego_module.so` установлен и загружен, как указано на шагах 1–2.
 
-    ``` { .sh .pageBreakAfter title="Пример файла comindware&lt;instanceName&gt;" }
+    ``` { .sh .pageBreakAfter title="Пример файла comindware<instanceName>" }
 
     ...
 

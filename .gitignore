@@ -38,3 +38,4 @@ for_kb_import_ru/tags.json
 .worktrees/
 dev/
 .cursor/hooks/state/continual-learning.json
+.zcode/

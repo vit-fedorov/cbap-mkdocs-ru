@@ -36,3 +36,4 @@ comindwareru/comindware_ru_progress_dirty.json
 .scratch/*
 !.scratch/.gitkeep
 .cursor/hooks/state/continual-learning.json
+.zcode/

@@ -28,6 +28,7 @@ build_log.txt
 kb.comindware.ru/
 ai_utils/
 comindwareru/comindware_ru_progress_dirty.json
+.zcode/
 
 # Legacy clone default (use --mapping explicitly; per-release maps live at repo root)
 .mapping.json

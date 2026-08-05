@@ -400,7 +400,7 @@
 
 [release_notes_5.0.20260609]: {{ kbArticleURLPrefix }}5746
 
-[release_notes_5.0.20260717]: {{ kbArticleURLPrefix }}5747
+[release_notes_5.0.20260804]: {{ kbArticleURLPrefix }}5747
 
 [s3_connection]: {{ kbArticleURLPrefix }}4677
 

@@ -1,0 +1,213 @@
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="5747" kb-tags="release notes,версия 5.0,информация о выпуске,релизноутс,сведения о выпуске" kb-title="Сведения о выпуске 5.0 от 04.08.2026">
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<div class="mce-toc">
+<h2 class="toc-heading">
+      Содержание
+      </h2>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260804_intro">
+<span class="md-ellipsis">
+      
+        Введение
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260804_key_changes">
+<span class="md-ellipsis">
+      
+        Ключевые изменения
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260804_new_and_improved">
+<span class="md-ellipsis">
+      
+        Новые возможности и улучшения
+      
+    </span>
+</a>
+<nav aria-label="Новые возможности и улучшения" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260804_ui">
+<span class="md-ellipsis">
+      
+        Интерфейс
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260804_mobile">
+<span class="md-ellipsis">
+      
+        Мобильное приложение
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260804_architect_processes">
+<span class="md-ellipsis">
+      
+        Корпоративная архитектура и процессы
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260804_integrations_api">
+<span class="md-ellipsis">
+      
+        Интеграции, API и обмен данными
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260804_admin_security">
+<span class="md-ellipsis">
+      
+        Администрирование, безопасность и аудит
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260804_infrastructure">
+<span class="md-ellipsis">
+      
+        Инфраструктура, развёртывание и эксплуатация
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260804_fixes">
+<span class="md-ellipsis">
+      
+        Исправления
+      
+    </span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h2 id="release_notes_5.0.20260804_intro">Введение</h2>
+<p><strong>Comindware Platform</strong> версии 5.0 от 04.08.2026 включает ряд улучшений по сравнению с <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5746">версией 5.0 от 09.06.2026</a>.</p>
+<div class="notice notice-warning">
+<p class="admonition-title">Обновление до версии 5.0 от 04.08.2026</p>
+<p>Из-за изменения структуры конфигурационных файлов обновление до версии 5.0 от 04.08.2026 следует выполнять только посредством создания нового экземпляра ПО и подключения к нему базы данных обновляемого экземпляра.</p>
+</div>
+<h2 id="release_notes_5.0.20260804_key_changes">Ключевые изменения</h2>
+<ul>
+<li><strong>Кластер Windows:</strong> улучшен поиск в кластерной конфигурации. </li>
+<li><strong>Версионирование:</strong> улучшено сохранение и восстановление версий процессов. </li>
+<li><strong>Конструктор диаграмм:</strong> улучшено поведение элементов диаграмм.    </li>
+<li><strong>Интеграционные адаптеры:</strong> улучшена обработка больших массивов сообщений от адаптеров.  </li>
+<li><strong>Обсуждения:</strong> повышена стабильность работы обсуждений. </li>
+<li><strong>Интерфейс и мобильное приложение:</strong> оптимизирована работа фильтров, улучшен поиск по вычисляемым атрибутам, увеличена скорость загрузки документов и просмотра изображений на iOS и Android.            </li>
+<li><strong>Администрирование и аудит:</strong> изменена логика журналирования событий — теперь отражаются только активные сеансы, действия пользователей фиксируются во вкладке «Операции».  </li>
+<li><strong>Инфраструктура:</strong> оптимизирован механизм обновления и улучшена производительность.    </li>
+</ul>
+<h2 id="release_notes_5.0.20260804_new_and_improved">Новые возможности и улучшения</h2>
+<h3 id="release_notes_5.0.20260804_ui">Интерфейс</h3>
+<ul>
+<li><strong>Страницы и навигация:</strong><ul>
+<li>исправлено отображение страницы «Мои задачи» после применения фильтра навигации; </li>
+<li>улучшена работа быстрых фильтров. </li>
+</ul>
+</li>
+<li><strong>Таблицы и списки:</strong><ul>
+<li>улучшена работа числовых атрибутов на формах; </li>
+<li>улучшена работа вычисляемых атрибутов в таблицах; </li>
+<li>улучшена работа счётчиков записей в списках; </li>
+<li>улучшена фильтрация по ссылочным атрибутам с множественными значениями; </li>
+</ul>
+</li>
+<li><strong>Обсуждения:</strong><ul>
+<li>оптимизирована работа сообщений в обсуждениях. </li>
+</ul>
+</li>
+</ul>
+<h3 id="release_notes_5.0.20260804_mobile">Мобильное приложение</h3>
+<ul>
+<li><strong>Формы и документы:</strong><ul>
+<li>увеличена скорость загрузки документов в мобильном приложении; </li>
+<li>улучшена работа атрибута «Длительность» на мобильных устройствах; </li>
+<li>улучшена работа с изображениями в мобильной версии. </li>
+</ul>
+</li>
+</ul>
+<h3 id="release_notes_5.0.20260804_architect_processes">Корпоративная архитектура и процессы</h3>
+<ul>
+<li><strong>Диаграммы и моделирование:</strong><ul>
+<li>улучшено отображение и позиционирование элементов на диаграмме;    </li>
+<li>повышена стабильность работы импорта диаграмм. </li>
+</ul>
+</li>
+</ul>
+<h3 id="release_notes_5.0.20260804_integrations_api">Интеграции, API и обмен данными</h3>
+<ul>
+<li><strong>Адаптеры и внешние подключения:</strong><ul>
+<li>повышена стабильность обработки больших массивов данных от внешних адаптеров через Apache Kafka; </li>
+<li>улучшена работа интеграционных адаптеров; </li>
+<li>адаптер «СФЕРА Курьер» теперь поддерживает передачу данных машиночитаемой доверенности (МЧД). </li>
+</ul>
+</li>
+<li><strong>API и маршруты передачи данных:</strong><ul>
+<li>улучшены методы API; </li>
+</ul>
+</li>
+</ul>
+<h3 id="release_notes_5.0.20260804_admin_security">Администрирование, безопасность и аудит</h3>
+<ul>
+<li><strong>Журналирование и аудит:</strong><ul>
+<li>в журнале событий теперь отражаются только активные сеансы. Действия пользователей фиксируются во вкладке «Операции»; </li>
+</ul>
+</li>
+<li><strong>Почта и уведомления:</strong><ul>
+<li>улучшена доставка писем из процессов при массовой отправке; </li>
+<li>улучшена работа уведомлений о задачах и их переназначении.  </li>
+</ul>
+</li>
+</ul>
+<h3 id="release_notes_5.0.20260804_infrastructure">Инфраструктура, развёртывание и эксплуатация</h3>
+<ul>
+<li><strong>Эксплуатация и производительность:</strong><ul>
+<li>добавлено меню загрузки, информирующее о запуске инстанса; </li>
+<li>улучшена производительность платформы. </li>
+</ul>
+</li>
+</ul>
+<h2 id="release_notes_5.0.20260804_fixes">Исправления</h2>
+<ul>
+<li><strong>Инфраструктура и интеграции:</strong> повышена стабильность работы в режиме кластера, адаптеров, API Gateway и фоновых обработчиков.</li>
+<li><strong>Приложения и интерфейс:</strong> улучшена работа форм, таблиц, фильтров, обсуждений, мобильного приложения и <strong>Корпоративная архитектура</strong>.</li>
+</ul>
+</article>
+</div>
+</div>
+<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#">
+<i class="fa-light fa-arrow-up">&zwnj;<!--icon--></i>
+            К началу
+          </a>
+</main>
+</div>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></div>

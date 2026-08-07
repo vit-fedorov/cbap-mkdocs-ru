@@ -1,7 +1,7 @@
 ﻿
 ----------------------
 
-Ingestion date: 2026-08-07 17:33:19
+Ingestion date: 2026-08-07 17:55:18
 Title: Comindware Platform V5 knowledge base for AI ingestion
 Description: Provide this file to your AI agent. For better results, add the prompt below
 Source: https://kb.comindware.ru/category.php?id=798

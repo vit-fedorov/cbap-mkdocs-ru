@@ -2,7 +2,7 @@
 title: 'Comindware Platform 5.0. Перечень стороннего программного обеспечения для Linux'
 kbId: 5425
 url: 'https://kb.comindware.ru/article.php?id=5425'
-updated: '2026-06-22 14:15:28'
+updated: '2026-07-20 12:39:37'
 ---
 
 # Comindware Platform 5.0. Перечень стороннего программного обеспечения для Linux
@@ -77,7 +77,6 @@ updated: '2026-06-22 14:15:28'
 | [Apache.Lucene.NET](https://github.com/apache/lucenenet) | Порт библиотеки Lucene для полнотекстового поиска. | 3.0.3.0 | Apache 2.0 License |
 | [Apache.Lucene.Net.Contrib.Highlighter](https://github.com/apache/lucenenet) | Компонент библиотеки Apache.Lucene.Net. | 2.3.2.1 | Apache 2.0 License |
 | [Apache.Lucene.Net.Contrib.Memory](https://github.com/apache/lucenenet) | Компонент библиотеки Apache.Lucene.Net. | 1.0.0.0 | Apache 2.0 License |
-| [Aspose](https://products.aspose.com/pdf/net/) | Компонент для создания и обработки PDF-документов, который позволяет приложениям .NET считывать, записывать и обрабатывать PDF-документы. | 9.6.0.0 | Aspose Licence |
 | [Autofac](https://github.com/autofac/Autofac) | IoC-контейнер для .NET. | 4.9.4 | MIT License |
 | [BouncyCastle](https://github.com/chrishaly/bc-csharp) | Пакет, реализующий криптографические алгоритмы. | 1.8.10.0 | MIT License |
 | [Castle.Core](https://github.com/castleproject/Core) | Castle Core API для создания прокси-объектов. | 4.0.0.0 | Apache 2.0 License |

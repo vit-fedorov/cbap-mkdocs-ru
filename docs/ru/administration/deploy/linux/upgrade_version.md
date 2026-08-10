@@ -378,7 +378,7 @@ end="<!-- instance-create-prepare-end -->"
 
     ``` sh
     cd /var/lib/comindware/<instanceName>/
-    chmod -R 777 Database/ 
+    chmod -R 700 Database/ 
     ```
 
     **Astra Linux, Debian, DEB-дистрибутивы**

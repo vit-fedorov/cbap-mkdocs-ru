@@ -101,11 +101,11 @@ hide: tags
     cd /var/www/
     ```
 
-8. Назначьте папке `apache-ignite` права на чтение-запись `rwxrwxrwx`:
+8. Назначьте папке `apache-ignite` права на чтение-запись:
 {: #assignRights}
 
     ``` sh
-    chmod -R 777 apache-ignite/
+    chmod -R 700 apache-ignite/
     ```
 
 9. Смените владельца директории `apache-ignite`:
@@ -142,10 +142,10 @@ hide: tags
     mkdir /var/www/backups/elasticsearch
     ```
 
-12. Присвойте директории `backups` права на чтение-запись `rwxrwxrwx`:
+12. Присвойте директории `backups` права на чтение-запись:
 
     ``` sh
-    chmod -R 777 backups/
+    chmod -R 700 backups/
     ```
 
 13. Смените владельца директории `backups`:

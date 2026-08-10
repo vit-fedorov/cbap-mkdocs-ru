@@ -297,10 +297,10 @@ hide: tags
     mv /var/lib/comindware/<instanceName>/History/* /var/backups/elasticsearch/
     ```
 
-3. Назначьте папке репозитория и её содержимому полные права доступа:
+3. Назначьте папке репозитория и её содержимому права доступа:
 
     ``` sh
-    chmod -R 777 /var/backups/elasticsearch/
+    chmod -R 700 /var/backups/elasticsearch/
     ```
 
 4. Назначьте владельца `elasticsearch` папке репозитория и её содержимому:

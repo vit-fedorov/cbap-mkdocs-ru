@@ -119,7 +119,7 @@ hide: tags
 
     ``` sh
     sudo chown elasticsearch:elasticsearch --recursive /var/elasticsearch/
-    sudo chmod  764 --recursive /var/elasticsearch/
+    sudo chmod 764 --recursive /var/elasticsearch/
     ```
 
 3. Создайте папку для хранения резервной копии `yml`-файла конфигурации Elasticsearch:

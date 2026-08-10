@@ -71,13 +71,13 @@ hide: tags
 
 Эти инструкции следует выполнять на машине (сервере) с экземпляром ПО **{{ productName }}**.
 
-1. Создайте директорию, в которой будут сохраняться резервные копии. Для этой директории предоставьте разрешения на полный доступ, чтобы система могла сохранять в неё резервные копии, например:
+1. Создайте директорию, в которой будут сохраняться резервные копии. Для этой директории предоставьте разрешения на доступ, чтобы система могла сохранять в неё резервные копии, например:
 
     **Astra Linux, Debian, DEB-дистрибутивы**
 
     ``` sh
     mkdir /var/backups/comindware/<instanceName>
-    chmod 777 /var/backups/comindware/<instanceName>
+    chmod 700 /var/backups/comindware/<instanceName>
     chown -R www-data:www-data /var/backups/comindware/<instanceName>
     ```
 
@@ -85,7 +85,7 @@ hide: tags
 
     ``` sh
     mkdir /var/backups/comindware/<instanceName>
-    chmod 777 /var/backups/comindware/<instanceName>
+    chmod 700 /var/backups/comindware/<instanceName>
     chown -R nginx:nginx /var/backups/comindware/<instanceName>
     ```
 
@@ -93,7 +93,7 @@ hide: tags
 
     ``` sh
     mkdir /var/backups/comindware/<instanceName>
-    chmod 777 /var/backups/comindware/<instanceName>
+    chmod 700 /var/backups/comindware/<instanceName>
     chown -R _nginx:_nginx /var/backups/comindware/<instanceName>
     ```
 
@@ -257,7 +257,7 @@ hide: tags
 4. Предоставьте доступ {{ openSearchVariants }} к репозиторию резервных копий:
 
     ``` sh
-    chmod -R 777 /var/backups/elasticsearch
+    chmod -R 700 /var/backups/elasticsearch
     chown -R elasticsearch:elasticsearch /var/backups/elasticsearch
     ```
 

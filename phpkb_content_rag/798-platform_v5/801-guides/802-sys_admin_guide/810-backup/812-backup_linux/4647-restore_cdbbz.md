@@ -2,7 +2,7 @@
 title: 'Восстановление базы данных из файла резервной копии в формате CDBBZ'
 kbId: 4647
 url: 'https://kb.comindware.ru/article.php?id=4647'
-updated: '2026-06-20 22:32:43'
+updated: '2026-08-10 15:35:04'
 ---
 
 # Восстановление базы данных из файла резервной копии в формате CDBBZ
@@ -252,10 +252,10 @@ OpenSearch (Elasticsearch) сохраняет и восстанавливает 
    mkdir /var/backups/elasticsearch/
    mv /var/lib/comindware/<instanceName>/History/* /var/backups/elasticsearch/
    ```
-3. Назначьте папке репозитория и её содержимому полные права доступа:
+3. Назначьте папке репозитория и её содержимому права доступа:
 
    ```
-   chmod -R 777 /var/backups/elasticsearch/
+   chmod -R 700 /var/backups/elasticsearch/
    ```
 4. Назначьте владельца `elasticsearch` папке репозитория и её содержимому:
 

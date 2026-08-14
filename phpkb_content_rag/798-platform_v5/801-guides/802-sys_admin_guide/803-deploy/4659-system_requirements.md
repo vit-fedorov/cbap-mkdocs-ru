@@ -2,7 +2,7 @@
 title: 'Системные требования Comindware Platform'
 kbId: 4659
 url: 'https://kb.comindware.ru/article.php?id=4659'
-updated: '2026-06-20 20:24:55'
+updated: '2026-08-14 18:14:33'
 ---
 
 # Системные требования Comindware Platform
@@ -68,8 +68,14 @@ updated: '2026-06-20 20:24:55'
 | --- | --- | --- |
 | ОС | Windows Server Standard 2022 | - Astra Linux Special Edition 1.7.5, 1.8 - Альт Сервер 11, Альт СПАльт 11 - РЕД ОС 8 - Debian 12 |
 | СУБД | Apache Ignite | Apache Ignite |
-| Веб-сервер | Internet Information Services (IIS) 10 | NGINX 1.24 |
+| Веб-сервер | Internet Information Services (IIS) 10 | NGINX 1.30.4 |
 | Дополнительное ПО (поставляется и устанавливается вместе с основным пакетом) | - NET 8.0 - .NET Framework 4.8.1 - Apache Kafka 3.6.0 - OpenSearch 2.18.0 | - NET 8.0 - Mono 6.12 - Apache Kafka 3.6.0 - OpenSearch 2.18.0 |
+
+Примечание
+
+Указанные версии веб-сервера и дополнительного ПО носят рекомендательный характер.
+
+При необходимости допускается использование более новых версий ПО в пределах одной основной версии.
 
 ### Клиентское рабочее место
 

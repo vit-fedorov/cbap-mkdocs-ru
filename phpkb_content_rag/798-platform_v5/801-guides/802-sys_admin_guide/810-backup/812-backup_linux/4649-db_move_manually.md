@@ -2,7 +2,7 @@
 title: 'Ручной перенос базы данных экземпляра ПО'
 kbId: 4649
 url: 'https://kb.comindware.ru/article.php?id=4649'
-updated: '2026-06-20 20:24:52'
+updated: '2026-08-10 15:34:50'
 ---
 
 # Ручной перенос базы данных экземпляра ПО
@@ -202,7 +202,7 @@ updated: '2026-06-20 20:24:52'
 
     ```
     cd /var/www/
-    chmod -R 777 cmw-db/
+    chmod -R 700 cmw-db/
     ```
 
     **Astra Linux, Debian, DEB-дистрибутивы**

@@ -2,7 +2,7 @@
 title: 'Резервное копирование. Настройка, запуск и просмотр журнала сеансов'
 kbId: 4642
 url: 'https://kb.comindware.ru/article.php?id=4642'
-updated: '2026-06-20 20:24:57'
+updated: '2026-08-10 15:34:27'
 ---
 
 # Резервное копирование. Настройка, запуск и просмотр журнала сеансов
@@ -65,13 +65,13 @@ updated: '2026-06-20 20:24:57'
 
 Эти инструкции следует выполнять на машине (сервере) с экземпляром ПО **Comindware Platform**.
 
-1. Создайте директорию, в которой будут сохраняться резервные копии. Для этой директории предоставьте разрешения на полный доступ, чтобы система могла сохранять в неё резервные копии, например:
+1. Создайте директорию, в которой будут сохраняться резервные копии. Для этой директории предоставьте разрешения на доступ, чтобы система могла сохранять в неё резервные копии, например:
 
    **Astra Linux, Debian, DEB-дистрибутивы**
 
    ```
    mkdir /var/backups/comindware/<instanceName>
-   chmod 777 /var/backups/comindware/<instanceName>
+   chmod 700 /var/backups/comindware/<instanceName>
    chown -R www-data:www-data /var/backups/comindware/<instanceName>
    ```
 
@@ -79,7 +79,7 @@ updated: '2026-06-20 20:24:57'
 
    ```
    mkdir /var/backups/comindware/<instanceName>
-   chmod 777 /var/backups/comindware/<instanceName>
+   chmod 700 /var/backups/comindware/<instanceName>
    chown -R nginx:nginx /var/backups/comindware/<instanceName>
    ```
 
@@ -87,7 +87,7 @@ updated: '2026-06-20 20:24:57'
 
    ```
    mkdir /var/backups/comindware/<instanceName>
-   chmod 777 /var/backups/comindware/<instanceName>
+   chmod 700 /var/backups/comindware/<instanceName>
    chown -R _nginx:_nginx /var/backups/comindware/<instanceName>
    ```
 
@@ -244,7 +244,7 @@ updated: '2026-06-20 20:24:57'
 4. Предоставьте доступ OpenSearch (Elasticsearch) к репозиторию резервных копий:
 
    ```
-   chmod -R 777 /var/backups/elasticsearch
+   chmod -R 700 /var/backups/elasticsearch
    chown -R elasticsearch:elasticsearch /var/backups/elasticsearch
    ```
 5. Перезапустите службу OpenSearch (Elasticsearch):

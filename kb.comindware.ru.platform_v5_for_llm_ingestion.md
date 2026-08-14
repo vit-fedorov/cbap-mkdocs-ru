@@ -1,7 +1,7 @@
 ﻿
 ----------------------
 
-Ingestion date: 2026-08-07 17:55:18
+Ingestion date: 2026-08-14 19:15:32
 Title: Comindware Platform V5 knowledge base for AI ingestion
 Description: Provide this file to your AI agent. For better results, add the prompt below
 Source: https://kb.comindware.ru/category.php?id=798
@@ -1310,7 +1310,7 @@ FILE: 799-general/4582-auxiliary_software_list.md
 title: 'Comindware Platform 5.0. Перечень стороннего программного обеспечения для Linux'
 kbId: 4582
 url: 'https://kb.comindware.ru/article.php?id=4582'
-updated: '2026-06-22 13:42:24'
+updated: '2026-08-14 18:14:51'
 ---
 
 # Comindware Platform 5.0. Перечень стороннего программного обеспечения для Linux
@@ -1438,10 +1438,10 @@ updated: '2026-06-22 13:42:24'
 | [dotnet-sdk-8.0](https://packages.altlinux.org/ru/sisyphus/srpms/dotnet-sdk-8.0/) | SDK для среды выполнения и библиотек .NET. | 8.0 | MIT License |
 | [Elasticsearch](https://www.elastic.co/elasticsearch/) | Распределенная облачная поисковая система RESTful. | 8.10.2 | Elastic License |
 | [glib2](https://packages.altlinux.org/ru/sisyphus/srpms/glib2/) | GLib — это базовая низкоуровневая библиотека, которая обеспечивает обработку структур данных для C, предоставляет классы-оболочки переносимости и интерфейсы для таких функций времени выполнения, как цикл обработки событий, потоки, динамическая загрузка и объектная система. | 2.68.4 | LGPLv2+ |
-| [librdkafka](https://packages.altlinux.org/ru/sisyphus/srpms/librdkafka/) | Реализация протокола Apache Kafka в C-библиотеке, содержащая поддержку как Producer, так и Consumer. | 1.5.3 | BSD-2-CLAUSE |
+| [librdkafka](https://packages.altlinux.org/ru/sisyphus/srpms/librdkafka/) | Реализация протокола Apache Kafka в C-библиотеке, содержащая поддержку как Producer, так и Consumer. | 2.4.0 | BSD-2-CLAUSE |
 | [mono-core](https://packages.altlinux.org/ru/sisyphus/binary/mono-core/) | Этот пакет содержит ядро среды выполнения Mono, включая виртуальную машину, компилятор Just-in-time, компилятор C#, инструменты безопасности и библиотеки (corlib, XML, System.Security, ZipLib, I18N, Cairo и Mono). | 6.12 | MIT License |
 | [mono-data](https://packages.altlinux.org/ru/sisyphus/binary/mono-data/) | Этот пакет содержит сборку Mono для облегчения доступа к данным и работы с базами данных, совместимыми с LDAP серверами каталогов, а также обменом данными XML. Помимо сборок ADO.NET, Novell.LDAP и System.DirectoryServices, он также содержит приложение SQL командной строки и поставщики данных Microsoft SQL Server и ODBC. | 6.12 | MIT License |
-| [nginx](https://packages.altlinux.org/ru/sisyphus/srpms/nginx/) | HTTP-сервер, обратный прокси-сервер. | 1.22.1 | BSD |
+| [nginx](https://packages.altlinux.org/ru/sisyphus/srpms/nginx/) | HTTP-сервер, обратный прокси-сервер. | 1.30.4 | BSD |
 | [xsp](https://packages.altlinux.org/ru/sisyphus/srpms/xsp/) | XSP-сервер — это компактный веб-сервер, на котором размещаются классы System.Webclasses Mono для запуска ASP.NET. | 4.7.1 | MIT License |
 
 ## Вспомогательное ПО для Astra Linux
@@ -1450,26 +1450,26 @@ updated: '2026-06-22 13:42:24'
 
 | **Наименование ПО и ссылка** | **Описание** | **Версия** | **Лицензия** |
 | --- | --- | --- | --- |
-| [openjdk-17-jre](https://wiki.astralinux.ru/pages/viewpage.action?pageId=147162398) | OpenJRE — это сборка JRE 17, соответствие спецификациям Java SE которой подтверждено тестами OpenJDK Technology Compatibility Kit. **Примечание:** компания **Comindware** может заменить данное ПО на аналог по запросу и согласно ТЗ заказчика. | 17.0.7+7 | GPLv2 |
+| [openjdk-17-jre](https://wiki.astralinux.ru/pages/viewpage.action?pageId=147162398) | OpenJRE — это сборка JRE 17, соответствие спецификациям Java SE которой подтверждено тестами OpenJDK Technology Compatibility Kit. **Примечание:** компания **Comindware** может заменить данное ПО на аналог по запросу и согласно ТЗ заказчика. | 17.0.18 | GPLv2 |
 | [Elasticsearch](https://www.elastic.co/) | Распределенная облачная поисковая система RESTful. | 8.10.2 | SSPL |
-| [geoip-bin](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — инструменты командной строки для поиска IP-адресов, использующие библиотеку GeoIP. | 1.6.12-1 | Другая |
-| [geoip-database](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX —бесплатная база данных GeoLiteCountry. | 20181108-1 | LGPLv2 |
-| [libgd3](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGIX — графическая библиотека GD. Пакет библиотеки для среды выполнения. | 2.2.5-5.2+ ci202206301705+ astra1 | GPLv2+ |
-| [libgd-tools](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX - инструменты командной строки и примеры кода, использующие графическую библиотеку GD. | 2.2.5-5.2+ ci202206301705+ astra1 | Другая |
-| [libgeoip1](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — библиотека для определения страны по IP-адресу. | 1.6.12-1 | LGPLv2 |
-| [libnginx-mod-http-geoip](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — HTTP-модуль GeoIP для NGINX. Создает переменные со значениями в зависимости от IP-адреса клиента, используя предварительно скомпилированные базы данных MaxMind. | 1.18.0-6.1 +deb11u2 | BSD 2-Clause License |
-| [libnginx-mod-http-image-filter](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — HTTP-модуль фильтрации изображений для NGINX. | 1.18.0-6.1 +deb11u2 | BSD 2-Clause License |
-| [libnginx-mod-http-xslt-filter](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — модуль преобразований XSLT для NGINX. | 1.18.0-6.1 +deb11u2 | BSD 2-Clause License |
-| [libnginx-mod-mail](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — почтовый модуль для NGINX. Поддерживает проксирование всех стандартных почтовых протоколов, таких как IMAP, POP3 и SMTP. | 1.18.0-6.1 +deb11u2 | BSD 2-Clause License |
-| [libnginx-mod-stream](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — потоковый модуль для NGINX. Добавляет поддержку потокового прокси. | 1.18.0-6.1 +deb11u2 | BSD 2-Clause License |
-| [libnginx-mod-stream-geoip](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX —модуль GeoIP Stream для NGINX. | 1.18.0-6.1 +deb11u2 | BSD 2-Clause License |
+| [geoip-bin](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — инструменты командной строки для поиска IP-адресов, использующие библиотеку GeoIP. | 1.6.12 | Другая |
+| [geoip-database](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX —бесплатная база данных GeoLiteCountry. | 20181108 | LGPLv2 |
+| [libgd3](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGIX — графическая библиотека GD. Пакет библиотеки для среды выполнения. | 2.2.5 | GPLv2+ |
+| [libgd-tools](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX - инструменты командной строки и примеры кода, использующие графическую библиотеку GD. | 2.2.5 | Другая |
+| [libgeoip1](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — библиотека для определения страны по IP-адресу. | 1.6.12 | LGPLv2 |
+| [libnginx-mod-http-geoip](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — HTTP-модуль GeoIP для NGINX. Создает переменные со значениями в зависимости от IP-адреса клиента, используя предварительно скомпилированные базы данных MaxMind. | 1.18.0 | BSD 2-Clause License |
+| [libnginx-mod-http-image-filter](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — HTTP-модуль фильтрации изображений для NGINX. | 1.18.0 | BSD 2-Clause License |
+| [libnginx-mod-http-xslt-filter](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — модуль преобразований XSLT для NGINX. | 1.18.0 | BSD 2-Clause License |
+| [libnginx-mod-mail](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — почтовый модуль для NGINX. Поддерживает проксирование всех стандартных почтовых протоколов, таких как IMAP, POP3 и SMTP. | 1.18.0 | BSD 2-Clause License |
+| [libnginx-mod-stream](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — потоковый модуль для NGINX. Добавляет поддержку потокового прокси. | 1.18.0 | BSD 2-Clause License |
+| [libnginx-mod-stream-geoip](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX —модуль GeoIP Stream для NGINX. | 1.18.0 | BSD 2-Clause License |
 | [libxpm4](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — библиотека X11 для работы с пиксельными картами (pixmap). Обеспечивает поддержку формата XPM в среде выполнения. | 1:3.5.12-1 | Другая |
-| [libxslt1.1](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — библиотека libxslt, используемая приложениями для преобразований XSLT. | 1.1.32-2.2~ deb10u2 | libxslt |
-| [mono](http://www.mono-project.com/) | Mono — это платформа для запуска и разработки приложений. Предоставляемый пакет содержит:- интерфейс командной строки - LLVM - Roslyn - MCS - MSBuild - GAC - GC SGen, GC Boehm - XSP4 Server - FastCGI Mono Server 4 | 6.12.0.200- 0xamarin1+ debian9b1 | MIT License |
+| [libxslt1.1](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — библиотека libxslt, используемая приложениями для преобразований XSLT. | 1.1.32 | libxslt |
+| [mono](http://www.mono-project.com/) | Mono — это платформа для запуска и разработки приложений. Предоставляемый пакет содержит:- интерфейс командной строки - LLVM - Roslyn - MCS - MSBuild - GAC - GC SGen, GC Boehm - XSP4 Server - FastCGI Mono Server 4 | 6.12.0.200 | MIT License |
 | [.NET SDK 8.0](https://packages.microsoft.com/config/debian/) | Платформа разработки с открытым исходным кодом. Предоставляемый пакет содержит:- .NET SDK 8.0 - .NETCore.App.Runtime 8.0 - dotnet-runtime-deps-debian 8.0 - .NETCore.App.Ref 8.0 - .NET Host — 7.0.2 - .NET Host FX Resolver — 8.0 - .NETCore.App.Host 8.0 - NETStandard.Library.Ref 2.1.0 - aspnetcore-runtime-8.0 - aspnetcore-targeting-pack-8.0 **Примечание:** компания **Comindware** может заменить данное ПО на аналог по запросу и согласно ТЗ заказчика. | 8.0 | MIT License |
-| [nginx](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Пакет зависимостей NGINX для установки nginx-core. | 1.18.0-6.1+ deb11u2 | BSD 2-Clause License |
-| [nginx-common](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — базовые файлы конфигурации, используемые всеми версиями NGINX. | 1.18.0-6.1+ deb11u2 | BSD 2-Clause License |
-| [nginx-core](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Веб/прокси-сервер NGINX. | 1.18.0-6.1+ deb11u2 | BSD 2-Clause License |
+| [nginx](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Пакет зависимостей NGINX для установки nginx-core. | 1.30.4 | BSD 2-Clause License |
+| [nginx-common](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Зависимость NGINX — базовые файлы конфигурации, используемые всеми версиями NGINX. | 1.30.4 | BSD 2-Clause License |
+| [nginx-core](http://download.astralinux.ru/astra/frozen/1.7_x86-64/1.7.0/repository-base/) | Веб/прокси-сервер NGINX. | 1.30.4 | BSD 2-Clause License |
 
 ================================================
 FILE: 799-general/4583-platform_life_cycle.md
@@ -1926,7 +1926,7 @@ FILE: 799-general/4659-system_requirements.md
 title: 'Системные требования Comindware Platform'
 kbId: 4659
 url: 'https://kb.comindware.ru/article.php?id=4659'
-updated: '2026-06-20 20:24:55'
+updated: '2026-08-14 18:14:33'
 ---
 
 # Системные требования Comindware Platform
@@ -1992,8 +1992,14 @@ updated: '2026-06-20 20:24:55'
 | --- | --- | --- |
 | ОС | Windows Server Standard 2022 | - Astra Linux Special Edition 1.7.5, 1.8 - Альт Сервер 11, Альт СПАльт 11 - РЕД ОС 8 - Debian 12 |
 | СУБД | Apache Ignite | Apache Ignite |
-| Веб-сервер | Internet Information Services (IIS) 10 | NGINX 1.24 |
+| Веб-сервер | Internet Information Services (IIS) 10 | NGINX 1.30.4 |
 | Дополнительное ПО (поставляется и устанавливается вместе с основным пакетом) | - NET 8.0 - .NET Framework 4.8.1 - Apache Kafka 3.6.0 - OpenSearch 2.18.0 | - NET 8.0 - Mono 6.12 - Apache Kafka 3.6.0 - OpenSearch 2.18.0 |
+
+Примечание
+
+Указанные версии веб-сервера и дополнительного ПО носят рекомендательный характер.
+
+При необходимости допускается использование более новых версий ПО в пределах одной основной версии.
 
 ### Клиентское рабочее место
 
@@ -4310,7 +4316,7 @@ FILE: 801-guides/802-sys_admin_guide/803-deploy/4596-architecture_landscape.md
 title: 'Развёртывание Comindware Platform. Архитектура, ландшафт, программное и техническое обеспечение'
 kbId: 4596
 url: 'https://kb.comindware.ru/article.php?id=4596'
-updated: '2026-06-20 20:24:54'
+updated: '2026-08-11 17:00:40'
 ---
 
 # Развёртывание Comindware Platform. Архитектура, ландшафт, программное и техническое обеспечение
@@ -4456,7 +4462,7 @@ _![Типовой ландшафт сервисов в составе Систе
 - Должна быть включена аутентификация.
 - Должна быть разрешена работа под любым аккаунтом, кроме стандартного (например, `elastic`).
 - Номер порта должен отличаться от стандартного 9200.
-- В конфигурации должно быть задано достаточное количество шардов: минимум 3000.
+- В конфигурации должно быть задано достаточное количество шардов: минимум 3000 (значение рекомендовано на основе опыта эксплуатации **Comindware Platform** и может варьироваться в зависимости от объёма данных и нагрузки).
 
 **Примеры конфигураций**
 
@@ -4514,7 +4520,7 @@ FILE: 801-guides/802-sys_admin_guide/803-deploy/4659-system_requirements.md
 title: 'Системные требования Comindware Platform'
 kbId: 4659
 url: 'https://kb.comindware.ru/article.php?id=4659'
-updated: '2026-06-20 20:24:55'
+updated: '2026-08-14 18:14:33'
 ---
 
 # Системные требования Comindware Platform
@@ -4580,8 +4586,14 @@ updated: '2026-06-20 20:24:55'
 | --- | --- | --- |
 | ОС | Windows Server Standard 2022 | - Astra Linux Special Edition 1.7.5, 1.8 - Альт Сервер 11, Альт СПАльт 11 - РЕД ОС 8 - Debian 12 |
 | СУБД | Apache Ignite | Apache Ignite |
-| Веб-сервер | Internet Information Services (IIS) 10 | NGINX 1.24 |
+| Веб-сервер | Internet Information Services (IIS) 10 | NGINX 1.30.4 |
 | Дополнительное ПО (поставляется и устанавливается вместе с основным пакетом) | - NET 8.0 - .NET Framework 4.8.1 - Apache Kafka 3.6.0 - OpenSearch 2.18.0 | - NET 8.0 - Mono 6.12 - Apache Kafka 3.6.0 - OpenSearch 2.18.0 |
+
+Примечание
+
+Указанные версии веб-сервера и дополнительного ПО носят рекомендательный характер.
+
+При необходимости допускается использование более новых версий ПО в пределах одной основной версии.
 
 ### Клиентское рабочее место
 
@@ -6095,13 +6107,13 @@ updated: '2026-06-22 13:42:22'
 FILE: 801-guides/802-sys_admin_guide/803-deploy/804-deploy_auxiliary/805-deploy_auxiliary_linux/4604-auxiliary_software_optimize.md
 ================================================
 ---
-title: 'Настройка вспомогательного ПО для оптимизации работы {{ productName }}'
+title: 'Настройка вспомогательного ПО для оптимизации работы Comindware Platform'
 kbId: 4604
 url: 'https://kb.comindware.ru/article.php?id=4604'
-updated: '2026-06-20 20:24:42'
+updated: '2026-08-11 17:00:47'
 ---
 
-# Настройка вспомогательного ПО для оптимизации работы {{ productName }}
+# Настройка вспомогательного ПО для оптимизации работы Comindware Platform
 
 ## Введение
 
@@ -6183,6 +6195,10 @@ updated: '2026-06-20 20:24:42'
    ```
    сluster.max_shards_per_node: 3000
    ```
+
+   Примечание
+
+   Значение в 3000 шардов является минимально рекомендуемым количеством, которое определено на основе практического опыта эксплуатации Comindware Platform.
 3. Перезапустите службу OpenSearch (Elasticsearch), чтобы изменения вступили в силу.
 
 ### Изменение размера кучи JVM
@@ -7615,7 +7631,7 @@ FILE: 801-guides/802-sys_admin_guide/803-deploy/804-deploy_auxiliary/805-deploy_
 title: 'Elasticsearch. Развёртывание без сертификатов подлинности'
 kbId: 4612
 url: 'https://kb.comindware.ru/article.php?id=4612'
-updated: '2026-06-20 20:24:42'
+updated: '2026-08-10 15:35:09'
 ---
 
 # Elasticsearch. Развёртывание без сертификатов подлинности
@@ -7721,7 +7737,7 @@ updated: '2026-06-20 20:24:42'
 
    ```
    sudo chown elasticsearch:elasticsearch --recursive /var/elasticsearch/
-   sudo chmod  764 --recursive /var/elasticsearch/
+   sudo chmod 764 --recursive /var/elasticsearch/
    ```
 3. Создайте папку для хранения резервной копии `yml`-файла конфигурации Elasticsearch:
 
@@ -7971,7 +7987,7 @@ FILE: 801-guides/802-sys_admin_guide/803-deploy/804-deploy_auxiliary/805-deploy_
 title: 'Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя'
 kbId: 4613
 url: 'https://kb.comindware.ru/article.php?id=4613'
-updated: '2026-06-20 20:25:59'
+updated: '2026-08-14 18:41:33'
 ---
 
 # Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя
@@ -8474,10 +8490,7 @@ _![Настройка свойств сервисного аккаунта дл�
    ```
 2. Установите модуль *NGINX-SPNEGO*:
 
-   - **Astra Linux (версии 1.8.3 и выше)**
-
-     Установите модуль `ngx_http_auth_spnego_module.so` из пакета `nginx-spnego-module_1.26.3-1_amd64.deb`, который поставляется в составе инсталлятора **Comindware Platform** для Astra Linux 1.8.3 и выше.
-   - **Astra Linux (версии ниже 1.8.3), Debian, DEB-дистрибутивы**
+   - **Astra Linux, Debian, DEB-дистрибутивы**
 
      ```
      apt-get update
@@ -8528,6 +8541,10 @@ _![Настройка свойств сервисного аккаунта дл�
      make
      make install
      ```
+
+   Здесь:
+
+   - `<nginx.version>` — версия NGINX, которая используется в текущем окружении (например, 1.30.4).
 3. Добавьте модуль *SPNEGO* к рабочей конфигурации *NGINX*:
 
    **Любые ОС (кроме Astra Linux 1.8.3):**
@@ -10736,7 +10753,7 @@ FILE: 801-guides/802-sys_admin_guide/803-deploy/804-deploy_auxiliary/806-deploy_
 title: 'Elasticsearch. Установка в базовой конфигурации для Windows'
 kbId: 4617
 url: 'https://kb.comindware.ru/article.php?id=4617'
-updated: '2026-06-20 20:24:43'
+updated: '2026-08-11 17:00:55'
 ---
 
 # Elasticsearch. Установка в базовой конфигурации для Windows
@@ -10869,7 +10886,7 @@ cluster.name: cmw
 
 # Максимальное возможное количество шардов в кластере
 # Система создает отдельный индекс для каждого объекта мониторинга, поэтому
-# рекомендуется увеличить количество шардов до 3000
+# рекомендуется увеличить количество шардов до 3000 (на основе практического опыта)
 cluster.max_shards_per_node: 3000
 
 # Стандартный номер порта 9200 изменен по соображениям безопасности
@@ -14237,7 +14254,7 @@ FILE: 801-guides/802-sys_admin_guide/803-deploy/807-deploy_linux/4624-upgrade_ve
 title: 'Обновление версии экземпляра ПО с его остановкой'
 kbId: 4624
 url: 'https://kb.comindware.ru/article.php?id=4624'
-updated: '2026-06-20 20:24:47'
+updated: '2026-08-10 15:35:10'
 ---
 
 # Обновление версии экземпляра ПО с его остановкой
@@ -14657,7 +14674,7 @@ updated: '2026-06-20 20:24:47'
 
    ```
    cd /var/lib/comindware/<instanceName>/
-   chmod -R 777 Database/
+   chmod -R 700 Database/
    ```
 
    **Astra Linux, Debian, DEB-дистрибутивы**
@@ -19081,7 +19098,7 @@ FILE: 801-guides/802-sys_admin_guide/810-backup/4642-configure.md
 title: 'Резервное копирование. Настройка, запуск и просмотр журнала сеансов'
 kbId: 4642
 url: 'https://kb.comindware.ru/article.php?id=4642'
-updated: '2026-06-20 20:24:57'
+updated: '2026-08-10 15:34:27'
 ---
 
 # Резервное копирование. Настройка, запуск и просмотр журнала сеансов
@@ -19144,13 +19161,13 @@ updated: '2026-06-20 20:24:57'
 
 Эти инструкции следует выполнять на машине (сервере) с экземпляром ПО **Comindware Platform**.
 
-1. Создайте директорию, в которой будут сохраняться резервные копии. Для этой директории предоставьте разрешения на полный доступ, чтобы система могла сохранять в неё резервные копии, например:
+1. Создайте директорию, в которой будут сохраняться резервные копии. Для этой директории предоставьте разрешения на доступ, чтобы система могла сохранять в неё резервные копии, например:
 
    **Astra Linux, Debian, DEB-дистрибутивы**
 
    ```
    mkdir /var/backups/comindware/<instanceName>
-   chmod 777 /var/backups/comindware/<instanceName>
+   chmod 700 /var/backups/comindware/<instanceName>
    chown -R www-data:www-data /var/backups/comindware/<instanceName>
    ```
 
@@ -19158,7 +19175,7 @@ updated: '2026-06-20 20:24:57'
 
    ```
    mkdir /var/backups/comindware/<instanceName>
-   chmod 777 /var/backups/comindware/<instanceName>
+   chmod 700 /var/backups/comindware/<instanceName>
    chown -R nginx:nginx /var/backups/comindware/<instanceName>
    ```
 
@@ -19166,7 +19183,7 @@ updated: '2026-06-20 20:24:57'
 
    ```
    mkdir /var/backups/comindware/<instanceName>
-   chmod 777 /var/backups/comindware/<instanceName>
+   chmod 700 /var/backups/comindware/<instanceName>
    chown -R _nginx:_nginx /var/backups/comindware/<instanceName>
    ```
 
@@ -19323,7 +19340,7 @@ updated: '2026-06-20 20:24:57'
 4. Предоставьте доступ OpenSearch (Elasticsearch) к репозиторию резервных копий:
 
    ```
-   chmod -R 777 /var/backups/elasticsearch
+   chmod -R 700 /var/backups/elasticsearch
    chown -R elasticsearch:elasticsearch /var/backups/elasticsearch
    ```
 5. Перезапустите службу OpenSearch (Elasticsearch):
@@ -20125,7 +20142,7 @@ FILE: 801-guides/802-sys_admin_guide/810-backup/812-backup_linux/4647-restore_cd
 title: 'Восстановление базы данных из файла резервной копии в формате CDBBZ'
 kbId: 4647
 url: 'https://kb.comindware.ru/article.php?id=4647'
-updated: '2026-06-20 22:32:43'
+updated: '2026-08-10 15:35:04'
 ---
 
 # Восстановление базы данных из файла резервной копии в формате CDBBZ
@@ -20375,10 +20392,10 @@ OpenSearch (Elasticsearch) сохраняет и восстанавливает 
    mkdir /var/backups/elasticsearch/
    mv /var/lib/comindware/<instanceName>/History/* /var/backups/elasticsearch/
    ```
-3. Назначьте папке репозитория и её содержимому полные права доступа:
+3. Назначьте папке репозитория и её содержимому права доступа:
 
    ```
-   chmod -R 777 /var/backups/elasticsearch/
+   chmod -R 700 /var/backups/elasticsearch/
    ```
 4. Назначьте владельца `elasticsearch` папке репозитория и её содержимому:
 
@@ -20683,7 +20700,7 @@ FILE: 801-guides/802-sys_admin_guide/810-backup/812-backup_linux/4649-db_move_ma
 title: 'Ручной перенос базы данных экземпляра ПО'
 kbId: 4649
 url: 'https://kb.comindware.ru/article.php?id=4649'
-updated: '2026-06-20 20:24:52'
+updated: '2026-08-10 15:34:50'
 ---
 
 # Ручной перенос базы данных экземпляра ПО
@@ -20883,7 +20900,7 @@ updated: '2026-06-20 20:24:52'
 
     ```
     cd /var/www/
-    chmod -R 777 cmw-db/
+    chmod -R 700 cmw-db/
     ```
 
     **Astra Linux, Debian, DEB-дистрибутивы**
@@ -20943,7 +20960,7 @@ FILE: 801-guides/802-sys_admin_guide/810-backup/812-backup_linux/4650-complete_r
 title: 'Создание полной резервной копии (базы данных, вложенных файлов и журналов) без остановки экземпляра ПО'
 kbId: 4650
 url: 'https://kb.comindware.ru/article.php?id=4650'
-updated: '2026-06-22 13:42:21'
+updated: '2026-08-10 15:34:40'
 ---
 
 # Создание полной резервной копии (базы данных, вложенных файлов и журналов) без остановки экземпляра ПО
@@ -21036,10 +21053,10 @@ updated: '2026-06-22 13:42:21'
    ```
    cd /var/www/
    ```
-8. Назначьте папке `apache-ignite` права на чтение-запись `rwxrwxrwx`:
+8. Назначьте папке `apache-ignite` права на чтение-запись:
 
    ```
-   chmod -R 777 apache-ignite/
+   chmod -R 700 apache-ignite/
    ```
 9. Смените владельца директории `apache-ignite`:
 
@@ -21070,10 +21087,10 @@ updated: '2026-06-22 13:42:21'
     ```
     mkdir /var/www/backups/elasticsearch
     ```
-12. Присвойте директории `backups` права на чтение-запись `rwxrwxrwx`:
+12. Присвойте директории `backups` права на чтение-запись:
 
     ```
-    chmod -R 777 backups/
+    chmod -R 700 backups/
     ```
 13. Смените владельца директории `backups`:
 
@@ -22382,7 +22399,7 @@ FILE: 801-guides/802-sys_admin_guide/813-account_management/814-account_manageme
 title: 'Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя'
 kbId: 4613
 url: 'https://kb.comindware.ru/article.php?id=4613'
-updated: '2026-06-20 20:25:59'
+updated: '2026-08-14 18:41:33'
 ---
 
 # Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя
@@ -22885,10 +22902,7 @@ _![Настройка свойств сервисного аккаунта дл�
    ```
 2. Установите модуль *NGINX-SPNEGO*:
 
-   - **Astra Linux (версии 1.8.3 и выше)**
-
-     Установите модуль `ngx_http_auth_spnego_module.so` из пакета `nginx-spnego-module_1.26.3-1_amd64.deb`, который поставляется в составе инсталлятора **Comindware Platform** для Astra Linux 1.8.3 и выше.
-   - **Astra Linux (версии ниже 1.8.3), Debian, DEB-дистрибутивы**
+   - **Astra Linux, Debian, DEB-дистрибутивы**
 
      ```
      apt-get update
@@ -22939,6 +22953,10 @@ _![Настройка свойств сервисного аккаунта дл�
      make
      make install
      ```
+
+   Здесь:
+
+   - `<nginx.version>` — версия NGINX, которая используется в текущем окружении (например, 1.30.4).
 3. Добавьте модуль *SPNEGO* к рабочей конфигурации *NGINX*:
 
    **Любые ОС (кроме Astra Linux 1.8.3):**
@@ -24747,7 +24765,7 @@ FILE: 801-guides/817-using_the_system/818-admin_page/820-infrastructure/4642-con
 title: 'Резервное копирование. Настройка, запуск и просмотр журнала сеансов'
 kbId: 4642
 url: 'https://kb.comindware.ru/article.php?id=4642'
-updated: '2026-06-20 20:24:57'
+updated: '2026-08-10 15:34:27'
 ---
 
 # Резервное копирование. Настройка, запуск и просмотр журнала сеансов
@@ -24810,13 +24828,13 @@ updated: '2026-06-20 20:24:57'
 
 Эти инструкции следует выполнять на машине (сервере) с экземпляром ПО **Comindware Platform**.
 
-1. Создайте директорию, в которой будут сохраняться резервные копии. Для этой директории предоставьте разрешения на полный доступ, чтобы система могла сохранять в неё резервные копии, например:
+1. Создайте директорию, в которой будут сохраняться резервные копии. Для этой директории предоставьте разрешения на доступ, чтобы система могла сохранять в неё резервные копии, например:
 
    **Astra Linux, Debian, DEB-дистрибутивы**
 
    ```
    mkdir /var/backups/comindware/<instanceName>
-   chmod 777 /var/backups/comindware/<instanceName>
+   chmod 700 /var/backups/comindware/<instanceName>
    chown -R www-data:www-data /var/backups/comindware/<instanceName>
    ```
 
@@ -24824,7 +24842,7 @@ updated: '2026-06-20 20:24:57'
 
    ```
    mkdir /var/backups/comindware/<instanceName>
-   chmod 777 /var/backups/comindware/<instanceName>
+   chmod 700 /var/backups/comindware/<instanceName>
    chown -R nginx:nginx /var/backups/comindware/<instanceName>
    ```
 
@@ -24832,7 +24850,7 @@ updated: '2026-06-20 20:24:57'
 
    ```
    mkdir /var/backups/comindware/<instanceName>
-   chmod 777 /var/backups/comindware/<instanceName>
+   chmod 700 /var/backups/comindware/<instanceName>
    chown -R _nginx:_nginx /var/backups/comindware/<instanceName>
    ```
 
@@ -24989,7 +25007,7 @@ updated: '2026-06-20 20:24:57'
 4. Предоставьте доступ OpenSearch (Elasticsearch) к репозиторию резервных копий:
 
    ```
-   chmod -R 777 /var/backups/elasticsearch
+   chmod -R 700 /var/backups/elasticsearch
    chown -R elasticsearch:elasticsearch /var/backups/elasticsearch
    ```
 5. Перезапустите службу OpenSearch (Elasticsearch):
@@ -69959,7 +69977,7 @@ FILE: 871-examples/4613-sso_authentication_configure.md
 title: 'Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя'
 kbId: 4613
 url: 'https://kb.comindware.ru/article.php?id=4613'
-updated: '2026-06-20 20:25:59'
+updated: '2026-08-14 18:41:33'
 ---
 
 # Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя
@@ -70462,10 +70480,7 @@ _![Настройка свойств сервисного аккаунта дл�
    ```
 2. Установите модуль *NGINX-SPNEGO*:
 
-   - **Astra Linux (версии 1.8.3 и выше)**
-
-     Установите модуль `ngx_http_auth_spnego_module.so` из пакета `nginx-spnego-module_1.26.3-1_amd64.deb`, который поставляется в составе инсталлятора **Comindware Platform** для Astra Linux 1.8.3 и выше.
-   - **Astra Linux (версии ниже 1.8.3), Debian, DEB-дистрибутивы**
+   - **Astra Linux, Debian, DEB-дистрибутивы**
 
      ```
      apt-get update
@@ -70516,6 +70531,10 @@ _![Настройка свойств сервисного аккаунта дл�
      make
      make install
      ```
+
+   Здесь:
+
+   - `<nginx.version>` — версия NGINX, которая используется в текущем окружении (например, 1.30.4).
 3. Добавьте модуль *SPNEGO* к рабочей конфигурации *NGINX*:
 
    **Любые ОС (кроме Astra Linux 1.8.3):**
@@ -77403,7 +77422,7 @@ FILE: 871-examples/4910-document_digital_signature.md
 title: 'Документы с электронной подписью. Настройка сертификатов, приложения и использование'
 kbId: 4910
 url: 'https://kb.comindware.ru/article.php?id=4910'
-updated: '2026-06-20 20:25:58'
+updated: '2026-08-12 22:43:19'
 ---
 
 # Документы с электронной подписью. Настройка сертификатов, приложения и использование
@@ -77451,8 +77470,8 @@ updated: '2026-06-20 20:25:58'
 5. В шаблоне *«Договоры»* создайте кнопку *«Добавить подписанта»*:
 
    - в поле «**Контекст кнопки**» выберите пункт «**Запись**»;
-   - в поле «**Операция**» выберите пункт «**Пользовательское событие**»;
-   - в поле «**Результат выполнения**» выберите пункт «**Обновить данные**».![Создание кнопки «Добавить подписанта»](https://kb.comindware.ru/assets/img_63342330ef3e3.png)
+   - в поле «**Операция**» выберите пункт «**Вызвать событие „Нажата кнопка“**»;
+   - в поле «**Результат выполнения**» выберите пункт «**Обновить данные**».![Создание кнопки «Добавить подписанта»](https://kb.comindware.ru/platform/v5.0/examples/img/document_digital_signature_create_button.png)
 
    Создание кнопки «Добавить подписанта»
 6. Поместите кнопку *«Добавить подписанта»* на ту же форму, на которую поместили атрибут *«Подписанные договоры»*.

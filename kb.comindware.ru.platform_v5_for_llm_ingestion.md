@@ -1,7 +1,7 @@
 ﻿
 ----------------------
 
-Ingestion date: 2026-08-14 19:15:32
+Ingestion date: 2026-08-21 15:09:40
 Title: Comindware Platform V5 knowledge base for AI ingestion
 Description: Provide this file to your AI agent. For better results, add the prompt below
 Source: https://kb.comindware.ru/category.php?id=798
@@ -4316,7 +4316,7 @@ FILE: 801-guides/802-sys_admin_guide/803-deploy/4596-architecture_landscape.md
 title: 'Развёртывание Comindware Platform. Архитектура, ландшафт, программное и техническое обеспечение'
 kbId: 4596
 url: 'https://kb.comindware.ru/article.php?id=4596'
-updated: '2026-08-11 17:00:40'
+updated: '2026-08-18 15:19:44'
 ---
 
 # Развёртывание Comindware Platform. Архитектура, ландшафт, программное и техническое обеспечение
@@ -4468,6 +4468,10 @@ _![Типовой ландшафт сервисов в составе Систе
 
 - *[Установка и настройка Elasticsearch без сертификатов подлинности](https://kb.comindware.ru/article.php?id=4612)*
 - *[Установка Elasticsearch. Краткое руководство для Windows](https://kb.comindware.ru/article.php?id=4617)*
+
+Важно
+
+Рекомендуется настроить TLS/SSL (HTTPS) для защиты данных, передаваемых между сервером приложений и сервером журналирования транзакций.
 
 ### Конфигурация обратного прокси-сервера
 
@@ -5601,7 +5605,7 @@ FILE: 801-guides/802-sys_admin_guide/803-deploy/804-deploy_auxiliary/805-deploy_
 title: 'Elasticsearch. Установка в базовой конфигурации'
 kbId: 4601
 url: 'https://kb.comindware.ru/article.php?id=4601'
-updated: '2026-06-20 20:24:42'
+updated: '2026-08-18 15:19:47'
 ---
 
 # Elasticsearch. Установка в базовой конфигурации
@@ -5610,7 +5614,7 @@ updated: '2026-06-20 20:24:42'
 
 Для работы **Comindware Platform** требуется сервер Elasticsearch. См. [системные требования](https://kb.comindware.ru/article.php?id=4659).
 
-Здесь представлены инструкции по установке Elasticsearch с помощью дистрибутива **Comindware Platform** в простейшей базовой конфигурации.
+Здесь представлены инструкции по установке Elasticsearch с помощью дистрибутива **Comindware Platform** в простейшей базовой конфигурации. В рамках данной конфигурации использование протоколов TLS/SSL и механизмов аутентификации не предусмотрено. Для развертывания в продуктивной среде требуется выполнить [настройку SSL-сертификатов](https://kb.comindware.ru/article.php?id=4606) и включить аутентификацию.
 
 Инструкции по установке Elasticsearch в иных конфигурациях:
 
@@ -5619,7 +5623,7 @@ updated: '2026-06-20 20:24:42'
 
 С помощью дистрибутива **Comindware Platform** можно развернуть сервер Elasticsearch вместе с экземпляром ПО или на отдельном сервере. Для этого укажите ключ `-e` при запуске скрипта `prerequisites_install.sh`. См. *«[Установка, запуск, инициализация и остановка ПО Comindware Platform](https://kb.comindware.ru/article.php?id=4622)»*.
 
-Установленная таким образом сервер Elasticsearch имеет базовую конфигурацию: без аутентификации и с одним узлом. Он доступна по адресу `localhost:9200`.
+Установленный таким образом сервер Elasticsearch имеет базовую конфигурацию: без аутентификации и с одним узлом. Он доступен по адресу `localhost:9200`.
 
 Здесь представлены требования к техническому обеспечению и инструкции по развёртыванию сервера Elasticsearch в ОС Linux, а также приведён пример типового файла конфигурации. Инструкции представлены для версии Elasticsearch 8.10.2, для других версий содержимое файлов конфигурации и порядок установки могут быть иными.
 
@@ -5754,6 +5758,7 @@ xpack.security.transport.ssl:
 
 - [Официальный сайт Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/targz.html) (английский язык)
 - [Установка и настройка Elasticsearch без сертификатов подлинности](https://kb.comindware.ru/article.php?id=4612)
+- [Elasticsearch. Настройка SSL-сертификатов](https://kb.comindware.ru/article.php?id=4606)
 - [OpenSearch (Elasticsearch). Настройка разрешений](https://kb.comindware.ru/article.php?id=5152)
 - [Установка, запуск, инициализация и остановка ПО Comindware Platform](https://kb.comindware.ru/article.php?id=4622)
 
@@ -6486,7 +6491,7 @@ FILE: 801-guides/802-sys_admin_guide/803-deploy/804-deploy_auxiliary/805-deploy_
 title: 'Elasticsearch. Настройка SSL-сертификатов'
 kbId: 4606
 url: 'https://kb.comindware.ru/article.php?id=4606'
-updated: '2026-06-20 20:24:42'
+updated: '2026-08-18 15:19:50'
 ---
 
 # Elasticsearch. Настройка SSL-сертификатов
@@ -7631,7 +7636,7 @@ FILE: 801-guides/802-sys_admin_guide/803-deploy/804-deploy_auxiliary/805-deploy_
 title: 'Elasticsearch. Развёртывание без сертификатов подлинности'
 kbId: 4612
 url: 'https://kb.comindware.ru/article.php?id=4612'
-updated: '2026-08-10 15:35:09'
+updated: '2026-08-18 15:19:48'
 ---
 
 # Elasticsearch. Развёртывание без сертификатов подлинности
@@ -7640,7 +7645,7 @@ updated: '2026-08-10 15:35:09'
 
 Для работы ПО **Comindware Platform** требуется сервер Elasticsearch версии не ниже 8.10.2.
 
-Здесь представлены требования к конфигурации компьютеров, инструкции по установке Elasticsearch, и настройке узлов кластера Elasticsearch без проверки сертификатов подлинности на виртуальных машинах с ОС Linux на базе Debian.
+Здесь представлены требования к конфигурации компьютеров, инструкции по установке Elasticsearch, и настройке узлов кластера Elasticsearch без проверки сертификатов подлинности на виртуальных машинах с ОС Linux на базе Debian. Перед переходом в продуктивную среду необходимо [настроить SSL-сертификаты](https://kb.comindware.ru/article.php?id=4606) и включить аутентификацию.
 
 Только после запуска службы Elasticsearch можно приступать к развертыванию **Comindware Platform**, указав путь к серверу Elasticsearch.
 
@@ -10753,7 +10758,7 @@ FILE: 801-guides/802-sys_admin_guide/803-deploy/804-deploy_auxiliary/806-deploy_
 title: 'Elasticsearch. Установка в базовой конфигурации для Windows'
 kbId: 4617
 url: 'https://kb.comindware.ru/article.php?id=4617'
-updated: '2026-08-11 17:00:55'
+updated: '2026-08-18 15:19:52'
 ---
 
 # Elasticsearch. Установка в базовой конфигурации для Windows
@@ -10762,7 +10767,7 @@ updated: '2026-08-11 17:00:55'
 
 Для работы **Comindware Platform** требуется сервер Elasticsearch. См. [системные требования](https://kb.comindware.ru/article.php?id=4659).
 
-Установщик **Comindware Platform** в Windows позволяет установить службу Elasticsearch в базовой конфигурации: без аутентификации и с одним узлом по адресу `localhost:9200`.
+Здесь представлены инструкции по установке Elasticsearch с помощью дистрибутива **Comindware Platform** в базовой конфигурации: без использования протоколов TLS/SSL и с одним узлом по адресу `localhost:9201`.
 
 См. *«[Установка, запуск, инициализация и остановка ПО в Windows](https://kb.comindware.ru/article.php?id=5063)»*.
 
@@ -14254,7 +14259,7 @@ FILE: 801-guides/802-sys_admin_guide/803-deploy/807-deploy_linux/4624-upgrade_ve
 title: 'Обновление версии экземпляра ПО с его остановкой'
 kbId: 4624
 url: 'https://kb.comindware.ru/article.php?id=4624'
-updated: '2026-08-10 15:35:10'
+updated: '2026-08-21 13:24:03'
 ---
 
 # Обновление версии экземпляра ПО с его остановкой
@@ -14513,6 +14518,12 @@ updated: '2026-08-10 15:35:10'
 
    - В новейших версиях **Comindware Platform** отсутствует файл `Workers.config`.
    - Настройка соответствующих служб выполняется в файле конфигурации экземпляра ПО `<instanceName>.yml`.
+
+   Восстановление резервной копии на другом экземпляре ПО
+
+   При создании экземпляра ПО база данных привязывается к имени, которое указано в директиве `db.name` (имя базы данных) файла конфигурации `<instanceName>.yml`.
+
+   Если вы восстанавливаете резервную копию на новом экземпляре ПО, необходимо убедиться, что в YML-файле конфигурации задано такое же значение `db.name`, как у экземпляра ПО, на котором была создана резервная копия.
 4. Откройте для редактирования три службы **каждого** из установленных экземпляров ПО (`<instanceName>`):
 
    ```
@@ -28282,7 +28293,7 @@ FILE: 801-guides/817-using_the_system/818-admin_page/821-connections_communicati
 title: 'Аутентификация через Keycloak и OpenID Connect. Настройка подключения и служб'
 kbId: 4685
 url: 'https://kb.comindware.ru/article.php?id=4685'
-updated: '2026-06-20 20:26:09'
+updated: '2026-08-21 15:02:05'
 ---
 
 # Аутентификация через Keycloak и OpenID Connect. Настройка подключения и служб
@@ -28479,10 +28490,15 @@ Keycloak и OpenID Connect позволяют организовать един�
    ```
    nginx -t
    ```
-7. Перезапустите **Comindware Platform**:
+7. Перезапустите службу NGINX для применения изменений:
 
    ```
-   systemctl restart elasticsearch nginx comindware<instanceName>
+   nginx -s reload
+   ```
+8. Перезапустите **Comindware Platform**:
+
+   ```
+   systemctl restart comindware<instanceName> apigateway<instanceName>
    ```
 
 ## Инициализация Comindware Platform для входа через Keycloak
@@ -42940,7 +42956,7 @@ FILE: 801-guides/817-using_the_system/832-business_apps/844-templates/846-attrib
 title: 'Атрибут типа «Логический»'
 kbId: 4778
 url: 'https://kb.comindware.ru/article.php?id=4778'
-updated: '2026-06-20 20:25:15'
+updated: '2026-08-18 18:14:52'
 ---
 
 # Атрибут типа «Логический»
@@ -42948,6 +42964,10 @@ updated: '2026-06-20 20:25:15'
 ## Свойства атрибута
 
 Атрибут типа «**Логический**» содержит булево значение `true` или `false`.
+
+Внимание!
+
+По умолчанию атрибут типа «**Логический**» содержит значение `null`, если его значение не было задано вручную или другими способами.
 
 Помимо **[общих свойств](https://kb.comindware.ru/article.php?id=4765)** для атрибута типа «**Логический**» предусмотрены перечисленные ниже свойства.
 
@@ -47871,7 +47891,7 @@ FILE: 801-guides/817-using_the_system/832-business_apps/844-templates/853-import
 title: 'Импорт данных в шаблон'
 kbId: 4802
 url: 'https://kb.comindware.ru/article.php?id=4802'
-updated: '2026-06-20 20:25:21'
+updated: '2026-08-21 11:54:41'
 ---
 
 # Импорт данных в шаблон
@@ -47904,8 +47924,9 @@ updated: '2026-06-20 20:25:21'
      - **Формат** — выберите формат импортируемой ячейки в соответствии с типом атрибута. См. [требования к импортируемому файлу](#подготовка-импортируемого-файла).
        - Для атрибута типа «**Дата и время**» выберите пункт «**Не задано**» (автоматическое преобразование данных) или формат, соответствующий представлению данных в импортируемом файле.
        - Для атрибута типа «**Число**» или «**Длительность**» выберите формат, соответствующий представлению данных в импортируемом файле.
-       - Для атрибута типа «**Запись**», «**Роль**» или «**Организационная единица**» выберите атрибут связанного шаблона **ID** или атрибут **Name** — это [атрибут-заголовок записей](https://kb.comindware.ru/article.php?id=4769) связанного шаблона. Выбранный атрибут будет использоваться в качестве ключевого для привязки импортированных записей к связанному шаблону.
-       - Для атрибута типа «**Аккаунт**» выберите атрибут шаблона аккаунта: **ID**, **Адрес эл. почты**, **Имя пользователя** или **Ф. И. О.** Выбранный атрибут будет использоваться в качестве ключевого для привязки импортированных записей к аккаунтам.
+       - Для атрибута типа «**Запись**» выберите атрибут связанного шаблона, который будет использоваться в качестве ключевого для сопоставления данных. Можно выбрать любой системный атрибут или атрибут, созданный вручную.
+       - Для атрибута типа «**Роль**» или «**Организационная единица**» выберите атрибут связанного шаблона **ID** или атрибут **Name** — это [атрибут-заголовок записей](https://kb.comindware.ru/article.php?id=4769) связанного шаблона. Выбранный атрибут будет использоваться в качестве ключевого для привязки импортированных записей к связанному шаблону.
+       - Для атрибута типа «**Аккаунт**» выберите атрибут шаблона аккаунта: **ID**, **Адрес эл. почты**, **Имя пользователя** или **Ф. И. О.** Выбранный атрибут будет использоваться в качестве ключевого для привязки импортированных записей к аккаунтам.
        - Для атрибутов остальных типов формат данных выбирать не требуется, данные будут преобразованы автоматически.
 5. Нажмите кнопку «**Загрузить**».
 6. В случае успешного импорта отобразится сообщение «**Данные импортированы**».
@@ -70674,7 +70695,7 @@ FILE: 871-examples/4685-openid_connection_gostech.md
 title: 'Аутентификация через Keycloak и OpenID Connect. Настройка подключения и служб'
 kbId: 4685
 url: 'https://kb.comindware.ru/article.php?id=4685'
-updated: '2026-06-20 20:26:09'
+updated: '2026-08-21 15:02:05'
 ---
 
 # Аутентификация через Keycloak и OpenID Connect. Настройка подключения и служб
@@ -70871,10 +70892,15 @@ Keycloak и OpenID Connect позволяют организовать един�
    ```
    nginx -t
    ```
-7. Перезапустите **Comindware Platform**:
+7. Перезапустите службу NGINX для применения изменений:
 
    ```
-   systemctl restart elasticsearch nginx comindware<instanceName>
+   nginx -s reload
+   ```
+8. Перезапустите **Comindware Platform**:
+
+   ```
+   systemctl restart comindware<instanceName> apigateway<instanceName>
    ```
 
 ## Инициализация Comindware Platform для входа через Keycloak
@@ -89790,7 +89816,7 @@ FILE: 872-integrations/875-integration_examples/4685-openid_connection_gostech.m
 title: 'Аутентификация через Keycloak и OpenID Connect. Настройка подключения и служб'
 kbId: 4685
 url: 'https://kb.comindware.ru/article.php?id=4685'
-updated: '2026-06-20 20:26:09'
+updated: '2026-08-21 15:02:05'
 ---
 
 # Аутентификация через Keycloak и OpenID Connect. Настройка подключения и служб
@@ -89987,10 +90013,15 @@ Keycloak и OpenID Connect позволяют организовать един�
    ```
    nginx -t
    ```
-7. Перезапустите **Comindware Platform**:
+7. Перезапустите службу NGINX для применения изменений:
 
    ```
-   systemctl restart elasticsearch nginx comindware<instanceName>
+   nginx -s reload
+   ```
+8. Перезапустите **Comindware Platform**:
+
+   ```
+   systemctl restart comindware<instanceName> apigateway<instanceName>
    ```
 
 ## Инициализация Comindware Platform для входа через Keycloak

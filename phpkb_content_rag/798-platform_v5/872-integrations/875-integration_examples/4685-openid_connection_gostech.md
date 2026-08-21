@@ -2,7 +2,7 @@
 title: 'Аутентификация через Keycloak и OpenID Connect. Настройка подключения и служб'
 kbId: 4685
 url: 'https://kb.comindware.ru/article.php?id=4685'
-updated: '2026-06-20 20:26:09'
+updated: '2026-08-21 15:02:05'
 ---
 
 # Аутентификация через Keycloak и OpenID Connect. Настройка подключения и служб
@@ -199,10 +199,15 @@ Keycloak и OpenID Connect позволяют организовать един�
    ```
    nginx -t
    ```
-7. Перезапустите **Comindware Platform**:
+7. Перезапустите службу NGINX для применения изменений:
 
    ```
-   systemctl restart elasticsearch nginx comindware<instanceName>
+   nginx -s reload
+   ```
+8. Перезапустите **Comindware Platform**:
+
+   ```
+   systemctl restart comindware<instanceName> apigateway<instanceName>
    ```
 
 ## Инициализация Comindware Platform для входа через Keycloak

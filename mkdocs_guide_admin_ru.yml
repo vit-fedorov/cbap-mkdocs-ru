@@ -120,7 +120,6 @@ nav:
       - administration/infrastructure/logs.md
       - administration/infrastructure/licensing.md
       - administration/infrastructure/system_service_management.md
-      - administration/infrastructure/performance.md
       - administration/infrastructure/logging_configuration.md
       - administration/infrastructure/global_configuration.md
       - administration/infrastructure/adapters.md
@@ -211,6 +210,7 @@ exclude_docs: |
   administration/connections_communication_routes/rest_odata_connections/http_receive_file.md
   administration/connections_communication_routes/rest_odata_connections/send_http_example_csharp.md
   administration/connections_communication_routes/rest_odata_connections/receive_http_example_csharp.md
+  administration/infrastructure/performance.md
   architect/**
   business_apps/application_configure_recommendations.md
   business_apps/data_model.md

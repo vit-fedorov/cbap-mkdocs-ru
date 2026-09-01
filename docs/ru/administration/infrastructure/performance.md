@@ -7,7 +7,10 @@ tags:
  - мониторинг
  - производительность
 hide: tags
+status: hidden
 ---
+
+<!-- HIDDEN per ticket 10690108 — excluded from all builds via exclude_docs + removed from nav -->
 
 # Производительность. Просмотр и сброс показателей {: #performance }
 

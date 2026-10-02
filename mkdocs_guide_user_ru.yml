@@ -24,6 +24,7 @@ nav:
     - general/bpm_system_intro.md
     - Обзор версий:
       - general/changelog/changelog.md
+      - general/changelog/release_notes_5.0.20260925.md
       - general/changelog/release_notes_5.0.20260804.md
       - general/changelog/release_notes_5.0.20260609.md
       - general/changelog/release_notes_5.0.20251231.md
@@ -213,11 +214,11 @@ nav:
       - Формы:
         - business_apps/templates/forms/index.md
         - business_apps/templates/forms/form_access_control.md
-         - business_apps/templates/forms/form_rules.md
-         - business_apps/templates/forms/form_static_elements.md
-         - business_apps/templates/forms/form_dynamic_elements.md
-         - business_apps/templates/forms/search_forms.md
-       - business_apps/templates/forms/discussion_configure.md
+        - business_apps/templates/forms/form_rules.md
+        - business_apps/templates/forms/form_static_elements.md
+        - business_apps/templates/forms/form_dynamic_elements.md
+        - business_apps/templates/forms/search_forms.md
+        - business_apps/templates/forms/discussion_configure.md
       - Кнопки: business_apps/templates/buttons/index.md
       - business_apps/templates/button_area.md
       - Карточки: business_apps/templates/cards/cards_layout_configure.md

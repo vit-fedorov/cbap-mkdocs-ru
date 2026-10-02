@@ -402,6 +402,8 @@
 
 [release_notes_5.0.20260804]: {{ kbArticleURLPrefix }}5747
 
+[release_notes_5.0.20260925]: {{ kbArticleURLPrefix }}5748
+
 [s3_connection]: {{ kbArticleURLPrefix }}4677
 
 [security]: {{ kbArticleURLPrefix }}4660

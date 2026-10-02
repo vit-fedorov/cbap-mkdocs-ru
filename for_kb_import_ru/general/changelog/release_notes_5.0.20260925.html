@@ -1,0 +1,206 @@
+<div class="md-body" data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="comindware" dir="ltr" kb-id="5748" kb-tags="release notes,версия 5.0,информация о выпуске,релизноутс,сведения о выпуске" kb-title="Сведения о выпуске 5.0 от 25.09.2026">
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<div class="mce-toc">
+<h2 class="toc-heading">
+      Содержание
+      </h2>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260925_intro">
+<span class="md-ellipsis">
+      
+        Введение
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260925_key_changes">
+<span class="md-ellipsis">
+      
+        Ключевые изменения
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260925_new_and_improved">
+<span class="md-ellipsis">
+      
+        Новые возможности и улучшения
+      
+    </span>
+</a>
+<nav aria-label="Новые возможности и улучшения" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260925_auth">
+<span class="md-ellipsis">
+      
+        Аутентификация
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260925_ui">
+<span class="md-ellipsis">
+      
+        Интерфейс
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260925_forms">
+<span class="md-ellipsis">
+      
+        Формы и атрибуты
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260925_lists">
+<span class="md-ellipsis">
+      
+        Списки и коллекции
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260925_scenarios">
+<span class="md-ellipsis">
+      
+        Переменные, сценарии и язык выражений
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260925_architect_processes">
+<span class="md-ellipsis">
+      
+        Корпоративная архитектура и процессы
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260925_integrations_api">
+<span class="md-ellipsis">
+      
+        Интеграции и пути передачи данных
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260925_performance">
+<span class="md-ellipsis">
+      
+        Производительность
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link mkdocs_imported_link" href="#release_notes_5.0.20260925_fixes">
+<span class="md-ellipsis">
+      
+        Исправления
+      
+    </span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h2 id="release_notes_5.0.20260925_intro">Введение</h2>
+<p><strong>Comindware Platform</strong> версии 5.0 от 25.09.2026 включает ряд новых возможностей, улучшений и исправлений по сравнению с <a class="mkdocs_imported_link" href="https://kb.comindware.ru/article.php?id=5747">версией 5.0 от 04.08.2026</a>.</p>
+<div class="notice notice-warning">
+<p class="admonition-title">Обновление до версии 5.0 от 25.09.2026</p>
+<p>Из-за изменения структуры конфигурационных файлов обновление до версии 5.0 от 25.09.2026 следует выполнять только посредством создания нового экземпляра ПО и подключения к нему базы данных обновляемого экземпляра.</p>
+</div>
+<h2 id="release_notes_5.0.20260925_key_changes">Ключевые изменения</h2>
+<ul>
+<li><strong>Аутентификация:</strong> реализована аутентификация пользователей Active Directory по тикетам Kerberos: единый вход (SSO) настраивается параметрами конфигурационного файла экземпляра и не требует установки и настройки модуля SPNEGO в NGINX. Повышена стабильность аутентификации через Active Directory и Keycloak.   </li>
+<li><strong>Корпоративная архитектура и процессы:</strong> улучшено сохранение, восстановление и просмотр версий диаграмм; обеспечено сохранение связей элементов с родительскими процессами в моделях при обновлении ПО.   </li>
+<li><strong>Интеграции и пути передачи данных:</strong> повышена стабильность адаптеров обмена данными через Apache Kafka и RabbitMQ, импорта данных по протоколу OData, экспорта записей с атрибутами, хранящими несколько значений.   </li>
+<li><strong>Переменные и язык выражений:</strong> в параметры сеанса добавлен признак устройства, с которого пользователь работает с системой. </li>
+</ul>
+<h2 id="release_notes_5.0.20260925_new_and_improved">Новые возможности и улучшения</h2>
+<h3 id="release_notes_5.0.20260925_auth">Аутентификация</h3>
+<ul>
+<li><strong>Active Directory:</strong> реализована аутентификация пользователей по тикетам Kerberos. Единый вход (SSO) полностью настраивается параметрами (<code>auth.kerberos.*</code>) в конфигурационном файле экземпляра <strong>Comindware Platform</strong> без установки и настройки модуля SPNEGO в NGINX. Поддерживаются два сценария: автоматический вход в домене и вход по кнопке на странице авторизации. </li>
+<li><strong>Keycloak:</strong> повышена стабильность аутентификации. </li>
+</ul>
+<h3 id="release_notes_5.0.20260925_ui">Интерфейс</h3>
+<ul>
+<li><strong>Запуск и перезапуск системы:</strong> доработана страница, отображаемая во время запуска <strong>Comindware Platform</strong> и обновления базы данных: страница автоматически обновляется, пока сервисы не будут готовы, отображает состояние обновления базы данных и после завершения запуска переводит пользователя на страницу входа. </li>
+<li><strong>Виджеты:</strong> улучшено отображение данных. </li>
+</ul>
+<h3 id="release_notes_5.0.20260925_forms">Формы и атрибуты</h3>
+<ul>
+<li><strong>Атрибуты «Документ» и «Изображение»:</strong> улучшена работа в режиме редактирования формы.  </li>
+<li><strong>Ссылочные атрибуты:</strong> уточнено отображение записей в выпадающих списках: архивированные записи больше не предлагаются для выбора на форме. </li>
+</ul>
+<h3 id="release_notes_5.0.20260925_lists">Списки и коллекции</h3>
+<ul>
+<li><strong>Коллекции:</strong> значения связанных справочников отображаются в коллекциях независимо от того, архивирована ли запись справочника. </li>
+<li><strong>Таблицы с группировкой:</strong> улучшена работа формы расширенного поиска. </li>
+</ul>
+<h3 id="release_notes_5.0.20260925_scenarios">Переменные, сценарии и язык выражений</h3>
+<ul>
+<li><strong>Параметры сеанса:</strong> добавлен признак устройства, с которого пользователь работает с системой (веб-интерфейс, мобильное приложение, мобильный веб-сайт, форма для внешних пользователей). Новый параметр доступен в языке выражений и позволяет настраивать правила отображения форм в зависимости от устройства пользователя, в том числе использовать его в вычисляемых атрибутах при работе через мобильный интерфейс.  </li>
+<li><strong>Сценарии:</strong> улучшена работа блока создания документа по шаблону внутри цикла по объектам. </li>
+</ul>
+<h3 id="release_notes_5.0.20260925_architect_processes">Корпоративная архитектура и процессы</h3>
+<ul>
+<li><strong>Конструктор диаграмм:</strong> улучшено отображение при переключении между режимами просмотра и редактирования; повышена стабильность работы с версиями.    </li>
+</ul>
+<h3 id="release_notes_5.0.20260925_integrations_api">Интеграции и пути передачи данных</h3>
+<ul>
+<li><strong>Адаптеры и брокеры сообщений:</strong><ul>
+<li>повышена стабильность работы с брокерами сообщений;  </li>
+<li>реализован двусторонний маппинг альтернативных имён шаблонов и атрибутов в адаптере Apache Kafka; </li>
+<li>улучшена работа кластерной конфигурации. </li>
+</ul>
+</li>
+<li><strong>Импорт и экспорт данных:</strong><ul>
+<li>улучшен импорт данных в <strong>Comindware Platform</strong>;  </li>
+<li>повышена надежность экспорта записей через адаптер передачи данных при наличии атрибутов, хранящих несколько значений. </li>
+</ul>
+</li>
+<li><strong>Пути передачи данных:</strong> повышена стабильность работы при выборе связанных ссылочных атрибутов из одного шаблона записи. </li>
+</ul>
+<h3 id="release_notes_5.0.20260925_performance">Производительность</h3>
+<ul>
+<li><strong>Формы:</strong> повышена производительность операций с формами, содержащими большое количество виджетов. </li>
+</ul>
+<h2 id="release_notes_5.0.20260925_fixes">Исправления</h2>
+<ul>
+<li><strong>Инфраструктура и интеграции:</strong> повышена стабильность работы адаптеров, брокеров сообщений, кластерной конфигурации, импорта и экспорта данных.</li>
+<li><strong>Приложения и интерфейс:</strong> улучшена работа форм, списков, коллекций, виджетов, сценариев, конструктора диаграмм и <strong>Корпоративная архитектура</strong>.</li>
+</ul>
+</article>
+</div>
+</div>
+<a class="md-top md-icon mkdocs_imported_link" data-md-component="top" href="#">
+<i class="fa-light fa-arrow-up">&zwnj;<!--icon--></i>
+            К началу
+          </a>
+</main>
+</div>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></div>

@@ -243,7 +243,7 @@
 <p>На вкладке «<strong>Атрибуты сообщения</strong>» настройте атрибуты, значения которых будут подставляться в содержимое в эл. письма с помощью вкладки <a class="mkdocs_imported_link" href="#scenario_send_email_integration">«<strong>Интеграция</strong>»</a>.</p>
 <p>Значения атрибутам сообщения необходимо присвоить в <a class="mkdocs_imported_link" href="#scenario_send_email_scenario_configure">сценарии</a> с помощью действия «<strong>Изменить значения переменных</strong>». Затем в сценарии следует выполнить действие «<strong>Отправить сообщение</strong>».</p>
 <ol class="colored_numbers_list">
-<li>В таблице «<strong>Запрос</strong>» настройте готовые атрибуты сообщения:</li>
+<li>В таблице «<strong>Запрос</strong>» отобразятся готовые атрибуты сообщения:</li>
 </ol>
 <ul>
 <li><strong>To</strong> — получатели письма (массив объектов).<ul>
@@ -275,7 +275,7 @@
 </li>
 </ul>
 <ol class="colored_numbers_list" start="2">
-<li>При необходимости в таблицах «<strong>Ответ</strong>» и «<strong>Ответ</strong>» настройте атрибуты, в которые будет помещаться отклик SMTP-сервера после отправки письма.</li>
+<li>При необходимости в таблицах «<strong>Ответ</strong>» и «<strong>Ответ с ошибкой</strong>» настройте атрибуты, в которые будет помещаться отклик SMTP-сервера после отправки письма.</li>
 </ol>
 <h4 class="pageBreakBefore" id="создание-собственного-атрибута-сообщения">Создание собственного атрибута сообщения</h4>
 <p>В качестве примера (для выполнения дальнейших шагов данной инструкции) создайте следующие атрибуты сообщения:</p>
@@ -283,8 +283,6 @@
 <li><em>FullName</em> типа «<strong>Строка</strong>» для Ф. И. О. получателя;</li>
 <li><em>Filename</em> типа «<strong>Строка</strong>» для имени прикрепляемого файла;</li>
 <li><em>RecepientEmail</em> типа «<strong>Строка</strong>» для эл. почты получателя;</li>
-<li><em>Subject</em> типа «<strong>Строка</strong>» для темы письма;</li>
-<li><em>Body</em> типа «<strong>Строка</strong>» для темы письма;</li>
 <li><em>ReplyAddress</em> типа «<strong>Строка</strong>» для выбора электронной почты, на которую должны приходить ответные письма.</li>
 </ul>
 <p>Чтобы создать атрибут сообщения, нажмите кнопку «<strong>Добавить</strong>» над таблицей с атрибутами и заполните свойства атрибута:</p>
@@ -362,7 +360,9 @@
 </ul>
 </li>
 <li>
-<p><strong>Прикреплённые файлы</strong></p>
+<p><strong>Прикреплённые файлы</strong> — в данном примере не используется.</p>
+<div class="notice notice-tip">
+<p class="admonition-title">Вложение файлов в электронное письмо</p>
 <ul>
 <li><strong>Название документа</strong> — введите строковый литерал с именем файла, включая расширение (заполнители не поддерживаются). Например:</li>
 </ul>
@@ -378,6 +378,7 @@
 <div class="highlight"><code><pre><span></span><code><span class="n">Это</span><span class="w"> </span><span class="n">пример</span><span class="w"> </span><span class="n">строки</span><span class="w"> </span><span class="n">в</span><span class="w"> </span><span class="n">кодировке</span><span class="w"> </span><span class="n">Base64</span><span class="p">.</span></code> <br/></pre></code></div>
 <p>в формате Base64 будет выглядеть следующим образом:</p>
 <div class="highlight"><code><pre><span></span><code>0K3RgtC+INC/0YDQuNC80LXRgCDRgdGC0YDQvtC60Lgg0LIg0LrQvtC00LjRgNC+0LLQutC1IEJhc2U2NC4=</code> <br/></pre></code></div>
+</div>
 </div>
 </li>
 </ul>

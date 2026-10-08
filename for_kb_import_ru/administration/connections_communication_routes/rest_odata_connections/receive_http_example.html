@@ -215,7 +215,7 @@
 <li><strong>Базовый путь получения HTTP-запросов</strong> — добавьте <strong>путь URI</strong>, например <code>uploadData</code>. При необходимости введите дополнительный <strong>путь URI</strong> на вкладке «<strong>Интеграция</strong>» в свойствах <a class="mkdocs_imported_link" href="#http_receive_example_route">пути передачи данных</a>.</li>
 <li><strong>Имя пользователя</strong> - не используется в данном примере.</li>
 <li><strong>Пароль</strong> - не используется в данном примере.</li>
-<li><strong>Порт</strong> - порт, на котором будут ожидаться запросы. Для работы нужно внести изменения в конфигурацию nginx (ссылка на область статьи после путей передачи данных).</li>
+<li><strong>Порт</strong> - порт, на котором будут ожидаться запросы. Для работы нужно внести изменения в конфигурацию nginx (ссылка на область статьи после путей передачи данных). Данный порт является внутренней настройкой между Платформой и Adapterhost.</li>
 <li><strong>Формат данных</strong> — выберите представление данных:<ul>
 <li><strong>JSON</strong> — используется в данном примере;</li>
 <li><strong>XML</strong>;</li>
@@ -274,7 +274,7 @@
 <p>В таблице «<strong>Запрос</strong>» сопоставьте данные HTTP-запроса с атрибутами <strong>Comindware Platform</strong>, то есть воссоздайте структуру JSON входящего запроса:</p>
 <ul>
 <li>В таблицу «<strong>Запрос</strong>» добавьте атрибут <em>ListZakazov</em> типа «<strong>Объект</strong>». Установите флажок «<strong>Массив</strong>», так как этот атрибут будет содержать массив данных по всем заказам. <strong>Системное имя</strong> должно совпадать с именем соответствующего поля HTTP-запроса.</li>
-<li>В атрибут <em>FileObject</em> добавьте дочерний атрибут <em>Zakaz</em> типа «<strong>Объект</strong>». Он будет содержать данные по одному заказу.</li>
+<li>В атрибут <em>ListZakazov</em> добавьте дочерний атрибут <em>Zakaz</em> типа «<strong>Объект</strong>». Он будет содержать данные по одному заказу.</li>
 <li>В атрибут <em>Zakaz</em> добавьте следующие дочерние атрибуты:</li>
 </ul>
 <table style="width: 100%;">
@@ -323,16 +323,19 @@
 </li>
 <li>
 <p>При необходимости укажите <strong>атрибут для заголовков</strong>, в котором будут содержаться все атрибуты заголовков запроса, <strong>атрибут для параметров запроса</strong>, в котором будут содержаться все параметры запроса, и <strong>атрибут для тела запроса</strong>, в котором будет содержаться всё тело запроса.</p>
-<figure class="screenshot_with_caption" markdown=""><img alt="Настройка интеграции" src="/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/json4.png"/><figcaption class="caption">Настройка интеграции</figcaption></figure>
 </li>
 </ol>
 <h2 id="настройка-nginx">Настройка NGINX</h2>
-<p>Добавить в файл /etc/nginx/sites-available/comindware\<instancename> новый location для нового пути передачи данных.</instancename></p>
+<p>Добавить в файл /etc/nginx/sites-available/comindware&lt;instanceName&gt; новый location для нового пути передачи данных.</p>
 <div class="highlight"><code><pre><span></span><code><span class="err">loca</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="w"> </span><span class="err">/&lt;URI</span><span class="w"> </span><span class="err">подключения&gt;/&lt;URI</span><span class="w"> </span><span class="err">пути</span><span class="w"> </span><span class="err">передачи</span><span class="w"> </span><span class="err">данных&gt;</span></code> <br/><code><span class="w">    </span><span class="p">{</span></code> <br/><code><span class="w">        </span><span class="err">proxy_pass</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">p</span><span class="p">:</span><span class="c1">//127.0.0.1:&lt;PORT подключения&gt;;</span></code> <br/><code><span class="w">    </span><span class="p">}</span></code> <br/></pre></code></div>
 <div class="notice notice-info">
 <p class="admonition-title">Примечание</p>
 <p>Для каждого пути передачи данных на получение запросов надо добавить свой отдельный location.</p>
 </div>
+<p>Проверьте корректность внесенных изменений</p>
+<div class="highlight"><code><pre><span></span><code>nginx -t</code> <br/></pre></code></div>
+<p>перезапустите nginx</p>
+<div class="highlight"><code><pre><span></span><code>sudo systemctl reload nginx</code> <br/></pre></code></div>
 <p><a class="mkdocs_imported_link" href="" id="scenario_configure"></a></p>
 <h2 class="pageBreakBefore" id="http_receive_example_scenario">Настройка сценария</h2>
 <ol class="colored_numbers_list">
@@ -375,17 +378,17 @@
 <tr>
 <td><em>Клиент</em></td>
 <td><strong>Заменить</strong></td>
-<td><strong>Формула:</strong> <code>$$local—Zakaz—Client</code></td>
+<td><strong>Формула:</strong> <code>$$local—&gt;Zakaz—&gt;Client</code></td>
 </tr>
 <tr>
 <td><em>Номер</em></td>
 <td><strong>Заменить</strong></td>
-<td><strong>Формула:</strong> <code>$$local—Zakaz—Nomer</code></td>
+<td><strong>Формула:</strong> <code>$$local—&gt;Zakaz—&gt;Nomer</code></td>
 </tr>
 <tr>
 <td><em>Товар</em></td>
 <td><strong>Заменить</strong></td>
-<td><strong>Формула:</strong> <code>$$local—Zakaz—Tovar</code></td>
+<td><strong>Формула:</strong> <code>$$local—&gt;Zakaz—&gt;Tovar</code></td>
 </tr>
 </tbody>
 </table>

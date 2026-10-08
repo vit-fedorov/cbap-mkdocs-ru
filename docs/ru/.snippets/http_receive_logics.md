@@ -3,7 +3,7 @@
     - Для получения HTTP-запросов из внешних систем **{{ productName }}** позволяет настроить конечные точки API вида: 
     
         ``` html
-        https://<instanceUrl>/api/public/adapter/<connectionUri>/<routeUri>
+        https://<instanceUrl>/<connectionUri>/<routeUri>
         ```
 
         Здесь:

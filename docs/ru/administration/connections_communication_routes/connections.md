@@ -49,7 +49,7 @@ hide:
 - [Управление версиями через {{ gitVariants }}][git_connection]
 - Абстрактное подключение
 - [Карты][map_configure]
-- [Хранилище S3][s3_connection]
+<!-- - [Хранилище S3][s3_connection] -->
 
 ### Аутентификация
 

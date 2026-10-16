@@ -57,7 +57,7 @@ SUBSTRING(
 
 - [Парсинг Email до знака @][example_email_parse_address_before_at_sign]
 - [Эл.&nbsp;почта в процессе. Отправка, получение и обработка][process_email_configure]
-- [Получение эл.&nbsp;почты и веб-запросов в процессе][process_receiving_connection]
+- [Получение эл.&nbsp;почты в процессе][process_receiving_connection]
 - [Список функций языка формул Comindware][formula_function_list]
 - [Сценарии][scenarios]
 

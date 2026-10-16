@@ -372,7 +372,7 @@ http://your-host/docs
 - _[Отправка эл.&nbsp;почты из сценариев по SMTP/Exchange][scenario_send_email]_
 - _[Получение эл.&nbsp;почты с помощью сценариев через IMAP и Exchange][scenario_receive_email]_
 - _[Отправка почты из процесса][process_sending_connection]_
-- _[Получение эл.&nbsp;почты и веб-запросов в процессе][process_receiving_connection]_
+- _[Получение эл.&nbsp;почты в процессе][process_receiving_connection]_
 
 ### Для работы с HTTP-запросами {: #integration_http_examples }
 
@@ -382,6 +382,7 @@ http://your-host/docs
 - _[HTTP-запросы типа POST. Отправка и получение ответа][http_send_post]_
 - _[HTTP-запросы типа POST. Отправка составного содержимого и файлов][http_send_file]_
 - _[HTTP-запросы с составным содержимым. Получение файлов в сценарии][http_receive_file]_
+- _[Получение веб-запросов в процессе. Настройка подключения, пути передачи данных и процесса][get_connection]_
 
 ### Для работы с СУБД {: #integration_db_examples }
 

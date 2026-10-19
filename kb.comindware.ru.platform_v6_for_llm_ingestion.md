@@ -1,11 +1,11 @@
 ﻿
 ----------------------
 
-Ingestion date: 2026-08-21 15:59:08
+Ingestion date: 2026-10-19 14:45:22
 Title: Comindware Platform V6 knowledge base for AI ingestion
 Description: Provide this file to your AI agent. For better results, add the prompt below
 Source: https://kb.comindware.ru/category.php?id=896
-Files analyzed: 606
+Files analyzed: 607
 Estimated tokens: 1.6M
 
 ----------------------
@@ -79,6 +79,7 @@ Directory structure:
     │   │   ├── 5184-index.md
     │   │   └── 5185-index.md
     │   ├── 900-csharp_examples/
+    │   │   ├── 5186-example_csharp_table_download_selections.md
     │   │   ├── 5187-goto_showcase_record.md
     │   │   ├── 5188-delete_related_record.md
     │   │   ├── 5189-add_group_accounts.md
@@ -270,6 +271,7 @@ Directory structure:
     │   ├── 5329-document_get_uri.md
     │   ├── 5334-multilingual_app.md
     │   ├── 5335-assign_task_group_example.md
+    │   ├── 5336-export_template_csharp_configure.md
     │   ├── 5337-change_process_real_time.md
     │   ├── 5338-export_template_csharp_collection_download.md
     │   ├── 5339-document_clone_scenario_n3.md
@@ -320,7 +322,6 @@ Directory structure:
     │   ├── 5386-n3_collection_join_string.md
     │   ├── 5387-n3_collection_get_selected_ids.md
     │   ├── 5389-attribute_text_masks.md
-    │   ├── 5390-template_reference_data_api.md
     │   ├── 5391-task_reassign.md
     │   ├── 5392-system_notifications.md
     │   ├── 5393-n3_task_list_custom.md
@@ -564,7 +565,6 @@ Directory structure:
             │   │   ├── 970-email_connections/
             │   │   │   ├── 5366-process_sending_connection.md
             │   │   │   ├── 5375-process_email_configure.md
-            │   │   │   ├── 5390-template_reference_data_api.md
             │   │   │   ├── 5628-process_receiving_connection.md
             │   │   │   ├── 5629-scenario_receive_email.md
             │   │   │   └── 5630-scenario_send_email.md
@@ -724,6 +724,7 @@ Directory structure:
                     │   └── 5729-button_area.md
                     ├── 995-export_templates/
                     │   ├── 5217-export_template_formula_format_values.md
+                    │   ├── 5336-export_template_csharp_configure.md
                     │   ├── 5338-export_template_csharp_collection_download.md
                     │   ├── 5730-export_template_file_configure.md
                     │   ├── 5731-export_template_file_example.md
@@ -3596,6 +3597,434 @@ _![Поиск текста в выражении](https://kb.comindware.ru/platf
 - [Вычисляемые атрибуты](https://kb.comindware.ru/article.php?id=5708)
 
 ================================================
+FILE: 898-expressioons/900-csharp_examples/5186-example_csharp_table_download_selections.md
+================================================
+---
+title: 'Выгрузка выбранных записей и столбцов из таблицы с помощью C#'
+kbId: 5186
+url: 'https://kb.comindware.ru/article.php?id=5186'
+updated: '2026-09-03 13:01:14'
+---
+
+# Выгрузка выбранных записей и столбцов из таблицы с помощью C#
+
+## Введение
+
+Здесь представлен пример скрипта для скачивания выбранных столбцов и строк из таблицы в виде файла Excel.
+
+Скрипт запускается по нажатию кнопки.
+
+Приведённый пример скрипта поддерживает экспорт столбцов следующих типов:
+
+- **Логический**
+- **Число**
+- **Длительность**
+- **Текст**
+- **Запись**
+- **Дата и время**
+- **Аккаунт**
+
+## Прикладная задача
+
+Имеется шаблон *«Заявки»*.
+
+Требуется экспортировать из таблицы в шаблоне *«Заявки»* строки и столбцы, выбранные пользователем.
+
+Данные должны выгружаться в файл формата `.XLSX` по нажатию кнопки.
+
+Пользователь выбирает столбцы и строки для экспорта следующим образом:
+
+- устанавливает флажки выбора в требуемых строках;
+- скрывает ненужные столбцы с помощью меню «**Мои настройки**» *‌* — «**Настроить внешний вид**» *‌*.
+
+## Настройка скрипта
+
+Логика работы скрипта
+
+Представленный здесь скрипт работает следующим образом:
+
+1. Получает список видимых и выбранных пользователем строк (записей) в таблице.
+2. Получает список видимых столбцов на основе настроенного пользователем представления таблицы.
+3. Создаёт пустой файл Excel с помощью библиотеки `Aspose.Cells`.
+4. Заполняет файл данными из выбранных строк и столбцов.
+5. Форматирует ячейки в Excel в соответствии с типом экспортируемых данных (текст, числа, даты и т. д.)
+6. Формирует таблицу на листе для более наглядного отображения и фильтрации данных.
+7. Возвращает сформированный файл пользователю для скачивания.
+8. Обрабатывает возможные ошибки (отсутствие выбранных записей, сбои при экспорте).
+
+1. В шаблоне *«Заявки»* создайте кнопку со следующими свойствами:
+
+   - **Отображаемое название:** *Экспортировать в Excel*
+   - **Контекст операции: запись**
+   - **Операция: C#-скрипт**
+   - **Результат выполнения: скачать документ**
+2. Сохраните кнопку.
+3. На вкладке «**Скрипт**» введите следующий код:
+
+   Скрипт для выгрузки выбранных ячеек из таблицы
+
+   ```
+   // Импорт базовых типов и функций .NET Framework для работы с основными типами данных.
+   using System;
+   // Импорт расширений LINQ для работы с коллекциями и выполнения запросов.
+   using System.Linq;
+   // Импорт классов для обработки нажатий кнопок и возврата результатов выполнения скрипта.
+   using Comindware.TeamNetwork.Api.Data.UserCommands;
+   // Импорт основных классов для работы с данными в {{ pdroductName }}.
+   using Comindware.TeamNetwork.Api.Data;
+   // Импорт классов для работы с формами.
+   using Comindware.TeamNetwork.Api.Data.Forms;
+   // Импорт классов для работы с потоками данных, файлами и операциями ввода-вывода.
+   using System.IO;
+   // Импорт библиотеки Aspose.Cells для создания и форматирования документов Excel.
+   using Aspose.Cells;
+   // Импорт дополнительных классов Aspose.Cells для работы с таблицами и их стилями в Excel.
+   using Aspose.Cells.Tables;
+   using System.Collections.Generic;
+
+   class Script
+   {
+       // userCommandContext содержит данные контекста при нажатии кнопки.
+       public static UserCommandResult Main(UserCommandContext userCommandContext)
+       {
+           // Получаем ID выбранных записей (строк) в таблице при нажатии кнопки.
+           var selectedTableRows = userCommandContext.ObjectIds as string[];
+           if(selectedTableRows.Count() > 0)
+           {
+               try
+               {
+                   // Получаем ID экспортируемой таблицы.
+                   var tableToExportId = userCommandContext.Query.DatasetId;
+                   // Получаем параметры разбиения таблицы на страницы.
+                   var paging = userCommandContext.Query.Paging;
+                   // Получаем параметры сортировки данных в таблице.
+                   var sorting = userCommandContext.Query.Sorting;
+                   // Получаем параметры фильтрации данных в таблице.
+                   var filter = userCommandContext.Query.Filter;
+                   // Получаем ID шаблона, к которому относится таблица, по ID первой из записей.
+                   var templateId = Api.Base.OntologyService.GetAxioms(selectedTableRows.First())["cmw.container"].First().ToString();
+                   // Получаем все таблицы шаблона для дальнейшей обработки.
+                   var templateTables = Api.TeamNetwork.DatasetService.GetQueries(templateId);
+
+                   // Создаём пустой набор экспортируемых данных.
+                   Dataset datasetToExport;
+                   // Создаём пустой файл Excel для экспорта данных.
+                   Workbook excelWorkbook = new Workbook();
+                   // Получаем первый лист книги Excel для заполнения данными.
+                   Worksheet excelSheet = excelWorkbook.Worksheets[0];
+
+                   // Создаём стили для форматирования ячеек Excel.
+                   var style = excelWorkbook.CreateStyle();
+                   // Разрешаем числовые типы для форматирования ячеек.
+                   var flag = new StyleFlag();
+                   flag.NumberFormat = true;
+
+                   // Перебираем все таблицы шаблона для поиска экспортируемой таблицы по её ID.
+                   foreach(var table in templateTables)
+                   {
+                       // Применяем  к таблице параметры разбиения на страницы, сортировки и фильтрации.
+                       table.Paging = paging;
+                       table.Sorting = sorting;
+                       table.Filter = filter;
+                       // Проверяем, требуется ли экспортировать таблицу.
+                       if(table.DatasetId == tableToExportId)
+                       {
+                           // Получаем настроенную пользователем конфигурацию таблицы.
+                           var personalTable = Api.TeamNetwork.DatasetConfigurationService.GetPersonalDataset(table.DatasetId);
+                           // Получаем данные строки и столбцы таблицы, без учёта выбора пользователя.
+                           datasetToExport = Api.TeamNetwork.DatasetService.QueryData(table);
+                           // Создаем массив контейнеров для хранения выбранных пользователем столбцов таблицы.
+                           var selectedTableColumns = new columnContainer[personalTable.Columns.Count()];
+                           // Инициализируем счётчик столбцов.
+                           var i=0;
+                           // Перебираем все столбцы настроенной пользователем таблицы.
+                           foreach(var coll in personalTable.Columns)
+                           {
+                               // Проверяем, что столбец не скрыт пользователем.
+                               if(!coll.IsHidden)
+                               {
+                                   // Создаём контейнер с данными столбца.
+                                   selectedTableColumns[i] = new columnContainer(coll.DataSourceInfo.Id, i);
+                                   // Записываем название столбца в заголовок Excel.
+                                   excelSheet.Cells[0,i].PutValue(coll.Name);
+                                   // Получаем путь к свойству столбца для определения его типа.
+                                   var attribute = coll.DataSourceInfo.PropertyPath.Last().ToString();
+
+                                   // Проверяем, что атрибут в столбце не является системным.
+                                   if(attribute != "id" && attribute != "lastWriteDate" && attribute != "creationDate" && attribute != "В архиве" && attribute != "creator" && attribute != "processes" && attribute != "isDisabled")
+                                   {
+                                       // Получаем свойства атрибута для определения его типа.
+                                       var attributeProperties = Api.Base.OntologyService.GetAxioms(attribute);
+                                       // Получаем тип атрибута.
+                                       attribute = attributeProperties["cmw.propertyType"].Last().ToString();
+                                   }
+
+                                   // Форматируем ячейки в соответствии с типом данных.
+                                   switch(attribute)
+                                   {
+                                       case "xsd.decimal":
+                                       {
+                                           // Устанавливаем числовой формат (код 1) для десятичных чисел.
+                                           style.Number = 1;
+                                           // Применяем формат к столбцу
+                                           excelSheet.Cells.Columns[i].ApplyStyle(style, flag);
+                                       }
+                                       break;
+                                       case "lastWriteDate":
+                                           {
+                                               // Устанавливаем формат даты (код 22) для столбца даты.
+                                               style.Number = 22;
+                                               // Применяем формат к столбцу.
+                                               excelSheet.Cells.Columns[i].ApplyStyle(style, flag);
+                                               // Устанавливаем ширину столбца для отображения даты  и времени.
+                                               excelSheet.Cells.Columns[i].Width = 15;
+                                           }
+                                       break;
+                                       case "creationDate":
+                                           {
+                                               // Устанавливаем формат даты (код 22) для столбца даты создания.
+                                               style.Number = 22;
+                                               // Применяем формат к столбцу.
+                                               excelSheet.Cells.Columns[i].ApplyStyle(style, flag);
+                                               // Устанавливаем ширину столбца для отображения даты и времени.
+                                               excelSheet.Cells.Columns[i].Width = 15;
+                                           }
+                                       break;
+                                       case "xsd.dateTime":
+                                           {
+                                               // Устанавливаем формат даты (код 22) для столбца даты и времени.
+                                               style.Number = 22;
+                                               // Применяем формат к столбцу.
+                                               excelSheet.Cells.Columns[i].ApplyStyle(style, flag);
+                                               // Устанавливаем ширину столбца для отображения даты и времени.
+                                               excelSheet.Cells.Columns[i].Width = 15;
+                                           }
+                                       break;
+                                   }
+                                   // Увеличиваем счётчик столбцов.
+                                   i++;
+                               }
+                           }
+
+                           // Инициализируем счётчик строк, начиная с 1 (0 — заголовки).
+                           var j=1;
+                           // Инициализируем счётчик столбцов.
+                           var y = 0;
+                           // Перебираем все столбцы из набора данных для экспорта.
+                           foreach(var datasetColumn in datasetToExport.Columns)
+                           {
+                               try
+                               {
+                                   // Получаем идентификатор столбца в данных для экспорта.
+                                   var columnId = datasetColumn.DataSourceInfo.Id;
+                                   // Находим индекс столбца в массиве выбранных пользователем столбцов.
+                                   var selectedColumnIndex = Array.Find(selectedTableColumns, x=> x.dataSourceId == columnId).columnIndex;
+                                   // Сохраняем позицию столбца в массиве выбранных пользователем столбцов.
+                                   selectedTableColumns[selectedColumnIndex].Position = y;
+                               }catch{}
+                               // Увеличиваем счётчик позиции.
+                               y++;
+                           }
+
+                           // Перебираем все строки из набора данных.
+                           foreach(var row in datasetToExport.Rows)
+                           {
+                               // Проверяем, что строка выбрана пользователем для экспорта.
+                               if(Array.Find(selectedTableRows, v => v == row.Id) != null)
+                               {
+                                   // Получаем данные строки.
+                                   var rowData = row.Data;
+                                   // Перебираем все видимые столбцы.
+                                   for(var jj = 0; jj < i; jj++)
+                                   {
+                                       // Получаем позицию столбца в исходных данных.
+                                       var ii = selectedTableColumns[jj].Position;
+                                       // Проверяем, что данные в ячейке не пустые.
+                                       if(rowData[ii] != null)
+                                       {
+                                           // Определяем типы данных, для которых требуется преобразование.
+                                           if(
+                                               // Не ссылка на аккаунт.
+                                               rowData[ii].GetType() != typeof(Comindware.TeamNetwork.Api.Data.Forms.AccountReference)
+                                               // Не булево значение.
+                                               && rowData[ii].GetType() != typeof(System.Boolean)
+                                               // Не ссылка на запись.
+                                               && rowData[ii].GetType() != typeof(Comindware.TeamNetwork.Api.Data.Forms.InstanceReference)
+                                               // Не значение из списка.
+                                               && rowData[ii].GetType() != typeof(Comindware.TeamNetwork.Api.Data.Forms.EnumReference)
+                                               // Не коллекция ссылок на записи.
+                                               && !(rowData[ii] is System.Collections.IList)
+                                           )
+
+                                           {
+                                           // Для остальных типов данных просто записываем значение в ячейку.
+                                               excelSheet.Cells[j,jj].PutValue(rowData[ii]);
+                                           }
+                                           else if (rowData[ii].GetType() == typeof(Comindware.TeamNetwork.Api.Data.Forms.AccountReference))
+                                           {
+                                               // Для ссылок на аккаунты записываем в ячейку Ф. И. О аккаунта.
+                                               excelSheet.Cells[j,jj].PutValue(((AccountReference)rowData[ii]).Name);
+                                           }
+                                           else if(rowData[ii].GetType() == typeof(System.Boolean))
+                                           {
+                                               // Логические значения преобразуем в строку.
+                                               if((bool)rowData[ii])
+                                               {
+                                                   excelSheet.Cells[j,jj].PutValue("Истина");
+                                               }
+                                               else
+                                               {
+                                                   excelSheet.Cells[j,jj].PutValue("Ложь");
+                                               }
+                                           }
+                                           // Для ссылок на записи записываем имя записи.
+                                           else if(rowData[ii].GetType() == typeof(Comindware.TeamNetwork.Api.Data.Forms.InstanceReference))
+                                           {
+                                               excelSheet.Cells[j,jj].PutValue(((Comindware.TeamNetwork.Api.Data.Forms.InstanceReference)rowData[ii]).Name);
+                                           }
+                                           // Для значения из списка записываем в ячейку название значения на языке текущего пользователя.
+                                           else if(rowData[ii].GetType() == typeof(Comindware.TeamNetwork.Api.Data.Forms.EnumReference))
+                                           {
+                                               excelSheet.Cells[j,jj].PutValue(((Comindware.TeamNetwork.Api.Data.Forms.EnumReference)rowData[ii]).Name);
+                                           }
+
+                                           // Обрабатываем атрибуты с несколькими значениями.
+                                           else if (rowData[ii] is System.Collections.IList list)
+                                           {
+                                               var names = new List<string>();
+                                               foreach (var item in list)
+                                               {
+                                                   if (item is Comindware.TeamNetwork.Api.Data.Forms.InstanceReference instanceRef)
+                                                   {
+                                                       names.Add(instanceRef.Name);
+                                                   }
+                                                   else if (item is Comindware.TeamNetwork.Api.Data.Forms.AccountReference accountRef)
+                                                   {
+                                                       names.Add(accountRef.Name);
+                                                   }
+                                                   else if (item is Comindware.TeamNetwork.Api.Data.Forms.EnumReference enumRef)
+                                                   {
+                                                       names.Add(enumRef.Name);
+                                                   }
+                                               }
+                                               excelSheet.Cells[j,jj].PutValue(string.Join(", ", names));
+                                           }
+                                       }
+                                   }
+                                   // Увеличиваем счётчик строк после обработки текущей строки.
+                                   j++;
+                               }
+                           }
+                           // Формируем таблицу на листе Excel:
+                           // - Применяем фильтры к заголовкам столбцов для сортировки и фильтрации данных.
+                           // - Применяем чередующуюся заливку строк для наглядности.
+                           // - Применяем автоматическое форматирование заголовков.
+                           // - Параметры таблицы:
+                           //   - начальные строка и столбец (0,0)
+                           //   - конечные строка и столбец (j-1,i-1)
+                           //   - включить заголовки (true)
+                           ListObject listObject = excelSheet.ListObjects[excelSheet.ListObjects.Add(0,0, j-1,i-1, true)];
+                       }
+                   }
+
+                   // Создаем поток в памяти для сохранения файла Excel.
+                   MemoryStream stream = new MemoryStream();
+                   // Сохраняем рабочую книгу в поток в формате XLSX.
+                   excelWorkbook.Save(stream, SaveFormat.Xlsx);
+
+                   // Формируем результат нажатия кнопки с успешным статусом.
+                   var result = new UserCommandResult
+                   {
+                       Success = true,
+                       Commited = true,
+
+                       File=new UserCommandFileResult(){
+                           Content = stream.ToArray(),
+                           // Задаём имя файла для экспорта.
+                           Name = "ExportedTable.xlsx"
+                           },
+                       Messages = new[]
+                       {
+                           new UserCommandMessage
+                           {
+                               Severity = SeverityLevel.Normal,
+                               Text = "Экспорт выполнен"
+                               }
+                       }
+                   };
+                   return result;
+
+               }
+               catch
+               {
+                   // Формируем результат нажатия кнопки с ошибкой.
+                   var result1 = new UserCommandResult
+                   {
+                       Success = false,
+                       Commited = true,
+                       Messages = new[]
+                       {
+                           new UserCommandMessage
+                           {
+                               Severity = SeverityLevel.Normal,
+                               Text = "Не удалось выполнить экспорт"
+                               }
+                       }
+                   };
+                   return result1;
+               }
+           }
+
+           else
+           {
+               // Формируем результат нажатия кнопки с ошибкой, если не выбрано ни одной записи.
+               var result1 = new UserCommandResult
+               {
+                   Success = false,
+                   Commited = true,
+                   Messages = new[]
+                   {
+                       new UserCommandMessage
+                       {
+                           Severity = SeverityLevel.Normal,
+                           Text = "Выберите хотя бы одну строку таблицы для экспорта"
+                           }
+                   }
+               };
+               return result1;
+           }
+       }
+       // Вспомогательный класс для хранения информации о столбцах таблицы.
+       public class columnContainer
+       {
+           // Индекс выбранного пользователем столбца.
+           public int columnIndex {get;set;}
+           // Позиция столбца в исходных данных.
+           public int Position {get;set;}
+           // Идентификатор источника данных столбца.
+           public string dataSourceId {get;set;}
+
+           // Конструктор класса.
+           public columnContainer(string id , int index )
+           {
+               dataSourceId = id; columnIndex = index;
+           }
+       }
+   }
+   ```
+4. Сохраните кнопку.
+5. Поместите кнопку *«Экспортировать в Excel»* на **область кнопок** таблицы «**Все записи**» шаблона *«Заявки»*.
+
+## Тестирование скрипта
+
+1. Откройте таблицу «**Все записи**» шаблона *«Заявки»*.
+2. Откройте меню «**Мои настройки**» *‌* — «**Настроить внешний вид**» *‌*.
+3. Скройте любой из столбцов таблицы и сохраните настройки внешнего вида.
+4. Выберите требуемые строки в таблице с помощью флажков в левом столбце.
+5. Нажмите кнопку *«Экспортировать в Excel»*.
+6. Браузер должен скачать файл формата `.XLSX` с выбранными данными.
+
+================================================
 FILE: 898-expressioons/900-csharp_examples/5187-goto_showcase_record.md
 ================================================
 ---
@@ -5144,7 +5573,7 @@ FILE: 898-expressioons/900-csharp_examples/5205-document_download_to_server_csha
 title: 'Атрибут типа «Документ». Скачивание файлов в папку на сервере'
 kbId: 5205
 url: 'https://kb.comindware.ru/article.php?id=5205'
-updated: '2026-06-16 19:18:35'
+updated: '2026-09-08 11:21:37'
 ---
 
 # Атрибут типа «Документ». Скачивание файлов в папку на сервере
@@ -5244,7 +5673,7 @@ class Script {
     public static UserCommandResult Main(UserCommandContext userCommandContext) {
         try {
             //<ServerDownloadPath> — путь для скачивания файлов на сервере
-            var path = @ "<ServerDownloadPath>";
+            var path = @"<ServerDownloadPath>";
             //DocumentAttributeSystemName — системное имя атрибута типа «Документ»
             var data = Api.TeamNetwork.ObjectService.GetPropertyValues(new string[] {
                 userCommandContext.ObjectIds[0]
@@ -17905,7 +18334,7 @@ FILE: 905-integrations/5303-connections.md
 title: 'Подключения. Определения, типы, создание, настройка, удаление'
 kbId: 5303
 url: 'https://kb.comindware.ru/article.php?id=5303'
-updated: '2025-12-11 13:14:33'
+updated: '2026-10-09 17:30:04'
 ---
 
 # Подключения. Определения, типы, создание, настройка, удаление
@@ -17941,7 +18370,6 @@ updated: '2025-12-11 13:14:33'
 - [Управление версиями через Git](https://kb.comindware.ru/article.php?id=5623)
 - Абстрактное подключение
 - [Карты](https://kb.comindware.ru/article.php?id=5314)
-- [Хранилище S3](https://kb.comindware.ru/article.php?id=5317)
 
 ### Аутентификация
 
@@ -19636,7 +20064,7 @@ FILE: 905-integrations/906-integration_examples/5311-receive_http_example.md
 title: 'HTTP-запросы. Получение JSON-данных. Настройка подключения, пути передачи данных и сценария'
 kbId: 5311
 url: 'https://kb.comindware.ru/article.php?id=5311'
-updated: '2026-06-26 18:29:09'
+updated: '2026-10-08 19:25:06'
 ---
 
 # HTTP-запросы. Получение JSON-данных. Настройка подключения, пути передачи данных и сценария
@@ -19654,7 +20082,7 @@ updated: '2026-06-26 18:29:09'
 - Для получения HTTP-запросов из внешних систем **Comindware Platform** позволяет настроить конечные точки API вида:
 
   ```
-  https://<instanceUrl>/api/public/adapter/<connectionUri>/<routeUri>
+  https://<instanceUrl>/<connectionUri>/<routeUri>
   ```
 
   Здесь:
@@ -19731,7 +20159,7 @@ updated: '2026-06-26 18:29:09'
    - **Базовый путь получения HTTP-запросов** — добавьте **путь URI**, например `uploadData`. При необходимости введите дополнительный **путь URI** на вкладке «**Интеграция**» в свойствах [пути передачи данных](#http_receive_example_route).
    - **Имя пользователя** - не используется в данном примере.
    - **Пароль** - не используется в данном примере.
-   - **Порт** - порт, на котором будут ожидаться запросы. Для работы нужно внести изменения в конфигурацию nginx (ссылка на область статьи после путей передачи данных).
+   - **Порт** - порт, на котором будут ожидаться запросы. Для работы нужно внести изменения в конфигурацию nginx (ссылка на область статьи после путей передачи данных). Данный порт является внутренней настройкой между Платформой и Adapterhost.
    - **Формат данных** — выберите представление данных:
      - **JSON** — используется в данном примере;
      - **XML**;
@@ -19777,7 +20205,7 @@ updated: '2026-06-26 18:29:09'
 2. В таблице «**Запрос**» сопоставьте данные HTTP-запроса с атрибутами **Comindware Platform**, то есть воссоздайте структуру JSON входящего запроса:
 
    - В таблицу «**Запрос**» добавьте атрибут *ListZakazov* типа «**Объект**». Установите флажок «**Массив**», так как этот атрибут будет содержать массив данных по всем заказам. **Системное имя** должно совпадать с именем соответствующего поля HTTP-запроса.
-   - В атрибут *FileObject* добавьте дочерний атрибут *Zakaz* типа «**Объект**». Он будет содержать данные по одному заказу.
+   - В атрибут *ListZakazov* добавьте дочерний атрибут *Zakaz* типа «**Объект**». Он будет содержать данные по одному заказу.
    - В атрибут *Zakaz* добавьте следующие дочерние атрибуты:
 
    | Системное имя | Тип | Описание |
@@ -19800,13 +20228,9 @@ updated: '2026-06-26 18:29:09'
 3. Укажите **атрибуты для десериализации данных**. По умолчанию следует указать `$` в обоих столбцах, чтобы получить всю структуру JSON из запроса. Для поиска определенного атрибута используйте JSONPath.
 4. При необходимости укажите **атрибут для заголовков**, в котором будут содержаться все атрибуты заголовков запроса, **атрибут для параметров запроса**, в котором будут содержаться все параметры запроса, и **атрибут для тела запроса**, в котором будет содержаться всё тело запроса.
 
-   ![Настройка интеграции](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/json4.png)
-
-   Настройка интеграции
-
 ## Настройка NGINX
 
-Добавить в файл /etc/nginx/sites-available/comindware\\ новый location для нового пути передачи данных.
+Добавить в файл /etc/nginx/sites-available/comindware<instanceName> новый location для нового пути передачи данных.
 
 ```
 location /<URI подключения>/<URI пути передачи данных>
@@ -19818,6 +20242,18 @@ location /<URI подключения>/<URI пути передачи данны
 Примечание
 
 Для каждого пути передачи данных на получение запросов надо добавить свой отдельный location.
+
+Проверьте корректность внесенных изменений
+
+```
+nginx -t
+```
+
+перезапустите nginx
+
+```
+sudo systemctl reload nginx
+```
 
 ## Настройка сценария
 
@@ -19854,9 +20290,9 @@ location /<URI подключения>/<URI пути передачи данны
 
    | Атрибут | Операция со значениями | Значение |
    | --- | --- | --- |
-   | *Клиент* | **Заменить** | **Формула:** `$$local—Zakaz—Client` |
-   | *Номер* | **Заменить** | **Формула:** `$$local—Zakaz—Nomer` |
-   | *Товар* | **Заменить** | **Формула:** `$$local—Zakaz—Tovar` |
+   | *Клиент* | **Заменить** | **Формула:** `$$local—>Zakaz—>Client` |
+   | *Номер* | **Заменить** | **Формула:** `$$local—>Zakaz—>Nomer` |
+   | *Товар* | **Заменить** | **Формула:** `$$local—>Zakaz—>Tovar` |
 
    Примечание
 
@@ -20218,7 +20654,7 @@ FILE: 905-integrations/906-integration_examples/5313-http_receive_file.md
 title: 'HTTP-запросы с составным содержимым. Получение файлов. Настройка подключения, пути передачи данных и сценария'
 kbId: 5313
 url: 'https://kb.comindware.ru/article.php?id=5313'
-updated: '2025-12-25 16:38:15'
+updated: '2026-10-08 15:13:51'
 ---
 
 # HTTP-запросы с составным содержимым. Получение файлов. Настройка подключения, пути передачи данных и сценария
@@ -20234,7 +20670,7 @@ updated: '2025-12-25 16:38:15'
 - Для получения HTTP-запросов из внешних систем **Comindware Platform** позволяет настроить конечные точки API вида:
 
   ```
-  https://<instanceUrl>/api/public/adapter/<connectionUri>/<routeUri>
+  https://<instanceUrl>/<connectionUri>/<routeUri>
   ```
 
   Здесь:
@@ -22265,7 +22701,7 @@ FILE: 905-integrations/906-integration_examples/5326-receive_http_example_csharp
 title: 'HTTP-запросы. Получение JSON-данных с помощью C#-скрипта. Настройка подключения, пути передачи данных и сценария'
 kbId: 5326
 url: 'https://kb.comindware.ru/article.php?id=5326'
-updated: '2025-12-26 12:34:06'
+updated: '2026-10-08 15:13:55'
 ---
 
 # HTTP-запросы. Получение JSON-данных с помощью C#-скрипта. Настройка подключения, пути передачи данных и сценария
@@ -22287,7 +22723,7 @@ updated: '2025-12-26 12:34:06'
 - Для получения HTTP-запросов из внешних систем **Comindware Platform** позволяет настроить конечные точки API вида:
 
   ```
-  https://<instanceUrl>/api/public/adapter/<connectionUri>/<routeUri>
+  https://<instanceUrl>/<connectionUri>/<routeUri>
   ```
 
   Здесь:
@@ -22449,9 +22885,7 @@ _![Настройка основных свойств пути для получ
    - Установите флажок «**Массив**» — атрибут `items` будет содержать массив статусов позиций.
    - Установите флажок слева от атрибута `items` и добавьте в него дочерние атрибуты:
      - `product` типа «**Строка**» — название товара.
-     - `status` типа «**Строка**» — статус позиции.
-
-   ![Настройка атрибутов сообщения](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/receive_http_example_csharp_route_message_attributes.png)
+     - `status` типа «**Строка**» — статус позиции.![Настройка атрибутов сообщения](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/receive_http_example_csharp_route_message_attributes.png)
 
    Настройка атрибутов сообщения
 4. При необходимости настройте **ответ с ошибкой** — структуру атрибутов для ответа на запрос, при обработке которого произошла ошибка.
@@ -22488,9 +22922,7 @@ _![Настройка основных свойств пути для получ
    - **Контекстный шаблон:** *Заказы*
    - **Подключение:** [подключение для получения HTTP-запросов](#http_receive_example_csharp_connection)
    - **Путь передачи данных:** [путь передачи данных для получения HTTP-запросов](#http_receive_example_csharp_route)
-   - **Имя переменной:** *IncomingMessage*
-
-   ![Настройка действия «Получение сообщения»](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/receive_http_example_csharp_scenario_receive_message.png)
+   - **Имя переменной:** *IncomingMessage*![Настройка действия «Получение сообщения»](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/receive_http_example_csharp_scenario_receive_message.png)
 
    Настройка действия «Получение сообщения»
 3. После события «**Получение сообщения**» добавьте действие «**Проверить результат скрипта**» для обработки входящего сообщения и подготовки ответа с помощью C#-скрипта:
@@ -31141,7 +31573,7 @@ FILE: 909-examples/5311-receive_http_example.md
 title: 'HTTP-запросы. Получение JSON-данных. Настройка подключения, пути передачи данных и сценария'
 kbId: 5311
 url: 'https://kb.comindware.ru/article.php?id=5311'
-updated: '2026-06-26 18:29:09'
+updated: '2026-10-08 19:25:06'
 ---
 
 # HTTP-запросы. Получение JSON-данных. Настройка подключения, пути передачи данных и сценария
@@ -31159,7 +31591,7 @@ updated: '2026-06-26 18:29:09'
 - Для получения HTTP-запросов из внешних систем **Comindware Platform** позволяет настроить конечные точки API вида:
 
   ```
-  https://<instanceUrl>/api/public/adapter/<connectionUri>/<routeUri>
+  https://<instanceUrl>/<connectionUri>/<routeUri>
   ```
 
   Здесь:
@@ -31236,7 +31668,7 @@ updated: '2026-06-26 18:29:09'
    - **Базовый путь получения HTTP-запросов** — добавьте **путь URI**, например `uploadData`. При необходимости введите дополнительный **путь URI** на вкладке «**Интеграция**» в свойствах [пути передачи данных](#http_receive_example_route).
    - **Имя пользователя** - не используется в данном примере.
    - **Пароль** - не используется в данном примере.
-   - **Порт** - порт, на котором будут ожидаться запросы. Для работы нужно внести изменения в конфигурацию nginx (ссылка на область статьи после путей передачи данных).
+   - **Порт** - порт, на котором будут ожидаться запросы. Для работы нужно внести изменения в конфигурацию nginx (ссылка на область статьи после путей передачи данных). Данный порт является внутренней настройкой между Платформой и Adapterhost.
    - **Формат данных** — выберите представление данных:
      - **JSON** — используется в данном примере;
      - **XML**;
@@ -31282,7 +31714,7 @@ updated: '2026-06-26 18:29:09'
 2. В таблице «**Запрос**» сопоставьте данные HTTP-запроса с атрибутами **Comindware Platform**, то есть воссоздайте структуру JSON входящего запроса:
 
    - В таблицу «**Запрос**» добавьте атрибут *ListZakazov* типа «**Объект**». Установите флажок «**Массив**», так как этот атрибут будет содержать массив данных по всем заказам. **Системное имя** должно совпадать с именем соответствующего поля HTTP-запроса.
-   - В атрибут *FileObject* добавьте дочерний атрибут *Zakaz* типа «**Объект**». Он будет содержать данные по одному заказу.
+   - В атрибут *ListZakazov* добавьте дочерний атрибут *Zakaz* типа «**Объект**». Он будет содержать данные по одному заказу.
    - В атрибут *Zakaz* добавьте следующие дочерние атрибуты:
 
    | Системное имя | Тип | Описание |
@@ -31305,13 +31737,9 @@ updated: '2026-06-26 18:29:09'
 3. Укажите **атрибуты для десериализации данных**. По умолчанию следует указать `$` в обоих столбцах, чтобы получить всю структуру JSON из запроса. Для поиска определенного атрибута используйте JSONPath.
 4. При необходимости укажите **атрибут для заголовков**, в котором будут содержаться все атрибуты заголовков запроса, **атрибут для параметров запроса**, в котором будут содержаться все параметры запроса, и **атрибут для тела запроса**, в котором будет содержаться всё тело запроса.
 
-   ![Настройка интеграции](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/json4.png)
-
-   Настройка интеграции
-
 ## Настройка NGINX
 
-Добавить в файл /etc/nginx/sites-available/comindware\\ новый location для нового пути передачи данных.
+Добавить в файл /etc/nginx/sites-available/comindware<instanceName> новый location для нового пути передачи данных.
 
 ```
 location /<URI подключения>/<URI пути передачи данных>
@@ -31323,6 +31751,18 @@ location /<URI подключения>/<URI пути передачи данны
 Примечание
 
 Для каждого пути передачи данных на получение запросов надо добавить свой отдельный location.
+
+Проверьте корректность внесенных изменений
+
+```
+nginx -t
+```
+
+перезапустите nginx
+
+```
+sudo systemctl reload nginx
+```
 
 ## Настройка сценария
 
@@ -31359,9 +31799,9 @@ location /<URI подключения>/<URI пути передачи данны
 
    | Атрибут | Операция со значениями | Значение |
    | --- | --- | --- |
-   | *Клиент* | **Заменить** | **Формула:** `$$local—Zakaz—Client` |
-   | *Номер* | **Заменить** | **Формула:** `$$local—Zakaz—Nomer` |
-   | *Товар* | **Заменить** | **Формула:** `$$local—Zakaz—Tovar` |
+   | *Клиент* | **Заменить** | **Формула:** `$$local—>Zakaz—>Client` |
+   | *Номер* | **Заменить** | **Формула:** `$$local—>Zakaz—>Nomer` |
+   | *Товар* | **Заменить** | **Формула:** `$$local—>Zakaz—>Tovar` |
 
    Примечание
 
@@ -31723,7 +32163,7 @@ FILE: 909-examples/5313-http_receive_file.md
 title: 'HTTP-запросы с составным содержимым. Получение файлов. Настройка подключения, пути передачи данных и сценария'
 kbId: 5313
 url: 'https://kb.comindware.ru/article.php?id=5313'
-updated: '2025-12-25 16:38:15'
+updated: '2026-10-08 15:13:51'
 ---
 
 # HTTP-запросы с составным содержимым. Получение файлов. Настройка подключения, пути передачи данных и сценария
@@ -31739,7 +32179,7 @@ updated: '2025-12-25 16:38:15'
 - Для получения HTTP-запросов из внешних систем **Comindware Platform** позволяет настроить конечные точки API вида:
 
   ```
-  https://<instanceUrl>/api/public/adapter/<connectionUri>/<routeUri>
+  https://<instanceUrl>/<connectionUri>/<routeUri>
   ```
 
   Здесь:
@@ -32975,7 +33415,7 @@ FILE: 909-examples/5326-receive_http_example_csharp.md
 title: 'HTTP-запросы. Получение JSON-данных с помощью C#-скрипта. Настройка подключения, пути передачи данных и сценария'
 kbId: 5326
 url: 'https://kb.comindware.ru/article.php?id=5326'
-updated: '2025-12-26 12:34:06'
+updated: '2026-10-08 15:13:55'
 ---
 
 # HTTP-запросы. Получение JSON-данных с помощью C#-скрипта. Настройка подключения, пути передачи данных и сценария
@@ -32997,7 +33437,7 @@ updated: '2025-12-26 12:34:06'
 - Для получения HTTP-запросов из внешних систем **Comindware Platform** позволяет настроить конечные точки API вида:
 
   ```
-  https://<instanceUrl>/api/public/adapter/<connectionUri>/<routeUri>
+  https://<instanceUrl>/<connectionUri>/<routeUri>
   ```
 
   Здесь:
@@ -33159,9 +33599,7 @@ _![Настройка основных свойств пути для получ
    - Установите флажок «**Массив**» — атрибут `items` будет содержать массив статусов позиций.
    - Установите флажок слева от атрибута `items` и добавьте в него дочерние атрибуты:
      - `product` типа «**Строка**» — название товара.
-     - `status` типа «**Строка**» — статус позиции.
-
-   ![Настройка атрибутов сообщения](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/receive_http_example_csharp_route_message_attributes.png)
+     - `status` типа «**Строка**» — статус позиции.![Настройка атрибутов сообщения](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/receive_http_example_csharp_route_message_attributes.png)
 
    Настройка атрибутов сообщения
 4. При необходимости настройте **ответ с ошибкой** — структуру атрибутов для ответа на запрос, при обработке которого произошла ошибка.
@@ -33198,9 +33636,7 @@ _![Настройка основных свойств пути для получ
    - **Контекстный шаблон:** *Заказы*
    - **Подключение:** [подключение для получения HTTP-запросов](#http_receive_example_csharp_connection)
    - **Путь передачи данных:** [путь передачи данных для получения HTTP-запросов](#http_receive_example_csharp_route)
-   - **Имя переменной:** *IncomingMessage*
-
-   ![Настройка действия «Получение сообщения»](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/receive_http_example_csharp_scenario_receive_message.png)
+   - **Имя переменной:** *IncomingMessage*![Настройка действия «Получение сообщения»](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/receive_http_example_csharp_scenario_receive_message.png)
 
    Настройка действия «Получение сообщения»
 3. После события «**Получение сообщения**» добавьте действие «**Проверить результат скрипта**» для обработки входящего сообщения и подготовки ответа с помощью C#-скрипта:
@@ -33891,6 +34327,449 @@ updated: '2026-06-20 17:33:09'
 - [Атрибут типа «Аккаунт»](https://kb.comindware.ru/article.php?id=5704)
 - [Атрибут типа «Роль»](https://kb.comindware.ru/article.php?id=5720)
 - [Страница «Администрирование». Использование](https://kb.comindware.ru/article.php?id=5608)
+
+================================================
+FILE: 909-examples/5336-export_template_csharp_configure.md
+================================================
+---
+title: 'Шаблон экспорта, Настройка с использованием C#'
+kbId: 5336
+url: 'https://kb.comindware.ru/article.php?id=5336'
+updated: '2026-09-03 13:00:57'
+---
+
+# Шаблон экспорта, Настройка с использованием C#
+
+В **Comindware Platform** помимо стандартной выгрузки отчётов предусмотрен экспорт данных с использованием скриптов на C#. Этот вариант позволяет более гибко настроить параметры экспортируемого файла, например, с дополнительной фильтрацией или заменой информации, либо с форматированным выводом атрибутов-коллекций.
+
+## Шаблон документа в формате .xls
+
+Рассмотрим решение следующей задачи: написать скрипт, который формирует Excel-файл, в котором каждый элемент коллекции располагается в отдельной строчке (по умолчанию все элементы коллекции перечисляются в одной строчке через пробел).
+
+1. Для начала создайте шаблон экспорта по типу:
+
+_![Пример excel шаблона экспорта](https://kb.comindware.ru/assets/exp1.jpg)_
+
+**&=data.свойство\_класса** (Свойства класса — структура подготовки данных, которые определяются в С# скрипте)
+
+Формат ячеек в Excel
+
+В Excel-файле обязательно укажите подходящий формат полей, иначе данные выгрузятся некорректно. Для чисел используйте числовой формат, для дат и времени — формат даты.
+
+Поля «Клиент», «Контактное лицо», «Телефон» и «Email» будут заполняться из атрибутов записей шаблона «Клиенты». Поле «Договор» — коллекция в шаблоне записей «Клиенты», поле «Статус» — справочник статусов в отдельном шаблоне.
+
+2. Добавьте созданный шаблон экспорта в текущий шаблон записи (в данном случае, «Клиенты»):
+
+_![Расположение раздела «Шаблоны экспорта»](https://kb.comindware.ru/assets/2.1_2021-12-13_114132.png)_
+
+3. В этом же шаблоне записи автоматически добавится кнопка с операцией «Экспорт записи»:
+
+_![Автоматически созданная кнопка](https://kb.comindware.ru/assets/2.2_2021-12-13_124346.png)_
+
+Перейдите на вкладку «**Скрипт**» в свойствах этой кнопки и добавьте следующий код:
+
+```
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using Comindware.Data.Entity;
+using Comindware.TeamNetwork.Api.Data.UserCommands;
+using Aspose.Cells;
+using Aspose.Cells.Pivot;
+
+class Script
+{
+    public static UserCommandResult Main(UserCommandContext userCommandContext)
+    {
+        var objectsData = Api.TeamNetwork.ObjectService.ListWithAlias("Clients"); // Системное имя ШЗ "Клиенты"
+        var dataToExport = new List<MainData>();
+        foreach (var objectDict in objectsData)
+        {
+            var ContractDataInIds = getterListSTR("Contracts_collection", objectDict); // Атрибут-коллекция в ШЗ "Клиенты"
+            if(ContractDataInIds.Count == 0) {ContractDataInIds.Add("tempID");}
+            var ContractDataInList = new List<ContractData>();
+            foreach (var ContractDataInId in ContractDataInIds)
+            {
+                var ContractDataInData = GetData(ContractDataInId);
+
+                var Status_Id = getterSTR("Status", ContractDataInData); // Атрибут-ссылка в ШЗ "Договоры"
+                var Status_Data = GetData(Status_Id);
+
+                var ContractDataInT = new ContractData
+                {
+                    Name = getterSTR("Title", ContractDataInData), // Атрибут "Статус" в ШЗ "Договоры"
+                    Date = getterDT("Date", ContractDataInData), // Атрибут "Дата" в ШЗ "Договоры"
+                    Total = getterDC("Total", ContractDataInData), // Атрибут "Сумма" в ШЗ "Договоры"
+                    Status = getterSTR("Title", Status_Data) // Атрибут "Название" в ШЗ "Статусы договора"
+                };
+                ContractDataInList.Add(ContractDataInT);
+            }
+
+            var Data_ = new MainData
+            {
+                Client = getterSTR("Title", objectDict), // Атрибут "Название" в ШЗ "Клиенты"
+                Contact = getterSTR("Contact", objectDict), // Атрибут "Контактное лицо" в ШЗ "Клиенты"
+                Phone = getterSTR("Phone", objectDict), // Атрибут "Телефон" в ШЗ "Клиенты"
+                Email = getterSTR("Email", objectDict), // Атрибут "Email" в ШЗ "Клиенты"
+                Contract = ContractDataInList
+            };
+            dataToExport.Add(Data_);
+        }
+
+        var content = Api.TeamNetwork.ObjectAppExportService.ExecuteExcelExportTemplate(userCommandContext.DocumentTemplateId, dataToExport);
+        var result = new UserCommandResult
+        {
+            Success = true,
+            Commited = true,
+            ResultType = UserCommandResultType.File,
+            File = new UserCommandFileResult()
+            {
+                Name = "Excel_Data.xlsx",
+                Type = "Excel",
+                Content = content
+            },
+            Messages = new[]
+            {
+                new UserCommandMessage
+                {
+                    Severity = SeverityLevel.Normal,
+                    Text = "Файл сформирован"
+                }
+            }
+        };
+        return result;
+    }
+
+    public static Decimal getterDC(string key, IDictionary<string, object> dictionary = null)
+    {
+        if (dictionary == null || key == null)
+        {
+            return 0;
+        }
+        var stringValue = getterSTR(key, dictionary);
+        if (stringValue != null && Decimal.TryParse(stringValue, out var result))
+        {
+            return result;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public static DateTime? getterDT(string key, IDictionary<string, object> dictionary = null)
+    {
+        if (dictionary == null || key == null)
+        {
+            return null;
+        }
+        var stringValue = getterSTR(key, dictionary);
+        if (stringValue != null && DateTime.TryParse(stringValue, out var result))
+        {
+            return result.AddHours(5);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public static string getterSTR(string key, IDictionary<string, object> dictionary = null)
+    {
+        if (dictionary == null || key == null)
+        {
+            return null;
+        }
+        if (dictionary.TryGetValue(key, out var result))
+        {
+            if (result == null) return null;
+            return result.ToString();
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public static IList<string> getterListSTR(string key, IDictionary<string, object> dictionary = null)
+    {
+        var result = new List<string>();
+        if (dictionary != null && key != null)
+        {
+            if (dictionary.TryGetValue(key, out var objectData))
+            {
+                var objectDataArray = objectData as object[];
+                foreach (var singlObject in objectDataArray)
+                {
+                    if (singlObject == null) continue;
+                    result.Add(singlObject.ToString());
+                }
+            }
+        }
+        return result;
+    }
+
+    public static IDictionary<string, object> GetData(string objectId = null)
+    {
+        if (objectId == null || objectId.Contains("account") || objectId == "tempID")
+        {
+            return null;
+        }
+        var container = Api.TeamNetwork.ObjectAppService.GetByObject(objectId);
+        var result = Api.TeamNetwork.ObjectService.GetWithAlias(container.Alias, objectId);
+        return result;
+    }
+}
+
+[Serializable]
+public class MainData
+{
+    public string Client { get; set; }
+    public string Contact { get; set; }
+    public string Phone { get; set; }
+    public string Email { get; set; }
+    public List<ContractData> Contract { get; set; }
+}
+
+[Serializable]
+public class ContractData
+{
+    public string Name { get; set; }
+    public decimal Total { get; set; }
+    public DateTime? Date { get; set; }
+    public string Status { get; set; }
+}
+```
+
+**Здесь:**
+
+В скрипте используются системные имена шаблонов и атрибутов из примера. Замените их на значения из вашего приложения.
+
+| Значение | Описание |
+| --- | --- |
+| `Clients` | Системное имя шаблона записи *«Клиенты»*. |
+| `Contracts_collection` | Системное имя атрибута-коллекции в шаблоне записи *«Клиенты»*. |
+| `Status` | Системное имя атрибута типа «**Запись**» в шаблоне записи *«Договоры»*. |
+| `Title` | Системное имя атрибута *«Название»* в шаблонах *«Клиенты»*, *«Договоры»* и *«Статусы договора»*. |
+| `Date` | Системное имя атрибута *«Дата»* в шаблоне записи *«Договоры»*. |
+| `Total` | Системное имя атрибута *«Сумма»* в шаблоне записи *«Договоры»*. |
+| `Contact` | Системное имя атрибута *«Контактное лицо»* в шаблоне записи *«Клиенты»*. |
+| `Phone` | Системное имя атрибута *«Телефон»* в шаблоне записи *«Клиенты»*. |
+| `Email` | Системное имя атрибута *«Email»* в шаблоне записи *«Клиенты»*. |
+
+Как выглядят данные в продукте:
+
+_![Таблица со списком клиентов](https://kb.comindware.ru/assets/2.3_2021-12-13_141658.png)_
+
+Результат выгрузки:
+
+_![Excel файл](https://kb.comindware.ru/assets/exp5.jpg)_
+
+## Шаблон документа в формате .doc
+
+По такой же логике настраиваем выгрузку  Шаблона экспорта в формате Word.
+
+Отличием здесь будет немного иное написание самого шаблона, а также C# скрипта.
+
+_![Пример word шаблона экспорта](https://kb.comindware.ru/assets/exp6.jpg)_
+
+C# скрипт:
+
+```
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text.RegularExpressions;
+using Comindware.Data.Entity;
+using Comindware.Platform.Api.Data;
+using Comindware.TeamNetwork.Api.Data.UserCommands;
+using System.IO;
+using System.Data;
+
+class Script
+{
+    public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)
+    {
+        var objectsData = Api.TeamNetwork.ObjectService.ListWithAlias("Clients"); // Системное имя ШЗ "Клиенты"
+        List<MainData> Data_ = new List<MainData>();
+        foreach (var objectDict in objectsData)
+        {
+            var ContractDataInIds = getterListSTR("Contracts_collection", objectDict); // Атрибут-коллекция в ШЗ "Клиенты"
+            if(ContractDataInIds.Count == 0) {ContractDataInIds.Add("tempID");}
+            bool first_element = true;
+            foreach (var ContractDataInId in ContractDataInIds)
+            {
+                var ContractDataInData = GetData(ContractDataInId);
+
+                var Status_Id = getterSTR("Status", ContractDataInData); // Атрибут-ссылка в ШЗ "Договоры"
+                var Status_Data = GetData(Status_Id);
+
+                if(first_element == true)
+                {
+                    first_element = false;
+                    var temp = new MainData
+                    {
+                        Client = getterSTR("Title", objectDict), // Атрибут "Название" в ШЗ "Клиенты"
+                        Contact = getterSTR("Contact", objectDict), // Атрибут "Контактное лицо" в ШЗ "Клиенты"
+                        Phone = getterSTR("Phone", objectDict), // Атрибут "Телефон" в ШЗ "Клиенты"
+                        Email = getterSTR("Email", objectDict), // Атрибут "Email" в ШЗ "Клиенты"
+
+                        Name = getterSTR("Title", ContractDataInData), // Атрибут "Статус" в ШЗ "Договоры"
+                        Date = getterDT("Date", ContractDataInData), // Атрибут "Дата" в ШЗ "Договоры"
+                        Total = getterDC("Total", ContractDataInData), // Атрибут "Сумма" в ШЗ "Договоры"
+                        Status = getterSTR("Title", Status_Data) // Атрибут "Название" в ШЗ "Статусы договора"
+                    };
+                    Data_.Add(temp);
+                }
+                else
+                {
+                    var temp = new MainData
+                    {
+                        Name = getterSTR("Title", ContractDataInData), // Атрибут "Статус" в ШЗ "Договоры"
+                        Date = getterDT("Date", ContractDataInData), // Атрибут "Дата" в ШЗ "Договоры"
+                        Total = getterDC("Total", ContractDataInData), // Атрибут "Сумма" в ШЗ "Договоры"
+                        Status = getterSTR("Title", Status_Data) // Атрибут "Название" в ШЗ "Статусы договора"
+                    };
+                    Data_.Add(temp);
+                }
+            }
+        }
+
+        var dataToExport = new RESULT
+        {
+            MainData_ = Data_
+        };
+
+        var content = Api.TeamNetwork.ObjectAppExportService.ExecuteWordExportTemplate(userCommandContext.DocumentTemplateId,dataToExport,false);
+
+        var result = new UserCommandResult
+        {
+            Success = true,
+            Commited = true,
+            File = new UserCommandFileResult()
+            {
+                Content = content,
+                Name = "Word_Data.doc",
+                Type = "Word"
+            },
+            ResultType = UserCommandResultType.Notificate,
+            Messages = new[]
+            {
+                new UserCommandMessage
+                {
+                    Severity = SeverityLevel.Normal,
+                    Text = "Документ сформирован"
+                }
+            }
+        };
+        return result;
+    }
+
+    public static Decimal getterDC(string key, IDictionary<string, object> dictionary = null)
+    {
+        if (dictionary == null || key == null)
+        {
+            return 0;
+        }
+        var stringValue = getterSTR(key, dictionary);
+        if (stringValue != null && Decimal.TryParse(stringValue, out var result))
+        {
+            return result;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public static DateTime? getterDT(string key, IDictionary<string, object> dictionary = null)
+    {
+        if (dictionary == null || key == null)
+        {
+            return null;
+        }
+        var stringValue = getterSTR(key, dictionary);
+        if (stringValue != null && DateTime.TryParse(stringValue, out var result))
+        {
+            return result.AddHours(5);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public static string getterSTR(string key, IDictionary<string, object> dictionary = null)
+    {
+        if (dictionary == null || key == null)
+        {
+            return null;
+        }
+        if (dictionary.TryGetValue(key, out var result))
+        {
+            if (result == null) return null;
+            return result.ToString();
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public static IList<string> getterListSTR(string key, IDictionary<string, object> dictionary = null)
+    {
+        var result = new List<string>();
+        if (dictionary != null && key != null)
+        {
+            if (dictionary.TryGetValue(key, out var objectData))
+            {
+                var objectDataArray = objectData as object[];
+                foreach (var singlObject in objectDataArray)
+                {
+                    if (singlObject == null) continue;
+                    result.Add(singlObject.ToString());
+                }
+            }
+        }
+        return result;
+    }
+
+    public static IDictionary<string, object> GetData(string objectId = null)
+    {
+        if (objectId == null || objectId.Contains("account") || objectId == "tempID")
+        {
+            return null;
+        }
+        var container = Api.TeamNetwork.ObjectAppService.GetByObject(objectId);
+        var result = Api.TeamNetwork.ObjectService.GetWithAlias(container.Alias, objectId);
+        return result;
+    }
+}
+
+[Serializable]
+public class MainData
+{
+    public string Client { get; set; }
+    public string Contact { get; set; }
+    public string Phone { get; set; }
+    public string Email { get; set; }
+    public string Name { get; set; }
+    public decimal Total { get; set; }
+    public DateTime? Date { get; set; }
+    public string Status { get; set; }
+}
+
+public class RESULT
+{
+    public List<MainData> MainData_ { get; set; }
+}
+```
+
+**Результат выгрузки:**
+
+_![Файл в формате Word](https://kb.comindware.ru/assets/exp7.jpg)_
 
 ================================================
 FILE: 909-examples/5337-change_process_real_time.md
@@ -41272,78 +42151,6 @@ _![Результат проверки значений атрибутов пр�
 - [Общие свойства атрибутов](https://kb.comindware.ru/article.php?id=5713)
 - [Список функций языка формул Comindware](https://kb.comindware.ru/article.php?id=5218)
 - [Regex101 — сайт для отладки регулярных выражений](https://regex101.com/)
-
-================================================
-FILE: 909-examples/5390-template_reference_data_api.md
-================================================
----
-title: 'Шаблон. Переключение флажка «Является справочником» с помощью API'
-kbId: 5390
-url: 'https://kb.comindware.ru/article.php?id=5390'
-updated: '2025-02-25 15:37:39'
----
-
-# Шаблон. Переключение флажка «Является справочником» с помощью API
-
-## Введение
-
-У шаблонов в **Comindware Platform** предусмотрен флажок «**Является справочником**».
-
-Если установлен этот флажок, атрибуты в шаблоне могут ссылаться только на шаблоны-справочники.
-
-## Прикладная задача
-
-Требуется снять флажок «**Является справочником**», чтобы шаблон мог ссылаться на шаблоны, не являющиеся справочниками.
-
-В некоторых конфигурациях переключить этот флажок вручную не представляется возможным, например для шаблонов оргединиц и ролей.
-
-В таком случае его можно переключить с помощью следующих методов [System Core API](https://kb.comindware.ru/article.php?id=5331):
-
-- `/Base/OntologyService/RemoveStatement` — снять флажок;
-- `/Base/OntologyService/AddStatement` — установить флажок.
-
-## Снятие флажка «Является справочником» с помощью API
-
-Выполните следующий запрос:
-
-```
-curl -X POST "https://your-host/api/public/system/Base/OntologyService/AddStatement" \
--H "Content-Type: application/json" -d \
-'{
-  "subject": "template.id",
-  "predicate": "cmw.object.specialization",
-  "value": "cmw.object.specializationType.ReferenceData"
-}'
-```
-
-Здесь:
-
-- `template.id` — идентификатор шаблона;
-- `https://your-host/` — адрес сервера **Comindware Platform**.
-
-## Установка флажка «Является справочником» с помощью API
-
-Выполните следующий запрос:
-
-```
-curl -X POST "https://your-host/api/public/system/Base/OntologyService/AddStatement" \
--H "Content-Type: application/json" -d \
-'{
-  "subject": "template.id",
-  "predicate": "cmw.object.specialization",
-  "value": "cmw.object.specializationType.ReferenceData"
-}'
-```
-
-Здесь:
-
-- `template.id` — идентификатор шаблона;
-- `https://your-host/` — адрес сервера **Comindware Platform**.
-
-## Связанные статьи
-
-- *[Методы System Core API](https://kb.comindware.ru/article.php?id=5331)*
-- *[Шаблоны. Определения, настройка, перенос, архивирование, очистка](https://kb.comindware.ru/article.php?id=5638)*
 
 ================================================
 FILE: 909-examples/5391-task_reassign.md
@@ -51417,7 +52224,7 @@ FILE: 914-general/5429-system_requirements.md
 title: 'Системные требования Comindware Platform'
 kbId: 5429
 url: 'https://kb.comindware.ru/article.php?id=5429'
-updated: '2026-08-14 19:45:35'
+updated: '2026-10-19 13:18:50'
 ---
 
 # Системные требования Comindware Platform
@@ -51432,7 +52239,7 @@ updated: '2026-08-14 19:45:35'
 
 Эта конфигурация может оказаться недостаточной для промышленной эксплуатации приложений, разработанных на основе **Comindware Platform**.
 
-Перед вводом приложений на основе **Comindware Platform** в промышленную эксплуатациею конечный пользователь (см. определения в ***[Лицензионном соглашении конечного пользователя программного обеспечения Comindware](https://www.comindware.ru/policy/)***) должен самостоятельно выполнить следующие шаги:
+Перед вводом приложений на основе **Comindware Platform** в промышленную эксплуатацию конечный пользователь (см. определения в ***[Лицензионном соглашении конечного пользователя программного обеспечения Comindware](https://www.comindware.ru/policy/)***) должен самостоятельно выполнить следующие шаги:
 
 - определить уровень критичности бизнес-функций системы и соответствующие параметры:
   - требуемый уровень доступности (high availability);
@@ -51481,7 +52288,7 @@ updated: '2026-08-14 19:45:35'
 
 | Характеристика | Windows | Linux |
 | --- | --- | --- |
-| ОС | Windows Server Standard 2022 | - Astra Linux Special Edition 1.7.5, 1.8 - Альт Сервер 11, Альт СПАльт 11 - РЕД ОС 8 - Debian 12 |
+| ОС | Windows Server Standard 2022 | - Astra Linux Special Edition 1.7.5, 1.8 - Альт Сервер 11, Альт СПАльт 11 - РЕД ОС 8.0.2 - Debian 12 |
 | СУБД | Apache Ignite | Apache Ignite |
 | Веб-сервер | Internet Information Services (IIS) 10 | NGINX 1.30.4 |
 | Дополнительное ПО (поставляется и устанавливается вместе с основным пакетом) | - NET 8.0 - .NET Framework 4.8.1 - Apache Kafka 3.6.0 - OpenSearch 2.18.0 | - NET 8.0 - Mono 6.12 - Apache Kafka 3.6.0 - OpenSearch 2.18.0 |
@@ -51590,7 +52397,7 @@ updated: '2026-08-14 19:45:35'
 
 - Виртуальные серверы одного сервиса должны быть размещены на разных физических серверах.
 - Скорость соединения между серверами должна быть не менее 10 Гбит/с.
-- SSD-накопитель для базы данных должен быть высокоскоростным и высоконадёжным.
+- SSD-накопитель для базы данных должен быть высоконадёжным и обеспечивать производительность от 75 000 IOPS на 1 сервер приложений.
 
 | Логич. ядер ЦП от 3,7 ГГц | ОЗУ, ГБ | Раздел с ПО, ГБ, SSD | БД, ГБ, SSD |
 | --- | --- | --- | --- |
@@ -51604,7 +52411,7 @@ updated: '2026-08-14 19:45:35'
 
 - Виртуальные серверы одного сервиса должны быть размещены на разных физических серверах.
 - Скорость соединения между серверами должна быть не менее 10 Гбит/с.
-- SSD-накопитель для базы данных должен быть высокоскоростным и высоконадёжным.
+- SSD-накопитель для базы данных должен быть высоконадёжным и обеспечивать производительность от 75 000 IOPS на 1 сервер приложений.
 
 | Логич. ядер ЦП от 3,7 ГГц | ОЗУ, ГБ | Раздел с ПО, ГБ, SSD | БД, ГБ, SSD | Загру­­­жаемые файлы, ГБ, СХД HDD | Жур­налы, HDD | Резерв­­ные копии, ГБ, СХД HDD |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -51615,7 +52422,7 @@ updated: '2026-08-14 19:45:35'
 
 #### Ландшафт тестирования и разработки
 
-- SSD-накопитель для базы данных должен быть высокоскоростным и высоконадёжным.
+- SSD-накопитель для базы данных должен быть высоконадёжным и обеспечивать производительность от 75 000 IOPS на 1 сервер приложений.
 
 | Логич. ядер ЦП от 3,7 ГГц | ОЗУ, ГБ | Раздел с ПО, ГБ, SSD | БД, ГБ, SSD | Загру­­­жаемые файлы, ГБ, СХД HDD | Жур­налы, HDD | Резерв­­ные копии, ГБ, СХД HDD |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -51655,8 +52462,6 @@ updated: '2026-08-14 19:45:35'
 ### Конфигурация системы хранения данных
 
 В минимальной конфигурации все папки данных сервера приложений могут храниться в одном разделе на высокопроизводительном SSD-накопителе.
-
-Высокопроизводительные системы хранения (SSD DAS/SAN) должны обеспечивать производительность не меньше 100 000 IOPS на 1 сервер приложений.
 
 Объем выделяемого пространства на высокопроизводительных (SSD DAS/SAN) и низкопроизводительных системах хранения (HDD DAS/SAN) следует определить в ходе составления технических требований.
 
@@ -60805,7 +61610,7 @@ FILE: 916-guides/921-admin_guide/922-deploy/5429-system_requirements.md
 title: 'Системные требования Comindware Platform'
 kbId: 5429
 url: 'https://kb.comindware.ru/article.php?id=5429'
-updated: '2026-08-14 19:45:35'
+updated: '2026-10-19 13:18:50'
 ---
 
 # Системные требования Comindware Platform
@@ -60820,7 +61625,7 @@ updated: '2026-08-14 19:45:35'
 
 Эта конфигурация может оказаться недостаточной для промышленной эксплуатации приложений, разработанных на основе **Comindware Platform**.
 
-Перед вводом приложений на основе **Comindware Platform** в промышленную эксплуатациею конечный пользователь (см. определения в ***[Лицензионном соглашении конечного пользователя программного обеспечения Comindware](https://www.comindware.ru/policy/)***) должен самостоятельно выполнить следующие шаги:
+Перед вводом приложений на основе **Comindware Platform** в промышленную эксплуатацию конечный пользователь (см. определения в ***[Лицензионном соглашении конечного пользователя программного обеспечения Comindware](https://www.comindware.ru/policy/)***) должен самостоятельно выполнить следующие шаги:
 
 - определить уровень критичности бизнес-функций системы и соответствующие параметры:
   - требуемый уровень доступности (high availability);
@@ -60869,7 +61674,7 @@ updated: '2026-08-14 19:45:35'
 
 | Характеристика | Windows | Linux |
 | --- | --- | --- |
-| ОС | Windows Server Standard 2022 | - Astra Linux Special Edition 1.7.5, 1.8 - Альт Сервер 11, Альт СПАльт 11 - РЕД ОС 8 - Debian 12 |
+| ОС | Windows Server Standard 2022 | - Astra Linux Special Edition 1.7.5, 1.8 - Альт Сервер 11, Альт СПАльт 11 - РЕД ОС 8.0.2 - Debian 12 |
 | СУБД | Apache Ignite | Apache Ignite |
 | Веб-сервер | Internet Information Services (IIS) 10 | NGINX 1.30.4 |
 | Дополнительное ПО (поставляется и устанавливается вместе с основным пакетом) | - NET 8.0 - .NET Framework 4.8.1 - Apache Kafka 3.6.0 - OpenSearch 2.18.0 | - NET 8.0 - Mono 6.12 - Apache Kafka 3.6.0 - OpenSearch 2.18.0 |
@@ -60978,7 +61783,7 @@ updated: '2026-08-14 19:45:35'
 
 - Виртуальные серверы одного сервиса должны быть размещены на разных физических серверах.
 - Скорость соединения между серверами должна быть не менее 10 Гбит/с.
-- SSD-накопитель для базы данных должен быть высокоскоростным и высоконадёжным.
+- SSD-накопитель для базы данных должен быть высоконадёжным и обеспечивать производительность от 75 000 IOPS на 1 сервер приложений.
 
 | Логич. ядер ЦП от 3,7 ГГц | ОЗУ, ГБ | Раздел с ПО, ГБ, SSD | БД, ГБ, SSD |
 | --- | --- | --- | --- |
@@ -60992,7 +61797,7 @@ updated: '2026-08-14 19:45:35'
 
 - Виртуальные серверы одного сервиса должны быть размещены на разных физических серверах.
 - Скорость соединения между серверами должна быть не менее 10 Гбит/с.
-- SSD-накопитель для базы данных должен быть высокоскоростным и высоконадёжным.
+- SSD-накопитель для базы данных должен быть высоконадёжным и обеспечивать производительность от 75 000 IOPS на 1 сервер приложений.
 
 | Логич. ядер ЦП от 3,7 ГГц | ОЗУ, ГБ | Раздел с ПО, ГБ, SSD | БД, ГБ, SSD | Загру­­­жаемые файлы, ГБ, СХД HDD | Жур­налы, HDD | Резерв­­ные копии, ГБ, СХД HDD |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -61003,7 +61808,7 @@ updated: '2026-08-14 19:45:35'
 
 #### Ландшафт тестирования и разработки
 
-- SSD-накопитель для базы данных должен быть высокоскоростным и высоконадёжным.
+- SSD-накопитель для базы данных должен быть высоконадёжным и обеспечивать производительность от 75 000 IOPS на 1 сервер приложений.
 
 | Логич. ядер ЦП от 3,7 ГГц | ОЗУ, ГБ | Раздел с ПО, ГБ, SSD | БД, ГБ, SSD | Загру­­­жаемые файлы, ГБ, СХД HDD | Жур­налы, HDD | Резерв­­ные копии, ГБ, СХД HDD |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -61043,8 +61848,6 @@ updated: '2026-08-14 19:45:35'
 ### Конфигурация системы хранения данных
 
 В минимальной конфигурации все папки данных сервера приложений могут храниться в одном разделе на высокопроизводительном SSD-накопителе.
-
-Высокопроизводительные системы хранения (SSD DAS/SAN) должны обеспечивать производительность не меньше 100 000 IOPS на 1 сервер приложений.
 
 Объем выделяемого пространства на высокопроизводительных (SSD DAS/SAN) и низкопроизводительных системах хранения (HDD DAS/SAN) следует определить в ходе составления технических требований.
 
@@ -70853,7 +71656,7 @@ FILE: 916-guides/921-admin_guide/922-deploy/949-deploy_linux/5557-logging_engine
 title: 'Подсистема журналирования'
 kbId: 5557
 url: 'https://kb.comindware.ru/article.php?id=5557'
-updated: '2025-06-23 19:20:24'
+updated: '2026-08-28 10:43:10'
 ---
 
 # Подсистема журналирования
@@ -71163,31 +71966,32 @@ _![Пример журнала процессов](https://kb.comindware.ru/plat
 
 _![Пример журнала резервного копирования](https://kb.comindware.ru/platform/v6.0/administration/deploy/img/logging_engine_backup_log.png)_
 
-#### Журнал сценариев
+#### Журнал транзакций
 
-Журнал сценариев содержит сведения о ходе выполнения сценариев.
+Журнал транзакций содержит сведения о ходе выполнения транзакций.
 
-Стандартное имя файла журнала сценариев: `trigger_ГГГГ-ММ-ДД.log`
+Стандартное имя файла журнала транзакций: `performance_ГГГГ-ММ-ДД.log`
 
-Журнал сценариев содержит следующие сведения:
+Журнал транзакций содержит следующие сведения:
 
-- дата события;
+- идентификатор запроса для корреляции;
 - время события;
-- тип сообщения;
-- инициатор вызова сценария;
-- идентификатор сценария;
-- тип события, запустившего сценарий;
-- идентификатор шаблона записи;
-- идентификатор записи;
 - длительность выполнения;
-- сведения о действиях, исполненных в ходе сценария:
-  - идентификатор действия сценария;
-  - тип действия;
-  - идентификатор шаблона записи;
-  - идентификатор записи;
-  - длительность выполнения.
+- идентификатор записи;
+- идентификатор корневого запроса цепочки;
+- идентификатор родителя в иерархии вызовов;
+- количество повторений операции;
+- имя кластера в многоузловой конфигурации;
+- имя узла в кластере;
+- сведения о действиях, исполненных в ходе транзакции:
+  - тип записи;
+  - компонент-источник;
+  - URL вызова, имя метода, действие;
+  - идентификатор сессии пользователя;
+  - имя аккаунта, инициировавшего событие;
+  - идентификатор запроса для корреляции.
 
-_![Пример журнала сценариев](https://kb.comindware.ru/platform/v6.0/administration/deploy/img/logging_engine_trigger_log.png)_
+_![Пример журнала транзакций](https://kb.comindware.ru/platform/v6.0/administration/deploy/img/logging_engine_performance_log.png)_
 
 #### Системный журнал
 
@@ -74765,7 +75569,7 @@ FILE: 916-guides/921-admin_guide/922-deploy/950-deploy_windows/5557-logging_engi
 title: 'Подсистема журналирования'
 kbId: 5557
 url: 'https://kb.comindware.ru/article.php?id=5557'
-updated: '2025-06-23 19:20:24'
+updated: '2026-08-28 10:43:10'
 ---
 
 # Подсистема журналирования
@@ -75075,31 +75879,32 @@ _![Пример журнала процессов](https://kb.comindware.ru/plat
 
 _![Пример журнала резервного копирования](https://kb.comindware.ru/platform/v6.0/administration/deploy/img/logging_engine_backup_log.png)_
 
-#### Журнал сценариев
+#### Журнал транзакций
 
-Журнал сценариев содержит сведения о ходе выполнения сценариев.
+Журнал транзакций содержит сведения о ходе выполнения транзакций.
 
-Стандартное имя файла журнала сценариев: `trigger_ГГГГ-ММ-ДД.log`
+Стандартное имя файла журнала транзакций: `performance_ГГГГ-ММ-ДД.log`
 
-Журнал сценариев содержит следующие сведения:
+Журнал транзакций содержит следующие сведения:
 
-- дата события;
+- идентификатор запроса для корреляции;
 - время события;
-- тип сообщения;
-- инициатор вызова сценария;
-- идентификатор сценария;
-- тип события, запустившего сценарий;
-- идентификатор шаблона записи;
-- идентификатор записи;
 - длительность выполнения;
-- сведения о действиях, исполненных в ходе сценария:
-  - идентификатор действия сценария;
-  - тип действия;
-  - идентификатор шаблона записи;
-  - идентификатор записи;
-  - длительность выполнения.
+- идентификатор записи;
+- идентификатор корневого запроса цепочки;
+- идентификатор родителя в иерархии вызовов;
+- количество повторений операции;
+- имя кластера в многоузловой конфигурации;
+- имя узла в кластере;
+- сведения о действиях, исполненных в ходе транзакции:
+  - тип записи;
+  - компонент-источник;
+  - URL вызова, имя метода, действие;
+  - идентификатор сессии пользователя;
+  - имя аккаунта, инициировавшего событие;
+  - идентификатор запроса для корреляции.
 
-_![Пример журнала сценариев](https://kb.comindware.ru/platform/v6.0/administration/deploy/img/logging_engine_trigger_log.png)_
+_![Пример журнала транзакций](https://kb.comindware.ru/platform/v6.0/administration/deploy/img/logging_engine_performance_log.png)_
 
 #### Системный журнал
 
@@ -86179,13 +86984,13 @@ _![Настройка замещения](https://kb.comindware.ru/platform/v6.0
 FILE: 916-guides/957-user_guide/961-administration/962-account_administration/5610-system_roles.md
 ================================================
 ---
-title: 'Системные роли. Определения, настройка, объединение, удаление'
+title: 'Системные роли'
 kbId: 5610
 url: 'https://kb.comindware.ru/article.php?id=5610'
-updated: '2024-10-08 15:17:39'
+updated: '2026-08-31 16:34:10'
 ---
 
-# Системные роли. Определения, настройка, объединение, удаление
+# Системные роли
 
 ## Определения
 
@@ -86221,31 +87026,29 @@ updated: '2024-10-08 15:17:39'
       - [**Журналы событий**](https://kb.comindware.ru/article.php?id=5614) — просмотр журналов работы системы и взаимодействия с внешними сервисами.
       - [**Подключения**](https://kb.comindware.ru/article.php?id=5303) — настройка подключений к внешним сервисам и путей передачи данных.
       - [**Приложения**](https://kb.comindware.ru/article.php?id=5643) — настройка приложений.
-      - [**Производительность**](https://kb.comindware.ru/article.php?id=5620) — просмотр показателей производительности системы.
       - [**Резервное копирование**](https://kb.comindware.ru/article.php?id=5566) — настройка конфигураций резервного копирования.
       - [**Системные роли**](https://kb.comindware.ru/article.php?id=5610) — настройка системных ролей.
       - [**Темы**](https://kb.comindware.ru/article.php?id=5637) — настройка тем визуального оформления системы.
     - Системные ресурсы:
-
       - [**Веб-интерфейс**](https://kb.comindware.ru/article.php?id=5600) — использование интерфейса конечного пользователя приложений.
-      - [**Вызовы API**](https://kb.comindware.ru/category.php?id=918) — использование всех методов API.
+      - [**Вызовы API**](https://kb.comindware.ru/article.php?id=5332) — использование всех методов API.
       - [**Системный LDAP**](https://kb.comindware.ru/article.php?id=5581) — настройка синхронизации аккаунтов посредством протокола LDAP.
-      - **Администраторы безопасности** — могут настраивать параметры безопасности системы, но не могут настраивать приложения и подключения к внешним службам, а также изменять данные в шаблонах.
-        - ***Полный доступ***
-          - [**Аккаунты**](https://kb.comindware.ru/article.php?id=5579)
-          - [**Системные роли**](https://kb.comindware.ru/article.php?id=5610)
-        - ***Просмотр***
-          - [**Журналы событий**](https://kb.comindware.ru/article.php?id=5614)
-      - **Администраторы инфраструктуры** — могут настраивать подключения к внешним службам и резервное копирование, но не могут настраивать параметры безопасности системы и приложения, а также изменять данные в шаблонах.
-        - ***Полный доступ***
-          - [**Адаптеры**](https://kb.comindware.ru/article.php?id=5615)
-          - [**Подключения**](https://kb.comindware.ru/article.php?id=5303)
-          - [**Резервное копирование**](https://kb.comindware.ru/article.php?id=5566)
-        - ***Просмотр***
-          - [**Журналы событий**](https://kb.comindware.ru/article.php?id=5614)
-      - **Системные архитекторы** — могут только настраивать приложения и изменять данные в шаблонах.
-        - ***Полный доступ***
-          - [**Приложения**](https://kb.comindware.ru/article.php?id=5643)
+- **Администраторы безопасности** — могут настраивать параметры безопасности системы, но не могут настраивать приложения и подключения к внешним службам, а также изменять данные в шаблонах.
+  - ***Полный доступ***
+    - [**Аккаунты**](https://kb.comindware.ru/article.php?id=5579)
+    - [**Системные роли**](https://kb.comindware.ru/article.php?id=5610)
+  - ***Просмотр***
+    - [**Журналы событий**](https://kb.comindware.ru/article.php?id=5614)
+- **Администраторы инфраструктуры** — могут настраивать подключения к внешним службам и резервное копирование, но не могут настраивать параметры безопасности системы и приложения, а также изменять данные в шаблонах.
+  - ***Полный доступ***
+    - [**Адаптеры**](https://kb.comindware.ru/article.php?id=5615)
+    - [**Подключения**](https://kb.comindware.ru/article.php?id=5303)
+    - [**Резервное копирование**](https://kb.comindware.ru/article.php?id=5566)
+  - ***Просмотр***
+    - [**Журналы событий**](https://kb.comindware.ru/article.php?id=5614)
+- **Системные архитекторы** — могут только настраивать приложения и изменять данные в шаблонах.
+  - ***Полный доступ***
+    - [**Приложения**](https://kb.comindware.ru/article.php?id=5643)
 
 ## Просмотр списка системных ролей и настройка роли
 
@@ -86262,23 +87065,24 @@ updated: '2024-10-08 15:17:39'
 6. Настройте [разрешения](#настройка-разрешений-для-ресурсов) на доступ к ресурсам.
 7. Сохраните роль.
 
-_![Список системных ролей](https://kb.comindware.ru/assets/system_role_list.png)_
+_![Список системных ролей](https://kb.comindware.ru/platform/v6.0/administration/account_administration/img/system_role_list.png)_
 
 ### Настройка свойств роли
 
 Заполните перечисленные ниже поля на вкладке «**Свойства роли**» и перейдите к вкладке «[**Разрешения**](#настройка-разрешений-для-ресурсов)» для настройки доступа к ресурсам.
 
 - **Название** — наименование роли. **Обязательное поле**.
-- **Системное имя** — уникальное имя роли. Не должно начинаться с цифры. Рекомендуется использовать буквы латинского алфавита, цифры и символ «\_». Заполняется автоматически по названию.
+- **Системное имя** — уникальное имя роли.
+  Не должно начинаться с цифры. Разрешены английские и русские буквы, цифры и символ «\_». Рекомендуется использовать английские буквы.
+  Обычно заполняется автоматически по названию.
 - **Описание** — дополнительный комментарий относительно назначения роли.
 - **Создатель** — аккаунт, создавший роль.
 - **Дата создания** — дата и время создания роли.
 - **Изменил(а)** — аккаунт, последним изменивший роль.
 - **Дата изменения** — дата и время последнего изменения роли.
-
 - **Активная** — установите или снимите этот флажок, чтобы использовать или отключить данную роль. Данный флажок нельзя снять для ролей, созданных системой (у которых не указан создатель).
-
 - **Выберите участников роли**
+
   - **Доступные аккаунты и группы** — в этом списке отображаются аккаунты и группы, которым можно назначить данную роль.
     - Чтобы назначить роль аккаунту или группе, дважды нажмите соответствующую строку.
     - Чтобы назначить роль всем аккаунтам и группам, отображающимся в списке, нажмите кнопку «**Выбрать все**» *‌*.
@@ -86288,7 +87092,7 @@ _![Список системных ролей](https://kb.comindware.ru/assets/s
     - установите или снимите флажок «**Аккаунты**» *‌* , чтобы показать или скрыть отдельные аккаунты;
     - установите или снимите флажок «**Группы**» *‌*, чтобы показать или скрыть группы аккаунтов.
 
-_![Настройка свойств системной роли](https://kb.comindware.ru/assets/system_role_settings.png)_
+_![Настройка свойств системной роли](https://kb.comindware.ru/platform/v6.0/administration/account_administration/img/system_role_settings.png)_
 
 ### Настройка разрешений для ресурсов
 
@@ -86298,7 +87102,7 @@ _![Настройка свойств системной роли](https://kb.com
 
    **(2)** **Список разрешений** — показывает ресурсы и назначенные для них разрешения для данной роли. Каждая строка задаёт набор разрешений для одного ресурса.
 
-   ![Настройка разрешений системной роли](https://kb.comindware.ru/assets/system_role_permission_list.png)
+   ![Настройка разрешений системной роли](https://kb.comindware.ru/platform/v6.0/administration/account_administration/img/system_role_permission_list.png)
 
    Настройка разрешений системной роли
 2. Перетаскивайте ресурсы из **списка ресурсов** в **список разрешений**, чтобы настроить полномочия на действия с ресурсами в рамках системной роли:
@@ -86307,12 +87111,11 @@ _![Настройка свойств системной роли](https://kb.com
    - [**Адаптеры**](https://kb.comindware.ru/article.php?id=5615) — настройка особых адаптеров для интеграции с внешними сервисами.
    - [**Аккаунты**](https://kb.comindware.ru/article.php?id=5579) — настройка пользователей.
    - [**Веб-интерфейс**](https://kb.comindware.ru/article.php?id=5600) — использование интерфейса конечного пользователя приложений.
-   - [**Вызовы API**](https://kb.comindware.ru/category.php?id=918) — использование всех методов API.
+   - [**Вызовы API**](https://kb.comindware.ru/article.php?id=5332) — использование всех методов API.
    - [**Глобальная конфигурация**](https://kb.comindware.ru/article.php?id=5619) — настройка параметров сервера.
    - [**Журналы событий**](https://kb.comindware.ru/article.php?id=5614) — просмотр журналов работы системы и взаимодействия с внешними сервисами.
    - [**Подключения**](https://kb.comindware.ru/article.php?id=5303) — настройка подключений к внешним сервисам и путей передачи данных.
    - [**Приложения**](https://kb.comindware.ru/article.php?id=5643) — настройка и использование приложений.
-   - [**Производительность**](https://kb.comindware.ru/article.php?id=5620) — просмотр показателей производительности системы.
    - [**Резервное копирование**](https://kb.comindware.ru/article.php?id=5566) — настройка конфигураций резервного копирования.
    - [**Системные роли**](https://kb.comindware.ru/article.php?id=5610) — настройка системных ролей.
    - [**Системный LDAP**](https://kb.comindware.ru/article.php?id=5581) — настройка синхронизации посредством протокола LDAP.
@@ -86338,8 +87141,6 @@ _![Настройка свойств системной роли](https://kb.com
 3. Будут восстановлены исходные разрешения роли на момент её последнего сохранения.
 
 ## Объединение системных ролей
-
-## Объединение ролей
 
 Можно создать новую роль, объединив в ней свойства нескольких других ролей. Для этого выполните указанные ниже действия.
 
@@ -86371,9 +87172,8 @@ _![Настройка свойств системной роли](https://kb.com
 
 ## Связанные статьи
 
-**[Роли в приложении](https://kb.comindware.ru/article.php?id=5738)**
-
-**[Шаблон роли](https://kb.comindware.ru/article.php?id=5692)**
+- *[Роли в приложении](https://kb.comindware.ru/article.php?id=5738)*
+- *[Шаблон роли](https://kb.comindware.ru/article.php?id=5692)*
 
 ================================================
 FILE: 916-guides/957-user_guide/961-administration/962-account_administration/5611-registration_and_login.md
@@ -86382,7 +87182,7 @@ FILE: 916-guides/957-user_guide/961-administration/962-account_administration/56
 title: 'Самостоятельная регистрация и вход через сервер каталогов. Настройка'
 kbId: 5611
 url: 'https://kb.comindware.ru/article.php?id=5611'
-updated: '2025-07-25 12:03:11'
+updated: '2026-08-28 13:00:45'
 ---
 
 # Самостоятельная регистрация и вход через сервер каталогов. Настройка
@@ -86424,7 +87224,6 @@ _![Переход к настройке подключения к серверу
 ## Связанные статьи
 
 - [Сервер каталогов. Настройка подключения](https://kb.comindware.ru/article.php?id=5319)
-
 - [Аутентификация через OpenID Connect. Настройка подключения и служб](https://kb.comindware.ru/article.php?id=5318)
 - [Аутентификация через Active Directory. Настройка контроллера домена и экземпляра ПО](https://kb.comindware.ru/article.php?id=5345)
 - [Аутентификация через единый вход (SSO). Настройка контроллера домена, экземпляра ПО и компьютера конечного пользователя](https://kb.comindware.ru/article.php?id=5378)
@@ -88340,7 +89139,7 @@ FILE: 916-guides/957-user_guide/961-administration/963-infrastructure/5620-perfo
 title: 'Производительность. Просмотр и сброс показателей'
 kbId: 5620
 url: 'https://kb.comindware.ru/article.php?id=5620'
-updated: '2026-01-14 15:09:30'
+updated: '2026-09-01 16:20:17'
 ---
 
 # Производительность. Просмотр и сброс показателей
@@ -88969,7 +89768,7 @@ FILE: 916-guides/957-user_guide/961-administration/964-connections_communication
 title: 'Подключения. Определения, типы, создание, настройка, удаление'
 kbId: 5303
 url: 'https://kb.comindware.ru/article.php?id=5303'
-updated: '2025-12-11 13:14:33'
+updated: '2026-10-09 17:30:04'
 ---
 
 # Подключения. Определения, типы, создание, настройка, удаление
@@ -89005,7 +89804,6 @@ updated: '2025-12-11 13:14:33'
 - [Управление версиями через Git](https://kb.comindware.ru/article.php?id=5623)
 - Абстрактное подключение
 - [Карты](https://kb.comindware.ru/article.php?id=5314)
-- [Хранилище S3](https://kb.comindware.ru/article.php?id=5317)
 
 ### Аутентификация
 
@@ -92048,100 +92846,28 @@ _![Диаграмма процесса «Обработка ответа рук�
 - [Парсинг Email до знака @](https://kb.comindware.ru/article.php?id=5228)
 
 ================================================
-FILE: 916-guides/957-user_guide/961-administration/964-connections_communication_routes/970-email_connections/5390-template_reference_data_api.md
-================================================
----
-title: 'Шаблон. Переключение флажка «Является справочником» с помощью API'
-kbId: 5390
-url: 'https://kb.comindware.ru/article.php?id=5390'
-updated: '2025-02-25 15:37:39'
----
-
-# Шаблон. Переключение флажка «Является справочником» с помощью API
-
-## Введение
-
-У шаблонов в **Comindware Platform** предусмотрен флажок «**Является справочником**».
-
-Если установлен этот флажок, атрибуты в шаблоне могут ссылаться только на шаблоны-справочники.
-
-## Прикладная задача
-
-Требуется снять флажок «**Является справочником**», чтобы шаблон мог ссылаться на шаблоны, не являющиеся справочниками.
-
-В некоторых конфигурациях переключить этот флажок вручную не представляется возможным, например для шаблонов оргединиц и ролей.
-
-В таком случае его можно переключить с помощью следующих методов [System Core API](https://kb.comindware.ru/article.php?id=5331):
-
-- `/Base/OntologyService/RemoveStatement` — снять флажок;
-- `/Base/OntologyService/AddStatement` — установить флажок.
-
-## Снятие флажка «Является справочником» с помощью API
-
-Выполните следующий запрос:
-
-```
-curl -X POST "https://your-host/api/public/system/Base/OntologyService/AddStatement" \
--H "Content-Type: application/json" -d \
-'{
-  "subject": "template.id",
-  "predicate": "cmw.object.specialization",
-  "value": "cmw.object.specializationType.ReferenceData"
-}'
-```
-
-Здесь:
-
-- `template.id` — идентификатор шаблона;
-- `https://your-host/` — адрес сервера **Comindware Platform**.
-
-## Установка флажка «Является справочником» с помощью API
-
-Выполните следующий запрос:
-
-```
-curl -X POST "https://your-host/api/public/system/Base/OntologyService/AddStatement" \
--H "Content-Type: application/json" -d \
-'{
-  "subject": "template.id",
-  "predicate": "cmw.object.specialization",
-  "value": "cmw.object.specializationType.ReferenceData"
-}'
-```
-
-Здесь:
-
-- `template.id` — идентификатор шаблона;
-- `https://your-host/` — адрес сервера **Comindware Platform**.
-
-## Связанные статьи
-
-- *[Методы System Core API](https://kb.comindware.ru/article.php?id=5331)*
-- *[Шаблоны. Определения, настройка, перенос, архивирование, очистка](https://kb.comindware.ru/article.php?id=5638)*
-
-================================================
 FILE: 916-guides/957-user_guide/961-administration/964-connections_communication_routes/970-email_connections/5628-process_receiving_connection.md
 ================================================
 ---
-title: 'Получение эл. почты и веб-запросов в процессе. Настройка подключения, пути передачи данных и процесса'
+title: 'Получение эл. почты в процессе. Настройка подключения, пути передачи данных и процесса'
 kbId: 5628
 url: 'https://kb.comindware.ru/article.php?id=5628'
-updated: '2025-10-03 13:01:18'
+updated: '2026-10-16 17:57:41'
 ---
 
-# Получение эл. почты и веб-запросов в процессе. Настройка подключения, пути передачи данных и процесса
+# Получение эл. почты в процессе. Настройка подключения, пути передачи данных и процесса
 
 ## Введение
 
-Здесь представлены инструкции по настройке подключения и пути передачи передачи данных из эл. писем и веб-запросов в бизнес-процессе.
+Здесь представлены инструкции по настройке подключения и пути передачи данных из эл. писем в бизнес-процессе.
 
 Кроме того, потребуется настроить **[начальное](https://kb.comindware.ru/article.php?id=5671)** или **[промежуточное](https://kb.comindware.ru/article.php?id=5677) событие-получение сообщения** на диаграмме процесса.
 
 Подробный пример настройки приложения для обмена данными посредством эл. почты см. в статье *«[Пример: согласование заявлений по эл. почте. Настройка подключений, путей передачи данных и диаграммы процесса](https://kb.comindware.ru/article.php?id=5375)»*.
 
-## Порядок настройки получения эл. писем и HTTP-запросов
+## Порядок настройки получения эл. писем
 
-1. [Настройте подключение](#process_receiving_connection_configure) типа «**Получение эл. почты в процессе**» или «**Получение HTTP-запросов**».
+1. [Настройте подключение](#process_receiving_connection_configure) типа «**Получение эл. почты в процессе**».
 2. [Настройте путь передачи данных](#process_receiving_connection_route_configure) типа «**Получение эл. почты в процессе**».
 3. Настройте [начальное или промежуточное событие-получение сообщения](#process_receiving_connection_message_event_configure) на диаграмме процесса:
 
@@ -92168,46 +92894,36 @@ updated: '2025-10-03 13:01:18'
 - **Анализируйте содержимое писем** (тему, отправителя, текст) для определения дальнейших действий при использовании одного адреса для обработки писем разных типов.
 
 1. На странице **Администрирование**» выберите пункт «**Инфраструктура**» — «[**Подключения**](https://kb.comindware.ru/article.php?id=5303)» *‌*.
-2. Откройте или создайте **подключение к электронной почте** типа «**Получение эл. почты в процессе**» или **подключение REST и OData** типа «**Получение веб-запросов**».
+2. Откройте или создайте **подключение к электронной почте** типа «**Получение эл. почты в процессе**».
 3. Настройте подключение:
 
-   - **Для получения эл. почты в процессе**
+   - **Отключить** — установите этот флажок, если требуется временно деактивировать данное подключение.
+   - **Название** — укажите наименование подключения.
+   - **Протокол** — выберите почтовый протокол:
+     - **IMAP**
+       - **Порт** — укажите порт для подключения к почтовому серверу.
+       - **Защита данных** — выберите протокол шифрования:
+         - **Нет**;
+         - **SSL**;
+         - **TLS**.
+     - **Microsoft Exchange**
+       - **Домен** — укажите домен для доступа к серверу Exchange.
+       - **Версия** — выберите версию сервера Exchange.
+   - **Адрес почтового сервера** — укажите URL почтового сервера.
 
-     - **Отключить** — установите этот флажок, если требуется временно деактивировать данное подключение.
-     - **Название** — укажите наименование подключения.
-     - **Протокол** — выберите почтовый протокол:
-       - **IMAP**
-         - **Порт** — укажите порт для подключения к почтовому серверу.
-         - **Защита данных** — выберите протокол шифрования:
-           - **Нет**;
-           - **SSL**;
-           - **TLS**.
-       - **Microsoft Exchange**
-         - **Домен** — укажите домен для доступа к серверу Exchange.
-         - **Версия** — выберите версию сервера Exchange.
-     - **Адрес почтового сервера** — укажите URL почтового сервера.
+     Примечание
 
-       Примечание
-
-       - Для **SMTP не** указывайте протокол (`SMTP`, `HTTPS`, `HTTP`).
-       - Для **Exchange укажите** протокол (`HTTPS`, `HTTP`).
-     - **Имя пользователя** — укажите учётную запись для подключения к почтовому серверу.
-     - **Пароль** — введите пароль к учётной записи для подключения к почтовому серверу.
-     - **Интервал опроса** — укажите интервал, с которым **Comindware Platform** будет проверять наличие новых писем.
-     - **Проверить соединение** — нажмите эту кнопку, чтобы проверить соединение с почтовым сервером.
-   - **Для получения веб-запросов**
-
-     - **Отключить** — установите этот флажок, если требуется временно деактивировать данное подключение.
-     - **Название** — укажите наименование подключения.
-     - **URL для получения внешних запросов** — укажите суффикс для получения веб-запросов, например `getMessages`.
-     - **Данные для страницы ответа** — настройте страницу, которая будет отображаться при открытии в браузере **URL для получения внешних запросов**:
-       - **Заголовок страницы** — название страницы;
-       - **Тело страницы** — текст под заголовком.
+     - Для **SMTP не** указывайте протокол (`SMTP`, `HTTPS`, `HTTP`).
+     - Для **Exchange укажите** протокол (`HTTPS`, `HTTP`).
+   - **Имя пользователя** — укажите учётную запись для подключения к почтовому серверу.
+   - **Пароль** — введите пароль к учётной записи для подключения к почтовому серверу.
+   - **Интервал опроса** — укажите интервал, с которым **Comindware Platform** будет проверять наличие новых писем.
+   - **Проверить соединение** — нажмите эту кнопку, чтобы проверить соединение с почтовым сервером.
 4. Нажмите кнопку «**Создать**».
 
 ## Настройка пути передачи данных
 
-Путь передачи данных типа «**Получение эл. почты в процессе**» служит для преобразования и передачи данных из эл. письма или HTTP-запроса в **Comindware Platform**.
+Путь передачи данных типа «**Получение эл. почты в процессе**» служит для преобразования и передачи данных из эл. письма в **Comindware Platform**.
 
 1. Откройте страницу «**Администрирование**» — «**Архитектура**» или страницу «**Администрирование**» приложения.
 2. Выберите пункт «[**Пути передачи данных**](https://kb.comindware.ru/article.php?id=5302)» *‌*.
@@ -92232,18 +92948,12 @@ updated: '2025-10-03 13:01:18'
   - **Новый экземпляр процесса** — полученное сообщение будет создавать новый экземпляр указанного процесса;
   - **Существующий экземпляр процесса** — полученное сообщение будет отправлено в определенный экземпляр указанного процесса.
 - **Ключевое поле** — атрибут для поиска существующего экземпляра процесса. Доступно при указании «**Существующий экземпляр процесса**» в «**Назначении**».
-- Для подключения типа «**Получение веб-запросов**»:
-  - **Метод парсинга ответа** — выберите метод анализа данных:
-    - **Не преобразовывать**;
-    - **XML**;
-    - **JSON**;
-    - **Строка запроса**.
 
 _![Настройка основных свойств пути передачи данных для получения эл. почты в процессе](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/email_connections/img/process_receiving_connection_settings_properties.png)_
 
 ### Атрибуты сообщения
 
-Чтобы извлечь данные из эл. письма или HTTP-запроса и передать их в **Comindware Platform**, сопоставьте набор **атрибутов сообщения** с полями письма или HTTP-запроса:
+Чтобы извлечь данные из эл. письма и передать их в **Comindware Platform**, сопоставьте набор **атрибутов сообщения** с полями письма:
 
 1. Добавьте атрибут сообщения, нажав кнопку «**Создать**».
 2. Заполните свойства атрибута:
@@ -92258,7 +92968,7 @@ _![Настройка основных свойств пути передачи 
      - **Логический**
      - **Документ**
      - **Аккаунт**
-   - Для **получения эл. писем** выберите **поле сообщения**, значение которого требуется присвоить атрибуту сообщения:
+   - **Поле сообщения** — выберите поле письма, значение которого требуется присвоить атрибуту сообщения:
      - **Адрес отправителя**
      - **Имя отправителя**
      - **Адрес получателя**
@@ -92272,14 +92982,9 @@ _![Настройка основных свойств пути передачи 
      - **Прикреплённые файлы**
      - **ID сообщения**
      - **Дата получения сообщения**
-   - Для **получения HTTP-запросов** задайте поле запроса, значение которого требуется присвоить атрибуту сообщения, в зависимости от **метода парсинга ответа**, выбранного на вкладке «**Основные свойства**»:
-     - **Поле сообщения** — установите флажок, чтобы передать значение из поля запроса **без преобразования**, **системное имя атрибута сообщения** должно совпадать с именем соответствующего поля запроса;
-     - **Выражение JPath** — введите путь к полю запроса в формате **JSON**;
-     - **Выражение XPath** — введите путь к полю запроса в формате **XML**;
-     - **Строка запроса** — введите имя поля запроса.
 3. Настройте передачу значений атрибутов сообщения в атрибуты записи с помощью вкладки «**Данные сообщения**» в свойствах [**события-получения сообщения**](https://kb.comindware.ru/article.php?id=5671), использующего этот путь передачи данных.
 
-Извлечение текста эл. письма
+Пример извлечения текста эл. письма
 
 Настройте **атрибут сообщения** следующим образом:
 
@@ -92287,17 +92992,6 @@ _![Настройка основных свойств пути передачи 
 - **Системное имя:** *EmailBody*
 - **Тип данных: текст**
 - **Поле сообщения: сообщение**
-
-Извлечение поля *Date* из HTTP-запроса по JSONPath
-
-Настройте **атрибут сообщения** следующим образом:
-
-- **Название:** *Дата*
-- **Системное имя:** *Date*
-- **Тип данных: дата и время**
-- **Выражение JPath:** `$.Date`
-
-Подробные сведения об использовании JSONPath см. в статье *«[HTTP-запросы. Получение и обработка данных с помощью JSONPath](https://kb.comindware.ru/article.php?id=5323)»*.
 
 _![Настройка атрибутов сообщения в пути передачи данных для получения эл. почты в процессе](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/email_connections/img/process_receiving_connection_attributes_settings.png)_
 
@@ -92315,9 +93009,7 @@ _![Настройка атрибутов сообщения в пути пере
 
    - Укажите название, системное имя и тип данных **атрибутов сообщения** так же, как они указаны в таблице «**Атрибуты для передачи данных сообщения**» в [свойствах пути передачи данных](#process_receiving_communication_route_properties_message_attributes).
    - В столбце «**Значение**» укажите атрибут **шаблона записи** такого же типа, как **атрибут сообщения**.
-   - Значения указанных **атрибутов сообщения** будут присвоены атрибутам **шаблона записи**.
-
-   ![Сопоставление атрибутов сообщения из пути передачи данных с данными процесса](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/email_connections/img/process_receiving_connection_message_data.png)
+   - Значения указанных **атрибутов сообщения** будут присвоены атрибутам **шаблона записи**.![Сопоставление атрибутов сообщения из пути передачи данных с данными процесса](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/email_connections/img/process_receiving_connection_message_data.png)
 
    Сопоставление атрибутов сообщения из пути передачи данных с данными процесса
 6. Опубликуйте процесс.
@@ -92330,6 +93022,7 @@ _![Настройка атрибутов сообщения в пути пере
 - *[Отправка эл. почты из процесса. Настройка подключения, пути передачи данных и события на диаграмме процесса](https://kb.comindware.ru/article.php?id=5366)*
 - *[Получение эл. почты с помощью сценария через Exchange и IMAP. Настройка подключения, пути передачи данных и сценария](https://kb.comindware.ru/article.php?id=5629)*
 - *[Отправка эл. почты из сценариев через SMTP и Exchange. Настройка подключения, пути передачи данных и сценария](https://kb.comindware.ru/article.php?id=5630)*
+- *[Получение веб-запросов в процессе. Настройка подключения, пути передачи данных и процесса](https://kb.comindware.ru/article.php?id=5631)*
 
 ================================================
 FILE: 916-guides/957-user_guide/961-administration/964-connections_communication_routes/970-email_connections/5629-scenario_receive_email.md
@@ -92338,7 +93031,7 @@ FILE: 916-guides/957-user_guide/961-administration/964-connections_communication
 title: 'Получение эл. почты с помощью сценариев через IMAP и Exchange. Настройка подключения, пути передачи данных и сценария'
 kbId: 5629
 url: 'https://kb.comindware.ru/article.php?id=5629'
-updated: '2025-09-03 16:33:43'
+updated: '2026-10-08 18:55:37'
 ---
 
 # Получение эл. почты с помощью сценариев через IMAP и Exchange. Настройка подключения, пути передачи данных и сценария
@@ -92369,9 +93062,13 @@ updated: '2025-09-03 16:33:43'
 - обрабатывает новые письма;
 - отмечает новые письма как прочтённые.
 
-Поэтому для автоматической обработки входящих писем рекомендуется использовать отдельный ящик эл. почты.
+Таким образом, каждое непрочитанное письмо в указанном почтовом ящике будет обработано и отмечено как прочитанное.
 
-Если использовать ящик, на который поступают прочие письма, они тоже будут отмечены как прочитанные.
+Рекомендации по настройке:
+
+- **Используйте отдельный ящик эл. почты** для автоматической обработки писем, чтобы избежать случайной обработки личной корреспонденции.
+- **Создайте технический процесс** для приема входящих писем с последующей маршрутизацией по типу письма.
+- **Анализируйте содержимое писем** (тему, отправителя, текст) для определения дальнейших действий при использовании одного адреса для обработки писем разных типов.
 
 1. Откройте страницу «**Администрирование**» — «**Подключения**».
 2. Откройте двойным нажатием или создайте **подключение к электронной почте** типа «**Получение эл. почты через IMAP**» или «**Получение сообщений через Exchange**».
@@ -92570,7 +93267,7 @@ updated: '2025-09-03 16:33:43'
    - **Значение: формула**
 
    ```
-   FORMAT ("{0} <1>", LIST($$message->From->Name, $$message->From->Address))
+   FORMAT ("{0} {1}", LIST($$message->From->Name, $$message->From->Address))
    ```
 
    Эта формула берёт данные отправителя из переменной `message` и возвращает имя и адрес отправителя письма в следующем формате: `Имя <address@example.com>`
@@ -92645,13 +93342,13 @@ _![Сценарий для получения электронной почты]
 FILE: 916-guides/957-user_guide/961-administration/964-connections_communication_routes/970-email_connections/5630-scenario_send_email.md
 ================================================
 ---
-title: 'Отправка эл. почты из сценариев через SMTP и Exchange. Настройка подключения, пути передачи данных и сценария'
+title: 'Отправка эл. почты из сценариев через SMTP и Exchange. Настройка подключения, пути передачи данных и сценария'
 kbId: 5630
 url: 'https://kb.comindware.ru/article.php?id=5630'
-updated: '2024-10-30 19:43:56'
+updated: '2026-10-08 14:18:47'
 ---
 
-# Отправка эл. почты из сценариев через SMTP и Exchange. Настройка подключения, пути передачи данных и сценария
+# Отправка эл. почты из сценариев через SMTP и Exchange. Настройка подключения, пути передачи данных и сценария
 
 ## Введение
 
@@ -92661,12 +93358,12 @@ updated: '2024-10-30 19:43:56'
 
 Здесь представлены общие инструкции по настройке подключения к почтовому серверу по протоколу SMTP или Exchange, пути передачи данных и сценария для отправки эл. писем.
 
-## Порядок настройки отправки эл. писем из сценария
+## Порядок настройки отправки эл. писем из сценария
 
-1. Настройте [подключение](#настройка-подключения-к-почтовому-серверу-для-отправки-почты-из-сценария) к почтовому серверу типа «**Отправка почты через SMTP**» или «**Отправка эл. почты через Exchange**».
-2. Настройте [путь передачи данных](#настройка-пути-передачи-данных-для-отправки-эл-почты-из-сценария) типа «**Отправка эл. почты через SMTP**» или «**Отправка эл. почты через Exchange**», использующий созданное подключение.
-3. Настройте [шаблон](#настройка-шаблона-записи) с данными для эл. писем.
-4. Настройте [сценарий](#настройка-сценария), который будет отправлять письма с данными из шаблона записи посредством настроенных подключения и пути передачи данных.
+1. Настройте [подключение](#scenario_send_email_connection_configure) к почтовому серверу типа «**Отправка почты через SMTP**» или «**Отправка эл. почты через Exchange**».
+2. Настройте [путь передачи данных](#scenario_send_email_communication_route_configure) типа «**Отправка эл. почты через SMTP**» или «**Отправка эл. почты через Exchange**», использующий созданное подключение.
+3. Настройте [шаблон](#scenario_send_email_template_configure) с данными для эл. писем.
+4. Настройте [сценарий](#scenario_send_email_scenario_configure), который будет отправлять письма с данными из шаблона записи посредством настроенных подключения и пути передачи данных.
 
 ## Настройка подключения к почтовому серверу для отправки почты из сценария
 
@@ -92689,7 +93386,7 @@ updated: '2024-10-30 19:43:56'
        - **SSL**;
        - **TLS**.
      - **Проверять соединение без отправки сообщения** — установите этот флажок, чтобы проверить соединение без указания получателей тестового письма.
-     - **Адреса получателей для проверки работоспособности подключения** — укажите один или несколько (через запятую) адресов эл. почты для проверки соединения.
+     - **Адреса получателей для проверки работоспособности подключения** — укажите один или несколько (через запятую) адресов эл. почты для проверки соединения.
    - **Для сервера Exchange**
      - **URL веб-сервера Exchange** — введите адрес почтового сервера с указанием протокола (`HTTPS`, `HTTP`).
      - **Версия Exchange** — выберите версию сервера Exchange.
@@ -92701,7 +93398,7 @@ updated: '2024-10-30 19:43:56'
    - **Пароль** — введите пароль для подключения к почтовому серверу.
    - **Домен** — укажите домен пользователя почтового сервера.
    - **Имя отправителя** — укажите имя, которое будет указано в отправляемых письмах.
-   - **Адрес эл. почты отправителя** — укажите адрес эл. почты, который будет указан в отправляемых письмах. Почтовый сервер может проверять соответствие адреса отправителя и **имени пользователя**, отправляющего почту.
+   - **Адрес эл. почты отправителя** — укажите адрес эл. почты, который будет указан в отправляемых письмах. Почтовый сервер может проверять соответствие адреса отправителя и **имени пользователя**, отправляющего почту.
 
      Примечание
 
@@ -92711,25 +93408,23 @@ updated: '2024-10-30 19:43:56'
 6. Чтобы просмотреть журнал событий отправки писем, нажмите кнопку «**Скачать журнал**».
 7. Сохраните подключение.
 
-## Настройка пути передачи данных для отправки эл. почты из сценария
-
-Путь передачи данных для отправки эл. почты служит для преобразования и передачи данных из **Comindware Platform** в эл. письмо.
+## Настройка пути передачи данных для отправки эл. почты из сценария
 
 1. Откройте страницу «**Администрирование**» — «**Архитектура**» или страницу «**Администрирование**» приложения.
 2. Выберите пункт «[**Пути передачи данных**](https://kb.comindware.ru/article.php?id=5302)» *‌*.
-3. Откройте двойным нажатием в списке или создайте создайте **подключение к электронной почте** типа «**Отправка почты через SMTP**» или «**Отправка эл. почты через Exchange**».
+3. Откройте двойным нажатием в списке или создайте **подключение к электронной почте** типа «**Отправка почты через SMTP**» или «**Отправка эл. почты через Exchange**».
 4. Настройте свойства пути передачи данных на следующих вкладках:
 
-   - [**Основные свойства**](#основные-свойства)
-   - [**Атрибуты сообщения**](#атрибуты-сообщения)
-   - [**Интеграция**](#интеграция)
+   - [**Основные свойства**](#scenario_send_email_general_properties)
+   - [**Атрибуты сообщения**](#scenario_send_email_message_attributes)
+   - [**Интеграция**](#scenario_send_email_integration)
 5. Сохраните путь передачи данных.
 
 ### Основные свойства
 
 На вкладке «**Основные свойства**» настройте параметры использования пути передачи данных.
 
-- **Подключение** — выберите [подключение для отправки эл. почты из сценариев через SMTP или Exchange](#настройка-подключения-к-почтовому-серверу-для-отправки-почты-из-сценария).
+- **Подключение** — выберите [подключение для отправки эл. почты из сценариев через SMTP или Exchange](#scenario_send_email_connection_configure).
 - **Системное имя** — введите уникальное имя пути передачи данных. Рекомендуются буквы латинского алфавита, цифры и символ «\_».
 - **Отключить** — установите этот флажок, если требуется временно деактивировать путь передачи данных.
 - **Описание** — введите наглядное описание пути передачи данных, например *«Путь для отправки писем из сценариев»*.
@@ -92737,11 +93432,11 @@ updated: '2024-10-30 19:43:56'
 
 ### Атрибуты сообщения
 
-На вкладке «**Атрибуты сообщения**» настройте атрибуты, значения которых будут подставляться в содержимое в эл. письма с помощью вкладки [«**Интеграция**»](#интеграция).
+На вкладке «**Атрибуты сообщения**» настройте атрибуты, значения которых будут подставляться в содержимое в эл. письма с помощью вкладки [«**Интеграция**»](#scenario_send_email_integration).
 
-Значения атрибутам сообщения необходимо присвоить в [сценарии](#настройка-сценария) с помощью действия «**Изменить значения переменных**». Затем в сценарии следует выполнить действие «**Отправить сообщение**».
+Значения атрибутам сообщения необходимо присвоить в [сценарии](#scenario_send_email_scenario_configure) с помощью действия «**Изменить значения переменных**». Затем в сценарии следует выполнить действие «**Отправить сообщение**».
 
-1. В таблице «**Запрос**» настройте готовые атрибуты сообщения:
+1. В таблице «**Запрос**» отобразятся готовые атрибуты сообщения:
 
 - **To** — получатели письма (массив объектов).
   - **Name** — имя получателя (строка).
@@ -92761,7 +93456,7 @@ updated: '2024-10-30 19:43:56'
   - **Value** — значение заголовка (строка).
   - **ListValues** — массив неименованных значений.
 
-2. При необходимости в таблицах «**Ответ**» и «**Ответ**» настройте атрибуты, в которые будет помещаться отклик SMTP-сервера после отправки письма.
+2. При необходимости в таблицах «**Ответ**» и «**Ответ с ошибкой**» настройте атрибуты, в которые будет помещаться отклик SMTP-сервера после отправки письма.
 
 #### Создание собственного атрибута сообщения
 
@@ -92769,9 +93464,7 @@ updated: '2024-10-30 19:43:56'
 
 - *FullName* типа «**Строка**» для Ф. И. О. получателя;
 - *Filename* типа «**Строка**» для имени прикрепляемого файла;
-- *RecepientEmail* типа «**Строка**» для эл. почты получателя;
-- *Subject* типа «**Строка**» для темы письма;
-- *Body* типа «**Строка**» для темы письма;
+- *RecepientEmail* типа «**Строка**» для эл. почты получателя;
 - *ReplyAddress* типа «**Строка**» для выбора электронной почты, на которую должны приходить ответные письма.
 
 Чтобы создать атрибут сообщения, нажмите кнопку «**Добавить**» над таблицей с атрибутами и заполните свойства атрибута:
@@ -92791,11 +93484,11 @@ updated: '2024-10-30 19:43:56'
 
 ### Интеграция
 
-На вкладке «**Интеграция**» настройте дополнительные свойства эл. письма, заполнив их статическими значениями или заполнителями [**атрибутов сообщения**](#атрибуты-сообщения).
+На вкладке «**Интеграция**» настройте дополнительные свойства эл. письма, заполнив их статическими значениями или заполнителями [**атрибутов сообщения**](#scenario_send_email_message_attributes).
 
 Внимание!
 
-Прежде чем подставлять в письмо заполнители атрибутов сообщения, их необходимо добавить в таблицу «**Запрос**» на вкладке «**[Атрибуты сообщения](#атрибуты-сообщения)**». В противном случае путь передачи данных будет автоматически отключён.
+Прежде чем подставлять в письмо заполнители атрибутов сообщения, их необходимо добавить в таблицу «**Запрос**» на вкладке «**[Атрибуты сообщения](#scenario_send_email_message_attributes)**». В противном случае путь передачи данных будет автоматически отключён.
 
 Подстановка значений атрибутов сообщения в эл. письмо
 
@@ -92851,7 +93544,9 @@ updated: '2024-10-30 19:43:56'
     ```
     {RecepientEmail}
     ```
-- **Прикреплённые файлы**
+- **Прикреплённые файлы** — в данном примере не используется.
+
+  Вложение файлов в электронное письмо
 
   - **Название документа** — введите строковый литерал с именем файла, включая расширение (заполнители не поддерживаются). Например:
 
@@ -92926,7 +93621,7 @@ updated: '2024-10-30 19:43:56'
 
    Сопоставление переменных-объектов с атрибутами сообщения
 
-   Имена переменных, значения которых передаются в [**атрибуты сообщения**](#атрибуты-сообщения) с помощью действия сценария «**Отправить сообщение**», должны совпадать с системными именами атрибутов сообщения.
+   Имена переменных, значения которых передаются в [**атрибуты сообщения**](#scenario_send_email_message_attributes) с помощью действия сценария «**Отправить сообщение**», должны совпадать с системными именами атрибутов сообщения.
 
    Для передачи значения переменной в атрибут сообщения типа «**Объект**», необходимо создать переменную с такой же структурой, как у атрибута сообщения, создав дочерние переменные:
 
@@ -93035,8 +93730,8 @@ updated: '2024-10-30 19:43:56'
      ```
 5. Создайте действие «**Отправить сообщение**» со следующими свойствами:
 
-   - **Подключение:** выберите [подключение для отправки эл. почты из сценариев через SMTP или Exchange](#настройка-подключения-к-почтовому-серверу-для-отправки-почты-из-сценария).
-   - **Путь передачи данных:** выберите [путь передачи данных эл. почты из сценариев через SMTP или Exchange](#настройка-пути-передачи-данных-для-отправки-эл-почты-из-сценария).
+   - **Подключение:** выберите [подключение для отправки эл. почты из сценариев через SMTP или Exchange](#scenario_send_email_connection_configure).
+   - **Путь передачи данных:** выберите [путь передачи данных эл. почты из сценариев через SMTP или Exchange](#scenario_send_email_communication_route_configure).
    - **Переменная с сообщением:** *mail*
 
 ## Тестирование
@@ -93050,13 +93745,10 @@ updated: '2024-10-30 19:43:56'
 
 ## Связанные статьи
 
-**[Получение эл. почты с помощью сценариев через IMAP и Exchange. Настройка подключения, пути передачи данных и сценария](https://kb.comindware.ru/article.php?id=5629)**
-
-**[Отправка эл. почты из процесса. Настройка подключения](https://kb.comindware.ru/article.php?id=5366)**
-
-**[Подключения. Типы, создание, настройка, удаление](https://kb.comindware.ru/article.php?id=5303)**
-
-**[Пути передачи данных. Типы, создание, настройка, удаление](https://kb.comindware.ru/article.php?id=5302)**
+- *[Получение эл. почты с помощью сценариев через IMAP и Exchange. Настройка подключения, пути передачи данных и сценария](https://kb.comindware.ru/article.php?id=5629)*
+- *[Отправка эл. почты из процесса. Настройка подключения](https://kb.comindware.ru/article.php?id=5366)*
+- *[Подключения. Типы, создание, настройка, удаление](https://kb.comindware.ru/article.php?id=5303)*
+- *[Пути передачи данных. Типы, создание, настройка, удаление](https://kb.comindware.ru/article.php?id=5302)*
 
 ================================================
 FILE: 916-guides/957-user_guide/961-administration/964-connections_communication_routes/971-rest_odata_connections/5304-http_send_post.md
@@ -93912,7 +94604,7 @@ FILE: 916-guides/957-user_guide/961-administration/964-connections_communication
 title: 'HTTP-запросы. Получение JSON-данных. Настройка подключения, пути передачи данных и сценария'
 kbId: 5311
 url: 'https://kb.comindware.ru/article.php?id=5311'
-updated: '2026-06-26 18:29:09'
+updated: '2026-10-08 19:25:06'
 ---
 
 # HTTP-запросы. Получение JSON-данных. Настройка подключения, пути передачи данных и сценария
@@ -93930,7 +94622,7 @@ updated: '2026-06-26 18:29:09'
 - Для получения HTTP-запросов из внешних систем **Comindware Platform** позволяет настроить конечные точки API вида:
 
   ```
-  https://<instanceUrl>/api/public/adapter/<connectionUri>/<routeUri>
+  https://<instanceUrl>/<connectionUri>/<routeUri>
   ```
 
   Здесь:
@@ -94007,7 +94699,7 @@ updated: '2026-06-26 18:29:09'
    - **Базовый путь получения HTTP-запросов** — добавьте **путь URI**, например `uploadData`. При необходимости введите дополнительный **путь URI** на вкладке «**Интеграция**» в свойствах [пути передачи данных](#http_receive_example_route).
    - **Имя пользователя** - не используется в данном примере.
    - **Пароль** - не используется в данном примере.
-   - **Порт** - порт, на котором будут ожидаться запросы. Для работы нужно внести изменения в конфигурацию nginx (ссылка на область статьи после путей передачи данных).
+   - **Порт** - порт, на котором будут ожидаться запросы. Для работы нужно внести изменения в конфигурацию nginx (ссылка на область статьи после путей передачи данных). Данный порт является внутренней настройкой между Платформой и Adapterhost.
    - **Формат данных** — выберите представление данных:
      - **JSON** — используется в данном примере;
      - **XML**;
@@ -94053,7 +94745,7 @@ updated: '2026-06-26 18:29:09'
 2. В таблице «**Запрос**» сопоставьте данные HTTP-запроса с атрибутами **Comindware Platform**, то есть воссоздайте структуру JSON входящего запроса:
 
    - В таблицу «**Запрос**» добавьте атрибут *ListZakazov* типа «**Объект**». Установите флажок «**Массив**», так как этот атрибут будет содержать массив данных по всем заказам. **Системное имя** должно совпадать с именем соответствующего поля HTTP-запроса.
-   - В атрибут *FileObject* добавьте дочерний атрибут *Zakaz* типа «**Объект**». Он будет содержать данные по одному заказу.
+   - В атрибут *ListZakazov* добавьте дочерний атрибут *Zakaz* типа «**Объект**». Он будет содержать данные по одному заказу.
    - В атрибут *Zakaz* добавьте следующие дочерние атрибуты:
 
    | Системное имя | Тип | Описание |
@@ -94076,13 +94768,9 @@ updated: '2026-06-26 18:29:09'
 3. Укажите **атрибуты для десериализации данных**. По умолчанию следует указать `$` в обоих столбцах, чтобы получить всю структуру JSON из запроса. Для поиска определенного атрибута используйте JSONPath.
 4. При необходимости укажите **атрибут для заголовков**, в котором будут содержаться все атрибуты заголовков запроса, **атрибут для параметров запроса**, в котором будут содержаться все параметры запроса, и **атрибут для тела запроса**, в котором будет содержаться всё тело запроса.
 
-   ![Настройка интеграции](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/json4.png)
-
-   Настройка интеграции
-
 ## Настройка NGINX
 
-Добавить в файл /etc/nginx/sites-available/comindware\\ новый location для нового пути передачи данных.
+Добавить в файл /etc/nginx/sites-available/comindware<instanceName> новый location для нового пути передачи данных.
 
 ```
 location /<URI подключения>/<URI пути передачи данных>
@@ -94094,6 +94782,18 @@ location /<URI подключения>/<URI пути передачи данны
 Примечание
 
 Для каждого пути передачи данных на получение запросов надо добавить свой отдельный location.
+
+Проверьте корректность внесенных изменений
+
+```
+nginx -t
+```
+
+перезапустите nginx
+
+```
+sudo systemctl reload nginx
+```
 
 ## Настройка сценария
 
@@ -94130,9 +94830,9 @@ location /<URI подключения>/<URI пути передачи данны
 
    | Атрибут | Операция со значениями | Значение |
    | --- | --- | --- |
-   | *Клиент* | **Заменить** | **Формула:** `$$local—Zakaz—Client` |
-   | *Номер* | **Заменить** | **Формула:** `$$local—Zakaz—Nomer` |
-   | *Товар* | **Заменить** | **Формула:** `$$local—Zakaz—Tovar` |
+   | *Клиент* | **Заменить** | **Формула:** `$$local—>Zakaz—>Client` |
+   | *Номер* | **Заменить** | **Формула:** `$$local—>Zakaz—>Nomer` |
+   | *Товар* | **Заменить** | **Формула:** `$$local—>Zakaz—>Tovar` |
 
    Примечание
 
@@ -94494,7 +95194,7 @@ FILE: 916-guides/957-user_guide/961-administration/964-connections_communication
 title: 'HTTP-запросы с составным содержимым. Получение файлов. Настройка подключения, пути передачи данных и сценария'
 kbId: 5313
 url: 'https://kb.comindware.ru/article.php?id=5313'
-updated: '2025-12-25 16:38:15'
+updated: '2026-10-08 15:13:51'
 ---
 
 # HTTP-запросы с составным содержимым. Получение файлов. Настройка подключения, пути передачи данных и сценария
@@ -94510,7 +95210,7 @@ updated: '2025-12-25 16:38:15'
 - Для получения HTTP-запросов из внешних систем **Comindware Platform** позволяет настроить конечные точки API вида:
 
   ```
-  https://<instanceUrl>/api/public/adapter/<connectionUri>/<routeUri>
+  https://<instanceUrl>/<connectionUri>/<routeUri>
   ```
 
   Здесь:
@@ -95395,7 +96095,7 @@ FILE: 916-guides/957-user_guide/961-administration/964-connections_communication
 title: 'HTTP-запросы. Получение JSON-данных с помощью C#-скрипта. Настройка подключения, пути передачи данных и сценария'
 kbId: 5326
 url: 'https://kb.comindware.ru/article.php?id=5326'
-updated: '2025-12-26 12:34:06'
+updated: '2026-10-08 15:13:55'
 ---
 
 # HTTP-запросы. Получение JSON-данных с помощью C#-скрипта. Настройка подключения, пути передачи данных и сценария
@@ -95417,7 +96117,7 @@ updated: '2025-12-26 12:34:06'
 - Для получения HTTP-запросов из внешних систем **Comindware Platform** позволяет настроить конечные точки API вида:
 
   ```
-  https://<instanceUrl>/api/public/adapter/<connectionUri>/<routeUri>
+  https://<instanceUrl>/<connectionUri>/<routeUri>
   ```
 
   Здесь:
@@ -95579,9 +96279,7 @@ _![Настройка основных свойств пути для получ
    - Установите флажок «**Массив**» — атрибут `items` будет содержать массив статусов позиций.
    - Установите флажок слева от атрибута `items` и добавьте в него дочерние атрибуты:
      - `product` типа «**Строка**» — название товара.
-     - `status` типа «**Строка**» — статус позиции.
-
-   ![Настройка атрибутов сообщения](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/receive_http_example_csharp_route_message_attributes.png)
+     - `status` типа «**Строка**» — статус позиции.![Настройка атрибутов сообщения](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/receive_http_example_csharp_route_message_attributes.png)
 
    Настройка атрибутов сообщения
 4. При необходимости настройте **ответ с ошибкой** — структуру атрибутов для ответа на запрос, при обработке которого произошла ошибка.
@@ -95618,9 +96316,7 @@ _![Настройка основных свойств пути для получ
    - **Контекстный шаблон:** *Заказы*
    - **Подключение:** [подключение для получения HTTP-запросов](#http_receive_example_csharp_connection)
    - **Путь передачи данных:** [путь передачи данных для получения HTTP-запросов](#http_receive_example_csharp_route)
-   - **Имя переменной:** *IncomingMessage*
-
-   ![Настройка действия «Получение сообщения»](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/receive_http_example_csharp_scenario_receive_message.png)
+   - **Имя переменной:** *IncomingMessage*![Настройка действия «Получение сообщения»](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/receive_http_example_csharp_scenario_receive_message.png)
 
    Настройка действия «Получение сообщения»
 3. После события «**Получение сообщения**» добавьте действие «**Проверить результат скрипта**» для обработки входящего сообщения и подготовки ответа с помощью C#-скрипта:
@@ -95930,45 +96626,142 @@ updated: '2025-12-25 12:38:20'
 FILE: 916-guides/957-user_guide/961-administration/964-connections_communication_routes/971-rest_odata_connections/5631-get_connection.md
 ================================================
 ---
-title: 'HTTP-запросы. Получение в процессе. Настройка подключения'
+title: 'Получение веб-запросов в процессе. Настройка подключения, пути передачи данных и процесса'
 kbId: 5631
 url: 'https://kb.comindware.ru/article.php?id=5631'
-updated: '2025-01-31 18:18:29'
+updated: '2026-10-16 17:57:50'
 ---
 
-# HTTP-запросы. Получение в процессе. Настройка подключения
+# Получение веб-запросов в процессе. Настройка подключения, пути передачи данных и процесса
 
 ## Введение
 
-**Comindware Platform** может принимать в процессах веб-запросы типа `GET` для взаимодействия с внешними системами.
+**Comindware Platform** может принимать в процессах веб-запросы типа `GET` для взаимодействия с внешними системами.
 
-После настройки подключения типа «**Получение веб-запросов**» настройте для него путь передачи данных типа «[**Получение эл. почты в процессе**](https://kb.comindware.ru/article.php?id=5628)». Такой путь передачи данных можно использовать в **[начальном событии-получении сообщения](https://kb.comindware.ru/article.php?id=5671)** и **[промежуточном событии-получении сообщения](https://kb.comindware.ru/article.php?id=5677)**.
+Настроенное подключение типа «**Получение веб-запросов**» используется в [пути передачи данных](#get_connection_communication_route_configure), который, в свою очередь, применяется в **[начальном событии-получении сообщения](https://kb.comindware.ru/article.php?id=5671)** и **[промежуточном событии-получении сообщения](https://kb.comindware.ru/article.php?id=5677)** на диаграмме процесса.
+
+## Порядок настройки получения веб-запросов
+
+1. [Настройте подключение](#get_connection_connection_configure) типа «**Получение веб-запросов**».
+2. [Настройте путь передачи данных](#get_connection_communication_route_configure) типа «**Получение эл. почты в процессе**».
+3. Настройте [начальное или промежуточное событие-получение сообщения](#get_connection_message_event_configure) на диаграмме процесса:
+
+   - укажите настроенный **путь передачи данных**;
+   - настройте сопоставление **данных сообщения**.
 
 ## Настройка подключения
 
-1. Откройте страницу «**Администрирование**» — «**Подключения**».
-2. Дважды нажмите в списке или создайте подключение типа «**Подключения REST и OData**» — «**Получение веб-запросов**».
+1. На странице **Администрирование**» выберите пункт «[**Подключения**](https://kb.comindware.ru/article.php?id=5303)» *‌*.
+2. Откройте или создайте подключение типа «**Подключения REST и OData**» — «**Получение веб-запросов**».
 3. Настройте свойства подключения.
 
-   - **Отключить** — установите этот флажок, если требуется деактивировать подключение.
-   - **Название** — введите наглядное наименование подключения.
-   - **URL для получения внешних запросов** — введите суффикс для веб-запросов. Например, для обработки запросов на получение списка контрактов можно указать: `getContracts`. Префикс `https://` и символ `/` в конце URL не требуются.
-   - **URL обслуживания запросов** — в этом поле отобразится итоговый URL-адрес, на который внешние системы должны будут отправлять HTTP-запросы.
-   - **Данные для страницы ответа** — настройте внешний вид веб-страницы ответа на запрос, отображающейся в веб-браузере:
+   - **Отключить** — установите этот флажок, если требуется деактивировать подключение.
+   - **Название** — введите наглядное наименование подключения.
+   - **URL для получения внешних запросов** — введите суффикс для веб-запросов. Например, для обработки запросов на получение списка контрактов можно указать: `getContracts`. Префикс `https://` и символ `/` в конце URL не требуются.
+   - **URL обслуживания запросов** — в этом поле отобразится итоговый URL-адрес, на который внешние системы должны будут отправлять HTTP-запросы.
+   - **Данные для страницы ответа** — настройте внешний вид веб-страницы ответа на запрос, отображающейся в веб-браузере:
 
-     - **Заголовок страницы** — введите текст заголовка веб-страницы с ответом;
-     - **Тело страницы** — введите текст сообщения на веб-странице с ответом.
-4. Нажмите кнопку «**Проверить соединение**» — если подключение настроено правильно, отобразится сообщение об успешном подключении к серверу.
-5. Cохраните подключение.
+     - **Заголовок страницы** — введите текст заголовка веб-страницы с ответом;
+     - **Тело страницы** — введите текст сообщения на веб-странице с ответом.
+4. Нажмите кнопку «**Создать**».
 
 _![Настройка подключения для получения веб-запросов](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/get_connection_settings.png)_
 
 _![Пример веб-страницы с ответом на запрос](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/get_connection_example.png)_
 
+## Настройка пути передачи данных
+
+Путь передачи данных типа «**Получение эл. почты в процессе**» служит для преобразования и передачи данных из HTTP-запроса в **Comindware Platform**.
+
+1. Откройте страницу «**Администрирование**» — «**Архитектура**» или страницу «**Администрирование**» приложения.
+2. Выберите пункт «[**Пути передачи данных**](https://kb.comindware.ru/article.php?id=5302)» *‌*.
+3. Откройте или создайте путь передачи данных типа «**Подключения к электронной почте**» — «**Получение эл. почты в процессе**».
+4. Настройте свойства пути передачи данных на следующих вкладках:
+
+   - [**Основные свойства**](#get_connection_communication_route_properties_general)
+   - [**Атрибуты сообщения**](#get_connection_communication_route_properties_message_attributes)
+5. Сохраните путь передачи данных.
+
+### Основные свойства
+
+На вкладке «**Основные свойства**» настройте базовые параметры пути передачи данных:
+
+- **Отключить** — установите этот флажок, чтобы временно деактивировать путь передачи данных.
+- **Название** — введите наглядное наименование пути передачи данных.
+- **Подключение** — выберите подключение типа «**Получение веб-запросов**».
+- **Имя сообщения** — введите *уникальный* идентификатор сообщения, проходящего по данному пути передачи данных.
+- **Приложение** — выберите бизнес-приложение, в котором будет использоваться путь передачи данных.
+- **Процесс** — выберите процесс из приложения, в котором будет использоваться путь передачи данных.
+- **Назначение**:
+  - **Новый экземпляр процесса** — полученное сообщение будет создавать новый экземпляр указанного процесса;
+  - **Существующий экземпляр процесса** — полученное сообщение будет отправлено в определенный экземпляр указанного процесса.
+- **Ключевое поле** — атрибут для поиска существующего экземпляра процесса. Доступно при указании «**Существующий экземпляр процесса**» в «**Назначении**».
+- **Метод парсинга ответа** — выберите метод анализа данных:
+  - **Не преобразовывать**;
+  - **XML**;
+  - **JSON**;
+  - **Строка запроса**.
+
+### Атрибуты сообщения
+
+Чтобы извлечь данные из HTTP-запроса и передать их в **Comindware Platform**, сопоставьте набор **атрибутов сообщения** с полями запроса:
+
+1. Добавьте атрибут сообщения, нажав кнопку «**Создать**».
+2. Заполните свойства атрибута:
+
+   - **Название** — наглядное название атрибута.
+   - **Системное имя** — уникальное имя атрибута.
+   - **Тип данных**:
+     - **Текст**
+     - **Число**
+     - **Длительность**
+     - **Дата и время**
+     - **Логический**
+     - **Документ**
+     - **Аккаунт**
+   - Задайте поле запроса, значение которого требуется присвоить атрибуту сообщения, в зависимости от **метода парсинга ответа**, выбранного на вкладке «**Основные свойства**»:
+     - **Поле сообщения** — установите флажок, чтобы передать значение из поля запроса **без преобразования**, **системное имя атрибута сообщения** должно совпадать с именем соответствующего поля запроса;
+     - **Выражение JPath** — введите путь к полю запроса в формате **JSON**;
+     - **Выражение XPath** — введите путь к полю запроса в формате **XML**;
+     - **Строка запроса** — введите имя поля запроса.
+
+Пример извлечения поля *Date* из HTTP-запроса по JSONPath
+
+Настройте **атрибут сообщения** следующим образом:
+
+- **Название:** *Дата*
+- **Системное имя:** *Date*
+- **Тип данных: дата и время**
+- **Выражение JPath:** `$.Date`
+
+Подробные сведения об использовании JSONPath см. в статье *«[HTTP-запросы. Получение и обработка данных с помощью JSONPath](https://kb.comindware.ru/article.php?id=5323)»*.
+
+_![Настройка атрибутов сообщения в пути передачи данных для получения веб-запросов](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/get_connection_attributes_settings.png)_
+
+## Настройка события-получения сообщения
+
+Атрибуты сообщения, настроенные в пути передачи данных, сопоставляются с атрибутами шаблона записи на вкладке «**Данные сообщения**» в свойствах [**события-получения сообщения**](https://kb.comindware.ru/article.php?id=5671). Порядок настройки события:
+
+1. Перейдите в шаблон процесса и откройте диаграмму.
+2. Поместите на диаграмму процесса [начальное](https://kb.comindware.ru/article.php?id=5671) или [промежуточное](https://kb.comindware.ru/article.php?id=5677) событие-получение сообщения.
+3. В меню элемента события нажмите кнопку «**Настроить**» *‌*.
+4. На вкладке «**Основные**» настройте [общие свойства элемента](https://kb.comindware.ru/article.php?id=5661).
+5. На вкладке «**Дополнительные**» выберите ранее созданный [путь передачи данных](#get_connection_communication_route_configure).
+6. На вкладке «**Данные сообщения**» сопоставьте **[атрибуты сообщения](#get_connection_communication_route_properties_message_attributes)** с атрибутами **[шаблона записи](https://kb.comindware.ru/article.php?id=5693)**, связанного с шаблоном процесса:
+
+   - Укажите название, системное имя и тип данных **атрибутов сообщения** так же, как они указаны в таблице «**Атрибуты для передачи данных сообщения**» в [свойствах пути передачи данных](#get_connection_communication_route_properties_message_attributes).
+   - В столбце «**Значение**» укажите атрибут **шаблона записи** такого же типа, как **атрибут сообщения**.
+   - Значения указанных **атрибутов сообщения** будут присвоены атрибутам **шаблона записи**.![Сопоставление атрибутов сообщения из пути передачи данных с данными процесса](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/rest_odata_connections/img/get_connection_message_data.png)
+
+   Сопоставление атрибутов сообщения из пути передачи данных с данными процесса
+7. Опубликуйте процесс.
+
 ## Связанные статьи
 
+- *[Начальное событие-получение сообщения](https://kb.comindware.ru/article.php?id=5671)*
+- *[Промежуточное событие-получение сообщения](https://kb.comindware.ru/article.php?id=5677)*
+- *[Получение эл. почты в процессе. Настройка подключения, пути передачи данных и процесса](https://kb.comindware.ru/article.php?id=5628)*
 - *[Отправка веб-запросов. Настройка подключения](https://kb.comindware.ru/article.php?id=5634)*
-- *[Получение эл. почты и веб-запросов в процессе. Настройка подключения, пути передачи данных и процесса](https://kb.comindware.ru/article.php?id=5628)*
 
 ================================================
 FILE: 916-guides/957-user_guide/961-administration/964-connections_communication_routes/971-rest_odata_connections/5632-odata_connection.md
@@ -98123,7 +98916,7 @@ FILE: 916-guides/957-user_guide/961-administration/975-templates/5638-index.md
 title: 'Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление'
 kbId: 5638
 url: 'https://kb.comindware.ru/article.php?id=5638'
-updated: '2026-06-16 19:14:32'
+updated: '2026-08-28 19:10:32'
 ---
 
 # Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление
@@ -98204,7 +98997,7 @@ _![Кнопки операций в списке шаблонов](https://kb.co
 - [шаблон процесса](#создание-шаблона-процесса)
 - [шаблон аккаунта](#создание-шаблона-аккаунта)
 
-[Шаблон роли](https://kb.comindware.ru/article.php?id=5692) и [шаблон организационной единицы](https://kb.comindware.ru/article.php?id=5697) создаются автоматически при создании приложения.
+[Шаблон роли](https://kb.comindware.ru/article.php?id=5692), [шаблон моделей](https://kb.comindware.ru/article.php?id=5719) и [шаблон организационной единицы](https://kb.comindware.ru/article.php?id=5697) создаются автоматически при создании приложения.
 
 ### Создание шаблона записи
 
@@ -105977,7 +106770,7 @@ FILE: 916-guides/957-user_guide/976-apps_kb/990-templates/5638-index.md
 title: 'Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление'
 kbId: 5638
 url: 'https://kb.comindware.ru/article.php?id=5638'
-updated: '2026-06-16 19:14:32'
+updated: '2026-08-28 19:10:32'
 ---
 
 # Шаблоны. Определения, создание, настройка, перенос между приложениями, архивирование, очистка, удаление
@@ -106058,7 +106851,7 @@ _![Кнопки операций в списке шаблонов](https://kb.co
 - [шаблон процесса](#создание-шаблона-процесса)
 - [шаблон аккаунта](#создание-шаблона-аккаунта)
 
-[Шаблон роли](https://kb.comindware.ru/article.php?id=5692) и [шаблон организационной единицы](https://kb.comindware.ru/article.php?id=5697) создаются автоматически при создании приложения.
+[Шаблон роли](https://kb.comindware.ru/article.php?id=5692), [шаблон моделей](https://kb.comindware.ru/article.php?id=5719) и [шаблон организационной единицы](https://kb.comindware.ru/article.php?id=5697) создаются автоматически при создании приложения.
 
 ### Создание шаблона записи
 
@@ -111853,6 +112646,449 @@ FORMAT("{0}",LIST(IF($attributeSystemName == true,"Согласовано","Не
 - *[Список функций языка формул Comindware](https://kb.comindware.ru/article.php?id=5218)*
 
 ================================================
+FILE: 916-guides/957-user_guide/976-apps_kb/990-templates/995-export_templates/5336-export_template_csharp_configure.md
+================================================
+---
+title: 'Шаблон экспорта, Настройка с использованием C#'
+kbId: 5336
+url: 'https://kb.comindware.ru/article.php?id=5336'
+updated: '2026-09-03 13:00:57'
+---
+
+# Шаблон экспорта, Настройка с использованием C#
+
+В **Comindware Platform** помимо стандартной выгрузки отчётов предусмотрен экспорт данных с использованием скриптов на C#. Этот вариант позволяет более гибко настроить параметры экспортируемого файла, например, с дополнительной фильтрацией или заменой информации, либо с форматированным выводом атрибутов-коллекций.
+
+## Шаблон документа в формате .xls
+
+Рассмотрим решение следующей задачи: написать скрипт, который формирует Excel-файл, в котором каждый элемент коллекции располагается в отдельной строчке (по умолчанию все элементы коллекции перечисляются в одной строчке через пробел).
+
+1. Для начала создайте шаблон экспорта по типу:
+
+_![Пример excel шаблона экспорта](https://kb.comindware.ru/assets/exp1.jpg)_
+
+**&=data.свойство\_класса** (Свойства класса — структура подготовки данных, которые определяются в С# скрипте)
+
+Формат ячеек в Excel
+
+В Excel-файле обязательно укажите подходящий формат полей, иначе данные выгрузятся некорректно. Для чисел используйте числовой формат, для дат и времени — формат даты.
+
+Поля «Клиент», «Контактное лицо», «Телефон» и «Email» будут заполняться из атрибутов записей шаблона «Клиенты». Поле «Договор» — коллекция в шаблоне записей «Клиенты», поле «Статус» — справочник статусов в отдельном шаблоне.
+
+2. Добавьте созданный шаблон экспорта в текущий шаблон записи (в данном случае, «Клиенты»):
+
+_![Расположение раздела «Шаблоны экспорта»](https://kb.comindware.ru/assets/2.1_2021-12-13_114132.png)_
+
+3. В этом же шаблоне записи автоматически добавится кнопка с операцией «Экспорт записи»:
+
+_![Автоматически созданная кнопка](https://kb.comindware.ru/assets/2.2_2021-12-13_124346.png)_
+
+Перейдите на вкладку «**Скрипт**» в свойствах этой кнопки и добавьте следующий код:
+
+```
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using Comindware.Data.Entity;
+using Comindware.TeamNetwork.Api.Data.UserCommands;
+using Aspose.Cells;
+using Aspose.Cells.Pivot;
+
+class Script
+{
+    public static UserCommandResult Main(UserCommandContext userCommandContext)
+    {
+        var objectsData = Api.TeamNetwork.ObjectService.ListWithAlias("Clients"); // Системное имя ШЗ "Клиенты"
+        var dataToExport = new List<MainData>();
+        foreach (var objectDict in objectsData)
+        {
+            var ContractDataInIds = getterListSTR("Contracts_collection", objectDict); // Атрибут-коллекция в ШЗ "Клиенты"
+            if(ContractDataInIds.Count == 0) {ContractDataInIds.Add("tempID");}
+            var ContractDataInList = new List<ContractData>();
+            foreach (var ContractDataInId in ContractDataInIds)
+            {
+                var ContractDataInData = GetData(ContractDataInId);
+
+                var Status_Id = getterSTR("Status", ContractDataInData); // Атрибут-ссылка в ШЗ "Договоры"
+                var Status_Data = GetData(Status_Id);
+
+                var ContractDataInT = new ContractData
+                {
+                    Name = getterSTR("Title", ContractDataInData), // Атрибут "Статус" в ШЗ "Договоры"
+                    Date = getterDT("Date", ContractDataInData), // Атрибут "Дата" в ШЗ "Договоры"
+                    Total = getterDC("Total", ContractDataInData), // Атрибут "Сумма" в ШЗ "Договоры"
+                    Status = getterSTR("Title", Status_Data) // Атрибут "Название" в ШЗ "Статусы договора"
+                };
+                ContractDataInList.Add(ContractDataInT);
+            }
+
+            var Data_ = new MainData
+            {
+                Client = getterSTR("Title", objectDict), // Атрибут "Название" в ШЗ "Клиенты"
+                Contact = getterSTR("Contact", objectDict), // Атрибут "Контактное лицо" в ШЗ "Клиенты"
+                Phone = getterSTR("Phone", objectDict), // Атрибут "Телефон" в ШЗ "Клиенты"
+                Email = getterSTR("Email", objectDict), // Атрибут "Email" в ШЗ "Клиенты"
+                Contract = ContractDataInList
+            };
+            dataToExport.Add(Data_);
+        }
+
+        var content = Api.TeamNetwork.ObjectAppExportService.ExecuteExcelExportTemplate(userCommandContext.DocumentTemplateId, dataToExport);
+        var result = new UserCommandResult
+        {
+            Success = true,
+            Commited = true,
+            ResultType = UserCommandResultType.File,
+            File = new UserCommandFileResult()
+            {
+                Name = "Excel_Data.xlsx",
+                Type = "Excel",
+                Content = content
+            },
+            Messages = new[]
+            {
+                new UserCommandMessage
+                {
+                    Severity = SeverityLevel.Normal,
+                    Text = "Файл сформирован"
+                }
+            }
+        };
+        return result;
+    }
+
+    public static Decimal getterDC(string key, IDictionary<string, object> dictionary = null)
+    {
+        if (dictionary == null || key == null)
+        {
+            return 0;
+        }
+        var stringValue = getterSTR(key, dictionary);
+        if (stringValue != null && Decimal.TryParse(stringValue, out var result))
+        {
+            return result;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public static DateTime? getterDT(string key, IDictionary<string, object> dictionary = null)
+    {
+        if (dictionary == null || key == null)
+        {
+            return null;
+        }
+        var stringValue = getterSTR(key, dictionary);
+        if (stringValue != null && DateTime.TryParse(stringValue, out var result))
+        {
+            return result.AddHours(5);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public static string getterSTR(string key, IDictionary<string, object> dictionary = null)
+    {
+        if (dictionary == null || key == null)
+        {
+            return null;
+        }
+        if (dictionary.TryGetValue(key, out var result))
+        {
+            if (result == null) return null;
+            return result.ToString();
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public static IList<string> getterListSTR(string key, IDictionary<string, object> dictionary = null)
+    {
+        var result = new List<string>();
+        if (dictionary != null && key != null)
+        {
+            if (dictionary.TryGetValue(key, out var objectData))
+            {
+                var objectDataArray = objectData as object[];
+                foreach (var singlObject in objectDataArray)
+                {
+                    if (singlObject == null) continue;
+                    result.Add(singlObject.ToString());
+                }
+            }
+        }
+        return result;
+    }
+
+    public static IDictionary<string, object> GetData(string objectId = null)
+    {
+        if (objectId == null || objectId.Contains("account") || objectId == "tempID")
+        {
+            return null;
+        }
+        var container = Api.TeamNetwork.ObjectAppService.GetByObject(objectId);
+        var result = Api.TeamNetwork.ObjectService.GetWithAlias(container.Alias, objectId);
+        return result;
+    }
+}
+
+[Serializable]
+public class MainData
+{
+    public string Client { get; set; }
+    public string Contact { get; set; }
+    public string Phone { get; set; }
+    public string Email { get; set; }
+    public List<ContractData> Contract { get; set; }
+}
+
+[Serializable]
+public class ContractData
+{
+    public string Name { get; set; }
+    public decimal Total { get; set; }
+    public DateTime? Date { get; set; }
+    public string Status { get; set; }
+}
+```
+
+**Здесь:**
+
+В скрипте используются системные имена шаблонов и атрибутов из примера. Замените их на значения из вашего приложения.
+
+| Значение | Описание |
+| --- | --- |
+| `Clients` | Системное имя шаблона записи *«Клиенты»*. |
+| `Contracts_collection` | Системное имя атрибута-коллекции в шаблоне записи *«Клиенты»*. |
+| `Status` | Системное имя атрибута типа «**Запись**» в шаблоне записи *«Договоры»*. |
+| `Title` | Системное имя атрибута *«Название»* в шаблонах *«Клиенты»*, *«Договоры»* и *«Статусы договора»*. |
+| `Date` | Системное имя атрибута *«Дата»* в шаблоне записи *«Договоры»*. |
+| `Total` | Системное имя атрибута *«Сумма»* в шаблоне записи *«Договоры»*. |
+| `Contact` | Системное имя атрибута *«Контактное лицо»* в шаблоне записи *«Клиенты»*. |
+| `Phone` | Системное имя атрибута *«Телефон»* в шаблоне записи *«Клиенты»*. |
+| `Email` | Системное имя атрибута *«Email»* в шаблоне записи *«Клиенты»*. |
+
+Как выглядят данные в продукте:
+
+_![Таблица со списком клиентов](https://kb.comindware.ru/assets/2.3_2021-12-13_141658.png)_
+
+Результат выгрузки:
+
+_![Excel файл](https://kb.comindware.ru/assets/exp5.jpg)_
+
+## Шаблон документа в формате .doc
+
+По такой же логике настраиваем выгрузку  Шаблона экспорта в формате Word.
+
+Отличием здесь будет немного иное написание самого шаблона, а также C# скрипта.
+
+_![Пример word шаблона экспорта](https://kb.comindware.ru/assets/exp6.jpg)_
+
+C# скрипт:
+
+```
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text.RegularExpressions;
+using Comindware.Data.Entity;
+using Comindware.Platform.Api.Data;
+using Comindware.TeamNetwork.Api.Data.UserCommands;
+using System.IO;
+using System.Data;
+
+class Script
+{
+    public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)
+    {
+        var objectsData = Api.TeamNetwork.ObjectService.ListWithAlias("Clients"); // Системное имя ШЗ "Клиенты"
+        List<MainData> Data_ = new List<MainData>();
+        foreach (var objectDict in objectsData)
+        {
+            var ContractDataInIds = getterListSTR("Contracts_collection", objectDict); // Атрибут-коллекция в ШЗ "Клиенты"
+            if(ContractDataInIds.Count == 0) {ContractDataInIds.Add("tempID");}
+            bool first_element = true;
+            foreach (var ContractDataInId in ContractDataInIds)
+            {
+                var ContractDataInData = GetData(ContractDataInId);
+
+                var Status_Id = getterSTR("Status", ContractDataInData); // Атрибут-ссылка в ШЗ "Договоры"
+                var Status_Data = GetData(Status_Id);
+
+                if(first_element == true)
+                {
+                    first_element = false;
+                    var temp = new MainData
+                    {
+                        Client = getterSTR("Title", objectDict), // Атрибут "Название" в ШЗ "Клиенты"
+                        Contact = getterSTR("Contact", objectDict), // Атрибут "Контактное лицо" в ШЗ "Клиенты"
+                        Phone = getterSTR("Phone", objectDict), // Атрибут "Телефон" в ШЗ "Клиенты"
+                        Email = getterSTR("Email", objectDict), // Атрибут "Email" в ШЗ "Клиенты"
+
+                        Name = getterSTR("Title", ContractDataInData), // Атрибут "Статус" в ШЗ "Договоры"
+                        Date = getterDT("Date", ContractDataInData), // Атрибут "Дата" в ШЗ "Договоры"
+                        Total = getterDC("Total", ContractDataInData), // Атрибут "Сумма" в ШЗ "Договоры"
+                        Status = getterSTR("Title", Status_Data) // Атрибут "Название" в ШЗ "Статусы договора"
+                    };
+                    Data_.Add(temp);
+                }
+                else
+                {
+                    var temp = new MainData
+                    {
+                        Name = getterSTR("Title", ContractDataInData), // Атрибут "Статус" в ШЗ "Договоры"
+                        Date = getterDT("Date", ContractDataInData), // Атрибут "Дата" в ШЗ "Договоры"
+                        Total = getterDC("Total", ContractDataInData), // Атрибут "Сумма" в ШЗ "Договоры"
+                        Status = getterSTR("Title", Status_Data) // Атрибут "Название" в ШЗ "Статусы договора"
+                    };
+                    Data_.Add(temp);
+                }
+            }
+        }
+
+        var dataToExport = new RESULT
+        {
+            MainData_ = Data_
+        };
+
+        var content = Api.TeamNetwork.ObjectAppExportService.ExecuteWordExportTemplate(userCommandContext.DocumentTemplateId,dataToExport,false);
+
+        var result = new UserCommandResult
+        {
+            Success = true,
+            Commited = true,
+            File = new UserCommandFileResult()
+            {
+                Content = content,
+                Name = "Word_Data.doc",
+                Type = "Word"
+            },
+            ResultType = UserCommandResultType.Notificate,
+            Messages = new[]
+            {
+                new UserCommandMessage
+                {
+                    Severity = SeverityLevel.Normal,
+                    Text = "Документ сформирован"
+                }
+            }
+        };
+        return result;
+    }
+
+    public static Decimal getterDC(string key, IDictionary<string, object> dictionary = null)
+    {
+        if (dictionary == null || key == null)
+        {
+            return 0;
+        }
+        var stringValue = getterSTR(key, dictionary);
+        if (stringValue != null && Decimal.TryParse(stringValue, out var result))
+        {
+            return result;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public static DateTime? getterDT(string key, IDictionary<string, object> dictionary = null)
+    {
+        if (dictionary == null || key == null)
+        {
+            return null;
+        }
+        var stringValue = getterSTR(key, dictionary);
+        if (stringValue != null && DateTime.TryParse(stringValue, out var result))
+        {
+            return result.AddHours(5);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public static string getterSTR(string key, IDictionary<string, object> dictionary = null)
+    {
+        if (dictionary == null || key == null)
+        {
+            return null;
+        }
+        if (dictionary.TryGetValue(key, out var result))
+        {
+            if (result == null) return null;
+            return result.ToString();
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public static IList<string> getterListSTR(string key, IDictionary<string, object> dictionary = null)
+    {
+        var result = new List<string>();
+        if (dictionary != null && key != null)
+        {
+            if (dictionary.TryGetValue(key, out var objectData))
+            {
+                var objectDataArray = objectData as object[];
+                foreach (var singlObject in objectDataArray)
+                {
+                    if (singlObject == null) continue;
+                    result.Add(singlObject.ToString());
+                }
+            }
+        }
+        return result;
+    }
+
+    public static IDictionary<string, object> GetData(string objectId = null)
+    {
+        if (objectId == null || objectId.Contains("account") || objectId == "tempID")
+        {
+            return null;
+        }
+        var container = Api.TeamNetwork.ObjectAppService.GetByObject(objectId);
+        var result = Api.TeamNetwork.ObjectService.GetWithAlias(container.Alias, objectId);
+        return result;
+    }
+}
+
+[Serializable]
+public class MainData
+{
+    public string Client { get; set; }
+    public string Contact { get; set; }
+    public string Phone { get; set; }
+    public string Email { get; set; }
+    public string Name { get; set; }
+    public decimal Total { get; set; }
+    public DateTime? Date { get; set; }
+    public string Status { get; set; }
+}
+
+public class RESULT
+{
+    public List<MainData> MainData_ { get; set; }
+}
+```
+
+**Результат выгрузки:**
+
+_![Файл в формате Word](https://kb.comindware.ru/assets/exp7.jpg)_
+
+================================================
 FILE: 916-guides/957-user_guide/976-apps_kb/990-templates/995-export_templates/5338-export_template_csharp_collection_download.md
 ================================================
 ---
@@ -112824,7 +114060,7 @@ FILE: 916-guides/957-user_guide/976-apps_kb/990-templates/999-import_data/5737-i
 title: 'Импорт данных в шаблон'
 kbId: 5737
 url: 'https://kb.comindware.ru/article.php?id=5737'
-updated: '2026-08-21 12:16:29'
+updated: '2026-08-24 18:50:11'
 ---
 
 # Импорт данных в шаблон
@@ -112878,7 +114114,7 @@ _![Настройка импорта данных из файла CSV](https://k
 - Для импорта значений атрибута типа «**Длительность**» задайте формат ячеек «**Время**».
 - Для импорта значений атрибута типа «**Логический**» задайте формат ячеек «**Общий**» или «**Текстовый**».
 
-  - Ячейки должны содержать значения `ИСТИНА` или ЛОЖЬ (либо `TRUE` или `FALSE`). Пустое значение в ячейке будет преобразовано в значение `ложь`.
+  - Ячейки должны содержать значения `ИСТИНА` или `ЛОЖЬ` (либо `TRUE` или `FALSE`). Пустое значение в ячейке будет преобразовано в значение `ложь`.
 - Для импорта значений атрибута типа «**Запись**», «**Аккаунт**», «**Роль**» или «**Организационная единица**» задайте формат ячеек «**Общий**» или «**Текстовый**».
 
   - Эти ячейки должны содержать уникальные значения, совпадающие (с учётом регистра) со значениями ключевого атрибута в имеющихся записях из связанного шаблона.
@@ -112897,7 +114133,7 @@ _![Настройка импорта данных из файла CSV](https://k
 
 ### Подготовка исходных данных
 
-1. Создайте [accounts](https://kb.comindware.ru/article.php?id=5579) с перечисленными ниже **Ф. И. О.**: *Иванов И. И., Кулагина А. Н., Филиппов К. В., Журавлёва Т. С., Игнатьев А. Б.* Остальные свойства аккаунтов заполните произвольными сведениями.
+1. Создайте [аккаунты](https://kb.comindware.ru/article.php?id=5579) с перечисленными ниже **Ф. И. О.**: *Иванов И. И., Кулагина А. Н., Филиппов К. В., Журавлёва Т. С., Игнатьев А. Б.* Остальные свойства аккаунтов заполните произвольными сведениями.
 2. Создайте шаблон записи *«Заявления на отпуск»* с указанными ниже атрибутами.
 
    | Название атрибута | Тип данных | Свойства атрибута |
@@ -112907,15 +114143,15 @@ _![Настройка импорта данных из файла CSV](https://k
    | *Дата начала* | Дата и время |  |
    | *Длительность отпуска* | Число | **Количество знаков после запятой:** **0** |
 3. Вынесите созданные атрибуты на *основную форму* и в таблицу «*Все записи*» шаблона *«Заявления на отпуск».*
-4. Создайте шаблон записи *«Решения по заявлениям на отпуск»*  с указанными ниже атрибутами.
+4. Создайте шаблон записи *«Решения по заявлениям на отпуск»* с указанными ниже атрибутами.
 
    | Название атрибута | Тип данных | Свойства атрибута |
    | --- | --- | --- |
-   | *Заявления* | Запись | **Связанный шаблон:** *Заявления на отпуск* **Хранить несколько значений:** флажок установлен |
+   | *Заявления* | Запись | **Связанный шаблон:** *Заявления на отпуск* **Хранить несколько значений:** флажок установлен |
    | *Руководитель* | Аккаунт |  |
    | *Решение* | Логический |  |
 5. Вынесите созданные атрибуты на *основную форму* и в таблицу «*Все записи*» шаблона *«Решения по заявлениям на отпуск».*
-6. Создайте файл `_Заявления_на_отпуск.XLSX_` и заполните его приведёнными ниже данными (можно скопировать и вставить таблицу).
+6. Создайте файл *`Заявления_на_отпуск.XLSX`* и заполните его приведёнными ниже данными (можно скопировать и вставить таблицу).
 
    | № заявления | Ф. И. О. заявителя | Дата заявления | Длительность |
    | --- | --- | --- | --- |
@@ -112923,7 +114159,7 @@ _![Настройка импорта данных из файла CSV](https://k
    | *2* | *Кулагина А. Н.* | 25.03.2024 | *20* |
    | *3* | *Филиппов К. В.* | 01.08.2024 | *15* |
    | *4* | *Журавлёва Т. С.* | 15.05.2024 | *30* |
-7. Задайте формат ячеек в файле `_Заявления_на_отпуск.XLSX_`, как указано ниже.
+7. Задайте формат ячеек в файле *`Заявления_на_отпуск.XLSX`*, как указано ниже.
 
    | Столбец | Формат ячеек |
    | --- | --- |
@@ -112931,13 +114167,13 @@ _![Настройка импорта данных из файла CSV](https://k
    | Ф. И. О. заявителя | **Текстовый** |
    | Дата начала | **Дата** |
    | Длительность | **Числовой Количество знаков после запятой: 0** |
-8. Создайте файл `_Решения_по_заявлениям_на_отпуск.XLSX_` и заполните его приведёнными ниже данными (можно скопировать и вставить таблицу).
+8. Создайте файл *`Решения_по_заявлениям_на_отпуск.XLSX`* и заполните его приведёнными ниже данными (можно скопировать и вставить таблицу).
 
    | № заявления | Руководитель | Решение |
    | --- | --- | --- |
    | *1;2* | *Игнатьев А. Б.* | *ЛОЖЬ* |
    | *3;4* | *Игнатьев А. Б.* | *TRUE* |
-9. Задайте формат ячеек в файле `_Решения_по_заявлениям_на_отпуск.XLSX_`, как указано ниже.
+9. Задайте формат ячеек в файле *`Решения_по_заявлениям_на_отпуск.XLSX`*, как указано ниже.
 
    | Столбец | Формат ячеек |
    | --- | --- |
@@ -112955,8 +114191,8 @@ _![Настройка импорта данных из файла CSV](https://k
 
 ### Импорт данных в шаблоны
 
-1. Откройте шаблон *«Заявления на отпуск»* и выберите вкладку «**Импорт**».
-2. В поле «**Файл с данными**» выберите файл *Заявления\_на\_отпуск.XLSX.*
+1. Откройте шаблон *«Заявления на отпуск»* и выберите вкладку «**Импорт**».
+2. В поле «**Файл с данными**» выберите файл *Заявления\_на\_отпуск.XLSX.*
 3. Установите флажок «**Обновить существующие записи данными из файла**» и настройте обновление:
 
    - **Столбец:** *№ заявления*
@@ -112982,7 +114218,7 @@ _![Настройка импорта данных из файла CSV](https://k
 
    Импортированные заявления на отпуск
 9. Откройте шаблон *«Решения по заявлениям на отпуск»* и выберите вкладку «**Импорт**».
-10. В поле «**Файл с данными**» выберите файл *Заявления\_на\_отпуск.XLSX.*
+10. В поле «**Файл с данными**» выберите файл *Заявления\_на\_отпуск.XLSX.*
 11. Настройте **сопоставление данных** следующим образом:
 
     | Столбец | Атрибут | Формат |
@@ -112998,7 +114234,7 @@ _![Настройка импорта данных из файла CSV](https://k
 13. Перейдите на вкладку «**Свойства**» шаблона *«Решения по заявлениям на отпуск»* и нажмите кнопку «**Перейти к экземплярам**»
 14. Отобразится список всех решений по заявлениям.
 15. В списке должно быть два решения, каждое по двум заявлениям на отпуск.
-16. Перейдите на вкладку «Свойства» шаблона *«Заявления на отпуск»*  и нажмите кнопку «Перейти к экземплярам»
+16. Перейдите на вкладку «Свойства» шаблона *«Заявления на отпуск»* и нажмите кнопку «Перейти к экземплярам»
 17. Отобразится два решения, каждое по двум заявлениям на отпуск.
 
     ![Импортированные решения по заявлениям на отпуск](https://kb.comindware.ru/platform/v6.0/business_apps/templates/img/import_added_records_to_decisions.png)

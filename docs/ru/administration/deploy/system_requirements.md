@@ -111,7 +111,7 @@ hide: tags
 - Astra Linux Special Edition 1.7.5, 1.8
 - Альт Сервер 11, Альт&nbsp;СПАльт&nbsp;11
 {% if not gostech %}
-- РЕД ОС 8
+- РЕД ОС 8.0.2
 - Debian 12
 {% endif %}
 </td>{% endif %}

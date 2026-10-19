@@ -2,7 +2,7 @@
 title: 'Подключения. Определения, типы, создание, настройка, удаление'
 kbId: 5303
 url: 'https://kb.comindware.ru/article.php?id=5303'
-updated: '2025-12-11 13:14:33'
+updated: '2026-10-09 17:30:04'
 ---
 
 # Подключения. Определения, типы, создание, настройка, удаление
@@ -38,7 +38,6 @@ updated: '2025-12-11 13:14:33'
 - [Управление версиями через Git](https://kb.comindware.ru/article.php?id=5623)
 - Абстрактное подключение
 - [Карты](https://kb.comindware.ru/article.php?id=5314)
-- [Хранилище S3](https://kb.comindware.ru/article.php?id=5317)
 
 ### Аутентификация
 

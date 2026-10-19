@@ -2,7 +2,7 @@
 title: 'HTTP-запросы с составным содержимым. Получение файлов. Настройка подключения, пути передачи данных и сценария'
 kbId: 5083
 url: 'https://kb.comindware.ru/article.php?id=5083'
-updated: '2026-06-20 20:26:10'
+updated: '2026-10-08 15:00:53'
 ---
 
 # HTTP-запросы с составным содержимым. Получение файлов. Настройка подключения, пути передачи данных и сценария
@@ -18,7 +18,7 @@ updated: '2026-06-20 20:26:10'
 - Для получения HTTP-запросов из внешних систем **Comindware Platform** позволяет настроить конечные точки API вида:
 
   ```
-  https://<instanceUrl>/api/public/adapter/<connectionUri>/<routeUri>
+  https://<instanceUrl>/<connectionUri>/<routeUri>
   ```
 
   Здесь:

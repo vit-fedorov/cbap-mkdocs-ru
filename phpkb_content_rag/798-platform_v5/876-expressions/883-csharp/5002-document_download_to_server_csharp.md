@@ -2,7 +2,7 @@
 title: 'Атрибут типа «Документ». Скачивание файлов в папку на сервере'
 kbId: 5002
 url: 'https://kb.comindware.ru/article.php?id=5002'
-updated: '2026-06-20 20:26:31'
+updated: '2026-09-08 11:15:19'
 ---
 
 # Атрибут типа «Документ». Скачивание файлов в папку на сервере
@@ -102,7 +102,7 @@ class Script {
     public static UserCommandResult Main(UserCommandContext userCommandContext) {
         try {
             //<ServerDownloadPath> — путь для скачивания файлов на сервере
-            var path = @ "<ServerDownloadPath>";
+            var path = @"<ServerDownloadPath>";
             //DocumentAttributeSystemName — системное имя атрибута типа «Документ»
             var data = Api.TeamNetwork.ObjectService.GetPropertyValues(new string[] {
                 userCommandContext.ObjectIds[0]

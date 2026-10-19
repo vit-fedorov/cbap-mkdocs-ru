@@ -2,7 +2,7 @@
 title: 'Подключения. Определения, типы, создание, настройка, удаление'
 kbId: 4675
 url: 'https://kb.comindware.ru/article.php?id=4675'
-updated: '2026-06-20 20:26:02'
+updated: '2026-10-09 17:19:36'
 ---
 
 # Подключения. Определения, типы, создание, настройка, удаление
@@ -38,7 +38,6 @@ updated: '2026-06-20 20:26:02'
 - [Управление версиями через Git](https://kb.comindware.ru/article.php?id=4680)
 - Абстрактное подключение
 - [Карты](https://kb.comindware.ru/article.php?id=4679)
-- [Хранилище S3](https://kb.comindware.ru/article.php?id=4677)
 
 ### Аутентификация
 

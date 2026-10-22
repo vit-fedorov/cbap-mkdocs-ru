@@ -429,22 +429,14 @@ hide: tags
     ```
 
 5. Создайте новый экземпляр ПО согласно приведённым выше [инструкциям](#deploy_guide_linux_instance_create_single), указав для него **уникальные имя и порт**.
-6. Откройте для редактирования три службы **каждого** из установленных экземпляров ПО (`<instanceName>`):
-
-    ``` sh
-    nano /usr/lib/systemd/system/comindware<instanceName>.service
-    nano /usr/lib/systemd/system/apigateway<instanceName>.service
-    nano /usr/lib/systemd/system/adapterhost<instanceName>.service
-    ```
-
-7. Если используются локальные службы Kafka и {{ openSearchVariants }}, откройте их для редактирования:
+6. Если используются локальные службы Kafka и {{ openSearchVariants }}, откройте их для редактирования:
 
     ``` sh
     nano /usr/lib/systemd/system/kafka.service
     nano /usr/lib/systemd/system/opensearch.service
     ```
 
-8. В каждом файле службы установите следующие директивы:
+7. В каждом файле службы установите следующие директивы:
 
     ``` cs
     # Макс. количество открытых файлов

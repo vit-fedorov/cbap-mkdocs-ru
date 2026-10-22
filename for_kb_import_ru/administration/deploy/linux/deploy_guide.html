@@ -494,10 +494,6 @@
 <p>Создайте новый экземпляр ПО согласно приведённым выше <a class="mkdocs_imported_link" href="#deploy_guide_linux_instance_create_single">инструкциям</a>, указав для него <strong>уникальные имя и порт</strong>.</p>
 </li>
 <li>
-<p>Откройте для редактирования три службы <strong>каждого</strong> из установленных экземпляров ПО (<code>&lt;instanceName&gt;</code>):</p>
-<div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/usr/lib/systemd/system/comindware&lt;instanceName&gt;.service</code> <br/><code>nano<span class="w"> </span>/usr/lib/systemd/system/apigateway&lt;instanceName&gt;.service</code> <br/><code>nano<span class="w"> </span>/usr/lib/systemd/system/adapterhost&lt;instanceName&gt;.service</code> <br/></pre></code></div>
-</li>
-<li>
 <p>Если используются локальные службы Kafka и OpenSearch (Elasticsearch), откройте их для редактирования:</p>
 <div class="highlight"><code><pre><span></span><code>nano<span class="w"> </span>/usr/lib/systemd/system/kafka.service</code> <br/><code>nano<span class="w"> </span>/usr/lib/systemd/system/opensearch.service</code> <br/></pre></code></div>
 </li>

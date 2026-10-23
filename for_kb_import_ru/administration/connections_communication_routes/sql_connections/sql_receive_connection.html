@@ -264,6 +264,25 @@
 <li>
 <p>В поле «<strong>SQL-запрос</strong>» введите запрос для получения записей с названиями городов из внешней БД, указав имя таблицы с названиями городов, которые будут помещены в атрибут <code>Name</code>, созданный на <a class="mkdocs_imported_link" href="#message_attributes">шаге 8</a>. Например:</p>
 <div class="highlight"><code><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cities</span></code> <br/></pre></code></div>
+<div class="notice notice-warning">
+<p class="admonition-title">Передача даты и времени в СУБД Oracle</p>
+<p>Для передачи даты и времени в <strong>СУБД Oracle</strong> используйте функцию <code>TO_DATE()</code> с подходящей форматной маской:</p>
+<div class="highlight"><code><pre><span></span><code><span class="n">TO_DATE</span><span class="p">(</span><span class="err">{</span><span class="n">attr</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="s1">'YYYY-MM-DD HH24:MI:SS'</span><span class="p">);</span></code> <br/></pre></code></div>
+<ul>
+<li><strong><code>{attr}</code></strong> — используемый атрибут.</li>
+<li><strong><code>YYYY-MM-DD HH24:MI:SS</code></strong> — форматная маска даты:<ul>
+<li><code>YYYY</code> — четырехзначный год;</li>
+<li><code>MM</code> — месяц (01–12);</li>
+<li><code>DD</code> — день;</li>
+<li><code>HH24</code> — час в 24-часовом формате (00–23);</li>
+<li><code>MI</code> — минуты;</li>
+<li><code>SS</code> — секунды.</li>
+</ul>
+</li>
+</ul>
+<p>Например:
+</p><div class="highlight"><code><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">birthday</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TO_DATE</span><span class="p">(</span><span class="s1">'{birthday}'</span><span class="p">,</span><span class="w"> </span><span class="s1">'YYYY-MM-DD HH24:MI:SS'</span><span class="p">);</span></code> <br/></pre></code></div>
+</div>
 </li>
 <li>
 <p>Сохраните путь для получения данных из СУБД.</p>

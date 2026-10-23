@@ -183,6 +183,28 @@ kbId: 5347
     SELECT * FROM cities
     ```
 
+    !!! warning "Передача даты и времени в СУБД Oracle"
+        
+        Для передачи даты и времени в **СУБД Oracle** используйте функцию `TO_DATE()` с подходящей форматной маской:
+        
+        ``` sql
+        TO_DATE({attr}, 'YYYY-MM-DD HH24:MI:SS');
+        ```
+        
+        - **`{attr}`** — используемый атрибут.
+        - **`YYYY-MM-DD HH24:MI:SS`** — форматная маска даты:
+        	- `YYYY` — четырехзначный год;
+        	- `MM` — месяц (01–12);
+        	- `DD` — день;
+        	- `HH24` — час в 24-часовом формате (00–23);
+        	- `MI` — минуты;
+        	- `SS` — секунды.
+        
+        Например:
+        ```sql
+        SELECT id, name FROM users WHERE birthday = TO_DATE('{birthday}', 'YYYY-MM-DD HH24:MI:SS');
+        ```
+
 13. Сохраните путь для получения данных из СУБД.
 
     _![Настройка параметров интеграции пути получения данных из СУБД](img/sql_receive_connection_parametres_settings.png)_

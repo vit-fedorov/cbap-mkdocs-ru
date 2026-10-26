@@ -1,7 +1,7 @@
 ﻿
 ----------------------
 
-Ingestion date: 2026-10-19 14:45:22
+Ingestion date: 2026-10-26 14:22:01
 Title: Comindware Platform V6 knowledge base for AI ingestion
 Description: Provide this file to your AI agent. For better results, add the prompt below
 Source: https://kb.comindware.ru/category.php?id=896
@@ -6056,7 +6056,7 @@ FILE: 898-expressioons/900-csharp_examples/5211-csharp_guide.md
 title: 'Написание скриптов на языке C#'
 kbId: 5211
 url: 'https://kb.comindware.ru/article.php?id=5211'
-updated: '2026-07-20 16:12:23'
+updated: '2026-10-26 14:14:54'
 ---
 
 # Написание скриптов на языке C#
@@ -6271,8 +6271,7 @@ public class Script  {
 Comindware.Process.Api.Data.ScriptContext context {
   string ProcessID, // ID экземпляра процесса
   string BusinessObjectID, // ID записи, связанной с экземпляром процесса
-},
-Comindware.Entities, // используется для доступа к данным шаблонов записей
+}
 ```
 
 **Выходные данные**
@@ -35842,7 +35841,7 @@ FILE: 909-examples/5347-sql_receive_connection.md
 title: 'Внешняя СУБД (MySQL, MSSQL, Oracle, PostgreSQL). Получение данных по таймеру. Настройка подключения, пути передачи данных и сценария'
 kbId: 5347
 url: 'https://kb.comindware.ru/article.php?id=5347'
-updated: '2024-12-02 18:12:36'
+updated: '2026-10-23 15:48:26'
 ---
 
 # Внешняя СУБД (MySQL, MSSQL, Oracle, PostgreSQL). Получение данных по таймеру. Настройка подключения, пути передачи данных и сценария
@@ -35895,7 +35894,7 @@ updated: '2024-12-02 18:12:36'
    - В ОС Windows путь к файлу по умолчанию:
 
      ```
-     C:\ProgramData\PostgreSQL\X.X\data\postgresql.conf
+     C:\\ProgramData\\PostgreSQL\\X.X\\data\\postgresql.conf
      ```
 
      Здесь `X.X` — номер версии PostgreSQL.
@@ -36010,6 +36009,29 @@ updated: '2024-12-02 18:12:36'
     ```
     SELECT * FROM cities
     ```
+
+    Передача даты и времени в СУБД Oracle
+
+    Для передачи даты и времени в **СУБД Oracle** используйте функцию `TO_DATE()` с подходящей форматной маской:
+
+    ```
+    TO_DATE({attr}, 'YYYY-MM-DD HH24:MI:SS');
+    ```
+
+    - **`{attr}`** — используемый атрибут.
+    - **`YYYY-MM-DD HH24:MI:SS`** — форматная маска даты:
+      - `YYYY` — четырехзначный год;
+      - `MM` — месяц (01–12);
+      - `DD` — день;
+      - `HH24` — час в 24-часовом формате (00–23);
+      - `MI` — минуты;
+      - `SS` — секунды.
+
+    Например:
+
+    ```
+    SELECT id, name FROM users WHERE birthday = TO_DATE('{birthday}', 'YYYY-MM-DD HH24:MI:SS');
+    ```
 13. Сохраните путь для получения данных из СУБД.
 
     ![Настройка параметров интеграции пути получения данных из СУБД](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/sql_connections/img/sql_receive_connection_parametres_settings.png)
@@ -36065,6 +36087,7 @@ updated: '2024-12-02 18:12:36'
        }
        ```
      - Здесь:
+
        - `CityRecords` — **имя переменной**, указанное в свойствах свойствах события «[**Получение сообщения**](#start_event)».
        - `City` — системное имя атрибута-массива, созданного [на вкладке «**Атрибуты сообщений**»](#message_attributes) в свойствах пути передачи данных.
    - Сохраните действие «**Повторять по количеству объектов**».![Настройка цикла по количеству объектов в сценарии](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/sql_connections/img/sql_receive_connection_scenario_cycle_settings.png)
@@ -58060,7 +58083,7 @@ FILE: 916-guides/917-developer_guide/919-csharp/5211-csharp_guide.md
 title: 'Написание скриптов на языке C#'
 kbId: 5211
 url: 'https://kb.comindware.ru/article.php?id=5211'
-updated: '2026-07-20 16:12:23'
+updated: '2026-10-26 14:14:54'
 ---
 
 # Написание скриптов на языке C#
@@ -58275,8 +58298,7 @@ public class Script  {
 Comindware.Process.Api.Data.ScriptContext context {
   string ProcessID, // ID экземпляра процесса
   string BusinessObjectID, // ID записи, связанной с экземпляром процесса
-},
-Comindware.Entities, // используется для доступа к данным шаблонов записей
+}
 ```
 
 **Выходные данные**
@@ -69560,7 +69582,7 @@ FILE: 916-guides/921-admin_guide/922-deploy/949-deploy_linux/5554-configuration_
 title: 'Конфигурация экземпляра, компонентов ПО и служб. Настройка'
 kbId: 5554
 url: 'https://kb.comindware.ru/article.php?id=5554'
-updated: '2026-07-07 19:02:46'
+updated: '2026-10-23 19:38:08'
 ---
 
 # Конфигурация экземпляра, компонентов ПО и служб. Настройка
@@ -70045,6 +70067,12 @@ requestProcessor.enabled: true
 #useGostAlgorithms: true
 ```
 
+Использование конфигурации с одним узлом Kafka
+
+Параметр `mq.replicationFactor` должен соответствовать числу узлов **Kafka**, задействованных в кластере. По умолчанию установлено значение 3.
+
+Если в конфигурации используется только один узел, необходимо установить для данного параметра значение `1` и убедиться, что соответствующая строка не закомментирована.
+
 ## Конфигурация службы apigateway
 
 1. Откройте файл конфигурации `apigateway.yml` экземпляра ПО для редактирования:
@@ -70139,6 +70167,12 @@ services:
   - apiPrefix: subscription
   - className: Comindware.ApiGateway.Services.SubscriptionHub
 ```
+
+Использование конфигурации с одним узлом Kafka
+
+Параметр `mq.replicationFactor` должен соответствовать числу узлов **Kafka**, задействованных в кластере. По умолчанию установлено значение 3.
+
+Если в конфигурации используется только один узел, необходимо установить для данного параметра значение `1` и убедиться, что соответствующая строка не закомментирована.
 
 ## Конфигурация службы adapterhost
 
@@ -72103,7 +72137,7 @@ FILE: 916-guides/921-admin_guide/922-deploy/949-deploy_linux/5558-deploy_guide.m
 title: 'Установка, запуск, инициализация и остановка ПО'
 kbId: 5558
 url: 'https://kb.comindware.ru/article.php?id=5558'
-updated: '2026-06-01 13:42:46'
+updated: '2026-10-22 10:59:18'
 ---
 
 # Установка, запуск, инициализация и остановка ПО
@@ -72526,20 +72560,13 @@ updated: '2026-06-01 13:42:46'
    ls /var/www/.cmw_version/
    ```
 5. Создайте новый экземпляр ПО согласно приведённым выше [инструкциям](#deploy_guide_linux_instance_create_single), указав для него **уникальные имя и порт**.
-6. Откройте для редактирования три службы **каждого** из установленных экземпляров ПО (`<instanceName>`):
-
-   ```
-   nano /usr/lib/systemd/system/comindware<instanceName>.service
-   nano /usr/lib/systemd/system/apigateway<instanceName>.service
-   nano /usr/lib/systemd/system/adapterhost<instanceName>.service
-   ```
-7. Если используются локальные службы Kafka и OpenSearch (Elasticsearch), откройте их для редактирования:
+6. Если используются локальные службы Kafka и OpenSearch (Elasticsearch), откройте их для редактирования:
 
    ```
    nano /usr/lib/systemd/system/kafka.service
    nano /usr/lib/systemd/system/opensearch.service
    ```
-8. В каждом файле службы установите следующие директивы:
+7. В каждом файле службы установите следующие директивы:
 
    ```
    # Макс. количество открытых файлов
@@ -97560,7 +97587,7 @@ FILE: 916-guides/957-user_guide/961-administration/964-connections_communication
 title: 'Внешняя СУБД (MySQL, MSSQL, Oracle, PostgreSQL). Получение данных по таймеру. Настройка подключения, пути передачи данных и сценария'
 kbId: 5347
 url: 'https://kb.comindware.ru/article.php?id=5347'
-updated: '2024-12-02 18:12:36'
+updated: '2026-10-23 15:48:26'
 ---
 
 # Внешняя СУБД (MySQL, MSSQL, Oracle, PostgreSQL). Получение данных по таймеру. Настройка подключения, пути передачи данных и сценария
@@ -97613,7 +97640,7 @@ updated: '2024-12-02 18:12:36'
    - В ОС Windows путь к файлу по умолчанию:
 
      ```
-     C:\ProgramData\PostgreSQL\X.X\data\postgresql.conf
+     C:\\ProgramData\\PostgreSQL\\X.X\\data\\postgresql.conf
      ```
 
      Здесь `X.X` — номер версии PostgreSQL.
@@ -97728,6 +97755,29 @@ updated: '2024-12-02 18:12:36'
     ```
     SELECT * FROM cities
     ```
+
+    Передача даты и времени в СУБД Oracle
+
+    Для передачи даты и времени в **СУБД Oracle** используйте функцию `TO_DATE()` с подходящей форматной маской:
+
+    ```
+    TO_DATE({attr}, 'YYYY-MM-DD HH24:MI:SS');
+    ```
+
+    - **`{attr}`** — используемый атрибут.
+    - **`YYYY-MM-DD HH24:MI:SS`** — форматная маска даты:
+      - `YYYY` — четырехзначный год;
+      - `MM` — месяц (01–12);
+      - `DD` — день;
+      - `HH24` — час в 24-часовом формате (00–23);
+      - `MI` — минуты;
+      - `SS` — секунды.
+
+    Например:
+
+    ```
+    SELECT id, name FROM users WHERE birthday = TO_DATE('{birthday}', 'YYYY-MM-DD HH24:MI:SS');
+    ```
 13. Сохраните путь для получения данных из СУБД.
 
     ![Настройка параметров интеграции пути получения данных из СУБД](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/sql_connections/img/sql_receive_connection_parametres_settings.png)
@@ -97783,6 +97833,7 @@ updated: '2024-12-02 18:12:36'
        }
        ```
      - Здесь:
+
        - `CityRecords` — **имя переменной**, указанное в свойствах свойствах события «[**Получение сообщения**](#start_event)».
        - `City` — системное имя атрибута-массива, созданного [на вкладке «**Атрибуты сообщений**»](#message_attributes) в свойствах пути передачи данных.
    - Сохраните действие «**Повторять по количеству объектов**».![Настройка цикла по количеству объектов в сценарии](https://kb.comindware.ru/platform/v6.0/administration/connections_communication_routes/sql_connections/img/sql_receive_connection_scenario_cycle_settings.png)

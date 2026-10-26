@@ -221,8 +221,7 @@ public class Script  {
 Comindware.Process.Api.Data.ScriptContext context {
   string ProcessID, // ID экземпляра процесса
   string BusinessObjectID, // ID записи, связанной с экземпляром процесса
-},
-Comindware.Entities, // используется для доступа к данным шаблонов записей
+}
 ```
 
 **Выходные данные**

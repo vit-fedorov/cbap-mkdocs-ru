@@ -2,7 +2,7 @@
 title: 'Написание скриптов на языке C#'
 kbId: 4864
 url: 'https://kb.comindware.ru/article.php?id=4864'
-updated: '2026-06-20 20:26:31'
+updated: '2026-10-26 13:49:20'
 ---
 
 # Написание скриптов на языке C#
@@ -217,8 +217,7 @@ public class Script  {
 Comindware.Process.Api.Data.ScriptContext context {
   string ProcessID, // ID экземпляра процесса
   string BusinessObjectID, // ID записи, связанной с экземпляром процесса
-},
-Comindware.Entities, // используется для доступа к данным шаблонов записей
+}
 ```
 
 **Выходные данные**

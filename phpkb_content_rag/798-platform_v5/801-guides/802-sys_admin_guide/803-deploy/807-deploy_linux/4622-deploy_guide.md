@@ -2,7 +2,7 @@
 title: 'Установка, запуск, инициализация и остановка ПО'
 kbId: 4622
 url: 'https://kb.comindware.ru/article.php?id=4622'
-updated: '2026-06-20 20:24:47'
+updated: '2026-10-22 10:52:55'
 ---
 
 # Установка, запуск, инициализация и остановка ПО
@@ -467,20 +467,13 @@ updated: '2026-06-20 20:24:47'
    ls /var/www/.cmw_version/
    ```
 5. Создайте новый экземпляр ПО согласно приведённым выше [инструкциям](#deploy_guide_linux_instance_create_single), указав для него **уникальные имя и порт**.
-6. Откройте для редактирования три службы **каждого** из установленных экземпляров ПО (`<instanceName>`):
-
-   ```
-   nano /usr/lib/systemd/system/comindware<instanceName>.service
-   nano /usr/lib/systemd/system/apigateway<instanceName>.service
-   nano /usr/lib/systemd/system/adapterhost<instanceName>.service
-   ```
-7. Если используются локальные службы Kafka и OpenSearch (Elasticsearch), откройте их для редактирования:
+6. Если используются локальные службы Kafka и OpenSearch (Elasticsearch), откройте их для редактирования:
 
    ```
    nano /usr/lib/systemd/system/kafka.service
    nano /usr/lib/systemd/system/elasticsearch.service
    ```
-8. В каждом файле службы установите следующие директивы:
+7. В каждом файле службы установите следующие директивы:
 
    ```
    # Макс. количество открытых файлов

@@ -2,7 +2,7 @@
 title: 'Внешняя СУБД (MySQL, MSSQL, Oracle, PostgreSQL). Получение данных по таймеру. Настройка подключения, пути передачи данных и сценария'
 kbId: 5347
 url: 'https://kb.comindware.ru/article.php?id=5347'
-updated: '2024-12-02 18:12:36'
+updated: '2026-10-23 15:48:26'
 ---
 
 # Внешняя СУБД (MySQL, MSSQL, Oracle, PostgreSQL). Получение данных по таймеру. Настройка подключения, пути передачи данных и сценария
@@ -55,7 +55,7 @@ updated: '2024-12-02 18:12:36'
    - В ОС Windows путь к файлу по умолчанию:
 
      ```
-     C:\ProgramData\PostgreSQL\X.X\data\postgresql.conf
+     C:\\ProgramData\\PostgreSQL\\X.X\\data\\postgresql.conf
      ```
 
      Здесь `X.X` — номер версии PostgreSQL.
@@ -170,6 +170,29 @@ updated: '2024-12-02 18:12:36'
     ```
     SELECT * FROM cities
     ```
+
+    Передача даты и времени в СУБД Oracle
+
+    Для передачи даты и времени в **СУБД Oracle** используйте функцию `TO_DATE()` с подходящей форматной маской:
+
+    ```
+    TO_DATE({attr}, 'YYYY-MM-DD HH24:MI:SS');
+    ```
+
+    - **`{attr}`** — используемый атрибут.
+    - **`YYYY-MM-DD HH24:MI:SS`** — форматная маска даты:
+      - `YYYY` — четырехзначный год;
+      - `MM` — месяц (01–12);
+      - `DD` — день;
+      - `HH24` — час в 24-часовом формате (00–23);
+      - `MI` — минуты;
+      - `SS` — секунды.
+
+    Например:
+
+    ```
+    SELECT id, name FROM users WHERE birthday = TO_DATE('{birthday}', 'YYYY-MM-DD HH24:MI:SS');
+    ```
 13. Сохраните путь для получения данных из СУБД.
 
     ![Настройка параметров интеграции пути получения данных из СУБД](/platform/v6.0/administration/connections_communication_routes/sql_connections/img/sql_receive_connection_parametres_settings.png)
@@ -225,6 +248,7 @@ updated: '2024-12-02 18:12:36'
        }
        ```
      - Здесь:
+
        - `CityRecords` — **имя переменной**, указанное в свойствах свойствах события «[**Получение сообщения**](#start_event)».
        - `City` — системное имя атрибута-массива, созданного [на вкладке «**Атрибуты сообщений**»](#message_attributes) в свойствах пути передачи данных.
    - Сохраните действие «**Повторять по количеству объектов**».![Настройка цикла по количеству объектов в сценарии](/platform/v6.0/administration/connections_communication_routes/sql_connections/img/sql_receive_connection_scenario_cycle_settings.png)
